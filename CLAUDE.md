@@ -67,4 +67,15 @@ Follow `.claude/skills/new-feature-module`. Keep changes small and reviewable, o
 ## Product status
 
 First milestone shipped: foundation, design system with four themes and Lucide icons, SEO, public pages, full Supabase auth flows (sign up, magic link or OTP, reset, change email, reauthentication) with branded email templates, API skeleton.
-The product scope is captured in `docs/product/FEATURE_MAP.md`. PRD + ERD written so far, in build order: F-02 Syllabus Structure and Coverage, F-01.1 Pomodoro Focus Timer, X-04 Ingestion Service (`docs/product/prd`, `docs/product/erd`). Next: F-01.2 Time Tracker + Analytics. The feature list in `modules/catalog/features.ts` is still provisional.
+The product scope is captured in `docs/product/FEATURE_MAP.md`. PRD + ERD written so far, in build order: F-02 Syllabus Structure and Coverage, F-01.1 Pomodoro Focus Timer, X-04 Ingestion Service, F-01.2 Time Tracker + Analytics (`docs/product/prd`, `docs/product/erd`). **F-02 is implemented** in `apps/api/modules/{syllabus,coverage}` and `apps/web/src/modules/{syllabus,coverage}` (public syllabus pages under `/courses/...`, My Coverage under `/app/onboarding`, `/app/syllabus`, `/app/revision`, `/app/settings/coverage`). F-01.1, X-04 and F-01.2 are not implemented yet. Next: F-01.1, then F-01.2. Syllabus content is edited in the Django admin (`apps/api/modules/syllabus/admin.py`); see `docs/F-02-ROLLOUT.md` for the exact rollout and editor workflow. Seed syllabus files in `apps/api/modules/syllabus/seed` load as drafts (`manage.py load_syllabus_seed`, add `--publish` after an editor has verified them against the official syllabus); the CA Intermediate file is a sample structure and must be verified before publishing. The feature list in `modules/catalog/features.ts` is still provisional.
+
+## Git lock files (do this before ANY code change or git command)
+
+Stale `.git/index.lock` files keep blocking work and the owner should never have to mention it. At the start of every session, and before every edit, commit, checkout or other git command in this repo: look for lock files, and if one exists and no git process is running, delete it.
+
+```bash
+cd "$(git rev-parse --show-toplevel)" 2>/dev/null || cd .
+if ! pgrep -x git >/dev/null; then find .git -maxdepth 3 -name "*.lock" -print -delete; fi
+```
+
+When the repo is on the user's computer, run this through the linked-computer shell (the cloud copy has its own `.git`). If deletion is refused, request delete permission once, then retry. Mention it in one short line only when a lock was actually removed.

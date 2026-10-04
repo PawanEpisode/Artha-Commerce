@@ -611,3 +611,17 @@ apps/web/src/modules/
 The shared test fixtures (a JSON file of inputs and expected percents) are used by both the Python and the TypeScript formula tests so the two copies cannot drift apart.
 
 Routes stay thin: `courses.$course.$level.$subject.index`, `courses.$course.$level.$subject.$chapter`, `app.onboarding`, `app.syllabus.index`, `app.syllabus.$subject.index`, `app.syllabus.$subject.$chapter`, `app.revision`, `app.settings.coverage`.
+
+## Implementation notes (as built)
+
+Deviations and additions made while implementing, so the document matches the code:
+
+- `coverage_settings.revision_days` is a JSON array column (not a Postgres `int[]`), so the same model runs on SQLite in tests. Validation (1 to 8 whole numbers, 1 to 365) lives in `domain/formula.py` and the serializer.
+- `topic_progress`, `rollup` use Django composite primary keys (`user_id`, `topic_id` or scope columns), matching the ERD keys.
+- `chapter_progress.implicit_topic_done` was added: a chapter with no topics uses one implicit topic, ticked through `PUT /coverage/chapters/{id}/read/`.
+- Extra endpoints beyond section 9 of the PRD: `PUT /coverage/chapters/{id}/read/`, `PUT /coverage/subjects/{id}/exclusion/`, `GET /syllabus/sitemap/`, `GET /syllabus/terms/`, `POST /admin/syllabus/schemes/{id}/publish|retire/`.
+- Write endpoints return the changed chapter plus its subject and level roll-ups, so one response refreshes the whole screen.
+- Admin editing is done in the Django admin (`/<DJANGO_ADMIN_PATH>/`): reference data, schemes with inline papers, papers with inline chapters, chapters with inline topics, bulk add of chapters and topics from pasted lists, JSON import and export of a whole scheme, publish and retire actions behind a separate permission (groups "Syllabus editors" and "Syllabus publishers"), chapter maps, the reports inbox, and read-only support views of enrolments and the ledger. Nodes of a published or retired scheme cannot be deleted, only switched off.
+- `profile.role` (student, editor, admin) was added to gate editor endpoints.
+- Offline queueing: every write carries a client id, so retries are idempotent. Writes made while offline wait in memory until the connection returns; a persisted offline queue is not built yet.
+- Seed files are indicative structures loaded as drafts. The CA Intermediate file (`2023-sample.json`) is a sample and must be checked against the official syllabus by an editor before it is published.

@@ -188,6 +188,8 @@ Check **Table Editor**: you should see `profiles` (RLS enabled).
    | `DJANGO_DEBUG` | `false` |
    | `DJANGO_ALLOWED_HOSTS` | your API domain, e.g. `api.yourdomain.com` (`.vercel.app` is always allowed) |
    | `CORS_ALLOWED_ORIGINS` | your web origins, comma separated, e.g. `https://yourdomain.com,https://www.yourdomain.com` (add preview origins if you need them) |
+   | `DJANGO_ADMIN_PATH` | secret-ish path for the content admin, e.g. `studio-x7k2` (default `admin`). Staff open `https://<api>/<this>/` |
+   | `CSRF_TRUSTED_ORIGINS` | your API origin, e.g. `https://api.yourdomain.com` (needed for admin login over HTTPS) |
    | `DATABASE_URL` | Supabase **transaction pooler** string (port 6543) |
    | `DIRECT_DATABASE_URL` | Supabase direct/session string (port 5432) |
    | `SUPABASE_URL` | `https://<ref>.supabase.co` |

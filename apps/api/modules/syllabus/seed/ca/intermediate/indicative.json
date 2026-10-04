@@ -1,0 +1,43 @@
+{
+  "course": "ca",
+  "level": "intermediate",
+  "scheme": {
+    "code": "indicative",
+    "name": "Indicative subject list",
+    "source_url": "",
+    "notes": "Subject names only, taken from the website's indicative catalog. Chapters, marks and the official scheme are NOT loaded: curate from the institute's official syllabus and have a person review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "advanced-accounting",
+      "paper_number": 1,
+      "name": "Advanced Accounting"
+    },
+    {
+      "key": "corporate-and-other-laws",
+      "paper_number": 2,
+      "name": "Corporate and Other Laws"
+    },
+    {
+      "key": "taxation",
+      "paper_number": 3,
+      "name": "Taxation"
+    },
+    {
+      "key": "cost-and-management-accounting",
+      "paper_number": 4,
+      "name": "Cost and Management Accounting"
+    },
+    {
+      "key": "auditing-and-ethics",
+      "paper_number": 5,
+      "name": "Auditing and Ethics"
+    },
+    {
+      "key": "financial-management-and-strategic-management",
+      "paper_number": 6,
+      "name": "Financial Management and Strategic Management"
+    }
+  ]
+}

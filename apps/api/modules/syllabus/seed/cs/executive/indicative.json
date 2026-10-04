@@ -1,0 +1,48 @@
+{
+  "course": "cs",
+  "level": "executive",
+  "scheme": {
+    "code": "indicative",
+    "name": "Indicative subject list",
+    "source_url": "",
+    "notes": "Subject names only, taken from the website's indicative catalog. Chapters, marks and the official scheme are NOT loaded: curate from the institute's official syllabus and have a person review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "jurisprudence-interpretation-and-general-laws",
+      "paper_number": 1,
+      "name": "Jurisprudence, Interpretation and General Laws"
+    },
+    {
+      "key": "company-law",
+      "paper_number": 2,
+      "name": "Company Law"
+    },
+    {
+      "key": "setting-up-of-business-entities-and-closure",
+      "paper_number": 3,
+      "name": "Setting up of Business Entities and Closure"
+    },
+    {
+      "key": "tax-laws",
+      "paper_number": 4,
+      "name": "Tax Laws"
+    },
+    {
+      "key": "corporate-and-management-accountancy",
+      "paper_number": 5,
+      "name": "Corporate and Management Accountancy"
+    },
+    {
+      "key": "securities-laws-and-capital-markets",
+      "paper_number": 6,
+      "name": "Securities Laws and Capital Markets"
+    },
+    {
+      "key": "economic-business-and-commercial-laws",
+      "paper_number": 7,
+      "name": "Economic, Business and Commercial Laws"
+    }
+  ]
+}

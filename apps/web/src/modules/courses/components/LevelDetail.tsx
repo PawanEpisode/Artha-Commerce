@@ -1,9 +1,22 @@
 import { ArrowLeft, Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+import type { ReactNode } from 'react'
 
 import type { Course, Level } from '~/modules/catalog'
 
-export function LevelDetail({ course, level }: { course: Course; level: Level }) {
+interface Props {
+  course: Course
+  level: Level
+  /** The curated syllabus (grouped papers). When absent, the indicative static list is shown. */
+  syllabus?: ReactNode
+  /** Paper count from the curated syllabus, when there is one. */
+  subjectCount?: number
+  /** Scheme name and source, shown under the intro. */
+  meta?: ReactNode
+}
+
+export function LevelDetail({ course, level, syllabus, subjectCount, meta }: Props) {
+  const count = subjectCount ?? level.subjects.length
   return (
     <Container className="max-w-3xl py-16 sm:py-24">
       <Button variant="link" className="mb-6 px-0" asChild>
@@ -15,18 +28,26 @@ export function LevelDetail({ course, level }: { course: Course; level: Level })
         {course.name} {level.name}
       </h1>
       <p className="mt-3 text-lg text-muted-foreground">
-        {level.subjects.length} papers. Syllabus shown is indicative; confirm the current scheme with {course.body}.
+        {count} papers.{' '}
+        {syllabus
+          ? 'Open a paper to see its chapters and weightage.'
+          : `Syllabus shown is indicative; confirm the current scheme with ${course.body}.`}
       </p>
-      <ol className="mt-10 space-y-3">
-        {level.subjects.map((s, i) => (
-          <Card key={s} className="flex items-center gap-4 p-4">
-            <span className="grid size-9 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
-              {i + 1}
-            </span>
-            <span className="font-medium">{s}</span>
-          </Card>
-        ))}
-      </ol>
+      {meta ? <div className="mt-3">{meta}</div> : null}
+      {syllabus ? (
+        <div className="mt-10">{syllabus}</div>
+      ) : (
+        <ol className="mt-10 space-y-3">
+          {level.subjects.map((s, i) => (
+            <Card key={s} className="flex items-center gap-4 p-4">
+              <span className="grid size-9 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
+                {i + 1}
+              </span>
+              <span className="font-medium">{s}</span>
+            </Card>
+          ))}
+        </ol>
+      )}
       <Button size="lg" className="mt-10" asChild>
         <Link to="/login">Plan my {level.name} prep</Link>
       </Button>

@@ -214,7 +214,7 @@ Each pointer lists: what you wrote, what we add, the data it will need (input fo
 
 > **Split decision (4 Oct 2026):** F-01 is delivered as two documents, in this order.
 > **F-01.1 Pomodoro Focus Timer** (first PRD + ERD): `prd/F-01.1-pomodoro-focus-timer.md`, `erd/F-01.1-pomodoro-focus-timer.md`.
-> **F-01.2 Time Tracker + Analytics** (second PRD + ERD): stopwatch, manual entry, goals, reports by day/week/month and by subject/chapter. It reuses the `study_session` table created in F-01.1.
+> **F-01.2 Time Tracker + Analytics** (second PRD + ERD): stopwatch, manual entry, goals, reports by day/week/month and by subject/chapter. It reuses the `study_session` table created in F-01.1. Written: `prd/F-01.2-time-tracker-and-analytics.md`, `erd/F-01.2-time-tracker-and-analytics.md`.
 
 ```
 Time Tracker
@@ -600,10 +600,10 @@ X-03 Gamification, X-02 Context Agent, payments, mentor mode, WhatsApp channel
 
 | # | Document | PRD | ERD | Status |
 | --- | --- | --- | --- | --- |
-| 1 | **X-05 Syllabus Structure + F-02 Syllabus Coverage** | `prd/F-02-syllabus-structure-and-coverage.md` | `erd/F-02-syllabus-structure-and-coverage.md` | written |
+| 1 | **X-05 Syllabus Structure + F-02 Syllabus Coverage** | `prd/F-02-syllabus-structure-and-coverage.md` | `erd/F-02-syllabus-structure-and-coverage.md` | written and implemented (API + web) |
 | 2 | **F-01.1 Pomodoro Focus Timer** | `prd/F-01.1-pomodoro-focus-timer.md` | `erd/F-01.1-pomodoro-focus-timer.md` | written (Q1 decided) |
 | 3 | **X-04 Ingestion Service (configurable scraping)** | `prd/X-04-ingestion-scraping-service.md` | `erd/X-04-ingestion-scraping-service.md` | written |
-| 4 | F-01.2 Time Tracker + Analytics | next | next | not started |
+| 4 | **F-01.2 Time Tracker + Analytics** | `prd/F-01.2-time-tracker-and-analytics.md` | `erd/F-01.2-time-tracker-and-analytics.md` | written (draft, Q1 auto-capture open) |
 | 5 | Then the rest in the build order above (Notes, Question Bank, Mock tests, Amendments, Today, ...) | | | |
 
 Why this order: the syllabus tables are referenced by every other ERD (Pomodoro tags rounds with subject and chapter; Ingestion maps scraped content to chapters). Ingestion publishes into modules (Amendments, Mock tests) that arrive later, so its first phase ships only the generic engine and the Notices type.

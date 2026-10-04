@@ -12,9 +12,10 @@ export function publicPaths(): string[] {
   ]
 }
 
-export function buildSitemapXml(): string {
+/** `extraPaths` are dynamic public paths (published syllabus subjects and chapters) supplied by the caller. */
+export function buildSitemapXml(extraPaths: string[] = []): string {
   const lastmod = new Date().toISOString().slice(0, 10)
-  const urls = publicPaths()
+  const urls = [...new Set([...publicPaths(), ...extraPaths])]
     .map((p) => `  <url><loc>${siteUrl}${p}</loc><lastmod>${lastmod}</lastmod></url>`)
     .join('\n')
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`

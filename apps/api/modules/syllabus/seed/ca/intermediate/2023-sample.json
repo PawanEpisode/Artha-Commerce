@@ -1,0 +1,140 @@
+{
+  "course": "ca",
+  "level": "intermediate",
+  "scheme": {
+    "code": "2023-sample",
+    "name": "CA Intermediate (sample structure)",
+    "source_url": "https://www.icai.org",
+    "notes": "REVIEW REQUIRED before publishing. Group and paper structure and the Taxation chapter list were written from memory of the ICAI study material as a development sample. Marks per chapter are deliberately empty (weight_source unknown). Verify every name and add the other papers' chapters from the official syllabus."
+  },
+  "groups": [
+    {
+      "key": "group-1",
+      "name": "Group I"
+    },
+    {
+      "key": "group-2",
+      "name": "Group II"
+    }
+  ],
+  "subjects": [
+    {
+      "key": "advanced-accounting",
+      "paper_number": 1,
+      "name": "Advanced Accounting",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "corporate-and-other-laws",
+      "paper_number": 2,
+      "name": "Corporate and Other Laws",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "taxation",
+      "paper_number": 3,
+      "name": "Taxation",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "basic-concepts",
+          "name": "Income Tax: Basic Concepts"
+        },
+        {
+          "key": "residential-status",
+          "name": "Income Tax: Residential Status and Scope of Total Income"
+        },
+        {
+          "key": "heads-of-income",
+          "name": "Income Tax: Heads of Income"
+        },
+        {
+          "key": "clubbing-of-income",
+          "name": "Income Tax: Income of Other Persons included in Assessee's Total Income"
+        },
+        {
+          "key": "set-off-and-carry-forward",
+          "name": "Income Tax: Aggregation of Income, Set-off and Carry Forward of Losses"
+        },
+        {
+          "key": "deductions-from-gti",
+          "name": "Income Tax: Deductions from Gross Total Income"
+        },
+        {
+          "key": "computation-of-tax",
+          "name": "Income Tax: Computation of Total Income and Tax Liability of Individuals"
+        },
+        {
+          "key": "gst-supply",
+          "name": "GST: Supply under GST"
+        },
+        {
+          "key": "gst-charge-of-tax",
+          "name": "GST: Charge of GST"
+        },
+        {
+          "key": "gst-place-of-supply",
+          "name": "GST: Place of Supply"
+        },
+        {
+          "key": "gst-exemptions",
+          "name": "GST: Exemptions from GST"
+        },
+        {
+          "key": "gst-time-of-supply",
+          "name": "GST: Time of Supply"
+        },
+        {
+          "key": "gst-value-of-supply",
+          "name": "GST: Value of Supply"
+        },
+        {
+          "key": "gst-input-tax-credit",
+          "name": "GST: Input Tax Credit"
+        },
+        {
+          "key": "gst-registration",
+          "name": "GST: Registration"
+        },
+        {
+          "key": "gst-invoice-and-payment",
+          "name": "GST: Tax Invoice, Credit and Debit Notes, Payment of Tax"
+        },
+        {
+          "key": "gst-returns",
+          "name": "GST: Filing of Returns"
+        }
+      ]
+    },
+    {
+      "key": "cost-and-management-accounting",
+      "paper_number": 4,
+      "name": "Cost and Management Accounting",
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "auditing-and-ethics",
+      "paper_number": 5,
+      "name": "Auditing and Ethics",
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "financial-and-strategic-management",
+      "paper_number": 6,
+      "name": "Financial Management and Strategic Management",
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory"
+    }
+  ]
+}

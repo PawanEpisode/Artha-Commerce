@@ -1,0 +1,33 @@
+{
+  "course": "cs",
+  "level": "foundation",
+  "scheme": {
+    "code": "indicative",
+    "name": "Indicative subject list",
+    "source_url": "",
+    "notes": "Subject names only, taken from the website's indicative catalog. Chapters, marks and the official scheme are NOT loaded: curate from the institute's official syllabus and have a person review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "business-environment-and-law",
+      "paper_number": 1,
+      "name": "Business Environment and Law"
+    },
+    {
+      "key": "business-management-ethics-and-entrepreneurship",
+      "paper_number": 2,
+      "name": "Business Management, Ethics and Entrepreneurship"
+    },
+    {
+      "key": "business-economics",
+      "paper_number": 3,
+      "name": "Business Economics"
+    },
+    {
+      "key": "fundamentals-of-accounting-and-auditing",
+      "paper_number": 4,
+      "name": "Fundamentals of Accounting and Auditing"
+    }
+  ]
+}

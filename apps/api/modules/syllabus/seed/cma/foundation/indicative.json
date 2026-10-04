@@ -1,0 +1,33 @@
+{
+  "course": "cma",
+  "level": "foundation",
+  "scheme": {
+    "code": "indicative",
+    "name": "Indicative subject list",
+    "source_url": "",
+    "notes": "Subject names only, taken from the website's indicative catalog. Chapters, marks and the official scheme are NOT loaded: curate from the institute's official syllabus and have a person review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "fundamentals-of-business-laws-and-business-communication",
+      "paper_number": 1,
+      "name": "Fundamentals of Business Laws and Business Communication"
+    },
+    {
+      "key": "fundamentals-of-financial-and-cost-accounting",
+      "paper_number": 2,
+      "name": "Fundamentals of Financial and Cost Accounting"
+    },
+    {
+      "key": "fundamentals-of-business-mathematics-and-statistics",
+      "paper_number": 3,
+      "name": "Fundamentals of Business Mathematics and Statistics"
+    },
+    {
+      "key": "fundamentals-of-business-economics-and-management",
+      "paper_number": 4,
+      "name": "Fundamentals of Business Economics and Management"
+    }
+  ]
+}

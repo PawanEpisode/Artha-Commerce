@@ -26,22 +26,66 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", "dev-insecure-key" if DEBUG else "")
 if not SECRET_KEY:
     raise RuntimeError("DJANGO_SECRET_KEY must be set when DJANGO_DEBUG is false")
 
-ALLOWED_HOSTS = [*env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1"), ".vercel.app"]
+
+def allowed_hosts() -> list[str]:
+    """Configured hosts, the Vercel production domain (when provided) and any *.vercel.app preview."""
+    hosts = env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1")
+    production_url = env("VERCEL_PROJECT_PRODUCTION_URL").strip()
+    if production_url:
+        hosts.append(production_url)
+    return [*hosts, ".vercel.app"]
+
+
+ALLOWED_HOSTS = allowed_hosts()
 
 INSTALLED_APPS = [
+    "django.contrib.admin",  # staff-only content admin at /<DJANGO_ADMIN_PATH> (not used by students)
     "django.contrib.contenttypes",
     "django.contrib.auth",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
     "core",
     "modules.profiles",
+    "modules.syllabus",
+    "modules.coverage",
 ]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # serves the admin's CSS/JS (no collectstatic step on Vercel)
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+            ]
+        },
+    }
+]
+
+# Admin location. Change it per environment to keep scanners away; the default is fine locally.
+ADMIN_PATH = env("DJANGO_ADMIN_PATH", "admin").strip("/") + "/"
+STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+WHITENOISE_USE_FINDERS = True  # serve straight from the installed apps: nothing to build or deploy
+CSRF_TRUSTED_ORIGINS = env_list("CSRF_TRUSTED_ORIGINS")  # e.g. https://api.yourdomain.com
 
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
@@ -73,7 +117,13 @@ REST_FRAMEWORK = {
         "rest_framework.throttling.AnonRateThrottle",
         "rest_framework.throttling.UserRateThrottle",
     ],
-    "DEFAULT_THROTTLE_RATES": {"anon": "60/min", "user": "300/min"},
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": "60/min",
+        "user": "300/min",
+        # Scoped throttles (ScopedRateThrottle), see modules.syllabus and modules.coverage views.
+        "syllabus_report": "20/hour",
+        "coverage_write": "120/min",
+    },
     "UNAUTHENTICATED_USER": None,
 }
 
@@ -93,6 +143,8 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
+    SESSION_COOKIE_SECURE = True  # admin login cookie
+    CSRF_COOKIE_SECURE = True
 
 # --- Observability ----------------------------------------------------------------------------
 if env("SENTRY_DSN"):

@@ -75,6 +75,10 @@ const REQUIRED = [
   ['ring', 'card', 3, 'focus indicator on cards'],
   ['input', 'card', 3, 'form field border (WCAG 1.4.11)'],
   ['input', 'background', 3, 'form field border on page (WCAG 1.4.11)'],
+  ['primary-foreground', 'destructive', 3, 'confidence marker icon'],
+  ['primary', 'secondary', 3, 'progress fill on track (WCAG 1.4.11)'],
+  ['primary', 'card', 3, 'progress ring on card'],
+  ['destructive', 'secondary', 3, 'progress fill (destructive) on track'],
 ]
 const ADVISORY = []
 

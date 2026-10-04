@@ -18,6 +18,8 @@ import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppAccountRouteImport } from './routes/app.account'
+import { Route as AppOnboardingRouteImport } from './routes/app.onboarding'
+import { Route as AppRevisionRouteImport } from './routes/app.revision'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
 import { Route as AuthConfirmRouteImport } from './routes/auth.confirm'
 import { Route as AuthForgotPasswordRouteImport } from './routes/auth.forgot-password'
@@ -25,8 +27,14 @@ import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-passw
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
+import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
+import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
-import { Route as CoursesCourseLevelRouteImport } from './routes/courses.$course.$level'
+import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
+import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
+import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
+import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
+import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -73,6 +81,16 @@ const AppAccountRoute = AppAccountRouteImport.update({
   path: '/account',
   getParentRoute: () => AppRoute,
 } as any)
+const AppOnboardingRoute = AppOnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRevisionRoute = AppRevisionRouteImport.update({
+  id: '/revision',
+  path: '/revision',
+  getParentRoute: () => AppRoute,
+} as any)
 const AuthCallbackRoute = AuthCallbackRouteImport.update({
   id: '/auth/callback',
   path: '/auth/callback',
@@ -108,16 +126,49 @@ const FeaturesSlugRoute = FeaturesSlugRouteImport.update({
   path: '/features/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
+  id: '/settings/coverage',
+  path: '/settings/coverage',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSyllabusIndexRoute = AppSyllabusIndexRouteImport.update({
+  id: '/syllabus/',
+  path: '/syllabus/',
+  getParentRoute: () => AppRoute,
+} as any)
 const CoursesCourseIndexRoute = CoursesCourseIndexRouteImport.update({
   id: '/courses/$course/',
   path: '/courses/$course/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CoursesCourseLevelRoute = CoursesCourseLevelRouteImport.update({
-  id: '/courses/$course/$level',
-  path: '/courses/$course/$level',
+const AppSyllabusSubjectIndexRoute = AppSyllabusSubjectIndexRouteImport.update({
+  id: '/syllabus/$subject/',
+  path: '/syllabus/$subject/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSyllabusSubjectChapterRoute =
+  AppSyllabusSubjectChapterRouteImport.update({
+    id: '/syllabus/$subject/$chapter',
+    path: '/syllabus/$subject/$chapter',
+    getParentRoute: () => AppRoute,
+  } as any)
+const CoursesCourseLevelIndexRoute = CoursesCourseLevelIndexRouteImport.update({
+  id: '/courses/$course/$level/',
+  path: '/courses/$course/$level/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoursesCourseLevelSubjectIndexRoute =
+  CoursesCourseLevelSubjectIndexRouteImport.update({
+    id: '/courses/$course/$level/$subject/',
+    path: '/courses/$course/$level/$subject/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CoursesCourseLevelSubjectChapterRoute =
+  CoursesCourseLevelSubjectChapterRouteImport.update({
+    id: '/courses/$course/$level/$subject/$chapter',
+    path: '/courses/$course/$level/$subject/$chapter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -128,6 +179,8 @@ export interface FileRoutesByFullPath {
   '/signup': typeof SignupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/account': typeof AppAccountRoute
+  '/app/onboarding': typeof AppOnboardingRoute
+  '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -136,8 +189,14 @@ export interface FileRoutesByFullPath {
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
-  '/courses/$course/$level': typeof CoursesCourseLevelRoute
+  '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
+  '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
+  '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
+  '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -147,6 +206,8 @@ export interface FileRoutesByTo {
   '/signup': typeof SignupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/account': typeof AppAccountRoute
+  '/app/onboarding': typeof AppOnboardingRoute
+  '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -155,8 +216,14 @@ export interface FileRoutesByTo {
   '/app': typeof AppIndexRoute
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
-  '/courses/$course/$level': typeof CoursesCourseLevelRoute
+  '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/syllabus': typeof AppSyllabusIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
+  '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
+  '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
+  '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
+  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
+  '/courses/$course/$level/$subject': typeof CoursesCourseLevelSubjectIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -168,6 +235,8 @@ export interface FileRoutesById {
   '/signup': typeof SignupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/account': typeof AppAccountRoute
+  '/app/onboarding': typeof AppOnboardingRoute
+  '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -176,8 +245,14 @@ export interface FileRoutesById {
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
-  '/courses/$course/$level': typeof CoursesCourseLevelRoute
+  '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
+  '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
+  '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
+  '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -190,6 +265,8 @@ export interface FileRouteTypes {
     | '/signup'
     | '/sitemap.xml'
     | '/app/account'
+    | '/app/onboarding'
+    | '/app/revision'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -198,8 +275,14 @@ export interface FileRouteTypes {
     | '/app/'
     | '/courses/'
     | '/features/'
-    | '/courses/$course/$level'
+    | '/app/settings/coverage'
+    | '/app/syllabus/'
     | '/courses/$course/'
+    | '/app/syllabus/$subject/$chapter'
+    | '/app/syllabus/$subject/'
+    | '/courses/$course/$level/'
+    | '/courses/$course/$level/$subject/$chapter'
+    | '/courses/$course/$level/$subject/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -209,6 +292,8 @@ export interface FileRouteTypes {
     | '/signup'
     | '/sitemap.xml'
     | '/app/account'
+    | '/app/onboarding'
+    | '/app/revision'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -217,8 +302,14 @@ export interface FileRouteTypes {
     | '/app'
     | '/courses'
     | '/features'
-    | '/courses/$course/$level'
+    | '/app/settings/coverage'
+    | '/app/syllabus'
     | '/courses/$course'
+    | '/app/syllabus/$subject/$chapter'
+    | '/app/syllabus/$subject'
+    | '/courses/$course/$level'
+    | '/courses/$course/$level/$subject/$chapter'
+    | '/courses/$course/$level/$subject'
   id:
     | '__root__'
     | '/'
@@ -229,6 +320,8 @@ export interface FileRouteTypes {
     | '/signup'
     | '/sitemap.xml'
     | '/app/account'
+    | '/app/onboarding'
+    | '/app/revision'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -237,8 +330,14 @@ export interface FileRouteTypes {
     | '/app/'
     | '/courses/'
     | '/features/'
-    | '/courses/$course/$level'
+    | '/app/settings/coverage'
+    | '/app/syllabus/'
     | '/courses/$course/'
+    | '/app/syllabus/$subject/$chapter'
+    | '/app/syllabus/$subject/'
+    | '/courses/$course/$level/'
+    | '/courses/$course/$level/$subject/$chapter'
+    | '/courses/$course/$level/$subject/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -256,8 +355,10 @@ export interface RootRouteChildren {
   FeaturesSlugRoute: typeof FeaturesSlugRoute
   CoursesIndexRoute: typeof CoursesIndexRoute
   FeaturesIndexRoute: typeof FeaturesIndexRoute
-  CoursesCourseLevelRoute: typeof CoursesCourseLevelRoute
   CoursesCourseIndexRoute: typeof CoursesCourseIndexRoute
+  CoursesCourseLevelIndexRoute: typeof CoursesCourseLevelIndexRoute
+  CoursesCourseLevelSubjectChapterRoute: typeof CoursesCourseLevelSubjectChapterRoute
+  CoursesCourseLevelSubjectIndexRoute: typeof CoursesCourseLevelSubjectIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -325,6 +426,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAccountRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/onboarding': {
+      id: '/app/onboarding'
+      path: '/onboarding'
+      fullPath: '/app/onboarding'
+      preLoaderRoute: typeof AppOnboardingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/revision': {
+      id: '/app/revision'
+      path: '/revision'
+      fullPath: '/app/revision'
+      preLoaderRoute: typeof AppRevisionRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/auth/callback': {
       id: '/auth/callback'
       path: '/auth/callback'
@@ -374,6 +489,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeaturesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/settings/coverage': {
+      id: '/app/settings/coverage'
+      path: '/settings/coverage'
+      fullPath: '/app/settings/coverage'
+      preLoaderRoute: typeof AppSettingsCoverageRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/syllabus/': {
+      id: '/app/syllabus/'
+      path: '/syllabus'
+      fullPath: '/app/syllabus/'
+      preLoaderRoute: typeof AppSyllabusIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/courses/$course/': {
       id: '/courses/$course/'
       path: '/courses/$course'
@@ -381,11 +510,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/courses/$course/$level': {
-      id: '/courses/$course/$level'
+    '/app/syllabus/$subject/': {
+      id: '/app/syllabus/$subject/'
+      path: '/syllabus/$subject'
+      fullPath: '/app/syllabus/$subject/'
+      preLoaderRoute: typeof AppSyllabusSubjectIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/syllabus/$subject/$chapter': {
+      id: '/app/syllabus/$subject/$chapter'
+      path: '/syllabus/$subject/$chapter'
+      fullPath: '/app/syllabus/$subject/$chapter'
+      preLoaderRoute: typeof AppSyllabusSubjectChapterRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/courses/$course/$level/': {
+      id: '/courses/$course/$level/'
       path: '/courses/$course/$level'
-      fullPath: '/courses/$course/$level'
-      preLoaderRoute: typeof CoursesCourseLevelRouteImport
+      fullPath: '/courses/$course/$level/'
+      preLoaderRoute: typeof CoursesCourseLevelIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/$course/$level/$subject/': {
+      id: '/courses/$course/$level/$subject/'
+      path: '/courses/$course/$level/$subject'
+      fullPath: '/courses/$course/$level/$subject/'
+      preLoaderRoute: typeof CoursesCourseLevelSubjectIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/$course/$level/$subject/$chapter': {
+      id: '/courses/$course/$level/$subject/$chapter'
+      path: '/courses/$course/$level/$subject/$chapter'
+      fullPath: '/courses/$course/$level/$subject/$chapter'
+      preLoaderRoute: typeof CoursesCourseLevelSubjectChapterRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -393,12 +550,24 @@ declare module '@tanstack/react-router' {
 
 interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
+  AppOnboardingRoute: typeof AppOnboardingRoute
+  AppRevisionRoute: typeof AppRevisionRoute
   AppIndexRoute: typeof AppIndexRoute
+  AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
+  AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
+  AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
+  AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppAccountRoute: AppAccountRoute,
+  AppOnboardingRoute: AppOnboardingRoute,
+  AppRevisionRoute: AppRevisionRoute,
   AppIndexRoute: AppIndexRoute,
+  AppSettingsCoverageRoute: AppSettingsCoverageRoute,
+  AppSyllabusIndexRoute: AppSyllabusIndexRoute,
+  AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
+  AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
@@ -418,8 +587,10 @@ const rootRouteChildren: RootRouteChildren = {
   FeaturesSlugRoute: FeaturesSlugRoute,
   CoursesIndexRoute: CoursesIndexRoute,
   FeaturesIndexRoute: FeaturesIndexRoute,
-  CoursesCourseLevelRoute: CoursesCourseLevelRoute,
   CoursesCourseIndexRoute: CoursesCourseIndexRoute,
+  CoursesCourseLevelIndexRoute: CoursesCourseLevelIndexRoute,
+  CoursesCourseLevelSubjectChapterRoute: CoursesCourseLevelSubjectChapterRoute,
+  CoursesCourseLevelSubjectIndexRoute: CoursesCourseLevelSubjectIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

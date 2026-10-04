@@ -1,0 +1,20 @@
+{% extends "admin/base_site.html" %}
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">Home</a> &rsaquo;
+    <a href="../">Schemes</a> &rsaquo; Import from JSON
+  </div>
+{% endblock %}
+{% block content %}
+  <p>
+    Upload or paste a scheme file in the same format as the seed files
+    (<code>apps/api/modules/syllabus/seed</code>). Importing is safe to repeat: items are matched on their stable keys,
+    so nothing is duplicated. Items missing from the file are switched off, never deleted. New schemes start as
+    <strong>draft</strong> and stay invisible to students until someone publishes them. Only draft schemes can be imported into.
+  </p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="default" value="Import as draft">
+  </form>
+{% endblock %}

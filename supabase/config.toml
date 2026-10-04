@@ -72,7 +72,7 @@ content_path = "./supabase/templates/reauthentication.html"
 # ---------------------------------------------------------------------------------------------------------------
 # Production overrides, applied by `supabase config push` to the linked project.
 [remotes.production]
-project_id = "arthacommerce"
+project_id = "bqkglnfdhkidajeqlebl"
 
 [remotes.production.auth]
 site_url = "https://arthacommerce.meetpawan.com"

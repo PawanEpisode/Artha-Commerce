@@ -1,0 +1,45 @@
+{
+  "weights": { "read": 40, "practice": 30, "revise": 20, "mock": 10 },
+  "cases": [
+    {
+      "name": "PRD worked example: read 100, practice 50, revise 50, mock 0",
+      "inputs": { "topics_total": 10, "topics_done": 10, "practice_count": 1, "revision_count": 1, "mock_count": 0, "target_practice_sets": 2, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 100, "practice": 50, "revise": 50, "mock": 0, "coverage": 65 }
+    },
+    {
+      "name": "FR-14: 4 of 10 topics read gives read 40",
+      "inputs": { "topics_total": 10, "topics_done": 4, "practice_count": 0, "revision_count": 0, "mock_count": 0, "target_practice_sets": 1, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 40, "practice": 0, "revise": 0, "mock": 0, "coverage": 16 }
+    },
+    {
+      "name": "All topics read, nothing else: read weight only",
+      "inputs": { "topics_total": 5, "topics_done": 5, "practice_count": 0, "revision_count": 0, "mock_count": 0, "target_practice_sets": 1, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 100, "practice": 0, "revise": 0, "mock": 0, "coverage": 40 }
+    },
+    {
+      "name": "Everything complete",
+      "inputs": { "topics_total": 3, "topics_done": 3, "practice_count": 3, "revision_count": 4, "mock_count": 2, "target_practice_sets": 1, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 100, "practice": 100, "revise": 100, "mock": 100, "coverage": 100 }
+    },
+    {
+      "name": "Chapter without topics, implicit topic ticked",
+      "inputs": { "topics_total": 0, "topics_done": 1, "practice_count": 0, "revision_count": 0, "mock_count": 0, "target_practice_sets": 1, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 100, "practice": 0, "revise": 0, "mock": 0, "coverage": 40 }
+    },
+    {
+      "name": "Practice target 0: component hidden and weight redistributed",
+      "inputs": { "topics_total": 4, "topics_done": 4, "practice_count": 0, "revision_count": 1, "mock_count": 1, "target_practice_sets": 0, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 100, "practice": 0, "revise": 50, "mock": 100, "coverage": 86 }
+    },
+    {
+      "name": "All targets 0: read only",
+      "inputs": { "topics_total": 4, "topics_done": 2, "practice_count": 5, "revision_count": 5, "mock_count": 5, "target_practice_sets": 0, "target_revisions": 0, "target_mocks": 0 },
+      "expected": { "read": 50, "practice": 0, "revise": 0, "mock": 0, "coverage": 50 }
+    },
+    {
+      "name": "Rounds half up: 1 of 8 topics is 12.5 which becomes 13",
+      "inputs": { "topics_total": 8, "topics_done": 1, "practice_count": 0, "revision_count": 0, "mock_count": 0, "target_practice_sets": 1, "target_revisions": 2, "target_mocks": 1 },
+      "expected": { "read": 13, "practice": 0, "revise": 0, "mock": 0, "coverage": 5 }
+    }
+  ]
+}

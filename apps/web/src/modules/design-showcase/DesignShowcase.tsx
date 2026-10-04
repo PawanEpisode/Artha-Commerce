@@ -6,6 +6,11 @@ import {
   Badge,
   BellRing,
   BookOpen,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
   Button,
   Card,
   CardContent,
@@ -13,24 +18,38 @@ import {
   CardHeader,
   CardTitle,
   Check,
+  Checkbox,
   CircleAlert,
+  CircleHelp,
+  ConfidenceDot,
   Container,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  EmptyState,
   Eye,
   Input,
   KeyRound,
+  Label,
   LoaderCircle,
   Logo,
   Mail,
   Menu,
   Moon,
+  NumberStepper,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  ProgressBar,
+  ProgressRing,
   Reveal,
+  Select,
+  Skeleton,
   Sparkles,
   Sun,
   SunMoon,
+  Switch,
   Tabs,
   TabsList,
   TabsTrigger,
@@ -40,6 +59,7 @@ import {
   useTheme,
   X,
 } from '@artha/design-system'
+import { useState } from 'react'
 
 const swatches = [
   ['background', 'bg-background'],
@@ -88,6 +108,30 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
       <h2 className="text-xl font-bold">{title}</h2>
       {children}
     </section>
+  )
+}
+
+function ControlsDemo() {
+  const [n, setN] = useState(3)
+  return (
+    <div className="max-w-sm space-y-4">
+      <div className="flex items-center gap-3">
+        <Checkbox id="demo-check" defaultChecked />
+        <Label htmlFor="demo-check">Chapter completed</Label>
+      </div>
+      <div className="flex items-center gap-3">
+        <Switch id="demo-switch" />
+        <Label htmlFor="demo-switch">Weighted view</Label>
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="demo-select">Revision rounds</Label>
+        <Select id="demo-select" defaultValue="2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </Select>
+      </div>
+      <NumberStepper label="Chapters read" value={n} onChange={setN} max={10} />
+    </div>
   )
 }
 
@@ -229,6 +273,59 @@ export function DesignShowcase() {
             <AccordionContent>A primitive built on Radix with our tokens.</AccordionContent>
           </AccordionItem>
         </Accordion>
+      </Block>
+
+      <Block title="Progress">
+        <div className="flex flex-wrap items-center gap-8">
+          <ProgressRing value={68} label="Overall coverage" />
+          <ProgressRing value={12} size={64} strokeWidth={6} tone="destructive" label="Needs attention">
+            <span className="text-sm font-bold">12%</span>
+          </ProgressRing>
+          <div className="w-64 space-y-3">
+            <ProgressBar value={45} label="Reading" />
+            <ProgressBar value={80} size="lg" label="Practice" />
+          </div>
+        </div>
+      </Block>
+
+      <Block title="Selection controls">
+        <ControlsDemo />
+      </Block>
+
+      <Block title="Confidence markers">
+        <div className="flex flex-wrap gap-4">
+          <ConfidenceDot value="red" showLabel />
+          <ConfidenceDot value="amber" showLabel />
+          <ConfidenceDot value="green" showLabel />
+        </div>
+      </Block>
+
+      <Block title="Loading and empty states">
+        <div className="max-w-sm space-y-2" aria-busy="true">
+          <Skeleton className="h-5 w-2/3" />
+          <Skeleton className="h-16 w-full" />
+        </div>
+        <EmptyState title="Nothing due today" description="Revisions you schedule will show up here." />
+      </Block>
+
+      <Block title="Breadcrumb and popover">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>Courses</BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>CA Intermediate</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="outline" size="sm">
+              <CircleHelp /> How is this calculated?
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>Reading 40%, practice 30%, revision 20%, mock 10%.</PopoverContent>
+        </Popover>
       </Block>
 
       <Block title="Motion">
