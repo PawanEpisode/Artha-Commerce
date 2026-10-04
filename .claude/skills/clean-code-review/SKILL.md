@@ -36,6 +36,7 @@ Run this on your own diff before asking for review.
 
 - No request waterfalls; fetch in parallel. Lists paginated.
 - Loading, empty and error states exist. No layout shift.
+- UI changes follow `ui-quality-checklist`: tokens work in Reading, Light, Dark and System; WCAG 2.2 AA; no horizontal scroll at 320 px; icons via the design system.
 
 ## PR hygiene
 

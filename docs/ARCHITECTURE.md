@@ -35,17 +35,29 @@ routes -> modules -> @artha/design-system (package) ; modules -> lib
 - **Catalog** (`modules/catalog`) is the shared source of truth for courses and features. It drives landing, detail pages, footer, sitemap.
 - **Server data** will flow through TanStack Query hooks calling `lib/api.ts` (adds the Supabase token). Static public content uses route loaders so it is server-rendered for SEO.
 
+### Theming and responsiveness
+
+- **Four theme choices**: Reading (default, warm paper tone), Light, Dark and **System**. System is stored as the value `system` and behaves as Light from 6 am to 6 pm and Dark from 6 pm to 6 am on the device clock, switching by itself while the page is open.
+- **How it works**: `data-theme` on `<html>` selects the token set in `packages/design-system/src/styles.css` (`reading` lives on `:root`, so it also works without JavaScript). Dark also sets the `.dark` class. An inline script in `<head>` paints the right theme before first paint (no flash); `ThemeProvider` keeps it in sync afterwards. The pure logic is in `src/theme/theme.ts` and unit tested, including the 6 am and 6 pm switch.
+- **Accessibility is enforced**: `pnpm check:contrast` verifies WCAG contrast for every text, button, focus-ring and form-border pair in all three palettes (body text AAA, UI text AA, focus and borders 3:1). It runs in CI.
+- **Icons**: Lucide, imported only from `@artha/design-system` (ESLint blocks direct `lucide-react` imports).
+- **Responsive**: mobile first. Every screen must work from 320 px to desktop with no horizontal page scroll and 44 px touch targets. See `.claude/skills/ui-quality-checklist`.
+
+### Auth flows
+
+Supabase Auth is the identity provider; the web app talks to it through `modules/auth` (`lib/auth-api.ts`). Flows: Google, email code or magic link, password sign-in, sign-up with confirmation, forgot and reset password, invite, change email and reauthentication (code by email before a sensitive change). Email links go to `/auth/confirm?token_hash=...&type=...` and are verified in the browser, so mail scanners cannot use up one-time tokens. Branded email HTML is generated from `packages/email-templates` into `supabase/templates/`, and `supabase/config.toml` applies templates and settings with the Supabase CLI. Setup steps: `docs/SETUP.md` sections 2.3 and 2.3.1.
+
 ### Public vs private
 
 | Area | Rendering | Indexed |
 | --- | --- | --- |
 | `/`, `/features/*`, `/courses/*` | SSR, full metadata | yes |
-| `/login`, `/auth/callback` | SSR shell | no |
+| `/login`, `/signup`, `/auth/*` | SSR shell | no |
 | `/app/*` | client-guarded workspace | no |
 
 ### Planned workspace routes (all URL based)
 
-`/app` dashboard, `/app/planner`, `/app/tracker/$subject`, `/app/tests/$id`, `/app/notes/$id`, `/app/revision`, `/app/ask`, `/app/settings`. Filters, tabs and selected entities live in the URL (search params validated with zod).
+`/app` dashboard, `/app/account`, `/app/planner`, `/app/tracker/$subject`, `/app/tests/$id`, `/app/notes/$id`, `/app/revision`, `/app/ask`, `/app/settings`. Filters, tabs and selected entities live in the URL (search params validated with zod).
 
 ## Backend: layered Django
 

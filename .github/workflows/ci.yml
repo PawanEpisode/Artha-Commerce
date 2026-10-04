@@ -18,7 +18,9 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm format:check
-      - run: pnpm test:web
+      - run: pnpm check:contrast
+      - run: pnpm emails:check
+      - run: pnpm test
       - run: pnpm build:web
 
   api:

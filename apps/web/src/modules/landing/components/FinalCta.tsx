@@ -1,6 +1,5 @@
-import { Button, Container, Reveal } from '@artha/design-system'
+import { ArrowRight, Button, Container, Reveal } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { ArrowRight } from 'lucide-react'
 
 export function FinalCta() {
   return (

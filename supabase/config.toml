@@ -1,0 +1,84 @@
+# Supabase CLI configuration for ArthaCommerce auth emails and sign-in settings.
+#
+#   Local development:  supabase start      (emails appear in the local Inbucket inbox, http://127.0.0.1:54324)
+#   Hosted project:     supabase link --project-ref <ref>  then  supabase config push
+#                       (shows a diff first; review it, then confirm)
+#
+# Email HTML is generated from packages/email-templates. Never edit supabase/templates/*.html by hand:
+#   pnpm emails:build
+#
+# The same settings exist in the dashboard (Authentication > Sign In / Providers, Emails, URL Configuration).
+# docs/SETUP.md lists every click if you prefer the dashboard.
+
+project_id = "arthacommerce"
+
+[auth]
+enabled = true
+# Production value is set in [remotes.production] below or in the dashboard (URL Configuration).
+site_url = "http://localhost:3000"
+additional_redirect_urls = [
+  "http://localhost:3000/auth/callback",
+  "http://localhost:3000/auth/confirm",
+  "http://localhost:3000/auth/reset-password",
+]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+enable_signup = true
+enable_anonymous_sign_ins = false
+minimum_password_length = 8
+password_requirements = "letters_digits"
+
+[auth.email]
+enable_signup = true
+# Students must prove they own the address (link or 6 digit code) before the account is active.
+enable_confirmations = true
+# Changing the email asks for confirmation on the old and the new address.
+double_confirm_changes = true
+# Changing the password needs a recent sign-in or the emailed code (Reauthentication template).
+secure_password_change = true
+# One email per address per minute. The Resend buttons in the app use the same 60 s.
+max_frequency = "60s"
+otp_length = 6
+# Seconds. The templates say "60 minutes": keep packages/email-templates/src/brand.ts (OTP_EXPIRY_MINUTES) in sync.
+otp_expiry = 3600
+
+[auth.email.template.confirmation]
+subject = "Confirm your ArthaCommerce account"
+content_path = "./supabase/templates/confirm-signup.html"
+
+[auth.email.template.invite]
+subject = "You have been invited to ArthaCommerce"
+content_path = "./supabase/templates/invite-user.html"
+
+[auth.email.template.magic_link]
+subject = "Your ArthaCommerce sign-in link and code"
+content_path = "./supabase/templates/magic-link.html"
+
+[auth.email.template.email_change]
+subject = "Confirm your new ArthaCommerce email address"
+content_path = "./supabase/templates/change-email.html"
+
+[auth.email.template.recovery]
+subject = "Reset your ArthaCommerce password"
+content_path = "./supabase/templates/reset-password.html"
+
+[auth.email.template.reauthentication]
+subject = "Your ArthaCommerce verification code"
+content_path = "./supabase/templates/reauthentication.html"
+
+# Google and custom SMTP are configured in the Supabase dashboard.
+# They are omitted here so `supabase config push` does not overwrite them.
+
+# ---------------------------------------------------------------------------------------------------------------
+# Production overrides, applied by `supabase config push` to the linked project.
+[remotes.production]
+project_id = "arthacommerce"
+
+[remotes.production.auth]
+site_url = "https://arthacommerce.meetpawan.com"
+additional_redirect_urls = [
+  "https://arthacommerce.meetpawan.com/auth/callback",
+  "https://arthacommerce.meetpawan.com/auth/confirm",
+  "https://arthacommerce.meetpawan.com/auth/reset-password",
+]
+# ---------------------------------------------------------------------------------------------------------------

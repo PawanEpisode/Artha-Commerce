@@ -18,7 +18,7 @@ description: Use for any new feature, issue or change request in ArthaCommerce. 
 7. **Add UI from the design system** (see `design-system-usage`). Add loading, empty, error and success states for every data view.
 8. **SEO and sharing** if public (see `seo-and-sharing`). Add to `modules/seo/sitemap.ts` if it is not catalog-driven.
 9. **Analytics.** Capture one PostHog event for the key action, named `noun_verb` (`plan_created`). Do not send PII.
-10. **Verify.** `pnpm check` and `pnpm lint:api && pnpm test:api`. Open the page at mobile and desktop widths.
+10. **Verify.** `pnpm check` and `pnpm lint:api && pnpm test:api`. For UI, run `pnpm check:contrast` and walk through `.claude/skills/ui-quality-checklist` (themes, accessibility, devices).
 
 ## Definition of done
 
@@ -27,5 +27,6 @@ description: Use for any new feature, issue or change request in ArthaCommerce. 
 - [ ] No duplicated component, constant or query
 - [ ] Only design tokens and `components/ui` used
 - [ ] Loading, empty, error states handled; keyboard and screen-reader usable
+- [ ] UI passes `.claude/skills/ui-quality-checklist`: all four themes, WCAG 2.2 AA, 320 to 1280 px
 - [ ] Tests for logic and endpoints; checks green
 - [ ] Docs or skill updated if a convention changed

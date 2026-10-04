@@ -3,14 +3,15 @@ import { createContext, type ReactNode, useContext, useEffect, useMemo, useState
 
 import { getSupabase, isSupabaseConfigured } from '~/lib/supabase'
 
+import { callbackUrl } from '../lib/redirects'
+
 interface AuthState {
   session: Session | null
   user: User | null
   /** True until the first session lookup finishes. */
   loading: boolean
   configured: boolean
-  signInWithGoogle: () => Promise<void>
-  signInWithEmail: (email: string) => Promise<{ error?: string }>
+  signInWithGoogle: (next?: string) => Promise<void>
   signOut: () => Promise<void>
 }
 
@@ -35,20 +36,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const value = useMemo<AuthState>(() => {
-    const redirectTo = () => `${window.location.origin}/auth/callback`
     return {
       session,
       user: session?.user ?? null,
       loading,
       configured: isSupabaseConfigured,
-      async signInWithGoogle() {
-        await getSupabase()?.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: redirectTo() } })
-      },
-      async signInWithEmail(email) {
-        const supabase = getSupabase()
-        if (!supabase) return { error: 'Sign-in is not configured yet.' }
-        const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: redirectTo() } })
-        return error ? { error: error.message } : {}
+      async signInWithGoogle(next) {
+        await getSupabase()?.auth.signInWithOAuth({
+          provider: 'google',
+          options: { redirectTo: callbackUrl(window.location.origin, next) },
+        })
       },
       async signOut() {
         await getSupabase()?.auth.signOut()

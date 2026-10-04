@@ -17,11 +17,12 @@ export function LogoMark({ className }: { className?: string }) {
   )
 }
 
-export function Logo({ className }: { className?: string }) {
+/** `compactOnMobile` shows only the mark below 640 px (the name stays available to screen readers). */
+export function Logo({ className, compactOnMobile = false }: { className?: string; compactOnMobile?: boolean }) {
   return (
     <span className={cn('inline-flex items-center gap-2.5 font-display text-lg font-bold tracking-tight', className)}>
       <LogoMark />
-      <span>
+      <span className={cn(compactOnMobile && 'max-sm:sr-only')}>
         Artha<span className="text-primary">Commerce</span>
       </span>
     </span>

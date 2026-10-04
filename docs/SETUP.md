@@ -58,19 +58,69 @@ cp apps/api/.env.example apps/api/.env
 - **Project Settings -> JWT Keys**: new projects use asymmetric signing keys and the API reads them automatically from `SUPABASE_URL`. Only if your project still shows a **legacy JWT secret** in use, copy it to `SUPABASE_JWT_SECRET` (api).
 
 ### 2.3 Authentication
-1. **Authentication -> Sign In / Providers**: make sure **Email** is enabled (magic link / OTP).
+
+The app supports: **Google**, **email code (6 digits) or magic link**, **email + password**, **forgot / reset password**, **invite**, **change email** and **reauthentication** for sensitive changes. These map one to one to the six templates under **Authentication -> Emails -> Templates**.
+
+1. **Authentication -> Sign In / Providers -> Email**: enable it, then set:
+   - **Confirm email**: ON (students must prove they own the address)
+   - **Secure email change**: ON (confirmation goes to the old and the new address)
+   - **Secure password change**: ON (changing a password needs a recent sign-in or the emailed code)
+   - **Minimum password length**: 8, **Password requirements**: letters and digits
+   - **Email OTP length**: 6, **Email OTP expiration**: 3600 seconds (the templates say 60 minutes)
 2. **Google provider**:
    - console.cloud.google.com -> create/select a project -> **APIs & Services -> OAuth consent screen** (External, add your email and app name).
    - **Credentials -> Create credentials -> OAuth client ID -> Web application**.
    - Authorised redirect URI: `https://<your-project-ref>.supabase.co/auth/v1/callback` (shown in the Supabase Google provider panel).
    - Paste the Client ID and Secret into Supabase **Google** provider and enable it.
 3. **Authentication -> URL Configuration**:
-   - **Site URL**: your production web URL (use `http://localhost:3000` until you have one)
-   - **Redirect URLs** (add all):
-     - `http://localhost:3000/auth/callback`
-     - `https://<your-prod-domain>/auth/callback`
-     - `https://*-<your-vercel-team-slug>.vercel.app/auth/callback` (preview deployments)
-4. **Authentication -> SMTP (before launch)**: the built-in email sender is heavily rate limited. Configure a custom SMTP provider (Resend, Postmark, SES) so sign-in emails are reliable.
+   - **Site URL**: your production web URL (use `http://localhost:3000` until you have one). The email links are built from it.
+   - **Redirect URLs** (add all; use the same three paths for each origin):
+     - `http://localhost:3000/auth/callback`, `/auth/confirm`, `/auth/reset-password`
+     - `https://<your-prod-domain>/auth/callback`, `/auth/confirm`, `/auth/reset-password`
+     - `https://*-<your-vercel-team-slug>.vercel.app/**` (preview deployments)
+4. **Email templates** (**Authentication -> Emails -> Templates**, the screen with Confirm sign up, Invite user, Magic link or OTP, Change email address, Reset password, Reauthentication).
+   The branded HTML lives in the repo and is generated from one layout (`packages/email-templates`). Pick one way:
+
+   **A. Paste in the dashboard** (no tools needed). For each row open the template, set the **Subject** and paste the file contents into **Message body**, then **Save**:
+
+   | Dashboard template | Subject | File to paste |
+   | --- | --- | --- |
+   | Confirm sign up | Confirm your ArthaCommerce account | `supabase/templates/confirm-signup.html` |
+   | Invite user | You have been invited to ArthaCommerce | `supabase/templates/invite-user.html` |
+   | Magic link or OTP | Your ArthaCommerce sign-in link and code | `supabase/templates/magic-link.html` |
+   | Change email address | Confirm your new ArthaCommerce email address | `supabase/templates/change-email.html` |
+   | Reset password | Reset your ArthaCommerce password | `supabase/templates/reset-password.html` |
+   | Reauthentication | Your ArthaCommerce verification code | `supabase/templates/reauthentication.html` |
+
+   **B. Push with the Supabase CLI** (keeps dashboard and repo in sync):
+   ```bash
+   brew install supabase/tap/supabase
+   supabase login
+   supabase link --project-ref <your-project-ref>
+   supabase config push        # shows a diff first. Review, then confirm. Google and SMTP stay in the dashboard.
+   ```
+   Regenerate the HTML after any wording or colour change with `pnpm emails:build` (CI fails if the committed files are stale).
+5. **Invite user** (admins and editors): **Authentication -> Users -> Invite user**. The person gets the Invite email, taps the button, lands on `/auth/confirm` and then on **Set your password**.
+6. **Test every flow** (use a Gmail and an Outlook address): sign up -> confirm by link and by code; sign in with email code; forgot password -> reset; change email in **/app/account** -> confirm both emails; change password in **/app/account** (you may be asked for the emailed code).
+
+### 2.3.1 Email delivery (SMTP)
+Supabase's built-in sender only emails your own team and is limited to a few emails per hour. Before inviting real students, set up your own SMTP in **Authentication -> Emails -> SMTP Settings** and switch **Enable custom SMTP** on.
+
+| Field | Value |
+| --- | --- |
+| Sender email | `no-reply@mail.<your-domain>` (a subdomain keeps your main domain reputation clean) |
+| Sender name | ArthaCommerce |
+| Host / Port | from your provider (table below). Port 465 uses TLS, 587 uses STARTTLS |
+| Username / Password | from your provider |
+| Minimum interval between emails | 60 seconds |
+
+| Provider | Host | Notes |
+| --- | --- | --- |
+| Resend | `smtp.resend.com` | username `resend`, password is an API key. Simplest start |
+| Amazon SES (Mumbai) | `email-smtp.ap-south-1.amazonaws.com` | cheapest at scale; create SMTP credentials, verify the domain, request production access |
+| Brevo | `smtp-relay.brevo.com` | port 587, SMTP key as password, generous free tier |
+
+DNS records at your domain provider (your email provider shows the exact values): **SPF**, **DKIM**, and a **DMARC** record (`v=DMARC1; p=none; rua=mailto:you@<your-domain>` to start). Gmail and Yahoo reject or spam-folder bulk mail without them. After setup send yourself a sign-in code and confirm it lands in the inbox, not spam.
 
 ### 2.4 Lock down the Data API (important)
 All app data is read and written by Django, so the browser must never reach tables directly.
@@ -149,7 +199,7 @@ Check **Table Editor**: you should see `profiles` (RLS enabled).
 5. **Deploy**. Then open `https://<api-url>/api/v1/health/ready/`. Expect `{"status":"ok","database":"up"}`.
 6. **Settings -> Domains**: add `api.yourdomain.com` and follow the DNS instructions.
 
-> Vercel Python reads `apps/api/requirements.txt` and `.python-version` (3.12). It detects Django from `manage.py` and serves `config/wsgi.py`. Do not rewrite every path to `/api/index`: that replaces the request path, so `/api/v1/health/ready/` never matches.
+> Vercel Python reads `apps/api/requirements.txt` and `.python-version` (3.12). The entrypoint is `apps/api/api/index.py`.
 
 ---
 
@@ -187,7 +237,7 @@ Check **Table Editor**: you should see `profiles` (RLS enabled).
 1. Open the site: landing page loads, planner sliders work.
 2. **WhatsApp preview**: paste `https://yourdomain.com` and a deep link such as `/features/study-planner` into WhatsApp. If it shows a stale or empty card, run the URL through the **Facebook Sharing Debugger** (developers.facebook.com/tools/debug) and click **Scrape Again**. WhatsApp caches previews.
 3. `https://yourdomain.com/sitemap.xml` and `/robots.txt` return content with your real domain.
-4. **Sign in**: click Start free -> Google or email link -> you land on `/app` and see your email.
+4. **Sign in**: click Start free -> Google, email code or password -> you land on `/app` and see your email. Open **/app/account** and check the theme picker (Reading, Light, Dark, System).
 5. **API call**: in the browser console on `/app` (after login) or via the Network tab, `GET /api/v1/me/` returns your profile (it is created on first call).
 6. **Sentry**: temporarily throw an error in a route and confirm it appears. **PostHog**: Activity shows `$pageview`.
 7. Submit the sitemap in **Google Search Console** (add property, verify DNS, submit `/sitemap.xml`).
@@ -234,13 +284,17 @@ pnpm lint:api && pnpm test:api
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |
 | `SENTRY_DSN` | | yes | no |
 
-Rule: nothing secret ever gets a `VITE_` prefix.
+Rule: nothing secret ever gets a `VITE_` prefix. Google and SMTP credentials stay in the Supabase dashboard.
 
 ---
 
 ## 11. Troubleshooting
 
 - **Login redirects to localhost in production**: Supabase **Site URL** and **Redirect URLs** are wrong.
+- **Emails do not arrive, or only some do**: you are still on Supabase's built-in sender (section 2.3.1), or SPF, DKIM or DMARC are missing. Check the provider's logs.
+- **"This link did not work" on /auth/confirm**: the link was already used or is older than 60 minutes. Request a new one. Make sure the Site URL matches the domain the student is on.
+- **Email shows `{{ .Something }}` text**: the template was pasted into the wrong dashboard slot, or contains a variable Supabase does not know. Regenerate with `pnpm emails:build` and paste the whole file.
+- **Theme looks wrong on first load**: the head script that sets the theme must stay in `apps/web/src/routes/__root.tsx`. Reading is the default; System means light 6 am to 6 pm, dark 6 pm to 6 am on the device clock.
 - **API returns 401 for a valid login**: `SUPABASE_URL` missing on the api, or a legacy project needs `SUPABASE_JWT_SECRET`.
 - **CORS error in the browser**: add the exact web origin (scheme + host, no trailing slash) to `CORS_ALLOWED_ORIGINS` and redeploy the api.
 - **`prepared statement ... already exists`**: you pointed `DATABASE_URL` at the session/direct port. Use the transaction pooler (6543) for runtime.

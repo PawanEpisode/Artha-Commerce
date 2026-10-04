@@ -1,22 +1,63 @@
-import { Button, Container, Logo } from '@artha/design-system'
+import {
+  Button,
+  Container,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  Logo,
+  LogOut,
+  Menu,
+  Settings,
+  ThemeSwitcher,
+  UserRound,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { useAuth } from '~/modules/auth'
-
-import { ThemeToggle } from './ThemeToggle'
 
 const nav = [
   { to: '/features', label: 'Features' },
   { to: '/courses', label: 'Courses' },
 ] as const
 
+function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => void }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon" aria-label="Account menu">
+          <UserRound />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        {email && <DropdownMenuLabel className="tracking-normal break-all normal-case">{email}</DropdownMenuLabel>}
+        <DropdownMenuItem asChild>
+          <Link to="/app">Workspace</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/app/account">
+            <Settings aria-hidden /> Account and settings
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem onSelect={onSignOut}>
+          <LogOut aria-hidden /> Sign out
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
 export function SiteHeader() {
-  const { user, loading } = useAuth()
+  const { user, loading, signOut } = useAuth()
+  const signedIn = !loading && Boolean(user)
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-xl">
-      <Container className="flex h-16 items-center justify-between">
-        <Link to="/" aria-label="ArthaCommerce home">
-          <Logo />
+      <Container className="flex h-16 items-center justify-between gap-2">
+        <Link to="/" aria-label="ArthaCommerce home" className="shrink-0">
+          <Logo compactOnMobile />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {nav.map((item) => (
@@ -27,17 +68,34 @@ export function SiteHeader() {
             </Button>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          {!loading && user ? (
-            <Button size="sm" asChild>
-              <Link to="/app">Open workspace</Link>
-            </Button>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <ThemeSwitcher />
+          {signedIn ? (
+            <>
+              <Button size="sm" className="hidden sm:inline-flex" asChild>
+                <Link to="/app">Open workspace</Link>
+              </Button>
+              <AccountMenu email={user?.email} onSignOut={() => void signOut()} />
+            </>
           ) : (
             <Button size="sm" asChild>
               <Link to="/login">Start free</Link>
             </Button>
           )}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+                <Menu />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="md:hidden">
+              {nav.map((item) => (
+                <DropdownMenuItem key={item.to} asChild>
+                  <Link to={item.to}>{item.label}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </Container>
     </header>

@@ -20,7 +20,11 @@
     "dev:api": "cd apps/api && python manage.py runserver 8000",
     "test:api": "cd apps/api && pytest",
     "lint:api": "cd apps/api && ruff check . && ruff format --check .",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:web && pnpm build:web"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm check:contrast && pnpm emails:check && pnpm test && pnpm build:web",
+    "test": "pnpm -r --if-present test",
+    "check:contrast": "pnpm --filter @artha/design-system check:contrast",
+    "emails:build": "pnpm --filter @artha/email-templates build",
+    "emails:check": "pnpm --filter @artha/email-templates check"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",

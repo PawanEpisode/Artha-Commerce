@@ -9,7 +9,7 @@ import {
   NotebookPen,
   Sparkles,
   Timer,
-} from 'lucide-react'
+} from '@artha/design-system'
 
 import type { FeatureIconKey } from '~/modules/catalog'
 

@@ -4,19 +4,41 @@ import {
   AccordionItem,
   AccordionTrigger,
   Badge,
+  BellRing,
+  BookOpen,
   Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
+  Check,
+  CircleAlert,
   Container,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  Eye,
   Input,
+  KeyRound,
+  LoaderCircle,
   Logo,
+  Mail,
+  Menu,
+  Moon,
   Reveal,
+  Sparkles,
+  Sun,
+  SunMoon,
   Tabs,
   TabsList,
   TabsTrigger,
+  ThemeRadioGroup,
+  ThemeSwitcher,
+  Timer,
+  useTheme,
+  X,
 } from '@artha/design-system'
 
 const swatches = [
@@ -31,6 +53,34 @@ const swatches = [
   ['destructive', 'bg-destructive'],
   ['border', 'bg-border'],
 ] as const
+
+const icons = [
+  ['BookOpen', BookOpen],
+  ['Sun', Sun],
+  ['Moon', Moon],
+  ['SunMoon', SunMoon],
+  ['Timer', Timer],
+  ['BellRing', BellRing],
+  ['Sparkles', Sparkles],
+  ['Mail', Mail],
+  ['KeyRound', KeyRound],
+  ['Eye', Eye],
+  ['Check', Check],
+  ['X', X],
+  ['Menu', Menu],
+  ['CircleAlert', CircleAlert],
+  ['LoaderCircle', LoaderCircle],
+] as const
+
+function ThemeStatus() {
+  const { preference, resolved } = useTheme()
+  return (
+    <p className="text-sm text-muted-foreground" role="status">
+      Preference: <strong className="text-foreground">{preference}</strong>. Painted as:{' '}
+      <strong className="text-foreground">{resolved}</strong>.
+    </p>
+  )
+}
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -49,10 +99,58 @@ export function DesignShowcase() {
         <Logo />
         <h1 className="text-4xl font-extrabold">Design system</h1>
         <p className="max-w-2xl text-muted-foreground">
-          Tokens and primitives from <code>packages/design-system</code>. Toggle the theme in the header to check both
-          modes.
+          Tokens and primitives from <code>packages/design-system</code>. Use the theme menu in the header to check
+          every theme.
         </p>
       </header>
+
+      <Block title="Themes">
+        <p className="max-w-2xl text-muted-foreground">
+          Reading (default), Light, Dark and System. System shows Light from 6 am to 6 pm and Dark from 6 pm to 6 am
+          (device time), and switches by itself while the page is open. Every screen must be checked in all four.
+        </p>
+        <div className="flex items-center gap-3">
+          <ThemeSwitcher />
+          <ThemeStatus />
+        </div>
+        <ThemeRadioGroup className="max-w-xl sm:grid-cols-2" />
+      </Block>
+
+      <Block title="Icons (Lucide)">
+        <p className="max-w-2xl text-muted-foreground">
+          Import from <code>@artha/design-system</code>. Add new icons to <code>src/icons.ts</code>.
+        </p>
+        <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5">
+          {icons.map(([name, Icon]) => (
+            <li key={name} className="flex flex-col items-center gap-2 rounded-lg border bg-card p-3 text-center">
+              <Icon aria-hidden className="size-5 text-primary" />
+              <span className="text-xs">{name}</span>
+            </li>
+          ))}
+        </ul>
+      </Block>
+
+      <Block title="Reading typography">
+        <article className="prose-reading rounded-xl border bg-card p-6">
+          <p>
+            Use <code>prose-reading</code> for long-form content such as notes and study material: a serif face,
+            generous line height and a comfortable line length of about 68 characters.
+          </p>
+          <p>It looks the same in every theme and takes its colours from the tokens.</p>
+        </article>
+      </Block>
+
+      <Block title="Menu">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">Open menu</Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start">
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Settings</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </Block>
 
       <Block title="Colour tokens">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">

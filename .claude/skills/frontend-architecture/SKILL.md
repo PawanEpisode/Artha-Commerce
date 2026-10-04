@@ -11,7 +11,7 @@ description: Use when creating or editing anything under apps/web. Module-driven
 src/
   routes/            thin TanStack file routes (head + loader + one container)
   modules/<name>/    feature modules
-    components/      presentational, props in / JSX out, no data fetching, no router hooks
+    components/      presentational, props in / JSX out, no data fetching, no router hooks. Ephemeral input state (a controlled field, open/closed) is allowed
     containers/      own state and data, compose components
     hooks/           useX (TanStack Query, local state)
     lib/             pure functions, no React

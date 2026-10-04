@@ -26,21 +26,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", "dev-insecure-key" if DEBUG else "")
 if not SECRET_KEY:
     raise RuntimeError("DJANGO_SECRET_KEY must be set when DJANGO_DEBUG is false")
 
-
-def allowed_hosts() -> list[str]:
-    """Hosts Django will serve.
-
-    `.vercel.app` covers generated deployment URLs. Vercel sets
-    `VERCEL_PROJECT_PRODUCTION_URL` to the production custom domain.
-    """
-    hosts = [*env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1"), ".vercel.app"]
-    production = env("VERCEL_PROJECT_PRODUCTION_URL").strip().split("/")[0]
-    if production and production not in hosts:
-        hosts.append(production)
-    return hosts
-
-
-ALLOWED_HOSTS = allowed_hosts()
+ALLOWED_HOSTS = [*env_list("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1"), ".vercel.app"]
 
 INSTALLED_APPS = [
     "django.contrib.contenttypes",

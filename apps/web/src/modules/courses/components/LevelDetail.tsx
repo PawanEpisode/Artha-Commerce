@@ -1,6 +1,5 @@
-import { Button, Card, Container } from '@artha/design-system'
+import { ArrowLeft, Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { ArrowLeft } from 'lucide-react'
 
 import type { Course, Level } from '~/modules/catalog'
 

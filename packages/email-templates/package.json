@@ -1,0 +1,19 @@
+{
+  "name": "@artha/email-templates",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Branded Supabase Auth email templates, generated from one layout. Output: supabase/templates/*.html",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "check": "tsx scripts/build.ts --check",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  }
+}

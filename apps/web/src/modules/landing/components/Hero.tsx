@@ -1,6 +1,5 @@
-import { Badge, Button, Container, ease } from '@artha/design-system'
+import { ArrowRight, Badge, Button, Container, ease, Flame, Sparkles } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { ArrowRight, Flame, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
 
 function ProductPeek() {

@@ -75,6 +75,13 @@ export default tseslint.config(
       'no-restricted-imports': [
         'error',
         {
+          paths: [
+            {
+              name: 'lucide-react',
+              message:
+                "Import icons from '@artha/design-system' (add new icons to packages/design-system/src/icons.ts).",
+            },
+          ],
           patterns: [
             {
               group: ['~/modules/*/*/*'],
@@ -97,6 +104,13 @@ export default tseslint.config(
       'no-restricted-imports': [
         'error',
         {
+          paths: [
+            {
+              name: 'lucide-react',
+              message:
+                "Import icons from '@artha/design-system' (add new icons to packages/design-system/src/icons.ts).",
+            },
+          ],
           patterns: [
             { group: ['~/routes/*'], message: 'Modules must not import from routes.' },
             {
@@ -123,7 +137,7 @@ export default tseslint.config(
     rules: { '@typescript-eslint/no-non-null-assertion': 'off' },
   },
   {
-    files: ['**/scripts/**/*.{js,mjs}', '*.config.{js,mjs,ts}', 'apps/web/vite.config.ts'],
+    files: ['**/scripts/**/*.{js,mjs,ts}', '*.config.{js,mjs,ts}', 'apps/web/vite.config.ts'],
     languageOptions: { globals: { ...globals.node } },
     rules: { 'no-console': 'off' },
   },

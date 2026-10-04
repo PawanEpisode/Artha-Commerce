@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>Sign in to your workspace</title>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .page { background: #090d18 !important; }
+      .card { background: #101524 !important; border-color: #272d3d !important; }
+      .text { color: #f3f2ec !important; }
+      .muted { color: #9ea5b2 !important; }
+      .link { color: #738cff !important; }
+      .btn { background: #738cff !important; }
+      .btn-link { color: #090d18 !important; }
+      .code { background: #1a2133 !important; }
+    }
+    @media only screen and (max-width: 520px) {
+      .inner { padding: 28px 20px !important; }
+    }
+  </style>
+</head>
+<body class="page" style="margin:0;padding:0;background:#f7f0dd;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">Your one-time sign-in link and code.</div>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="page" style="background:#f7f0dd;">
+    <tr>
+      <td align="center" style="padding:32px 16px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:560px;">
+          <tr>
+            <td style="padding:0 4px 20px;">
+              <span class="text" style="font-size:20px;font-weight:800;letter-spacing:-0.3px;color:#2b2018;">ArthaCommerce</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="card" style="background:#fcf6e9;border:1px solid #ddd3bf;border-radius:16px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="inner" style="padding:36px 36px 28px;">
+              <h1 class="text" style="margin:0 0 16px;font-size:24px;line-height:32px;font-weight:800;color:#2b2018;">Sign in to your workspace</h1>
+              <p class="text" style="margin:0 0 16px;font-size:16px;line-height:26px;color:#2b2018;">Use the button below to sign in. No password needed.</p>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:8px 0 24px;">
+                <tr>
+                  <td class="btn" bgcolor="#3643ae" style="border-radius:10px;background:#3643ae;">
+                    <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink&next=%2Fapp" class="btn-link" style="display:inline-block;padding:14px 28px;font-size:16px;font-weight:700;line-height:20px;color:#fbf8f1;text-decoration:none;border-radius:10px;">Sign in</a>
+                  </td>
+                </tr>
+              </table>
+              <p class="muted" style="margin:0 0 24px;font-size:13px;line-height:20px;color:#605245;">Button not working? Copy this link into your browser:<br><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink&next=%2Fapp" class="link" style="color:#3643ae;word-break:break-all;">{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=magiclink&next=%2Fapp</a></p>
+              <p class="text" style="margin:0 0 8px;font-size:16px;line-height:26px;color:#2b2018;">On another device? Enter this code instead:</p>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:0 0 8px;">
+                <tr>
+                  <td class="code" bgcolor="#efe5d0" style="border-radius:10px;background:#efe5d0;padding:14px 24px;">
+                    <span class="text" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace;font-size:30px;line-height:36px;letter-spacing:8px;font-weight:700;color:#2b2018;">{{ .Token }}</span>
+                  </td>
+                </tr>
+              </table>
+              <p class="muted" style="margin:0 0 24px;font-size:13px;line-height:20px;color:#605245;">Never share this code with anyone. We will never ask for it.</p>
+              <p class="muted" style="margin:0 0 8px;font-size:13px;line-height:20px;color:#605245;">The link and code expire in 60 minutes and work only once.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px 8px 0;">
+              <p class="muted" style="margin:0 0 6px;font-size:12px;line-height:18px;color:#605245;">You received this because a sign-in to ArthaCommerce was requested for {{ .Email }}. If it was not you, ignore this email: nobody can sign in without the link or code.</p>
+              <p class="muted" style="margin:0;font-size:12px;line-height:18px;color:#605245;">ArthaCommerce. Exam preparation for CA, CS and CMA.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

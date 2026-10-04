@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+import { buildThemeInitScript, THEME_META_COLORS, ThemeProvider } from '@artha/design-system'
 import { type QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
@@ -11,8 +12,8 @@ import { ObservabilityProvider } from '~/modules/observability'
 import { buildHead, organizationJsonLd, websiteJsonLd } from '~/modules/seo'
 import appCss from '~/styles.css?url'
 
-// Runs before first paint so there is no light/dark flash.
-const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`
+// Runs before first paint so there is no theme flash (Reading is the default; System resolves by time of day).
+const themeScript = buildThemeInitScript()
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => {
@@ -27,7 +28,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#4a3fd6' },
+        { name: 'theme-color', content: THEME_META_COLORS.reading },
         ...base.meta,
       ],
       links: [
@@ -52,25 +53,28 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext()
   return (
     <RootDocument>
-      <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <ObservabilityProvider>
-            <SiteShell>
-              <Outlet />
-            </SiteShell>
-          </ObservabilityProvider>
-        </AuthProvider>
-      </QueryClientProvider>
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <ObservabilityProvider>
+              <SiteShell>
+                <Outlet />
+              </SiteShell>
+            </ObservabilityProvider>
+          </AuthProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
     </RootDocument>
   )
 }
 
 function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-IN" suppressHydrationWarning>
+    <html lang="en-IN" data-theme="reading" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <HeadContent />
+        {/* After the stylesheet link and the theme-color meta, before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body data-site={env.VITE_SITE_NAME}>
         {children}

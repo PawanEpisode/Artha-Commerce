@@ -19,3 +19,7 @@ Audience: stressed, time-poor students, mostly on mobile, often at night. The pr
 10. **Aha moments to design for:** first generated plan, first completed chapter updating readiness, first streak milestone, first AI answer linked to the syllabus.
 
 Instrument each aha moment with a PostHog event so activation can be measured.
+
+## Every moment must work everywhere
+
+An aha moment that breaks in Dark, on a 320 px phone or without a mouse is not shipped. Check it against `.claude/skills/ui-quality-checklist` (themes, accessibility, devices) before calling it done.

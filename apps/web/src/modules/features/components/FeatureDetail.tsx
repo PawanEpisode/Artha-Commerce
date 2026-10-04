@@ -1,6 +1,5 @@
-import { Badge, Button, Container } from '@artha/design-system'
+import { ArrowLeft, Badge, Button, Check, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { ArrowLeft, Check } from 'lucide-react'
 
 import { FeatureIcon } from '~/components/feature-icon'
 import type { Feature } from '~/modules/catalog'
