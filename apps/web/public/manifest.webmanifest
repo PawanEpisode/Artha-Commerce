@@ -1,0 +1,10 @@
+{
+  "name": "ArthaCommerce",
+  "short_name": "Artha",
+  "description": "Exam preparation workspace for CA, CS and CMA students.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf6",
+  "theme_color": "#4a3fd6",
+  "icons": [{ "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }]
+}

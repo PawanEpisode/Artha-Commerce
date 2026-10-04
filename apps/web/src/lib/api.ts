@@ -1,0 +1,33 @@
+import { env } from '~/lib/env'
+import { getSupabase } from '~/lib/supabase'
+
+export class ApiError extends Error {
+  constructor(
+    public status: number,
+    message: string,
+    public body?: unknown,
+  ) {
+    super(message)
+  }
+}
+
+/** Typed fetch wrapper for the Django API. Attaches the Supabase access token automatically. */
+export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const { data } = (await getSupabase()?.auth.getSession()) ?? { data: { session: null } }
+  const token = data.session?.access_token
+
+  const res = await fetch(`${env.VITE_API_URL}/api/v1${path}`, {
+    ...init,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...init.headers,
+    },
+  })
+
+  if (!res.ok) {
+    const body = await res.json().catch(() => undefined)
+    throw new ApiError(res.status, `API ${res.status} on ${path}`, body)
+  }
+  return res.status === 204 ? (undefined as T) : ((await res.json()) as T)
+}
