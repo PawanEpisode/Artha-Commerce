@@ -17,8 +17,7 @@ src/
     lib/             pure functions, no React
     data/            static content
     index.ts         PUBLIC API of the module
-  design-system/     tokens (styles.css), layout (Container, Section), motion (Reveal), Logo
-  components/ui/     shadcn primitives (Button, Card, ...)
+  styles.css         Tailwind entry: imports @artha/design-system tokens
   lib/               env.ts, supabase.ts, api.ts, utils.ts (cross-cutting only)
 ```
 
@@ -27,7 +26,7 @@ src/
 - **Routes are thin.** `createFileRoute(...)({ head, loader, component })`. No markup beyond rendering a container.
 - **Container/presentational.** Components never call `useQuery`, `useNavigate` or read context other than theme. Containers do. This keeps components reusable and testable.
 - **Barrels.** Cross-module imports use `~/modules/<name>` only. ESLint blocks deeper paths.
-- **Dependency direction.** `routes -> modules -> design-system/components/ui -> lib`. Modules may use `catalog` and `auth`; avoid module-to-module cycles. Shared needs go to `lib` or `design-system`.
+- **Dependency direction.** `routes -> modules -> @artha/design-system -> (nothing app specific)`; shared app helpers live in `src/lib`. Modules may use `catalog` and `auth`; avoid module-to-module cycles. Shared UI goes to `packages/design-system`, shared helpers to `src/lib`.
 - **Data.** Server data via TanStack Query hooks calling `api()` from `~/lib/api`. Do not store server data in `useState`. Static public content may use route loaders for SSR.
 - **State in the URL** when it should survive refresh or be shareable: filters, tabs, selected course/level (use route params or search params validated with zod).
 - **Env.** Add every `VITE_*` var to `src/lib/env.ts` (zod) and `.env.example`. Never read `import.meta.env` elsewhere.

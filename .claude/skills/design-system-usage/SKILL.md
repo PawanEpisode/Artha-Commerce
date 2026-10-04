@@ -1,35 +1,51 @@
 ---
 name: design-system-usage
-description: Use for any UI work in apps/web. How to use tokens, shadcn primitives, layout and motion; how to add or change design-system pieces.
+description: Use for any UI work. How to use and extend the @artha/design-system package (tokens, primitives, layout, motion), and the rules for building screens from it.
 ---
 
 # Design system usage
 
-The design system is the product's visual contract. Pages are assembled, not hand-styled.
+The design system is a workspace package: `packages/design-system`, imported as `@artha/design-system`. Screens are assembled from it, never hand-styled.
 
-## Source of truth
+## What is inside
 
-- Tokens: `src/design-system/styles.css` (`:root` and `.dark`, mapped in `@theme inline`). Colours are OKLCH.
-- Primitives: `src/components/ui/*` (shadcn style: Button, Card, Badge, Input, Tabs, Accordion, Separator).
-- Layout: `Container`, `Section` in `~/design-system`. Use `Section` for every page block so spacing and headings stay consistent.
-- Motion: `Reveal`, `fadeUp`, `stagger`, `ease` in `~/design-system/motion`. Always respect reduced motion (built in to `Reveal`).
-- Icons: `lucide-react` only. Feature icons go through `components/feature-icon.tsx`.
+```
+packages/design-system/src/
+  styles.css            tokens (:root, .dark), @theme mapping, base layer. OKLCH colours
+  components/ui/*.tsx   shadcn-style primitives: Button, Card, Badge, Input, Tabs, Accordion, Separator
+  layout.tsx            Container, Section
+  motion.tsx            Reveal, fadeUp, stagger, ease
+  Logo.tsx              LogoMark, Logo
+  lib/utils.ts          cn()
+  index.ts              the public barrel
+```
+
+The app wires it in `apps/web/src/styles.css`:
+
+```css
+@import 'tailwindcss';
+@import '@artha/design-system/styles.css';
+@source '../../../packages/design-system/src';
+```
+
+See it live at `/design-system` (run `pnpm dev:web`). Every primitive and variant must appear there.
 
 ## Rules
 
-1. Use semantic colour classes only: `bg-background`, `bg-card`, `bg-primary`, `text-muted-foreground`, `border-border`, `bg-accent`, `bg-highlight`. Never `#hex`, `rgb()`, or `bg-indigo-500`.
-2. Change the look globally by editing tokens, not components.
-3. Need a new primitive? Add it to `components/ui` following the shadcn pattern (`cva` variants, `cn()`, `data-slot`). If the shadcn CLI is reachable: `pnpm dlx shadcn@latest add <name>` (config in `components.json`), then reconcile with our tokens.
-4. Variants over one-offs. Add a `variant` or `size` to the primitive instead of passing a long `className` in several places. Three similar uses means extract.
-5. Display type uses `font-display` (applied to headings automatically). Body uses `font-sans`.
-6. Radius comes from `rounded-lg/xl/2xl` (token driven). Shadows: `shadow-soft`, `shadow-lift`.
-7. Dark mode is automatic through tokens. Check both themes for every screen.
-8. Accessibility: visible focus ring (`focus-visible:ring-*`), 44px touch targets on mobile, labelled controls, `aria-live` for results that change.
-9. Animate meaning, not decoration: entrances, progress, state change. Keep durations 150-600ms.
+1. Import from `'@artha/design-system'` only. Never from `@artha/design-system/src/...` or a local `components/ui` path (ESLint blocks both).
+2. Semantic colour classes only: `bg-background`, `bg-card`, `bg-primary`, `text-muted-foreground`, `border-border`, `bg-accent`, `bg-highlight`. No `#hex`, `rgb()`, or `bg-indigo-500`.
+3. Change the look globally by editing tokens in `styles.css`, never component by component.
+4. **Adding a primitive**: create `src/components/ui/<name>.tsx` (cva variants, `cn()`, `data-slot`), use **relative imports inside the package** (no `~` alias: the web app also uses `~`), export it from `src/index.ts`, add it to `DesignShowcase`, then use it in the app. Components copied from shadcn need their imports rewritten to relative paths.
+5. Variants over one-offs: if a long `className` repeats in three places, add a variant or a new primitive.
+6. App-specific components (they know about courses, features, routes) stay in `apps/web/src/modules`, not in the package. The package has no knowledge of the product domain.
+7. Display type is `font-display` (headings get it automatically), body is `font-sans`. Radius via `rounded-lg/xl/2xl`. Shadows `shadow-soft`, `shadow-lift`.
+8. Dark mode comes from tokens. Check both themes on every screen.
+9. Accessibility: visible `focus-visible` ring, 44px touch targets on mobile, labelled controls, `aria-live` for changing results.
+10. Motion explains change (entrances, progress, state). 150 to 600 ms. `Reveal` already honours reduced motion.
 
 ## Checklist before merging UI
 
-- [ ] No raw colours or arbitrary pixel values where a token exists
-- [ ] Looks right at 390px, 768px, 1280px, light and dark
+- [ ] Only design-system imports and tokens used
+- [ ] New or changed primitive appears in `/design-system` showcase
+- [ ] Looks right at 390, 768 and 1280 px, light and dark
 - [ ] Keyboard path works, focus visible
-- [ ] Reused an existing primitive or added a variant

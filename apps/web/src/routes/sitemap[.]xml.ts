@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+
 import { buildSitemapXml } from '~/modules/seo'
 
 export const Route = createFileRoute('/sitemap.xml')({

@@ -1,5 +1,6 @@
-import { useEffect, type ReactNode } from 'react'
 import { useNavigate } from '@tanstack/react-router'
+import { type ReactNode, useEffect } from 'react'
+
 import { useAuth } from '../hooks/useAuth'
 
 /** Client-side route guard. The API independently verifies the JWT, so this is UX, not security. */

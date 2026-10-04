@@ -1,7 +1,8 @@
+import { Button, Container, Logo } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Button } from '~/components/ui/button'
-import { Container, Logo } from '~/design-system'
+
 import { useAuth } from '~/modules/auth'
+
 import { ThemeToggle } from './ThemeToggle'
 
 const nav = [

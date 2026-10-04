@@ -1,8 +1,7 @@
+import { Badge, Card, Reveal, Section } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Badge } from '~/components/ui/badge'
-import { Card } from '~/components/ui/card'
+
 import { FeatureIcon } from '~/components/feature-icon'
-import { Reveal, Section } from '~/design-system'
 import { features } from '~/modules/catalog'
 
 export function FeatureGrid() {

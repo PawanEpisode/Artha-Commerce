@@ -1,8 +1,8 @@
+import { Card, cn, Tabs, TabsList, TabsTrigger } from '@artha/design-system'
 import { motion } from 'motion/react'
-import { Card } from '~/components/ui/card'
-import { Tabs, TabsList, TabsTrigger } from '~/components/ui/tabs'
-import { cn } from '~/lib/utils'
-import { courses, type Course, type CourseSlug, type Level } from '~/modules/catalog'
+
+import { type Course, courses, type CourseSlug, type Level } from '~/modules/catalog'
+
 import type { PlanResult } from '../lib/plan'
 
 interface Props {
@@ -20,7 +20,23 @@ interface Props {
 
 const phaseTone = { learn: 'bg-primary', revise: 'bg-accent', mock: 'bg-highlight' } as const
 
-function Slider({ id, label, value, min, max, unit, onChange }: { id: string; label: string; value: number; min: number; max: number; unit: string; onChange: (n: number) => void }) {
+function Slider({
+  id,
+  label,
+  value,
+  min,
+  max,
+  unit,
+  onChange,
+}: {
+  id: string
+  label: string
+  value: number
+  min: number
+  max: number
+  unit: string
+  onChange: (n: number) => void
+}) {
   return (
     <div>
       <div className="mb-2 flex items-baseline justify-between text-sm">
@@ -45,11 +61,22 @@ function Slider({ id, label, value, min, max, unit, onChange }: { id: string; la
 }
 
 /** Presentational. Receives everything via props from usePlannerPreview. */
-export function PlannerPreviewView({ course, level, levelIndex, plan, months, hoursPerDay, onCourse, onLevel, onMonths, onHours }: Props) {
+export function PlannerPreviewView({
+  course,
+  level,
+  levelIndex,
+  plan,
+  months,
+  hoursPerDay,
+  onCourse,
+  onLevel,
+  onMonths,
+  onHours,
+}: Props) {
   const maxSubject = Math.max(...plan.perSubject.map((s) => s.hours), 1)
   return (
     <Card className="grid gap-0 overflow-hidden shadow-lift lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-      <div className="space-y-6 border-b p-6 sm:p-8 lg:border-b-0 lg:border-r">
+      <div className="space-y-6 border-b p-6 sm:p-8 lg:border-r lg:border-b-0">
         <Tabs value={course.slug} onValueChange={(v) => onCourse(v as CourseSlug)}>
           <TabsList aria-label="Course">
             {courses.map((c) => (
@@ -75,14 +102,32 @@ export function PlannerPreviewView({ course, level, levelIndex, plan, months, ho
             </button>
           ))}
         </div>
-        <Slider id="months" label="Months until your exam" value={months} min={1} max={12} unit={months === 1 ? 'month' : 'months'} onChange={onMonths} />
-        <Slider id="hours" label="Study hours per day" value={hoursPerDay} min={1} max={10} unit="hrs" onChange={onHours} />
+        <Slider
+          id="months"
+          label="Months until your exam"
+          value={months}
+          min={1}
+          max={12}
+          unit={months === 1 ? 'month' : 'months'}
+          onChange={onMonths}
+        />
+        <Slider
+          id="hours"
+          label="Study hours per day"
+          value={hoursPerDay}
+          min={1}
+          max={10}
+          unit="hrs"
+          onChange={onHours}
+        />
       </div>
 
       <div className="space-y-6 bg-muted/40 p-6 sm:p-8" aria-live="polite">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm text-muted-foreground">Your {course.name} {level.name} plan</p>
+            <p className="text-sm text-muted-foreground">
+              Your {course.name} {level.name} plan
+            </p>
             <p className="font-display text-5xl font-extrabold tabular-nums">
               {plan.totalHours.toLocaleString('en-IN')}
               <span className="ml-1 text-lg font-semibold text-muted-foreground">study hours</span>
@@ -94,7 +139,12 @@ export function PlannerPreviewView({ course, level, levelIndex, plan, months, ho
         <div>
           <div className="flex h-3 overflow-hidden rounded-full bg-border">
             {plan.phases.map((p) => (
-              <motion.div key={p.key} className={phaseTone[p.key]} animate={{ width: `${p.share * 100}%` }} transition={{ duration: 0.5 }} />
+              <motion.div
+                key={p.key}
+                className={phaseTone[p.key]}
+                animate={{ width: `${p.share * 100}%` }}
+                transition={{ duration: 0.5 }}
+              />
             ))}
           </div>
           <ul className="mt-3 grid grid-cols-3 gap-2 text-xs">
@@ -114,15 +164,21 @@ export function PlannerPreviewView({ course, level, levelIndex, plan, months, ho
             <li key={s.name}>
               <div className="mb-1 flex justify-between gap-3 text-sm">
                 <span className="truncate font-medium">{s.name}</span>
-                <span className="tabular-nums text-muted-foreground">{s.hours}h</span>
+                <span className="text-muted-foreground tabular-nums">{s.hours}h</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-border">
-                <motion.div className="h-full rounded-full bg-primary/70" animate={{ width: `${(s.hours / maxSubject) * 100}%` }} transition={{ duration: 0.5 }} />
+                <motion.div
+                  className="h-full rounded-full bg-primary/70"
+                  animate={{ width: `${(s.hours / maxSubject) * 100}%` }}
+                  transition={{ duration: 0.5 }}
+                />
               </div>
             </li>
           ))}
         </ul>
-        <p className="text-xs text-muted-foreground">Illustrative split. Your real plan adapts to your pace and weak areas.</p>
+        <p className="text-xs text-muted-foreground">
+          Illustrative split. Your real plan adapts to your pace and weak areas.
+        </p>
       </div>
     </Card>
   )

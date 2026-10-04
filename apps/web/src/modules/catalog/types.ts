@@ -19,15 +19,7 @@ export interface Course {
 }
 
 export type FeatureIconKey =
-  | 'calendar'
-  | 'list-checks'
-  | 'timer'
-  | 'sparkles'
-  | 'notebook-pen'
-  | 'layers'
-  | 'file-clock'
-  | 'flame'
-  | 'bell-ring'
+  'calendar' | 'list-checks' | 'timer' | 'sparkles' | 'notebook-pen' | 'layers' | 'file-clock' | 'flame' | 'bell-ring'
 
 export interface Feature {
   slug: string

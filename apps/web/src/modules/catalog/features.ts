@@ -12,7 +12,11 @@ export const features: Feature[] = [
     description:
       'Tell us your course, level, exam date and daily hours. ArthaCommerce splits your time across subjects and phases (learn, revise, mock) and re-plans when you fall behind.',
     icon: 'calendar',
-    highlights: ['Plans backwards from your exam date', 'Learn, revise and mock phases', 'Auto re-plan when you miss a day'],
+    highlights: [
+      'Plans backwards from your exam date',
+      'Learn, revise and mock phases',
+      'Auto re-plan when you miss a day',
+    ],
     status: 'soon',
   },
   {
@@ -22,7 +26,11 @@ export const features: Feature[] = [
     description:
       'See your whole syllabus as a progress map. Mark chapters as read, practised and revised, and know exactly where you stand in each subject.',
     icon: 'list-checks',
-    highlights: ['Chapter-wise progress for each paper', 'Read, practise, revise states', 'Readiness score per subject'],
+    highlights: [
+      'Chapter-wise progress for each paper',
+      'Read, practise, revise states',
+      'Readiness score per subject',
+    ],
     status: 'soon',
   },
   {

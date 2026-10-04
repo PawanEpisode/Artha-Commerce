@@ -1,8 +1,6 @@
-import type { FormEvent } from 'react'
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Input } from '@artha/design-system'
 import { Mail } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
-import { Input } from '~/components/ui/input'
+import type { FormEvent } from 'react'
 
 interface LoginCardProps {
   email: string
@@ -15,7 +13,15 @@ interface LoginCardProps {
 }
 
 /** Presentational only: no hooks, no data fetching. State lives in LoginContainer. */
-export function LoginCard({ email, onEmailChange, onSubmitEmail, onGoogle, status, message, disabled }: LoginCardProps) {
+export function LoginCard({
+  email,
+  onEmailChange,
+  onSubmitEmail,
+  onGoogle,
+  status,
+  message,
+  disabled,
+}: LoginCardProps) {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">

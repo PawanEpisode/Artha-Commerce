@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
+
 import { courses, type CourseSlug } from '~/modules/catalog'
+
 import { buildPlan } from '../lib/plan'
 
 export function usePlannerPreview() {
@@ -8,12 +10,9 @@ export function usePlannerPreview() {
   const [months, setMonths] = useState(6)
   const [hoursPerDay, setHoursPerDay] = useState(5)
 
-  const course = courses.find((c) => c.slug === courseSlug)!
+  const course = courses.find((c) => c.slug === courseSlug) ?? courses[0]
   const level = course.levels[Math.min(levelIndex, course.levels.length - 1)]
-  const plan = useMemo(
-    () => buildPlan({ subjects: level.subjects, months, hoursPerDay }),
-    [level, months, hoursPerDay],
-  )
+  const plan = useMemo(() => buildPlan({ subjects: level.subjects, months, hoursPerDay }), [level, months, hoursPerDay])
 
   return {
     course,

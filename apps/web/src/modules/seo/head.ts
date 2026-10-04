@@ -55,8 +55,6 @@ export function buildHead({
       { name: 'twitter:image', content: imageUrl },
     ],
     links: [{ rel: 'canonical', href: url }],
-    scripts: jsonLd
-      ? [{ type: 'application/ld+json', children: JSON.stringify(jsonLd) }]
-      : [],
+    scripts: jsonLd ? [{ type: 'application/ld+json', children: JSON.stringify(jsonLd) }] : [],
   }
 }

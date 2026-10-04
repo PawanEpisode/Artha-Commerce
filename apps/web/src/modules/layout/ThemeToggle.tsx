@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { Button } from '@artha/design-system'
 import { Moon, Sun } from 'lucide-react'
-import { Button } from '~/components/ui/button'
+import { useEffect, useState } from 'react'
 
 /** Toggles the `.dark` class. The initial class is set by an inline script in the root document to avoid a flash. */
 export function ThemeToggle() {
@@ -20,7 +20,12 @@ export function ThemeToggle() {
   }
 
   return (
-    <Button variant="ghost" size="icon" onClick={toggle} aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}>
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={toggle}
+      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+    >
       {dark ? <Sun /> : <Moon />}
     </Button>
   )

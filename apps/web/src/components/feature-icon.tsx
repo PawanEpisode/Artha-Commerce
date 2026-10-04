@@ -1,4 +1,16 @@
-import { BellRing, CalendarRange, FileClock, Flame, Layers, ListChecks, NotebookPen, Sparkles, Timer, type LucideProps } from 'lucide-react'
+import {
+  BellRing,
+  CalendarRange,
+  FileClock,
+  Flame,
+  Layers,
+  ListChecks,
+  type LucideProps,
+  NotebookPen,
+  Sparkles,
+  Timer,
+} from 'lucide-react'
+
 import type { FeatureIconKey } from '~/modules/catalog'
 
 const icons: Record<FeatureIconKey, React.ComponentType<LucideProps>> = {

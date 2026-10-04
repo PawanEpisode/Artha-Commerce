@@ -1,8 +1,7 @@
+import { Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { ArrowLeft } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { Card } from '~/components/ui/card'
-import { Container } from '~/design-system'
+
 import type { Course, Level } from '~/modules/catalog'
 
 export function LevelDetail({ course, level }: { course: Course; level: Level }) {
@@ -22,7 +21,9 @@ export function LevelDetail({ course, level }: { course: Course; level: Level })
       <ol className="mt-10 space-y-3">
         {level.subjects.map((s, i) => (
           <Card key={s} className="flex items-center gap-4 p-4">
-            <span className="grid size-9 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">{i + 1}</span>
+            <span className="grid size-9 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
+              {i + 1}
+            </span>
             <span className="font-medium">{s}</span>
           </Card>
         ))}

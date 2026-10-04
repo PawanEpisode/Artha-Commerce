@@ -1,0 +1,12 @@
+node_modules
+.output
+.nitro
+.tanstack
+.vercel
+dist
+pnpm-lock.yaml
+routeTree.gen.ts
+apps/api
+*.md
+*.png
+*.svg

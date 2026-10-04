@@ -1,13 +1,16 @@
+import { Badge, Card, Section } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Badge } from '~/components/ui/badge'
-import { Card } from '~/components/ui/card'
+
 import { FeatureIcon } from '~/components/feature-icon'
-import { Section } from '~/design-system'
 import { features } from '~/modules/catalog'
 
 export function FeaturesIndex() {
   return (
-    <Section eyebrow="Features" title="Built for how commerce students study" description="Explore every tool in the workspace.">
+    <Section
+      eyebrow="Features"
+      title="Built for how commerce students study"
+      description="Explore every tool in the workspace."
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         {features.map((f) => (
           <Link key={f.slug} to="/features/$slug" params={{ slug: f.slug }} className="group block">
@@ -17,7 +20,12 @@ export function FeaturesIndex() {
               </span>
               <div>
                 <h2 className="text-lg font-semibold">
-                  {f.title} {f.status === 'soon' && <Badge variant="highlight" className="ml-1 align-middle">Early access</Badge>}
+                  {f.title}{' '}
+                  {f.status === 'soon' && (
+                    <Badge variant="highlight" className="ml-1 align-middle">
+                      Early access
+                    </Badge>
+                  )}
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">{f.tagline}</p>
               </div>

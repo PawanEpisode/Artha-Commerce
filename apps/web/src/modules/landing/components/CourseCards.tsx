@@ -1,7 +1,7 @@
+import { Card, Reveal, Section } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { ArrowUpRight } from 'lucide-react'
-import { Card } from '~/components/ui/card'
-import { Reveal, Section } from '~/design-system'
+
 import { courses } from '~/modules/catalog'
 
 export function CourseCards() {

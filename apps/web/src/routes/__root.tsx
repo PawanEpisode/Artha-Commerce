@@ -1,14 +1,15 @@
 /// <reference types="vite/client" />
+import { type QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
-import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from '@tanstack/react-router'
-import { QueryClientProvider, type QueryClient } from '@tanstack/react-query'
-import appCss from '~/design-system/styles.css?url'
+
 import { env } from '~/lib/env'
 import { AuthProvider } from '~/modules/auth'
-import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { SiteShell } from '~/modules/layout'
+import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { ObservabilityProvider } from '~/modules/observability'
 import { buildHead, organizationJsonLd, websiteJsonLd } from '~/modules/seo'
+import appCss from '~/styles.css?url'
 
 // Runs before first paint so there is no light/dark flash.
 const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`

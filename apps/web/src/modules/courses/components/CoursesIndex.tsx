@@ -1,6 +1,6 @@
+import { Card, Section } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Card } from '~/components/ui/card'
-import { Section } from '~/design-system'
+
 import { courses } from '~/modules/catalog'
 
 export function CoursesIndex() {

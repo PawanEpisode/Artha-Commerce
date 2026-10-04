@@ -1,6 +1,5 @@
+import { Button, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Button } from '~/components/ui/button'
-import { Container } from '~/design-system'
 
 export function NotFound() {
   return (

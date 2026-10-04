@@ -1,4 +1,5 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
+
 import { getCourse } from '~/modules/catalog'
 import { CourseDetail } from '~/modules/courses'
 import { breadcrumbJsonLd, buildHead } from '~/modules/seo'

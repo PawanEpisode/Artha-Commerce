@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { Button, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Button } from '~/components/ui/button'
-import { Container } from '~/design-system'
+import { useEffect } from 'react'
+
 import { captureException } from '~/modules/observability'
 
 export function ErrorFallback({ error, reset }: { error: Error; reset: () => void }) {

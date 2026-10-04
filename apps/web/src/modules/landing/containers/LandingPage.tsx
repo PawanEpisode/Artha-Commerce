@@ -1,5 +1,7 @@
-import { Section } from '~/design-system'
+import { Section } from '@artha/design-system'
+
 import { PlannerPreview } from '~/modules/planner-preview'
+
 import { CourseCards } from '../components/CourseCards'
 import { Faq } from '../components/Faq'
 import { FeatureGrid } from '../components/FeatureGrid'

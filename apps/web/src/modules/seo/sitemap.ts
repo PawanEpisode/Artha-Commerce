@@ -1,5 +1,5 @@
-import { courses, features } from '~/modules/catalog'
 import { siteUrl } from '~/lib/env'
+import { courses, features } from '~/modules/catalog'
 
 /** Public, indexable paths. Derived from the catalog so new courses/features appear automatically. */
 export function publicPaths(): string[] {

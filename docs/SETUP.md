@@ -19,7 +19,7 @@ Open the project folder and install:
 
 ```bash
 cd ~/Desktop/personal-work/ArthaCommerce
-pnpm install
+pnpm install     # installs dependencies and the git hooks (Husky)
 cp apps/web/.env.example apps/web/.env.local
 cp apps/api/.env.example apps/api/.env
 ```
@@ -212,8 +212,8 @@ For the API to accept your Supabase tokens locally, set `SUPABASE_URL` (and `SUP
 Checks before every PR:
 
 ```bash
-pnpm typecheck && pnpm lint && pnpm build:web
-cd apps/api && ruff check . && ruff format --check . && pytest
+pnpm check
+pnpm lint:api && pnpm test:api
 ```
 
 ---

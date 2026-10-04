@@ -1,7 +1,8 @@
-import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { useAuth } from '../hooks/useAuth'
+import { type FormEvent, useEffect, useState } from 'react'
+
 import { LoginCard } from '../components/LoginCard'
+import { useAuth } from '../hooks/useAuth'
 
 export function LoginContainer() {
   const { user, configured, signInWithEmail, signInWithGoogle } = useAuth()

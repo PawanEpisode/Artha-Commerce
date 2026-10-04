@@ -1,4 +1,5 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
+
 import { getCourse, getLevel } from '~/modules/catalog'
 import { LevelDetail } from '~/modules/courses'
 import { breadcrumbJsonLd, buildHead } from '~/modules/seo'

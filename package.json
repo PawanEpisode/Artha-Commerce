@@ -2,17 +2,41 @@
   "name": "arthacommerce",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
   "packageManager": "pnpm@10.28.0",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
+    "prepare": "husky || true",
     "dev:web": "pnpm --filter @artha/web dev",
     "build:web": "pnpm --filter @artha/web build",
-    "typecheck": "pnpm --filter @artha/web typecheck",
-    "lint": "pnpm --filter @artha/web lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,css,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json,css,yml,yaml}\"",
+    "test:web": "pnpm --filter @artha/web test",
     "dev:api": "cd apps/api && python manage.py runserver 8000",
     "test:api": "cd apps/api && pytest",
-    "test:web": "pnpm --filter @artha/web test"
+    "lint:api": "cd apps/api && ruff check . && ruff format --check .",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:web && pnpm build:web"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0"
   }
 }

@@ -1,5 +1,6 @@
+import { Container, Logo } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { Container, Logo } from '~/design-system'
+
 import { courses, features } from '~/modules/catalog'
 
 export function SiteFooter() {
@@ -15,7 +16,12 @@ export function SiteFooter() {
         <nav aria-label="Courses" className="space-y-3 text-sm">
           <p className="font-semibold">Courses</p>
           {courses.map((c) => (
-            <Link key={c.slug} to="/courses/$course" params={{ course: c.slug }} className="block text-muted-foreground hover:text-foreground">
+            <Link
+              key={c.slug}
+              to="/courses/$course"
+              params={{ course: c.slug }}
+              className="block text-muted-foreground hover:text-foreground"
+            >
               {c.name} ({c.body})
             </Link>
           ))}
@@ -23,7 +29,12 @@ export function SiteFooter() {
         <nav aria-label="Features" className="space-y-3 text-sm">
           <p className="font-semibold">Features</p>
           {features.slice(0, 5).map((f) => (
-            <Link key={f.slug} to="/features/$slug" params={{ slug: f.slug }} className="block text-muted-foreground hover:text-foreground">
+            <Link
+              key={f.slug}
+              to="/features/$slug"
+              params={{ slug: f.slug }}
+              className="block text-muted-foreground hover:text-foreground"
+            >
               {f.title}
             </Link>
           ))}

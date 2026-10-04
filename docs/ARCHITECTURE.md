@@ -25,13 +25,13 @@ Later, Supabase **Storage** (notes attachments, PDFs) and **Realtime** (live stu
 ## Frontend: module-driven architecture
 
 ```
-routes -> modules -> (design-system, components/ui) -> lib
+routes -> modules -> @artha/design-system (package) ; modules -> lib
 ```
 
 - **Routes** are file-based, URL = screen. They only declare `head` (SEO), `loader`, and render one container.
 - **Modules** own a feature end to end: `components` (presentational), `containers` (state/data), `hooks`, `lib` (pure logic), `data`, `index.ts` (public API).
 - **Container/presentational** keeps UI reusable and testable: components receive props, containers connect data.
-- **Design system** (`design-system/styles.css` tokens + `components/ui` shadcn primitives + layout/motion helpers) is the only source of visual decisions.
+- **Design system** is its own workspace package, `packages/design-system` (`@artha/design-system`): tokens, shadcn-style primitives, layout and motion helpers. It is the only source of visual decisions and has no product knowledge, so it can later power other apps (admin, mobile web).
 - **Catalog** (`modules/catalog`) is the shared source of truth for courses and features. It drives landing, detail pages, footer, sitemap.
 - **Server data** will flow through TanStack Query hooks calling `lib/api.ts` (adds the Supabase token). Static public content uses route loaders so it is server-rendered for SEO.
 

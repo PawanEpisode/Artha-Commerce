@@ -1,9 +1,8 @@
+import { Badge, Button, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { ArrowLeft, Check } from 'lucide-react'
-import { Badge } from '~/components/ui/badge'
-import { Button } from '~/components/ui/button'
+
 import { FeatureIcon } from '~/components/feature-icon'
-import { Container } from '~/design-system'
 import type { Feature } from '~/modules/catalog'
 
 export function FeatureDetail({ feature }: { feature: Feature }) {
@@ -19,7 +18,11 @@ export function FeatureDetail({ feature }: { feature: Feature }) {
       </span>
       <h1 className="mt-6 text-4xl font-extrabold sm:text-5xl">{feature.title}</h1>
       <p className="mt-3 text-xl text-muted-foreground">{feature.tagline}</p>
-      {feature.status === 'soon' && <Badge variant="highlight" className="mt-4">Early access</Badge>}
+      {feature.status === 'soon' && (
+        <Badge variant="highlight" className="mt-4">
+          Early access
+        </Badge>
+      )}
       <p className="mt-8 text-lg leading-relaxed">{feature.description}</p>
       <ul className="mt-8 space-y-3">
         {feature.highlights.map((h) => (

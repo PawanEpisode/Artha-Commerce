@@ -1,4 +1,3 @@
-/* global Buffer, console */
 // Generates the 1200x630 social preview (WhatsApp/LinkedIn/X) and the app icon.
 // Run: pnpm --filter @artha/web og   (output is committed; re-run when branding changes)
 import sharp from 'sharp'

@@ -5,8 +5,9 @@ description: Use for any new feature, issue or change request in ArthaCommerce. 
 
 # New feature or issue workflow
 
+0. **Check the product docs.** Is there a PRD and ERD for this pointer in `docs/product/prd` and `docs/product/erd`? If not, write them first from `docs/templates` (see `prd-and-erd`).
 1. **Clarify the slice.** Write one sentence: who benefits, what changes, which URL it lives at. Split anything bigger than one PR.
-2. **Find reuse first.** Search `src/modules`, `src/components/ui`, `src/design-system`, `modules/` (api). Extend before creating.
+2. **Find reuse first.** Search `src/modules`, `packages/design-system`, `modules/` (api). Extend before creating.
 3. **Name the module.** One noun, kebab-case (`syllabus-tracker`). Create `src/modules/<name>/` and, if it needs data, `apps/api/modules/<name>/`.
 4. **Build API first when data is involved** (see `django-backend-layers`): model -> migration -> selector/service -> serializer -> view -> url -> tests.
 5. **Build the web module** (see `frontend-architecture`):
@@ -17,7 +18,7 @@ description: Use for any new feature, issue or change request in ArthaCommerce. 
 7. **Add UI from the design system** (see `design-system-usage`). Add loading, empty, error and success states for every data view.
 8. **SEO and sharing** if public (see `seo-and-sharing`). Add to `modules/seo/sitemap.ts` if it is not catalog-driven.
 9. **Analytics.** Capture one PostHog event for the key action, named `noun_verb` (`plan_created`). Do not send PII.
-10. **Verify.** `pnpm typecheck && pnpm lint && pnpm build:web` and `pytest && ruff check .`. Open the page at mobile and desktop widths.
+10. **Verify.** `pnpm check` and `pnpm lint:api && pnpm test:api`. Open the page at mobile and desktop widths.
 
 ## Definition of done
 

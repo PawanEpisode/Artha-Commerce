@@ -1,5 +1,5 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '~/components/ui/accordion'
-import { Container } from '~/design-system'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Container } from '@artha/design-system'
+
 import { faqItems } from '../data/faq'
 
 export function Faq() {

@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { LandingPage, faqItems } from '~/modules/landing'
+
+import { faqItems, LandingPage } from '~/modules/landing'
 import { buildHead, faqJsonLd, organizationJsonLd, websiteJsonLd } from '~/modules/seo'
 
 export const Route = createFileRoute('/')({

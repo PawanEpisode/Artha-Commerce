@@ -1,4 +1,5 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
+
 import { getFeature } from '~/modules/catalog'
 import { FeatureDetail } from '~/modules/features'
 import { breadcrumbJsonLd, buildHead } from '~/modules/seo'

@@ -1,9 +1,7 @@
+import { Badge, Button, Container, ease } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { ArrowRight, Flame, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
-import { Badge } from '~/components/ui/badge'
-import { Button } from '~/components/ui/button'
-import { Container, ease } from '~/design-system'
 
 function ProductPeek() {
   const tasks = [
@@ -29,7 +27,13 @@ function ProductPeek() {
             <svg viewBox="0 0 120 120" className="size-full -rotate-90">
               <circle cx="60" cy="60" r="52" fill="none" strokeWidth="10" className="stroke-muted" />
               <motion.circle
-                cx="60" cy="60" r="52" fill="none" strokeWidth="10" strokeLinecap="round" className="stroke-primary"
+                cx="60"
+                cy="60"
+                r="52"
+                fill="none"
+                strokeWidth="10"
+                strokeLinecap="round"
+                className="stroke-primary"
                 strokeDasharray={327}
                 initial={{ strokeDashoffset: 327 }}
                 animate={{ strokeDashoffset: 327 * (1 - 0.68) }}
@@ -45,8 +49,13 @@ function ProductPeek() {
           </div>
           <ul className="space-y-2.5">
             {tasks.map((task) => (
-              <li key={task.t} className="flex items-center gap-3 rounded-xl border bg-background px-4 py-3 text-left text-sm">
-                <span className={`grid size-5 place-items-center rounded-full text-[11px] ${task.d ? 'bg-accent text-accent-foreground' : 'border-2 border-border'}`}>
+              <li
+                key={task.t}
+                className="flex items-center gap-3 rounded-xl border bg-background px-4 py-3 text-left text-sm"
+              >
+                <span
+                  className={`grid size-5 place-items-center rounded-full text-[11px] ${task.d ? 'bg-accent text-accent-foreground' : 'border-2 border-border'}`}
+                >
                   {task.d ? '✓' : ''}
                 </span>
                 <span className={task.d ? 'text-muted-foreground line-through' : 'font-medium'}>{task.t}</span>
@@ -56,7 +65,7 @@ function ProductPeek() {
         </div>
       </div>
       <motion.div
-        className="absolute -bottom-5 -right-3 hidden rounded-xl border bg-card px-4 py-3 text-left shadow-lift sm:block"
+        className="absolute -right-3 -bottom-5 hidden rounded-xl border bg-card px-4 py-3 text-left shadow-lift sm:block"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6, ease }}
@@ -72,14 +81,14 @@ function ProductPeek() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-20 pt-16 sm:pt-24">
+    <section className="relative overflow-hidden pt-16 pb-20 sm:pt-24">
       <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
       <Container className="text-center">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
           <Badge variant="outline" className="mb-6">
             <Sparkles className="text-primary" /> Built for CA, CS and CMA aspirants
           </Badge>
-          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="mx-auto max-w-4xl text-4xl leading-[1.05] font-extrabold sm:text-6xl lg:text-7xl">
             Your entire exam prep, <span className="text-gradient">in one calm workspace.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">

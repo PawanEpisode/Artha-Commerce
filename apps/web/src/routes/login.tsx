@@ -1,5 +1,6 @@
+import { Container } from '@artha/design-system'
 import { createFileRoute } from '@tanstack/react-router'
-import { Container } from '~/design-system'
+
 import { LoginContainer } from '~/modules/auth'
 import { buildHead } from '~/modules/seo'
 

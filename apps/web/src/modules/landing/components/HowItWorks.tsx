@@ -1,9 +1,17 @@
-import { Reveal, Section } from '~/design-system'
+import { Reveal, Section } from '@artha/design-system'
 
 const steps = [
   { n: '01', title: 'Tell us your goal', body: 'Choose your course, level and exam date. It takes under a minute.' },
-  { n: '02', title: 'Follow your daily plan', body: 'Get a focused list for today: what to learn, revise and practise.' },
-  { n: '03', title: 'Watch readiness grow', body: 'Every chapter you finish and every mock you attempt moves your readiness score.' },
+  {
+    n: '02',
+    title: 'Follow your daily plan',
+    body: 'Get a focused list for today: what to learn, revise and practise.',
+  },
+  {
+    n: '03',
+    title: 'Watch readiness grow',
+    body: 'Every chapter you finish and every mock you attempt moves your readiness score.',
+  },
 ]
 
 export function HowItWorks() {
