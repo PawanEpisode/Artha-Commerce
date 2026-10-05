@@ -4,9 +4,10 @@ from collections.abc import Iterator
 
 import pytest
 from django.core.cache import cache
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client
 
-from core import auth_admin, storage
+from core import auth_admin, feature_flags, storage
 from modules.syllabus.models import ExamTerm
 from modules.syllabus.tests.helpers import make_scheme
 
@@ -45,6 +46,11 @@ class Api:
     def delete(self, path, body=None):
         return self._send("delete", path, body)
 
+    def upload(self, path, data: bytes, *, name="photo.jpg", content_type="image/jpeg"):
+        res = self.c.post(f"/api/v1{path}", data={"file": SimpleUploadedFile(name, data, content_type=content_type)})
+        res.json_body = res.json() if res.content else None
+        return res
+
 
 @pytest.fixture(autouse=True)
 def _fresh_throttle_counters():
@@ -82,9 +88,15 @@ class FakeStorage:
     def __init__(self):
         self.objects: dict[tuple[str, str], bytes] = {}
         self.fail_delete = False
+        self.fail_upload = False
+        self.fail_upload_after: int | None = None  # fail every upload once this many have stored
+        self.last_upload: dict = {}
 
     def upload(self, bucket, path, data, *, content_type, cache_control):
+        if self.fail_upload or (self.fail_upload_after is not None and len(self.objects) >= self.fail_upload_after):
+            raise storage.StorageError("down")
         self.objects[(bucket, path)] = data
+        self.last_upload = {"content_type": content_type, "cache_control": cache_control}
 
     def delete(self, bucket, paths):
         if self.fail_delete:
@@ -122,3 +134,20 @@ def fresh_login(make_token):
         return Api(make_token(sub=sub, amr=[{"method": "otp", "timestamp": int(time.time()) - 60}]))
 
     return _make
+
+
+@pytest.fixture
+def flag_off(settings, monkeypatch):
+    """`flag_off("name")` turns one PostHog flag off for the test (flags fail open otherwise)."""
+
+    def make(name):
+        class Off:
+            def get_feature_flag(self, key, distinct_id, **kwargs):
+                return False if key == name else None
+
+        settings.POSTHOG_API_KEY = "phc_test"
+        monkeypatch.setattr(feature_flags, "_client", Off())
+        feature_flags.clear_flag_cache()
+
+    yield make
+    feature_flags.clear_flag_cache()

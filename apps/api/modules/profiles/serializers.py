@@ -22,6 +22,10 @@ class MePatchSerializer(serializers.Serializer):
     DEPRECATED_FIELDS = ("course", "level", "exam_date")
 
 
+class PresetSerializer(serializers.Serializer):
+    key = serializers.CharField(max_length=24)
+
+
 class DeleteAccountSerializer(serializers.Serializer):
     confirm = serializers.CharField(allow_blank=True, default="")
 

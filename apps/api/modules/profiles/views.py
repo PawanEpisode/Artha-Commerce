@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import time
 
+from rest_framework.parsers import MultiPartParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
@@ -13,10 +14,22 @@ from core.feature_flags import flag_enabled
 from core.http import tagged_response
 
 from . import registry, selectors, serializers, services
+from .avatar_urls import avatar_summary
+from .domain.images import MAX_INPUT_BYTES
 from .domain.names import InvalidName
-from .errors import FieldReadOnly, PersonalizationDisabled, StepNotFound
+from .errors import (
+    AvatarUploadDisabled,
+    FieldReadOnly,
+    InvalidImage,
+    PayloadTooLarge,
+    PersonalizationDisabled,
+    StepNotFound,
+)
 
 PERSONALIZATION_FLAG = "personalization"
+AVATAR_FLAG = "profile_avatar"
+#: Multipart framing on top of the file itself.
+MULTIPART_OVERHEAD = 4_096
 
 
 class ScopedView(APIView):
@@ -119,3 +132,43 @@ class OnboardingCompleteView(PersonalizationView):
         resolution = services.complete_onboarding(request.user.id)
         # The server's default; the web applies its own precedence (gate, deep link, last visit) after the celebration.
         return Response({"state": serializers.steps_dict(resolution), "destination": "/app"})
+
+
+class AvatarView(ScopedView):
+    """POST uploads the cropped photo (behind `profile_avatar`); DELETE goes back to initials (always allowed)."""
+
+    parser_classes = [MultiPartParser]
+
+    @property
+    def throttle_scope(self):
+        return "avatar_write" if self.request.method == "POST" else "profile_write"
+
+    def post(self, request):
+        if not flag_enabled(AVATAR_FLAG, request.user.id):
+            raise AvatarUploadDisabled
+        # Refuse oversized bodies before parsing them.
+        declared = int(request.META.get("CONTENT_LENGTH") or 0)
+        if declared > MAX_INPUT_BYTES + MULTIPART_OVERHEAD:
+            raise PayloadTooLarge
+        services.ensure_student(request.user)
+        upload = request.FILES.get("file")
+        if upload is None:
+            raise InvalidImage
+        if upload.size > MAX_INPUT_BYTES:
+            raise PayloadTooLarge
+        profile = services.set_upload(request.user.id, upload.read())
+        return Response(avatar_summary(profile), status=201)
+
+    def delete(self, request):
+        services.ensure_student(request.user)
+        return Response(avatar_summary(services.remove_avatar(request.user.id)))
+
+
+class AvatarPresetView(ScopedView):
+    throttle_scope = "profile_write"
+
+    def put(self, request):
+        s = serializers.PresetSerializer(data=request.data)
+        s.is_valid(raise_exception=True)
+        services.ensure_student(request.user)
+        return Response(avatar_summary(services.set_preset(request.user.id, s.validated_data["key"])))

@@ -51,3 +51,43 @@ class DeletionIncomplete(APIException):
 
 class PersonalizationDisabled(FeatureDisabled):
     default_detail = "Personalised setup is not available yet."
+
+
+class UnknownPreset(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "That avatar does not exist."
+    default_code = "unknown_preset"
+
+
+class InvalidImage(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "Use a JPG, PNG or WebP image."
+    default_code = "invalid_image"
+
+
+class ImageTooLarge(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "That photo has too many pixels. Choose a smaller one."
+    default_code = "image_too_large"
+
+
+class ImageTooSmall(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "Choose a photo at least 128 by 128 pixels."
+    default_code = "image_too_small"
+
+
+class PayloadTooLarge(CodedError):
+    status_code = status.HTTP_413_REQUEST_ENTITY_TOO_LARGE
+    default_detail = "That photo is too large."
+    default_code = "payload_too_large"
+
+
+class StorageUnavailable(CodedError):
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+    default_detail = "We could not save your photo. Try again."
+    default_code = "storage_unavailable"
+
+
+class AvatarUploadDisabled(FeatureDisabled):
+    default_detail = "Photo upload is not available yet."
