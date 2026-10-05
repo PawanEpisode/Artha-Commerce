@@ -1,0 +1,41 @@
+.reorder-cell,
+.reorder-head {
+  width: 2.5em;
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.reorder-head-text {
+  font-size: 0.75em;
+  font-weight: normal;
+}
+.reorder-handle {
+  cursor: grab;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  background: var(--body-bg, #fff);
+  color: var(--body-quiet-color, #666);
+  min-width: 2em;
+  min-height: 2em;
+  line-height: 1;
+}
+.reorder-handle:hover,
+.reorder-handle:focus-visible {
+  color: var(--link-fg, #447e9b);
+  border-color: var(--link-fg, #447e9b);
+}
+.reorder-dragging {
+  opacity: 0.5;
+  outline: 2px dashed var(--link-fg, #447e9b);
+}
+.reorder-help {
+  margin: 0 0 8px;
+}
+.reorder-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

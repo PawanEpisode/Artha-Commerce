@@ -12,15 +12,17 @@ Rules enforced in this file:
 from __future__ import annotations
 
 import json
+import uuid
 
 from django import forms
 from django.contrib import admin, messages
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import IntegrityError
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import path, reverse
 from django.utils.html import format_html
+from django.views.decorators.http import require_POST
 
 from modules.profiles.models import Profile
 
@@ -147,6 +149,86 @@ class ActivateActionsMixin:
         self.message_user(request, f"{queryset.update(is_active=False)} switched off.")
 
 
+class ReorderMixin:
+    """
+    Drag-and-drop ordering (`sort_order`) for papers, chapters and topics.
+
+    Inline tables are reordered in the browser and saved with the form. Change lists post the new order to
+    `<model>/reorder/` at once; that only works while the list is filtered to one parent (`reorder_scope_param` is set),
+    because `sort_order` is numbered within a parent. See static/syllabus/admin/reorder.js.
+    """
+
+    change_list_template = "admin/syllabus/reorderable_change_list.html"
+    reorder_parent_field = ""  # "scheme" for papers, "subject" for chapters, "chapter" for topics
+    reorder_scope_param = ""  # change list query parameter that pins the list to one parent
+    reorder_scope_hint = ""
+
+    class Media:
+        css = {"all": ("syllabus/admin/reorder.css",)}
+        js = ("syllabus/admin/reorder.js",)
+
+    def _reorder_url_name(self) -> str:
+        return f"admin:{self.model._meta.app_label}_{self.model._meta.model_name}_reorder"
+
+    def get_urls(self):
+        custom = [
+            path(
+                "reorder/",
+                self.admin_site.admin_view(require_POST(self.reorder_view)),
+                name=self._reorder_url_name().removeprefix("admin:"),
+            )
+        ]
+        return custom + super().get_urls()
+
+    def changelist_view(self, request, extra_context=None):
+        enabled = bool(request.GET.get(self.reorder_scope_param)) and self.has_change_permission(request)
+        config = {"url": reverse(self._reorder_url_name()), "enabled": enabled, "hint": self.reorder_scope_hint}
+        return super().changelist_view(request, {**(extra_context or {}), "reorder_config": config})
+
+    def reorder_view(self, request):
+        try:
+            body = json.loads(request.body or b"{}")
+            ids = [str(uuid.UUID(str(i))) for i in body["ids"]]
+        except (ValueError, KeyError, TypeError):
+            return JsonResponse({"error": "The new order could not be read."}, status=400)
+        if not 1 <= len(ids) <= 500 or len(set(ids)) != len(ids):
+            return JsonResponse({"error": "The new order could not be read."}, status=400)
+        by_id = {str(o.pk): o for o in self.model.objects.filter(pk__in=ids)}
+        if len(by_id) != len(ids):
+            return JsonResponse({"error": "Some rows no longer exist."}, status=404)
+        parents = {getattr(o, f"{self.reorder_parent_field}_id") for o in by_id.values()}
+        if len(parents) != 1:
+            return JsonResponse({"error": self.reorder_scope_hint}, status=400)
+        if not all(self.has_change_permission(request, o) for o in by_id.values()):
+            return JsonResponse({"error": "You may not change these rows."}, status=403)
+
+        siblings = list(
+            self.model.objects.filter(**{f"{self.reorder_parent_field}_id": parents.pop()}).order_by(
+                "sort_order", "key"
+            )
+        )
+        slots = [i for i, o in enumerate(siblings) if str(o.pk) in by_id]  # positions the dragged rows occupy now
+        arranged = list(siblings)
+        for slot, row_id in zip(slots, ids, strict=True):
+            arranged[slot] = by_id[row_id]
+        changed = []
+        for order, obj in enumerate(arranged):
+            if obj.sort_order != order:
+                obj.sort_order = order
+                changed.append(obj)
+        self.model.objects.bulk_update(changed, ["sort_order"])
+        for obj in changed:
+            if str(obj.pk) in by_id:
+                self.log_change(request, obj, f"Moved to position {obj.sort_order + 1}.")
+        scheme = scheme_of(arranged[0])
+        return JsonResponse(
+            {
+                "orders": {str(o.pk): o.sort_order for o in arranged},
+                "published": bool(scheme and scheme.status == Scheme.Status.PUBLISHED),
+            }
+        )
+
+
 # --- reference data --------------------------------------------------------------------------
 
 
@@ -232,6 +314,10 @@ class SchemeAdmin(DraftOnlyDeleteMixin, admin.ModelAdmin):
     actions = ["publish_selected", "retire_selected", "build_chapter_map", "export_json"]
     list_select_related = ("level", "level__course", "from_term", "to_term", "from_term__level", "to_term__level")
 
+    class Media:
+        css = {"all": ("syllabus/admin/reorder.css",)}
+        js = ("syllabus/admin/reorder.js",)
+
     @admin.display(description="Status", ordering="status")
     def status_badge(self, obj):
         colour = {"draft": "#8a6d00", "published": "#146c2e", "retired": "#666"}[obj.status]
@@ -250,6 +336,14 @@ class SchemeAdmin(DraftOnlyDeleteMixin, admin.ModelAdmin):
             try:
                 services.publish_scheme(scheme)
                 self.message_user(request, f"Published {scheme}.", messages.SUCCESS)
+                pending = ChapterMap.objects.filter(to_chapter__subject__scheme=scheme, needs_review=True).count()
+                if pending:
+                    self.message_user(
+                        request,
+                        f"{pending} chapter maps into {scheme.code} still need review. Students who switch to it "
+                        "carry progress through them as they stand: confirm or fix them under Chapter maps.",
+                        messages.WARNING,
+                    )
             except ValidationError as exc:
                 self.message_user(request, f"{scheme}: {'; '.join(exc.messages)}", messages.ERROR)
 
@@ -272,11 +366,11 @@ class SchemeAdmin(DraftOnlyDeleteMixin, admin.ModelAdmin):
         if old is None:
             self.message_user(request, "This level has no other scheme to map from.", messages.ERROR)
             return
-        created = services.build_default_chapter_map(old, new)
+        report = services.build_default_chapter_map(old, new)
         self.message_user(
             request,
-            f"Mapped {created} new chapters from {old.code} to {new.code}. Review splits and merges under Chapter maps.",
-            messages.SUCCESS,
+            f"{old.code} to {new.code}: {report.summary()}",
+            messages.WARNING if report.needs_review else messages.SUCCESS,
         )
 
     @admin.action(description="Download as JSON (same format as the seed files)")
@@ -373,7 +467,10 @@ class SubjectForm(forms.ModelForm):
 
 
 @admin.register(Subject)
-class SubjectAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
+class SubjectAdmin(ReorderMixin, DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
+    reorder_parent_field = "scheme"
+    reorder_scope_param = "scheme__id__exact"
+    reorder_scope_hint = "Pick one scheme in the filter on the right to drag its papers into order."
     form = SubjectForm
     list_display = (
         "name",
@@ -419,7 +516,10 @@ class ChapterForm(forms.ModelForm):
 
 
 @admin.register(Chapter)
-class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
+class ChapterAdmin(ReorderMixin, DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
+    reorder_parent_field = "subject"
+    reorder_scope_param = "paper"
+    reorder_scope_hint = "Pick one scheme, then one paper, in the filter on the right to drag its chapters into order."
     form = ChapterForm
     list_display = (
         "name",
@@ -428,6 +528,9 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
         "marks_min",
         "marks_max",
         "weight_source",
+        "target_practice_sets",
+        "target_revisions",
+        "target_mocks",
         "topic_total",
         "sort_order",
         "is_active",
@@ -440,7 +543,16 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
         "weight_source",
         "is_active",
     )
-    list_editable = ("marks_min", "marks_max", "weight_source", "sort_order", "is_active")
+    list_editable = (
+        "marks_min",
+        "marks_max",
+        "weight_source",
+        "target_practice_sets",
+        "target_revisions",
+        "target_mocks",
+        "sort_order",
+        "is_active",
+    )
     search_fields = ("name", "key", "section", "subject__name")
     autocomplete_fields = ("subject",)
     inlines = [TopicInline]
@@ -451,6 +563,13 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
     def topic_total(self, obj):
         return obj.topics.filter(is_active=True).count()
 
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
+        field = super().formfield_for_dbfield(db_field, request, **kwargs)
+        if field is not None and db_field.name.startswith("target_"):
+            # Targets are small counts (0 to 20): keep the editable list columns narrow.
+            field.widget.attrs.update({"min": 0, "max": 20, "style": "width: 4.5em"})
+        return field
+
     def save_related(self, request, form, formsets, change):
         super().save_related(request, form, formsets, change)
         text = form.cleaned_data.get("add_topics", "")
@@ -459,7 +578,12 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
 
 
 @admin.register(Topic)
-class TopicAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
+class TopicAdmin(ReorderMixin, DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
+    reorder_parent_field = "chapter"
+    reorder_scope_param = "chapter"
+    reorder_scope_hint = (
+        "Pick a scheme, a paper and then a chapter in the filter on the right to drag its topics into order."
+    )
     list_display = ("name", "paper", "chapter_name", "scheme_name", "kind", "sort_order", "is_active")
     list_filter = (
         "chapter__subject__scheme__level__course",
@@ -516,11 +640,46 @@ class ChapterMapForm(forms.ModelForm):
 
 @admin.register(ChapterMap)
 class ChapterMapAdmin(admin.ModelAdmin):
+    """The review queue for proposed maps: low-confidence rows are listed first, flagged until an editor confirms them."""
+
     form = ChapterMapForm
-    list_display = ("from_chapter", "to_chapter", "relation", "carry_ratio")
-    list_filter = ("relation", "to_chapter__subject__scheme")
+    list_display = (
+        "old_chapter",
+        "new_chapter",
+        "relation",
+        "carry_ratio",
+        "basis",
+        "confidence",
+        "needs_review",
+    )
+    list_filter = ("needs_review", "relation", "basis", "to_chapter__subject__scheme")
+    list_editable = ("relation", "carry_ratio", "needs_review")
+    list_select_related = ("from_chapter__subject__scheme", "to_chapter__subject__scheme")
     autocomplete_fields = ("from_chapter", "to_chapter")
     search_fields = ("from_chapter__name", "to_chapter__name")
+    readonly_fields = ("basis", "confidence")
+    actions = ["mark_reviewed"]
+    ordering = ("-needs_review", "confidence", "to_chapter__subject__sort_order", "to_chapter__sort_order")
+
+    @admin.display(description="Old chapter", ordering="from_chapter__name")
+    def old_chapter(self, obj):
+        c = obj.from_chapter
+        return f"{c.subject.scheme.code} | {c.subject.name} | {c.name}"
+
+    @admin.display(description="New chapter", ordering="to_chapter__name")
+    def new_chapter(self, obj):
+        c = obj.to_chapter
+        return f"{c.subject.scheme.code} | {c.subject.name} | {c.name}"
+
+    def save_model(self, request, obj, form, change):
+        # An editor who changes a proposed row has looked at it: it leaves the review queue unless they say otherwise.
+        if change and form.has_changed() and "needs_review" not in form.changed_data:
+            obj.needs_review = False
+        super().save_model(request, obj, form, change)
+
+    @admin.action(description="Mark as reviewed (keep as proposed)")
+    def mark_reviewed(self, request, queryset):
+        self.message_user(request, f"{queryset.filter(needs_review=True).update(needs_review=False)} maps confirmed.")
 
 
 # --- "Report a wrong item" inbox -------------------------------------------------------------

@@ -1,0 +1,5 @@
+{% extends "admin/change_list.html" %}
+{% block extrahead %}
+  {{ block.super }}
+  {% if reorder_config %}{{ reorder_config|json_script:"reorder-config" }}{% endif %}
+{% endblock %}

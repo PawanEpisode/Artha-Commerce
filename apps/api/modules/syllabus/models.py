@@ -8,11 +8,10 @@ See docs/product/erd/F-02-syllabus-structure-and-coverage.md.
 
 from decimal import Decimal
 
+from core.models import UUIDModel
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
-
-from core.models import UUIDModel
 
 
 class Course(UUIDModel):
@@ -262,10 +261,26 @@ class ChapterMap(UUIDModel):
         MERGED = "merged", "Merged"
         PARTIAL = "partial", "Partial"
 
+    class Basis(models.TextChoices):
+        """Why the row exists. Everything but `manual` was proposed by `build_default_chapter_map`."""
+
+        KEY = "key", "Same key"
+        NAME = "name", "Same name"
+        FUZZY = "fuzzy", "Similar name"
+        RENAMED = "renamed", "Renamed in place"
+        MOVED = "moved", "Moved to another paper"
+        SPLIT = "split", "Proposed split"
+        MERGE = "merge", "Proposed merge"
+        MANUAL = "manual", "Added by an editor"
+
     from_chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE, related_name="maps_out")
     to_chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE, related_name="maps_in")
     relation = models.CharField(max_length=10, choices=Relation.choices, default=Relation.SAME)
     carry_ratio = models.DecimalField(max_digits=3, decimal_places=2, default=Decimal("1.00"))
+    basis = models.CharField(max_length=10, choices=Basis.choices, default=Basis.MANUAL)
+    confidence = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)  # 0 to 1, proposals only
+    # A low-confidence proposal waits here until an editor confirms or fixes it. Saving the row in the admin clears it.
+    needs_review = models.BooleanField(default=False)
 
     class Meta:
         db_table = "syllabus_chaptermap"
@@ -277,7 +292,16 @@ class ChapterMap(UUIDModel):
             models.CheckConstraint(
                 condition=Q(carry_ratio__gte=0, carry_ratio__lte=1), name="syllabus_chaptermap_ratio_range"
             ),
+            models.CheckConstraint(
+                condition=Q(basis__in=["key", "name", "fuzzy", "renamed", "moved", "split", "merge", "manual"]),
+                name="syllabus_chaptermap_basis_valid",
+            ),
+            models.CheckConstraint(
+                condition=Q(confidence__isnull=True) | Q(confidence__gte=0, confidence__lte=1),
+                name="syllabus_chaptermap_confidence_range",
+            ),
         ]
+        indexes = [models.Index(fields=["needs_review"], name="syllabus_chaptermap_review_idx")]
 
 
 class SyllabusReport(UUIDModel):
