@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+from core.feature_flags import flag_enabled
 from django.utils import timezone
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import BasePermission, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
@@ -10,12 +12,25 @@ from modules.syllabus import selectors as syllabus
 
 from . import selectors, serializers, services
 from .domain.formula import Weights
-from .errors import CoverageError, to_api_exception
+from .errors import CoverageError, FeatureDisabled, to_api_exception
 from .models import CoverageEvent
+
+COVERAGE_FLAG = "syllabus_coverage"
+
+
+class CoverageEnabled(BasePermission):
+    """The `syllabus_coverage` flag (FR-30), evaluated by PostHog for this student. Off means 403 `feature_disabled`."""
+
+    def has_permission(self, request, view):
+        if not flag_enabled(COVERAGE_FLAG, request.user.id):
+            raise FeatureDisabled
+        return True
 
 
 class CoverageView(APIView):
-    """Authenticated, student-scoped. Domain errors become the API's standard error shape."""
+    """Authenticated, student-scoped, behind the coverage flag. Domain errors become the API's standard error shape."""
+
+    permission_classes = [IsAuthenticated, CoverageEnabled]
 
     def handle_exception(self, exc):
         if isinstance(exc, CoverageError):
@@ -309,7 +324,9 @@ class SettingsView(CoverageView):
 
 
 class DataView(CoverageView):
-    """GET exports everything coverage stores about the student; DELETE removes it (FR-29)."""
+    """GET exports everything coverage stores about the student; DELETE removes it (FR-29). Not behind the flag."""
+
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         return Response(selectors.export_all(request.user.id))
