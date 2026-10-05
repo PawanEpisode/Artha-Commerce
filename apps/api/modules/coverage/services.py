@@ -17,6 +17,7 @@ from typing import Any
 from django.db import IntegrityError, transaction
 from django.utils import timezone
 
+from modules.syllabus import matching
 from modules.syllabus import selectors as syllabus
 from modules.syllabus.models import Chapter, ChapterMap, Scheme, Topic
 
@@ -755,6 +756,20 @@ def _apply_electives(enrollment: Enrollment) -> list[ChapterProgress]:
 
 
 @transaction.atomic
+def sync_electives(enrollment: Enrollment) -> None:
+    """
+    Brings an enrolment in line with its elective choices. New enrolments are already in line; this catches students
+    who enrolled before electives existed (their option papers were all counted) and slots a scheme gained later.
+    A no-op when nothing differs.
+    """
+    if enrollment.status != Enrollment.Status.ACTIVE:
+        return
+    changed = _apply_electives(enrollment)
+    if changed:
+        _settle(enrollment, changed)
+
+
+@transaction.atomic
 def set_electives(enrollment: Enrollment, choices: dict[str, Any]) -> Enrollment:
     """Saves the student's elective choices for their active syllabus and re-counts coverage."""
     if enrollment.status != Enrollment.Status.ACTIVE:
@@ -770,6 +785,34 @@ def _retired_subject(subject_id):
     from modules.syllabus.models import Subject
 
     return Subject.objects.filter(pk=subject_id, scheme__status=Scheme.Status.RETIRED).first()
+
+
+def _match_topics(old_done: list[tuple[str, str]], targets: list[Topic]) -> list[Topic]:
+    """
+    Topics of the new chapter that the student finished in the old one: same key first, then same normalised name
+    (so a re-keyed or renumbered topic still carries over). Each target topic is used once, in the old order.
+    """
+    by_key = {t.key: t for t in targets}
+    by_name: dict[str, Topic] = {}
+    for t in targets:
+        by_name.setdefault(matching.normalise(t.name), t)
+    taken: set = set()
+    matched: list[Topic] = []
+    for key, name in old_done:
+        topic = by_key.get(key) or by_name.get(matching.normalise(name))
+        if topic is not None and topic.id not in taken:
+            taken.add(topic.id)
+            matched.append(topic)
+    return matched
+
+
+def _chapter_ref(chapter: Chapter) -> dict:
+    return {
+        "id": str(chapter.id),
+        "key": chapter.key,
+        "name": chapter.name,
+        "subject": {"id": str(chapter.subject_id), "key": chapter.subject.key, "name": chapter.subject.name},
+    }
 
 
 # --- scheme switch with carry-over -----------------------------------------------------------
@@ -808,8 +851,10 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
     settings = get_or_create_settings(user_id)
     revision_days = selectors.revision_days_of(settings)
     new_progress = {p.chapter_id: p for p in selectors.chapter_progress_for_enrollment(new)}
-    new_chapters = {c.id: c for c in Chapter.objects.filter(subject__scheme=new_scheme, is_active=True)}
-    carried = 0
+    new_chapters = {
+        c.id: c for c in Chapter.objects.filter(subject__scheme=new_scheme, is_active=True).select_related("subject")
+    }
+    carried_ids: list = []
     touched: list[ChapterProgress] = []
 
     for chapter_id, incoming in maps.items():
@@ -817,7 +862,6 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
         if target is None:
             continue
         target_topics = list(new_chapters[chapter_id].topics.filter(is_active=True).order_by("sort_order", "key"))
-        by_key = {t.key: t for t in target_topics}
         carried_topics: dict = {}
         counts = {"practice": 0, "mock": 0, "revision": 0}
         study_seconds = 0
@@ -830,14 +874,17 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
             ratio = float(m.carry_ratio)
             all_excluded = all_excluded and src.is_excluded
             confidence = confidence or src.confidence
-            old_done_keys = list(
+            old_done = list(
                 TopicProgress.objects.filter(user_id=user_id, topic__chapter_id=m.from_chapter_id, is_done=True)
                 .select_related("topic")
                 .order_by("topic__sort_order", "topic__key")
-                .values_list("topic__key", flat=True)
+                .values_list("topic__key", "topic__name")
             )
-            matched = [k for k in old_done_keys if k in by_key]
-            carried_topics.update({by_key[k].id: by_key[k] for k in matched[: math.floor(len(matched) * ratio + 0.5)]})
+            matched = _match_topics(old_done, target_topics)
+            # Topics are matched by name, so the ratio only trims them for an editor's explicit "partial" row.
+            topic_ratio = ratio if m.relation == ChapterMap.Relation.PARTIAL else 1.0
+            for topic in matched[: math.floor(len(matched) * topic_ratio + 0.5)]:
+                carried_topics[topic.id] = topic
             implicit = implicit or (src.implicit_topic_done and not target_topics)
             counts["practice"] += math.floor(src.practice_count * ratio)
             counts["mock"] += math.floor(src.mock_count * ratio)
@@ -906,7 +953,7 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
         if all_excluded and incoming and not target.is_excluded:
             _append_event(new, chapter_id, EventType.EXCLUDED, source=Source.CARRYOVER, occurred_at=now)
             apply_event(target, EventType.EXCLUDED, occurred_at=now, revision_days=[])
-        carried += 1
+        carried_ids.append(chapter_id)
         touched.append(target)
         _ = wrote
 
@@ -921,13 +968,45 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
     }
     if carried_choices:
         set_electives(new, carried_choices)
+    return new, _switch_summary(new_progress, new_chapters, old_rows, maps, carried_ids)
+
+
+def _switch_summary(new_progress: dict, new_chapters: dict, old_rows: dict, maps: dict, carried_ids: list) -> dict:
+    """The lists behind the switch screen: chapters that carried, chapters new to the student, chapters that are gone."""
     mapped_old = {m.from_chapter_id for ms in maps.values() for m in ms}
-    summary = {
-        "carried_chapters": carried,
-        "new_chapters": len(new_progress) - len(maps),
-        "removed_chapters": len([cid for cid in old_rows if cid not in mapped_old and old_rows[cid].chapter.is_active]),
+    old_chapters = {
+        c.id: c for c in Chapter.objects.filter(id__in=list(old_rows), is_active=True).select_related("subject")
     }
-    return new, summary
+
+    def in_order(chapters):
+        return sorted(chapters, key=lambda c: (c.subject.sort_order, c.subject.key, c.sort_order, c.key))
+
+    carried = []
+    for chapter in in_order(new_chapters[cid] for cid in carried_ids):
+        incoming = maps[chapter.id]
+        sources = [old_chapters[m.from_chapter_id] for m in incoming if m.from_chapter_id in old_chapters]
+        carried.append(
+            {
+                **_chapter_ref(chapter),
+                "relation": ChapterMap.Relation.MERGED if len(incoming) > 1 else incoming[0].relation,
+                "from": [_chapter_ref(c) for c in in_order(sources)],
+            }
+        )
+    carried_set = set(carried_ids)
+    new = [
+        _chapter_ref(c)
+        for c in in_order(new_chapters[cid] for cid in new_progress if cid in new_chapters)
+        if c.id not in carried_set
+    ]
+    removed = [_chapter_ref(c) for c in in_order(old_chapters.values()) if c.id not in mapped_old]
+    return {
+        "carried_chapters": len(carried),
+        "new_chapters": len(new),
+        "removed_chapters": len(removed),
+        "carried": carried,
+        "new": new,
+        "removed": removed,
+    }
 
 
 # --- rebuild from the ledger -----------------------------------------------------------------

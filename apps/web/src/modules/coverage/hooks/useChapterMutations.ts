@@ -2,9 +2,10 @@ import { type QueryClient, useMutation, useQueryClient } from '@tanstack/react-q
 
 import { track } from '~/modules/observability'
 
-import { logEvent, newClientId, setChapterExclusion, setConfidence, tickChapter, tickTopic } from '../lib/api'
+import { setChapterExclusion, setConfidence } from '../lib/api'
 import { computeComponents, DEFAULT_WEIGHTS, deriveStatus } from '../lib/formula'
 import { coverageKeys } from '../lib/keys'
+import { logEventOrQueue, tickChapterOrQueue, tickTopicOrQueue } from '../lib/queuedWrites'
 import type {
   ChapterCoverage,
   ChapterRow,
@@ -88,10 +89,9 @@ export function useTickTopic(ctx: Ctx) {
   const qc = useQueryClient()
   const key = coverageKeys.chapter(ctx.chapterId)
   return useMutation({
-    mutationFn: ({ topicId, done }: { topicId: string | null; done: boolean }) => {
-      const clientId = newClientId()
-      return topicId ? tickTopic(topicId, done, clientId) : tickChapter(ctx.chapterId, done, clientId)
-    },
+    // Null means the write was queued (no network): the optimistic state stays and the queue syncs it later.
+    mutationFn: ({ topicId, done }: { topicId: string | null; done: boolean }) =>
+      topicId ? tickTopicOrQueue(topicId, done) : tickChapterOrQueue(ctx.chapterId, done),
     onMutate: async ({ topicId, done }) => {
       await qc.cancelQueries({ queryKey: key })
       const previous = qc.getQueryData<ChapterCoverage>(key)
@@ -110,6 +110,10 @@ export function useTickTopic(ctx: Ctx) {
       if (c?.previous) qc.setQueryData(key, c.previous)
     },
     onSuccess: (state, { done }, c) => {
+      if (!state) {
+        track('coverage_write_queued', { kind: 'tick' })
+        return
+      }
       const prev = c?.overview?.subjects.find((s) => s.id === ctx.subjectId)
       trackMilestones('subject', prev?.pct_simple, state.subject.pct_simple)
       trackMilestones('level', c?.overview?.level.pct_simple, state.level.pct_simple)
@@ -136,8 +140,12 @@ export function useLogEvent(ctx: Ctx) {
   const qc = useQueryClient()
   return useMutation({
     mutationFn: ({ type, value }: { type: EventType; value?: number | null }) =>
-      logEvent({ chapter_id: ctx.chapterId, type, value: value ?? null, client_id: newClientId() }),
+      logEventOrQueue({ chapter_id: ctx.chapterId, type, value: value ?? null }),
     onSuccess: (state, { type, value }) => {
+      if (!state) {
+        track('coverage_write_queued', { kind: type })
+        return
+      }
       track(EVENT_NAME[type], {
         subject_key: ctx.subjectKey,
         chapter_key: ctx.chapterKey,

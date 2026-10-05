@@ -1,9 +1,9 @@
 import { Card, Section } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { courses } from '~/modules/catalog'
+import type { PublicCourse } from '../lib/load'
 
-export function CoursesIndex() {
+export function CoursesIndex({ courses }: { courses: PublicCourse[] }) {
   return (
     <Section eyebrow="Courses" title="CA, CS and CMA" description="Choose a course to explore its levels and papers.">
       <div className="grid gap-5 md:grid-cols-3">

@@ -7,3 +7,4 @@ PyJWT[crypto]>=2.10
 sentry-sdk[django]>=2.20
 google-genai>=1.0
 whitenoise>=6.9
+posthog>=7,<8

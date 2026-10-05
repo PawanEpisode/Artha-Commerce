@@ -9,9 +9,21 @@ interface Props {
   subjects: SubjectRow[]
   electives?: ElectiveSlot[]
   weighted: boolean
+  /** An explicit ?view on the map, carried to the paper screen so both show the same numbers. */
+  view?: 'weighted' | 'simple'
 }
 
-function Row({ subject, weighted, notChosen }: { subject: SubjectRow; weighted: boolean; notChosen: boolean }) {
+function Row({
+  subject,
+  weighted,
+  notChosen,
+  view,
+}: {
+  subject: SubjectRow
+  weighted: boolean
+  notChosen: boolean
+  view?: 'weighted' | 'simple'
+}) {
   const pct = pick(subject, weighted)
   const allExcluded = subject.chapters_total === 0
   return (
@@ -20,6 +32,7 @@ function Row({ subject, weighted, notChosen }: { subject: SubjectRow; weighted: 
         <Link
           to="/app/syllabus/$subject"
           params={{ subject: subject.id }}
+          search={view ? { view } : {}}
           className="flex items-center gap-4 rounded-xl p-4 outline-none"
         >
           <span className="min-w-0 flex-1 space-y-2">
@@ -45,7 +58,7 @@ function Row({ subject, weighted, notChosen }: { subject: SubjectRow; weighted: 
 }
 
 /** Groups (Group 1, Group 2) with their papers, each with a bar and percent. */
-export function SubjectProgressList({ groups, subjects: allSubjects, electives = [], weighted }: Props) {
+export function SubjectProgressList({ groups, subjects: allSubjects, electives = [], weighted, view }: Props) {
   // Once an elective is chosen the other options are out of the student's syllabus; until then all of them are listed.
   const chosenBySlot = new Map(electives.map((e) => [e.key, e.chosen]))
   const subjects = allSubjects.filter((s) => {
@@ -87,6 +100,7 @@ export function SubjectProgressList({ groups, subjects: allSubjects, electives =
                 key={s.id}
                 subject={s}
                 weighted={weighted}
+                view={view}
                 notChosen={Boolean(s.elective_slot) && !chosenBySlot.get(s.elective_slot ?? '')}
               />
             ))}

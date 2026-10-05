@@ -2,10 +2,12 @@ import { ArrowLeft, Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
-import type { Course, Level } from '~/modules/catalog'
+import type { Level } from '~/modules/catalog'
+
+import type { PublicCourse } from '../lib/load'
 
 interface Props {
-  course: Course
+  course: PublicCourse
   level: Level
   /** The curated syllabus (grouped papers). When absent, the indicative static list is shown. */
   syllabus?: ReactNode
@@ -13,9 +15,11 @@ interface Props {
   subjectCount?: number
   /** Scheme name and source, shown under the intro. */
   meta?: ReactNode
+  /** "Report a wrong item" control, shown under the papers when there is a curated syllabus. */
+  report?: ReactNode
 }
 
-export function LevelDetail({ course, level, syllabus, subjectCount, meta }: Props) {
+export function LevelDetail({ course, level, syllabus, subjectCount, meta, report }: Props) {
   const count = subjectCount ?? level.subjects.length
   return (
     <Container className="max-w-3xl py-16 sm:py-24">
@@ -48,6 +52,7 @@ export function LevelDetail({ course, level, syllabus, subjectCount, meta }: Pro
           ))}
         </ol>
       )}
+      {report ? <div className="mt-8">{report}</div> : null}
       <Button size="lg" className="mt-10" asChild>
         <Link to="/login">Plan my {level.name} prep</Link>
       </Button>

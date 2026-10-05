@@ -146,7 +146,7 @@ def test_switching_scheme_carries_progress_and_lists_what_is_new_or_removed(api,
     old.save()
     new = second_scheme()
     publish_scheme(new)
-    assert build_default_chapter_map(old, new) == 3  # gst-itc, residential-status, companies-act
+    assert build_default_chapter_map(old, new).created == 3  # gst-itc, residential-status, companies-act
 
     for t in ids["topics"][:3]:
         api.put(f"/coverage/topics/{t}/", {"done": True})
@@ -161,7 +161,13 @@ def test_switching_scheme_carries_progress_and_lists_what_is_new_or_removed(api,
     res = api.patch(f"/coverage/enrollments/{old_enrollment.id}/", {"scheme": str(new.id)})
     assert res.status_code == 200, res.json_body
     assert res.json_body["scheme"]["code"] == "2025" and res.json_body["carried_from"] == str(old_enrollment.id)
-    assert res.json_body["switch_summary"] == {"carried_chapters": 3, "new_chapters": 1, "removed_chapters": 1}
+    summary = res.json_body["switch_summary"]
+    assert (summary["carried_chapters"], summary["new_chapters"], summary["removed_chapters"]) == (3, 1, 1)
+    assert [c["name"] for c in summary["carried"]] == ["GST: Input Tax Credit", "Residential status", "Companies Act"]
+    assert [c["name"] for c in summary["new"]] == ["Brand new chapter"]
+    assert [c["name"] for c in summary["removed"]] == ["Heads of income"]
+    assert summary["carried"][0]["subject"]["name"] == "Taxation" and summary["carried"][0]["relation"] == "same"
+    assert [f["name"] for f in summary["carried"][0]["from"]] == ["GST: Input Tax Credit"]
 
     old_enrollment.refresh_from_db()
     assert old_enrollment.status == "archived"

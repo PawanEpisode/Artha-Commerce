@@ -67,7 +67,7 @@ export function OnboardingContainer() {
     [subjects, chapterQueries],
   )
 
-  if (!enabled) return <Navigate to="/app" replace />
+  if (!enabled || overview.featureDisabled) return <Navigate to="/app" replace />
   // Already enrolled (and not in the middle of this flow): straight to the map.
   if (ov && !created) return <Navigate to="/app/syllabus" replace />
 

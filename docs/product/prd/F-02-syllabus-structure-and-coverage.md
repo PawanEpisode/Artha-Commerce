@@ -145,12 +145,12 @@ P0 must ship in v1, P1 should ship in v1, P2 can follow.
 | FR-2 | Every syllabus node has a stable `key` (slug) that never changes across schemes, plus display `name` | P0 | A renamed chapter keeps its key, so old links and progress keep working. |
 | FR-3 | Marks weightage per chapter (min and max marks, or a single value) and total marks per subject | P0 | Given a 15-mark chapter, then the marks-weighted view counts it more than a 5-mark chapter. |
 | FR-4 | Scheme versions with status draft, published, retired and an applicability window (from exam term, to exam term) | P0 | Given two schemes, then an enrolment is bound to exactly one. |
-| FR-5 | Chapter mapping between schemes (same, split, merged, removed, new) | P1 | Given a scheme switch, then progress carries over for mapped chapters. |
-| FR-6 | Public indexable pages: course list, level, subject and chapter with title, description, JSON-LD and OG image | P0 | Given the chapter URL shared on WhatsApp, then the preview shows chapter name, paper and course. |
+| FR-5 | Chapter mapping between schemes (same, split, merged, removed, new). The default map is proposed from equal keys, then equal or close names and position in the paper, then merges and splits; every proposal below high confidence, and every merge, split, move or rename, is flagged for editor review | P1 | Given a scheme switch, then progress carries over for mapped chapters, and topics carry over on equal keys or equal names. Given a chapter renamed between schemes, then the proposed map links it and flags it for review. |
+| FR-6 | Public indexable pages: course list, level, subject and chapter with title, description, JSON-LD and OG image. Course, level and paper pages share a per-course image; chapter pages have their own. Pages read the API and fall back to the static catalog | P0 | Given the chapter URL shared on WhatsApp, then the preview shows chapter name, paper and course. |
 | FR-7 | Sitemap includes all published syllabus pages | P0 | `sitemap.xml` lists every published subject and chapter URL. |
-| FR-8 | Admin can create, edit, reorder and publish nodes; publish makes a scheme visible, retiring does not delete | P0 | Given a draft scheme, then it is invisible to students until published. |
+| FR-8 | Admin can create, edit, reorder (drag and drop, or Alt+Arrow keys, for papers, chapters and topics) and publish nodes; publish makes a scheme visible, retiring does not delete | P0 | Given a draft scheme, then it is invisible to students until published. Given a dragged chapter, then its siblings are renumbered and the move is in the change history. |
 | FR-9 | Seed loader that is idempotent and keyed on stable keys | P0 | Running the seed twice creates no duplicates. |
-| FR-10 | "Report a wrong syllabus item" from any public or private page | P1 | Report is stored with the node and the user (optional). |
+| FR-10 | "Report a wrong syllabus item" from any public or private page: level, paper and chapter pages, and the syllabus map, paper and chapter screens | P1 | Report is stored with the node and the user (optional). |
 | FR-11 | Exam term calendar (for example May 2027 attempt) with exam start and end dates | P1 | Given a term, then the app shows days remaining. |
 
 ### Coverage (F-02)
@@ -162,20 +162,21 @@ P0 must ship in v1, P1 should ship in v1, P2 can follow.
 | FR-14 | Topic checklist per chapter with tick and untick | P0 | Given a chapter with 10 topics and 4 ticked, then read progress is 40%. |
 | FR-15 | Log events: practice set done, mock or past paper done (with optional score), revision done | P0 | Given a revision logged today, then `revision_count` increments and the next due date is set. |
 | FR-16 | Coverage formula: `coverage = read*wR + practice*wP + revise*wV + mock*wM`, each component 0 to 100, weights sum to 100, default 40/30/20/10 | P0 | Given read 100, practice 50, revise 50, mock 0, then coverage is 65. |
-| FR-17 | Component targets per chapter: practice sets target, revisions target, mocks target (defaults 1, 2 and 1, overridable by admin per chapter) | P1 | Given a target of 2 revisions and 1 done, then revise component is 50. |
+| FR-17 | Component targets per chapter: practice sets target, revisions target, mocks target (defaults 1, 2 and 1, overridable by admin per chapter, editable in the chapter list) | P1 | Given a target of 2 revisions and 1 done, then revise component is 50. |
 | FR-18 | Chapter status derived from the data: not started, reading, practised, revised once, revised twice or more, exam ready (coverage 85 or more and at least 2 revisions) | P0 | Status updates within one second of an event. |
 | FR-19 | Spaced revision schedule: next due date after each revision (defaults 3, 7, 21, 45 days, configurable) | P1 | Given the first revision today, then the due date is in 3 days. |
 | FR-20 | "Due for revision" list across the enrolment, ordered by overdue days and marks weight | P1 | Overdue and high-weight chapters appear first. |
 | FR-21 | Confidence rating per chapter: red, amber, green, shown beside the measured percent | P1 | Rating is stored per student and chapter. |
 | FR-22 | Exclude a chapter or subject; excluded nodes are removed from percent maths | P0 | Excluding a chapter of 10 marks changes the denominators of its subject. |
-| FR-23 | Marks-weighted roll-up toggle (simple average or marks-weighted) | P1 | Toggle changes subject and level percent without reloading. |
+| FR-23 | Marks-weighted roll-up toggle (simple average or marks-weighted) on the syllabus map and on the paper screen; an explicit `?view` is kept when moving from the map to a paper | P1 | Toggle changes subject and level percent without reloading. Given `?view=weighted` on either screen, then both show the weighted percent. |
 | FR-24 | Quick catch-up: select several chapters or a whole subject and mark them as read, with an optional "also revised once" | P0 | Given three chapters selected, then three read components become 100 and the ring animates. |
 | FR-25 | Custom weights and revision schedule on the Coverage settings page, with reset to defaults | P1 | Weights must total 100; otherwise Save is disabled. |
 | FR-26 | Event ledger API for other modules: `POST` internal service call `coverage.services.record_event` with type, chapter, value, source, client id | P0 | Duplicate client ids create one event. |
 | FR-27 | Time forwarded by the tracker is shown as "last studied" and "total minutes" per chapter; it does not change the percent | P1 | After a Pomodoro round tagged to a chapter, the chapter shows updated last studied. |
-| FR-28 | Scheme switch with carry-over and a summary screen of what carried and what is new | P1 | Given a mapped chapter at 60%, then it shows 60% in the new scheme. |
+| FR-28 | Scheme switch with carry-over and a summary of what carried, what is new and what no longer exists, as lists of chapters and not only counts | P1 | Given a mapped chapter at 60%, then it shows 60% in the new scheme and is listed under carried, with the old chapter it came from. |
 | FR-29 | Export all coverage data (JSON) and delete all coverage data | P2 | Delete removes enrolments, progress, events and settings. |
-| FR-30 | Feature flag `syllabus_coverage`; public syllabus pages are not behind a flag | P0 | Flag off hides My Coverage only. |
+| FR-30 | Feature flag `syllabus_coverage`, evaluated on the web and on the API (PostHog, per user, fail-open); public syllabus pages are not behind a flag; a student can always export and delete their own data | P0 | Flag off hides My Coverage only. Given the flag off for a user, then every coverage endpoint except export and delete answers 403 `feature_disabled` and the web shows the "not available yet" state. |
+| FR-31 | Coverage writes that carry a client id (tick a topic or chapter, log an event) are kept in a persisted offline queue when the network fails, shown as "N changes saved on this device", and replayed in order with the same client ids when the student is back online | P1 | Given a tick made offline and replayed twice, then the server counts it once. |
 
 ## 7. Screens, URLs and design-system needs
 
@@ -250,12 +251,12 @@ All paths under `/api/v1/`. Errors use `{"error": {code, message, details}}`.
 
 Public pages are rendered on the server by the web app through route loaders that call these endpoints, so crawlers and WhatsApp see full HTML.
 
-### Coverage (auth required)
+### Coverage (auth required, and gated by the `syllabus_coverage` flag except export and delete)
 
 | Method and path | Purpose |
 | --- | --- |
 | GET, POST `coverage/enrollments/` | List, create enrolment |
-| PATCH `coverage/enrollments/{id}/` | Change term, date, scheme (with carry-over), archive |
+| PATCH `coverage/enrollments/{id}/` | Change term, date, scheme (with carry-over), archive. A scheme change returns `switch_summary`: counts plus `carried` (chapter, subject, relation, the old chapters it came from), `new` and `removed` lists |
 | PUT `coverage/enrollments/{id}/electives/` | Choose the elective for each optional paper `{choices: {slot_key: subject_id or null}}`; only the chosen one counts |
 | GET `coverage/overview/` | Level, group, subject percents for the active enrolment (params: `weighted`) |
 | GET `coverage/subjects/{subject_id}/` | Chapter rows with percent, status, confidence |
@@ -283,6 +284,8 @@ Internal service interface (not HTTP): `coverage.services.record_event(user_id, 
 | `chapter_excluded` | subject_key |
 | `coverage_settings_changed` | changed_keys |
 | `scheme_switched` | from, to, carried_count, new_count |
+| `electives_chosen` | slots (how many elective papers were set in the request), cleared (true when one was set back to "decide later") |
+| `coverage_write_queued` | kind (tick, practice_done, mock_done or revision_done): a write was saved on the device because the network failed |
 | `syllabus_issue_reported` | node_type |
 | `coverage_milestone_reached` | scope (subject or level), milestone (25, 50, 75, 100) |
 

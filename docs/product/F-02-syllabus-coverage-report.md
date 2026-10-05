@@ -6,8 +6,8 @@ Date: 5 Oct 2026. Scope: PRD `F-02-syllabus-structure-and-coverage`, its ERD, th
 
 | Area | Status |
 | --- | --- |
-| PRD requirements present in the ERD | 30 of 30 present; 4 only partly (FR-5, FR-8, FR-29, FR-30), clarified in the ERD below |
-| Requirements implemented in code | 21 yes, 9 partial, 0 missing (details in section 3) |
+| PRD requirements present in the ERD | 31 of 31 present (FR-31, the offline queue, was added with the open items) |
+| Requirements implemented in code | 30 yes, 1 partial (FR-3, a content gap: CA and CS chapters have no marks), 0 missing (details in section 3) |
 | Syllabus content: CMA (3 levels, 22 papers) | Loaded from the CMA Syllabus 2022 PDF: 231 chapters, 1,132 topics |
 | Syllabus content: CS (CSEET, Executive, Professional) | Loaded from the ICSI Syllabus 2022 PDF: 4 + 7 + 16 papers, 407 chapters, 2,772 topics |
 | Syllabus content: CA (Foundation, Intermediate, Final, SPOM) | Loaded from the 36 ICAI paper PDFs: 4 + 6 + 6 + 16 papers, 304 chapters, 1,478 topics. No marks per chapter (ICAI does not publish them) |
@@ -18,7 +18,7 @@ Date: 5 Oct 2026. Scope: PRD `F-02-syllabus-structure-and-coverage`, its ERD, th
 2. The model had no place for the Section or Part a chapter belongs to (CMA Section A/B with weightage, CS Part I/II with marks, CA Section A/B and Part I/II), nor for the source document of a paper. Added `Chapter.section` and `Subject.source_url` (migration `0004`), exposed in admin, API, JSON import and export.
 3. ICAI Self-Paced Online Modules had no level. Added CA level `spom` (migration `0005`, idempotent).
 4. ERD brought in line: new columns, `spom`, seed content table, FR-5 "new/removed" are derived, `coverage_enrollment.level_id` documented.
-5. Tests: `test_seed_content.py` (papers per level, key and length limits, section weights, load, export and import round trip); the seed command test and the public courses test were updated. API suite: 129 passed, ruff clean, no pending migrations.
+5. Tests: `test_seed_content.py` (papers per level, key and length limits, section weights, load, export and import round trip); the seed command test and the public courses test were updated. API suite: 154 passed, ruff clean, no pending migrations (after the per-level exam terms, elective choice, admin filters and chapter navigation work). After the open items were closed: API 212 passed and 2 skipped (the two row-level security checks need Postgres and run in CI, and were run once against Postgres 16), web 108 tests in 15 files.
 
 ## 3. PRD to ERD to code (requirements)
 
@@ -28,28 +28,33 @@ Date: 5 Oct 2026. Scope: PRD `F-02-syllabus-structure-and-coverage`, its ERD, th
 | FR-2 stable keys | yes | yes | |
 | FR-3 marks weightage | yes | partial | Chapters with no marks weigh 1 in the weighted view. Mitigated for CMA by giving every chapter a weight (section 5) |
 | FR-4 scheme versions | yes | yes | |
-| FR-5 chapter mapping | partial | partial | ERD stores same/split/merged/partial; "new/removed" are derived (now documented). Default map only links equal keys; topics carry over only on equal keys |
-| FR-6 public pages + OG | yes | partial | OG image is the default one; no per-course or per-chapter image. `/courses` and `/courses/$course` read the static catalog |
+| FR-5 chapter mapping | yes | yes | ERD stores same/split/merged/partial; "new/removed" are derived. The default map matches by key, then normalised name and position, then proposes merges and splits, and flags low-confidence rows for review (`basis`, `confidence`, `needs_review`); topics carry over on equal keys or names |
+| FR-6 public pages + OG | yes | yes | Course, level and paper pages use a per-course card, chapters their own (`/og/courses/...`, 1200x630 PNG). `/courses` and `/courses/$course` read the API and fall back to the static catalog |
 | FR-7 sitemap | yes | yes | |
-| FR-8 admin edit/publish | partial | partial | Reordering is a number field, no drag and drop |
+| FR-8 admin edit/publish | yes | yes | Drag and drop (and Alt+Arrow) ordering for papers, chapters and topics |
 | FR-9 idempotent seed | yes | yes | |
-| FR-10 report wrong item | yes | partial | Link missing on course/level pages and on `/app/syllabus` screens |
+| FR-10 report wrong item | yes | yes | On level, paper and chapter pages, the syllabus map and the paper screen |
 | FR-11 exam terms | yes | yes | Term dates are empty until confirmed from the institutes |
 | FR-12 to FR-16 | yes | yes | |
-| FR-17 chapter targets | yes | partial | Editable only on the full chapter form |
+| FR-17 chapter targets | yes | yes | Editable in the chapter list |
 | FR-18, FR-19, FR-20, FR-21, FR-22 | yes | yes | |
-| FR-23 weighted toggle | yes | partial | Subject screen ignores `?view` |
+| FR-23 weighted toggle | yes | yes | The paper screen honours and keeps `?view`, with its own toggle |
 | FR-24 catch-up | yes | yes | |
 | FR-25 settings | yes | yes | Total shows red when not 100; server rejects it |
 | FR-26 event ledger | yes | yes | |
 | FR-27 tracker time | yes | yes | No `tracking` module yet, so nothing calls it |
-| FR-28 scheme switch | yes | partial | Summary shows counts, not the list of carried and new chapters |
-| FR-29 export, delete | partial | yes | |
-| FR-30 feature flag | partial | partial | Web only; API not gated; defaults on when PostHog is not loaded |
+| FR-28 scheme switch | yes | yes | Summary lists the carried, new and removed chapters |
+| FR-29 export, delete | yes | yes | Stay available when the flag is off |
+| FR-30 feature flag | yes | yes | Web and API (PostHog, per user, fail-open: on when PostHog is unreachable or not configured) |
+| FR-31 offline queue | yes | yes | Tick and log writes persist in IndexedDB and replay with their client ids |
 
-Also checked: all 21 PRD endpoints exist under the same paths, all PRD screens have a route, all 12 analytics events are emitted. Not in the ERD: the feature flag behaviour, analytics events, offline queue (not built), per-course OG images. The ERD claim "a test asserts RLS" has no test yet.
+Also checked: all 21 PRD endpoints exist under the same paths, all PRD screens have a route, all 14 analytics events are in the PRD table and emitted (`electives_chosen` and `coverage_write_queued` were added). The ERD now describes the flag, the offline queue, the OG routes and the map review fields, and a test asserts row-level security on every syllabus and coverage table.
 
 These partial items are about the student features, not the syllabus content. None block the content in Django admin; they are the follow-up list.
+
+### Added after the first audit
+
+Exam terms per level; elective choice (onboarding step, syllabus map picker, `PUT coverage/enrollments/{id}/electives/`); `--prune-legacy` cleanup of the placeholder schemes; section grouping, paper PDF link and SPOM on the web; Paper and Chapter filters in the Topic and Chapter admin lists; topic counts, previous and next chapter links and a chapter search box (papers over 8 chapters) in the API and web.
 
 ## 4. Content coverage
 
@@ -101,3 +106,11 @@ CMA chapters carry the module weight from the syllabus table (`weight_source = o
 3. CS Professional Paper 1 chapters 19 and 20 and Elective 7.3 chapter 9 have no title in the source; their names were derived from their bullets.
 4. CS Elective 4.5 (Advanced Direct Tax) has no bullets in the source; its topics came from splitting running text.
 5. Exam terms are now per level. Dates are loaded only where announced and reported: CA Foundation 3 to 9 Jan 2027, CA Intermediate 2 to 12 Jan 2027, CMA Foundation 13 Dec 2026, CMA Intermediate and Final 10 to 17 Dec 2026. Check them against the institutes' schedules; other terms (CA May and September 2027, CMA June and December 2027, all CS terms) have no dates yet, and CS terms are still the same three for every level.
+
+## 7. Still open
+
+Code: nothing from the earlier follow-up list is left. Known limits: only tick and log writes are queued offline (catch-up, settings, confidence and exclusion need a connection); the OG cards are drawn with a bundled Inter font, not the site's display font; the row-level security test skips on SQLite and relies on the CI Postgres service.
+
+Content and data: CA and CS chapters have no marks; term dates for CS and for later CA and CMA attempts; admin review of the derived chapter names and split topics listed above; CA Final Paper 3 notes not loaded.
+
+Operations: set `POSTHOG_API_KEY` (and optionally `POSTHOG_HOST`) on the API project; run `migrate` (coverage `0002`, syllabus `0006` to `0009`), `load_syllabus_seed --prune-legacy`, review and publish drafts; run `pnpm check` on a Mac (it was run in a Linux copy of the repo while the open items were built).

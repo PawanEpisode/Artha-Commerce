@@ -2,6 +2,7 @@ import json
 from datetime import timedelta
 
 import pytest
+from django.core.cache import cache
 from django.test import Client
 from django.utils import timezone
 
@@ -39,6 +40,14 @@ class Api:
 
     def delete(self, path):
         return self._send("delete", path)
+
+
+@pytest.fixture(autouse=True)
+def _fresh_throttle_counters():
+    """DRF counts writes per student in the process-wide cache; without this, a long run starts answering 429."""
+    cache.clear()
+    yield
+    cache.clear()
 
 
 @pytest.fixture

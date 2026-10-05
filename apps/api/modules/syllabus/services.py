@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Any
 
@@ -9,6 +10,7 @@ from django.core.exceptions import ValidationError
 from django.db import transaction
 from django.utils import timezone
 
+from . import matching
 from .models import (
     Chapter,
     ChapterMap,
@@ -77,27 +79,137 @@ def retire_scheme(scheme: Scheme) -> Scheme:
 # --- chapter mapping between schemes ---------------------------------------------------------
 
 
+@dataclass
+class ChapterMapReport:
+    """What `build_default_chapter_map` did. `created` counts new rows; rows that already existed are never touched."""
+
+    created: int = 0
+    skipped_existing: int = 0
+    needs_review: int = 0
+    by_basis: dict[str, int] = field(default_factory=dict)
+    splits: int = 0  # old chapters proposed to split into several new ones
+    merges: int = 0  # new chapters proposed to merge several old ones
+    unmatched_old: list[Chapter] = field(
+        default_factory=list
+    )  # no counterpart: students' progress stays on the old scheme
+    unmatched_new: list[Chapter] = field(default_factory=list)  # new in this scheme: start at zero
+
+    def summary(self) -> str:
+        parts = [f"Created {self.created} chapter maps"]
+        if self.needs_review:
+            parts.append(f"{self.needs_review} need your review (filter Chapter maps by 'needs review')")
+        if self.splits or self.merges:
+            parts.append(f"{self.splits} split and {self.merges} merge proposals")
+        parts.append(
+            f"{len(self.unmatched_new)} new chapters and {len(self.unmatched_old)} removed chapters have no map"
+        )
+        return ". ".join(parts) + "."
+
+
+def _items(chapters: list[Chapter]) -> list[matching.Item]:
+    return [matching.Item(c, c.key, c.name, position) for position, c in enumerate(chapters)]
+
+
+def _subject_items(subjects: list[Subject]) -> list[matching.Item]:
+    return [matching.Item(s, s.key, s.name, position) for position, s in enumerate(subjects)]
+
+
+def propose_chapter_map(
+    old_scheme: Scheme, new_scheme: Scheme
+) -> tuple[list[matching.Proposal], list[Chapter], list[Chapter]]:
+    """
+    Proposes chapter maps from `old_scheme` to `new_scheme` without saving anything (see `matching`).
+    Chapters an editor already mapped into the new scheme are left alone. Returns (proposals, unmatched old, unmatched new).
+    """
+    already = ChapterMap.objects.filter(
+        to_chapter__subject__scheme=new_scheme, from_chapter__subject__scheme=old_scheme
+    )
+    mapped_old = set(already.values_list("from_chapter_id", flat=True))
+    mapped_new = set(already.values_list("to_chapter_id", flat=True))
+
+    def chapters_of(scheme: Scheme, skip: set) -> dict:
+        grouped: dict = {}
+        qs = Chapter.objects.filter(subject__scheme=scheme, is_active=True)
+        for chapter in qs.select_related("subject").order_by("sort_order", "key"):
+            if chapter.id not in skip:
+                grouped.setdefault(chapter.subject_id, []).append(chapter)
+        return grouped
+
+    old_by_subject = chapters_of(old_scheme, mapped_old)
+    new_by_subject = chapters_of(new_scheme, mapped_new)
+    old_subjects = list(old_scheme.subjects.order_by("sort_order", "key"))
+    new_subjects = list(new_scheme.subjects.order_by("sort_order", "key"))
+
+    proposals: list[matching.Proposal] = []
+    leftover_old: list[Chapter] = []
+    leftover_new: list[Chapter] = []
+    paired_old: set = set()
+    paired_new: set = set()
+    for old_item, new_item in matching.match_papers(_subject_items(old_subjects), _subject_items(new_subjects)):
+        old_subject, new_subject = old_item.ref, new_item.ref
+        paired_old.add(old_subject.id)
+        paired_new.add(new_subject.id)
+        result = matching.match_chapters(
+            _items(old_by_subject.get(old_subject.id, [])), _items(new_by_subject.get(new_subject.id, []))
+        )
+        proposals.extend(result.proposals)
+        leftover_old.extend(i.ref for i in result.unmatched_old)
+        leftover_new.extend(i.ref for i in result.unmatched_new)
+    for subject in old_subjects:
+        if subject.id not in paired_old:
+            leftover_old.extend(old_by_subject.get(subject.id, []))
+    for subject in new_subjects:
+        if subject.id not in paired_new:
+            leftover_new.extend(new_by_subject.get(subject.id, []))
+
+    moved = matching.match_moved(_items(leftover_old), _items(leftover_new))
+    proposals.extend(moved)
+    moved_old = {p.old.id for p in moved}
+    moved_new = {p.new.id for p in moved}
+    return (
+        proposals,
+        [c for c in leftover_old if c.id not in moved_old],
+        [c for c in leftover_new if c.id not in moved_new],
+    )
+
+
 @transaction.atomic
-def build_default_chapter_map(old_scheme: Scheme, new_scheme: Scheme) -> int:
-    """Creates `same` rows for chapters with the same subject key and chapter key. Editors adjust the rest."""
+def build_default_chapter_map(old_scheme: Scheme, new_scheme: Scheme) -> ChapterMapReport:
+    """
+    Fills the chapter map between two schemes of a level. Matches by key, then by normalised name and position,
+    and proposes splits and merges; anything doubtful is saved with `needs_review` so an editor confirms it in the
+    admin. Safe to repeat: existing rows (including ones an editor changed) are never overwritten.
+    """
     if old_scheme.level_id != new_scheme.level_id:
         raise ValidationError("Schemes must belong to the same level.")
-    new_chapters = {
-        (c.subject.key, c.key): c
-        for c in Chapter.objects.filter(subject__scheme=new_scheme, is_active=True).select_related("subject")
-    }
-    created = 0
-    for old in Chapter.objects.filter(subject__scheme=old_scheme, is_active=True).select_related("subject"):
-        target = new_chapters.get((old.subject.key, old.key))
-        if not target:
-            continue
+    proposals, unmatched_old, unmatched_new = propose_chapter_map(old_scheme, new_scheme)
+    report = ChapterMapReport(unmatched_old=unmatched_old, unmatched_new=unmatched_new)
+    split_sources: set = set()
+    merge_targets: set = set()
+    for p in proposals:
         _, was_created = ChapterMap.objects.get_or_create(
-            from_chapter=old,
-            to_chapter=target,
-            defaults={"relation": ChapterMap.Relation.SAME, "carry_ratio": Decimal("1.00")},
+            from_chapter=p.old,
+            to_chapter=p.new,
+            defaults={
+                "relation": p.relation,
+                "carry_ratio": p.carry_ratio,
+                "basis": p.basis,
+                "confidence": Decimal(str(round(p.confidence, 2))),
+                "needs_review": p.needs_review,
+            },
         )
-        created += int(was_created)
-    return created
+        if not was_created:
+            report.skipped_existing += 1
+            continue
+        report.created += 1
+        report.needs_review += int(p.needs_review)
+        report.by_basis[p.basis] = report.by_basis.get(p.basis, 0) + 1
+        if p.relation == ChapterMap.Relation.SPLIT:
+            split_sources.add(p.old.id)
+        if p.relation == ChapterMap.Relation.MERGED:
+            merge_targets.add(p.new.id)
+    report.splits, report.merges = len(split_sources), len(merge_targets)
+    return report
 
 
 # --- reports ---------------------------------------------------------------------------------

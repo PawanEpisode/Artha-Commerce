@@ -1,9 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { z } from 'zod'
 
 import { SubjectContainer } from '~/modules/coverage'
 import { buildHead } from '~/modules/seo'
 
+const search = z.object({
+  view: z.enum(['weighted', 'simple']).optional().catch(undefined),
+})
+
 export const Route = createFileRoute('/app/syllabus/$subject/')({
+  validateSearch: search,
   head: () =>
     buildHead({
       title: 'Subject coverage',
@@ -13,6 +19,6 @@ export const Route = createFileRoute('/app/syllabus/$subject/')({
     }),
   component: function SubjectRoute() {
     const { subject } = Route.useParams()
-    return <SubjectContainer subjectId={subject} />
+    return <SubjectContainer subjectId={subject} search={Route.useSearch()} />
   },
 })

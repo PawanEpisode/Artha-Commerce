@@ -1,6 +1,8 @@
 import { Button, Card, ChevronRight } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 
+import { ReportIssue } from '~/modules/syllabus'
+
 import { CalculationPopover } from '../components/CalculationPopover'
 import { DueList } from '../components/DueList'
 import { ElectivePicker } from '../components/ElectivePicker'
@@ -75,6 +77,7 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
             subjects={overview.subjects}
             electives={overview.electives}
             weighted={weighted}
+            view={search.view}
           />
           {overview.electives.length > 0 ? (
             <ElectivePicker
@@ -86,6 +89,7 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
               }
             />
           ) : null}
+          <ReportIssue nodeType="level" nodeId={overview.enrollment.level.id} />
         </>
       )}
     </>

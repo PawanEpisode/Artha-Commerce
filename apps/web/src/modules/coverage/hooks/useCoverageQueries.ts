@@ -1,6 +1,15 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getChapter, getDue, getOverview, getSettings, getSubject, isNoEnrollment, listEnrollments } from '../lib/api'
+import {
+  getChapter,
+  getDue,
+  getOverview,
+  getSettings,
+  getSubject,
+  isFeatureDisabled,
+  isNoEnrollment,
+  listEnrollments,
+} from '../lib/api'
 import { coverageKeys } from '../lib/keys'
 
 /** The active enrolment's overview. `data` is undefined and `noEnrollment` true when the student has not enrolled. */
@@ -8,9 +17,9 @@ export function useOverview() {
   const query = useQuery({
     queryKey: coverageKeys.overview,
     queryFn: getOverview,
-    retry: (count, error) => !isNoEnrollment(error) && count < 1,
+    retry: (count, error) => !isNoEnrollment(error) && !isFeatureDisabled(error) && count < 1,
   })
-  return { ...query, noEnrollment: isNoEnrollment(query.error) }
+  return { ...query, noEnrollment: isNoEnrollment(query.error), featureDisabled: isFeatureDisabled(query.error) }
 }
 
 export const useEnrollments = () => useQuery({ queryKey: coverageKeys.enrollments, queryFn: listEnrollments })
