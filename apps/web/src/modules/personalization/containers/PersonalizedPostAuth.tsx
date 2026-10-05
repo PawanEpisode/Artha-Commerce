@@ -7,6 +7,8 @@ import { useFeatureFlag } from '~/modules/observability'
 import { bootstrapKey } from '../hooks/useBootstrap'
 import { getBootstrap } from '../lib/api'
 import { resolvePostAuthDestination } from '../lib/destination'
+import { newestVisit, readLocalVisit } from '../lib/lastVisit'
+import { isRestorable } from '../lib/restorable'
 
 /**
  * Plugs the destination rules (PRD 5.1) into every sign-in surface. Mounted once under the auth provider. When the
@@ -23,7 +25,8 @@ export function PersonalizedPostAuth({ children }: { children: ReactNode }) {
       if (!enabled || !userId) return safeNextPath(next)
       try {
         const facts = await qc.fetchQuery({ queryKey: bootstrapKey(userId), queryFn: getBootstrap, staleTime: 0 })
-        return resolvePostAuthDestination(facts, next)
+        const last_visit = newestVisit(facts.last_visit, readLocalVisit(userId))
+        return resolvePostAuthDestination({ ...facts, last_visit }, next, { isRestorable })
       } catch {
         return safeNextPath(next)
       }

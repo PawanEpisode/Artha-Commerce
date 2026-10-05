@@ -32,7 +32,7 @@ describe('landing redirect script', () => {
   afterEach(() => vi.unstubAllGlobals())
 
   it('sends a stored Supabase session to /app', () => {
-    expect(run({ 'sb-abc-auth-token': session })).toBe('/app')
+    expect(run({ 'sb-abc-auth-token': session })).toBe('/app?from=landing')
   })
   it('leaves signed-out visitors alone', () => {
     expect(run({})).toBeNull()
