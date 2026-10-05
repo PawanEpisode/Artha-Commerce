@@ -9,7 +9,7 @@ from django.apps import apps
 from django.db import connection
 from django.db.models.signals import post_migrate
 
-APP_LABELS = ("syllabus", "coverage", "tracking", "focus")
+APP_LABELS = ("syllabus", "coverage", "tracking", "focus", "profiles")
 
 
 def app_tables(*labels: str) -> list[str]:
