@@ -604,7 +604,22 @@ X-03 Gamification, X-02 Context Agent, payments, mentor mode, WhatsApp channel
 | 2 | **F-01.1 Pomodoro Focus Timer** | `prd/F-01.1-pomodoro-focus-timer.md` | `erd/F-01.1-pomodoro-focus-timer.md` | written (Q1 decided) |
 | 3 | **X-04 Ingestion Service (configurable scraping)** | `prd/X-04-ingestion-scraping-service.md` | `erd/X-04-ingestion-scraping-service.md` | written |
 | 4 | **F-01.2 Time Tracker + Analytics** | `prd/F-01.2-time-tracker-and-analytics.md` | `erd/F-01.2-time-tracker-and-analytics.md` | written (draft, Q1 auto-capture open) |
-| 5 | Then the rest in the build order above (Notes, Question Bank, Mock tests, Amendments, Today, ...) | | | |
+| 5 | **F-06 Question Bank System (foundation)** | `prd/F-06-question-bank-system.md` | `erd/F-06-question-bank-system.md` | written (draft for review, 5 Oct 2026) |
+| 6 | **F-05 MCQ Bank** | `prd/F-05-mcq-bank.md` | `erd/F-05-mcq-bank.md` | written (draft for review, 5 Oct 2026) |
+| 7 | **F-09 Previous Year Questions** | `prd/F-09-previous-year-questions.md` | `erd/F-09-previous-year-questions.md` | written (draft for review, 5 Oct 2026) |
+| 8 | **F-08 Mock Tests and MTP** | `prd/F-08-mock-tests-and-mtp.md` | `erd/F-08-mock-tests-and-mtp.md` | written (draft for review, 5 Oct 2026) |
+| 9 | **F-12 Institute Study Material (MAT)** | `prd/F-12-institute-study-material.md` | `erd/F-12-institute-study-material.md` | written (draft for review, 5 Oct 2026) |
+| 10 | **F-04 Super 50 Questions** | `prd/F-04-super-50-questions.md` | `erd/F-04-super-50-questions.md` | written (draft for review, 5 Oct 2026) |
+| 11 | **F-07 AI Answer Evaluation** | `prd/F-07-ai-answer-evaluation.md` | `erd/F-07-ai-answer-evaluation.md` | written (draft for review, 5 Oct 2026) |
+| 12 | **F-10 Performance Analytics** | `prd/F-10-performance-analytics.md` | `erd/F-10-performance-analytics.md` | written (draft for review, 5 Oct 2026) |
+| 13 | **F-11 Paper Analysis and Recommendations** | `prd/F-11-paper-analysis-and-recommendations.md` | `erd/F-11-paper-analysis-and-recommendations.md` | written (draft for review, 5 Oct 2026) |
+| 14 | **F-13 Today (daily tasks) and planner** | `prd/F-13-today-daily-tasks.md` | `erd/F-13-today-daily-tasks.md` | written (draft for review, 5 Oct 2026) |
+| 15 | **F-14 Amendments** | `prd/F-14-amendments.md` | `erd/F-14-amendments.md` | written (draft for review, 5 Oct 2026) |
+| 16 | **F-15 Recall System** | `prd/F-15-recall-system.md` | `erd/F-15-recall-system.md` | written (draft for review, 5 Oct 2026) |
+| 17 | **F-03 Notes and PDF editor** | `prd/F-03-notes-and-pdf-editor.md` | `erd/F-03-notes-and-pdf-editor.md` | written (draft for review, 5 Oct 2026) |
+| 18 | X-01 Notifications, X-03 Gamification, X-02 Context Agent | | | next to write |
+
+Index, build waves and open decisions: `docs/product/README.md`. Implementation audit: `docs/product/validation/`.
 
 Why this order: the syllabus tables are referenced by every other ERD (Pomodoro tags rounds with subject and chapter; Ingestion maps scraped content to chapters). Ingestion publishes into modules (Amendments, Mock tests) that arrive later, so its first phase ships only the generic engine and the Notices type.
 

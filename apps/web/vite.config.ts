@@ -27,6 +27,8 @@ export default defineConfig(({ command, mode }) => {
     customLogger: logger,
     server: { port: 3000 },
     resolve: { tsconfigPaths: true },
+    // resvg is a native addon. The client prebundler tries to parse its .node binary as text and crashes dev startup.
+    optimizeDeps: { exclude: ['@resvg/resvg-js'] },
     // The design system ships as TypeScript source; bundle it for SSR instead of treating it as an external dependency.
     ssr: { noExternal: ['@artha/design-system'], external: ['@resvg/resvg-js', 'satori'] },
     build: {
