@@ -190,7 +190,7 @@ P0 must ship in v1, P1 should ship in v1, P2 can follow.
 | Subject (paper) | `/courses/$course/$level/$subject` | marks, chapters, weightage, group |
 | Chapter | `/courses/$course/$level/$subject/$chapter` | topics, weightage, "Track this chapter" call to action |
 
-Each page uses `buildHead()` with a unique title, description, canonical URL, JSON-LD (`Course` or `Article` style as suitable) and an OG image. The OG image for the shareable pages is generated per course and level.
+Each page uses `buildHead()` with a unique title, description, canonical URL, JSON-LD (`Course` or `Article` style as suitable) and an OG image. Preview images are generated per course (shared by the course, level and paper pages) at `/og/courses/$course`, and per chapter at `/og/courses/$course/$level/$subject/$chapter`; both are 1200x630 PNGs and fall back to the site image on any failure.
 
 ### Private (noindex)
 
@@ -198,7 +198,7 @@ Each page uses `buildHead()` with a unique title, description, canonical URL, JS
 | --- | --- | --- |
 | Onboarding | `/app/onboarding` | course, level, term, catch-up |
 | Syllabus map | `/app/syllabus` | rings and bars for groups and subjects. Query: `?view=weighted&status=due` |
-| Subject coverage | `/app/syllabus/$subject` | chapter list with percent, status, confidence |
+| Subject coverage | `/app/syllabus/$subject` | chapter list with percent, status, confidence. Query: `?view=weighted` |
 | Chapter coverage | `/app/syllabus/$subject/$chapter` | topics, logs, revision history, notes slot |
 | Due for revision | `/app/revision` | later joined by recall (F-15) |
 | Coverage settings | `/app/settings/coverage` | weights, schedule, scheme, exclusions |
@@ -244,8 +244,11 @@ All paths under `/api/v1/`. Errors use `{"error": {code, message, details}}`.
 | --- | --- |
 | GET `syllabus/courses/` | Courses with levels |
 | GET `syllabus/courses/{course}/levels/{level}/` | Level with current scheme, groups, subjects |
-| GET `syllabus/subjects/{subject_id}/` | Subject with chapters and weightage |
-| GET `syllabus/chapters/{chapter_id}/` | Chapter with topics |
+| GET `syllabus/courses/{course}/levels/{level}/subjects/{subject}/` | Subject with chapters and weightage, by key (used by the public pages) |
+| GET `syllabus/courses/{course}/levels/{level}/subjects/{subject}/chapters/{chapter}/` | Chapter with topics, previous and next chapter, by key |
+| GET `syllabus/subjects/{subject_id}/` | Subject with chapters and weightage, by id |
+| GET `syllabus/chapters/{chapter_id}/` | Chapter with topics, by id |
+| GET `syllabus/sitemap/` | Public paths of every published subject and chapter, for `sitemap.xml` |
 | GET `syllabus/terms/` | Exam terms |
 | POST `syllabus/reports/` | Report a wrong item (auth optional, rate limited) |
 
@@ -265,7 +268,9 @@ Public pages are rendered on the server by the web app through route loaders tha
 | POST `coverage/catchup/` | Bulk mark chapters `{chapter_ids, also_revised}` |
 | POST `coverage/events/` | Log practice, mock, revision `{chapter_id, type, value?, client_id}` |
 | PUT `coverage/chapters/{chapter_id}/confidence/` | Red, amber, green |
+| PUT `coverage/chapters/{chapter_id}/read/` | Tick or untick a chapter that has no topics `{done, client_id}` |
 | PUT `coverage/chapters/{chapter_id}/exclusion/` | Exclude or include |
+| PUT `coverage/subjects/{subject_id}/exclusion/` | Exclude or include a whole paper |
 | GET `coverage/due/` | Due for revision |
 | GET, PUT `coverage/settings/` | Weights, schedule, weighted default |
 | GET `coverage/export/` and DELETE `coverage/` | Export and delete all |

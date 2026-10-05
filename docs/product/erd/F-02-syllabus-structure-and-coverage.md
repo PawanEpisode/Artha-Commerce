@@ -396,6 +396,20 @@ Index `(status, created_at)`.
 
 Partial unique index `(user_id, level)` where `status = 'active'` (level is reached through the scheme, stored denormalised as `level_id` for the index). One active enrolment per student and level; a student can be enrolled in more than one level or course at the same time if needed later.
 
+### 3.1a `coverage_enrollment_elective`
+
+The elective a student chose for one slot (see the module notes in section 11 for how slots are derived). The options not chosen are excluded through the normal exclusion ledger; this row only remembers the choice.
+
+| Column | Type | Null | Default | Notes |
+| --- | --- | --- | --- | --- |
+| id | uuid | no | gen | PK |
+| user_id | uuid | no | | Owner, indexed |
+| enrollment_id | uuid | no | | FK `coverage_enrollment`, cascade |
+| slot_key | text | no | | `"<group key>:<paper number>"`, for example `electives:20` |
+| subject_id | uuid | no | | FK `syllabus_subject`, protect |
+
+Unique `(enrollment_id, slot_key)`.
+
 ### 3.2 `coverage_settings`
 
 | Column | Type | Null | Default | Notes |
@@ -436,6 +450,7 @@ Index `(enrollment_id, is_done)`.
 | status | text | no | `not_started` | `not_started`, `reading`, `practised`, `revised_once`, `revised_twice_plus`, `exam_ready` |
 | confidence | text | yes | | `red`, `amber`, `green`. Chosen by the student, never derived |
 | is_excluded | boolean | no | false | |
+| implicit_topic_done | boolean | no | false | A chapter with no topics uses one implicit topic; set by `PUT coverage/chapters/{id}/read/` |
 | read_pct | smallint | no | 0 | 0..100 |
 | practice_pct | smallint | no | 0 | |
 | revise_pct | smallint | no | 0 | |
@@ -668,7 +683,7 @@ Deviations and additions made while implementing, so the document matches the co
 - `coverage_settings.revision_days` is a JSON array column (not a Postgres `int[]`), so the same model runs on SQLite in tests. Validation (1 to 8 whole numbers, 1 to 365) lives in `domain/formula.py` and the serializer.
 - `topic_progress`, `rollup` use Django composite primary keys (`user_id`, `topic_id` or scope columns), matching the ERD keys.
 - `chapter_progress.implicit_topic_done` was added: a chapter with no topics uses one implicit topic, ticked through `PUT /coverage/chapters/{id}/read/`.
-- Extra endpoints beyond section 9 of the PRD: `PUT /coverage/chapters/{id}/read/`, `PUT /coverage/subjects/{id}/exclusion/`, `GET /syllabus/sitemap/`, `GET /syllabus/terms/`, `POST /admin/syllabus/schemes/{id}/publish|retire/`.
+- Extra endpoints beyond section 9 of the PRD: `GET /syllabus/terms/`, `POST /admin/syllabus/schemes/{id}/publish|retire/` (all other public and coverage routes are now listed in the PRD).
 - Elective papers (CMA Final Paper 20A/20B/20C, CS Professional Papers 4 and 7): a student sits one option per paper. A *slot* is the set of subjects with `kind = elective` or `is_optional` that share a group and paper number and number at least two (derived, nothing stored on the syllabus; `slot_key` is `"<group key>:<paper number>"`, for example `electives:20`, `group-1:4`). The choice is stored in `coverage_enrollment_elective` (unique per enrolment and slot, migration `coverage.0002`). Coverage follows the choice through the existing exclusion ledger: the chosen option is included, every other option is excluded with `EXCLUDED`/`INCLUDED` events (source `system`), so percentages and `rebuild_enrollment` need no special case. A slot with no choice excludes all its options until the student picks one. Elective papers cannot be excluded or included by hand (400); the choice is the only control. `switch_scheme` carries each choice to the new scheme by subject key. Endpoints: `elective_slots` on `GET /syllabus/courses/{c}/levels/{l}/`, `electives` (slot choices) on `POST /coverage/enrollments/`, `PUT /coverage/enrollments/{id}/electives/` with `{"choices": {"<slot key>": "<subject id>" | null}}`, and `electives`, `subjects[].elective_slot` and `enrollment.electives_pending` on the overview and enrolment payloads. CA has no elective papers in the NSET scheme, so its levels have no slots.
 - Write endpoints return the changed chapter plus its subject and level roll-ups, so one response refreshes the whole screen.
 - Admin editing is done in the Django admin (`/<DJANGO_ADMIN_PATH>/`): reference data, schemes with inline papers, papers with inline chapters, chapters with inline topics, bulk add of chapters and topics from pasted lists, JSON import and export of a whole scheme, publish and retire actions behind a separate permission (groups "Syllabus editors" and "Syllabus publishers"), chapter maps, the reports inbox, and read-only support views of enrolments and the ledger. Nodes of a published or retired scheme cannot be deleted, only switched off.
