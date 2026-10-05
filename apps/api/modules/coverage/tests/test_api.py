@@ -355,7 +355,10 @@ def test_subject_coverage_lists_chapters_in_order(api, ids, enrolled):
 
 
 def test_settings_default_validate_and_recompute(api, ids, enrolled):
-    assert api.get("/coverage/settings/").json_body == {
+    body = api.get("/coverage/settings/").json_body
+    assert {
+        k: body[k] for k in ("w_read", "w_practice", "w_revise", "w_mock", "revision_days", "weighted_default")
+    } == {
         "w_read": 40,
         "w_practice": 30,
         "w_revise": 20,

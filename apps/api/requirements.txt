@@ -8,3 +8,5 @@ sentry-sdk[django]>=2.20
 google-genai>=1.0
 whitenoise>=6.9
 posthog>=7,<8
+httpx>=0.28
+Pillow>=11

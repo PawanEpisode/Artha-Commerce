@@ -86,10 +86,20 @@ def ids(scheme):
     }
 
 
+def set_targets(api, practice_sets=2, revisions=2, mocks=1):
+    res = api.put(
+        "/coverage/settings/", {"targets": {"practice_sets": practice_sets, "revisions": revisions, "mocks": mocks}}
+    )
+    assert res.status_code == 200, res.json_body
+    return res.json_body
+
+
 @pytest.fixture
 def enrolled(api, ids):
+    """Enrolled student with targets practice 2, revisions 2, mocks 1 (what the syllabus table used to say for GST)."""
     res = api.post("/coverage/enrollments/", {"scheme": ids["scheme"], "target_term": ids["term"]})
     assert res.status_code == 201, res.json_body
+    set_targets(api)
     return res.json_body
 
 

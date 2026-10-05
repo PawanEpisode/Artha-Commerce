@@ -8,6 +8,7 @@ only decide whether one more MANUAL log is accepted and what a screen should sho
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from enum import StrEnum
 
 #: A chapter must be at least this covered before the student can rate their confidence in it.
@@ -19,6 +20,91 @@ CAPPED_ACTIVITIES = {
     "revision_done": ("revisions", "revision_count", "Revision rounds"),
     "mock_done": ("mocks", "mock_count", "Mock tests"),
 }
+
+
+#: Student targets are goals per chapter, 0 to 10 each. 0 means "I do not track this activity".
+TARGET_MIN = 0
+TARGET_MAX = 10
+
+
+@dataclass(frozen=True)
+class Targets:
+    """What the student wants to finish in every chapter (F-16 S2). Applies to every chapter of every paper."""
+
+    practice_sets: int = 1
+    revisions: int = 2
+    mocks: int = 1
+
+    def for_event_type(self, event_type: str) -> int:
+        return {"practice": self.practice_sets, "revisions": self.revisions, "mocks": self.mocks}[
+            CAPPED_ACTIVITIES[event_type][0]
+        ]
+
+    def as_tuple(self) -> tuple[int, int, int]:
+        return (self.practice_sets, self.revisions, self.mocks)
+
+
+#: The values every student had before F-16 (they came from the syllabus table). Nothing changes on deploy.
+DEFAULT_TARGETS = Targets()
+
+PRESET_CUSTOM = "custom"
+
+#: Light, Standard and Intense. `[CALIBRATE]` with tutors (PRD Q-F16-1). The web renders these from the API.
+PRESETS: dict[str, Targets] = {
+    "light": Targets(1, 1, 1),
+    "standard": Targets(2, 2, 2),
+    "intense": Targets(3, 3, 3),
+}
+PRESET_LABELS = {"light": "Light", "standard": "Standard", "intense": "Intense", PRESET_CUSTOM: "Custom"}
+
+
+class Direction(StrEnum):
+    SAME = "same"
+    RAISED = "raised"
+    LOWERED = "lowered"
+    MIXED = "mixed"
+
+
+def targets_valid(value: Targets) -> bool:
+    return all(isinstance(n, int) and TARGET_MIN <= n <= TARGET_MAX for n in value.as_tuple())
+
+
+def preset_for(value: Targets) -> str:
+    """The preset these numbers equal, else `custom`. Derived on every save, so it can never disagree with the numbers."""
+    for key, preset in PRESETS.items():
+        if preset == value:
+            return key
+    return PRESET_CUSTOM
+
+
+def direction_of(old: Targets, new: Targets) -> Direction:
+    pairs = list(zip(old.as_tuple(), new.as_tuple(), strict=True))
+    up = any(n > o for o, n in pairs)
+    down = any(n < o for o, n in pairs)
+    if up and down:
+        return Direction.MIXED
+    if up:
+        return Direction.RAISED
+    return Direction.LOWERED if down else Direction.SAME
+
+
+@dataclass(frozen=True)
+class Impact:
+    """How many chapter percentages a change of targets moves. `dropping` is what the web warns about."""
+
+    chapters_changed: int = 0
+    chapters_dropping: int = 0
+    chapters_rising: int = 0
+
+
+def impact_of(changes: list[tuple[int, int]]) -> Impact:
+    """`changes` is (old_pct, new_pct) per chapter."""
+    moved = [(o, n) for o, n in changes if o != n]
+    return Impact(
+        chapters_changed=len(moved),
+        chapters_dropping=sum(1 for o, n in moved if n < o),
+        chapters_rising=sum(1 for o, n in moved if n > o),
+    )
 
 
 class Decision(StrEnum):

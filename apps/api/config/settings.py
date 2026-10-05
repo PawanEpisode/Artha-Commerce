@@ -141,6 +141,13 @@ REST_FRAMEWORK = {
         "tracking_reports": "120/min",
         "tracking_export": "6/hour",
         "focus_write": "120/min",
+        # F-16 profile, onboarding and account data
+        "profile_write": "30/min",
+        "avatar_write": "10/hour",
+        "lastvisit_write": "20/min",
+        "onboarding_write": "60/min",
+        "account_export": "3/hour",
+        "account_delete": "3/day",
     },
     "UNAUTHENTICATED_USER": None,
 }
@@ -152,6 +159,9 @@ CORS_ALLOW_CREDENTIALS = False  # bearer tokens, not cookies
 SUPABASE_URL = env("SUPABASE_URL").rstrip("/")
 SUPABASE_JWT_SECRET = env("SUPABASE_JWT_SECRET")  # legacy HS256 projects; asymmetric keys are read from JWKS
 # Feature flags (PostHog). Leave the key empty to treat every flag as on (local development, tests).
+# Service-role key: Storage writes (avatars) and the Auth Admin API (account deletion). API only, never `VITE_*`, never logged.
+SUPABASE_SERVICE_ROLE_KEY = env("SUPABASE_SERVICE_ROLE_KEY")
+SUPABASE_AVATAR_BUCKET = env("SUPABASE_AVATAR_BUCKET", "avatars")
 # POSTHOG_API_KEY is the project API key (starts with phc_), the same one the web uses as VITE_POSTHOG_KEY.
 POSTHOG_API_KEY = env("POSTHOG_API_KEY")
 POSTHOG_HOST = env("POSTHOG_HOST", "https://us.i.posthog.com")  # the real host, not the web's /ingest proxy

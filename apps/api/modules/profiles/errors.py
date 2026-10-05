@@ -1,0 +1,53 @@
+"""Errors of the profiles module. Each class carries the `default_code` the web branches on."""
+
+from rest_framework import status
+from rest_framework.exceptions import APIException, NotFound
+
+from core.errors import CodedError, Conflict, FeatureDisabled
+
+
+class StepMandatory(Conflict):
+    default_detail = "This step is required."
+    default_code = "step_mandatory"
+
+
+class OnboardingIncomplete(Conflict):
+    default_detail = "Finish the required steps first."
+    default_code = "onboarding_incomplete"
+
+
+class StepNotFound(NotFound):
+    default_detail = "That onboarding step does not exist."
+    default_code = "not_found"
+
+
+class FieldReadOnly(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "This field can no longer be changed here."
+    default_code = "field_read_only"
+
+
+class ConfirmationRequired(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "Type DELETE to confirm."
+    default_code = "confirmation_required"
+
+
+class ReauthRequired(CodedError):
+    status_code = status.HTTP_401_UNAUTHORIZED
+    default_detail = "Confirm it is you with a new code first."
+    default_code = "reauth_required"
+
+
+class DeletionIncomplete(APIException):
+    status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+    default_detail = "We could not finish deleting your account. Try again."
+    default_code = "deletion_incomplete"
+
+    def __init__(self, done: list[str], failed: str):
+        super().__init__()
+        self.extra = {"done": done, "failed": failed}
+
+
+class PersonalizationDisabled(FeatureDisabled):
+    default_detail = "Personalised setup is not available yet."

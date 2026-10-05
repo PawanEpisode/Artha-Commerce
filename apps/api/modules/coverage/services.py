@@ -18,6 +18,7 @@ from typing import Any
 from django.db import IntegrityError, transaction
 from django.utils import timezone
 
+from core import events
 from modules.syllabus import matching
 from modules.syllabus import selectors as syllabus
 from modules.syllabus.models import Chapter, ChapterMap, Scheme, Topic
@@ -62,32 +63,130 @@ def get_or_create_settings(user_id) -> CoverageSettings:
     return obj
 
 
+def _locked_settings(user_id) -> CoverageSettings:
+    """The settings row under a row lock, so two tabs saving at once serialise instead of interleaving recomputes."""
+    get_or_create_settings(user_id)
+    return CoverageSettings.objects.select_for_update().get(pk=user_id)
+
+
+@dataclass(frozen=True)
+class SettingsSaved:
+    settings: CoverageSettings
+    targets_changed: bool = False
+    impact: targets.Impact = targets.Impact()
+
+
 @transaction.atomic
-def update_settings(
-    user_id, *, weights: formula.Weights, revision_days: list[int], weighted_default: bool
-) -> CoverageSettings:
-    if not formula.weights_valid(weights):
+def save_settings(
+    user_id,
+    *,
+    weights: formula.Weights | None = None,
+    revision_days: list[int] | None = None,
+    weighted_default: bool | None = None,
+    new_targets: targets.Targets | None = None,
+) -> SettingsSaved:
+    """
+    One transaction for every settings change, with one recompute at the end (never one per field).
+    Weights and revision gaps arrive together or not at all. A change of targets never touches history: counts and the
+    ledger stay as they are and only the derived percentages move (lowering can only raise them, raising can lower them).
+    Saving the same targets again is a no-op that still records the student's confirmation.
+    """
+    if weights is not None and not formula.weights_valid(weights):
         raise InvalidInput("Weights must be between 0 and 100 and total 100.", {"weights": ["Weights must total 100."]})
-    if not formula.revision_days_valid(revision_days):
+    if revision_days is not None and not formula.revision_days_valid(revision_days):
         raise InvalidInput(
             "Revision schedule is invalid.", {"revision_days": ["Use 1 to 8 gaps, each between 1 and 365 days."]}
         )
-    settings = get_or_create_settings(user_id)
-    settings.w_read, settings.w_practice = weights.read, weights.practice
-    settings.w_revise, settings.w_mock = weights.revise, weights.mock
-    settings.revision_days = revision_days
-    settings.weighted_default = weighted_default
+    if new_targets is not None and not targets.targets_valid(new_targets):
+        raise InvalidInput(
+            "Targets must be whole numbers from 0 to 10.",
+            {"targets": [f"Use {targets.TARGET_MIN} to {targets.TARGET_MAX}."]},
+        )
+
+    settings = _locked_settings(user_id)
+    old_targets = selectors.targets_of(settings)
+    targets_changed = new_targets is not None and new_targets != old_targets
+    needs_recompute = targets_changed
+
+    if weights is not None:
+        needs_recompute = needs_recompute or selectors.weights_of(settings) != weights
+        settings.w_read, settings.w_practice = weights.read, weights.practice
+        settings.w_revise, settings.w_mock = weights.revise, weights.mock
+    if revision_days is not None:
+        settings.revision_days = revision_days
+    if weighted_default is not None:
+        settings.weighted_default = weighted_default
+    if new_targets is not None:
+        settings.target_practice_sets = new_targets.practice_sets
+        settings.target_revisions = new_targets.revisions
+        settings.target_mocks = new_targets.mocks
+        settings.targets_preset = targets.preset_for(new_targets)
+        if targets_changed:
+            settings.targets_version += 1
+        if settings.targets_confirmed_at is None:
+            settings.targets_confirmed_at = timezone.now()
     settings.save()
-    # Percentages recompute immediately; history (the ledger) is not rewritten.
-    for enrollment in selectors.list_enrollments(user_id).filter(status=Enrollment.Status.ACTIVE):
-        _recompute_enrollment(enrollment, settings)
-    return settings
+
+    changes: list[tuple[int, int]] = []
+    if needs_recompute:
+        for enrollment in selectors.list_enrollments(user_id).filter(status=Enrollment.Status.ACTIVE):
+            changes += _recompute_enrollment(enrollment, settings)
+    impact = targets.impact_of(changes) if targets_changed else targets.Impact()
+
+    if targets_changed:
+        transaction.on_commit(
+            lambda: events.emit(
+                "study_targets_changed",
+                user_id=str(user_id),
+                old=old_targets,
+                new=new_targets,
+                version=settings.targets_version,
+                direction=targets.direction_of(old_targets, new_targets),
+                chapters_changed=impact.chapters_changed,
+            )
+        )
+    return SettingsSaved(settings, targets_changed, impact)
+
+
+def update_settings(
+    user_id, *, weights: formula.Weights, revision_days: list[int], weighted_default: bool
+) -> CoverageSettings:
+    return save_settings(
+        user_id, weights=weights, revision_days=revision_days, weighted_default=weighted_default
+    ).settings
 
 
 def reset_settings(user_id) -> CoverageSettings:
+    """Weights and revision gaps back to defaults. The student's targets are their own choice and are kept."""
     return update_settings(
         user_id, weights=formula.Weights(), revision_days=list(DEFAULT_REVISION_DAYS), weighted_default=False
     )
+
+
+def preview_targets(user_id, new_targets: targets.Targets) -> targets.Impact:
+    """
+    Dry run for the "N chapters will drop" dialog: the same recompute as a save, computed in memory and never written.
+    """
+    if not targets.targets_valid(new_targets):
+        raise InvalidInput(
+            "Targets must be whole numbers from 0 to 10.",
+            {"targets": [f"Use {targets.TARGET_MIN} to {targets.TARGET_MAX}."]},
+        )
+    settings = get_or_create_settings(user_id)
+    hypothetical = CoverageSettings(
+        user_id=user_id,
+        w_read=settings.w_read,
+        w_practice=settings.w_practice,
+        w_revise=settings.w_revise,
+        w_mock=settings.w_mock,
+        target_practice_sets=new_targets.practice_sets,
+        target_revisions=new_targets.revisions,
+        target_mocks=new_targets.mocks,
+    )
+    changes: list[tuple[int, int]] = []
+    for enrollment in selectors.list_enrollments(user_id).filter(status=Enrollment.Status.ACTIVE):
+        changes += _recompute_enrollment(enrollment, hypothetical, persist=False)
+    return targets.impact_of(changes)
 
 
 # --- enrolment -------------------------------------------------------------------------------
@@ -100,7 +199,7 @@ def create_enrollment(
     scheme_id,
     target_term_id=None,
     exam_date=None,
-    daily_hours=None,
+    daily_minutes=None,
     carried_from: Enrollment | None = None,
     electives: dict[str, Any] | None = None,
 ) -> Enrollment:
@@ -123,7 +222,7 @@ def create_enrollment(
         archived.status = Enrollment.Status.ACTIVE
         archived.target_term = term or archived.target_term
         archived.exam_date = exam_date or archived.exam_date
-        archived.daily_hours = daily_hours or archived.daily_hours
+        archived.daily_minutes = daily_minutes or archived.planned_minutes
         archived.save()
         if electives:
             _store_electives(archived, electives)
@@ -136,7 +235,7 @@ def create_enrollment(
         level=scheme.level,
         target_term=term,
         exam_date=exam_date,
-        daily_hours=daily_hours,
+        daily_minutes=daily_minutes,
         carried_from=carried_from,
     )
     settings = get_or_create_settings(user_id)
@@ -155,7 +254,7 @@ def create_enrollment(
 
 @transaction.atomic
 def update_enrollment(enrollment: Enrollment, *, data: dict[str, Any]) -> Enrollment:
-    """Change term, exam date or daily hours, or archive. A scheme change goes through `switch_scheme`."""
+    """Change term, exam date or daily study time, or archive. A scheme change goes through `switch_scheme`."""
     if "target_term" in data:
         term = data["target_term"]
         if term and term.level_id != enrollment.scheme.level_id:
@@ -163,7 +262,7 @@ def update_enrollment(enrollment: Enrollment, *, data: dict[str, Any]) -> Enroll
                 "Exam term does not belong to this level.", {"target_term": ["Unknown term for this level."]}
             )
         enrollment.target_term = term
-    for field in ("exam_date", "daily_hours"):
+    for field in ("exam_date", "daily_minutes"):
         if field in data:
             setattr(enrollment, field, data[field])
     if data.get("archive"):
@@ -296,6 +395,7 @@ def _recompute_chapter(
     total, done = counts
     if total == 0:  # implicit single topic: the chapter itself
         total, done = 1, int(progress.implicit_topic_done)
+    student_targets = selectors.targets_of(settings)
     components = formula.compute_components(
         formula.ChapterInputs(
             topics_total=total,
@@ -303,9 +403,9 @@ def _recompute_chapter(
             practice_count=progress.practice_count,
             revision_count=progress.revision_count,
             mock_count=progress.mock_count,
-            target_practice_sets=chapter.target_practice_sets,
-            target_revisions=chapter.target_revisions,
-            target_mocks=chapter.target_mocks,
+            target_practice_sets=student_targets.practice_sets,
+            target_revisions=student_targets.revisions,
+            target_mocks=student_targets.mocks,
         ),
         selectors.weights_of(settings),
     )
@@ -327,13 +427,25 @@ def _save_progress(progress: ChapterProgress) -> None:
     progress.save()
 
 
-def _recompute_enrollment(enrollment: Enrollment, settings: CoverageSettings | None = None) -> None:
-    """Recomputes every chapter of an enrolment and its roll-ups (used after settings change and on rebuild)."""
+def _recompute_enrollment(
+    enrollment: Enrollment, settings: CoverageSettings | None = None, *, persist: bool = True
+) -> list[tuple[int, int]]:
+    """
+    Recomputes every chapter of an enrolment and its roll-ups (used after settings change and on rebuild).
+    Returns (old_pct, new_pct) per chapter so a caller can tell how many percentages moved. With `persist=False`
+    nothing is written (the dry run behind the "N chapters will drop" dialog).
+    """
     settings = settings or get_or_create_settings(enrollment.user_id)
     rows = list(selectors.chapter_progress_for_enrollment(enrollment))
     counts = selectors.topic_counts(enrollment.user_id, [p.chapter_id for p in rows])
+    changes: list[tuple[int, int]] = []
     for progress in rows:
+        before = progress.coverage_pct
         _recompute_chapter(progress, progress.chapter, settings, counts[progress.chapter_id])
+        if not progress.is_excluded:
+            changes.append((before, progress.coverage_pct))
+    if not persist:
+        return changes
     ChapterProgress.objects.bulk_update(
         rows,
         [
@@ -358,6 +470,7 @@ def _recompute_enrollment(enrollment: Enrollment, settings: CoverageSettings | N
         ],
     )
     recompute_rollups(enrollment, rows)
+    return changes
 
 
 def recompute_rollups(enrollment: Enrollment, rows: list[ChapterProgress] | None = None) -> None:
@@ -625,19 +738,12 @@ class RecordResult:
     created: bool
 
 
-def _target_for(chapter: Chapter, event_type: str) -> int:
-    """The target a manual log is checked against. The one lookup F-16 S2 swaps for the student's own targets."""
-    return {
-        EventType.PRACTICE_DONE: chapter.target_practice_sets,
-        EventType.REVISION_DONE: chapter.target_revisions,
-        EventType.MOCK_DONE: chapter.target_mocks,
-    }[event_type]
-
-
-def _enforce_target(progress: ChapterProgress, chapter: Chapter, event_type: str, payload: dict | None) -> None:
-    """Raises when one more manual log would go past the target. Runs under the chapter's row lock."""
+def _enforce_target(
+    progress: ChapterProgress, student_targets: targets.Targets, event_type: str, payload: dict | None
+) -> None:
+    """Raises when one more manual log would go past the student's target. Runs under the chapter's row lock."""
     activity, counter, label = targets.CAPPED_ACTIVITIES[event_type]
-    target = _target_for(chapter, event_type)
+    target = student_targets.for_event_type(event_type)
     count = getattr(progress, counter)
     decision = targets.can_log(count=count, add=int((payload or {}).get("count", 1)), target=target)
     details = {"activity": activity, "target": target, "count": count}
@@ -686,8 +792,9 @@ def record_event_result(
         replay = CoverageEvent.objects.filter(user_id=user_id, client_id=client_id).first()
         if replay:
             return RecordResult(replay, False)
+    settings = get_or_create_settings(user_id)
     if source == Source.MANUAL and type in targets.CAPPED_ACTIVITIES:
-        _enforce_target(progress, chapter, type, payload)
+        _enforce_target(progress, selectors.targets_of(settings), type, payload)
     when = _clean_time(occurred_at)
     event, created = _append_event(
         enrollment,
@@ -708,7 +815,7 @@ def record_event_result(
         value=value,
         payload=payload,
         occurred_at=when,
-        revision_days=selectors.revision_days_of(get_or_create_settings(user_id)),
+        revision_days=selectors.revision_days_of(settings),
     )
     _settle(enrollment, [progress])
     return RecordResult(event, True)
@@ -948,7 +1055,7 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
         scheme_id=new_scheme.id,
         target_term_id=target_term_id or enrollment.target_term_id,
         exam_date=enrollment.exam_date,
-        daily_hours=enrollment.daily_hours,
+        daily_minutes=enrollment.planned_minutes,
         carried_from=enrollment,
     )
 

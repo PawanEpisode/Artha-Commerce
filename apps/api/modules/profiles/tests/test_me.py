@@ -1,4 +1,11 @@
+"""GET/PATCH /me/: the bootstrap that fills the header, the gate and the destination in one request."""
+
 import pytest
+from django.db import connection
+from django.test.utils import CaptureQueriesContext
+
+from modules.profiles.models import Onboarding, Profile
+from modules.profiles.tests.conftest import USER
 
 pytestmark = pytest.mark.django_db
 
@@ -22,28 +29,91 @@ def test_me_rejects_bad_token(client):
     assert res.status_code == 401
 
 
-def test_me_creates_profile_lazily(auth_client):
-    body = auth_client.get("/api/v1/me/").json()
-    assert body["email"] == "student@example.com"
-    assert body["course"] == ""
+def test_the_bootstrap_creates_the_profile_and_onboarding_rows_lazily(api):
+    body = api.get("/me/").json_body
+    assert body["id"] == USER and body["email"] == "student@example.com"
+    assert body["full_name"] == "" and body["first_name"] == ""
+    assert body["avatar"] == {"kind": "initials", "preset_key": None, "version": 0, "urls": None}
+    assert body["onboarding"] == {
+        "status": "not_started",
+        "mode": "full",
+        "required_version": 2,
+        "completed_version": 0,
+        "next_step": "profile",
+        "missing": ["profile", "course", "hours", "targets"],
+    }
+    assert body["course"] is None and body["last_visit"] is None
+    assert Profile.objects.filter(pk=USER).exists() and Onboarding.objects.filter(pk=USER).exists()
 
 
-def test_me_patch_updates_allowed_fields(auth_client):
-    res = auth_client.patch(
-        "/api/v1/me/",
-        data={"course": "ca", "level": "intermediate", "exam_date": "2027-05-02"},
-        content_type="application/json",
-    )
+def test_the_provider_name_is_only_a_suggestion_until_the_student_confirms_it(make_token, db):
+    from modules.profiles.tests.conftest import Api
+
+    google = Api(make_token(user_metadata={"full_name": "Aarav Mehta", "picture": "https://img.example/a.png"}))
+    body = google.get("/me/").json_body
+    assert body["full_name"] == "" and body["name_suggestion"] == "Aarav Mehta"
+    assert body["onboarding"]["next_step"] == "profile"  # confirming the name is a real step
+    assert Profile.objects.get(pk=USER).avatar_url == "https://img.example/a.png"  # kept for "Use my Google photo"
+
+
+def test_the_suggestion_comes_from_the_email_when_there_is_no_provider_name(api):
+    assert api.get("/me/").json_body["name_suggestion"] == "Student"
+
+
+def test_a_warm_bootstrap_costs_at_most_five_queries(api, scheme):
+    api.get("/me/")  # first call creates the rows
+    with CaptureQueriesContext(connection) as queries:
+        assert api.get("/me/").status_code == 200
+    assert len(queries) <= 5, [q["sql"][:80] for q in queries]
+
+
+def test_etag_gives_304_when_nothing_changed(api):
+    first = api.get("/me/")
+    etag = first["ETag"]
+    assert api.get("/me/", HTTP_IF_NONE_MATCH=etag).status_code == 304
+    api.patch("/me/", {"full_name": "Aarav"})
+    assert api.get("/me/", HTTP_IF_NONE_MATCH=etag).status_code == 200
+
+
+def test_patch_saves_a_trimmed_normalised_name(api):
+    res = api.patch("/me/", {"full_name": "  Aarav  Mehta "})
     assert res.status_code == 200
-    assert res.json()["course"] == "ca"
+    assert res.json_body["full_name"] == "Aarav Mehta" and res.json_body["first_name"] == "Aarav"
+    assert res.json_body["onboarding"]["missing"] == ["course", "hours", "targets"]
 
 
-def test_me_patch_rejects_unknown_course(auth_client):
-    res = auth_client.patch("/api/v1/me/", data={"course": "mba"}, content_type="application/json")
+@pytest.mark.parametrize("bad", ["   ", "", "A" * 61, "x‮y"])
+def test_patch_refuses_invalid_names_with_a_field_message(api, bad):
+    res = api.patch("/me/", {"full_name": bad})
     assert res.status_code == 400
-    assert "course" in res.json()["error"]["details"]
+    assert "full_name" in res.json_body["error"]["details"]
 
 
-def test_me_patch_cannot_change_email(auth_client):
-    res = auth_client.patch("/api/v1/me/", data={"email": "hacker@example.com"}, content_type="application/json")
-    assert res.json()["email"] == "student@example.com"
+def test_patch_requires_a_name(api):
+    assert api.patch("/me/", {}).status_code == 400
+
+
+@pytest.mark.parametrize("field", ["course", "level", "exam_date"])
+def test_the_deprecated_course_fields_are_read_only(api, field):
+    res = api.patch("/me/", {field: "ca"})
+    assert res.status_code == 400 and res.json_body["error"]["code"] == "field_read_only"
+    assert res.json_body["error"]["details"] == {"fields": [field]}
+
+
+def test_patch_cannot_change_email_or_role(api):
+    res = api.patch("/me/", {"full_name": "A", "email": "hacker@example.com", "role": "admin"})
+    assert res.json_body["email"] == "student@example.com"
+    assert Profile.objects.get(pk=USER).role == "student"
+
+
+def test_each_student_only_ever_sees_their_own_profile(api, other_api):
+    api.patch("/me/", {"full_name": "Aarav"})
+    assert other_api.get("/me/").json_body["full_name"] == ""
+    assert other_api.get("/me/").json_body["email"] == "other@example.com"
+
+
+def test_a_long_legacy_name_is_left_alone_until_the_next_edit(api):
+    api.get("/me/")
+    Profile.objects.filter(pk=USER).update(full_name="L" * 100)
+    assert api.get("/me/").json_body["full_name"] == "L" * 100
+    assert api.patch("/me/", {"full_name": "L" * 100}).status_code == 400

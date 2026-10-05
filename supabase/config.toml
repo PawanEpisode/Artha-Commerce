@@ -66,6 +66,11 @@ content_path = "./supabase/templates/reset-password.html"
 subject = "Your ArthaCommerce verification code"
 content_path = "./supabase/templates/reauthentication.html"
 
+[storage.buckets.avatars]
+public = true
+file_size_limit = "1MiB"
+allowed_mime_types = ["image/webp"]
+
 # Google and custom SMTP are configured in the Supabase dashboard.
 # They are omitted here so `supabase config push` does not overwrite them.
 

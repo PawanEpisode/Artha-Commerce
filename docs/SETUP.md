@@ -50,7 +50,7 @@ cp apps/api/.env.example apps/api/.env
 - **Project Settings -> API** (or the **Connect** button): copy
   - Project URL -> `SUPABASE_URL` (api) and `VITE_SUPABASE_URL` (web)
   - **Publishable / anon key** -> `VITE_SUPABASE_ANON_KEY` (web). Safe for the browser.
-  - Do **not** use the `service_role` / secret key anywhere yet. It is not needed.
+  - **Service role / secret key** -> `SUPABASE_SERVICE_ROLE_KEY` (api only, Vercel API project, secret). F-16 needs it to delete a student's account and avatar files. Never give it a `VITE_` prefix and never put it in the web project.
 - **Connect -> Connection string**:
   - **Transaction pooler** (port **6543**) -> `DATABASE_URL` (api runtime)
   - **Session pooler** or **Direct** (port **5432**) -> `DIRECT_DATABASE_URL` (api migrations)
@@ -140,6 +140,12 @@ python manage.py migrate
 ```
 
 Check **Table Editor**: you should see `profiles` (RLS enabled).
+
+### 2.6 Avatar bucket (F-16)
+Student avatars live in one **public** Storage bucket with random object keys (`<user id>/<random>.webp`), so the URL is not guessable and the CDN can cache it. Only the API writes to it, with the service role key.
+- **Storage -> New bucket**: name `avatars`, **Public bucket on**, file size limit 1 MB, allowed types `image/webp`. (Or run `supabase config push`: the bucket is declared in `supabase/config.toml`.)
+- Set `SUPABASE_AVATAR_BUCKET=avatars` on the API project if you use another name.
+- Add **no** Storage policies: uploads and deletes happen only through the API.
 
 ---
 
@@ -264,9 +270,7 @@ pnpm dev:web                     # http://localhost:3000
 
 # terminal 2
 cd apps/api && source .venv/bin/activate
-set -a
-source .env
-set +a
+set -a && source .env && set +a
 export DJANGO_DEBUG=true
 python manage.py runserver 8000  # uses SQLite unless DATABASE_URL is set
 ```
@@ -296,6 +300,7 @@ pnpm lint:api && pnpm test:api
 | `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS` | | yes | **yes** (secret key) |
 | `DATABASE_URL`, `DIRECT_DATABASE_URL` | | yes | **yes** |
 | `SUPABASE_URL`, `SUPABASE_JWT_SECRET` | | yes | JWT secret **yes** |
+| `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AVATAR_BUCKET` | | yes | service role key **yes** (never in the web project) |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |
 | `SENTRY_DSN` | | yes | no |
 

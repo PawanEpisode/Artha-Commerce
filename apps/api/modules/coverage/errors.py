@@ -1,7 +1,8 @@
 """Domain errors raised by services. Views translate them into the API's standard error shape."""
 
-from rest_framework import status
-from rest_framework.exceptions import APIException, NotFound, PermissionDenied, ValidationError
+from rest_framework.exceptions import APIException, NotFound, ValidationError
+
+from core.errors import Conflict, FeatureDisabled
 
 
 class CoverageError(Exception):
@@ -43,12 +44,6 @@ class ConfidenceLockedError(RuleViolation):
     code = "confidence_locked"
 
 
-class Conflict(APIException):
-    status_code = status.HTTP_409_CONFLICT
-    default_detail = "Conflict."
-    default_code = "conflict"
-
-
 class TargetReached(Conflict):
     default_detail = "This activity is already at its target."
     default_code = "target_reached"
@@ -71,11 +66,16 @@ _RULE_EXCEPTIONS = {
 }
 
 
-class FeatureDisabled(PermissionDenied):
-    """The `syllabus_coverage` flag is off for this student. The web shows its own "not available yet" screen."""
+class CoverageFeatureDisabled(FeatureDisabled):
+    """The `syllabus_coverage` flag is off for this student."""
 
     default_detail = "My Coverage is not available yet."
-    default_code = "feature_disabled"
+
+
+class TargetsFeatureDisabled(FeatureDisabled):
+    """The `study_targets` flag is off for this student: reading targets works, changing them does not yet."""
+
+    default_detail = "Study targets are not available yet."
 
 
 def to_api_exception(exc: CoverageError) -> APIException:

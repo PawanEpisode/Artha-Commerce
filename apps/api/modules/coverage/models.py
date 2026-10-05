@@ -27,7 +27,10 @@ class Enrollment(UUIDModel):
     level = models.ForeignKey(Level, on_delete=models.PROTECT, related_name="enrollments")
     target_term = models.ForeignKey(ExamTerm, null=True, blank=True, on_delete=models.PROTECT, related_name="+")
     exam_date = models.DateField(null=True, blank=True)
+    # Legacy decimal hours: read as a fallback for one release, no longer written (F-16 Q-F16-9). Use `planned_minutes`.
     daily_hours = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
+    # Planned study time per day in whole minutes (15 to 960). The UI edits it as hours plus minutes.
+    daily_minutes = models.SmallIntegerField(null=True, blank=True)
     status = models.CharField(max_length=10, choices=Status.choices, default=Status.ACTIVE)
     carried_from = models.ForeignKey(
         "self", null=True, blank=True, on_delete=models.SET_NULL, related_name="carried_to"
@@ -44,7 +47,20 @@ class Enrollment(UUIDModel):
                 condition=Q(daily_hours__isnull=True) | Q(daily_hours__gt=0, daily_hours__lte=24),
                 name="coverage_enrollment_hours",
             ),
+            models.CheckConstraint(
+                condition=Q(daily_minutes__isnull=True) | Q(daily_minutes__gte=15, daily_minutes__lte=960),
+                name="coverage_enrollment_minutes",
+            ),
         ]
+
+    @property
+    def planned_minutes(self) -> int | None:
+        """Daily study time in minutes: the new column, else the legacy decimal hours rounded."""
+        if self.daily_minutes is not None:
+            return self.daily_minutes
+        if self.daily_hours is not None:
+            return round(float(self.daily_hours) * 60)
+        return None
 
 
 class EnrollmentElective(UUIDModel):
@@ -79,6 +95,16 @@ class CoverageSettings(TimeStampedModel):
     # Stored as a JSON array so the same model runs on Postgres (jsonb) and in SQLite tests. 1 to 8 gaps, 1..365 days.
     revision_days = models.JSONField(default=list)
     weighted_default = models.BooleanField(default=False)
+    # Per-chapter activity targets chosen by the student (F-16 S2). The defaults equal what every student had before
+    # (they were chapter columns), so deploying changes no percentage. 0 means "not tracked".
+    target_practice_sets = models.SmallIntegerField(default=1)
+    target_revisions = models.SmallIntegerField(default=2)
+    target_mocks = models.SmallIntegerField(default=1)
+    # Derived from the numbers on every save (`domain.targets.preset_for`); stored for display and analytics.
+    targets_preset = models.CharField(max_length=10, default="custom")
+    targets_version = models.IntegerField(default=1)  # bumped on every change: ETag input and event idempotency
+    # Null until the student confirms in onboarding or settings, so existing students are asked once.
+    targets_confirmed_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         db_table = "coverage_settings"
@@ -93,6 +119,16 @@ class CoverageSettings(TimeStampedModel):
             models.CheckConstraint(
                 condition=Q(w_read=100 - models.F("w_practice") - models.F("w_revise") - models.F("w_mock")),
                 name="coverage_settings_weights_total_100",
+            ),
+            models.CheckConstraint(
+                condition=Q(target_practice_sets__gte=0, target_practice_sets__lte=10)
+                & Q(target_revisions__gte=0, target_revisions__lte=10)
+                & Q(target_mocks__gte=0, target_mocks__lte=10),
+                name="coverage_settings_targets_range",
+            ),
+            models.CheckConstraint(
+                condition=Q(targets_preset__in=["light", "standard", "intense", "custom"]),
+                name="coverage_settings_targets_preset_valid",
             ),
         ]
 

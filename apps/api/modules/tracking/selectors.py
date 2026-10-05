@@ -136,6 +136,11 @@ def export_rows(user_id, **filters) -> QuerySet[StudySession]:
 
 
 # --- Goals ---------------------------------------------------------------------------------------------------------
+def has_daily_goal(user_id) -> bool:
+    """Whether the student has an open overall daily goal (not a per-subject one)."""
+    return Goal.objects.filter(user_id=user_id, period="daily", subject_key="", effective_to__isnull=True).exists()
+
+
 def goals_in_force(user_id, day: date) -> QuerySet[Goal]:
     return (
         Goal.objects.filter(user_id=user_id, effective_from__lte=day)
