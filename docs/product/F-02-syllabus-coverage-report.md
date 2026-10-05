@@ -18,7 +18,7 @@ Date: 5 Oct 2026. Scope: PRD `F-02-syllabus-structure-and-coverage`, its ERD, th
 2. The model had no place for the Section or Part a chapter belongs to (CMA Section A/B with weightage, CS Part I/II with marks, CA Section A/B and Part I/II), nor for the source document of a paper. Added `Chapter.section` and `Subject.source_url` (migration `0004`), exposed in admin, API, JSON import and export.
 3. ICAI Self-Paced Online Modules had no level. Added CA level `spom` (migration `0005`, idempotent).
 4. ERD brought in line: new columns, `spom`, seed content table, FR-5 "new/removed" are derived, `coverage_enrollment.level_id` documented.
-5. Tests: `test_seed_content.py` (papers per level, key and length limits, section weights, load, export and import round trip); the seed command test and the public courses test were updated. API suite: 129 passed, ruff clean, no pending migrations.
+5. Tests: `test_seed_content.py` (papers per level, key and length limits, section weights, load, export and import round trip); the seed command test and the public courses test were updated. API suite: 154 passed, ruff clean, no pending migrations (after the per-level exam terms, elective choice, admin filters and chapter navigation work).
 
 ## 3. PRD to ERD to code (requirements)
 
@@ -50,6 +50,10 @@ Date: 5 Oct 2026. Scope: PRD `F-02-syllabus-structure-and-coverage`, its ERD, th
 Also checked: all 21 PRD endpoints exist under the same paths, all PRD screens have a route, all 12 analytics events are emitted. Not in the ERD: the feature flag behaviour, analytics events, offline queue (not built), per-course OG images. The ERD claim "a test asserts RLS" has no test yet.
 
 These partial items are about the student features, not the syllabus content. None block the content in Django admin; they are the follow-up list.
+
+### Added after the first audit
+
+Exam terms per level; elective choice (onboarding step, syllabus map picker, `PUT coverage/enrollments/{id}/electives/`); `--prune-legacy` cleanup of the placeholder schemes; section grouping, paper PDF link and SPOM on the web; Paper and Chapter filters in the Topic and Chapter admin lists; topic counts, previous and next chapter links and a chapter search box (papers over 8 chapters) in the API and web.
 
 ## 4. Content coverage
 
@@ -101,3 +105,11 @@ CMA chapters carry the module weight from the syllabus table (`weight_source = o
 3. CS Professional Paper 1 chapters 19 and 20 and Elective 7.3 chapter 9 have no title in the source; their names were derived from their bullets.
 4. CS Elective 4.5 (Advanced Direct Tax) has no bullets in the source; its topics came from splitting running text.
 5. Exam terms are now per level. Dates are loaded only where announced and reported: CA Foundation 3 to 9 Jan 2027, CA Intermediate 2 to 12 Jan 2027, CMA Foundation 13 Dec 2026, CMA Intermediate and Final 10 to 17 Dec 2026. Check them against the institutes' schedules; other terms (CA May and September 2027, CMA June and December 2027, all CS terms) have no dates yet, and CS terms are still the same three for every level.
+
+## 7. Still open
+
+Code (student features, from section 3): chapter map links only equal keys (FR-5); per-course and per-chapter OG images and `/courses` still read the static catalog (FR-6); drag and drop ordering (FR-8); report-a-wrong-item link on level pages and `/app/syllabus` screens (FR-10); chapter targets editable only on the full admin form (FR-17); subject screen ignores `?view` (FR-23); switch summary shows counts, not lists (FR-28); API not gated by the feature flag (FR-30); no test asserts RLS; no persisted offline queue; no web component tests for the elective step and picker; `electives_chosen` analytics event is not in the PRD event table.
+
+Content and data: CA and CS chapters have no marks; term dates for CS and for later CA and CMA attempts; admin review of the derived chapter names and split topics listed above; CA Final Paper 3 notes not loaded.
+
+Operations: run `migrate` (coverage `0002`, syllabus `0006` to `0008`), `load_syllabus_seed --prune-legacy`, review and publish drafts, run `pnpm check` (vitest) on a Mac.

@@ -755,6 +755,20 @@ def _apply_electives(enrollment: Enrollment) -> list[ChapterProgress]:
 
 
 @transaction.atomic
+def sync_electives(enrollment: Enrollment) -> None:
+    """
+    Brings an enrolment in line with its elective choices. New enrolments are already in line; this catches students
+    who enrolled before electives existed (their option papers were all counted) and slots a scheme gained later.
+    A no-op when nothing differs.
+    """
+    if enrollment.status != Enrollment.Status.ACTIVE:
+        return
+    changed = _apply_electives(enrollment)
+    if changed:
+        _settle(enrollment, changed)
+
+
+@transaction.atomic
 def set_electives(enrollment: Enrollment, choices: dict[str, Any]) -> Enrollment:
     """Saves the student's elective choices for their active syllabus and re-counts coverage."""
     if enrollment.status != Enrollment.Status.ACTIVE:

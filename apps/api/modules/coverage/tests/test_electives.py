@@ -4,7 +4,8 @@ from copy import deepcopy
 
 import pytest
 
-from modules.coverage.models import ChapterProgress, CoverageEvent, EnrollmentElective
+from modules.coverage import services
+from modules.coverage.models import ChapterProgress, CoverageEvent, Enrollment, EnrollmentElective
 from modules.syllabus import selectors as syllabus
 from modules.syllabus.models import Subject
 from modules.syllabus.tests.helpers import SPEC, make_scheme
@@ -176,9 +177,6 @@ def test_core_papers_can_still_be_excluded(api, elective_scheme):
 
 
 def test_rebuild_from_the_ledger_keeps_the_choice(api, elective_scheme):
-    from modules.coverage import services
-    from modules.coverage.models import Enrollment
-
     enrollment = _enrol(api, elective_scheme, electives={"electives:20": subject_id("elective-b")})
     services.rebuild_enrollment(Enrollment.objects.get(pk=enrollment["id"]))
     excluded = _excluded(api)
@@ -210,3 +208,16 @@ def test_export_and_delete_cover_the_choice(api, elective_scheme):
     assert export["enrollments"][0]["electives"] == {"electives:20": "elective-a"}
     assert api.delete("/coverage/").status_code == 204
     assert EnrollmentElective.objects.count() == 0
+
+
+def test_overview_applies_electives_to_enrolments_made_before_they_existed(api, elective_scheme):
+    enrollment = _enrol(api, elective_scheme)
+    # Simulate a pre-feature enrolment: every option counted, no choice stored.
+    for chapter in ChapterProgress.objects.filter(enrollment_id=enrollment["id"], chapter__subject__kind="elective"):
+        chapter.is_excluded = False
+        chapter.save()
+    services.rebuild_enrollment(Enrollment.objects.get(pk=enrollment["id"]))  # replays the ledger, which excluded them
+    ChapterProgress.objects.filter(enrollment_id=enrollment["id"]).update(is_excluded=False)
+    CoverageEvent.objects.filter(enrollment_id=enrollment["id"]).delete()
+
+    assert all(_excluded(api)[k] == 2 for k in ELECTIVE_KEYS)  # the overview call repaired it

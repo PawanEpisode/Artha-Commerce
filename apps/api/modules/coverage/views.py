@@ -122,6 +122,7 @@ class EnrollmentElectivesView(WriteView):
 class OverviewView(CoverageView):
     def get(self, request):
         enrollment = self.active_enrollment(request)
+        services.sync_electives(enrollment)
         settings = services.get_or_create_settings(request.user.id)
         return Response(serializers.overview_dict(enrollment, settings, self.today(request)))
 
