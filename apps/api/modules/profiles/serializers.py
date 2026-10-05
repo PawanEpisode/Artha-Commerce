@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-from core.authentication import SupabaseUser
 from rest_framework import serializers
+
+from core.authentication import SupabaseUser
 
 from .avatar_urls import avatar_summary
 from .domain.names import first_name, suggested_name

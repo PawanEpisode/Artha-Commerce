@@ -1,8 +1,9 @@
 """Errors of the profiles module. Each class carries the `default_code` the web branches on."""
 
-from core.errors import CodedError, Conflict, FeatureDisabled
 from rest_framework import status
 from rest_framework.exceptions import APIException, NotFound
+
+from core.errors import CodedError, Conflict, FeatureDisabled
 
 
 class StepMandatory(Conflict):

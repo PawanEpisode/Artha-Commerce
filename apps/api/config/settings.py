@@ -9,6 +9,7 @@ from pathlib import Path
 
 import dj_database_url
 import sentry_sdk
+
 from core.sentry import before_send
 
 BASE_DIR = Path(__file__).resolve().parent.parent
