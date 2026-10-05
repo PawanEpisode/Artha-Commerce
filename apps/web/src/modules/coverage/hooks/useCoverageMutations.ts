@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useState } from 'react'
 
 import { track } from '~/modules/observability'
 
@@ -7,6 +8,7 @@ import {
   createEnrollment,
   deleteCoverage,
   newClientId,
+  previewTargets,
   resetSettings,
   saveSettings,
   setElectives,
@@ -15,7 +17,8 @@ import {
 } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
-import type { CoverageSettings, Overview } from '../lib/types'
+import { needsImpactCheck } from '../lib/targets'
+import type { CoverageSettings, Overview, SettingsSaved, Targets, TargetsImpact, WeightSettings } from '../lib/types'
 
 const refreshAll = (qc: ReturnType<typeof useQueryClient>) => qc.invalidateQueries({ queryKey: coverageKeys.all })
 
@@ -101,7 +104,7 @@ export function useSetSubjectExclusion() {
 export function useSaveSettings() {
   const qc = useQueryClient()
   return useMutation({
-    mutationFn: (next: { settings: CoverageSettings; previous?: CoverageSettings }) => saveSettings(next.settings),
+    mutationFn: (next: { settings: WeightSettings; previous?: CoverageSettings }) => saveSettings(next.settings),
     onSuccess: (saved, { previous }) => {
       const changed = previous
         ? (Object.keys(saved) as Array<keyof CoverageSettings>).filter(
@@ -187,4 +190,71 @@ export function useDeleteCoverageData() {
     },
     onError: (error) => notify.failed(error, 'We could not delete your data. Please try again.', 'coverage-delete'),
   })
+}
+
+const UNDO_MS = 10_000
+
+/** A pending raise of targets that the student has to confirm (some chapters would show a lower percentage). */
+interface PendingRaise {
+  next: Targets
+  impact: TargetsImpact
+}
+
+/**
+ * Saving study targets (PRD FR-F16-22..24). Lowering saves at once. Raising is previewed first: if some chapter
+ * percentages would drop, the student confirms. A saved change that moved percentages offers Undo for ten seconds.
+ */
+export function useSaveTargets(current: Targets) {
+  const qc = useQueryClient()
+  const [pendingRaise, setPendingRaise] = useState<PendingRaise | null>(null)
+
+  const mutation = useMutation({
+    mutationFn: (next: Targets) => saveSettings({ targets: next }),
+    onSuccess: (saved: SettingsSaved) => {
+      const settings: CoverageSettings = { ...saved }
+      delete (settings as SettingsSaved).impact
+      qc.setQueryData(coverageKeys.settings, settings)
+      return refreshAll(qc)
+    },
+    onError: (error) => notify.failed(error, 'We could not save your targets. Please try again.', 'coverage-targets'),
+  })
+
+  async function commit(next: Targets, undoTo?: Targets) {
+    const saved = await mutation.mutateAsync(next).catch(() => null)
+    if (!saved) return
+    const impact = saved.impact
+    track('study_targets_changed', {
+      practice_sets: next.practice_sets,
+      revisions: next.revisions,
+      mocks: next.mocks,
+      chapters_changed: impact?.chapters_changed ?? 0,
+      source: undoTo ? 'undo' : 'settings',
+    })
+    const moved = (impact?.chapters_changed ?? 0) > 0
+    notify.targetsSaved(
+      moved && undoTo === undefined
+        ? { label: 'Undo', onClick: () => void commit(current, current), duration: UNDO_MS }
+        : null,
+    )
+    setPendingRaise(null)
+  }
+
+  async function request(next: Targets) {
+    if (!needsImpactCheck(current, next)) return commit(next)
+    try {
+      const impact = await previewTargets(next)
+      if (impact.chapters_dropping > 0) return setPendingRaise({ next, impact })
+    } catch {
+      // The preview is advice only: if it fails, the save itself still reports its own errors.
+    }
+    return commit(next)
+  }
+
+  return {
+    request,
+    saving: mutation.isPending,
+    pendingRaise,
+    confirm: () => (pendingRaise ? commit(pendingRaise.next) : undefined),
+    cancel: () => setPendingRaise(null),
+  }
 }

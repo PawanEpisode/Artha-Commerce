@@ -2,23 +2,27 @@ import { Alert, Skeleton } from '@artha/design-system'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
+import { useFeatureFlag } from '~/modules/observability'
 import { fetchLevel } from '~/modules/syllabus'
 
 import { DataControls } from '../components/DataControls'
 import { ExclusionList } from '../components/ExclusionList'
 import { SchemeSwitch } from '../components/SchemeSwitch'
 import { SettingsForm } from '../components/SettingsForm'
+import { StudyTargetsForm } from '../components/StudyTargetsForm'
+import { TargetsImpactDialog } from '../components/TargetsImpactDialog'
 import {
   useDeleteCoverageData,
   useResetSettings,
   useSaveSettings,
+  useSaveTargets,
   useSetSubjectExclusion,
   useSwitchScheme,
 } from '../hooks/useCoverageMutations'
 import { useCoverageSettings } from '../hooks/useCoverageQueries'
 import { exportCoverage } from '../lib/api'
 import { notify } from '../lib/notify'
-import type { Overview } from '../lib/types'
+import type { CoverageSettings, Overview } from '../lib/types'
 import { CoverageShell } from './CoverageShell'
 
 function download(name: string, data: unknown) {
@@ -28,6 +32,31 @@ function download(name: string, data: unknown) {
   a.download = name
   a.click()
   URL.revokeObjectURL(url)
+}
+
+function StudyTargets({ settings }: { settings: CoverageSettings }) {
+  const enabled = useFeatureFlag('study_targets')
+  const targets = useSaveTargets(settings.targets)
+  if (!enabled) return null
+  return (
+    <>
+      <StudyTargetsForm
+        key={JSON.stringify(settings.targets)}
+        settings={settings}
+        pending={targets.saving}
+        onSave={(next) => void targets.request(next)}
+      />
+      <TargetsImpactDialog
+        open={targets.pendingRaise !== null}
+        impact={targets.pendingRaise?.impact ?? null}
+        from={settings.targets}
+        to={targets.pendingRaise?.next ?? settings.targets}
+        pending={targets.saving}
+        onConfirm={() => void targets.confirm()}
+        onCancel={targets.cancel}
+      />
+    </>
+  )
 }
 
 function Body({ overview }: { overview: Overview }) {
@@ -71,13 +100,16 @@ function Body({ overview }: { overview: Overview }) {
       ) : settings.isError || !settings.data ? (
         <Alert variant="error">We could not load your settings.</Alert>
       ) : (
-        <SettingsForm
-          key={JSON.stringify(settings.data)}
-          settings={settings.data}
-          pending={save.isPending || reset.isPending}
-          onSave={(next) => save.mutate({ settings: next, previous: settings.data })}
-          onReset={() => reset.mutate()}
-        />
+        <>
+          <StudyTargets settings={settings.data} />
+          <SettingsForm
+            key={JSON.stringify(settings.data)}
+            settings={settings.data}
+            pending={save.isPending || reset.isPending}
+            onSave={(next) => save.mutate({ settings: next, previous: settings.data })}
+            onReset={() => reset.mutate()}
+          />
+        </>
       )}
 
       <ExclusionList

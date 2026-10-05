@@ -25,6 +25,9 @@ export interface Enrollment {
   target_term: { id: string; code: string; name: string } | null
   exam_date: string | null
   days_remaining: number | null
+  /** Planned study time per day in whole minutes (15 to 960), or null when not set. */
+  daily_minutes: number | null
+  /** @deprecated Decimal hours mirror of `daily_minutes`, kept for one release. Read `daily_minutes`. */
   daily_hours: number | null
   carried_from: string | null
   /** Elective papers the student has not chosen yet. */
@@ -145,7 +148,30 @@ export interface Due {
   results: DueRow[]
 }
 
-export interface CoverageSettings {
+/** What the student wants to finish in every chapter. 0 means "not tracked". Mirrors the API's `targets`. */
+export interface Targets {
+  practice_sets: number
+  revisions: number
+  mocks: number
+}
+
+export type PresetKey = 'light' | 'standard' | 'intense'
+export type TargetsPreset = PresetKey | 'custom'
+
+export interface TargetPreset extends Targets {
+  key: PresetKey
+  label: string
+}
+
+/** How many chapter percentages a change of targets moves. */
+export interface TargetsImpact {
+  chapters_changed: number
+  chapters_dropping: number
+  chapters_rising: number
+}
+
+/** The weights and revision gaps: saved together, independent of the targets. */
+export interface WeightSettings {
   w_read: number
   w_practice: number
   w_revise: number
@@ -153,6 +179,19 @@ export interface CoverageSettings {
   revision_days: number[]
   weighted_default: boolean
 }
+
+export interface CoverageSettings extends WeightSettings {
+  targets: Targets
+  targets_preset: TargetsPreset
+  /** Bumps on every change of targets. */
+  targets_version: number
+  /** False until the student has chosen their targets once (onboarding or settings). */
+  targets_confirmed: boolean
+  target_presets: TargetPreset[]
+  target_limits: { min: number; max: number }
+}
+
+export type SettingsSaved = CoverageSettings & { impact?: TargetsImpact }
 
 export interface CatchupResult {
   overview: Overview

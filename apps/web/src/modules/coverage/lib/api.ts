@@ -13,7 +13,11 @@ import type {
   EnrollmentWithSummary,
   EventType,
   Overview,
+  SettingsSaved,
   SubjectCoverage,
+  Targets,
+  TargetsImpact,
+  WeightSettings,
 } from './types'
 
 const json = (body: unknown) => JSON.stringify(body)
@@ -57,7 +61,7 @@ export const createEnrollment = (input: {
   scheme: string
   target_term?: string | null
   exam_date?: string | null
-  daily_hours?: number | null
+  daily_minutes?: number | null
   /** Elective slot key -> chosen subject id. */
   electives?: Record<string, string>
 }) => post<Enrollment>('/coverage/enrollments/', input)
@@ -66,7 +70,7 @@ export const updateEnrollment = (
   patch: {
     target_term?: string | null
     exam_date?: string | null
-    daily_hours?: number | null
+    daily_minutes?: number | null
     archive?: boolean
     scheme?: string
   },
@@ -125,7 +129,11 @@ export const catchup = (input: { chapter_ids: string[]; also_revised: boolean; c
   post<CatchupResult>('/coverage/catchup/', input)
 
 export const getSettings = () => api<CoverageSettings>('/coverage/settings/')
-export const saveSettings = (settings: CoverageSettings) => put<CoverageSettings>('/coverage/settings/', settings)
+/** Weights and/or targets: each form sends only its own group, so they save independently. */
+export const saveSettings = (body: Partial<WeightSettings> & { targets?: Targets }) =>
+  put<SettingsSaved>('/coverage/settings/', body)
+/** Dry run: how many chapters would move if these targets were saved. Writes nothing. */
+export const previewTargets = (targets: Targets) => post<TargetsImpact>('/coverage/settings/targets/preview/', targets)
 export const resetSettings = () => api<CoverageSettings>('/coverage/settings/', { method: 'DELETE' })
 
 export const exportCoverage = () => api<Record<string, unknown>>('/coverage/export/')
