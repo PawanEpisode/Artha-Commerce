@@ -266,7 +266,8 @@ def apply_event(
                 occurred_at.date(), progress.revision_count, revision_days
             )
     elif event_type == EventType.STUDY_TIME:
-        progress.total_study_seconds += int(value or 0)
+        # A negative value is a correction from tracking (a session was edited or deleted); never below zero.
+        progress.total_study_seconds = max(0, progress.total_study_seconds + int(value or 0))
     elif event_type == EventType.CONFIDENCE_SET:
         progress.confidence = payload.get("rating", "") or ""
     elif event_type == EventType.EXCLUDED:
@@ -399,6 +400,46 @@ def _settle(enrollment: Enrollment, progresses: list[ChapterProgress]) -> None:
 
 
 # --- topics and catch-up ---------------------------------------------------------------------
+
+
+@transaction.atomic
+def adjust_study_time(
+    user_id, chapter_id, delta_seconds: int, *, source_ref: str, source: str = Source.TRACKING
+) -> None:
+    """
+    Signed correction to a chapter's study time, appended to the ledger (never edits history). Used by tracking when a
+    session that was already forwarded is edited, deleted, merged, split or restored. Quietly skipped when the student
+    is not enrolled in the chapter's syllabus. Callers pass the net difference, so a repeated call with 0 is a no-op.
+    """
+    delta = int(delta_seconds)
+    if delta == 0:
+        return
+    chapter = syllabus.get_chapter(chapter_id)
+    enrollment = _enrollment_for_chapter(user_id, chapter) if chapter else None
+    if not chapter or not enrollment:
+        return
+    when = timezone.now()
+    event, created = _append_event(
+        enrollment,
+        chapter.id,
+        EventType.STUDY_TIME,
+        value=delta,
+        payload={"correction": True},
+        source=source,
+        source_ref=source_ref,
+        occurred_at=when,
+    )
+    if not created:
+        return
+    progress = _progress_for(enrollment, chapter.id)
+    apply_event(
+        progress,
+        EventType.STUDY_TIME,
+        value=delta,
+        occurred_at=when,
+        revision_days=selectors.revision_days_of(get_or_create_settings(user_id)),
+    )
+    _settle(enrollment, [progress])
 
 
 @transaction.atomic

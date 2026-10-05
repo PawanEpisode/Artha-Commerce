@@ -233,3 +233,14 @@ def progress_stamp(user_id) -> tuple:
 
     agg = ChapterProgress.objects.filter(user_id=user_id).aggregate(n=Count("id"), latest=Max("updated_at"))
     return agg["n"], agg["latest"]
+
+
+def tracked_study_seconds(user_id, source_refs) -> dict[tuple[str, object], int]:
+    """Net study seconds forwarded by tracking per (source_ref, chapter_id): originals plus signed corrections."""
+    totals: dict[tuple[str, object], int] = defaultdict(int)
+    rows = CoverageEvent.objects.filter(
+        user_id=user_id, type="study_time", source="tracking", source_ref__in=[str(r) for r in source_refs]
+    ).values_list("source_ref", "chapter_id", "value")
+    for ref, chapter_id, value in rows:
+        totals[(ref, chapter_id)] += int(value or 0)
+    return dict(totals)

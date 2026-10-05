@@ -17,6 +17,7 @@ from django.db import IntegrityError, transaction
 from django.db.models import Sum
 from django.utils import timezone
 
+from modules.coverage import selectors as coverage_selectors
 from modules.coverage import services as coverage
 from modules.syllabus import selectors as syllabus
 
@@ -182,6 +183,31 @@ def _forward_to_coverage(session: StudySession) -> None:
             )
     except Exception:  # noqa: BLE001 - tracking must never fail because coverage did
         logger.warning("Could not forward study time of session %s to coverage", session.id, exc_info=True)
+
+
+def reconcile_coverage(user_id, session_ids) -> None:
+    """
+    Brings the coverage ledger in line with the sessions as they are now (FR-16 corrections). For each id it compares
+    the seconds already forwarded per chapter with the seconds the session should carry and appends the signed
+    difference. A session that no longer exists should carry nothing; auto-captured time is never forwarded. Self-healing
+    and never raises, so the tracker keeps working if coverage is unavailable.
+    """
+    ids = [str(i) for i in dict.fromkeys(session_ids)]
+    if not ids:
+        return
+    try:
+        sent = coverage_selectors.tracked_study_seconds(user_id, ids)
+        wanted: dict[tuple[str, object], int] = {}
+        for s in StudySession.objects.filter(user_id=user_id, pk__in=ids).exclude(source=Source.AUTO):
+            if s.chapter_id:
+                wanted[(str(s.id), s.chapter_id)] = s.focus_seconds
+        for key in set(sent) | set(wanted):
+            delta = wanted.get(key, 0) - sent.get(key, 0)
+            if delta:
+                with transaction.atomic():
+                    coverage.adjust_study_time(user_id, key[1], delta, source_ref=key[0])
+    except Exception:  # noqa: BLE001 - tracking must never fail because coverage did
+        logger.warning("Could not reconcile coverage for sessions %s", ids, exc_info=True)
 
 
 def _new_session(
@@ -463,6 +489,7 @@ def delete_session(user_id, session_id) -> SessionAudit:
     days = rollups.touched_days(session)
     session.delete()
     rollups.refresh_days(user_id, days)
+    reconcile_coverage(user_id, [session_id])
     return audit
 
 
@@ -493,6 +520,11 @@ def undo(user_id, token, notes: dict | None = None) -> list[StudySession]:
         restored.append(session)
     audit.delete()
     rollups.refresh_days(user_id, days)
+    reconcile_coverage(user_id, [str(r["id"]) for r in audit.snapshot["rows"]] + [str(s.id) for s in restored])
+    if audit.action == "merge":
+        reconcile_coverage(user_id, [audit.snapshot["result_id"]])
+    if audit.action == "split":
+        reconcile_coverage(user_id, [audit.snapshot["part_id"]])
     return restored
 
 
@@ -557,6 +589,7 @@ def edit_session(user_id, session_id, changes: dict) -> StudySession:
             )
     session.save()
     rollups.refresh_days(user_id, before_days | rollups.touched_days(session))
+    reconcile_coverage(user_id, [session.id])
     return session
 
 
@@ -624,6 +657,7 @@ def merge_sessions(user_id, session_ids: list, choice: dict) -> StudySession:
     audit.snapshot = {**audit.snapshot, "result_id": str(result.id)}
     audit.save(update_fields=["snapshot"])
     rollups.refresh_days(user_id, days | rollups.touched_days(result))
+    reconcile_coverage(user_id, ids + [result.id])
     return result
 
 
@@ -675,6 +709,7 @@ def split_session(user_id, session_id, at: datetime) -> tuple[StudySession, Stud
     session.save()
     part.save()
     rollups.refresh_days(user_id, days | rollups.touched_days(session) | rollups.touched_days(part))
+    reconcile_coverage(user_id, [session.id, part.id])
     return session, part, audit
 
 
