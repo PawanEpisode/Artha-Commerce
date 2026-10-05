@@ -63,6 +63,12 @@ export const notify = {
   electiveSaved: () => toast.success('Elective saved.'),
   settingsSaved: () => toast.success('Coverage settings saved.', { id: 'coverage-settings' }),
   settingsReset: () => toast.success('Defaults restored.', { id: 'coverage-settings' }),
+  /** `undo` is offered for ten seconds when the change moved chapter percentages. */
+  targetsSaved: (undo: { label: string; onClick: () => void; duration: number } | null) =>
+    toast.success('Study targets saved.', {
+      id: 'coverage-targets',
+      ...(undo ? { action: { label: undo.label, onClick: undo.onClick }, duration: undo.duration } : {}),
+    }),
   switchedScheme: (scheme: string) => toast.success(`Switched to ${scheme}.`),
   dataExported: () => toast.success('Your coverage data was downloaded.'),
   dataDeleted: () => toast.info('Your coverage data was deleted.'),

@@ -2,14 +2,14 @@ import { Alert, Button, Card, Label, LoaderCircle, NumberStepper, Switch, TextFi
 import { type FormEvent, useState } from 'react'
 
 import { DEFAULT_REVISION_DAYS, DEFAULT_WEIGHTS, revisionDaysValid, weightsTotal, weightsValid } from '../lib/formula'
-import type { CoverageSettings } from '../lib/types'
+import type { WeightSettings } from '../lib/types'
 
 interface Props {
-  settings: CoverageSettings
+  settings: WeightSettings
   pending: boolean
   error?: string
   saved?: boolean
-  onSave: (next: CoverageSettings) => void
+  onSave: (next: WeightSettings) => void
   onReset: () => void
 }
 

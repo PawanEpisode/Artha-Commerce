@@ -10,6 +10,8 @@ from pathlib import Path
 import dj_database_url
 import sentry_sdk
 
+from core.sentry import before_send
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -182,7 +184,12 @@ if not DEBUG:
 
 # --- Observability ----------------------------------------------------------------------------
 if env("SENTRY_DSN"):
-    sentry_sdk.init(dsn=env("SENTRY_DSN"), traces_sample_rate=0.1, send_default_pii=False)
+    sentry_sdk.init(
+        dsn=env("SENTRY_DSN"),
+        traces_sample_rate=0.1,
+        send_default_pii=False,
+        before_send=before_send,
+    )
 
 LANGUAGE_CODE = "en-in"
 TIME_ZONE = "UTC"

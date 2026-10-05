@@ -2,7 +2,6 @@
 
 import pytest
 
-from core import feature_flags
 from modules.coverage.models import CoverageSettings, Enrollment
 from modules.profiles.models import Onboarding
 from modules.profiles.tests.conftest import USER
@@ -211,21 +210,6 @@ def test_when_everything_is_satisfied_but_the_version_is_behind_the_web_can_comp
 
 
 # --- flags ---------------------------------------------------------------------------------------
-
-
-@pytest.fixture
-def flag_off(settings, monkeypatch):
-    def make(name):
-        class Off:
-            def get_feature_flag(self, key, distinct_id, **kwargs):
-                return False if key == name else None
-
-        settings.POSTHOG_API_KEY = "phc_test"
-        monkeypatch.setattr(feature_flags, "_client", Off())
-        feature_flags.clear_flag_cache()
-
-    yield make
-    feature_flags.clear_flag_cache()
 
 
 def test_with_personalization_off_the_writes_are_403_but_the_bootstrap_still_reads(api, flag_off):

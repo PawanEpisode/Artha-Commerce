@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url'
+
 import { defineConfig } from 'vitest/config'
 
 // Unit tests only need TypeScript path aliases, not the TanStack Start / Nitro build plugins.
@@ -17,6 +19,7 @@ export default defineConfig({
           environment: 'jsdom',
           include: ['src/**/*.test.tsx'],
           setupFiles: ['./src/test/setup-dom.ts'],
+          alias: { 'canvas-confetti': fileURLToPath(new URL('./src/test/confetti-stub.ts', import.meta.url)) },
         },
       },
     ],

@@ -10,3 +10,21 @@ export { newClientId } from './lib/api'
 export { type ChapterCounts, paperSentence, progressSentence } from './lib/progress'
 export { flushQueue, pendingCount, QueuedOffline, writeOrQueue } from './lib/queuedWrites'
 export type { Overview, SubjectCoverage } from './lib/types'
+// Shared with the personalization flow: the targets controls and rules, so onboarding and Settings read the same.
+export { CatchupResult } from './components/CatchupResult'
+export { CatchupStep } from './components/CatchupStep'
+export { CourseLevelStep, ElectiveStep, TermStep } from './components/OnboardingSteps'
+export { TargetsFields } from './components/TargetsFields'
+export { useCatchupSubjects } from './hooks/useCatchupSubjects'
+export { useCoverageSettings } from './hooks/useCoverageQueries'
+export { prefillSelection } from './lib/prefill'
+export {
+  DEFAULT_PRESETS,
+  DEFAULT_TARGETS,
+  presetFor,
+  targetsEqual,
+  targetsLine,
+  targetsOfPreset,
+  targetsValid,
+} from './lib/targets'
+export type { CoverageSettings, TargetPreset, Targets, TargetsPreset } from './lib/types'

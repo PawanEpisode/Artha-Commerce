@@ -99,7 +99,7 @@ export function OnboardingContainer({
         scheme: scheme.id,
         target_term: termId || null,
         exam_date: examDate || null,
-        daily_hours: dailyHours.trim() === '' ? null : Number(dailyHours),
+        daily_minutes: dailyHours.trim() === '' ? null : Math.round(Number(dailyHours) * 60),
         ...(Object.keys(electiveChoices).length ? { electives: electiveChoices } : {}),
       },
       {

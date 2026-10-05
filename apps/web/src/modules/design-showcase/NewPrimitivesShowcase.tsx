@@ -1,7 +1,10 @@
 import {
   AlarmClock,
+  Avatar,
+  AVATAR_PRESET_KEYS,
   Button,
   ButtonLink,
+  Celebration,
   DurationField,
   EntityBadge,
   EntityDot,
@@ -10,6 +13,7 @@ import {
   PartyPopper,
   ReadToggle,
   SectionTabs,
+  StepFlow,
   StudyTimeIcon,
   toast,
   toastApiError,
@@ -103,6 +107,59 @@ function ToastDemo() {
       <Button variant="ghost" onClick={() => toast.dismiss()}>
         Dismiss all
       </Button>
+    </div>
+  )
+}
+
+function AvatarDemo() {
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-end gap-4">
+        {([24, 32, 44, 96] as const).map((size) => (
+          <Avatar key={size} size={size} name="Aarav Mehta" seed="demo-user" />
+        ))}
+        <Avatar size={44} name="आरव मेहता" seed="demo-2" />
+        <Avatar size={44} loading />
+      </div>
+      <div className="grid max-w-md grid-cols-6 gap-3 sm:grid-cols-8">
+        {AVATAR_PRESET_KEYS.map((key) => (
+          <Avatar key={key} size={44} presetKey={key} name={key} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function StepFlowDemo() {
+  const [step, setStep] = useState(1)
+  const [celebrating, setCelebrating] = useState(false)
+  const labels = ['Profile', 'Course', 'Hours', 'Targets', 'Photo']
+  return (
+    <div className="max-w-xl space-y-6">
+      <StepFlow
+        steps={labels}
+        current={step}
+        title="Pick your course"
+        description="Choose the exam you are preparing for."
+        onBack={step > 0 ? () => setStep(step - 1) : undefined}
+      >
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={() => setStep(Math.min(step + 1, labels.length - 1))}>Continue</Button>
+          <Button variant="outline" onClick={() => setCelebrating(true)}>
+            Replay celebration
+          </Button>
+          <Button variant="danger">Delete my account</Button>
+        </div>
+      </StepFlow>
+      {celebrating ? (
+        <Celebration
+          title="You are all set"
+          message="Aarav, CMA Final June 2027 is set up. 238 days to go."
+          ctaLabel="Open my workspace"
+          autoContinueMs={0}
+          onContinue={() => setCelebrating(false)}
+        />
+      ) : null}
     </div>
   )
 }
@@ -264,6 +321,14 @@ export function NewPrimitivesShowcase() {
             </EntityRow>
           ))}
         </div>
+      </Block>
+
+      <Block title="Avatar: initials, sizes, loading and the 24 presets">
+        <AvatarDemo />
+      </Block>
+
+      <Block title="Step flow, celebration and the danger button">
+        <StepFlowDemo />
       </Block>
 
       <Block title="Read toggle">

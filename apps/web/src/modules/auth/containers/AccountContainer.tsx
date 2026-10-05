@@ -31,8 +31,16 @@ function Section({ title, description, children }: { title: string; description:
   )
 }
 
-/** /app/account: change email, change password (with emailed code when the server asks for it), appearance, sign out. */
-export function AccountContainer() {
+/**
+ * /app/account: change email, change password (with emailed code when the server asks for it), appearance, sign out. */
+export function AccountContainer({
+  profileSlot,
+  dataSlot,
+}: {
+  profileSlot?: React.ReactNode
+  /** Supplied by the route (personalization): export and delete. Auth does not import it. */
+  dataSlot?: React.ReactNode
+}) {
   const { user, signOut } = useAuth()
 
   const emailChange = useAsyncAction()
@@ -83,6 +91,8 @@ export function AccountContainer() {
         <p className="mt-1 text-muted-foreground">Signed in as {user?.email}</p>
       </header>
 
+      {profileSlot}
+
       <Section
         title="Appearance"
         description="Reading is the default. System follows the clock: light 6 am to 6 pm, dark after."
@@ -131,6 +141,8 @@ export function AccountContainer() {
           />
         )}
       </Section>
+
+      {dataSlot}
 
       <Section title="Session" description="Sign out on this device.">
         <Button variant="outline" onClick={() => void signOut()}>

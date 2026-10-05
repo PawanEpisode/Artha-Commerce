@@ -57,3 +57,21 @@ def test_the_suggestion_falls_back_to_a_readable_email_local_part():
 def test_an_unusable_provider_name_falls_through_to_the_email():
     claims = {"user_metadata": {"full_name": "bad‮name"}}
     assert suggested_name(claims, "sam@example.com") == "Sam"
+
+
+# --- shared with the web: apps/web/src/modules/personalization/lib/names.test.ts reads the same file --------------
+
+import json  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+_CASES = json.loads((Path(__file__).parent / "fixtures" / "names_cases.json").read_text(encoding="utf-8"))["cases"]
+
+
+@pytest.mark.parametrize("case", _CASES, ids=[c["name"] for c in _CASES])
+def test_shared_name_cases(case):
+    if case["ok"]:
+        assert normalize_name(case["input"]) == case["expected"]
+    else:
+        with pytest.raises(InvalidName) as caught:
+            normalize_name(case["input"])
+        assert str(caught.value) == case["expected"]

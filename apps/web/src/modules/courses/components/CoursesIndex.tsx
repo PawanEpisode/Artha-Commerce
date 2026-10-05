@@ -1,17 +1,11 @@
-import { ArrowRight, Badge, buttonVariants, Card, Container } from '@artha/design-system'
+import { ArrowRight, buttonVariants, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
 import type { PublicCourse } from '../lib/load'
 
-interface Props {
-  courses: PublicCourse[]
-  /** The student's enrolled course code, lowercased, when they have one. */
-  activeCourseCode?: string | null
-  prompt?: ReactNode
-}
-
-export function CoursesIndex({ courses, activeCourseCode, prompt }: Props) {
+/** The public catalog. Signed-in students are sent home before this paints. */
+export function CoursesIndex({ courses, prompt }: { courses: PublicCourse[]; prompt?: ReactNode }) {
   return (
     <Container className="py-12 sm:py-20">
       <header className="max-w-2xl">
@@ -25,7 +19,6 @@ export function CoursesIndex({ courses, activeCourseCode, prompt }: Props) {
       <ul className="mt-8 grid list-none gap-5 md:grid-cols-3">
         {courses.map((c) => {
           const papers = c.levels.reduce((sum, level) => sum + level.subjects.length, 0)
-          const yours = activeCourseCode === c.slug
           return (
             <li key={c.slug}>
               <Link
@@ -34,10 +27,7 @@ export function CoursesIndex({ courses, activeCourseCode, prompt }: Props) {
                 className="group block h-full rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
               >
                 <Card className="flex h-full flex-col p-7 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="font-display text-5xl font-extrabold text-primary">{c.name}</span>
-                    {yours ? <Badge variant="accent">Your course</Badge> : null}
-                  </div>
+                  <span className="font-display text-5xl font-extrabold text-primary">{c.name}</span>
                   <h2 className="mt-4 text-lg font-semibold">{c.fullName}</h2>
                   <p className="mt-1 text-sm text-muted-foreground">{c.tagline}</p>
                   <p className="mt-3 text-sm text-muted-foreground">{c.levels.map((l) => l.name).join(' · ')}</p>

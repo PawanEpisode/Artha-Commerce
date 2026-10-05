@@ -11,20 +11,17 @@ import {
   LogOut,
   Menu,
   ThemeSwitcher,
-  UserRound,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+import { useEffect } from 'react'
 
 import { useAuth } from '~/modules/auth'
+import { IdentityAvatar, useBootstrap } from '~/modules/personalization'
 
+import { mainNav } from './main-nav'
 import { useWorkspaceNav } from './useWorkspaceNav'
 import { workspaceIcon } from './workspace-icons'
 import type { WorkspaceLink } from './workspace-nav'
-
-const nav = [
-  { to: '/features', label: 'Features' },
-  { to: '/courses', label: 'Courses' },
-] as const
 
 function MenuLinks({ links }: { links: readonly WorkspaceLink[] }) {
   return links.map((item) => {
@@ -42,15 +39,26 @@ function MenuLinks({ links }: { links: readonly WorkspaceLink[] }) {
 
 function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => void }) {
   const { study, settings } = useWorkspaceNav()
+  const { data } = useBootstrap()
+  const firstName = data?.first_name
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Account menu">
-          <UserRound />
+        {/* The 44 px target is the whole button; the first name is hidden under 640 px so nothing overflows at 320. */}
+        <Button variant="ghost" className="h-11 min-w-11 gap-2 rounded-full px-1 sm:pr-3" aria-label="Account menu">
+          <IdentityAvatar size={32} decorative />
+          {firstName ? <span className="hidden max-w-28 truncate sm:inline">{firstName}</span> : null}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        {email && <DropdownMenuLabel className="tracking-normal break-all normal-case">{email}</DropdownMenuLabel>}
+        {data?.full_name ? (
+          <DropdownMenuLabel className="tracking-normal normal-case">
+            <span className="block max-w-56 truncate text-foreground">{data.full_name}</span>
+            {email ? <span className="block max-w-56 truncate font-normal">{email}</span> : null}
+          </DropdownMenuLabel>
+        ) : email ? (
+          <DropdownMenuLabel className="tracking-normal break-all normal-case">{email}</DropdownMenuLabel>
+        ) : null}
         <DropdownMenuItem asChild>
           <Link to="/app">Workspace</Link>
         </DropdownMenuItem>
@@ -76,22 +84,36 @@ function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => vo
 export function SiteHeader() {
   const { user, loading, signOut } = useAuth()
   const signedIn = !loading && Boolean(user)
+  const links = mainNav(signedIn)
+  // The head script hides guest-only chrome before paint. Drop that mark if the session is not real.
+  useEffect(() => {
+    if (loading) return
+    if (user) document.documentElement.dataset.signedIn = '1'
+    else delete document.documentElement.dataset.signedIn
+  }, [loading, user])
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-xl">
+      <style>{`html[data-signed-in="1"] [data-nav="courses"]{display:none}`}</style>
       <Container className="flex h-[var(--site-header-height)] items-center justify-between gap-2">
         <Link to="/" aria-label="ArthaCommerce home" className="shrink-0">
           <Logo compactOnMobile />
         </Link>
-        <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
-            <Button key={item.to} variant="ghost" size="sm" asChild>
-              <Link to={item.to} activeProps={{ className: 'text-primary' }}>
-                {item.label}
-              </Link>
-            </Button>
-          ))}
-        </nav>
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex min-w-0 items-center gap-1 sm:gap-2">
+          <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
+            {links.map((item) => (
+              <Button
+                key={item.to}
+                variant="ghost"
+                size="sm"
+                data-nav={item.to === '/courses' ? 'courses' : undefined}
+                asChild
+              >
+                <Link to={item.to} activeProps={{ className: 'text-primary' }}>
+                  {item.label}
+                </Link>
+              </Button>
+            ))}
+          </nav>
           <ThemeSwitcher />
           {signedIn ? (
             <>
@@ -112,8 +134,8 @@ export function SiteHeader() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="md:hidden">
-              {nav.map((item) => (
-                <DropdownMenuItem key={item.to} asChild>
+              {links.map((item) => (
+                <DropdownMenuItem key={item.to} data-nav={item.to === '/courses' ? 'courses' : undefined} asChild>
                   <Link to={item.to}>{item.label}</Link>
                 </DropdownMenuItem>
               ))}

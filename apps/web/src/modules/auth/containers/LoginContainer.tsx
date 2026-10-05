@@ -1,5 +1,5 @@
 import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from '@artha/design-system'
-import { Link, useNavigate } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
 import { AuthCard } from '../components/AuthCard'
@@ -10,9 +10,9 @@ import { PasswordSignInForm } from '../components/PasswordSignInForm'
 import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useAuth } from '../hooks/useAuth'
 import { useCooldown } from '../hooks/useCooldown'
+import { useGoAfterAuth } from '../hooks/usePostAuth'
 import { sendEmailCode, signInWithPassword, verifyEmailCode } from '../lib/auth-api'
 import { notify } from '../lib/notify'
-import { safeNextPath } from '../lib/redirects'
 
 const signedInToast = (result: { error?: string }) => {
   if (!result.error) notify.signedIn()
@@ -28,8 +28,7 @@ interface LoginContainerProps {
 
 export function LoginContainer({ method, next, onMethodChange }: LoginContainerProps) {
   const { user, configured, signInWithGoogle } = useAuth()
-  const navigate = useNavigate()
-  const destination = safeNextPath(next)
+  const goAfterAuth = useGoAfterAuth()
 
   const [email, setEmail] = useState<string>()
   const send = useAsyncAction()
@@ -39,8 +38,8 @@ export function LoginContainer({ method, next, onMethodChange }: LoginContainerP
   const cooldown = useCooldown()
 
   useEffect(() => {
-    if (user) void navigate({ to: destination, replace: true })
-  }, [user, destination, navigate])
+    if (user) void goAfterAuth(next)
+  }, [user, next, goAfterAuth])
 
   async function sendCode(address: string) {
     const result = await send.run(() => sendEmailCode(address))
@@ -75,7 +74,7 @@ export function LoginContainer({ method, next, onMethodChange }: LoginContainerP
         </div>
       }
     >
-      <GoogleButton onClick={() => void signInWithGoogle(destination)} disabled={!configured} />
+      <GoogleButton onClick={() => void signInWithGoogle(next)} disabled={!configured} />
       <Tabs
         value={method}
         onValueChange={(v) => {

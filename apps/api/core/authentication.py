@@ -1,5 +1,6 @@
 """Verifies Supabase-issued JWTs. The API trusts the signature, never the client."""
 
+import json
 from dataclasses import dataclass, field
 from functools import lru_cache
 from typing import Any
@@ -71,6 +72,30 @@ class SupabaseJWTAuthentication(BaseAuthentication):
         if len(parts) != 2:
             raise AuthenticationFailed("Malformed Authorization header.")
         claims = decode_token(parts[1].decode())
+        return SupabaseUser(id=claims["sub"], email=claims.get("email", ""), claims=claims), None
+
+    def authenticate_header(self, request):
+        return "Bearer"
+
+
+class BeaconBodyAuthentication(BaseAuthentication):
+    """
+    Token in the body, for `navigator.sendBeacon`, which cannot set an Authorization header. List it only on views
+    that need it (the last-visit write), after the normal class. The token is verified exactly like a bearer token, so
+    replay risk equals a bearer token's and is bounded by its expiry. The body must never be logged (see `core.sentry`).
+    """
+
+    def authenticate(self, request):
+        raw = request._request  # the untouched Django request: DRF has not parsed the body yet at this point
+        if get_authorization_header(request) or not (raw.content_type or "").startswith("text/plain"):
+            return None
+        try:
+            token = json.loads(raw.body.decode("utf-8")).get("t")
+        except (ValueError, UnicodeDecodeError, AttributeError):
+            return None
+        if not isinstance(token, str) or not token:
+            return None
+        claims = decode_token(token)
         return SupabaseUser(id=claims["sub"], email=claims.get("email", ""), claims=claims), None
 
     def authenticate_header(self, request):
