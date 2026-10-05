@@ -103,6 +103,34 @@ export const features: Feature[] = [
     highlights: ['Mapped to affected chapters', 'Attempt-wise applicability', 'Institute announcement alerts'],
     status: 'soon',
   },
+  {
+    slug: 'pomodoro-focus-timer',
+    title: 'Pomodoro Focus Timer',
+    tagline: 'Study in focused rounds, then rest, without losing your place.',
+    description:
+      'Classic, Deep and Light rhythms or your own, with timed breaks, a gentle chime and a countdown in your browser tab. The clock runs on our server, so a reload or a second device shows the same time, and every finished round counts toward your daily goal.',
+    icon: 'timer',
+    highlights: [
+      'Classic, Deep, Light and custom rhythms',
+      'Breaks, long breaks and +5 minute extensions',
+      'Counts toward your daily goal and streak',
+    ],
+    status: 'soon',
+  },
+  {
+    slug: 'time-tracker',
+    title: 'Study Time Tracker',
+    tagline: 'Know where your hours really go.',
+    description:
+      'A stopwatch, manual entries and optional automatic logging while you read a chapter, with daily goals, a calendar heat map, time per subject and a comparison of time spent against chapters covered. Fix any entry, undo mistakes and download your data whenever you like.',
+    icon: 'flame',
+    highlights: [
+      'Stopwatch, manual and optional automatic logging',
+      'Daily and weekly goals with streaks',
+      'Time per subject compared with coverage',
+    ],
+    status: 'soon',
+  },
 ]
 
 export const getFeature = (slug: string) => features.find((f) => f.slug === slug)

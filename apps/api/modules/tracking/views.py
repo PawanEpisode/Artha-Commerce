@@ -8,7 +8,6 @@ from __future__ import annotations
 import csv
 from datetime import date, timedelta
 
-from core.feature_flags import flag_enabled
 from django.http import HttpResponse, StreamingHttpResponse
 from rest_framework import status
 from rest_framework.exceptions import NotFound, ValidationError
@@ -17,6 +16,7 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
 
+from core.feature_flags import flag_enabled
 from modules.coverage import selectors as coverage
 
 from . import selectors, serializers, services

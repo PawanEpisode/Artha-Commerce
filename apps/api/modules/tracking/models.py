@@ -6,10 +6,11 @@ the short edit trail. `user_id` columns hold the Supabase user id by value (no c
 
 import uuid
 
-from core.models import TimeStampedModel, UUIDModel
 from django.db import models
 from django.db.models import Q
 from django.db.models.functions import Coalesce
+
+from core.models import TimeStampedModel, UUIDModel
 
 NIL_UUID = uuid.UUID(int=0)
 

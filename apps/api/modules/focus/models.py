@@ -5,10 +5,10 @@ tracker's (one shared goal), so there is no goal column or summary table here. `
 value (no cross-schema foreign key).
 """
 
-from core.models import TimeStampedModel
 from django.db import models
 from django.db.models import Q
 
+from core.models import TimeStampedModel
 from modules.tracking.domain.durations import ACTIVITY_TYPES
 
 PRESET_CHOICES = [("classic", "Classic"), ("deep", "Deep"), ("light", "Light"), ("custom", "Custom")]
