@@ -153,10 +153,26 @@ export interface CatchupResult {
 
 export type EventType = 'practice_done' | 'mock_done' | 'revision_done'
 
+export interface SwitchChapterRef {
+  id: string
+  key: string
+  name: string
+  subject: { id: string; key: string; name: string }
+}
+
+export interface SwitchCarried extends SwitchChapterRef {
+  /** same, split or merged: how the old chapter(s) map onto this one. */
+  relation: string
+  from: SwitchChapterRef[]
+}
+
 export interface SwitchSummary {
   carried_chapters: number
   new_chapters: number
   removed_chapters: number
+  carried: SwitchCarried[]
+  new: SwitchChapterRef[]
+  removed: SwitchChapterRef[]
 }
 
 export interface ElectivesResult {

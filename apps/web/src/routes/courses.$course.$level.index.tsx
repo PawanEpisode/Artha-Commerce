@@ -3,7 +3,7 @@ import { createFileRoute, notFound } from '@tanstack/react-router'
 import { getCourse, getLevel } from '~/modules/catalog'
 import { LevelDetail } from '~/modules/courses'
 import { breadcrumbJsonLd, buildHead } from '~/modules/seo'
-import { fetchLevel, SubjectList, SyllabusMeta } from '~/modules/syllabus'
+import { fetchLevel, ReportIssue, SubjectList, SyllabusMeta } from '~/modules/syllabus'
 
 export const Route = createFileRoute('/courses/$course/$level/')({
   loader: async ({ params }) => {
@@ -39,6 +39,7 @@ export const Route = createFileRoute('/courses/$course/$level/')({
         level={level}
         subjectCount={syllabus?.subjects.length}
         meta={syllabus?.scheme ? <SyllabusMeta scheme={syllabus.scheme} body={course.body} /> : undefined}
+        report={syllabus ? <ReportIssue nodeType="level" nodeId={syllabus.id} /> : undefined}
         syllabus={
           syllabus ? (
             <SubjectList

@@ -13,9 +13,11 @@ interface Props {
   subjectCount?: number
   /** Scheme name and source, shown under the intro. */
   meta?: ReactNode
+  /** "Report a wrong item" control, shown under the papers when there is a curated syllabus. */
+  report?: ReactNode
 }
 
-export function LevelDetail({ course, level, syllabus, subjectCount, meta }: Props) {
+export function LevelDetail({ course, level, syllabus, subjectCount, meta, report }: Props) {
   const count = subjectCount ?? level.subjects.length
   return (
     <Container className="max-w-3xl py-16 sm:py-24">
@@ -48,6 +50,7 @@ export function LevelDetail({ course, level, syllabus, subjectCount, meta }: Pro
           ))}
         </ol>
       )}
+      {report ? <div className="mt-8">{report}</div> : null}
       <Button size="lg" className="mt-10" asChild>
         <Link to="/login">Plan my {level.name} prep</Link>
       </Button>

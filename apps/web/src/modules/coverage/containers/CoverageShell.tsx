@@ -6,6 +6,7 @@ import { useFeatureFlag } from '~/modules/observability'
 
 import { CoverageNav } from '../components/CoverageNav'
 import { useOverview } from '../hooks/useCoverageQueries'
+import { useOfflineSync } from '../hooks/useOfflineSync'
 import type { Overview } from '../lib/types'
 
 /**
@@ -20,9 +21,10 @@ export function CoverageShell({
   nav?: boolean
 }) {
   const enabled = useFeatureFlag('syllabus_coverage')
-  const { data, isPending, isError, noEnrollment, refetch } = useOverview()
+  const { data, isPending, isError, noEnrollment, featureDisabled, refetch } = useOverview()
+  const { pending } = useOfflineSync()
 
-  if (!enabled) {
+  if (!enabled || featureDisabled) {
     return (
       <Container className="max-w-3xl py-14">
         <EmptyState
@@ -38,6 +40,14 @@ export function CoverageShell({
   return (
     <Container className="max-w-3xl space-y-6 py-10 sm:py-14">
       {nav ? <CoverageNav dueCount={data?.due_count} /> : null}
+      {pending > 0 ? (
+        <Alert variant="info">
+          <span role="status">
+            {pending === 1 ? '1 change is' : `${pending} changes are`} saved on this device and will sync when you are
+            back online.
+          </span>
+        </Alert>
+      ) : null}
       {isPending ? (
         <div aria-busy="true" className="space-y-4">
           <span className="sr-only" role="status">
