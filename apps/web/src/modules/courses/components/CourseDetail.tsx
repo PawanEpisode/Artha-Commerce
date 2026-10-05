@@ -1,9 +1,9 @@
 import { Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import type { Course } from '~/modules/catalog'
+import type { PublicCourse } from '../lib/load'
 
-export function CourseDetail({ course }: { course: Course }) {
+export function CourseDetail({ course }: { course: PublicCourse }) {
   return (
     <Container className="py-16 sm:py-24">
       <p className="text-sm font-semibold tracking-widest text-primary uppercase">{course.body}</p>

@@ -2,10 +2,12 @@ import { ArrowLeft, Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
-import type { Course, Level } from '~/modules/catalog'
+import type { Level } from '~/modules/catalog'
+
+import type { PublicCourse } from '../lib/load'
 
 interface Props {
-  course: Course
+  course: PublicCourse
   level: Level
   /** The curated syllabus (grouped papers). When absent, the indicative static list is shown. */
   syllabus?: ReactNode

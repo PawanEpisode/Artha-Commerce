@@ -30,11 +30,13 @@ import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
+import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
 import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
 import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
+import { Route as OgCoursesCourseLevelSubjectChapterRouteImport } from './routes/og.courses.$course.$level.$subject.$chapter'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -141,6 +143,11 @@ const CoursesCourseIndexRoute = CoursesCourseIndexRouteImport.update({
   path: '/courses/$course/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OgCoursesCourseRoute = OgCoursesCourseRouteImport.update({
+  id: '/og/courses/$course',
+  path: '/og/courses/$course',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppSyllabusSubjectIndexRoute = AppSyllabusSubjectIndexRouteImport.update({
   id: '/syllabus/$subject/',
   path: '/syllabus/$subject/',
@@ -169,6 +176,12 @@ const CoursesCourseLevelSubjectChapterRoute =
     path: '/courses/$course/$level/$subject/$chapter',
     getParentRoute: () => rootRouteImport,
   } as any)
+const OgCoursesCourseLevelSubjectChapterRoute =
+  OgCoursesCourseLevelSubjectChapterRouteImport.update({
+    id: '/$level/$subject/$chapter',
+    path: '/$level/$subject/$chapter',
+    getParentRoute: () => OgCoursesCourseRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -190,6 +203,7 @@ export interface FileRoutesByFullPath {
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
@@ -197,6 +211,7 @@ export interface FileRoutesByFullPath {
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
+  '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -217,6 +232,7 @@ export interface FileRoutesByTo {
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/syllabus': typeof AppSyllabusIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
@@ -224,6 +240,7 @@ export interface FileRoutesByTo {
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
   '/courses/$course/$level/$subject': typeof CoursesCourseLevelSubjectIndexRoute
+  '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -246,6 +263,7 @@ export interface FileRoutesById {
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
@@ -253,6 +271,7 @@ export interface FileRoutesById {
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
+  '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -276,6 +295,7 @@ export interface FileRouteTypes {
     | '/courses/'
     | '/features/'
     | '/app/settings/coverage'
+    | '/og/courses/$course'
     | '/app/syllabus/'
     | '/courses/$course/'
     | '/app/syllabus/$subject/$chapter'
@@ -283,6 +303,7 @@ export interface FileRouteTypes {
     | '/courses/$course/$level/'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/'
+    | '/og/courses/$course/$level/$subject/$chapter'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -303,6 +324,7 @@ export interface FileRouteTypes {
     | '/courses'
     | '/features'
     | '/app/settings/coverage'
+    | '/og/courses/$course'
     | '/app/syllabus'
     | '/courses/$course'
     | '/app/syllabus/$subject/$chapter'
@@ -310,6 +332,7 @@ export interface FileRouteTypes {
     | '/courses/$course/$level'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject'
+    | '/og/courses/$course/$level/$subject/$chapter'
   id:
     | '__root__'
     | '/'
@@ -331,6 +354,7 @@ export interface FileRouteTypes {
     | '/courses/'
     | '/features/'
     | '/app/settings/coverage'
+    | '/og/courses/$course'
     | '/app/syllabus/'
     | '/courses/$course/'
     | '/app/syllabus/$subject/$chapter'
@@ -338,6 +362,7 @@ export interface FileRouteTypes {
     | '/courses/$course/$level/'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/'
+    | '/og/courses/$course/$level/$subject/$chapter'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -355,6 +380,7 @@ export interface RootRouteChildren {
   FeaturesSlugRoute: typeof FeaturesSlugRoute
   CoursesIndexRoute: typeof CoursesIndexRoute
   FeaturesIndexRoute: typeof FeaturesIndexRoute
+  OgCoursesCourseRoute: typeof OgCoursesCourseRouteWithChildren
   CoursesCourseIndexRoute: typeof CoursesCourseIndexRoute
   CoursesCourseLevelIndexRoute: typeof CoursesCourseLevelIndexRoute
   CoursesCourseLevelSubjectChapterRoute: typeof CoursesCourseLevelSubjectChapterRoute
@@ -510,6 +536,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/og/courses/$course': {
+      id: '/og/courses/$course'
+      path: '/og/courses/$course'
+      fullPath: '/og/courses/$course'
+      preLoaderRoute: typeof OgCoursesCourseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app/syllabus/$subject/': {
       id: '/app/syllabus/$subject/'
       path: '/syllabus/$subject'
@@ -545,6 +578,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseLevelSubjectChapterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/og/courses/$course/$level/$subject/$chapter': {
+      id: '/og/courses/$course/$level/$subject/$chapter'
+      path: '/$level/$subject/$chapter'
+      fullPath: '/og/courses/$course/$level/$subject/$chapter'
+      preLoaderRoute: typeof OgCoursesCourseLevelSubjectChapterRouteImport
+      parentRoute: typeof OgCoursesCourseRoute
+    }
   }
 }
 
@@ -572,6 +612,19 @@ const AppRouteChildren: AppRouteChildren = {
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
+interface OgCoursesCourseRouteChildren {
+  OgCoursesCourseLevelSubjectChapterRoute: typeof OgCoursesCourseLevelSubjectChapterRoute
+}
+
+const OgCoursesCourseRouteChildren: OgCoursesCourseRouteChildren = {
+  OgCoursesCourseLevelSubjectChapterRoute:
+    OgCoursesCourseLevelSubjectChapterRoute,
+}
+
+const OgCoursesCourseRouteWithChildren = OgCoursesCourseRoute._addFileChildren(
+  OgCoursesCourseRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRouteWithChildren,
@@ -587,6 +640,7 @@ const rootRouteChildren: RootRouteChildren = {
   FeaturesSlugRoute: FeaturesSlugRoute,
   CoursesIndexRoute: CoursesIndexRoute,
   FeaturesIndexRoute: FeaturesIndexRoute,
+  OgCoursesCourseRoute: OgCoursesCourseRouteWithChildren,
   CoursesCourseIndexRoute: CoursesCourseIndexRoute,
   CoursesCourseLevelIndexRoute: CoursesCourseLevelIndexRoute,
   CoursesCourseLevelSubjectChapterRoute: CoursesCourseLevelSubjectChapterRoute,

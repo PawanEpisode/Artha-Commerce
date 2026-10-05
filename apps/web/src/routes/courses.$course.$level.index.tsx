@@ -1,14 +1,13 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { getCourse, getLevel } from '~/modules/catalog'
-import { LevelDetail } from '~/modules/courses'
-import { breadcrumbJsonLd, buildHead } from '~/modules/seo'
+import { findLevel, LevelDetail, loadCourse } from '~/modules/courses'
+import { breadcrumbJsonLd, buildHead, courseOgPath } from '~/modules/seo'
 import { fetchLevel, ReportIssue, SubjectList, SyllabusMeta } from '~/modules/syllabus'
 
 export const Route = createFileRoute('/courses/$course/$level/')({
   loader: async ({ params }) => {
-    const course = getCourse(params.course)
-    const level = getLevel(params.course, params.level)
+    const course = await loadCourse(params.course)
+    const level = course && findLevel(course, params.level)
     if (!course || !level) throw notFound()
     // Curated syllabus from the API. Null (not curated yet, or API unreachable) falls back to the static list.
     const syllabus = await fetchLevel(params.course, params.level)
@@ -23,6 +22,8 @@ export const Route = createFileRoute('/courses/$course/$level/')({
       title: `${course.name} ${level.name}: Papers and Preparation`,
       description: `All ${count} papers of ${course.name} ${level.name}${syllabus ? ', with chapters and marks weightage' : ''}, plus study planning, mock tests and revision tools.`,
       path,
+      image: courseOgPath(course.slug),
+      imageAlt: `${course.name} ${level.name} papers and preparation`,
       jsonLd: breadcrumbJsonLd([
         { name: 'Home', path: '/' },
         { name: 'Courses', path: '/courses' },

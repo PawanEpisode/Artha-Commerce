@@ -1,13 +1,13 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { getCourse, getLevel } from '~/modules/catalog'
-import { breadcrumbJsonLd, buildHead } from '~/modules/seo'
+import { findLevel, loadCourse } from '~/modules/courses'
+import { breadcrumbJsonLd, buildHead, courseOgPath } from '~/modules/seo'
 import { fetchSubject, ReportIssue, SubjectView } from '~/modules/syllabus'
 
 export const Route = createFileRoute('/courses/$course/$level/$subject/')({
   loader: async ({ params }) => {
-    const course = getCourse(params.course)
-    const level = getLevel(params.course, params.level)
+    const course = await loadCourse(params.course)
+    const level = course && findLevel(course, params.level)
     if (!course || !level) throw notFound()
     const subject = await fetchSubject(params.course, params.level, params.subject)
     if (!subject) throw notFound()
@@ -21,6 +21,8 @@ export const Route = createFileRoute('/courses/$course/$level/$subject/')({
       title: `${subject.name}: ${course.name} ${level.name} Syllabus and Chapters`,
       description: `${subject.name} for ${course.name} ${level.name}: ${subject.chapters.length} chapters${subject.total_marks ? `, ${subject.total_marks} marks` : ''}, with marks weightage and topics.`,
       path,
+      image: courseOgPath(course.slug),
+      imageAlt: `${subject.name}, ${course.name} ${level.name}`,
       jsonLd: [
         breadcrumbJsonLd([
           { name: 'Home', path: '/' },

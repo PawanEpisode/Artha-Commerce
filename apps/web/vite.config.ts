@@ -28,7 +28,7 @@ export default defineConfig(({ command, mode }) => {
     server: { port: 3000 },
     resolve: { tsconfigPaths: true },
     // The design system ships as TypeScript source; bundle it for SSR instead of treating it as an external dependency.
-    ssr: { noExternal: ['@artha/design-system'] },
+    ssr: { noExternal: ['@artha/design-system'], external: ['@resvg/resvg-js', 'satori'] },
     build: {
       sourcemap: uploadSourcemaps ? 'hidden' : false,
     },
@@ -46,7 +46,8 @@ export default defineConfig(({ command, mode }) => {
         : []),
       tailwindcss(),
       tanstackStart(),
-      nitro(),
+      // satori and resvg are loaded at runtime (OG images) and must stay external, with their files traced into the output.
+      nitro({ traceDeps: ['satori*', 'harfbuzzjs*', '@resvg/resvg-js*'] }),
       viteReact(),
       // Uploads source maps to Sentry only when credentials exist (Vercel production builds).
       ...(uploadSourcemaps

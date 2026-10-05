@@ -1,12 +1,11 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { getCourse } from '~/modules/catalog'
-import { CourseDetail } from '~/modules/courses'
-import { breadcrumbJsonLd, buildHead } from '~/modules/seo'
+import { CourseDetail, loadCourse } from '~/modules/courses'
+import { breadcrumbJsonLd, buildHead, courseOgPath } from '~/modules/seo'
 
 export const Route = createFileRoute('/courses/$course/')({
-  loader: ({ params }) => {
-    const course = getCourse(params.course)
+  loader: async ({ params }) => {
+    const course = await loadCourse(params.course, { papers: true })
     if (!course) throw notFound()
     return { course }
   },
@@ -18,6 +17,8 @@ export const Route = createFileRoute('/courses/$course/')({
       title: `${course.name} (${course.fullName}) Exam Preparation`,
       description: course.description,
       path,
+      image: courseOgPath(course.slug),
+      imageAlt: `${course.fullName} (${course.name}) exam preparation`,
       jsonLd: breadcrumbJsonLd([
         { name: 'Home', path: '/' },
         { name: 'Courses', path: '/courses' },
