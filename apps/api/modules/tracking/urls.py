@@ -16,6 +16,7 @@ urlpatterns = [
     path("tracking/sessions/merge/", views.SessionMergeView.as_view(), name="tracking-sessions-merge"),
     path("tracking/sessions/<uuid:session_id>/", views.SessionDetailView.as_view(), name="tracking-session"),
     path("tracking/sessions/<uuid:session_id>/split/", views.SessionSplitView.as_view(), name="tracking-session-split"),
+    path("tracking/auto/", views.AutoCaptureView.as_view(), name="tracking-auto"),
     path("tracking/goals/", views.GoalsView.as_view(), name="tracking-goals"),
     path("tracking/settings/", views.SettingsView.as_view(), name="tracking-settings"),
     path("tracking/reports/summary/", views.SummaryView.as_view(), name="tracking-report-summary"),

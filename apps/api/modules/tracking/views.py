@@ -8,6 +8,7 @@ from __future__ import annotations
 import csv
 from datetime import date, timedelta
 
+from core.feature_flags import flag_enabled
 from django.http import HttpResponse, StreamingHttpResponse
 from rest_framework import status
 from rest_framework.exceptions import NotFound, ValidationError
@@ -16,7 +17,6 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
 
-from core.feature_flags import flag_enabled
 from modules.coverage import selectors as coverage
 
 from . import selectors, serializers, services
@@ -217,6 +217,24 @@ class SessionDetailView(WriteView):
     def delete(self, request, session_id):
         audit = services.delete_session(request.user.id, session_id)
         return Response({"undo_token": audit.id, "undo_until": audit.undo_until})
+
+
+class AutoCaptureView(WriteView):
+    """Opt-in auto capture: time actively spent on a chapter page, reported in short chunks."""
+
+    def post(self, request):
+        d = self.parse(serializers.AutoCaptureSerializer, request.data).validated_data
+        session, outcome = services.add_auto(
+            request.user.id,
+            client_id=d["client_id"],
+            chapter_id=d["chapter_id"],
+            started_at=d["started_at"],
+            seconds=d["seconds"],
+        )
+        return Response(
+            {"session": session_dict(session) if session else None, "outcome": outcome, "server_time": services._now()},
+            status=201 if outcome == "saved" and session else 200,
+        )
 
 
 class SessionUndoView(WriteView):

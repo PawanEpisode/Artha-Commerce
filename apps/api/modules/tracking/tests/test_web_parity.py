@@ -40,6 +40,8 @@ def test_every_numeric_api_limit_is_mirrored_on_the_web():
         "IDLE_ANSWER_SECONDS",
         "MERGE_MAX_GAP_SECONDS",
         "NOTE_MAX_CHARS",
+        "AUTO_MAX_CHUNK_SECONDS",
+        "AUTO_DAILY_CAP_SECONDS",
         "GOAL_DAILY_MIN",
         "GOAL_DAILY_MAX",
         "GOAL_WEEKLY_MIN",

@@ -14,6 +14,7 @@ from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from django.db import IntegrityError, transaction
+from django.db.models import Sum
 from django.utils import timezone
 
 from modules.coverage import services as coverage
@@ -106,7 +107,7 @@ def update_settings(user_id, changes: dict) -> tuple[TrackerSettings, list[str]]
         raise InvalidInput("Invalid activity.", {"default_activity_type": ["Unknown activity type."]})
     if "tz" in changes:
         _check_tz(changes["tz"])
-    for field in ("idle_minutes", "week_start", "default_activity_type", "tz"):
+    for field in ("idle_minutes", "week_start", "default_activity_type", "tz", "auto_capture_enabled"):
         if field in changes and getattr(settings, field) != changes[field]:
             setattr(settings, field, changes[field])
             changed.append(field)
@@ -356,6 +357,55 @@ _SNAPSHOT_FIELDS = [
     for f in StudySession._meta.concrete_fields
     if f.name not in {"note", "created_at", "updated_at", "subject", "chapter", "split_from"}
 ] + ["subject_id", "chapter_id", "split_from_id"]
+
+
+@transaction.atomic
+def add_auto(user_id, *, client_id, chapter_id, started_at: datetime, seconds: int) -> tuple[StudySession | None, str]:
+    """
+    Opt-in auto capture (F-01.2 Q1): the web reports time spent actively on a syllabus chapter page. Returns
+    (session, outcome) where outcome is "saved", "too_short", "timer_running", "overlap" or "daily_cap". Auto time never
+    competes with a live timer or other recorded time, is capped per post and per day, and is not forwarded to coverage.
+    """
+    existing = selectors.session_by_client_id(user_id, client_id)
+    if existing:
+        return existing, "saved"
+    if not get_or_create_settings(user_id).auto_capture_enabled:
+        raise ConflictError("Auto capture is switched off.", code="auto_capture_off")
+    if live_timer_kind(user_id) != "none":
+        return None, "timer_running"
+    now = _now()
+    started = durations.whole_seconds(durations.clamp_client_time(started_at, now))
+    ended = min(
+        started + timedelta(seconds=min(seconds, durations.AUTO_MAX_CHUNK_SECONDS)), durations.whole_seconds(now)
+    )
+    focus = durations.span_seconds(started, ended)
+    if focus < durations.MIN_SESSION_SECONDS:
+        return None, "too_short"
+    subject, chapter = _resolve_tags(None, chapter_id)
+    study_date = durations.local_date(started, get_timezone(user_id))
+    if _overlapping(user_id, started, ended, study_date):
+        return None, "overlap"
+    today_auto = (
+        StudySession.objects.filter(user_id=user_id, study_date=study_date, source=Source.AUTO).aggregate(
+            total=Sum("focus_seconds")
+        )["total"]
+        or 0
+    )
+    if today_auto + focus > durations.AUTO_DAILY_CAP_SECONDS:
+        return None, "daily_cap"
+    session, _ = record_session(
+        user_id,
+        source=Source.AUTO,
+        started_at=started,
+        ended_at=ended,
+        focus_seconds=focus,
+        subject_id=subject.id if subject else None,
+        chapter_id=chapter.id,
+        activity_type=ActivityType.READING,
+        client_id=client_id,
+        forward=False,
+    )
+    return session, "saved"
 
 
 def _snapshot(session: StudySession) -> dict:

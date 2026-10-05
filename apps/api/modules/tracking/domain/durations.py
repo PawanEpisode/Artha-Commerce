@@ -27,6 +27,8 @@ IDLE_MINUTES_MIN, IDLE_MINUTES_MAX, IDLE_MINUTES_DEFAULT = 5, 60, 10
 GOAL_DAILY_MIN, GOAL_DAILY_MAX = 15, 1440
 GOAL_WEEKLY_MIN, GOAL_WEEKLY_MAX = 30, 10080
 NOTE_MAX_CHARS = 500
+AUTO_MAX_CHUNK_SECONDS = 30 * 60  # one auto-capture post covers at most this much time
+AUTO_DAILY_CAP_SECONDS = 4 * 3600  # auto-captured time counts for at most four hours a day
 
 SOURCES = ("pomodoro", "stopwatch", "manual", "auto")
 ACTIVITY_TYPES = ("reading", "practice", "revision", "notes", "mock_test", "other")

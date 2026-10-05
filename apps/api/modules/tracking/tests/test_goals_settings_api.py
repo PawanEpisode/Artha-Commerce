@@ -119,7 +119,13 @@ def test_goals_belong_to_the_student(api, other_api):
 
 def test_settings_defaults_update_and_reset(api):
     s = api.get("/tracking/settings/").json_body
-    assert s == {"idle_minutes": 10, "week_start": 1, "default_activity_type": "reading", "tz": "Asia/Kolkata"}
+    assert s == {
+        "idle_minutes": 10,
+        "week_start": 1,
+        "default_activity_type": "reading",
+        "tz": "Asia/Kolkata",
+        "auto_capture_enabled": False,
+    }
     res = api.put("/tracking/settings/", {"idle_minutes": 20, "week_start": 0, "tz": "Asia/Singapore"})
     assert res.status_code == 200 and sorted(res.json_body["changed_keys"]) == ["idle_minutes", "tz", "week_start"]
     assert api.put("/tracking/settings/", {"idle_minutes": 20}).json_body["changed_keys"] == []

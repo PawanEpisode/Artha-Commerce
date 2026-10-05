@@ -6,11 +6,10 @@ the short edit trail. `user_id` columns hold the Supabase user id by value (no c
 
 import uuid
 
+from core.models import TimeStampedModel, UUIDModel
 from django.db import models
 from django.db.models import Q
 from django.db.models.functions import Coalesce
-
-from core.models import TimeStampedModel, UUIDModel
 
 NIL_UUID = uuid.UUID(int=0)
 
@@ -161,6 +160,8 @@ class TrackerSettings(TimeStampedModel):
     week_start = models.SmallIntegerField(default=1)  # 1 = Monday, 0 = Sunday
     default_activity_type = models.CharField(max_length=10, choices=ActivityType.choices, default=ActivityType.READING)
     tz = models.CharField(max_length=64, default="Asia/Kolkata")
+    # Opt-in (F-01.2 Q1): time on syllabus chapter pages is logged as source=auto. Off until the student turns it on.
+    auto_capture_enabled = models.BooleanField(default=False)
 
     class Meta:
         db_table = "tracking_trackersettings"

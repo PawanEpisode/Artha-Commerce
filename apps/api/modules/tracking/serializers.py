@@ -99,6 +99,13 @@ class MergeSerializer(_Optional):
     activity_type = serializers.ChoiceField(choices=ACTIVITY_CHOICES, required=False)
 
 
+class AutoCaptureSerializer(serializers.Serializer):
+    client_id = serializers.UUIDField()
+    chapter_id = serializers.UUIDField()
+    started_at = serializers.DateTimeField()
+    seconds = serializers.IntegerField(min_value=1, max_value=durations.AUTO_MAX_CHUNK_SECONDS)
+
+
 class SplitSerializer(serializers.Serializer):
     at = serializers.DateTimeField()
 
@@ -118,6 +125,7 @@ class SettingsSerializer(_Optional):
     week_start = serializers.IntegerField(required=False, min_value=0, max_value=1)
     default_activity_type = serializers.ChoiceField(choices=ACTIVITY_CHOICES, required=False)
     tz = serializers.CharField(required=False, max_length=64)
+    auto_capture_enabled = serializers.BooleanField(required=False)
 
 
 class _RangeBase(serializers.Serializer):
@@ -186,6 +194,7 @@ def settings_dict(s) -> dict:
         "week_start": s.week_start,
         "default_activity_type": s.default_activity_type,
         "tz": s.tz,
+        "auto_capture_enabled": s.auto_capture_enabled,
     }
 
 
