@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   Badge,
+  BarChart,
   BellRing,
   BookOpen,
   Breadcrumb,
@@ -23,12 +24,18 @@ import {
   CircleHelp,
   ConfidenceDot,
   Container,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   EmptyState,
   Eye,
+  Heatmap,
   Input,
   KeyRound,
   Label,
@@ -44,9 +51,11 @@ import {
   ProgressBar,
   ProgressRing,
   Reveal,
+  SegmentedControl,
   Select,
   Skeleton,
   Sparkles,
+  StatTile,
   Sun,
   SunMoon,
   Switch,
@@ -56,7 +65,9 @@ import {
   ThemeRadioGroup,
   ThemeSwitcher,
   Timer,
+  ToastProvider,
   useTheme,
+  useToast,
   X,
 } from '@artha/design-system'
 import { useState } from 'react'
@@ -131,6 +142,80 @@ function ControlsDemo() {
         </Select>
       </div>
       <NumberStepper label="Chapters read" value={n} onChange={setN} max={10} />
+    </div>
+  )
+}
+
+const DEMO_COLUMNS = Array.from({ length: 14 }, (_, i) => ({
+  label: `Day ${i + 1}`,
+  short: String(i + 1),
+  values: { reading: ((i * 37) % 60) * 60, practice: ((i * 53) % 45) * 60 },
+}))
+const DEMO_HEAT = Array.from({ length: 56 }, (_, i) => ({
+  date: `2026-09-${String((i % 28) + 1).padStart(2, '0')}-${i}`,
+  level: (i * 7) % 6,
+  weekday: i % 7,
+  label: `Day ${i + 1}: level ${(i * 7) % 6}`,
+}))
+
+function TimeTrackerDemo() {
+  const [range, setRange] = useState('30d')
+  const toast = useToast()
+  return (
+    <div className="space-y-6">
+      <div className="grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
+        <StatTile label="Total study time" value="12 h 30 m" hint="Up 1 h 10 m on the previous period" />
+        <StatTile label="Days studied" value={9} />
+        <StatTile label="Best day" value="3 h 05 m" hint="Mon, 5 Oct 2026" />
+      </div>
+      <SegmentedControl
+        label="Range"
+        value={range}
+        onValueChange={setRange}
+        options={[
+          { value: '7d', label: '7 days' },
+          { value: '30d', label: '30 days' },
+          { value: '90d', label: '90 days' },
+        ]}
+      />
+      <div className="max-w-2xl">
+        <BarChart
+          title="Study time by day"
+          series={[
+            { key: 'reading', name: 'Reading' },
+            { key: 'practice', name: 'Practice' },
+          ]}
+          columns={DEMO_COLUMNS}
+          format={(s) => `${Math.floor(s / 60)} m`}
+        />
+      </div>
+      <div className="max-w-2xl">
+        <Heatmap
+          title="Study days"
+          cells={DEMO_HEAT}
+          weekdayLabels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
+          legend={{ less: 'Less', more: 'More' }}
+        />
+      </div>
+      <div className="flex flex-wrap gap-3">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline">Open a dialog</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogTitle>Add study time</DialogTitle>
+            <DialogDescription>Focus is trapped here and Escape closes it.</DialogDescription>
+          </DialogContent>
+        </Dialog>
+        <Button
+          variant="outline"
+          onClick={() =>
+            toast.show({ message: 'Deleted 45 m of study time.', actionLabel: 'Undo', onAction: () => {} })
+          }
+        >
+          Show a toast with undo
+        </Button>
+      </div>
     </div>
   )
 }
@@ -286,6 +371,12 @@ export function DesignShowcase() {
             <ProgressBar value={80} size="lg" label="Practice" />
           </div>
         </div>
+      </Block>
+
+      <Block title="Time tracker">
+        <ToastProvider>
+          <TimeTrackerDemo />
+        </ToastProvider>
       </Block>
 
       <Block title="Selection controls">

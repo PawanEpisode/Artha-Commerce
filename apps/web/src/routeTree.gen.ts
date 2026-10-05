@@ -28,11 +28,17 @@ import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
+import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
+import { Route as AppTrackerIndexRouteImport } from './routes/app.tracker.index'
+import { Route as AppTrackerGoalsRouteImport } from './routes/app.tracker.goals'
+import { Route as AppTrackerLogRouteImport } from './routes/app.tracker.log'
+import { Route as AppTrackerReportsRouteImport } from './routes/app.tracker.reports'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
 import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
+import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
 import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
 import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
 import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
@@ -133,9 +139,34 @@ const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   path: '/settings/coverage',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsTrackerRoute = AppSettingsTrackerRouteImport.update({
+  id: '/settings/tracker',
+  path: '/settings/tracker',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSyllabusIndexRoute = AppSyllabusIndexRouteImport.update({
   id: '/syllabus/',
   path: '/syllabus/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTrackerIndexRoute = AppTrackerIndexRouteImport.update({
+  id: '/tracker/',
+  path: '/tracker/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTrackerGoalsRoute = AppTrackerGoalsRouteImport.update({
+  id: '/tracker/goals',
+  path: '/tracker/goals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTrackerLogRoute = AppTrackerLogRouteImport.update({
+  id: '/tracker/log',
+  path: '/tracker/log',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTrackerReportsRoute = AppTrackerReportsRouteImport.update({
+  id: '/tracker/reports',
+  path: '/tracker/reports',
   getParentRoute: () => AppRoute,
 } as any)
 const CoursesCourseIndexRoute = CoursesCourseIndexRouteImport.update({
@@ -159,6 +190,11 @@ const AppSyllabusSubjectChapterRoute =
     path: '/syllabus/$subject/$chapter',
     getParentRoute: () => AppRoute,
   } as any)
+const AppTrackerDayDateRoute = AppTrackerDayDateRouteImport.update({
+  id: '/tracker/day/$date',
+  path: '/tracker/day/$date',
+  getParentRoute: () => AppRoute,
+} as any)
 const CoursesCourseLevelIndexRoute = CoursesCourseLevelIndexRouteImport.update({
   id: '/courses/$course/$level/',
   path: '/courses/$course/$level/',
@@ -203,10 +239,16 @@ export interface FileRoutesByFullPath {
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/settings/tracker': typeof AppSettingsTrackerRoute
+  '/app/tracker/goals': typeof AppTrackerGoalsRoute
+  '/app/tracker/log': typeof AppTrackerLogRoute
+  '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/syllabus/': typeof AppSyllabusIndexRoute
+  '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
+  '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
@@ -232,10 +274,16 @@ export interface FileRoutesByTo {
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/settings/tracker': typeof AppSettingsTrackerRoute
+  '/app/tracker/goals': typeof AppTrackerGoalsRoute
+  '/app/tracker/log': typeof AppTrackerLogRoute
+  '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/syllabus': typeof AppSyllabusIndexRoute
+  '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
+  '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
@@ -263,10 +311,16 @@ export interface FileRoutesById {
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/settings/tracker': typeof AppSettingsTrackerRoute
+  '/app/tracker/goals': typeof AppTrackerGoalsRoute
+  '/app/tracker/log': typeof AppTrackerLogRoute
+  '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/syllabus/': typeof AppSyllabusIndexRoute
+  '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
+  '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
@@ -295,10 +349,16 @@ export interface FileRouteTypes {
     | '/courses/'
     | '/features/'
     | '/app/settings/coverage'
+    | '/app/settings/tracker'
+    | '/app/tracker/goals'
+    | '/app/tracker/log'
+    | '/app/tracker/reports'
     | '/og/courses/$course'
     | '/app/syllabus/'
+    | '/app/tracker/'
     | '/courses/$course/'
     | '/app/syllabus/$subject/$chapter'
+    | '/app/tracker/day/$date'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
     | '/courses/$course/$level/$subject/$chapter'
@@ -324,10 +384,16 @@ export interface FileRouteTypes {
     | '/courses'
     | '/features'
     | '/app/settings/coverage'
+    | '/app/settings/tracker'
+    | '/app/tracker/goals'
+    | '/app/tracker/log'
+    | '/app/tracker/reports'
     | '/og/courses/$course'
     | '/app/syllabus'
+    | '/app/tracker'
     | '/courses/$course'
     | '/app/syllabus/$subject/$chapter'
+    | '/app/tracker/day/$date'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
     | '/courses/$course/$level/$subject/$chapter'
@@ -354,10 +420,16 @@ export interface FileRouteTypes {
     | '/courses/'
     | '/features/'
     | '/app/settings/coverage'
+    | '/app/settings/tracker'
+    | '/app/tracker/goals'
+    | '/app/tracker/log'
+    | '/app/tracker/reports'
     | '/og/courses/$course'
     | '/app/syllabus/'
+    | '/app/tracker/'
     | '/courses/$course/'
     | '/app/syllabus/$subject/$chapter'
+    | '/app/tracker/day/$date'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
     | '/courses/$course/$level/$subject/$chapter'
@@ -522,11 +594,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSettingsCoverageRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings/tracker': {
+      id: '/app/settings/tracker'
+      path: '/settings/tracker'
+      fullPath: '/app/settings/tracker'
+      preLoaderRoute: typeof AppSettingsTrackerRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/syllabus/': {
       id: '/app/syllabus/'
       path: '/syllabus'
       fullPath: '/app/syllabus/'
       preLoaderRoute: typeof AppSyllabusIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/tracker/': {
+      id: '/app/tracker/'
+      path: '/tracker'
+      fullPath: '/app/tracker/'
+      preLoaderRoute: typeof AppTrackerIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/tracker/goals': {
+      id: '/app/tracker/goals'
+      path: '/tracker/goals'
+      fullPath: '/app/tracker/goals'
+      preLoaderRoute: typeof AppTrackerGoalsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/tracker/log': {
+      id: '/app/tracker/log'
+      path: '/tracker/log'
+      fullPath: '/app/tracker/log'
+      preLoaderRoute: typeof AppTrackerLogRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/tracker/reports': {
+      id: '/app/tracker/reports'
+      path: '/tracker/reports'
+      fullPath: '/app/tracker/reports'
+      preLoaderRoute: typeof AppTrackerReportsRouteImport
       parentRoute: typeof AppRoute
     }
     '/courses/$course/': {
@@ -555,6 +662,13 @@ declare module '@tanstack/react-router' {
       path: '/syllabus/$subject/$chapter'
       fullPath: '/app/syllabus/$subject/$chapter'
       preLoaderRoute: typeof AppSyllabusSubjectChapterRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/tracker/day/$date': {
+      id: '/app/tracker/day/$date'
+      path: '/tracker/day/$date'
+      fullPath: '/app/tracker/day/$date'
+      preLoaderRoute: typeof AppTrackerDayDateRouteImport
       parentRoute: typeof AppRoute
     }
     '/courses/$course/$level/': {
@@ -594,8 +708,14 @@ interface AppRouteChildren {
   AppRevisionRoute: typeof AppRevisionRoute
   AppIndexRoute: typeof AppIndexRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
+  AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
+  AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
+  AppTrackerLogRoute: typeof AppTrackerLogRoute
+  AppTrackerReportsRoute: typeof AppTrackerReportsRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
+  AppTrackerIndexRoute: typeof AppTrackerIndexRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
+  AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
 }
 
@@ -605,8 +725,14 @@ const AppRouteChildren: AppRouteChildren = {
   AppRevisionRoute: AppRevisionRoute,
   AppIndexRoute: AppIndexRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
+  AppSettingsTrackerRoute: AppSettingsTrackerRoute,
+  AppTrackerGoalsRoute: AppTrackerGoalsRoute,
+  AppTrackerLogRoute: AppTrackerLogRoute,
+  AppTrackerReportsRoute: AppTrackerReportsRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
+  AppTrackerIndexRoute: AppTrackerIndexRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
+  AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
 }
 
