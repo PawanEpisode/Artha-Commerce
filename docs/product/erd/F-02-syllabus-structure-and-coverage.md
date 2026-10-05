@@ -130,6 +130,10 @@ erDiagram
     uuid from_chapter_id FK
     uuid to_chapter_id FK
     text relation
+    numeric carry_ratio
+    text basis
+    numeric confidence
+    boolean needs_review
   }
   SYLLABUS_REPORT {
     uuid id PK
@@ -345,9 +349,21 @@ Carries progress between schemes.
 | from_chapter_id | uuid | no | | FK, chapter in the old scheme |
 | to_chapter_id | uuid | no | | FK, chapter in the new scheme |
 | relation | text | no | `same` | `same`, `split`, `merged`, `partial` |
-| carry_ratio | numeric(3,2) | no | 1.00 | Fraction of progress carried (for `split` and `partial`) |
+| carry_ratio | numeric(3,2) | no | 1.00 | Fraction of progress carried. A merge of k old chapters into one new chapter proposes `1/k` each; a split proposes `1.00` to every part. Topics carry fully (by key, then by normalised name) except on `partial` rows, which scale them by this ratio |
+| basis | text | no | `manual` | How the row was proposed: `key`, `name`, `fuzzy`, `renamed`, `moved`, `split`, `merge`, `manual` |
+| confidence | numeric(3,2) | yes | | 0 to 1 for proposed rows; null for rows an editor created |
+| needs_review | boolean | no | false | True for anything an editor should confirm; cleared when the editor changes the row or runs "Mark as reviewed" |
 
-Unique `(from_chapter_id, to_chapter_id)`. A chapter in the new scheme with no incoming row is "new"; one in the old scheme with no outgoing row is "removed". Default creation rule: same `key` in the same subject key gives `same`. Editors adjust the rest.
+Unique `(from_chapter_id, to_chapter_id)`. Check constraints keep `basis` to the list above and `confidence` between 0 and 1; index `(needs_review, confidence)` serves the review queue. A chapter in the new scheme with no incoming row is "new"; one in the old scheme with no outgoing row is "removed".
+
+Default creation rule (`syllabus.matching`, pure functions, `services.build_default_chapter_map`), per paper, each step working on what the earlier steps left over:
+
+1. Same `key`: `same`, `basis = key`. Flagged when the two names have nothing in common (a re-used key).
+2. Same normalised name (accents, "&", leading numbering such as "Chapter 3:" removed): `same`, `basis = name`, trusted. Close names (similarity 0.60 or more): `basis = fuzzy`, flagged below 0.85. Ties are broken by position in the paper.
+3. Merges (two to four old names contained in one new chapter) and splits (the reverse): `basis = merge` or `split`, always flagged.
+4. The one chapter left on each side of a paper whose names still resemble each other (0.50 or more): `basis = renamed`, flagged.
+
+Papers are paired by key, then by name (0.75 or more). Chapters left over across unpaired papers are linked only when the names are near identical (0.90 or more): `basis = moved`, flagged. The service never overwrites a row an editor already created, and publishing a scheme warns while any map into it still needs review.
 
 ### 2.10 `syllabus_report`
 
@@ -564,7 +580,7 @@ Chapter marks follow the source: official module weights, and where the source g
 | Q-8 | Tick or untick: upsert topic progress, insert event, recompute chapter and its 3 ancestors in one transaction | PK on topic progress, unique `client_id` |
 | Q-9 | Due list ordered by overdue days and marks weight | partial index on `next_revision_due` |
 | Q-10 | Quick catch-up: bulk upsert of topic progress for chosen chapters, one event per chapter | single transaction, `INSERT ... ON CONFLICT` |
-| Q-11 | Scheme switch: for each old chapter with a mapping, copy progress scaled by `carry_ratio`, write `carryover` events | `coverage_enrollment` + `syllabus_chaptermap` |
+| Q-11 | Scheme switch: for each old chapter with a mapping, copy progress scaled by `carry_ratio`, write `carryover` events; return `switch_summary` with the carried, new and removed chapters as lists | `coverage_enrollment` + `syllabus_chaptermap` |
 | Q-12 | Rebuild derived data from the ledger (admin, tests) | `(enrollment_id, chapter_id, occurred_at)` |
 
 ## 8. Storage
@@ -576,7 +592,7 @@ No files. The OG images for public syllabus pages are generated at build or on d
 - **Public data:** `syllabus_*` read endpoints are unauthenticated and cacheable. They never expose draft or retired schemes (retired only to their enrolled students) and never expose `syllabus_report`.
 - **Admin writes:** require the `admin` or `editor` role (a column on `profiles`, checked in a DRF permission class and in Django admin). All publish and retire actions are logged in the Django admin history.
 - **Student data:** every `coverage_*` query filters by the JWT `sub`. Detail routes filter id and user together, so another student's id returns 404.
-- **RLS:** enabled with no policies on all tables listed here; the post-migrate hook covers them, and a test asserts it.
+- **RLS:** enabled with no policies on all tables listed here; the post-migrate hook covers them, and `core/tests/test_row_level_security.py` asserts it for every syllabus and coverage table (derived from the models, so a new table is covered automatically; it runs on Postgres and skips on SQLite, and CI has a Postgres service).
 - **Validation:** weights total 100; chapters must belong to the enrolment's scheme (service check); event `value` ranges by type; payload limited to 2 KB and scrubbed of text.
 - **Rate limits:** DRF throttles on `POST coverage/events/`, `catchup` and `syllabus/reports/` (anonymous reports are throttled per IP).
 - **PII:** none in `syllabus`. In `coverage`, progress and confidence are personal data: included in export, removed on delete. Nothing from `coverage` is sent to analytics except counts and keys.
@@ -586,6 +602,7 @@ No files. The OG images for public syllabus pages are generated at build or on d
 
 Order (one migration set per app):
 
+0. Later migrations: `syllabus.0009_chaptermap_review_fields` adds `basis`, `confidence`, `needs_review`, their two check constraints and the review index; existing rows default to `basis = manual`, `needs_review = false`.
 1. `syllabus.0001_initial`: course, level, examterm, scheme, group, subject, chapter, topic, chaptermap, report with all constraints and indexes.
 2. `syllabus.0002_seed_reference`: data migration for the three courses, their levels and the open exam terms (small, idempotent). Detailed schemes are loaded with the management command, not inside migrations, so content can be updated without a migration.
 2a. `syllabus.0006` to `0008`: exam terms per level. `level_id` is added, every course-wide term is copied to each level of its course, scheme windows and enrolments are re-pointed, CA and CMA attempts are set per level, then `level_id` becomes required with `unique (level_id, code)`. A scheme's from and to term must belong to the scheme's level; an enrolment's target term must belong to its level (`GET /syllabus/terms/?course=&level=`).
@@ -599,7 +616,7 @@ Notes:
 - Use `DIRECT_DATABASE_URL` for migrations.
 - Later indexes on `coverage_event` (the largest table) use `AddIndexConcurrently`.
 - Expected volume: about 150 chapters and 500 topics per level; per active student about 150 chapter rows, 500 topic rows and a few thousand events a year. Comfortable for one Postgres without partitioning. If events grow past tens of millions, partition `coverage_event` by month on `occurred_at`.
-- The feature flag `syllabus_coverage` hides only the private screens; the public API and pages ship earlier (Phase B).
+- The feature flag `syllabus_coverage` hides only the private screens; the public API and pages ship earlier (Phase B). It is evaluated twice with the same PostHog flag and the same user id: on the web (`useFeatureFlag`) and on the API (`core/feature_flags.py`, PostHog Python SDK, per user, cached for 60 seconds, fail-open: no key, no answer or an error means on, only an explicit false turns it off). When off, every coverage endpoint except export and delete answers `403` with code `feature_disabled`. Needs `POSTHOG_API_KEY` (the project key) on the API.
 - Rollback is a drop of `coverage` then `syllabus` tables before any other feature depends on them.
 
 ## 11. Module layout
@@ -610,6 +627,8 @@ Notes:
 apps/api/modules/
   syllabus/
     models.py selectors.py services.py (publish, retire, map schemes) serializers.py views.py urls.py admin.py
+    matching.py             pure chapter, paper and moved-chapter matching for the default map (unit tested)
+    static/syllabus/admin/  reorder.js and reorder.css: drag and drop ordering in the admin lists
     seed/ca/intermediate/2023.json ...
     management/commands/load_syllabus_seed.py
     tests/
@@ -620,6 +639,7 @@ apps/api/modules/
     selectors.py            overview, subject view, chapter view, due list
     serializers.py views.py urls.py
     tests/
+  core/feature_flags.py     server-side PostHog flag evaluation, cached and fail-open
 ```
 
 ### Web
@@ -633,6 +653,7 @@ apps/web/src/modules/
     lib/formula.ts          mirror of the formula for optimistic UI, tested against shared fixtures
     hooks/ (useOverview, useChapterCoverage, useTickTopic, useLogEvent, useDueList, useCoverageSettings)
     components/ (CoverageRing, SubjectCoverageRow, TopicChecklist, StatusBadge, ConfidencePicker, CatchupSelector, DueList)
+    lib/offlineQueue.ts, queuedWrites.ts   IndexedDB queue for idempotent writes; hooks/useOfflineSync.ts replays it
     containers/ (OnboardingContainer, SyllabusMapContainer, ChapterCoverageContainer, SettingsContainer)
 ```
 
@@ -652,7 +673,9 @@ Deviations and additions made while implementing, so the document matches the co
 - Write endpoints return the changed chapter plus its subject and level roll-ups, so one response refreshes the whole screen.
 - Admin editing is done in the Django admin (`/<DJANGO_ADMIN_PATH>/`): reference data, schemes with inline papers, papers with inline chapters, chapters with inline topics, bulk add of chapters and topics from pasted lists, JSON import and export of a whole scheme, publish and retire actions behind a separate permission (groups "Syllabus editors" and "Syllabus publishers"), chapter maps, the reports inbox, and read-only support views of enrolments and the ledger. Nodes of a published or retired scheme cannot be deleted, only switched off.
 - `profile.role` (student, editor, admin) was added to gate editor endpoints.
-- Offline queueing: every write carries a client id, so retries are idempotent. Writes made while offline wait in memory until the connection returns; a persisted offline queue is not built yet.
+- Offline queueing: every write carries a client id, so retries are idempotent. Tick topic, tick chapter and log event are stored in IndexedDB (database `artha-coverage`, store `writes`, keyed by client id, scoped to the user) when the network fails or an older write is still waiting, and replayed oldest first with the same client ids on load, when the browser comes back online and every 30 seconds while something waits. A 5xx, 408, 425, 429 or network error is retried; any other 4xx drops the entry. Falls back to memory where IndexedDB is unavailable. Catch-up, settings, confidence and exclusion are not queued: they need the server's answer to show the next screen.
+- Admin ordering: papers, chapters and topics are reordered by drag and drop (or Alt+Arrow) in their admin lists; the order is saved through `<model>/reorder/` and renumbers the siblings of the same parent, and each move is written to the change history.
+- Public pages: course, level, paper and chapter pages read courses from the API and merge them over the static catalog. Preview images are generated at `/og/courses/{course}` and `/og/courses/{course}/{level}/{paper}/{chapter}` (satori and resvg, Inter font bundled) and cached for a day; any failure redirects to `/og/default.png`.
 - Seed files are the real syllabus structures built from the official documents (see the seed table in section 6) and still load as drafts until an editor verifies and publishes them. The earlier `indicative.json` files and the memory-based `2023-sample.json` were replaced.
 - `chapter.section` and `subject.source_url` were added (PRD sources: Section/Part with weightage appears in CMA, CS and CA papers; the source link supports the "Based on ... issued by ..." line and the later ingestion service). `spom` was added as a CA level for ICAI's Self-Paced Online Modules.
 - PRD FR-5 lists the relations same, split, merged, removed and new. The table stores `same`, `split`, `merged`, `partial`; "new" (no incoming row) and "removed" (no outgoing row) are derived, never stored.
