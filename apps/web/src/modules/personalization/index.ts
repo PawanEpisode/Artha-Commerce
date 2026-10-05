@@ -1,5 +1,8 @@
 export { IdentityAvatar } from './components/IdentityAvatar'
 export { OnboardingContainer, type OnboardingSearch } from './containers/OnboardingContainer'
+export { PersonalizedPostAuth } from './containers/PersonalizedPostAuth'
 export { ProfileSection } from './containers/ProfileSection'
+export { RequireOnboarded } from './containers/RequireOnboarded'
 export { useBootstrap } from './hooks/useBootstrap'
+export { LANDING_REDIRECT_SCRIPT } from './lib/landingRedirect'
 export type { Avatar, Bootstrap, CourseSummary, OnboardingStatus, OnboardingSummary } from './lib/types'

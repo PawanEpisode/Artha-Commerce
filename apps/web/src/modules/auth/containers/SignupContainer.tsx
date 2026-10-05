@@ -1,5 +1,5 @@
 import { Button } from '@artha/design-system'
-import { Link, useNavigate } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
 import { AuthCard } from '../components/AuthCard'
@@ -9,12 +9,13 @@ import { SignUpForm } from '../components/SignUpForm'
 import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useAuth } from '../hooks/useAuth'
 import { useCooldown } from '../hooks/useCooldown'
+import { useGoAfterAuth } from '../hooks/usePostAuth'
 import { resendSignupEmail, signUpWithPassword, verifyEmailCode } from '../lib/auth-api'
 import { notify } from '../lib/notify'
 
 export function SignupContainer() {
   const { user, configured, signInWithGoogle } = useAuth()
-  const navigate = useNavigate()
+  const goAfterAuth = useGoAfterAuth()
   const [email, setEmail] = useState<string>()
   const signUp = useAsyncAction()
   const verify = useAsyncAction()
@@ -22,8 +23,8 @@ export function SignupContainer() {
   const cooldown = useCooldown()
 
   useEffect(() => {
-    if (user) void navigate({ to: '/app', replace: true })
-  }, [user, navigate])
+    if (user) void goAfterAuth()
+  }, [user, goAfterAuth])
 
   async function create({ email: address, password }: { email: string; password: string }) {
     const result = await signUp.run(() => signUpWithPassword(address, password))

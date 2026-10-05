@@ -1,10 +1,11 @@
-import { Alert, Button, Celebration, Container, Skeleton, StepFlow } from '@artha/design-system'
+import { Alert, Celebration, StepFlow } from '@artha/design-system'
 import { useRouter } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
 import { useAuth } from '~/modules/auth'
 import { track } from '~/modules/observability'
 
+import { LoadErrorPanel, PageColumn, WorkspaceSkeleton } from '../components/LoadStates'
 import { AvatarStep } from '../components/steps/AvatarStep'
 import { CatchupStep } from '../components/steps/CatchupStep'
 import { CourseStep } from '../components/steps/CourseStep'
@@ -14,6 +15,7 @@ import { TargetsStep } from '../components/steps/TargetsStep'
 import type { StepProps } from '../components/steps/types'
 import { useBootstrap } from '../hooks/useBootstrap'
 import { useCompleteOnboarding, useOnboardingState } from '../hooks/useOnboarding'
+import { useSlow } from '../hooks/useSlow'
 import { celebrationMessage, celebrationSeen, markCelebrated } from '../lib/celebration'
 import { copyFor, nextAfter, previousBefore, resolveStep, walkOf } from '../lib/onboardingSteps'
 import { describeStepError } from '../lib/stepErrors'
@@ -46,17 +48,12 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
   const complete = useCompleteOnboarding()
   const [walk, setWalk] = useState<string[] | null>(null)
   const [celebrating, setCelebrating] = useState(false)
-  const [slow, setSlow] = useState(false)
+  const slow = useSlow(state.isPending || boot.isPending)
 
   // The walk is fixed once, when the state first arrives, so the progress bar never shrinks as steps get done.
   useEffect(() => {
     if (state.data && walk === null) setWalk(walkOf(state.data.mode, state.data.steps))
   }, [state.data, walk])
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => setSlow(true), 3000)
-    return () => window.clearTimeout(timer)
-  }, [])
 
   const resolved = walk && state.data ? resolveStep(walk, state.data.steps, search.step) : null
   const current = resolved?.key ?? null
@@ -112,45 +109,23 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
     )
   }
 
-  const shell = (children: React.ReactNode) => <Container className="max-w-2xl py-10 sm:py-16">{children}</Container>
-
   if (state.isError || boot.isError) {
-    return shell(
-      <Alert variant="error">
-        <div className="space-y-3">
-          <p>We could not load your setup. Check your connection and try again.</p>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              size="sm"
-              onClick={() => {
-                void state.refetch()
-                void boot.refetch()
-              }}
-            >
-              Try again
-            </Button>
-            <Button size="sm" variant="outline" onClick={() => void signOut()}>
-              Sign out
-            </Button>
-          </div>
-        </div>
-      </Alert>,
+    return (
+      <LoadErrorPanel
+        onRetry={() => {
+          void state.refetch()
+          void boot.refetch()
+        }}
+        onSignOut={() => void signOut()}
+      />
     )
   }
 
   if (!state.data || !boot.data || !walk || !current) {
-    return shell(
-      <div className="space-y-6" aria-busy>
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-10 w-3/4" />
-        <Skeleton className="h-56 w-full" />
-        {slow ? (
-          <p role="status" className="text-sm text-muted-foreground">
-            This is taking longer than usual…
-          </p>
-        ) : null}
+    return (
+      <WorkspaceSkeleton slow={slow}>
         {complete.isError ? <Alert variant="error">{describeStepError(complete.error).message}</Alert> : null}
-      </div>,
+      </WorkspaceSkeleton>
     )
   }
 
@@ -160,24 +135,26 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
   const props: StepProps = { bootstrap: boot.data, onDone: () => advance(current) }
   const returning = state.data.mode === 'update'
 
-  return shell(
-    <StepFlow
-      steps={walk.map((key) => copyFor(key).label)}
-      current={index}
-      title={copy.title}
-      description={
-        returning && index === 0 ? 'We added a few quick questions to personalise your plan.' : copy.description
-      }
-      onBack={back ? () => onStep(back) : undefined}
-    >
-      {current === 'profile' ? <ProfileStep {...props} /> : null}
-      {current === 'course' ? (
-        <CourseStep {...props} initialCourse={search.course} initialLevel={search.level} />
-      ) : null}
-      {current === 'hours' ? <HoursStep {...props} /> : null}
-      {current === 'targets' ? <TargetsStep {...props} /> : null}
-      {current === 'catchup' ? <CatchupStep {...props} /> : null}
-      {current === 'avatar' ? <AvatarStep {...props} /> : null}
-    </StepFlow>,
+  return (
+    <PageColumn>
+      <StepFlow
+        steps={walk.map((key) => copyFor(key).label)}
+        current={index}
+        title={copy.title}
+        description={
+          returning && index === 0 ? 'We added a few quick questions to personalise your plan.' : copy.description
+        }
+        onBack={back ? () => onStep(back) : undefined}
+      >
+        {current === 'profile' ? <ProfileStep {...props} /> : null}
+        {current === 'course' ? (
+          <CourseStep {...props} initialCourse={search.course} initialLevel={search.level} />
+        ) : null}
+        {current === 'hours' ? <HoursStep {...props} /> : null}
+        {current === 'targets' ? <TargetsStep {...props} /> : null}
+        {current === 'catchup' ? <CatchupStep {...props} /> : null}
+        {current === 'avatar' ? <AvatarStep {...props} /> : null}
+      </StepFlow>
+    </PageColumn>
   )
 }

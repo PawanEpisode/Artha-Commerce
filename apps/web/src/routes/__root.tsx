@@ -10,6 +10,7 @@ import { LiveMiniTimer } from '~/modules/focus'
 import { SiteShell } from '~/modules/layout'
 import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { ObservabilityProvider } from '~/modules/observability'
+import { PersonalizedPostAuth } from '~/modules/personalization'
 import appCss from '~/styles.css?url'
 
 // Runs before first paint so there is no theme flash (Reading is the default; System resolves by time of day).
@@ -47,12 +48,14 @@ function RootComponent() {
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
             <ObservabilityProvider>
-              <SiteShell>
-                <Outlet />
-              </SiteShell>
-              <LiveMiniTimer />
-              {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}
-              <Toaster />
+              <PersonalizedPostAuth>
+                <SiteShell>
+                  <Outlet />
+                </SiteShell>
+                <LiveMiniTimer />
+                {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}
+                <Toaster />
+              </PersonalizedPostAuth>
             </ObservabilityProvider>
           </AuthProvider>
         </QueryClientProvider>

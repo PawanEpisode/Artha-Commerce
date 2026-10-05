@@ -3,6 +3,7 @@ import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 import { AuthCard } from '../components/AuthCard'
+import { useGoAfterAuth } from '../hooks/usePostAuth'
 import { confirmTokenHash } from '../lib/auth-api'
 import { isConfirmType, postConfirmPath } from '../lib/redirects'
 
@@ -18,6 +19,7 @@ interface ConfirmContainerProps {
  */
 export function ConfirmContainer({ tokenHash, type, next }: ConfirmContainerProps) {
   const navigate = useNavigate()
+  const goAfterAuth = useGoAfterAuth()
   const started = useRef(false) // React Strict Mode runs effects twice in dev; a one-time token must be sent once.
   const [error, setError] = useState<string>()
 
@@ -28,9 +30,11 @@ export function ConfirmContainer({ tokenHash, type, next }: ConfirmContainerProp
     started.current = true
     void confirmTokenHash(tokenHash, type).then((result) => {
       if (result.error) setError(result.error)
-      else void navigate({ to: postConfirmPath(type, next), replace: true })
+      else if (type === 'recovery' || type === 'invite' || type === 'email_change') {
+        void navigate({ to: postConfirmPath(type, next), replace: true })
+      } else void goAfterAuth(next) // a sign-in: the destination rules decide (onboarding, deep link, last visit)
     })
-  }, [valid, tokenHash, type, next, navigate])
+  }, [valid, tokenHash, type, next, navigate, goAfterAuth])
 
   if (!valid || error) {
     return (
