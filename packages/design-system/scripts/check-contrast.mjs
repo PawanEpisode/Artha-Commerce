@@ -20,7 +20,7 @@ function block(selector) {
 
 function tokens(selector) {
   const out = {}
-  for (const m of block(selector).matchAll(/--([a-z-]+):\s*oklch\(([^)]+)\)/g)) {
+  for (const m of block(selector).matchAll(/--([a-z0-9-]+):\s*oklch\(([^)]+)\)/g)) {
     const [main, alpha] = m[2].split('/').map((s) => s.trim())
     const [l, c, h] = main.split(/\s+/).map(Number)
     out[m[1]] = { l, c, h, alpha: alpha === undefined ? 1 : Number(alpha) }
@@ -79,6 +79,11 @@ const REQUIRED = [
   ['primary', 'secondary', 3, 'progress fill on track (WCAG 1.4.11)'],
   ['primary', 'card', 3, 'progress ring on card'],
   ['destructive', 'secondary', 3, 'progress fill (destructive) on track'],
+  ['chart-1', 'card', 3, 'chart series 1 on card (WCAG 1.4.11)'],
+  ['chart-2', 'card', 3, 'chart series 2 on card (WCAG 1.4.11)'],
+  ['chart-3', 'card', 3, 'chart series 3 on card (WCAG 1.4.11)'],
+  ['chart-4', 'card', 3, 'chart series 4 on card (WCAG 1.4.11)'],
+  ['chart-5', 'card', 3, 'chart series 5 on card (WCAG 1.4.11)'],
 ]
 const ADVISORY = []
 
