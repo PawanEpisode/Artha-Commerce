@@ -1,9 +1,8 @@
 """Errors of the profiles module. Each class carries the `default_code` the web branches on."""
 
+from core.errors import CodedError, Conflict, FeatureDisabled
 from rest_framework import status
 from rest_framework.exceptions import APIException, NotFound
-
-from core.errors import CodedError, Conflict, FeatureDisabled
 
 
 class StepMandatory(Conflict):
@@ -83,6 +82,10 @@ class PayloadTooLarge(CodedError):
     default_code = "payload_too_large"
 
 
+class BodyTooLarge(PayloadTooLarge):
+    default_detail = "That request is too large."
+
+
 class StorageUnavailable(CodedError):
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
     default_detail = "We could not save your photo. Try again."
@@ -91,3 +94,9 @@ class StorageUnavailable(CodedError):
 
 class AvatarUploadDisabled(FeatureDisabled):
     default_detail = "Photo upload is not available yet."
+
+
+class PathNotRestorable(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "That page is not remembered."
+    default_code = "path_not_restorable"

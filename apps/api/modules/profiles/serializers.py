@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
-from rest_framework import serializers
-
 from core.authentication import SupabaseUser
+from rest_framework import serializers
 
 from .avatar_urls import avatar_summary
 from .domain.names import first_name, suggested_name
@@ -93,3 +92,10 @@ def bootstrap_dict(b: Bootstrap, user: SupabaseUser) -> dict:
         else {"path": b.last_visit.path, "search": b.last_visit.search, "at": _iso(b.last_visit.visited_at)},
         "created_at": _iso(p.created_at),
     }
+
+
+class LastVisitSerializer(serializers.Serializer):
+    """Whatever else the body carries (the beacon token `t`) is ignored. Restorability is judged by the service."""
+
+    path = serializers.CharField(max_length=300, trim_whitespace=False)
+    search = serializers.CharField(max_length=200, required=False, allow_blank=True, default="", trim_whitespace=False)

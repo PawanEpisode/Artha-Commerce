@@ -1,0 +1,268 @@
+{
+ "cases": [
+  {
+   "name": "workspace home",
+   "path": "/app",
+   "search": "",
+   "expected": {
+    "path": "/app",
+    "search": ""
+   }
+  },
+  {
+   "name": "trailing slash is dropped",
+   "path": "/app/tracker/",
+   "search": "",
+   "expected": {
+    "path": "/app/tracker",
+    "search": ""
+   }
+  },
+  {
+   "name": "syllabus with view",
+   "path": "/app/syllabus",
+   "search": "view=weighted&status=due",
+   "expected": {
+    "path": "/app/syllabus",
+    "search": "view=weighted&status=due"
+   }
+  },
+  {
+   "name": "leading question mark is dropped",
+   "path": "/app/syllabus",
+   "search": "?view=simple",
+   "expected": {
+    "path": "/app/syllabus",
+    "search": "view=simple"
+   }
+  },
+  {
+   "name": "unknown keys are dropped",
+   "path": "/app/syllabus",
+   "search": "view=simple&utm_source=x&token=abc",
+   "expected": {
+    "path": "/app/syllabus",
+    "search": "view=simple"
+   }
+  },
+  {
+   "name": "hostile values are dropped",
+   "path": "/app/syllabus",
+   "search": "view=%3Cscript%3E&status=due",
+   "expected": {
+    "path": "/app/syllabus",
+    "search": "status=due"
+   }
+  },
+  {
+   "name": "subject page",
+   "path": "/app/syllabus/3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11",
+   "search": "",
+   "expected": {
+    "path": "/app/syllabus/3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11",
+    "search": ""
+   }
+  },
+  {
+   "name": "chapter page",
+   "path": "/app/syllabus/fin-acc/ch-3",
+   "search": "",
+   "expected": {
+    "path": "/app/syllabus/fin-acc/ch-3",
+    "search": ""
+   }
+  },
+  {
+   "name": "revision",
+   "path": "/app/revision",
+   "search": "",
+   "expected": {
+    "path": "/app/revision",
+    "search": ""
+   }
+  },
+  {
+   "name": "reports keep range and by, drop dates",
+   "path": "/app/tracker/reports",
+   "search": "range=7d&from=2026-01-01&to=2026-01-31&by=subject",
+   "expected": {
+    "path": "/app/tracker/reports",
+    "search": "range=7d&by=subject"
+   }
+  },
+  {
+   "name": "tracker log",
+   "path": "/app/tracker/log",
+   "search": "",
+   "expected": {
+    "path": "/app/tracker/log",
+    "search": ""
+   }
+  },
+  {
+   "name": "tracker goals",
+   "path": "/app/tracker/goals",
+   "search": "",
+   "expected": {
+    "path": "/app/tracker/goals",
+    "search": ""
+   }
+  },
+  {
+   "name": "focus",
+   "path": "/app/focus",
+   "search": "",
+   "expected": {
+    "path": "/app/focus",
+    "search": ""
+   }
+  },
+  {
+   "name": "focus history drops the date",
+   "path": "/app/focus/history",
+   "search": "date=2026-01-01",
+   "expected": {
+    "path": "/app/focus/history",
+    "search": ""
+   }
+  },
+  {
+   "name": "not restorable: onboarding",
+   "path": "/app/onboarding",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: account",
+   "path": "/app/account",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: coverage settings",
+   "path": "/app/settings/coverage",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: tracker settings",
+   "path": "/app/settings/tracker",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: focus settings",
+   "path": "/app/settings/focus",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: a tracker day",
+   "path": "/app/tracker/day/2026-01-01",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: login",
+   "path": "/login",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: auth",
+   "path": "/auth/callback",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: public page",
+   "path": "/courses/cma",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: home",
+   "path": "/",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "not restorable: other app page",
+   "path": "/app/unknown",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "empty",
+   "path": "",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "no leading slash",
+   "path": "app/tracker",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "scheme",
+   "path": "https://evil.com/app",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "protocol relative",
+   "path": "//evil.com/app",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "dot dot",
+   "path": "/app/syllabus/../account",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "encoded dot dot",
+   "path": "/app/syllabus/%2e%2e/x",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "double slash",
+   "path": "/app//tracker",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "backslash",
+   "path": "/app\\tracker",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "control character",
+   "path": "/app/tracker\n",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "too long",
+   "path": "/app/syllabus/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "extra segment",
+   "path": "/app/tracker/reports/extra",
+   "search": "",
+   "expected": null
+  },
+  {
+   "name": "case matters",
+   "path": "/App/Tracker",
+   "search": "",
+   "expected": null
+  }
+ ]
+}

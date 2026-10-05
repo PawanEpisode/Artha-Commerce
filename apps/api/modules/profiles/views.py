@@ -4,14 +4,15 @@ from __future__ import annotations
 
 import time
 
-from rest_framework.parsers import MultiPartParser
+from core.authentication import BeaconBodyAuthentication, SupabaseJWTAuthentication
+from core.feature_flags import flag_enabled
+from core.http import tagged_response
+from core.parsers import PlainTextJSONParser
+from rest_framework.parsers import JSONParser, MultiPartParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
-
-from core.feature_flags import flag_enabled
-from core.http import tagged_response
 
 from . import registry, selectors, serializers, services
 from .avatar_urls import avatar_summary
@@ -19,6 +20,7 @@ from .domain.images import MAX_INPUT_BYTES
 from .domain.names import InvalidName
 from .errors import (
     AvatarUploadDisabled,
+    BodyTooLarge,
     FieldReadOnly,
     InvalidImage,
     PayloadTooLarge,
@@ -172,3 +174,33 @@ class AvatarPresetView(ScopedView):
         s.is_valid(raise_exception=True)
         services.ensure_student(request.user)
         return Response(avatar_summary(services.set_preset(request.user.id, s.validated_data["key"])))
+
+
+#: A last-visit body is a path and a query string; the token in a beacon adds a JWT. Anything bigger is not ours.
+LAST_VISIT_MAX_BODY = 1_024
+
+
+class LastVisitView(PersonalizationView):
+    """
+    Remembers the page the student left on. Called when the tab is hidden, usually by `navigator.sendBeacon`, which
+    can only send a body: so the token may travel in it (`BeaconBodyAuthentication`), here and nowhere else.
+    """
+
+    throttle_scope = "lastvisit_write"
+    authentication_classes = [SupabaseJWTAuthentication, BeaconBodyAuthentication]
+    parser_classes = [JSONParser, PlainTextJSONParser]
+
+    def initial(self, request, *args, **kwargs):
+        # Before anything reads the body.
+        declared = request.META.get("CONTENT_LENGTH")
+        if not declared or int(declared) > LAST_VISIT_MAX_BODY:
+            raise BodyTooLarge
+        super().initial(request, *args, **kwargs)
+
+    def post(self, request):
+        data = serializers.LastVisitSerializer(data=request.data)
+        data.is_valid(raise_exception=True)
+        services.record_visit(request.user.id, data.validated_data["path"], data.validated_data["search"])
+        return Response(status=204)
+
+    put = post
