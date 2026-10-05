@@ -1,4 +1,4 @@
-export { ContextPicker, type PickerValue } from './components/ContextPicker'
+export { ContextPicker, hasSubjectAndChapter, type PickerValue } from './components/ContextPicker'
 export { GoalRings } from './components/GoalRings'
 export { DayContainer } from './containers/DayContainer'
 export { GoalsContainer } from './containers/GoalsContainer'

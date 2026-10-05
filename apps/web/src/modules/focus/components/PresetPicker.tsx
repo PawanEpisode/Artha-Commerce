@@ -1,4 +1,5 @@
 import { Alert, Label, NumberStepper, SegmentedControl } from '@artha/design-system'
+import { useEffect, useState } from 'react'
 
 import {
   describeTimings,
@@ -20,6 +21,8 @@ import {
 
 interface Props {
   value: Timings
+  /** The saved choice. Custom can share a preset's lengths, so this is not inferred from the numbers alone. */
+  preset?: PresetKey
   onChange: (timings: Timings, preset: PresetKey) => void
   disabled?: boolean
 }
@@ -30,12 +33,25 @@ const OPTIONS = (['classic', 'deep', 'light', 'custom'] as const).map((value) =>
 }))
 
 /** Classic, Deep, Light or Custom. Custom shows four steppers bounded by the same limits the server enforces. */
-export function PresetPicker({ value, onChange, disabled }: Props) {
-  const selected = matchPreset(value)
+export function PresetPicker({ value, preset, onChange, disabled }: Props) {
+  const derived = preset ?? matchPreset(value)
+  // Keep the click visible before a parent (or the server) echoes the new preset back.
+  const [pending, setPending] = useState<PresetKey | null>(null)
+  useEffect(() => {
+    if (pending && derived === pending) setPending(null)
+  }, [pending, derived])
+  const selected = pending ?? derived
   const errors = timingErrors(value)
+  const choose = (key: PresetKey) => {
+    setPending(key)
+    if (key === 'custom') onChange(value, 'custom')
+    else onChange(presetTimings(key), key)
+  }
   const set = (patch: Partial<Timings>) => {
     const next = { ...value, ...patch }
-    onChange(next, matchPreset(next))
+    const key = matchPreset(next)
+    setPending(key)
+    onChange(next, key)
   }
   return (
     <div className="space-y-3">
@@ -46,15 +62,18 @@ export function PresetPicker({ value, onChange, disabled }: Props) {
           value={selected}
           options={OPTIONS}
           disabled={disabled}
-          onValueChange={(key) => {
-            if (key === 'custom') onChange(value, 'custom')
-            else onChange(presetTimings(key), key)
-          }}
+          stretch
+          onValueChange={choose}
         />
         <p className="text-sm text-muted-foreground">{describeTimings(value)}</p>
+        {selected === 'custom' ? (
+          <p className="text-sm text-muted-foreground">
+            Adjust the lengths below. They stay custom until you choose another preset.
+          </p>
+        ) : null}
       </div>
       {selected === 'custom' ? (
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none sm:grid-cols-2">
           <Field label="Focus (minutes)">
             <NumberStepper
               label="Focus minutes"

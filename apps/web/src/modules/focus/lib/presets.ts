@@ -44,9 +44,9 @@ export function presetTimings(key: Exclude<PresetKey, 'custom'>): Timings {
   return { focus_minutes: focus, short_break_minutes: short, long_break_minutes: long, rounds_before_long: rounds }
 }
 
-/** "25 / 5 / 15 · long break after 4" for a preset button. */
+/** "25 min focus, 5 min break, then a 15 min long break after 4 rounds." */
 export function describeTimings(t: Timings): string {
-  return `${t.focus_minutes} / ${t.short_break_minutes} / ${t.long_break_minutes} min, long break after ${t.rounds_before_long}`
+  return `${t.focus_minutes} min focus, ${t.short_break_minutes} min break, then a ${t.long_break_minutes} min long break after ${t.rounds_before_long} rounds.`
 }
 
 /** Which preset these timings are, or "custom". */

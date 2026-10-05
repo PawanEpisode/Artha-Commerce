@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogContent, DialogDescription, DialogTitle, Label, Select } from '@artha/design-system'
+import { Button, Dialog, DialogContent, DialogDescription, DialogTitle, Label, SelectField } from '@artha/design-system'
 import { useState } from 'react'
 
 import { MIN_ROUND_SECONDS } from '../lib/presets'
@@ -30,13 +30,12 @@ export function EndEarlyDialog({ open, studiedSeconds, busy, onClose, onEnd }: P
         {tooShort ? null : (
           <div className="mt-4 space-y-1.5">
             <Label htmlFor="end-reason">What got in the way?</Label>
-            <Select id="end-reason" value={reason} onChange={(e) => setReason(e.target.value as EndReason)}>
-              {REASON_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>
-                  {o.label}
-                </option>
-              ))}
-            </Select>
+            <SelectField
+              id="end-reason"
+              value={reason}
+              onValueChange={(next) => setReason(next as EndReason)}
+              options={REASON_OPTIONS}
+            />
           </div>
         )}
         <div className="mt-6 flex flex-wrap justify-end gap-3">

@@ -25,6 +25,18 @@ describe('PresetPicker', () => {
     expect(onChange).toHaveBeenCalledWith({ ...custom, focus_minutes: 115 }, 'custom')
   })
 
+  it('selects Custom even when the lengths still match a preset', async () => {
+    const onChange = vi.fn()
+    const classic = presetTimings('classic')
+    const { rerender } = render(<PresetPicker value={classic} preset="classic" onChange={onChange} />)
+    await userEvent.click(screen.getByRole('radio', { name: 'Custom' }))
+    expect(onChange).toHaveBeenCalledWith(classic, 'custom')
+    expect(screen.getByRole('radio', { name: 'Custom' })).toBeChecked()
+    rerender(<PresetPicker value={classic} preset="custom" onChange={onChange} />)
+    expect(screen.getByRole('radio', { name: 'Custom' })).toBeChecked()
+    expect(screen.getByRole('button', { name: 'Increase Focus minutes' })).toBeInTheDocument()
+  })
+
   it('treats timings equal to a preset as that preset', () => {
     render(<PresetPicker value={presetTimings('light')} onChange={vi.fn()} />)
     expect(screen.getByRole('radio', { name: 'Light' })).toBeChecked()

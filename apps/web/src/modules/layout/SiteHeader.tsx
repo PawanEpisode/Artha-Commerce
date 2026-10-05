@@ -10,7 +10,6 @@ import {
   Logo,
   LogOut,
   Menu,
-  Settings,
   ThemeSwitcher,
   UserRound,
 } from '@artha/design-system'
@@ -18,12 +17,31 @@ import { Link } from '@tanstack/react-router'
 
 import { useAuth } from '~/modules/auth'
 
+import { useWorkspaceNav } from './useWorkspaceNav'
+import { workspaceIcon } from './workspace-icons'
+import type { WorkspaceLink } from './workspace-nav'
+
 const nav = [
   { to: '/features', label: 'Features' },
   { to: '/courses', label: 'Courses' },
 ] as const
 
+function MenuLinks({ links }: { links: readonly WorkspaceLink[] }) {
+  return links.map((item) => {
+    const Icon = workspaceIcon(item.to)
+    return (
+      <DropdownMenuItem key={item.to} asChild>
+        <Link to={item.to}>
+          <Icon aria-hidden />
+          {item.label}
+        </Link>
+      </DropdownMenuItem>
+    )
+  })
+}
+
 function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => void }) {
+  const { study, settings } = useWorkspaceNav()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -36,11 +54,16 @@ function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => vo
         <DropdownMenuItem asChild>
           <Link to="/app">Workspace</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link to="/app/account">
-            <Settings aria-hidden /> Account and settings
-          </Link>
-        </DropdownMenuItem>
+        {study.length > 0 ? (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuLabel>Study</DropdownMenuLabel>
+            <MenuLinks links={study} />
+          </>
+        ) : null}
+        <DropdownMenuSeparator />
+        <DropdownMenuLabel>Settings</DropdownMenuLabel>
+        <MenuLinks links={settings} />
         <DropdownMenuSeparator />
         <DropdownMenuItem onSelect={onSignOut}>
           <LogOut aria-hidden /> Sign out

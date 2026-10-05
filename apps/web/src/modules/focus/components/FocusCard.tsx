@@ -1,6 +1,6 @@
 import { Alert, Button, Card, CardContent, Coffee, Kbd, Pause, Play, SkipForward, Square } from '@artha/design-system'
 
-import { ContextPicker, type PickerValue } from '~/modules/tracker'
+import { ContextPicker, hasSubjectAndChapter, type PickerValue } from '~/modules/tracker'
 
 import { MAX_EXTENSIONS, type PresetKey, type Timings } from '../lib/presets'
 import { PHASE_LABEL, startLabel } from '../lib/timer-math'
@@ -18,6 +18,7 @@ interface Props {
   /** The other kind of live timer that blocks Start ("stopwatch"), if any. */
   otherLive: string | null
   timings: Timings
+  preset?: PresetKey
   onTimingsChange: (timings: Timings, preset: PresetKey) => void
   subjects: Array<{ id: string; name: string }>
   chapters: Array<{ id: string; name: string }>
@@ -51,22 +52,26 @@ export function FocusCard(p: Props) {
         ? `Round ${p.idle.next_round} of ${p.idle.rounds_before_long} is next`
         : 'Pick a rhythm and start'
   const extensionsLeft = t ? MAX_EXTENSIONS - t.extension_count : 0
+  const needsContext = !t && !hasSubjectAndChapter(p.value)
+  const startDisabled = p.busy || !!p.otherLive || needsContext
 
   return (
     <Card>
       <CardContent className="space-y-6 p-6">
-        <TimerRing
-          phase={t?.phase ?? null}
-          status={t?.status ?? null}
-          remainingSeconds={t ? p.remainingSeconds : p.timings.focus_minutes * 60}
-          percent={t ? p.percent : 0}
-          caption={caption}
-        />
-        <CycleDots
-          total={t?.rounds_before_long ?? p.idle?.rounds_before_long ?? p.timings.rounds_before_long}
-          current={t ? (t.phase === 'focus' ? t.round_number : t.round_number + 1) : (p.idle?.next_round ?? 1)}
-          active={t?.phase === 'focus'}
-        />
+        <div className="flex flex-col items-center gap-4">
+          <TimerRing
+            phase={t?.phase ?? null}
+            status={t?.status ?? null}
+            remainingSeconds={t ? p.remainingSeconds : p.timings.focus_minutes * 60}
+            percent={t ? p.percent : 0}
+            caption={caption}
+          />
+          <CycleDots
+            total={t?.rounds_before_long ?? p.idle?.rounds_before_long ?? p.timings.rounds_before_long}
+            current={t ? (t.phase === 'focus' ? t.round_number : t.round_number + 1) : (p.idle?.next_round ?? 1)}
+            active={t?.phase === 'focus'}
+          />
+        </div>
 
         <p role="status" aria-live="polite" className="sr-only">
           {p.announcement}
@@ -84,7 +89,7 @@ export function FocusCard(p: Props) {
 
         {!t ? (
           <div className="space-y-4">
-            <PresetPicker value={p.timings} onChange={p.onTimingsChange} disabled={p.busy} />
+            <PresetPicker value={p.timings} preset={p.preset} onChange={p.onTimingsChange} disabled={p.busy} />
             <ContextPicker
               subjects={p.subjects}
               chapters={p.chapters}
@@ -106,16 +111,16 @@ export function FocusCard(p: Props) {
         <div className="flex flex-wrap justify-center gap-3">
           {!t ? (
             <>
-              <Button size="lg" onClick={p.onStart} disabled={p.busy || !!p.otherLive}>
+              <Button
+                size="lg"
+                onClick={p.onStart}
+                disabled={startDisabled}
+                aria-describedby={needsContext && !p.otherLive ? 'focus-needs-context' : undefined}
+              >
                 {dueBreak ? <Coffee aria-hidden /> : <Play aria-hidden />} {startLabel(p.idle)}
               </Button>
               {dueBreak ? (
-                <Button
-                  size="lg"
-                  variant="ghost"
-                  onClick={p.onStartFocusInsteadOfBreak}
-                  disabled={p.busy || !!p.otherLive}
-                >
+                <Button size="lg" variant="ghost" onClick={p.onStartFocusInsteadOfBreak} disabled={startDisabled}>
                   Skip the break
                 </Button>
               ) : null}
@@ -144,6 +149,11 @@ export function FocusCard(p: Props) {
             </>
           )}
         </div>
+        {needsContext && !p.otherLive ? (
+          <p id="focus-needs-context" className="text-center text-sm text-muted-foreground">
+            Choose a subject and a chapter to start.
+          </p>
+        ) : null}
         <p className="text-center text-xs text-muted-foreground">
           {t
             ? `${PHASE_LABEL[t.phase]} runs on our clock, so a reload or another device shows the same time. `

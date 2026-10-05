@@ -1,4 +1,4 @@
-import { Alert, Button, Download, Select, TextField } from '@artha/design-system'
+import { Alert, Button, Download, SelectField, TextField } from '@artha/design-system'
 import { useState } from 'react'
 
 import { useSubjectOptions } from '../hooks/useTagOptions'
@@ -45,14 +45,12 @@ function Log({ tz }: { tz: string }) {
           <label htmlFor="log-subject" className="text-sm font-medium">
             Subject
           </label>
-          <Select id="log-subject" value={subject} onChange={(e) => setSubject(e.target.value)}>
-            <option value="">All subjects</option>
-            {subjects.map((s) => (
-              <option key={s.id} value={s.id}>
-                {s.name}
-              </option>
-            ))}
-          </Select>
+          <SelectField
+            id="log-subject"
+            value={subject}
+            onValueChange={setSubject}
+            options={[{ value: '', label: 'All subjects' }, ...subjects.map((s) => ({ value: s.id, label: s.name }))]}
+          />
         </div>
       </div>
       {q.isError ? (

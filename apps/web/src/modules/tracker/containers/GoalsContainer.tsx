@@ -1,4 +1,4 @@
-import { Alert, Button, Select, TextField, useToast } from '@artha/design-system'
+import { Alert, Button, SelectField, TextField, useToast } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { GoalRings } from '../components/GoalRings'
@@ -104,23 +104,20 @@ function GoalsForm() {
           <legend className="text-sm font-semibold">Weekly goals by subject</legend>
           {draft.subjects.map((s, i) => (
             <div key={i} className="grid items-start gap-3 sm:grid-cols-[1fr_10rem_auto]">
-              <Select
+              <SelectField
                 aria-label={`Subject for goal ${i + 1}`}
                 value={s.subject_id}
-                onChange={(e) =>
+                onValueChange={(subjectId) =>
                   setDraft({
                     ...draft,
-                    subjects: draft.subjects.map((x, j) => (j === i ? { ...x, subject_id: e.target.value } : x)),
+                    subjects: draft.subjects.map((x, j) => (j === i ? { ...x, subject_id: subjectId } : x)),
                   })
                 }
-              >
-                <option value="">Choose a subject</option>
-                {subjects.map((o) => (
-                  <option key={o.id} value={o.id}>
-                    {o.name}
-                  </option>
-                ))}
-              </Select>
+                options={[
+                  { value: '', label: 'Choose a subject' },
+                  ...subjects.map((o) => ({ value: o.id, label: o.name })),
+                ]}
+              />
               <TextField
                 label="Minutes"
                 className="[&>label]:sr-only"

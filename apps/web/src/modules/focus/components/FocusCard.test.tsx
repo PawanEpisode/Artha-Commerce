@@ -31,6 +31,12 @@ const base = {
   announcement: '',
 }
 
+const tagged = {
+  ...base,
+  chapters: [{ id: 'c1', name: 'Chapter 1' }],
+  value: { subject_id: 's1', chapter_id: 'c1', activity_type: 'reading' as const },
+}
+
 const running = (patch: Partial<FocusTimer> = {}): FocusTimer =>
   ({
     phase: 'focus',
@@ -47,13 +53,21 @@ const running = (patch: Partial<FocusTimer> = {}): FocusTimer =>
   }) as FocusTimer
 
 describe('FocusCard', () => {
-  it('offers Start and the presets when nothing runs', async () => {
+  it('offers Start and the presets when a subject and chapter are chosen', async () => {
     const h = handlers()
-    render(<FocusCard {...base} {...h} timer={null} />)
+    render(<FocusCard {...tagged} {...h} timer={null} />)
     await userEvent.click(screen.getByRole('button', { name: /^start$/i }))
     expect(h.onStart).toHaveBeenCalledOnce()
     expect(screen.getByRole('radio', { name: 'Deep' })).toBeInTheDocument()
     expect(screen.getByRole('timer')).toHaveAccessibleName(/about 25 minutes left/i)
+  })
+
+  it('keeps Start disabled until a subject and a chapter are chosen', () => {
+    const h = handlers()
+    render(<FocusCard {...base} {...h} timer={null} />)
+    expect(screen.getByRole('button', { name: /^start$/i })).toBeDisabled()
+    expect(screen.getByText(/choose a subject and a chapter/i)).toBeInTheDocument()
+    expect(h.onStart).not.toHaveBeenCalled()
   })
 
   it('continues a remembered cycle instead of restarting it', () => {
@@ -66,8 +80,8 @@ describe('FocusCard', () => {
   it('offers the due break, and a way to skip it', async () => {
     const h = handlers()
     const idle = { next_phase: 'short_break', next_round: 1, rounds_before_long: 4, cycle_id: 'c' } as const
-    render(<FocusCard {...base} {...h} timer={null} idle={idle} />)
-    expect(screen.getByRole('button', { name: 'Start short break' })).toBeInTheDocument()
+    render(<FocusCard {...tagged} {...h} timer={null} idle={idle} />)
+    expect(screen.getByRole('button', { name: 'Start short break' })).toBeEnabled()
     await userEvent.click(screen.getByRole('button', { name: 'Skip the break' }))
     expect(h.onStartFocusInsteadOfBreak).toHaveBeenCalledOnce()
   })

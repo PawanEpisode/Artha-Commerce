@@ -32,8 +32,8 @@ export function CycleDots({ total, current, active }: Props) {
           )
         })}
       </ol>
-      <p className="text-sm font-medium text-muted-foreground">
-        Round {Math.min(current, total)} of {total}
+      <p className="max-w-xs text-center text-sm text-muted-foreground">
+        Round {Math.min(current, total)} of {total}. A longer break starts after round {total}.
       </p>
     </div>
   )

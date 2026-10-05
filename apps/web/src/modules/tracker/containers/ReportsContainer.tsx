@@ -1,4 +1,4 @@
-import { Alert, BarChart, Heatmap, SegmentedControl, Select, Skeleton } from '@artha/design-system'
+import { Alert, BarChart, Heatmap, SegmentedControl, SelectField, Skeleton } from '@artha/design-system'
 import { useNavigate } from '@tanstack/react-router'
 import { type ReactNode, useEffect, useMemo, useRef } from 'react'
 
@@ -219,18 +219,13 @@ function Reports({ search, tz, weekStart }: { search: ReportsSearch; tz: string;
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="text-lg font-bold">Time against coverage</h2>
               {subjects.length > 0 ? (
-                <Select
+                <SelectField
                   aria-label="Subject"
-                  value={chosenSubject}
-                  onChange={(e) => setSearch({ subject: e.target.value })}
+                  value={chosenSubject ?? subjects[0].id}
+                  onValueChange={(subject) => setSearch({ subject })}
                   className="w-56"
-                >
-                  {subjects.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.name}
-                    </option>
-                  ))}
-                </Select>
+                  options={subjects.map((s) => ({ value: s.id, label: s.name }))}
+                />
               ) : null}
             </div>
             {subjects.length === 0 ? (

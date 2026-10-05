@@ -6,6 +6,7 @@ import type { ReactNode } from 'react'
 
 import { env } from '~/lib/env'
 import { AuthProvider } from '~/modules/auth'
+import { LiveMiniTimer } from '~/modules/focus'
 import { SiteShell } from '~/modules/layout'
 import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { ObservabilityProvider } from '~/modules/observability'
@@ -60,6 +61,7 @@ function RootComponent() {
               <SiteShell>
                 <Outlet />
               </SiteShell>
+              <LiveMiniTimer />
             </ObservabilityProvider>
           </AuthProvider>
         </QueryClientProvider>

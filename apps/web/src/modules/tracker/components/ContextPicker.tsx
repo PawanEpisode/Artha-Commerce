@@ -1,4 +1,4 @@
-import { Label, Select } from '@artha/design-system'
+import { Label, SelectField } from '@artha/design-system'
 import { useId } from 'react'
 
 import { ACTIVITY_OPTIONS, type ActivityType } from '../lib/types'
@@ -7,6 +7,11 @@ export interface PickerValue {
   subject_id: string | null
   chapter_id: string | null
   activity_type: ActivityType
+}
+
+/** A study timer can start only once both a subject and a chapter are chosen. */
+export function hasSubjectAndChapter(value: Pick<PickerValue, 'subject_id' | 'chapter_id'>) {
+  return Boolean(value.subject_id && value.chapter_id)
 }
 
 interface Props {
@@ -24,50 +29,33 @@ export function ContextPicker({ subjects, chapters, value, onChange, disabled }:
     <div className="grid gap-3 sm:grid-cols-3">
       <div className="space-y-1.5">
         <Label htmlFor={`${id}-subject`}>Subject</Label>
-        <Select
+        <SelectField
           id={`${id}-subject`}
           disabled={disabled}
           value={value.subject_id ?? ''}
-          onChange={(e) => onChange({ subject_id: e.target.value || null, chapter_id: null })}
-        >
-          <option value="">No subject</option>
-          {subjects.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name}
-            </option>
-          ))}
-        </Select>
+          onValueChange={(subjectId) => onChange({ subject_id: subjectId || null, chapter_id: null })}
+          options={[{ value: '', label: 'No subject' }, ...subjects.map((s) => ({ value: s.id, label: s.name }))]}
+        />
       </div>
       <div className="space-y-1.5">
         <Label htmlFor={`${id}-chapter`}>Chapter</Label>
-        <Select
+        <SelectField
           id={`${id}-chapter`}
           disabled={disabled || !value.subject_id}
           value={value.chapter_id ?? ''}
-          onChange={(e) => onChange({ chapter_id: e.target.value || null })}
-        >
-          <option value="">No chapter</option>
-          {chapters.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}
-            </option>
-          ))}
-        </Select>
+          onValueChange={(chapterId) => onChange({ chapter_id: chapterId || null })}
+          options={[{ value: '', label: 'No chapter' }, ...chapters.map((c) => ({ value: c.id, label: c.name }))]}
+        />
       </div>
       <div className="space-y-1.5">
         <Label htmlFor={`${id}-activity`}>Activity</Label>
-        <Select
+        <SelectField
           id={`${id}-activity`}
           disabled={disabled}
           value={value.activity_type}
-          onChange={(e) => onChange({ activity_type: e.target.value as ActivityType })}
-        >
-          {ACTIVITY_OPTIONS.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </Select>
+          onValueChange={(activity) => onChange({ activity_type: activity as ActivityType })}
+          options={ACTIVITY_OPTIONS}
+        />
       </div>
     </div>
   )

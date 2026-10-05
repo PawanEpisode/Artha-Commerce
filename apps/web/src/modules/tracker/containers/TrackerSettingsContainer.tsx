@@ -1,4 +1,4 @@
-import { Alert, Button, Select, Switch, TextField, useToast } from '@artha/design-system'
+import { Alert, Button, SelectField, Switch, TextField, useToast } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { useSaveSettings } from '../hooks/useSessionActions'
@@ -85,26 +85,26 @@ function SettingsForm() {
             <label htmlFor="week-start" className="text-sm font-medium">
               Week starts on
             </label>
-            <Select id="week-start" value={weekStart} onChange={(e) => setWeekStart(e.target.value as '0' | '1')}>
-              <option value="1">Monday</option>
-              <option value="0">Sunday</option>
-            </Select>
+            <SelectField
+              id="week-start"
+              value={weekStart}
+              onValueChange={(start) => setWeekStart(start as '0' | '1')}
+              options={[
+                { value: '1', label: 'Monday' },
+                { value: '0', label: 'Sunday' },
+              ]}
+            />
           </div>
           <div className="grid gap-2">
             <label htmlFor="default-activity" className="text-sm font-medium">
               Default activity
             </label>
-            <Select
+            <SelectField
               id="default-activity"
               value={activity}
-              onChange={(e) => setActivity(e.target.value as ActivityType)}
-            >
-              {ACTIVITY_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>
-                  {o.label}
-                </option>
-              ))}
-            </Select>
+              onValueChange={(next) => setActivity(next as ActivityType)}
+              options={ACTIVITY_OPTIONS}
+            />
           </div>
         </div>
         <TextField

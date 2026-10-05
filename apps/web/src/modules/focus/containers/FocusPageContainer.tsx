@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { track } from '~/modules/observability'
 import {
   type ActivityType,
+  hasSubjectAndChapter,
   nowMs,
   type PickerValue,
   useChapterOptions,
@@ -75,7 +76,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
       rounds_before_long: settings.rounds_before_long,
     }
     const next = search.preset ? presetTimings(search.preset) : fromSettings
-    setTimings({ timings: next, preset: search.preset ?? matchPreset(next) })
+    setTimings({ timings: next, preset: search.preset ?? settings.preset ?? matchPreset(next) })
   }, [settings, search.preset])
 
   useEffect(() => {
@@ -109,6 +110,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
   }
 
   const doStart = (phase: 'focus' | 'short_break' | 'long_break' = 'focus') => {
+    if (!hasSubjectAndChapter(pick)) return
     unlockAudio()
     const body = timings.preset === 'custom' ? { preset: 'custom', ...timings.timings } : { preset: timings.preset }
     f.start(
@@ -174,6 +176,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         busy={f.busy}
         otherLive={f.live === 'stopwatch' ? 'stopwatch' : null}
         timings={timings.timings}
+        preset={timings.preset}
         onTimingsChange={(next, preset) => setTimings({ timings: next, preset })}
         subjects={subjects}
         chapters={chapterOptions}

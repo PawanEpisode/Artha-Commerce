@@ -1,5 +1,6 @@
 import { Link, useRouterState } from '@tanstack/react-router'
 
+import { useAuth } from '~/modules/auth'
 import { useFeatureFlag } from '~/modules/observability'
 import { formatClock, spokenDuration, useStopwatch } from '~/modules/tracker'
 
@@ -11,10 +12,10 @@ import { formatRemaining, PHASE_LABEL, spokenRemaining } from '../lib/timer-math
 const linkClass = 'outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40'
 
 /** A running (or paused) Pomodoro round or break. It also closes phases and plays the alerts while the student is elsewhere. */
-function FocusMini() {
+function FocusMini({ ownTitle }: { ownTitle: boolean }) {
   const f = useFocusTimer()
   const t = f.timer
-  useTimerTitle(t, document.title || 'Artha', f.remaining)
+  useTimerTitle(t, document.title || 'Artha', f.remaining, ownTitle)
   if (f.featureDisabled || !t) return null
   const away = t.status === 'away'
   return (
@@ -59,17 +60,19 @@ function StopwatchMini() {
 }
 
 /**
- * Mounted once in the signed-in layout. Shows whichever timer runs (only one can), gated by its own flag, and hides on
- * the screen that already shows that timer in full.
+ * Shown on every page once a student is signed in. Whichever timer is running stays in the corner (only one can),
+ * including on the focus and tracker screens. Each timer still follows its own feature flag.
  */
 export function LiveMiniTimer() {
+  const { user, loading } = useAuth()
   const path = useRouterState({ select: (s) => s.location.pathname })
   const focusOn = useFeatureFlag('focus_timer')
   const trackerOn = useFeatureFlag('time_tracker')
+  if (loading || !user) return null
   return (
     <>
-      {focusOn && !path.startsWith('/app/focus') ? <FocusMini /> : null}
-      {trackerOn && !path.startsWith('/app/tracker') ? <StopwatchMini /> : null}
+      {focusOn ? <FocusMini ownTitle={!path.startsWith('/app/focus')} /> : null}
+      {trackerOn ? <StopwatchMini /> : null}
     </>
   )
 }

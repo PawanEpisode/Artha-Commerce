@@ -1,4 +1,13 @@
-import { Alert, Button, Label, LoaderCircle, RadioCardItem, RadioGroup, Select, TextField } from '@artha/design-system'
+import {
+  Alert,
+  Button,
+  Label,
+  LoaderCircle,
+  RadioCardItem,
+  RadioGroup,
+  SelectField,
+  TextField,
+} from '@artha/design-system'
 import type { FormEvent } from 'react'
 
 import type { CourseSummary, ElectiveSlotInfo, ExamTerm } from '~/modules/syllabus'
@@ -114,14 +123,12 @@ export function TermStep({
     <form onSubmit={submit} noValidate className="space-y-6">
       <div className="grid gap-2">
         <Label htmlFor="term">Which attempt are you aiming for?</Label>
-        <Select id="term" value={termId} onChange={(e) => onTerm(e.target.value)}>
-          <option value="">I am not sure yet</option>
-          {terms.map((t) => (
-            <option key={t.id} value={t.id}>
-              {t.name}
-            </option>
-          ))}
-        </Select>
+        <SelectField
+          id="term"
+          value={termId}
+          onValueChange={onTerm}
+          options={[{ value: '', label: 'I am not sure yet' }, ...terms.map((t) => ({ value: t.id, label: t.name }))]}
+        />
       </div>
       <TextField
         label="Exam date (optional)"

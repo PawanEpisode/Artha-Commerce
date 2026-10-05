@@ -1,8 +1,9 @@
-import { Alert, Button, Card, CardContent, Pause, Play, Square, Timer } from '@artha/design-system'
+import { Alert, Button, Card, CardContent, cn, Pause, Play, Square, Timer } from '@artha/design-system'
 
 import { formatClock, spokenDuration } from '../lib/duration'
+import { otherLiveLabel } from '../lib/live'
 import type { Stopwatch } from '../lib/types'
-import { ContextPicker, type PickerValue } from './ContextPicker'
+import { ContextPicker, hasSubjectAndChapter, type PickerValue } from './ContextPicker'
 
 interface Props {
   stopwatch: Stopwatch | null
@@ -27,8 +28,11 @@ interface Props {
 
 /** The stopwatch: a big clock, the context pickers and the four controls. The clock is derived from timestamps. */
 export function StopwatchCard(props: Props) {
-  const { stopwatch: sw, seconds, busy, otherLive } = props
+  const { stopwatch: sw, seconds, busy } = props
+  const otherLive = otherLiveLabel(props.otherLive)
   const running = sw?.status === 'running'
+  const needsContext = !hasSubjectAndChapter(props.value)
+  const startDisabled = busy || !!otherLive || needsContext
   return (
     <Card>
       <CardContent className="space-y-5 p-6">
@@ -41,13 +45,23 @@ export function StopwatchCard(props: Props) {
           ) : null}
         </div>
 
-        <p
-          role="timer"
-          aria-label={`Elapsed ${spokenDuration(seconds)}`}
-          className="text-center font-display text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl"
-        >
-          <span aria-hidden>{formatClock(seconds)}</span>
-        </p>
+        <div className="relative mx-auto w-fit px-6 py-1">
+          {running ? (
+            <span
+              aria-hidden
+              className="absolute inset-0 rounded-full bg-primary/10 motion-safe:animate-pulse motion-reduce:bg-primary/5"
+            />
+          ) : null}
+          <p
+            role="timer"
+            aria-label={`Elapsed ${spokenDuration(seconds)}`}
+            className={cn(
+              'relative text-center font-display text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl',
+            )}
+          >
+            <span aria-hidden>{formatClock(seconds)}</span>
+          </p>
+        </div>
 
         {props.idlePending ? (
           <Alert variant="info">
@@ -81,7 +95,12 @@ export function StopwatchCard(props: Props) {
 
         <div className="flex flex-wrap justify-center gap-3">
           {!sw ? (
-            <Button size="lg" onClick={props.onStart} disabled={busy || !!otherLive}>
+            <Button
+              size="lg"
+              onClick={props.onStart}
+              disabled={startDisabled}
+              aria-describedby={needsContext && !otherLive ? 'stopwatch-needs-context' : undefined}
+            >
               <Play aria-hidden /> Start
             </Button>
           ) : (
@@ -104,6 +123,11 @@ export function StopwatchCard(props: Props) {
             </>
           )}
         </div>
+        {!sw && needsContext && !otherLive ? (
+          <p id="stopwatch-needs-context" className="text-center text-sm text-muted-foreground">
+            Choose a subject and a chapter to start.
+          </p>
+        ) : null}
         <p className="text-center text-xs text-muted-foreground">
           Time under one minute is not saved. The clock keeps running if you close this tab.
         </p>

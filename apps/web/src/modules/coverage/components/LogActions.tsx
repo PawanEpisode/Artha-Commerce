@@ -1,4 +1,4 @@
-import { Button, Label, LoaderCircle, Select, TextField } from '@artha/design-system'
+import { Button, Label, LoaderCircle, SelectField, TextField } from '@artha/design-system'
 import { type FormEvent, useState } from 'react'
 
 import type { EventType } from '../lib/types'
@@ -34,13 +34,12 @@ export function LogActions({ pending, error, onLog }: Props) {
     <form onSubmit={submit} noValidate className="grid gap-4 sm:grid-cols-[1fr_9rem_auto] sm:items-end">
       <div className="grid gap-2">
         <Label htmlFor="log-type">What did you finish?</Label>
-        <Select id="log-type" value={type} onChange={(e) => setType(e.target.value as EventType)}>
-          {OPTIONS.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </Select>
+        <SelectField
+          id="log-type"
+          value={type}
+          onValueChange={(next) => setType(next as EventType)}
+          options={OPTIONS.map(({ value, label }) => ({ value, label }))}
+        />
       </div>
       {scored ? (
         <TextField

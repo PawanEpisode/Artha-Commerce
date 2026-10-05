@@ -1,4 +1,4 @@
-import { Alert, Button, Card, Label, LoaderCircle, Select } from '@artha/design-system'
+import { Alert, Button, Card, Label, LoaderCircle, SelectField } from '@artha/design-system'
 import { type ReactNode, useState } from 'react'
 
 import type { SwitchCarried, SwitchSummary } from '../lib/types'
@@ -102,14 +102,15 @@ export function SchemeSwitch({ current, options, pending, error, summary, onSwit
         <div className="space-y-3">
           <div className="grid gap-2">
             <Label htmlFor="scheme-target">Switch to</Label>
-            <Select id="scheme-target" value={target} onChange={(e) => setTarget(e.target.value)}>
-              <option value="">Choose a scheme</option>
-              {others.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.name}
-                </option>
-              ))}
-            </Select>
+            <SelectField
+              id="scheme-target"
+              value={target}
+              onValueChange={setTarget}
+              options={[
+                { value: '', label: 'Choose a scheme' },
+                ...others.map((s) => ({ value: s.id, label: s.name })),
+              ]}
+            />
           </div>
           {error ? <Alert variant="error">{error}</Alert> : null}
           <Button variant="outline" disabled={!chosen || pending} onClick={() => chosen && onSwitch(chosen)}>

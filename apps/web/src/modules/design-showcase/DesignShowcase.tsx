@@ -53,7 +53,7 @@ import {
   ProgressRing,
   Reveal,
   SegmentedControl,
-  Select,
+  SelectField,
   Skeleton,
   Slider,
   Sparkles,
@@ -128,6 +128,7 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
 
 function ControlsDemo() {
   const [n, setN] = useState(3)
+  const [rounds, setRounds] = useState('2')
   return (
     <div className="max-w-sm space-y-4">
       <div className="flex items-center gap-3">
@@ -140,10 +141,15 @@ function ControlsDemo() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="demo-select">Revision rounds</Label>
-        <Select id="demo-select" defaultValue="2">
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </Select>
+        <SelectField
+          id="demo-select"
+          value={rounds}
+          onValueChange={setRounds}
+          options={[
+            { value: '1', label: '1' },
+            { value: '2', label: '2' },
+          ]}
+        />
       </div>
       <NumberStepper label="Chapters read" value={n} onChange={setN} max={10} />
     </div>

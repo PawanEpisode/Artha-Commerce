@@ -1,4 +1,4 @@
-import { Alert, Button, EmptyState, Merge, Select, useToast } from '@artha/design-system'
+import { Alert, Button, EmptyState, Merge, SelectField, useToast } from '@artha/design-system'
 import { useState } from 'react'
 
 import { SessionRow } from '../components/SessionRow'
@@ -90,16 +90,20 @@ export function SessionsPanel({
           <span className="text-sm font-medium">{chosen.length} selected</span>
           {needsChoice ? (
             <>
-              <label className="flex items-center gap-2 text-sm">
-                Keep subject
-                <Select value={keepSubject} onChange={(e) => setKeepSubject(e.target.value)} className="h-9">
-                  {[...new Map(chosen.filter((s) => s.subject_id).map((s) => [s.subject_id, s])).values()].map((s) => (
-                    <option key={s.subject_id} value={s.subject_id as string}>
-                      {s.subject_name}
-                    </option>
-                  ))}
-                </Select>
-              </label>
+              <div className="flex items-center gap-2 text-sm">
+                <label htmlFor="merge-subject" className="font-medium">
+                  Keep subject
+                </label>
+                <SelectField
+                  id="merge-subject"
+                  value={keepSubject}
+                  onValueChange={setKeepSubject}
+                  className="w-48"
+                  options={[...new Map(chosen.filter((s) => s.subject_id).map((s) => [s.subject_id, s])).values()].map(
+                    (s) => ({ value: s.subject_id as string, label: s.subject_name }),
+                  )}
+                />
+              </div>
               <Button size="sm" onClick={() => runMerge(keepSubject)} disabled={merge.isPending}>
                 Merge
               </Button>

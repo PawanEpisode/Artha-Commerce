@@ -29,7 +29,7 @@ export function FocusSettingsForm({ value, onChange, onTimingsChange, onPreview,
         <h2 id="rhythm-heading" className="text-lg font-bold">
           Rhythm
         </h2>
-        <PresetPicker value={timings} onChange={onTimingsChange} disabled={busy} />
+        <PresetPicker value={timings} preset={value.preset} onChange={onTimingsChange} disabled={busy} />
         <Row
           id="auto-breaks"
           label="Start breaks automatically"
