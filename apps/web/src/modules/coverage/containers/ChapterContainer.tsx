@@ -105,7 +105,7 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
       </p>
 
       {data.prev_chapter || data.next_chapter ? (
-        <nav aria-label="Chapters in this paper" className="flex flex-wrap justify-between gap-3 text-sm">
+        <nav aria-label="Chapters in this paper" className="flex justify-between gap-3 text-sm">
           {data.prev_chapter ? (
             <Link
               to="/app/syllabus/$subject/$chapter"

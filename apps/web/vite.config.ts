@@ -1,9 +1,15 @@
+import { fileURLToPath } from 'node:url'
+
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
+import { codeInspectorPlugin } from 'code-inspector-plugin'
 import { nitro } from 'nitro/vite'
 import { createLogger, defineConfig, loadEnv } from 'vite'
+
+// TanStack Start renders HTML itself, so the inspector client is injected into the router module.
+const codeInspectorTarget = fileURLToPath(new URL('./src/router.tsx', import.meta.url))
 
 // "use client" directives in motion/radix/react-query are meaningless outside RSC; keep them out of build logs.
 const logger = createLogger()
@@ -13,7 +19,7 @@ logger.warn = (msg, options) => {
   warn(msg, options)
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   const uploadSourcemaps = Boolean(env.SENTRY_AUTH_TOKEN && env.SENTRY_ORG && env.SENTRY_PROJECT)
 
@@ -27,6 +33,17 @@ export default defineConfig(({ mode }) => {
       sourcemap: uploadSourcemaps ? 'hidden' : false,
     },
     plugins: [
+      // Dev server only. Hold Option+Shift (Alt+Shift on Windows) and click an element to open its source.
+      ...(command === 'serve'
+        ? [
+            codeInspectorPlugin({
+              bundler: 'vite',
+              hotKeys: ['altKey', 'shiftKey'],
+              showSwitch: false,
+              injectTo: codeInspectorTarget,
+            }),
+          ]
+        : []),
       tailwindcss(),
       tanstackStart(),
       nitro(),
