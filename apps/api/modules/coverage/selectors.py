@@ -216,3 +216,31 @@ def export_all(user_id) -> dict:
 
 def scheme_chapter_ids(scheme: Scheme) -> list:
     return list(Chapter.objects.filter(subject__scheme=scheme, is_active=True).values_list("id", flat=True))
+
+
+def coverage_pct_by_chapter(user_id, chapter_ids) -> dict:
+    """Coverage percent per chapter id, for the chapters the student has progress on (used by tracking reports)."""
+    return dict(
+        ChapterProgress.objects.filter(user_id=user_id, chapter_id__in=list(chapter_ids)).values_list(
+            "chapter_id", "coverage_pct"
+        )
+    )
+
+
+def progress_stamp(user_id) -> tuple:
+    """A cheap version stamp of the student's chapter progress, for report ETags that include coverage."""
+    from django.db.models import Count, Max
+
+    agg = ChapterProgress.objects.filter(user_id=user_id).aggregate(n=Count("id"), latest=Max("updated_at"))
+    return agg["n"], agg["latest"]
+
+
+def tracked_study_seconds(user_id, source_refs) -> dict[tuple[str, object], int]:
+    """Net study seconds forwarded by tracking per (source_ref, chapter_id): originals plus signed corrections."""
+    totals: dict[tuple[str, object], int] = defaultdict(int)
+    rows = CoverageEvent.objects.filter(
+        user_id=user_id, type="study_time", source="tracking", source_ref__in=[str(r) for r in source_refs]
+    ).values_list("source_ref", "chapter_id", "value")
+    for ref, chapter_id, value in rows:
+        totals[(ref, chapter_id)] += int(value or 0)
+    return dict(totals)

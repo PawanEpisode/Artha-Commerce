@@ -24,8 +24,8 @@ export function useOverview() {
 
 export const useEnrollments = () => useQuery({ queryKey: coverageKeys.enrollments, queryFn: listEnrollments })
 
-export const useSubjectCoverage = (id: string) =>
-  useQuery({ queryKey: coverageKeys.subject(id), queryFn: () => getSubject(id) })
+export const useSubjectCoverage = (id: string, enabled = true) =>
+  useQuery({ queryKey: coverageKeys.subject(id), queryFn: () => getSubject(id), enabled: enabled && id !== '' })
 
 export const useChapterCoverage = (id: string) =>
   useQuery({ queryKey: coverageKeys.chapter(id), queryFn: () => getChapter(id) })

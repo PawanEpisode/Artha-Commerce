@@ -1,7 +1,7 @@
 """
 Row Level Security is our second wall: Django is the only writer, so the Supabase Data API (PostgREST) must be able
 to read nothing. `core.apps.enable_rls_everywhere` switches RLS on for every public table after each migrate. These
-tests pin that for every syllabus and coverage table, including ones added later (tables come from the models).
+tests pin that for every syllabus, coverage, tracking and focus table, including ones added later (tables come from the models).
 """
 
 import pytest
@@ -9,7 +9,7 @@ from django.apps import apps
 from django.db import connection
 from django.db.models.signals import post_migrate
 
-APP_LABELS = ("syllabus", "coverage")
+APP_LABELS = ("syllabus", "coverage", "tracking", "focus")
 
 
 def app_tables(*labels: str) -> list[str]:
@@ -29,6 +29,16 @@ def test_the_tables_under_test_are_the_ones_we_think():
     # Guards the test itself: if model discovery ever returned nothing, the Postgres checks below would pass vacuously.
     assert {"syllabus_scheme", "syllabus_chapter", "syllabus_chaptermap", "syllabus_report"} <= set(TABLES)
     assert {"coverage_enrollment", "coverage_event", "coverage_chapterprogress", "coverage_rollup"} <= set(TABLES)
+    assert {
+        "tracking_studysession",
+        "tracking_activestopwatch",
+        "tracking_trackersettings",
+        "tracking_goal",
+        "tracking_dailyrollup",
+        "tracking_hourbucket",
+        "tracking_sessionaudit",
+    } <= set(TABLES)
+    assert {"focus_activetimer", "focus_focussettings"} <= set(TABLES)
 
 
 def test_rls_is_switched_on_after_every_migrate():

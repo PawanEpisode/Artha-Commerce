@@ -63,6 +63,8 @@ INSTALLED_APPS = [
     "modules.profiles",
     "modules.syllabus",
     "modules.coverage",
+    "modules.tracking",
+    "modules.focus",
 ]
 
 MIDDLEWARE = [
@@ -135,6 +137,10 @@ REST_FRAMEWORK = {
         # Scoped throttles (ScopedRateThrottle), see modules.syllabus and modules.coverage views.
         "syllabus_report": "20/hour",
         "coverage_write": "120/min",
+        "tracking_write": "60/min",
+        "tracking_reports": "120/min",
+        "tracking_export": "6/hour",
+        "focus_write": "120/min",
     },
     "UNAUTHENTICATED_USER": None,
 }

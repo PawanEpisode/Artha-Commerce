@@ -137,6 +137,15 @@ def get_published_subject(subject_id) -> Subject | None:
     )
 
 
+def get_subject(subject_id) -> Subject | None:
+    """Any visible subject (published or retired scheme). Used by tracking for students still on an older scheme."""
+    return (
+        Subject.objects.select_related("scheme__level__course", "group")
+        .filter(pk=subject_id, is_active=True, scheme__status__in=[Scheme.Status.PUBLISHED, Scheme.Status.RETIRED])
+        .first()
+    )
+
+
 def get_published_chapter(chapter_id) -> Chapter | None:
     return (
         Chapter.objects.select_related("subject__scheme__level__course", "subject__group")
