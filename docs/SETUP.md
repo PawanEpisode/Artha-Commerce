@@ -270,9 +270,7 @@ pnpm dev:web                     # http://localhost:3000
 
 # terminal 2
 cd apps/api && source .venv/bin/activate
-set -a
-source .env
-set +a
+set -a && source .env && set +a
 export DJANGO_DEBUG=true
 python manage.py runserver 8000  # uses SQLite unless DATABASE_URL is set
 ```
