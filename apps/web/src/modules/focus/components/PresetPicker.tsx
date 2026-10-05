@@ -1,12 +1,10 @@
-import { Alert, Label, NumberStepper, SegmentedControl } from '@artha/design-system'
+import { DurationField, Label, NumberStepper, SegmentedControl } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import {
   describeTimings,
   FOCUS_MINUTES_MAX,
-  FOCUS_MINUTES_MIN,
   LONG_BREAK_MINUTES_MAX,
-  LONG_BREAK_MINUTES_MIN,
   matchPreset,
   PRESET_LABELS,
   type PresetKey,
@@ -14,7 +12,6 @@ import {
   ROUNDS_BEFORE_LONG_MAX,
   ROUNDS_BEFORE_LONG_MIN,
   SHORT_BREAK_MINUTES_MAX,
-  SHORT_BREAK_MINUTES_MIN,
   timingErrors,
   type Timings,
 } from '../lib/presets'
@@ -26,6 +23,14 @@ interface Props {
   onChange: (timings: Timings, preset: PresetKey) => void
   disabled?: boolean
 }
+
+type DurationKey = 'focus_minutes' | 'short_break_minutes' | 'long_break_minutes'
+type DurationDraft = Record<DurationKey, number | null>
+const nullToZero = (d: DurationDraft) => ({
+  focus_minutes: d.focus_minutes ?? 0,
+  short_break_minutes: d.short_break_minutes ?? 0,
+  long_break_minutes: d.long_break_minutes ?? 0,
+})
 
 const OPTIONS = (['classic', 'deep', 'light', 'custom'] as const).map((value) => ({
   value,
@@ -41,11 +46,28 @@ export function PresetPicker({ value, preset, onChange, disabled }: Props) {
     if (pending && derived === pending) setPending(null)
   }, [pending, derived])
   const selected = pending ?? derived
-  const errors = timingErrors(value)
+  // A duration being typed can be out of range for a moment. Keep it here, show why, and only report valid timings.
+  const [draft, setDraft] = useState<DurationDraft>({
+    focus_minutes: value.focus_minutes,
+    short_break_minutes: value.short_break_minutes,
+    long_break_minutes: value.long_break_minutes,
+  })
+  useEffect(() => {
+    setDraft({
+      focus_minutes: value.focus_minutes,
+      short_break_minutes: value.short_break_minutes,
+      long_break_minutes: value.long_break_minutes,
+    })
+  }, [value.focus_minutes, value.short_break_minutes, value.long_break_minutes])
+  const errors = timingErrors({ ...value, ...nullToZero(draft) })
   const choose = (key: PresetKey) => {
     setPending(key)
     if (key === 'custom') onChange(value, 'custom')
     else onChange(presetTimings(key), key)
+  }
+  const setDuration = (key: DurationKey, minutes: number | null) => {
+    setDraft((d) => ({ ...d, [key]: minutes }))
+    if (!timingErrors({ ...value, [key]: minutes ?? 0 })[key]) set({ [key]: minutes ?? 0 })
   }
   const set = (patch: Partial<Timings>) => {
     const next = { ...value, ...patch }
@@ -73,39 +95,34 @@ export function PresetPicker({ value, preset, onChange, disabled }: Props) {
         ) : null}
       </div>
       {selected === 'custom' ? (
-        <div className="grid gap-4 motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none sm:grid-cols-2">
-          <Field label="Focus (minutes)">
-            <NumberStepper
-              label="Focus minutes"
-              value={value.focus_minutes}
-              min={FOCUS_MINUTES_MIN}
-              max={FOCUS_MINUTES_MAX}
-              step={5}
-              disabled={disabled}
-              onChange={(n) => set({ focus_minutes: n })}
-            />
-          </Field>
-          <Field label="Short break (minutes)">
-            <NumberStepper
-              label="Short break minutes"
-              value={value.short_break_minutes}
-              min={SHORT_BREAK_MINUTES_MIN}
-              max={SHORT_BREAK_MINUTES_MAX}
-              disabled={disabled}
-              onChange={(n) => set({ short_break_minutes: n })}
-            />
-          </Field>
-          <Field label="Long break (minutes)">
-            <NumberStepper
-              label="Long break minutes"
-              value={value.long_break_minutes}
-              min={LONG_BREAK_MINUTES_MIN}
-              max={LONG_BREAK_MINUTES_MAX}
-              step={5}
-              disabled={disabled}
-              onChange={(n) => set({ long_break_minutes: n })}
-            />
-          </Field>
+        <div className="grid gap-5 motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none sm:grid-cols-2">
+          <DurationField
+            label="Focus length"
+            size="compact"
+            valueMinutes={draft.focus_minutes}
+            onChangeMinutes={(n) => setDuration('focus_minutes', n)}
+            maxMinutes={FOCUS_MINUTES_MAX}
+            disabled={disabled}
+            error={errors.focus_minutes}
+          />
+          <DurationField
+            label="Short break"
+            size="compact"
+            valueMinutes={draft.short_break_minutes}
+            onChangeMinutes={(n) => setDuration('short_break_minutes', n)}
+            maxMinutes={SHORT_BREAK_MINUTES_MAX}
+            disabled={disabled}
+            error={errors.short_break_minutes}
+          />
+          <DurationField
+            label="Long break"
+            size="compact"
+            valueMinutes={draft.long_break_minutes}
+            onChangeMinutes={(n) => setDuration('long_break_minutes', n)}
+            maxMinutes={LONG_BREAK_MINUTES_MAX}
+            disabled={disabled}
+            error={errors.long_break_minutes}
+          />
           <Field label="Rounds before a long break">
             <NumberStepper
               label="Rounds before a long break"
@@ -117,11 +134,6 @@ export function PresetPicker({ value, preset, onChange, disabled }: Props) {
             />
           </Field>
         </div>
-      ) : null}
-      {Object.values(errors).length > 0 ? (
-        <Alert variant="error">
-          <span role="alert">{Object.values(errors)[0]}</span>
-        </Alert>
       ) : null}
     </div>
   )

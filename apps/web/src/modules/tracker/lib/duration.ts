@@ -1,12 +1,10 @@
+import { formatDuration as formatMinutes } from '@artha/design-system'
+
 /** Formatting and arithmetic for study time. Pure; the server stays the clock and these only mirror its maths. */
 
-/** "2 h 05 m", "45 m", "0 m". Minutes are floored, as the rollups store whole seconds. */
+/** "2 h 5 m", "45 m", "0 m". Seconds are floored to whole minutes, as the rollups store whole seconds. */
 export function formatDuration(totalSeconds: number): string {
-  const seconds = Math.max(0, Math.floor(totalSeconds))
-  const h = Math.floor(seconds / 3600)
-  const m = Math.floor((seconds % 3600) / 60)
-  if (h === 0) return `${m} m`
-  return `${h} h ${String(m).padStart(2, '0')} m`
+  return formatMinutes(Math.floor(Math.max(0, totalSeconds) / 60))
 }
 
 /** Spoken form for screen readers: "2 hours 5 minutes". */

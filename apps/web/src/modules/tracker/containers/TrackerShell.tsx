@@ -1,21 +1,13 @@
-import { Alert, Button, Container, EmptyState, Skeleton, Sparkles, ToastProvider } from '@artha/design-system'
-import { Link } from '@tanstack/react-router'
+import { Alert, Button, Container, EmptyState, Skeleton, Sparkles } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
 
+import { RouterSectionTabs } from '../components/RouterSectionTabs'
 import { useTrackerSettings } from '../hooks/useTrackerQueries'
 import { useTrackerSync } from '../hooks/useTrackerSync'
 import { isFeatureDisabled } from '../lib/api'
-
-const ITEMS = [
-  { to: '/app/tracker', label: 'Today', exact: true },
-  { to: '/app/tracker/reports', label: 'Reports', exact: false },
-  { to: '/app/tracker/log', label: 'Log', exact: false },
-  { to: '/app/tracker/goals', label: 'Goals', exact: false },
-  { to: '/app/focus', label: 'Focus timer', exact: false },
-  { to: '/app/settings/tracker', label: 'Settings', exact: false },
-] as const
+import { TRACKER_SECTIONS } from '../lib/sections'
 
 /**
  * Frame for every signed-in tracker screen: the `time_tracker` flag (web and server), the offline banner, local
@@ -39,21 +31,9 @@ export function TrackerShell({ children }: { children: (tz: string, weekStart: 0
   }
 
   return (
-    <ToastProvider>
-      <Container className="max-w-4xl space-y-6 py-10 sm:py-14">
-        <nav aria-label="Time tracker" className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1">
-          {ITEMS.map((item) => (
-            <Button key={item.to} variant="ghost" size="sm" className="shrink-0" asChild>
-              <Link
-                to={item.to}
-                activeOptions={{ exact: item.exact }}
-                activeProps={{ className: 'bg-secondary text-secondary-foreground', 'aria-current': 'page' }}
-              >
-                {item.label}
-              </Link>
-            </Button>
-          ))}
-        </nav>
+    <>
+      <RouterSectionTabs label="Time tracker sections" items={TRACKER_SECTIONS} />
+      <Container className="max-w-4xl space-y-6 py-8 sm:py-12">
         {pending > 0 ? (
           <Alert variant="info">
             <span role="status">
@@ -74,7 +54,7 @@ export function TrackerShell({ children }: { children: (tz: string, weekStart: 0
           <Alert variant="error">
             <span className="flex flex-wrap items-center gap-3">
               We could not load the time tracker.
-              <Button size="sm" variant="outline" onClick={() => void settings.refetch()}>
+              <Button variant="outline" onClick={() => void settings.refetch()}>
                 Try again
               </Button>
             </span>
@@ -83,6 +63,6 @@ export function TrackerShell({ children }: { children: (tz: string, weekStart: 0
           children(settings.data.tz, settings.data.week_start)
         )}
       </Container>
-    </ToastProvider>
+    </>
   )
 }

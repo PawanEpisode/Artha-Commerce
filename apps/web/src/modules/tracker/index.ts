@@ -1,5 +1,6 @@
 export { ContextPicker, hasSubjectAndChapter, type PickerValue } from './components/ContextPicker'
 export { GoalRings } from './components/GoalRings'
+export { RouterSectionTabs } from './components/RouterSectionTabs'
 export { DayContainer } from './containers/DayContainer'
 export { GoalsContainer } from './containers/GoalsContainer'
 export { LogContainer } from './containers/LogContainer'
@@ -16,4 +17,5 @@ export { markActive, nowIso, nowMs, recentlyActive, resetClock, setServerTime } 
 export { formatClock, formatDuration, spokenDuration } from './lib/duration'
 export { trackerKeys } from './lib/keys'
 export { RANGE_PRESETS } from './lib/range'
+export type { SectionLink } from './lib/sections'
 export { ACTIVITY_OPTIONS, type ActivityType, type StudySession, type TrackerSettings } from './lib/types'

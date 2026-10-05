@@ -4,6 +4,13 @@ import { useEffect } from 'react'
 import { flushQueue, pendingCount } from '~/modules/coverage'
 
 import { trackerKeys } from '../lib/keys'
+import { notify } from '../lib/notify'
+
+/** Tells the student what a flush did: how many changes synced and how many the server refused. */
+function report(result: Awaited<ReturnType<typeof flushQueue>>) {
+  if (result && result.sent > 0) notify.synced(result.sent)
+  if (result && result.dropped > 0) notify.syncConflict(result.dropped)
+}
 
 /**
  * Flushes the shared offline queue when a tracker screen opens, when the browser comes back online and every 30
@@ -20,6 +27,7 @@ export function useTrackerSync() {
     const sync = async () => {
       const result = await flushQueue().catch(() => null)
       if (!alive) return
+      report(result)
       await qc.invalidateQueries({
         queryKey: result && result.sent + result.dropped > 0 ? trackerKeys.all : trackerKeys.offline,
       })
@@ -36,7 +44,11 @@ export function useTrackerSync() {
   useEffect(() => {
     if (waiting === 0) return
     const timer = window.setInterval(
-      () => void flushQueue().then(() => qc.invalidateQueries({ queryKey: trackerKeys.offline })),
+      () =>
+        void flushQueue().then((result) => {
+          report(result)
+          return qc.invalidateQueries({ queryKey: trackerKeys.offline })
+        }),
       30_000,
     )
     return () => window.clearInterval(timer)

@@ -8,6 +8,7 @@ import {
   type LucideProps,
   NotebookPen,
   Sparkles,
+  StudyTimeIcon,
   Timer,
 } from '@artha/design-system'
 
@@ -22,6 +23,7 @@ const icons: Record<FeatureIconKey, React.ComponentType<LucideProps>> = {
   layers: Layers,
   'file-clock': FileClock,
   flame: Flame,
+  'study-time': StudyTimeIcon,
   'bell-ring': BellRing,
 }
 

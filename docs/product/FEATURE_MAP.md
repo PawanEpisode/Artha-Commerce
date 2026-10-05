@@ -14,7 +14,7 @@ Purpose: one place that captures **exactly what was written**, organises it as f
 1. Terms and hierarchy
 2. Master flowchart
 3. Your notes, page by page (transcription as flowcharts)
-4. Main pointers with sub-pointers (F-01 to F-15)
+4. Main pointers with sub-pointers (F-01 to F-16)
 5. Cross-cutting systems (X-01 to X-05)
 6. Extra features we recommend
 7. Risks to decide on early
@@ -479,6 +479,33 @@ Recall System
  └─▶ [ADD] Share a deck by link
 ```
 
+### F-16 Personalization, Onboarding, Profile and Workspace Home  (founder UX review of 5 Oct 2026, items 9, 10, 11, 13, 14, 15; section 6 "Onboarding")
+
+```
+Personalization
+ ├─▶ [NOTE] New signup (Google or email and password) lands on onboarding immediately and collects all data points
+ ├─▶ [NOTE] Signed-in users with incomplete onboarding see only onboarding
+ ├─▶ [NOTE] On completion celebrate (confetti or a delightful animation)
+ ├─▶ [NOTE] Returning users land on the last page they were on, saved on tab close or hide (visibilitychange, pagehide, sendBeacon), not on every navigation
+ ├─▶ [NOTE] Signed-in users do not see the public landing page: send them to the workspace
+ ├─▶ [NOTE] Personalise all pages after course selection (courses and features show the user's course, no generic feel)
+ ├─▶ [NOTE] Account settings: name and profile picture, full CRUD with all states, default (initial or generated avatar)
+ ├─▶ [NOTE] Header shows the user's picture and name instead of a generic icon
+ ├─▶ [NOTE] World-class picture upload: crop, edit, remove, or pick from preset avatars
+ ├─▶ [NOTE] The user defines their own targets once (for example 3 mock tests, 3 revisions, 2 practice sets), applied to every chapter in every paper; asked in onboarding, editable in settings (UX review item 9)
+ ├─▶ [NOTE] Once the target for an activity is met, further logs are blocked: UI disables the option with an explanation, API rejects with a clear error code (item 10: "2 of 1 tests" bug)
+ ├─▶ [NOTE] Confidence (Needs work, Getting there, Confident) is selectable only when the chapter is at least 50% complete (item 11)
+ ├─▶ [NOTE] A toast for every user action outcome: success, error, warning, info, custom (item 12)
+ ├─▶ [NOTE] Hours plus minutes inputs wherever a duration is typed; the backend keeps its units (item 5, 6)
+ ├─▶ [ADD] Onboarding steps: name, course and level, attempt term and exam date, daily study time, per-chapter targets (presets Light, Standard, Intense), optional coaching followed, optional photo
+ ├─▶ [ADD] Versioned and resumable onboarding: a later required step re-prompts only that step; existing users are backfilled by facts, not flags
+ ├─▶ [ADD] Workspace home: greeting and exam countdown, Today ring and streak, continue where you left off, next revision due, course progress, finish-your-setup card
+ ├─▶ [ADD] Per-route personalisation table (signed out, signed in without course, with course); public SEO pages unchanged for crawlers
+ ├─▶ [ADD] Explain the overall percent: "31 chapters started, 0 completed" next to the ring (the 25% with 0 of 119 done case is an average of partial progress versus a count of 100% chapters)
+ ├─▶ [ADD] Central account export and deletion registry (DPDP) used by every module
+ └─▶ [ADD] Later: Google photo import, per-subject targets, avatars visible to mentors (needs moderation and consent first)
+```
+
 ---
 
 ## 5. Cross-cutting systems
@@ -617,7 +644,8 @@ X-03 Gamification, X-02 Context Agent, payments, mentor mode, WhatsApp channel
 | 15 | **F-14 Amendments** | `prd/F-14-amendments.md` | `erd/F-14-amendments.md` | written (draft for review, 5 Oct 2026) |
 | 16 | **F-15 Recall System** | `prd/F-15-recall-system.md` | `erd/F-15-recall-system.md` | written (draft for review, 5 Oct 2026) |
 | 17 | **F-03 Notes and PDF editor** | `prd/F-03-notes-and-pdf-editor.md` | `erd/F-03-notes-and-pdf-editor.md` | written (draft for review, 5 Oct 2026) |
-| 18 | X-01 Notifications, X-03 Gamification, X-02 Context Agent | | | next to write |
+| 18 | **F-16 Personalization, Onboarding, Profile and Workspace Home** | `prd/F-16-personalization-onboarding-profile.md` | `erd/F-16-personalization-onboarding-profile.md` | written (draft for review, 6 Oct 2026); **build before the practice engine** (slices S1 to S14) |
+| 19 | X-01 Notifications, X-03 Gamification, X-02 Context Agent | | | next to write |
 
 Index, build waves and open decisions: `docs/product/README.md`. Implementation audit: `docs/product/validation/`.
 

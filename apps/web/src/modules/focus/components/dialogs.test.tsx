@@ -9,10 +9,10 @@ describe('EndEarlyDialog', () => {
   it('saves the studied minutes with the chosen reason', async () => {
     const onEnd = vi.fn()
     render(<EndEarlyDialog open studiedSeconds={754} busy={false} onClose={vi.fn()} onEnd={onEnd} />)
-    expect(screen.getByText(/you studied 12 minutes/i)).toBeInTheDocument()
+    expect(screen.getByText(/you studied 12 m\b/i)).toBeInTheDocument()
     await userEvent.click(screen.getByLabelText('What got in the way?'))
     await userEvent.click(screen.getByRole('option', { name: 'Too tired' }))
-    await userEvent.click(screen.getByRole('button', { name: 'Save 12 min' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Save 12 m' }))
     expect(onEnd).toHaveBeenCalledWith(true, 'tired')
   })
 

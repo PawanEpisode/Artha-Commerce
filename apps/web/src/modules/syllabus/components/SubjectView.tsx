@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   Badge,
   Breadcrumb,
   BreadcrumbItem,
@@ -7,8 +6,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Button,
-  Card,
+  ChevronRight,
   Container,
+  EntityBadge,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { type ReactNode, useState } from 'react'
@@ -16,6 +16,7 @@ import { type ReactNode, useState } from 'react'
 import { groupBySection, marksLabel, matchesQuery, pluralize, SEARCH_THRESHOLD } from '../lib/format'
 import type { SubjectSyllabus } from '../lib/types'
 import { ChapterSearch } from './ChapterSearch'
+import { EntityCrumb, EntityIndex, EntityListRow, EntityTitle, ROW_LINK_CLASS } from './EntityList'
 import { SyllabusMeta } from './SyllabusMeta'
 
 interface Props {
@@ -53,17 +54,25 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{subject.name}</BreadcrumbPage>
+            <BreadcrumbPage>
+              <EntityCrumb kind="paper">{subject.name}</EntityCrumb>
+            </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
-      <h1 className="text-4xl font-extrabold sm:text-5xl">{subject.name}</h1>
+      <h1 className="text-4xl font-extrabold break-words sm:text-5xl">{subject.name}</h1>
       <p className="mt-3 flex flex-wrap items-center gap-2 text-lg text-muted-foreground">
-        {subject.paper_number ? <span>Paper {subject.paper_number}</span> : null}
+        <EntityBadge kind="paper" size="lg">
+          {subject.paper_number ? `Paper ${subject.paper_number}` : 'Paper'}
+        </EntityBadge>
         {subject.total_marks ? <Badge variant="outline">{subject.total_marks} marks</Badge> : null}
         {subject.is_optional ? <Badge variant="outline">Optional</Badge> : null}
-        {subject.chapters.length > 0 ? <span>{pluralize(subject.chapters.length, 'chapter')}</span> : null}
+        {subject.chapters.length > 0 ? (
+          <EntityBadge kind="chapter" size="lg">
+            {pluralize(subject.chapters.length, 'chapter')}
+          </EntityBadge>
+        ) : null}
       </p>
       <div className="mt-3">
         <SyllabusMeta scheme={subject.scheme} body={body} />
@@ -96,20 +105,25 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
                 <ol className="space-y-3">
                   {group.items.map((c) => (
                     <li key={c.id}>
-                      <Card className="focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
+                      <EntityListRow kind="chapter">
                         <Link
                           to="/courses/$course/$level/$subject/$chapter"
                           params={{ course, level, subject: subject.key, chapter: c.key }}
-                          className="flex items-center gap-4 rounded-xl p-4 outline-none"
+                          className={ROW_LINK_CLASS}
                         >
-                          <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
-                            {subject.chapters.indexOf(c) + 1}
+                          <EntityIndex kind="chapter">{subject.chapters.indexOf(c) + 1}</EntityIndex>
+                          <span className="min-w-0 space-y-1.5">
+                            <EntityTitle>{c.name}</EntityTitle>
+                            <span className="flex flex-wrap items-center gap-2">
+                              {c.topic_count ? (
+                                <EntityBadge kind="topic">{pluralize(c.topic_count, 'topic')}</EntityBadge>
+                              ) : null}
+                              {marksLabel(c) ? <Badge variant="outline">{marksLabel(c)}</Badge> : null}
+                            </span>
                           </span>
-                          <span className="min-w-0 flex-1 font-medium">{c.name}</span>
-                          {c.topic_count ? <Badge variant="outline">{pluralize(c.topic_count, 'topic')}</Badge> : null}
-                          {marksLabel(c) ? <Badge variant="outline">{marksLabel(c)}</Badge> : null}
+                          <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
                         </Link>
-                      </Card>
+                      </EntityListRow>
                     </li>
                   ))}
                 </ol>
@@ -120,10 +134,8 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
       )}
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Button size="lg" asChild>
-          <Link to="/app/syllabus">
-            Track {subject.name} <ArrowRight />
-          </Link>
+        <Button variant="cta" size="lg" arrow asChild>
+          <Link to="/app/syllabus">Track {subject.name}</Link>
         </Button>
         {report}
       </div>

@@ -1,4 +1,6 @@
 export * from './head'
 export * from './jsonld'
 export * from './og-card'
+export * from './pages'
+export * from './robots'
 export * from './sitemap'

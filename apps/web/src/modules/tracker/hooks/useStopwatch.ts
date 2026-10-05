@@ -16,6 +16,7 @@ import {
 import { markActive, nowIso, nowMs, recentlyActive, setServerTime } from '../lib/clock'
 import { elapsedSeconds } from '../lib/duration'
 import { trackerKeys } from '../lib/keys'
+import { notify } from '../lib/notify'
 import { localPause, localResume, localStart } from '../lib/stopwatchLocal'
 import type { ActivityType, StopResult, StopwatchState } from '../lib/types'
 
@@ -96,6 +97,7 @@ export function useStopwatch() {
         setServerTime(next.server_time)
         put(next)
         track('stopwatch_started', { activity_type: context.activity_type, has_subject: !!context.subject_id })
+        notify.stopwatchStarted()
       } catch (error) {
         if (!(error instanceof QueuedOffline)) throw error
         put({ stopwatch: localStart(at, clientId, context) })
@@ -104,11 +106,13 @@ export function useStopwatch() {
           has_subject: !!context.subject_id,
           queued: true,
         })
+        notify.stopwatchStarted(true)
         afterWrite()
       }
     },
     onError: (error) => {
       if ((error as { status?: number }).status === 409) track('timer_conflict', { kind: 'stopwatch_start' })
+      notify.error(error, 'Could not start the stopwatch.')
       void refresh()
     },
   })
@@ -124,13 +128,19 @@ export function useStopwatch() {
           sendStopwatch<StopwatchState>(online),
         )
         put(next)
+        if (kind === 'pause') notify.stopwatchPaused()
+        else notify.stopwatchResumed()
       } catch (error) {
         if (!(error instanceof QueuedOffline)) throw error
         put({ stopwatch: kind === 'pause' ? localPause(sw, at) : localResume(sw, at) })
+        notify.queued()
         afterWrite()
       }
     },
-    onError: () => void refresh(),
+    onError: (error, kind) => {
+      notify.error(error, kind === 'pause' ? 'Could not pause the stopwatch.' : 'Could not resume the stopwatch.')
+      void refresh()
+    },
   })
 
   const stop = useMutation({
@@ -146,15 +156,18 @@ export function useStopwatch() {
         )
         put({ stopwatch: null })
         track('stopwatch_stopped', { seconds: counted, saved: save, outcome: result.outcome })
+        notify.stopwatchStopped({ saved: save, outcome: result.outcome, seconds: counted })
         return result
       } catch (error) {
         if (!(error instanceof QueuedOffline)) throw error
         put({ stopwatch: null })
         track('stopwatch_stopped', { seconds: counted, saved: save, queued: true })
+        notify.queued()
         afterWrite()
         return null
       }
     },
+    onError: (error) => notify.error(error, 'Could not stop the stopwatch.'),
     onSettled: () => {
       void qc.invalidateQueries({ queryKey: trackerKeys.sessions })
       void qc.invalidateQueries({ queryKey: trackerKeys.goals })
@@ -170,7 +183,10 @@ export function useStopwatch() {
       const next = await changeContext({ version: sw.version, ...patch })
       put(next)
     },
-    onError: () => void refresh(),
+    onError: (error) => {
+      notify.error(error, 'Could not change the subject or chapter.')
+      void refresh()
+    },
   })
 
   const idle = useMutation({
@@ -179,7 +195,11 @@ export function useStopwatch() {
       put(next)
       if (answer === 'prompted') track('stopwatch_idle_prompted')
     },
-    onError: () => void refresh(),
+    onError: (error, answer) => {
+      // The automatic "are you still there?" prompt fails quietly; only a student's own answer is worth a toast.
+      if (answer === 'still_studying') notify.error(error, 'Could not update the stopwatch.')
+      void refresh()
+    },
   })
 
   const seconds = sw ? elapsedSeconds(sw, nowMs()) : 0

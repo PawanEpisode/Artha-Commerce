@@ -10,7 +10,15 @@ import {
   tickTopic,
   topicTickRequest,
 } from './api'
-import { enqueue, flush, type FlushResult, isTransient, pending, type QueuedWrite } from './offlineQueue'
+import {
+  type DroppedHandler,
+  enqueue,
+  flush,
+  type FlushResult,
+  isTransient,
+  pending,
+  type QueuedWrite,
+} from './offlineQueue'
 import type { ChapterState, EventType } from './types'
 
 /** Thrown by `writeOrQueue` when the write was stored for later instead of sent. The caller keeps its optimistic UI. */
@@ -56,9 +64,9 @@ export async function writeOrQueue<T>(
 }
 
 /** Replays whatever is waiting for the signed-in user. Resolves to null when nobody is signed in. */
-export async function flushQueue(): Promise<FlushResult | null> {
+export async function flushQueue(onDropped?: DroppedHandler): Promise<FlushResult | null> {
   const userId = await currentUserId()
-  return userId && !offline() ? flush(userId, replay) : null
+  return userId && !offline() ? flush(userId, replay, onDropped) : null
 }
 
 export async function pendingCount(): Promise<number> {
@@ -83,11 +91,14 @@ export async function logEventOrQueue(input: {
   chapter_id: string
   type: EventType
   value?: number | null
+  /** Chapter name, kept with a queued write for the "skipped" message. */
+  label?: string
 }): Promise<ChapterState | null> {
   const id = newClientId()
-  const request = { ...input, value: input.value ?? null, client_id: id }
+  const { label, ...fields } = input
+  const request = { ...fields, value: input.value ?? null, client_id: id }
   const { method, path, body } = eventRequest(request)
-  return orNull(writeOrQueue({ clientId: id, method, path, body }, () => logEvent(request)))
+  return orNull(writeOrQueue({ clientId: id, method, path, body, label }, () => logEvent(request)))
 }
 
 async function orNull<T>(write: Promise<T>): Promise<T | null> {

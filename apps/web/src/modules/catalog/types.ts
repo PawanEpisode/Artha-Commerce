@@ -19,7 +19,16 @@ export interface Course {
 }
 
 export type FeatureIconKey =
-  'calendar' | 'list-checks' | 'timer' | 'sparkles' | 'notebook-pen' | 'layers' | 'file-clock' | 'flame' | 'bell-ring'
+  | 'calendar'
+  | 'list-checks'
+  | 'timer'
+  | 'sparkles'
+  | 'notebook-pen'
+  | 'layers'
+  | 'file-clock'
+  | 'flame'
+  | 'study-time'
+  | 'bell-ring'
 
 export type LiveToolPath = '/app/focus' | '/app/syllabus' | '/app/tracker' | '/app/tracker/reports'
 

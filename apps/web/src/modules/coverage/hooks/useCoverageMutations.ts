@@ -14,6 +14,7 @@ import {
   updateEnrollment,
 } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
+import { notify } from '../lib/notify'
 import type { CoverageSettings, Overview } from '../lib/types'
 
 const refreshAll = (qc: ReturnType<typeof useQueryClient>) => qc.invalidateQueries({ queryKey: coverageKeys.all })
@@ -29,8 +30,11 @@ export function useCreateEnrollment() {
         scheme: e.scheme.code,
         term: e.target_term?.code ?? null,
       })
+      notify.enrolled()
       return refreshAll(qc)
     },
+    onError: (error) =>
+      notify.failed(error, 'We could not create your syllabus map. Please try again.', 'coverage-enroll'),
   })
 }
 
@@ -45,8 +49,10 @@ export function useCatchup() {
         resulting_percent: result.overview.level.pct_simple,
       })
       qc.setQueryData<Overview>(coverageKeys.overview, result.overview)
+      notify.catchupApplied(input.chapterIds.length)
       await refreshAll(qc)
     },
+    onError: (error) => notify.failed(error, 'We could not apply that. Please try again.', 'coverage-catchup'),
   })
 }
 
@@ -58,22 +64,38 @@ export function useSetElectives() {
     onSuccess: (result, { choices }) => {
       track('electives_chosen', { slots: Object.keys(choices).length, cleared: Object.values(choices).includes(null) })
       qc.setQueryData<Overview>(coverageKeys.overview, result.overview)
+      notify.electiveSaved()
       return refreshAll(qc)
     },
+    onError: (error) => notify.failed(error, 'We could not save your elective. Please try again.', 'coverage-elective'),
   })
+}
+
+interface SubjectExclusionInput {
+  subjectId: string
+  excluded: boolean
+  subjectKey: string
+  /** For the message ("Excluded Taxation.") and its Undo. */
+  subjectName: string
 }
 
 export function useSetSubjectExclusion() {
   const qc = useQueryClient()
-  return useMutation({
-    mutationFn: ({ subjectId, excluded }: { subjectId: string; excluded: boolean; subjectKey: string }) =>
-      setSubjectExclusion(subjectId, excluded),
-    onSuccess: (result, { excluded, subjectKey }) => {
-      if (excluded) track('chapter_excluded', { subject_key: subjectKey })
+  const mutation = useMutation({
+    mutationFn: ({ subjectId, excluded }: SubjectExclusionInput) => setSubjectExclusion(subjectId, excluded),
+    onSuccess: (result, input) => {
+      if (input.excluded) {
+        track('chapter_excluded', { subject_key: input.subjectKey })
+        notify.excluded(input.subjectName, () => mutation.mutate({ ...input, excluded: false }))
+      } else {
+        notify.included(input.subjectName)
+      }
       qc.setQueryData<Overview>(coverageKeys.overview, result.overview)
       return refreshAll(qc)
     },
+    onError: (error) => notify.exclusionFailed(error),
   })
+  return mutation
 }
 
 export function useSaveSettings() {
@@ -87,9 +109,16 @@ export function useSaveSettings() {
           )
         : []
       track('coverage_settings_changed', { changed_keys: changed })
+      notify.settingsSaved()
       qc.setQueryData(coverageKeys.settings, saved)
       return refreshAll(qc)
     },
+    onError: (error) =>
+      notify.failed(
+        error,
+        'We could not save your settings. Please check the values and try again.',
+        'coverage-settings',
+      ),
   })
 }
 
@@ -99,9 +128,12 @@ export function useResetSettings() {
     mutationFn: resetSettings,
     onSuccess: (saved) => {
       track('coverage_settings_changed', { changed_keys: ['reset'] })
+      notify.settingsReset()
       qc.setQueryData(coverageKeys.settings, saved)
       return refreshAll(qc)
     },
+    onError: (error) =>
+      notify.failed(error, 'We could not restore the defaults. Please try again.', 'coverage-settings'),
   })
 }
 
@@ -113,6 +145,8 @@ export function useSwitchScheme() {
       schemeId: string
       fromCode: string
       toCode: string
+      /** For the message ("Switched to 2023 Scheme."). */
+      toName: string
       termId?: string | null
     }) =>
       updateEnrollment(input.enrollmentId, {
@@ -126,8 +160,10 @@ export function useSwitchScheme() {
         carried_count: result.switch_summary?.carried_chapters ?? 0,
         new_count: result.switch_summary?.new_chapters ?? 0,
       })
+      notify.switchedScheme(input.toName)
       return refreshAll(qc)
     },
+    onError: (error) => notify.failed(error, 'We could not switch scheme. Please try again.', 'coverage-switch'),
   })
 }
 
@@ -137,6 +173,7 @@ export function useUpdateEnrollment() {
     mutationFn: (input: { id: string; patch: Parameters<typeof updateEnrollment>[1] }) =>
       updateEnrollment(input.id, input.patch),
     onSuccess: () => refreshAll(qc),
+    onError: (error) => notify.failed(error, 'We could not save that. Please try again.'),
   })
 }
 
@@ -145,7 +182,9 @@ export function useDeleteCoverageData() {
   return useMutation({
     mutationFn: deleteCoverage,
     onSuccess: () => {
+      notify.dataDeleted()
       qc.removeQueries({ queryKey: coverageKeys.all })
     },
+    onError: (error) => notify.failed(error, 'We could not delete your data. Please try again.', 'coverage-delete'),
   })
 }

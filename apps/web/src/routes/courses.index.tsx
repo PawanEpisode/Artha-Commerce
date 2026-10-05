@@ -1,17 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { CoursesIndexContainer, loadCourses } from '~/modules/courses'
-import { buildHead } from '~/modules/seo'
+import { pageHead } from '~/modules/seo'
 
 export const Route = createFileRoute('/courses/')({
   loader: async () => ({ courses: await loadCourses() }),
-  head: () =>
-    buildHead({
-      title: 'CA, CS and CMA Courses',
-      description:
-        'Explore Foundation, Intermediate/Executive and Final/Professional levels for CA, CS and CMA exam preparation.',
-      path: '/courses',
-    }),
+  head: () => pageHead('/courses'),
   component: function CoursesRoute() {
     const { courses } = Route.useLoaderData()
     return <CoursesIndexContainer courses={courses} />

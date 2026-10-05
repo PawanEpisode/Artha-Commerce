@@ -76,6 +76,8 @@ import {
 } from '@artha/design-system'
 import { useState } from 'react'
 
+import { NewPrimitivesShowcase } from './NewPrimitivesShowcase'
+
 const swatches = [
   ['background', 'bg-background'],
   ['foreground', 'bg-foreground'],
@@ -452,6 +454,8 @@ export function DesignShowcase() {
           <PopoverContent>Reading 40%, practice 30%, revision 20%, mock 10%.</PopoverContent>
         </Popover>
       </Block>
+
+      <NewPrimitivesShowcase />
 
       <Block title="Motion">
         <Reveal>

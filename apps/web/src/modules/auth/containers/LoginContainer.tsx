@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@artha/design-system'
+import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
@@ -11,7 +11,12 @@ import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useAuth } from '../hooks/useAuth'
 import { useCooldown } from '../hooks/useCooldown'
 import { sendEmailCode, signInWithPassword, verifyEmailCode } from '../lib/auth-api'
+import { notify } from '../lib/notify'
 import { safeNextPath } from '../lib/redirects'
+
+const signedInToast = (result: { error?: string }) => {
+  if (!result.error) notify.signedIn()
+}
 
 export type LoginMethod = 'code' | 'password'
 
@@ -42,13 +47,17 @@ export function LoginContainer({ method, next, onMethodChange }: LoginContainerP
     if (!result.error) {
       setEmail(address)
       cooldown.start()
+      notify.codeSent(address)
     }
   }
 
   async function resendCode() {
     if (!email) return
     const result = await resend.run(() => sendEmailCode(email))
-    if (!result.error) cooldown.start()
+    if (!result.error) {
+      cooldown.start()
+      notify.codeResent()
+    }
   }
 
   const notConfigured = !configured ? 'Sign-in is not configured yet. Add the Supabase env vars.' : undefined
@@ -58,12 +67,12 @@ export function LoginContainer({ method, next, onMethodChange }: LoginContainerP
       title="Welcome to ArthaCommerce"
       description="Sign in to save your plan, notes and progress."
       footer={
-        <>
-          New here?{' '}
-          <Link to="/signup" className="font-semibold text-primary underline-offset-4 hover:underline">
-            Create an account
-          </Link>
-        </>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          New here?
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/signup">Create an account</Link>
+          </Button>
+        </div>
       }
     >
       <GoogleButton onClick={() => void signInWithGoogle(destination)} disabled={!configured} />
@@ -86,7 +95,7 @@ export function LoginContainer({ method, next, onMethodChange }: LoginContainerP
               resendSeconds={cooldown.secondsLeft}
               resendPending={resend.pending}
               resendNotice={resend.status === 'success' ? 'We sent a new code.' : resend.error}
-              onSubmit={(code) => void verify.run(() => verifyEmailCode(email, code))}
+              onSubmit={(code) => void verify.run(() => verifyEmailCode(email, code)).then(signedInToast)}
               onResend={() => void resendCode()}
               onChangeEmail={() => {
                 setEmail(undefined)
@@ -108,7 +117,7 @@ export function LoginContainer({ method, next, onMethodChange }: LoginContainerP
             pending={passwordLogin.pending}
             error={notConfigured ?? passwordLogin.error}
             onSubmit={({ email: address, password }) =>
-              void passwordLogin.run(() => signInWithPassword(address, password))
+              void passwordLogin.run(() => signInWithPassword(address, password)).then(signedInToast)
             }
           />
         </TabsContent>

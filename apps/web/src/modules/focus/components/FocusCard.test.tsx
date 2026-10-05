@@ -90,7 +90,7 @@ describe('FocusCard', () => {
     const h = handlers()
     render(<FocusCard {...base} {...h} timer={running()} />)
     await userEvent.click(screen.getByRole('button', { name: /pause/i }))
-    await userEvent.click(screen.getByRole('button', { name: '+5 min (2 left)' }))
+    await userEvent.click(screen.getByRole('button', { name: '+5 m (2 left)' }))
     await userEvent.click(screen.getByRole('button', { name: /end early/i }))
     expect(h.onPause).toHaveBeenCalledOnce()
     expect(h.onExtend).toHaveBeenCalledOnce()
@@ -100,7 +100,7 @@ describe('FocusCard', () => {
 
   it('disables extending after the third time', () => {
     render(<FocusCard {...base} {...handlers()} timer={running({ extension_count: 3, can_extend: false })} />)
-    expect(screen.getByRole('button', { name: '+5 min' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: '+5 m' })).toBeDisabled()
   })
 
   it('shows Resume when paused', async () => {

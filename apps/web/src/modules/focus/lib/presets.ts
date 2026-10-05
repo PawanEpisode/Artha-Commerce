@@ -1,3 +1,5 @@
+import { formatDuration } from '@artha/design-system'
+
 /**
  * Presets and limits of the Pomodoro timer. They mirror apps/api/modules/focus/domain/timing.py; a test on the API side
  * (test_web_parity.py) reads this file and fails when the two drift. Keep one `NAME = value` per line, and one preset
@@ -46,7 +48,8 @@ export function presetTimings(key: Exclude<PresetKey, 'custom'>): Timings {
 
 /** "25 min focus, 5 min break, then a 15 min long break after 4 rounds." */
 export function describeTimings(t: Timings): string {
-  return `${t.focus_minutes} min focus, ${t.short_break_minutes} min break, then a ${t.long_break_minutes} min long break after ${t.rounds_before_long} rounds.`
+  const d = (minutes: number) => formatDuration(minutes)
+  return `${d(t.focus_minutes)} focus, ${d(t.short_break_minutes)} break, then a ${d(t.long_break_minutes)} long break after ${t.rounds_before_long} rounds.`
 }
 
 /** Which preset these timings are, or "custom". */
@@ -67,12 +70,15 @@ export function matchPreset(t: Timings): PresetKey {
 /** Field messages for custom timings outside the limits. Empty when everything is allowed. */
 export function timingErrors(t: Timings): Partial<Record<keyof Timings, string>> {
   const out: Partial<Record<keyof Timings, string>> = {}
-  const check = (k: keyof Timings, lo: number, hi: number, label: string) => {
-    if (!Number.isInteger(t[k]) || t[k] < lo || t[k] > hi) out[k] = `${label} must be between ${lo} and ${hi}.`
+  const check = (k: keyof Timings, lo: number, hi: number, label: string, isDuration = true) => {
+    if (Number.isInteger(t[k]) && t[k] >= lo && t[k] <= hi) return
+    out[k] = isDuration
+      ? `${label} must be between ${formatDuration(lo, 'long')} and ${formatDuration(hi, 'long')}.`
+      : `${label} must be between ${lo} and ${hi}.`
   }
   check('focus_minutes', FOCUS_MINUTES_MIN, FOCUS_MINUTES_MAX, 'Focus length')
   check('short_break_minutes', SHORT_BREAK_MINUTES_MIN, SHORT_BREAK_MINUTES_MAX, 'Short break')
   check('long_break_minutes', LONG_BREAK_MINUTES_MIN, LONG_BREAK_MINUTES_MAX, 'Long break')
-  check('rounds_before_long', ROUNDS_BEFORE_LONG_MIN, ROUNDS_BEFORE_LONG_MAX, 'Rounds before a long break')
+  check('rounds_before_long', ROUNDS_BEFORE_LONG_MIN, ROUNDS_BEFORE_LONG_MAX, 'Rounds before a long break', false)
   return out
 }

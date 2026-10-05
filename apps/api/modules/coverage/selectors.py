@@ -9,6 +9,7 @@ from django.db.models import QuerySet
 
 from modules.syllabus.models import Chapter, Scheme, Subject, SyllabusGroup, Topic
 
+from .domain import targets
 from .domain.formula import DEFAULT_REVISION_DAYS, Weights
 from .models import ChapterProgress, CoverageEvent, CoverageSettings, Enrollment, Rollup, TopicProgress
 
@@ -64,6 +65,34 @@ def get_chapter_progress(user_id, chapter_id) -> ChapterProgress | None:
         .filter(user_id=user_id, chapter_id=chapter_id, enrollment__status=Enrollment.Status.ACTIVE)
         .first()
     )
+
+
+def activity_summary(chapter: Chapter, progress: ChapterProgress | None) -> dict:
+    """
+    Per activity: `done` (never above `target`), `target`, `logged` (the real count) and `can_log`. Legacy rows that
+    already hold more than the target show a full bar and block further manual logs; nothing is deleted.
+    """
+    counts = {
+        "practice": progress.practice_count if progress else 0,
+        "revisions": progress.revision_count if progress else 0,
+        "mocks": progress.mock_count if progress else 0,
+    }
+    target_of = {
+        "practice": chapter.target_practice_sets,
+        "revisions": chapter.target_revisions,
+        "mocks": chapter.target_mocks,
+    }
+    return {key: targets.activity_progress(counts[key], target_of[key]) for key in counts}
+
+
+def confidence_gate(progress: ChapterProgress | None) -> dict:
+    """Whether confidence can be rated now, with the numbers the UI needs for its hint."""
+    current = progress.coverage_pct if progress else 0
+    return {
+        "unlocked": targets.confidence_allowed(current),
+        "required_pct": targets.CONFIDENCE_MIN_PCT,
+        "current_pct": current,
+    }
 
 
 def topic_counts(user_id, chapter_ids) -> dict:

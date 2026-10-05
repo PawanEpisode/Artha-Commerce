@@ -7,6 +7,7 @@ import { EmailForm } from '../components/EmailForm'
 import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useCooldown } from '../hooks/useCooldown'
 import { requestPasswordReset } from '../lib/auth-api'
+import { notify } from '../lib/notify'
 
 export function ForgotPasswordContainer() {
   const [email, setEmail] = useState<string>()
@@ -18,13 +19,14 @@ export function ForgotPasswordContainer() {
     if (!result.error) {
       setEmail(address)
       cooldown.start()
+      notify.resetRequested()
     }
   }
 
   const footer = (
-    <Link to="/login" className="font-semibold text-primary underline-offset-4 hover:underline">
-      Back to sign in
-    </Link>
+    <Button variant="outline" size="sm" asChild>
+      <Link to="/login">Back to sign in</Link>
+    </Button>
   )
 
   if (email) {

@@ -51,7 +51,7 @@ export function PasswordSignInForm({ pending, error, onResendConfirmation, onSub
         <Alert variant="error">
           <p>{error}</p>
           {onResendConfirmation && (
-            <Button type="button" variant="link" className="h-auto p-0" onClick={onResendConfirmation}>
+            <Button type="button" variant="outline" size="sm" className="mt-2" onClick={onResendConfirmation}>
               Resend confirmation email
             </Button>
           )}
@@ -61,11 +61,9 @@ export function PasswordSignInForm({ pending, error, onResendConfirmation, onSub
         {pending && <LoaderCircle className="animate-spin" aria-hidden />}
         Sign in
       </Button>
-      <p className="text-center text-sm">
-        <Link to="/auth/forgot-password" className="font-semibold text-primary underline-offset-4 hover:underline">
-          Forgot password?
-        </Link>
-      </p>
+      <Button variant="ghost" size="sm" className="w-full" asChild>
+        <Link to="/auth/forgot-password">Forgot password?</Link>
+      </Button>
     </form>
   )
 }

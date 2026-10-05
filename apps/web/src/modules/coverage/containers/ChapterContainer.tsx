@@ -7,8 +7,11 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
+  Button,
   Card,
   ConfidenceDot,
+  EntityBadge,
+  EntityDot,
   Label,
   ProgressRing,
   Skeleton,
@@ -16,7 +19,7 @@ import {
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { ReportIssue } from '~/modules/syllabus'
+import { CRUMB_LINK_CLASS, EntityCrumb, ReportIssue } from '~/modules/syllabus'
 
 import { CalculationPopover } from '../components/CalculationPopover'
 import { ComponentBreakdown } from '../components/ComponentBreakdown'
@@ -28,6 +31,7 @@ import { TopicChecklist } from '../components/TopicChecklist'
 import { useLogEvent, useSetChapterExclusion, useSetConfidence, useTickTopic } from '../hooks/useChapterMutations'
 import { useChapterCoverage, useCoverageSettings } from '../hooks/useCoverageQueries'
 import { DEFAULT_WEIGHTS } from '../lib/formula'
+import { chapterActivities, confidenceAllowed } from '../lib/rules'
 import { CoverageShell } from './CoverageShell'
 
 const date = (iso: string | null) =>
@@ -36,7 +40,13 @@ const date = (iso: string | null) =>
 function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: string }) {
   const { data, isPending, isError } = useChapterCoverage(chapterId)
   const { data: settings } = useCoverageSettings()
-  const ctx = { chapterId, subjectId, subjectKey: data?.subject.key ?? '', chapterKey: data?.chapter.key ?? '' }
+  const ctx = {
+    chapterId,
+    subjectId,
+    subjectKey: data?.subject.key ?? '',
+    chapterKey: data?.chapter.key ?? '',
+    chapterName: data?.chapter.name,
+  }
   const tick = useTickTopic(ctx)
   const log = useLogEvent(ctx)
   const confidence = useSetConfidence(ctx)
@@ -69,17 +79,15 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <Link
-              to="/app/syllabus/$subject"
-              params={{ subject: subject.id }}
-              className="underline-offset-4 hover:underline"
-            >
-              {subject.name}
+            <Link to="/app/syllabus/$subject" params={{ subject: subject.id }} className={CRUMB_LINK_CLASS}>
+              <EntityCrumb kind="paper">{subject.name}</EntityCrumb>
             </Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{chapter.name}</BreadcrumbPage>
+            <BreadcrumbPage>
+              <EntityCrumb kind="chapter">{chapter.name}</EntityCrumb>
+            </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
@@ -92,7 +100,8 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
           strokeWidth={9}
         />
         <div className="min-w-0 space-y-2">
-          <h1 className="font-display text-2xl font-extrabold sm:text-3xl">{chapter.name}</h1>
+          <EntityBadge kind="chapter">Chapter</EntityBadge>
+          <h1 className="font-display text-2xl font-extrabold break-words sm:text-3xl">{chapter.name}</h1>
           <div className="flex flex-wrap items-center gap-2">
             <StatusBadge status={chapter.status} />
             {chapter.confidence ? <ConfidenceDot value={chapter.confidence} showLabel /> : null}
@@ -105,34 +114,49 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
       </p>
 
       {data.prev_chapter || data.next_chapter ? (
-        <nav aria-label="Chapters in this paper" className="flex justify-between gap-3 text-sm">
+        <nav aria-label="Chapters in this paper" className="grid gap-3 sm:grid-cols-2">
           {data.prev_chapter ? (
-            <Link
-              to="/app/syllabus/$subject/$chapter"
-              params={{ subject: subject.id, chapter: data.prev_chapter.id }}
-              className="inline-flex min-h-11 items-center gap-2 font-medium underline-offset-4 hover:underline"
+            <Button
+              variant="outline"
+              className="h-auto min-h-11 justify-start py-2 text-left whitespace-normal"
+              asChild
             >
-              <ArrowLeft aria-hidden className="size-4" />
-              {data.prev_chapter.name}
-            </Link>
+              <Link
+                to="/app/syllabus/$subject/$chapter"
+                params={{ subject: subject.id, chapter: data.prev_chapter.id }}
+                title={data.prev_chapter.name}
+              >
+                <ArrowLeft aria-hidden />
+                <span className="min-w-0">
+                  <span className="block text-xs font-medium text-muted-foreground">Previous chapter</span>
+                  <span className="line-clamp-2 break-words">{data.prev_chapter.name}</span>
+                </span>
+              </Link>
+            </Button>
           ) : (
             <span />
           )}
           {data.next_chapter ? (
-            <Link
-              to="/app/syllabus/$subject/$chapter"
-              params={{ subject: subject.id, chapter: data.next_chapter.id }}
-              className="inline-flex min-h-11 items-center gap-2 font-medium underline-offset-4 hover:underline"
-            >
-              {data.next_chapter.name}
-              <ArrowRight aria-hidden className="size-4" />
-            </Link>
+            <Button variant="outline" className="h-auto min-h-11 justify-end py-2 text-right whitespace-normal" asChild>
+              <Link
+                to="/app/syllabus/$subject/$chapter"
+                params={{ subject: subject.id, chapter: data.next_chapter.id }}
+                title={data.next_chapter.name}
+              >
+                <span className="min-w-0">
+                  <span className="block text-xs font-medium text-muted-foreground">Next chapter</span>
+                  <span className="line-clamp-2 break-words">{data.next_chapter.name}</span>
+                </span>
+                <ArrowRight aria-hidden />
+              </Link>
+            </Button>
           ) : null}
         </nav>
       ) : null}
 
       <section aria-labelledby="topics-h" className="space-y-3">
-        <h2 id="topics-h" className="font-display text-xl font-bold">
+        <h2 id="topics-h" className="flex items-center gap-2.5 font-display text-xl font-bold">
+          <EntityDot kind="topic" />
           Topics
         </h2>
         <TopicChecklist
@@ -143,7 +167,6 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
           onToggleTopic={(topicId, done) => tick.mutate({ topicId, done })}
           onToggleChapter={(done) => tick.mutate({ topicId: null, done })}
         />
-        {tick.isError ? <Alert variant="error">We could not save that tick. It has been put back.</Alert> : null}
       </section>
 
       <Card className="space-y-4 p-6">
@@ -157,8 +180,8 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
         </h2>
         <Card className="p-6">
           <LogActions
+            activities={chapterActivities(chapter)}
             pending={log.isPending}
-            error={log.isError ? 'We could not save that. Please try again.' : undefined}
             onLog={(type, value) => log.mutate({ type, value })}
           />
         </Card>
@@ -178,6 +201,8 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
         </h2>
         <ConfidencePicker
           value={chapter.confidence}
+          coveragePct={chapter.coverage_pct}
+          unlocked={confidenceAllowed(chapter.coverage_pct)}
           disabled={confidence.isPending}
           onChange={(v) => confidence.mutate(v)}
         />

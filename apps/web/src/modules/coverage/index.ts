@@ -7,5 +7,6 @@ export { type MapSearch, SyllabusMapContainer } from './containers/SyllabusMapCo
 // Shared with the time tracker: the persisted offline queue for idempotent writes, and the enrolment's subjects.
 export { useOverview, useSubjectCoverage } from './hooks/useCoverageQueries'
 export { newClientId } from './lib/api'
+export { type ChapterCounts, paperSentence, progressSentence } from './lib/progress'
 export { flushQueue, pendingCount, QueuedOffline, writeOrQueue } from './lib/queuedWrites'
 export type { Overview, SubjectCoverage } from './lib/types'

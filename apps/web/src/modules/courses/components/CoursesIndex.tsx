@@ -1,4 +1,4 @@
-import { Badge, Card, ChevronRight, Container } from '@artha/design-system'
+import { ArrowRight, Badge, buttonVariants, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
@@ -28,7 +28,11 @@ export function CoursesIndex({ courses, activeCourseCode, prompt }: Props) {
           const yours = activeCourseCode === c.slug
           return (
             <li key={c.slug}>
-              <Link to="/courses/$course" params={{ course: c.slug }} className="group block h-full">
+              <Link
+                to="/courses/$course"
+                params={{ course: c.slug }}
+                className="group block h-full rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+              >
                 <Card className="flex h-full flex-col p-7 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
                   <div className="flex items-start justify-between gap-3">
                     <span className="font-display text-5xl font-extrabold text-primary">{c.name}</span>
@@ -42,9 +46,15 @@ export function CoursesIndex({ courses, activeCourseCode, prompt }: Props) {
                       {papers} {papers === 1 ? 'paper' : 'papers'}
                     </p>
                   ) : null}
-                  <p className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    Browse papers <ChevronRight aria-hidden className="size-4" />
-                  </p>
+                  <span className="mt-auto pt-5">
+                    <span className={buttonVariants({ variant: 'outline' })}>
+                      Browse {c.name} papers
+                      <ArrowRight
+                        aria-hidden
+                        className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+                      />
+                    </span>
+                  </span>
                 </Card>
               </Link>
             </li>

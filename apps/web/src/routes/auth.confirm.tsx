@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 
 import { AuthPage, ConfirmContainer } from '~/modules/auth'
-import { buildHead } from '~/modules/seo'
+import { pageHead } from '~/modules/seo'
 
 /** Target of the links in our auth emails (see packages/email-templates). */
 export const Route = createFileRoute('/auth/confirm')({
@@ -11,13 +11,7 @@ export const Route = createFileRoute('/auth/confirm')({
     type: z.string().optional().catch(undefined),
     next: z.string().optional().catch(undefined),
   }),
-  head: () =>
-    buildHead({
-      title: 'Confirming',
-      description: 'Confirming your email link.',
-      path: '/auth/confirm',
-      noindex: true,
-    }),
+  head: () => pageHead('/auth/confirm'),
   component: function ConfirmPage() {
     const { token_hash, type, next } = Route.useSearch()
     return (

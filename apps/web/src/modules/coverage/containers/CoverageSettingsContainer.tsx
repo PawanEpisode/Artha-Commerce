@@ -17,6 +17,7 @@ import {
 } from '../hooks/useCoverageMutations'
 import { useCoverageSettings } from '../hooks/useCoverageQueries'
 import { exportCoverage } from '../lib/api'
+import { notify } from '../lib/notify'
 import type { Overview } from '../lib/types'
 import { CoverageShell } from './CoverageShell'
 
@@ -37,7 +38,6 @@ function Body({ overview }: { overview: Overview }) {
   const switcher = useSwitchScheme()
   const wipe = useDeleteCoverageData()
   const [exporting, setExporting] = useState(false)
-  const [exportError, setExportError] = useState<string>()
 
   const { enrollment } = overview
   const level = useQuery({
@@ -47,11 +47,11 @@ function Body({ overview }: { overview: Overview }) {
 
   async function onExport() {
     setExporting(true)
-    setExportError(undefined)
     try {
       download('my-coverage-data.json', await exportCoverage())
-    } catch {
-      setExportError('We could not export your data. Please try again.')
+      notify.dataExported()
+    } catch (error) {
+      notify.failed(error, 'We could not export your data. Please try again.', 'coverage-export')
     } finally {
       setExporting(false)
     }
@@ -75,12 +75,6 @@ function Body({ overview }: { overview: Overview }) {
           key={JSON.stringify(settings.data)}
           settings={settings.data}
           pending={save.isPending || reset.isPending}
-          saved={save.isSuccess}
-          error={
-            save.isError || reset.isError
-              ? 'We could not save your settings. Please check the values and try again.'
-              : undefined
-          }
           onSave={(next) => save.mutate({ settings: next, previous: settings.data })}
           onReset={() => reset.mutate()}
         />
@@ -89,14 +83,15 @@ function Body({ overview }: { overview: Overview }) {
       <ExclusionList
         subjects={overview.subjects}
         pending={exclusion.isPending}
-        onChange={(s, excluded) => exclusion.mutate({ subjectId: s.id, excluded, subjectKey: s.key })}
+        onChange={(s, excluded) =>
+          exclusion.mutate({ subjectId: s.id, excluded, subjectKey: s.key, subjectName: s.name })
+        }
       />
 
       <SchemeSwitch
         current={enrollment.scheme}
         options={level.data?.schemes ?? []}
         pending={switcher.isPending}
-        error={switcher.isError ? 'We could not switch scheme. Please try again.' : undefined}
         summary={switcher.data?.switch_summary}
         onSwitch={(to) =>
           switcher.mutate({
@@ -104,6 +99,7 @@ function Body({ overview }: { overview: Overview }) {
             schemeId: to.id,
             fromCode: enrollment.scheme.code,
             toCode: to.code,
+            toName: to.name,
           })
         }
       />
@@ -111,8 +107,6 @@ function Body({ overview }: { overview: Overview }) {
       <DataControls
         exporting={exporting}
         deleting={wipe.isPending}
-        error={exportError ?? (wipe.isError ? 'We could not delete your data. Please try again.' : undefined)}
-        deleted={wipe.isSuccess}
         onExport={() => void onExport()}
         onDelete={() => wipe.mutate()}
       />

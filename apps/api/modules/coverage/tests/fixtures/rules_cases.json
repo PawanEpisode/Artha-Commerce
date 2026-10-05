@@ -1,0 +1,26 @@
+{
+  "can_log": [
+    { "name": "below target", "count": 0, "add": 1, "target": 1, "expected": "ok" },
+    { "name": "one slot left", "count": 2, "add": 1, "target": 3, "expected": "ok" },
+    { "name": "exactly at target", "count": 1, "add": 1, "target": 1, "expected": "at_target" },
+    { "name": "request would pass the target is refused whole", "count": 2, "add": 2, "target": 3, "expected": "at_target" },
+    { "name": "request fills the target exactly", "count": 1, "add": 2, "target": 3, "expected": "ok" },
+    { "name": "legacy count above target", "count": 2, "add": 1, "target": 1, "expected": "at_target" },
+    { "name": "target 0 means not tracked", "count": 0, "add": 1, "target": 0, "expected": "not_tracked" },
+    { "name": "target 0 with legacy count", "count": 4, "add": 1, "target": 0, "expected": "not_tracked" },
+    { "name": "add below 1 counts as 1", "count": 1, "add": 0, "target": 1, "expected": "at_target" }
+  ],
+  "confidence_allowed": [
+    { "coverage_pct": 0, "expected": false },
+    { "coverage_pct": 49, "expected": false },
+    { "coverage_pct": 50, "expected": true },
+    { "coverage_pct": 51, "expected": true },
+    { "coverage_pct": 100, "expected": true }
+  ],
+  "activity_progress": [
+    { "count": 0, "target": 1, "expected": { "done": 0, "target": 1, "logged": 0, "can_log": true } },
+    { "count": 1, "target": 1, "expected": { "done": 1, "target": 1, "logged": 1, "can_log": false } },
+    { "count": 2, "target": 1, "expected": { "done": 1, "target": 1, "logged": 2, "can_log": false } },
+    { "count": 2, "target": 0, "expected": { "done": 0, "target": 0, "logged": 2, "can_log": false } }
+  ]
+}

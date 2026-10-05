@@ -12,7 +12,8 @@ interface Props {
   /** The browser's notification permission, so the switch can explain a block. */
   permission: 'granted' | 'denied' | 'default' | 'unsupported'
   busy: boolean
-  error: string | null
+  /** Optional inline message for a problem the form itself can explain. API failures are toasts. */
+  error?: string | null
 }
 
 /** Controlled form for the timer's presets and alerts. Every change saves straight away; there is no Save button. */
@@ -68,7 +69,7 @@ export function FocusSettingsForm({ value, onChange, onTimingsChange, onPreview,
               onValueChange={(v) => onChange({ volume: v })}
             />
             <span className="w-10 text-right text-sm tabular-nums">{value.volume}</span>
-            <Button type="button" size="sm" variant="outline" onClick={onPreview} disabled={!value.sound_enabled}>
+            <Button type="button" variant="outline" onClick={onPreview} disabled={!value.sound_enabled}>
               Play
             </Button>
           </div>

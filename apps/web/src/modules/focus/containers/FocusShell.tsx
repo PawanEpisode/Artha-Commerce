@@ -1,25 +1,15 @@
-import {
-  Alert,
-  Button,
-  Container,
-  EmptyState,
-  Skeleton,
-  Sparkles,
-  ToastProvider,
-  TooltipProvider,
-} from '@artha/design-system'
-import { Link } from '@tanstack/react-router'
+import { Alert, Button, Container, EmptyState, Skeleton, Sparkles, TooltipProvider } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
-import { useTrackerSync } from '~/modules/tracker'
+import { RouterSectionTabs, type SectionLink, useTrackerSync } from '~/modules/tracker'
 
-const ITEMS = [
-  { to: '/app/focus', label: 'Timer', exact: true },
-  { to: '/app/focus/history', label: 'History', exact: false },
-  { to: '/app/settings/focus', label: 'Settings', exact: false },
-  { to: '/app/tracker', label: 'Time tracker', exact: false },
-] as const
+const SECTIONS: ReadonlyArray<SectionLink> = [
+  { value: 'timer', label: 'Timer', to: '/app/focus' },
+  { value: 'history', label: 'History', to: '/app/focus/history' },
+  { value: 'settings', label: 'Settings', to: '/app/settings/focus' },
+  { value: 'tracker', label: 'Time tracker', to: '/app/tracker' },
+]
 
 /**
  * Frame for every focus screen: the `focus_timer` flag (web), the offline banner, local navigation and the loading and
@@ -53,52 +43,38 @@ export function FocusShell({
   }
 
   return (
-    <ToastProvider>
-      <TooltipProvider>
-        <Container className="max-w-3xl space-y-6 py-10 sm:py-14">
-          <nav aria-label="Focus timer" className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1">
-            {ITEMS.map((item) => (
-              <Button key={item.to} variant="ghost" size="sm" className="shrink-0" asChild>
-                <Link
-                  to={item.to}
-                  activeOptions={{ exact: item.exact }}
-                  activeProps={{ className: 'bg-secondary text-secondary-foreground', 'aria-current': 'page' }}
-                >
-                  {item.label}
-                </Link>
+    <TooltipProvider>
+      <RouterSectionTabs label="Focus timer sections" items={SECTIONS} width="3xl" />
+      <Container className="max-w-3xl space-y-6 py-8 sm:py-12">
+        {pending > 0 ? (
+          <Alert variant="info">
+            <span role="status">
+              {pending === 1 ? '1 change is' : `${pending} changes are`} saved on this device and will sync when you are
+              back online.
+            </span>
+          </Alert>
+        ) : null}
+        {state === 'loading' ? (
+          <div aria-busy="true" className="space-y-4">
+            <span className="sr-only" role="status">
+              Loading the focus timer…
+            </span>
+            <Skeleton className="h-96 w-full" />
+            <Skeleton className="h-24 w-full" />
+          </div>
+        ) : state === 'error' ? (
+          <Alert variant="error">
+            <span className="flex flex-wrap items-center gap-3">
+              We could not load the focus timer.
+              <Button variant="outline" onClick={onRetry}>
+                Try again
               </Button>
-            ))}
-          </nav>
-          {pending > 0 ? (
-            <Alert variant="info">
-              <span role="status">
-                {pending === 1 ? '1 change is' : `${pending} changes are`} saved on this device and will sync when you
-                are back online.
-              </span>
-            </Alert>
-          ) : null}
-          {state === 'loading' ? (
-            <div aria-busy="true" className="space-y-4">
-              <span className="sr-only" role="status">
-                Loading the focus timer…
-              </span>
-              <Skeleton className="h-96 w-full" />
-              <Skeleton className="h-24 w-full" />
-            </div>
-          ) : state === 'error' ? (
-            <Alert variant="error">
-              <span className="flex flex-wrap items-center gap-3">
-                We could not load the focus timer.
-                <Button size="sm" variant="outline" onClick={onRetry}>
-                  Try again
-                </Button>
-              </span>
-            </Alert>
-          ) : (
-            children
-          )}
-        </Container>
-      </TooltipProvider>
-    </ToastProvider>
+            </span>
+          </Alert>
+        ) : (
+          children
+        )}
+      </Container>
+    </TooltipProvider>
   )
 }

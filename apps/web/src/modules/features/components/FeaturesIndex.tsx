@@ -1,4 +1,4 @@
-import { Badge, Card, Container } from '@artha/design-system'
+import { Badge, Button, Card, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { FeatureIcon } from '~/components/feature-icon'
@@ -12,10 +12,26 @@ interface Props {
   onOpen: (slug: string, destination: OpenDestination) => void
 }
 
+function HowItWorks({ slug, title }: { slug: string; title: string }) {
+  return (
+    <Button variant="ghost" arrow asChild className="w-full justify-center text-primary sm:w-auto">
+      <Link to="/features/$slug" params={{ slug }}>
+        How it works<span className="sr-only"> for {title}</span>
+      </Link>
+    </Button>
+  )
+}
+
 function Actions({ offer, onOpen, large }: { offer: FeatureOffer; onOpen: Props['onOpen']; large?: boolean }) {
   return (
     <>
-      <OfferButton offer={offer} size={large ? 'lg' : 'default'} className="w-full sm:w-auto" onOpen={onOpen} />
+      <OfferButton
+        offer={offer}
+        size={large ? 'lg' : 'default'}
+        variant={large ? 'cta' : 'secondary'}
+        className="w-full sm:w-auto"
+        onOpen={onOpen}
+      />
       <BrowseButton offer={offer} className="w-full sm:w-auto" onOpen={onOpen} />
     </>
   )
@@ -32,15 +48,9 @@ function Hero({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] 
         <p className="text-sm font-semibold text-primary">Start here</p>
         <h2 className="mt-1 text-2xl font-bold">{feature.title}</h2>
         <p className="mt-2 text-muted-foreground">{feature.tagline}</p>
-        <p className="mt-3">
-          <Link
-            to="/features/$slug"
-            params={{ slug: feature.slug }}
-            className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline"
-          >
-            How it works
-          </Link>
-        </p>
+        <div className="mt-3">
+          <HowItWorks slug={feature.slug} title={feature.title} />
+        </div>
       </div>
       <div className="flex w-full flex-col gap-2 sm:w-auto">
         <Actions offer={offer} onOpen={onOpen} large />
@@ -60,13 +70,7 @@ function ReadyCard({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOp
       <p className="mt-1 text-sm text-muted-foreground">{feature.tagline}</p>
       <div className="mt-5 flex flex-1 flex-col justify-end gap-2">
         <Actions offer={offer} onOpen={onOpen} />
-        <Link
-          to="/features/$slug"
-          params={{ slug: feature.slug }}
-          className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline"
-        >
-          How it works
-        </Link>
+        <HowItWorks slug={feature.slug} title={feature.title} />
       </div>
     </Card>
   )

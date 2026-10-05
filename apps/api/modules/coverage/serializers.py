@@ -102,12 +102,13 @@ def _iso(value) -> str | None:
 
 def rollup_dict(r: Rollup | None) -> dict:
     if r is None:
-        return {"pct_simple": 0, "pct_weighted": 0, "chapters_total": 0, "chapters_done": 0}
+        return {"pct_simple": 0, "pct_weighted": 0, "chapters_total": 0, "chapters_done": 0, "chapters_started": 0}
     return {
         "pct_simple": r.pct_simple,
         "pct_weighted": r.pct_weighted,
         "chapters_total": r.chapters_total,
         "chapters_done": r.chapters_done,
+        "chapters_started": r.chapters_started,
     }
 
 
@@ -180,6 +181,9 @@ def chapter_row(chapter, progress: ChapterProgress | None, counts: tuple[int, in
         "practice_count": p.practice_count if p else 0,
         "mock_count": p.mock_count if p else 0,
         "revision_count": p.revision_count if p else 0,
+        # Clamped for display and with the "can the student log one more" answer; the counts above stay the facts.
+        "activities": selectors.activity_summary(chapter, p),
+        "confidence_gate": selectors.confidence_gate(p),
         "targets": {
             "practice": chapter.target_practice_sets,
             "revisions": chapter.target_revisions,

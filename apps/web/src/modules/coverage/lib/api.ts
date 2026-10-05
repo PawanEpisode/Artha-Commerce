@@ -1,5 +1,6 @@
 import { api, ApiError } from '~/lib/api'
 
+import type { Activity } from './rules'
 import type {
   CatchupResult,
   ChapterCoverage,
@@ -33,6 +34,22 @@ export function isFeatureDisabled(error: unknown): boolean {
   if (!(error instanceof ApiError) || error.status !== 403) return false
   const code = (error.body as { error?: { code?: unknown } } | undefined)?.error?.code
   return code === 'feature_disabled'
+}
+
+/** The typed business-rule refusals of F-16 S1 (HTTP 409), with the numbers the API sends along. */
+export type RuleViolation =
+  | { code: 'target_reached'; details: { activity: Activity; target: number; count: number } }
+  | { code: 'activity_not_tracked'; details: { activity: Activity; target: number; count: number } }
+  | { code: 'confidence_locked'; details: { required: number; current: number } }
+
+const RULE_CODES = new Set(['target_reached', 'activity_not_tracked', 'confidence_locked'])
+
+/** Returns the rule refusal carried by an API error, or null for any other failure. */
+export function ruleViolation(error: unknown): RuleViolation | null {
+  if (!(error instanceof ApiError) || error.status !== 409) return null
+  const body = (error.body as { error?: { code?: unknown; details?: unknown } } | undefined)?.error
+  if (!body || typeof body.code !== 'string' || !RULE_CODES.has(body.code)) return null
+  return { code: body.code, details: body.details } as RuleViolation
 }
 
 export const listEnrollments = () => api<{ results: Enrollment[] }>('/coverage/enrollments/').then((r) => r.results)

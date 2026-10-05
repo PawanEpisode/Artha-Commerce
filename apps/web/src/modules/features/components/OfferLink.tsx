@@ -9,6 +9,9 @@ export type OpenDestination = 'app' | 'login' | 'browse'
 interface Props {
   offer: FeatureOffer
   size?: ButtonProps['size']
+  variant?: ButtonProps['variant']
+  /** Show the trailing arrow. Defaults on, every offer navigates. */
+  arrow?: boolean
   className?: string
   onOpen: (slug: string, destination: OpenDestination) => void
 }
@@ -45,7 +48,7 @@ function AppPathLink({ path, onClick, children }: { path: string; onClick: () =>
 }
 
 /** The primary action for a shipped feature: open the tool, or sign in and come back to it. */
-export function OfferButton({ offer, size = 'default', className, onOpen }: Props) {
+export function OfferButton({ offer, size = 'default', variant = 'cta', arrow = true, className, onOpen }: Props) {
   if (offer.destination === 'soon') return null
   const destination = offer.destination
   const onClick = () => onOpen(offer.feature.slug, destination)
@@ -61,16 +64,17 @@ export function OfferButton({ offer, size = 'default', className, onOpen }: Prop
     )
   if (!link) return null
   return (
-    <Button size={size} className={className} asChild>
+    <Button variant={variant} size={size} arrow={arrow} className={className} asChild>
       {link}
     </Button>
   )
 }
 
-export function BrowseButton({ offer, className, onOpen }: Omit<Props, 'size'>) {
+/** The secondary action next to an offer, e.g. "Browse the syllabus". */
+export function BrowseButton({ offer, className, onOpen }: Omit<Props, 'size' | 'variant' | 'arrow'>) {
   if (!offer.browse) return null
   return (
-    <Button variant="outline" className={className} asChild>
+    <Button variant="outline" arrow className={className} asChild>
       <Link to="/courses" onClick={() => onOpen(offer.feature.slug, 'browse')}>
         {offer.browse.label}
       </Link>

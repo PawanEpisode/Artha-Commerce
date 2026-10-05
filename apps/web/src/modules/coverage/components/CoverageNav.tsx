@@ -1,31 +1,37 @@
-import { Badge, Button } from '@artha/design-system'
-import { Link } from '@tanstack/react-router'
+import { Badge, SectionTabs } from '@artha/design-system'
+import { Link, useRouterState } from '@tanstack/react-router'
 
-/** Local navigation for My Coverage screens. Each tab is a real route. */
+const ITEMS = [
+  { value: 'map', label: 'Syllabus map', to: '/app/syllabus' },
+  { value: 'revision', label: 'Due for revision', to: '/app/revision' },
+  { value: 'settings', label: 'Coverage settings', to: '/app/settings/coverage' },
+] as const
+
+type Section = (typeof ITEMS)[number]['value']
+
+const sectionOf = (pathname: string): Section =>
+  pathname.startsWith('/app/revision') ? 'revision' : pathname.startsWith('/app/settings') ? 'settings' : 'map'
+
+/** Sticky local navigation for My Coverage screens: the shared `SectionTabs`, each tab a real route. */
 export function CoverageNav({ dueCount }: { dueCount?: number }) {
-  const items: Array<{
-    to: '/app/syllabus' | '/app/revision' | '/app/settings/coverage'
-    label: string
-    badge?: number
-  }> = [
-    { to: '/app/syllabus', label: 'Syllabus map' },
-    { to: '/app/revision', label: 'Due for revision', badge: dueCount },
-    { to: '/app/settings/coverage', label: 'Coverage settings' },
-  ]
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
   return (
-    <nav aria-label="My Coverage" className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1">
-      {items.map((item) => (
-        <Button key={item.to} variant="ghost" size="sm" className="shrink-0" asChild>
-          <Link
-            to={item.to}
-            activeOptions={{ exact: item.to === '/app/syllabus' ? false : true }}
-            activeProps={{ className: 'bg-secondary text-secondary-foreground', 'aria-current': 'page' }}
-          >
-            {item.label}
-            {item.badge ? <Badge variant="highlight">{item.badge}</Badge> : null}
+    <SectionTabs
+      label="My Coverage"
+      items={ITEMS.map(({ value, label, to }) => ({ value, label, href: to }))}
+      value={sectionOf(pathname)}
+      className="[&>div]:mx-auto [&>div]:max-w-3xl"
+      renderLink={(item, props) => {
+        const target = ITEMS.find((i) => i.value === item.value)
+        if (!target) return null
+        const { children, ...rest } = props
+        return (
+          <Link to={target.to} {...rest}>
+            {children}
+            {target.value === 'revision' && dueCount ? <Badge variant="highlight">{dueCount}</Badge> : null}
           </Link>
-        </Button>
-      ))}
-    </nav>
+        )
+      }}
+    />
   )
 }

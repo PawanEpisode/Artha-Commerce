@@ -12,7 +12,7 @@ from modules.syllabus import selectors as syllabus
 
 from . import selectors, serializers, services
 from .domain.formula import Weights
-from .errors import CoverageError, FeatureDisabled, to_api_exception
+from .errors import CoverageError, FeatureDisabled, RuleViolation, to_api_exception
 from .models import CoverageEvent
 
 COVERAGE_FLAG = "syllabus_coverage"
@@ -33,9 +33,14 @@ class CoverageView(APIView):
     permission_classes = [IsAuthenticated, CoverageEnabled]
 
     def handle_exception(self, exc):
+        rule_details = exc.details if isinstance(exc, RuleViolation) else None
         if isinstance(exc, CoverageError):
             exc = to_api_exception(exc)
-        return super().handle_exception(exc)
+        response = super().handle_exception(exc)
+        if rule_details is not None and isinstance(response.data, dict) and "error" in response.data:
+            # DRF would stringify the numbers; the web needs {activity, target, count} / {required, current} as is.
+            response.data["error"]["details"] = rule_details
+        return response
 
     def today(self, request):
         s = serializers.TodaySerializer(data=request.query_params)
@@ -237,7 +242,7 @@ class EventView(WriteView):
         s = serializers.EventCreateSerializer(data=request.data)
         s.is_valid(raise_exception=True)
         d = s.validated_data
-        services.record_event(
+        result = services.record_event_result(
             request.user.id,
             d["chapter_id"],
             d["type"],
@@ -246,7 +251,8 @@ class EventView(WriteView):
             d.get("client_id"),
             occurred_at=d.get("occurred_at"),
         )
-        return Response(_chapter_state(request.user.id, d["chapter_id"]), status=201)
+        # 201 for a new event, 200 for a replay of the same client_id (the original is returned, never refused).
+        return Response(_chapter_state(request.user.id, d["chapter_id"]), status=201 if result.created else 200)
 
 
 class ConfidenceView(WriteView):

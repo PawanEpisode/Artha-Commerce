@@ -1,8 +1,17 @@
-import { Badge, Card, ChevronRight, ConfidenceDot, Label, ProgressBar, Switch } from '@artha/design-system'
+import { Badge, ChevronRight, ConfidenceDot, Label, ProgressBar, Switch } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 
-import { ChapterSearch, groupBySection, matchesQuery, SEARCH_THRESHOLD } from '~/modules/syllabus'
+import {
+  ChapterSearch,
+  EntityIndex,
+  EntityListRow,
+  EntityTitle,
+  groupBySection,
+  matchesQuery,
+  ROW_LINK_CLASS,
+  SEARCH_THRESHOLD,
+} from '~/modules/syllabus'
 
 import type { ChapterRow } from '../lib/types'
 import { StatusBadge } from './StatusBadge'
@@ -44,31 +53,29 @@ export function ChapterList({ subjectId, chapters }: { subjectId: string; chapte
 function ChapterItem({ subjectId, chapter: c, index }: { subjectId: string; chapter: ChapterRow; index: number }) {
   return (
     <li>
-      <Card
-        className={`focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft) ${c.is_excluded ? 'opacity-70' : ''}`}
-      >
+      <EntityListRow kind="chapter" className={c.is_excluded ? 'opacity-70' : undefined}>
         <Link
           to="/app/syllabus/$subject/$chapter"
           params={{ subject: subjectId, chapter: c.id }}
-          className="flex items-center gap-4 rounded-xl p-4 outline-none"
+          className={ROW_LINK_CLASS}
         >
-          <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
-            {index + 1}
-          </span>
-          <span className="min-w-0 flex-1 space-y-2">
-            <span className="block font-medium">{c.name}</span>
+          <EntityIndex kind="chapter">{index + 1}</EntityIndex>
+          <span className="min-w-0 space-y-2">
+            <EntityTitle>{c.name}</EntityTitle>
             <span className="flex flex-wrap items-center gap-2">
               {c.is_excluded ? <Badge variant="outline">Excluded</Badge> : <StatusBadge status={c.status} />}
               {c.confidence ? <ConfidenceDot value={c.confidence} showLabel /> : null}
             </span>
             {c.is_excluded ? null : <ProgressBar size="sm" value={c.coverage_pct} label={`${c.name} coverage`} />}
           </span>
-          <span className="w-12 shrink-0 text-right font-display text-lg font-bold tabular-nums">
-            {c.is_excluded ? '' : `${c.coverage_pct}%`}
+          <span className="flex items-center gap-1">
+            <span className="w-12 text-right font-display text-lg font-bold tabular-nums">
+              {c.is_excluded ? '' : `${c.coverage_pct}%`}
+            </span>
+            <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
           </span>
-          <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
         </Link>
-      </Card>
+      </EntityListRow>
     </li>
   )
 }

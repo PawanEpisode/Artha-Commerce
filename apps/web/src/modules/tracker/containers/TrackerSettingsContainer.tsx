@@ -1,31 +1,32 @@
-import { Alert, Button, SelectField, Switch, TextField, useToast } from '@artha/design-system'
+import { Alert, Button, DurationField, formatDuration, SelectField, Switch, TextField } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { useSaveSettings } from '../hooks/useSessionActions'
 import { useTrackerSettings } from '../hooks/useTrackerQueries'
 import { deleteData, downloadCsv, errorMessage, exportData, resetSettings } from '../lib/api'
 import { IDLE_MINUTES_MAX, IDLE_MINUTES_MIN } from '../lib/limits'
+import { notify } from '../lib/notify'
 import { ACTIVITY_OPTIONS, type ActivityType } from '../lib/types'
 import { TrackerShell } from './TrackerShell'
 
 function SettingsForm() {
   const q = useTrackerSettings()
   const save = useSaveSettings()
-  const toast = useToast()
   const s = q.data
   const [idleOn, setIdleOn] = useState(true)
-  const [idle, setIdle] = useState('10')
+  const [idle, setIdle] = useState<number | null>(10)
   const [weekStart, setWeekStart] = useState<'0' | '1'>('1')
   const [activity, setActivity] = useState<ActivityType>('other')
   const [tz, setTz] = useState('')
   const [auto, setAuto] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [idleError, setIdleError] = useState<string | null>(null)
   const [confirmDelete, setConfirmDelete] = useState(false)
 
   useEffect(() => {
     if (!s) return
     setIdleOn(s.idle_minutes > 0)
-    setIdle(String(s.idle_minutes || 10))
+    setIdle(s.idle_minutes || 10)
     setWeekStart(String(s.week_start) as '0' | '1')
     setActivity(s.default_activity_type)
     setTz(s.tz)
@@ -33,11 +34,14 @@ function SettingsForm() {
   }, [s])
 
   const submit = () => {
-    const minutes = Number(idle)
-    if (idleOn && (!Number.isInteger(minutes) || minutes < IDLE_MINUTES_MIN || minutes > IDLE_MINUTES_MAX)) {
-      setError(`Idle time must be whole minutes from ${IDLE_MINUTES_MIN} to ${IDLE_MINUTES_MAX}.`)
+    const minutes = idle ?? 0
+    if (idleOn && (minutes < IDLE_MINUTES_MIN || minutes > IDLE_MINUTES_MAX)) {
+      setIdleError(
+        `Enter between ${formatDuration(IDLE_MINUTES_MIN, 'long')} and ${formatDuration(IDLE_MINUTES_MAX, 'long')}.`,
+      )
       return
     }
+    setIdleError(null)
     setError(null)
     save.mutate(
       {
@@ -47,7 +51,13 @@ function SettingsForm() {
         tz,
         auto_capture_enabled: auto,
       },
-      { onSuccess: () => toast.show({ message: 'Settings saved.' }), onError: (e) => setError(errorMessage(e)) },
+      {
+        onSuccess: () => notify.settingsSaved(),
+        onError: (e) => {
+          setError(errorMessage(e))
+          notify.error(e, 'Could not save your settings.')
+        },
+      },
     )
   }
 
@@ -71,13 +81,13 @@ function SettingsForm() {
           </label>
         </div>
         {idleOn ? (
-          <TextField
-            label="Idle time (minutes)"
-            type="number"
-            inputMode="numeric"
-            value={idle}
-            onChange={(e) => setIdle(e.target.value)}
-            hint={`Between ${IDLE_MINUTES_MIN} and ${IDLE_MINUTES_MAX}.`}
+          <DurationField
+            label="Idle time before we ask"
+            valueMinutes={idle}
+            onChangeMinutes={setIdle}
+            maxMinutes={IDLE_MINUTES_MAX}
+            error={idleError ?? undefined}
+            hint={`Between ${formatDuration(IDLE_MINUTES_MIN, 'long')} and ${formatDuration(IDLE_MINUTES_MAX, 'long')}.`}
           />
         ) : null}
         <div className="grid gap-4 sm:grid-cols-2">
@@ -133,10 +143,19 @@ function SettingsForm() {
           </Alert>
         ) : null}
         <div className="flex flex-wrap gap-3">
-          <Button type="submit" disabled={save.isPending}>
+          <Button type="submit" variant="cta" loading={save.isPending}>
             Save settings
           </Button>
-          <Button type="button" variant="ghost" onClick={() => void resetSettings().then(() => q.refetch())}>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() =>
+              void resetSettings()
+                .then(() => q.refetch())
+                .then(() => notify.settingsReset())
+                .catch((e: unknown) => notify.error(e, 'Could not reset your settings.'))
+            }
+          >
             Reset to defaults
           </Button>
         </div>
@@ -152,22 +171,31 @@ function SettingsForm() {
         <div className="flex flex-wrap gap-3">
           <Button
             variant="outline"
-            onClick={() =>
-              void exportData().then((d) => {
-                const url = URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }))
-                const a = document.createElement('a')
-                a.href = url
-                a.download = 'time-tracker-data.json'
-                a.click()
-                URL.revokeObjectURL(url)
-              })
-            }
+            onClick={() => {
+              notify.exportStarted('your data')
+              void exportData()
+                .then((d) => {
+                  const url = URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }))
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = 'time-tracker-data.json'
+                  a.click()
+                  URL.revokeObjectURL(url)
+                  notify.exportFinished('your data')
+                })
+                .catch((e: unknown) => notify.error(e, 'Could not download your data.'))
+            }}
           >
             Download my data
           </Button>
           <Button
             variant="outline"
-            onClick={() => void downloadCsv('/tracking/sessions/export.csv', {}, 'study-sessions.csv')}
+            onClick={() => {
+              notify.exportStarted('sessions CSV')
+              void downloadCsv('/tracking/sessions/export.csv', {}, 'study-sessions.csv')
+                .then(() => notify.exportFinished('sessions CSV'))
+                .catch((e: unknown) => notify.error(e, 'Could not download your sessions.'))
+            }}
           >
             Download sessions (CSV)
           </Button>
@@ -175,12 +203,19 @@ function SettingsForm() {
             <Button
               variant="outline"
               className="border-destructive text-destructive"
-              onClick={() => void deleteData().then(() => window.location.assign('/app/tracker'))}
+              onClick={() =>
+                void deleteData()
+                  .then(() => {
+                    notify.dataDeleted()
+                    window.location.assign('/app/tracker')
+                  })
+                  .catch((e: unknown) => notify.error(e, 'Could not delete your data.'))
+              }
             >
               Yes, delete all my tracker data
             </Button>
           ) : (
-            <Button variant="ghost" onClick={() => setConfirmDelete(true)}>
+            <Button variant="outline" onClick={() => setConfirmDelete(true)}>
               Delete my data
             </Button>
           )}

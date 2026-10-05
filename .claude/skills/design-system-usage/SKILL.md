@@ -12,11 +12,17 @@ The design system is a workspace package: `packages/design-system`, imported as 
 ```
 packages/design-system/src/
   styles.css            tokens for 3 palettes (reading default, light, dark), @theme mapping, prose-reading. OKLCH colours
-  components/ui/*.tsx   shadcn-style primitives: Button, Card, Badge, Input, TextField, PasswordField, Label, RadioGroup, DropdownMenu, Alert, Tabs, Accordion, Separator
+  components/ui/*.tsx   shadcn-style primitives: Button, Card, Badge, Input, TextField, PasswordField, Label, RadioGroup, DropdownMenu, Alert, Tabs, Accordion, Separator,
+                        plus: Button (variants default/cta/accent/secondary/outline/ghost/link, sizes sm/default/lg/xl, `loading`, `arrow`, `fullWidth`), ButtonLink
+                        (anchor or `asChild` router Link styled as a Button), SectionTabs (sticky scrollable sub-nav, `nav` or `tablist`; set
+                        `--site-header-height` for the sticky offset), DurationField (hours + minutes <-> whole minutes), EntityBadge/LabelBadge/EntityRow/
+                        EntityDot (chapter green, topic amber, paper pink), ReadToggle, Toaster + `toast.success/error/warning/info/custom/promise/dismiss`
+                        + `toastApiError(error, fallback)` (mount `<Toaster />` once in the app root)
+  lib/duration.ts       splitMinutes, joinMinutes, formatDuration (short/long), clampMinutes: use for every typed duration
   layout.tsx            Container, Section
   motion.tsx            Reveal, fadeUp, stagger, ease
   Logo.tsx              LogoMark, Logo
-  icons.ts              curated Lucide icons (the only icon source)
+  icons.ts              curated Lucide icons (the only icon source); StudyTimeIcon = tracker clock, Flame = streaks
   theme/                ThemeProvider, useTheme, ThemeSwitcher, buildThemeInitScript
   lib/utils.ts          cn()
   index.ts              the public barrel
@@ -35,7 +41,7 @@ See it live at `/design-system` (run `pnpm dev:web`). Every primitive and varian
 ## Rules
 
 1. Import from `'@artha/design-system'` only. Never from `@artha/design-system/src/...` or a local `components/ui` path (ESLint blocks both).
-2. Semantic colour classes only: `bg-background`, `bg-card`, `bg-primary`, `text-muted-foreground`, `border-border`, `bg-accent`, `bg-highlight`. No `#hex`, `rgb()`, or `bg-indigo-500`.
+2. Semantic colour classes only: `bg-background`, `bg-card`, `bg-primary`, `text-muted-foreground`, `border-border`, `bg-accent`, `bg-highlight`, status `bg-success-bg text-success-fg border-success-border` (also warning, info, error) and entity `tag-chapter|topic|paper` (-bg/-fg/-border, accent for rails). No `#hex`, `rgb()`, or `bg-indigo-500`.
 3. Change the look globally by editing tokens in `styles.css`, never component by component.
 4. **Adding a primitive**: create `src/components/ui/<name>.tsx` (cva variants, `cn()`, `data-slot`), use **relative imports inside the package** (no `~` alias: the web app also uses `~`), export it from `src/index.ts`, add it to `DesignShowcase`, then use it in the app. Components copied from shadcn need their imports rewritten to relative paths.
 5. Variants over one-offs: if a long `className` repeats in three places, add a variant or a new primitive.

@@ -1,12 +1,13 @@
-import { Button, useToast } from '@artha/design-system'
+import { Button } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 import { FocusSettingsForm } from '../components/FocusSettingsForm'
 import { requestNotifications } from '../hooks/useFocusAlerts'
 import { useFocusSettings, useSaveFocusSettings } from '../hooks/useFocusSettings'
-import { deleteData, errorMessage, exportData, isFeatureDisabled } from '../lib/api'
+import { deleteData, exportData, isFeatureDisabled } from '../lib/api'
 import { playChime, unlockAudio } from '../lib/chime'
+import { notify } from '../lib/notify'
 import type { PresetKey, Timings } from '../lib/presets'
 import type { FocusSettings } from '../lib/types'
 import { FocusShell } from './FocusShell'
@@ -17,19 +18,19 @@ const currentPermission = (): Permission =>
 
 function Body({ settings }: { settings: FocusSettings }) {
   const save = useSaveFocusSettings()
-  const toast = useToast()
   const [permission, setPermission] = useState<Permission>(currentPermission)
   const [volume, setVolume] = useState(settings.volume)
   const [confirmDelete, setConfirmDelete] = useState(false)
-  const [error, setError] = useState<string | null>(null)
   const timer = useRef<number | undefined>(undefined)
 
   useEffect(() => setVolume(settings.volume), [settings.volume])
   useEffect(() => () => window.clearTimeout(timer.current), [])
 
   const apply = (patch: Partial<FocusSettings>) => {
-    setError(null)
-    save.mutate(patch, { onError: (e) => setError(errorMessage(e)) })
+    save.mutate(patch, {
+      onSuccess: () => notify.settingsSaved(),
+      onError: (e) => notify.error(e, 'Could not save your settings.'),
+    })
   }
   const onChange = async (patch: Partial<FocusSettings>) => {
     if (patch.volume !== undefined) {
@@ -41,7 +42,10 @@ function Body({ settings }: { settings: FocusSettings }) {
     if (patch.notifications_enabled) {
       const result = await requestNotifications()
       setPermission(result)
-      if (result !== 'granted') return
+      if (result !== 'granted') {
+        if (result === 'denied') notify.notificationsBlocked()
+        return
+      }
     }
     apply(patch)
   }
@@ -63,7 +67,6 @@ function Body({ settings }: { settings: FocusSettings }) {
         }}
         permission={permission}
         busy={save.isPending}
-        error={error}
       />
       <section aria-labelledby="focus-data" className="space-y-3 rounded-2xl border border-border bg-card p-6">
         <h2 id="focus-data" className="text-lg font-bold">
@@ -80,16 +83,20 @@ function Body({ settings }: { settings: FocusSettings }) {
         <div className="flex flex-wrap gap-3">
           <Button
             variant="outline"
-            onClick={() =>
-              void exportData().then((d) => {
-                const url = URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }))
-                const a = document.createElement('a')
-                a.href = url
-                a.download = 'focus-timer-data.json'
-                a.click()
-                URL.revokeObjectURL(url)
-              })
-            }
+            onClick={() => {
+              notify.exportStarted()
+              void exportData()
+                .then((d) => {
+                  const url = URL.createObjectURL(new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }))
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = 'focus-timer-data.json'
+                  a.click()
+                  URL.revokeObjectURL(url)
+                  notify.exportFinished()
+                })
+                .catch((e: unknown) => notify.error(e, 'Could not download your timer data.'))
+            }}
           >
             Download my timer data
           </Button>
@@ -98,16 +105,18 @@ function Body({ settings }: { settings: FocusSettings }) {
               variant="outline"
               className="border-destructive text-destructive"
               onClick={() =>
-                void deleteData().then(() => {
-                  toast.show({ message: 'Timer settings deleted.' })
-                  window.location.assign('/app/focus')
-                })
+                void deleteData()
+                  .then(() => {
+                    notify.dataDeleted()
+                    window.location.assign('/app/focus')
+                  })
+                  .catch((e: unknown) => notify.error(e, 'Could not delete your timer data.'))
               }
             >
               Yes, delete my timer data
             </Button>
           ) : (
-            <Button variant="ghost" onClick={() => setConfirmDelete(true)}>
+            <Button variant="outline" onClick={() => setConfirmDelete(true)}>
               Delete my timer data
             </Button>
           )}

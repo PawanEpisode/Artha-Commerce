@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import math
 from collections import defaultdict
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
 from typing import Any
@@ -22,8 +23,15 @@ from modules.syllabus import selectors as syllabus
 from modules.syllabus.models import Chapter, ChapterMap, Scheme, Topic
 
 from . import selectors
-from .domain import formula
-from .errors import ConflictError, InvalidInput, NotFoundError
+from .domain import formula, targets
+from .errors import (
+    ActivityNotTrackedError,
+    ConfidenceLockedError,
+    ConflictError,
+    InvalidInput,
+    NotFoundError,
+    TargetReachedError,
+)
 from .models import (
     DEFAULT_REVISION_DAYS,
     ChapterProgress,
@@ -186,10 +194,16 @@ def _enrollment_for_chapter(user_id, chapter: Chapter) -> Enrollment | None:
 
 
 def _progress_for(enrollment: Enrollment, chapter_id) -> ChapterProgress:
-    progress, _ = ChapterProgress.objects.get_or_create(
+    """
+    The chapter's progress row, created on first use and LOCKED (`select_for_update`) until the surrounding
+    transaction ends. Every write path reads counters from this row and writes them back, so two requests for the
+    same chapter (two taps, two devices) run one after the other instead of overwriting each other (audit AUD-001).
+    Always call it inside `transaction.atomic`.
+    """
+    ChapterProgress.objects.get_or_create(
         user_id=enrollment.user_id, chapter_id=chapter_id, defaults={"enrollment": enrollment}
     )
-    return progress
+    return ChapterProgress.objects.select_for_update().get(user_id=enrollment.user_id, chapter_id=chapter_id)
 
 
 def _append_event(
@@ -375,6 +389,7 @@ def recompute_rollups(enrollment: Enrollment, rows: list[ChapterProgress] | None
                 pct_weighted=r.pct_weighted,
                 chapters_total=r.chapters_total,
                 chapters_done=r.chapters_done,
+                chapters_started=r.chapters_started,
                 updated_at=now,
             )
         )
@@ -602,8 +617,38 @@ def _mark_topics_done(user_id, enrollment: Enrollment, topic_ids: list, when: da
 # --- the ledger entry point ------------------------------------------------------------------
 
 
+@dataclass(frozen=True)
+class RecordResult:
+    """`event` is None only when `strict=False` and the student is not enrolled. `created` is False on a replay."""
+
+    event: CoverageEvent | None
+    created: bool
+
+
+def _target_for(chapter: Chapter, event_type: str) -> int:
+    """The target a manual log is checked against. The one lookup F-16 S2 swaps for the student's own targets."""
+    return {
+        EventType.PRACTICE_DONE: chapter.target_practice_sets,
+        EventType.REVISION_DONE: chapter.target_revisions,
+        EventType.MOCK_DONE: chapter.target_mocks,
+    }[event_type]
+
+
+def _enforce_target(progress: ChapterProgress, chapter: Chapter, event_type: str, payload: dict | None) -> None:
+    """Raises when one more manual log would go past the target. Runs under the chapter's row lock."""
+    activity, counter, label = targets.CAPPED_ACTIVITIES[event_type]
+    target = _target_for(chapter, event_type)
+    count = getattr(progress, counter)
+    decision = targets.can_log(count=count, add=int((payload or {}).get("count", 1)), target=target)
+    details = {"activity": activity, "target": target, "count": count}
+    if decision is targets.Decision.NOT_TRACKED:
+        raise ActivityNotTrackedError(f"{label} are not part of your plan for this chapter.", details)
+    if decision is targets.Decision.AT_TARGET:
+        raise TargetReachedError(f"{label} are already at target ({min(count, target)} of {target}).", details)
+
+
 @transaction.atomic
-def record_event(
+def record_event_result(
     user_id,
     chapter_id,
     type: str,  # noqa: A002 (part of the documented internal interface)
@@ -615,11 +660,14 @@ def record_event(
     payload: dict | None = None,
     source_ref: str = "",
     strict: bool = True,
-) -> CoverageEvent | None:
+) -> RecordResult:
     """
-    Single entry point for other modules: `coverage.services.record_event(user_id, chapter_id, type, value, source, client_id)`.
-    Idempotent on `client_id`. With `strict=False` it returns None instead of raising when the student is not enrolled in
-    the chapter's syllabus (for example time tracked against an old scheme).
+    `record_event` plus whether a new event was written (the API answers 201 for a new one, 200 for a replay).
+
+    Order matters and is the whole concurrency story: lock the chapter's progress row, answer a replay of the same
+    `client_id` (a retry wins over the cap), then check the cap for MANUAL logs, then append. Two requests racing for
+    the last slot queue on the lock, so exactly one is accepted and the other gets 409 `target_reached`.
+    Events from other modules (tracking, practice engine, mocks) are facts that happened and are never refused.
     """
     if type not in INTERNAL_EVENT_TYPES:
         raise InvalidInput(
@@ -632,7 +680,14 @@ def record_event(
     if not chapter or not enrollment:
         if strict:
             raise NotFoundError("Chapter not found in your syllabus.")
-        return None
+        return RecordResult(None, False)
+    progress = _progress_for(enrollment, chapter.id)  # takes the row lock
+    if client_id:
+        replay = CoverageEvent.objects.filter(user_id=user_id, client_id=client_id).first()
+        if replay:
+            return RecordResult(replay, False)
+    if source == Source.MANUAL and type in targets.CAPPED_ACTIVITIES:
+        _enforce_target(progress, chapter, type, payload)
     when = _clean_time(occurred_at)
     event, created = _append_event(
         enrollment,
@@ -646,8 +701,7 @@ def record_event(
         occurred_at=when,
     )
     if not created:
-        return event
-    progress = _progress_for(enrollment, chapter.id)
+        return RecordResult(event, False)
     apply_event(
         progress,
         type,
@@ -657,11 +711,21 @@ def record_event(
         revision_days=selectors.revision_days_of(get_or_create_settings(user_id)),
     )
     _settle(enrollment, [progress])
-    return event
+    return RecordResult(event, True)
+
+
+def record_event(*args, **kwargs) -> CoverageEvent | None:
+    """
+    Single entry point for other modules: `coverage.services.record_event(user_id, chapter_id, type, value, source, client_id)`.
+    Idempotent on `client_id`. With `strict=False` it returns None instead of raising when the student is not enrolled in
+    the chapter's syllabus (for example time tracked against an old scheme). Same arguments as `record_event_result`.
+    """
+    return record_event_result(*args, **kwargs).event
 
 
 @transaction.atomic
 def set_confidence(user_id, chapter_id, rating: str | None) -> ChapterProgress:
+    """Rating needs the chapter at 50% or more (409 `confidence_locked`); clearing it is always allowed."""
     if rating not in {None, "", "red", "amber", "green"}:
         raise InvalidInput("Confidence must be red, amber or green.", {"confidence": ["Invalid rating."]})
     chapter = syllabus.get_chapter(chapter_id)
@@ -669,6 +733,11 @@ def set_confidence(user_id, chapter_id, rating: str | None) -> ChapterProgress:
     if not chapter or not enrollment:
         raise NotFoundError("Chapter not found in your syllabus.")
     progress = _progress_for(enrollment, chapter.id)
+    if rating and not targets.confidence_allowed(progress.coverage_pct):
+        raise ConfidenceLockedError(
+            f"Confidence unlocks at {targets.CONFIDENCE_MIN_PCT}% coverage. This chapter is at {progress.coverage_pct}%.",
+            {"required": targets.CONFIDENCE_MIN_PCT, "current": progress.coverage_pct},
+        )
     when = timezone.now()
     _append_event(enrollment, chapter.id, EventType.CONFIDENCE_SET, payload={"rating": rating or ""}, occurred_at=when)
     apply_event(

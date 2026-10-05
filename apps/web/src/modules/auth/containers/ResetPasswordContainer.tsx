@@ -7,6 +7,7 @@ import { NewPasswordForm } from '../components/NewPasswordForm'
 import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useAuth } from '../hooks/useAuth'
 import { updatePassword } from '../lib/auth-api'
+import { notify } from '../lib/notify'
 
 /** Set a new password after a recovery link, or choose a first password after accepting an invitation. */
 export function ResetPasswordContainer({ mode }: { mode?: 'invite' }) {
@@ -16,7 +17,10 @@ export function ResetPasswordContainer({ mode }: { mode?: 'invite' }) {
   const invite = mode === 'invite'
 
   useEffect(() => {
-    if (save.status === 'success') void navigate({ to: '/app', replace: true })
+    if (save.status === 'success') {
+      notify.passwordUpdated()
+      void navigate({ to: '/app', replace: true })
+    }
   }, [save.status, navigate])
 
   if (loading) {

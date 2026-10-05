@@ -46,7 +46,7 @@ export const features: Feature[] = [
     tagline: 'Know where your hours really go.',
     description:
       'A stopwatch, manual entries and optional automatic logging while you read a chapter, with daily goals, a calendar heat map, time per subject and a comparison of time spent against chapters covered. Fix any entry, undo mistakes and download your data whenever you like.',
-    icon: 'flame',
+    icon: 'study-time',
     highlights: [
       'Stopwatch, manual and optional automatic logging',
       'Daily and weekly goals with streaks',

@@ -1,10 +1,10 @@
-import { Alert, Button, EmptyState, Merge, SelectField, useToast } from '@artha/design-system'
+import { Alert, Button, EmptyState, Merge, SelectField } from '@artha/design-system'
 import { useState } from 'react'
 
 import { SessionRow } from '../components/SessionRow'
 import { useDeleteSession, useMerge, useUndo } from '../hooks/useSessionActions'
 import { errorCode, errorMessage } from '../lib/api'
-import { formatDuration } from '../lib/duration'
+import { notify } from '../lib/notify'
 import type { ActivityType, StudySession } from '../lib/types'
 import { SessionFormDialog } from './SessionFormDialog'
 import { SplitDialog } from './SplitDialog'
@@ -27,7 +27,6 @@ export function SessionsPanel({
   const [mergeError, setMergeError] = useState<string | null>(null)
   const [needsChoice, setNeedsChoice] = useState(false)
   const [keepSubject, setKeepSubject] = useState('')
-  const toast = useToast()
   const del = useDeleteSession()
   const undo = useUndo()
   const merge = useMerge()
@@ -41,15 +40,20 @@ export function SessionsPanel({
       return next
     })
 
+  const restore = (vars: Parameters<typeof undo.mutate>[0], then: string) =>
+    undo.mutate(vars, { onSuccess: () => notify.undone(), onError: (e) => notify.error(e, then) })
+
   const remove = (s: StudySession) =>
     del.mutate(s.id, {
       onSuccess: (r) =>
-        toast.show({
-          message: `Deleted ${formatDuration(s.focus_seconds)} of study time.`,
-          actionLabel: 'Undo',
+        notify.sessionDeleted(s.focus_seconds, () =>
           // The note is not kept in the history, so the page sends it back with the undo.
-          onAction: () => undo.mutate({ token: r.undo_token, notes: s.note ? { [s.id]: s.note } : undefined }),
-        }),
+          restore(
+            { token: r.undo_token, notes: s.note ? { [s.id]: s.note } : undefined },
+            'Could not restore the session.',
+          ),
+        ),
+      onError: (e) => notify.error(e, 'Could not delete the session.'),
     })
 
   const runMerge = (subjectId?: string) => {
@@ -64,12 +68,11 @@ export function SessionsPanel({
         onSuccess: (r) => {
           setSelected(new Set())
           setNeedsChoice(false)
-          toast.show({
-            message: `Merged ${chosen.length} sessions.`,
-            ...(r.undo_token
-              ? { actionLabel: 'Undo', onAction: () => undo.mutate({ token: r.undo_token as string }) }
-              : {}),
-          })
+          const token = r.undo_token
+          notify.sessionsMerged(
+            chosen.length,
+            token ? () => restore({ token }, 'Could not undo the merge.') : undefined,
+          )
         },
         onError: (e) => {
           if (errorCode(e) === 'choice_required') {
@@ -104,16 +107,16 @@ export function SessionsPanel({
                   )}
                 />
               </div>
-              <Button size="sm" onClick={() => runMerge(keepSubject)} disabled={merge.isPending}>
+              <Button onClick={() => runMerge(keepSubject)} disabled={merge.isPending}>
                 Merge
               </Button>
             </>
           ) : (
-            <Button size="sm" onClick={() => runMerge()} disabled={merge.isPending}>
+            <Button onClick={() => runMerge()} disabled={merge.isPending}>
               <Merge aria-hidden /> Merge
             </Button>
           )}
-          <Button size="sm" variant="ghost" onClick={() => setSelected(new Set())}>
+          <Button variant="outline" onClick={() => setSelected(new Set())}>
             Clear
           </Button>
         </div>

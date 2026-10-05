@@ -1,5 +1,7 @@
-import { Badge, Card, ChevronRight, ConfidenceDot, EmptyState, ListChecks } from '@artha/design-system'
+import { Badge, BookOpen, ChevronRight, ConfidenceDot, EmptyState, EntityBadge, ListChecks } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+
+import { EntityIndex, EntityListRow, EntityTitle, ROW_LINK_CLASS } from '~/modules/syllabus'
 
 import type { DueRow } from '../lib/types'
 
@@ -23,24 +25,31 @@ export function DueList({ rows }: { rows: DueRow[] }) {
     <ul className="space-y-3">
       {rows.map((r) => (
         <li key={r.id}>
-          <Card className="focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
+          <EntityListRow kind="chapter">
             <Link
               to="/app/syllabus/$subject/$chapter"
               params={{ subject: r.subject.id, chapter: r.id }}
-              className="flex items-center gap-4 rounded-xl p-4 outline-none"
+              className={ROW_LINK_CLASS}
             >
-              <span className="min-w-0 flex-1">
-                <span className="block font-semibold">{r.name}</span>
-                <span className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                  <span>{r.subject.name}</span>
+              <EntityIndex kind="chapter">
+                <BookOpen className="size-5" />
+              </EntityIndex>
+              <span className="min-w-0 space-y-2">
+                <EntityTitle>{r.name}</EntityTitle>
+                <span className="flex flex-wrap items-center gap-2">
+                  <EntityBadge kind="paper" title={r.subject.name} className="max-w-[12rem]">
+                    {r.subject.name}
+                  </EntityBadge>
                   <Badge variant={r.overdue_days > 0 ? 'highlight' : 'default'}>{dueLabel(r.overdue_days)}</Badge>
                   {r.confidence ? <ConfidenceDot value={r.confidence} showLabel /> : null}
                 </span>
               </span>
-              <span className="font-display text-lg font-bold tabular-nums">{r.coverage_pct}%</span>
-              <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+              <span className="flex items-center gap-1">
+                <span className="w-12 text-right font-display text-lg font-bold tabular-nums">{r.coverage_pct}%</span>
+                <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+              </span>
             </Link>
-          </Card>
+          </EntityListRow>
         </li>
       ))}
     </ul>

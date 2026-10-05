@@ -133,6 +133,9 @@ class RollupResult:
     pct_weighted: int
     chapters_total: int
     chapters_done: int
+    #: Chapters with any progress (coverage above 0), finished ones included. Explains an average above 0 with
+    #: no chapter at 100%: the ring is the average of partial chapters, "done" only counts complete ones.
+    chapters_started: int = 0
 
 
 def rollup(rows: list[RollupRow]) -> RollupResult:
@@ -144,7 +147,8 @@ def rollup(rows: list[RollupRow]) -> RollupResult:
     weight_sum = sum(r.weight for r in included)
     weighted = round_half_up(sum(r.coverage_pct * r.weight for r in included) / weight_sum) if weight_sum else simple
     done = sum(1 for r in included if r.coverage_pct >= 100 or r.status == STATUS_EXAM_READY)
-    return RollupResult(simple, weighted, len(included), done)
+    started = sum(1 for r in included if r.coverage_pct > 0)
+    return RollupResult(simple, weighted, len(included), done, started)
 
 
 DEFAULT_REVISION_DAYS = (3, 7, 21, 45)

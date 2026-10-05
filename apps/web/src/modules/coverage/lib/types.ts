@@ -12,6 +12,8 @@ export interface Rollup {
   pct_weighted: number
   chapters_total: number
   chapters_done: number
+  /** Chapters with any progress, finished ones included. The ring is an average of partial chapters. */
+  chapters_started: number
 }
 
 export interface Enrollment {
@@ -83,6 +85,12 @@ export interface ChapterRow {
   mock_count: number
   revision_count: number
   targets: { practice: number; revisions: number; mocks: number }
+  /** Server-side view of the same numbers, clamped. The screens derive it with `chapterActivities` (lib/rules.ts). */
+  activities?: Record<
+    'practice' | 'revisions' | 'mocks',
+    { done: number; target: number; logged: number; can_log: boolean }
+  >
+  confidence_gate?: { unlocked: boolean; required_pct: number; current_pct: number }
   total_study_seconds: number
   last_studied_at: string | null
   last_revised_at: string | null

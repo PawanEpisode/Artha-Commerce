@@ -1,7 +1,8 @@
-import { Checkbox, Label, SegmentedControl, Textarea, TextField } from '@artha/design-system'
+import { Checkbox, DurationField, Label, SegmentedControl, Textarea, TextField } from '@artha/design-system'
 import { useId } from 'react'
 
-import { NOTE_MAX_CHARS } from '../lib/limits'
+import { friendlyDateTime } from '../lib/format'
+import { MAX_MANUAL_SPAN_SECONDS, NOTE_MAX_CHARS } from '../lib/limits'
 import type { EntryMode, FormErrors, SessionFormValues } from '../lib/sessionForm'
 import { ContextPicker } from './ContextPicker'
 
@@ -55,6 +56,7 @@ export function SessionForm({
           value={values.start}
           disabled={timesLocked}
           onChange={(e) => onChange({ start: e.target.value })}
+          hint={friendlyDateTime(values.start) || undefined}
           error={errors.start}
         />
         {values.mode === 'range' ? (
@@ -64,17 +66,15 @@ export function SessionForm({
             value={values.end}
             disabled={timesLocked}
             onChange={(e) => onChange({ end: e.target.value })}
+            hint={friendlyDateTime(values.end) || undefined}
             error={errors.end}
           />
         ) : (
-          <TextField
-            label="Duration (minutes)"
-            type="number"
-            inputMode="numeric"
-            min={1}
-            max={1440}
-            value={values.durationMinutes || ''}
-            onChange={(e) => onChange({ durationMinutes: Number(e.target.value) })}
+          <DurationField
+            label="Duration"
+            valueMinutes={values.durationMinutes}
+            onChangeMinutes={(durationMinutes) => onChange({ durationMinutes })}
+            maxMinutes={MAX_MANUAL_SPAN_SECONDS / 60}
             error={errors.duration}
           />
         )}

@@ -201,7 +201,6 @@ export function OnboardingContainer({
           dailyHours={dailyHours}
           pending={enroll.isPending}
           hasElectives={slots.length > 0}
-          error={enroll.isError ? 'We could not create your syllabus map. Please try again.' : undefined}
           onTerm={setTermId}
           onExamDate={setExamDate}
           onDailyHours={setDailyHours}
@@ -213,7 +212,6 @@ export function OnboardingContainer({
           slots={slots}
           choices={electiveChoices}
           pending={enroll.isPending}
-          error={enroll.isError ? 'We could not create your syllabus map. Please try again.' : undefined}
           onChoose={chooseElective}
           onBack={() => setStage('term')}
           onSubmit={createNow}
@@ -224,7 +222,6 @@ export function OnboardingContainer({
           selected={selected}
           alsoRevised={alsoRevised}
           pending={catchup.isPending}
-          error={catchup.isError ? 'We could not apply that. Please try again.' : undefined}
           note={
             hiddenElectives
               ? 'Elective papers you have not chosen are not listed. You can choose them later from your syllabus map.'

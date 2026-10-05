@@ -1,8 +1,9 @@
-import { Badge, Card, ChevronRight } from '@artha/design-system'
+import { Badge, ChevronRight, EntityBadge } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { pluralize } from '../lib/format'
 import type { SyllabusGroup, SyllabusSubject } from '../lib/types'
+import { EntityIndex, EntityListRow, EntityTitle, ROW_LINK_CLASS } from './EntityList'
 
 interface Props {
   course: string
@@ -14,20 +15,18 @@ interface Props {
 function SubjectCard({ course, level, subject }: { course: string; level: string; subject: SyllabusSubject }) {
   return (
     <li>
-      <Card className="transition-shadow focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
+      <EntityListRow kind="paper">
         <Link
           to="/courses/$course/$level/$subject"
           params={{ course, level, subject: subject.key }}
-          className="flex items-center gap-4 rounded-xl p-4 outline-none"
+          className={ROW_LINK_CLASS}
         >
-          <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
-            {subject.paper_number ?? '·'}
-          </span>
-          <span className="min-w-0 flex-1">
-            <span className="block font-semibold">{subject.name}</span>
-            <span className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <EntityIndex kind="paper">{subject.paper_number ?? '·'}</EntityIndex>
+          <span className="min-w-0 space-y-1.5">
+            <EntityTitle>{subject.name}</EntityTitle>
+            <span className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               {subject.chapter_count > 0 ? (
-                <span>{pluralize(subject.chapter_count, 'chapter')}</span>
+                <EntityBadge kind="chapter">{pluralize(subject.chapter_count, 'chapter')}</EntityBadge>
               ) : (
                 <Badge variant="outline">Coming soon</Badge>
               )}
@@ -37,7 +36,7 @@ function SubjectCard({ course, level, subject }: { course: string; level: string
           </span>
           <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
         </Link>
-      </Card>
+      </EntityListRow>
     </li>
   )
 }

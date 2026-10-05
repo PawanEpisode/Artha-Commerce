@@ -14,15 +14,41 @@ describe('PresetPicker', () => {
     expect(onChange).toHaveBeenCalledWith(presetTimings('deep'), 'deep')
   })
 
-  it('shows steppers for custom timings and stays within the limits', async () => {
+  it('describes the rhythm in hours and minutes', () => {
+    render(<PresetPicker value={presetTimings('classic')} onChange={vi.fn()} />)
+    expect(screen.getByText('25 m focus, 5 m break, then a 15 m long break after 4 rounds.')).toBeInTheDocument()
+  })
+
+  it('shows hours and minutes boxes for custom timings and reports whole minutes', async () => {
     const onChange = vi.fn()
-    const custom = { focus_minutes: 120, short_break_minutes: 1, long_break_minutes: 15, rounds_before_long: 4 }
+    const custom = { focus_minutes: 90, short_break_minutes: 5, long_break_minutes: 15, rounds_before_long: 4 }
     render(<PresetPicker value={custom} onChange={onChange} />)
     expect(screen.getByRole('radio', { name: 'Custom' })).toBeChecked()
-    expect(screen.getByRole('button', { name: 'Increase Focus minutes' })).toBeDisabled()
-    expect(screen.getByRole('button', { name: 'Decrease Short break minutes' })).toBeDisabled()
-    await userEvent.click(screen.getByRole('button', { name: 'Decrease Focus minutes' }))
-    expect(onChange).toHaveBeenCalledWith({ ...custom, focus_minutes: 115 }, 'custom')
+    const focus = screen.getByRole('group', { name: 'Focus length' })
+    expect(focus.querySelector<HTMLInputElement>('input[id$="-h"]')).toHaveValue('1')
+    const minutes = focus.querySelector<HTMLInputElement>('input[id$="-m"]') as HTMLInputElement
+    expect(minutes).toHaveValue('30')
+    await userEvent.clear(minutes)
+    await userEvent.type(minutes, '45')
+    expect(onChange).toHaveBeenLastCalledWith({ ...custom, focus_minutes: 105 }, 'custom')
+  })
+
+  it('does not report a value outside the limits and says why in hours and minutes', async () => {
+    const onChange = vi.fn()
+    const custom = { focus_minutes: 90, short_break_minutes: 5, long_break_minutes: 15, rounds_before_long: 4 }
+    render(<PresetPicker value={custom} onChange={onChange} />)
+    const minutes = screen
+      .getByRole('group', { name: 'Focus length' })
+      .querySelector<HTMLInputElement>('input[id$="-m"]') as HTMLInputElement
+    const hours = screen
+      .getByRole('group', { name: 'Focus length' })
+      .querySelector<HTMLInputElement>('input[id$="-h"]') as HTMLInputElement
+    await userEvent.clear(hours)
+    await userEvent.clear(minutes)
+    onChange.mockClear()
+    await userEvent.type(minutes, '2')
+    expect(onChange).not.toHaveBeenCalled()
+    expect(screen.getByText('Focus length must be between 5 minutes and 2 hours.')).toBeInTheDocument()
   })
 
   it('selects Custom even when the lengths still match a preset', async () => {
@@ -34,7 +60,7 @@ describe('PresetPicker', () => {
     expect(screen.getByRole('radio', { name: 'Custom' })).toBeChecked()
     rerender(<PresetPicker value={classic} preset="custom" onChange={onChange} />)
     expect(screen.getByRole('radio', { name: 'Custom' })).toBeChecked()
-    expect(screen.getByRole('button', { name: 'Increase Focus minutes' })).toBeInTheDocument()
+    expect(screen.getByRole('group', { name: 'Focus length' })).toBeInTheDocument()
   })
 
   it('treats timings equal to a preset as that preset', () => {

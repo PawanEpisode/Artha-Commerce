@@ -46,7 +46,7 @@ export function StudyPromptCard({ prompt, onOpen }: { prompt: StudyPrompt; onOpe
         <p className="text-xl font-bold break-words">{prompt.title}</p>
         <p className="mt-2 text-muted-foreground">{prompt.body}</p>
       </div>
-      <Button size="lg" className="w-full sm:w-auto" asChild>
+      <Button variant="cta" size="lg" arrow className="w-full sm:w-auto" asChild>
         <PromptLink link={prompt.link} onOpen={onOpen} />
       </Button>
     </Card>

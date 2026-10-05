@@ -1,12 +1,14 @@
 import { Badge, Card, Label, ProgressRing, Switch } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
+import { progressSentence } from '../lib/progress'
 import type { Enrollment } from '../lib/types'
 
 interface Props {
   enrollment: Enrollment
   percent: number
   chaptersDone: number
+  chaptersStarted: number
   chaptersTotal: number
   weighted: boolean
   onWeightedChange: (weighted: boolean) => void
@@ -19,6 +21,7 @@ export function OverallRing({
   enrollment,
   percent,
   chaptersDone,
+  chaptersStarted,
   chaptersTotal,
   weighted,
   onWeightedChange,
@@ -26,7 +29,7 @@ export function OverallRing({
 }: Props) {
   return (
     <Card className="flex flex-col items-center gap-5 p-6 text-center sm:flex-row sm:text-left">
-      <ProgressRing value={percent} label="Overall coverage" size={140} strokeWidth={12} />
+      <ProgressRing value={percent} label="Average progress across chapters" size={140} strokeWidth={12} />
       <div className="min-w-0 flex-1 space-y-3">
         <div>
           <h1 className="font-display text-2xl font-extrabold">
@@ -40,7 +43,7 @@ export function OverallRing({
           </p>
         </div>
         <p className="text-sm text-muted-foreground">
-          {chaptersDone} of {chaptersTotal} chapters done.
+          {progressSentence({ chaptersDone, chaptersStarted, chaptersTotal })}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:justify-start">
           <div className="flex items-center gap-2">

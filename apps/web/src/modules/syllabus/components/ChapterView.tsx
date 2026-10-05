@@ -8,14 +8,16 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Button,
-  Card,
   Container,
+  EntityBadge,
+  EntityDot,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
 import { marksLabel, pluralize } from '../lib/format'
 import type { ChapterSyllabus } from '../lib/types'
+import { CRUMB_LINK_CLASS, EntityCrumb, EntityListRow, EntityTitle } from './EntityList'
 
 interface Props {
   courseName: string
@@ -51,21 +53,28 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
             <Link
               to="/courses/$course/$level/$subject"
               params={{ course, level, subject: subject.key }}
-              className="underline-offset-4 hover:underline"
+              className={CRUMB_LINK_CLASS}
             >
-              {subject.name}
+              <EntityCrumb kind="paper">{subject.name}</EntityCrumb>
             </Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{chapter.name}</BreadcrumbPage>
+            <BreadcrumbPage>
+              <EntityCrumb kind="chapter">{chapter.name}</EntityCrumb>
+            </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
-      <h1 className="text-4xl font-extrabold sm:text-5xl">{chapter.name}</h1>
+      <EntityBadge kind="chapter" size="lg">
+        Chapter
+      </EntityBadge>
+      <h1 className="mt-3 text-4xl font-extrabold break-words sm:text-5xl">{chapter.name}</h1>
       <p className="mt-3 flex flex-wrap items-center gap-2 text-lg text-muted-foreground">
-        <span>{subject.name}</span>
+        <EntityBadge kind="paper" size="lg">
+          {subject.name}
+        </EntityBadge>
         {chapter.section ? <Badge variant="outline">{chapter.section}</Badge> : null}
         {marks ? <Badge variant="outline">{marks}</Badge> : null}
         {chapter.est_study_minutes ? (
@@ -74,7 +83,8 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
       </p>
 
       <section className="mt-10" aria-labelledby="topics-heading">
-        <h2 id="topics-heading" className="font-display text-xl font-bold">
+        <h2 id="topics-heading" className="flex items-center gap-2.5 font-display text-xl font-bold">
+          <EntityDot kind="topic" />
           {chapter.topics.length ? pluralize(chapter.topics.length, 'topic') : 'Topics'}
         </h2>
         {chapter.topics.length === 0 ? (
@@ -85,10 +95,10 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
           <ol className="mt-4 space-y-2">
             {chapter.topics.map((t) => (
               <li key={t.id}>
-                <Card className="flex items-center gap-3 p-4">
-                  <span className="font-medium">{t.name}</span>
+                <EntityListRow kind="topic" className="flex flex-wrap items-center gap-x-3 gap-y-2 p-4">
+                  <EntityTitle className="min-w-0 flex-1 basis-40 font-medium">{t.name}</EntityTitle>
                   {t.kind !== 'concept' ? <Badge variant="outline">{t.kind.replace('_', ' ')}</Badge> : null}
-                </Card>
+                </EntityListRow>
               </li>
             ))}
           </ol>
@@ -129,10 +139,8 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
       ) : null}
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Button size="lg" asChild>
-          <Link to="/app/syllabus">
-            Track this chapter <ArrowRight />
-          </Link>
+        <Button variant="cta" size="lg" arrow asChild>
+          <Link to="/app/syllabus">Track this chapter</Link>
         </Button>
         {report}
       </div>

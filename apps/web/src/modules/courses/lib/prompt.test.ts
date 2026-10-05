@@ -9,6 +9,7 @@ const snapshot = {
   levelName: 'Intermediate',
   percent: 12,
   chaptersDone: 8,
+  chaptersStarted: 20,
   chaptersTotal: 70,
 }
 
@@ -32,7 +33,7 @@ describe('toSnapshot', () => {
         },
         level: { pct_simple: 12.4, chapters_done: 8, chapters_total: 70 },
       }),
-    ).toMatchObject({ courseCode: 'ca', levelCode: 'intermediate', percent: 12 })
+    ).toMatchObject({ courseCode: 'ca', levelCode: 'intermediate', percent: 12, chaptersStarted: 8 })
   })
 })
 
@@ -51,9 +52,10 @@ describe('coursesHomePrompt', () => {
 
   it('shows the real percent for an enrolled student', () => {
     const prompt = coursesHomePrompt(enrolled)
-    expect(prompt?.title).toBe('12% of Chartered Accountancy Intermediate')
+    expect(prompt?.title).toBe('Chartered Accountancy Intermediate')
     expect(prompt?.percent).toBe(12)
-    expect(prompt?.body).toBe('8 of 70 chapters done. 62 still to go.')
+    expect(prompt?.body).toBe('Average progress across chapters. 8 of 70 chapters finished, 20 started.')
+    expect(prompt?.progressLabel).toBe('Average progress across chapters')
     expect(prompt?.link).toEqual({ to: '/app/syllabus', label: 'Continue coverage' })
   })
 
@@ -105,7 +107,7 @@ describe('levelPrompt', () => {
       snapshot: { ...snapshot, percent: 100, chaptersDone: 70 },
     }
     expect(levelPrompt(done, ca, intermediate)?.body).toBe(
-      'Every chapter is marked. Open your map to revise what is due.',
+      'Every chapter is finished. Open your map to revise what is due.',
     )
   })
 })

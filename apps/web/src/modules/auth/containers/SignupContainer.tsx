@@ -1,3 +1,4 @@
+import { Button } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
@@ -9,6 +10,7 @@ import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useAuth } from '../hooks/useAuth'
 import { useCooldown } from '../hooks/useCooldown'
 import { resendSignupEmail, signUpWithPassword, verifyEmailCode } from '../lib/auth-api'
+import { notify } from '../lib/notify'
 
 export function SignupContainer() {
   const { user, configured, signInWithGoogle } = useAuth()
@@ -28,22 +30,26 @@ export function SignupContainer() {
     if (!result.error) {
       setEmail(address)
       cooldown.start()
+      notify.confirmationSent(address)
     }
   }
 
   async function resendCode() {
     if (!email) return
     const result = await resend.run(() => resendSignupEmail(email))
-    if (!result.error) cooldown.start()
+    if (!result.error) {
+      cooldown.start()
+      notify.codeResent()
+    }
   }
 
   const footer = (
-    <>
-      Already have an account?{' '}
-      <Link to="/login" className="font-semibold text-primary underline-offset-4 hover:underline">
-        Sign in
-      </Link>
-    </>
+    <div className="flex flex-wrap items-center justify-center gap-2">
+      Already have an account?
+      <Button variant="outline" size="sm" asChild>
+        <Link to="/login">Sign in</Link>
+      </Button>
+    </div>
   )
 
   if (email) {
@@ -57,7 +63,9 @@ export function SignupContainer() {
           resendSeconds={cooldown.secondsLeft}
           resendPending={resend.pending}
           resendNotice={resend.status === 'success' ? 'We sent a new code.' : resend.error}
-          onSubmit={(code) => void verify.run(() => verifyEmailCode(email, code, 'signup'))}
+          onSubmit={(code) =>
+            void verify.run(() => verifyEmailCode(email, code, 'signup')).then((r) => !r.error && notify.signedUp())
+          }
           onResend={() => void resendCode()}
           onChangeEmail={() => {
             setEmail(undefined)

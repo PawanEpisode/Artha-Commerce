@@ -19,6 +19,7 @@ import {
   type StartBody,
 } from '../lib/api'
 import { focusKeys } from '../lib/keys'
+import { notify } from '../lib/notify'
 import { HEARTBEAT_SECONDS } from '../lib/presets'
 import { isFinished, localExtend, localPause, localResume, remainingSeconds } from '../lib/timer-math'
 import type { EndReason, FocusState, FocusTimer } from '../lib/types'
@@ -31,6 +32,8 @@ interface Action {
   local?: Local
   /** Called with the answer, for analytics. */
   done?: (next: FocusState, before: FocusTimer | null) => void
+  /** The toast for a write that reached the server; `queued` is the toast for one saved on the device. */
+  said?: (next: FocusState | null, queued: boolean) => void
 }
 
 /**
@@ -93,10 +96,12 @@ export function useFocusTimer() {
         setServerTime(next.server_time)
         put(next)
         a.done?.(next, before)
+        a.said?.(next, false)
         if (next.outcome === 'saved' || next.session || before?.client_id !== next.timer?.client_id) refreshTime()
       } catch (error) {
         if (!(error instanceof QueuedOffline)) throw error
         if (a.local && before) put({ timer: a.local(before) })
+        a.said?.(null, true)
         void qc.invalidateQueries({ queryKey: trackerKeys.offline })
       }
     },
@@ -104,8 +109,11 @@ export function useFocusTimer() {
       quiet.current = false
       const latest = staleTimer(error)
       if (latest !== undefined) put({ timer: latest })
-      if (errorCode(error) === 'stale_version' || errorCode(error) === 'timer_already_active')
-        track('focus_timer_conflict', { code: errorCode(error) })
+      const code = errorCode(error)
+      if (code === 'stale_version' || code === 'timer_already_active') track('focus_timer_conflict', { code })
+      // A taken timer opens its own dialog; every other failure is a toast.
+      if (code === 'stale_version') notify.outOfDate()
+      else if (code !== 'timer_already_active') notify.error(error, 'That did not work. Please try again.')
       void refresh()
     },
   })
@@ -118,6 +126,7 @@ export function useFocusTimer() {
       {
         online: req,
         queued: req,
+        said: (next, queued) => notify.started(body.phase ?? 'focus', next?.timer?.round_number ?? 1, queued),
         done: (next) => {
           if (!next.timer) return
           track(next.timer.phase === 'focus' ? 'focus_session_started' : 'focus_break_started', {
@@ -139,6 +148,7 @@ export function useFocusTimer() {
       online: focusRequest.pause({ version: v, at: nowIso() }),
       queued: focusRequest.pause({ at: nowIso() }),
       local: (t) => localPause(t, nowIso()),
+      said: (_n, queued) => notify.paused(queued),
       done: (_n, b) => track('focus_session_paused', { round_number: b?.round_number }),
     })
   const resume = () =>
@@ -146,6 +156,7 @@ export function useFocusTimer() {
       online: focusRequest.resume({ version: v, at: nowIso() }),
       queued: focusRequest.resume({ at: nowIso() }),
       local: (t) => localResume(t, nowIso()),
+      said: (_n, queued) => notify.resumed(queued),
       done: (_n, b) => track('focus_session_resumed', { round_number: b?.round_number }),
     })
   const extend = () =>
@@ -153,6 +164,7 @@ export function useFocusTimer() {
       online: focusRequest.extend({ version: v }),
       queued: focusRequest.extend({}),
       local: localExtend,
+      said: (_n, queued) => notify.extended(queued),
     })
   const skipBreak = () => {
     quiet.current = true
@@ -160,6 +172,7 @@ export function useFocusTimer() {
       online: focusRequest.skipBreak({ version: v }),
       queued: focusRequest.skipBreak({}),
       local: () => null,
+      said: (_n, queued) => notify.breakSkipped(queued),
       done: (_n, b) => track('focus_break_skipped', { phase: b?.phase }),
     })
   }
@@ -170,6 +183,7 @@ export function useFocusTimer() {
       online: focusRequest.end({ client_id, version: v, save, reason }),
       queued: focusRequest.end({ client_id, save, reason }),
       local: () => null,
+      said: (next, queued) => notify.ended({ saved: save, outcome: next?.outcome, queued }),
       done: (next, b) =>
         track('focus_session_abandoned', {
           saved: save && next.outcome === 'saved',
@@ -196,7 +210,10 @@ export function useFocusTimer() {
           extension_count: before.extension_count,
         })
     },
-    onError: () => void refresh(),
+    onError: (error) => {
+      notify.error(error, 'Could not close the round.')
+      void refresh()
+    },
   })
 
   const claim = useMutation({
@@ -207,8 +224,12 @@ export function useFocusTimer() {
       put(next)
       refreshTime()
       track('focus_away_claim', { counted: count })
+      notify.claimed(count)
     },
-    onError: () => void refresh(),
+    onError: (error) => {
+      notify.error(error, 'Could not record your answer.')
+      void refresh()
+    },
   })
 
   const context = useMutation({
@@ -217,7 +238,10 @@ export function useFocusTimer() {
       const next = await changeContext({ version: timer.version, ...patch })
       put(next)
     },
-    onError: () => void refresh(),
+    onError: (error) => {
+      notify.error(error, 'Could not change the subject or chapter.')
+      void refresh()
+    },
   })
 
   // The countdown reached zero on this screen: ask the server to close the phase (once per phase).

@@ -1,4 +1,4 @@
-import { Card, ChevronRight, Container } from '@artha/design-system'
+import { ArrowRight, buttonVariants, Card, Container, EntityBadge, EntityDot } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
@@ -19,21 +19,32 @@ export function CourseDetail({ course, prompt }: { course: PublicCourse; prompt?
             key={l.slug}
             to="/courses/$course/$level"
             params={{ course: course.slug, level: l.slug }}
-            className="group block"
+            className="group block rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
           >
             <Card className="flex h-full flex-col p-6 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
               <h2 className="text-xl font-bold">{l.name}</h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {l.subjects.length} {l.subjects.length === 1 ? 'paper' : 'papers'}
+              <p className="mt-2">
+                <EntityBadge kind="paper">
+                  {l.subjects.length} {l.subjects.length === 1 ? 'paper' : 'papers'}
+                </EntityBadge>
               </p>
-              <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 {l.subjects.slice(0, 3).map((s) => (
-                  <li key={s}>{s}</li>
+                  <li key={s} className="flex items-start gap-2.5">
+                    <EntityDot kind="paper" className="mt-1.5" />
+                    <span className="min-w-0 break-words">{s}</span>
+                  </li>
                 ))}
               </ul>
-              <p className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                Open papers <ChevronRight aria-hidden className="size-4" />
-              </p>
+              <span className="mt-auto pt-5">
+                <span className={buttonVariants({ variant: 'outline' })}>
+                  Open {l.name} papers
+                  <ArrowRight
+                    aria-hidden
+                    className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+                  />
+                </span>
+              </span>
             </Card>
           </Link>
         ))}

@@ -215,7 +215,7 @@ Check **Table Editor**: you should see `profiles` (RLS enabled).
 
    | Name | Value |
    | --- | --- |
-   | `VITE_SITE_URL` | `https://yourdomain.com` (**must be the real public URL**, drives canonical and WhatsApp previews) |
+   | `VITE_SITE_URL` | `https://yourdomain.com` (**origin only: scheme + host, NO path, NO trailing slash**. Drives canonical, `og:url`, `og:image`, sitemap and robots, so it decides whether WhatsApp shows a preview. A path such as `/login` breaks every link preview; the app strips it, but fix the variable anyway) |
    | `VITE_SITE_NAME` | `ArthaCommerce` |
    | `VITE_SUPABASE_URL` | Supabase project URL |
    | `VITE_SUPABASE_ANON_KEY` | Supabase publishable/anon key |
@@ -244,6 +244,16 @@ Check **Table Editor**: you should see `profiles` (RLS enabled).
 6. **Sentry**: temporarily throw an error in a route and confirm it appears. **PostHog**: Activity shows `$pageview`.
 7. Submit the sitemap in **Google Search Console** (add property, verify DNS, submit `/sitemap.xml`).
 
+### 8.1 How to verify a link preview (do this after every web deploy that touches SEO)
+
+1. Confirm the env: Vercel -> `arthacommerce-web` -> Settings -> Environment Variables. `VITE_SITE_URL` is exactly `https://arthacommerce.meetpawan.com` (origin only). After any change, **Redeploy** (values are baked in at build time).
+2. View the server HTML (not the DOM inspector): browser `view-source:https://<domain>/`. Inside the first 300 KB of `<head>`, find `og:title`, `og:description`, `og:url`, `og:image` (absolute `https://`, same host), `og:image:width` 1200, `og:image:height` 630, `twitter:card`, `canonical`. Repeat for `/features`, `/courses`, `/courses/ca` and one chapter: each must show its own title and description.
+3. Open the `og:image` URL directly: it must load in a normal tab without login or redirect, as a 1200x630 PNG under 300 KB.
+4. Open `/robots.txt` (no `Disallow: /`, Sitemap line has the right host) and `/sitemap.xml` (every `<loc>` opens).
+5. Facebook Sharing Debugger (developers.facebook.com/tools/debug): paste the URL, press **Scrape Again**. It uses the same crawler as WhatsApp (`facebookexternalhit`) and shows the exact tags and any warning.
+6. WhatsApp: send the link to yourself or a test group. **WhatsApp caches previews** (the result of a first, broken scrape can stick for days). To bust it, share the URL with a throwaway query string, e.g. `https://<domain>/?v=2` (a new URL is a new cache entry), and use Scrape Again in the Sharing Debugger for the clean URL. If a phone still shows the old card, clear WhatsApp's cache or test from another phone.
+7. Also check with LinkedIn Post Inspector, opengraph.xyz and, for JSON-LD, Google's Rich Results Test.
+
 ---
 
 ## 9. Daily local development
@@ -254,6 +264,9 @@ pnpm dev:web                     # http://localhost:3000
 
 # terminal 2
 cd apps/api && source .venv/bin/activate
+set -a
+source .env
+set +a
 export DJANGO_DEBUG=true
 python manage.py runserver 8000  # uses SQLite unless DATABASE_URL is set
 ```
@@ -301,5 +314,5 @@ Rule: nothing secret ever gets a `VITE_` prefix. Google and SMTP credentials sta
 - **CORS error in the browser**: add the exact web origin (scheme + host, no trailing slash) to `CORS_ALLOWED_ORIGINS` and redeploy the api.
 - **`prepared statement ... already exists`**: you pointed `DATABASE_URL` at the session/direct port. Use the transaction pooler (6543) for runtime.
 - **Migrate hangs**: run it with `DIRECT_DATABASE_URL` (5432), never the 6543 pooler.
-- **WhatsApp shows no image**: `VITE_SITE_URL` is wrong, or the image is over about 300 KB, or the cache needs a Sharing Debugger refresh.
+- **WhatsApp shows only the bare host, or no image**: view the page source and check `og:image`. It must be `https://<your domain>/og/default.png` and open in a browser. Causes seen: `VITE_SITE_URL` contained a path (`https://domain/login`, so every URL became `.../login/og/default.png`, a 404) or was unset; the image is over about 300 KB; WhatsApp cached the earlier bad result (see 8.1).
 - **Sentry shows minified stack traces**: the three `SENTRY_*` build vars are missing in the web project.

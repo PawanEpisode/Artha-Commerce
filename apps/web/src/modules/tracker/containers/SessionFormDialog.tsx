@@ -1,4 +1,4 @@
-import { Alert, Button, Dialog, DialogContent, DialogDescription, DialogTitle, useToast } from '@artha/design-system'
+import { Alert, Button, Dialog, DialogContent, DialogDescription, DialogTitle } from '@artha/design-system'
 import { useEffect, useMemo, useState } from 'react'
 
 import { SessionForm } from '../components/SessionForm'
@@ -7,6 +7,7 @@ import { useChapterOptions, useSubjectOptions } from '../hooks/useTagOptions'
 import { errorCode, errorMessage, newClientId } from '../lib/api'
 import { nowMs } from '../lib/clock'
 import { fromLocalInput, toLocalInput } from '../lib/duration'
+import { notify } from '../lib/notify'
 import { type FormErrors, type SessionFormValues, toEdit, toManualInput, validateForm } from '../lib/sessionForm'
 import type { ActivityType, StudySession } from '../lib/types'
 
@@ -64,7 +65,6 @@ export function SessionFormDialog({ open, onOpenChange, tz, session, defaultActi
   const chapters = useChapterOptions(values.subject_id)
   const add = useAddManual()
   const edit = useEditSession()
-  const toast = useToast()
   const busy = add.isPending || edit.isPending
 
   useEffect(() => {
@@ -103,7 +103,7 @@ export function SessionFormDialog({ open, onOpenChange, tz, session, defaultActi
         { id: session.id, patch },
         {
           onSuccess: () => {
-            toast.show({ message: 'Session updated.' })
+            notify.sessionUpdated()
             onOpenChange(false)
           },
           onError: fail,
@@ -113,9 +113,7 @@ export function SessionFormDialog({ open, onOpenChange, tz, session, defaultActi
     }
     add.mutate(toManualInput(values, tz, clientId), {
       onSuccess: ({ queued }) => {
-        toast.show({
-          message: queued ? 'Saved on this device. It will sync when you are back online.' : 'Study time added.',
-        })
+        notify.sessionAdded(queued)
         onOpenChange(false)
       },
       onError: fail,
@@ -158,7 +156,7 @@ export function SessionFormDialog({ open, onOpenChange, tz, session, defaultActi
             </Alert>
           ) : null}
           <div className="flex justify-end gap-3">
-            <Button type="button" variant="ghost" onClick={() => onOpenChange(false)}>
+            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
               Cancel
             </Button>
             <Button type="submit" disabled={busy}>

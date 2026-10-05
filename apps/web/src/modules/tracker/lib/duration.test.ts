@@ -19,8 +19,8 @@ describe('formatDuration', () => {
     expect(formatDuration(0)).toBe('0 m')
     expect(formatDuration(59)).toBe('0 m')
     expect(formatDuration(45 * 60)).toBe('45 m')
-    expect(formatDuration(3600)).toBe('1 h 00 m')
-    expect(formatDuration(3600 + 5 * 60 + 59)).toBe('1 h 05 m')
+    expect(formatDuration(3600)).toBe('1 h')
+    expect(formatDuration(3600 + 5 * 60 + 59)).toBe('1 h 5 m')
   })
   it('never shows a negative time', () => {
     expect(formatDuration(-5)).toBe('0 m')

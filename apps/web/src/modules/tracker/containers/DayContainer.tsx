@@ -1,4 +1,4 @@
-import { Alert, Button, Plus } from '@artha/design-system'
+import { Alert, ArrowLeft, Button, ButtonLink, Plus } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 
@@ -18,16 +18,18 @@ function Day({ date, tz }: { date: string; tz: string }) {
   return (
     <>
       <header className="space-y-1">
-        <Button variant="link" size="sm" className="-ml-3" asChild>
-          <Link to="/app/tracker/reports">Back to reports</Link>
-        </Button>
+        <ButtonLink variant="outline" asChild>
+          <Link to="/app/tracker/reports">
+            <ArrowLeft aria-hidden /> Back to reports
+          </Link>
+        </ButtonLink>
         <h1 className="text-3xl font-extrabold">{dayLabel(date)}</h1>
         <p className="text-muted-foreground">
           {formatDuration(total)} over {rows.length} {rows.length === 1 ? 'session' : 'sessions'}
         </p>
       </header>
       <div className="flex justify-end">
-        <Button size="sm" variant="outline" onClick={() => setAdding(true)}>
+        <Button variant="outline" onClick={() => setAdding(true)}>
           <Plus aria-hidden /> Add time
         </Button>
       </div>

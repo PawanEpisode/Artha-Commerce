@@ -21,7 +21,7 @@ export function ConflictDialog({ open, kind, onClose, action }: Props) {
             : 'A focus round is already running, maybe on another device. We have loaded it here.'}
         </DialogDescription>
         <div className="mt-6 flex flex-wrap justify-end gap-3">
-          <Button variant="ghost" onClick={onClose}>
+          <Button variant="outline" onClick={onClose}>
             Close
           </Button>
           {action}

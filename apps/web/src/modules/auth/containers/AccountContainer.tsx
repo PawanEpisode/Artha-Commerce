@@ -17,6 +17,7 @@ import { useAsyncAction } from '../hooks/useAsyncAction'
 import { useAuth } from '../hooks/useAuth'
 import { useCooldown } from '../hooks/useCooldown'
 import { requestEmailChange, sendReauthCode, updatePassword } from '../lib/auth-api'
+import { notify } from '../lib/notify'
 
 function Section({ title, description, children }: { title: string; description: string; children: React.ReactNode }) {
   return (
@@ -44,23 +45,33 @@ export function AccountContainer() {
 
   async function changeEmail(address: string) {
     const result = await emailChange.run(() => requestEmailChange(address))
-    if (!result.error) setRequestedEmail(address)
+    if (!result.error) {
+      setRequestedEmail(address)
+      notify.emailChangeRequested(address)
+    }
   }
 
   async function changePassword(next: string) {
     const result = await password.run(() => updatePassword(next))
+    if (!result.error) notify.passwordUpdated()
     if (result.needsReauth) {
       // The server wants proof of a recent sign-in: email a code, then retry with it (Reauthentication template).
       setPendingPassword(next)
       const sent = await reauth.run(() => sendReauthCode())
-      if (!sent.error) cooldown.start()
+      if (!sent.error) {
+        cooldown.start()
+        notify.codeSent(user?.email ?? 'your email')
+      }
     }
   }
 
   async function confirmWithCode(code: string) {
     if (!pendingPassword) return
     const result = await password.run(() => updatePassword(pendingPassword, code))
-    if (!result.error) setPendingPassword(undefined)
+    if (!result.error) {
+      setPendingPassword(undefined)
+      notify.passwordUpdated()
+    }
   }
 
   const waitingForCode = pendingPassword !== undefined && password.status !== 'success'

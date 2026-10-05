@@ -1,6 +1,8 @@
 import { Button, Dialog, DialogContent, DialogDescription, DialogTitle, Label, SelectField } from '@artha/design-system'
 import { useState } from 'react'
 
+import { formatDuration } from '~/modules/tracker'
+
 import { MIN_ROUND_SECONDS } from '../lib/presets'
 import { type EndReason, REASON_OPTIONS } from '../lib/types'
 
@@ -17,7 +19,7 @@ interface Props {
 export function EndEarlyDialog({ open, studiedSeconds, busy, onClose, onEnd }: Props) {
   const [reason, setReason] = useState<EndReason>('other')
   const tooShort = studiedSeconds < MIN_ROUND_SECONDS
-  const minutes = Math.floor(studiedSeconds / 60)
+  const studied = formatDuration(studiedSeconds)
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
       <DialogContent>
@@ -25,7 +27,7 @@ export function EndEarlyDialog({ open, studiedSeconds, busy, onClose, onEnd }: P
         <DialogDescription>
           {tooShort
             ? 'Less than a minute is not saved.'
-            : `You studied ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}. Save it as a partial round, or discard it.`}
+            : `You studied ${studied}. Save it as a partial round, or discard it.`}
         </DialogDescription>
         {tooShort ? null : (
           <div className="mt-4 space-y-1.5">
@@ -39,7 +41,7 @@ export function EndEarlyDialog({ open, studiedSeconds, busy, onClose, onEnd }: P
           </div>
         )}
         <div className="mt-6 flex flex-wrap justify-end gap-3">
-          <Button variant="ghost" onClick={onClose} disabled={busy}>
+          <Button variant="outline" onClick={onClose} disabled={busy}>
             Keep going
           </Button>
           <Button variant="outline" onClick={() => onEnd(false)} disabled={busy}>
@@ -47,7 +49,7 @@ export function EndEarlyDialog({ open, studiedSeconds, busy, onClose, onEnd }: P
           </Button>
           {tooShort ? null : (
             <Button onClick={() => onEnd(true, reason)} disabled={busy}>
-              Save {minutes} min
+              Save {studied}
             </Button>
           )}
         </div>

@@ -1,4 +1,4 @@
-import { Button, useToast } from '@artha/design-system'
+import { Button } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
@@ -25,7 +25,7 @@ import { useTimerTitle } from '../hooks/useDocumentTitle'
 import { useRoundsOn } from '../hooks/useFocusQueries'
 import { useSaveFocusSettings } from '../hooks/useFocusSettings'
 import { type FocusTimerApi, useFocusTimer } from '../hooks/useFocusTimer'
-import { errorCode, errorMessage } from '../lib/api'
+import { errorCode } from '../lib/api'
 import { unlockAudio } from '../lib/chime'
 import { matchPreset, type PresetKey, presetTimings, type Timings } from '../lib/presets'
 import { shortcutFor } from '../lib/shortcuts'
@@ -42,7 +42,6 @@ export interface FocusSearch {
 const DEFAULT_TIMINGS: Timings = presetTimings('classic')
 
 function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
-  const toast = useToast()
   const save = useSaveFocusSettings()
   const trackerSettings = useTrackerSettings().data
   const subjects = useSubjectOptions()
@@ -189,7 +188,6 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onExtend={f.extend}
         onSkipBreak={f.skipBreak}
         onEndEarly={() => setEnding(true)}
-        error={f.error && !liveKind ? errorMessage(f.error) : null}
         announcement={f.announcement}
       />
 
@@ -209,7 +207,6 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onEnd={(saveIt, reason) => {
           f.end(saveIt, reason)
           setEnding(false)
-          if (saveIt) toast.show({ message: 'Saved as a partial round.' })
         }}
       />
       <AwayDialog

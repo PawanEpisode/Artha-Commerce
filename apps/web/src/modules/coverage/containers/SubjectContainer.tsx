@@ -5,6 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
+  EntityBadge,
   Label,
   ProgressBar,
   Skeleton,
@@ -12,11 +13,12 @@ import {
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 
-import { ReportIssue } from '~/modules/syllabus'
+import { EntityCrumb, ReportIssue } from '~/modules/syllabus'
 
 import { ChapterList } from '../components/ChapterList'
 import { useOverview, useSubjectCoverage } from '../hooks/useCoverageQueries'
 import { pick } from '../lib/formula'
+import { paperSentence } from '../lib/progress'
 import { CoverageShell } from './CoverageShell'
 
 export interface SubjectSearch {
@@ -49,14 +51,23 @@ function SubjectBody({ subjectId, search }: { subjectId: string; search: Subject
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{data.subject.name}</BreadcrumbPage>
+            <BreadcrumbPage>
+              <EntityCrumb kind="paper">{data.subject.name}</EntityCrumb>
+            </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
       <header className="space-y-3">
-        <h1 className="font-display text-3xl font-extrabold">{data.subject.name}</h1>
+        <EntityBadge kind="paper" size="lg">
+          {data.subject.paper_number ? `Paper ${data.subject.paper_number}` : 'Paper'}
+        </EntityBadge>
+        <h1 className="font-display text-3xl font-extrabold break-words">{data.subject.name}</h1>
         <p className="text-muted-foreground">
-          {pct}% covered. {data.subject.chapters_done} of {data.subject.chapters_total} chapters done.
+          {paperSentence(pct, {
+            chaptersDone: data.subject.chapters_done,
+            chaptersStarted: data.subject.chapters_started,
+            chaptersTotal: data.subject.chapters_total,
+          })}
         </p>
         <ProgressBar size="lg" value={pct} label={`${data.subject.name} coverage`} />
         <div className="flex items-center gap-2">

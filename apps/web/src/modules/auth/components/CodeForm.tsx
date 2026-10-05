@@ -66,11 +66,17 @@ export function CodeForm({
         {submitLabel}
       </Button>
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-        <Button type="button" variant="link" onClick={onResend} disabled={resendSeconds > 0 || resendPending}>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={onResend}
+          disabled={resendSeconds > 0 || resendPending}
+        >
           {resendSeconds > 0 ? `Resend in ${resendSeconds}s` : 'Resend code'}
         </Button>
         {onChangeEmail && (
-          <Button type="button" variant="link" onClick={onChangeEmail}>
+          <Button type="button" variant="ghost" size="sm" onClick={onChangeEmail}>
             Use a different email
           </Button>
         )}

@@ -5,7 +5,9 @@ import { track } from '~/modules/observability'
 import { setChapterExclusion, setConfidence } from '../lib/api'
 import { computeComponents, DEFAULT_WEIGHTS, deriveStatus } from '../lib/formula'
 import { coverageKeys } from '../lib/keys'
+import { notify } from '../lib/notify'
 import { logEventOrQueue, tickChapterOrQueue, tickTopicOrQueue } from '../lib/queuedWrites'
+import { chapterActivities, EVENT_ACTIVITY } from '../lib/rules'
 import type {
   ChapterCoverage,
   ChapterRow,
@@ -82,6 +84,8 @@ interface Ctx {
   subjectId: string
   subjectKey: string
   chapterKey: string
+  /** Shown in messages ("Excluded Income from Salaries."). */
+  chapterName?: string
 }
 
 /** Tick or untick one topic (or the chapter itself when it has no topics). Optimistic, idempotent, rolls back on error. */
@@ -106,14 +110,17 @@ export function useTickTopic(ctx: Ctx) {
       }
       return { previous, overview: qc.getQueryData<Overview>(coverageKeys.overview) }
     },
-    onError: (_e, _v, c) => {
+    onError: (error, _v, c) => {
       if (c?.previous) qc.setQueryData(key, c.previous)
+      notify.tickFailed(error)
     },
-    onSuccess: (state, { done }, c) => {
+    onSuccess: (state, { done, topicId }, c) => {
       if (!state) {
         track('coverage_write_queued', { kind: 'tick' })
+        notify.savedOffline()
         return
       }
+      notify.topicRead(topicId ?? ctx.chapterId, done)
       const prev = c?.overview?.subjects.find((s) => s.id === ctx.subjectId)
       trackMilestones('subject', prev?.pct_simple, state.subject.pct_simple)
       trackMilestones('level', c?.overview?.level.pct_simple, state.level.pct_simple)
@@ -140,18 +147,28 @@ export function useLogEvent(ctx: Ctx) {
   const qc = useQueryClient()
   return useMutation({
     mutationFn: ({ type, value }: { type: EventType; value?: number | null }) =>
-      logEventOrQueue({ chapter_id: ctx.chapterId, type, value: value ?? null }),
+      logEventOrQueue({ chapter_id: ctx.chapterId, type, value: value ?? null, label: ctx.chapterName }),
     onSuccess: (state, { type, value }) => {
       if (!state) {
         track('coverage_write_queued', { kind: type })
+        notify.savedOffline()
         return
       }
+      const activity = EVENT_ACTIVITY[type]
+      const progress = chapterActivities(state.chapter)[activity]
+      notify.activityLogged(activity, progress.done, progress.target)
       track(EVENT_NAME[type], {
         subject_key: ctx.subjectKey,
         chapter_key: ctx.chapterKey,
         score_bucket: scoreBucket(value),
       })
       applyState(qc, ctx.chapterId, state, ctx.subjectId)
+      void qc.invalidateQueries({ queryKey: coverageKeys.chapter(ctx.chapterId) })
+    },
+    onError: (error, { type }) => {
+      // 409 target_reached: another tab or device filled the last slot. Say so and refresh so the option disables.
+      track('activity_log_blocked', { activity: EVENT_ACTIVITY[type], surface: 'form' })
+      notify.logRefused(error)
       void qc.invalidateQueries({ queryKey: coverageKeys.chapter(ctx.chapterId) })
     },
   })
@@ -163,18 +180,28 @@ export function useSetConfidence(ctx: Ctx) {
     mutationFn: (confidence: Confidence | null) => setConfidence(ctx.chapterId, confidence),
     onSuccess: (state, confidence) => {
       track('confidence_set', { rating: confidence ?? 'cleared' })
+      notify.confidenceSaved(confidence === null)
       applyState(qc, ctx.chapterId, state, ctx.subjectId)
+    },
+    onError: (error) => {
+      notify.confidenceRefused(error)
+      void qc.invalidateQueries({ queryKey: coverageKeys.chapter(ctx.chapterId) })
     },
   })
 }
 
 export function useSetChapterExclusion(ctx: Ctx) {
   const qc = useQueryClient()
-  return useMutation({
+  const mutation = useMutation({
     mutationFn: (excluded: boolean) => setChapterExclusion(ctx.chapterId, excluded),
     onSuccess: (state, excluded) => {
       if (excluded) track('chapter_excluded', { subject_key: ctx.subjectKey })
       applyState(qc, ctx.chapterId, state, ctx.subjectId)
+      const name = ctx.chapterName ?? 'this chapter'
+      if (excluded) notify.excluded(name, () => mutation.mutate(false))
+      else notify.included(name)
     },
+    onError: (error) => notify.exclusionFailed(error),
   })
+  return mutation
 }

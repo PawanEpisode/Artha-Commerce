@@ -1,4 +1,4 @@
-import { Button, cn, Container } from '@artha/design-system'
+import { ArrowRight, Button, buttonVariants, cn, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { useAuth } from '~/modules/auth'
@@ -31,7 +31,7 @@ export function WorkspaceHome() {
                   <Link
                     to={item.to}
                     className={cn(
-                      'flex h-full min-h-11 flex-col gap-2 rounded-xl border bg-card p-5 text-card-foreground shadow-soft outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40',
+                      'group flex h-full min-h-11 flex-col gap-2 rounded-xl border bg-card p-5 text-card-foreground shadow-soft outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40',
                       index === 0 ? 'border-primary' : 'border-border',
                     )}
                   >
@@ -41,6 +41,15 @@ export function WorkspaceHome() {
                     {item.description ? (
                       <span className="text-sm text-muted-foreground">{item.description}</span>
                     ) : null}
+                    <span className="mt-auto pt-2">
+                      <span className={buttonVariants({ variant: index === 0 ? 'cta' : 'secondary', size: 'sm' })}>
+                        Open {item.label}
+                        <ArrowRight
+                          aria-hidden
+                          className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+                        />
+                      </span>
+                    </span>
                   </Link>
                 </li>
               )

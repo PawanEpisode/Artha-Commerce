@@ -253,6 +253,8 @@ class Rollup(models.Model):
     pct_weighted = models.SmallIntegerField(default=0)
     chapters_total = models.SmallIntegerField(default=0)
     chapters_done = models.SmallIntegerField(default=0)
+    # Included chapters with coverage above 0 (done ones included). See formula.RollupResult.
+    chapters_started = models.SmallIntegerField(default=0)
     updated_at = models.DateTimeField(default=timezone.now)
 
     class Meta:

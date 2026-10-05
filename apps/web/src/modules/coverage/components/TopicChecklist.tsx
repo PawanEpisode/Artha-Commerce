@@ -1,10 +1,13 @@
-import { Badge, Card, Checkbox } from '@artha/design-system'
+import { Badge, ReadToggle } from '@artha/design-system'
+import { useId } from 'react'
+
+import { EntityListRow, EntityTitle } from '~/modules/syllabus'
 
 import type { TopicRow } from '../lib/types'
 
 interface Props {
   topics: TopicRow[]
-  /** Chapters without topics yet get one implicit "whole chapter" tick (see PRD edge cases). */
+  /** Chapters without topics yet get one implicit "whole chapter" toggle (see PRD edge cases). */
   chapterName: string
   hasTopics: boolean
   chapterDone: boolean
@@ -12,28 +15,35 @@ interface Props {
   onToggleChapter: (done: boolean) => void
 }
 
+/**
+ * One row per topic: amber rail, the topic name (wraps, never overflows) and a "Mark as read" toggle that turns into
+ * a tick and "Read". The write is optimistic; the toggle is a real button (`aria-pressed`), so Space and Enter work.
+ */
 function Row({
-  id,
   label,
   kind,
   checked,
+  toggleLabels,
   onChange,
 }: {
-  id: string
   label: string
   kind?: string
   checked: boolean
-  onChange: (v: boolean) => void
+  toggleLabels?: { unchecked: string; checked: string }
+  onChange: (done: boolean) => void
 }) {
+  const titleId = useId()
   return (
     <li>
-      <Card className="focus-within:ring-[3px] focus-within:ring-ring/40">
-        <label htmlFor={id} className="flex min-h-14 cursor-pointer items-center gap-4 p-4">
-          <Checkbox id={id} checked={checked} onCheckedChange={(v) => onChange(v === true)} />
-          <span className={`min-w-0 flex-1 font-medium ${checked ? 'text-muted-foreground' : ''}`}>{label}</span>
+      <EntityListRow kind="topic" className="flex flex-wrap items-center gap-x-3 gap-y-2 p-3 pl-4 sm:p-4">
+        <span className="min-w-0 flex-1 basis-40 space-y-1">
+          <EntityTitle id={titleId} className={checked ? 'font-medium text-muted-foreground' : 'font-medium'}>
+            {label}
+          </EntityTitle>
           {kind && kind !== 'concept' ? <Badge variant="outline">{kind.replace('_', ' ')}</Badge> : null}
-        </label>
-      </Card>
+        </span>
+        <ReadToggle checked={checked} onChange={onChange} labels={toggleLabels} aria-describedby={titleId} />
+      </EntityListRow>
     </li>
   )
 }
@@ -42,21 +52,19 @@ export function TopicChecklist({ topics, chapterName, hasTopics, chapterDone, on
   if (!hasTopics) {
     return (
       <ul className="space-y-2">
-        <Row id="chapter-read" label={`I have read ${chapterName}`} checked={chapterDone} onChange={onToggleChapter} />
+        <Row
+          label={`I have read ${chapterName}`}
+          checked={chapterDone}
+          toggleLabels={{ unchecked: 'Mark chapter as read', checked: 'Chapter read' }}
+          onChange={onToggleChapter}
+        />
       </ul>
     )
   }
   return (
     <ul className="space-y-2">
       {topics.map((t) => (
-        <Row
-          key={t.id}
-          id={`topic-${t.id}`}
-          label={t.name}
-          kind={t.kind}
-          checked={t.is_done}
-          onChange={(v) => onToggleTopic(t.id, v)}
-        />
+        <Row key={t.id} label={t.name} kind={t.kind} checked={t.is_done} onChange={(v) => onToggleTopic(t.id, v)} />
       ))}
     </ul>
   )

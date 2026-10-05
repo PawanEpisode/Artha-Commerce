@@ -18,7 +18,7 @@ describe('heatCells', () => {
       ['2026-10-06', 2, 1],
       ['2026-10-07', 0, 2],
     ])
-    expect(cells[1]?.label).toContain('1 h 00 m')
+    expect(cells[1]?.label).toContain('1 h')
     expect(cells[0]?.label).toContain('no study')
   })
   it('puts Sunday first when the week starts on Sunday', () => {

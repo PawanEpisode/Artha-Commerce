@@ -64,7 +64,7 @@ export function SessionRow({ session: s, tz, selected, onSelect, onEdit, onSplit
       <p className="font-display text-lg font-bold tabular-nums">{formatDuration(s.focus_seconds)}</p>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" aria-label={`Actions for ${title}, ${timeOfDay(s.started_at, tz)}`}>
+          <Button variant="outline" size="icon" aria-label={`Actions for ${title}, ${timeOfDay(s.started_at, tz)}`}>
             <Ellipsis aria-hidden />
           </Button>
         </DropdownMenuTrigger>

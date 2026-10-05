@@ -37,6 +37,8 @@ describe('validateForm', () => {
   })
   it('checks the duration in duration mode', () => {
     expect(validateForm({ ...base, mode: 'duration', durationMinutes: 0 }, TZ, NOW).duration).toBeDefined()
+    expect(validateForm({ ...base, mode: 'duration', durationMinutes: null }, TZ, NOW).duration).toBeDefined()
+    expect(validateForm({ ...base, mode: 'duration', durationMinutes: 90 }, TZ, NOW)).toEqual({})
     expect(validateForm({ ...base, mode: 'duration', durationMinutes: 1500 }, TZ, NOW).duration).toMatch(/24 hours/)
     expect(validateForm({ ...base, mode: 'duration', durationMinutes: 30 }, TZ, NOW)).toEqual({})
   })

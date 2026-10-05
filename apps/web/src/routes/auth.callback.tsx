@@ -3,13 +3,12 @@ import { useEffect } from 'react'
 import { z } from 'zod'
 
 import { safeNextPath, useAuth } from '~/modules/auth'
-import { buildHead } from '~/modules/seo'
+import { pageHead } from '~/modules/seo'
 
 /** Supabase redirects here after OAuth / magic link. supabase-js exchanges the code automatically. */
 export const Route = createFileRoute('/auth/callback')({
   validateSearch: z.object({ next: z.string().optional().catch(undefined) }),
-  head: () =>
-    buildHead({ title: 'Signing you in', description: 'Signing you in.', path: '/auth/callback', noindex: true }),
+  head: () => pageHead('/auth/callback'),
   component: function Callback() {
     const { next } = Route.useSearch()
     const { user, loading } = useAuth()

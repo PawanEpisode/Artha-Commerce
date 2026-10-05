@@ -19,7 +19,7 @@ export function FeatureDetail({ feature, offer, alternatives, onOpen }: Props) {
   const comingSoon = offer.destination === 'soon'
   return (
     <Container className="max-w-3xl py-12 sm:py-20">
-      <Button variant="link" className="mb-8 px-0" asChild>
+      <Button variant="outline" size="sm" className="mb-8" asChild>
         <Link to="/features">
           <ArrowLeft /> All features
         </Link>
@@ -70,7 +70,7 @@ export function FeatureDetail({ feature, offer, alternatives, onOpen }: Props) {
           <ul className="mt-4 flex list-none flex-col gap-3 sm:flex-row sm:flex-wrap">
             {alternatives.map((alt) => (
               <li key={alt.feature.slug}>
-                <OfferButton offer={alt} className="w-full sm:w-auto" onOpen={onOpen} />
+                <OfferButton offer={alt} variant="secondary" className="w-full sm:w-auto" onOpen={onOpen} />
               </li>
             ))}
           </ul>

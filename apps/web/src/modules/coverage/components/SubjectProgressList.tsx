@@ -1,5 +1,7 @@
-import { Badge, Card, ChevronRight, ProgressBar } from '@artha/design-system'
+import { Badge, ChevronRight, ProgressBar } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+
+import { EntityIndex, EntityListRow, EntityTitle, ROW_LINK_CLASS } from '~/modules/syllabus'
 
 import { pick } from '../lib/formula'
 import type { ElectiveSlot, GroupRow, SubjectRow } from '../lib/types'
@@ -28,31 +30,36 @@ function Row({
   const allExcluded = subject.chapters_total === 0
   return (
     <li>
-      <Card className="focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
+      <EntityListRow kind="paper">
         <Link
           to="/app/syllabus/$subject"
           params={{ subject: subject.id }}
           search={view ? { view } : {}}
-          className="flex items-center gap-4 rounded-xl p-4 outline-none"
+          className={ROW_LINK_CLASS}
         >
-          <span className="min-w-0 flex-1 space-y-2">
-            <span className="flex flex-wrap items-center gap-2">
-              <span className="font-semibold">{subject.name}</span>
-              {subject.elective_slot ? (
-                <Badge variant="outline">{notChosen ? 'Elective: not chosen' : 'Your elective'}</Badge>
-              ) : null}
-              {subject.excluded_chapters > 0 && !subject.elective_slot ? (
-                <Badge variant="outline">{subject.excluded_chapters} excluded</Badge>
-              ) : null}
-            </span>
+          <EntityIndex kind="paper">{subject.paper_number ?? '·'}</EntityIndex>
+          <span className="min-w-0 space-y-2">
+            <EntityTitle>{subject.name}</EntityTitle>
+            {subject.elective_slot || subject.excluded_chapters > 0 ? (
+              <span className="flex flex-wrap items-center gap-2">
+                {subject.elective_slot ? (
+                  <Badge variant="outline">{notChosen ? 'Elective: not chosen' : 'Your elective'}</Badge>
+                ) : null}
+                {subject.excluded_chapters > 0 && !subject.elective_slot ? (
+                  <Badge variant="outline">{subject.excluded_chapters} excluded</Badge>
+                ) : null}
+              </span>
+            ) : null}
             <ProgressBar value={pct} label={`${subject.name} coverage`} />
           </span>
-          <span className="w-12 shrink-0 text-right font-display text-lg font-bold tabular-nums">
-            {allExcluded ? 'n/a' : `${pct}%`}
+          <span className="flex items-center gap-1">
+            <span className="w-12 text-right font-display text-lg font-bold tabular-nums">
+              {allExcluded ? 'n/a' : `${pct}%`}
+            </span>
+            <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
           </span>
-          <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
         </Link>
-      </Card>
+      </EntityListRow>
     </li>
   )
 }

@@ -1,8 +1,20 @@
-import { Alert, Button, Card, CardContent, Coffee, Kbd, Pause, Play, SkipForward, Square } from '@artha/design-system'
+import {
+  Alert,
+  Button,
+  Card,
+  CardContent,
+  Coffee,
+  formatDuration,
+  Kbd,
+  Pause,
+  Play,
+  SkipForward,
+  Square,
+} from '@artha/design-system'
 
 import { ContextPicker, hasSubjectAndChapter, type PickerValue } from '~/modules/tracker'
 
-import { MAX_EXTENSIONS, type PresetKey, type Timings } from '../lib/presets'
+import { EXTEND_SECONDS, MAX_EXTENSIONS, type PresetKey, type Timings } from '../lib/presets'
 import { PHASE_LABEL, startLabel } from '../lib/timer-math'
 import type { FocusTimer, IdleInfo } from '../lib/types'
 import { CycleDots } from './CycleDots'
@@ -113,6 +125,7 @@ export function FocusCard(p: Props) {
             <>
               <Button
                 size="lg"
+                variant="cta"
                 onClick={p.onStart}
                 disabled={startDisabled}
                 aria-describedby={needsContext && !p.otherLive ? 'focus-needs-context' : undefined}
@@ -120,7 +133,7 @@ export function FocusCard(p: Props) {
                 {dueBreak ? <Coffee aria-hidden /> : <Play aria-hidden />} {startLabel(p.idle)}
               </Button>
               {dueBreak ? (
-                <Button size="lg" variant="ghost" onClick={p.onStartFocusInsteadOfBreak} disabled={startDisabled}>
+                <Button size="lg" variant="outline" onClick={p.onStartFocusInsteadOfBreak} disabled={startDisabled}>
                   Skip the break
                 </Button>
               ) : null}
@@ -141,9 +154,10 @@ export function FocusCard(p: Props) {
                 </Button>
               )}
               <Button size="lg" variant="outline" onClick={p.onExtend} disabled={p.busy || !t.can_extend}>
-                +5 min{extensionsLeft > 0 ? ` (${extensionsLeft} left)` : ''}
+                +{formatDuration(EXTEND_SECONDS / 60)}
+                {extensionsLeft > 0 ? ` (${extensionsLeft} left)` : ''}
               </Button>
-              <Button size="lg" variant="ghost" onClick={p.onEndEarly} disabled={p.busy}>
+              <Button size="lg" variant="outline" onClick={p.onEndEarly} disabled={p.busy}>
                 <Square aria-hidden /> End early
               </Button>
             </>

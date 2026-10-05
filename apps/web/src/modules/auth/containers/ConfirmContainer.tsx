@@ -37,9 +37,9 @@ export function ConfirmContainer({ tokenHash, type, next }: ConfirmContainerProp
       <AuthCard
         title="This link did not work"
         footer={
-          <Link to="/login" className="font-semibold text-primary underline-offset-4 hover:underline">
-            Back to sign in
-          </Link>
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/login">Back to sign in</Link>
+          </Button>
         }
       >
         <Alert variant="error">{error ?? 'The link is incomplete. Open the latest email we sent you.'}</Alert>

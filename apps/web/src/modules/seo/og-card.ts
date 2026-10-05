@@ -1,3 +1,5 @@
+import { siteUrl } from '~/lib/env'
+
 /**
  * What an Open Graph preview card says. Pure text decisions (wording, truncation, font size) live here so they are
  * tested; drawing happens in `og-render.server.ts`.
@@ -102,6 +104,21 @@ export const ogResponse = {
   png: (bytes: Uint8Array) =>
     new Response(bytes as BodyInit, { headers: { 'Content-Type': 'image/png', 'Cache-Control': CACHE } }),
   notFound: () => new Response('Not found', { status: 404, headers: { 'Cache-Control': 'public, max-age=300' } }),
-  fallback: (path: string) =>
-    new Response(null, { status: 302, headers: { Location: path, 'Cache-Control': 'no-store' } }),
+  /**
+   * Serves the static site image with a 200 (unfurlers such as WhatsApp handle a direct image more reliably than a
+   * redirect). Falls back to a redirect only if the static file cannot be fetched.
+   */
+  fallback: async (path: string): Promise<Response> => {
+    try {
+      const res = await fetch(`${siteUrl}${path}`)
+      if (res.ok) {
+        return new Response(res.body, {
+          headers: { 'Content-Type': 'image/png', 'Cache-Control': 'public, max-age=300' },
+        })
+      }
+    } catch {
+      // fall through to the redirect
+    }
+    return new Response(null, { status: 302, headers: { Location: path, 'Cache-Control': 'no-store' } })
+  },
 }

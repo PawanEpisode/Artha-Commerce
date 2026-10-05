@@ -1,18 +1,10 @@
-import {
-  Alert,
-  Button,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  TextField,
-  useToast,
-} from '@artha/design-system'
+import { Alert, Button, Dialog, DialogContent, DialogDescription, DialogTitle, TextField } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { useSplit, useUndo } from '../hooks/useSessionActions'
 import { errorMessage } from '../lib/api'
 import { fromLocalInput, toLocalInput } from '../lib/duration'
+import { notify } from '../lib/notify'
 import type { StudySession } from '../lib/types'
 
 /** Splits one session in two at a chosen moment. Offers an undo for ten seconds. */
@@ -29,7 +21,6 @@ export function SplitDialog({
   const [message, setMessage] = useState<string | null>(null)
   const split = useSplit()
   const undo = useUndo()
-  const toast = useToast()
 
   useEffect(() => {
     if (!session) return
@@ -44,11 +35,12 @@ export function SplitDialog({
       { id: session.id, at: fromLocalInput(at, tz).toISOString() },
       {
         onSuccess: (r) => {
-          toast.show({
-            message: 'Session split in two.',
-            actionLabel: 'Undo',
-            onAction: () => undo.mutate({ token: r.undo_token }),
-          })
+          notify.sessionSplit(() =>
+            undo.mutate(
+              { token: r.undo_token },
+              { onSuccess: () => notify.undone(), onError: (e) => notify.error(e, 'Could not undo the split.') },
+            ),
+          )
           onClose()
         },
         onError: (e) => setMessage(errorMessage(e)),
@@ -74,7 +66,7 @@ export function SplitDialog({
             </Alert>
           ) : null}
           <div className="flex justify-end gap-3">
-            <Button type="button" variant="ghost" onClick={onClose}>
+            <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>
             <Button type="submit" disabled={split.isPending || !at}>

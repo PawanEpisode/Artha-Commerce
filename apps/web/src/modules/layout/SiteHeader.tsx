@@ -78,7 +78,7 @@ export function SiteHeader() {
   const signedIn = !loading && Boolean(user)
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-xl">
-      <Container className="flex h-16 items-center justify-between gap-2">
+      <Container className="flex h-[var(--site-header-height)] items-center justify-between gap-2">
         <Link to="/" aria-label="ArthaCommerce home" className="shrink-0">
           <Logo compactOnMobile />
         </Link>

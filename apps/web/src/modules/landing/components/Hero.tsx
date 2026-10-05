@@ -1,4 +1,4 @@
-import { ArrowRight, Badge, Button, Container, ease, Flame, Sparkles } from '@artha/design-system'
+import { Badge, Button, Container, ease, Flame, Sparkles } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
@@ -95,12 +95,10 @@ export function Hero() {
             juggling notebooks, PDFs and WhatsApp groups.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button size="lg" asChild>
-              <Link to="/login">
-                Start preparing free <ArrowRight />
-              </Link>
+            <Button size="lg" variant="cta" arrow asChild>
+              <Link to="/login">Start preparing free</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" arrow asChild>
               <a href="#planner">Build a sample plan</a>
             </Button>
           </div>

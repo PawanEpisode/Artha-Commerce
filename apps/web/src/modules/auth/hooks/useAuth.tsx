@@ -3,6 +3,7 @@ import { createContext, type ReactNode, useContext, useEffect, useMemo, useState
 
 import { getSupabase, isSupabaseConfigured } from '~/lib/supabase'
 
+import { notify } from '../lib/notify'
 import { callbackUrl } from '../lib/redirects'
 
 interface AuthState {
@@ -48,7 +49,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         })
       },
       async signOut() {
-        await getSupabase()?.auth.signOut()
+        const { error } = (await getSupabase()?.auth.signOut()) ?? {}
+        if (error) notify.failed(error, 'We could not sign you out. Please try again.')
+        else notify.signedOut()
       },
     }
   }, [session, loading])

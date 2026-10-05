@@ -16,8 +16,8 @@ export function ErrorFallback({ error, reset }: { error: Error; reset: () => voi
         <p className="mt-2 text-muted-foreground">We have been notified. Please try again.</p>
         <div className="mt-8 flex justify-center gap-3">
           <Button onClick={reset}>Try again</Button>
-          <Button variant="outline" asChild>
-            <Link to="/">Home</Link>
+          <Button variant="outline" arrow asChild>
+            <Link to="/">Go to the home page</Link>
           </Button>
         </div>
       </div>

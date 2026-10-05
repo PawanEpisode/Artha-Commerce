@@ -1,4 +1,4 @@
-import { ArrowRight, Button, Container, Reveal } from '@artha/design-system'
+import { Button, Container, Reveal } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 export function FinalCta() {
@@ -15,10 +15,8 @@ export function FinalCta() {
             <p className="relative mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80">
               Create a free account and get your first study plan in minutes.
             </p>
-            <Button size="lg" variant="secondary" className="relative mt-8" asChild>
-              <Link to="/login">
-                Get started free <ArrowRight />
-              </Link>
+            <Button size="lg" variant="secondary" arrow className="relative mt-8" asChild>
+              <Link to="/login">Create my free account</Link>
             </Button>
           </div>
         </Reveal>

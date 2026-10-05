@@ -4,6 +4,7 @@ import { track } from '~/modules/observability'
 
 import { describeTransition } from '../lib/alerts'
 import { playChime } from '../lib/chime'
+import { notify } from '../lib/notify'
 import type { FocusSettings, FocusTimer } from '../lib/types'
 
 /**
@@ -29,6 +30,8 @@ export function useFocusAlerts(
     const alert = describeTransition(before, timer)
     if (!alert || !settings) return
     setAnnouncement(`${alert.title}. ${alert.body}`)
+    // The "did you finish?" question has its own dialog; a finished round or break gets a toast.
+    if (timer === null || before?.client_id !== timer.client_id) notify.phaseEnded(alert)
     if (settings.sound_enabled) playChime(settings.volume)
     try {
       navigator.vibrate?.([200, 100, 200])

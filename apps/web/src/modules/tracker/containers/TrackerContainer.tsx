@@ -9,7 +9,6 @@ import { WeeklySummaryCard } from '../components/WeeklySummaryCard'
 import { useStopwatch } from '../hooks/useStopwatch'
 import { useChapterOptions, useSubjectOptions } from '../hooks/useTagOptions'
 import { useGoals, useSessionsPage, useToday, useTrackerSettings, useWeeklySummary } from '../hooks/useTrackerQueries'
-import { errorMessage } from '../lib/api'
 import { formatDuration } from '../lib/duration'
 import type { ActivityType } from '../lib/types'
 import { SessionFormDialog } from './SessionFormDialog'
@@ -63,7 +62,6 @@ function Today({ tz }: { tz: string }) {
     if (sw) timer.context.mutate(patch)
     else setPick((p) => ({ ...p, ...patch }))
   }
-  const startError = timer.start.error ?? timer.toggle.error ?? timer.stop.error
 
   return (
     <>
@@ -88,7 +86,6 @@ function Today({ tz }: { tz: string }) {
         onDiscard={() => timer.stop.mutate(false)}
         idlePending={!!sw?.idle_pending}
         onStillStudying={() => idle.mutate('still_studying')}
-        error={startError ? errorMessage(startError) : null}
       />
 
       {goals.data ? (
@@ -102,7 +99,7 @@ function Today({ tz }: { tz: string }) {
           <h2 id="today-heading" className="text-lg font-bold">
             Today
           </h2>
-          <Button size="sm" variant="outline" onClick={() => setAdding(true)}>
+          <Button variant="outline" onClick={() => setAdding(true)}>
             <Plus aria-hidden /> Add time
           </Button>
         </div>

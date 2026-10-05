@@ -1,3 +1,5 @@
+import { progressSentence } from '~/modules/coverage'
+
 export interface CoverageSnapshot {
   courseCode: string
   courseName: string
@@ -5,6 +7,7 @@ export interface CoverageSnapshot {
   levelName: string
   percent: number
   chaptersDone: number
+  chaptersStarted: number
   chaptersTotal: number
 }
 
@@ -30,7 +33,7 @@ export interface StudyPrompt {
 
 export function toSnapshot(overview: {
   enrollment: { course: { code: string; name: string }; level: { code: string; name: string } }
-  level: { pct_simple: number; chapters_done: number; chapters_total: number }
+  level: { pct_simple: number; chapters_done: number; chapters_started?: number; chapters_total: number }
 }): CoverageSnapshot {
   return {
     courseCode: overview.enrollment.course.code.toLowerCase(),
@@ -39,6 +42,7 @@ export function toSnapshot(overview: {
     levelName: overview.enrollment.level.name,
     percent: Math.round(overview.level.pct_simple),
     chaptersDone: overview.level.chapters_done,
+    chaptersStarted: overview.level.chapters_started ?? overview.level.chapters_done,
     chaptersTotal: overview.level.chapters_total,
   }
 }
@@ -51,19 +55,14 @@ const onboardingNext = (course?: string, level?: string) => {
   return query ? `/app/onboarding?${query}` : '/app/onboarding'
 }
 
-const chapterSentence = (s: CoverageSnapshot) => {
-  if (s.chaptersTotal === 0) return 'Your syllabus map is ready.'
-  if (s.chaptersDone >= s.chaptersTotal) return 'Every chapter is marked. Open your map to revise what is due.'
-  const left = s.chaptersTotal - s.chaptersDone
-  return `${s.chaptersDone} of ${s.chaptersTotal} chapters done. ${left} still to go.`
-}
+const chapterSentence = (s: CoverageSnapshot) => progressSentence(s)
 
 const continuePrompt = (s: CoverageSnapshot, label: string, body?: string): StudyPrompt => ({
-  title: `${s.percent}% of ${s.courseName} ${s.levelName}`,
+  title: `${s.courseName} ${s.levelName}`,
   body: body ?? chapterSentence(s),
   link: { to: '/app/syllabus', label },
   percent: s.percent,
-  progressLabel: `${s.courseName} ${s.levelName} coverage`,
+  progressLabel: 'Average progress across chapters',
 })
 
 const setupPrompt = (

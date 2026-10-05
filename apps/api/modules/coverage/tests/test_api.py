@@ -63,7 +63,13 @@ def test_enrol_creates_a_zero_percent_map(api, ids, enrolled):
     assert enrolled["scheme"]["code"] == "2023" and enrolled["target_term"]["code"] == "2027-05"
     assert ChapterProgress.objects.filter(enrollment_id=enrolled["id"]).count() == 4
     body = api.get("/coverage/overview/").json_body
-    assert body["level"] == {"pct_simple": 0, "pct_weighted": 0, "chapters_total": 4, "chapters_done": 0}
+    assert body["level"] == {
+        "pct_simple": 0,
+        "pct_weighted": 0,
+        "chapters_total": 4,
+        "chapters_done": 0,
+        "chapters_started": 0,
+    }
     assert [g["key"] for g in body["groups"]] == ["group-1", "group-2"]
     assert [s["key"] for s in body["subjects"]] == ["taxation", "corporate-laws"]
     assert body["subjects"][0]["chapters_total"] == 3 and body["due_count"] == 0
@@ -303,6 +309,11 @@ def test_excluding_a_whole_subject(api, ids, enrolled):
 
 
 def test_confidence_rating_is_stored_per_chapter(api, ids, enrolled):
+    for t in ids["topics"][:3]:  # 30% read: still locked
+        api.put(f"/coverage/topics/{t}/", {"done": True})
+    api.post("/coverage/events/", {"chapter_id": ids["gst"], "type": "practice_done"})  # 30 + 15 = 45%: locked
+    assert chapter(api, ids["gst"])["coverage_pct"] == 45
+    api.post("/coverage/events/", {"chapter_id": ids["gst"], "type": "practice_done"})  # 30 + 30 = 60%
     res = api.put(f"/coverage/chapters/{ids['gst']}/confidence/", {"confidence": "amber"})
     assert res.json_body["chapter"]["confidence"] == "amber"
     assert api.put(f"/coverage/chapters/{ids['gst']}/confidence/", {"confidence": "purple"}).status_code == 400

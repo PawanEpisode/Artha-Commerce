@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
 import { findLevel, LevelDetailContainer, loadCourse } from '~/modules/courses'
-import { breadcrumbJsonLd, buildHead, courseOgPath } from '~/modules/seo'
+import { levelHead } from '~/modules/seo'
 import { fetchLevel, ReportIssue, SubjectList, SyllabusMeta } from '~/modules/syllabus'
 
 export const Route = createFileRoute('/courses/$course/$level/')({
@@ -16,21 +16,7 @@ export const Route = createFileRoute('/courses/$course/$level/')({
   head: ({ loaderData }) => {
     if (!loaderData) return {}
     const { course, level, syllabus } = loaderData
-    const path = `/courses/${course.slug}/${level.slug}`
-    const count = syllabus ? syllabus.subjects.length : level.subjects.length
-    return buildHead({
-      title: `${course.name} ${level.name}: Papers and Preparation`,
-      description: `All ${count} papers of ${course.name} ${level.name}${syllabus ? ', with chapters and marks weightage' : ''}, plus study planning, mock tests and revision tools.`,
-      path,
-      image: courseOgPath(course.slug),
-      imageAlt: `${course.name} ${level.name} papers and preparation`,
-      jsonLd: breadcrumbJsonLd([
-        { name: 'Home', path: '/' },
-        { name: 'Courses', path: '/courses' },
-        { name: course.name, path: `/courses/${course.slug}` },
-        { name: level.name, path },
-      ]),
-    })
+    return levelHead(course, level, syllabus ? syllabus.subjects.length : level.subjects.length, Boolean(syllabus))
   },
   component: function LevelRoute() {
     const { course, level, syllabus } = Route.useLoaderData()

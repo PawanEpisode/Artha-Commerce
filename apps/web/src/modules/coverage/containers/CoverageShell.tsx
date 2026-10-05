@@ -38,37 +38,39 @@ export function CoverageShell({
   if (noEnrollment) return <Navigate to="/app/onboarding" replace />
 
   return (
-    <Container className="max-w-3xl space-y-6 py-10 sm:py-14">
+    <>
       {nav ? <CoverageNav dueCount={data?.due_count} /> : null}
-      {pending > 0 ? (
-        <Alert variant="info">
-          <span role="status">
-            {pending === 1 ? '1 change is' : `${pending} changes are`} saved on this device and will sync when you are
-            back online.
-          </span>
-        </Alert>
-      ) : null}
-      {isPending ? (
-        <div aria-busy="true" className="space-y-4">
-          <span className="sr-only" role="status">
-            Loading your coverage…
-          </span>
-          <Skeleton className="h-44 w-full" />
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-20 w-full" />
-        </div>
-      ) : isError || !data ? (
-        <Alert variant="error">
-          <span className="flex flex-wrap items-center gap-3">
-            We could not load your coverage.
-            <Button size="sm" variant="outline" onClick={() => void refetch()}>
-              Try again
-            </Button>
-          </span>
-        </Alert>
-      ) : (
-        children(data)
-      )}
-    </Container>
+      <Container className="max-w-3xl space-y-6 py-8 sm:py-12">
+        {pending > 0 ? (
+          <Alert variant="info">
+            <span role="status">
+              {pending === 1 ? '1 change is' : `${pending} changes are`} saved on this device and will sync when you are
+              back online.
+            </span>
+          </Alert>
+        ) : null}
+        {isPending ? (
+          <div aria-busy="true" className="space-y-4">
+            <span className="sr-only" role="status">
+              Loading your coverage…
+            </span>
+            <Skeleton className="h-44 w-full" />
+            <Skeleton className="h-20 w-full" />
+            <Skeleton className="h-20 w-full" />
+          </div>
+        ) : isError || !data ? (
+          <Alert variant="error">
+            <span className="flex flex-wrap items-center gap-3">
+              We could not load your coverage.
+              <Button size="sm" variant="outline" onClick={() => void refetch()}>
+                Try again
+              </Button>
+            </span>
+          </Alert>
+        ) : (
+          children(data)
+        )}
+      </Container>
+    </>
   )
 }

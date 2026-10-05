@@ -5,6 +5,7 @@ import { useSubjectOptions } from '../hooks/useTagOptions'
 import { useSessionsPage, useTrackerSettings } from '../hooks/useTrackerQueries'
 import { downloadCsv } from '../lib/api'
 import { dayLabel } from '../lib/format'
+import { notify } from '../lib/notify'
 import { SessionsPanel } from './SessionsPanel'
 import { TrackerShell } from './TrackerShell'
 
@@ -31,9 +32,13 @@ function Log({ tz }: { tz: string }) {
           <p className="text-muted-foreground">Every session, newest first.</p>
         </div>
         <Button
-          size="sm"
           variant="outline"
-          onClick={() => void downloadCsv('/tracking/sessions/export.csv', { ...filters }, 'study-sessions.csv')}
+          onClick={() => {
+            notify.exportStarted('sessions CSV')
+            void downloadCsv('/tracking/sessions/export.csv', { ...filters }, 'study-sessions.csv')
+              .then(() => notify.exportFinished('sessions CSV'))
+              .catch((e: unknown) => notify.error(e, 'Could not download your sessions.'))
+          }}
         >
           <Download aria-hidden /> Download CSV
         </Button>

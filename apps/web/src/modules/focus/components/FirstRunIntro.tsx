@@ -14,9 +14,7 @@ export function FirstRunIntro({ onDismiss }: { onDismiss: () => void }) {
             Shortcuts: <Kbd>Space</Kbd> start or pause, <Kbd>S</Kbd> skip a break, <Kbd>E</Kbd> end a round early.
           </li>
         </ul>
-        <Button size="sm" onClick={onDismiss}>
-          Got it
-        </Button>
+        <Button onClick={onDismiss}>Got it</Button>
       </CardContent>
     </Card>
   )

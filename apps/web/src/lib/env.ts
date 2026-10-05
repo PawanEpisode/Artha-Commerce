@@ -1,11 +1,14 @@
 import { z } from 'zod'
 
+import { resolveSiteUrl } from './site-url'
+
 /**
  * Typed, validated access to public (browser-safe) environment variables.
  * Every VITE_* variable the app reads must be declared here: one place, one contract.
  */
 const schema = z.object({
-  VITE_SITE_URL: z.string().url().default('http://localhost:3000'),
+  /** Public origin. Normalised by `resolveSiteUrl`, so a stray path or a missing value cannot break link previews. */
+  VITE_SITE_URL: z.string().optional(),
   VITE_SITE_NAME: z.string().default('ArthaCommerce'),
   VITE_SUPABASE_URL: z.string().optional(),
   VITE_SUPABASE_ANON_KEY: z.string().optional(),
@@ -24,4 +27,5 @@ if (!parsed.success) {
 
 export const env = parsed.success ? parsed.data : schema.parse({})
 
-export const siteUrl = env.VITE_SITE_URL.replace(/\/$/, '')
+/** Bare origin of the public site (https://host, no trailing slash). Build every absolute URL from this. */
+export const siteUrl = resolveSiteUrl(env.VITE_SITE_URL, import.meta.env.PROD)

@@ -32,6 +32,7 @@ docs/product/
 | F-14 | Amendments | [PRD](prd/F-14-amendments.md) | [ERD](erd/F-14-amendments.md) | `amendments` | Written |
 | F-15 | Recall system (spaced repetition) | [PRD](prd/F-15-recall-system.md) | [ERD](erd/F-15-recall-system.md) | `recall` | Written |
 | F-03 | Notes + PDF editor | [PRD](prd/F-03-notes-and-pdf-editor.md) | [ERD](erd/F-03-notes-and-pdf-editor.md) | `notes` | Written |
+| F-16 | Personalization, onboarding, profile, workspace home | [PRD](prd/F-16-personalization-onboarding-profile.md) | [ERD](erd/F-16-personalization-onboarding-profile.md) | `profiles` (extended), `coverage` (additive), web `personalization` | Written, build next |
 | X-01, X-02, X-03 | Notifications, context agent, gamification | not written | not written | `notifications` (proposed) | Next |
 
 Validation: [F-02 / F-01 implementation audit](validation/F-02-F-01-implementation-audit-2026-10-05.md) (0 blockers, 7 major, 17 minor, 3 nits; 464 backend tests pass).
@@ -68,6 +69,7 @@ The rule that keeps it modular: **one owner per concept**. Questions and attempt
 | Wave | Build | Why now |
 | --- | --- | --- |
 | 0 | Fix audit Majors AUD-001/002/003/004/005/006, then the shared platform: `core/events` outbox, `core/jobs` queue + worker, `media`, central account-deletion registry, cached flag lookups | Everything after depends on these; the audit found concurrency and layering gaps that would multiply |
+| 0b | **F-16 S1 to S5 (then S6 to S14)**: enforce targets and the 50% confidence gate (bug fixes), duration inputs, toast system, profile bootstrap and account erasure registry, then avatar, onboarding, gate, last visit, workspace home | Everything after personalises from it (course, attempt, daily time, targets); fixes the "2 of 1 tests" and "25% with 0 chapters" defects; closes AUD-004 for every later module |
 | 1 | F-06 R1, then F-05 R1, then F-09 R1 (structure and link-out first) | The practice loop (answer, score, mistake, event) is the product's core; unlocks five pointers |
 | 2 | F-10 R1, F-13 R1, F-15 R1, and write X-01 PRD/ERD (in-app inbox first) | Daily habit: Today pulls from coverage, MCQ sets and recall; analytics makes progress visible |
 | 3 | F-03 R1, F-08 R1, X-04 engine, then F-14 and F-12 | Study content and ingestion; amendments and MAT ride on the X-04 publisher |
@@ -99,4 +101,6 @@ Authors worked in parallel, so a few interfaces are described from both sides sl
 | F-06 extensions | F-05, F-07, F-08, F-09, F-10, F-11, F-12, F-03 each propose small additive F-06 extensions (E1..En lists) | Review once as a single "F-06 R2 extensions" batch before slicing |
 | F-02 extensions | Selectors and events requested by F-03, F-08, F-10, F-11, F-12, F-13, F-14 | Add one `syllabus.selectors` / `coverage.selectors` read interface (also fixes audit AUD-005) |
 | X-04 rights ledger | F-04 proposes `ingestion_sourcerights` and `capabilities`; F-12 and F-14 reuse it | Add to X-04 ERD when X-04 is sliced |
+| Account erasure and export registry | F-06, F-10, F-12 call it `[PROPOSED: profiles]`; audit AUD-004 | F-16 owns it: `profiles.registry.register_eraser` / `register_exporter`, `DELETE /me/`, `GET /me/export/` (F-16 ERD section 3). Modules register once when F-16 S5 ships |
+| Per-chapter targets and daily time | F-02 stores targets on `syllabus_chapter` and `daily_hours` on the enrolment | F-16 moves targets to the student (`coverage_settings.target_*`) and adds `daily_minutes`; F-02 ERD columns stay, unused for coverage |
 | X-01 `notifications.services.notify` | Referenced as `[PROPOSED]` by all docs (34 mentions) | Write X-01 PRD/ERD next |

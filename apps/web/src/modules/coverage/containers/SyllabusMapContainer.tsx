@@ -1,4 +1,4 @@
-import { Button, Card, ChevronRight } from '@artha/design-system'
+import { ArrowLeft, Badge, Button } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 
 import { ReportIssue } from '~/modules/syllabus'
@@ -40,6 +40,7 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
         enrollment={overview.enrollment}
         percent={pick(overview.level, weighted)}
         chaptersDone={overview.level.chapters_done}
+        chaptersStarted={overview.level.chapters_started}
         chaptersTotal={overview.level.chapters_total}
         weighted={weighted}
         onWeightedChange={(w) =>
@@ -54,9 +55,9 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
             <h2 id="due-heading" className="font-display text-xl font-bold">
               Due for revision
             </h2>
-            <Button variant="link" asChild>
+            <Button variant="outline" asChild>
               <Link to="/app/syllabus" search={(prev) => ({ ...prev, status: undefined })}>
-                Show all papers
+                <ArrowLeft aria-hidden /> Show all papers
               </Link>
             </Button>
           </div>
@@ -65,12 +66,13 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
       ) : (
         <>
           {overview.due_count > 0 ? (
-            <Card className="focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
-              <Link to="/app/revision" className="flex items-center gap-3 rounded-xl p-4 outline-none">
-                <span className="flex-1 font-semibold">Due for revision ({overview.due_count})</span>
-                <ChevronRight aria-hidden className="size-5 text-muted-foreground" />
+            <Button variant="secondary" size="lg" arrow fullWidth className="justify-between" asChild>
+              <Link to="/app/revision">
+                <span className="flex items-center gap-2">
+                  Revise what is due <Badge variant="highlight">{overview.due_count}</Badge>
+                </span>
               </Link>
-            </Card>
+            </Button>
           ) : null}
           <SubjectProgressList
             groups={overview.groups}
@@ -83,7 +85,6 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
             <ElectivePicker
               slots={overview.electives}
               pending={setElectives.isPending}
-              error={setElectives.isError ? 'We could not save your elective. Please try again.' : undefined}
               onChange={(slotKey, subjectId) =>
                 setElectives.mutate({ enrollmentId: overview.enrollment.id, choices: { [slotKey]: subjectId } })
               }

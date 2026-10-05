@@ -23,6 +23,7 @@ import { toChartModel } from '../lib/chartData'
 import { addDays, formatDuration } from '../lib/duration'
 import { dayLabel, WEEKDAYS_MON, WEEKDAYS_SUN } from '../lib/format'
 import { heatCells } from '../lib/heatmap'
+import { notify } from '../lib/notify'
 import { defaultGroup, presetRange, type RangePreset, rangeProblem } from '../lib/range'
 import type { SplitBy } from '../lib/types'
 import { TrackerShell } from './TrackerShell'
@@ -129,7 +130,10 @@ function Reports({ search, tz, weekStart }: { search: ReportsSearch; tz: string;
         exporting={false}
         onExport={() => {
           track('report_exported', { range: search.range })
+          notify.exportStarted('report CSV')
           void downloadCsv('/tracking/reports/export.csv', { ...params, by: 'subject' }, 'study-report.csv')
+            .then(() => notify.exportFinished('report CSV'))
+            .catch((e: unknown) => notify.error(e, 'Could not download the report.'))
         }}
       />
 

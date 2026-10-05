@@ -1,4 +1,4 @@
-import { Alert, Button, Card, CardContent, cn, Pause, Play, Square, Timer } from '@artha/design-system'
+import { Alert, Button, Card, CardContent, cn, Pause, Play, Square, StudyTimeIcon } from '@artha/design-system'
 
 import { formatClock, spokenDuration } from '../lib/duration'
 import { otherLiveLabel } from '../lib/live'
@@ -38,7 +38,7 @@ export function StopwatchCard(props: Props) {
       <CardContent className="space-y-5 p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="flex items-center gap-2 text-lg font-bold">
-            <Timer className="size-5 text-primary" aria-hidden /> Stopwatch
+            <StudyTimeIcon className="size-5 text-primary" aria-hidden /> Stopwatch
           </h2>
           {sw ? (
             <span className="text-sm font-medium text-muted-foreground">{running ? 'Running' : 'Paused'}</span>
@@ -67,9 +67,7 @@ export function StopwatchCard(props: Props) {
           <Alert variant="info">
             <span role="alert" className="flex flex-wrap items-center gap-3">
               Still studying? The timer pauses on its own if you do not answer.
-              <Button size="sm" onClick={props.onStillStudying}>
-                Yes, still studying
-              </Button>
+              <Button onClick={props.onStillStudying}>Yes, still studying</Button>
             </span>
           </Alert>
         ) : null}
@@ -97,6 +95,7 @@ export function StopwatchCard(props: Props) {
           {!sw ? (
             <Button
               size="lg"
+              variant="cta"
               onClick={props.onStart}
               disabled={startDisabled}
               aria-describedby={needsContext && !otherLive ? 'stopwatch-needs-context' : undefined}
@@ -117,7 +116,7 @@ export function StopwatchCard(props: Props) {
               <Button size="lg" onClick={props.onStop} disabled={busy}>
                 <Square aria-hidden /> Stop and save
               </Button>
-              <Button size="lg" variant="ghost" onClick={props.onDiscard} disabled={busy}>
+              <Button size="lg" variant="outline" onClick={props.onDiscard} disabled={busy}>
                 Discard
               </Button>
             </>

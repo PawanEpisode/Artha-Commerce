@@ -24,7 +24,7 @@ export function ReportToolbar({ preset, range, onPreset, onCustom, problem, onEx
           onValueChange={onPreset}
           options={RANGE_PRESETS.map((p) => ({ value: p, label: PRESET_LABELS[p] }))}
         />
-        <Button variant="outline" size="sm" onClick={onExport} disabled={exporting}>
+        <Button variant="outline" onClick={onExport} disabled={exporting}>
           <Download aria-hidden /> Download CSV
         </Button>
       </div>

@@ -17,6 +17,8 @@ export interface QueuedWrite {
   path: string
   body: Record<string, unknown>
   queuedAt: number
+  /** Human name of what the write is about (a chapter), only for messages such as "Skipped a mock test for X". */
+  label?: string
 }
 
 const DB_NAME = 'artha-coverage'
@@ -125,14 +127,25 @@ const attempts = new Map<string, number>()
  * Replays the user's queued writes in the order they were made, using the original client ids. Stops at the first
  * transient failure so the order is kept. Concurrent callers share one run.
  */
-export function flush(userId: string, send: (entry: QueuedWrite) => Promise<unknown>): Promise<FlushResult> {
-  flushing ??= run(userId, send).finally(() => {
+export function flush(
+  userId: string,
+  send: (entry: QueuedWrite) => Promise<unknown>,
+  onDropped?: DroppedHandler,
+): Promise<FlushResult> {
+  flushing ??= run(userId, send, onDropped).finally(() => {
     flushing = undefined
   })
   return flushing
 }
 
-async function run(userId: string, send: (entry: QueuedWrite) => Promise<unknown>): Promise<FlushResult> {
+/** Called for every write the server rejected for good, so the screen can say why (for example target reached). */
+export type DroppedHandler = (entry: QueuedWrite, error: unknown) => void
+
+async function run(
+  userId: string,
+  send: (entry: QueuedWrite) => Promise<unknown>,
+  onDropped?: DroppedHandler,
+): Promise<FlushResult> {
   const result: FlushResult = { sent: 0, dropped: 0, remaining: 0 }
   const rows = await pending(userId)
   for (const [index, entry] of rows.entries()) {
@@ -154,6 +167,7 @@ async function run(userId: string, send: (entry: QueuedWrite) => Promise<unknown
       await guarded((b) => b.remove(entry.clientId))
       attempts.delete(entry.clientId)
       result.dropped += 1
+      onDropped?.(entry, error)
     }
   }
   return result

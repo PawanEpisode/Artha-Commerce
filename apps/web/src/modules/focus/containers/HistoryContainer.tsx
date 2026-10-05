@@ -30,7 +30,11 @@ function Body({ date, tz, defaultActivity }: { date?: string; tz: string; defaul
           onChange={(e) => void navigate({ to: '/app/focus/history', search: { date: e.target.value || undefined } })}
         />
         {date ? (
-          <Button type="button" variant="ghost" onClick={() => void navigate({ to: '/app/focus/history', search: {} })}>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => void navigate({ to: '/app/focus/history', search: {} })}
+          >
             Show all days
           </Button>
         ) : null}
