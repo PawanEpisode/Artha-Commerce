@@ -13,7 +13,8 @@ interface AuthState {
   loading: boolean
   configured: boolean
   signInWithGoogle: (next?: string) => Promise<void>
-  signOut: () => Promise<void>
+  /** `silent` skips the "Signed out" toast and ignores a server that no longer knows the student (account deleted). */
+  signOut: (options?: { silent?: boolean }) => Promise<void>
 }
 
 const AuthContext = createContext<AuthState | null>(null)
@@ -48,7 +49,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           options: { redirectTo: callbackUrl(window.location.origin, next) },
         })
       },
-      async signOut() {
+      async signOut(options) {
+        if (options?.silent) {
+          await getSupabase()
+            ?.auth.signOut({ scope: 'local' })
+            .catch(() => undefined)
+          return
+        }
         const { error } = (await getSupabase()?.auth.signOut()) ?? {}
         if (error) notify.failed(error, 'We could not sign you out. Please try again.')
         else notify.signedOut()

@@ -33,7 +33,14 @@ function Section({ title, description, children }: { title: string; description:
 
 /**
  * /app/account: change email, change password (with emailed code when the server asks for it), appearance, sign out. */
-export function AccountContainer({ profileSlot }: { profileSlot?: React.ReactNode }) {
+export function AccountContainer({
+  profileSlot,
+  dataSlot,
+}: {
+  profileSlot?: React.ReactNode
+  /** Supplied by the route (personalization): export and delete. Auth does not import it. */
+  dataSlot?: React.ReactNode
+}) {
   const { user, signOut } = useAuth()
 
   const emailChange = useAsyncAction()
@@ -134,6 +141,8 @@ export function AccountContainer({ profileSlot }: { profileSlot?: React.ReactNod
           />
         )}
       </Section>
+
+      {dataSlot}
 
       <Section title="Session" description="Sign out on this device.">
         <Button variant="outline" onClick={() => void signOut()}>

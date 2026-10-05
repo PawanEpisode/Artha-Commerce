@@ -1,4 +1,5 @@
 export { AuthPage } from './components/AuthPage'
+export { ReauthPrompt } from './components/ReauthPrompt'
 export { AccountContainer } from './containers/AccountContainer'
 export { ConfirmContainer } from './containers/ConfirmContainer'
 export { ForgotPasswordContainer } from './containers/ForgotPasswordContainer'

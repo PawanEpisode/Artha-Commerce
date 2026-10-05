@@ -17,6 +17,8 @@ export const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/70',
         outline: 'border border-input bg-card text-foreground hover:bg-muted',
         ghost: 'text-foreground hover:bg-muted',
+        /** Irreversible actions (delete account). Outlined, so the destructive text colour keeps its checked contrast in every theme. */
+        danger: 'border border-destructive bg-card text-destructive hover:bg-destructive/10',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {

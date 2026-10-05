@@ -1,4 +1,5 @@
 export { IdentityAvatar } from './components/IdentityAvatar'
+export { DataSection } from './containers/DataSection'
 export { LastVisitReporter } from './containers/LastVisitReporter'
 export { OnboardingContainer, type OnboardingSearch } from './containers/OnboardingContainer'
 export { PersonalizedPostAuth } from './containers/PersonalizedPostAuth'

@@ -33,8 +33,10 @@ export async function uploadAvatar(
   return avatarSchema.parse(await apiUpload<unknown>('/me/avatar/', form, options))
 }
 
+/** The student's data as the API holds it (profile, onboarding, last visit and every module). Shape is the server's. */
 export const exportAccount = () => api<unknown>('/me/export/')
 
+/** `confirm` is the typed word. A recent sign-in is required; the server says so with `reauth_required`. */
 export const deleteAccount = (confirm: string) => api<void>('/me/', { method: 'DELETE', body: json({ confirm }) })
 
 export const getOnboarding = async (): Promise<OnboardingState> =>
