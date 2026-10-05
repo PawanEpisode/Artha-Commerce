@@ -38,6 +38,18 @@ def allowed_hosts() -> list[str]:
 
 ALLOWED_HOSTS = allowed_hosts()
 
+
+def csrf_trusted_origins() -> list[str]:
+    """Origins allowed to POST to the admin. Includes the Vercel production domain."""
+    origins = env_list("CSRF_TRUSTED_ORIGINS")
+    production = env("VERCEL_PROJECT_PRODUCTION_URL").strip().split("/")[0]
+    if production:
+        origin = f"https://{production}"
+        if origin not in origins:
+            origins.append(origin)
+    return origins
+
+
 INSTALLED_APPS = [
     "django.contrib.admin",  # staff-only content admin at /<DJANGO_ADMIN_PATH> (not used by students)
     "django.contrib.contenttypes",
@@ -85,7 +97,7 @@ ADMIN_PATH = env("DJANGO_ADMIN_PATH", "admin").strip("/") + "/"
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 WHITENOISE_USE_FINDERS = True  # serve straight from the installed apps: nothing to build or deploy
-CSRF_TRUSTED_ORIGINS = env_list("CSRF_TRUSTED_ORIGINS")  # e.g. https://api.yourdomain.com
+CSRF_TRUSTED_ORIGINS = csrf_trusted_origins()
 
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"

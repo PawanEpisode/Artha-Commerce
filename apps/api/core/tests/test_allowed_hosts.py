@@ -1,4 +1,4 @@
-from config.settings import allowed_hosts
+from config.settings import allowed_hosts, csrf_trusted_origins
 
 
 def test_production_domain_is_allowed_alongside_vercel(monkeypatch):
@@ -10,6 +10,13 @@ def test_production_domain_is_allowed_alongside_vercel(monkeypatch):
     assert "api.example.com" in hosts
     assert ".vercel.app" in hosts
     assert "localhost" in hosts
+
+
+def test_production_origin_is_trusted_for_admin_login(monkeypatch):
+    monkeypatch.setenv("CSRF_TRUSTED_ORIGINS", "")
+    monkeypatch.setenv("VERCEL_PROJECT_PRODUCTION_URL", "arthacommerce-api.meetpawan.com")
+
+    assert csrf_trusted_origins() == ["https://arthacommerce-api.meetpawan.com"]
 
 
 def test_blank_production_url_is_ignored(monkeypatch):

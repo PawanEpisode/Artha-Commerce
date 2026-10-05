@@ -201,7 +201,7 @@ Check **Table Editor**: you should see `profiles` (RLS enabled).
 5. **Deploy**. Then open `https://<api-url>/api/v1/health/ready/`. Expect `{"status":"ok","database":"up"}`.
 6. **Settings -> Domains**: add `api.yourdomain.com` and follow the DNS instructions.
 
-> Vercel Python reads `apps/api/requirements.txt` and `.python-version` (3.12). The entrypoint is `apps/api/api/index.py`.
+> Vercel Python reads `apps/api/requirements.txt` and `.python-version` (3.12). It serves `config/wsgi.py`. Do not rewrite every path to `/api/index`: that makes `/admin/` and `/api/v1/` both 404.
 
 ---
 
