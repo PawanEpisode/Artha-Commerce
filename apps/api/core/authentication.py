@@ -24,6 +24,22 @@ class SupabaseUser:
         return self.id
 
 
+REAUTH_MAX_AGE_SECONDS = 600
+
+
+def recent_authentication(claims: dict[str, Any], *, now: float, max_age: int = REAUTH_MAX_AGE_SECONDS) -> bool:
+    """
+    True when the token proves the student authenticated (password, magic link or emailed code) within `max_age`
+    seconds. Supabase lists every method used for the session in `amr` with a timestamp; a refresh keeps the original
+    entries, so only a real sign-in or the reauthentication code makes this true. `[VERIFY]` against production tokens.
+    """
+    for entry in claims.get("amr") or []:
+        stamp = entry.get("timestamp") if isinstance(entry, dict) else None
+        if isinstance(stamp, (int, float)) and 0 <= now - stamp <= max_age:
+            return True
+    return False
+
+
 @lru_cache(maxsize=1)
 def _jwks_client() -> jwt.PyJWKClient:
     return jwt.PyJWKClient(f"{settings.SUPABASE_URL}/auth/v1/.well-known/jwks.json", cache_keys=True, lifespan=3600)
