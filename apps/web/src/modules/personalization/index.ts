@@ -1,4 +1,5 @@
 export { IdentityAvatar } from './components/IdentityAvatar'
+export { OnboardingContainer, type OnboardingSearch } from './containers/OnboardingContainer'
 export { ProfileSection } from './containers/ProfileSection'
 export { useBootstrap } from './hooks/useBootstrap'
 export type { Avatar, Bootstrap, CourseSummary, OnboardingStatus, OnboardingSummary } from './lib/types'

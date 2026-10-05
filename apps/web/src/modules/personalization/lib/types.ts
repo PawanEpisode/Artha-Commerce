@@ -49,3 +49,17 @@ export type OnboardingSummary = z.infer<typeof onboardingSchema>
 export type OnboardingStatus = z.infer<typeof onboardingStatusSchema>
 export type CourseSummary = z.infer<typeof courseSummarySchema>
 export type Bootstrap = z.infer<typeof bootstrapSchema>
+
+export const stepStateSchema = z.object({
+  key: z.string(),
+  state: z.enum(['todo', 'done', 'skipped', 'unavailable']),
+  mandatory: z.boolean(),
+  available: z.boolean(),
+})
+
+/** `GET /me/onboarding/` and every step write: the summary plus the step list. */
+export const onboardingStateSchema = onboardingSchema.extend({ steps: z.array(stepStateSchema) })
+export type OnboardingState = z.infer<typeof onboardingStateSchema>
+
+export const completionSchema = z.object({ state: onboardingStateSchema, destination: z.string() })
+export type Completion = z.infer<typeof completionSchema>

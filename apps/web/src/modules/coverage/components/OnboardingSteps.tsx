@@ -83,16 +83,20 @@ interface TermProps {
   terms: ExamTerm[]
   termId: string
   examDate: string
-  dailyHours: string
+  /** Optional: the personalised flow asks for study time in its own step, so it leaves these two out. */
+  dailyHours?: string
   pending: boolean
   /** True when the next step is the elective choice, so this one only continues. */
   hasElectives?: boolean
   error?: string
   onTerm: (id: string) => void
   onExamDate: (v: string) => void
-  onDailyHours: (v: string) => void
-  onBack: () => void
+  onDailyHours?: (v: string) => void
+  /** Without it there is no Back button (the step is the first of its screen). */
+  onBack?: () => void
   onSubmit: () => void
+  /** Overrides the button text. */
+  submitLabel?: string
 }
 
 /** Step 2: exam attempt, optional exact date, optional daily study hours. */
@@ -109,8 +113,9 @@ export function TermStep({
   onDailyHours,
   onBack,
   onSubmit,
+  submitLabel,
 }: TermProps) {
-  const hours = dailyHours.trim() === '' ? null : Number(dailyHours)
+  const hours = dailyHours === undefined || dailyHours.trim() === '' ? null : Number(dailyHours)
   const hoursError =
     hours !== null && (!Number.isFinite(hours) || hours < 0.5 || hours > 24)
       ? 'Enter hours between 0.5 and 24.'
@@ -137,22 +142,26 @@ export function TermStep({
         onChange={(e) => onExamDate(e.target.value)}
         hint="Use this if you know your exact paper dates."
       />
-      <TextField
-        label="Study hours per day (optional)"
-        inputMode="decimal"
-        value={dailyHours}
-        onChange={(e) => onDailyHours(e.target.value)}
-        error={hoursError}
-        hint="Helps plan your preparation later."
-      />
+      {onDailyHours ? (
+        <TextField
+          label="Study hours per day (optional)"
+          inputMode="decimal"
+          value={dailyHours ?? ''}
+          onChange={(e) => onDailyHours(e.target.value)}
+          error={hoursError}
+          hint="Helps plan your preparation later."
+        />
+      ) : null}
       {error ? <Alert variant="error">{error}</Alert> : null}
       <div className="flex flex-wrap gap-3">
-        <Button type="button" variant="outline" onClick={onBack}>
-          Back
-        </Button>
+        {onBack ? (
+          <Button type="button" variant="outline" onClick={onBack}>
+            Back
+          </Button>
+        ) : null}
         <Button type="submit" size="lg" disabled={pending || Boolean(hoursError)}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
-          {hasElectives ? 'Continue' : 'Create my syllabus map'}
+          {submitLabel ?? (hasElectives ? 'Continue' : 'Create my syllabus map')}
         </Button>
       </div>
     </form>
@@ -165,12 +174,22 @@ interface ElectiveStepProps {
   pending: boolean
   error?: string
   onChoose: (slotKey: string, subjectId: string | null) => void
-  onBack: () => void
+  onBack?: () => void
   onSubmit: () => void
+  submitLabel?: string
 }
 
 /** Step 3 (only for levels with elective papers): pick the elective you will sit, or decide later. */
-export function ElectiveStep({ slots, choices, pending, error, onChoose, onBack, onSubmit }: ElectiveStepProps) {
+export function ElectiveStep({
+  slots,
+  choices,
+  pending,
+  error,
+  onChoose,
+  onBack,
+  onSubmit,
+  submitLabel = 'Create my syllabus map',
+}: ElectiveStepProps) {
   return (
     <div className="space-y-6">
       <p className="text-muted-foreground">
@@ -188,12 +207,14 @@ export function ElectiveStep({ slots, choices, pending, error, onChoose, onBack,
       ))}
       {error ? <Alert variant="error">{error}</Alert> : null}
       <div className="flex flex-wrap gap-3">
-        <Button type="button" variant="outline" onClick={onBack} disabled={pending}>
-          Back
-        </Button>
+        {onBack ? (
+          <Button type="button" variant="outline" onClick={onBack} disabled={pending}>
+            Back
+          </Button>
+        ) : null}
         <Button size="lg" onClick={onSubmit} disabled={pending}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
-          Create my syllabus map
+          {submitLabel}
         </Button>
       </div>
     </div>

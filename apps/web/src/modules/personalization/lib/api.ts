@@ -1,6 +1,15 @@
 import { api, apiUpload } from '~/lib/api'
 
-import { type Avatar, avatarSchema, type Bootstrap, bootstrapSchema } from './types'
+import {
+  type Avatar,
+  avatarSchema,
+  type Bootstrap,
+  bootstrapSchema,
+  type Completion,
+  completionSchema,
+  type OnboardingState,
+  onboardingStateSchema,
+} from './types'
 
 const json = (body: unknown) => JSON.stringify(body)
 
@@ -27,3 +36,15 @@ export async function uploadAvatar(
 export const exportAccount = () => api<unknown>('/me/export/')
 
 export const deleteAccount = (confirm: string) => api<void>('/me/', { method: 'DELETE', body: json({ confirm }) })
+
+export const getOnboarding = async (): Promise<OnboardingState> =>
+  onboardingStateSchema.parse(await api<unknown>('/me/onboarding/'))
+
+export const putStep = async (key: string, body: unknown): Promise<OnboardingState> =>
+  onboardingStateSchema.parse(await api<unknown>(`/me/onboarding/steps/${key}/`, { method: 'PUT', body: json(body) }))
+
+export const skipStep = async (key: string): Promise<OnboardingState> =>
+  onboardingStateSchema.parse(await api<unknown>(`/me/onboarding/steps/${key}/skip/`, { method: 'POST', body: '{}' }))
+
+export const completeOnboarding = async (): Promise<Completion> =>
+  completionSchema.parse(await api<unknown>('/me/onboarding/complete/', { method: 'POST', body: '{}' }))
