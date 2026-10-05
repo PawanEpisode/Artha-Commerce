@@ -79,6 +79,7 @@ export interface TrackerSettings {
   week_start: 0 | 1
   default_activity_type: ActivityType
   tz: string
+  auto_capture_enabled: boolean
 }
 
 export interface GoalEntry {

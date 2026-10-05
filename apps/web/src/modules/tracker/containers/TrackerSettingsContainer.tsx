@@ -18,6 +18,7 @@ function SettingsForm() {
   const [weekStart, setWeekStart] = useState<'0' | '1'>('1')
   const [activity, setActivity] = useState<ActivityType>('other')
   const [tz, setTz] = useState('')
+  const [auto, setAuto] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [confirmDelete, setConfirmDelete] = useState(false)
 
@@ -28,6 +29,7 @@ function SettingsForm() {
     setWeekStart(String(s.week_start) as '0' | '1')
     setActivity(s.default_activity_type)
     setTz(s.tz)
+    setAuto(s.auto_capture_enabled)
   }, [s])
 
   const submit = () => {
@@ -43,6 +45,7 @@ function SettingsForm() {
         week_start: Number(weekStart) as 0 | 1,
         default_activity_type: activity,
         tz,
+        auto_capture_enabled: auto,
       },
       { onSuccess: () => toast.show({ message: 'Settings saved.' }), onError: (e) => setError(errorMessage(e)) },
     )
@@ -110,6 +113,20 @@ function SettingsForm() {
           onChange={(e) => setTz(e.target.value)}
           hint="An IANA name, for example Asia/Kolkata. Days and reports follow this zone."
         />
+        <div className="space-y-2 rounded-xl border border-border p-4">
+          <div className="flex items-center gap-3">
+            <Switch id="auto-capture" checked={auto} onCheckedChange={setAuto} />
+            <label htmlFor="auto-capture" className="text-sm font-medium">
+              Log time on syllabus chapter pages automatically
+            </label>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Off by default. When on, while a chapter page is open, visible and in use, we save that time as study time
+            (up to 4 hours a day). We store only the chapter, the start time and the length. We never read what is on
+            your screen, and a running timer or time you logged yourself always comes first. You can edit or delete any
+            of it in the log, and switching this off stops it straight away.
+          </p>
+        </div>
         {error ? (
           <Alert variant="error">
             <span role="alert">{error}</span>

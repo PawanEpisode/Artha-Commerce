@@ -27,7 +27,10 @@ import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-passw
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
+import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
+import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
+import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
 import { Route as AppTrackerIndexRouteImport } from './routes/app.tracker.index'
@@ -134,9 +137,24 @@ const FeaturesSlugRoute = FeaturesSlugRouteImport.update({
   path: '/features/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppFocusIndexRoute = AppFocusIndexRouteImport.update({
+  id: '/focus/',
+  path: '/focus/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFocusHistoryRoute = AppFocusHistoryRouteImport.update({
+  id: '/focus/history',
+  path: '/focus/history',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   id: '/settings/coverage',
   path: '/settings/coverage',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsFocusRoute = AppSettingsFocusRouteImport.update({
+  id: '/settings/focus',
+  path: '/settings/focus',
   getParentRoute: () => AppRoute,
 } as any)
 const AppSettingsTrackerRoute = AppSettingsTrackerRouteImport.update({
@@ -238,12 +256,15 @@ export interface FileRoutesByFullPath {
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
+  '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/focus/': typeof AppFocusIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
@@ -273,12 +294,15 @@ export interface FileRoutesByTo {
   '/app': typeof AppIndexRoute
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
+  '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/focus': typeof AppFocusIndexRoute
   '/app/syllabus': typeof AppSyllabusIndexRoute
   '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
@@ -310,12 +334,15 @@ export interface FileRoutesById {
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
+  '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
+  '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/focus/': typeof AppFocusIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
@@ -348,12 +375,15 @@ export interface FileRouteTypes {
     | '/app/'
     | '/courses/'
     | '/features/'
+    | '/app/focus/history'
     | '/app/settings/coverage'
+    | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/focus/'
     | '/app/syllabus/'
     | '/app/tracker/'
     | '/courses/$course/'
@@ -383,12 +413,15 @@ export interface FileRouteTypes {
     | '/app'
     | '/courses'
     | '/features'
+    | '/app/focus/history'
     | '/app/settings/coverage'
+    | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/focus'
     | '/app/syllabus'
     | '/app/tracker'
     | '/courses/$course'
@@ -419,12 +452,15 @@ export interface FileRouteTypes {
     | '/app/'
     | '/courses/'
     | '/features/'
+    | '/app/focus/history'
     | '/app/settings/coverage'
+    | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/focus/'
     | '/app/syllabus/'
     | '/app/tracker/'
     | '/courses/$course/'
@@ -587,11 +623,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeaturesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/focus/': {
+      id: '/app/focus/'
+      path: '/focus'
+      fullPath: '/app/focus/'
+      preLoaderRoute: typeof AppFocusIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/focus/history': {
+      id: '/app/focus/history'
+      path: '/focus/history'
+      fullPath: '/app/focus/history'
+      preLoaderRoute: typeof AppFocusHistoryRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/coverage': {
       id: '/app/settings/coverage'
       path: '/settings/coverage'
       fullPath: '/app/settings/coverage'
       preLoaderRoute: typeof AppSettingsCoverageRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings/focus': {
+      id: '/app/settings/focus'
+      path: '/settings/focus'
+      fullPath: '/app/settings/focus'
+      preLoaderRoute: typeof AppSettingsFocusRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/settings/tracker': {
@@ -707,11 +764,14 @@ interface AppRouteChildren {
   AppOnboardingRoute: typeof AppOnboardingRoute
   AppRevisionRoute: typeof AppRevisionRoute
   AppIndexRoute: typeof AppIndexRoute
+  AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
+  AppSettingsFocusRoute: typeof AppSettingsFocusRoute
   AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
+  AppFocusIndexRoute: typeof AppFocusIndexRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
@@ -724,11 +784,14 @@ const AppRouteChildren: AppRouteChildren = {
   AppOnboardingRoute: AppOnboardingRoute,
   AppRevisionRoute: AppRevisionRoute,
   AppIndexRoute: AppIndexRoute,
+  AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
+  AppSettingsFocusRoute: AppSettingsFocusRoute,
   AppSettingsTrackerRoute: AppSettingsTrackerRoute,
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,
   AppTrackerReportsRoute: AppTrackerReportsRoute,
+  AppFocusIndexRoute: AppFocusIndexRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
   AppTrackerIndexRoute: AppTrackerIndexRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,

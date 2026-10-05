@@ -183,5 +183,9 @@ export async function downloadCsv(
   URL.revokeObjectURL(url)
 }
 
+/** Opt-in auto capture: active time on a chapter page. The server answers 409 `auto_capture_off` when it is switched off. */
+export const postAutoCapture = (body: { client_id: string; chapter_id: string; started_at: string; seconds: number }) =>
+  send<{ session: StudySession | null; outcome: string }>('POST', '/tracking/auto/', body)
+
 export const exportData = () => api<Record<string, unknown>>('/tracking/data/')
 export const deleteData = () => api<void>('/tracking/data/', { method: 'DELETE' })

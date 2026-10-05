@@ -13,6 +13,7 @@ const ITEMS = [
   { to: '/app/tracker/reports', label: 'Reports', exact: false },
   { to: '/app/tracker/log', label: 'Log', exact: false },
   { to: '/app/tracker/goals', label: 'Goals', exact: false },
+  { to: '/app/focus', label: 'Focus timer', exact: false },
   { to: '/app/settings/tracker', label: 'Settings', exact: false },
 ] as const
 

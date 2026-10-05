@@ -37,6 +37,7 @@ import {
   Eye,
   Heatmap,
   Input,
+  Kbd,
   KeyRound,
   Label,
   LoaderCircle,
@@ -54,6 +55,7 @@ import {
   SegmentedControl,
   Select,
   Skeleton,
+  Slider,
   Sparkles,
   StatTile,
   Sun,
@@ -66,6 +68,8 @@ import {
   ThemeSwitcher,
   Timer,
   ToastProvider,
+  Tooltip,
+  TooltipProvider,
   useTheme,
   useToast,
   X,
@@ -157,6 +161,26 @@ const DEMO_HEAT = Array.from({ length: 56 }, (_, i) => ({
   weekday: i % 7,
   label: `Day ${i + 1}: level ${(i * 7) % 6}`,
 }))
+
+function FocusTimerDemo() {
+  const [volume, setVolume] = useState(70)
+  return (
+    <TooltipProvider>
+      <div className="max-w-md space-y-4">
+        <div className="space-y-1">
+          <Label>Alert volume: {volume}</Label>
+          <Slider label="Alert volume" value={volume} min={0} max={100} step={5} onValueChange={setVolume} />
+        </div>
+        <p className="text-sm text-muted-foreground">
+          Press <Kbd>Space</Kbd> to start or pause, <Kbd>S</Kbd> to skip a break and <Kbd>E</Kbd> to end a round early.
+        </p>
+        <Tooltip content="Adds five minutes, up to three times">
+          <Button variant="outline">+5 min</Button>
+        </Tooltip>
+      </div>
+    </TooltipProvider>
+  )
+}
 
 function TimeTrackerDemo() {
   const [range, setRange] = useState('30d')
@@ -377,6 +401,10 @@ export function DesignShowcase() {
         <ToastProvider>
           <TimeTrackerDemo />
         </ToastProvider>
+      </Block>
+
+      <Block title="Focus timer">
+        <FocusTimerDemo />
       </Block>
 
       <Block title="Selection controls">
