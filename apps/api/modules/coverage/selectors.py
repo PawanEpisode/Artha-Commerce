@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from dataclasses import dataclass
 from datetime import date
 
 from django.db.models import QuerySet
@@ -21,6 +22,62 @@ def get_active_enrollment(user_id, enrollment_id=None) -> Enrollment | None:
     if enrollment_id:
         qs = qs.filter(pk=enrollment_id)
     return qs.order_by("-created_at").first()
+
+
+@dataclass(frozen=True)
+class CourseSummary:
+    """The student's course in one read-only value: what `/me/`, the workspace home and other modules show."""
+
+    enrollment_id: str
+    scheme_id: str
+    course_code: str
+    course_name: str
+    level_code: str
+    level_name: str
+    term_code: str | None
+    term_name: str | None
+    exam_date: date | None
+    days_remaining: int | None
+    daily_minutes: int | None
+
+
+def course_summary(user_id, today: date | None = None, enrollment: Enrollment | None = None) -> CourseSummary | None:
+    """
+    The active enrolment as a summary (F-16: "the student's course" has one source of truth). `exam_date` falls back to
+    the start of the chosen term. Pass `enrollment` when it is already loaded to avoid a second query.
+    """
+    enrollment = enrollment or get_active_enrollment(user_id)
+    if enrollment is None:
+        return None
+    today = today or date.today()
+    exam_date = enrollment.exam_date or (enrollment.target_term.exam_start if enrollment.target_term else None)
+    level = enrollment.scheme.level
+    term = enrollment.target_term
+    return CourseSummary(
+        enrollment_id=str(enrollment.id),
+        scheme_id=str(enrollment.scheme_id),
+        course_code=level.course.code,
+        course_name=level.course.name,
+        level_code=level.code,
+        level_name=level.name,
+        term_code=term.code if term else None,
+        term_name=term.name if term else None,
+        exam_date=exam_date,
+        days_remaining=max((exam_date - today).days, 0) if exam_date else None,
+        daily_minutes=enrollment.planned_minutes,
+    )
+
+
+def get_term(term_id):
+    """An exam term by id (any level), or None. `update_enrollment` checks it belongs to the enrolment's level."""
+    from modules.syllabus.models import ExamTerm
+
+    return ExamTerm.objects.filter(pk=term_id).first() if term_id else None
+
+
+def scheme_level_id(scheme_id):
+    scheme = Scheme.objects.filter(pk=scheme_id).only("level_id").first()
+    return scheme.level_id if scheme else None
 
 
 def get_enrollment(user_id, enrollment_id) -> Enrollment | None:
@@ -51,6 +108,16 @@ def weights_of(settings: CoverageSettings) -> Weights:
     return Weights(settings.w_read, settings.w_practice, settings.w_revise, settings.w_mock)
 
 
+def targets_of(settings: CoverageSettings) -> targets.Targets:
+    return targets.Targets(settings.target_practice_sets, settings.target_revisions, settings.target_mocks)
+
+
+def get_targets(user_id) -> targets.Targets:
+    """The student's activity targets, or the pre-F-16 defaults when they never opened settings. Creates nothing."""
+    settings = get_settings(user_id)
+    return targets_of(settings) if settings else targets.DEFAULT_TARGETS
+
+
 def revision_days_of(settings: CoverageSettings) -> list[int]:
     return list(settings.revision_days or DEFAULT_REVISION_DAYS)
 
@@ -67,10 +134,11 @@ def get_chapter_progress(user_id, chapter_id) -> ChapterProgress | None:
     )
 
 
-def activity_summary(chapter: Chapter, progress: ChapterProgress | None) -> dict:
+def activity_summary(student_targets: targets.Targets, progress: ChapterProgress | None) -> dict:
     """
-    Per activity: `done` (never above `target`), `target`, `logged` (the real count) and `can_log`. Legacy rows that
-    already hold more than the target show a full bar and block further manual logs; nothing is deleted.
+    Per activity: `done` (never above `target`), `target`, `logged` (the real count) and `can_log`. The target is the
+    student's own (F-16), the same for every chapter. Rows that hold more than the target show a full bar and block
+    further manual logs; nothing is deleted.
     """
     counts = {
         "practice": progress.practice_count if progress else 0,
@@ -78,9 +146,9 @@ def activity_summary(chapter: Chapter, progress: ChapterProgress | None) -> dict
         "mocks": progress.mock_count if progress else 0,
     }
     target_of = {
-        "practice": chapter.target_practice_sets,
-        "revisions": chapter.target_revisions,
-        "mocks": chapter.target_mocks,
+        "practice": student_targets.practice_sets,
+        "revisions": student_targets.revisions,
+        "mocks": student_targets.mocks,
     }
     return {key: targets.activity_progress(counts[key], target_of[key]) for key in counts}
 
@@ -194,6 +262,13 @@ def export_all(user_id) -> dict:
             "w_mock": settings.w_mock,
             "revision_days": revision_days_of(settings),
             "weighted_default": settings.weighted_default,
+            "targets": {
+                "practice_sets": settings.target_practice_sets,
+                "revisions": settings.target_revisions,
+                "mocks": settings.target_mocks,
+                "preset": settings.targets_preset,
+                "confirmed_at": settings.targets_confirmed_at.isoformat() if settings.targets_confirmed_at else None,
+            },
         },
         "enrollments": [
             {
@@ -202,7 +277,7 @@ def export_all(user_id) -> dict:
                 "status": e.status,
                 "target_term": e.target_term.code if e.target_term else None,
                 "exam_date": e.exam_date.isoformat() if e.exam_date else None,
-                "daily_hours": float(e.daily_hours) if e.daily_hours is not None else None,
+                "daily_minutes": e.planned_minutes,
                 "electives": {x.slot_key: x.subject.key for x in e.electives.select_related("subject")},
             }
             for e in list_enrollments(user_id)

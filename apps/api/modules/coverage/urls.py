@@ -32,6 +32,7 @@ urlpatterns = [
     path("coverage/events/", views.EventView.as_view(), name="coverage-events"),
     path("coverage/due/", views.DueView.as_view(), name="coverage-due"),
     path("coverage/settings/", views.SettingsView.as_view(), name="coverage-settings"),
+    path("coverage/settings/targets/preview/", views.TargetsPreviewView.as_view(), name="coverage-targets-preview"),
     path("coverage/", views.DataView.as_view(), name="coverage-data"),
     path("coverage/export/", views.DataView.as_view(), name="coverage-export"),
 ]

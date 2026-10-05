@@ -14,7 +14,8 @@ from django.db import connection
 from modules.coverage import services
 from modules.coverage.domain import targets
 from modules.coverage.models import ChapterProgress, CoverageEvent, Enrollment
-from modules.syllabus.models import Chapter
+
+from .conftest import set_targets
 
 CASES = json.loads((Path(__file__).parent / "fixtures" / "rules_cases.json").read_text())
 
@@ -96,7 +97,7 @@ def test_legacy_rows_above_the_target_show_clamped_and_block_more_without_crashi
 
 @pytest.mark.django_db
 def test_a_target_of_zero_means_the_activity_is_not_tracked(api, ids, enrolled):
-    Chapter.objects.filter(pk=ids["gst"]).update(target_mocks=0)
+    set_targets(api, practice_sets=2, revisions=2, mocks=0)
     res = log(api, ids, "mock_done")
     assert res.status_code == 409 and res.json_body["error"]["code"] == "activity_not_tracked"
     assert chapter(api, ids)["activities"]["mocks"]["can_log"] is False

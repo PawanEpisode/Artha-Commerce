@@ -12,10 +12,11 @@ from modules.syllabus import selectors as syllabus
 
 from . import selectors, serializers, services
 from .domain.formula import Weights
-from .errors import CoverageError, FeatureDisabled, RuleViolation, to_api_exception
+from .errors import CoverageError, CoverageFeatureDisabled, RuleViolation, TargetsFeatureDisabled, to_api_exception
 from .models import CoverageEvent
 
 COVERAGE_FLAG = "syllabus_coverage"
+STUDY_TARGETS_FLAG = "study_targets"
 
 
 class CoverageEnabled(BasePermission):
@@ -23,7 +24,7 @@ class CoverageEnabled(BasePermission):
 
     def has_permission(self, request, view):
         if not flag_enabled(COVERAGE_FLAG, request.user.id):
-            raise FeatureDisabled
+            raise CoverageFeatureDisabled
         return True
 
 
@@ -66,7 +67,7 @@ def _chapter_state(user_id, chapter_id) -> dict:
     counts = selectors.topic_counts(user_id, [chapter.id])[chapter.id]
     rollups = selectors.rollups_for_enrollment(progress.enrollment)
     return {
-        "chapter": serializers.chapter_row(chapter, progress, counts),
+        "chapter": serializers.chapter_row(chapter, progress, counts, selectors.get_targets(user_id)),
         "subject": serializers.rollup_dict(rollups.get(("subject", chapter.subject_id))),
         "level": serializers.rollup_dict(rollups.get(("level", progress.enrollment.scheme.level_id))),
     }
@@ -87,7 +88,7 @@ class EnrollmentListView(CoverageView):
             scheme_id=d["scheme"],
             target_term_id=d.get("target_term"),
             exam_date=d.get("exam_date"),
-            daily_hours=d.get("daily_hours"),
+            daily_minutes=d.get("daily_minutes"),
             electives=d.get("electives"),
         )
         enrollment = selectors.get_enrollment(request.user.id, enrollment.id)
@@ -154,6 +155,7 @@ class SubjectCoverageView(CoverageView):
         if not subject:
             raise NotFound("Subject not found in your syllabus.")
         rows = selectors.subject_chapter_rows(enrollment, subject.id)
+        student_targets = selectors.get_targets(request.user.id)
         rollup = selectors.rollups_for_enrollment(enrollment).get(("subject", subject.id))
         return Response(
             {
@@ -166,7 +168,7 @@ class SubjectCoverageView(CoverageView):
                     "group_key": subject.group.key if subject.group_id else None,
                     **serializers.rollup_dict(rollup),
                 },
-                "chapters": [serializers.chapter_row(c, p, counts) for c, p, counts in rows],
+                "chapters": [serializers.chapter_row(c, p, counts, student_targets) for c, p, counts in rows],
             }
         )
 
@@ -187,7 +189,7 @@ class ChapterCoverageView(CoverageView):
         prev_chapter, next_chapter = syllabus.neighbour_chapters(chapter)
         return Response(
             {
-                "chapter": serializers.chapter_row(chapter, progress, counts),
+                "chapter": serializers.chapter_row(chapter, progress, counts, selectors.get_targets(request.user.id)),
                 "subject": {"id": str(chapter.subject_id), "key": chapter.subject.key, "name": chapter.subject.name},
                 "prev_chapter": {"id": str(prev_chapter.id), "name": prev_chapter.name} if prev_chapter else None,
                 "next_chapter": {"id": str(next_chapter.id), "name": next_chapter.name} if next_chapter else None,
@@ -289,12 +291,13 @@ class DueView(CoverageView):
         today = self.today(request)
         rows = selectors.due_for_revision(enrollment, today)
         counts = selectors.topic_counts(request.user.id, [p.chapter_id for p in rows])
+        student_targets = selectors.get_targets(request.user.id)
         return Response(
             {
                 "today": today.isoformat(),
                 "results": [
                     {
-                        **serializers.chapter_row(p.chapter, p, counts[p.chapter_id]),
+                        **serializers.chapter_row(p.chapter, p, counts[p.chapter_id], student_targets),
                         "subject": {
                             "id": str(p.chapter.subject_id),
                             "key": p.chapter.subject.key,
@@ -309,6 +312,11 @@ class DueView(CoverageView):
 
 
 class SettingsView(CoverageView):
+    """
+    GET reads (always allowed). PUT saves weights and revision gaps and/or the student's study targets. A write that
+    includes targets needs the `study_targets` flag; weights keep working with it off.
+    """
+
     def get(self, request):
         return Response(serializers.settings_dict(services.get_or_create_settings(request.user.id)))
 
@@ -316,17 +324,33 @@ class SettingsView(CoverageView):
         s = serializers.SettingsSerializer(data=request.data)
         s.is_valid(raise_exception=True)
         d = s.validated_data
-        settings = services.update_settings(
+        if "targets" in d and not flag_enabled(STUDY_TARGETS_FLAG, request.user.id):
+            raise TargetsFeatureDisabled
+        has_weights = "w_read" in d
+        saved = services.save_settings(
             request.user.id,
-            weights=Weights(d["w_read"], d["w_practice"], d["w_revise"], d["w_mock"]),
-            revision_days=d["revision_days"],
-            weighted_default=d["weighted_default"],
+            weights=Weights(d["w_read"], d["w_practice"], d["w_revise"], d["w_mock"]) if has_weights else None,
+            revision_days=d.get("revision_days"),
+            weighted_default=d.get("weighted_default"),
+            new_targets=serializers.targets_from(d["targets"]) if "targets" in d else None,
         )
-        return Response(serializers.settings_dict(settings))
+        body = serializers.settings_dict(saved.settings)
+        body["impact"] = serializers.impact_dict(saved.impact)
+        return Response(body)
 
     def delete(self, request):
-        """Reset to defaults."""
+        """Reset weights and revision gaps to defaults (the student's targets are kept)."""
         return Response(serializers.settings_dict(services.reset_settings(request.user.id)))
+
+
+class TargetsPreviewView(WriteView):
+    """POST: how many chapters would move if these targets were saved. Writes nothing."""
+
+    def post(self, request):
+        s = serializers.TargetsPreviewSerializer(data=request.data)
+        s.is_valid(raise_exception=True)
+        impact = services.preview_targets(request.user.id, s.to_targets())
+        return Response(serializers.impact_dict(impact))
 
 
 class DataView(CoverageView):
