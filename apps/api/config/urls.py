@@ -12,4 +12,5 @@ urlpatterns = [
     path("api/v1/", include("modules.profiles.urls")),
     path("api/v1/", include("modules.syllabus.urls")),
     path("api/v1/", include("modules.coverage.urls")),
+    path("api/v1/", include("modules.tracking.urls")),
 ]
