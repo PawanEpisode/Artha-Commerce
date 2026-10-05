@@ -354,7 +354,7 @@ Carries progress between schemes.
 | confidence | numeric(3,2) | yes | | 0 to 1 for proposed rows; null for rows an editor created |
 | needs_review | boolean | no | false | True for anything an editor should confirm; cleared when the editor changes the row or runs "Mark as reviewed" |
 
-Unique `(from_chapter_id, to_chapter_id)`. Check constraints keep `basis` to the list above and `confidence` between 0 and 1; index `(needs_review, confidence)` serves the review queue. A chapter in the new scheme with no incoming row is "new"; one in the old scheme with no outgoing row is "removed".
+Unique `(from_chapter_id, to_chapter_id)`. Check constraints keep `basis` to the list above and `confidence` between 0 and 1; index `(needs_review)` serves the review queue (the admin sorts it by `confidence` within the flagged rows). A chapter in the new scheme with no incoming row is "new"; one in the old scheme with no outgoing row is "removed".
 
 Default creation rule (`syllabus.matching`, pure functions, `services.build_default_chapter_map`), per paper, each step working on what the earlier steps left over:
 
@@ -608,7 +608,7 @@ No files. The OG images for public syllabus pages are generated at build or on d
 - **Admin writes:** require the `admin` or `editor` role (a column on `profiles`, checked in a DRF permission class and in Django admin). All publish and retire actions are logged in the Django admin history.
 - **Student data:** every `coverage_*` query filters by the JWT `sub`. Detail routes filter id and user together, so another student's id returns 404.
 - **RLS:** enabled with no policies on all tables listed here; the post-migrate hook covers them, and `core/tests/test_row_level_security.py` asserts it for every syllabus and coverage table (derived from the models, so a new table is covered automatically; it runs on Postgres and skips on SQLite, and CI has a Postgres service).
-- **Validation:** weights total 100; chapters must belong to the enrolment's scheme (service check); event `value` ranges by type; payload limited to 2 KB and scrubbed of text.
+- **Validation:** weights total 100; chapters must belong to the enrolment's scheme (service check); event `value` is 0 to 100 on the HTTP endpoint and must be positive for `study_time`; clients cannot send a payload (see the module notes).
 - **Rate limits:** DRF throttles on `POST coverage/events/`, `catchup` and `syllabus/reports/` (anonymous reports are throttled per IP).
 - **PII:** none in `syllabus`. In `coverage`, progress and confidence are personal data: included in export, removed on delete. Nothing from `coverage` is sent to analytics except counts and keys.
 - **Retention:** kept until the student deletes it; old schemes are never deleted.
@@ -688,6 +688,8 @@ Deviations and additions made while implementing, so the document matches the co
 - Write endpoints return the changed chapter plus its subject and level roll-ups, so one response refreshes the whole screen.
 - Admin editing is done in the Django admin (`/<DJANGO_ADMIN_PATH>/`): reference data, schemes with inline papers, papers with inline chapters, chapters with inline topics, bulk add of chapters and topics from pasted lists, JSON import and export of a whole scheme, publish and retire actions behind a separate permission (groups "Syllabus editors" and "Syllabus publishers"), chapter maps, the reports inbox, and read-only support views of enrolments and the ledger. Nodes of a published or retired scheme cannot be deleted, only switched off.
 - `profile.role` (student, editor, admin) was added to gate editor endpoints.
+- Optional text columns (`institute_url`, `description`, `source_url`, `notes`, `source_ref`) are stored as an empty string, not null, as is usual in Django; the tables above show them as nullable.
+- `coverage_event.payload` is never accepted from clients: `POST coverage/events/` takes only chapter, type, value and client id. Internal callers of `record_event` set it, and it is expected to stay small and free of personal text (no size limit is enforced in code).
 - Offline queueing: every write carries a client id, so retries are idempotent. Tick topic, tick chapter and log event are stored in IndexedDB (database `artha-coverage`, store `writes`, keyed by client id, scoped to the user) when the network fails or an older write is still waiting, and replayed oldest first with the same client ids on load, when the browser comes back online and every 30 seconds while something waits. A 5xx, 408, 425, 429 or network error is retried; any other 4xx drops the entry. Falls back to memory where IndexedDB is unavailable. Catch-up, settings, confidence and exclusion are not queued: they need the server's answer to show the next screen.
 - Admin ordering: papers, chapters and topics are reordered by drag and drop (or Alt+Arrow) in their admin lists; the order is saved through `<model>/reorder/` and renumbers the siblings of the same parent, and each move is written to the change history.
 - Public pages: course, level, paper and chapter pages read courses from the API and merge them over the static catalog. Preview images are generated at `/og/courses/{course}` and `/og/courses/{course}/{level}/{paper}/{chapter}` (satori and resvg, Inter font bundled) and cached for a day; any failure redirects to `/og/default.png`.

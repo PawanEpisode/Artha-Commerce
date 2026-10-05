@@ -56,6 +56,10 @@ These partial items are about the student features, not the syllabus content. No
 
 Exam terms per level; elective choice (onboarding step, syllabus map picker, `PUT coverage/enrollments/{id}/electives/`); `--prune-legacy` cleanup of the placeholder schemes; section grouping, paper PDF link and SPOM on the web; Paper and Chapter filters in the Topic and Chapter admin lists; topic counts, previous and next chapter links and a chapter search box (papers over 8 chapters) in the API and web.
 
+### Full audit (PRD, ERD, code)
+
+Checked: every model column against the ERD (names and nullability), every constraint and index, the maths and status rules against `domain/formula.py`, every PRD endpoint and screen against the URL resolver and web routes, the analytics events, the edge-case table, the non-functional requirements that can be read from code (WCAG roles and labels, status never colour only, 44 px targets, noindex on private pages, throttles, student scoping) and the rollout phases. Result: aligned, with these documented deviations: no `coverage_updated` event (the weekly-return metric now uses the existing tick and log events); the map rows carry no confidence dot (confidence is per chapter and shows on the chapter list); no subject-level self-reported percent for uncurated levels; no payload size limit in code (clients cannot send a payload); the chapter map review index is on `needs_review` alone. Not measured here: the 200 ms and 300 ms performance targets and the CDN caching headers in production.
+
 ## 4. Content coverage
 
 ### CMA (ICMAI, CMA Syllabus 2022)

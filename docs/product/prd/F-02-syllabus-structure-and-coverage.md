@@ -42,7 +42,7 @@ The institute releases a new scheme. His old progress must not vanish. The syste
 | --- | --- | --- | --- |
 | Enrolment activation | New users who complete course and level selection | 80% of sign-ups | `enrollment_created` |
 | Aha reached | Users who tick or bulk mark at least 3 chapters in the first session | 60% | `coverage_catchup_completed`, `topic_ticked` |
-| Weekly return | Users who update progress or revision at least once in a week | 50% | `coverage_updated` |
+| Weekly return | Users who update progress or revision at least once in a week | 50% | any of `topic_ticked`, `topic_unticked`, `practice_logged`, `mock_logged`, `revision_logged` |
 | Revision loop | Chapters with at least one logged revision per active user per month | 3 | `revision_logged` |
 | Public reach | Organic landing sessions on syllabus pages | track | PostHog pageview on `/courses/*` |
 | Data quality | Syllabus issues reported per 1000 views | under 2 | `syllabus_issue_reported` |
@@ -131,7 +131,7 @@ flowchart TD
 | Offline | Ticks and logs queue locally with client ids and sync later without duplicates. |
 | Two devices edit at once | Last write wins per topic (timestamps compared on the server); the ledger keeps both events. |
 | Student changes the weights | Percentages recompute immediately; history is not rewritten, only the presentation. |
-| Level not yet curated (only subject names) | Chapter list shows "Coming soon" and subject-level self-reported percent only. |
+| Level not yet curated (only subject names) | The public level page shows the indicative paper list from the static catalog; in My Coverage a paper with no chapters shows "Chapters for this paper are coming soon". A subject-level self-reported percent is not built. |
 
 ## 6. Functional requirements
 
@@ -212,9 +212,9 @@ Each page uses `buildHead()` with a unique title, description, canonical URL, JS
 │       │   47%    │  overall ring      Weighted ▢
 │        ╰────────╯            │
 │ Group 1                      │
-│  Advanced Accounting   ████░░ 62%  ●green │
-│  Corporate and Other Laws ██░░░ 35% ●amber│
-│  Taxation              ███░░░ 48%  ●amber │
+│  Advanced Accounting   ████░░ 62%        │
+│  Corporate and Other Laws ██░░░ 35%      │
+│  Taxation              ███░░░ 48%        │
 │ Group 2   ...                │
 │ Due for revision (4)  ›      │
 └──────────────────────────────┘
@@ -224,7 +224,7 @@ Aha moment: after Quick catch-up the overall ring animates from 0 to the new val
 
 ### Design-system components
 
-Existing: Button, Card, Badge, Input, Tabs, Container, Section, Reveal. Needed (shared with the Pomodoro PRD where it overlaps, built once): `ProgressRing`, `ProgressBar`, `StatusBadge` (chapter status), `Checkbox`, `Accordion` (group, subject, chapter tree), `Select/Combobox`, `Dialog/Sheet`, `Toast`, `Skeleton`, `Stepper` (onboarding), `Tooltip`, `EmptyState`, `Breadcrumb`, `RatingDot` (red, amber, green).
+Built for this feature: `ProgressRing`, `ProgressBar` (in `progress.tsx`), `Checkbox`, `Accordion`, `Stepper`, `Breadcrumb`, `EmptyState`, `Skeleton`, `ConfidenceDot` (the RatingDot below), `Switch`, `RadioGroup`, `Select`, `Popover` (used for the "How is this calculated?" note and the report form instead of a Tooltip or Dialog); `StatusBadge` lives in the coverage module. `Toast`, `Dialog/Sheet`, `Tooltip` and `Combobox` were not needed in v1. Original list: Existing: Button, Card, Badge, Input, Tabs, Container, Section, Reveal. Needed (shared with the Pomodoro PRD where it overlaps, built once): `ProgressRing`, `ProgressBar`, `StatusBadge` (chapter status), `Checkbox`, `Accordion` (group, subject, chapter tree), `Select/Combobox`, `Dialog/Sheet`, `Toast`, `Skeleton`, `Stepper` (onboarding), `Tooltip`, `EmptyState`, `Breadcrumb`, `RatingDot` (red, amber, green).
 
 ## 8. Data and permissions
 
