@@ -56,7 +56,7 @@ export function FeatureDetail({ feature, offer, alternatives, onOpen }: Props) {
         </p>
       ) : (
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <OfferButton offer={offer} size="lg" className="w-full sm:w-auto" onOpen={onOpen} />
+          <OfferButton offer={offer} size="lg" variant="cta" className="w-full sm:w-auto" onOpen={onOpen} />
           <BrowseButton offer={offer} className="w-full sm:w-auto" onOpen={onOpen} />
         </div>
       )}
@@ -70,7 +70,7 @@ export function FeatureDetail({ feature, offer, alternatives, onOpen }: Props) {
           <ul className="mt-4 flex list-none flex-col gap-3 sm:flex-row sm:flex-wrap">
             {alternatives.map((alt) => (
               <li key={alt.feature.slug}>
-                <OfferButton offer={alt} variant="secondary" className="w-full sm:w-auto" onOpen={onOpen} />
+                <OfferButton offer={alt} variant="cta" className="w-full sm:w-auto" onOpen={onOpen} />
               </li>
             ))}
           </ul>

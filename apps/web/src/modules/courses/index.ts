@@ -1,4 +1,6 @@
 export { CourseDetailContainer } from './containers/CourseDetailContainer'
 export { CoursesIndexContainer } from './containers/CoursesIndexContainer'
 export { LevelDetailContainer } from './containers/LevelDetailContainer'
+export { StudyHomeContainer } from './containers/StudyHomeContainer'
+export { COURSES_INDEX_REDIRECT_SCRIPT } from './lib/indexRedirect'
 export { findLevel, loadCourse, loadCourses, mergeCourse, type PublicCourse } from './lib/load'

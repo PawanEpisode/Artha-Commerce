@@ -1,4 +1,4 @@
-import { Badge, Button, Card, Container } from '@artha/design-system'
+import { Badge, Button, Card, cn, Container } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { FeatureIcon } from '~/components/feature-icon'
@@ -12,9 +12,19 @@ interface Props {
   onOpen: (slug: string, destination: OpenDestination) => void
 }
 
-function HowItWorks({ slug, title }: { slug: string; title: string }) {
+function HowItWorks({
+  slug,
+  title,
+  fullWidth = false,
+  className,
+}: {
+  slug: string
+  title: string
+  fullWidth?: boolean
+  className?: string
+}) {
   return (
-    <Button variant="ghost" arrow asChild className="w-full justify-center text-primary sm:w-auto">
+    <Button variant="ghost" arrow fullWidth={fullWidth} asChild className={cn('text-primary', className)}>
       <Link to="/features/$slug" params={{ slug }}>
         How it works<span className="sr-only"> for {title}</span>
       </Link>
@@ -22,38 +32,24 @@ function HowItWorks({ slug, title }: { slug: string; title: string }) {
   )
 }
 
-function Actions({ offer, onOpen, large }: { offer: FeatureOffer; onOpen: Props['onOpen']; large?: boolean }) {
-  return (
-    <>
-      <OfferButton
-        offer={offer}
-        size={large ? 'lg' : 'default'}
-        variant={large ? 'cta' : 'secondary'}
-        className="w-full sm:w-auto"
-        onOpen={onOpen}
-      />
-      <BrowseButton offer={offer} className="w-full sm:w-auto" onOpen={onOpen} />
-    </>
-  )
-}
-
 function Hero({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] }) {
   const { feature } = offer
   return (
-    <Card className="flex flex-col gap-6 border-primary p-6 sm:flex-row sm:items-center sm:p-8">
-      <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-secondary text-primary">
-        <FeatureIcon name={feature.icon} className="size-7" />
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className="text-sm font-semibold text-primary">Start here</p>
-        <h2 className="mt-1 text-2xl font-bold">{feature.title}</h2>
-        <p className="mt-2 text-muted-foreground">{feature.tagline}</p>
-        <div className="mt-3">
-          <HowItWorks slug={feature.slug} title={feature.title} />
+    <Card className="border-primary p-6 sm:p-8">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+        <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-secondary text-primary">
+          <FeatureIcon name={feature.icon} className="size-7" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-primary">Start here</p>
+          <h2 className="mt-1 text-2xl font-bold">{feature.title}</h2>
+          <p className="mt-2 text-muted-foreground">{feature.tagline}</p>
         </div>
       </div>
-      <div className="flex w-full flex-col gap-2 sm:w-auto">
-        <Actions offer={offer} onOpen={onOpen} large />
+      <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+        <OfferButton offer={offer} size="lg" variant="cta" className="w-full sm:w-auto" onOpen={onOpen} />
+        <BrowseButton offer={offer} className="w-full sm:w-auto" onOpen={onOpen} />
+        <HowItWorks slug={feature.slug} title={feature.title} className="w-full sm:w-auto" />
       </div>
     </Card>
   )
@@ -67,10 +63,11 @@ function ReadyCard({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOp
         <FeatureIcon name={feature.icon} className="size-6" />
       </span>
       <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-      <p className="mt-1 text-sm text-muted-foreground">{feature.tagline}</p>
-      <div className="mt-5 flex flex-1 flex-col justify-end gap-2">
-        <Actions offer={offer} onOpen={onOpen} />
-        <HowItWorks slug={feature.slug} title={feature.title} />
+      <p className="mt-1 flex-1 text-sm text-muted-foreground">{feature.tagline}</p>
+      <div className="mt-5 flex flex-col gap-2">
+        <OfferButton offer={offer} variant="default" fullWidth onOpen={onOpen} />
+        <BrowseButton offer={offer} fullWidth onOpen={onOpen} />
+        <HowItWorks slug={feature.slug} title={feature.title} fullWidth />
       </div>
     </Card>
   )

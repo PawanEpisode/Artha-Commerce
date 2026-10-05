@@ -1,27 +1,44 @@
 import { Button, Card, ProgressRing } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
+import { type MouseEvent, type ReactNode, useEffect, useState } from 'react'
 
 import { type StudyLink, type StudyPrompt } from '../lib/prompt'
 
-function PromptLink({ link, onOpen }: { link: StudyLink; onOpen: () => void }) {
+/** Forwards the button styles. A wrapper that drops className renders the action as plain text. */
+function PromptLink({
+  link,
+  onOpen,
+  className,
+  children,
+  onClick,
+}: {
+  link: StudyLink
+  onOpen: () => void
+  className?: string
+  children?: ReactNode
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void
+}) {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(event)
+    onOpen()
+  }
   if (link.to === '/app/syllabus') {
     return (
-      <Link to="/app/syllabus" onClick={onOpen}>
-        {link.label}
+      <Link to="/app/syllabus" className={className} onClick={handleClick}>
+        {children}
       </Link>
     )
   }
   if (link.to === '/app/onboarding') {
     return (
-      <Link to="/app/onboarding" search={link.search} onClick={onOpen}>
-        {link.label}
+      <Link to="/app/onboarding" search={link.search} className={className} onClick={handleClick}>
+        {children}
       </Link>
     )
   }
   return (
-    <Link to="/login" search={link.search} onClick={onOpen}>
-      {link.label}
+    <Link to="/login" search={link.search} className={className} onClick={handleClick}>
+      {children}
     </Link>
   )
 }
@@ -47,7 +64,9 @@ export function StudyPromptCard({ prompt, onOpen }: { prompt: StudyPrompt; onOpe
         <p className="mt-2 text-muted-foreground">{prompt.body}</p>
       </div>
       <Button variant="cta" size="lg" arrow className="w-full sm:w-auto" asChild>
-        <PromptLink link={prompt.link} onOpen={onOpen} />
+        <PromptLink link={prompt.link} onOpen={onOpen}>
+          {prompt.link.label}
+        </PromptLink>
       </Button>
     </Card>
   )

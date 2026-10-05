@@ -7,7 +7,7 @@ import type { ReactNode } from 'react'
 import { env } from '~/lib/env'
 import { AuthProvider } from '~/modules/auth'
 import { LiveMiniTimer } from '~/modules/focus'
-import { SiteShell } from '~/modules/layout'
+import { SIGNED_IN_MARK_SCRIPT, SiteShell } from '~/modules/layout'
 import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { ObservabilityProvider } from '~/modules/observability'
 import { PersonalizedPostAuth } from '~/modules/personalization'
@@ -71,6 +71,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
         {/* After the stylesheet link and the theme-color meta, before first paint. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: SIGNED_IN_MARK_SCRIPT }} />
       </head>
       <body data-site={env.VITE_SITE_NAME}>
         {children}

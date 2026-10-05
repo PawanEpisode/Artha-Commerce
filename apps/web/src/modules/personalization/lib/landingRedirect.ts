@@ -1,10 +1,9 @@
 /**
- * Signed-in students who open `/` go straight to their workspace (FR-F16-31); `/app?from=landing` then lets the destination rules pick the last visit. The page is server-rendered and cached,
- * so the check is a tiny inline script in the head: it runs before the hero paints, reads only the Supabase session
- * key that already sits in localStorage, and changes nothing in the HTML a crawler or a signed-out visitor receives.
+ * Kept so a stored session can still be recognised, and so `/app?from=landing` can restore the last visit.
+ * `/` itself no longer redirects: a signed-in student stays on the home and sees their course there.
  *
  * The `personalization` flag lives in PostHog, which is not loaded that early, so the app mirrors the flag into one
- * localStorage key whenever it learns it. "off" disables the redirect; anything else leaves it on.
+ * localStorage key whenever it learns it. "off" disables this script; anything else leaves it on.
  */
 export const LANDING_REDIRECT_KEY = 'artha.landing-redirect'
 
