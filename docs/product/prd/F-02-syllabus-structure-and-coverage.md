@@ -42,7 +42,7 @@ The institute releases a new scheme. His old progress must not vanish. The syste
 | --- | --- | --- | --- |
 | Enrolment activation | New users who complete course and level selection | 80% of sign-ups | `enrollment_created` |
 | Aha reached | Users who tick or bulk mark at least 3 chapters in the first session | 60% | `coverage_catchup_completed`, `topic_ticked` |
-| Weekly return | Users who update progress or revision at least once in a week | 50% | `coverage_updated` |
+| Weekly return | Users who update progress or revision at least once in a week | 50% | any of `topic_ticked`, `topic_unticked`, `practice_logged`, `mock_logged`, `revision_logged` |
 | Revision loop | Chapters with at least one logged revision per active user per month | 3 | `revision_logged` |
 | Public reach | Organic landing sessions on syllabus pages | track | PostHog pageview on `/courses/*` |
 | Data quality | Syllabus issues reported per 1000 views | under 2 | `syllabus_issue_reported` |
@@ -131,7 +131,7 @@ flowchart TD
 | Offline | Ticks and logs queue locally with client ids and sync later without duplicates. |
 | Two devices edit at once | Last write wins per topic (timestamps compared on the server); the ledger keeps both events. |
 | Student changes the weights | Percentages recompute immediately; history is not rewritten, only the presentation. |
-| Level not yet curated (only subject names) | Chapter list shows "Coming soon" and subject-level self-reported percent only. |
+| Level not yet curated (only subject names) | The public level page shows the indicative paper list from the static catalog; in My Coverage a paper with no chapters shows "Chapters for this paper are coming soon". A subject-level self-reported percent is not built. |
 
 ## 6. Functional requirements
 
@@ -190,7 +190,7 @@ P0 must ship in v1, P1 should ship in v1, P2 can follow.
 | Subject (paper) | `/courses/$course/$level/$subject` | marks, chapters, weightage, group |
 | Chapter | `/courses/$course/$level/$subject/$chapter` | topics, weightage, "Track this chapter" call to action |
 
-Each page uses `buildHead()` with a unique title, description, canonical URL, JSON-LD (`Course` or `Article` style as suitable) and an OG image. The OG image for the shareable pages is generated per course and level.
+Each page uses `buildHead()` with a unique title, description, canonical URL, JSON-LD (`Course` or `Article` style as suitable) and an OG image. Preview images are generated per course (shared by the course, level and paper pages) at `/og/courses/$course`, and per chapter at `/og/courses/$course/$level/$subject/$chapter`; both are 1200x630 PNGs and fall back to the site image on any failure.
 
 ### Private (noindex)
 
@@ -198,7 +198,7 @@ Each page uses `buildHead()` with a unique title, description, canonical URL, JS
 | --- | --- | --- |
 | Onboarding | `/app/onboarding` | course, level, term, catch-up |
 | Syllabus map | `/app/syllabus` | rings and bars for groups and subjects. Query: `?view=weighted&status=due` |
-| Subject coverage | `/app/syllabus/$subject` | chapter list with percent, status, confidence |
+| Subject coverage | `/app/syllabus/$subject` | chapter list with percent, status, confidence. Query: `?view=weighted` |
 | Chapter coverage | `/app/syllabus/$subject/$chapter` | topics, logs, revision history, notes slot |
 | Due for revision | `/app/revision` | later joined by recall (F-15) |
 | Coverage settings | `/app/settings/coverage` | weights, schedule, scheme, exclusions |
@@ -212,9 +212,9 @@ Each page uses `buildHead()` with a unique title, description, canonical URL, JS
 │       │   47%    │  overall ring      Weighted ▢
 │        ╰────────╯            │
 │ Group 1                      │
-│  Advanced Accounting   ████░░ 62%  ●green │
-│  Corporate and Other Laws ██░░░ 35% ●amber│
-│  Taxation              ███░░░ 48%  ●amber │
+│  Advanced Accounting   ████░░ 62%        │
+│  Corporate and Other Laws ██░░░ 35%      │
+│  Taxation              ███░░░ 48%        │
 │ Group 2   ...                │
 │ Due for revision (4)  ›      │
 └──────────────────────────────┘
@@ -224,7 +224,7 @@ Aha moment: after Quick catch-up the overall ring animates from 0 to the new val
 
 ### Design-system components
 
-Existing: Button, Card, Badge, Input, Tabs, Container, Section, Reveal. Needed (shared with the Pomodoro PRD where it overlaps, built once): `ProgressRing`, `ProgressBar`, `StatusBadge` (chapter status), `Checkbox`, `Accordion` (group, subject, chapter tree), `Select/Combobox`, `Dialog/Sheet`, `Toast`, `Skeleton`, `Stepper` (onboarding), `Tooltip`, `EmptyState`, `Breadcrumb`, `RatingDot` (red, amber, green).
+Built for this feature: `ProgressRing`, `ProgressBar` (in `progress.tsx`), `Checkbox`, `Accordion`, `Stepper`, `Breadcrumb`, `EmptyState`, `Skeleton`, `ConfidenceDot` (the RatingDot below), `Switch`, `RadioGroup`, `Select`, `Popover` (used for the "How is this calculated?" note and the report form instead of a Tooltip or Dialog); `StatusBadge` lives in the coverage module. `Toast`, `Dialog/Sheet`, `Tooltip` and `Combobox` were not needed in v1. Original list: Existing: Button, Card, Badge, Input, Tabs, Container, Section, Reveal. Needed (shared with the Pomodoro PRD where it overlaps, built once): `ProgressRing`, `ProgressBar`, `StatusBadge` (chapter status), `Checkbox`, `Accordion` (group, subject, chapter tree), `Select/Combobox`, `Dialog/Sheet`, `Toast`, `Skeleton`, `Stepper` (onboarding), `Tooltip`, `EmptyState`, `Breadcrumb`, `RatingDot` (red, amber, green).
 
 ## 8. Data and permissions
 
@@ -244,8 +244,11 @@ All paths under `/api/v1/`. Errors use `{"error": {code, message, details}}`.
 | --- | --- |
 | GET `syllabus/courses/` | Courses with levels |
 | GET `syllabus/courses/{course}/levels/{level}/` | Level with current scheme, groups, subjects |
-| GET `syllabus/subjects/{subject_id}/` | Subject with chapters and weightage |
-| GET `syllabus/chapters/{chapter_id}/` | Chapter with topics |
+| GET `syllabus/courses/{course}/levels/{level}/subjects/{subject}/` | Subject with chapters and weightage, by key (used by the public pages) |
+| GET `syllabus/courses/{course}/levels/{level}/subjects/{subject}/chapters/{chapter}/` | Chapter with topics, previous and next chapter, by key |
+| GET `syllabus/subjects/{subject_id}/` | Subject with chapters and weightage, by id |
+| GET `syllabus/chapters/{chapter_id}/` | Chapter with topics, by id |
+| GET `syllabus/sitemap/` | Public paths of every published subject and chapter, for `sitemap.xml` |
 | GET `syllabus/terms/` | Exam terms |
 | POST `syllabus/reports/` | Report a wrong item (auth optional, rate limited) |
 
@@ -265,7 +268,9 @@ Public pages are rendered on the server by the web app through route loaders tha
 | POST `coverage/catchup/` | Bulk mark chapters `{chapter_ids, also_revised}` |
 | POST `coverage/events/` | Log practice, mock, revision `{chapter_id, type, value?, client_id}` |
 | PUT `coverage/chapters/{chapter_id}/confidence/` | Red, amber, green |
+| PUT `coverage/chapters/{chapter_id}/read/` | Tick or untick a chapter that has no topics `{done, client_id}` |
 | PUT `coverage/chapters/{chapter_id}/exclusion/` | Exclude or include |
+| PUT `coverage/subjects/{subject_id}/exclusion/` | Exclude or include a whole paper |
 | GET `coverage/due/` | Due for revision |
 | GET, PUT `coverage/settings/` | Weights, schedule, weighted default |
 | GET `coverage/export/` and DELETE `coverage/` | Export and delete all |

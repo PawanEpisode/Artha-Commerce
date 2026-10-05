@@ -48,13 +48,17 @@ Date: 5 Oct 2026. Scope: PRD `F-02-syllabus-structure-and-coverage`, its ERD, th
 | FR-30 feature flag | yes | yes | Web and API (PostHog, per user, fail-open: on when PostHog is unreachable or not configured) |
 | FR-31 offline queue | yes | yes | Tick and log writes persist in IndexedDB and replay with their client ids |
 
-Also checked: all 21 PRD endpoints exist under the same paths, all PRD screens have a route, all 14 analytics events are in the PRD table and emitted (`electives_chosen` and `coverage_write_queued` were added). The ERD now describes the flag, the offline queue, the OG routes and the map review fields, and a test asserts row-level security on every syllabus and coverage table.
+Also checked: every endpoint in the PRD tables exists under the same path (checked against the Django URL resolver), all PRD screens have a route, all 14 analytics events are in the PRD table and emitted (`electives_chosen` and `coverage_write_queued` were added). The ERD now describes the flag, the offline queue, the OG routes and the map review fields, and a test asserts row-level security on every syllabus and coverage table.
 
 These partial items are about the student features, not the syllabus content. None block the content in Django admin; they are the follow-up list.
 
 ### Added after the first audit
 
 Exam terms per level; elective choice (onboarding step, syllabus map picker, `PUT coverage/enrollments/{id}/electives/`); `--prune-legacy` cleanup of the placeholder schemes; section grouping, paper PDF link and SPOM on the web; Paper and Chapter filters in the Topic and Chapter admin lists; topic counts, previous and next chapter links and a chapter search box (papers over 8 chapters) in the API and web.
+
+### Full audit (PRD, ERD, code)
+
+Checked: every model column against the ERD (names and nullability), every constraint and index, the maths and status rules against `domain/formula.py`, every PRD endpoint and screen against the URL resolver and web routes, the analytics events, the edge-case table, the non-functional requirements that can be read from code (WCAG roles and labels, status never colour only, 44 px targets, noindex on private pages, throttles, student scoping) and the rollout phases. Result: aligned, with these documented deviations: no `coverage_updated` event (the weekly-return metric now uses the existing tick and log events); the map rows carry no confidence dot (confidence is per chapter and shows on the chapter list); no subject-level self-reported percent for uncurated levels; no payload size limit in code (clients cannot send a payload); the chapter map review index is on `needs_review` alone. Not measured here: the 200 ms and 300 ms performance targets and the CDN caching headers in production.
 
 ## 4. Content coverage
 
