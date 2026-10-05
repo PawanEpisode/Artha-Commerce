@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from core.feature_flags import flag_enabled
 from django.utils import timezone
 from rest_framework.exceptions import NotFound
 from rest_framework.permissions import BasePermission, IsAuthenticated
@@ -8,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
 
+from core.feature_flags import flag_enabled
 from modules.syllabus import selectors as syllabus
 
 from . import selectors, serializers, services

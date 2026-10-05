@@ -8,10 +8,11 @@ See docs/product/erd/F-02-syllabus-structure-and-coverage.md.
 
 from decimal import Decimal
 
-from core.models import UUIDModel
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
+
+from core.models import UUIDModel
 
 
 class Course(UUIDModel):

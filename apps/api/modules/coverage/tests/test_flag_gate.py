@@ -3,9 +3,9 @@
 import uuid
 
 import pytest
-from core import feature_flags
 from django.urls import reverse
 
+from core import feature_flags
 from modules.coverage import urls as coverage_urls
 
 pytestmark = pytest.mark.django_db
