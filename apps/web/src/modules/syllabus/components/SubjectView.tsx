@@ -11,10 +11,11 @@ import {
   Container,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import type { ReactNode } from 'react'
+import { type ReactNode, useState } from 'react'
 
-import { marksLabel, pluralize } from '../lib/format'
+import { groupBySection, marksLabel, matchesQuery, pluralize, SEARCH_THRESHOLD } from '../lib/format'
 import type { SubjectSyllabus } from '../lib/types'
+import { ChapterSearch } from './ChapterSearch'
 import { SyllabusMeta } from './SyllabusMeta'
 
 interface Props {
@@ -29,6 +30,8 @@ interface Props {
 export function SubjectView({ courseName, levelName, body, subject, report }: Props) {
   const course = subject.course
   const level = subject.level
+  const [query, setQuery] = useState('')
+  const shown = subject.chapters.filter((c) => matchesQuery(c.name, query))
   return (
     <Container className="max-w-3xl py-12 sm:py-20">
       <Breadcrumb className="mb-6">
@@ -64,6 +67,16 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
       </p>
       <div className="mt-3">
         <SyllabusMeta scheme={subject.scheme} body={body} />
+        {subject.source_url ? (
+          <a
+            href={subject.source_url}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="mt-2 inline-block text-sm font-medium text-primary underline underline-offset-4"
+          >
+            Official paper syllabus ({body})
+          </a>
+        ) : null}
       </div>
 
       {subject.chapters.length === 0 ? (
@@ -71,25 +84,39 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
           The chapter list for this paper is coming soon.
         </p>
       ) : (
-        <ol className="mt-10 space-y-3">
-          {subject.chapters.map((c, i) => (
-            <li key={c.id}>
-              <Card className="focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
-                <Link
-                  to="/courses/$course/$level/$subject/$chapter"
-                  params={{ course, level, subject: subject.key, chapter: c.key }}
-                  className="flex items-center gap-4 rounded-xl p-4 outline-none"
-                >
-                  <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
-                    {i + 1}
-                  </span>
-                  <span className="min-w-0 flex-1 font-medium">{c.name}</span>
-                  {marksLabel(c) ? <Badge variant="outline">{marksLabel(c)}</Badge> : null}
-                </Link>
-              </Card>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-10 space-y-8">
+          {subject.chapters.length > SEARCH_THRESHOLD ? (
+            <ChapterSearch value={query} onChange={setQuery} shown={shown.length} total={subject.chapters.length} />
+          ) : null}
+          {shown.length === 0 ? <p className="text-muted-foreground">No chapter matches that search.</p> : null}
+          {groupBySection(shown).map((group) => {
+            return (
+              <section key={group.section || 'all'}>
+                {group.section ? <h2 className="mb-3 font-display text-xl font-bold">{group.section}</h2> : null}
+                <ol className="space-y-3">
+                  {group.items.map((c) => (
+                    <li key={c.id}>
+                      <Card className="focus-within:ring-[3px] focus-within:ring-ring/40 hover:shadow-(--shadow-soft)">
+                        <Link
+                          to="/courses/$course/$level/$subject/$chapter"
+                          params={{ course, level, subject: subject.key, chapter: c.key }}
+                          className="flex items-center gap-4 rounded-xl p-4 outline-none"
+                        >
+                          <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-secondary font-display font-bold text-primary">
+                            {subject.chapters.indexOf(c) + 1}
+                          </span>
+                          <span className="min-w-0 flex-1 font-medium">{c.name}</span>
+                          {c.topic_count ? <Badge variant="outline">{pluralize(c.topic_count, 'topic')}</Badge> : null}
+                          {marksLabel(c) ? <Badge variant="outline">{marksLabel(c)}</Badge> : null}
+                        </Link>
+                      </Card>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )
+          })}
+        </div>
       )}
 
       <div className="mt-10 flex flex-wrap items-center gap-3">

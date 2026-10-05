@@ -14,7 +14,7 @@ def test_courses_are_seeded_by_migration_and_public(client):
     body = res.json()
     assert [c["code"] for c in body] == ["ca", "cma", "cs"]
     ca = next(c for c in body if c["code"] == "ca")
-    assert [lv["code"] for lv in ca["levels"]] == ["foundation", "intermediate", "final"]
+    assert [lv["code"] for lv in ca["levels"]] == ["foundation", "intermediate", "final", "spom"]
     assert res["Cache-Control"] == "public, s-maxage=300, stale-while-revalidate=3600"
 
 
@@ -81,6 +81,14 @@ def test_terms_are_filterable_by_course(client):
     body = client.get(f"{BASE}/terms/?course=cs").json()
     assert {t["course"] for t in body} == {"cs"}
     assert "2027-06" in [t["code"] for t in body]
+    assert {t["level"] for t in body} == {"foundation", "executive", "professional"}
+
+
+def test_terms_are_filterable_by_level(client):
+    body = client.get(f"{BASE}/terms/?course=ca&level=final").json()
+    assert {(t["course"], t["level"]) for t in body} == {("ca", "final")}
+    assert [t["code"] for t in body] == ["2027-05", "2027-09"]
+    assert "2027-01" in [t["code"] for t in client.get(f"{BASE}/terms/?course=ca&level=foundation").json()]
 
 
 def test_sitemap_paths_list_published_subjects_and_chapters(client):
@@ -116,3 +124,21 @@ def test_models_use_expected_table_names():
     assert Level._meta.db_table == "syllabus_level"
     assert Subject._meta.db_table == "syllabus_subject"
     assert Chapter._meta.db_table == "syllabus_chapter"
+
+
+def test_chapters_know_their_neighbours_and_topic_counts(client):
+    from modules.syllabus.models import Chapter
+    from modules.syllabus.tests.helpers import make_scheme
+
+    make_scheme()
+    body = client.get(f"{BASE}/courses/ca/levels/intermediate/subjects/taxation/").json()
+    assert {c["key"]: c["topic_count"] for c in body["chapters"]} == {
+        "gst-itc": 4,
+        "residential-status": 0,
+        "heads-of-income": 0,
+    }
+    middle = Chapter.objects.get(key="residential-status")
+    detail = client.get(f"{BASE}/chapters/{middle.id}/").json()
+    assert detail["prev_chapter"]["key"] == "gst-itc" and detail["next_chapter"]["key"] == "heads-of-income"
+    first = client.get(f"{BASE}/chapters/{Chapter.objects.get(key='gst-itc').id}/").json()
+    assert first["prev_chapter"] is None

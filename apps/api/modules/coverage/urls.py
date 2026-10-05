@@ -7,6 +7,11 @@ urlpatterns = [
     path(
         "coverage/enrollments/<uuid:enrollment_id>/", views.EnrollmentDetailView.as_view(), name="coverage-enrollment"
     ),
+    path(
+        "coverage/enrollments/<uuid:enrollment_id>/electives/",
+        views.EnrollmentElectivesView.as_view(),
+        name="coverage-enrollment-electives",
+    ),
     path("coverage/overview/", views.OverviewView.as_view(), name="coverage-overview"),
     path("coverage/subjects/<uuid:subject_id>/", views.SubjectCoverageView.as_view(), name="coverage-subject"),
     path(

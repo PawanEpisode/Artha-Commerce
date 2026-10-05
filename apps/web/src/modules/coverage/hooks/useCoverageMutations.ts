@@ -9,6 +9,7 @@ import {
   newClientId,
   resetSettings,
   saveSettings,
+  setElectives,
   setSubjectExclusion,
   updateEnrollment,
 } from '../lib/api'
@@ -45,6 +46,19 @@ export function useCatchup() {
       })
       qc.setQueryData<Overview>(coverageKeys.overview, result.overview)
       await refreshAll(qc)
+    },
+  })
+}
+
+export function useSetElectives() {
+  const qc = useQueryClient()
+  return useMutation({
+    mutationFn: ({ enrollmentId, choices }: { enrollmentId: string; choices: Record<string, string | null> }) =>
+      setElectives(enrollmentId, choices),
+    onSuccess: (result, { choices }) => {
+      track('electives_chosen', { slots: Object.keys(choices).length, cleared: Object.values(choices).includes(null) })
+      qc.setQueryData<Overview>(coverageKeys.overview, result.overview)
+      return refreshAll(qc)
     },
   })
 }

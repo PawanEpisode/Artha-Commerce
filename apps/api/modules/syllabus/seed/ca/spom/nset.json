@@ -1,0 +1,4540 @@
+{
+  "course": "ca",
+  "level": "spom",
+  "scheme": {
+    "code": "nset",
+    "name": "Self-Paced Online Modules (NSET)",
+    "source_url": "https://www.icai.org/post/syllabus-nset-spom",
+    "notes": "Structure (papers, groups, sections) from the ICAI syllabus page https://www.icai.org/post/syllabus-nset-spom. Chapters and topics extracted from the ICAI paper PDFs (links per paper in source_url and docs/syllabus-sources/ca-pdf-links.json; local copies in docs/syllabus-sources/ca/). Chapter = numbered content item of the paper; topic = its sub-item, with deeper levels written as 'Parent: item'; the Section or Part (with marks) is in the chapter's section field. ICAI does not publish marks per chapter, so chapter weights are empty. Papers published as two PDFs are merged into one paper. Set D Paper 3 chapter 1 combines Part A (Introduction to Entrepreneurship & Startups) and Part B (Startup Registration) of the source. Needs editor review before publishing."
+  },
+  "groups": [
+    {
+      "key": "set-a",
+      "name": "SET A"
+    },
+    {
+      "key": "set-b",
+      "name": "SET B"
+    },
+    {
+      "key": "set-c",
+      "name": "SET C"
+    },
+    {
+      "key": "set-d",
+      "name": "SET D"
+    }
+  ],
+  "subjects": [
+    {
+      "key": "corporate-and-economic-laws",
+      "paper_number": 1,
+      "name": "Corporate and Economic Laws",
+      "source_url": "https://resource.cdn.icai.org/92194bos-aps5090-set-a.pdf",
+      "chapters": [
+        {
+          "key": "appointment-and-qualifications-of-directors",
+          "name": "Appointment and Qualifications of Directors",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "appointment-and-remuneration-of-managerial-personnel",
+          "name": "Appointment and Remuneration of Managerial Personnel",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "meetings-of-board-and-its-powers",
+          "name": "Meetings of Board and its Powers",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "inspection-inquiry-and-investigation",
+          "name": "Inspection, Inquiry and Investigation",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "compromises-arrangements-and-amalgamations",
+          "name": "Compromises, Arrangements and Amalgamations",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "prevention-of-oppression-and-mismanagement",
+          "name": "Prevention of Oppression and Mismanagement",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "winding-up",
+          "name": "Winding Up",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "miscellaneous-provisions",
+          "name": "Miscellaneous Provisions",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "adjudication-special-courts-national-company-law-tribunal",
+          "name": "Adjudication, Special Courts, National Company Law Tribunal",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "e-filing",
+          "name": "e-Filing",
+          "section": "Part I, Section A: Company Law (50 Marks)",
+          "topics": []
+        },
+        {
+          "key": "sebi-listing-obligations-and-disclosure-requirement-regulations-2015",
+          "name": "SEBI (Listing Obligations and Disclosure Requirement) Regulations, 2015",
+          "section": "Part I, Section B: Securities Laws (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "sebi-issue-of-capital-and-disclosure-requirements-regulations-2018",
+          "name": "SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018",
+          "section": "Part I, Section B: Securities Laws (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "sebi-substantial-acquisition-of-shares-and-takeover-regulations-2011",
+          "name": "SEBI (Substantial Acquisition of Shares and Takeover) Regulations, 2011",
+          "section": "Part I, Section B: Securities Laws (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "sebi-prohibition-of-insider-trading-regulations-2015",
+          "name": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+          "section": "Part I, Section B: Securities Laws (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "the-foreign-exchange-management-act-1999-and-significant-rules-and-regulations",
+          "name": "The Foreign Exchange Management Act, 1999 and significant Rules and Regulations",
+          "section": "Part II: Economic Laws (30 Marks)",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "broad-structure-of-fema",
+              "name": "Broad structure of FEMA",
+              "kind": "concept"
+            },
+            {
+              "key": "definition",
+              "name": "Definition",
+              "kind": "concept"
+            },
+            {
+              "key": "regulation-and-management-of-foreign-exchange",
+              "name": "Regulation and Management of Foreign Exchange",
+              "kind": "concept"
+            },
+            {
+              "key": "contraventions-and-penalties-in-brief",
+              "name": "Contraventions and Penalties in brief",
+              "kind": "concept"
+            },
+            {
+              "key": "miscellaneous-provisions",
+              "name": "Miscellaneous Provisions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-foreign-contribution-regulation-act-2010-and-its-regulation",
+          "name": "The Foreign Contribution Regulation Act, 2010 and its Regulation",
+          "section": "Part II: Economic Laws (30 Marks)",
+          "topics": [
+            {
+              "key": "definitions",
+              "name": "Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "regulation-of-foreign-contribution-and-miscellaneous-provisions",
+              "name": "Regulation of Foreign Contribution and Miscellaneous Provisions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-insolvency-and-bankruptcy-code-2016-and-significant-rules-and-regulations",
+          "name": "The Insolvency and Bankruptcy Code, 2016 and significant Rules and Regulations",
+          "section": "Part II: Economic Laws (30 Marks)",
+          "topics": [
+            {
+              "key": "significant-concepts-covered-uptill-section-33-of-the-code",
+              "name": "Significant concepts covered uptill section 33 of the Code",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-a",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "strategic-cost-and-performance-management",
+      "paper_number": 1,
+      "name": "Strategic Cost & Performance Management",
+      "source_url": "https://resource.cdn.icai.org/92195bos-aps5090-set-b.pdf",
+      "chapters": [
+        {
+          "key": "an-introduction-to-strategic-cost-management",
+          "name": "An Introduction to Strategic Cost Management",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "managing-cost-strategically-strategic-cost-management-limitations-of-traditional-cost-management-traditional-vs-strategi",
+              "name": "Managing Cost Strategically- Strategic Cost Management, Limitations of Traditional Cost Management, Traditional vs. Strategic Cost Management",
+              "kind": "concept"
+            },
+            {
+              "key": "organisational-context-gaining-competitive-advantage-value-proposition-osterwalders-business-model-canvas",
+              "name": "Organisational Context- Gaining Competitive Advantage, Value Proposition, Osterwalder's Business Model Canvas",
+              "kind": "concept"
+            },
+            {
+              "key": "external-environment-context-industry-profitability-basis-of-competition-industry-key-success-factors-understanding-cust",
+              "name": "External Environment Context- Industry Profitability, Basis of Competition, Industry Key Success Factors, Understanding Customers and Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "information-technology-the-strategic-context-isit-and-porters-five-forces-itis-and-the-value-chain",
+              "name": "Information Technology the Strategic Context- IS/IT and Porter’s Five Forces, IT/IS and the Value Chain",
+              "kind": "concept"
+            },
+            {
+              "key": "the-role-of-management-accountant-as-a-leader-communication-decision-making-business-ethics",
+              "name": "The Role of Management Accountant as a Leader- Communication, Decision Making, Business Ethics",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "modern-business-environment",
+          "name": "Modern Business Environment",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "introduction-characteristics-of-the-modern-business-environment",
+              "name": "Introduction/ Characteristics of the Modern Business Environment",
+              "kind": "concept"
+            },
+            {
+              "key": "quality-to-business-excellence-cost-of-quality-total-quality-management",
+              "name": "Quality to Business Excellence- Cost of Quality, Total Quality Management",
+              "kind": "concept"
+            },
+            {
+              "key": "supply-chain-management-scm",
+              "name": "Supply Chain Management (SCM)",
+              "kind": "concept"
+            },
+            {
+              "key": "gain-sharing-arrangements",
+              "name": "Gain Sharing Arrangements",
+              "kind": "concept"
+            },
+            {
+              "key": "downsizing-outsourcing-and-offshoring",
+              "name": "Downsizing, Outsourcing and Offshoring",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "lean-system-and-innovation",
+          "name": "Lean System and Innovation",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "introduction-to-lean-system-just-in-time-jit",
+              "name": "Introduction to Lean System: Just-in-Time (JIT)",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-lean-system-kaizen-costing",
+              "name": "Introduction to Lean System: Kaizen Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-lean-system-5s",
+              "name": "Introduction to Lean System: 5S",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-lean-system-total-productive-maintenance-tpm",
+              "name": "Introduction to Lean System: Total Productive Maintenance (TPM)",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-lean-system-cellular-manufacturing-one-piece-flow-production-systems",
+              "name": "Introduction to Lean System: Cellular Manufacturing/ One-Piece Flow Production Systems",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-lean-system-six-sigma-ss",
+              "name": "Introduction to Lean System: Six Sigma (SS)",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-process-innovation",
+              "name": "Introduction to Process Innovation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "specialist-cost-management-techniques",
+          "name": "Specialist Cost Management Techniques",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "cost-control-waste-control-cost-reduction",
+              "name": "Cost Control/ Waste Control, Cost Reduction",
+              "kind": "concept"
+            },
+            {
+              "key": "target-costing",
+              "name": "Target Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "throughput-accounting-and-theory-of-constraints",
+              "name": "Throughput Accounting and Theory of Constraints",
+              "kind": "concept"
+            },
+            {
+              "key": "life-cycle-costing",
+              "name": "Life Cycle Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "environment-management-accounting",
+              "name": "Environment Management Accounting",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "management-of-cost-strategically-for-emerging-business-models",
+          "name": "Management of Cost Strategically for Emerging Business Models",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "changing-business-environment-digital-technologies-business-ecosystems-hyper-competition-transformation-and-disruption-a",
+              "name": "Changing Business Environment- Digital Technologies, Business Ecosystems, Hyper Competition, Transformation and Disruption, Advanced Manufacturing, Lean Start-up, Agile Organisations, Start-ups vs Incumbents",
+              "kind": "concept"
+            },
+            {
+              "key": "intrapreneurship-innovation-hubs-and-incubators-supply-chain-partnerships",
+              "name": "Intrapreneurship, Innovation Hubs and Incubators, Supply Chain Partnerships",
+              "kind": "concept"
+            },
+            {
+              "key": "business-models-hyper-disruptive-business-models",
+              "name": "Business Models: Hyper disruptive Business Models",
+              "kind": "concept"
+            },
+            {
+              "key": "business-models-models-relevant-to-sustainability",
+              "name": "Business Models: Models relevant to Sustainability",
+              "kind": "concept"
+            },
+            {
+              "key": "business-models-models-relevant-to-emerging-national-markets",
+              "name": "Business Models: Models relevant to Emerging National Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "strategic-responses-to-new-business-models",
+              "name": "Strategic Responses to New Business Models",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "strategic-revenue-management",
+          "name": "Strategic Revenue Management",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "decision-making-techniques-cvp-analysis",
+              "name": "Decision Making Techniques: CVP Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-making-techniques-relevant-cost-concepts",
+              "name": "Decision Making Techniques: Relevant Cost Concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-decisions-theory-principles-of-product-pricing",
+              "name": "Pricing Decisions: Theory & Principles of Product Pricing",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-decisions-pricing-new-product-finished-products-pricing-of-services-emerging-business-models",
+              "name": "Pricing Decisions: Pricing – New Product, Finished Products, Pricing of Services, Emerging Business Models",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-decisions-sensitivity-analysis-in-pricing-decisions",
+              "name": "Pricing Decisions: Sensitivity Analysis in Pricing Decisions",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-decisions-pricing-decision-under-special-circumstances",
+              "name": "Pricing Decisions: Pricing Decision under Special Circumstances",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-decisions-ethical-and-non-financial-considerations",
+              "name": "Pricing Decisions: Ethical and Non-financial Considerations",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-strategies-pricing-strategies",
+              "name": "Pricing Strategies: Pricing Strategies",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-strategies-kanos-performance-attributes",
+              "name": "Pricing Strategies: Kano’s performance attributes",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "strategic-profit-management",
+          "name": "Strategic Profit Management",
+          "section": "Part A: Strategic Cost Management",
+          "topics": [
+            {
+              "key": "operating-profit-analysis",
+              "name": "Operating Profit Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "activity-based-profitability-analysis-activity-based-management-abm-activity-based-budgeting-abb",
+              "name": "Activity Based Profitability Analysis, Activity Based Management (ABM), Activity Based Budgeting (ABB)",
+              "kind": "concept"
+            },
+            {
+              "key": "pareto-analysis",
+              "name": "Pareto Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "an-introduction-to-strategic-performance-management",
+          "name": "An Introduction to Strategic Performance Management",
+          "section": "Part B: Strategic Performance Management",
+          "topics": [
+            {
+              "key": "performance-management-and-its-link-to-strategy",
+              "name": "Performance Management and Its link to Strategy",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-performance-management-in-business-integration-using-models-such-as-value-chain-and-mckinseys-7s",
+              "name": "Role of Performance Management in Business Integration using Models such as Value Chain and McKinsey’s 7S",
+              "kind": "concept"
+            },
+            {
+              "key": "influence-of-organisations-structure-culture-and-strategy-on-performance-measurement",
+              "name": "Influence of Organisation's Structure, Culture and Strategy on Performance Measurement",
+              "kind": "concept"
+            },
+            {
+              "key": "strategic-performance-issues-in-complex-business-structures",
+              "name": "Strategic Performance Issues in Complex Business Structures",
+              "kind": "concept"
+            },
+            {
+              "key": "behavioural-aspects",
+              "name": "Behavioural Aspects",
+              "kind": "concept"
+            },
+            {
+              "key": "predicting-and-preventing-corporate-failure",
+              "name": "Predicting and Preventing Corporate Failure",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "strategic-performance-measures-in-private-sector",
+          "name": "Strategic Performance Measures in Private Sector",
+          "section": "Part B: Strategic Performance Management",
+          "topics": [
+            {
+              "key": "critical-success-factors-and-link-to-performance-measurement-key-performance-indicators-kpi",
+              "name": "Critical Success Factors and Link to Performance Measurement, Key Performance Indicators (KPI)",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-measures-gross-profit-roce-roi-eps-ri-npv-eva-etc",
+              "name": "Financial Measures- Gross Profit, ROCE, ROI, EPS, RI, NPV, EVA etc.",
+              "kind": "concept"
+            },
+            {
+              "key": "non-financial-performance-measures-linkage-between-performance-measures-balanced-scorecard",
+              "name": "Non-Financial Performance Measures- Linkage between performance measures (Balanced Scorecard)",
+              "kind": "concept"
+            },
+            {
+              "key": "link-strategy-operations-and-performance-performance-pyramid",
+              "name": "Link Strategy, Operations and Performance (Performance Pyramid)",
+              "kind": "concept"
+            },
+            {
+              "key": "link-between-achievement-of-the-corporate-strategy-and-the-management-of-human-resources-the-building-block-model",
+              "name": "Link between achievement of the corporate strategy and the management of human resources (The Building Block Model)",
+              "kind": "concept"
+            },
+            {
+              "key": "triple-bottom-line",
+              "name": "Triple Bottom Line",
+              "kind": "concept"
+            },
+            {
+              "key": "the-role-of-quality-in-management-information-and-performance-measurement-systems",
+              "name": "The role of quality in management information and performance measurement systems",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "strategic-performance-measures-in-the-not-for-profit-organisations",
+          "name": "Strategic Performance Measures in the Not-for-Profit Organisations",
+          "section": "Part B: Strategic Performance Management",
+          "topics": [
+            {
+              "key": "diversity-in-objectives-difficulties-in-measuring-outputs-ii-value-for-money-service-provision-as-a-measure-of-performan",
+              "name": "Diversity in objectives, difficulties in measuring outputs ii ‘value for money’ service provision as a measure of performance in not-for-profit organisations and the public sector iii Adapted Balanced Scorecard",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "preparation-of-performance-reports",
+          "name": "Preparation of Performance Reports",
+          "section": "Part B: Strategic Performance Management",
+          "topics": []
+        },
+        {
+          "key": "divisional-transfer-pricing",
+          "name": "Divisional Transfer Pricing",
+          "section": "Part B: Strategic Performance Management",
+          "topics": [
+            {
+              "key": "meaning-purpose-principles-of-transfer-pricing",
+              "name": "Meaning, Purpose & Principles of Transfer Pricing",
+              "kind": "concept"
+            },
+            {
+              "key": "methods-of-transfer-pricing",
+              "name": "Methods of Transfer Pricing",
+              "kind": "concept"
+            },
+            {
+              "key": "the-behavioural-consequences-arising-from-divisional-structures",
+              "name": "The Behavioural Consequences arising from Divisional Structures",
+              "kind": "concept"
+            },
+            {
+              "key": "international-transfer-pricing",
+              "name": "International Transfer Pricing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "standard-costing",
+          "name": "Standard Costing",
+          "section": "Part B: Strategic Performance Management",
+          "topics": [
+            {
+              "key": "analysis-of-advanced-variances",
+              "name": "Analysis of Advanced Variances",
+              "kind": "concept"
+            },
+            {
+              "key": "integration-of-standard-costing-with-marginal-cost-accounting",
+              "name": "Integration of Standard Costing with Marginal Cost Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "reconciliation-of-profit",
+              "name": "Reconciliation of Profit",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-investigation-techniques-interpretation-of-variances-possible-interdependence-between-variances-and-reporting",
+              "name": "Variance Investigation Techniques, Interpretation of Variances, Possible Interdependence Between Variances and Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "behavioural-aspects-of-standard-costing-limitation-of-standard-costing-including-its-use-in-the-contemporary-business-en",
+              "name": "Behavioural Aspects of Standard Costing, Limitation of Standard Costing (including its use in the contemporary business environment)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "case-study",
+          "name": "Case Study",
+          "section": "Part C: Case Study",
+          "topics": [
+            {
+              "key": "covering-course-concepts",
+              "name": "Covering Course Concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "combination-of-mcqs-and-extended-response-questions",
+              "name": "Combination of MCQs and extended response questions",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-b",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "risk-management",
+      "paper_number": 1,
+      "name": "Risk Management",
+      "source_url": "https://resource.cdn.icai.org/92196bos-aps5090-set-c-p1.pdf",
+      "chapters": [
+        {
+          "key": "introduction-overview",
+          "name": "Introduction & Overview",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-risk-uncertainty",
+              "name": "Introduction to Risk & Uncertainty",
+              "kind": "concept"
+            },
+            {
+              "key": "classifications-types-of-risks",
+              "name": "Classifications & Types of Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "importance-objectives",
+              "name": "Importance & Objectives",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-mitigation-controls",
+              "name": "Overview of Mitigation & Controls",
+              "kind": "concept"
+            },
+            {
+              "key": "opportunities-in-rm-for-cas",
+              "name": "Opportunities in RM for CAs",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risk-strategy-governance",
+          "name": "Risk Strategy & Governance",
+          "section": "",
+          "topics": [
+            {
+              "key": "risk-management-frameworks",
+              "name": "Risk Management Frameworks",
+              "kind": "concept"
+            },
+            {
+              "key": "implementation-of-risk-management-policies-processes",
+              "name": "Implementation of Risk Management Policies & Processes",
+              "kind": "concept"
+            },
+            {
+              "key": "enterprise-risk-and-linkage-to-business",
+              "name": "Enterprise Risk and linkage to Business",
+              "kind": "concept"
+            },
+            {
+              "key": "governance-ethical-dimensions",
+              "name": "Governance & Ethical dimensions",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-regulatory-compliance",
+              "name": "Legal, Regulatory & Compliance",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "role-of-risk-stakeholders",
+          "name": "Role of Risk Stakeholders",
+          "section": "",
+          "topics": [
+            {
+              "key": "board-oversight",
+              "name": "Board Oversight",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-ceo-management",
+              "name": "Role of CEO, Management",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-risk-managers-owners",
+              "name": "Role of Risk Managers, Owners",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-auditors-statutoryinternal",
+              "name": "Role of Auditors (Statutory/Internal)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risk-assessment",
+          "name": "Risk Assessment",
+          "section": "",
+          "topics": [
+            {
+              "key": "risk-identification",
+              "name": "Risk Identification",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-evaluation-impactlikelihood",
+              "name": "Risk Evaluation (Impact/Likelihood)",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-quantification-ratings",
+              "name": "Risk Quantification & Ratings",
+              "kind": "concept"
+            },
+            {
+              "key": "rm-quantification-tools",
+              "name": "RM Quantification Tools",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-prioritization-heat-matrix",
+              "name": "Risk Prioritization & Heat Matrix",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risk-response",
+          "name": "Risk Response",
+          "section": "",
+          "topics": [
+            {
+              "key": "risk-appetite",
+              "name": "Risk Appetite",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-treatment-techniques",
+              "name": "Risk Treatment Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "controlling-risk",
+              "name": "Controlling Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "contingency-planning",
+              "name": "Contingency Planning",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risk-monitoring-reporting",
+          "name": "Risk Monitoring & Reporting",
+          "section": "",
+          "topics": [
+            {
+              "key": "information-communication",
+              "name": "Information & Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "automation-continuous-monitoring",
+              "name": "Automation & Continuous Monitoring",
+              "kind": "concept"
+            },
+            {
+              "key": "auditing-evaluating-risk",
+              "name": "Auditing & Evaluating Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "continuous-periodic-reporting",
+              "name": "Continuous & Periodic Reporting",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "strategic-risk",
+          "name": "Strategic Risk",
+          "section": "",
+          "topics": [
+            {
+              "key": "business-portfolio-risks",
+              "name": "Business Portfolio Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "industrycompetition-risks",
+              "name": "Industry/Competition Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "investments-funding-of-growth",
+              "name": "Investments & Funding of Growth",
+              "kind": "concept"
+            },
+            {
+              "key": "productservice-risks",
+              "name": "Product/Service Risks",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "operational-risk",
+          "name": "Operational Risk",
+          "section": "",
+          "topics": [
+            {
+              "key": "process-level-risk-management",
+              "name": "Process level Risk Management",
+              "kind": "concept"
+            },
+            {
+              "key": "outsourcing-risks-3rd-party-risk",
+              "name": "Outsourcing Risks & 3rd Party Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "supply-chain-sale-purchase",
+              "name": "Supply Chain (Sale/ Purchase)",
+              "kind": "concept"
+            },
+            {
+              "key": "productservice-quality-etc",
+              "name": "Product/Service Quality etc.",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "emerging-issues-in-erm",
+          "name": "Emerging Issues in ERM",
+          "section": "",
+          "topics": [
+            {
+              "key": "external-influences",
+              "name": "External Influences",
+              "kind": "concept"
+            },
+            {
+              "key": "global-developments",
+              "name": "Global Developments",
+              "kind": "concept"
+            },
+            {
+              "key": "technology-automation",
+              "name": "Technology & Automation",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "sustainable-development-and-sustainability-reporting",
+      "paper_number": 2,
+      "name": "Sustainable Development and Sustainability Reporting",
+      "source_url": "https://resource.cdn.icai.org/92197bos-aps5090-set-c-p2.pdf",
+      "chapters": [
+        {
+          "key": "fundamentals-of-sustainable-development",
+          "name": "Fundamentals of Sustainable Development",
+          "section": "",
+          "topics": [
+            {
+              "key": "origin",
+              "name": "Origin",
+              "kind": "concept"
+            },
+            {
+              "key": "key-terms",
+              "name": "Key terms",
+              "kind": "concept"
+            },
+            {
+              "key": "need-for-sustainability",
+              "name": "Need for sustainability",
+              "kind": "concept"
+            },
+            {
+              "key": "decoding-sustainable-development",
+              "name": "Decoding Sustainable Development",
+              "kind": "concept"
+            },
+            {
+              "key": "benefits-of-integrating-sustainability-in-business",
+              "name": "Benefits of integrating sustainability in business",
+              "kind": "concept"
+            },
+            {
+              "key": "state-of-sustainability-in-current-business-planning",
+              "name": "State of sustainability in current business planning",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sustainability-reporting-in-india",
+          "name": "Sustainability Reporting in India",
+          "section": "",
+          "topics": [
+            {
+              "key": "national-guidelines-on-responsible-business-conduct-2018-background-and-structure",
+              "name": "National Guidelines on Responsible Business Conduct, 2018: Background and Structure",
+              "kind": "concept"
+            },
+            {
+              "key": "national-guidelines-on-responsible-business-conduct-2018-nine-principles-of-ngrbc",
+              "name": "National Guidelines on Responsible Business Conduct, 2018: Nine Principles of NGRBC",
+              "kind": "concept"
+            },
+            {
+              "key": "national-guidelines-on-responsible-business-conduct-2018-linkage-with-the-sustainable-development-goals-sdgs",
+              "name": "National Guidelines on Responsible Business Conduct, 2018: Linkage with the Sustainable Development Goals (SDGs)",
+              "kind": "concept"
+            },
+            {
+              "key": "sustainability-reporting-standards-board-of-icai",
+              "name": "Sustainability Reporting Standards Board of ICAI",
+              "kind": "concept"
+            },
+            {
+              "key": "social-stock-exchange-and-institute-of-social-auditors-of-india",
+              "name": "Social Stock Exchange and Institute of Social Auditors of India",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-responsibility-and-sustainability-reporting-brsr-in-india",
+          "name": "Business Responsibility and Sustainability Reporting (BRSR) in India",
+          "section": "",
+          "topics": [
+            {
+              "key": "business-responsibility-and-sustainability-report-issued-by-committee-on-business-responsibility-reporting-of-ministry-o",
+              "name": "Business Responsibility and Sustainability Report issued by Committee on Business Responsibility Reporting of Ministry of Corporate Affairs",
+              "kind": "concept"
+            },
+            {
+              "key": "securities-exchange-board-of-india-sebi-circular-on-business-responsibility-and-sustainability-reporting-brsr",
+              "name": "Securities Exchange Board of India (SEBI) Circular on Business Responsibility and Sustainability Reporting (BRSR)",
+              "kind": "concept"
+            },
+            {
+              "key": "business-responsibility-and-sustainability-reporting-brsr-disclosures",
+              "name": "Business Responsibility and Sustainability Reporting (BRSR) Disclosures",
+              "kind": "concept"
+            },
+            {
+              "key": "sustainability-reporting-maturity-model-srmm-icai",
+              "name": "Sustainability Reporting Maturity Model (SRMM), ICAI",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-format-of-business-responsibility-and-sustainability-reporting-brsr-lite",
+              "name": "Overview of Format of Business Responsibility and Sustainability Reporting (BRSR) Lite",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "global-trends-in-sustainability-reporting",
+          "name": "Global Trends in Sustainability Reporting",
+          "section": "",
+          "topics": [
+            {
+              "key": "united-nations-sustainable-development-goals-and-reporting-objective",
+              "name": "United Nations Sustainable Development Goals and Reporting: Objective",
+              "kind": "concept"
+            },
+            {
+              "key": "united-nations-sustainable-development-goals-and-reporting-structure",
+              "name": "United Nations Sustainable Development Goals and Reporting: Structure",
+              "kind": "concept"
+            },
+            {
+              "key": "united-nations-sustainable-development-goals-and-reporting-the-17-sustainable-development-goals-sdgs",
+              "name": "United Nations Sustainable Development Goals and Reporting: The 17 Sustainable Development Goals (SDGs)",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-key-global-sustainability-reporting-standards-and-frameworks",
+              "name": "Overview of Key Global Sustainability Reporting Standards and Frameworks",
+              "kind": "concept"
+            },
+            {
+              "key": "international-sustainability-standards-board-issb-and-overview-of-its-sustainability-reporting-standards",
+              "name": "International Sustainability Standards Board (ISSB) and overview of its Sustainability Reporting Standards",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sustainability-assurance",
+          "name": "Sustainability Assurance",
+          "section": "",
+          "topics": [
+            {
+              "key": "overview-of-assurance-standards-on-sustainability",
+              "name": "Overview of Assurance Standards on sustainability",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-assurance-limited-vs-reasonable",
+              "name": "Types of Assurance: Limited vs. Reasonable",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "public-finance-and-government-accounting",
+      "paper_number": 3,
+      "name": "Public Finance and Government Accounting",
+      "source_url": "https://resource.cdn.icai.org/92198bos-aps5090-set-c-p3.pdf",
+      "chapters": [
+        {
+          "key": "introduction-to-government-functioning",
+          "name": "Introduction to Government Functioning",
+          "section": "",
+          "topics": [
+            {
+              "key": "role-and-responsibilities-of-central-state-panchayati-raj-institution-and-urban-local-bodies-union-state-local-governmen",
+              "name": "Role and responsibilities of Central, State, Panchayati Raj Institution and Urban Local Bodies, Union-State-Local Government Fiscal Relations, Fiscal Federalism",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "constitutional-provisions-and-related-authorities",
+          "name": "Constitutional Provisions and Related Authorities",
+          "section": "",
+          "topics": [
+            {
+              "key": "112-annual-financial-statement",
+              "name": "112. Annual financial statement",
+              "kind": "section"
+            },
+            {
+              "key": "113-procedure-in-parliament-with-respect-to-estimates",
+              "name": "113. Procedure in Parliament with respect to estimates",
+              "kind": "section"
+            },
+            {
+              "key": "114-appropriation-bills",
+              "name": "114. Appropriation Bills",
+              "kind": "section"
+            },
+            {
+              "key": "115-supplementary-additional-or-excess-grants",
+              "name": "115. Supplementary, additional, or excess grants",
+              "kind": "section"
+            },
+            {
+              "key": "116-votes-on-account-votes-of-credit-and-exceptional-grants",
+              "name": "116. Votes on account, votes of credit and exceptional grants",
+              "kind": "section"
+            },
+            {
+              "key": "117-special-provisions-as-to-financial-bills",
+              "name": "117. Special provisions as to financial Bills",
+              "kind": "section"
+            },
+            {
+              "key": "148-comptroller-and-auditor-general-of-india",
+              "name": "148. Comptroller and Auditor-General of India",
+              "kind": "section"
+            },
+            {
+              "key": "149-duties-and-powers-of-the-comptroller-and-auditor-general",
+              "name": "149. Duties and powers of the Comptroller and Auditor-General",
+              "kind": "section"
+            },
+            {
+              "key": "150-form-of-accounts-of-the-union-and-of-the-states",
+              "name": "150. Form of accounts of the Union and of the States",
+              "kind": "section"
+            },
+            {
+              "key": "280-finance-commission",
+              "name": "280. Finance Commission",
+              "kind": "section"
+            },
+            {
+              "key": "281-recommendations-of-the-finance-commission",
+              "name": "281. Recommendations of the Finance Commission",
+              "kind": "section"
+            },
+            {
+              "key": "state-finance-commission",
+              "name": "State Finance commission",
+              "kind": "concept"
+            },
+            {
+              "key": "cga",
+              "name": "CGA",
+              "kind": "concept"
+            },
+            {
+              "key": "niti-aayog",
+              "name": "Niti Aayog",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "public-finance",
+          "name": "Public Finance",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning",
+              "name": "Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "importance",
+              "name": "Importance",
+              "kind": "concept"
+            },
+            {
+              "key": "scope-and-categories",
+              "name": "Scope and Categories",
+              "kind": "concept"
+            },
+            {
+              "key": "fiscalbudgetary-functions",
+              "name": "Fiscal/Budgetary functions",
+              "kind": "concept"
+            },
+            {
+              "key": "distinction-between-private-and-public-finance",
+              "name": "Distinction between Private and Public Finance",
+              "kind": "concept"
+            },
+            {
+              "key": "public-finance-economic-system",
+              "name": "Public Finance & Economic System",
+              "kind": "concept"
+            },
+            {
+              "key": "fiscal-monetary-policies",
+              "name": "Fiscal & Monetary Policies",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "public-revenue",
+          "name": "Public Revenue",
+          "section": "",
+          "topics": [
+            {
+              "key": "sources-of-tax-and-non-tax-revenue-for-centre-states-and-local-government-efficiency-and-equity-in-tax-policy-design-tax",
+              "name": "Sources of Tax and Non-tax Revenue for Centre, States and Local Government, Efficiency and Equity in Tax Policy Design, Tax Policy and Tax Administration in India, Tax collection by Government- Union, State & Local Governments",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "budget",
+          "name": "Budget",
+          "section": "",
+          "topics": [
+            {
+              "key": "budget-cycle-planning-preparation-execution-monitoring-how-to-interpret-data-from-budget-document-fiscal-deficit-primary",
+              "name": "Budget Cycle: Planning, Preparation, Execution, Monitoring, how to interpret data from Budget document, Fiscal Deficit, Primary Deficit, Revenue and Effective Revenue Deficit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "public-debtbond",
+          "name": "Public Debt/Bond",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-and-types-of-public-debt",
+              "name": "Meaning and Types of Public Debt",
+              "kind": "concept"
+            },
+            {
+              "key": "burden-of-public-debt",
+              "name": "Burden of Public Debt",
+              "kind": "concept"
+            },
+            {
+              "key": "principles-of-public-debt-management",
+              "name": "Principles of Public Debt Management",
+              "kind": "concept"
+            },
+            {
+              "key": "debt-profile-of-the-union-government",
+              "name": "Debt Profile of the Union Government",
+              "kind": "concept"
+            },
+            {
+              "key": "debt-servicing",
+              "name": "Debt servicing",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-multilateral-agencies",
+              "name": "Role of multilateral agencies",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "public-expenditure",
+          "name": "Public Expenditure",
+          "section": "",
+          "topics": [
+            {
+              "key": "canons-of-public-expenditure",
+              "name": "Canons of Public Expenditure",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-public-expenditure",
+              "name": "Classification of Public Expenditure",
+              "kind": "concept"
+            },
+            {
+              "key": "wagners-law-of-public-expenditure",
+              "name": "Wagner’s Law of Public Expenditure",
+              "kind": "concept"
+            },
+            {
+              "key": "public-expenditure-as-an-instrument-of-fiscal-policy-pfm-structure-an-introduction-and-it-intervention",
+              "name": "Public Expenditure as an Instrument of Fiscal Policy: PFM Structure - An Introduction and IT Intervention",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "union-state-accounts",
+          "name": "Union & State Accounts",
+          "section": "",
+          "topics": [
+            {
+              "key": "constitutional-provisions",
+              "name": "Constitutional Provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "structure-of-various-ministriesdepartments-of-government-of-india",
+              "name": "Structure of various ministries/departments of Government of India",
+              "kind": "concept"
+            },
+            {
+              "key": "controller-general-of-accounts-hierarchy-and-functions",
+              "name": "Controller General of Accounts - Hierarchy and Functions",
+              "kind": "concept"
+            },
+            {
+              "key": "structure-of-government-accounts-and-flow-of-funds",
+              "name": "Structure of Government Accounts and Flow of Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-government-accounts-consolidated-fund",
+              "name": "Classification of Government Accounts - Consolidated Fund",
+              "kind": "concept"
+            },
+            {
+              "key": "contingency-fund-and-public-accounts",
+              "name": "Contingency Fund and Public Accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-government-expenditure-in-india-including-introduction-to-chart-of-accounts",
+              "name": "Classification of Government expenditure in India including introduction to Chart of Accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "banking-arrangements",
+              "name": "Banking Arrangements",
+              "kind": "concept"
+            },
+            {
+              "key": "bankers-to-the-government",
+              "name": "Bankers to the Government",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "urban-local-bodies",
+          "name": "Urban Local Bodies",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-nmam",
+              "name": "Introduction - NMAM",
+              "kind": "concept"
+            },
+            {
+              "key": "national-municipal-asset-valuation-manual",
+              "name": "National Municipal Asset Valuation Manual",
+              "kind": "concept"
+            },
+            {
+              "key": "state-municipal-accounts-manualsrules-and-aslbs",
+              "name": "State Municipal Accounts Manuals/Rules and ASLBs",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "standard-internal-control-and-risk-management",
+          "name": "Standard Internal Control and Risk Management",
+          "section": "",
+          "topics": [
+            {
+              "key": "internal-control-systems-in-government",
+              "name": "Internal Control Systems in Government",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit",
+              "name": "Internal Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "outcome-budgeting-reporting",
+              "name": "Outcome Budgeting & Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "procurement-control",
+              "name": "Procurement Control",
+              "kind": "concept"
+            },
+            {
+              "key": "asset-controls",
+              "name": "Asset Controls",
+              "kind": "concept"
+            },
+            {
+              "key": "cash-controls",
+              "name": "Cash Controls",
+              "kind": "concept"
+            },
+            {
+              "key": "type-of-audit-role-of-cag-pac",
+              "name": "Type of Audit – Role of CAG & PAC",
+              "kind": "concept"
+            },
+            {
+              "key": "contingent-liability-and-parliamentary-control",
+              "name": "Contingent liability, and Parliamentary Control",
+              "kind": "concept"
+            },
+            {
+              "key": "brief-introduction-of-igas",
+              "name": "Brief Introduction of IGAS",
+              "kind": "concept"
+            },
+            {
+              "key": "igfrs-and-ipsas",
+              "name": "IGFRS and IPSAS",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "the-insolvency-and-bankruptcy-code-2016",
+      "paper_number": 4,
+      "name": "The Insolvency and Bankruptcy Code, 2016",
+      "source_url": "https://resource.cdn.icai.org/92199bos-aps5090-set-c-p4.pdf",
+      "chapters": [
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "",
+          "topics": [
+            {
+              "key": "covering-journey-of-development-of-insolvency-and-bankruptcy-code-and-its-importance",
+              "name": "Covering Journey of development of Insolvency and Bankruptcy Code and its importance",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "preliminary",
+          "name": "Preliminary",
+          "section": "",
+          "topics": [
+            {
+              "key": "relevant-definitions-and-application-of-the-code",
+              "name": "Relevant Definitions and application of the Code",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "insolvency-resolutions-and-liquidation-for-corporate-persons",
+          "name": "Insolvency Resolutions and Liquidation for Corporate Persons",
+          "section": "",
+          "topics": [
+            {
+              "key": "corporate-insolvency-resolution-process",
+              "name": "Corporate Insolvency Resolution Process",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidation-process",
+              "name": "Liquidation Process",
+              "kind": "concept"
+            },
+            {
+              "key": "pre-packaged-insolvency-resolution-process",
+              "name": "Pre-Packaged Insolvency Resolution Process",
+              "kind": "concept"
+            },
+            {
+              "key": "fast-track-corporate-insolvency-resolution-process",
+              "name": "Fast Track Corporate Insolvency Resolution Process",
+              "kind": "concept"
+            },
+            {
+              "key": "voluntary-liquidation-of-corporate-persons",
+              "name": "Voluntary Liquidation of Corporate Persons",
+              "kind": "concept"
+            },
+            {
+              "key": "adjudicating-authority-for-corporate-persons",
+              "name": "Adjudicating Authority for Corporate Persons",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "insolvency-resolution-and-bankruptcy-for-individuals-and-partnership-firms",
+          "name": "Insolvency Resolution and Bankruptcy for Individuals and Partnership Firms",
+          "section": "",
+          "topics": [
+            {
+              "key": "preliminary-application-definitions",
+              "name": "Preliminary (Application & Definitions)",
+              "kind": "concept"
+            },
+            {
+              "key": "fresh-start-process",
+              "name": "Fresh Start Process",
+              "kind": "concept"
+            },
+            {
+              "key": "insolvency-resolution-process",
+              "name": "Insolvency Resolution Process",
+              "kind": "concept"
+            },
+            {
+              "key": "bankruptcy-order-for-individuals-partnership-firms",
+              "name": "Bankruptcy Order for Individuals & Partnership Firms",
+              "kind": "concept"
+            },
+            {
+              "key": "administration-distribution-of-the-estate-of-the-bankrupt",
+              "name": "Administration & Distribution of the Estate of the Bankrupt",
+              "kind": "concept"
+            },
+            {
+              "key": "adjudicating-authority",
+              "name": "Adjudicating Authority",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-penalties",
+              "name": "Offences & Penalties",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "regulation-of-insolvency-professionals-agencies-and-information-utilities",
+          "name": "Regulation of Insolvency Professionals, Agencies and Information Utilities",
+          "section": "",
+          "topics": [
+            {
+              "key": "the-insolvency-and-bankruptcy-board-of-india",
+              "name": "The Insolvency and Bankruptcy Board of India",
+              "kind": "concept"
+            },
+            {
+              "key": "powers-functions-of-the-board",
+              "name": "Powers & Functions of the Board",
+              "kind": "concept"
+            },
+            {
+              "key": "insolvency-professional-agencies",
+              "name": "Insolvency Professional Agencies",
+              "kind": "concept"
+            },
+            {
+              "key": "insolvency-professionals",
+              "name": "Insolvency Professionals",
+              "kind": "concept"
+            },
+            {
+              "key": "information-utilities",
+              "name": "Information Utilities",
+              "kind": "concept"
+            },
+            {
+              "key": "inspection-investigation",
+              "name": "Inspection & Investigation",
+              "kind": "concept"
+            },
+            {
+              "key": "finance",
+              "name": "Finance",
+              "kind": "concept"
+            },
+            {
+              "key": "accounts-audit",
+              "name": "Accounts & Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "miscellaneous-provisions-including-forms-1-6-filed-for-initiation-of-cirp-before-the-nclt-lists-of-a",
+          "name": "Miscellaneous provisions including Forms 1-6 filed for initiation of CIRP before the NCLT, lists of all rules and regulations under IBC",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "significant-judicial-pronouncements-under-insolvency-and-bankruptcy-code-2016",
+          "name": "Significant Judicial Pronouncements under Insolvency and Bankruptcy Code, 2016",
+          "section": "",
+          "topics": []
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "international-taxation",
+      "paper_number": 5,
+      "name": "International Taxation",
+      "source_url": "https://resource.cdn.icai.org/92200bos-aps5090-set-c-p5.pdf",
+      "chapters": [
+        {
+          "key": "background-of-international-taxation",
+          "name": "Background of International Taxation",
+          "section": "",
+          "topics": [
+            {
+              "key": "genesis-of-international-taxation",
+              "name": "Genesis of international taxation",
+              "kind": "concept"
+            },
+            {
+              "key": "international-tax-conflicts-and-double-taxation",
+              "name": "International tax conflicts and double taxation",
+              "kind": "concept"
+            },
+            {
+              "key": "meaning-of-treaty",
+              "name": "Meaning of treaty",
+              "kind": "concept"
+            },
+            {
+              "key": "source-rule-vs-residence-rule-of-taxation",
+              "name": "Source rule vs. Residence rule of taxation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "overview-of-the-income-tax-act-1961",
+          "name": "Overview of the Income-tax Act, 1961",
+          "section": "",
+          "topics": [
+            {
+              "key": "charge-of-income-tax-and-important-definitions",
+              "name": "Charge of income-tax and important definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "residential-status-and-control-and-management",
+              "name": "Residential Status and Control and Management",
+              "kind": "concept"
+            },
+            {
+              "key": "scope-of-total-income",
+              "name": "Scope of total income",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-deemed-accrual-section-9",
+              "name": "Concept of ‘deemed accrual’- Section 9",
+              "kind": "concept"
+            },
+            {
+              "key": "business-connection-including-significant-economic-presence",
+              "name": "Business connection (including significant economic presence)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "non-resident-taxation",
+          "name": "Non-resident Taxation",
+          "section": "",
+          "topics": [
+            {
+              "key": "categories-of-income-and-their-taxability",
+              "name": "Categories of income and their taxability",
+              "kind": "concept"
+            },
+            {
+              "key": "withholding-tax",
+              "name": "Withholding tax",
+              "kind": "concept"
+            },
+            {
+              "key": "return-filing-obligations-of-non-residents",
+              "name": "Return filing obligations of non residents",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "taxation-of-e-commerce-transactions-including-equalization-levy",
+          "name": "Taxation of E-Commerce Transactions (including Equalization levy)",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "double-taxation-relief",
+          "name": "Double Taxation Relief",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept-of-double-taxation-and-circumstances-that-give-rise-to-double-taxation",
+              "name": "Concept of double taxation and circumstances that give rise to double taxation",
+              "kind": "concept"
+            },
+            {
+              "key": "the-concept-of-tax-neutrality",
+              "name": "The Concept of Tax Neutrality",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-relief",
+              "name": "Types of Relief",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-residency-certificate",
+              "name": "Tax Residency Certificate",
+              "kind": "concept"
+            },
+            {
+              "key": "treaty-shopping",
+              "name": "Treaty shopping",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "model-tax-conventions",
+          "name": "Model Tax Conventions",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-oecd-and-un-model-tax-conventions",
+              "name": "Introduction – OECD and UN Model Tax Conventions",
+              "kind": "concept"
+            },
+            {
+              "key": "comparative-analysis-of-some-of-the-significant-articles-of-oecd-and-un-model-tax-conventions-with-examples-of-indias-dt",
+              "name": "Comparative analysis of some of the significant articles of OECD and UN Model Tax Conventions (with examples of India’s DTAAs with USA, Singapore, UK, UAE and Netherlands)",
+              "kind": "concept"
+            },
+            {
+              "key": "protocol-to-dtaas-mfn-clause",
+              "name": "Protocol to DTAAs (MFN Clause)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "transfer-pricing",
+          "name": "Transfer Pricing",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "international-transaction",
+              "name": "International transaction",
+              "kind": "concept"
+            },
+            {
+              "key": "associated-enterprises",
+              "name": "Associated Enterprises",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-domestic-transaction",
+              "name": "Specified domestic transaction",
+              "kind": "concept"
+            },
+            {
+              "key": "arms-length-price",
+              "name": "Arm’s-length price",
+              "kind": "concept"
+            },
+            {
+              "key": "computation-of-arms-length-price",
+              "name": "Computation of arm’s-length price",
+              "kind": "concept"
+            },
+            {
+              "key": "safe-harbour-rules-shrs",
+              "name": "Safe Harbour rules (SHRs)",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-advance-pricing-agreement",
+              "name": "Overview of Advance Pricing Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "secondary-adjustment-and-thin-capitalisation",
+              "name": "Secondary Adjustment and Thin Capitalisation",
+              "kind": "concept"
+            },
+            {
+              "key": "documentation-and-compliances",
+              "name": "Documentation and Compliances",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "overview-of-beps",
+          "name": "Overview of BEPS",
+          "section": "",
+          "topics": []
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "the-arbitration-and-conciliation-act-1996",
+      "paper_number": 6,
+      "name": "The Arbitration and Conciliation Act, 1996",
+      "source_url": "https://resource.cdn.icai.org/92201bos-aps5090-set-c-p6.pdf",
+      "chapters": [
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-the-various-modes-of-alternate-dispute-redressal-mechanism-adrs",
+              "name": "Introduction to the various modes of Alternate Dispute Redressal Mechanism (ADRs)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fundamentals-of-arbitration",
+          "name": "Fundamentals of Arbitration",
+          "section": "",
+          "topics": [
+            {
+              "key": "general-provisions",
+              "name": "General provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "arbitration-agreement",
+              "name": "Arbitration Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "conduct-of-arbitral-proceedings",
+              "name": "Conduct of Arbitral Proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "making-of-arbitral-award-and-termination-of-proceedings",
+              "name": "Making of Arbitral Award and Termination of Proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "recourse-against-arbitral-award",
+              "name": "Recourse against Arbitral Award",
+              "kind": "concept"
+            },
+            {
+              "key": "finality-and-enforcement-of-arbitral-awards",
+              "name": "Finality and Enforcement of Arbitral Awards",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "enforcement-of-certain-foreign-awards",
+          "name": "Enforcement of Certain Foreign Awards",
+          "section": "",
+          "topics": [
+            {
+              "key": "types-of-arbitration",
+              "name": "Types of Arbitration",
+              "kind": "concept"
+            },
+            {
+              "key": "arbitral-awards-adhoc-domestic-and-international-commercial-awards",
+              "name": "Arbitral Awards (Adhoc, Domestic and International Commercial Awards)",
+              "kind": "concept"
+            },
+            {
+              "key": "enforcement-of-foreign-awards-new-york-convention-awards-and-geneva-convention-awards",
+              "name": "Enforcement of Foreign Awards (New York Convention Awards and Geneva Convention Awards)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "conciliation",
+          "name": "Conciliation",
+          "section": "",
+          "topics": [
+            {
+              "key": "difference-between-arbitration-and-conciliation",
+              "name": "Difference between Arbitration and Conciliation",
+              "kind": "concept"
+            },
+            {
+              "key": "commencement-of-conciliation-proceedings",
+              "name": "Commencement of Conciliation Proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "number-of-conciliators",
+              "name": "Number of Conciliators",
+              "kind": "concept"
+            },
+            {
+              "key": "appointment-of-conciliators",
+              "name": "Appointment of Conciliators",
+              "kind": "concept"
+            },
+            {
+              "key": "submission-of-statements-to-conciliator",
+              "name": "Submission of Statements to Conciliator",
+              "kind": "concept"
+            },
+            {
+              "key": "conciliator-not-bound-by-certain-enactments",
+              "name": "Conciliator not bound by Certain Enactments",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-conciliator",
+              "name": "Role of Conciliator",
+              "kind": "concept"
+            },
+            {
+              "key": "administrative-assistance",
+              "name": "Administrative Assistance",
+              "kind": "concept"
+            },
+            {
+              "key": "communication-between-conciliator-and-parties",
+              "name": "Communication between Conciliator and Parties",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosure-of-information",
+              "name": "Disclosure of Information",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "forensic-accounting",
+      "paper_number": 7,
+      "name": "Forensic Accounting",
+      "source_url": "https://resource.cdn.icai.org/92202bos-aps5090-set-c-p7.pdf",
+      "chapters": [
+        {
+          "key": "background-overview",
+          "name": "Background & Overview",
+          "section": "",
+          "topics": [
+            {
+              "key": "brief-overview-evolution-of-forensic-accounting-profession",
+              "name": "Brief overview & evolution of Forensic Accounting profession",
+              "kind": "concept"
+            },
+            {
+              "key": "increasing-importance-of-forensic-accounting-profession",
+              "name": "Increasing Importance of Forensic Accounting profession",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-regulatory-ramifications",
+              "name": "Legal & Regulatory ramifications",
+              "kind": "concept"
+            },
+            {
+              "key": "opportunities-in-forensic-accounting-for-chartered-accountants",
+              "name": "Opportunities in Forensic Accounting for Chartered Accountants",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction-basic-concepts",
+          "name": "Introduction & Basic Concepts",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-of-fraud-forensics-forensic-accounting-investigations",
+              "name": "Meaning of Fraud, Forensics, Forensic Accounting, Investigations",
+              "kind": "concept"
+            },
+            {
+              "key": "differences-between-audit-forensics-investigations",
+              "name": "Differences between Audit, Forensics & Investigations",
+              "kind": "concept"
+            },
+            {
+              "key": "roles-responsibilities-of-stakeholders",
+              "name": "Roles & Responsibilities of Stakeholders",
+              "kind": "concept"
+            },
+            {
+              "key": "theories-and-vulnerabilities-of-fraud",
+              "name": "Theories and Vulnerabilities of Fraud",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-forensic-accounting-and-investigations-standards-fais",
+              "name": "Introduction to Forensic Accounting and Investigations Standards (FAIS)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "nature-types-of-frauds",
+          "name": "Nature & Types of Frauds",
+          "section": "",
+          "topics": [
+            {
+              "key": "different-categories-of-fraud",
+              "name": "Different Categories of Fraud",
+              "kind": "concept"
+            },
+            {
+              "key": "different-nature-of-frauds",
+              "name": "Different Nature of Frauds",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-occupational-frauds-fraud-tree",
+              "name": "Types of Occupational Frauds - Fraud Tree",
+              "kind": "concept"
+            },
+            {
+              "key": "specialised-areasschemes-of-fraud",
+              "name": "Specialised Areas/schemes of Fraud",
+              "kind": "concept"
+            },
+            {
+              "key": "cyber-fraudcrime",
+              "name": "Cyber Fraud/Crime",
+              "kind": "concept"
+            },
+            {
+              "key": "fraud-mechanisms",
+              "name": "Fraud Mechanisms",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "financial-statement-frauds",
+          "name": "Financial Statement Frauds",
+          "section": "",
+          "topics": [
+            {
+              "key": "characteristics-nature-and-reasons",
+              "name": "Characteristics, nature and Reasons",
+              "kind": "concept"
+            },
+            {
+              "key": "different-types-of-financial-statement-frauds",
+              "name": "Different types of Financial Statement Frauds",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-regulatory-provisions-related-to-financial-statement-frauds",
+              "name": "Legal & Regulatory provisions related to Financial Statement Frauds",
+              "kind": "concept"
+            },
+            {
+              "key": "fraud-risk-factors-in-financial-statement-frauds",
+              "name": "Fraud Risk Factors in Financial Statement Frauds",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "process-of-forensic-investigation",
+          "name": "Process of Forensic Investigation",
+          "section": "",
+          "topics": [
+            {
+              "key": "initialization-defining-mandate",
+              "name": "Initialization & defining mandate",
+              "kind": "concept"
+            },
+            {
+              "key": "develop-plan-gather-expertise",
+              "name": "Develop Plan & gather expertise",
+              "kind": "concept"
+            },
+            {
+              "key": "gathering-relevant-evidence",
+              "name": "Gathering Relevant Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "perform-the-analysis",
+              "name": "Perform the analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "ireporting",
+              "name": "IReporting",
+              "kind": "concept"
+            },
+            {
+              "key": "court-proceedings",
+              "name": "Court proceedings",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fraud-detection",
+          "name": "Fraud Detection",
+          "section": "",
+          "topics": [
+            {
+              "key": "fraud-predicationindicators",
+              "name": "Fraud Predication/Indicators",
+              "kind": "concept"
+            },
+            {
+              "key": "quantitative-evidence-data-mining-analysis",
+              "name": "Quantitative Evidence - Data Mining & Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "qualitative-evidence",
+              "name": "Qualitative Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "law-and-evidence",
+              "name": "Law and Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "applying-hypothesis",
+              "name": "Applying Hypothesis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "digital-forensics",
+          "name": "Digital Forensics",
+          "section": "",
+          "topics": [
+            {
+              "key": "digital-evidence",
+              "name": "Digital Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "use-of-technology-tools",
+              "name": "Use of Technology Tools",
+              "kind": "concept"
+            },
+            {
+              "key": "laboratory-analysis-of-physical-and-electronic-evidence",
+              "name": "Laboratory Analysis of Physical and Electronic Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "important-legal-sections-of-information-technology-act",
+              "name": "Important legal sections of Information Technology Act",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "interviewing-skills",
+          "name": "Interviewing Skills",
+          "section": "",
+          "topics": [
+            {
+              "key": "art-science-of-interviews-nature-type",
+              "name": "Art & Science of Interviews - Nature & Type",
+              "kind": "concept"
+            },
+            {
+              "key": "the-interview-process",
+              "name": "The Interview Process",
+              "kind": "concept"
+            },
+            {
+              "key": "importance-of-non-verbal-cues",
+              "name": "Importance of Non-verbal Cues",
+              "kind": "concept"
+            },
+            {
+              "key": "recording-the-statements",
+              "name": "Recording the Statements",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studiesrole-play",
+              "name": "Case Studies/Role play",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "writing-a-forensic-investigation-report",
+          "name": "Writing a Forensic Investigation Report",
+          "section": "",
+          "topics": [
+            {
+              "key": "summary-of-findings",
+              "name": "Summary of findings",
+              "kind": "concept"
+            },
+            {
+              "key": "presenting-discussing-draft-report",
+              "name": "Presenting & discussing draft report",
+              "kind": "concept"
+            },
+            {
+              "key": "key-elements-as-per-forensic-accounting-and-investigations-standards-fais",
+              "name": "Key Elements as per Forensic Accounting and Investigations Standards (FAIS)",
+              "kind": "concept"
+            },
+            {
+              "key": "assumptions-and-limitations",
+              "name": "Assumptions and Limitations",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fraud-prevention",
+          "name": "Fraud Prevention",
+          "section": "",
+          "topics": [
+            {
+              "key": "anti-fraud-policies-vigilance-mechanism",
+              "name": "Anti-Fraud Policies / Vigilance Mechanism",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-controls-and-systems-processes",
+              "name": "Internal Controls and Systems & Processes",
+              "kind": "concept"
+            },
+            {
+              "key": "compliance-culture",
+              "name": "Compliance Culture",
+              "kind": "concept"
+            },
+            {
+              "key": "disciplinary-mechanism",
+              "name": "Disciplinary Mechanism",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "valuation",
+      "paper_number": 8,
+      "name": "Valuation",
+      "source_url": "https://resource.cdn.icai.org/92211bos-aps5090-set-c-p8.pdf",
+      "chapters": [
+        {
+          "key": "introduction-to-valuation",
+          "name": "Introduction to Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "genesis-of-valuation",
+              "name": "Genesis of Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-under-present-scenarios",
+              "name": "Valuation under present scenarios",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-valuation",
+              "name": "Reference to important terminologies: Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-valuer",
+              "name": "Reference to important terminologies: Valuer",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-registered-valuer",
+              "name": "Reference to important terminologies: Registered Valuer",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-types-of-value",
+              "name": "Reference to important terminologies: Types of Value",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-distinction-between-price-and-value",
+              "name": "Reference to important terminologies: Distinction between Price and Value",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-valuation-bases-and-premise",
+              "name": "Reference to important terminologies: Valuation Bases and Premise",
+              "kind": "concept"
+            },
+            {
+              "key": "reference-to-important-terminologies-valuation-date",
+              "name": "Reference to important terminologies: Valuation Date",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "need-and-purpose-of-valuation",
+          "name": "Need and Purpose of Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "purpose-of-valuation",
+              "name": "Purpose of Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "transaction-based-valuation",
+              "name": "Transaction based Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "regulatory-tax-based-valuation",
+              "name": "Regulatory & Tax based Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "other-requirements-based-valuation",
+              "name": "Other Requirements based Valuation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-approaches-and-methodologies",
+          "name": "Valuation Approaches and Methodologies",
+          "section": "",
+          "topics": [
+            {
+              "key": "valuation-approaches-definition-asset-based-approach",
+              "name": "Valuation Approaches (Definition): Asset Based Approach",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-approaches-definition-incomeearning-based-approach-a-priceearnings-ratio-pricegrowth-ratio",
+              "name": "Valuation Approaches (Definition): Income/Earning Based Approach: (a) Price/Earnings Ratio & Price/Growth Ratio",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-approaches-definition-incomeearning-based-approach-b-earning-measure-on-cash-flow-basis-dcf-approach",
+              "name": "Valuation Approaches (Definition): Income/Earning Based Approach: (b) Earning measure on Cash Flow Basis (DCF Approach)",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-approaches-definition-incomeearning-based-approach-c-earning-measure-non-cash-flow-basis-non-dcf-approach",
+              "name": "Valuation Approaches (Definition): Income/Earning Based Approach: (c) Earning measure non-Cash Flow Basis (Non DCF Approach)",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-approaches-definition-market-based-approach",
+              "name": "Valuation Approaches (Definition): Market Based Approach",
+              "kind": "concept"
+            },
+            {
+              "key": "fair-value-computation",
+              "name": "Fair Value Computation",
+              "kind": "concept"
+            },
+            {
+              "key": "guidelines-for-opting-approaches-methodologies-under-various-circumstances",
+              "name": "Guidelines for opting Approaches/ Methodologies under various circumstances",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-documentation-and-report",
+          "name": "Valuation Documentation and Report",
+          "section": "",
+          "topics": [
+            {
+              "key": "purpose-of-valuation",
+              "name": "Purpose of Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "transaction-based-valuation",
+              "name": "Transaction based Valuation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-standards",
+          "name": "Valuation Standards",
+          "section": "",
+          "topics": [
+            {
+              "key": "basic-understanding-of-icai-valuation-standards-2018-and-its-application",
+              "name": "Basic understanding of ICAI Valuation Standards 2018 and its application",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "other-applications-of-valuation",
+          "name": "Other Applications of Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "valuation-in-specific-situations-and-cases",
+              "name": "Valuation in specific Situations and Cases",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-inventories",
+              "name": "Valuation of Inventories",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-investments",
+              "name": "Valuation of Investments",
+              "kind": "concept"
+            },
+            {
+              "key": "fixed-income-instruments",
+              "name": "Fixed Income Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-intangibles",
+              "name": "Valuation of Intangibles",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-liabilities",
+              "name": "Valuation of Liabilities",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "financial-services-and-capital-markets",
+      "paper_number": 9,
+      "name": "Financial Services and Capital Markets",
+      "source_url": "https://resource.cdn.icai.org/92212bos-aps5090-set-c-p9.pdf",
+      "chapters": [
+        {
+          "key": "introduction-to-financial-markets",
+          "name": "Introduction to Financial Markets",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-financial-market",
+              "name": "Introduction to Financial Market",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-financial-market-in-economic-development-of-a-country",
+              "name": "Role of Financial Market in Economic Development of a country",
+              "kind": "concept"
+            },
+            {
+              "key": "stakeholders-in-financial-market-domestic-and-global",
+              "name": "Stakeholders in Financial Market (Domestic and Global)",
+              "kind": "concept"
+            },
+            {
+              "key": "indian-financial-market-scenario",
+              "name": "Indian Financial Market scenario",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "impact-of-various-policies-of-financial-markets",
+          "name": "Impact of various Policies of Financial Markets",
+          "section": "",
+          "topics": [
+            {
+              "key": "credit-policy-of-rbi",
+              "name": "Credit Policy of RBI",
+              "kind": "concept"
+            },
+            {
+              "key": "fed-policy",
+              "name": "Fed Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-inflation-index",
+              "name": "Cost Inflation Index",
+              "kind": "concept"
+            },
+            {
+              "key": "consumer-price-index",
+              "name": "Consumer Price Index",
+              "kind": "concept"
+            },
+            {
+              "key": "wholesale-price-index",
+              "name": "Wholesale Price Index",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "capital-market-primary",
+          "name": "Capital Market - Primary",
+          "section": "",
+          "topics": [
+            {
+              "key": "basics-of-capital-markets",
+              "name": "Basics of Capital Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "segments-of-capital-markets",
+              "name": "Segments of Capital Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-instruments",
+              "name": "Capital Market Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "aspects-of-primary-market-kinds-of-securities-types-of-offer-documents-issue-requirements-intermediaries-to-the-capital",
+              "name": "Aspects of Primary Market: Kinds of Securities, Types of Offer Documents, Issue Requirements, Intermediaries to the Capital Markets, Book Building, Special Purpose Acquisition Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "aspects-of-primary-market-application-supported-by-blocked-amount-asba-green-shoe-option-anchor-investors-private-placem",
+              "name": "Aspects of Primary Market: Application Supported by Blocked Amount (ASBA), Green Shoe Option, Anchor Investors, Private Placement of Shares, Right Issue, Exit Offers",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "capital-market-secondary",
+          "name": "Capital Market - Secondary",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-secondary-market",
+              "name": "Introduction to Secondary Market",
+              "kind": "concept"
+            },
+            {
+              "key": "development-of-the-stock-market-in-india",
+              "name": "Development of the Stock Market in India",
+              "kind": "concept"
+            },
+            {
+              "key": "stock-market-organization-in-india",
+              "name": "Stock Market Organization in India",
+              "kind": "concept"
+            },
+            {
+              "key": "demutualization-of-stock-exchanges",
+              "name": "Demutualization of Stock Exchanges",
+              "kind": "concept"
+            },
+            {
+              "key": "share-trading-in-secondary-market-trading-buy-a-retail-investor-algorithmic-trading-basket-trading",
+              "name": "Share Trading in Secondary Market – Trading buy a Retail Investor, Algorithmic Trading, Basket Trading",
+              "kind": "concept"
+            },
+            {
+              "key": "stock-market-and-its-operations-growth-of-stock-exchanges-characteristics-of-stock-exchanges-in-india-functions-of-stock",
+              "name": "Stock Market and its Operations: Growth of Stock Exchanges, Characteristics of Stock Exchanges in India, Functions of Stock Exchanges, Basics of Stock Market Indices, Index Management, Rebalancing and Reconstitution",
+              "kind": "concept"
+            },
+            {
+              "key": "stock-market-and-its-operations-uses-of-market-indexes",
+              "name": "Stock Market and its Operations: Uses of Market Indexes",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-in-secondary-market-trading-rules-and-regulations-circuit-breakers-to-curb-excess-volatility-trading-and",
+              "name": "Risk Management in Secondary Market: Trading Rules and Regulations, Circuit Breakers to curb excess volatility, Trading and Settlement, National Securities Clearing Corporation Limited, Market Making System",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-in-secondary-market-securities-lending-and-borrowing-short-selling-straight-through-processing-margin-tr",
+              "name": "Risk Management in Secondary Market: Securities Lending and Borrowing, Short Selling, Straight Through Processing, Margin Trading, Block Mechanism in Demat Account",
+              "kind": "concept"
+            },
+            {
+              "key": "other-aspects-of-secondary-market-buy-back-of-shares-block-and-bulk-deals",
+              "name": "Other aspects of Secondary Market – Buy Back of Shares, Block and Bulk Deals",
+              "kind": "concept"
+            },
+            {
+              "key": "indian-debt-market",
+              "name": "Indian Debt Market",
+              "kind": "concept"
+            },
+            {
+              "key": "emerging-marketsgift-city-power-exchange-energy-exchange-social-stock-exchange",
+              "name": "Emerging Markets–GIFT City, Power Exchange, Energy Exchange, Social Stock Exchange",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "money-market",
+          "name": "Money Market",
+          "section": "",
+          "topics": [
+            {
+              "key": "basics-of-money-market",
+              "name": "Basics of Money Market",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-participants",
+              "name": "Money Market Participants",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-instruments",
+              "name": "Money Market Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "cash-reserve-ratio-and-statutory-liquidity-ratio",
+              "name": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+              "kind": "concept"
+            },
+            {
+              "key": "determination-of-interest-rates-mibor-libor-replacement-of-libor",
+              "name": "Determination of Interest Rates – MIBOR, LIBOR, Replacement of LIBOR",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-instruments-government-securities-g-sec",
+              "name": "Money Market Instruments – Government Securities (G Sec)",
+              "kind": "concept"
+            },
+            {
+              "key": "recent-developments-in-money-market",
+              "name": "Recent developments in Money Market",
+              "kind": "concept"
+            },
+            {
+              "key": "repo-and-reverse-repo",
+              "name": "Repo and Reverse Repo",
+              "kind": "concept"
+            },
+            {
+              "key": "crr-slr",
+              "name": "CRR, SLR",
+              "kind": "concept"
+            },
+            {
+              "key": "day-count-convention",
+              "name": "Day Count Convention",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "bond-market",
+          "name": "Bond Market",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-bond-market",
+              "name": "Introduction to Bond Market",
+              "kind": "concept"
+            },
+            {
+              "key": "primary-bond-market-vs-secondary-bond-market",
+              "name": "Primary Bond Market vs Secondary Bond Market",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-bond-market",
+              "name": "Types of Bond Market",
+              "kind": "concept"
+            },
+            {
+              "key": "bond-market-strategies",
+              "name": "Bond Market Strategies",
+              "kind": "concept"
+            },
+            {
+              "key": "bond-indices",
+              "name": "Bond Indices",
+              "kind": "concept"
+            },
+            {
+              "key": "bond-market-vs-stock-market",
+              "name": "Bond Market vs. Stock Market",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "derivative-market",
+          "name": "Derivative Market",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-derivatives",
+              "name": "Introduction to Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "forward-contract",
+              "name": "Forward Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "futures-contract",
+              "name": "Futures Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "options-contract",
+              "name": "Options Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-swaps",
+              "name": "Concept of Swaps",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "institutions-and-intermediaries",
+          "name": "Institutions and Intermediaries",
+          "section": "",
+          "topics": [
+            {
+              "key": "depository",
+              "name": "Depository",
+              "kind": "concept"
+            },
+            {
+              "key": "stock-and-commodity-exchanges-indian-and-global",
+              "name": "Stock and Commodity Exchanges – Indian and Global",
+              "kind": "concept"
+            },
+            {
+              "key": "intermediaries-in-the-capital-markets-merchant-bankers-registrars-to-an-issue-and-share-transfer-agents-underwriters-ban",
+              "name": "Intermediaries in the Capital Markets – Merchant Bankers, Registrars to an issue and Share Transfer Agents, Underwriters, Bankers to an issue, Debenture Trustees, Portfolio Managers, Stockbrokers, and sub-brokers",
+              "kind": "concept"
+            },
+            {
+              "key": "institutional-investors",
+              "name": "Institutional Investors",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-portfolio-investors-fpis",
+              "name": "Foreign Portfolio Investors (FPIs)",
+              "kind": "concept"
+            },
+            {
+              "key": "custodians",
+              "name": "Custodians",
+              "kind": "concept"
+            },
+            {
+              "key": "clearing-houses-indian-and-global",
+              "name": "Clearing Houses – Indian and Global",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "commodity-market",
+          "name": "Commodity Market",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-of-commodity-markets",
+              "name": "Introduction of Commodity Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-commodity-markets",
+              "name": "Role of Commodity Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "commodity-market-in-indiaincluding-warehousing-and-physical-settlement",
+              "name": "Commodity Market in India–Including warehousing and physical settlement",
+              "kind": "concept"
+            },
+            {
+              "key": "application-of-derivative-in-commodities",
+              "name": "Application of Derivative in Commodities",
+              "kind": "concept"
+            },
+            {
+              "key": "global-commodities-exchanges",
+              "name": "Global Commodities Exchanges",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "mutual-funds",
+          "name": "Mutual Funds",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning",
+              "name": "Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "evolution",
+              "name": "Evolution",
+              "kind": "concept"
+            },
+            {
+              "key": "mutual-fund-organization",
+              "name": "Mutual Fund Organization",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-mutual-funds",
+              "name": "Types of Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "net-asset-value-nav",
+              "name": "Net Asset Value (NAV)",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-measurement",
+              "name": "Performance Measurement",
+              "kind": "concept"
+            },
+            {
+              "key": "advantages-and-disadvantages-of-mutual-fund",
+              "name": "Advantages and Disadvantages of Mutual Fund",
+              "kind": "concept"
+            },
+            {
+              "key": "factors-influencing-the-selection-of-mutual-funds",
+              "name": "Factors influencing the selection of Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "signals-highlighting-the-exit-of-investors-from-the-mutual-fund-scheme",
+              "name": "Signals highlighting the exit of investors from the Mutual Fund Scheme",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-mutual-funds",
+              "name": "Money Market Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "exchange-traded-funds-etfs",
+              "name": "Exchange Traded Funds (ETFs)",
+              "kind": "concept"
+            },
+            {
+              "key": "real-estate-investment-trusts-reits",
+              "name": "Real Estate Investment Trusts (ReITs)",
+              "kind": "concept"
+            },
+            {
+              "key": "infrastructure-investment-trusts-invits",
+              "name": "Infrastructure Investment Trusts (Invits)",
+              "kind": "concept"
+            },
+            {
+              "key": "other-aspects-side-pocketing-and-tracking-error",
+              "name": "Other aspects - Side Pocketing and Tracking Error",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "private-equity",
+          "name": "Private Equity",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-of-private-equity",
+              "name": "Meaning of Private Equity",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-private-equity-venture-capital",
+              "name": "Classification of Private Equity: Venture Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-private-equity-buyouts",
+              "name": "Classification of Private Equity: Buyouts",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-private-equity-hurdle-rate",
+              "name": "Classification of Private Equity: Hurdle rate",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-private-equity-paid-in-capital",
+              "name": "Classification of Private Equity: Paid in Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-private-equity-term-sheet",
+              "name": "Classification of Private Equity: Term Sheet",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-of-investing-in-private-equity",
+              "name": "Cost of Investing in Private Equity",
+              "kind": "concept"
+            },
+            {
+              "key": "exit-routes",
+              "name": "Exit Routes",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-private-equity-transactions",
+              "name": "Valuation of Private Equity Transactions",
+              "kind": "concept"
+            },
+            {
+              "key": "private-equity-funds-distribution-of-returns-in-general-partner-and-limited-partner",
+              "name": "Private Equity Funds (Distribution of returns in General Partner and Limited Partner)",
+              "kind": "concept"
+            },
+            {
+              "key": "contemporary-issues-in-private-equity-the-rise-of-patient-capital-ethical-issues",
+              "name": "Contemporary issues in Private Equity – The rise of patient capital, Ethical Issues",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "investment-banking",
+          "name": "Investment Banking",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept",
+              "name": "Concept",
+              "kind": "concept"
+            },
+            {
+              "key": "functions",
+              "name": "Functions",
+              "kind": "concept"
+            },
+            {
+              "key": "challenges",
+              "name": "Challenges",
+              "kind": "concept"
+            },
+            {
+              "key": "developments-in-investment-banking",
+              "name": "Developments in Investment Banking",
+              "kind": "concept"
+            },
+            {
+              "key": "merchant-banking-and-issue-management",
+              "name": "Merchant Banking and Issue Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "credit-rating",
+          "name": "Credit Rating",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "rating-services",
+              "name": "Rating Services",
+              "kind": "concept"
+            },
+            {
+              "key": "objectives-and-types",
+              "name": "Objectives and types",
+              "kind": "concept"
+            },
+            {
+              "key": "uses",
+              "name": "Uses",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-rating-process",
+              "name": "Credit Rating Process",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-rating-methodology",
+              "name": "Credit Rating Methodology",
+              "kind": "concept"
+            },
+            {
+              "key": "camel-model-in-credit-rating",
+              "name": "CAMEL Model in Credit Rating",
+              "kind": "concept"
+            },
+            {
+              "key": "rating-revisions",
+              "name": "Rating Revisions",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-rating-agencies-in-india-and-abroad",
+              "name": "Credit Rating Agencies in India and abroad",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-rating-agencies-and-the-us-sub-prime-crisis",
+              "name": "Credit Rating agencies and the US Sub-prime crisis",
+              "kind": "concept"
+            },
+            {
+              "key": "limitations-of-credit-rating",
+              "name": "Limitations of Credit Rating",
+              "kind": "concept"
+            },
+            {
+              "key": "contemporary-aspects-in-credit-rating",
+              "name": "Contemporary Aspects in Credit Rating",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "leasing",
+          "name": "Leasing",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-types-advantages-and-disadvantages-of-leasing",
+              "name": "Meaning, types, advantages, and disadvantages of Leasing",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-evaluation-of-lease-proposal-from-the-perspective-of-lessee-and-lessor",
+              "name": "Financial evaluation of lease proposal from the perspective of Lessee and Lessor",
+              "kind": "concept"
+            },
+            {
+              "key": "break-even-lease-rental-belr-from-lessees-and-lessors-point-of-view",
+              "name": "Break Even Lease Rental (BELR) from Lessee’s and Lessor’s point of view",
+              "kind": "concept"
+            },
+            {
+              "key": "cross-border-leasing",
+              "name": "Cross Border Leasing",
+              "kind": "concept"
+            },
+            {
+              "key": "regulatory-aspects-of-leasing",
+              "name": "Regulatory Aspects of Leasing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "factoring",
+          "name": "Factoring",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept-definition-and-mechanism-of-factoring",
+              "name": "Concept, Definition and Mechanism of Factoring",
+              "kind": "concept"
+            },
+            {
+              "key": "typesforms-of-factoring",
+              "name": "Types/Forms of Factoring",
+              "kind": "concept"
+            },
+            {
+              "key": "functions-of-a-factor",
+              "name": "Functions of a Factor",
+              "kind": "concept"
+            },
+            {
+              "key": "benefits-of-factoring",
+              "name": "Benefits of Factoring",
+              "kind": "concept"
+            },
+            {
+              "key": "factors-inhibiting-the-growth-of-factoring-in-india",
+              "name": "Factors inhibiting the growth of Factoring in India",
+              "kind": "concept"
+            },
+            {
+              "key": "forfaiting",
+              "name": "Forfaiting",
+              "kind": "concept"
+            },
+            {
+              "key": "forfaiting-vs-export-factoring",
+              "name": "Forfaiting vs Export Factoring",
+              "kind": "concept"
+            },
+            {
+              "key": "regulatory-aspects-of-factoring",
+              "name": "Regulatory Aspects of Factoring",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sebi-regulations-compliances-in-capital-markets",
+          "name": "SEBI Regulations – Compliances in Capital Markets",
+          "section": "",
+          "topics": []
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "forex-and-treasury-management",
+      "paper_number": 10,
+      "name": "Forex and Treasury Management",
+      "source_url": "https://resource.cdn.icai.org/92213bos-aps5090-set-c-p10.pdf",
+      "chapters": [
+        {
+          "key": "organizational-structure-of-treasury",
+          "name": "Organizational Structure of Treasury",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-of-treasury",
+              "name": "Introduction of Treasury",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-its-evolution-and-objectives",
+              "name": "Treasury – Its Evolution and Objectives",
+              "kind": "concept"
+            },
+            {
+              "key": "organization-structure-of-treasury-front-back-mid-office",
+              "name": "Organization Structure of Treasury – Front, Back & Mid Office",
+              "kind": "concept"
+            },
+            {
+              "key": "functions-of-treasury-department",
+              "name": "Functions of Treasury Department",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-raising-capital",
+              "name": "Role of Treasury and Treasurer in: Raising Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-managing-bank-relationships",
+              "name": "Role of Treasury and Treasurer in: Managing Bank Relationships",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-money-management",
+              "name": "Role of Treasury and Treasurer in: Money Management",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-treasury-performance-management",
+              "name": "Role of Treasury and Treasurer in: Treasury Performance Management",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-liquidity-management",
+              "name": "Role of Treasury and Treasurer in: Liquidity Management",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-credit-management",
+              "name": "Role of Treasury and Treasurer in: Credit Management",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-forex-management",
+              "name": "Role of Treasury and Treasurer in: Forex Management",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-treasury-and-treasurer-in-risk-management",
+              "name": "Role of Treasury and Treasurer in: Risk Management",
+              "kind": "concept"
+            },
+            {
+              "key": "responsibilities-of-a-treasurer",
+              "name": "Responsibilities of a Treasurer",
+              "kind": "concept"
+            },
+            {
+              "key": "integrated-treasury-management-cost-centre-and-profit-centre",
+              "name": "Integrated Treasury Management - Cost Centre and Profit Centre",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "process-of-treasury",
+          "name": "Process of Treasury",
+          "section": "",
+          "topics": [
+            {
+              "key": "treasury-management-systems-and-techniques",
+              "name": "Treasury Management - Systems and Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-policy-and-procedure-manual",
+              "name": "Treasury Policy and Procedure Manual",
+              "kind": "concept"
+            },
+            {
+              "key": "delegation-with-accountability-open-position-limits-daylight-overnight-asset-position-limit-intraday-limit",
+              "name": "Delegation with Accountability: Open Position Limits: Daylight, Overnight, Asset Position Limit, Intraday Limit",
+              "kind": "concept"
+            },
+            {
+              "key": "delegation-with-accountability-deal-size-individual-dealers-limit",
+              "name": "Delegation with Accountability: Deal Size, Individual Dealer’s Limit",
+              "kind": "concept"
+            },
+            {
+              "key": "delegation-with-accountability-stop-loss-limits",
+              "name": "Delegation with Accountability: Stop Loss Limits",
+              "kind": "concept"
+            },
+            {
+              "key": "control-and-reporting-requirements",
+              "name": "Control and Reporting Requirements",
+              "kind": "concept"
+            },
+            {
+              "key": "dealing-and-trading-operations-control-and-orderly-conduct-moral-and-ethical-codes-checks-of-balances-signing-ethical-co",
+              "name": "Dealing and Trading Operations – Control and Orderly Conduct, Moral and Ethical Codes, Checks of Balances, Signing Ethical Code Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "an-insight-into-float-availability-swaps",
+              "name": "An insight into: Float, Availability, Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "an-insight-into-account-analysis-clearing-houses",
+              "name": "An insight into: Account Analysis, Clearing Houses",
+              "kind": "concept"
+            },
+            {
+              "key": "an-insight-into-lockboxes-disbursement",
+              "name": "An insight into: Lockboxes, Disbursement",
+              "kind": "concept"
+            },
+            {
+              "key": "benchmark-rates-for-discounting-cash-flows",
+              "name": "Benchmark Rates for Discounting Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-and-cash-flow-management-crr-objectives-sources-and-deployment",
+              "name": "Liquidity and Cash Flow Management – CRR: Objectives, Sources and Deployment",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-and-cash-flow-management-crr-internal-control-netting-gap-management",
+              "name": "Liquidity and Cash Flow Management – CRR: Internal Control, Netting, Gap Management",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-management-processes-like-domestic-treasury-remittances-international-treasury-remittances",
+              "name": "Treasury Management Processes like Domestic Treasury Remittances, International Treasury Remittances",
+              "kind": "concept"
+            },
+            {
+              "key": "payment-settlement-systems-ccil-cls-rtgs-neft-and-swift",
+              "name": "Payment & Settlement Systems, CCIL, CLS, RTGS, NEFT and SWIFT",
+              "kind": "concept"
+            },
+            {
+              "key": "dealing-room-operations-nostro-vostro-loro-mirror-acs-open-currency-position-cash-position-by-dealers",
+              "name": "Dealing Room Operations: Nostro / Vostro/ Loro, Mirror A/cs – Open Currency Position, Cash Position by Dealers",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "types-of-treasuries",
+          "name": "Types of Treasuries",
+          "section": "",
+          "topics": [
+            {
+              "key": "treasury-manufacturing-and-service-corporates",
+              "name": "Treasury – Manufacturing and Service Corporates",
+              "kind": "concept"
+            },
+            {
+              "key": "background-contribution-analysis",
+              "name": "Background: Contribution Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "background-operating-and-financial-leverage",
+              "name": "Background: Operating and Financial Leverage",
+              "kind": "concept"
+            },
+            {
+              "key": "background-liquidity-management",
+              "name": "Background: Liquidity Management",
+              "kind": "concept"
+            },
+            {
+              "key": "background-foreign-exchange-exposures",
+              "name": "Background: Foreign Exchange Exposures",
+              "kind": "concept"
+            },
+            {
+              "key": "background-commodity-exposures",
+              "name": "Background: Commodity Exposures",
+              "kind": "concept"
+            },
+            {
+              "key": "background-credit-exposures",
+              "name": "Background: Credit Exposures",
+              "kind": "concept"
+            },
+            {
+              "key": "background-debt-restructurings",
+              "name": "Background: Debt Restructurings",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-background",
+              "name": "Treasury – Banking: Background",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-capital-adequacy",
+              "name": "Treasury – Banking: Capital Adequacy",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-yield-curve-and-spreads",
+              "name": "Treasury – Banking: Yield Curve and Spreads",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-credit-risks",
+              "name": "Treasury – Banking: Credit Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-foreign-exchange-risk",
+              "name": "Treasury – Banking: Foreign Exchange Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-interest-risks",
+              "name": "Treasury – Banking: Interest Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-re-financing-risks",
+              "name": "Treasury – Banking: Re-financing Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-securitization",
+              "name": "Treasury – Banking: Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-banking-asset-liability-management",
+              "name": "Treasury – Banking: Asset Liability Management",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-insurance-companies-life-general",
+              "name": "Treasury – Special Reference to: Insurance Companies (Life & General)",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-mutual-fund-organizations",
+              "name": "Treasury – Special Reference to: Mutual Fund Organizations",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-chit-fund-organizations",
+              "name": "Treasury – Special Reference to: Chit Fund Organizations",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-housing-finance-companies",
+              "name": "Treasury – Special Reference to: Housing Finance Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-non-banking-financial-companies",
+              "name": "Treasury – Special Reference to: Non-banking Financial Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-government-either-state-or-central",
+              "name": "Treasury – Special Reference to: Government (Either State or Central)",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-reserve-bank-of-india",
+              "name": "Treasury – Special Reference to: Reserve Bank of India",
+              "kind": "concept"
+            },
+            {
+              "key": "treasury-special-reference-to-profit-centre-vs-non-profit-treasury",
+              "name": "Treasury – Special Reference to: Profit Centre Vs. Non-Profit Treasury",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "treasury-domestic",
+          "name": "Treasury — Domestic",
+          "section": "",
+          "topics": [
+            {
+              "key": "classification-of-treasury-market",
+              "name": "Classification of Treasury Market",
+              "kind": "concept"
+            },
+            {
+              "key": "domestic-or-national-treasury-market",
+              "name": "Domestic or National Treasury Market",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-or-international-treasury-markets",
+              "name": "Forex or International Treasury Markets",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "treasury-forex",
+          "name": "Treasury – Forex",
+          "section": "",
+          "topics": [
+            {
+              "key": "foreign-exchange-markets-different-kinds-of-inter-bank-forex-markets",
+              "name": "Foreign Exchange Markets: Different Kinds of Inter - Bank Forex Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-highly-traded-markets-cashotc",
+              "name": "Foreign Exchange Markets: Highly Traded Markets - Cash/OTC",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-nature-of-transactions",
+              "name": "Foreign Exchange Markets: Nature of Transactions",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-cross-border-currency-flows",
+              "name": "Foreign Exchange Markets: Cross Border Currency Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-liberalization-of-exchange-control",
+              "name": "Foreign Exchange Markets: Liberalization of Exchange Control",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-role-of-banks-in-forex-market",
+              "name": "Foreign Exchange Markets: Role of Banks in Forex Market",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-factors-impacting-forex-market",
+              "name": "Foreign Exchange Markets: Factors Impacting Forex Market",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-markets-convertibility-and-bop",
+              "name": "Foreign Exchange Markets: Convertibility and BOP",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-concepts-exchange-rate-quotes",
+              "name": "Forex Concepts: Exchange Rate Quotes",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-concepts-factors-affecting-exchange-rates",
+              "name": "Forex Concepts: Factors affecting Exchange Rates",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-concepts-exchange-rate-mechanism",
+              "name": "Forex Concepts: Exchange Rate Mechanism",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-concepts-spot-and-cross-and-forward-rates",
+              "name": "Forex Concepts: Spot and Cross and Forward Rates",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-concepts-premium-and-discount",
+              "name": "Forex Concepts: Premium and Discount",
+              "kind": "concept"
+            },
+            {
+              "key": "forex-concepts-forward-contractsbooking-extension-cancellation",
+              "name": "Forex Concepts: Forward Contracts–Booking, Extension, Cancellation",
+              "kind": "concept"
+            },
+            {
+              "key": "international-treasury-market-participants",
+              "name": "International Treasury: Market Participants",
+              "kind": "concept"
+            },
+            {
+              "key": "international-treasury-various-forex-treasury-products",
+              "name": "International Treasury: Various Forex Treasury Products",
+              "kind": "concept"
+            },
+            {
+              "key": "international-treasury-volatility-of-major-currencies",
+              "name": "International Treasury: Volatility of Major Currencies",
+              "kind": "concept"
+            },
+            {
+              "key": "international-treasury-currency-trading",
+              "name": "International Treasury: Currency Trading",
+              "kind": "concept"
+            },
+            {
+              "key": "international-treasury-global-securities-portfolio-management",
+              "name": "International Treasury: Global Securities – Portfolio Management",
+              "kind": "concept"
+            },
+            {
+              "key": "derivative-markets-futures-options-and-swaps",
+              "name": "Derivative Markets: Futures, Options and Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "derivative-markets-price-calculation-of-various-instruments",
+              "name": "Derivative Markets: Price Calculation of Various Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "derivative-markets-swaps-outright-deals-dealer-operations",
+              "name": "Derivative Markets: Swaps - Outright Deals, Dealer Operations",
+              "kind": "concept"
+            },
+            {
+              "key": "derivative-markets-trends-in-futures-market",
+              "name": "Derivative Markets: Trends in Futures Market",
+              "kind": "concept"
+            },
+            {
+              "key": "derivative-markets-short-term-interest-rate-futures",
+              "name": "Derivative Markets: Short Term Interest Rate Futures",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-derivatives-introduction",
+              "name": "Interest Rate Derivatives: Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-derivatives-brief-terminologies",
+              "name": "Interest Rate Derivatives: Brief terminologies",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-derivatives-hedging",
+              "name": "Interest Rate Derivatives: Hedging",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-c",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "the-constitution-of-india-and-art-of-advocacy",
+      "paper_number": 1,
+      "name": "The Constitution of India & Art of Advocacy",
+      "source_url": "https://resource.cdn.icai.org/92214bos-aps5090-set-d-p1.pdf",
+      "chapters": [
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "Part I: The Constitution of India",
+          "topics": [
+            {
+              "key": "preamble",
+              "name": "Preamble",
+              "kind": "concept"
+            },
+            {
+              "key": "features",
+              "name": "Features",
+              "kind": "concept"
+            },
+            {
+              "key": "sources",
+              "name": "Sources",
+              "kind": "concept"
+            },
+            {
+              "key": "the-union-and-its-territory",
+              "name": "The Union and its Territory",
+              "kind": "concept"
+            },
+            {
+              "key": "citizenship",
+              "name": "Citizenship",
+              "kind": "concept"
+            },
+            {
+              "key": "fundamental-rights",
+              "name": "Fundamental Rights",
+              "kind": "concept"
+            },
+            {
+              "key": "duties-and-directive-principles",
+              "name": "Duties and Directive Principles",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "government-of-union",
+          "name": "Government of Union",
+          "section": "Part I: The Constitution of India",
+          "topics": [
+            {
+              "key": "the-executive",
+              "name": "The Executive",
+              "kind": "concept"
+            },
+            {
+              "key": "parliament",
+              "name": "Parliament",
+              "kind": "concept"
+            },
+            {
+              "key": "judiciary",
+              "name": "Judiciary",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "government-of-states",
+          "name": "Government of States",
+          "section": "Part I: The Constitution of India",
+          "topics": [
+            {
+              "key": "the-executive",
+              "name": "The Executive",
+              "kind": "concept"
+            },
+            {
+              "key": "state-legislature",
+              "name": "State Legislature",
+              "kind": "concept"
+            },
+            {
+              "key": "high-courts-in-the-states",
+              "name": "High courts in the States",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "relation-between-union-and-the-states",
+          "name": "Relation between Union and the States",
+          "section": "Part I: The Constitution of India",
+          "topics": [
+            {
+              "key": "legislative-relations",
+              "name": "Legislative relations",
+              "kind": "concept"
+            },
+            {
+              "key": "administrative-relations",
+              "name": "Administrative relations",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-relations",
+              "name": "Financial relations",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "emergency-provisions",
+          "name": "Emergency Provisions",
+          "section": "Part I: The Constitution of India",
+          "topics": []
+        },
+        {
+          "key": "procedure-for-amendments",
+          "name": "Procedure for Amendments",
+          "section": "Part I: The Constitution of India",
+          "topics": []
+        },
+        {
+          "key": "development-of-legal-system-in-india",
+          "name": "Development of Legal System in India",
+          "section": "Part II: Art of Advocacy",
+          "topics": []
+        },
+        {
+          "key": "representation-by-chartered-accountants-in-tribunals",
+          "name": "Representation by Chartered Accountants in Tribunals",
+          "section": "Part II: Art of Advocacy",
+          "topics": []
+        },
+        {
+          "key": "basic-rules-of-drafting-and-pleading",
+          "name": "Basic Rules of drafting and pleading",
+          "section": "Part II: Art of Advocacy",
+          "topics": []
+        }
+      ],
+      "group": "set-d",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "psychology-and-philosophy",
+      "paper_number": 2,
+      "name": "Psychology & Philosophy",
+      "source_url": "https://www.icai.org/post/syllabus-nset-spom",
+      "chapters": [
+        {
+          "key": "introduction-definition-orientation-and-scope",
+          "name": "Introduction (Definition, Orientation and Scope)",
+          "section": "Section A: Psychology",
+          "topics": [
+            {
+              "key": "what-is-psychology",
+              "name": "What is Psychology?",
+              "kind": "concept"
+            },
+            {
+              "key": "misconceptions-in-psychology",
+              "name": "Misconceptions in Psychology",
+              "kind": "concept"
+            },
+            {
+              "key": "applications-and-scope-of-psychology-in-accounting-and-accountancy",
+              "name": "Applications and Scope of Psychology in Accounting and accountancy",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "personality",
+          "name": "Personality",
+          "section": "Section A: Psychology",
+          "topics": [
+            {
+              "key": "understanding-personality-hexaco-model-and-dark-triad-theory",
+              "name": "Understanding Personality (HEXACO model and Dark Triad theory)",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-personality-during-human-interaction-in-accounting",
+              "name": "Role of Personality during human interaction in accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "mindfulness-and-decision-making",
+              "name": "Mindfulness and Decision Making",
+              "kind": "concept"
+            },
+            {
+              "key": "factors-affecting-decision-making-attitude-stereotypes-and-prejudices-aptitude-and-motivation",
+              "name": "Factors affecting Decision Making (Attitude: stereotypes and prejudices; aptitude and motivation)",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-making-under-uncertainty",
+              "name": "Decision Making under uncertainty",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "individual-level-psychological-process",
+          "name": "Individual level psychological process",
+          "section": "Section A: Psychology",
+          "topics": [
+            {
+              "key": "emotional-intelligence-concept-self-awareness-self-regulation-self-management-relationship-management-of-ei",
+              "name": "Emotional Intelligence Concept (self-awareness, self-regulation, self-management, relationship management) of EI",
+              "kind": "concept"
+            },
+            {
+              "key": "strategies-to-enhance-ei-in-day-to-day-activities",
+              "name": "Strategies to enhance EI in day-to-day activities",
+              "kind": "concept"
+            },
+            {
+              "key": "navrasa",
+              "name": "Navrasa",
+              "kind": "concept"
+            },
+            {
+              "key": "communication-verbal-and-nonverbal",
+              "name": "Communication (verbal and nonverbal)",
+              "kind": "concept"
+            },
+            {
+              "key": "stress-management-work-life-balance",
+              "name": "Stress Management & Work-life Balance",
+              "kind": "concept"
+            },
+            {
+              "key": "understanding-stress-eustress-and-distress",
+              "name": "Understanding stress (Eustress and Distress)",
+              "kind": "concept"
+            },
+            {
+              "key": "practical-ways-to-deal-with-stress",
+              "name": "Practical ways to deal with stress",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "psychological-processes-in-organizations",
+          "name": "Psychological processes in Organizations",
+          "section": "Section A: Psychology",
+          "topics": [
+            {
+              "key": "groups-leadership-and-change-management",
+              "name": "Groups, Leadership and Change Management",
+              "kind": "concept"
+            },
+            {
+              "key": "conceptual-understanding-group-think-conformity-and-social-loafing-work-teams-leadership-change-management-and-its-appli",
+              "name": "Conceptual understanding (Group Think, Conformity and Social loafing, Work Teams, Leadership, Change management) and its application in modern accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "psycap-and-goal-setting-in-accountancy-self-efficacy-optimism-hope-and-resilience-and-goal-setting-in-accounting",
+              "name": "PsyCap and Goal Setting in Accountancy Self-efficacy, Optimism, Hope and Resilience and goal setting in accounting",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "general-discussions-on-philosophy-and-reasoning",
+          "name": "General Discussions on Philosophy and Reasoning",
+          "section": "Section B: Philosophy",
+          "topics": [
+            {
+              "key": "what-is-philosophy",
+              "name": "What is Philosophy?",
+              "kind": "concept"
+            },
+            {
+              "key": "core-branches-in-philosophy-indian-and-western-epistemology-theory-of-knowledge-truth-justification-and-belief",
+              "name": "Core branches in Philosophy (Indian and Western): Epistemology (Theory of Knowledge- Truth, Justification and Belief)",
+              "kind": "concept"
+            },
+            {
+              "key": "core-branches-in-philosophy-indian-and-western-metaphysics-nature-of-reality-mind-body-dualism-nature-of-consciousness",
+              "name": "Core branches in Philosophy (Indian and Western): Metaphysics (Nature of Reality: Mind-Body Dualism, Nature of Consciousness)",
+              "kind": "concept"
+            },
+            {
+              "key": "core-branches-in-philosophy-indian-and-western-axiology-ethics-and-aesthetics",
+              "name": "Core branches in Philosophy (Indian and Western): Axiology (Ethics and Aesthetics)",
+              "kind": "concept"
+            },
+            {
+              "key": "characteristics-of-indian-philosophy-darshana-shastra",
+              "name": "Characteristics of Indian Philosophy: Darshana Shastra",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "critical-thinking-and-reasoning",
+          "name": "Critical Thinking and Reasoning",
+          "section": "Section B: Philosophy",
+          "topics": [
+            {
+              "key": "argument-and-evaluation",
+              "name": "Argument and Evaluation",
+              "kind": "concept"
+            },
+            {
+              "key": "informal-fallacy",
+              "name": "Informal Fallacy",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "ethics",
+          "name": "Ethics",
+          "section": "Section B: Philosophy",
+          "topics": [
+            {
+              "key": "who-we-are-how-we-ought-to-conduct-ourselves",
+              "name": "Who we are & How we ought to conduct ourselves",
+              "kind": "concept"
+            },
+            {
+              "key": "virtue-ethics-and-theory-of-excellence-plato-and-aristotle-teleology-theory-of-means-and-end",
+              "name": "Virtue Ethics and Theory of Excellence: Plato and Aristotle: Teleology (Theory of Means and End)",
+              "kind": "concept"
+            },
+            {
+              "key": "virtue-ethics-and-theory-of-excellence-plato-and-aristotle-deontology-concept-of-duty",
+              "name": "Virtue Ethics and Theory of Excellence: Plato and Aristotle: Deontology (Concept of Duty)",
+              "kind": "concept"
+            },
+            {
+              "key": "indian-ethics-aims-of-life-dharma-duty-artha-wealth-kama-pleasure-moksha-liberation",
+              "name": "Indian Ethics: Aims of Life: Dharma (Duty), Artha (Wealth), Kama (Pleasure), Moksha (Liberation)",
+              "kind": "concept"
+            },
+            {
+              "key": "indian-ethics-yoga-karma-yoga-bhakti-yoga-jnana-yoga-raja-yoga",
+              "name": "Indian Ethics: Yoga: Karma Yoga, Bhakti Yoga, Jnana Yoga, Raja Yoga",
+              "kind": "concept"
+            },
+            {
+              "key": "indian-ethics-meditation-chitta-vritti-nirodha-yama-and-niyama",
+              "name": "Indian Ethics: Meditation: Chitta Vritti Nirodha, Yama and Niyama",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "usefulness-of-philosophy-in-contemporary-life-especially-for-cas",
+          "name": "Usefulness of Philosophy in Contemporary life (especially for CAs)",
+          "section": "Section B: Philosophy",
+          "topics": [
+            {
+              "key": "business-ethics-karma-yoga-for-superior-business-performance",
+              "name": "Business Ethics: Karma Yoga for superior business performance",
+              "kind": "concept"
+            },
+            {
+              "key": "business-ethics-lokasamgraha-in-bhagavad-gita",
+              "name": "Business Ethics: Lokasamgraha in Bhagavad Gita",
+              "kind": "concept"
+            },
+            {
+              "key": "business-ethics-leadership-and-communication",
+              "name": "Business Ethics: Leadership and Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "justice-freedom-responsibility-and-action",
+              "name": "Justice: Freedom, Responsibility and Action",
+              "kind": "concept"
+            },
+            {
+              "key": "gender-and-environment",
+              "name": "Gender and Environment",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-d",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "entrepreneurship-and-start-up-ecosystem",
+      "paper_number": 3,
+      "name": "Entrepreneurship & Start-up Ecosystem",
+      "source_url": "https://resource.cdn.icai.org/92217bos-aps5090-set-d-p3.pdf",
+      "chapters": [
+        {
+          "key": "part-a-introduction-to-entrepreneurship-startups-part-b-startup-registration",
+          "name": "Part A: Introduction to Entrepreneurship & Startups; Part B: Startup Registration",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-and-concept-of-entrepreneurship-startups",
+              "name": "Meaning and concept of entrepreneurship & Startups",
+              "kind": "concept"
+            },
+            {
+              "key": "the-history-of-entrepreneurship-development",
+              "name": "The history of entrepreneurship development",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-entrepreneurs",
+              "name": "Types of entrepreneurs",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-entrepreneurship-startups-in-economic-development",
+              "name": "Role of entrepreneurship & Startups in economic development",
+              "kind": "concept"
+            },
+            {
+              "key": "rise-of-startups-global-perspective",
+              "name": "Rise of Startups: Global Perspective",
+              "kind": "concept"
+            },
+            {
+              "key": "rise-of-startups-indian-perspective",
+              "name": "Rise of Startups: Indian Perspective",
+              "kind": "concept"
+            },
+            {
+              "key": "the-skills-traits-required-to-be-an-entrepreneur",
+              "name": "The skills/ traits required to be an entrepreneur",
+              "kind": "concept"
+            },
+            {
+              "key": "creative-and-design-thinking",
+              "name": "Creative and design Thinking",
+              "kind": "concept"
+            },
+            {
+              "key": "the-entrepreneurial-decision-process",
+              "name": "The entrepreneurial decision process",
+              "kind": "concept"
+            },
+            {
+              "key": "succession-planning-and-managing-family-business",
+              "name": "Succession Planning and Managing Family Business",
+              "kind": "concept"
+            },
+            {
+              "key": "startup-registration-dpiit-recognition",
+              "name": "Startup Registration: DPIIT Recognition",
+              "kind": "concept"
+            },
+            {
+              "key": "startup-registration-benefits",
+              "name": "Startup Registration: Benefits",
+              "kind": "concept"
+            },
+            {
+              "key": "startup-registration-government-seed-funding",
+              "name": "Startup Registration: Government Seed Funding",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "crafting-business-models-and-lean-start-ups",
+          "name": "Crafting business models and Lean Start-ups",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-business-models",
+              "name": "Introduction to business models",
+              "kind": "concept"
+            },
+            {
+              "key": "creating-value-propositions-conventional-industry-logic",
+              "name": "Creating value propositions-conventional industry logic",
+              "kind": "concept"
+            },
+            {
+              "key": "value-innovation-logic",
+              "name": "Value innovation logic",
+              "kind": "concept"
+            },
+            {
+              "key": "customer-focused-innovation",
+              "name": "Customer focused innovation",
+              "kind": "concept"
+            },
+            {
+              "key": "building-and-analysing-business-models",
+              "name": "Building and analysing business models",
+              "kind": "concept"
+            },
+            {
+              "key": "business-model-canvas",
+              "name": "Business model canvas",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-lean-start-ups",
+              "name": "Introduction to lean start-ups",
+              "kind": "concept"
+            },
+            {
+              "key": "business-pitching",
+              "name": "Business Pitching",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "product-development",
+          "name": "Product Development",
+          "section": "",
+          "topics": [
+            {
+              "key": "building-a-minimum-viable-product-mvp",
+              "name": "Building a Minimum Viable Product (MVP)",
+              "kind": "concept"
+            },
+            {
+              "key": "journey-towards-building-product-market-fit",
+              "name": "Journey towards building \"Product Market Fit\"",
+              "kind": "concept"
+            },
+            {
+              "key": "practical-case-studies-on-journey-of-successful-startups-from-mvp-to-pmf",
+              "name": "Practical case studies on journey of successful startups from MVP to PMF",
+              "kind": "concept"
+            },
+            {
+              "key": "prototype-and-agile-development-methodology-for-tech-startups",
+              "name": "Prototype and Agile development methodology for tech Startups",
+              "kind": "concept"
+            },
+            {
+              "key": "identify-critical-success-elements",
+              "name": "Identify critical success elements",
+              "kind": "concept"
+            },
+            {
+              "key": "product-tech",
+              "name": "Product (tech)",
+              "kind": "concept"
+            },
+            {
+              "key": "product-offering",
+              "name": "Product (offering)",
+              "kind": "concept"
+            },
+            {
+              "key": "procurement",
+              "name": "Procurement",
+              "kind": "concept"
+            },
+            {
+              "key": "supply-chain",
+              "name": "Supply Chain",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "pitching-the-idea-and-presentation",
+          "name": "Pitching the idea and presentation",
+          "section": "",
+          "topics": [
+            {
+              "key": "drafting-of-pitch-deck-and-business-plan",
+              "name": "Drafting of Pitch Deck and Business Plan",
+              "kind": "concept"
+            },
+            {
+              "key": "art-of-elevator-pitch",
+              "name": "Art of Elevator Pitch",
+              "kind": "concept"
+            },
+            {
+              "key": "rulessteps-of-pitching-the-idea",
+              "name": "Rules/Steps of Pitching the idea",
+              "kind": "concept"
+            },
+            {
+              "key": "art-of-persuasion",
+              "name": "Art of Persuasion",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "institutions-supporting-small-business-enterprises",
+          "name": "Institutions Supporting Small Business Enterprises",
+          "section": "",
+          "topics": [
+            {
+              "key": "central-level-institutions",
+              "name": "Central level institutions",
+              "kind": "concept"
+            },
+            {
+              "key": "state-level-institutions",
+              "name": "State level institutions",
+              "kind": "concept"
+            },
+            {
+              "key": "other-agencies",
+              "name": "Other agencies",
+              "kind": "concept"
+            },
+            {
+              "key": "industry-associations",
+              "name": "Industry Associations",
+              "kind": "concept"
+            },
+            {
+              "key": "current-government-schemes-supporting-entrepreneurship",
+              "name": "Current government schemes supporting entrepreneurship",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "funding-valuation",
+          "name": "Funding & Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "understanding-basics-of-startup-funding-where-to-get-investment",
+              "name": "Understanding basics of Startup Funding & where to get investment",
+              "kind": "concept"
+            },
+            {
+              "key": "quantifying-the-seed-capital",
+              "name": "Quantifying the seed capital",
+              "kind": "concept"
+            },
+            {
+              "key": "prerequisite-of-startup-funding",
+              "name": "Prerequisite of Startup Funding",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-modelling-for-the-startups",
+              "name": "Financial Modelling for the Startups",
+              "kind": "concept"
+            },
+            {
+              "key": "how-to-approach-angel-investors-vc-firms",
+              "name": "How to approach Angel Investors & VC Firms",
+              "kind": "concept"
+            },
+            {
+              "key": "understanding-term-sheet",
+              "name": "Understanding Term Sheet",
+              "kind": "concept"
+            },
+            {
+              "key": "investor-agreement-and-equity-dilution",
+              "name": "Investor Agreement and Equity Dilution",
+              "kind": "concept"
+            },
+            {
+              "key": "the-science-behind-startup-valuation",
+              "name": "The science behind 'Startup Valuation'",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "legal-considerations-for-a-startup",
+          "name": "Legal considerations for a Startup",
+          "section": "",
+          "topics": [
+            {
+              "key": "choosing-an-ideal-entity-type-and-overview-of-registration-process",
+              "name": "Choosing an ideal entity type and overview of registration process",
+              "kind": "concept"
+            },
+            {
+              "key": "startup-equity-split-among-cofounders-and-equity-vesting",
+              "name": "Startup Equity Split among cofounders and equity vesting",
+              "kind": "concept"
+            },
+            {
+              "key": "esop-planning-and-other-best-practices",
+              "name": "ESOP Planning and other best practices",
+              "kind": "concept"
+            },
+            {
+              "key": "drafting-of-cofounder-agreement",
+              "name": "Drafting of Cofounder Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "registering-intellectual-property-rights-iprs-patent-copyright-and-trademark-etc",
+              "name": "Registering intellectual property rights (IPRs) [Patent, Copyright and Trademark, etc.]",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "startup-incubators-acceleration",
+          "name": "Startup Incubators & Acceleration",
+          "section": "",
+          "topics": [
+            {
+              "key": "difference-between-incubators-and-accelerators",
+              "name": "Difference between incubators and accelerators",
+              "kind": "concept"
+            },
+            {
+              "key": "choosing-the-right-one-factors-and-effect-thereof",
+              "name": "Choosing the right one (factors and effect thereof)",
+              "kind": "concept"
+            },
+            {
+              "key": "working-of-incubators-and-accelerators",
+              "name": "Working of incubators and accelerators",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "miscellaneous",
+          "name": "Miscellaneous",
+          "section": "",
+          "topics": [
+            {
+              "key": "case-studies-on-success-stories",
+              "name": "Case studies on success stories",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-startup-advisors-funding-agents",
+              "name": "Role of Startup Advisors & Funding Agents",
+              "kind": "concept"
+            },
+            {
+              "key": "building-a-right-startup-team",
+              "name": "Building a right Startup Team",
+              "kind": "concept"
+            },
+            {
+              "key": "founders-grooming-role-of-pr-building-activities-in-success-of-startups",
+              "name": "Founder's grooming: Role of PR Building Activities in success of startups",
+              "kind": "concept"
+            },
+            {
+              "key": "being-part-of-startup-community-and-leading-it-and-exit-strategies",
+              "name": "Being part of Startup Community and leading it and Exit Strategies",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-d",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "digital-ecosystem-and-controls",
+      "paper_number": 4,
+      "name": "Digital Ecosystem and Controls",
+      "source_url": "https://resource.cdn.icai.org/92218bos-aps5090-set-d-p4.pdf",
+      "chapters": [
+        {
+          "key": "governance-and-management-of-digital-ecosystem",
+          "name": "Governance and Management of Digital Ecosystem",
+          "section": "",
+          "topics": [
+            {
+              "key": "key-concepts-of-governance-and-it-strategy",
+              "name": "Key concepts of Governance and IT strategy",
+              "kind": "concept"
+            },
+            {
+              "key": "governance-risk-and-compliance-grc-framework",
+              "name": "Governance, Risk and Compliance (GRC) Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-fundamentals-and-related-terms-sources-and-types-of-risk",
+              "name": "Risk fundamentals and related terms, Sources, and types of risk",
+              "kind": "concept"
+            },
+            {
+              "key": "enterprise-risk-management-framework",
+              "name": "Enterprise Risk Management Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "information-systems-security-policy",
+              "name": "Information Systems Security Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "business-continuity-planning-and-disaster-recovery-planning",
+              "name": "Business Continuity Planning and Disaster Recovery Planning",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "information-systems-life-cycle",
+          "name": "Information Systems Life Cycle",
+          "section": "",
+          "topics": [
+            {
+              "key": "information-system-acquisition",
+              "name": "Information System Acquisition",
+              "kind": "concept"
+            },
+            {
+              "key": "information-system-development-methodologies",
+              "name": "Information System Development methodologies",
+              "kind": "concept"
+            },
+            {
+              "key": "information-systems-implementation-and-maintenance",
+              "name": "Information Systems implementation and maintenance",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "information-systems-control",
+          "name": "Information Systems’ Control",
+          "section": "",
+          "topics": [
+            {
+              "key": "information-systems-control-and-its-classification",
+              "name": "Information Systems’ Control and its classification",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-information-technology-tools",
+              "name": "Overview of Information Technology Tools",
+              "kind": "concept"
+            },
+            {
+              "key": "illustrations-on-risks-and-controls-of-specific-business-processes",
+              "name": "Illustrations on Risks and Controls of specific business processes",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "digital-data-and-analysis",
+          "name": "Digital Data and Analysis",
+          "section": "",
+          "topics": [
+            {
+              "key": "data-privacy",
+              "name": "Data privacy",
+              "kind": "concept"
+            },
+            {
+              "key": "data-assurance",
+              "name": "Data assurance",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-digital-personal-data-protection-act-2023",
+              "name": "Introduction to Digital Personal Data Protection Act, 2023",
+              "kind": "concept"
+            },
+            {
+              "key": "regulatory-compliance-in-terms-of-relevant-sections-of-information-technology-act-2000",
+              "name": "Regulatory compliance in terms of relevant sections of Information Technology Act, 2000",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-data-analytical-tools-and-techniques",
+              "name": "Introduction to Data Analytical tools and Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-business-intelligence-bi-tools-and-techniques",
+              "name": "Introduction to Business Intelligence (BI) tools and techniques",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "digital-economy",
+          "name": "Digital Economy",
+          "section": "",
+          "topics": [
+            {
+              "key": "abcd-of-fintech",
+              "name": "ABCD of Fintech",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-payments-digital-currency-and-cryptocurrency",
+              "name": "Digital payments, Digital Currency, and Cryptocurrency",
+              "kind": "concept"
+            },
+            {
+              "key": "e-business-and-their-associated-risks-and-controls",
+              "name": "e-business and their associated risks and controls",
+              "kind": "concept"
+            },
+            {
+              "key": "emerging-technologies-and-concepts",
+              "name": "Emerging Technologies and Concepts",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "set-d",
+      "total_marks": 100,
+      "kind": "theory"
+    }
+  ]
+}

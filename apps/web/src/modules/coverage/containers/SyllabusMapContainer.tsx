@@ -3,8 +3,10 @@ import { Link, useNavigate } from '@tanstack/react-router'
 
 import { CalculationPopover } from '../components/CalculationPopover'
 import { DueList } from '../components/DueList'
+import { ElectivePicker } from '../components/ElectivePicker'
 import { OverallRing } from '../components/OverallRing'
 import { SubjectProgressList } from '../components/SubjectProgressList'
+import { useSetElectives } from '../hooks/useCoverageMutations'
 import { useCoverageSettings, useDue } from '../hooks/useCoverageQueries'
 import { DEFAULT_WEIGHTS, pick } from '../lib/formula'
 import type { Overview } from '../lib/types'
@@ -19,6 +21,7 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
   const navigate = useNavigate({ from: '/app/syllabus/' })
   const { data: settings } = useCoverageSettings()
   const due = useDue()
+  const setElectives = useSetElectives()
   const weighted = search.view ? search.view === 'weighted' : overview.weighted_default
   const weights = settings
     ? { w_read: settings.w_read, w_practice: settings.w_practice, w_revise: settings.w_revise, w_mock: settings.w_mock }
@@ -67,7 +70,22 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
               </Link>
             </Card>
           ) : null}
-          <SubjectProgressList groups={overview.groups} subjects={overview.subjects} weighted={weighted} />
+          <SubjectProgressList
+            groups={overview.groups}
+            subjects={overview.subjects}
+            electives={overview.electives}
+            weighted={weighted}
+          />
+          {overview.electives.length > 0 ? (
+            <ElectivePicker
+              slots={overview.electives}
+              pending={setElectives.isPending}
+              error={setElectives.isError ? 'We could not save your elective. Please try again.' : undefined}
+              onChange={(slotKey, subjectId) =>
+                setElectives.mutate({ enrollmentId: overview.enrollment.id, choices: { [slotKey]: subjectId } })
+              }
+            />
+          ) : null}
         </>
       )}
     </>

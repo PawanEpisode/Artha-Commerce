@@ -25,6 +25,8 @@ interface Props {
   alsoRevised: boolean
   pending: boolean
   error?: string
+  /** Shown under the intro, for example that unchosen elective papers are hidden. */
+  note?: string
   onToggleChapter: (id: string, on: boolean) => void
   onToggleSubject: (chapterIds: string[], on: boolean) => void
   onAlsoRevised: (v: boolean) => void
@@ -39,6 +41,7 @@ export function CatchupStep({
   alsoRevised,
   pending,
   error,
+  note,
   onToggleChapter,
   onToggleSubject,
   onAlsoRevised,
@@ -51,6 +54,7 @@ export function CatchupStep({
         Tick what you have already read. We will count it as read and show your starting point. You can change anything
         later.
       </p>
+      {note ? <p className="text-sm text-muted-foreground">{note}</p> : null}
       <Accordion type="multiple">
         {subjects.map(({ subject, chapters }) => {
           const ids = chapters?.map((c) => c.id) ?? []

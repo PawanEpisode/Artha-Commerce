@@ -1,5 +1,7 @@
 /** Shapes returned by the coverage API (`/api/v1/coverage/...`). Mirrors apps/api/modules/coverage/serializers.py. */
 
+import type { ElectiveSlotInfo } from '~/modules/syllabus'
+
 export type ChapterStatus =
   'not_started' | 'reading' | 'practised' | 'revised_once' | 'revised_twice_plus' | 'exam_ready'
 
@@ -23,6 +25,8 @@ export interface Enrollment {
   days_remaining: number | null
   daily_hours: number | null
   carried_from: string | null
+  /** Elective papers the student has not chosen yet. */
+  electives_pending: number
   created_at: string | null
 }
 
@@ -33,7 +37,14 @@ export interface SubjectRow extends Rollup {
   paper_number: number | null
   total_marks: number | null
   group_key: string | null
+  /** Key of the elective slot this paper is an option of, or null for a core paper. */
+  elective_slot: string | null
   excluded_chapters: number
+}
+
+/** An elective slot with the student's choice (a subject id), or null while they have not chosen. */
+export interface ElectiveSlot extends ElectiveSlotInfo {
+  chosen: string | null
 }
 
 export interface GroupRow extends Rollup {
@@ -48,6 +59,7 @@ export interface Overview {
   level: Rollup
   groups: GroupRow[]
   subjects: SubjectRow[]
+  electives: ElectiveSlot[]
   due_count: number
 }
 
@@ -55,6 +67,7 @@ export interface ChapterRow {
   id: string
   key: string
   name: string
+  section: string
   marks_min: number | null
   marks_max: number | null
   marks_weight: number
@@ -100,6 +113,8 @@ export interface CoverageEventRow {
 export interface ChapterCoverage {
   chapter: ChapterRow
   subject: { id: string; key: string; name: string }
+  prev_chapter: { id: string; name: string } | null
+  next_chapter: { id: string; name: string } | null
   topics: TopicRow[]
   events: CoverageEventRow[]
   revision_history: CoverageEventRow[]
@@ -142,6 +157,11 @@ export interface SwitchSummary {
   carried_chapters: number
   new_chapters: number
   removed_chapters: number
+}
+
+export interface ElectivesResult {
+  electives: ElectiveSlot[]
+  overview: Overview
 }
 
 export type EnrollmentWithSummary = Enrollment & { switch_summary?: SwitchSummary }

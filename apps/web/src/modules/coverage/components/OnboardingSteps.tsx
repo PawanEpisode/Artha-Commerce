@@ -1,7 +1,9 @@
 import { Alert, Button, Label, LoaderCircle, RadioCardItem, RadioGroup, Select, TextField } from '@artha/design-system'
 import type { FormEvent } from 'react'
 
-import type { CourseSummary, ExamTerm } from '~/modules/syllabus'
+import type { CourseSummary, ElectiveSlotInfo, ExamTerm } from '~/modules/syllabus'
+
+import { ElectiveChoice } from './ElectiveChoice'
 
 interface CourseLevelProps {
   courses: CourseSummary[]
@@ -74,6 +76,8 @@ interface TermProps {
   examDate: string
   dailyHours: string
   pending: boolean
+  /** True when the next step is the elective choice, so this one only continues. */
+  hasElectives?: boolean
   error?: string
   onTerm: (id: string) => void
   onExamDate: (v: string) => void
@@ -89,6 +93,7 @@ export function TermStep({
   examDate,
   dailyHours,
   pending,
+  hasElectives = false,
   error,
   onTerm,
   onExamDate,
@@ -140,9 +145,50 @@ export function TermStep({
         </Button>
         <Button type="submit" size="lg" disabled={pending || Boolean(hoursError)}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
-          Create my syllabus map
+          {hasElectives ? 'Continue' : 'Create my syllabus map'}
         </Button>
       </div>
     </form>
+  )
+}
+
+interface ElectiveStepProps {
+  slots: ElectiveSlotInfo[]
+  choices: Record<string, string>
+  pending: boolean
+  error?: string
+  onChoose: (slotKey: string, subjectId: string | null) => void
+  onBack: () => void
+  onSubmit: () => void
+}
+
+/** Step 3 (only for levels with elective papers): pick the elective you will sit, or decide later. */
+export function ElectiveStep({ slots, choices, pending, error, onChoose, onBack, onSubmit }: ElectiveStepProps) {
+  return (
+    <div className="space-y-6">
+      <p className="text-muted-foreground">
+        You sit just one option for each elective paper, so only that one should count toward your coverage. You can
+        change it any time from your syllabus map.
+      </p>
+      {slots.map((slot) => (
+        <ElectiveChoice
+          key={slot.key}
+          slot={slot}
+          value={choices[slot.key] ?? null}
+          disabled={pending}
+          onChange={(id) => onChoose(slot.key, id)}
+        />
+      ))}
+      {error ? <Alert variant="error">{error}</Alert> : null}
+      <div className="flex flex-wrap gap-3">
+        <Button type="button" variant="outline" onClick={onBack} disabled={pending}>
+          Back
+        </Button>
+        <Button size="lg" onClick={onSubmit} disabled={pending}>
+          {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
+          Create my syllabus map
+        </Button>
+      </div>
+    </div>
   )
 }

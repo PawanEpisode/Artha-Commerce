@@ -11,7 +11,7 @@ from django.db.models import Q
 from django.utils import timezone
 
 from core.models import TimeStampedModel, UUIDModel
-from modules.syllabus.models import Chapter, ExamTerm, Level, Scheme, Topic
+from modules.syllabus.models import Chapter, ExamTerm, Level, Scheme, Subject, Topic
 
 DEFAULT_REVISION_DAYS = [3, 7, 21, 45]
 
@@ -45,6 +45,27 @@ class Enrollment(UUIDModel):
                 name="coverage_enrollment_hours",
             ),
         ]
+
+
+class EnrollmentElective(UUIDModel):
+    """
+    The elective a student chose for one slot of their syllabus (for example CMA Final Paper 20). The options they did
+    not choose are excluded from coverage through the normal exclusion ledger; this row only remembers the choice.
+    """
+
+    user_id = models.UUIDField(db_index=True)
+    enrollment = models.ForeignKey(Enrollment, on_delete=models.CASCADE, related_name="electives")
+    slot_key = models.CharField(max_length=100)  # "<group key>:<paper number>", see syllabus.selectors.elective_slots
+    subject = models.ForeignKey(Subject, on_delete=models.PROTECT, related_name="+")
+
+    class Meta:
+        db_table = "coverage_enrollment_elective"
+        constraints = [
+            models.UniqueConstraint(fields=["enrollment", "slot_key"], name="coverage_elective_one_per_slot")
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.enrollment_id} {self.slot_key}"
 
 
 class CoverageSettings(TimeStampedModel):

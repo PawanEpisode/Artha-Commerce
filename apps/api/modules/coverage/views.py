@@ -68,6 +68,7 @@ class EnrollmentListView(CoverageView):
             target_term_id=d.get("target_term"),
             exam_date=d.get("exam_date"),
             daily_hours=d.get("daily_hours"),
+            electives=d.get("electives"),
         )
         enrollment = selectors.get_enrollment(request.user.id, enrollment.id)
         return Response(serializers.enrollment_dict(enrollment), status=201)
@@ -96,6 +97,26 @@ class EnrollmentDetailView(CoverageView):
         if summary:
             body["switch_summary"] = summary
         return Response(body)
+
+
+class EnrollmentElectivesView(WriteView):
+    """PUT {"choices": {"<slot key>": "<subject id>" | null}}: sets the elective of each slot named and re-counts coverage."""
+
+    def put(self, request, enrollment_id):
+        enrollment = selectors.get_enrollment(request.user.id, enrollment_id)
+        if not enrollment:
+            raise NotFound("Enrolment not found.")
+        s = serializers.ElectivesSerializer(data=request.data)
+        s.is_valid(raise_exception=True)
+        services.set_electives(enrollment, s.validated_data["choices"])
+        enrollment = selectors.get_enrollment(request.user.id, enrollment.id)
+        settings = services.get_or_create_settings(request.user.id)
+        return Response(
+            {
+                "electives": serializers.electives_list(enrollment),
+                "overview": serializers.overview_dict(enrollment, settings, self.today(request)),
+            }
+        )
 
 
 class OverviewView(CoverageView):
@@ -142,10 +163,13 @@ class ChapterCoverageView(CoverageView):
             {"id": str(t.id), "key": t.key, "name": t.name, "kind": t.kind, "is_done": states.get(t.id, False)}
             for t in syllabus.list_topics(chapter)
         ]
+        prev_chapter, next_chapter = syllabus.neighbour_chapters(chapter)
         return Response(
             {
                 "chapter": serializers.chapter_row(chapter, progress, counts),
                 "subject": {"id": str(chapter.subject_id), "key": chapter.subject.key, "name": chapter.subject.name},
+                "prev_chapter": {"id": str(prev_chapter.id), "name": prev_chapter.name} if prev_chapter else None,
+                "next_chapter": {"id": str(next_chapter.id), "name": next_chapter.name} if next_chapter else None,
                 "topics": topics,
                 "events": [serializers.event_dict(e) for e in selectors.chapter_events(request.user.id, chapter.id)],
                 "revision_history": [

@@ -1,0 +1,4818 @@
+{
+  "course": "cs",
+  "level": "executive",
+  "scheme": {
+    "code": "2022",
+    "name": "ICSI Syllabus 2022",
+    "source_url": "https://www.icsi.edu",
+    "notes": "Structure from the ICSI Syllabus 2022 PDF supplied by the founder. Needs editor review before publishing. Excluded as deleted by ICSI: Paper 1 lessons 9 Law relating to Specific Relief, 12 Indian Stamp Law, 13 Law relating to Registration of Documents, 17 Law relating to Sale of Goods; Paper 1 lesson 2 topics Finance Bill and Other Bills, Parliamentary Standing Committees and their Role; Paper 1 lesson 11 topics Power of High Court to make rules, Mediation rules made by Higher Courts; Paper 2 lessons 12 Inspection, Inquiry and Investigation, 17 Corporate Social Responsibility-Concepts (ICSI relocates the topics Policy; Activities and CSR Committee into lesson 18 Annual Report-Concepts, not itemised in the syllabus text; CSR Expenditure, Ongoing Project, Impact Assessment deleted); Paper 2 lesson 10 topics Oppression and Mismanagement, Class Actions Suits; Paper 6 lessons 4 External Commercial Borrowings (ECB), 9 Law relating to Fugitive Economic Offenders, 10 Law relating to Benami Transactions & Prohibition (briefs relocated into lesson 8)."
+  },
+  "groups": [
+    {
+      "key": "group-1",
+      "name": "Group 1"
+    },
+    {
+      "key": "group-2",
+      "name": "Group 2"
+    }
+  ],
+  "subjects": [
+    {
+      "key": "jurisprudence-interpretation-and-general-laws",
+      "paper_number": 1,
+      "name": "Jurisprudence, Interpretation & General Laws",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "sources-of-law",
+          "name": "Sources of Law",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-of-law-and-its-significance",
+              "name": "Meaning of Law and its Significance",
+              "kind": "concept"
+            },
+            {
+              "key": "relevance-of-law-to-civil-society",
+              "name": "Relevance of Law to Civil Society",
+              "kind": "concept"
+            },
+            {
+              "key": "jurisprudence-and-legal-theory",
+              "name": "Jurisprudence & Legal Theory",
+              "kind": "concept"
+            },
+            {
+              "key": "schools-of-law-propounded-by-austin-roscoe-pound-salmond-kelsen-savigny-bentham-and-others",
+              "name": "Schools of Law propounded by Austin, Roscoe Pound, Salmond, Kelsen, Savigny, Bentham and others",
+              "kind": "concept"
+            },
+            {
+              "key": "statutes-subordinate-legislation-custom-common-law-precedent-stare-decisis",
+              "name": "Statutes, Subordinate Legislation, Custom, Common Law, Precedent, Stare decisis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "constitution-of-india",
+          "name": "Constitution of India",
+          "section": "",
+          "topics": [
+            {
+              "key": "broad-framework-of-the-constitution-of-india",
+              "name": "Broad Framework of the Constitution of India",
+              "kind": "concept"
+            },
+            {
+              "key": "fundamental-rights-directive-principles-of-state-policy-and-fundamental-duties",
+              "name": "Fundamental Rights, Directive Principles of State Policy and Fundamental Duties",
+              "kind": "concept"
+            },
+            {
+              "key": "legislative-framework-and-powers-of-union-and-states",
+              "name": "Legislative framework and Powers of Union and States",
+              "kind": "concept"
+            },
+            {
+              "key": "judicial-framework",
+              "name": "Judicial framework",
+              "kind": "concept"
+            },
+            {
+              "key": "executive-administrative-framework",
+              "name": "Executive/Administrative framework",
+              "kind": "concept"
+            },
+            {
+              "key": "legislative-process",
+              "name": "Legislative Process",
+              "kind": "concept"
+            },
+            {
+              "key": "writ-jurisdiction-of-high-courts-and-the-supreme-court",
+              "name": "Writ Jurisdiction of High Courts and the Supreme Court",
+              "kind": "concept"
+            },
+            {
+              "key": "different-types-of-writs",
+              "name": "Different types of writs",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "interpretation-of-statutes",
+          "name": "Interpretation of Statutes",
+          "section": "",
+          "topics": [
+            {
+              "key": "need-for-interpretation-of-a-statute",
+              "name": "Need for interpretation of a statute",
+              "kind": "concept"
+            },
+            {
+              "key": "meanings-of-interpretation-of-statutes",
+              "name": "Meanings of Interpretation of Statutes",
+              "kind": "concept"
+            },
+            {
+              "key": "a-state-and-the-casus-omissus",
+              "name": "A state and the casus omissus",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation-of-definition-clause",
+              "name": "Interpretation of Definition Clause",
+              "kind": "concept"
+            },
+            {
+              "key": "principles-of-interpretation-including-heydons-rule-of-interpretation-golden-rule-of-interpretation",
+              "name": "Principles of Interpretation including Heydon’s Rule of Interpretation, Golden Rule of Interpretation",
+              "kind": "concept"
+            },
+            {
+              "key": "aids-to-interpretation",
+              "name": "Aids to Interpretation",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-terminologies",
+              "name": "Legal Terminologies",
+              "kind": "concept"
+            },
+            {
+              "key": "reading-a-bare-act-and-citation-of-cases",
+              "name": "Reading a Bare Act & Citation of Cases",
+              "kind": "concept"
+            },
+            {
+              "key": "pari-materia",
+              "name": "Pari Materia",
+              "kind": "concept"
+            },
+            {
+              "key": "harmonious-construction",
+              "name": "Harmonious Construction",
+              "kind": "concept"
+            },
+            {
+              "key": "prospective-and-retrospective-operation",
+              "name": "Prospective and retrospective operation",
+              "kind": "concept"
+            },
+            {
+              "key": "use-of-may-and-shall",
+              "name": "Use of “May” and “Shall”",
+              "kind": "concept"
+            },
+            {
+              "key": "use-of-and-and-or",
+              "name": "Use of “And” and “or”",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation-of-proviso",
+              "name": "Interpretation of proviso",
+              "kind": "concept"
+            },
+            {
+              "key": "latin-maxims-used-to-interpret-words-and-phrases",
+              "name": "Latin maxims used to interpret words and phrases",
+              "kind": "concept"
+            },
+            {
+              "key": "contemporanea-expositio",
+              "name": "Contemporanea Expositio",
+              "kind": "concept"
+            },
+            {
+              "key": "deeming-provisions",
+              "name": "Deeming provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "repugnancy-with-other-statutes",
+              "name": "Repugnancy with other statutes",
+              "kind": "concept"
+            },
+            {
+              "key": "conflict-between-general-provision-and-special-provision",
+              "name": "Conflict between general provision and special provision",
+              "kind": "concept"
+            },
+            {
+              "key": "socially-beneficial-construction",
+              "name": "Socially beneficial construction",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation-of-procedural-law",
+              "name": "Interpretation of Procedural Law",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation-of-fiscal-and-taxing-statutes",
+              "name": "Interpretation of fiscal and taxing statutes",
+              "kind": "concept"
+            },
+            {
+              "key": "delegated-legislations",
+              "name": "Delegated legislations",
+              "kind": "concept"
+            },
+            {
+              "key": "conflict-between-statute-rules-and-regulations",
+              "name": "Conflict between Statute, Rules and regulations",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-substantial-compliance",
+              "name": "Doctrine of substantial compliance",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-impossibility-of-performance",
+              "name": "Doctrine of impossibility of performance",
+              "kind": "concept"
+            },
+            {
+              "key": "strict-construction-of-penal-statutes",
+              "name": "Strict Construction of penal statutes",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation-of-fiscal-and-taxation-statute",
+              "name": "Interpretation of Fiscal and Taxation Statute",
+              "kind": "concept"
+            },
+            {
+              "key": "brief-of-general-clause-act-1897",
+              "name": "Brief of General Clause Act, 1897",
+              "kind": "concept"
+            },
+            {
+              "key": "reading-methodology-of-the-companies-act-2013-and-its-legal-aura",
+              "name": "Reading Methodology of the Companies Act, 2013 and its Legal Aura",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "administrative-laws",
+          "name": "Administrative Laws",
+          "section": "",
+          "topics": [
+            {
+              "key": "conceptual-analysis",
+              "name": "Conceptual Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "source-and-need-of-administrative-law",
+              "name": "Source and Need of Administrative Law",
+              "kind": "concept"
+            },
+            {
+              "key": "principle-of-natural-justice",
+              "name": "Principle of Natural Justice",
+              "kind": "concept"
+            },
+            {
+              "key": "administrative-discretion",
+              "name": "Administrative Discretion",
+              "kind": "concept"
+            },
+            {
+              "key": "judicial-review-and-other-remedies",
+              "name": "Judicial Review & Other Remedies",
+              "kind": "concept"
+            },
+            {
+              "key": "liability-of-government-public-corporation",
+              "name": "Liability of Government, Public Corporation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-of-torts",
+          "name": "Law of Torts",
+          "section": "",
+          "topics": [
+            {
+              "key": "general-conditions-of-liability-for-a-tort",
+              "name": "General conditions of Liability for a Tort",
+              "kind": "concept"
+            },
+            {
+              "key": "strict-and-absolute-liability",
+              "name": "Strict and Absolute Liability",
+              "kind": "concept"
+            },
+            {
+              "key": "vicarious-liability",
+              "name": "Vicarious Liability",
+              "kind": "concept"
+            },
+            {
+              "key": "torts-or-wrongs-to-personal-safety-and-freedom",
+              "name": "Torts or wrongs to personal safety and freedom",
+              "kind": "concept"
+            },
+            {
+              "key": "liability-of-a-corporate-entity-company-in-torts",
+              "name": "Liability of a Corporate Entity/Company in Torts",
+              "kind": "concept"
+            },
+            {
+              "key": "remedies-in-torts",
+              "name": "Remedies in Torts",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-civil-procedure",
+          "name": "Law relating to Civil Procedure",
+          "section": "",
+          "topics": [
+            {
+              "key": "structure-and-jurisdiction-of-civil-courts",
+              "name": "Structure and Jurisdiction of Civil Courts",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-understanding-of-certain-terms-order-judgment-and-decree-stay-of-suits-cause-of-action-res-judicata-sub-judice",
+              "name": "Basic Understanding of Certain Terms - Order, Judgment and Decree, Stay of Suits, Cause of Action, Res Judicata, Sub-judice",
+              "kind": "concept"
+            },
+            {
+              "key": "summary-proceedings-procedures-appeals-reference-review-and-revision",
+              "name": "Summary Proceedings/Procedures, Appeals, Reference, Review and Revision",
+              "kind": "concept"
+            },
+            {
+              "key": "powers-of-civil-court-and-their-exercise-by-tribunals",
+              "name": "Powers of Civil Court and their exercise by Tribunals",
+              "kind": "concept"
+            },
+            {
+              "key": "institution-of-suit",
+              "name": "Institution of Suit",
+              "kind": "concept"
+            },
+            {
+              "key": "law-relating-to-commercial-courts",
+              "name": "Law relating to Commercial Courts",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "laws-relating-to-crime-and-its-procedure",
+          "name": "Laws relating to Crime and its Procedure",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "classes-of-criminal-courts",
+              "name": "Classes of Criminal Courts",
+              "kind": "concept"
+            },
+            {
+              "key": "power-of-courts",
+              "name": "Power of Courts",
+              "kind": "concept"
+            },
+            {
+              "key": "arrest-of-persons",
+              "name": "Arrest of Persons",
+              "kind": "concept"
+            },
+            {
+              "key": "mens-rea-and-actus-reus",
+              "name": "Mens Rea and Actus Reus",
+              "kind": "concept"
+            },
+            {
+              "key": "cognizable-and-non-cognizable-offences",
+              "name": "Cognizable and Non-Cognizable Offences",
+              "kind": "concept"
+            },
+            {
+              "key": "bail",
+              "name": "Bail",
+              "kind": "concept"
+            },
+            {
+              "key": "continuing-offences",
+              "name": "Continuing Offences",
+              "kind": "concept"
+            },
+            {
+              "key": "compounding-of-offences",
+              "name": "Compounding of Offences",
+              "kind": "concept"
+            },
+            {
+              "key": "summons-and-warrants",
+              "name": "Summons and Warrants",
+              "kind": "concept"
+            },
+            {
+              "key": "searches",
+              "name": "Searches",
+              "kind": "concept"
+            },
+            {
+              "key": "summary-trial",
+              "name": "Summary Trial",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-against-property",
+              "name": "Offences against Property",
+              "kind": "concept"
+            },
+            {
+              "key": "criminal-breach-of-trust",
+              "name": "Criminal Breach of Trust",
+              "kind": "concept"
+            },
+            {
+              "key": "cheating-fraudulent-deeds-and-dispositions-of-property",
+              "name": "Cheating, Fraudulent Deeds and Dispositions of Property",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-relating-to-documents-and-property-marks",
+              "name": "Offences relating to Documents and Property Marks",
+              "kind": "concept"
+            },
+            {
+              "key": "forgery",
+              "name": "Forgery",
+              "kind": "concept"
+            },
+            {
+              "key": "defamation",
+              "name": "Defamation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-evidence",
+          "name": "Law relating to Evidence",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept-of-relevant-evidence-and-admissible-evidence",
+              "name": "Concept of Relevant Evidence and Admissible Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "statements-about-the-facts-to-be-proved",
+              "name": "Statements about the facts to be proved",
+              "kind": "concept"
+            },
+            {
+              "key": "relevancy-of-facts-connected-with-the-fact-to-be-proved",
+              "name": "Relevancy of facts connected with the fact to be proved",
+              "kind": "concept"
+            },
+            {
+              "key": "opinion-of-third-persons",
+              "name": "Opinion of Third Persons",
+              "kind": "concept"
+            },
+            {
+              "key": "facts-of-which-evidence-cannot-be-given",
+              "name": "Facts of which evidence cannot be given",
+              "kind": "concept"
+            },
+            {
+              "key": "oral-documentary-and-circumstantial-evidence",
+              "name": "Oral, Documentary and Circumstantial Evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "burden-of-proof",
+              "name": "Burden of proof",
+              "kind": "concept"
+            },
+            {
+              "key": "presumptions",
+              "name": "Presumptions",
+              "kind": "concept"
+            },
+            {
+              "key": "estoppel",
+              "name": "Estoppel",
+              "kind": "concept"
+            },
+            {
+              "key": "witness",
+              "name": "Witness",
+              "kind": "concept"
+            },
+            {
+              "key": "improper-admission-and-rejection-of-evidence",
+              "name": "Improper admission & rejection of evidence",
+              "kind": "concept"
+            },
+            {
+              "key": "e-evidence",
+              "name": "e-evidence",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-limitation",
+          "name": "Law relating to Limitation",
+          "section": "",
+          "topics": [
+            {
+              "key": "computation-of-the-period-of-limitation",
+              "name": "Computation of the Period of Limitation",
+              "kind": "concept"
+            },
+            {
+              "key": "bar-of-limitation",
+              "name": "Bar of Limitation",
+              "kind": "concept"
+            },
+            {
+              "key": "effect-of-acknowledgment",
+              "name": "Effect of acknowledgment",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-of-ownership-by-possession",
+              "name": "Acquisition of ownership by Possession",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-period-of-limitation",
+              "name": "Classification of Period of Limitation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-arbitration-mediation-and-conciliation",
+          "name": "Law relating to Arbitration, Mediation and Conciliation",
+          "section": "",
+          "topics": [
+            {
+              "key": "arbitration-law-in-india",
+              "name": "Arbitration Law in India",
+              "kind": "concept"
+            },
+            {
+              "key": "appointment-of-arbitrators",
+              "name": "Appointment of Arbitrators",
+              "kind": "concept"
+            },
+            {
+              "key": "judicial-intervention",
+              "name": "Judicial Intervention",
+              "kind": "concept"
+            },
+            {
+              "key": "award",
+              "name": "Award",
+              "kind": "concept"
+            },
+            {
+              "key": "recourse-against-award",
+              "name": "Recourse against Award",
+              "kind": "concept"
+            },
+            {
+              "key": "commencement-of-conciliation-proceedings",
+              "name": "Commencement of conciliation proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "laws-relating-to-conduct-of-conciliation-proceedings",
+              "name": "Laws relating to conduct of conciliation proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "termination-of-conciliation-proceedings",
+              "name": "Termination of conciliation proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-conciliator-in-other-proceedings",
+              "name": "Role of conciliator in other proceedings",
+              "kind": "concept"
+            },
+            {
+              "key": "development-of-mediation-law",
+              "name": "Development of Mediation Law",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "right-to-information-law",
+          "name": "Right to Information Law",
+          "section": "",
+          "topics": [
+            {
+              "key": "key-definitions",
+              "name": "Key Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "public-authorities-and-their-obligations",
+              "name": "Public Authorities & their Obligations",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-central-state-governments",
+              "name": "Role of Central/State Governments",
+              "kind": "concept"
+            },
+            {
+              "key": "central-information-commission",
+              "name": "Central Information Commission",
+              "kind": "concept"
+            },
+            {
+              "key": "state-information-commission",
+              "name": "State information Commission",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-information-technology",
+          "name": "Law relating to Information Technology",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-definition-important-terms-under-the-it-act",
+              "name": "Introduction, definition, important terms under the IT Act",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-signatures-electronic-record-certifying-authority-digital-signature-certificate",
+              "name": "Digital Signatures, Electronic Record, Certifying Authority, Digital Signature Certificate",
+              "kind": "concept"
+            },
+            {
+              "key": "cyber-regulation-appellate-tribunal",
+              "name": "Cyber Regulation Appellate Tribunal",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-and-penalties",
+              "name": "Offences and Penalties",
+              "kind": "concept"
+            },
+            {
+              "key": "rules-relating-to-sensitive-personal-data-under-it-act",
+              "name": "Rules relating to sensitive personal data under IT Act",
+              "kind": "concept"
+            },
+            {
+              "key": "development-and-law-of-data-protection",
+              "name": "Development and Law of Data Protection",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "contract-law",
+          "name": "Contract Law",
+          "section": "",
+          "topics": [
+            {
+              "key": "formation-of-an-agreement-intention-to-create-legal-relationship",
+              "name": "Formation of an Agreement, Intention to create legal relationship",
+              "kind": "concept"
+            },
+            {
+              "key": "offer-and-invitation-to-offer",
+              "name": "Offer and invitation to offer",
+              "kind": "concept"
+            },
+            {
+              "key": "kinds-of-offer-communication-acceptance-and-revocation-of-offer-and-acceptance",
+              "name": "Kinds of offer, communication, acceptance and revocation of offer and acceptance",
+              "kind": "concept"
+            },
+            {
+              "key": "modes-of-revocation-of-offer",
+              "name": "Modes of revocation of offer",
+              "kind": "concept"
+            },
+            {
+              "key": "consideration",
+              "name": "Consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "basis-and-the-nature-of-consideration",
+              "name": "Basis and the nature of consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-privity-of-contract-and-of-consideration",
+              "name": "Doctrine of Privity of Contract and of consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "exceptions-of-consideration",
+              "name": "Exceptions of consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "capacity-to-contract",
+              "name": "Capacity to Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "free-consent",
+              "name": "Free Consent",
+              "kind": "concept"
+            },
+            {
+              "key": "void-and-voidable-contracts",
+              "name": "Void and Voidable Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "discharge-of-contracts",
+              "name": "Discharge of Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "remedies-for-breach-of-contract",
+              "name": "Remedies for breach of Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "quasi-contracts",
+              "name": "Quasi Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "e-contracts",
+              "name": "e-contracts",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-negotiable-instruments",
+          "name": "Law relating to Negotiable Instruments",
+          "section": "",
+          "topics": [
+            {
+              "key": "negotiable-instruments-and-parties",
+              "name": "Negotiable Instruments and Parties",
+              "kind": "concept"
+            },
+            {
+              "key": "material-alteration",
+              "name": "Material Alteration",
+              "kind": "concept"
+            },
+            {
+              "key": "crossing-and-bouncing-of-cheques",
+              "name": "Crossing and bouncing of Cheques",
+              "kind": "concept"
+            },
+            {
+              "key": "dishonour-of-cheques-and-its-remedies",
+              "name": "Dishonour of Cheques & its Remedies",
+              "kind": "concept"
+            },
+            {
+              "key": "presumption-of-law-as-to-negotiable-instruments",
+              "name": "Presumption of Law as to Negotiable Instruments",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "company-law-and-practice",
+      "paper_number": 2,
+      "name": "Company Law & Practice",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction-to-company-law",
+          "name": "Introduction to Company Law",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "jurisprudence-of-company-law",
+              "name": "Jurisprudence of Company Law",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-ultra-vires",
+              "name": "Doctrine of Ultra-vires",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-indoor-management",
+              "name": "Doctrine of Indoor Management",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-constructive-notice",
+              "name": "Doctrine of Constructive Notice",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-corporate-veil",
+              "name": "Concept of Corporate Veil",
+              "kind": "concept"
+            },
+            {
+              "key": "applicability-of-the-companies-act",
+              "name": "Applicability of the Companies Act",
+              "kind": "concept"
+            },
+            {
+              "key": "definitions-and-key-concepts",
+              "name": "Definitions and Key Concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "mca-21",
+              "name": "MCA 21",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "legal-status-and-types-of-registered-companies",
+          "name": "Legal Status and Types of Registered Companies",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "legal-status-of-registered-companies-corporate-personality",
+              "name": "Legal Status of Registered Companies: Corporate Personality",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-status-of-registered-companies-perpetual-succession",
+              "name": "Legal Status of Registered Companies: Perpetual succession",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-status-of-registered-companies-separate-property",
+              "name": "Legal Status of Registered Companies: Separate property",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-status-of-registered-companies-transferability-of-shares",
+              "name": "Legal Status of Registered Companies: Transferability of shares",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-status-of-registered-companies-capacity-to-sue-or-be-sued",
+              "name": "Legal Status of Registered Companies: Capacity to sue or be sued",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-private-company",
+              "name": "Types of Registered Companies: Private Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-public-company",
+              "name": "Types of Registered Companies: Public Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-small-company",
+              "name": "Types of Registered Companies: Small Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-holding-company",
+              "name": "Types of Registered Companies: Holding Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-subsidiary-company",
+              "name": "Types of Registered Companies: Subsidiary Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-associate-company",
+              "name": "Types of Registered Companies: Associate Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-dormant-company",
+              "name": "Types of Registered Companies: Dormant Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-registered-companies-government-company",
+              "name": "Types of Registered Companies: Government Company",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "memorandum-and-articles-of-association-and-its-alteration",
+          "name": "Memorandum and Articles of Association and its Alteration",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "memorandum-of-association-and-articles-of-association",
+              "name": "Memorandum of Association and Articles of Association",
+              "kind": "concept"
+            },
+            {
+              "key": "incorporation-contracts",
+              "name": "Incorporation Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "alteration-in-moa-and-aoa",
+              "name": "Alteration in MOA & AOA",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "shares-and-share-capital-concepts",
+          "name": "Shares and Share Capital-Concepts",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "meaning-and-types-of-capital",
+              "name": "Meaning and Types of Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "issue-and-allotment",
+              "name": "Issue and Allotment",
+              "kind": "concept"
+            },
+            {
+              "key": "issue-of-share-certificates",
+              "name": "Issue of Share Certificates",
+              "kind": "concept"
+            },
+            {
+              "key": "further-issue-of-share-capital",
+              "name": "Further Issue of Share Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "issue-of-shares-on-private-and-preferential-basis",
+              "name": "Issue of shares on Private and Preferential basis",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-issue-and-bonus-shares",
+              "name": "Rights issue and Bonus Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "sweat-equity-shares-and-esops",
+              "name": "Sweat Equity Shares and ESOPs",
+              "kind": "concept"
+            },
+            {
+              "key": "issue-and-redemption-of-preference-shares",
+              "name": "Issue and Redemption of Preference Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "transfer-and-transmission-of-securities",
+              "name": "Transfer and Transmission of Securities",
+              "kind": "concept"
+            },
+            {
+              "key": "buyback-of-securities",
+              "name": "Buyback of Securities",
+              "kind": "concept"
+            },
+            {
+              "key": "reduction-of-share-capital",
+              "name": "Reduction of Share Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "payment-of-stamp-duty",
+              "name": "Payment of Stamp Duty",
+              "kind": "concept"
+            },
+            {
+              "key": "registers-and-records",
+              "name": "Registers and Records",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "members-and-shareholders",
+          "name": "Members and Shareholders",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "how-to-become-a-member",
+              "name": "How to become a Member",
+              "kind": "concept"
+            },
+            {
+              "key": "register-of-members",
+              "name": "Register of Members",
+              "kind": "concept"
+            },
+            {
+              "key": "declaration-of-beneficial-interest",
+              "name": "Declaration of Beneficial Interest",
+              "kind": "concept"
+            },
+            {
+              "key": "significant-beneficial-owner",
+              "name": "Significant Beneficial Owner",
+              "kind": "concept"
+            },
+            {
+              "key": "rectification-of-register-of-members",
+              "name": "Rectification of Register of Members",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-of-members",
+              "name": "Rights of Members",
+              "kind": "concept"
+            },
+            {
+              "key": "variation-of-shareholders-rights",
+              "name": "Variation of Shareholders’ Rights",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "debt-instruments-concepts",
+          "name": "Debt Instruments-Concepts",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "issue-and-redemption-of-debentures-and-bonds",
+              "name": "Issue and Redemption of Debentures and Bonds",
+              "kind": "concept"
+            },
+            {
+              "key": "creation-of-security",
+              "name": "Creation of Security",
+              "kind": "concept"
+            },
+            {
+              "key": "debenture-redemption-reserve",
+              "name": "Debenture Redemption Reserve",
+              "kind": "concept"
+            },
+            {
+              "key": "debenture-trust-deed",
+              "name": "Debenture Trust Deed",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-debentures-into-shares",
+              "name": "Conversion of Debentures into Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-company-deposits",
+              "name": "Overview of Company Deposits",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "charges",
+          "name": "Charges",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "creation-of-charges",
+              "name": "Creation of Charges",
+              "kind": "concept"
+            },
+            {
+              "key": "registration-modification-and-satisfaction-of-charges",
+              "name": "Registration, Modification and Satisfaction of Charges",
+              "kind": "concept"
+            },
+            {
+              "key": "register-of-charges",
+              "name": "Register of Charges",
+              "kind": "concept"
+            },
+            {
+              "key": "inspection-of-charges",
+              "name": "Inspection of Charges",
+              "kind": "concept"
+            },
+            {
+              "key": "punishment-for-contravention",
+              "name": "Punishment for Contravention",
+              "kind": "concept"
+            },
+            {
+              "key": "rectification-by-central-government-in-register-of-charges",
+              "name": "Rectification by Central Government in Register of Charges",
+              "kind": "concept"
+            },
+            {
+              "key": "purpose-objective-drafting-and-issuing-of-search-report",
+              "name": "Purpose,Objective, Drafting and Issuing of Search Report",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "distribution-of-profits",
+          "name": "Distribution of Profits",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "profit-and-ascertainment-of-divisible-profits",
+              "name": "Profit and Ascertainment of Divisible Profits",
+              "kind": "concept"
+            },
+            {
+              "key": "declaration-and-payment-of-dividend",
+              "name": "Declaration and Payment of Dividend",
+              "kind": "concept"
+            },
+            {
+              "key": "unpaid-dividend-account",
+              "name": "Unpaid Dividend Account",
+              "kind": "concept"
+            },
+            {
+              "key": "investor-education-and-protection-fund",
+              "name": "Investor Education and Protection Fund",
+              "kind": "concept"
+            },
+            {
+              "key": "right-to-dividend",
+              "name": "Right to Dividend",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-shares-and-bonus-shares-to-be-held-in-abeyance",
+              "name": "Rights Shares and Bonus shares to be held in abeyance",
+              "kind": "concept"
+            },
+            {
+              "key": "secretarial-standards-on-dividend",
+              "name": "Secretarial Standards on Dividend",
+              "kind": "standard"
+            },
+            {
+              "key": "dividend-distribution-policy",
+              "name": "Dividend Distribution Policy",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounts-and-auditors",
+          "name": "Accounts and Auditors",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "books-of-accounts",
+              "name": "Books of Accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-statements",
+              "name": "Financial Statements",
+              "kind": "concept"
+            },
+            {
+              "key": "national-financial-reporting-authority",
+              "name": "National Financial Reporting Authority",
+              "kind": "concept"
+            },
+            {
+              "key": "auditors-appointment-resignation-and-procedure-relating-to-removal-qualification-and-disqualification",
+              "name": "Auditors- Appointment, Resignation and Procedure relating to Removal, Qualification and Disqualification",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-duties-and-liabilities",
+              "name": "Rights, Duties and Liabilities",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-and-auditors-report",
+              "name": "Audit and Auditor’s Report",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-audit",
+              "name": "Cost Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "secretarial-audit",
+              "name": "Secretarial Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit",
+              "name": "Internal Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "compromise-arrangement-and-amalgamations-concepts",
+          "name": "Compromise, Arrangement and Amalgamations-Concepts",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "introduction-of-compromises-arrangement-and-amalgamation",
+              "name": "Introduction of Compromises, Arrangement and Amalgamation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "dormant-company",
+          "name": "Dormant Company",
+          "section": "Part I: Company Law - Principles & Concepts (60 Marks)",
+          "topics": [
+            {
+              "key": "legal-framework-for-dormant-companies",
+              "name": "Legal framework for Dormant Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "procedure-to-obtain-the-status-of-a-dormant-company",
+              "name": "Procedure to obtain the status of a Dormant Company",
+              "kind": "concept"
+            },
+            {
+              "key": "prerequisite-for-obtaining-the-status-of-dormant-company",
+              "name": "Prerequisite for obtaining the status of Dormant Company",
+              "kind": "concept"
+            },
+            {
+              "key": "benefits-exemptions-provided-to-a-dormant-company",
+              "name": "Benefits / exemptions provided to a Dormant Company",
+              "kind": "concept"
+            },
+            {
+              "key": "compliance-requirements-by-dormant-company",
+              "name": "Compliance requirements by Dormant Company",
+              "kind": "concept"
+            },
+            {
+              "key": "procedure-to-obtain-the-status-of-an-active-company-from-dormant-company",
+              "name": "Procedure to obtain the status of an Active Company from Dormant Company",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "general-meetings",
+          "name": "General Meetings",
+          "section": "Part II: Company Administration and Meetings (40 Marks)",
+          "topics": [
+            {
+              "key": "annual-general-meeting",
+              "name": "Annual General Meeting",
+              "kind": "concept"
+            },
+            {
+              "key": "extraordinary-general-meetings",
+              "name": "Extraordinary General Meetings",
+              "kind": "concept"
+            },
+            {
+              "key": "other-general-meetings",
+              "name": "Other General Meetings",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-resolutions",
+              "name": "Types of Resolutions",
+              "kind": "concept"
+            },
+            {
+              "key": "notice-quorum-poll-chairman-proxy",
+              "name": "Notice, Quorum, Poll, Chairman, Proxy",
+              "kind": "concept"
+            },
+            {
+              "key": "meeting-and-agenda",
+              "name": "Meeting and Agenda",
+              "kind": "concept"
+            },
+            {
+              "key": "process-of-conducting-meeting",
+              "name": "Process of conducting meeting",
+              "kind": "concept"
+            },
+            {
+              "key": "voting-and-its-types-vote-on-show-of-hands-poll-e-voting-postal-ballot",
+              "name": "Voting and its types-vote on show of hands, Poll, E-Voting, Postal ballot",
+              "kind": "concept"
+            },
+            {
+              "key": "circulation-of-members-resolutions",
+              "name": "Circulation of Members’ Resolutions",
+              "kind": "concept"
+            },
+            {
+              "key": "signing-and-inspection-of-minutes",
+              "name": "Signing and Inspection of Minutes",
+              "kind": "concept"
+            },
+            {
+              "key": "secretarial-standard-2",
+              "name": "Secretarial Standard – 2",
+              "kind": "standard"
+            },
+            {
+              "key": "duties-of-company-secretaries-before-during-and-after-general-meeting",
+              "name": "Duties of Company Secretaries before, during and after General Meeting",
+              "kind": "concept"
+            },
+            {
+              "key": "virtual-meetings-technological-advancement-in-conduct-of-general-meetings",
+              "name": "Virtual Meetings : Technological Advancement in conduct of General Meetings",
+              "kind": "concept"
+            },
+            {
+              "key": "drafting-of-notice-and-minutes-of-annual-general-meeting-and-extra-ordinary-general-meeting",
+              "name": "Drafting of Notice and Minutes of Annual General Meeting and Extra-Ordinary General Meeting",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "directors",
+          "name": "Directors",
+          "section": "Part II: Company Administration and Meetings (40 Marks)",
+          "topics": [
+            {
+              "key": "din-requirement",
+              "name": "DIN requirement",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-directors",
+              "name": "Types of Directors",
+              "kind": "concept"
+            },
+            {
+              "key": "appointment-reappointment-disqualifications-vacation-of-office-retirement-resignation-and-removal",
+              "name": "Appointment / Reappointment, Disqualifications, Vacation of Office, Retirement, Resignation and Removal",
+              "kind": "concept"
+            },
+            {
+              "key": "loans-to-directors",
+              "name": "Loans to Directors",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosure-of-interest",
+              "name": "Disclosure of Interest",
+              "kind": "concept"
+            },
+            {
+              "key": "duties-of-directors",
+              "name": "Duties of Directors",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-of-directors",
+              "name": "Rights of Directors",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "board-composition-and-powers-of-the-board",
+          "name": "Board Composition and Powers of the Board",
+          "section": "Part II: Company Administration and Meetings (40 Marks)",
+          "topics": [
+            {
+              "key": "board-composition",
+              "name": "Board composition",
+              "kind": "concept"
+            },
+            {
+              "key": "powers-of-board",
+              "name": "Powers of Board",
+              "kind": "concept"
+            },
+            {
+              "key": "restrictions-on-powers-of-board",
+              "name": "Restrictions on Powers of Board",
+              "kind": "concept"
+            },
+            {
+              "key": "board-committees",
+              "name": "Board Committees",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-inter-corporate-loans-investments-guarantees-and-security",
+              "name": "Overview of Inter-Corporate Loans, Investments, Guarantees and Security",
+              "kind": "concept"
+            },
+            {
+              "key": "related-party-transactions",
+              "name": "Related Party Transactions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "meetings-of-board-and-its-committees",
+          "name": "Meetings of Board and its Committees",
+          "section": "Part II: Company Administration and Meetings (40 Marks)",
+          "topics": [
+            {
+              "key": "frequency-convening-and-proceedings-of-board-and-committee-meetings",
+              "name": "Frequency, Convening and Proceedings of Board and Committee meetings",
+              "kind": "concept"
+            },
+            {
+              "key": "agenda-management",
+              "name": "Agenda Management",
+              "kind": "concept"
+            },
+            {
+              "key": "meeting-management",
+              "name": "Meeting Management",
+              "kind": "concept"
+            },
+            {
+              "key": "resolution-by-circulation",
+              "name": "Resolution by Circulation",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-resolutions",
+              "name": "Types of Resolutions",
+              "kind": "concept"
+            },
+            {
+              "key": "duties-of-company-secretaries-before-during-and-after-board-committee-meeting",
+              "name": "Duties of Company Secretaries before, during and after Board/ Committee Meeting",
+              "kind": "concept"
+            },
+            {
+              "key": "virtual-meetings-technological-advancement-in-conduct-of-board-committee",
+              "name": "Virtual Meetings :Technological Advancement in conduct of Board Committee",
+              "kind": "concept"
+            },
+            {
+              "key": "need-and-scope-of-secretarial-standards",
+              "name": "Need and Scope of Secretarial Standards",
+              "kind": "standard"
+            },
+            {
+              "key": "secretarial-standard-1",
+              "name": "Secretarial Standard – 1",
+              "kind": "standard"
+            },
+            {
+              "key": "drafting-of-notice-agenda-and-minutes-of-board-and-committee-meetings",
+              "name": "Drafting of Notice, Agenda and Minutes of Board and Committee Meetings",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "annual-report-concepts",
+          "name": "Annual Report-Concepts",
+          "section": "Part II: Company Administration and Meetings (40 Marks)",
+          "topics": [
+            {
+              "key": "boards-report",
+              "name": "Board’s Report",
+              "kind": "concept"
+            },
+            {
+              "key": "annual-return",
+              "name": "Annual Return",
+              "kind": "concept"
+            },
+            {
+              "key": "annual-report",
+              "name": "Annual Report",
+              "kind": "concept"
+            },
+            {
+              "key": "secretarial-standard-on-report-of-the-board-of-directors",
+              "name": "Secretarial Standard on Report of the Board of Directors",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "key-managerial-personnel-kmps-and-their-remuneration",
+          "name": "Key Managerial Personnel (KMP’s) and their Remuneration",
+          "section": "Part II: Company Administration and Meetings (40 Marks)",
+          "topics": [
+            {
+              "key": "appointment-of-key-managerial-personnel",
+              "name": "Appointment of Key Managerial Personnel",
+              "kind": "concept"
+            },
+            {
+              "key": "managing-and-whole-time-directors-manager-chief-executive-officer-and-chief-financial-officer",
+              "name": "Managing and Whole-Time Directors, Manager, Chief Executive Officer and Chief Financial Officer",
+              "kind": "concept"
+            },
+            {
+              "key": "company-secretary-appointment-role-and-responsibilities",
+              "name": "Company Secretary – Appointment, Role and Responsibilities",
+              "kind": "concept"
+            },
+            {
+              "key": "company-secretary-as-a-key-managerial-personnel",
+              "name": "Company Secretary as a Key Managerial Personnel",
+              "kind": "concept"
+            },
+            {
+              "key": "functions-of-company-secretary",
+              "name": "Functions of Company Secretary",
+              "kind": "concept"
+            },
+            {
+              "key": "officer-who-is-in-default",
+              "name": "Officer who is in default",
+              "kind": "concept"
+            },
+            {
+              "key": "remuneration-of-managerial-personnel",
+              "name": "Remuneration of Managerial Personnel",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "setting-up-of-business-industrial-and-labour-laws",
+      "paper_number": 3,
+      "name": "Setting Up of Business, Industrial & Labour Laws",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "selection-of-business-organization",
+          "name": "Selection of Business Organization",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "key-features-of-various-business-organisations-and-issues-in-choosing-business-organisation-including-policy-matters",
+              "name": "Key features of various Business Organisations and issues in choosing business organisation including policy matters, identification of location, tax implications and other relevant aspects",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "corporate-entities-companies",
+          "name": "Corporate Entities – Companies",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "types-of-corporate-business-entities-private-company",
+              "name": "Types of Corporate Business Entities: Private Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-corporate-business-entities-public-company",
+              "name": "Types of Corporate Business Entities: Public Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-corporate-business-entities-one-person-company",
+              "name": "Types of Corporate Business Entities: One Person Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-corporate-business-entities-nidhi",
+              "name": "Types of Corporate Business Entities: Nidhi",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-corporate-business-entities-section-8-company",
+              "name": "Types of Corporate Business Entities: Section 8 Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-corporate-business-entities-producer-company",
+              "name": "Types of Corporate Business Entities: Producer Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-corporate-business-entities-foreign-company",
+              "name": "Types of Corporate Business Entities: Foreign Company",
+              "kind": "concept"
+            },
+            {
+              "key": "drafting-of-incorporation-documents-memorandum-of-association-and-articles-of-association",
+              "name": "Drafting of Incorporation Documents: Memorandum of Association and Articles of Association",
+              "kind": "concept"
+            },
+            {
+              "key": "drafting-of-incorporation-documents-incorporation-contracts-documents-and-forms",
+              "name": "Drafting of Incorporation Documents: Incorporation contracts, documents and forms",
+              "kind": "concept"
+            },
+            {
+              "key": "formation-and-registration-procedural-aspects-with-regard-to-incorporation-of-corporate-entities",
+              "name": "Formation and Registration: Procedural aspects with regard to Incorporation of corporate entities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "limited-liability-partnership",
+          "name": "Limited Liability Partnership",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "concept-of-llp",
+              "name": "Concept of LLP",
+              "kind": "concept"
+            },
+            {
+              "key": "formation-and-registration",
+              "name": "Formation and Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "llp-agreement",
+              "name": "LLP Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "alteration-in-llp-agreement",
+              "name": "Alteration in LLP Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "annual-and-event-based-compliances",
+              "name": "Annual and Event Based Compliances",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "startups-and-its-registration",
+          "name": "Startups and its Registration",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "start-up-india-policy",
+              "name": "Start-up India Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "registration-process",
+              "name": "Registration Process",
+              "kind": "concept"
+            },
+            {
+              "key": "benefits-and-other-government-policies",
+              "name": "Benefits and other Government Policies",
+              "kind": "concept"
+            },
+            {
+              "key": "different-types-of-capital-seed-capital-venture-capital-private-equity",
+              "name": "Different types of capital - Seed Capital, Venture Capital, Private Equity",
+              "kind": "concept"
+            },
+            {
+              "key": "angel-investor",
+              "name": "Angel Investor",
+              "kind": "concept"
+            },
+            {
+              "key": "entrepreneurship",
+              "name": "Entrepreneurship",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-on-unicorn",
+              "name": "Case Studies on Unicorn",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "micro-small-and-medium-enterprises",
+          "name": "Micro, Small and Medium Enterprises",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "classification-of-enterprises",
+              "name": "Classification of Enterprises",
+              "kind": "concept"
+            },
+            {
+              "key": "memorandum",
+              "name": "Memorandum",
+              "kind": "concept"
+            },
+            {
+              "key": "measures-for-promotion-and-development",
+              "name": "Measures for promotion and development",
+              "kind": "concept"
+            },
+            {
+              "key": "udyam-registration-process",
+              "name": "Udyam Registration Process",
+              "kind": "concept"
+            },
+            {
+              "key": "nsic-registration",
+              "name": "NSIC Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "msmes-schemes",
+              "name": "MSMEs Schemes",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "conversion-of-business-entities",
+          "name": "Conversion of Business Entities",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "conversion-of-private-company-into-public-company-and-vice-versa",
+              "name": "Conversion of private company into public company and vice versa",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-section-8-company-into-other-kind-of-company",
+              "name": "Conversion of Section 8 company into other kind of Company",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-company-into-llp-and-vice-versa",
+              "name": "Conversion of Company into LLP and vice versa",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-opc-to-other-type-of-company-and-vice-versa",
+              "name": "Conversion of OPC to other type of company and vice versa",
+              "kind": "concept"
+            },
+            {
+              "key": "companies-authorised-to-registered-under-chapter-xxi-of-the-companies-act-2013",
+              "name": "Companies authorised to registered under Chapter XXI of the Companies Act, 2013",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "non-corporate-entities",
+          "name": "Non-Corporate Entities",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "partnership",
+              "name": "Partnership",
+              "kind": "concept"
+            },
+            {
+              "key": "hindu-undivided-family",
+              "name": "Hindu Undivided Family",
+              "kind": "concept"
+            },
+            {
+              "key": "sole-proprietorship",
+              "name": "Sole Proprietorship",
+              "kind": "concept"
+            },
+            {
+              "key": "multi-state-co-operative-society",
+              "name": "Multi State Co-operative Society",
+              "kind": "concept"
+            },
+            {
+              "key": "trust-and-society",
+              "name": "Trust and Society",
+              "kind": "concept"
+            },
+            {
+              "key": "formation-and-registration",
+              "name": "Formation and registration",
+              "kind": "concept"
+            },
+            {
+              "key": "partnership-agreement-and-trust-deed",
+              "name": "Partnership Agreement and Trust Deed",
+              "kind": "concept"
+            },
+            {
+              "key": "mega-firms",
+              "name": "Mega Firms",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "financial-services-organization",
+          "name": "Financial Services Organization",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "nbfcs",
+              "name": "NBFCs",
+              "kind": "concept"
+            },
+            {
+              "key": "housing-finance-company",
+              "name": "Housing Finance Company",
+              "kind": "concept"
+            },
+            {
+              "key": "asset-reconstruction-company",
+              "name": "Asset Reconstruction Company",
+              "kind": "concept"
+            },
+            {
+              "key": "micro-finance-institutions-mfis",
+              "name": "Micro Finance Institutions (MFIs)",
+              "kind": "concept"
+            },
+            {
+              "key": "nidhi",
+              "name": "Nidhi",
+              "kind": "concept"
+            },
+            {
+              "key": "payment-banks",
+              "name": "Payment Banks",
+              "kind": "concept"
+            },
+            {
+              "key": "mudra-bank",
+              "name": "Mudra Bank",
+              "kind": "concept"
+            },
+            {
+              "key": "registration",
+              "name": "Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "chit-funds",
+              "name": "Chit Funds",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-collaborations",
+          "name": "Business Collaborations",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "foreign-collaborations",
+              "name": "Foreign Collaborations",
+              "kind": "concept"
+            },
+            {
+              "key": "joint-venture",
+              "name": "Joint Venture",
+              "kind": "concept"
+            },
+            {
+              "key": "special-purpose-vehicle",
+              "name": "Special Purpose Vehicle",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "setting-up-of-branch-office-liaison-office-wholly-owned-subsidiary-by-foreign-company",
+          "name": "Setting up of Branch Office/ Liaison Office/ Wholly owned Subsidiary by Foreign Company",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "formation-and-registration",
+              "name": "Formation and Registration",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "setting-up-of-business-outside-india-and-issue-relating-thereto",
+          "name": "Setting up of Business outside India and Issue Relating Thereto",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "issues-in-choosing-location",
+              "name": "Issues in choosing location",
+              "kind": "concept"
+            },
+            {
+              "key": "structure-and-the-processes-of-incorporation-of-business-entities-in-uk-usa-canada-and-australia",
+              "name": "Structure and the processes of incorporation of business entities in UK, USA, Canada and Australia",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "identifying-laws-applicable-to-various-industries-and-their-initial-compliances",
+          "name": "Identifying laws applicable to various Industries and their initial compliances",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "compliance-of-industry-specific-laws-applicable-to-an-entity-at-the-time-of-setting-up-of-the-enterprise",
+              "name": "Compliance of industry specific laws applicable to an entity at the time of setting up of the enterprise",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "various-initial-registrations-and-licenses",
+          "name": "Various Initial Registrations and Licenses",
+          "section": "Part I: Setting up of Business (60 Marks)",
+          "topics": [
+            {
+              "key": "mandatory-registration-pan-tan",
+              "name": "Mandatory Registration – PAN / TAN",
+              "kind": "concept"
+            },
+            {
+              "key": "gst-registration",
+              "name": "GST Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "shops-and-establishments",
+              "name": "Shops & Establishments",
+              "kind": "concept"
+            },
+            {
+              "key": "additional-registration-license-esi-pf",
+              "name": "Additional Registration / License - ESI/PF",
+              "kind": "concept"
+            },
+            {
+              "key": "pollution",
+              "name": "Pollution",
+              "kind": "concept"
+            },
+            {
+              "key": "other-registration-as-per-requirement-of-sector",
+              "name": "Other registration as per requirement of sector",
+              "kind": "concept"
+            },
+            {
+              "key": "ie-code",
+              "name": "IE Code",
+              "kind": "concept"
+            },
+            {
+              "key": "fssai",
+              "name": "FSSAI",
+              "kind": "concept"
+            },
+            {
+              "key": "telecom-i-and-b",
+              "name": "Telecom; I & B",
+              "kind": "concept"
+            },
+            {
+              "key": "industrial-license-industrial-entrepreneurs-memorandum-iem",
+              "name": "Industrial License, Industrial Entrepreneurs Memorandum (IEM)",
+              "kind": "concept"
+            },
+            {
+              "key": "activities-specific-approvals-permissions-licenses",
+              "name": "Activities specific approvals / permissions / licenses",
+              "kind": "concept"
+            },
+            {
+              "key": "environmental-and-pollution-clearances",
+              "name": "Environmental & Pollution clearances",
+              "kind": "concept"
+            },
+            {
+              "key": "sectoral-approvals-permissions-licenses",
+              "name": "Sectoral approvals / permissions / licenses",
+              "kind": "concept"
+            },
+            {
+              "key": "state-level-approval-from-the-respective-state-industrial-department",
+              "name": "State Level Approval from the respective State Industrial Department",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "constitution-and-labour-laws",
+          "name": "Constitution and Labour Laws",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "fundamental-rights-vis-vis-labour-laws-equality-before-law-and-its-application-in-labour-laws-equal-pay-for-equal-work",
+              "name": "Fundamental rights vis-à-vis labour laws, Equality before law and its application in Labour Laws, Equal pay for equal work",
+              "kind": "concept"
+            },
+            {
+              "key": "article-16-and-reservation-policies-articles-19-21-23-and-24-and-its-implications",
+              "name": "Article-16 and reservation policies, Articles 19, 21, 23 and 24 and its implications",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "evaluation-of-labour-legislation-and-need-of-labour-code",
+          "name": "Evaluation of Labour Legislation and need of Labour Code",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": []
+        },
+        {
+          "key": "law-of-welfare-and-working-condition",
+          "name": "Law of Welfare & Working Condition",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "the-factories-act",
+              "name": "The Factories Act",
+              "kind": "concept"
+            },
+            {
+              "key": "contract-labour-regulation-and-abolition-act",
+              "name": "Contract Labour (Regulation and Abolition) Act",
+              "kind": "concept"
+            },
+            {
+              "key": "the-child-and-adolescent-labour-prohibition-and-regulation-act",
+              "name": "The Child and Adolescent Labour (Prohibition and Regulation) Act",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-of-industrial-relations",
+          "name": "Law of Industrial Relations",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "industrial-disputes-act",
+              "name": "Industrial Disputes Act",
+              "kind": "concept"
+            },
+            {
+              "key": "industrial-employment-standing-orders-act",
+              "name": "Industrial Employment (Standing Orders) Act",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-of-wages",
+          "name": "Law of Wages",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "payment-of-wages-act",
+              "name": "Payment of Wages Act",
+              "kind": "concept"
+            },
+            {
+              "key": "minimum-wages-act",
+              "name": "Minimum Wages Act",
+              "kind": "concept"
+            },
+            {
+              "key": "payment-of-bonus-act",
+              "name": "Payment of Bonus Act",
+              "kind": "concept"
+            },
+            {
+              "key": "equal-remuneration-act",
+              "name": "Equal Remuneration Act",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "social-security-legislations",
+          "name": "Social Security Legislations",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "employees-state-insurance-act",
+              "name": "Employees’ State Insurance Act",
+              "kind": "concept"
+            },
+            {
+              "key": "employees-provident-funds-and-miscellaneous-provisions-act",
+              "name": "Employees’ Provident Funds and Miscellaneous Provisions Act",
+              "kind": "concept"
+            },
+            {
+              "key": "maternity-benefit-act",
+              "name": "Maternity Benefit Act",
+              "kind": "concept"
+            },
+            {
+              "key": "the-payment-of-gratuity-act",
+              "name": "The Payment of Gratuity Act",
+              "kind": "concept"
+            },
+            {
+              "key": "apprentices-act-the-labour-laws-simplification-of-procedure-for-furnishing-returns-and-maintaining-registers-by-certain",
+              "name": "Apprentices Act, The Labour Laws (Simplification of Procedure for furnishing Returns and Maintaining Registers by Certain Establishments) Act",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sexual-harassment-of-women-at-workplace-prevention-prohibition-and-redressal-act-2013",
+          "name": "Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+          "section": "Part II: Industrial and Labour Laws (40 Marks)",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "key": "corporate-accounting-and-financial-management",
+      "paper_number": 4,
+      "name": "Corporate Accounting and Financial Management",
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "mixed",
+      "chapters": [
+        {
+          "key": "introduction-to-accounting",
+          "name": "Introduction to Accounting",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "book-keeping",
+              "name": "Book Keeping",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-cycle",
+              "name": "Accounting Cycle",
+              "kind": "concept"
+            },
+            {
+              "key": "single-double-entry-system",
+              "name": "Single / Double entry system",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-principles",
+              "name": "Accounting Principles",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-concept-and-convention",
+              "name": "Accounting Concept & Convention",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-account",
+              "name": "Types of Account",
+              "kind": "concept"
+            },
+            {
+              "key": "journal",
+              "name": "Journal",
+              "kind": "concept"
+            },
+            {
+              "key": "ledger",
+              "name": "Ledger",
+              "kind": "concept"
+            },
+            {
+              "key": "trial-balance",
+              "name": "Trial Balance",
+              "kind": "concept"
+            },
+            {
+              "key": "final-accounts",
+              "name": "Final Accounts",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction-to-corporate-accounting",
+          "name": "Introduction to Corporate Accounting",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "records-of-accounts-to-be-maintained-by-a-company",
+              "name": "Records of accounts to be maintained by a company",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-and-presentation-of-financial-statements",
+              "name": "Preparation and Presentation of Financial Statements",
+              "kind": "concept"
+            },
+            {
+              "key": "schedule-iii-of-the-companies-act-2013",
+              "name": "Schedule III of the Companies Act, 2013",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosure-requirement",
+              "name": "Disclosure Requirement",
+              "kind": "concept"
+            },
+            {
+              "key": "true-and-fair-view-of-financial-statements",
+              "name": "True and Fair View of Financial Statements",
+              "kind": "concept"
+            },
+            {
+              "key": "xbrl",
+              "name": "XBRL",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounting-standards-as",
+          "name": "Accounting Standards (AS)",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "applicability",
+              "name": "Applicability",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation",
+              "name": "Interpretation",
+              "kind": "concept"
+            },
+            {
+              "key": "scope-and-compliance",
+              "name": "Scope and Compliance",
+              "kind": "concept"
+            },
+            {
+              "key": "international-financial-reporting-standards",
+              "name": "International Financial Reporting Standards",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-as",
+              "name": "Overview of AS",
+              "kind": "concept"
+            },
+            {
+              "key": "as-vs-ind-as-vs-ifrs",
+              "name": "AS vs. Ind AS vs. IFRS",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounting-for-share-capital",
+          "name": "Accounting for Share Capital",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "issue-of-shares",
+              "name": "Issue of Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "forfeiture-and-reissue-of-shares",
+              "name": "Forfeiture and Reissue of Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-treatment-of-premium",
+              "name": "Accounting Treatment of Premium",
+              "kind": "concept"
+            },
+            {
+              "key": "buy-back-of-shares",
+              "name": "Buy-back of Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "redemption-and-conversion",
+              "name": "Redemption and Conversion",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-redemption-reserve",
+              "name": "Capital Redemption Reserve",
+              "kind": "concept"
+            },
+            {
+              "key": "bonus-shares",
+              "name": "Bonus Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-issue",
+              "name": "Rights Issue",
+              "kind": "concept"
+            },
+            {
+              "key": "esops",
+              "name": "ESOPs",
+              "kind": "concept"
+            },
+            {
+              "key": "esps",
+              "name": "ESPS",
+              "kind": "concept"
+            },
+            {
+              "key": "sweat-equity-shares-and-underwriting",
+              "name": "Sweat Equity Shares and Underwriting",
+              "kind": "concept"
+            },
+            {
+              "key": "book-building",
+              "name": "Book Building",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounting-for-debentures",
+          "name": "Accounting for Debentures",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "accounting-treatment",
+              "name": "Accounting Treatment",
+              "kind": "concept"
+            },
+            {
+              "key": "debenture-redemption-reserve",
+              "name": "Debenture Redemption Reserve",
+              "kind": "concept"
+            },
+            {
+              "key": "redemption-of-debentures-and-conversion-of-debentures-into-shares",
+              "name": "Redemption of Debentures and Conversion of Debentures into Shares",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "related-aspects-of-company-accounts",
+          "name": "Related Aspects of Company Accounts",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "accounting-for-esop",
+              "name": "Accounting for ESOP",
+              "kind": "concept"
+            },
+            {
+              "key": "buy-back",
+              "name": "Buy-back",
+              "kind": "concept"
+            },
+            {
+              "key": "equity-shares-with-differential-rights",
+              "name": "Equity Shares with differential rights",
+              "kind": "concept"
+            },
+            {
+              "key": "underwriting-and-debentures",
+              "name": "Underwriting and Debentures",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "consolidation-of-accounts",
+          "name": "Consolidation of Accounts",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "standalone-and-consolidated-financial-statements",
+              "name": "Standalone and Consolidated Financial Statements",
+              "kind": "concept"
+            },
+            {
+              "key": "holding-company",
+              "name": "Holding Company",
+              "kind": "concept"
+            },
+            {
+              "key": "subsidiary-companies",
+              "name": "Subsidiary Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "associate-companies-and-joint-venture",
+              "name": "Associate Companies and Joint Venture",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-treatment-and-disclosures",
+              "name": "Accounting Treatment and disclosures",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "financial-statement-analysis",
+          "name": "Financial Statement Analysis",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "characteristics-of-good-financial-statements-and-its-relevancy-for-better-reporting",
+              "name": "Characteristics of good financial statements and its relevancy for better reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "requirements-of-financial-reporting-and-recent-trends",
+              "name": "Requirements of Financial Reporting and Recent trends",
+              "kind": "concept"
+            },
+            {
+              "key": "best-practices-applicable-to-all-companies",
+              "name": "Best Practices applicable to all companies",
+              "kind": "concept"
+            },
+            {
+              "key": "usage-and-features-of-ratios-analysis",
+              "name": "Usage and features of ratios analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-ratios",
+              "name": "liquidity ratios",
+              "kind": "concept"
+            },
+            {
+              "key": "turnover-ratio",
+              "name": "turnover ratio",
+              "kind": "concept"
+            },
+            {
+              "key": "leverage-ratios",
+              "name": "leverage ratios",
+              "kind": "concept"
+            },
+            {
+              "key": "insolvency-ratio-and-profitability-ratio",
+              "name": "Insolvency ratio and profitability ratio",
+              "kind": "concept"
+            },
+            {
+              "key": "dupont-analysis",
+              "name": "DuPont Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "reading-and-interpretation-of-financial-statements",
+              "name": "Reading and Interpretation of Financial Statements",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cash-flows",
+          "name": "Cash Flows",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "understanding-the-statement-of-cash-flows",
+              "name": "Understanding the Statement of Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "identify-the-purpose-of-the-statement-of-cash-flows",
+              "name": "Identify the purpose of the statement of Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "structure-and-interpretation-of-operating-investing-and-financing-activities-in-cash-flow-statement",
+              "name": "structure and interpretation of operating, investing and financing activities in Cash Flow statement",
+              "kind": "concept"
+            },
+            {
+              "key": "analyze-information-in-the-statement-of-cash-flows-to-determine-whether-the-firm-is-in-its-life-cycle",
+              "name": "Analyze information in the statement of Cash Flows to determine whether the firm is in its life cycle",
+              "kind": "concept"
+            },
+            {
+              "key": "examine-additional-uses-of-cash-flow-information",
+              "name": "Examine additional uses of Cash Flow information",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "forecasting-financial-statements",
+          "name": "Forecasting Financial Statements",
+          "section": "Part I: Corporate Accounting (60 Marks)",
+          "topics": [
+            {
+              "key": "build-forecasts-of-future-balance-sheets-income-statements-and-statements-of-cash-flows",
+              "name": "Build forecasts of future Balance Sheets, Income Statements and Statements of Cash Flows",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "nature",
+              "name": "Nature",
+              "kind": "concept"
+            },
+            {
+              "key": "scope-and-objectives-of-financial-management",
+              "name": "Scope & Objectives of Financial Management",
+              "kind": "concept"
+            },
+            {
+              "key": "profit-maximization-vs-wealth-maximization",
+              "name": "Profit Maximization vs. Wealth Maximization",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "time-value-of-money",
+          "name": "Time Value of Money",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-time-value-of-money-the-power-of-compounding",
+              "name": "Concept of Time Value of Money – The power of compounding",
+              "kind": "concept"
+            },
+            {
+              "key": "significance-and-application-of-time-value-of-money",
+              "name": "Significance and application of Time Value of money",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-annuity",
+              "name": "Concept of Annuity",
+              "kind": "concept"
+            },
+            {
+              "key": "understanding-and-application-of-table-used-in-time-value-of-money",
+              "name": "Understanding and application of Table used in Time value of money",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "capital-budgeting",
+          "name": "Capital Budgeting",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "compounding-and-discounting-techniques-capital-budgeting-process",
+              "name": "Compounding and Discounting techniques - Capital Budgeting Process",
+              "kind": "concept"
+            },
+            {
+              "key": "techniques-of-capital-budgeting-discounted-and-non-discounted-cash-flow-methods",
+              "name": "Techniques of Capital Budgeting - Discounted and Non- Discounted Cash Flow Methods",
+              "kind": "concept"
+            },
+            {
+              "key": "npv",
+              "name": "NPV",
+              "kind": "concept"
+            },
+            {
+              "key": "payback",
+              "name": "Payback",
+              "kind": "concept"
+            },
+            {
+              "key": "profitability-index",
+              "name": "Profitability Index",
+              "kind": "concept"
+            },
+            {
+              "key": "irr",
+              "name": "IRR",
+              "kind": "concept"
+            },
+            {
+              "key": "economic-value-added-eva",
+              "name": "Economic Value Added (EVA)",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-rationing",
+              "name": "Capital Rationing",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-evaluation-and-sensitivity-analysis",
+              "name": "Risk Evaluation and Sensitivity Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-of-capital",
+          "name": "Cost of Capital",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "sources",
+              "name": "Sources",
+              "kind": "concept"
+            },
+            {
+              "key": "meaning",
+              "name": "Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "factors-affecting-cost-of-capital",
+              "name": "Factors Affecting Cost of Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "methods-for-calculating-cost-of-capital",
+              "name": "Methods for Calculating Cost of capital",
+              "kind": "concept"
+            },
+            {
+              "key": "weighted-average-cost-of-capital-wacc",
+              "name": "Weighted Average Cost of Capital (WACC)",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-cost-of-capital",
+              "name": "Marginal Cost of Capital",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "capital-structure",
+          "name": "Capital Structure",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "significance-of-capital-structure",
+              "name": "Significance of capital structure",
+              "kind": "concept"
+            },
+            {
+              "key": "determinants-of-capital-structure",
+              "name": "Determinants of capital structure",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structure-planning-and-designing-of-optimum-capital-structure",
+              "name": "Capital structure planning and designing of optimum capital structure",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structure-theories",
+              "name": "Capital Structure Theories",
+              "kind": "concept"
+            },
+            {
+              "key": "ebit-eps-analysis",
+              "name": "EBIT- EPS Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "breakeven-ebit-analysis",
+              "name": "Breakeven - EBIT Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "under-over-capitalisation",
+              "name": "Under / Over Capitalisation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "dividend-decisions",
+          "name": "Dividend Decisions",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "factors-determining-dividend-policy",
+              "name": "Factors determining dividend policy",
+              "kind": "concept"
+            },
+            {
+              "key": "dividend-models-relevant-irrelevant-theories-walters-model-gordons-model-m-m-model",
+              "name": "Dividend Models- Relevant/ Irrelevant Theories - Walter’s Model, Gordon’s Model, M-M Model",
+              "kind": "concept"
+            },
+            {
+              "key": "forms-of-divided-cash-dividend-stock-dividend-stock-splits-share-repurchase",
+              "name": "Forms of Divided – Cash Dividend, Stock Dividend, Stock Splits, Share repurchase",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "working-capital-management",
+          "name": "Working Capital Management",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "meaning",
+              "name": "Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "types",
+              "name": "Types",
+              "kind": "concept"
+            },
+            {
+              "key": "determinants-and-assessment-of-working-capital-requirements",
+              "name": "Determinants and Assessment of Working Capital Requirements",
+              "kind": "concept"
+            },
+            {
+              "key": "negative-working-capital",
+              "name": "Negative Working Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "operating-cycle-concept-and-applications-of-quantitative-techniques",
+              "name": "Operating Cycle Concept and Applications of Quantitative Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-working-capital-cash-receivables-inventories",
+              "name": "Management of Working Capital – Cash Receivables Inventories",
+              "kind": "concept"
+            },
+            {
+              "key": "financing-of-working-capital",
+              "name": "Financing of Working Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "banking-norms-and-macro-aspects",
+              "name": "Banking Norms and Macro Aspects",
+              "kind": "concept"
+            },
+            {
+              "key": "factoring-and-forfaiting",
+              "name": "Factoring and Forfaiting",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "security-analysis",
+          "name": "Security Analysis",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "measuring-of-systematic-and-unsystematic-risk",
+              "name": "Measuring of Systematic and Unsystematic Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "fundamental-analysis-economic-industry-and-company",
+              "name": "Fundamental Analysis (Economic, Industry and Company)",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis-and-efficient-market-hypothesis",
+              "name": "Technical Analysis and Efficient Market Hypothesis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "operational-approach-to-financial-decision",
+          "name": "Operational Approach to Financial Decision",
+          "section": "Part II: Financial Management (40 Marks)",
+          "topics": [
+            {
+              "key": "an-overview-of-costing",
+              "name": "An Overview of Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "key-concepts",
+              "name": "Key Concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "basics-principles-of-costing",
+              "name": "Basics Principles of Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-costing-breakeven-point-margin-of-safety",
+              "name": "Marginal Costing – Breakeven Point, Margin of Safety",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "capital-market-and-securities-laws",
+      "paper_number": 5,
+      "name": "Capital Market & Securities Laws",
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "basics-of-capital-market",
+          "name": "Basics of Capital Market",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "structure-of-capital-market",
+              "name": "Structure of Capital Market",
+              "kind": "concept"
+            },
+            {
+              "key": "participants-of-capital-market",
+              "name": "Participants of Capital Market",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-instruments",
+              "name": "Capital Market Instruments",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "secondary-market-in-india",
+          "name": "Secondary Market in India",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "development-of-stock-market-in-india",
+              "name": "Development of Stock market in India",
+              "kind": "concept"
+            },
+            {
+              "key": "stock-market-and-its-operations",
+              "name": "Stock market & its operations",
+              "kind": "concept"
+            },
+            {
+              "key": "trading-mechanism",
+              "name": "Trading Mechanism",
+              "kind": "concept"
+            },
+            {
+              "key": "exchange-traded-fund",
+              "name": "Exchange Traded Fund",
+              "kind": "concept"
+            },
+            {
+              "key": "derivatives",
+              "name": "Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-entitlements",
+              "name": "Rights Entitlements",
+              "kind": "concept"
+            },
+            {
+              "key": "block-and-bulk-deals",
+              "name": "Block and Bulk deals",
+              "kind": "concept"
+            },
+            {
+              "key": "basis-of-sensex",
+              "name": "Basis of Sensex",
+              "kind": "concept"
+            },
+            {
+              "key": "nifty",
+              "name": "Nifty",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-indexes",
+              "name": "Types of Indexes",
+              "kind": "concept"
+            },
+            {
+              "key": "clearing-corporations",
+              "name": "Clearing Corporations",
+              "kind": "concept"
+            },
+            {
+              "key": "suspension-and-penalties",
+              "name": "Suspension and Penalties",
+              "kind": "concept"
+            },
+            {
+              "key": "surveillance-mechanism",
+              "name": "Surveillance Mechanism",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-in-secondary-market",
+              "name": "Risk management in Secondary market",
+              "kind": "concept"
+            },
+            {
+              "key": "impact-of-various-policies-on-stock-markets",
+              "name": "Impact of various Policies on Stock Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-market",
+              "name": "Types of Market",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-trading-platform",
+              "name": "Types of Trading Platform",
+              "kind": "concept"
+            },
+            {
+              "key": "regulators-of-secondary-markets",
+              "name": "Regulators of Secondary Markets",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "securities-contracts-regulations-act-1956",
+          "name": "Securities Contracts (Regulations) Act 1956",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "objectives-of-the-scr-act-rules-and-regulations-made-there-under",
+              "name": "Objectives of the SCR Act, Rules and Regulations made there under",
+              "kind": "concept"
+            },
+            {
+              "key": "important-definitions",
+              "name": "Important Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "recognized-stock-exchange",
+              "name": "Recognized Stock Exchange",
+              "kind": "concept"
+            },
+            {
+              "key": "public-issue-and-listing-of-securities",
+              "name": "Public issue and listing of securities",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws",
+              "name": "Case Laws",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "securities-and-exchange-board-of-india",
+          "name": "Securities and Exchange Board of India",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "objective",
+              "name": "Objective",
+              "kind": "concept"
+            },
+            {
+              "key": "powers-and-functions-of-sebi",
+              "name": "Powers and functions of SEBI",
+              "kind": "concept"
+            },
+            {
+              "key": "securities-appellate-tribunal",
+              "name": "Securities Appellate Tribunal",
+              "kind": "concept"
+            },
+            {
+              "key": "penalties-and-appeals",
+              "name": "Penalties and appeals",
+              "kind": "concept"
+            },
+            {
+              "key": "procedure-for-redressal-of-grievances",
+              "name": "Procedure for Redressal of Grievances",
+              "kind": "concept"
+            },
+            {
+              "key": "scores",
+              "name": "SCORES",
+              "kind": "concept"
+            },
+            {
+              "key": "sebi-informal-guidance-scheme-2003",
+              "name": "SEBI (Informal Guidance) Scheme, 2003",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws",
+              "name": "Case Laws",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "laws-governing-to-depositories-and-depository-participants",
+          "name": "Laws Governing to Depositories and Depository Participants",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "role-and-functions-of-depositories",
+              "name": "Role & Functions of Depositories",
+              "kind": "concept"
+            },
+            {
+              "key": "depository-participants",
+              "name": "Depository Participants",
+              "kind": "concept"
+            },
+            {
+              "key": "admission-of-securities",
+              "name": "Admission of Securities",
+              "kind": "concept"
+            },
+            {
+              "key": "dematerialization-and-re-materialisation",
+              "name": "Dematerialization & Re-materialisation",
+              "kind": "concept"
+            },
+            {
+              "key": "international-securities-identification-number-isin",
+              "name": "International Securities Identification Number (ISIN)",
+              "kind": "concept"
+            },
+            {
+              "key": "depository-process",
+              "name": "Depository Process",
+              "kind": "concept"
+            },
+            {
+              "key": "inspection-and-penalties",
+              "name": "Inspection and Penalties",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit-and-concurrent-audit-of-depository-participants",
+              "name": "Internal Audit and Concurrent Audit of Depository Participants",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "securities-market-intermediaries",
+          "name": "Securities Market Intermediaries",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "regulatory-framework",
+              "name": "Regulatory Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "primary-market-and-secondary-market-intermediaries",
+              "name": "Primary Market and Secondary Market Intermediaries",
+              "kind": "concept"
+            },
+            {
+              "key": "role-and-functions-of-merchant-bankers-stock-brokers-registrars-and-transfer-agents-bankers-to-an-issue-portfolio",
+              "name": "Role and Functions of Merchant Bankers, Stock Brokers, Registrars and Transfer Agents, Bankers to an Issue, Portfolio Managers",
+              "kind": "concept"
+            },
+            {
+              "key": "debenture-trustees-investment-advisers-research-analysts-credit-rating-agencies-depositories-and-depositories",
+              "name": "Debenture Trustees, Investment Advisers, Research Analysts, Credit Rating Agencies, Depositories and Depositories Participants, Foreign Institutional Investors",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit-of-intermediaries-by-company-secretary-in-practice",
+              "name": "Internal Audit of Intermediaries by Company Secretary in Practice",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "international-financial-services-centres-authority-ifsca",
+          "name": "International Financial Services Centres Authority (IFSCA)",
+          "section": "Part I: Capital Market (40 Marks)",
+          "topics": [
+            {
+              "key": "establishment-of-authority",
+              "name": "Establishment of Authority",
+              "kind": "concept"
+            },
+            {
+              "key": "powers-and-functions-of-authority",
+              "name": "Powers and Functions of Authority",
+              "kind": "concept"
+            },
+            {
+              "key": "international-financial-services-centre-ifsc",
+              "name": "International Financial Services Centre (IFSC)",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-products",
+              "name": "Financial Products",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-services",
+              "name": "Financial Services",
+              "kind": "concept"
+            },
+            {
+              "key": "listing-and-trading-of-units-in-ifsc",
+              "name": "Listing and Trading of units in IFSC",
+              "kind": "concept"
+            },
+            {
+              "key": "sebi-ifsc-guidelines",
+              "name": "SEBI IFSC Guidelines",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "issue-of-securities-concepts",
+          "name": "Issue of Securities - Concepts",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "types-of-issues",
+              "name": "Types of Issues",
+              "kind": "concept"
+            },
+            {
+              "key": "initial-public-offer",
+              "name": "Initial Public Offer",
+              "kind": "concept"
+            },
+            {
+              "key": "further-public-offering",
+              "name": "Further Public Offering",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-issue",
+              "name": "Rights Issue",
+              "kind": "concept"
+            },
+            {
+              "key": "preferential-issue",
+              "name": "Preferential Issue",
+              "kind": "concept"
+            },
+            {
+              "key": "qualified-institutions-placement",
+              "name": "Qualified Institutions Placement",
+              "kind": "concept"
+            },
+            {
+              "key": "initial-public-offer-of-indian-depository-receipts",
+              "name": "Initial Public Offer of Indian Depository Receipts",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-issue-of-indian-depository-receipts",
+              "name": "Rights Issue of Indian Depository Receipts",
+              "kind": "concept"
+            },
+            {
+              "key": "initial-public-offer-by-small-and-medium-enterprises",
+              "name": "Initial Public Offer by Small and Medium Enterprises",
+              "kind": "concept"
+            },
+            {
+              "key": "bonus-issue",
+              "name": "Bonus Issue",
+              "kind": "concept"
+            },
+            {
+              "key": "share-based-employee-benefits-and-sweat-equity",
+              "name": "Share Based Employee Benefits and Sweat Equity",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "issue-and-listing-of-non-convertible-securities",
+          "name": "Issue and Listing of Non-Convertible Securities",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "debt-securities-and-non-convertible-redeemable-preference-shares",
+              "name": "Debt Securities and Non-Convertible Redeemable Preference Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "perpetual-debt-instruments",
+              "name": "Perpetual Debt Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "commercial-paper-issuance-and-listing",
+              "name": "Commercial Paper - Issuance and Listing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "listing-obligations-and-disclosure-requirements",
+          "name": "Listing Obligations and Disclosure Requirements",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "compliances-under-sebi-lodr-regulations-2015",
+              "name": "Compliances under SEBI (LODR) Regulations, 2015",
+              "kind": "concept"
+            },
+            {
+              "key": "key-provisions-pertaining-to-corporate-governance",
+              "name": "Key Provisions pertaining to Corporate Governance",
+              "kind": "concept"
+            },
+            {
+              "key": "prior-intimations",
+              "name": "Prior Intimations",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosure-of-events-or-information",
+              "name": "Disclosure of Events or Information",
+              "kind": "concept"
+            },
+            {
+              "key": "meeting-of-shareholders-and-voting",
+              "name": "Meeting of shareholders and voting",
+              "kind": "concept"
+            },
+            {
+              "key": "policies",
+              "name": "Policies",
+              "kind": "concept"
+            },
+            {
+              "key": "compliance-under-sebi-lodr-regulations-2015-which-has-listed-its-non-convertible-securities",
+              "name": "Compliance under SEBI (LODR) Regulations, 2015 which has listed its Non-Convertible securities",
+              "kind": "concept"
+            },
+            {
+              "key": "liability-of-a-listed-entity-for-contravention",
+              "name": "Liability of a Listed Entity for Contravention",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "acquisition-of-shares-and-takeovers-concepts",
+          "name": "Acquisition of Shares and Takeovers - Concepts",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "regulatory-framework",
+              "name": "Regulatory Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "trigger-point-for-making-an-open-offer-by-an-acquirer",
+              "name": "Trigger point for making an open offer by an acquirer",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosures",
+              "name": "Disclosures",
+              "kind": "concept"
+            },
+            {
+              "key": "exemptions",
+              "name": "Exemptions",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "prohibition-of-insider-trading",
+          "name": "Prohibition of Insider Trading",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "basic-concepts",
+              "name": "Basic Concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "unpublished-price-sensitive-information-upsi",
+              "name": "Unpublished price sensitive information (UPSI)",
+              "kind": "concept"
+            },
+            {
+              "key": "trading-plans",
+              "name": "Trading Plans",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosures",
+              "name": "Disclosures",
+              "kind": "concept"
+            },
+            {
+              "key": "informant-incentives-and-rewards",
+              "name": "Informant Incentives and Rewards",
+              "kind": "concept"
+            },
+            {
+              "key": "codes-of-fair-disclosure-and-conduct",
+              "name": "Codes of fair disclosure and conduct",
+              "kind": "concept"
+            },
+            {
+              "key": "penalties-and-appeals",
+              "name": "Penalties and Appeals",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "prohibition-of-fraudulent-and-unfair-trade-practices-relating-to-securities-market",
+          "name": "Prohibition of Fraudulent and Unfair Trade Practices Relating to Securities Market",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "prohibition-of-certain-dealings-in-securities",
+              "name": "Prohibition of certain dealings in securities",
+              "kind": "concept"
+            },
+            {
+              "key": "prohibition-of-manipulative-fraudulent-and-unfair-trade-practices",
+              "name": "Prohibition of manipulative, fraudulent and unfair trade practices",
+              "kind": "concept"
+            },
+            {
+              "key": "investigation",
+              "name": "Investigation",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "delisting-and-buyback-of-securities-concepts",
+          "name": "Delisting and Buyback of Securities - Concepts",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "delisting-of-equity-shares",
+              "name": "Delisting of Equity Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "voluntary-delisting",
+              "name": "Voluntary Delisting",
+              "kind": "concept"
+            },
+            {
+              "key": "exit-opportunity",
+              "name": "Exit Opportunity",
+              "kind": "concept"
+            },
+            {
+              "key": "compulsory-delisting",
+              "name": "Compulsory Delisting",
+              "kind": "concept"
+            },
+            {
+              "key": "conditions-of-buy-back",
+              "name": "Conditions of buy-back",
+              "kind": "concept"
+            },
+            {
+              "key": "buy-back-methods",
+              "name": "Buy back Methods",
+              "kind": "concept"
+            },
+            {
+              "key": "tender-offer",
+              "name": "Tender Offer",
+              "kind": "concept"
+            },
+            {
+              "key": "open-market-book-building-and-stock-exchange",
+              "name": "Open Market (Book building and Stock Exchange)",
+              "kind": "concept"
+            },
+            {
+              "key": "general-obligations",
+              "name": "General obligations",
+              "kind": "concept"
+            },
+            {
+              "key": "penalties",
+              "name": "Penalties",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        },
+        {
+          "key": "mutual-funds",
+          "name": "Mutual Funds",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "regulatory-framework",
+              "name": "Regulatory Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-mutual-funds-and-schemes",
+              "name": "Types of Mutual Funds and Schemes",
+              "kind": "concept"
+            },
+            {
+              "key": "key-players-in-mutual-funds-sponsor-asset-management-company-trustee-unit-holder",
+              "name": "Key players in Mutual Funds - Sponsor, Asset Management Company, Trustee, Unit holder",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluating-performance-of-mutual-funds-net-asset-value",
+              "name": "Evaluating performance of Mutual funds - Net Asset Value",
+              "kind": "concept"
+            },
+            {
+              "key": "expense-ratio",
+              "name": "Expense Ratio",
+              "kind": "concept"
+            },
+            {
+              "key": "holding-period-return",
+              "name": "Holding Period Return",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "collective-investment-schemes",
+          "name": "Collective Investment Schemes",
+          "section": "Part II: Securities Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "regulatory-framework",
+              "name": "Regulatory Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "restrictions-on-business-activities",
+              "name": "Restrictions on Business Activities",
+              "kind": "concept"
+            },
+            {
+              "key": "submission-of-information-and-documents",
+              "name": "Submission of Information and Documents",
+              "kind": "concept"
+            },
+            {
+              "key": "trustees-and-their-obligations",
+              "name": "Trustees and their Obligations",
+              "kind": "concept"
+            },
+            {
+              "key": "case-laws-and-case-studies",
+              "name": "Case Laws and Case Studies",
+              "kind": "case_law"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "economic-commercial-and-intellectual-property-laws",
+      "paper_number": 6,
+      "name": "Economic, Commercial and Intellectual Property Laws",
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "law-relating-foreign-exchange-management",
+          "name": "Law relating Foreign Exchange Management",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "current-and-capital-account-transactions",
+              "name": "Current and Capital Account Transactions",
+              "kind": "concept"
+            },
+            {
+              "key": "liberalized-remittance-scheme",
+              "name": "Liberalized Remittance Scheme",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-and-transfer-of-immovable-property-in-india",
+              "name": "Acquisition & Transfer of Immovable Property in India",
+              "kind": "concept"
+            },
+            {
+              "key": "export-of-goods-and-services",
+              "name": "Export of Goods and Services",
+              "kind": "concept"
+            },
+            {
+              "key": "realization-and-repatriation-of-foreign-exchange",
+              "name": "Realization and Repatriation of Foreign Exchange",
+              "kind": "concept"
+            },
+            {
+              "key": "reserve-bank-of-india",
+              "name": "Reserve Bank of India",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-direct-investments-regulations-and-policy",
+          "name": "Foreign Direct Investments – Regulations & Policy",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "automatic-route-of-fdi",
+              "name": "Automatic Route of FDI",
+              "kind": "concept"
+            },
+            {
+              "key": "approval-route-of-fdi",
+              "name": "Approval Route of FDI",
+              "kind": "concept"
+            },
+            {
+              "key": "prohibited-sector",
+              "name": "Prohibited Sector",
+              "kind": "concept"
+            },
+            {
+              "key": "permitted-sector",
+              "name": "Permitted Sector",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-portfolio-investments",
+              "name": "Foreign Portfolio Investments",
+              "kind": "concept"
+            },
+            {
+              "key": "non-debt-instrument-rules-and-regulations",
+              "name": "Non-Debt Instrument Rules & Regulations",
+              "kind": "concept"
+            },
+            {
+              "key": "filing-of-fcgpr-form-and-other-returns",
+              "name": "Filing of FCGPR form & other Returns",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "overseas-direct-investment",
+          "name": "Overseas Direct Investment",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "odi-policy",
+              "name": "ODI Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-currency-remittances",
+              "name": "Foreign currency remittances",
+              "kind": "concept"
+            },
+            {
+              "key": "setting-up-of-subsidiary-joint-venture-branch-office-abroad",
+              "name": "Setting up of Subsidiary/Joint Venture/Branch Office abroad",
+              "kind": "concept"
+            },
+            {
+              "key": "filing-of-returns",
+              "name": "Filing of Returns",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-trade-policy-and-procedure",
+          "name": "Foreign Trade Policy & Procedure",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "focus-of-the-foreign-trade-policy-ftp",
+              "name": "Focus of the Foreign Trade Policy (FTP)",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-basis-of-the-foreign-trade-policy",
+              "name": "Legal Basis of the Foreign Trade Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "importer-exporter-code-iec-number",
+              "name": "Importer-Exporter Code (IEC) Number",
+              "kind": "concept"
+            },
+            {
+              "key": "status-holder",
+              "name": "Status Holder",
+              "kind": "concept"
+            },
+            {
+              "key": "imports-and-export-policy",
+              "name": "Imports and Export Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "deemed-exports",
+              "name": "Deemed Exports",
+              "kind": "concept"
+            },
+            {
+              "key": "trade-disputes",
+              "name": "Trade Disputes",
+              "kind": "concept"
+            },
+            {
+              "key": "various-schemes-under-foreign-trade-policy-and-procedure",
+              "name": "Various Schemes under Foreign Trade Policy & Procedure",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-special-economic-zones",
+          "name": "Law relating to Special Economic Zones",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "establishment-of-special-economic-zones",
+              "name": "Establishment of Special Economic Zones",
+              "kind": "concept"
+            },
+            {
+              "key": "approval-and-authorization-to-operate-sez",
+              "name": "Approval and Authorization to Operate SEZ",
+              "kind": "concept"
+            },
+            {
+              "key": "setting-up-of-unit",
+              "name": "Setting up of Unit",
+              "kind": "concept"
+            },
+            {
+              "key": "special-economic-zone-authority",
+              "name": "Special Economic Zone Authority",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-foreign-contribution-regulation",
+          "name": "Law relating to Foreign Contribution Regulation",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "introduction-and-objective",
+              "name": "Introduction and Objective",
+              "kind": "concept"
+            },
+            {
+              "key": "eligible-contributor",
+              "name": "Eligible Contributor",
+              "kind": "concept"
+            },
+            {
+              "key": "eligible-receiver",
+              "name": "Eligible Receiver",
+              "kind": "concept"
+            },
+            {
+              "key": "registration",
+              "name": "Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-and-penalties",
+              "name": "Offences and Penalties",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "prevention-of-money-laundering",
+          "name": "Prevention of Money Laundering",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "process-of-money-laundering",
+              "name": "Process of Money Laundering",
+              "kind": "concept"
+            },
+            {
+              "key": "adjudication-attachment-and-confiscation",
+              "name": "Adjudication, Attachment and confiscation",
+              "kind": "concept"
+            },
+            {
+              "key": "obligation-of-banking-companies-financial-institutions-and-intermediaries",
+              "name": "Obligation of Banking Companies, Financial Institutions and Intermediaries",
+              "kind": "concept"
+            },
+            {
+              "key": "problem-and-adverse-effect-of-money-laundering",
+              "name": "Problem and adverse effect of money laundering",
+              "kind": "concept"
+            },
+            {
+              "key": "offence-of-money-laundering",
+              "name": "Offence of money laundering",
+              "kind": "concept"
+            },
+            {
+              "key": "enforcement-directorate",
+              "name": "Enforcement Directorate",
+              "kind": "concept"
+            },
+            {
+              "key": "kyc-and-fiu",
+              "name": "KYC & FIU",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "competition-law",
+          "name": "Competition Law",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "competition-policy",
+              "name": "Competition Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "anti-competitive-agreements",
+              "name": "Anti-Competitive Agreements",
+              "kind": "concept"
+            },
+            {
+              "key": "abuse-of-dominant-position",
+              "name": "Abuse of Dominant Position",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-combination",
+              "name": "Overview of Combination",
+              "kind": "concept"
+            },
+            {
+              "key": "regulation-of-combinations",
+              "name": "Regulation of Combinations",
+              "kind": "concept"
+            },
+            {
+              "key": "competition-advocacy",
+              "name": "Competition Advocacy",
+              "kind": "concept"
+            },
+            {
+              "key": "competition-commission-of-india",
+              "name": "Competition Commission of India",
+              "kind": "concept"
+            },
+            {
+              "key": "appellate-tribunal",
+              "name": "Appellate Tribunal",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-consumer-protection",
+          "name": "Law relating to Consumer Protection",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "consumer-protection-in-india",
+              "name": "Consumer Protection in India",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-of-consumers",
+              "name": "Rights of Consumers",
+              "kind": "concept"
+            },
+            {
+              "key": "consumer-dispute-redressal-forums",
+              "name": "Consumer Dispute Redressal Forums",
+              "kind": "concept"
+            },
+            {
+              "key": "nature-and-scope-of-remedies",
+              "name": "Nature and Scope of Remedies",
+              "kind": "concept"
+            },
+            {
+              "key": "e-commerce-and-direct-selling-guidelines",
+              "name": "E-commerce & Direct Selling Guidelines",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "legal-metrology",
+          "name": "Legal Metrology",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "standard-weights-and-measures",
+              "name": "Standard weights and measures",
+              "kind": "concept"
+            },
+            {
+              "key": "power-of-inspection-seizure",
+              "name": "Power of inspection, seizure",
+              "kind": "concept"
+            },
+            {
+              "key": "declarations-on-pre-packaged-commodities",
+              "name": "Declarations on pre-packaged commodities",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-and-penalties",
+              "name": "Offences and penalties",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "real-estate-regulation-and-development-law",
+          "name": "Real Estate Regulation and Development Law",
+          "section": "Part I: Economic & Commercial Laws (60 Marks)",
+          "topics": [
+            {
+              "key": "registration-of-real-estate-project",
+              "name": "Registration of Real Estate Project",
+              "kind": "concept"
+            },
+            {
+              "key": "real-estate-agents",
+              "name": "Real Estate Agents",
+              "kind": "concept"
+            },
+            {
+              "key": "real-estate-regulatory-authority",
+              "name": "Real Estate Regulatory Authority",
+              "kind": "concept"
+            },
+            {
+              "key": "central-advisory-council",
+              "name": "Central Advisory Council",
+              "kind": "concept"
+            },
+            {
+              "key": "the-real-estate-appellate-tribunal",
+              "name": "The Real Estate Appellate Tribunal",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-penalties-and-adjudication",
+              "name": "Offences, Penalties and Adjudication",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-patents",
+          "name": "Law relating to Patents",
+          "section": "Part II: Intellectual Property Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "applications-for-patents",
+              "name": "Applications for Patents",
+              "kind": "concept"
+            },
+            {
+              "key": "publication-and-examination-of-applications",
+              "name": "Publication and Examination of Applications",
+              "kind": "concept"
+            },
+            {
+              "key": "inventions-not-patentable",
+              "name": "Inventions Not Patentable",
+              "kind": "concept"
+            },
+            {
+              "key": "opposition-proceedings-to-grant-of-patents",
+              "name": "Opposition Proceedings to Grant of Patents",
+              "kind": "concept"
+            },
+            {
+              "key": "restoration-of-lapsed-patents",
+              "name": "Restoration of Lapsed Patents",
+              "kind": "concept"
+            },
+            {
+              "key": "surrender-and-revocation-of-patents",
+              "name": "Surrender and Revocation of Patents",
+              "kind": "concept"
+            },
+            {
+              "key": "working-of-patents",
+              "name": "Working of Patents",
+              "kind": "concept"
+            },
+            {
+              "key": "compulsory-licences-and-revocation",
+              "name": "Compulsory Licences and Revocation",
+              "kind": "concept"
+            },
+            {
+              "key": "infringement-of-patents",
+              "name": "Infringement of Patents",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-trade-marks",
+          "name": "Law relating to Trade Marks",
+          "section": "Part II: Intellectual Property Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "classification-of-goods-and-services",
+              "name": "Classification of goods and services",
+              "kind": "concept"
+            },
+            {
+              "key": "conditions-for-registration",
+              "name": "Conditions For Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "procedure-for-and-duration-of-registration",
+              "name": "Procedure for and Duration of Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "absolute-grounds-for-refusal-of-registration",
+              "name": "Absolute grounds for refusal of registration",
+              "kind": "concept"
+            },
+            {
+              "key": "assignability-and-transmissibility-of-registered-trademarks",
+              "name": "Assignability and transmissibility of registered trademarks",
+              "kind": "concept"
+            },
+            {
+              "key": "collective-marks",
+              "name": "Collective Marks",
+              "kind": "concept"
+            },
+            {
+              "key": "certification-trademarks",
+              "name": "Certification trademarks",
+              "kind": "concept"
+            },
+            {
+              "key": "trade-mark-agent",
+              "name": "Trade mark Agent",
+              "kind": "concept"
+            },
+            {
+              "key": "infringement-of-trade-marks",
+              "name": "Infringement of Trade Marks",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-copyright",
+          "name": "Law relating to Copyright",
+          "section": "Part II: Intellectual Property Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "meaning-of-copyright",
+              "name": "Meaning of copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "works-in-which-copyright-subsists",
+              "name": "Works in which copyright subsists",
+              "kind": "concept"
+            },
+            {
+              "key": "registration-of-copyright",
+              "name": "Registration of Copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "ownership-of-copyright",
+              "name": "Ownership of Copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "assignment-of-copyright",
+              "name": "Assignment of copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "term-of-copyright",
+              "name": "Term of copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "infringement-of-copyright",
+              "name": "Infringement of Copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "licences-by-owners-of-copyright",
+              "name": "Licences by owners of copyright",
+              "kind": "concept"
+            },
+            {
+              "key": "copyright-society",
+              "name": "Copyright Society",
+              "kind": "concept"
+            },
+            {
+              "key": "infringement-of-copyrights",
+              "name": "Infringement of Copyrights",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-geographical-indications-of-goods",
+          "name": "Law relating to Geographical Indications of Goods",
+          "section": "Part II: Intellectual Property Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "geographical-indication",
+              "name": "Geographical Indication",
+              "kind": "concept"
+            },
+            {
+              "key": "application-for-registration",
+              "name": "Application for registration",
+              "kind": "concept"
+            },
+            {
+              "key": "procedure-for-and-duration-of-registration",
+              "name": "Procedure for and Duration of Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "effect-of-registration",
+              "name": "Effect of Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "prohibition-of-registration-of-geographical-indication-as-trade-mark",
+              "name": "Prohibition of registration of geographical indication as Trade Mark",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "law-relating-to-industrial-designs",
+          "name": "Law relating to Industrial Designs",
+          "section": "Part II: Intellectual Property Laws (40 Marks)",
+          "topics": [
+            {
+              "key": "registration-of-designs",
+              "name": "Registration of Designs",
+              "kind": "concept"
+            },
+            {
+              "key": "prohibition-of-registration-of-certain-designs",
+              "name": "Prohibition of registration of certain designs",
+              "kind": "concept"
+            },
+            {
+              "key": "certificate-of-registration",
+              "name": "Certificate of registration",
+              "kind": "concept"
+            },
+            {
+              "key": "copyright-in-registered-designs",
+              "name": "Copyright in Registered Designs",
+              "kind": "concept"
+            },
+            {
+              "key": "industrial-and-international-exhibitions",
+              "name": "Industrial and International Exhibitions",
+              "kind": "concept"
+            },
+            {
+              "key": "piracy-of-registered-design",
+              "name": "Piracy of registered design",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "tax-laws-and-practice",
+      "paper_number": 7,
+      "name": "Tax Laws & Practice",
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "direct-tax-at-a-glance",
+          "name": "Direct Tax at a Glance",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "an-introduction",
+              "name": "An Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "characteristics-of-taxes",
+              "name": "Characteristics of Taxes",
+              "kind": "concept"
+            },
+            {
+              "key": "objectives-of-taxation",
+              "name": "Objectives of Taxation",
+              "kind": "concept"
+            },
+            {
+              "key": "direct-vs-indirect-tax",
+              "name": "Direct vs. Indirect Tax",
+              "kind": "concept"
+            },
+            {
+              "key": "background-of-taxation-system-of-india",
+              "name": "Background of Taxation system of India",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-structure-and-administration",
+              "name": "Tax Structure & Administration",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "basic-concept-of-income-tax",
+          "name": "Basic Concept of Income Tax",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "an-overview-of-finance-bill",
+              "name": "An overview of Finance Bill",
+              "kind": "concept"
+            },
+            {
+              "key": "definitions",
+              "name": "Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-and-revenue-receipts-and-expenditure",
+              "name": "Capital and Revenue Receipts and Expenditure",
+              "kind": "concept"
+            },
+            {
+              "key": "residential-status",
+              "name": "Residential Status",
+              "kind": "concept"
+            },
+            {
+              "key": "basis-of-charge",
+              "name": "Basis of Charge",
+              "kind": "concept"
+            },
+            {
+              "key": "scope-of-total-income",
+              "name": "Scope of Total Income",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "incomes-which-do-not-form-part-of-total-income",
+          "name": "Incomes which do not form part of Total Income",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": []
+        },
+        {
+          "key": "income-under-the-head-salary",
+          "name": "Income under the Head Salary",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": []
+        },
+        {
+          "key": "income-under-the-head-house-property",
+          "name": "Income under the Head House Property",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": []
+        },
+        {
+          "key": "profits-and-gains-from-business-and-profession",
+          "name": "Profits and Gains from Business and Profession",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": []
+        },
+        {
+          "key": "capital-gains",
+          "name": "Capital Gains",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": []
+        },
+        {
+          "key": "income-from-other-sources",
+          "name": "Income from Other Sources",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": []
+        },
+        {
+          "key": "clubbing-provisions-and-set-off-and-or-carry-forward-of-losses",
+          "name": "Clubbing provisions and Set Off and / or Carry Forward of Losses",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "income-of-other-persons-included-in-assessees-total-income",
+              "name": "Income of other persons included in Assessee’s Total Income",
+              "kind": "concept"
+            },
+            {
+              "key": "aggregation-of-income",
+              "name": "Aggregation of Income",
+              "kind": "concept"
+            },
+            {
+              "key": "set-off-and-or-carry-forward-of-losses",
+              "name": "Set off and / or Carry forward of losses",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "deductions",
+          "name": "Deductions",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "deductions-in-respect-of-certain-payments",
+              "name": "Deductions in respect of certain payments",
+              "kind": "concept"
+            },
+            {
+              "key": "specific-deductions-in-respect-of-certain-income",
+              "name": "Specific deductions in respect of certain income",
+              "kind": "concept"
+            },
+            {
+              "key": "deductions-in-respect-for-donations-for-expenditure-under-csr-activities",
+              "name": "Deductions in respect for donations for expenditure under CSR activities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "computation-of-total-income-and-tax-liability-of-various-entities",
+          "name": "Computation of Total Income and Tax Liability of various entities",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "individual",
+              "name": "Individual",
+              "kind": "concept"
+            },
+            {
+              "key": "hindu-undivided-family-huf",
+              "name": "Hindu Undivided Family ‘HUF’",
+              "kind": "concept"
+            },
+            {
+              "key": "alternate-minimum-tax-amt",
+              "name": "Alternate Minimum Tax (AMT)",
+              "kind": "concept"
+            },
+            {
+              "key": "partnership-firm-llp",
+              "name": "Partnership Firm / LLP",
+              "kind": "concept"
+            },
+            {
+              "key": "co-operative-societies",
+              "name": "Co-operative Societies",
+              "kind": "concept"
+            },
+            {
+              "key": "association-of-person-aop-and-body-of-individual-boi",
+              "name": "Association of Person ‘AOP’ and Body of Individual ‘BOI’",
+              "kind": "concept"
+            },
+            {
+              "key": "political-parties",
+              "name": "Political Parties",
+              "kind": "concept"
+            },
+            {
+              "key": "electoral-trusts",
+              "name": "Electoral Trusts",
+              "kind": "concept"
+            },
+            {
+              "key": "exempt-organization-trust-registration-u-s-12a-12aa-12ab",
+              "name": "Exempt organization – Trust Registration u/s 12A/ 12AA/12AB",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-rates",
+              "name": "Tax Rates",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "classification-and-tax-incidence-on-companies",
+          "name": "Classification and Tax Incidence on Companies",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "computation-of-taxable-income-and-tax-liability-of-company-including-foreign-company",
+              "name": "Computation of taxable income and tax liability of Company including Foreign Company",
+              "kind": "concept"
+            },
+            {
+              "key": "taxation-on-dividend-income",
+              "name": "Taxation on Dividend Income",
+              "kind": "concept"
+            },
+            {
+              "key": "minimum-alternate-tax-mat",
+              "name": "Minimum Alternate Tax ‘MAT’",
+              "kind": "concept"
+            },
+            {
+              "key": "other-special-provisions-relating-to-companies",
+              "name": "Other Special Provisions Relating to Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "equalization-levy",
+              "name": "Equalization Levy",
+              "kind": "concept"
+            },
+            {
+              "key": "carbon-credit",
+              "name": "Carbon Credit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "procedural-compliance",
+          "name": "Procedural Compliance",
+          "section": "Part I: Direct Tax (60 Marks)",
+          "topics": [
+            {
+              "key": "tax-deduction-at-source-tds-and-tax-collection-at-source-tcs",
+              "name": "Tax Deduction at Source ‘TDS’ & Tax Collection at Source ‘TCS’",
+              "kind": "concept"
+            },
+            {
+              "key": "advance-tax-and-self-assessment-tax-sat",
+              "name": "Advance Tax & Self Assessment Tax ‘SAT’",
+              "kind": "concept"
+            },
+            {
+              "key": "filing-of-returns",
+              "name": "Filing of Returns",
+              "kind": "concept"
+            },
+            {
+              "key": "fee-and-interest-for-default-in-furnishing-return-of-income",
+              "name": "Fee and interest for default in furnishing return of Income",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "concept-of-indirect-taxes-at-a-glance",
+          "name": "Concept of Indirect Taxes at a Glance",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "background",
+              "name": "Background",
+              "kind": "concept"
+            },
+            {
+              "key": "constitutional-powers-of-taxation",
+              "name": "Constitutional powers of taxation",
+              "kind": "concept"
+            },
+            {
+              "key": "indirect-taxes-in-india-an-overview",
+              "name": "Indirect taxes in India – An overview",
+              "kind": "concept"
+            },
+            {
+              "key": "pre-gst-tax-structure-and-deficiencies",
+              "name": "Pre-GST tax structure and deficiencies",
+              "kind": "concept"
+            },
+            {
+              "key": "administration-of-indirect-taxation-in-india",
+              "name": "Administration of Indirect Taxation in India",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "basics-of-goods-and-services-tax-gst",
+          "name": "Basics of Goods and Services Tax ‘GST’",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "basic-concepts-and-overview-of-gst",
+              "name": "Basic concepts and Overview of GST",
+              "kind": "concept"
+            },
+            {
+              "key": "gst-model-cgst-igst-sgst-utgst",
+              "name": "GST Model – CGST / IGST / SGST / UTGST",
+              "kind": "concept"
+            },
+            {
+              "key": "gst-compensation-to-states",
+              "name": "GST Compensation to States",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "levy-and-collection-of-gst",
+          "name": "Levy and Collection of GST",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "taxable-event",
+              "name": "Taxable Event",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-supply-including-composite-and-mixed-supply",
+              "name": "Concept of Supply including Composite and Mixed supply",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-cgst-and-igst",
+              "name": "Levy and Collection of CGST and IGST",
+              "kind": "concept"
+            },
+            {
+              "key": "exemptions-under-gst",
+              "name": "Exemptions under GST",
+              "kind": "concept"
+            },
+            {
+              "key": "composition-scheme",
+              "name": "Composition Scheme",
+              "kind": "concept"
+            },
+            {
+              "key": "forward-charge-mechanism",
+              "name": "Forward Charge Mechanism",
+              "kind": "concept"
+            },
+            {
+              "key": "reverse-charge-mechanism",
+              "name": "Reverse Charge Mechanism",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "time-value-and-place-of-supply",
+          "name": "Time, Value & Place of Supply",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "concepts-of-time-of-supply",
+              "name": "Concepts of Time of Supply",
+              "kind": "concept"
+            },
+            {
+              "key": "value-of-supply",
+              "name": "Value of Supply",
+              "kind": "concept"
+            },
+            {
+              "key": "place-of-supply",
+              "name": "Place of Supply",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "input-tax-credit-and-computation-of-gst-liability",
+          "name": "Input Tax Credit & Computation of GST Liability",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "overview",
+              "name": "Overview",
+              "kind": "concept"
+            },
+            {
+              "key": "eligibility-and-conditions-for-taking-input-tax-credit",
+              "name": "Eligibility and Conditions for taking Input Tax Credit",
+              "kind": "concept"
+            },
+            {
+              "key": "transitional-provisions-in-itc",
+              "name": "Transitional Provisions in ITC",
+              "kind": "concept"
+            },
+            {
+              "key": "ineligible-credits",
+              "name": "Ineligible Credits",
+              "kind": "concept"
+            },
+            {
+              "key": "input-service-distributor",
+              "name": "Input Service Distributor",
+              "kind": "concept"
+            },
+            {
+              "key": "order-of-utilisation-of-input-tax-credit",
+              "name": "Order of Utilisation of Input Tax Credit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "procedural-compliance-under-gst",
+          "name": "Procedural Compliance under GST",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "registration",
+              "name": "Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-invoices",
+              "name": "Tax Invoices",
+              "kind": "concept"
+            },
+            {
+              "key": "debit-and-credit-notes",
+              "name": "Debit & Credit Notes",
+              "kind": "concept"
+            },
+            {
+              "key": "accounts-and-records",
+              "name": "Accounts and Records",
+              "kind": "concept"
+            },
+            {
+              "key": "electronic-way-bill",
+              "name": "Electronic Way Bill",
+              "kind": "concept"
+            },
+            {
+              "key": "returns",
+              "name": "Returns",
+              "kind": "concept"
+            },
+            {
+              "key": "payment-of-tax",
+              "name": "Payment of Tax",
+              "kind": "concept"
+            },
+            {
+              "key": "refund-procedures",
+              "name": "Refund Procedures",
+              "kind": "concept"
+            },
+            {
+              "key": "gst-practitioners",
+              "name": "GST Practitioners",
+              "kind": "concept"
+            },
+            {
+              "key": "assessment",
+              "name": "Assessment",
+              "kind": "concept"
+            },
+            {
+              "key": "demand-and-recovery",
+              "name": "Demand and Recovery",
+              "kind": "concept"
+            },
+            {
+              "key": "qrmp-scheme",
+              "name": "QRMP Scheme",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "overview-of-customs-act",
+          "name": "Overview of Customs Act",
+          "section": "Part II: Indirect Tax (GST & Customs) (40 Marks)",
+          "topics": [
+            {
+              "key": "overview-of-customs-law",
+              "name": "Overview of Customs Law",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-customs-duties",
+              "name": "Levy and collection of Customs Duties",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-custom-duties",
+              "name": "Types of Custom Duties",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-and-valuation-of-import-and-export-goods",
+              "name": "Classification and valuation of import and export goods",
+              "kind": "concept"
+            },
+            {
+              "key": "exemption",
+              "name": "Exemption",
+              "kind": "concept"
+            },
+            {
+              "key": "baggage",
+              "name": "Baggage",
+              "kind": "concept"
+            },
+            {
+              "key": "officers-of-customs",
+              "name": "Officers of Customs",
+              "kind": "concept"
+            },
+            {
+              "key": "administration-of-customs-law",
+              "name": "Administration of Customs Law",
+              "kind": "concept"
+            },
+            {
+              "key": "import-and-export-procedures",
+              "name": "Import and Export Procedures",
+              "kind": "concept"
+            },
+            {
+              "key": "transportation",
+              "name": "Transportation",
+              "kind": "concept"
+            },
+            {
+              "key": "warehousing",
+              "name": "Warehousing",
+              "kind": "concept"
+            },
+            {
+              "key": "duty-drawback",
+              "name": "Duty Drawback",
+              "kind": "concept"
+            },
+            {
+              "key": "demand-and-recovery",
+              "name": "Demand and Recovery",
+              "kind": "concept"
+            },
+            {
+              "key": "confiscation-of-goods-and-conveyances",
+              "name": "Confiscation of Goods and Conveyances",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

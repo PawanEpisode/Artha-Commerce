@@ -41,6 +41,68 @@ from .models import (
 # --- shared helpers --------------------------------------------------------------------------
 
 
+class PaperFilter(admin.SimpleListFilter):
+    """
+    Papers of the scheme picked in the scheme filter. Hidden until a scheme is picked (there are hundreds of papers
+    across all schemes). `scheme_param` is the admin's own query parameter of the scheme filter on this page and
+    `subject_path` the lookup that leads from the listed model to its paper.
+    """
+
+    title = "paper"
+    parameter_name = "paper"
+    scheme_param = ""
+    subject_path = ""
+
+    def _scheme_id(self, request) -> str | None:
+        return request.GET.get(self.scheme_param) or None
+
+    def lookups(self, request, model_admin):
+        scheme_id = self._scheme_id(request)
+        if not scheme_id:
+            return []
+        subjects = Subject.objects.filter(scheme_id=scheme_id).order_by("sort_order", "key")
+        return [(str(s.id), f"{s.paper_number}. {s.name}" if s.paper_number else s.name) for s in subjects]
+
+    def queryset(self, request, queryset):
+        value = self.value()
+        scheme_id = self._scheme_id(request)
+        # A paper left over from another scheme (the scheme filter was changed afterwards) is ignored.
+        if value and scheme_id and Subject.objects.filter(pk=value, scheme_id=scheme_id).exists():
+            return queryset.filter(**{self.subject_path: value})
+        return queryset
+
+
+class ChapterFilter(admin.SimpleListFilter):
+    """Chapters of the paper picked in the paper filter. Hidden until a paper is picked."""
+
+    title = "chapter"
+    parameter_name = "chapter"
+
+    def lookups(self, request, model_admin):
+        paper = request.GET.get("paper")
+        if not paper:
+            return []
+        chapters = Chapter.objects.filter(subject_id=paper).order_by("sort_order", "key")
+        return [(str(c.id), c.name[:80]) for c in chapters]
+
+    def queryset(self, request, queryset):
+        value = self.value()
+        paper = request.GET.get("paper")
+        if value and paper and Chapter.objects.filter(pk=value, subject_id=paper).exists():
+            return queryset.filter(chapter_id=value)
+        return queryset
+
+
+class ChapterPaperFilter(PaperFilter):
+    scheme_param = "subject__scheme__id__exact"
+    subject_path = "subject_id"
+
+
+class TopicPaperFilter(PaperFilter):
+    scheme_param = "chapter__subject__scheme__id__exact"
+    subject_path = "chapter__subject_id"
+
+
 def scheme_of(obj) -> Scheme | None:
     """The scheme a taxonomy node belongs to."""
     if isinstance(obj, Scheme):
@@ -104,10 +166,11 @@ class LevelAdmin(admin.ModelAdmin):
 
 @admin.register(ExamTerm)
 class ExamTermAdmin(admin.ModelAdmin):
-    list_display = ("name", "course", "code", "exam_start", "exam_end", "is_open")
-    list_filter = ("course", "is_open")
+    list_display = ("name", "course", "level", "code", "exam_start", "exam_end", "is_open")
+    list_filter = ("course", "level", "is_open")
     list_editable = ("is_open",)
-    search_fields = ("name", "code")
+    list_select_related = ("course", "level")
+    search_fields = ("name", "code", "level__name", "course__code")
 
 
 # --- scheme ----------------------------------------------------------------------------------
@@ -167,7 +230,7 @@ class SchemeAdmin(DraftOnlyDeleteMixin, admin.ModelAdmin):
     autocomplete_fields = ("from_term", "to_term")
     inlines = [GroupInline, SubjectInline]
     actions = ["publish_selected", "retire_selected", "build_chapter_map", "export_json"]
-    list_select_related = ("level", "level__course", "from_term", "to_term")
+    list_select_related = ("level", "level__course", "from_term", "to_term", "from_term__level", "to_term__level")
 
     @admin.display(description="Status", ordering="status")
     def status_badge(self, obj):
@@ -278,7 +341,7 @@ class SchemeAdmin(DraftOnlyDeleteMixin, admin.ModelAdmin):
 class ChapterInline(DraftOnlyDeleteMixin, admin.TabularInline):
     model = Chapter
     extra = 0
-    fields = ("key", "name", "marks_min", "marks_max", "weight_source", "sort_order", "is_active")
+    fields = ("key", "name", "section", "marks_min", "marks_max", "weight_source", "sort_order", "is_active")
     show_change_link = True  # open the chapter to edit its topics
 
 
@@ -322,7 +385,7 @@ class SubjectAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
         "sort_order",
         "is_active",
     )
-    list_filter = ("scheme__level__course", "scheme__level", "scheme", "is_active")
+    list_filter = ("scheme__level__course", "scheme__level", "scheme", "group", "kind", "is_optional", "is_active")
     list_editable = ("sort_order", "is_active")
     search_fields = ("name", "key")
     autocomplete_fields = ("scheme",)
@@ -361,6 +424,7 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
     list_display = (
         "name",
         "subject",
+        "section",
         "marks_min",
         "marks_max",
         "weight_source",
@@ -372,11 +436,12 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
         "subject__scheme__level__course",
         "subject__scheme__level",
         "subject__scheme",
+        ChapterPaperFilter,
         "weight_source",
         "is_active",
     )
     list_editable = ("marks_min", "marks_max", "weight_source", "sort_order", "is_active")
-    search_fields = ("name", "key", "subject__name")
+    search_fields = ("name", "key", "section", "subject__name")
     autocomplete_fields = ("subject",)
     inlines = [TopicInline]
     actions = ["make_active", "make_inactive"]
@@ -395,13 +460,39 @@ class ChapterAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMi
 
 @admin.register(Topic)
 class TopicAdmin(DraftOnlyDeleteMixin, LiveEditWarningMixin, ActivateActionsMixin, admin.ModelAdmin):
-    list_display = ("name", "chapter", "kind", "sort_order", "is_active")
-    list_filter = ("chapter__subject__scheme", "kind", "is_active")
+    list_display = ("name", "paper", "chapter_name", "scheme_name", "kind", "sort_order", "is_active")
+    list_filter = (
+        "chapter__subject__scheme__level__course",
+        "chapter__subject__scheme",
+        TopicPaperFilter,
+        ChapterFilter,
+        "kind",
+        "is_active",
+    )
     list_editable = ("kind", "sort_order", "is_active")
-    search_fields = ("name", "key", "chapter__name")
+    search_fields = ("name", "key", "chapter__name", "chapter__subject__name")
     autocomplete_fields = ("chapter",)
     actions = ["make_active", "make_inactive"]
-    list_select_related = ("chapter", "chapter__subject")
+    list_select_related = ("chapter", "chapter__subject", "chapter__subject__scheme__level__course")
+    ordering = (
+        "chapter__subject__scheme__level__course__code",
+        "chapter__subject__scheme__level__sort_order",
+        "chapter__subject__sort_order",
+        "chapter__sort_order",
+        "sort_order",
+    )
+
+    @admin.display(description="Paper", ordering="chapter__subject__sort_order")
+    def paper(self, obj):
+        return obj.chapter.subject.name
+
+    @admin.display(description="Chapter", ordering="chapter__sort_order")
+    def chapter_name(self, obj):
+        return obj.chapter.name
+
+    @admin.display(description="Scheme")
+    def scheme_name(self, obj):
+        return str(obj.chapter.subject.scheme)
 
 
 # --- chapter maps ----------------------------------------------------------------------------

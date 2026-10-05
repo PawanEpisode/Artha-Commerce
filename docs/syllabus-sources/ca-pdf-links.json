@@ -1,0 +1,419 @@
+{
+  "note": "Official ICAI paper PDFs for each paper (from the ICAI syllabus pages). These hosts are not reachable from the build environment; download them and run the same chapter/topic extraction used for CMA and CS.",
+  "pages": {
+    "foundation": "https://www.icai.org/post/syllabus-nset-fnd",
+    "intermediate": "https://www.icai.org/post/syllabus-nset-intermediate",
+    "final": "https://www.icai.org/post/syllabus-nset-final",
+    "spom": "https://www.icai.org/post/syllabus-nset-spom"
+  },
+  "papers": {
+    "foundation": [
+      {
+        "subject": "accounting",
+        "paper": 1,
+        "name": "Accounting",
+        "group": null,
+        "pdfs": [
+          {
+            "label": "Paper-1: Accounting",
+            "url": "https://resource.cdn.icai.org/92167bos-aps5079-fnd-p1.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "business-laws",
+        "paper": 2,
+        "name": "Business Laws",
+        "group": null,
+        "pdfs": [
+          {
+            "label": "Paper-2: Business Laws",
+            "url": "https://resource.cdn.icai.org/92168bos-aps5079-fnd-p2.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "quantitative-aptitude",
+        "paper": 3,
+        "name": "Quantitative Aptitude",
+        "group": null,
+        "pdfs": [
+          {
+            "label": "Paper-3: Quantitative Aptitude",
+            "url": "https://resource.cdn.icai.org/92169bos-aps5079-fnd-p3.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "business-economics",
+        "paper": 4,
+        "name": "Business Economics",
+        "group": null,
+        "pdfs": [
+          {
+            "label": "Paper-4: Business Economics",
+            "url": "https://resource.cdn.icai.org/92170bos-aps5079-fnd-p4.pdf"
+          }
+        ]
+      }
+    ],
+    "intermediate": [
+      {
+        "subject": "advanced-accounting",
+        "paper": 1,
+        "name": "Advanced Accounting",
+        "group": "group-1",
+        "pdfs": [
+          {
+            "label": "Paper-1: Advanced Accounting",
+            "url": "https://resource.cdn.icai.org/92175bos-aps5086-int-p1.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "corporate-and-other-laws",
+        "paper": 2,
+        "name": "Corporate and Other Laws",
+        "group": "group-1",
+        "pdfs": [
+          {
+            "label": "Paper-2: Corporate and Other Laws",
+            "url": "https://resource.cdn.icai.org/92176bos-aps5086-int-p2.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "taxation",
+        "paper": 3,
+        "name": "Taxation",
+        "group": "group-1",
+        "pdfs": [
+          {
+            "label": "Section A: Income-tax Law",
+            "url": "https://resource.cdn.icai.org/92177bos-aps5086-int-p3a.pdf"
+          },
+          {
+            "label": "Section B: Goods and Services Tax",
+            "url": "https://resource.cdn.icai.org/92178bos-aps5086-int-p3b.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "cost-and-management-accounting",
+        "paper": 4,
+        "name": "Cost and Management Accounting",
+        "group": "group-2",
+        "pdfs": [
+          {
+            "label": "Paper-4: Cost and Management Accounting",
+            "url": "https://resource.cdn.icai.org/92179bos-aps5086-int-p4.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "auditing-and-ethics",
+        "paper": 5,
+        "name": "Auditing and Ethics",
+        "group": "group-2",
+        "pdfs": [
+          {
+            "label": "Paper-5: Auditing and Ethics",
+            "url": "https://resource.cdn.icai.org/92180bos-aps5086-int-p5.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "financial-management-and-strategic-management",
+        "paper": 6,
+        "name": "Financial Management and Strategic Management",
+        "group": "group-2",
+        "pdfs": [
+          {
+            "label": "Section A: Financial Management",
+            "url": "https://resource.cdn.icai.org/92181bos-aps5086-int-p6a.pdf"
+          },
+          {
+            "label": "Section B: Strategic Management",
+            "url": "https://resource.cdn.icai.org/92182bos-aps5086-int-p6b.pdf"
+          }
+        ]
+      }
+    ],
+    "final": [
+      {
+        "subject": "financial-reporting",
+        "paper": 1,
+        "name": "Financial Reporting",
+        "group": "group-1",
+        "pdfs": [
+          {
+            "label": "Paper-1: Financial Reporting",
+            "url": "https://resource.cdn.icai.org/92183bos-aps5087-final-p1.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "advanced-financial-management",
+        "paper": 2,
+        "name": "Advanced Financial Management",
+        "group": "group-1",
+        "pdfs": [
+          {
+            "label": "Paper-2: Advanced Financial Management",
+            "url": "https://resource.cdn.icai.org/92184bos-aps5087-final-p2.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "advanced-auditing-assurance-and-professional-ethics",
+        "paper": 3,
+        "name": "Advanced Auditing, Assurance and Professional Ethics",
+        "group": "group-1",
+        "pdfs": [
+          {
+            "label": "Paper-3: Advanced Auditing, Assurance and Professional Ethics",
+            "url": "https://resource.cdn.icai.org/92185bos-aps5087-final-p3.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "direct-tax-laws-and-international-taxation",
+        "paper": 4,
+        "name": "Direct Tax Laws & International Taxation",
+        "group": "group-2",
+        "pdfs": [
+          {
+            "label": "Paper-4: Direct Tax Laws & International Taxation",
+            "url": "https://resource.cdn.icai.org/92186bos-aps5087-final-p4.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "indirect-tax-laws",
+        "paper": 5,
+        "name": "Indirect Tax Laws",
+        "group": "group-2",
+        "pdfs": [
+          {
+            "label": "Part I: Goods and Services Tax",
+            "url": "https://resource.cdn.icai.org/92187bos-aps5087-final-p5a.pdf"
+          },
+          {
+            "label": "Part II: Customs & FTP",
+            "url": "https://resource.cdn.icai.org/92188bos-aps5087-final-p5b.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "integrated-business-solutions-multidisciplinary-case-study-with-strategic-manage",
+        "paper": 6,
+        "name": "Integrated Business Solutions (Multidisciplinary Case Study with Strategic Management)",
+        "group": "group-2",
+        "pdfs": [
+          {
+            "label": "Paper-6: Integrated Business Solutions",
+            "url": "https://resource.cdn.icai.org/92189bos-aps5087-final-p6.pdf"
+          }
+        ]
+      }
+    ],
+    "spom": [
+      {
+        "subject": "corporate-and-economic-laws",
+        "paper": 1,
+        "name": "Corporate and Economic Laws",
+        "group": "set-a",
+        "pdfs": [
+          {
+            "label": "SET-A: Corporate and Economic Laws",
+            "url": "https://resource.cdn.icai.org/92194bos-aps5090-set-a.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "strategic-cost-and-performance-management",
+        "paper": 1,
+        "name": "Strategic Cost & Performance Management",
+        "group": "set-b",
+        "pdfs": [
+          {
+            "label": "SET-B: Strategic Cost & Performance Management",
+            "url": "https://resource.cdn.icai.org/92195bos-aps5090-set-b.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "risk-management",
+        "paper": 1,
+        "name": "Risk Management",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-1: Risk Management",
+            "url": "https://resource.cdn.icai.org/92196bos-aps5090-set-c-p1.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "sustainable-development-and-sustainability-reporting",
+        "paper": 2,
+        "name": "Sustainable Development and Sustainability Reporting",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-2: Sustainable Development and Sustainability Reporting",
+            "url": "https://resource.cdn.icai.org/92197bos-aps5090-set-c-p2.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "public-finance-and-government-accounting",
+        "paper": 3,
+        "name": "Public Finance and Government Accounting",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-3: Public Finance and Government Accounting",
+            "url": "https://resource.cdn.icai.org/92198bos-aps5090-set-c-p3.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "the-insolvency-and-bankruptcy-code-2016",
+        "paper": 4,
+        "name": "The Insolvency and Bankruptcy Code, 2016",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-4: The Insolvency and Bankruptcy Code, 2016",
+            "url": "https://resource.cdn.icai.org/92199bos-aps5090-set-c-p4.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "international-taxation",
+        "paper": 5,
+        "name": "International Taxation",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-5: International Taxation",
+            "url": "https://resource.cdn.icai.org/92200bos-aps5090-set-c-p5.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "the-arbitration-and-conciliation-act-1996",
+        "paper": 6,
+        "name": "The Arbitration and Conciliation Act, 1996",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-6: The Arbitration and Conciliation Act, 1996",
+            "url": "https://resource.cdn.icai.org/92201bos-aps5090-set-c-p6.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "forensic-accounting",
+        "paper": 7,
+        "name": "Forensic Accounting",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-7: Forensic Accounting",
+            "url": "https://resource.cdn.icai.org/92202bos-aps5090-set-c-p7.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "valuation",
+        "paper": 8,
+        "name": "Valuation",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-8: Valuation",
+            "url": "https://resource.cdn.icai.org/92211bos-aps5090-set-c-p8.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "financial-services-and-capital-markets",
+        "paper": 9,
+        "name": "Financial Services and Capital Markets",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-9: Financial Services and Capital Markets",
+            "url": "https://resource.cdn.icai.org/92212bos-aps5090-set-c-p9.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "forex-and-treasury-management",
+        "paper": 10,
+        "name": "Forex and Treasury Management",
+        "group": "set-c",
+        "pdfs": [
+          {
+            "label": "SET-C Paper-10: Forex and Treasury Management",
+            "url": "https://resource.cdn.icai.org/92213bos-aps5090-set-c-p10.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "the-constitution-of-india-and-art-of-advocacy",
+        "paper": 1,
+        "name": "The Constitution of India & Art of Advocacy",
+        "group": "set-d",
+        "pdfs": [
+          {
+            "label": "Paper-1",
+            "url": "https://resource.cdn.icai.org/92214bos-aps5090-set-d-p1.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "psychology-and-philosophy",
+        "paper": 2,
+        "name": "Psychology & Philosophy",
+        "group": "set-d",
+        "pdfs": [
+          {
+            "label": "Section A: Psychology",
+            "url": "https://resource.cdn.icai.org/92215bos-aps5090-set-d-p2a.pdf"
+          },
+          {
+            "label": "Section B: Philosophy",
+            "url": "https://resource.cdn.icai.org/92216bos-aps5090-set-d-p2b.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "entrepreneurship-and-start-up-ecosystem",
+        "paper": 3,
+        "name": "Entrepreneurship & Start-up Ecosystem",
+        "group": "set-d",
+        "pdfs": [
+          {
+            "label": "Paper-3",
+            "url": "https://resource.cdn.icai.org/92217bos-aps5090-set-d-p3.pdf"
+          }
+        ]
+      },
+      {
+        "subject": "digital-ecosystem-and-controls",
+        "paper": 4,
+        "name": "Digital Ecosystem and Controls",
+        "group": "set-d",
+        "pdfs": [
+          {
+            "label": "Paper-4",
+            "url": "https://resource.cdn.icai.org/92218bos-aps5090-set-d-p4.pdf"
+          }
+        ]
+      }
+    ]
+  }
+}

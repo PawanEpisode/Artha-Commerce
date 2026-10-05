@@ -44,7 +44,10 @@ export async function fetchCourses(): Promise<CourseSummary[]> {
   return (await publicApi<CourseSummary[]>('/syllabus/courses/')) ?? []
 }
 
-export async function fetchTerms(course?: string): Promise<ExamTerm[]> {
-  const query = course ? `?course=${encodeURIComponent(course)}` : ''
-  return (await publicApi<ExamTerm[]>(`/syllabus/terms/${query}`)) ?? []
+export async function fetchTerms(course?: string, level?: string): Promise<ExamTerm[]> {
+  const params = new URLSearchParams()
+  if (course) params.set('course', course)
+  if (level) params.set('level', level)
+  const query = params.toString()
+  return (await publicApi<ExamTerm[]>(`/syllabus/terms/${query ? `?${query}` : ''}`)) ?? []
 }

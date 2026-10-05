@@ -1,0 +1,1976 @@
+{
+  "course": "ca",
+  "level": "final",
+  "scheme": {
+    "code": "nset",
+    "name": "New Scheme of Education and Training (NSET)",
+    "source_url": "https://www.icai.org/post/syllabus-nset-final",
+    "notes": "Structure (papers, groups, sections) from the ICAI syllabus page https://www.icai.org/post/syllabus-nset-final. Chapters and topics extracted from the ICAI paper PDFs (links per paper in source_url and docs/syllabus-sources/ca-pdf-links.json; local copies in docs/syllabus-sources/ca/). Chapter = numbered content item of the paper; topic = its sub-item, with deeper levels written as 'Parent: item'; the Section or Part (with marks) is in the chapter's section field. ICAI does not publish marks per chapter, so chapter weights are empty. Papers published as two PDFs are merged into one paper. Paper 4 chapter 1 has no title in the source; its name was derived from its sub-items. Notes in Paper 3 saying that SA 200, 210, 230, 300, 315, 320, 500, 501, 505, 510, 530, 550, 560, 570 and 580 are covered in depth at Intermediate level and may be tested as case studies are not loaded as topics; Paper 6 is entirely case-study based and lists the seven subjects it integrates as chapters without topics. Needs editor review before publishing."
+  },
+  "groups": [
+    {
+      "key": "group-1",
+      "name": "Group I"
+    },
+    {
+      "key": "group-2",
+      "name": "Group II"
+    }
+  ],
+  "subjects": [
+    {
+      "key": "financial-reporting",
+      "paper_number": 1,
+      "name": "Financial Reporting",
+      "source_url": "https://resource.cdn.icai.org/92183bos-aps5087-final-p1.pdf",
+      "chapters": [
+        {
+          "key": "introduction-to-general-purpose-financial-statements-as-per-indian-accounting-standard-ind-as",
+          "name": "Introduction to General Purpose Financial Statements as per Indian Accounting Standard (Ind AS)",
+          "section": "",
+          "topics": [
+            {
+              "key": "statutory-provisions-applicability-criteria",
+              "name": "Statutory provisions: Applicability criteria",
+              "kind": "concept"
+            },
+            {
+              "key": "division-ii-of-schedule-iii-to-the-companies-act-2013-and-guidance-note-thereupon",
+              "name": "Division II of Schedule III to the Companies Act, 2013 and Guidance Note thereupon",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "conceptual-framework-for-financial-reporting-under-indian-accounting-standards-ind-as",
+          "name": "Conceptual Framework for Financial Reporting under Indian Accounting Standards (Ind AS)",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "application-of-ind-as-with-reference-to-general-purpose-financial-statements",
+          "name": "Application of Ind AS with reference to General Purpose Financial Statements",
+          "section": "",
+          "topics": [
+            {
+              "key": "ind-as-1-presentation-of-financial-statements",
+              "name": "Ind AS 1 “Presentation of Financial Statements”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-34-interim-financial-reporting",
+              "name": "Ind AS 34 “Interim Financial Reporting”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-7-statement-of-cash-flows",
+              "name": "Ind AS 7 “Statement of Cash Flows”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-8-accounting-policies-changes-in-accounting-estimates-and-errors",
+              "name": "Ind AS 8 “Accounting Policies, Changes in Accounting Estimates and Errors”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-10-events-after-the-reporting-period",
+              "name": "Ind AS 10 “Events after the Reporting Period”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-113-fair-value-measurement",
+              "name": "Ind AS 113 “Fair Value Measurement”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-115-revenue-from-contracts-with-the-customers",
+              "name": "Ind AS 115* “Revenue from Contracts with the Customers”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-2-inventories",
+              "name": "Ind AS 2 “Inventories”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-16-property-plant-and-equipment",
+              "name": "Ind AS 16 “Property, Plant and Equipment”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-116-leases",
+              "name": "Ind AS 116* “Leases”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-23-borrowing-costs",
+              "name": "Ind AS 23 “Borrowing Costs”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-36-impairment-of-assets",
+              "name": "Ind AS 36 “Impairment of Assets”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-38-intangible-assets",
+              "name": "Ind AS 38 “Intangible Assets”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-40-investment-property",
+              "name": "Ind AS 40 “Investment Property”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-105-non-current-assets-held-for-sale-and-discontinued-operations",
+              "name": "Ind AS 105 “Non-current Assets Held for Sale and Discontinued Operations”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-19-employee-benefits",
+              "name": "Ind AS 19 “Employee Benefits”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-37-provisions-contingent-liabilities-and-contingent-assets",
+              "name": "Ind AS 37 “Provisions, Contingent Liabilities and Contingent Assets”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-12-income-taxes",
+              "name": "Ind AS 12* “Income Taxes”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-21-the-effects-of-changes-in-foreign-exchange-rates",
+              "name": "Ind AS 21 “The Effects of Changes in Foreign Exchange Rates”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-24-related-party-disclosures",
+              "name": "Ind AS 24 “Related Party Disclosures”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-33-earnings-per-share",
+              "name": "Ind AS 33 “Earnings per Share”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-108-operating-segments",
+              "name": "Ind AS 108 “Operating Segments”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-102-share-based-payment",
+              "name": "Ind AS 102 “Share Based Payment”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-41-agriculture",
+              "name": "Ind AS 41 “Agriculture”",
+              "kind": "standard"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-financial-instruments-scope-and-definitions",
+              "name": "Ind AS on Financial Instruments: Financial Instruments: Scope and Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-classification-and-measurement-of-financial-assets-and-financial-liabilities",
+              "name": "Ind AS on Financial Instruments: Classification and Measurement of Financial Assets and Financial Liabilities",
+              "kind": "concept"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-financial-instruments-equity-and-financial-liabilities",
+              "name": "Ind AS on Financial Instruments: Financial Instruments: Equity and Financial Liabilities",
+              "kind": "concept"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-derivatives-and-embedded-derivatives",
+              "name": "Ind AS on Financial Instruments: Derivatives and Embedded Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-recognition-and-derecognition-of-financial-instruments",
+              "name": "Ind AS on Financial Instruments: Recognition and Derecognition of Financial Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-hedge-accounting",
+              "name": "Ind AS on Financial Instruments: Hedge Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "ind-as-on-financial-instruments-disclosures",
+              "name": "Ind AS on Financial Instruments: Disclosures",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "ind-as-on-group-accounting",
+          "name": "Ind AS on Group Accounting",
+          "section": "",
+          "topics": [
+            {
+              "key": "business-combinations-ind-as-103",
+              "name": "Business Combinations (Ind AS 103)",
+              "kind": "concept"
+            },
+            {
+              "key": "consolidated-and-separate-financial-statements-it-includes-ind-as-110-ind-as-111-ind-as-27-ind-as-28-ind-as-112",
+              "name": "Consolidated and Separate Financial Statements (it includes Ind AS 110, Ind AS 111, Ind AS 27, Ind AS 28, Ind AS 112)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "first-time-adoption-of-indian-accounting-standards-ind-as-101",
+          "name": "First time adoption of Indian Accounting Standards (Ind AS 101)",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "analysis-of-financial-statements-as-per-ind-as",
+          "name": "Analysis of financial statements (as per Ind AS)",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "ethics-with-accounting-concepts",
+          "name": "Ethics with Accounting Concepts",
+          "section": "",
+          "topics": [
+            {
+              "key": "identify-and-explain-the-key-ethical-issues",
+              "name": "Identify and explain the key ethical issues",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "technology-and-accounting",
+          "name": "Technology and Accounting",
+          "section": "",
+          "topics": [
+            {
+              "key": "evolution-of-accounting-in-the-technological-environment",
+              "name": "Evolution of Accounting in the technological environment",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "advanced-financial-management",
+      "paper_number": 2,
+      "name": "Advanced Financial Management",
+      "source_url": "https://resource.cdn.icai.org/92184bos-aps5087-final-p2.pdf",
+      "chapters": [
+        {
+          "key": "financial-policy-and-corporate-strategy",
+          "name": "Financial Policy and Corporate Strategy",
+          "section": "",
+          "topics": [
+            {
+              "key": "advanced-role-of-cfo-in-various-matters-including-value-creation",
+              "name": "Advanced role of CFO in various matters including Value Creation",
+              "kind": "concept"
+            },
+            {
+              "key": "strategic-decision-making-framework",
+              "name": "Strategic decision making framework",
+              "kind": "concept"
+            },
+            {
+              "key": "interface-of-financial-policy-and-strategic-management",
+              "name": "Interface of Financial Policy and strategic management",
+              "kind": "concept"
+            },
+            {
+              "key": "balancing-financial-goals-vis-a-vis-sustainable-growth",
+              "name": "Balancing financial goals vis-à-vis sustainable growth",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risk-management",
+          "name": "Risk Management",
+          "section": "",
+          "topics": [
+            {
+              "key": "identification-of-types-of-risk-faced-by-an-organisation",
+              "name": "Identification of types of Risk faced by an organisation",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-financial-risks",
+              "name": "Evaluation of Financial Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "value-at-risk-var",
+              "name": "Value at Risk (VAR)",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-appropriate-method-for-the-identification-and-management-of-financial-risk",
+              "name": "Evaluation of appropriate method for the identification and management of financial risk",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "advanced-capital-budgeting-decisions",
+          "name": "Advanced Capital Budgeting Decisions",
+          "section": "",
+          "topics": [
+            {
+              "key": "current-trends-in-capital-budgeting-impact-of-inflation-on-capital-budgeting-decisions",
+              "name": "Current trends in Capital Budgeting: Impact of Inflation on Capital Budgeting Decisions",
+              "kind": "concept"
+            },
+            {
+              "key": "current-trends-in-capital-budgeting-impact-of-change-in-technology-on-capital-budgeting",
+              "name": "Current trends in Capital Budgeting: Impact of change in technology on Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "current-trends-in-capital-budgeting-impact-of-change-in-government-policies-on-capital-budgeting",
+              "name": "Current trends in Capital Budgeting: Impact of change in Government Policies on Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "dealing-with-risk-in-investment-decisions",
+              "name": "Dealing with Risk in Investment Decisions",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-and-external-factors-affecting-capital-budgeting-decision",
+              "name": "Internal and External Factors affecting capital budgeting decision",
+              "kind": "concept"
+            },
+            {
+              "key": "methods-of-incorporating-risk-in-capital-budgeting",
+              "name": "Methods of incorporating risk in Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "adjusted-present-value",
+              "name": "Adjusted Present Value",
+              "kind": "concept"
+            },
+            {
+              "key": "optimum-replacement-cycle",
+              "name": "Optimum Replacement Cycle",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "security-analysis",
+          "name": "Security Analysis",
+          "section": "",
+          "topics": [
+            {
+              "key": "fundamental-analysis",
+              "name": "Fundamental Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis-meaning",
+              "name": "Technical Analysis: Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis-assumptions",
+              "name": "Technical Analysis: Assumptions",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis-theories-and-principles",
+              "name": "Technical Analysis: Theories and Principles",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis-charting-techniques-basics",
+              "name": "Technical Analysis: Charting Techniques - Basics",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis-efficient-market-hypothesis-emh-analysis",
+              "name": "Technical Analysis: Efficient Market Hypothesis (EMH) Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "equity-research-and-tools-available",
+              "name": "Equity Research and tools available",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "security-valuation",
+          "name": "Security Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "theory-of-valuation",
+              "name": "Theory of Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "return-concepts",
+              "name": "Return Concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "equity-risk-premium",
+              "name": "Equity Risk Premium",
+              "kind": "concept"
+            },
+            {
+              "key": "required-return-on-equity",
+              "name": "Required Return on Equity",
+              "kind": "concept"
+            },
+            {
+              "key": "discount-rate-selection-in-relation-to-cash-flows",
+              "name": "Discount Rate Selection in Relation to Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-to-valuation-of-equity-shares",
+              "name": "Approaches to Valuation of Equity Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-preference-shares",
+              "name": "Valuation of Preference Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-debentures-bonds",
+              "name": "Valuation of Debentures/ Bonds",
+              "kind": "concept"
+            },
+            {
+              "key": "role-and-responsibilities-of-valuers",
+              "name": "Role and Responsibilities of Valuers",
+              "kind": "concept"
+            },
+            {
+              "key": "precautions-need-to-be-taken-by-a-valuer-before-accepting-any-valuation-assignment",
+              "name": "Precautions need to be taken by a Valuer before accepting any valuation assignment",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "portfolio-management",
+          "name": "Portfolio Management",
+          "section": "",
+          "topics": [
+            {
+              "key": "portfolio-analysis",
+              "name": "Portfolio Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "portfolio-selection",
+              "name": "Portfolio Selection",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-theory",
+              "name": "Capital Market Theory",
+              "kind": "concept"
+            },
+            {
+              "key": "portfolio-revision",
+              "name": "Portfolio Revision",
+              "kind": "concept"
+            },
+            {
+              "key": "portfolio-evaluation",
+              "name": "Portfolio Evaluation",
+              "kind": "concept"
+            },
+            {
+              "key": "asset-allocation",
+              "name": "Asset Allocation",
+              "kind": "concept"
+            },
+            {
+              "key": "fixed-income-portfolio",
+              "name": "Fixed Income Portfolio",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-analysis-of-investment-in-distressed-securities",
+              "name": "Risk Analysis of Investment in Distressed Securities",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-real-estate",
+              "name": "Alternative Investment Avenues: Real Estate",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-gold",
+              "name": "Alternative Investment Avenues: Gold",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-private-equity",
+              "name": "Alternative Investment Avenues: Private Equity",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-reits",
+              "name": "Alternative Investment Avenues: REITs",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-hedge-funds",
+              "name": "Alternative Investment Avenues: Hedge Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-etfs",
+              "name": "Alternative Investment Avenues: ETFs",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-mutual-funds",
+              "name": "Alternative Investment Avenues: Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "alternative-investment-avenues-commodities",
+              "name": "Alternative Investment Avenues: Commodities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "securitization",
+          "name": "Securitization",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-and-definition",
+              "name": "Concept and Definition",
+              "kind": "concept"
+            },
+            {
+              "key": "benefits-of-securitization",
+              "name": "Benefits of Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "participants-in-securitization",
+              "name": "Participants in Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "mechanism-of-securitization",
+              "name": "Mechanism of Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "problems-in-securitization",
+              "name": "Problems in Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "securitization-instruments",
+              "name": "Securitization Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-of-securitization-instruments",
+              "name": "Pricing of Securitization Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "risks-in-securitization",
+              "name": "Risks in Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "tokenization",
+              "name": "Tokenization",
+              "kind": "concept"
+            },
+            {
+              "key": "securitization-in-india",
+              "name": "Securitization in India",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "mutual-funds",
+          "name": "Mutual Funds",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning",
+              "name": "Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "types",
+              "name": "Types",
+              "kind": "concept"
+            },
+            {
+              "key": "advantages-and-disadvantages-of-mutual-funds",
+              "name": "Advantages and Disadvantages of Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-mutual-funds",
+              "name": "Evaluation of Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-fund-manager-in-mutual-funds",
+              "name": "Role of Fund Manager in Mutual Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "hedge-funds",
+              "name": "Hedge Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-fiis-in-mutual-funds",
+              "name": "Role of FIIs in Mutual Funds",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "derivatives-analysis-and-valuation",
+          "name": "Derivatives Analysis and Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-to-forwards-futures-and-options",
+              "name": "Introduction to Forwards, Futures and Options",
+              "kind": "concept"
+            },
+            {
+              "key": "futures-market",
+              "name": "Futures Market",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-of-forwards-and-futures",
+              "name": "Pricing of Forwards and Futures",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-using-futures",
+              "name": "Hedging using Futures",
+              "kind": "concept"
+            },
+            {
+              "key": "options-option-pricing",
+              "name": "Options: Option Pricing",
+              "kind": "concept"
+            },
+            {
+              "key": "options-option-greeks",
+              "name": "Options: Option Greeks",
+              "kind": "concept"
+            },
+            {
+              "key": "options-exotic-options",
+              "name": "Options: Exotic Options",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-derivatives",
+              "name": "Credit Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "real-options",
+              "name": "Real Options",
+              "kind": "concept"
+            },
+            {
+              "key": "derivative-mishaps-and-lessons",
+              "name": "Derivative Mishaps and Lessons",
+              "kind": "concept"
+            },
+            {
+              "key": "swaps",
+              "name": "Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "commodity-derivatives",
+              "name": "Commodity Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "weather-derivatives",
+              "name": "Weather Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "electricity-derivatives",
+              "name": "Electricity Derivatives",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-exchange-exposure-and-risk-management",
+          "name": "Foreign Exchange Exposure and Risk Management",
+          "section": "",
+          "topics": [
+            {
+              "key": "factors-affecting-foreign-exchange-rate",
+              "name": "Factors affecting foreign exchange rate",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-swift-in-foreign-exchange",
+              "name": "Role of SWIFT in Foreign Exchange",
+              "kind": "concept"
+            },
+            {
+              "key": "national-and-international-payment-gateways",
+              "name": "National and International Payment Gateways",
+              "kind": "concept"
+            },
+            {
+              "key": "exchange-rate-determination",
+              "name": "Exchange rate determination",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-currency-market",
+              "name": "Foreign currency market",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-foreign-exchange-risk",
+              "name": "Management of Foreign Exchange Risk",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "international-financial-management",
+          "name": "International Financial Management",
+          "section": "",
+          "topics": [
+            {
+              "key": "international-capital-budgeting-offshore-investment-strategies-vis-a-vis-domestic-capital-budgeting",
+              "name": "International Capital Budgeting: Offshore Investment Strategies vis-à-vis Domestic Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "international-capital-budgeting-project-vis-a-vis-parent-cash-flows",
+              "name": "International Capital Budgeting: Project vis-à-vis Parent Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "international-capital-budgeting-discounting-rate-and-adjusting-cash-flows",
+              "name": "International Capital Budgeting: Discounting Rate and Adjusting Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "international-capital-budgeting-adjusted-present-value",
+              "name": "International Capital Budgeting: Adjusted Present Value",
+              "kind": "concept"
+            },
+            {
+              "key": "raising-funds-from-international-sources",
+              "name": "Raising funds from International Sources",
+              "kind": "concept"
+            },
+            {
+              "key": "sovereign-funds",
+              "name": "Sovereign Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "international-financial-centre-gift-city",
+              "name": "International Financial Centre (GIFT City)",
+              "kind": "concept"
+            },
+            {
+              "key": "international-working-capital-management-multinational-cash-management-objectives-of-effective-cash-management",
+              "name": "International Working Capital Management: Multinational Cash Management: Objectives of Effective Cash Management",
+              "kind": "concept"
+            },
+            {
+              "key": "international-working-capital-management-multinational-cash-management-optimization-of-cash-flows-needs",
+              "name": "International Working Capital Management: Multinational Cash Management: Optimization of Cash Flows/ Needs",
+              "kind": "concept"
+            },
+            {
+              "key": "international-working-capital-management-multinational-receivable-management",
+              "name": "International Working Capital Management: Multinational Receivable Management",
+              "kind": "concept"
+            },
+            {
+              "key": "international-working-capital-management-multinational-inventory-management",
+              "name": "International Working Capital Management: Multinational Inventory Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "interest-rate-risk-management",
+          "name": "Interest Rate Risk Management",
+          "section": "",
+          "topics": [
+            {
+              "key": "benchmark-rates",
+              "name": "Benchmark Rates",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk",
+              "name": "Interest Rate Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-interest-rate-risk-traditional-methods-asset-and-liability-management-alm",
+              "name": "Hedging Interest Rate Risk: Traditional Methods: Asset and Liability Management (ALM)",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-interest-rate-risk-traditional-methods-forward-rate-agreement-fra",
+              "name": "Hedging Interest Rate Risk: Traditional Methods: Forward Rate Agreement (FRA)",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-interest-rate-risk-modern-methods-including-interest-rate-derivatives-interest-rate-futures",
+              "name": "Hedging Interest Rate Risk: Modern Methods including Interest Rate Derivatives: Interest Rate Futures",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-interest-rate-risk-modern-methods-including-interest-rate-derivatives-interest-rate-options",
+              "name": "Hedging Interest Rate Risk: Modern Methods including Interest Rate Derivatives: Interest Rate Options",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-interest-rate-risk-modern-methods-including-interest-rate-derivatives-swaps",
+              "name": "Hedging Interest Rate Risk: Modern Methods including Interest Rate Derivatives: Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "hedging-interest-rate-risk-modern-methods-including-interest-rate-derivatives-swaptions",
+              "name": "Hedging Interest Rate Risk: Modern Methods including Interest Rate Derivatives: Swaptions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-valuation",
+          "name": "Business Valuation",
+          "section": "",
+          "topics": [
+            {
+              "key": "conceptual-framework-of-valuation",
+              "name": "Conceptual Framework of Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-assets-based-valuation-model",
+              "name": "Approaches/ Methods of Valuation: Assets Based Valuation Model",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-earning-based-models",
+              "name": "Approaches/ Methods of Valuation: Earning Based Models",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-cash-flow-based-models",
+              "name": "Approaches/ Methods of Valuation: Cash Flow Based Models",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-measuring-cost-of-equity-capital-asset-pricing-model-capm",
+              "name": "Approaches/ Methods of Valuation: Measuring Cost of Equity: Capital Asset Pricing Model (CAPM)",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-measuring-cost-of-equity-arbitrage-pricing-theory",
+              "name": "Approaches/ Methods of Valuation: Measuring Cost of Equity: Arbitrage Pricing Theory",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-measuring-cost-of-equity-estimating-beta-of-an-unlisted-company",
+              "name": "Approaches/ Methods of Valuation: Measuring Cost of Equity: Estimating Beta of an unlisted company",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-relative-valuation-steps-involved-in-relative-valuation",
+              "name": "Approaches/ Methods of Valuation: Relative Valuation: Steps involved in Relative Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-relative-valuation-equity-valuation-multiples",
+              "name": "Approaches/ Methods of Valuation: Relative Valuation: Equity Valuation Multiples",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-relative-valuation-enterprise-valuation-multiple",
+              "name": "Approaches/ Methods of Valuation: Relative Valuation: Enterprise Valuation Multiple",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-other-approaches-to-value-measurement-economic-value-added-eva",
+              "name": "Approaches/ Methods of Valuation: Other Approaches to Value Measurement: Economic Value Added (EVA)",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-other-approaches-to-value-measurement-market-value-added-mva",
+              "name": "Approaches/ Methods of Valuation: Other Approaches to Value Measurement: Market Value Added (MVA)",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-other-approaches-to-value-measurement-shareholder-value-analysis-sva",
+              "name": "Approaches/ Methods of Valuation: Other Approaches to Value Measurement: Shareholder Value Analysis (SVA)",
+              "kind": "concept"
+            },
+            {
+              "key": "approaches-methods-of-valuation-arriving-at-fair-value",
+              "name": "Approaches/ Methods of Valuation: Arriving at Fair Value",
+              "kind": "concept"
+            },
+            {
+              "key": "going-concern-and-non-going-concern-valuation",
+              "name": "Going concern and Non Going concern valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-distressed-companies",
+              "name": "Valuation of Distressed Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-start-ups",
+              "name": "Valuation of Start ups",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-digital-platforms",
+              "name": "Valuation of Digital Platforms",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-professional-consultancy-firms",
+              "name": "Valuation of Professional/ Consultancy Firms",
+              "kind": "concept"
+            },
+            {
+              "key": "impact-of-esg-on-valuation",
+              "name": "Impact of ESG on valuation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "mergers-acquisitions-and-corporate-restructuring",
+          "name": "Mergers, Acquisitions and Corporate Restructuring",
+          "section": "",
+          "topics": [
+            {
+              "key": "conceptual-framework",
+              "name": "Conceptual Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "rationale",
+              "name": "Rationale",
+              "kind": "concept"
+            },
+            {
+              "key": "forms",
+              "name": "Forms",
+              "kind": "concept"
+            },
+            {
+              "key": "mergers-and-acquisitions-financial-framework",
+              "name": "Mergers and Acquisitions: Financial Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "mergers-and-acquisitions-takeover-defensive-tactics",
+              "name": "Mergers and Acquisitions: Takeover Defensive Tactics",
+              "kind": "concept"
+            },
+            {
+              "key": "mergers-and-acquisitions-reverse-merger",
+              "name": "Mergers and Acquisitions: Reverse Merger",
+              "kind": "concept"
+            },
+            {
+              "key": "divestitures-partial-sell-off",
+              "name": "Divestitures: Partial Sell off",
+              "kind": "concept"
+            },
+            {
+              "key": "divestitures-demerger",
+              "name": "Divestitures: Demerger",
+              "kind": "concept"
+            },
+            {
+              "key": "divestitures-equity-carve-outs",
+              "name": "Divestitures: Equity Carve outs",
+              "kind": "concept"
+            },
+            {
+              "key": "ownership-restructuring-going-private",
+              "name": "Ownership Restructuring: Going Private",
+              "kind": "concept"
+            },
+            {
+              "key": "ownership-restructuring-management-leveraged-buyouts",
+              "name": "Ownership Restructuring: Management/ Leveraged Buyouts",
+              "kind": "concept"
+            },
+            {
+              "key": "unlocking-the-value-through-mergers-acquisitions-and-business-restructuring",
+              "name": "Unlocking the value through Mergers & Acquisitions and Business Restructuring",
+              "kind": "concept"
+            },
+            {
+              "key": "cross-border-mergers",
+              "name": "Cross Border Mergers",
+              "kind": "concept"
+            },
+            {
+              "key": "special-purpose-acquisition-companies-spacs",
+              "name": "Special Purpose Acquisition Companies (SPACs)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "startup-finance",
+          "name": "Startup Finance",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-including-pitch-presentation",
+              "name": "Introduction including Pitch Presentation",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-unicorn",
+              "name": "Concept of Unicorn",
+              "kind": "concept"
+            },
+            {
+              "key": "startup-initiative-of-goi",
+              "name": "Startup Initiative of GOI",
+              "kind": "concept"
+            },
+            {
+              "key": "sources-of-funding",
+              "name": "Sources of Funding",
+              "kind": "concept"
+            },
+            {
+              "key": "succession-planning-in-business",
+              "name": "Succession planning in Business",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "advanced-auditing-assurance-and-professional-ethics",
+      "paper_number": 3,
+      "name": "Advanced Auditing, Assurance and Professional Ethics",
+      "source_url": "https://resource.cdn.icai.org/92185bos-aps5087-final-p3.pdf",
+      "chapters": [
+        {
+          "key": "quality-control",
+          "name": "Quality Control",
+          "section": "",
+          "topics": [
+            {
+              "key": "sqc-1-quality-control-for-firms-that-perform-audits-and-reviews-of-historical-financial-information-and-other-assurance",
+              "name": "SQC 1 Quality Control for Firms that Perform Audits and Reviews of Historical Financial Information and Other Assurance and Related Services Engagements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-220-quality-control-for-an-audit-of-financial-statements",
+              "name": "SA 220 Quality Control for an Audit of Financial Statements",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "general-auditing-principles-and-auditors-responsibilities",
+          "name": "General Auditing Principles and Auditors Responsibilities",
+          "section": "",
+          "topics": [
+            {
+              "key": "sa-240-the-auditors-responsibilities-relating-to-fraud-in-an-audit-of-financial-statements",
+              "name": "SA 240 The Auditor’s Responsibilities Relating to Fraud in an Audit of Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-250-consideration-of-laws-and-regulations-in-an-audit-of-financial-statements",
+              "name": "SA 250 Consideration of Laws and Regulations in an Audit of Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-260-communication-with-those-charged-with-governance",
+              "name": "SA 260 Communication with Those Charged with Governance",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-299-joint-audit-of-financial-statements",
+              "name": "SA 299 Joint Audit of Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-402-audit-considerations-relating-to-an-entity-using-a-service-organisation",
+              "name": "SA 402 Audit Considerations Relating to an Entity Using a Service Organisation",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "audit-planning-strategy-and-execution",
+          "name": "Audit Planning, Strategy, and Execution",
+          "section": "",
+          "topics": [
+            {
+              "key": "sa-300-planning-an-audit-of-financial-statements",
+              "name": "SA 300 Planning an Audit of Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-450-evaluation-of-misstatements-identified-during-the-audit",
+              "name": "SA 450 Evaluation of Misstatements identified During the Audit",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-520-analytical-procedures",
+              "name": "SA 520 Analytical Procedures",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-540-auditing-accounting-estimates-including-fair-value-accounting-estimates-and-related-disclosures",
+              "name": "SA 540 Auditing Accounting Estimates, Including Fair Value Accounting Estimates and Related Disclosures",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-610-using-the-work-of-internal-auditors",
+              "name": "SA 610 Using the Work of Internal Auditors",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-620-using-the-work-of-an-auditors-expert",
+              "name": "SA 620 Using the Work of an Auditor’s Expert",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "materiality-risk-assessment-and-internal-control",
+          "name": "Materiality, Risk Assessment and Internal Control",
+          "section": "",
+          "topics": [
+            {
+              "key": "evaluation-of-internal-control-procedures",
+              "name": "Evaluation of Internal Control Procedures",
+              "kind": "concept"
+            },
+            {
+              "key": "components-of-internal-controls",
+              "name": "Components of Internal Controls",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-control-and-risk-assessment",
+              "name": "Internal Control and Risk Assessment",
+              "kind": "concept"
+            },
+            {
+              "key": "auditors-response-to-assessed-risks",
+              "name": "Auditor’s response to assessed risks",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-based-audit-audit-risk-analysis",
+              "name": "Risk-Based Audit- Audit Risk Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "reporting-on-internal-control-weaknesses-framework-on-reporting-of-internal-controls",
+              "name": "Reporting on Internal Control Weaknesses, Framework on Reporting of Internal Controls",
+              "kind": "concept"
+            },
+            {
+              "key": "sa-265-communicating-deficiencies-in-internal-control-to-those-charged-with-governance-and-management",
+              "name": "SA 265 Communicating Deficiencies in Internal Control to Those Charged with Governance and Management",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-330-the-auditors-responses-to-assessed-risks",
+              "name": "SA 330 The Auditor’s Responses to Assessed Risks",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "audit-evidence",
+          "name": "Audit Evidence",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "completion-and-review",
+          "name": "Completion and Review",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "reporting",
+          "name": "Reporting",
+          "section": "",
+          "topics": [
+            {
+              "key": "sa-700-forming-an-opinion-and-reporting-on-financial-statements",
+              "name": "SA 700 Forming an Opinion and Reporting on Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-701-communicating-key-audit-matters-in-the-independent-auditors-report",
+              "name": "SA 701 Communicating Key Audit Matters in the Independent Auditor’s Report",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-705-modifications-to-the-opinion-in-the-independent-auditors-report",
+              "name": "SA 705 Modifications to the Opinion in the Independent Auditor’s Report",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-706-emphasis-of-matter-paragraphs-and-other-matter-paragraphs-in-the-independent-auditors-report",
+              "name": "SA 706 Emphasis of Matter Paragraphs and Other Matter Paragraphs in the Independent Auditor’s Report",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-710-comparative-information-corresponding-figures-and-comparative-financial-statements",
+              "name": "SA 710 Comparative Information – Corresponding Figures and Comparative Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "sa-720-the-auditors-responsibility-in-relation-to-other-information",
+              "name": "SA 720 The Auditor’s Responsibility in Relation to Other Information",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "specialized-areas",
+          "name": "Specialized Areas",
+          "section": "",
+          "topics": [
+            {
+              "key": "basic-and-overview-of-sa-800-special-considerations-audits-of-financial-statements-prepared-in-accordance-with-special-p",
+              "name": "Basic and Overview of SA 800 Special Considerations-Audits of Financial Statements Prepared in Accordance with Special Purpose Frameworks",
+              "kind": "standard"
+            },
+            {
+              "key": "basic-and-overview-of-sa-805-special-considerations-audits-of-single-financial-statements-and-specific-elements-accounts",
+              "name": "Basic and Overview of SA 805 Special Considerations-Audits of Single Financial Statements and Specific Elements, Accounts or Items of a Financial Statement",
+              "kind": "standard"
+            },
+            {
+              "key": "basic-and-overview-of-sa-810-engagements-to-report-on-summary-financial-statements",
+              "name": "Basic and Overview of SA 810 Engagements to Report on Summary Financial Statements",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "audit-related-services",
+          "name": "Audit-related Services",
+          "section": "",
+          "topics": [
+            {
+              "key": "basic-and-overview-of-srs-4400-engagements-to-perform-agreed-upon-procedures-regarding-financial-information",
+              "name": "Basic and Overview of SRS 4400 Engagements to Perform Agreed-upon Procedures Regarding Financial Information",
+              "kind": "standard"
+            },
+            {
+              "key": "basic-and-overview-of-srs-4410-compilation-engagements",
+              "name": "Basic and Overview of SRS 4410 Compilation Engagements",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "review-of-financial-information",
+          "name": "Review of Financial Information",
+          "section": "",
+          "topics": [
+            {
+              "key": "basic-and-overview-of-sre-2400-engagements-to-review-historical-financial-statements",
+              "name": "Basic and Overview of SRE 2400 Engagements to Review Historical Financial Statements",
+              "kind": "standard"
+            },
+            {
+              "key": "basic-and-overview-of-sre-2410-review-of-interim-financial-information-performed-by-the-independent-auditor-of-the-entit",
+              "name": "Basic and Overview of SRE 2410 Review of Interim Financial Information Performed by the Independent Auditor of the Entity",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "prospective-financial-information-and-other-assurance-services",
+          "name": "Prospective Financial Information and Other Assurance Services",
+          "section": "",
+          "topics": [
+            {
+              "key": "basic-and-overview-of-sae-3400-the-examination-of-prospective-financial-information",
+              "name": "Basic and Overview of SAE 3400 The Examination of Prospective Financial Information",
+              "kind": "standard"
+            },
+            {
+              "key": "basic-and-overview-of-sae-3402-assurance-reports-on-controls-at-a-service-organisation",
+              "name": "Basic and Overview of SAE 3402 Assurance Reports on Controls at a Service Organisation",
+              "kind": "standard"
+            },
+            {
+              "key": "basic-and-overview-of-sae-3420-assurance-engagements-to-report-on-the-compilation-of-pro-forma-financial-information-inc",
+              "name": "Basic and Overview of SAE 3420 Assurance Engagements to Report on the Compilation of Pro Forma Financial Information Included in a Prospectus",
+              "kind": "standard"
+            }
+          ]
+        },
+        {
+          "key": "digital-auditing-and-assurance",
+          "name": "Digital Auditing and Assurance",
+          "section": "",
+          "topics": [
+            {
+              "key": "auditing-digitally-and-digital-auditing-usage-of-automated-tools-such-as-caat-data-analytics-artificial-intelligence-etc",
+              "name": "Auditing digitally and Digital auditing, Usage of Automated Tools such as CAAT, Data Analytics, Artificial Intelligence, etc., Remote Auditing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "group-audits",
+          "name": "Group Audits",
+          "section": "",
+          "topics": [
+            {
+              "key": "audit-of-consolidated-financial-statements-responsibility-of-parent-company-auditor-of-the-consolidated-financial-statem",
+              "name": "Audit of Consolidated Financial Statements - Responsibility of Parent Company, Auditor of the Consolidated Financial Statements",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-considerations-permanent-consolidation-current-period-consolidation",
+              "name": "Audit Considerations - Permanent Consolidation, Current Period Consolidation",
+              "kind": "concept"
+            },
+            {
+              "key": "reporting",
+              "name": "Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-group-financial-statements-including-the-work-of-component-auditors-sa-600-using-the-work-of-another-auditor",
+              "name": "Audit of Group Financial Statements including the work of Component Auditors (SA 600 Using the Work of Another Auditor)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "special-features-of-audit-of-banks-non-banking-financial-companies",
+          "name": "Special Features of Audit of Banks & Non-Banking Financial Companies",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "overview-of-audit-of-public-sector-undertakings",
+          "name": "Overview of Audit of Public Sector Undertakings",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept-of-propriety-audit",
+              "name": "Concept of Propriety Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-audit",
+              "name": "Performance Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "comprehensive-audit",
+              "name": "Comprehensive Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "internal-audit",
+          "name": "Internal Audit",
+          "section": "",
+          "topics": [
+            {
+              "key": "provisions-of-internal-audit-as-per-companies-act-2013",
+              "name": "Provisions of Internal Audit as per Companies Act, 2013",
+              "kind": "concept"
+            },
+            {
+              "key": "scope-of-internal-auditing",
+              "name": "Scope of Internal Auditing",
+              "kind": "concept"
+            },
+            {
+              "key": "relationship-between-internal-and-external-auditor",
+              "name": "Relationship between Internal and External Auditor",
+              "kind": "concept"
+            },
+            {
+              "key": "basics-of-internal-audit-standards-issued-by-the-icai",
+              "name": "Basics of Internal Audit Standards issued by the ICAI",
+              "kind": "concept"
+            },
+            {
+              "key": "drafting-of-internal-audit-report",
+              "name": "Drafting of Internal Audit Report",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-trail-internal-audit-as-a-management-function",
+              "name": "Audit Trail, Internal Audit as a Management Function",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "due-diligence-investigation-and-forensic-accounting",
+          "name": "Due Diligence, Investigation and Forensic Accounting",
+          "section": "",
+          "topics": [
+            {
+              "key": "due-diligence-review",
+              "name": "Due Diligence Review",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-versus-investigation",
+              "name": "Audit versus Investigation",
+              "kind": "concept"
+            },
+            {
+              "key": "steps-for-investigation",
+              "name": "Steps for Investigation",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-investigation",
+              "name": "Types of Investigation",
+              "kind": "concept"
+            },
+            {
+              "key": "procedure-powers-etc-of-investigator",
+              "name": "Procedure, Powers, etc. of Investigator",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-fraud-indicators-of-fraud-follow-up-thereof",
+              "name": "Types of Fraud, Indicators of Fraud, Follow-up thereof",
+              "kind": "concept"
+            },
+            {
+              "key": "forensic-accounting-meaning-difference-between-statutory-audit-and-forensic-accounting-forensic-accounting-and-investiga",
+              "name": "Forensic Accounting- meaning, difference between Statutory Audit and Forensic Accounting, Forensic Accounting and Investigation Report, Introduction of Forensic Accounting and Investigation Standards",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "emerging-areas",
+          "name": "Emerging Areas",
+          "section": "",
+          "topics": [
+            {
+              "key": "sustainable-development-goals-sdg-environment-social-and-governance-esg-assurance-etc",
+              "name": "Sustainable Development Goals (SDG) & Environment, Social and Governance (ESG) Assurance, etc.",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "professional-ethics-and-liabilities-of-auditors",
+          "name": "Professional Ethics and Liabilities of Auditors",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-of-code-of-ethics-as-per-iesba-and-code-of-ethics-with-special-reference-to-the-relevant-provisions-of-the",
+              "name": "Introduction of Code of Ethics as per IESBA and Code of Ethics with special reference to the relevant provisions of the Chartered Accountants Act, 1949 and the Regulations thereunder",
+              "kind": "concept"
+            },
+            {
+              "key": "application-of-fundamental-principles",
+              "name": "Application of Fundamental Principles",
+              "kind": "concept"
+            },
+            {
+              "key": "application-of-threats-evaluation-of-threats",
+              "name": "Application of Threats, Evaluation of Threats",
+              "kind": "concept"
+            },
+            {
+              "key": "addressing-threats-and-safeguards",
+              "name": "Addressing Threats and Safeguards",
+              "kind": "concept"
+            },
+            {
+              "key": "conceptual-framework",
+              "name": "Conceptual Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "important-provisions-of-chartered-accountants-act1949-and-chartered-accountants-regulations-1988",
+              "name": "Important Provisions of Chartered Accountants Act,1949 and Chartered Accountants Regulations 1988",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "direct-tax-laws-and-international-taxation",
+      "paper_number": 4,
+      "name": "Direct Tax Laws & International Taxation",
+      "source_url": "https://resource.cdn.icai.org/92186bos-aps5087-final-p4.pdf",
+      "chapters": [
+        {
+          "key": "income-tax-computation-special-provisions-and-anti-avoidance",
+          "name": "Income-tax Computation, Special Provisions and Anti-avoidance",
+          "section": "",
+          "topics": [
+            {
+              "key": "general-provisions-under-the-act-for-computation-of-total-income-and-tax-liability-of-companies-and-other-entities",
+              "name": "General provisions under the Act for computation of total income and tax liability of companies and other entities",
+              "kind": "concept"
+            },
+            {
+              "key": "comprehensive-computation-of-income-tax-liability-of-companies-and-other-entities-under-the-alternative-tax-regimes-unde",
+              "name": "Comprehensive computation of income-tax liability of companies and other entities under the alternative tax regimes under the Income-tax Act, 1961 to optimise tax liability: Special tax regimes under the Act for companies and other entities",
+              "kind": "concept"
+            },
+            {
+              "key": "optimisation-of-tax-liability-of-companies-and-other-entities-through-tax-planning",
+              "name": "Optimisation of tax liability of companies and other entities through tax planning",
+              "kind": "concept"
+            },
+            {
+              "key": "special-provisions-relating-to-charitable-and-religious-trust-and-institutions-political-parties-and-electoral-trusts-bu",
+              "name": "Special Provisions relating to charitable and religious trust and institutions, political parties and electoral trusts, business trusts, securitisation trusts, investment funds and other funds/trusts",
+              "kind": "concept"
+            },
+            {
+              "key": "anti-avoidance-provisions-under-the-act",
+              "name": "Anti-avoidance provisions under the Act",
+              "kind": "concept"
+            },
+            {
+              "key": "provisions-to-address-tax-challenges-on-digitalisation",
+              "name": "Provisions to address tax challenges on digitalisation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "tax-administration-and-appellate-mechanism",
+          "name": "Tax Administration and Appellate Mechanism",
+          "section": "",
+          "topics": [
+            {
+              "key": "deduction-collection-and-recovery-of-tax",
+              "name": "Deduction, Collection and Recovery of Tax",
+              "kind": "concept"
+            },
+            {
+              "key": "income-tax-authorities",
+              "name": "Income-tax Authorities",
+              "kind": "concept"
+            },
+            {
+              "key": "assessment-procedures",
+              "name": "Assessment Procedures",
+              "kind": "concept"
+            },
+            {
+              "key": "appeals-and-revision-and-dispute-resolution",
+              "name": "Appeals and Revision, and Dispute Resolution",
+              "kind": "concept"
+            },
+            {
+              "key": "provisions-to-counteract-unethical-tax-practices-taxation-of-undisclosed-income-under-the-income-tax-act-1961",
+              "name": "Provisions to counteract unethical tax practices: Taxation of undisclosed income under the Income-tax Act, 1961",
+              "kind": "concept"
+            },
+            {
+              "key": "provisions-to-counteract-unethical-tax-practices-taxation-of-undisclosed-foreign-income-and-assets",
+              "name": "Provisions to counteract unethical tax practices: Taxation of undisclosed foreign income and assets",
+              "kind": "concept"
+            },
+            {
+              "key": "provisions-to-counteract-unethical-tax-practices-penalties-and-offences-and-prosecution",
+              "name": "Provisions to counteract unethical tax practices: Penalties and offences and prosecution",
+              "kind": "concept"
+            },
+            {
+              "key": "miscellaneous-provisions",
+              "name": "Miscellaneous Provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-audit",
+              "name": "Tax Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "international-taxation",
+          "name": "International Taxation",
+          "section": "",
+          "topics": [
+            {
+              "key": "taxation-of-cross-border-transactions-and-non-resident-taxation-under-the-income-tax-act-1961-including-transfer-pricing",
+              "name": "Taxation of cross border transactions and Non-resident taxation under the Income-tax Act, 1961, including: Transfer Pricing",
+              "kind": "concept"
+            },
+            {
+              "key": "taxation-of-cross-border-transactions-and-non-resident-taxation-under-the-income-tax-act-1961-including-non-resident-tax",
+              "name": "Taxation of cross border transactions and Non-resident taxation under the Income-tax Act, 1961, including: Non-resident Taxation",
+              "kind": "concept"
+            },
+            {
+              "key": "taxation-of-cross-border-transactions-and-non-resident-taxation-under-the-income-tax-act-1961-including-double-taxation",
+              "name": "Taxation of cross border transactions and Non-resident taxation under the Income-tax Act, 1961, including: Double Taxation Relief",
+              "kind": "concept"
+            },
+            {
+              "key": "taxation-of-cross-border-transactions-and-non-resident-taxation-under-the-income-tax-act-1961-including-advance-ruling",
+              "name": "Taxation of cross border transactions and Non-resident taxation under the Income-tax Act, 1961, including: Advance Ruling",
+              "kind": "concept"
+            },
+            {
+              "key": "other-aspects-of-international-taxation-namely-significant-articles-of-oecd-and-un-model-tax-conventions",
+              "name": "Other Aspects of International Taxation, namely,: Significant articles of OECD and UN Model Tax Conventions",
+              "kind": "concept"
+            },
+            {
+              "key": "other-aspects-of-international-taxation-namely-fundamentals-of-beps",
+              "name": "Other Aspects of International Taxation, namely,: Fundamentals of BEPS",
+              "kind": "concept"
+            },
+            {
+              "key": "other-aspects-of-international-taxation-namely-application-and-interpretation-of-tax-treaties",
+              "name": "Other Aspects of International Taxation, namely,: Application and Interpretation of Tax Treaties",
+              "kind": "concept"
+            },
+            {
+              "key": "other-aspects-of-international-taxation-namely-latest-developments-in-international-taxation",
+              "name": "Other Aspects of International Taxation, namely,: Latest developments in International Taxation",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "indirect-tax-laws",
+      "paper_number": 5,
+      "name": "Indirect Tax Laws",
+      "source_url": "https://www.icai.org/post/syllabus-nset-final",
+      "chapters": [
+        {
+          "key": "case-studies-based-on-following",
+          "name": "Case studies based on following",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": [
+            {
+              "key": "levy-and-collection-of-cgst-and-igst-application-of-cgstigst-law",
+              "name": "Levy and collection of CGST and IGST – Application of CGST/IGST law",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-supply-inter-state-supply-intra-state-supply-supplies-in-territorial-waters",
+              "name": "Concept of supply, inter-State supply, intra-State supply, supplies in territorial waters",
+              "kind": "concept"
+            },
+            {
+              "key": "charge-of-tax-including-reverse-charge",
+              "name": "Charge of tax including reverse charge",
+              "kind": "concept"
+            },
+            {
+              "key": "classification",
+              "name": "Classification",
+              "kind": "concept"
+            },
+            {
+              "key": "exemption-from-tax",
+              "name": "Exemption from tax",
+              "kind": "concept"
+            },
+            {
+              "key": "place-of-supply",
+              "name": "Place of supply",
+              "kind": "concept"
+            },
+            {
+              "key": "time-of-supply",
+              "name": "Time of Supply",
+              "kind": "concept"
+            },
+            {
+              "key": "value-of-supply",
+              "name": "Value of supply",
+              "kind": "concept"
+            },
+            {
+              "key": "input-tax-credit",
+              "name": "Input tax credit",
+              "kind": "concept"
+            },
+            {
+              "key": "computation-of-gst-liability",
+              "name": "Computation of GST liability",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "procedures-under-gst-including-registration-tax-invoice-credit-and-debit-notes-electronic-way-bill-a",
+          "name": "Procedures under GST including registration, tax invoice, credit and debit notes, electronic way-bill, accounts and records, returns, payment of tax",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "refunds-and-case-studies-based-on-refund-provisions",
+          "name": "Refunds and case studies based on refund provisions",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "job-work",
+          "name": "Job work",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "liability-to-pay-in-certain-cases",
+          "name": "Liability to pay in certain cases",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "administration-of-gst-assessment-and-audit",
+          "name": "Administration of GST; Assessment and Audit",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "inspection-search-seizure-and-arrest",
+          "name": "Inspection, Search, Seizure and Arrest",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "demand-and-recovery-offences-and-penalties",
+          "name": "Demand and Recovery; Offences and Penalties",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "appeals-and-revision",
+          "name": "Appeals and Revision",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "advance-ruling",
+          "name": "Advance Ruling",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "ethics-under-gst",
+          "name": "Ethics under GST",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "other-provisions",
+          "name": "Other provisions",
+          "section": "Part I: Goods and Services Tax (80 Marks)",
+          "topics": []
+        },
+        {
+          "key": "customs-law-as-contained-in-the-customs-act-1962-and-the-customs-tariff-act-1975",
+          "name": "Customs Law as contained in the Customs Act, 1962 and the Customs Tariff Act, 1975",
+          "section": "Part II: Customs & FTP (20 Marks)",
+          "topics": [
+            {
+              "key": "introduction-to-customs-law-including-constitutional-aspects",
+              "name": "Introduction to customs law including Constitutional aspects",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-of-customs-duties-including-application-of-customs-law-taxable-event-charge-of-customs-duty-exceptions-to-levy-of-c",
+              "name": "Levy of customs duties including application of customs law, taxable event, charge of customs duty, exceptions to levy of customs duty, exemption from custom duty",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-customs-duties",
+              "name": "Types of customs duties",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-and-valuation-of-imported-and-export-goods",
+              "name": "Classification and valuation of imported and export goods",
+              "kind": "concept"
+            },
+            {
+              "key": "import-and-export-procedures-including-special-procedures-relating-to-baggage-goods-imported-or-exported-by-post-stores",
+              "name": "Import and Export Procedures including special procedures relating to baggage, goods imported or exported by post, stores",
+              "kind": "concept"
+            },
+            {
+              "key": "warehousing",
+              "name": "Warehousing",
+              "kind": "concept"
+            },
+            {
+              "key": "refund",
+              "name": "Refund",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-trade-policy",
+          "name": "Foreign Trade Policy",
+          "section": "Part II: Customs & FTP (20 Marks)",
+          "topics": [
+            {
+              "key": "introduction-to-ftp-legislation-governing-ftp-salient-features-of-an-ftp-administration-of-ftp-contents-of-ftp-and-other",
+              "name": "Introduction to FTP – legislation governing FTP, salient features of an FTP, administration of FTP, contents of FTP and other related provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-concepts-relating-to-import-and-export",
+              "name": "Basic concepts relating to import and export",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-concepts-relating-to-export-promotion-schemes-provided-under-ftp",
+              "name": "Basic concepts relating to export promotion schemes provided under FTP",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "integrated-business-solutions-multidisciplinary-case-study-with-strategic-manage",
+      "paper_number": 6,
+      "name": "Integrated Business Solutions (Multidisciplinary Case Study with Strategic Management)",
+      "source_url": "https://resource.cdn.icai.org/92189bos-aps5087-final-p6.pdf",
+      "chapters": [
+        {
+          "key": "financial-reporting",
+          "name": "Financial Reporting",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "advanced-financial-management",
+          "name": "Advanced Financial Management",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "advanced-auditing-assurance-and-professional-ethics",
+          "name": "Advanced Auditing, Assurance and Professional Ethics",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "direct-tax-laws-international-taxation",
+          "name": "Direct Tax Laws & International Taxation",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "indirect-tax-laws",
+          "name": "Indirect Tax Laws",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "corporate-and-economic-laws",
+          "name": "Corporate and Economic Laws",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "strategic-cost-performance-management",
+          "name": "Strategic Cost & Performance Management",
+          "section": "",
+          "topics": []
+        }
+      ],
+      "group": "group-2",
+      "total_marks": 100,
+      "kind": "theory"
+    }
+  ]
+}

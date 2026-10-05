@@ -7,6 +7,7 @@ import type {
   Confidence,
   CoverageSettings,
   Due,
+  ElectivesResult,
   Enrollment,
   EnrollmentWithSummary,
   EventType,
@@ -30,6 +31,8 @@ export const createEnrollment = (input: {
   target_term?: string | null
   exam_date?: string | null
   daily_hours?: number | null
+  /** Elective slot key -> chosen subject id. */
+  electives?: Record<string, string>
 }) => post<Enrollment>('/coverage/enrollments/', input)
 export const updateEnrollment = (
   id: string,
@@ -41,6 +44,10 @@ export const updateEnrollment = (
     scheme?: string
   },
 ) => api<EnrollmentWithSummary>(`/coverage/enrollments/${id}/`, { method: 'PATCH', body: json(patch) })
+
+/** Sets (or, with null, clears) the elective of each slot named. The response carries the re-counted overview. */
+export const setElectives = (enrollmentId: string, choices: Record<string, string | null>) =>
+  put<ElectivesResult>(`/coverage/enrollments/${enrollmentId}/electives/`, { choices })
 
 export const getOverview = () => api<Overview>('/coverage/overview/')
 export const getSubject = (id: string) => api<SubjectCoverage>(`/coverage/subjects/${id}/`)

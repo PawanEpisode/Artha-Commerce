@@ -80,9 +80,10 @@ def test_cannot_enrol_in_a_draft_or_unknown_scheme(api, ids):
     assert api.post("/coverage/enrollments/", {"scheme": str(uuid.uuid4())}).status_code == 404
 
 
-def test_term_must_belong_to_the_course(api, ids):
-    res = api.post("/coverage/enrollments/", {"scheme": ids["scheme"], "target_term": ids["cs_term"]})
-    assert res.status_code == 400 and "target_term" in res.json_body["error"]["details"]
+def test_term_must_belong_to_the_level(api, ids):
+    for key in ("cs_term", "foundation_term"):  # another course, and another level of the same course
+        res = api.post("/coverage/enrollments/", {"scheme": ids["scheme"], "target_term": ids[key]})
+        assert res.status_code == 400 and "target_term" in res.json_body["error"]["details"]
 
 
 def test_patch_enrolment_changes_date_and_archives(api, ids, enrolled):
@@ -404,3 +405,10 @@ def test_export_and_delete_all(api, other_api, ids, enrolled):
 
 def enrolled_user_for(sub):
     return sub
+
+
+def test_chapter_page_links_to_neighbouring_chapters(api, ids, enrolled):
+    body = api.get(f"/coverage/chapters/{ids['residential']}/").json_body
+    assert body["prev_chapter"]["id"] == ids["gst"]
+    assert body["next_chapter"]["id"] == ids["heads"]
+    assert api.get(f"/coverage/chapters/{ids['gst']}/").json_body["prev_chapter"] is None

@@ -1,5 +1,7 @@
 import {
   Alert,
+  ArrowLeft,
+  ArrowRight,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
@@ -101,6 +103,33 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
       <p role="status" className="sr-only">
         {chapter.name} is {chapter.coverage_pct} percent covered.
       </p>
+
+      {data.prev_chapter || data.next_chapter ? (
+        <nav aria-label="Chapters in this paper" className="flex flex-wrap justify-between gap-3 text-sm">
+          {data.prev_chapter ? (
+            <Link
+              to="/app/syllabus/$subject/$chapter"
+              params={{ subject: subject.id, chapter: data.prev_chapter.id }}
+              className="inline-flex min-h-11 items-center gap-2 font-medium underline-offset-4 hover:underline"
+            >
+              <ArrowLeft aria-hidden className="size-4" />
+              {data.prev_chapter.name}
+            </Link>
+          ) : (
+            <span />
+          )}
+          {data.next_chapter ? (
+            <Link
+              to="/app/syllabus/$subject/$chapter"
+              params={{ subject: subject.id, chapter: data.next_chapter.id }}
+              className="inline-flex min-h-11 items-center gap-2 font-medium underline-offset-4 hover:underline"
+            >
+              {data.next_chapter.name}
+              <ArrowRight aria-hidden className="size-4" />
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
 
       <section aria-labelledby="topics-h" className="space-y-3">
         <h2 id="topics-h" className="font-display text-xl font-bold">

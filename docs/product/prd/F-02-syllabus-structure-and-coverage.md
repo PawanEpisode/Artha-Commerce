@@ -256,6 +256,7 @@ Public pages are rendered on the server by the web app through route loaders tha
 | --- | --- |
 | GET, POST `coverage/enrollments/` | List, create enrolment |
 | PATCH `coverage/enrollments/{id}/` | Change term, date, scheme (with carry-over), archive |
+| PUT `coverage/enrollments/{id}/electives/` | Choose the elective for each optional paper `{choices: {slot_key: subject_id or null}}`; only the chosen one counts |
 | GET `coverage/overview/` | Level, group, subject percents for the active enrolment (params: `weighted`) |
 | GET `coverage/subjects/{subject_id}/` | Chapter rows with percent, status, confidence |
 | GET `coverage/chapters/{chapter_id}/` | Topics, components, events summary, revision history |

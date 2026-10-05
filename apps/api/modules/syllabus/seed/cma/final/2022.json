@@ -1,0 +1,4437 @@
+{
+  "course": "cma",
+  "level": "final",
+  "scheme": {
+    "code": "2022",
+    "name": "CMA Syllabus 2022",
+    "source_url": "https://icmai.in",
+    "notes": "Built from the ICMAI \"CMA Syllabus 2022\" PDF supplied by the founder (effective from the June 2023 exam term). Chapters are the syllabus modules, topics are the numbered sub-items, and each chapter carries its Section and weightage in \"section\". Chapter marks are the module weights from the syllabus table (weight source \"official\"). Where the table gives one combined weight for a group of modules, or only the section total, the remaining section weight is split evenly across those modules and marked \"analysis\" (indicative only). Needs editor review before publishing."
+  },
+  "groups": [
+    {
+      "key": "group-3",
+      "name": "Group III"
+    },
+    {
+      "key": "group-4",
+      "name": "Group IV"
+    },
+    {
+      "key": "electives",
+      "name": "Elective Papers (choose one)"
+    }
+  ],
+  "subjects": [
+    {
+      "key": "corporate-and-economic-laws",
+      "paper_number": 13,
+      "name": "Corporate and Economic Laws",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "the-companies-act-2013",
+          "name": "The Companies Act, 2013",
+          "section": "Section A: Corporate Laws (60%)",
+          "marks_min": 40,
+          "marks_max": 40,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "company-formation-and-conversion-incorporation-of-private-companies-public-companies-company-limited-by-guarantee-and-un",
+              "name": "Company Formation and Conversion: Incorporation of Private Companies, Public Companies, Company Limited by guarantee and Unlimited Companies and their conversions/ reconversion/ re-registration",
+              "kind": "concept"
+            },
+            {
+              "key": "company-formation-and-conversion-formation-of-not-for-profit-making-companies",
+              "name": "Company Formation and Conversion: Formation of Not-for-Profit making Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "company-formation-and-conversion-procedure-relating-to-foreign-companies-carrying-on-business-in-india",
+              "name": "Company Formation and Conversion: Procedure relating to Foreign Companies Carrying on Business in India",
+              "kind": "concept"
+            },
+            {
+              "key": "company-formation-and-conversion-conversion-of-llps-into-private-limited-companies-and-vice-versa",
+              "name": "Company Formation and Conversion: Conversion of LLPs into Private Limited Companies and vice versa",
+              "kind": "concept"
+            },
+            {
+              "key": "investment-and-loans-procedure-for-inter-corporate-loans-investments-giving-off-guarantee-and-security",
+              "name": "Investment and Loans: Procedure for Inter-Corporate Loans, Investments, giving off Guarantee and Security",
+              "kind": "concept"
+            },
+            {
+              "key": "investment-and-loans-acceptance-of-deposits-renewal-repayment-default-and-remedies",
+              "name": "Investment and Loans: Acceptance of Deposits, Renewal, Repayment, Default and Remedies",
+              "kind": "concept"
+            },
+            {
+              "key": "investment-and-loans-public-deposits-and-debt-instruments",
+              "name": "Investment and Loans: Public Deposits and Debt Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "dividends-profits-and-ascertainment-of-divisible-profits",
+              "name": "Dividends: Profits and Ascertainment of Divisible Profits",
+              "kind": "concept"
+            },
+            {
+              "key": "dividends-declaration-and-payment-of-dividend",
+              "name": "Dividends: Declaration and Payment of Dividend",
+              "kind": "concept"
+            },
+            {
+              "key": "dividends-unpaid-and-unclaimed-dividend-treatment-and-transfer-to-investor-education-and-protection-fund",
+              "name": "Dividends: Unpaid and Unclaimed dividend – Treatment and Transfer to Investor Education and Protection Fund",
+              "kind": "concept"
+            },
+            {
+              "key": "accounts-and-audit-maintenance-of-books-of-accounts-safe-preservation-of-records-and-accounting-policies",
+              "name": "Accounts and Audit: Maintenance of Books of Accounts, Safe Preservation of Records and Accounting Policies",
+              "kind": "concept"
+            },
+            {
+              "key": "accounts-and-audit-statutory-auditor-special-auditor-and-cost-auditor-appointment-resignation-removal-qualification-disq",
+              "name": "Accounts and Audit: Statutory Auditor, Special Auditor and Cost Auditor – Appointment, Resignation, Removal, Qualification, Disqualification, Rights, Duties and Liabilities",
+              "kind": "concept"
+            },
+            {
+              "key": "accounts-and-audit-companies-auditor-report-order-caro-rules",
+              "name": "Accounts and Audit: Companies Auditor Report Order (CARO) Rules",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-directors-and-key-managerial-personnel-appointment-reappointment-resigna",
+              "name": "Board of Directors and Key Managerial Personnel: Directors and Key Managerial Personnel - Appointment, Reappointment, Resignation, Removal",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-payment-of-remuneration-to-directors-and-key-managerial-personnel-and-di",
+              "name": "Board of Directors and Key Managerial Personnel: Payment of Remuneration to Directors and Key Managerial Personnel and Disclosure",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-powers-of-board-of-directors-and-restrictions-on-the-powers-of-directors",
+              "name": "Board of Directors and Key Managerial Personnel: Powers of Board of Directors and Restrictions on the Powers of Directors",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-obtaining-din",
+              "name": "Board of Directors and Key Managerial Personnel: Obtaining DIN",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-compensation-for-loss-of-office",
+              "name": "Board of Directors and Key Managerial Personnel: Compensation for Loss of Office",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-waiver-of-recovery-of-compensation",
+              "name": "Board of Directors and Key Managerial Personnel: Waiver of Recovery of Compensation",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-and-key-managerial-personnel-making-loans-to-directors-disclosure-of-interest-of-a-director-holding-o",
+              "name": "Board of Directors and Key Managerial Personnel: Making loans to Directors, Disclosure of interest of a Director, Holding of Office or Place of Profit by a Director/relative",
+              "kind": "concept"
+            },
+            {
+              "key": "board-meetings-and-procedures-board-meetings-minutes-and-registers",
+              "name": "Board Meetings and Procedures: Board Meetings, Minutes and Registers",
+              "kind": "concept"
+            },
+            {
+              "key": "board-meetings-and-procedures-corporate-governance-and-audit-committee",
+              "name": "Board Meetings and Procedures: Corporate Governance and Audit Committee",
+              "kind": "concept"
+            },
+            {
+              "key": "board-meetings-and-procedures-duties-and-liabilities-of-directors",
+              "name": "Board Meetings and Procedures: Duties and Liabilities of Directors",
+              "kind": "concept"
+            },
+            {
+              "key": "board-meetings-and-procedures-powers-related-to-political-contributions",
+              "name": "Board Meetings and Procedures: Powers related to Political Contributions",
+              "kind": "concept"
+            },
+            {
+              "key": "inspection-inquiry-and-investigation",
+              "name": "Inspection, Inquiry and Investigation",
+              "kind": "concept"
+            },
+            {
+              "key": "compromises-arrangements-and-amalgamations",
+              "name": "Compromises, Arrangements and Amalgamations",
+              "kind": "concept"
+            },
+            {
+              "key": "prevention-of-oppression-and-mismanagement-majority-rule-but-minority-protection",
+              "name": "Prevention of Oppression and Mismanagement: Majority Rule but Minority Protection",
+              "kind": "concept"
+            },
+            {
+              "key": "prevention-of-oppression-and-mismanagement-prevention-of-oppression-and-mismanagement",
+              "name": "Prevention of Oppression and Mismanagement: Prevention of Oppression and Mismanagement",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "insolvency-and-bankruptcy-code-2016",
+          "name": "Insolvency and Bankruptcy Code, 2016",
+          "section": "Section A: Corporate Laws (60%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definitions",
+              "name": "Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-insolvency-resolution-process",
+              "name": "Corporate Insolvency Resolution Process",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidation-of-a-corporate-person",
+              "name": "Liquidation of a Corporate Person",
+              "kind": "concept"
+            },
+            {
+              "key": "personal-insolvency",
+              "name": "Personal Insolvency",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "corporate-governance-social-responsibility-and-sustainability",
+          "name": "Corporate Governance, Social Responsibility and Sustainability",
+          "section": "Section A: Corporate Laws (60%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "corporate-governance-concepts-and-issues",
+              "name": "Corporate Governance Concepts and Issues",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-governance-practices-codes-in-india",
+              "name": "Corporate Governance Practices/Codes in India",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-governance-in-family-business",
+              "name": "Corporate Governance in Family Business",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-social-responsibility-nature-of-activities-evaluation-of-csr-projects",
+              "name": "Corporate Social Responsibility – Nature of Activities, Evaluation of CSR Projects",
+              "kind": "concept"
+            },
+            {
+              "key": "sustainability-management",
+              "name": "Sustainability Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sebi-laws-and-regulations",
+          "name": "SEBI Laws and Regulations",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "raising-finance-from-capital-markets-ipo",
+              "name": "Raising finance from capital markets –IPO",
+              "kind": "concept"
+            },
+            {
+              "key": "insider-trading",
+              "name": "Insider Trading",
+              "kind": "concept"
+            },
+            {
+              "key": "takeover-code",
+              "name": "Takeover Code",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-competition-act-2002",
+          "name": "The Competition Act, 2002",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "competition-meaning-objectives-extent-and-applicability-anti-competitive-agreement",
+              "name": "Competition – Meaning, Objectives, Extent and Applicability: Anti-Competitive Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "competition-meaning-objectives-extent-and-applicability-abuse-of-dominant-position",
+              "name": "Competition – Meaning, Objectives, Extent and Applicability: Abuse of Dominant Position",
+              "kind": "concept"
+            },
+            {
+              "key": "competition-meaning-objectives-extent-and-applicability-combinations-and-its-regulations",
+              "name": "Competition – Meaning, Objectives, Extent and Applicability: Combinations and its Regulations",
+              "kind": "concept"
+            },
+            {
+              "key": "competition-commission-of-india",
+              "name": "Competition Commission of India",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-exchange-management-act-1999",
+          "name": "Foreign Exchange Management Act, 1999",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "salient-features-of-foreign-exchange-management-act-fema",
+              "name": "Salient Features of Foreign Exchange Management Act (FEMA)",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-direct-investment-in-india-fdi-master-directions-on-fdi",
+              "name": "Foreign Direct Investment in India (FDI) – Master Directions on FDI",
+              "kind": "concept"
+            },
+            {
+              "key": "external-commercial-borrowings-trade-credit-and-structured-obligations-master-directions",
+              "name": "External Commercial Borrowings, Trade Credit and Structured Obligations – Master Directions",
+              "kind": "concept"
+            },
+            {
+              "key": "liberalized-remittance-scheme-lrs-master-directions",
+              "name": "Liberalized Remittance Scheme (LRS) – Master Directions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "laws-and-regulations-related-to-banking-sector",
+          "name": "Laws and Regulations related to Banking Sector",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "the-banking-regulation-act-1949",
+              "name": "The Banking Regulation Act, 1949",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-reserve-bank-of-india",
+              "name": "Role of Reserve Bank of India",
+              "kind": "concept"
+            },
+            {
+              "key": "the-securitization-and-reconstruction-of-financial-assets-and-enforcement-of-security-interest-act-2002",
+              "name": "The Securitization and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "laws-and-regulations-related-to-insurance-sector",
+          "name": "Laws and Regulations related to Insurance Sector",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "the-insurance-act-1938",
+              "name": "The Insurance Act, 1938",
+              "kind": "concept"
+            },
+            {
+              "key": "the-insurance-regulatory-and-development-authority-act-1999",
+              "name": "The Insurance Regulatory and Development Authority Act, 1999",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "specific-legal-provisions-related-to-msme-sector",
+          "name": "Specific Legal Provisions related to MSME Sector",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definition-of-msme",
+              "name": "Definition of MSME",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-available-to-msme-measures-for-promotion-of-msme-under-msmed-act-2006",
+              "name": "Rights available to MSME, Measures for promotion of MSME under MSMED Act, 2006",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "laws-and-regulations-related-to-cyber-security-and-data-privacy",
+          "name": "Laws and Regulations related to Cyber Security and Data Privacy",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "information-technology-act-2000-and-rules-framed-there-under-sensitive-personal-data-rules",
+              "name": "Information Technology Act, 2000 and Rules framed there under, Sensitive Personal Data rules",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-principles-of-data-privacy-data-privacy-and-business-intelligence",
+              "name": "Basic Principles of Data Privacy, Data Privacy and Business Intelligence",
+              "kind": "concept"
+            },
+            {
+              "key": "cyber-crime-cyber-frauds-meaning-remedies-and-penalties",
+              "name": "Cyber Crime / Cyber Frauds – Meaning, Remedies and Penalties",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "laws-and-regulations-related-to-anti-money-laundering",
+          "name": "Laws and Regulations related to Anti-Money Laundering",
+          "section": "Section B: Economic Laws and Regulations (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "the-prevention-of-money-laundering-act-2002",
+              "name": "The Prevention of Money Laundering Act, 2002",
+              "kind": "concept"
+            },
+            {
+              "key": "the-prevention-of-money-laundering-maintenance-of-records-rules-2005",
+              "name": "The Prevention of Money Laundering (Maintenance of Records) Rules, 2005",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-3"
+    },
+    {
+      "key": "strategic-financial-management",
+      "paper_number": 14,
+      "name": "Strategic Financial Management",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "investment-decisions-project-planning-and-control",
+          "name": "Investment Decisions, Project Planning and Control",
+          "section": "Section A: Investment Decisions (25%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "measuring-cash-flows-discounted-cash-flow-technique-for-project-evaluation",
+              "name": "Measuring Cash Flows, Discounted Cash Flow Technique for Project Evaluation",
+              "kind": "concept"
+            },
+            {
+              "key": "npv-and-irr-conflict-and-resolution-the-modified-internal-rate-of-return-mirr-comparing-projects-with-unequal-lives-the",
+              "name": "NPV and IRR - Conflict and Resolution, The Modified Internal Rate of Return (MIRR), Comparing Projects with Unequal Lives, The Concept of Abandonment Value, Modified Accelerated Cost Recovery System (MACRS)",
+              "kind": "concept"
+            },
+            {
+              "key": "inflation-adjusted-cash-flow-forecasting-in-capital-budgeting",
+              "name": "Inflation Adjusted Cash Flow Forecasting in Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-rationing-for-divisible-and-non-divisible-projects-with-application-of-integer-programming",
+              "name": "Capital Rationing for Divisible and Non – divisible Projects (with Application of Integer Programming)",
+              "kind": "concept"
+            },
+            {
+              "key": "social-cost-benefit-analysis",
+              "name": "Social Cost Benefit Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "evaluation-of-risky-proposals-for-investment-decisions",
+          "name": "Evaluation of Risky Proposals for Investment Decisions",
+          "section": "Section A: Investment Decisions (25%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "risk-analysis-in-capital-budgeting-certainty-equivalent-approach-risk-adjusted-discount-rate-expected-npv-standard-devia",
+              "name": "Risk Analysis in Capital Budgeting - Certainty Equivalent Approach, Risk Adjusted Discount Rate, Expected NPV, Standard Deviation of NPV and Use of Normal Distribution, Decision Tree Analysis, Options in Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "sensitivity-analysis",
+              "name": "Sensitivity Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "scenario-analysis",
+              "name": "Scenario Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "monte-carlo-simulation",
+              "name": "Monte Carlo Simulation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "leasing-decisions",
+          "name": "Leasing Decisions",
+          "section": "Section A: Investment Decisions (25%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "lease-financing-evaluation-of-lease-vs-buy-options",
+              "name": "Lease Financing – Evaluation of Lease vs. Buy Options",
+              "kind": "concept"
+            },
+            {
+              "key": "break-even-lease-rental-determination-and-implicit-rate",
+              "name": "Break-Even Lease Rental Determination and Implicit Rate",
+              "kind": "concept"
+            },
+            {
+              "key": "cross-border-leasing-sale-and-lease-back",
+              "name": "Cross Border Leasing, Sale and Lease Back",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "securitization",
+          "name": "Securitization",
+          "section": "Section A: Investment Decisions (25%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "definition-and-concept-and-benefits-of-securitization",
+              "name": "Definition and Concept and Benefits of Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "participants-in-securitization",
+              "name": "Participants in Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "mechanism-and-problems-of-securitization",
+              "name": "Mechanism and Problems of Securitization",
+              "kind": "concept"
+            },
+            {
+              "key": "securitization-instruments",
+              "name": "Securitization Instruments",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "fundamental-analysis",
+              "name": "Fundamental Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "technical-analysis",
+              "name": "Technical Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "equity-and-bond-valuation-and-evaluation-of-performance",
+          "name": "Equity and Bond Valuation and Evaluation of Performance",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "equity-valuation-discounted-cash-flow-based-valuation-relative-valuation-using-multiples-and-weights",
+              "name": "Equity Valuation - Discounted Cash Flow Based Valuation, Relative Valuation using Multiples and Weights",
+              "kind": "concept"
+            },
+            {
+              "key": "bond-valuation-prices-and-yields",
+              "name": "Bond Valuation - Prices & Yields",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "mutual-funds",
+          "name": "Mutual Funds",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "meaning-advantages-and-disadvantages-structure-and-types",
+              "name": "Meaning, Advantages and Disadvantages, Structure and Types",
+              "kind": "concept"
+            },
+            {
+              "key": "regulations",
+              "name": "Regulations",
+              "kind": "concept"
+            },
+            {
+              "key": "computation-of-nav",
+              "name": "Computation of NAV",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-performance-and-movements-in-security-values-and-navs-of-mutual-funds-for-investment-decisions-perspective",
+              "name": "Evaluation of Performance and Movements in Security Values and NAVs of Mutual Funds for Investment Decisions: Perspective of AUM Managers and Individual Investors",
+              "kind": "concept"
+            },
+            {
+              "key": "etf-reit-invit",
+              "name": "ETF, REIT, InvIT",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "portfolio-theory-and-practice",
+          "name": "Portfolio Theory and Practice",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "portfolio-return-and-risk-systematic-and-unsystematic-risk-diversification-strategies-na-ve-vs-the-markowitz-model",
+              "name": "Portfolio Return and Risk, Systematic and Unsystematic Risk, Diversification strategies (Naïve vs the Markowitz Model)",
+              "kind": "concept"
+            },
+            {
+              "key": "optimal-portfolio-efficient-frontier-capital-market-line",
+              "name": "Optimal Portfolio, Efficient Frontier, Capital Market Line",
+              "kind": "concept"
+            },
+            {
+              "key": "principles-of-asset-allocation-active-and-passive-asset-allocation",
+              "name": "Principles of Asset Allocation, Active and Passive Asset Allocation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "asset-pricing-theories",
+          "name": "Asset Pricing Theories",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "single-factor-and-multifactor-asset-pricing-theories-capm-and-apt",
+              "name": "Single Factor and Multifactor Asset Pricing Theories: CAPM and APT",
+              "kind": "concept"
+            },
+            {
+              "key": "concepts-and-applications-including-levered-beta-and-unlevered-beta",
+              "name": "Concepts and Applications (including Levered Beta and Unlevered Beta)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "portfolio-performance-evaluation-and-portfolio-revision",
+          "name": "Portfolio Performance Evaluation and Portfolio Revision",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "conventional-performance-evaluation",
+              "name": "Conventional Performance Evaluation",
+              "kind": "concept"
+            },
+            {
+              "key": "market-timing-and-style-analysis",
+              "name": "Market Timing and Style Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "efficient-market-hypothesis",
+          "name": "Efficient Market Hypothesis",
+          "section": "Section B: Security Analysis and Portfolio Management (35%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "definition",
+              "name": "Definition",
+              "kind": "concept"
+            },
+            {
+              "key": "forms-of-market-efficiency",
+              "name": "Forms of Market Efficiency",
+              "kind": "concept"
+            },
+            {
+              "key": "implications",
+              "name": "Implications",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risks-in-financial-market",
+          "name": "Risks in Financial Market",
+          "section": "Section C: Financial Risk Management (20%)",
+          "marks_min": 10.0,
+          "marks_max": 10.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "financial-derivatives-instruments-for-risk-management",
+          "name": "Financial Derivatives – Instruments for Risk Management",
+          "section": "Section C: Financial Risk Management (20%)",
+          "marks_min": 10.0,
+          "marks_max": 10.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction-to-financial-derivatives",
+              "name": "Introduction to Financial Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "forward-and-futures-meaning-and-difference-pricing-stock-futures-index-based-futures-hedging-through-futures",
+              "name": "Forward and Futures – Meaning and Difference, Pricing, Stock Futures, Index based Futures, Hedging through Futures",
+              "kind": "concept"
+            },
+            {
+              "key": "options-meaning-features-and-types-of-options-option-vs-forward-and-futures-profitability-of-option-profit-profile-of-bu",
+              "name": "Options: Meaning, Features and Types of Options, Option vs. Forward and Futures, Profitability of Option, Profit Profile of Buyer and Seller, Value of Option, Determination of Option Premium",
+              "kind": "concept"
+            },
+            {
+              "key": "options-option-strategies",
+              "name": "Options: Option Strategies",
+              "kind": "concept"
+            },
+            {
+              "key": "options-put-call-parity-relationship-valuation-of-options-using-binomial-tree-approach-and-black-scholes-model-the-greek",
+              "name": "Options: Put-Call Parity Relationship, Valuation of Options using Binomial Tree Approach and Black-Scholes Model, The Greeks",
+              "kind": "concept"
+            },
+            {
+              "key": "swaps-meaning-features-types-benefits-of-swaps",
+              "name": "Swaps: Meaning, Features, Types, Benefits of Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "swaps-interest-rate-swaps-credit-default-swaps",
+              "name": "Swaps: Interest Rate Swaps, Credit Default Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-derivatives-forward-rate-agreement-interest-rate-futures-and-options-caps-floors-and-collars",
+              "name": "Interest Rate Derivatives – Forward Rate Agreement, Interest Rate Futures and Options, Caps, Floors and Collars",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-international-financial-environment",
+          "name": "The International Financial Environment",
+          "section": "Section D: International Financial Management (15%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "international-financial-institutions-and-markets",
+              "name": "International Financial Institutions and Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "sources-of-foreign-currency",
+              "name": "Sources of Foreign Currency",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-exchange-market",
+          "name": "Foreign Exchange Market",
+          "section": "Section D: International Financial Management (15%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction-structure-of-foreign-exchange-market",
+              "name": "Introduction – Structure of Foreign Exchange Market",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-exchange-rate-meaning-determinants-equilibrium-exchange-rate-exchange-rate-quotations-meaning-direct-vs-indirect",
+              "name": "Foreign Exchange Rate – Meaning, Determinants, Equilibrium Exchange Rate, Exchange Rate Quotations – Meaning, Direct vs. Indirect Quote, American vs. European Quote, Bid-Ask Rate and Spread, Cross Rates",
+              "kind": "concept"
+            },
+            {
+              "key": "segments-of-foreign-exchange-market-spot-market-including-two-and-three-point-arbitrage-forward-market",
+              "name": "Segments of Foreign Exchange Market – Spot Market (including two and three-point Arbitrage), Forward Market",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-currency-derivatives-currency-forwards",
+              "name": "Foreign Currency Derivatives: Currency Forwards",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-currency-derivatives-currency-futures",
+              "name": "Foreign Currency Derivatives: Currency Futures",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-currency-derivatives-currency-options",
+              "name": "Foreign Currency Derivatives: Currency Options",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-currency-derivatives-currency-swaps",
+              "name": "Foreign Currency Derivatives: Currency Swaps",
+              "kind": "concept"
+            },
+            {
+              "key": "parity-relationships",
+              "name": "Parity Relationships",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "foreign-exchange-risk-management",
+          "name": "Foreign Exchange Risk Management",
+          "section": "Section D: International Financial Management (15%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "transaction-exposure",
+              "name": "Transaction Exposure",
+              "kind": "concept"
+            },
+            {
+              "key": "translation-exposure",
+              "name": "Translation Exposure",
+              "kind": "concept"
+            },
+            {
+              "key": "operating-exposure",
+              "name": "Operating Exposure",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "digital-finance",
+          "name": "Digital Finance",
+          "section": "Section E: Digital Finance (5%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "meaning-traditional-finance-vs-digital-finance",
+              "name": "Meaning, Traditional Finance vs. Digital Finance",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-finance-ecosystem-digital-infrastructure",
+              "name": "Digital Finance Ecosystem –: Digital Infrastructure",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-finance-ecosystem-digital-money-cards-central-bank-digital-currency",
+              "name": "Digital Finance Ecosystem –: Digital Money – Cards, Central Bank Digital Currency",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-finance-ecosystem-digital-assets-non-fungible-tokens-private-cryptocurrency-stablecoins",
+              "name": "Digital Finance Ecosystem –: Digital Assets – Non-Fungible Tokens, Private Cryptocurrency, Stablecoins",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-finance-ecosystem-digital-financial-services-wallets-upi-neo-banks-fintech",
+              "name": "Digital Finance Ecosystem –: Digital Financial Services – Wallets, UPI, Neo-Banks, FinTech",
+              "kind": "concept"
+            },
+            {
+              "key": "regulation-and-governance-in-a-digital-finance-environment",
+              "name": "Regulation and Governance in a Digital Finance Environment",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-3"
+    },
+    {
+      "key": "direct-tax-laws-and-international-taxation",
+      "paper_number": 15,
+      "name": "Direct Tax Laws and International Taxation",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+          "name": "Assessment of Income and Computation of Tax Liability of Various Entities",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "individual-including-non-resident",
+              "name": "Individual including Non-resident",
+              "kind": "concept"
+            },
+            {
+              "key": "company",
+              "name": "Company",
+              "kind": "concept"
+            },
+            {
+              "key": "trust",
+              "name": "Trust",
+              "kind": "concept"
+            },
+            {
+              "key": "mutual-association",
+              "name": "Mutual Association",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "tax-management-return-and-assessment-procedure",
+          "name": "Tax Management, Return and Assessment Procedure",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "return-of-income",
+              "name": "Return of Income",
+              "kind": "concept"
+            },
+            {
+              "key": "assessment-procedure-including-dispute-resolution-process",
+              "name": "Assessment Procedure including Dispute Resolution Process",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-and-fees",
+              "name": "Interest and Fees",
+              "kind": "concept"
+            },
+            {
+              "key": "survey-search-and-seizure",
+              "name": "Survey, Search and Seizure",
+              "kind": "concept"
+            },
+            {
+              "key": "collection-recovery-and-refund-of-tax",
+              "name": "Collection, Recovery and Refund of Tax",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "grievance-redressal",
+          "name": "Grievance Redressal",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "appeal",
+              "name": "Appeal",
+              "kind": "concept"
+            },
+            {
+              "key": "rectification",
+              "name": "Rectification",
+              "kind": "concept"
+            },
+            {
+              "key": "revision",
+              "name": "Revision",
+              "kind": "concept"
+            },
+            {
+              "key": "settlement-commission",
+              "name": "Settlement Commission",
+              "kind": "concept"
+            },
+            {
+              "key": "advance-ruling",
+              "name": "Advance Ruling",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "penalties-and-prosecutions",
+          "name": "Penalties and Prosecutions",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "business-restructuring",
+          "name": "Business Restructuring",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "amalgamation",
+              "name": "Amalgamation",
+              "kind": "concept"
+            },
+            {
+              "key": "demerger",
+              "name": "Demerger",
+              "kind": "concept"
+            },
+            {
+              "key": "slump-sale",
+              "name": "Slump Sale",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-sole-proprietary-business-to-company",
+              "name": "Conversion of Sole Proprietary Business to Company",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-firm-into-company",
+              "name": "Conversion of Firm into Company",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-private-limited-company-unlisted-public-company-into-llp",
+              "name": "Conversion of Private Limited Company/Unlisted Public Company into LLP",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "different-aspects-of-tax-planning",
+          "name": "Different Aspects of Tax Planning",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "cbdt-and-other-authorities",
+          "name": "CBDT and Other Authorities",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "e-commerce-transaction-and-liability-in-special-cases",
+          "name": "E-commerce Transaction and Liability in Special Cases",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "income-computation-and-disclosure-standards-icds",
+          "name": "Income Computation and Disclosure Standards (ICDS)",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "black-money-act-2015",
+          "name": "Black Money Act,2015",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction-to-black-money-act",
+              "name": "Introduction to Black Money Act",
+              "kind": "concept"
+            },
+            {
+              "key": "highlights-of-black-money-act",
+              "name": "Highlights of Black Money Act",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "case-study",
+          "name": "Case Study",
+          "section": "Section A: Direct Tax Laws (60%)",
+          "marks_min": 5.5,
+          "marks_max": 5.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "double-taxation-and-avoidance-agreements-dtaa-sec-90-90a-and-91",
+          "name": "Double Taxation and Avoidance Agreements (DTAA) [Sec.90. 90A and 91]",
+          "section": "Section B: International Taxation (40%)",
+          "marks_min": 13.3,
+          "marks_max": 13.3,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "types-of-dtaa",
+              "name": "Types of DTAA",
+              "kind": "concept"
+            },
+            {
+              "key": "models-of-dtaas-oecd-and-un",
+              "name": "Models of DTAAs (OECD and UN)",
+              "kind": "concept"
+            },
+            {
+              "key": "interlink-of-dtaas-with-section-90-of-income-tax-act-1961",
+              "name": "Interlink of DTAAs with Section 90 of Income Tax Act, 1961",
+              "kind": "concept"
+            },
+            {
+              "key": "overview-of-articles-in-dtaas",
+              "name": "Overview of Articles in DTAAs",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "transfer-pricing",
+          "name": "Transfer Pricing",
+          "section": "Section B: International Taxation (40%)",
+          "marks_min": 13.3,
+          "marks_max": 13.3,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "transfer-pricing-including-specified-domestic-transactions",
+              "name": "Transfer Pricing including Specified Domestic Transactions",
+              "kind": "concept"
+            },
+            {
+              "key": "determination-of-arm-s-length-price",
+              "name": "Determination of Arm’s Length Price",
+              "kind": "concept"
+            },
+            {
+              "key": "advance-pricing-agreement-concept-and-application",
+              "name": "Advance Pricing Agreement- Concept and Application",
+              "kind": "concept"
+            },
+            {
+              "key": "safe-harbour-rules-thin-capitalisation-and-secondary-adjustment",
+              "name": "Safe Harbour Rules, Thin Capitalisation and Secondary Adjustment",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "gaar",
+          "name": "GAAR",
+          "section": "Section B: International Taxation (40%)",
+          "marks_min": 13.3,
+          "marks_max": 13.3,
+          "weight_source": "analysis",
+          "topics": []
+        }
+      ],
+      "group": "group-3"
+    },
+    {
+      "key": "strategic-cost-management",
+      "paper_number": 16,
+      "name": "Strategic Cost Management",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction-to-strategic-cost-management",
+          "name": "Introduction to Strategic Cost Management",
+          "section": "Section A: Strategic Cost Management for Decision Making (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concepts-of-strategic-cost-management-in-different-stages-of-value-chain",
+              "name": "Concepts of Strategic Cost Management in Different Stages of Value Chain",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-control-and-cost-reduction-contemporary-techniques",
+              "name": "Cost Control and Cost Reduction – Contemporary Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "value-chain-analysis-and-value-engineering-business-process-re-engineering",
+              "name": "Value Chain Analysis and Value Engineering - Business Process Re-engineering",
+              "kind": "concept"
+            },
+            {
+              "key": "supply-chain-management",
+              "name": "Supply Chain Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "quality-cost-management",
+          "name": "Quality Cost Management",
+          "section": "Section A: Strategic Cost Management for Decision Making (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "managing-quality-in-competitive-environment",
+              "name": "Managing Quality in Competitive Environment",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-of-quality",
+              "name": "Cost of Quality",
+              "kind": "concept"
+            },
+            {
+              "key": "total-quality-management",
+              "name": "Total Quality Management",
+              "kind": "concept"
+            },
+            {
+              "key": "lean-accounting",
+              "name": "Lean Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "six-sigma",
+              "name": "Six Sigma",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "decision-making-techniques-case-study-based-approach",
+          "name": "Decision Making Techniques (Case Study-based Approach)",
+          "section": "Section A: Strategic Cost Management for Decision Making (60%)",
+          "marks_min": 25,
+          "marks_max": 25,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "decisions-involving-alternative-choices",
+              "name": "Decisions involving Alternative Choices",
+              "kind": "concept"
+            },
+            {
+              "key": "pricing-decisions-and-strategies",
+              "name": "Pricing Decisions and Strategies",
+              "kind": "concept"
+            },
+            {
+              "key": "transfer-pricing",
+              "name": "Transfer Pricing",
+              "kind": "concept"
+            },
+            {
+              "key": "relevant-cost-analysis",
+              "name": "Relevant Cost Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "target-costing",
+              "name": "Target Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "product-life-cycle-costing",
+              "name": "Product Life Cycle Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "asset-life-cycle-costing",
+              "name": "Asset Life Cycle Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-making-using-probability",
+              "name": "Decision Making using Probability",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "activity-based-management-and-just-in-time-jit",
+          "name": "Activity Based Management and Just in Time (JIT)",
+          "section": "Section A: Strategic Cost Management for Decision Making (60%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "activity-based-cost-management-concept-purpose-benefits-stages-relevance-in-decision-making-and-its-application-in-budge",
+              "name": "Activity Based Cost Management - Concept, Purpose, Benefits, Stages, Relevance in Decision-making and its Application in Budgeting, Responsibility Accounting, Traditional vs. ABC System – Comparative Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "jit-introduction-benefits-use-of-jit-in-measuring-the-performance",
+              "name": "JIT – Introduction, Benefits, Use of JIT in measuring the Performance",
+              "kind": "concept"
+            },
+            {
+              "key": "throughput-accounting",
+              "name": "Throughput Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "back-flush-accounting",
+              "name": "Back flush Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "benchmarking",
+              "name": "Benchmarking",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "evaluating-performance",
+          "name": "Evaluating Performance",
+          "section": "Section A: Strategic Cost Management for Decision Making (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "variance-analyses-investigation-of-variances",
+              "name": "Variance Analyses: Investigation of Variances",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-planning-and-operating-variances",
+              "name": "Variance Analyses: Planning and Operating Variances",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-controllable-and-non-controllable-variances",
+              "name": "Variance Analyses: Controllable and Non-controllable Variances",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-relevant-cost-approach-to-variance-analysis",
+              "name": "Variance Analyses: Relevant Cost Approach to Variance Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-variance-analysis-under-marginal-costing-and-absorption-costing",
+              "name": "Variance Analyses: Variance Analysis under Marginal Costing and Absorption Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-activity-ratios",
+              "name": "Variance Analyses: Activity Ratios",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-application-of-budgetary-control-and-standard-costing-in-profit-planning",
+              "name": "Variance Analyses: Application of Budgetary Control and Standard Costing in Profit Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-standard-costing-vs-budgetary-control",
+              "name": "Variance Analyses: Standard Costing Vs Budgetary Control",
+              "kind": "concept"
+            },
+            {
+              "key": "variance-analyses-reconciliation-of-actual-profit-with-standard-profit-and-or-budgeted-profit",
+              "name": "Variance Analyses: Reconciliation of Actual Profit with Standard Profit and /or Budgeted Profit",
+              "kind": "concept"
+            },
+            {
+              "key": "uniform-costing-and-inter-firm-comparison",
+              "name": "Uniform Costing and Inter-firm comparison",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "linear-programming",
+          "name": "Linear Programming",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "transportation",
+          "name": "Transportation",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "assignment",
+          "name": "Assignment",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "game-theory",
+          "name": "Game Theory",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "simulation",
+          "name": "Simulation",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "network-analysis-pert-cpm",
+          "name": "Network analysis – PERT, CPM",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "learning-curve",
+          "name": "Learning Curve",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "business-application-of-maxima-and-minima",
+          "name": "Business Application of Maxima and Minima",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "business-forecasting-models-time-series-and-regression-analysis",
+          "name": "Business Forecasting Models – Time Series and Regression Analysis",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "introduction-to-tools-for-data-analytics",
+          "name": "Introduction to Tools for Data Analytics",
+          "section": "Section B: Quantitative Techniques in Decision Making (40%)",
+          "marks_min": 1.9,
+          "marks_max": 1.9,
+          "weight_source": "analysis",
+          "topics": []
+        }
+      ],
+      "group": "group-3"
+    },
+    {
+      "key": "cost-and-management-audit",
+      "paper_number": 17,
+      "name": "Cost and Management Audit",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "basics-of-cost-audit",
+          "name": "Basics of Cost Audit",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "nature-and-scope-of-cost-audit",
+              "name": "Nature and Scope of Cost Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "genesis-of-cost-audit",
+              "name": "Genesis of Cost Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "objectives-of-cost-audit",
+              "name": "Objectives of Cost Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "utility-and-advantage-of-cost-audit",
+              "name": "Utility and Advantage of Cost Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-accounting-standards",
+              "name": "Cost Accounting Standards",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "companies-cost-records-and-audit-rules-2014-as-amended",
+          "name": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "cost-auditor",
+          "name": "Cost Auditor",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definition",
+              "name": "Definition",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-auditor-s-eligibility-qualifications-disqualifications-appointment-resignation-rotation-remuneration-removal-rights",
+              "name": "Cost Auditor’s Eligibility, Qualifications, Disqualifications, Appointment, Resignation, Rotation, Remuneration, Removal, Rights and Duties, Liabilities",
+              "kind": "concept"
+            },
+            {
+              "key": "professional-ethics",
+              "name": "Professional Ethics",
+              "kind": "concept"
+            },
+            {
+              "key": "duties-of-a-cost-auditor-to-report-fraud-section-143-of-the-companies-act-2013",
+              "name": "Duties of a Cost Auditor to Report Fraud – Section 143 of the Companies Act 2013",
+              "kind": "concept"
+            },
+            {
+              "key": "punishment-for-fraud-section-447-of-the-companies-act-2013",
+              "name": "Punishment for Fraud (Section 447 of the Companies Act, 2013)",
+              "kind": "concept"
+            },
+            {
+              "key": "punishment-for-false-statement-section-448-of-the-companies-act-2013",
+              "name": "Punishment for False Statement (Section 448 of the Companies Act, 2013)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "overview-of-cost-accounting-standards-and-gacap",
+          "name": "Overview of Cost Accounting Standards and GACAP",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "cost-accounting-standards",
+              "name": "Cost Accounting Standards",
+              "kind": "concept"
+            },
+            {
+              "key": "guidance-notes-on-cost-accounting-standards",
+              "name": "Guidance Notes on Cost Accounting Standards",
+              "kind": "concept"
+            },
+            {
+              "key": "generally-accepted-cost-accounting-principles-gacap",
+              "name": "Generally Accepted Cost Accounting Principles (GACAP)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-auditing-and-assurance-standards",
+          "name": "Cost Auditing and Assurance Standards",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "cost-auditing-standards-overview",
+              "name": "Cost Auditing Standards - Overview",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-audit-programme",
+          "name": "Cost Audit Programme",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "factors-in-planning-cost-audit-assignment",
+              "name": "Factors in Planning Cost Audit Assignment",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-audit-programme",
+              "name": "Cost Audit Programme",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-audit-documentation-audit-process-and-execution",
+          "name": "Cost Audit Documentation, Audit Process and Execution",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "cost-audit-documentation",
+              "name": "Cost Audit Documentation",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-process",
+              "name": "Audit Process",
+              "kind": "concept"
+            },
+            {
+              "key": "practical-steps-of-audit-process",
+              "name": "Practical Steps of Audit Process",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "preparation-and-filing-of-cost-audit-report",
+          "name": "Preparation and Filing of Cost Audit Report",
+          "section": "Section A: Cost Audit (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "critical-elements-of-cost-audit-report-and-related-evidences-physical-and-digital",
+              "name": "Critical Elements of Cost Audit Report and Related Evidences (Physical and Digital)",
+              "kind": "concept"
+            },
+            {
+              "key": "qualified-audit-report",
+              "name": "Qualified Audit Report",
+              "kind": "concept"
+            },
+            {
+              "key": "adverse-audit-report",
+              "name": "Adverse Audit Report",
+              "kind": "concept"
+            },
+            {
+              "key": "filing-of-cost-audit-report-to-mca-in-xbrl-format-as-per-taxonomy",
+              "name": "Filing of Cost Audit Report to MCA in XBRL Format (as per TAXONOMY)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "basics-of-management-audit",
+          "name": "Basics of Management Audit",
+          "section": "Section B: Management Audit (25%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definition",
+              "name": "Definition",
+              "kind": "concept"
+            },
+            {
+              "key": "nature-and-scope",
+              "name": "Nature and Scope",
+              "kind": "concept"
+            },
+            {
+              "key": "need-for-management-audit-and-reporting",
+              "name": "Need for Management Audit and Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-management-process-and-functions",
+              "name": "Audit of Management Process and Functions",
+              "kind": "concept"
+            },
+            {
+              "key": "establishing-reliability-of-information",
+              "name": "Establishing reliability of information",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-cmas-in-management-audit",
+              "name": "Role of CMAs in Management Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "management-reporting-issues-and-analysis",
+          "name": "Management Reporting Issues and Analysis",
+          "section": "Section B: Management Audit (25%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-analysis",
+              "name": "Performance Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "capacity-utilisation-analysis",
+              "name": "Capacity Utilisation Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-and-efficiency-analysis",
+              "name": "Productivity and Efficiency Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "utilities-and-energy-efficiency-analysis",
+              "name": "Utilities and Energy Efficiency Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "key-costs-and-contribution-analysis",
+              "name": "Key Costs and Contribution Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "profitability-analysis",
+              "name": "Profitability Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "working-capital-and-liquidity-management-analysis",
+              "name": "Working Capital and Liquidity Management Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "manpower-analysis",
+              "name": "Manpower Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "other-areas-suggested-to-be-covered-in-the-report-on-performance-analysis",
+              "name": "Other Areas Suggested to be covered in the Report on Performance Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "management-accounting-tools",
+              "name": "Management Accounting Tools",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "management-audit-in-different-functions",
+          "name": "Management Audit in Different Functions",
+          "section": "Section B: Management Audit (25%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "corporate-objectives-and-culture",
+              "name": "Corporate Objectives and Culture",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-services-audit",
+              "name": "Corporate Services Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-development-audit",
+              "name": "Corporate Development Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-personnel-development",
+              "name": "Evaluation of Personnel Development",
+              "kind": "concept"
+            },
+            {
+              "key": "consumer-services-audit",
+              "name": "Consumer Services Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-environmental-pollution-control",
+              "name": "Audit of Environmental Pollution Control",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-energy-and-utilities-generation-and-consumption",
+              "name": "Audit of Energy and Utilities - Generation and Consumption",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-audit-efficiency-audit",
+              "name": "Productivity Audit/ Efficiency Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "propriety-audit",
+              "name": "Propriety Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-social-responsibility-csr-audit",
+              "name": "Corporate Social Responsibility (CSR) Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "social-cost-benefit-analysis-audit",
+              "name": "Social Cost – Benefit Analysis Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "evaluation-of-corporate-image",
+          "name": "Evaluation of Corporate Image",
+          "section": "Section B: Management Audit (25%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-checks-of-different-managerial-functions",
+              "name": "Audit Checks of Different Managerial Functions",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-checks-of-various-corporate-divisions-departments",
+              "name": "Audit Checks of Various Corporate Divisions/Departments",
+              "kind": "concept"
+            },
+            {
+              "key": "esg-audit",
+              "name": "ESG Audit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "information-systems-security-audit",
+          "name": "Information Systems Security Audit",
+          "section": "Section B: Management Audit (25%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "overview",
+              "name": "Overview",
+              "kind": "concept"
+            },
+            {
+              "key": "compliance-and-security-framework",
+              "name": "Compliance and Security Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "cyber-security-and-cyber-forensics",
+              "name": "Cyber Security and Cyber Forensics",
+              "kind": "concept"
+            },
+            {
+              "key": "it-audit-in-banking-sector",
+              "name": "IT Audit in Banking Sector",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "internal-control-and-internal-audit",
+          "name": "Internal Control and Internal Audit",
+          "section": "Section C: Internal Control, Internal Audit, Operational Audit and Other (15%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "internal-control-concept-objectives-of-internal-control",
+              "name": "Internal Control-Concept: Objectives of Internal Control",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-control-concept-scope-of-internal-control",
+              "name": "Internal Control-Concept: Scope of Internal Control",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-control-concept-structure-of-internal-control",
+              "name": "Internal Control-Concept: Structure of Internal Control",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-control-concept-limitations-of-internal-control",
+              "name": "Internal Control-Concept: Limitations of Internal Control",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-control-concept-evaluation-of-internal-control",
+              "name": "Internal Control-Concept: Evaluation of Internal Control",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-control-and-the-auditor",
+              "name": "Internal Control and the Auditor",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-auditing-evolution-of-the-profession",
+              "name": "Internal Auditing – Evolution of the Profession",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "operational-audit-and-internal-audit-under-companies-act-2013",
+          "name": "Operational Audit and Internal Audit under Companies Act, 2013",
+          "section": "Section C: Internal Control, Internal Audit, Operational Audit and Other (15%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-for-an-audit",
+              "name": "Preparation for an Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-engagement-letter",
+              "name": "Audit Engagement Letter",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-cmas-in-internal-audit-operational-audit-and-managers",
+              "name": "Role of CMAs in Internal Audit, Operational Audit and Managers",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit-under-companies-act-2013",
+              "name": "Internal Audit under Companies Act, 2013",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit-and-companies-auditor-s-report-order",
+              "name": "Internal Audit and Companies (Auditor’s Report) Order",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-audit-in-companies-under-manufacturing-sector",
+              "name": "Internal Audit in Companies under manufacturing sector",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "audit-of-different-service-organisations",
+          "name": "Audit of Different Service Organisations",
+          "section": "Section C: Internal Control, Internal Audit, Operational Audit and Other (15%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "audit-of-hospitals",
+              "name": "Audit of Hospitals",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-hotels",
+              "name": "Audit of Hotels",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-educational-institutions",
+              "name": "Audit of Educational Institutions",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-co-operative-societies",
+              "name": "Audit of Co-operative Societies",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-self-help-groups",
+              "name": "Audit of Self-Help Groups",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-non-government-organisations-ngos",
+              "name": "Audit of Non-Government Organisations (NGOs)",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-local-bodies",
+              "name": "Audit of Local Bodies",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-government-expenditure",
+              "name": "Audit of Government Expenditure",
+              "kind": "concept"
+            },
+            {
+              "key": "propriety-audit-in-the-context-of-government-audit",
+              "name": "Propriety Audit in the context of Government Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-commercial-accounts",
+              "name": "Audit of Commercial Accounts",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "forensic-audit",
+          "name": "Forensic Audit",
+          "section": "Section D: Forensic Audit and Anti-Money Laundering (10%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-forensic-audit",
+              "name": "Introduction to Forensic Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "fraud-risk-management",
+              "name": "Fraud Risk Management",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-forensics-and-forensic-audit-techniques",
+              "name": "Financial Forensics and Forensic Audit Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "ethical-considerations-and-code-of-conduct-in-forensic-audit",
+              "name": "Ethical Considerations and Code of Conduct in Forensic Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "professional-opportunities",
+              "name": "Professional Opportunities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "anti-money-laundering",
+          "name": "Anti-Money Laundering",
+          "section": "Section D: Forensic Audit and Anti-Money Laundering (10%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "international-standards-on-combating-money-laundering-and-the-financing-of-terrorism-and-proliferation",
+              "name": "International Standards on Combating Money Laundering and the Financing of Terrorism & Proliferation",
+              "kind": "concept"
+            },
+            {
+              "key": "guidance-for-a-risk-based-approach-for-the-accounting-profession",
+              "name": "Guidance for a Risk-Based Approach for the Accounting Profession",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-4"
+    },
+    {
+      "key": "corporate-financial-reporting",
+      "paper_number": 18,
+      "name": "Corporate Financial Reporting",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "specific-accounting-standards",
+          "name": "Specific Accounting Standards",
+          "section": "Section A: Indian Accounting Standards (25%)",
+          "marks_min": 25,
+          "marks_max": 25,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "accounting-policies-changes-in-accounting-estimates-and-errors-ind-as-8",
+              "name": "Accounting Policies, Changes in Accounting Estimates and Errors (Ind AS 8)",
+              "kind": "concept"
+            },
+            {
+              "key": "income-taxes-ind-as-12",
+              "name": "Income Taxes (Ind AS 12)",
+              "kind": "concept"
+            },
+            {
+              "key": "property-plant-and-equipment-ind-as-16",
+              "name": "Property, Plant and Equipment (Ind AS 16)",
+              "kind": "concept"
+            },
+            {
+              "key": "leases-ind-as-116",
+              "name": "Leases (Ind AS 116)",
+              "kind": "concept"
+            },
+            {
+              "key": "the-effects-of-changes-in-foreign-exchange-rates-ind-as-21",
+              "name": "The Effects of Changes in Foreign Exchange Rates (Ind AS 21)",
+              "kind": "concept"
+            },
+            {
+              "key": "borrowing-costs-ind-as-23",
+              "name": "Borrowing Costs (Ind AS 23)",
+              "kind": "concept"
+            },
+            {
+              "key": "impairment-of-assets-ind-as-36",
+              "name": "Impairment of Assets (Ind AS 36)",
+              "kind": "concept"
+            },
+            {
+              "key": "intangible-assets-ind-as-38",
+              "name": "Intangible Assets (Ind AS 38)",
+              "kind": "concept"
+            },
+            {
+              "key": "share-based-payment-ind-as-102",
+              "name": "Share based Payment (Ind AS 102)",
+              "kind": "concept"
+            },
+            {
+              "key": "operating-segments-ind-as-108",
+              "name": "Operating Segments (Ind AS 108)",
+              "kind": "concept"
+            },
+            {
+              "key": "fair-value-measurement-ind-as-113",
+              "name": "Fair Value Measurement (Ind AS 113)",
+              "kind": "concept"
+            },
+            {
+              "key": "revenue-from-contracts-with-customers-ind-as-115",
+              "name": "Revenue from Contracts with Customers (Ind AS 115)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-of-shares-including-determination-of-goodwill-post-valuation-of-tangible-and-intangible-as",
+          "name": "Valuation of Shares (including Determination of Goodwill, Post-valuation of Tangible and Intangible Assets)",
+          "section": "Section B: Valuation of Shares, Accounting and Reporting of Financial (15%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "accounting-of-financial-instruments",
+          "name": "Accounting of Financial Instruments",
+          "section": "Section B: Valuation of Shares, Accounting and Reporting of Financial (15%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "nbfcs-provisioning-norms-accounting-and-reporting",
+          "name": "NBFCs – Provisioning Norms, Accounting and Reporting",
+          "section": "Section B: Valuation of Shares, Accounting and Reporting of Financial (15%)",
+          "marks_min": 5.0,
+          "marks_max": 5.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "accounting-for-business-combination-and-restructuring",
+          "name": "Accounting for Business Combination and Restructuring",
+          "section": "Section C: Accounting for Business Combination and Restructuring (in (20%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-for-business-combination-basic-level-with-simple-examples",
+              "name": "Accounting for Business Combination (Basic Level) with Simple Examples",
+              "kind": "concept"
+            },
+            {
+              "key": "absorptions-amalgamations-external-reconstruction",
+              "name": "Absorptions, Amalgamations, External Reconstruction",
+              "kind": "concept"
+            },
+            {
+              "key": "detailed-discussion-on-business-combination",
+              "name": "Detailed Discussion on Business Combination",
+              "kind": "concept"
+            },
+            {
+              "key": "a-business-combination-achieved-in-stages",
+              "name": "A Business Combination Achieved in Stages",
+              "kind": "concept"
+            },
+            {
+              "key": "reverse-acquisition",
+              "name": "Reverse Acquisition",
+              "kind": "concept"
+            },
+            {
+              "key": "purchase-of-shares-from-sale-to-non-controlling-interest-not-resulting-in-loss-of-control-of-the-acquirer",
+              "name": "Purchase of Shares from/Sale to Non-controlling Interest not Resulting in Loss of Control of the Acquirer",
+              "kind": "concept"
+            },
+            {
+              "key": "sale-of-holding-resulting-in-loss-of-control-of-the-acquirer-over-the-acquiree",
+              "name": "Sale of Holding Resulting in Loss of Control of the Acquirer over the Acquiree",
+              "kind": "concept"
+            },
+            {
+              "key": "business-combination-under-common-control-appendix-c-of-ind-as-103",
+              "name": "Business Combination under Common Control (Appendix C of Ind AS 103)",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosures",
+              "name": "Disclosures",
+              "kind": "concept"
+            },
+            {
+              "key": "difference-between-ind-as-103-and-as-14",
+              "name": "Difference between Ind AS 103 and AS 14",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-reconstruction-capital-reduction",
+              "name": "Internal Reconstruction (Capital Reduction)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "consolidated-financial-statements-and-separate-financial-statements",
+          "name": "Consolidated Financial Statements and Separate Financial Statements",
+          "section": "Section D: Consolidated Financial Statements and Separate Financial (20%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-consolidation",
+              "name": "Introduction to Consolidation",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-significant-influence-joint-control-and-control-as-per-ind-as",
+              "name": "Concept of Significant Influence, Joint Control and Control as per Ind AS",
+              "kind": "concept"
+            },
+            {
+              "key": "consolidation-procedure-for-investment-in-associates-joint-ventures-and-subsidiaries",
+              "name": "Consolidation Procedure for Investment in Associates, Joint Ventures and Subsidiaries",
+              "kind": "concept"
+            },
+            {
+              "key": "measurement-of-fair-value-of-net-assets-non-controlling-interest-goodwill-gain-on-bargain-purchase-consolidated-other-eq",
+              "name": "Measurement of Fair Value of Net Assets, Non-controlling Interest, Goodwill/ Gain on Bargain Purchase, Consolidated Other Equity (including Measurement of Investments under Equity Method)",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-and-reporting-in-consolidated-financial-statements-and-in-separate-financial-statements-at-acquisition-date-i",
+              "name": "Accounting and Reporting in Consolidated Financial Statements and in Separate Financial Statements at Acquisition Date - Introductory Examples",
+              "kind": "concept"
+            },
+            {
+              "key": "consolidated-financial-statements-and-separate-financial-statements-at-subsequent-reporting-date-introductory-examples",
+              "name": "Consolidated Financial Statements and Separate Financial Statements at Subsequent Reporting Date - Introductory Examples",
+              "kind": "concept"
+            },
+            {
+              "key": "consolidated-and-separate-financial-statements-of-group-entities-advanced-level-discussion-and-examples-including-inter",
+              "name": "Consolidated and Separate Financial Statements of Group Entities - Advanced Level Discussion and Examples (including Inter-company Investments, Chain Holding, Cross-holding and Other Relevant Matters)",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-and-reporting-of-joint-operation",
+              "name": "Accounting and Reporting of Joint Operation",
+              "kind": "concept"
+            },
+            {
+              "key": "disclosures",
+              "name": "Disclosures",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "recent-developments-in-financial-reporting",
+          "name": "Recent Developments in Financial Reporting",
+          "section": "Section E: Recent Developments in Financial Reporting (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "4p-bottom-line-reporting",
+              "name": "4P Bottom Line Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "sustainability-reporting-and-global-reporting-initiative",
+              "name": "Sustainability Reporting and Global Reporting Initiative",
+              "kind": "concept"
+            },
+            {
+              "key": "business-responsibility-and-sustainability-report",
+              "name": "Business Responsibility and Sustainability Report",
+              "kind": "concept"
+            },
+            {
+              "key": "integrated-reporting",
+              "name": "Integrated Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-social-responsibility-reporting-in-india",
+              "name": "Corporate Social Responsibility Reporting in India",
+              "kind": "concept"
+            },
+            {
+              "key": "environmental-social-and-governance-esg",
+              "name": "Environmental, Social and Governance (ESG)",
+              "kind": "concept"
+            },
+            {
+              "key": "human-resource-reporting",
+              "name": "Human Resource Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "value-added-statement",
+              "name": "Value Added Statement",
+              "kind": "concept"
+            },
+            {
+              "key": "economic-value-added-and-market-value-added",
+              "name": "Economic Value Added and Market Value Added",
+              "kind": "concept"
+            },
+            {
+              "key": "reporting-through-xbrl-extensible-business-reporting-language",
+              "name": "Reporting through XBRL (eXtensible Business Reporting Language)",
+              "kind": "concept"
+            },
+            {
+              "key": "quarterly-earnings-call-management",
+              "name": "Quarterly Earnings Call Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "government-accounting-in-india",
+          "name": "Government Accounting in India",
+          "section": "Section F: Government Accounting in India (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "general-principles-and-comparison-with-commercial-accounting",
+              "name": "General Principles and Comparison with Commercial Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-comptroller-and-auditor-general-of-india",
+              "name": "Role of Comptroller and Auditor General of India",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-public-accounts-committee-review-of-accounts",
+              "name": "Role of Public Accounts Committee, Review of Accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "government-accounting-standards-issued-by-government-accounting-standards-advisory-board-gasab",
+              "name": "Government Accounting Standards Issued by Government Accounting Standards Advisory Board (GASAB)",
+              "kind": "concept"
+            },
+            {
+              "key": "government-accounting-and-reporting",
+              "name": "Government Accounting and Reporting",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-4"
+    },
+    {
+      "key": "indirect-tax-laws-and-practice",
+      "paper_number": 19,
+      "name": "Indirect Tax Laws and Practice",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "supply-under-gst-a-refresh",
+          "name": "Supply under GST - A Refresh",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-and-illustrations-on-supply-taxable-non-taxable-exempted-deemed-supplies-reverse-charge",
+              "name": "Case Studies and Illustrations on Supply - Taxable, Non-taxable, Exempted, Deemed Supplies, Reverse Charge",
+              "kind": "concept"
+            },
+            {
+              "key": "notifications-on-exempted-supplies",
+              "name": "Notifications on Exempted Supplies",
+              "kind": "concept"
+            },
+            {
+              "key": "important-circulars-covering-clarifications-on-supply",
+              "name": "Important Circulars covering Clarifications on Supply",
+              "kind": "concept"
+            },
+            {
+              "key": "analysis-of-key-advance-rulings",
+              "name": "Analysis of Key Advance Rulings",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "time-of-supply-advanced",
+          "name": "Time of Supply (Advanced)",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "domestic-transactions-including-reverse-charge",
+              "name": "Domestic Transactions including Reverse Charge",
+              "kind": "concept"
+            },
+            {
+              "key": "international-transactions-including-reverse-charge",
+              "name": "International Transactions including Reverse Charge",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-analysis-of-advance-rulings",
+              "name": "Case Studies / Analysis of Advance Rulings",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "place-of-supply",
+          "name": "Place of Supply",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "supplies-in-territorial-waters",
+              "name": "Supplies in Territorial Waters",
+              "kind": "concept"
+            },
+            {
+              "key": "detailed-discussion-on-place-of-supply-provisions",
+              "name": "Detailed discussion on Place of Supply Provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "place-of-supply-oidar-services",
+              "name": "Place of Supply- OIDAR Services",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-and-illustrations-on-place-of-supply",
+              "name": "Case Studies and Illustrations on Place of Supply",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-advanced",
+          "name": "Valuation (Advanced)",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "related-party-transactions",
+              "name": "Related Party Transactions",
+              "kind": "concept"
+            },
+            {
+              "key": "distinct-person-transactions",
+              "name": "Distinct Person Transactions",
+              "kind": "concept"
+            },
+            {
+              "key": "specific-valuation-rules",
+              "name": "Specific Valuation Rules",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-and-illustrations-on-valuation",
+              "name": "Case Studies and Illustrations on Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "key-advance-rulings",
+              "name": "Key Advance Rulings",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "input-tax-credit-advanced",
+          "name": "Input Tax Credit (Advanced)",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "specific-provisions-on-input-tax-credit",
+              "name": "Specific Provisions on Input Tax Credit",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-and-illustrations-on-input-tax-credit-including-job-work-input-service-distributor",
+              "name": "Case Studies and Illustrations on Input Tax Credit including Job Work, Input Service Distributor",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "zero-rated-supplies-and-deemed-exports",
+          "name": "Zero Rated Supplies and Deemed Exports",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "tds-and-tcs-under-gst",
+          "name": "TDS & TCS under GST",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "e-way-bill",
+          "name": "E-way Bill",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "gst-refunds-inverted-duty-structure-and-zero-rated-supplies",
+          "name": "GST Refunds - Inverted Duty Structure and Zero Rated Supplies",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "gst-returns",
+          "name": "GST Returns",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "specific-provisions-monthly-returns-matching-reversal-and-reclaim-of-input-tax-credit",
+              "name": "Specific Provisions - Monthly Returns, Matching, Reversal and Reclaim of Input Tax Credit",
+              "kind": "concept"
+            },
+            {
+              "key": "annual-return-final-return",
+              "name": "Annual Return, Final Return",
+              "kind": "concept"
+            },
+            {
+              "key": "penal-provisions-for-return-filing",
+              "name": "Penal Provisions for Return Filing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounts-and-records",
+          "name": "Accounts and Records",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "gst-annual-return-and-gst-audit-return",
+          "name": "GST Annual Return and GST Audit Return",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "key-points-for-gst-annual-return-and-gst-audit",
+              "name": "Key Points for GST Annual Return and GST Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "approach-for-gst-audit-audit-plan-checklists-methodology-management-representations-reconciliations",
+              "name": "Approach for GST Audit- Audit Plan, Checklists, Methodology, Management Representations, Reconciliations",
+              "kind": "concept"
+            },
+            {
+              "key": "case-studies-and-illustrations",
+              "name": "Case Studies and Illustrations",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "transition-to-gst-transitional-provisions",
+          "name": "Transition to GST (Transitional Provisions)",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "dispute-resolution-mechanism-under-gst",
+          "name": "Dispute Resolution Mechanism under GST",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "demands",
+              "name": "Demands",
+              "kind": "concept"
+            },
+            {
+              "key": "assessment-and-appeals",
+              "name": "Assessment and Appeals",
+              "kind": "concept"
+            },
+            {
+              "key": "advance-ruling",
+              "name": "Advance Ruling",
+              "kind": "concept"
+            },
+            {
+              "key": "offences-and-penalties",
+              "name": "Offences and Penalties",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "inspection-search-seizure-arrest-and-prosecution",
+          "name": "Inspection, Search, Seizure, Arrest and Prosecution",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "anti-profiteering",
+          "name": "Anti-profiteering",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "provisions",
+              "name": "Provisions",
+              "kind": "concept"
+            },
+            {
+              "key": "key-rulings",
+              "name": "Key Rulings",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "walkthrough-of-gstn-portal",
+          "name": "Walkthrough of GSTN Portal",
+          "section": "Section A: Goods and Services Tax Act & Rules (70%)",
+          "marks_min": 4.1,
+          "marks_max": 4.1,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "valuation-and-related-party-transactions",
+          "name": "Valuation and Related Party Transactions",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "valuation-of-imported-and-exported-goods",
+              "name": "Valuation of Imported and Exported Goods",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "customs-procedures-baggage-and-courier-post",
+          "name": "Customs Procedures - Baggage & Courier / Post",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "provision-regarding-baggage",
+              "name": "Provision regarding Baggage",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "manufacture-in-bond",
+          "name": "Manufacture in Bond",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "duty-drawback",
+          "name": "Duty Drawback",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "customs-import-of-goods-at-concessional-rate-of-duty-rules-2017",
+          "name": "Customs (Import of Goods at Concessional Rate of Duty) Rules, 2017",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "remission-of-duties",
+          "name": "Remission of Duties",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "refund",
+          "name": "Refund",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "trade-facilitation-measures",
+          "name": "Trade Facilitation Measures",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "export-promotion-schemes-under-foreign-trade-policy",
+          "name": "Export Promotion Schemes under Foreign Trade Policy",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "merchandise-exports-from-india-scheme-meis",
+              "name": "Merchandise Exports from India Scheme (MEIS)",
+              "kind": "concept"
+            },
+            {
+              "key": "service-exports-from-india-scheme-seis",
+              "name": "Service Exports from India Scheme (SEIS)",
+              "kind": "concept"
+            },
+            {
+              "key": "advance-authorization-scheme",
+              "name": "Advance Authorization Scheme",
+              "kind": "concept"
+            },
+            {
+              "key": "duty-free-import-authorization-dfia-scheme",
+              "name": "Duty Free Import Authorization (DFIA) Scheme",
+              "kind": "concept"
+            },
+            {
+              "key": "export-promotion-capital-goods-scheme-epcg",
+              "name": "Export Promotion Capital Goods Scheme (EPCG)",
+              "kind": "concept"
+            },
+            {
+              "key": "new-scheme-rodtep",
+              "name": "New Scheme: RODTEP",
+              "kind": "concept"
+            },
+            {
+              "key": "eou-ehtp-stp-and-btp-schemes",
+              "name": "EOU, EHTP, STP & BTP Schemes",
+              "kind": "concept"
+            },
+            {
+              "key": "deemed-exports",
+              "name": "Deemed Exports",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "special-economic-zone-scheme-with-amended-sez-rules",
+          "name": "Special Economic Zone Scheme (with Amended SEZ Rules)",
+          "section": "Section B: Customs Act and Rules (30%)",
+          "marks_min": 3.0,
+          "marks_max": 3.0,
+          "weight_source": "analysis",
+          "topics": []
+        }
+      ],
+      "group": "group-4"
+    },
+    {
+      "key": "strategic-performance-management-and-business-valuation",
+      "paper_number": 20,
+      "name": "Strategic Performance Management and Business Valuation (Elective Paper 20A)",
+      "total_marks": 100,
+      "kind": "elective",
+      "chapters": [
+        {
+          "key": "introduction-to-performance-management",
+          "name": "Introduction to Performance Management",
+          "section": "Section A: Strategic Performance Management (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "performance-productivity-and-efficiency",
+              "name": "Performance, Productivity and Efficiency",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-performance-analysis",
+              "name": "Financial Performance Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "procurement-to-pay-and-vendor-relationship-management",
+              "name": "Procurement to Pay and Vendor Relationship Management",
+              "kind": "concept"
+            },
+            {
+              "key": "supply-chain-management-scm",
+              "name": "Supply Chain Management (SCM)",
+              "kind": "concept"
+            },
+            {
+              "key": "reverse-mapping-of-business-strategies-from-market-place-using-data-analytics",
+              "name": "Reverse Mapping of Business Strategies from Market Place using Data Analytics",
+              "kind": "concept"
+            },
+            {
+              "key": "order-to-cash-and-customer-relationship-management-crm",
+              "name": "Order to Cash and Customer Relationship Management (CRM)",
+              "kind": "concept"
+            },
+            {
+              "key": "customer-profitability-analysis",
+              "name": "Customer Profitability Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "improvement-of-corporate-credit-rating-score",
+              "name": "Improvement of Corporate Credit Rating Score",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "performance-measurement-evaluation-and-improvement-tools",
+          "name": "Performance Measurement, Evaluation and Improvement Tools",
+          "section": "Section A: Strategic Performance Management (50%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "balanced-score-card",
+              "name": "Balanced Score Card",
+              "kind": "concept"
+            },
+            {
+              "key": "du-pont-analysis-and-rona-model",
+              "name": "Du-Pont Analysis and RONA Model",
+              "kind": "concept"
+            },
+            {
+              "key": "bench-marking-and-bench-trending",
+              "name": "Bench marking & Bench Trending",
+              "kind": "concept"
+            },
+            {
+              "key": "six-sigma-and-lean-management",
+              "name": "Six Sigma and Lean Management",
+              "kind": "concept"
+            },
+            {
+              "key": "statistical-quality-control-sqc",
+              "name": "Statistical Quality Control (SQC)",
+              "kind": "concept"
+            },
+            {
+              "key": "plan-do-check-action-pdca",
+              "name": "Plan-Do-Check-Action (PDCA)",
+              "kind": "concept"
+            },
+            {
+              "key": "management-information-system-in-a-digital-environment",
+              "name": "Management Information System in a Digital Environment",
+              "kind": "concept"
+            },
+            {
+              "key": "total-productive-maintenance",
+              "name": "Total Productive Maintenance",
+              "kind": "concept"
+            },
+            {
+              "key": "total-quality-management",
+              "name": "Total Quality Management",
+              "kind": "concept"
+            },
+            {
+              "key": "data-envelopment-analysis",
+              "name": "Data Envelopment Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "economic-efficiency-of-the-firm-performance-analysis",
+          "name": "Economic Efficiency of the Firm – Performance Analysis",
+          "section": "Section A: Strategic Performance Management (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "economic-performance-indicator",
+              "name": "Economic Performance Indicator",
+              "kind": "concept"
+            },
+            {
+              "key": "profit-optimization-under-different-market-structure",
+              "name": "Profit Optimization under different Market Structure",
+              "kind": "concept"
+            },
+            {
+              "key": "market-factors-affecting-pricing-decisions",
+              "name": "Market Factors affecting Pricing Decisions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "enterprise-risk-management",
+          "name": "Enterprise Risk Management",
+          "section": "Section A: Strategic Performance Management (50%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "risk-management-introduction-and-objectives",
+              "name": "Risk Management: Introduction and Objectives",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-coso-framework",
+              "name": "Risk Management: COSO Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-pooling",
+              "name": "Risk Management: Pooling",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-diversification",
+              "name": "Risk Management: Diversification",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-total-loss-distribution",
+              "name": "Risk Management: Total Loss Distribution",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-ruin-probability",
+              "name": "Risk Management: Ruin Probability",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-risk-analysis",
+              "name": "Risk Management: Risk Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-risk-mapping",
+              "name": "Risk Management: Risk Mapping",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-risk-indicators",
+              "name": "Risk Management: Risk Indicators",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-cobit",
+              "name": "Risk Management: COBIT",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-risk-management-transformation-of-enterprise-risk-management-to-risk-enabled-performance-management",
+              "name": "Corporate Risk Management: Transformation of Enterprise Risk Management to Risk-enabled Performance Management",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-risk-management-risk-retention-or-reduction",
+              "name": "Corporate Risk Management: Risk Retention or Reduction",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-risk-management-value-at-risk-var",
+              "name": "Corporate Risk Management: Value at Risk (VaR)",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-risk-management-introduction-to-capital-adequacy-norms-in-banking-industry",
+              "name": "Corporate Risk Management: Introduction to Capital Adequacy Norms in Banking Industry",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-failure-corporate-distress-analysis",
+              "name": "Corporate Failure: Corporate Distress Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-failure-corporate-distress-prediction-models-altman-s-z-score-beinish-m-ncaer-models",
+              "name": "Corporate Failure: Corporate Distress Prediction Models - Altman’s Z Score, Beinish M, NCAER Models",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fundamentals-of-business-valuation",
+          "name": "Fundamentals of Business Valuation",
+          "section": "Section B: Business Valuation (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "purpose-of-business-valuation",
+              "name": "Purpose of Business Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-premise",
+              "name": "Valuation Premise",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-approaches",
+              "name": "Valuation Approaches",
+              "kind": "concept"
+            },
+            {
+              "key": "fundamentals-of-valuation-risk-and-return",
+              "name": "Fundamentals of Valuation – Risk and Return",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-statement-analysis",
+              "name": "Financial Statement Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "market-value-and-enterprise-value",
+              "name": "Market Value and Enterprise Value",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "laws-and-compliance-in-business-valuation",
+          "name": "Laws and Compliance in Business Valuation",
+          "section": "Section B: Business Valuation (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "salient-features-of-the-insolvency-and-bankruptcy-code-2016",
+              "name": "Salient features of the Insolvency and Bankruptcy Code, 2016",
+              "kind": "concept"
+            },
+            {
+              "key": "the-companies-act-2013-section-192-2-230-1-2-3-231-232-247-281-1",
+              "name": "The Companies Act, 2013: Section 192(2), 230(1), (2), (3), 231, 232, 247, 281(1)",
+              "kind": "concept"
+            },
+            {
+              "key": "salient-features-of-the-companies-registered-valuers-and-valuation-rules-2017",
+              "name": "Salient features of the Companies (Registered Valuers and Valuation) Rules, 2017",
+              "kind": "concept"
+            },
+            {
+              "key": "salient-features-of-the-sarfaesi-act-2002-on-valuation",
+              "name": "Salient Features of the SARFAESI Act, 2002 on Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-standards-ivsc",
+              "name": "Valuation Standards (IVSC)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-valuation-methods-and-approaches",
+          "name": "Business Valuation Methods and Approaches",
+          "section": "Section B: Business Valuation (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "discounted-cash-flow-analysis-dcf-comparable-transactions-method-comparable-market-multiples-method-market-valuation",
+              "name": "Discounted Cash Flow Analysis (DCF), Comparable Transactions Method, Comparable Market Multiples Method, Market Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "economic-value-added-approach-free-cash-flow-to-equity-dividend-discount-model-net-asset-valuation-relative-valuation",
+              "name": "Economic Value Added Approach, Free Cash Flow to Equity, Dividend Discount Model, Net Asset Valuation, Relative Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "earnings-multiples",
+              "name": "Earnings Multiples",
+              "kind": "concept"
+            },
+            {
+              "key": "book-value-multiples",
+              "name": "Book Value Multiples",
+              "kind": "concept"
+            },
+            {
+              "key": "revenue-and-sector-specific-multiples",
+              "name": "Revenue and Sector Specific Multiples",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-of-assets-and-liabilities",
+          "name": "Valuation of Assets and Liabilities",
+          "section": "Section B: Business Valuation (50%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "valuation-of-plant-and-machinery",
+              "name": "Valuation of Plant & Machinery",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-inventory",
+              "name": "Valuation of Inventory",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-investments-shares-and-bonds-debentures",
+              "name": "Valuation of Investments – Shares and Bonds/Debentures",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-intangibles-copy-rights-goodwill-brand",
+              "name": "Valuation of Intangibles – Copy Rights, Goodwill, Brand",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-human-resources",
+              "name": "Valuation of Human Resources",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-real-estate",
+              "name": "Valuation of Real Estate",
+              "kind": "concept"
+            },
+            {
+              "key": "value-added-economic-value-added-market-value-added",
+              "name": "Value Added, Economic Value Added, Market Value Added",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-of-liabilities",
+              "name": "Valuation of Liabilities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "valuation-in-mergers-and-acquisitions",
+          "name": "Valuation in Mergers and Acquisitions",
+          "section": "Section B: Business Valuation (50%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "acquisition-pricing-analysing-premium-offered-to-target-stockholders",
+              "name": "Acquisition Pricing: Analysing Premium offered to Target Stockholders",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-pricing-analysing-value-of-the-target-to-the-acquirer",
+              "name": "Acquisition Pricing: Analysing Value of the Target to the Acquirer",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-pricing-earnings-multiples",
+              "name": "Acquisition Pricing: Earnings Multiples",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-pricing-discounted-abnormal-earnings-or-cash-flows",
+              "name": "Acquisition Pricing: Discounted Abnormal Earnings or Cash Flows",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-pricing-acquisitions-by-private-equity-and-venture-capitalists",
+              "name": "Acquisition Pricing: Acquisitions by Private Equity and Venture Capitalists",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-outcome-other-potential-acquires",
+              "name": "Acquisition Outcome: Other Potential Acquires",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-outcome-target-management-entrenchment",
+              "name": "Acquisition Outcome: Target Management Entrenchment",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-outcome-anti-trust-and-security-issues",
+              "name": "Acquisition Outcome: Anti-trust and Security Issues",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-outcome-post-transactions-value-incorporating-effect-of-intended-synergies",
+              "name": "Acquisition Outcome: Post Transactions Value incorporating Effect of Intended Synergies",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-outcome-exit-synergies",
+              "name": "Acquisition Outcome: Exit Synergies",
+              "kind": "concept"
+            },
+            {
+              "key": "acquisition-outcome-tax-implications",
+              "name": "Acquisition Outcome: Tax Implications",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-modelling",
+              "name": "Financial Modelling",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "electives",
+      "is_optional": true
+    },
+    {
+      "key": "risk-management-in-banking-and-insurance",
+      "paper_number": 20,
+      "name": "Risk Management in Banking and Insurance (Elective Paper 20B)",
+      "total_marks": 100,
+      "kind": "elective",
+      "chapters": [
+        {
+          "key": "introduction-to-risk-management",
+          "name": "Introduction to Risk Management",
+          "section": "Section A: Risk Management in Banking (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concept-of-risk",
+              "name": "Concept of Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-vs-uncertainty",
+              "name": "Risk vs. Uncertainty",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-risk",
+              "name": "Types of Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-concept-and-approaches",
+              "name": "Risk Management – Concept and Approaches",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-strategies",
+              "name": "Risk Management Strategies",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "interest-rate-risk-and-market-risk",
+          "name": "Interest Rate Risk and Market Risk",
+          "section": "Section A: Risk Management in Banking (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "interest-rate-risk-management-concept",
+              "name": "Interest Rate Risk Management: Concept",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk-management-source",
+              "name": "Interest Rate Risk Management: Source",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk-management-term-structure-of-interest-rates-and-yield-curve",
+              "name": "Interest Rate Risk Management: Term Structure of Interest Rates and Yield Curve",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk-management-interest-rate-risk-and-credit-risk",
+              "name": "Interest Rate Risk Management: Interest Rate Risk and Credit Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk-management-measuring-interest-rate-risk",
+              "name": "Interest Rate Risk Management: Measuring Interest Rate Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk-management-interest-rate-risk-measurement-and-basel-norms",
+              "name": "Interest Rate Risk Management: Interest Rate Risk Measurement and Basel Norms",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-rate-risk-management-managing-interest-rate-risk",
+              "name": "Interest Rate Risk Management: Managing Interest Rate Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-market-risk-and-its-types",
+              "name": "Market Risk Management: Market Risk and its Types",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-calculating-market-risk-exposures",
+              "name": "Market Risk Management: Calculating Market Risk Exposures",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-market-risk-and-basel-norms-value-at-risk-var",
+              "name": "Market Risk Management: Market Risk and Basel Norms, Value-at-Risk (VaR)",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-sources-of-foreign-exchange-risk-exposure",
+              "name": "Market Risk Management: Sources of Foreign Exchange Risk Exposure",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-foreign-asset-and-liability-positions",
+              "name": "Market Risk Management: Foreign Asset and Liability Positions",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-interaction-of-interest-rate",
+              "name": "Market Risk Management: Interaction of Interest Rate",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-inflation-and-exchange-rates",
+              "name": "Market Risk Management: Inflation and Exchange Rates",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-hedging-market-risk",
+              "name": "Market Risk Management: Hedging Market Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "market-risk-management-dynamic-hedging-strategies",
+              "name": "Market Risk Management: Dynamic Hedging Strategies",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "credit-risk-and-liquidity-risk",
+          "name": "Credit Risk and Liquidity Risk",
+          "section": "Section A: Risk Management in Banking (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "credit-risk-management-credit-risk-exposures-types",
+              "name": "Credit Risk Management: Credit Risk Exposures, Types",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-risk-management-credit-risk-measurement-models-merton-s-model",
+              "name": "Credit Risk Management: Credit Risk Measurement Models – Merton’s Model",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-risk-management-credit-risk-measurement-and-basel-norms",
+              "name": "Credit Risk Management: Credit Risk Measurement and Basel Norms",
+              "kind": "concept"
+            },
+            {
+              "key": "credit-risk-management-managing-credit-risk",
+              "name": "Credit Risk Management: Managing Credit Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-non-performing-assets-npas-definition-concept-and-categorisation-of-npas",
+              "name": "Management of Non-Performing Assets (NPAs): Definition, Concept and Categorisation of NPAs",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-non-performing-assets-npas-choices-available-to-banks-for-management-of-npas",
+              "name": "Management of Non-Performing Assets (NPAs): Choices available to Banks for Management of NPAs",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-non-performing-assets-npas-trading-of-npas",
+              "name": "Management of Non-Performing Assets (NPAs): Trading of NPAs",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-non-performing-assets-npas-status-of-npas-in-banks-in-india",
+              "name": "Management of Non-Performing Assets (NPAs): Status of NPAs in Banks in India",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-liability-side-and-asset-side-liquidity-risk",
+              "name": "Liquidity Risk Management: Liability-side and Asset-side Liquidity Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-types-of-liquidity-risk-events",
+              "name": "Liquidity Risk Management: Types of Liquidity Risk Events",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-liquidity-risk-vs-credit-risk",
+              "name": "Liquidity Risk Management: Liquidity Risk vs. Credit Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-liquidity-risk-in-insurance-services",
+              "name": "Liquidity Risk Management: Liquidity Risk in Insurance Services",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-measuring-liquidity-risk",
+              "name": "Liquidity Risk Management: Measuring Liquidity Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-managing-liquidity-risk",
+              "name": "Liquidity Risk Management: Managing Liquidity Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-asset-liability-management-concept",
+              "name": "Liquidity Risk Management: Asset Liability Management – Concept",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-role-of-alm-in-managing-interest-rate-risk-and-liquidity-risk",
+              "name": "Liquidity Risk Management: Role of ALM in managing Interest Rate Risk and Liquidity Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "liquidity-risk-management-rbi-guidelines",
+              "name": "Liquidity Risk Management: RBI Guidelines",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sovereign-risk-and-insolvency-risk",
+          "name": "Sovereign Risk and Insolvency Risk",
+          "section": "Section A: Risk Management in Banking (60%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "sovereign-risk-events",
+              "name": "Sovereign Risk Events",
+              "kind": "concept"
+            },
+            {
+              "key": "debt-repudiation-versus-debt-rescheduling",
+              "name": "Debt Repudiation versus Debt Rescheduling",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-sovereign-risk",
+              "name": "Evaluation of Sovereign Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "mechanisms-for-dealing-with-sovereign-risk-exposures",
+              "name": "Mechanisms for dealing with Sovereign Risk Exposures",
+              "kind": "concept"
+            },
+            {
+              "key": "insolvency-risk-analysis-through-capital-adequacy-ratios",
+              "name": "Insolvency Risk Analysis through Capital Adequacy Ratios",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "operational-risk-and-off-balance-sheet-risk",
+          "name": "Operational Risk and Off-Balance Sheet Risk",
+          "section": "Section A: Risk Management in Banking (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "operational-risk-identification-and-assessment-basel-norms",
+              "name": "Operational Risk – Identification and Assessment, Basel Norms",
+              "kind": "concept"
+            },
+            {
+              "key": "monitoring-and-mitigating-operational-risk",
+              "name": "Monitoring and Mitigating Operational Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "off-balance-sheet-risk-exposures",
+              "name": "Off-Balance Sheet Risk Exposures",
+              "kind": "concept"
+            },
+            {
+              "key": "loan-commitments",
+              "name": "Loan Commitments",
+              "kind": "concept"
+            },
+            {
+              "key": "commercial-letters-of-credit-letters-of-undertaking-and-bank-guarantee",
+              "name": "Commercial Letters of Credit, Letters of Undertaking and Bank Guarantee",
+              "kind": "concept"
+            },
+            {
+              "key": "derivatives",
+              "name": "Derivatives",
+              "kind": "concept"
+            },
+            {
+              "key": "deposit-insurance",
+              "name": "Deposit Insurance",
+              "kind": "concept"
+            },
+            {
+              "key": "nature-of-off-balance-sheet-risks",
+              "name": "Nature of Off-Balance Sheet Risks",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction-to-insurance-business",
+          "name": "Introduction to Insurance Business",
+          "section": "Section B: Risk Management in Insurance (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definition-concept-and-features-of-insurance",
+              "name": "Definition, Concept and Features of Insurance",
+              "kind": "concept"
+            },
+            {
+              "key": "principles-of-insurance",
+              "name": "Principles of Insurance",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-insurance-towards-economic-growth",
+              "name": "Role of Insurance towards Economic Growth",
+              "kind": "concept"
+            },
+            {
+              "key": "difference-between-insurance-companies-and-other-financial-institutions",
+              "name": "Difference between Insurance Companies and other Financial Institutions",
+              "kind": "concept"
+            },
+            {
+              "key": "insurance-regulatory-and-development-authority-irda-objectives-statutory-powers-and-functions-of-irda",
+              "name": "Insurance Regulatory and Development Authority (IRDA) – Objectives, Statutory Powers and Functions of IRDA",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "insurance-intermediaries-general-insurance-health-insurance-and-life-insurance",
+          "name": "Insurance Intermediaries, General Insurance, Health Insurance and Life Insurance",
+          "section": "Section B: Risk Management in Insurance (40%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "insurance-intermediaries-insurance-agents",
+              "name": "Insurance Intermediaries: Insurance Agents",
+              "kind": "concept"
+            },
+            {
+              "key": "insurance-intermediaries-surveyors-and-loss-assessors",
+              "name": "Insurance Intermediaries: Surveyors and Loss Assessors",
+              "kind": "concept"
+            },
+            {
+              "key": "insurance-intermediaries-insurance-brokers",
+              "name": "Insurance Intermediaries: Insurance Brokers",
+              "kind": "concept"
+            },
+            {
+              "key": "insurance-intermediaries-third-party-administrators-tpas",
+              "name": "Insurance Intermediaries: Third Party Administrators (TPAs)",
+              "kind": "concept"
+            },
+            {
+              "key": "insurance-intermediaries-bancassurance",
+              "name": "Insurance Intermediaries: Bancassurance",
+              "kind": "concept"
+            },
+            {
+              "key": "insurance-intermediaries-other-channels",
+              "name": "Insurance Intermediaries: Other Channels",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-principles",
+              "name": "General Insurance: Principles",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-general-insurance-products",
+              "name": "General Insurance: General Insurance Products",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-tariff-advisory-committee-tac",
+              "name": "General Insurance: Tariff Advisory Committee (TAC)",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-general-insurance-council",
+              "name": "General Insurance: General Insurance Council",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-de-tariffing-in-general-insurance",
+              "name": "General Insurance: De-tariffing in General Insurance",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-irda-s-exposure-prudential-norms",
+              "name": "General Insurance: IRDA’s Exposure/Prudential Norms",
+              "kind": "concept"
+            },
+            {
+              "key": "general-insurance-solvency-margins-of-non-life-insurers",
+              "name": "General Insurance: Solvency Margins of Non-life Insurers",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-and-types-of-health-insurance-policies",
+              "name": "Concept and Types of Health Insurance Policies",
+              "kind": "concept"
+            },
+            {
+              "key": "structure-and-type-of-re-insurance",
+              "name": "Structure and Type of Re-insurance",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-principles-and-characteristics",
+              "name": "Life Insurance: Principles and Characteristics",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-types-of-life-insurance-products",
+              "name": "Life Insurance: Types of Life Insurance Products",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-solvency-margins-of-life-insurers",
+              "name": "Life Insurance: Solvency Margins of Life Insurers",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-various-players-in-life-insurance-business",
+              "name": "Life Insurance: Various players in Life Insurance Business",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-lic-of-india",
+              "name": "Life Insurance: LIC of India",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-post-office-life-insurance",
+              "name": "Life Insurance: Post Office Life Insurance",
+              "kind": "concept"
+            },
+            {
+              "key": "life-insurance-other-players",
+              "name": "Life Insurance: Other Players",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "managing-risk-in-insurance-business",
+          "name": "Managing Risk in Insurance Business",
+          "section": "Section B: Risk Management in Insurance (40%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concept-of-risk-in-insurance-business",
+              "name": "Concept of Risk in Insurance Business",
+              "kind": "concept"
+            },
+            {
+              "key": "factors-affecting-risk-profile-of-insurers",
+              "name": "Factors affecting Risk Profile of Insurers",
+              "kind": "concept"
+            },
+            {
+              "key": "kinds-of-risks-in-insurance-portfolio-risk-solvency-risk-marketing-risk-market-risk-operational-risk-and-other-risks",
+              "name": "Kinds of Risks in Insurance – Portfolio Risk, Solvency Risk, Marketing Risk, Market Risk, Operational Risk and Other Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-based-capital-types-of-risk-based-capital-current-risks-special-risks-non-technical-risks",
+              "name": "Risk-based Capital, Types of Risk-based Capital – Current Risks, Special Risks, Non-technical Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-process-in-insurance-risk-identification",
+              "name": "Risk Management Process in Insurance: Risk Identification",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-process-in-insurance-risk-assessment",
+              "name": "Risk Management Process in Insurance: Risk Assessment",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-process-in-insurance-risk-treatment",
+              "name": "Risk Management Process in Insurance: Risk Treatment",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-process-in-insurance-risk-reduction",
+              "name": "Risk Management Process in Insurance: Risk Reduction",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-management-process-in-insurance-risk-review-and-monitoring",
+              "name": "Risk Management Process in Insurance: Risk Review and Monitoring",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-an-actuary-in-insurance-business",
+              "name": "Role of an Actuary in Insurance Business",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "electives",
+      "is_optional": true
+    },
+    {
+      "key": "entrepreneurship-and-start-up",
+      "paper_number": 20,
+      "name": "Entrepreneurship and Start-up (Elective Paper 20C)",
+      "total_marks": 100,
+      "kind": "elective",
+      "chapters": [
+        {
+          "key": "entrepreneurial-skill-sets",
+          "name": "Entrepreneurial Skill Sets",
+          "section": "Section A: Entrepreneurial Skill Sets (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "building-the-entrepreneurial-quotient",
+              "name": "Building the Entrepreneurial Quotient",
+              "kind": "concept"
+            },
+            {
+              "key": "entrepreneurial-psychology-driving-forces-and-characteristics",
+              "name": "Entrepreneurial Psychology, Driving Forces and Characteristics",
+              "kind": "concept"
+            },
+            {
+              "key": "entrepreneurial-discipline-with-practice-patience-and-perseverance-3ps",
+              "name": "Entrepreneurial Discipline with Practice, Patience and Perseverance (3Ps)",
+              "kind": "concept"
+            },
+            {
+              "key": "identifying-and-meeting-the-gaps-in-resources-at-optimised-cost",
+              "name": "Identifying and Meeting the Gaps in Resources at Optimised Cost",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structuring-resource-mobilization-and-management",
+              "name": "Capital Structuring, Resource Mobilization and Management",
+              "kind": "concept"
+            },
+            {
+              "key": "new-age-marketing-and-after-sales-services",
+              "name": "New Age Marketing and After Sales Services",
+              "kind": "concept"
+            },
+            {
+              "key": "using-it-and-8-deep-technologies",
+              "name": "Using IT and 8 Deep Technologies",
+              "kind": "concept"
+            },
+            {
+              "key": "strategies-for-disruption",
+              "name": "Strategies for Disruption",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-and-regulatory-compliance",
+              "name": "Legal and Regulatory Compliance",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-entrepreneurial-ecosystem",
+          "name": "The Entrepreneurial Ecosystem",
+          "section": "Section B: The Entrepreneurial Eco-system (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "macroeconomic-environment-and-emerging-dimensions-of-business-ecosystems",
+              "name": "Macroeconomic Environment and Emerging Dimensions of Business Ecosystems",
+              "kind": "concept"
+            },
+            {
+              "key": "formation-and-incorporation-of-a-legal-entity",
+              "name": "Formation and Incorporation of a Legal Entity",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-and-intellectual-property-rights",
+              "name": "Legal and Intellectual Property Rights",
+              "kind": "concept"
+            },
+            {
+              "key": "procurement-to-pay",
+              "name": "Procurement to Pay",
+              "kind": "concept"
+            },
+            {
+              "key": "order-to-cash",
+              "name": "Order to Cash",
+              "kind": "concept"
+            },
+            {
+              "key": "transaction-to-reporting",
+              "name": "Transaction to Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "working-capital-management",
+              "name": "Working Capital Management",
+              "kind": "concept"
+            },
+            {
+              "key": "market-dynamics",
+              "name": "Market Dynamics",
+              "kind": "concept"
+            },
+            {
+              "key": "government-policies-subsidies-incentives-tax-laws",
+              "name": "Government Policies, Subsidies, Incentives, Tax Laws",
+              "kind": "concept"
+            },
+            {
+              "key": "trends-in-entrepreneurship",
+              "name": "Trends in Entrepreneurship",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "idea-to-action",
+          "name": "Idea to Action",
+          "section": "Section C: Idea to Action (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "monetizing-ideas",
+              "name": "Monetizing Ideas",
+              "kind": "concept"
+            },
+            {
+              "key": "bootstrapping",
+              "name": "Bootstrapping",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-project-report",
+              "name": "Preparation of Project Report",
+              "kind": "concept"
+            },
+            {
+              "key": "funding-options-for-start-up-including-crowd-funding",
+              "name": "Funding Options for Start-up, including Crowd Funding",
+              "kind": "concept"
+            },
+            {
+              "key": "using-data-analytics-to-advantage",
+              "name": "Using Data Analytics to Advantage",
+              "kind": "concept"
+            },
+            {
+              "key": "building-a-sustainable-revenue-model-and-periodical-business-plan",
+              "name": "Building a Sustainable Revenue Model and Periodical Business Plan",
+              "kind": "concept"
+            },
+            {
+              "key": "launching-sustainable-impact-initiatives",
+              "name": "Launching Sustainable Impact Initiatives",
+              "kind": "concept"
+            },
+            {
+              "key": "from-start-up-to-mnc",
+              "name": "From Start up to MNC",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "value-addition",
+          "name": "Value Addition",
+          "section": "Section D: Value Addition (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "process-of-innovation",
+              "name": "Process of Innovation",
+              "kind": "concept"
+            },
+            {
+              "key": "design-thinking",
+              "name": "Design Thinking",
+              "kind": "concept"
+            },
+            {
+              "key": "lean-start-up-and-customer-validation",
+              "name": "Lean Start-Up & Customer Validation",
+              "kind": "concept"
+            },
+            {
+              "key": "generating-market-traction",
+              "name": "Generating Market Traction",
+              "kind": "concept"
+            },
+            {
+              "key": "positioning-and-packaging",
+              "name": "Positioning and Packaging",
+              "kind": "concept"
+            },
+            {
+              "key": "start-up-models",
+              "name": "Start-up Models",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "scalability-scaling-up-and-stabilisation-of-sustainable-business",
+          "name": "Scalability, Scaling up and Stabilisation of Sustainable Business",
+          "section": "Section E: Scale up (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "business-scalability-validation-and-roadmap",
+              "name": "Business Scalability –Validation and Roadmap",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-pitching-document-and-giving-elevator-pitches",
+              "name": "Preparation of Pitching Document and giving Elevator Pitches",
+              "kind": "concept"
+            },
+            {
+              "key": "funding-strategies-and-funding-series-including-crowd-funding",
+              "name": "Funding Strategies and Funding Series including crowd funding",
+              "kind": "concept"
+            },
+            {
+              "key": "start-up-valuation-pre-money-milestone-and-investors-exit-point",
+              "name": "Start-up Valuation – Pre-money, Milestone and Investors’ Exit Point",
+              "kind": "concept"
+            },
+            {
+              "key": "scaling-up-and-stabilisation-of-business",
+              "name": "Scaling up and Stabilisation of Business",
+              "kind": "concept"
+            },
+            {
+              "key": "sustainability-management",
+              "name": "Sustainability Management",
+              "kind": "concept"
+            },
+            {
+              "key": "exit-strategies-of-fund-houses",
+              "name": "Exit Strategies of Fund Houses",
+              "kind": "concept"
+            },
+            {
+              "key": "gathering-critical-mass-through-mergers-and-acquisitions",
+              "name": "Gathering Critical Mass through Mergers & Acquisitions",
+              "kind": "concept"
+            },
+            {
+              "key": "negotiations-at-each-milestone",
+              "name": "Negotiations at each Milestone",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "risk-management-strategies",
+          "name": "Risk Management Strategies",
+          "section": "Section F: Risk Management Strategies (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "predicting-calculating-and-mitigating-enterprise-risks",
+              "name": "Predicting, Calculating and Mitigating Enterprise Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "application-of-coso-framework-for-risk-enabled-performance-management",
+              "name": "Application of COSO Framework for Risk-Enabled Performance Management",
+              "kind": "concept"
+            },
+            {
+              "key": "predicting-calculating-and-overcoming-financial-risks",
+              "name": "Predicting, Calculating and Overcoming Financial Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "project-monitoring-and-controlling",
+              "name": "Project Monitoring and Controlling",
+              "kind": "concept"
+            },
+            {
+              "key": "increasing-coping-mechanisms-and-risk-mitigation",
+              "name": "Increasing Coping Mechanisms and Risk Mitigation",
+              "kind": "concept"
+            },
+            {
+              "key": "establishing-internal-checks-and-balances-as-a-process",
+              "name": "Establishing Internal Checks and Balances as a Process",
+              "kind": "concept"
+            },
+            {
+              "key": "transformation-from-risk-managing-to-risks-enabled-organisation",
+              "name": "Transformation from Risk Managing to Risks Enabled Organisation",
+              "kind": "concept"
+            },
+            {
+              "key": "start-up-audit",
+              "name": "Start-up Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "bouncing-back-from-failures",
+              "name": "Bouncing Back from Failures",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "leadership",
+          "name": "Leadership",
+          "section": "Section G: Leadership (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "leading-mission-driven-ventures-and-organisations",
+              "name": "Leading Mission Driven Ventures and Organisations",
+              "kind": "concept"
+            },
+            {
+              "key": "business-ethics-and-best-practices",
+              "name": "Business Ethics and Best Practices",
+              "kind": "concept"
+            },
+            {
+              "key": "forecasting-and-planning-building-capabilities-to-see-deeper-wider-and-faster",
+              "name": "Forecasting and Planning - Building Capabilities to see Deeper, Wider and Faster",
+              "kind": "concept"
+            },
+            {
+              "key": "developing-mission-vision-and-goals",
+              "name": "Developing Mission, Vision and Goals",
+              "kind": "concept"
+            },
+            {
+              "key": "learning-smart-ways-to-create-competitive-advantage",
+              "name": "Learning smart ways to create Competitive Advantage",
+              "kind": "concept"
+            },
+            {
+              "key": "learn-to-deal-with-ups-and-downs-and-lead-organisational-change",
+              "name": "Learn to deal with Ups and Downs and Lead Organisational Change",
+              "kind": "concept"
+            },
+            {
+              "key": "building-a-motivated-team",
+              "name": "Building a Motivated Team",
+              "kind": "concept"
+            },
+            {
+              "key": "designing-strategies-to-suit-the-business-needs-and-ecosystem-ection-h-types-of-new-age-business",
+              "name": "Designing Strategies to suit the Business Needs and Ecosystem ECTION H: TYPES OF NEW AGE BUSINESS",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "types-of-new-age-business",
+          "name": "Types of New Age Business",
+          "section": "Section H: Types of New Age Business (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "fintech-edtech-healthcare-agritech-defence-it-space-robotics-digital-transformation-and-vba-etc",
+              "name": "FinTech, EdTech, HealthCare, AgriTech, Defence, IT, Space, Robotics, Digital Transformation & VBA etc",
+              "kind": "concept"
+            },
+            {
+              "key": "agropreneurship",
+              "name": "Agropreneurship",
+              "kind": "concept"
+            },
+            {
+              "key": "women-entrepreneurship",
+              "name": "Women Entrepreneurship",
+              "kind": "concept"
+            },
+            {
+              "key": "family-run-business",
+              "name": "Family Run Business",
+              "kind": "concept"
+            },
+            {
+              "key": "msme",
+              "name": "MSME",
+              "kind": "concept"
+            },
+            {
+              "key": "generation-transfer-transaction",
+              "name": "Generation Transfer Transaction",
+              "kind": "concept"
+            },
+            {
+              "key": "social-entrepreneurship",
+              "name": "Social Entrepreneurship",
+              "kind": "concept"
+            },
+            {
+              "key": "emerging-markets-applications-of-learning-points-through-case-studies-for-the-final-level-course",
+              "name": "Emerging Markets APPLICATIONS OF LEARNING POINTS THROUGH CASE STUDIES FOR THE FINAL LEVEL COURSE",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "electives",
+      "is_optional": true
+    }
+  ]
+}

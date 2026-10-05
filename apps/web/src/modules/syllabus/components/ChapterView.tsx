@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   ArrowRight,
   Badge,
   Breadcrumb,
@@ -65,6 +66,7 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
       <h1 className="text-4xl font-extrabold sm:text-5xl">{chapter.name}</h1>
       <p className="mt-3 flex flex-wrap items-center gap-2 text-lg text-muted-foreground">
         <span>{subject.name}</span>
+        {chapter.section ? <Badge variant="outline">{chapter.section}</Badge> : null}
         {marks ? <Badge variant="outline">{marks}</Badge> : null}
         {chapter.est_study_minutes ? (
           <Badge variant="outline">About {Math.round(chapter.est_study_minutes / 60)} h to study</Badge>
@@ -92,6 +94,39 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
           </ol>
         )}
       </section>
+
+      {chapter.prev_chapter || chapter.next_chapter ? (
+        <nav aria-label="Chapters in this paper" className="mt-10 grid gap-3 sm:grid-cols-2">
+          {chapter.prev_chapter ? (
+            <Link
+              to="/courses/$course/$level/$subject/$chapter"
+              params={{ course, level, subject: subject.key, chapter: chapter.prev_chapter.key }}
+              className="flex items-center gap-3 rounded-xl border p-4 hover:shadow-(--shadow-soft)"
+            >
+              <ArrowLeft aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+              <span className="min-w-0">
+                <span className="block text-sm text-muted-foreground">Previous chapter</span>
+                <span className="block font-medium">{chapter.prev_chapter.name}</span>
+              </span>
+            </Link>
+          ) : (
+            <span />
+          )}
+          {chapter.next_chapter ? (
+            <Link
+              to="/courses/$course/$level/$subject/$chapter"
+              params={{ course, level, subject: subject.key, chapter: chapter.next_chapter.key }}
+              className="flex items-center justify-end gap-3 rounded-xl border p-4 text-right hover:shadow-(--shadow-soft)"
+            >
+              <span className="min-w-0">
+                <span className="block text-sm text-muted-foreground">Next chapter</span>
+                <span className="block font-medium">{chapter.next_chapter.name}</span>
+              </span>
+              <ArrowRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
         <Button size="lg" asChild>

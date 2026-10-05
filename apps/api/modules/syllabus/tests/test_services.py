@@ -1,10 +1,12 @@
 from copy import deepcopy
+from uuid import uuid4
 
 import pytest
 from django.core.management import call_command
 from django.db import IntegrityError, transaction
 from django.test import Client
 
+from modules.coverage.models import Enrollment
 from modules.profiles.models import Profile
 from modules.syllabus import services
 from modules.syllabus.models import Chapter, ChapterMap, ExamTerm, Scheme, Subject, Topic
@@ -52,7 +54,7 @@ def test_two_open_ended_schemes_cannot_both_be_published():
 
 def test_schemes_with_disjoint_term_windows_can_both_be_published():
     first = make_scheme(publish=False, code="2023", to_term="2027-05")
-    second = make_scheme(publish=False, code="2025", from_term="2027-11")
+    second = make_scheme(publish=False, code="2025", from_term="2027-09")
     services.publish_scheme(first)
     services.publish_scheme(second)
     assert Scheme.objects.filter(status="published").count() == 2
@@ -92,21 +94,64 @@ def test_check_constraints_reject_bad_rows():
         chapter.save()
 
 
-def test_term_codes_exist_per_course():
-    assert ExamTerm.objects.filter(course__code="ca", code="2027-05").exists()
+def test_exam_terms_are_per_level():
+    # CA Final has no January 2027 attempt, Foundation and Intermediate do; each level carries its own dates.
+    def codes(level):
+        return set(ExamTerm.objects.filter(level__course__code="ca", level__code=level).values_list("code", flat=True))
+
+    assert codes("foundation") == codes("intermediate") == {"2027-01", "2027-05", "2027-09"}
+    assert codes("final") == {"2027-05", "2027-09"} and codes("spom") == set()
+    foundation = ExamTerm.objects.get(level__course__code="cma", level__code="foundation", code="2026-12")
+    final = ExamTerm.objects.get(level__course__code="cma", level__code="final", code="2026-12")
+    assert foundation.exam_start != final.exam_start
+    assert foundation.course == foundation.level.course  # set from the level on save
+    assert str(foundation) == "CMA Foundation December 2026"
+
+
+def test_scheme_terms_must_belong_to_the_scheme_level():
+    from django.core.exceptions import ValidationError
+
+    scheme = make_scheme(publish=False, code="2025")
+    scheme.from_term = ExamTerm.objects.get(level__course__code="ca", level__code="foundation", code="2027-01")
+    with pytest.raises(ValidationError):
+        scheme.full_clean()
+    scheme.from_term = ExamTerm.objects.get(level__course__code="ca", level__code="intermediate", code="2027-01")
+    scheme.full_clean()
 
 
 def test_load_command_loads_every_seed_file_as_draft(capsys):
     call_command("load_syllabus_seed")
-    assert Scheme.objects.count() >= 10
+    assert Scheme.objects.count() == 10  # one scheme per level: CA 4, CS 3, CMA 3
     assert not Scheme.objects.filter(status="published").exists()
+    first = counts()
     call_command("load_syllabus_seed")  # idempotent
-    assert Scheme.objects.filter(level__course__code="ca", level__code="intermediate").count() == 2
-    assert Chapter.objects.filter(subject__key="taxation", is_active=True).count() == 17
+    assert counts() == first
+    assert Subject.objects.filter(scheme__level__course__code="cma", is_active=True).count() == 22
+    assert Chapter.objects.filter(subject__key="direct-and-indirect-taxation", is_active=True).count() == 6
     call_command("load_syllabus_seed", "--publish")
-    published = Scheme.objects.filter(level__course__code="ca", level__code="intermediate", status="published")
-    assert published.count() == 1  # the second one is refused (overlap), the first stays published
-    assert "not published" in capsys.readouterr().err
+    assert Scheme.objects.filter(status="published").count() == 10  # one scheme per level, so none overlap
+    assert "not published" not in capsys.readouterr().err
+
+
+def test_prune_legacy_schemes_keeps_enrolled_students():
+    leftover = make_scheme(publish=False, code="indicative")
+    kept = make_scheme(publish=False, code="2023-sample", spec={**deepcopy(SPEC), "level": "final"})
+    Enrollment.objects.create(user_id=uuid4(), scheme=kept, level=kept.level)
+
+    preview = services.prune_legacy_schemes(dry_run=True)
+    assert {scheme.code: action for scheme, action in preview} == {
+        "indicative": "would delete",
+        "2023-sample": "kept (enrolled students)",
+    }
+    assert Scheme.objects.filter(code="indicative").exists()
+
+    done = services.prune_legacy_schemes(dry_run=False)
+    assert {scheme.code: action for scheme, action in done} == {
+        "indicative": "deleted",
+        "2023-sample": "kept (enrolled students)",
+    }
+    assert not Scheme.objects.filter(pk=leftover.pk).exists()
+    assert Scheme.objects.filter(pk=kept.pk).exists()
 
 
 def test_publish_endpoint_requires_an_editor(auth_client):

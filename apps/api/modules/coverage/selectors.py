@@ -174,6 +174,7 @@ def export_all(user_id) -> dict:
                 "target_term": e.target_term.code if e.target_term else None,
                 "exam_date": e.exam_date.isoformat() if e.exam_date else None,
                 "daily_hours": float(e.daily_hours) if e.daily_hours is not None else None,
+                "electives": {x.slot_key: x.subject.key for x in e.electives.select_related("subject")},
             }
             for e in list_enrollments(user_id)
         ],

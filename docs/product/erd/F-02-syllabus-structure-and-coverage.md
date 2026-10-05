@@ -25,7 +25,7 @@ The existing web `modules/catalog` (static courses and features used by the land
 erDiagram
   COURSE ||--o{ LEVEL : has
   LEVEL ||--o{ SCHEME : "versions"
-  COURSE ||--o{ EXAM_TERM : schedules
+  LEVEL ||--o{ EXAM_TERM : schedules
   SCHEME ||--o{ SYL_GROUP : has
   SCHEME ||--o{ SUBJECT : has
   SYL_GROUP ||--o{ SUBJECT : "groups (optional)"
@@ -45,6 +45,8 @@ erDiagram
   AUTH_USER ||--o{ COVERAGE_EVENT : "ledger"
   CHAPTER ||--o{ COVERAGE_EVENT : about
   ENROLLMENT ||--o{ ROLLUP : caches
+  ENROLLMENT ||--o{ ENROLLMENT_ELECTIVE : "elective choice"
+  SUBJECT ||--o{ ENROLLMENT_ELECTIVE : "chosen as"
 
   COURSE {
     uuid id PK
@@ -75,6 +77,7 @@ erDiagram
   EXAM_TERM {
     uuid id PK
     uuid course_id FK
+    uuid level_id FK
     text code
     text name
     date exam_start
@@ -96,6 +99,8 @@ erDiagram
     text name
     smallint total_marks
     text kind
+    boolean is_optional
+    text source_url
     smallint sort_order
   }
   CHAPTER {
@@ -103,6 +108,7 @@ erDiagram
     uuid subject_id FK
     text key
     text name
+    text section
     numeric marks_min
     numeric marks_max
     smallint target_practice_sets
@@ -142,6 +148,13 @@ erDiagram
     date exam_date
     smallint daily_hours
     text status
+  }
+  ENROLLMENT_ELECTIVE {
+    uuid id PK
+    uuid user_id
+    uuid enrollment_id FK
+    text slot_key "group key : paper number"
+    uuid subject_id FK
   }
   COVERAGE_SETTINGS {
     uuid user_id PK
@@ -225,7 +238,7 @@ Common columns on every table here: `id uuid PK default gen`, `created_at timest
 | Column | Type | Null | Default | Notes |
 | --- | --- | --- | --- | --- |
 | course_id | uuid | no | | FK `syllabus_course`, restrict |
-| code | text | no | | `foundation`, `intermediate`, `final`, `executive`, `professional` |
+| code | text | no | | `foundation`, `intermediate`, `final`, `spom` (CA Self-Paced Online Modules), `executive`, `professional` |
 | name | text | no | | |
 | sort_order | smallint | no | 0 | |
 | is_active | boolean | no | true | |
@@ -236,8 +249,9 @@ Unique `(course_id, code)`.
 
 | Column | Type | Null | Default | Notes |
 | --- | --- | --- | --- | --- |
-| course_id | uuid | no | | FK |
-| code | text | no | | `2027-05`. Unique per course |
+| course_id | uuid | no | | FK, always the course of `level_id` (set on save, not editable) |
+| level_id | uuid | no | | FK `syllabus_level`. Attempts and dates differ per level (CMA Foundation, Intermediate and Final each have their own) |
+| code | text | no | | `2027-05`. Unique per level |
 | name | text | no | | "May 2027" |
 | exam_start | date | yes | | |
 | exam_end | date | yes | | |
@@ -283,6 +297,7 @@ Unique `(scheme_id, key)`. Levels without groups (for example Foundation) simply
 | exam_duration_minutes | smallint | yes | | |
 | kind | text | no | `theory` | `theory`, `practical`, `mixed`, `elective` |
 | is_optional | boolean | no | false | Elective or optional papers |
+| source_url | text | yes | | The institute document (PDF) the paper was built from. When a paper has several PDFs (for example Section A and B), the institute's syllabus page |
 | sort_order | smallint | no | 0 | |
 | is_active | boolean | no | true | |
 
@@ -295,9 +310,10 @@ Unique `(scheme_id, key)`. Index `(scheme_id, group_id, sort_order)`.
 | subject_id | uuid | no | | FK |
 | key | text | no | | `gst-itc` |
 | name | text | no | | |
+| section | text | no | `''` | Section or Part of the paper with its weightage, for example `Section A: Direct Taxation (50%)`. A flat label (no extra table); the app groups chapters by it |
 | marks_min | numeric(5,1) | yes | | Indicative weightage low |
 | marks_max | numeric(5,1) | yes | | Indicative weightage high |
-| weight_source | text | no | `unknown` | `official`, `analysis`, `unknown` |
+| weight_source | text | no | `unknown` | `official` (the institute's own weight), `analysis` (indicative, for example a section weight shared evenly by a group of modules), `unknown` |
 | target_practice_sets | smallint | no | 1 | Denominator for the practice component |
 | target_revisions | smallint | no | 2 | Denominator for the revise component |
 | target_mocks | smallint | no | 1 | Denominator for the mock component |
@@ -358,6 +374,7 @@ Index `(status, created_at)`.
 | exam_date | date | yes | | Student's own date, overrides the term |
 | daily_hours | numeric(3,1) | yes | | |
 | status | text | no | `active` | `active`, `archived` |
+| level_id | uuid | no | | FK `syllabus_level`, denormalised from the scheme for the partial unique index |
 | carried_from_id | uuid | yes | | Previous enrolment when the scheme was switched |
 | created_at, updated_at | timestamptz | no | now() | |
 
@@ -513,6 +530,7 @@ Dependency direction: `focus -> tracking -> coverage -> syllabus`, and `ingestio
 | Name | Values | Stored as | Owner |
 | --- | --- | --- | --- |
 | Course codes | ca, cs, cma | rows | seed |
+| Level codes | foundation, intermediate, final, spom (CA only), executive, professional (CS only) | rows | seed (`0002`, `0005`) |
 | Scheme status | draft, published, retired | text + check | code |
 | Subject kind | theory, practical, mixed, elective | text + check | code |
 | Topic kind | concept, section, rule, standard, formula, case_law, illustration | text + check | code |
@@ -522,7 +540,15 @@ Dependency direction: `focus -> tracking -> coverage -> syllabus`, and `ingestio
 | Event source | manual, catchup, tracking, question_bank, mock, notes, carryover, system | text + check | code |
 | Chapter map relation | same, split, merged, partial | text + check | code |
 
-**Seed data:** JSON files per course in `apps/api/modules/syllabus/seed/<course>/<level>/<scheme>.json` describing groups, subjects, chapters, topics, marks and sources. They are produced from the official syllabus documents, reviewed by a person, and loaded by `python manage.py load_syllabus_seed` (idempotent by `key`). Each file carries `source_url` and a reviewer note. The ingestion service (X-04) later helps create these files as drafts, with the same review step.
+**Seed data:** JSON files, one per level, in `apps/api/modules/syllabus/seed/<course>/<level>/<scheme>.json` describing groups, subjects, chapters, topics, marks and sources, loaded by `python manage.py load_syllabus_seed` (idempotent by `key`, drafts only until published). Content status:
+
+| Course | Level (scheme) | Source document | Papers | Chapters and topics |
+| --- | --- | --- | --- | --- |
+| CMA | Foundation, Intermediate, Final (`2022`) | CMA Syllabus 2022 (ICMAI) PDF | 22 incl. 3 electives | Loaded: modules are chapters, numbered sub-items are topics, section and module weights in `section` and `marks_*` |
+| CS | Foundation = CSEET, Executive, Professional (`2022`) | ICSI Syllabus 2022 PDF | 4 + 7 + 16 incl. 11 electives | Loaded: lessons are chapters, bullets are topics, Parts in `section` |
+| CA | Foundation, Intermediate, Final, SPOM (`nset`) | ICAI NSET syllabus pages (4 pages) | 4 + 6 + 6 + 16 | Papers, groups, sections, 304 chapters and 1,478 topics extracted from the 36 ICAI paper PDFs (`docs/syllabus-sources/ca/`, links in `docs/syllabus-sources/ca-pdf-links.json`); no per-chapter marks published |
+
+Chapter marks follow the source: official module weights, and where the source gives one weight for several modules the remainder of the section is shared evenly and marked `analysis`. Editors verify every file against the official document before publishing; the ingestion service (X-04) later helps create such files as drafts with the same review step.
 
 ## 7. Query patterns
 
@@ -562,6 +588,8 @@ Order (one migration set per app):
 
 1. `syllabus.0001_initial`: course, level, examterm, scheme, group, subject, chapter, topic, chaptermap, report with all constraints and indexes.
 2. `syllabus.0002_seed_reference`: data migration for the three courses, their levels and the open exam terms (small, idempotent). Detailed schemes are loaded with the management command, not inside migrations, so content can be updated without a migration.
+2a. `syllabus.0006` to `0008`: exam terms per level. `level_id` is added, every course-wide term is copied to each level of its course, scheme windows and enrolments are re-pointed, CA and CMA attempts are set per level, then `level_id` becomes required with `unique (level_id, code)`. A scheme's from and to term must belong to the scheme's level; an enrolment's target term must belong to its level (`GET /syllabus/terms/?course=&level=`).
+2b. `syllabus.0004_chapter_section_subject_source_url`: adds `chapter.section` and `subject.source_url`. `syllabus.0005_seed_ca_spom_level`: adds the CA `spom` level (idempotent).
 3. `coverage.0001_initial`: enrolment, settings, topic progress, chapter progress, event, rollup.
 4. Post-migrate hook: RLS enabled on all new tables.
 
@@ -620,8 +648,12 @@ Deviations and additions made while implementing, so the document matches the co
 - `topic_progress`, `rollup` use Django composite primary keys (`user_id`, `topic_id` or scope columns), matching the ERD keys.
 - `chapter_progress.implicit_topic_done` was added: a chapter with no topics uses one implicit topic, ticked through `PUT /coverage/chapters/{id}/read/`.
 - Extra endpoints beyond section 9 of the PRD: `PUT /coverage/chapters/{id}/read/`, `PUT /coverage/subjects/{id}/exclusion/`, `GET /syllabus/sitemap/`, `GET /syllabus/terms/`, `POST /admin/syllabus/schemes/{id}/publish|retire/`.
+- Elective papers (CMA Final Paper 20A/20B/20C, CS Professional Papers 4 and 7): a student sits one option per paper. A *slot* is the set of subjects with `kind = elective` or `is_optional` that share a group and paper number and number at least two (derived, nothing stored on the syllabus; `slot_key` is `"<group key>:<paper number>"`, for example `electives:20`, `group-1:4`). The choice is stored in `coverage_enrollment_elective` (unique per enrolment and slot, migration `coverage.0002`). Coverage follows the choice through the existing exclusion ledger: the chosen option is included, every other option is excluded with `EXCLUDED`/`INCLUDED` events (source `system`), so percentages and `rebuild_enrollment` need no special case. A slot with no choice excludes all its options until the student picks one. Elective papers cannot be excluded or included by hand (400); the choice is the only control. `switch_scheme` carries each choice to the new scheme by subject key. Endpoints: `elective_slots` on `GET /syllabus/courses/{c}/levels/{l}/`, `electives` (slot choices) on `POST /coverage/enrollments/`, `PUT /coverage/enrollments/{id}/electives/` with `{"choices": {"<slot key>": "<subject id>" | null}}`, and `electives`, `subjects[].elective_slot` and `enrollment.electives_pending` on the overview and enrolment payloads. CA has no elective papers in the NSET scheme, so its levels have no slots.
 - Write endpoints return the changed chapter plus its subject and level roll-ups, so one response refreshes the whole screen.
 - Admin editing is done in the Django admin (`/<DJANGO_ADMIN_PATH>/`): reference data, schemes with inline papers, papers with inline chapters, chapters with inline topics, bulk add of chapters and topics from pasted lists, JSON import and export of a whole scheme, publish and retire actions behind a separate permission (groups "Syllabus editors" and "Syllabus publishers"), chapter maps, the reports inbox, and read-only support views of enrolments and the ledger. Nodes of a published or retired scheme cannot be deleted, only switched off.
 - `profile.role` (student, editor, admin) was added to gate editor endpoints.
 - Offline queueing: every write carries a client id, so retries are idempotent. Writes made while offline wait in memory until the connection returns; a persisted offline queue is not built yet.
-- Seed files are indicative structures loaded as drafts. The CA Intermediate file (`2023-sample.json`) is a sample and must be checked against the official syllabus by an editor before it is published.
+- Seed files are the real syllabus structures built from the official documents (see the seed table in section 6) and still load as drafts until an editor verifies and publishes them. The earlier `indicative.json` files and the memory-based `2023-sample.json` were replaced.
+- `chapter.section` and `subject.source_url` were added (PRD sources: Section/Part with weightage appears in CMA, CS and CA papers; the source link supports the "Based on ... issued by ..." line and the later ingestion service). `spom` was added as a CA level for ICAI's Self-Paced Online Modules.
+- PRD FR-5 lists the relations same, split, merged, removed and new. The table stores `same`, `split`, `merged`, `partial`; "new" (no incoming row) and "removed" (no outgoing row) are derived, never stored.
+- Seed tests (`tests/test_seed_content.py`) pin papers per level, key and length limits, section weights and the load, export and import round trip.

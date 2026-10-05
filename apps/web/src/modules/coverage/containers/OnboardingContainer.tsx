@@ -8,27 +8,28 @@ import { fetchCourses, fetchLevel, fetchTerms } from '~/modules/syllabus'
 
 import { CatchupResult } from '../components/CatchupResult'
 import { CatchupStep } from '../components/CatchupStep'
-import { CourseLevelStep, TermStep } from '../components/OnboardingSteps'
+import { CourseLevelStep, ElectiveStep, TermStep } from '../components/OnboardingSteps'
 import { useCatchup, useCreateEnrollment } from '../hooks/useCoverageMutations'
 import { useOverview } from '../hooks/useCoverageQueries'
 import { getSubject } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
 import type { Overview } from '../lib/types'
 
-const STEPS = ['Course', 'Exam', 'Catch up']
+type Stage = 'course' | 'term' | 'electives' | 'catchup'
 
-/** The first-run flow (PRD 5.1): course, level, attempt, then Quick catch-up and the aha moment. */
+/** The first-run flow (PRD 5.1): course, level, attempt, elective papers (where the level has them), then Quick catch-up and the aha moment. */
 export function OnboardingContainer() {
   const enabled = useFeatureFlag('syllabus_coverage')
   const navigate = useNavigate()
   const overview = useOverview()
-  const [step, setStep] = useState(0)
+  const [stage, setStage] = useState<Stage>('course')
   const [course, setCourse] = useState('')
   const [level, setLevel] = useState('')
   const [termId, setTermId] = useState('')
   const [examDate, setExamDate] = useState('')
   const [dailyHours, setDailyHours] = useState('')
   const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [electiveChoices, setElectiveChoices] = useState<Record<string, string>>({})
   const [alsoRevised, setAlsoRevised] = useState(false)
   const [created, setCreated] = useState(false)
 
@@ -39,15 +40,19 @@ export function OnboardingContainer() {
     enabled: Boolean(course && level),
   })
   const terms = useQuery({
-    queryKey: ['syllabus', 'terms', course],
-    queryFn: () => fetchTerms(course),
-    enabled: Boolean(course),
+    queryKey: ['syllabus', 'terms', course, level],
+    queryFn: () => fetchTerms(course, level),
+    enabled: Boolean(course && level),
   })
   const enroll = useCreateEnrollment()
   const catchup = useCatchup()
 
   const ov = overview.data
-  const subjects = useMemo(() => ov?.subjects ?? [], [ov])
+  // Papers of an elective the student did not choose are out of their syllabus, so they are not offered for catch-up.
+  const subjects = useMemo(() => {
+    const chosen = new Map((ov?.electives ?? []).map((slot) => [slot.key, slot.chosen]))
+    return (ov?.subjects ?? []).filter((s) => !s.elective_slot || chosen.get(s.elective_slot) === s.id)
+  }, [ov])
   const chapterQueries = useQueries({
     queries: subjects.map((s) => ({
       queryKey: coverageKeys.subject(s.id),
@@ -56,6 +61,7 @@ export function OnboardingContainer() {
     })),
   })
 
+  const hiddenElectives = (ov?.subjects.length ?? 0) > subjects.length
   const catchupSubjects = useMemo(
     () => subjects.map((subject, i) => ({ subject, chapters: chapterQueries[i]?.data?.chapters })),
     [subjects, chapterQueries],
@@ -66,6 +72,8 @@ export function OnboardingContainer() {
   if (ov && !created) return <Navigate to="/app/syllabus" replace />
 
   const scheme = levelSyllabus.data?.scheme ?? null
+  const slots = levelSyllabus.data?.elective_slots ?? []
+  const steps = slots.length ? ['Course', 'Exam', 'Electives', 'Catch up'] : ['Course', 'Exam', 'Catch up']
 
   function createNow() {
     if (!scheme) return
@@ -75,14 +83,24 @@ export function OnboardingContainer() {
         target_term: termId || null,
         exam_date: examDate || null,
         daily_hours: dailyHours.trim() === '' ? null : Number(dailyHours),
+        ...(Object.keys(electiveChoices).length ? { electives: electiveChoices } : {}),
       },
       {
         onSuccess: () => {
           setCreated(true)
-          setStep(2)
+          setStage('catchup')
         },
       },
     )
+  }
+
+  function chooseElective(slotKey: string, subjectId: string | null) {
+    setElectiveChoices((prev) => {
+      const next = { ...prev }
+      if (subjectId) next[slotKey] = subjectId
+      else delete next[slotKey]
+      return next
+    })
   }
 
   function toggleChapter(id: string, on: boolean) {
@@ -118,13 +136,14 @@ export function OnboardingContainer() {
   }
 
   const done = catchup.data?.overview
-  const stepIndex = done ? 3 : step
+  const stageIndex = stage === 'course' ? 0 : stage === 'term' ? 1 : stage === 'electives' ? 2 : steps.length - 1
+  const stepIndex = done ? steps.length : stageIndex
 
   return (
     <Container className="max-w-2xl space-y-8 py-10 sm:py-16">
       <header className="space-y-4">
         <h1 className="font-display text-3xl font-extrabold">Set up My Coverage</h1>
-        <Stepper steps={STEPS} current={Math.min(stepIndex, STEPS.length - 1)} />
+        <Stepper steps={steps} current={Math.min(stepIndex, steps.length - 1)} />
       </header>
 
       {courses.isPending ? (
@@ -137,7 +156,7 @@ export function OnboardingContainer() {
           percent={done.level.pct_simple}
           startWith={startWith(done)}
         />
-      ) : step === 0 ? (
+      ) : stage === 'course' ? (
         <CourseLevelStep
           courses={courses.data ?? []}
           course={course}
@@ -148,22 +167,38 @@ export function OnboardingContainer() {
             setCourse(c)
             setLevel('')
             setTermId('')
+            setElectiveChoices({})
           }}
-          onLevel={setLevel}
-          onNext={() => setStep(1)}
+          onLevel={(l) => {
+            setLevel(l)
+            setTermId('')
+            setElectiveChoices({})
+          }}
+          onNext={() => setStage('term')}
         />
-      ) : step === 1 ? (
+      ) : stage === 'term' ? (
         <TermStep
           terms={terms.data ?? []}
           termId={termId}
           examDate={examDate}
           dailyHours={dailyHours}
           pending={enroll.isPending}
+          hasElectives={slots.length > 0}
           error={enroll.isError ? 'We could not create your syllabus map. Please try again.' : undefined}
           onTerm={setTermId}
           onExamDate={setExamDate}
           onDailyHours={setDailyHours}
-          onBack={() => setStep(0)}
+          onBack={() => setStage('course')}
+          onSubmit={() => (slots.length ? setStage('electives') : createNow())}
+        />
+      ) : stage === 'electives' ? (
+        <ElectiveStep
+          slots={slots}
+          choices={electiveChoices}
+          pending={enroll.isPending}
+          error={enroll.isError ? 'We could not create your syllabus map. Please try again.' : undefined}
+          onChoose={chooseElective}
+          onBack={() => setStage('term')}
           onSubmit={createNow}
         />
       ) : (
@@ -173,6 +208,11 @@ export function OnboardingContainer() {
           alsoRevised={alsoRevised}
           pending={catchup.isPending}
           error={catchup.isError ? 'We could not apply that. Please try again.' : undefined}
+          note={
+            hiddenElectives
+              ? 'Elective papers you have not chosen are not listed. You can choose them later from your syllabus map.'
+              : undefined
+          }
           onToggleChapter={toggleChapter}
           onToggleSubject={toggleSubject}
           onAlsoRevised={setAlsoRevised}

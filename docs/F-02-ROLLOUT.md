@@ -28,14 +28,18 @@ Everything else (`DJANGO_SECRET_KEY`, `DATABASE_URL`, `DIRECT_DATABASE_URL`, ...
 3. Create your own login: `python manage.py createsuperuser` (this is a Django staff account, separate from the student sign-in).
 4. Deploy the API (merge the PR). Open `https://<api>/<DJANGO_ADMIN_PATH>/` and log in. If the page has no styling, check that the deploy finished.
 
-## D. Load the first content
+## D. Load the content
+
+If Django admin still lists schemes named `indicative` or `2023-sample`, they are leftovers from the first placeholder seed files: run `python manage.py load_syllabus_seed --prune-legacy --dry-run` to preview and without `--dry-run` to delete them (schemes with enrolled students are kept). Exam terms (attempts and dates) belong to a level, so add them per level in Django admin under Exam terms; the CA and CMA dates loaded by migration `0007` come from press reports of the institutes' announcements, so check them against the official schedule. Seed files, one per level, live in `apps/api/modules/syllabus/seed/<course>/<level>/`: CMA and CS (full chapters and topics from the official 2022 syllabi), and CA (papers, groups, sections, chapters and topics extracted from the 36 ICAI paper PDFs in `docs/syllabus-sources/ca/`; links in `docs/syllabus-sources/ca-pdf-links.json`). Coverage summary: `docs/product/F-02-syllabus-coverage-report.md`.
 
 Pick one:
 
-- From the admin: Syllabus -> Schemes -> **Import scheme from JSON**, upload a file from `apps/api/modules/syllabus/seed/...`. It lands as a **draft**.
-- From the command line: `python manage.py load_syllabus_seed` (drafts only).
+- From the admin: Syllabus -> Schemes -> **Import scheme from JSON**, upload a file from the seed folder. It lands as a **draft**.
+- From the command line: `python manage.py migrate` (adds the chapter section and paper source link fields and the CA Self-Paced Online Modules level), then `python manage.py load_syllabus_seed` (drafts only, safe to repeat).
 
-Then open each draft scheme, check papers and chapters against the official syllabus, fix names and marks, and only then publish (Part F, step 5). Do not publish the CA Intermediate sample as is; its notes say it needs review.
+If an earlier load left the old placeholder drafts (scheme code `indicative` or `2023-sample`), delete those drafts in Syllabus -> Schemes first (drafts can be deleted).
+
+Then open each draft scheme, check papers and chapters against the official syllabus, fix names and marks, and only then publish (Part F, step 5). Chapters whose weight source is `analysis` carry an indicative split of a section weight; confirm or edit them.
 
 ## E. Web (Vercel, project `arthacommerce-web`)
 
@@ -54,7 +58,8 @@ Then open each draft scheme, check papers and chapters against the official syll
 5. **Publish.** Syllabus -> Schemes, tick the scheme, action **Publish**. It fails with a clear message if the scheme has no papers or overlaps another published scheme for the same terms.
 6. **When the institute changes the syllabus.** Create a new scheme (or import an edited JSON: export the old one with the **Download as JSON** action, edit, import under a new code). Tick the new scheme, run **Create chapter map from the previous scheme**, fix splits and merges under Chapter maps, then publish the new scheme and retire the old one. Students move over from Coverage settings and keep their progress.
 7. **Handle reports.** Syllabus reports shows what students flagged, with a link to the item. Fix it, then mark the report fixed or rejected.
-8. **Rules to remember.** Published nodes cannot be deleted; switch them off instead (progress is kept). Edits to a published scheme are live immediately and the admin warns you. Exam terms and levels are under their own lists.
+8. **Elective papers.** CMA Final (Paper 20) and CS Professional (Papers 4 and 7) have optional papers. Mark each option paper with kind *Elective* (or tick *Is optional*) and give the options of one choice the same group and paper number; the app then asks the student to pick one in onboarding and on the syllabus map, and counts only that one. Nothing else to configure. After deploying, run the migration (it adds one table); existing students on these levels are asked to choose on their syllabus map and until then no elective counts.
+9. **Rules to remember.** Published nodes cannot be deleted; switch them off instead (progress is kept). Edits to a published scheme are live immediately and the admin warns you. Exam terms and levels are under their own lists.
 
 ## G. Support
 

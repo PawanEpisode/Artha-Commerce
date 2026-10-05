@@ -69,8 +69,11 @@ def ids(scheme):
         "heads": str(Chapter.objects.get(key="heads-of-income").id),
         "companies": str(Chapter.objects.get(key="companies-act").id),
         "topics": [str(t.id) for t in Topic.objects.filter(chapter=gst).order_by("sort_order")],
-        "term": str(ExamTerm.objects.get(course__code="ca", code="2027-05").id),
-        "cs_term": str(ExamTerm.objects.get(course__code="cs", code="2027-06").id),
+        "term": str(ExamTerm.objects.get(level__course__code="ca", level__code="intermediate", code="2027-05").id),
+        "foundation_term": str(
+            ExamTerm.objects.get(level__course__code="ca", level__code="foundation", code="2027-01").id
+        ),
+        "cs_term": str(ExamTerm.objects.get(level__course__code="cs", level__code="executive", code="2027-06").id),
     }
 
 

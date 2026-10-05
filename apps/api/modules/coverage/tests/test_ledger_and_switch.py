@@ -133,8 +133,8 @@ def second_scheme():
     spec["subjects"][0]["chapters"].append({"key": "new-chapter", "name": "Brand new chapter"})
     spec["subjects"][0]["chapters"] = [c for c in spec["subjects"][0]["chapters"] if c["key"] != "heads-of-income"]
     # the new scheme starts after the old one ends
-    spec["scheme"]["from_term"] = "2027-11"
-    new = make_scheme(publish=False, code="2025", spec=spec, from_term="2027-11")
+    spec["scheme"]["from_term"] = "2027-09"
+    new = make_scheme(publish=False, code="2025", spec=spec, from_term="2027-09")
     return new
 
 
@@ -142,7 +142,7 @@ def test_switching_scheme_carries_progress_and_lists_what_is_new_or_removed(api,
     from modules.syllabus.models import Scheme
 
     old = Scheme.objects.get(code="2023")
-    old.to_term = old.level.course.terms.get(code="2027-05")
+    old.to_term = old.level.terms.get(code="2027-05")
     old.save()
     new = second_scheme()
     publish_scheme(new)

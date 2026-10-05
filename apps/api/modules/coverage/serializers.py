@@ -8,7 +8,9 @@ from decimal import Decimal
 from django.utils import timezone
 from rest_framework import serializers
 
+from modules.syllabus import selectors as syllabus
 from modules.syllabus.models import ExamTerm
+from modules.syllabus.serializers import elective_slot_data
 
 from . import selectors
 from .models import ChapterProgress, CoverageEvent, CoverageSettings, Enrollment, Rollup
@@ -16,8 +18,15 @@ from .models import ChapterProgress, CoverageEvent, CoverageSettings, Enrollment
 # --- input -----------------------------------------------------------------------------------
 
 
+class ElectiveChoicesField(serializers.DictField):
+    """slot key -> chosen subject id, or null to clear the choice."""
+
+    child = serializers.UUIDField(allow_null=True)
+
+
 class EnrollmentCreateSerializer(serializers.Serializer):
     scheme = serializers.UUIDField()
+    electives = ElectiveChoicesField(required=False)
     target_term = serializers.UUIDField(required=False, allow_null=True)
     exam_date = serializers.DateField(required=False, allow_null=True)
     daily_hours = serializers.DecimalField(
@@ -33,6 +42,10 @@ class EnrollmentPatchSerializer(serializers.Serializer):
     )
     archive = serializers.BooleanField(required=False)
     scheme = serializers.UUIDField(required=False)
+
+
+class ElectivesSerializer(serializers.Serializer):
+    choices = ElectiveChoicesField()
 
 
 class TickSerializer(serializers.Serializer):
@@ -109,6 +122,12 @@ def settings_dict(s: CoverageSettings) -> dict:
     }
 
 
+def _electives_pending(e: Enrollment) -> int:
+    """How many elective papers the student still has to choose."""
+    chosen = {x.slot_key for x in e.electives.all()}
+    return sum(1 for slot in syllabus.elective_slots(e.scheme) if slot.key not in chosen)
+
+
 def enrollment_dict(e: Enrollment, today: date | None = None) -> dict:
     today = today or timezone.now().date()
     exam_date = e.exam_date or (e.target_term.exam_start if e.target_term else None)
@@ -125,6 +144,7 @@ def enrollment_dict(e: Enrollment, today: date | None = None) -> dict:
         "days_remaining": max((exam_date - today).days, 0) if exam_date else None,
         "daily_hours": float(e.daily_hours) if e.daily_hours is not None else None,
         "carried_from": str(e.carried_from_id) if e.carried_from_id else None,
+        "electives_pending": _electives_pending(e),
         "created_at": _iso(e.created_at),
     }
 
@@ -140,6 +160,7 @@ def chapter_row(chapter, progress: ChapterProgress | None, counts: tuple[int, in
         "id": str(chapter.id),
         "key": chapter.key,
         "name": chapter.name,
+        "section": chapter.section,
         "marks_min": float(chapter.marks_min) if chapter.marks_min is not None else None,
         "marks_max": float(chapter.marks_max) if chapter.marks_max is not None else None,
         "marks_weight": chapter.marks_weight,
@@ -181,8 +202,19 @@ def event_dict(e: CoverageEvent) -> dict:
     }
 
 
+def electives_list(enrollment: Enrollment, chosen: dict | None = None) -> list[dict]:
+    """The enrolment's elective slots with the student's choice (`chosen` is a subject id or null)."""
+    if chosen is None:
+        chosen = {e.slot_key: e.subject_id for e in enrollment.electives.all()}
+    return [
+        {**elective_slot_data(slot), "chosen": str(chosen[slot.key]) if slot.key in chosen else None}
+        for slot in syllabus.elective_slots(enrollment.scheme)
+    ]
+
+
 def overview_dict(enrollment: Enrollment, settings: CoverageSettings, today: date) -> dict:
     data = selectors.overview(enrollment)
+    slot_of = {o.id: slot.key for slot in syllabus.elective_slots(enrollment.scheme) for o in slot.options}
     subject_rows = [
         {
             "id": str(s.id),
@@ -191,6 +223,7 @@ def overview_dict(enrollment: Enrollment, settings: CoverageSettings, today: dat
             "paper_number": s.paper_number,
             "total_marks": s.total_marks,
             "group_key": s.group.key if s.group_id else None,
+            "elective_slot": slot_of.get(s.id),
             "excluded_chapters": excluded,
             **rollup_dict(r),
         }
@@ -202,5 +235,6 @@ def overview_dict(enrollment: Enrollment, settings: CoverageSettings, today: dat
         "level": rollup_dict(data["level_rollup"]),
         "groups": [{"id": str(g.id), "key": g.key, "name": g.name, **rollup_dict(r)} for g, r in data["groups"]],
         "subjects": subject_rows,
+        "electives": electives_list(enrollment),
         "due_count": len(selectors.due_for_revision(enrollment, today)),
     }

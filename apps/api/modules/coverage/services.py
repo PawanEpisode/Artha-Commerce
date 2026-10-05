@@ -29,6 +29,7 @@ from .models import (
     CoverageEvent,
     CoverageSettings,
     Enrollment,
+    EnrollmentElective,
     Rollup,
     TopicProgress,
 )
@@ -85,17 +86,24 @@ def reset_settings(user_id) -> CoverageSettings:
 
 @transaction.atomic
 def create_enrollment(
-    user_id, *, scheme_id, target_term_id=None, exam_date=None, daily_hours=None, carried_from: Enrollment | None = None
+    user_id,
+    *,
+    scheme_id,
+    target_term_id=None,
+    exam_date=None,
+    daily_hours=None,
+    carried_from: Enrollment | None = None,
+    electives: dict[str, Any] | None = None,
 ) -> Enrollment:
     scheme = syllabus.get_scheme(scheme_id)
     if not scheme or scheme.status != Scheme.Status.PUBLISHED:
         raise NotFoundError("Scheme not found.")
     term = None
     if target_term_id:
-        term = syllabus.list_terms(open_only=False).filter(pk=target_term_id, course=scheme.level.course).first()
+        term = syllabus.list_terms(open_only=False).filter(pk=target_term_id, level=scheme.level).first()
         if not term:
             raise InvalidInput(
-                "Exam term does not belong to this course.", {"target_term": ["Unknown term for this course."]}
+                "Exam term does not belong to this level.", {"target_term": ["Unknown term for this level."]}
             )
     if Enrollment.objects.filter(user_id=user_id, level=scheme.level, status=Enrollment.Status.ACTIVE).exists():
         raise ConflictError("You already have an active enrolment for this level.")
@@ -108,6 +116,9 @@ def create_enrollment(
         archived.exam_date = exam_date or archived.exam_date
         archived.daily_hours = daily_hours or archived.daily_hours
         archived.save()
+        if electives:
+            _store_electives(archived, electives)
+        _apply_electives(archived)
         _recompute_enrollment(archived, get_or_create_settings(user_id))
         return archived
     enrollment = Enrollment.objects.create(
@@ -126,6 +137,9 @@ def create_enrollment(
             for chapter_id in selectors.scheme_chapter_ids(scheme)
         ]
     )
+    if electives:
+        _store_electives(enrollment, electives)
+    _apply_electives(enrollment)
     _recompute_enrollment(enrollment, settings)
     return enrollment
 
@@ -135,9 +149,9 @@ def update_enrollment(enrollment: Enrollment, *, data: dict[str, Any]) -> Enroll
     """Change term, exam date or daily hours, or archive. A scheme change goes through `switch_scheme`."""
     if "target_term" in data:
         term = data["target_term"]
-        if term and term.course_id != enrollment.scheme.level.course_id:
+        if term and term.level_id != enrollment.scheme.level_id:
             raise InvalidInput(
-                "Exam term does not belong to this course.", {"target_term": ["Unknown term for this course."]}
+                "Exam term does not belong to this level.", {"target_term": ["Unknown term for this level."]}
             )
         enrollment.target_term = term
     for field in ("exam_date", "daily_hours"):
@@ -628,6 +642,13 @@ def set_exclusion(user_id, chapter_id, excluded: bool) -> ChapterProgress:
     enrollment = _enrollment_for_chapter(user_id, chapter) if chapter else None
     if not chapter or not enrollment:
         raise NotFoundError("Chapter not found in your syllabus.")
+    if not excluded:
+        slot = _elective_slot_of(enrollment.scheme, chapter.subject_id)
+        if slot and elective_choices(enrollment).get(slot.key) != chapter.subject_id:
+            raise InvalidInput(
+                "This chapter belongs to an elective you did not choose.",
+                {"chapter": ["Choose this elective to count its chapters."]},
+            )
     progress = _progress_for(enrollment, chapter.id)
     if progress.is_excluded != excluded:
         when = timezone.now()
@@ -638,6 +659,22 @@ def set_exclusion(user_id, chapter_id, excluded: bool) -> ChapterProgress:
     return progress
 
 
+def _set_subject_excluded(
+    enrollment: Enrollment, subject, excluded: bool, *, source: str = Source.MANUAL, when: datetime | None = None
+) -> list[ChapterProgress]:
+    """Writes EXCLUDED/INCLUDED events for every chapter of a subject that is not already in that state."""
+    when = when or timezone.now()
+    changed: list[ChapterProgress] = []
+    for chapter in subject.chapters.filter(is_active=True):
+        progress = _progress_for(enrollment, chapter.id)
+        if progress.is_excluded != excluded:
+            event_type = EventType.EXCLUDED if excluded else EventType.INCLUDED
+            _append_event(enrollment, chapter.id, event_type, source=source, occurred_at=when)
+            apply_event(progress, event_type, occurred_at=when, revision_days=[])
+            changed.append(progress)
+    return changed
+
+
 @transaction.atomic
 def set_subject_exclusion(user_id, subject_id, excluded: bool) -> int:
     subject = syllabus.get_published_subject(subject_id) or _retired_subject(subject_id)
@@ -646,18 +683,87 @@ def set_subject_exclusion(user_id, subject_id, excluded: bool) -> int:
     enrollment = Enrollment.objects.filter(user_id=user_id, scheme_id=subject.scheme_id, status="active").first()
     if not enrollment:
         raise NotFoundError("You are not enrolled in the syllabus this subject belongs to.")
-    changed: list[ChapterProgress] = []
-    when = timezone.now()
-    for chapter in subject.chapters.filter(is_active=True):
-        progress = _progress_for(enrollment, chapter.id)
-        if progress.is_excluded != excluded:
-            event_type = EventType.EXCLUDED if excluded else EventType.INCLUDED
-            _append_event(enrollment, chapter.id, event_type, occurred_at=when)
-            apply_event(progress, event_type, occurred_at=when, revision_days=[])
-            changed.append(progress)
+    if _elective_slot_of(enrollment.scheme, subject.id):
+        raise InvalidInput(
+            "This paper is an elective. Choose your elective instead of excluding papers.",
+            {"subject": ["Elective papers are controlled by your elective choice."]},
+        )
+    changed = _set_subject_excluded(enrollment, subject, excluded)
     if changed:
         _settle(enrollment, changed)
     return len(changed)
+
+
+# --- electives -------------------------------------------------------------------------------
+
+
+def _elective_slot_of(scheme: Scheme, subject_id):
+    return next(
+        (slot for slot in syllabus.elective_slots(scheme) if any(o.id == subject_id for o in slot.options)), None
+    )
+
+
+def elective_choices(enrollment: Enrollment) -> dict[str, Any]:
+    """slot key -> chosen subject id."""
+    return {e.slot_key: e.subject_id for e in EnrollmentElective.objects.filter(enrollment=enrollment)}
+
+
+def _store_electives(enrollment: Enrollment, choices: dict[str, Any]) -> None:
+    """Validates and saves choices (a slot mapped to None clears it). Does not touch coverage; see `_apply_electives`."""
+    slots = {s.key: s for s in syllabus.elective_slots(enrollment.scheme)}
+    errors: dict[str, list[str]] = {}
+    clean: dict[str, Any] = {}
+    for key, subject_id in choices.items():
+        slot = slots.get(key)
+        if slot is None:
+            errors[key] = ["Unknown elective slot for this syllabus."]
+        elif subject_id is None:
+            clean[key] = None
+        elif not any(str(o.id) == str(subject_id) for o in slot.options):
+            errors[key] = ["Not one of the options for this elective paper."]
+        else:
+            clean[key] = subject_id
+    if errors:
+        raise InvalidInput("Invalid elective choice.", {"electives": errors})
+    for key, subject_id in clean.items():
+        if subject_id is None:
+            EnrollmentElective.objects.filter(enrollment=enrollment, slot_key=key).delete()
+        else:
+            EnrollmentElective.objects.update_or_create(
+                enrollment=enrollment,
+                slot_key=key,
+                defaults={"user_id": enrollment.user_id, "subject_id": subject_id},
+            )
+
+
+def _apply_electives(enrollment: Enrollment) -> list[ChapterProgress]:
+    """
+    Makes coverage follow the choices: in every slot the chosen option counts and the others are excluded.
+    A slot without a choice yet excludes all its options, so no paper is counted until the student picks one.
+    """
+    chosen = elective_choices(enrollment)
+    when = timezone.now()
+    changed: list[ChapterProgress] = []
+    for slot in syllabus.elective_slots(enrollment.scheme):
+        for option in slot.options:
+            changed += _set_subject_excluded(
+                enrollment, option, option.id != chosen.get(slot.key), source=Source.SYSTEM, when=when
+            )
+    for progress in changed:
+        progress.save()  # callers recompute from the database
+    return changed
+
+
+@transaction.atomic
+def set_electives(enrollment: Enrollment, choices: dict[str, Any]) -> Enrollment:
+    """Saves the student's elective choices for their active syllabus and re-counts coverage."""
+    if enrollment.status != Enrollment.Status.ACTIVE:
+        raise InvalidInput("Only an active enrolment can change electives.", {"enrollment": ["Not active."]})
+    _store_electives(enrollment, choices)
+    changed = _apply_electives(enrollment)
+    if changed:
+        _settle(enrollment, changed)
+    return enrollment
 
 
 def _retired_subject(subject_id):
@@ -681,6 +787,7 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
         raise InvalidInput("You are already on this scheme.", {"scheme": ["Same scheme."]})
 
     old_rows = {p.chapter_id: p for p in selectors.chapter_progress_for_enrollment(enrollment)}
+    old_choices = {e.slot_key: e.subject.key for e in enrollment.electives.select_related("subject")}
     enrollment.status = Enrollment.Status.ARCHIVED
     enrollment.save(update_fields=["status", "updated_at"])
     new = create_enrollment(
@@ -796,7 +903,7 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
             apply_event(
                 target, EventType.CONFIDENCE_SET, payload={"rating": confidence}, occurred_at=now, revision_days=[]
             )
-        if all_excluded and incoming:
+        if all_excluded and incoming and not target.is_excluded:
             _append_event(new, chapter_id, EventType.EXCLUDED, source=Source.CARRYOVER, occurred_at=now)
             apply_event(target, EventType.EXCLUDED, occurred_at=now, revision_days=[])
         carried += 1
@@ -805,6 +912,15 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
 
     if touched:
         _settle(new, touched)
+    # Keep the student's elective choices: slots are matched by subject key, so a re-numbered scheme still lines up.
+    carried_choices = {
+        slot.key: option.id
+        for slot in syllabus.elective_slots(new_scheme)
+        for option in slot.options
+        if old_choices.get(slot.key) == option.key
+    }
+    if carried_choices:
+        set_electives(new, carried_choices)
     mapped_old = {m.from_chapter_id for ms in maps.values() for m in ms}
     summary = {
         "carried_chapters": carried,

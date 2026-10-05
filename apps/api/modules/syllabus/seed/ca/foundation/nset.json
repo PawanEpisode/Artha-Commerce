@@ -1,0 +1,1159 @@
+{
+  "course": "ca",
+  "level": "foundation",
+  "scheme": {
+    "code": "nset",
+    "name": "New Scheme of Education and Training (NSET)",
+    "source_url": "https://www.icai.org/post/syllabus-nset-fnd",
+    "notes": "Structure (papers, groups, sections) from the ICAI syllabus page https://www.icai.org/post/syllabus-nset-fnd. Chapters and topics extracted from the ICAI paper PDFs (links per paper in source_url and docs/syllabus-sources/ca-pdf-links.json; local copies in docs/syllabus-sources/ca/). Chapter = numbered content item of the paper; topic = its sub-item, with deeper levels written as 'Parent: item'; the Section or Part (with marks) is in the chapter's section field. ICAI does not publish marks per chapter, so chapter weights are empty. Papers published as two PDFs are merged into one paper. Needs editor review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "accounting",
+      "paper_number": 1,
+      "name": "Accounting",
+      "source_url": "https://resource.cdn.icai.org/92167bos-aps5079-fnd-p1.pdf",
+      "chapters": [
+        {
+          "key": "theoretical-framework",
+          "name": "Theoretical Framework",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-and-scope-of-accounting",
+              "name": "Meaning and Scope of Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-concepts-principles-and-conventions",
+              "name": "Accounting concepts, principles and conventions",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-and-revenue-expenditure-capital-and-revenue-receipts-contingent-assets-and-contingent-liabilities",
+              "name": "Capital and revenue expenditure, capital and revenue receipts, contingent assets and contingent liabilities",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-policies",
+              "name": "Accounting policies",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-as-a-measurement-discipline-valuation-principles-accounting-estimates",
+              "name": "Accounting as a measurement discipline – valuation principles, accounting estimates",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-standards-concepts-and-objectives",
+              "name": "Accounting Standards - concepts and objectives",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounting-process",
+          "name": "Accounting Process",
+          "section": "",
+          "topics": [
+            {
+              "key": "recording-accounting-transactions-principles-of-double-entry-book-keeping-books-of-original-entry-journal-subsidiary-boo",
+              "name": "Recording accounting transactions: principles of double entry book-keeping, books of original entry - journal, subsidiary books, cash book, ledger-format, posting from journal and subsidiary books, balancing of accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-trial-balance",
+              "name": "Preparation of trial balance",
+              "kind": "concept"
+            },
+            {
+              "key": "rectification-of-errors",
+              "name": "Rectification of errors",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "bank-reconciliation-statement",
+          "name": "Bank Reconciliation Statement",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-reasons-and-preparation-of-bank-reconciliation-statement",
+              "name": "Introduction, reasons and preparation of bank reconciliation statement",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "inventories",
+          "name": "Inventories",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-basis-and-technique-of-inventory-valuation-cost-of-inventory-net-realizable-value-and-record-system",
+              "name": "Meaning, basis and technique of inventory valuation, cost of inventory, net realizable value and record system",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "depreciation-and-amortisation",
+          "name": "Depreciation and Amortisation",
+          "section": "",
+          "topics": [
+            {
+              "key": "tangible-and-intangible-assets-meaning-and-difference-concepts-methods-of-computation-and-accounting-treatment-of-deprec",
+              "name": "Tangible and intangible assets-Meaning and difference, concepts, methods of computation and accounting treatment of depreciation / amortisation, change in depreciation method",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "bills-of-exchange-and-promissory-notes",
+          "name": "Bills of exchange and Promissory notes",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-of-bills-of-exchange-and-promissory-notes-and-their-accounting-treatment",
+              "name": "Meaning of bills of exchange and promissory notes and their accounting treatment",
+              "kind": "concept"
+            },
+            {
+              "key": "accommodation-bills",
+              "name": "Accommodation bills",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "preparation-of-final-accounts-of-sole-proprietors",
+          "name": "Preparation of Final accounts of Sole Proprietors",
+          "section": "",
+          "topics": [
+            {
+              "key": "elements-of-financial-statements-closing-adjustment-entries-trading-account-profit-and-loss-account-and-balance-sheet-of",
+              "name": "Elements of financial statements, closing adjustment entries, trading account, profit and loss account and balance sheet of manufacturing and non-manufacturing entities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "financial-statements-of-not-for-profit-organizations",
+          "name": "Financial Statements of Not-for-Profit Organizations",
+          "section": "",
+          "topics": [
+            {
+              "key": "significance-and-preparation-of-receipt-and-payment-account-income-and-expenditure-account-and-balance-sheet-difference",
+              "name": "Significance and preparation of receipt and payment account, income and expenditure account and balance sheet, difference between profit and loss account and income and expenditure account",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounts-from-incomplete-records-excluding-preparation-of-accounts-based-on-ratios",
+          "name": "Accounts from Incomplete Records (excluding preparation of accounts based on ratios)",
+          "section": "",
+          "topics": []
+        },
+        {
+          "key": "partnership-and-llp-accounts",
+          "name": "Partnership and LLP Accounts",
+          "section": "",
+          "topics": [
+            {
+              "key": "final-accounts-of-partnership-firms-and-llps",
+              "name": "Final accounts of partnership firms and LLPs",
+              "kind": "concept"
+            },
+            {
+              "key": "admission-retirement-and-death-of-a-partner-including-treatment-of-goodwill",
+              "name": "Admission, retirement and death of a partner including treatment of goodwill",
+              "kind": "concept"
+            },
+            {
+              "key": "dissolution-of-partnership-firms-and-llps-including-piecemeal-distribution-of-assets",
+              "name": "Dissolution of partnership firms and LLPs including piecemeal distribution of assets",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "company-accounts",
+          "name": "Company Accounts",
+          "section": "",
+          "topics": [
+            {
+              "key": "definition-of-shares-and-debentures",
+              "name": "Definition of shares and debentures",
+              "kind": "concept"
+            },
+            {
+              "key": "issue-of-shares-and-debentures-forfeiture-of-shares-re-issue-of-forfeited-shares",
+              "name": "Issue of shares and debentures, forfeiture of shares, re-issue of forfeited shares",
+              "kind": "concept"
+            },
+            {
+              "key": "redemption-of-preference-shares-and-debentures-excluding-purchase-and-redemption-of-own-debentures-and-sinking-fund-meth",
+              "name": "Redemption of preference shares and debentures (excluding purchase and redemption of own debentures and sinking fund method)",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-for-bonus-issue-and-right-issue",
+              "name": "Accounting for bonus issue and right issue",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "business-laws",
+      "paper_number": 2,
+      "name": "Business Laws",
+      "source_url": "https://resource.cdn.icai.org/92168bos-aps5079-fnd-p2.pdf",
+      "chapters": [
+        {
+          "key": "indian-regulatory-framework",
+          "name": "Indian Regulatory Framework",
+          "section": "",
+          "topics": [
+            {
+              "key": "major-regulatory-bodies-such-as-ministry-of-finance-ministry-of-corporate-affairs-sebi-rbi-ibbi-ministry-of-law-and-just",
+              "name": "Major Regulatory Bodies such as Ministry of Finance, Ministry of Corporate Affairs, SEBI, RBI, IBBI, Ministry of Law and Justice, etc.",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-indian-contract-act-1872",
+          "name": "The Indian Contract Act, 1872",
+          "section": "",
+          "topics": [
+            {
+              "key": "general-nature-of-contract",
+              "name": "General nature of contract",
+              "kind": "concept"
+            },
+            {
+              "key": "consideration",
+              "name": "Consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "other-essential-elements-of-a-valid-contract",
+              "name": "Other essential elements of a valid contract",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-of-contract",
+              "name": "Performance of contract",
+              "kind": "concept"
+            },
+            {
+              "key": "breach-of-contract",
+              "name": "Breach of contract",
+              "kind": "concept"
+            },
+            {
+              "key": "contingent-and-quasi-contract",
+              "name": "Contingent and Quasi Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "contract-of-indemnity-and-guarantee",
+              "name": "Contract of Indemnity and Guarantee",
+              "kind": "concept"
+            },
+            {
+              "key": "contract-of-bailment-and-pledge",
+              "name": "Contract of Bailment and Pledge",
+              "kind": "concept"
+            },
+            {
+              "key": "contract-of-agency",
+              "name": "Contract of Agency",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-sale-of-goods-act-1930",
+          "name": "The Sale of Goods Act, 1930",
+          "section": "",
+          "topics": [
+            {
+              "key": "formation-of-the-contract-of-sale",
+              "name": "Formation of the contract of sale",
+              "kind": "concept"
+            },
+            {
+              "key": "conditions-and-warranties",
+              "name": "Conditions and Warranties",
+              "kind": "concept"
+            },
+            {
+              "key": "transfer-of-ownership-and-delivery-of-goods",
+              "name": "Transfer of ownership and Delivery of goods",
+              "kind": "concept"
+            },
+            {
+              "key": "unpaid-seller-and-his-rights",
+              "name": "Unpaid seller and his rights",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-indian-partnership-act-1932",
+          "name": "The Indian Partnership Act, 1932",
+          "section": "",
+          "topics": [
+            {
+              "key": "general-nature-of-partnership",
+              "name": "General Nature of Partnership",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-and-duties-of-partners",
+              "name": "Rights and Duties of partners",
+              "kind": "concept"
+            },
+            {
+              "key": "reconstitution-of-firms",
+              "name": "Reconstitution of firms",
+              "kind": "concept"
+            },
+            {
+              "key": "registration-and-dissolution-of-a-firm",
+              "name": "Registration and Dissolution of a firm",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-limited-liability-partnership-act-2008",
+          "name": "The Limited Liability Partnership Act, 2008",
+          "section": "",
+          "topics": [
+            {
+              "key": "introduction-covering-nature-and-scope",
+              "name": "Introduction-covering nature and scope",
+              "kind": "concept"
+            },
+            {
+              "key": "essential-features",
+              "name": "Essential features",
+              "kind": "concept"
+            },
+            {
+              "key": "characteristics-of-llp",
+              "name": "Characteristics of LLP",
+              "kind": "concept"
+            },
+            {
+              "key": "incorporation-and-differences-with-other-forms-of-organizations",
+              "name": "Incorporation and Differences with other forms of organizations",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-companies-act-2013",
+          "name": "The Companies Act, 2013",
+          "section": "",
+          "topics": [
+            {
+              "key": "essential-features-of-company",
+              "name": "Essential features of company",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-veil-theory",
+              "name": "Corporate veil theory",
+              "kind": "concept"
+            },
+            {
+              "key": "classes-of-companies",
+              "name": "Classes of companies",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-share-capital",
+              "name": "Types of share capital",
+              "kind": "concept"
+            },
+            {
+              "key": "incorporation-of-company",
+              "name": "Incorporation of company",
+              "kind": "concept"
+            },
+            {
+              "key": "memorandum-of-association",
+              "name": "Memorandum of Association",
+              "kind": "concept"
+            },
+            {
+              "key": "articles-of-association",
+              "name": "Articles of Association",
+              "kind": "concept"
+            },
+            {
+              "key": "doctrine-of-indoor-management",
+              "name": "Doctrine of Indoor Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "the-negotiable-instruments-act-1881",
+          "name": "The Negotiable Instruments Act, 1881",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-of-negotiable-instruments",
+              "name": "Meaning of Negotiable Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "characteristics",
+              "name": "Characteristics",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-instruments",
+              "name": "Classification of Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "different-provisions-relating-to-negotiation",
+              "name": "Different provisions relating to Negotiation",
+              "kind": "concept"
+            },
+            {
+              "key": "presentment-of-instruments",
+              "name": "Presentment of Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "rules-of-compensation",
+              "name": "Rules of Compensation",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "quantitative-aptitude",
+      "paper_number": 3,
+      "name": "Quantitative Aptitude",
+      "source_url": "https://resource.cdn.icai.org/92169bos-aps5079-fnd-p3.pdf",
+      "chapters": [
+        {
+          "key": "ratio-and-proportion-indices-and-logarithms",
+          "name": "Ratio and proportion, Indices and Logarithms",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "ratio-and-proportion-and-time-and-work-related-problems",
+              "name": "Ratio and proportion and Time and work-related problems",
+              "kind": "concept"
+            },
+            {
+              "key": "laws-of-indices",
+              "name": "Laws of Indices",
+              "kind": "concept"
+            },
+            {
+              "key": "exponents-and-logarithms-and-anti-logarithms",
+              "name": "Exponents and Logarithms and Anti Logarithms",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "equations",
+          "name": "Equations",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "linear-simultaneous-linear-equations-up-to-three-variables",
+              "name": "Linear Simultaneous linear equations up to three variables",
+              "kind": "concept"
+            },
+            {
+              "key": "quadratic-and-cubic-equations-in-one-variable",
+              "name": "Quadratic and Cubic equations in one variable",
+              "kind": "concept"
+            },
+            {
+              "key": "applications-in-business-related-problems",
+              "name": "Applications in Business related problems",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "linear-inequalities",
+          "name": "Linear Inequalities",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "linear-inequalities-in-one-and-two-variables-and-the-solution-space",
+              "name": "Linear Inequalities in one and two variables and the solution space",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "mathematics-of-finance",
+          "name": "Mathematics of Finance",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "simple-interest",
+              "name": "Simple Interest",
+              "kind": "concept"
+            },
+            {
+              "key": "compound-interest",
+              "name": "Compound interest",
+              "kind": "concept"
+            },
+            {
+              "key": "nominal-and-effective-rate-of-interest",
+              "name": "Nominal and Effective Rate of Interest",
+              "kind": "concept"
+            },
+            {
+              "key": "present-value",
+              "name": "Present Value",
+              "kind": "concept"
+            },
+            {
+              "key": "net-present-value",
+              "name": "Net Present Value",
+              "kind": "concept"
+            },
+            {
+              "key": "future-value",
+              "name": "Future Value",
+              "kind": "concept"
+            },
+            {
+              "key": "perpetuity",
+              "name": "Perpetuity",
+              "kind": "concept"
+            },
+            {
+              "key": "annuities",
+              "name": "Annuities",
+              "kind": "concept"
+            },
+            {
+              "key": "sinking-funds",
+              "name": "Sinking Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "calculating-of-emi",
+              "name": "Calculating of EMI",
+              "kind": "concept"
+            },
+            {
+              "key": "calculations-of-returns-nominal-and-effective-rate-of-return",
+              "name": "Calculations of Returns: Nominal and Effective rate of Return",
+              "kind": "concept"
+            },
+            {
+              "key": "compound-annual-growth-rate-cagr",
+              "name": "Compound Annual growth rate (CAGR)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "permutations-and-combinations",
+          "name": "Permutations and Combinations",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "basic-concepts-of-permutations-and-combinations",
+              "name": "Basic concepts of Permutations and combinations",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "the-factorial",
+              "name": "The factorial",
+              "kind": "concept"
+            },
+            {
+              "key": "permutations",
+              "name": "Permutations",
+              "kind": "concept"
+            },
+            {
+              "key": "results",
+              "name": "Results",
+              "kind": "concept"
+            },
+            {
+              "key": "circular-permutations",
+              "name": "Circular permutations",
+              "kind": "concept"
+            },
+            {
+              "key": "permutations-with-restrictions",
+              "name": "Permutations with restrictions",
+              "kind": "concept"
+            },
+            {
+              "key": "combinations-with-standard-results",
+              "name": "Combinations with standard results",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sequence-and-series",
+          "name": "Sequence and Series",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "introduction-sequences",
+              "name": "Introduction Sequences",
+              "kind": "concept"
+            },
+            {
+              "key": "series",
+              "name": "Series",
+              "kind": "concept"
+            },
+            {
+              "key": "arithmetic-and-geometric-progression",
+              "name": "Arithmetic and Geometric progression",
+              "kind": "concept"
+            },
+            {
+              "key": "relationship-between-am-and-gm-and-sum-of-n-terms-of-special-series-and-business-applications",
+              "name": "Relationship between AM and GM and Sum of n terms of special series and Business Applications",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sets-relations-and-functions",
+          "name": "Sets, Relations, and Functions",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": [
+            {
+              "key": "basics-of-limits-and-continuity-functions",
+              "name": "Basics of Limits and Continuity functions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "basic-applications-of-differential-and-integral-calculus-in-business-and-economics-excluding-the-tri",
+          "name": "Basic applications of Differential and Integral calculus in Business and Economics (Excluding the trigonometric applications)",
+          "section": "Part A: Business Mathematics (40 Marks)",
+          "topics": []
+        },
+        {
+          "key": "number-series-coding-and-decoding-and-odd-man-out",
+          "name": "Number series coding and Decoding and odd man out",
+          "section": "Part B: Logical Reasoning (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "direction-tests",
+          "name": "Direction Tests",
+          "section": "Part B: Logical Reasoning (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "seating-arrangements",
+          "name": "Seating Arrangements",
+          "section": "Part B: Logical Reasoning (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "blood-relations",
+          "name": "Blood Relations",
+          "section": "Part B: Logical Reasoning (20 Marks)",
+          "topics": []
+        },
+        {
+          "key": "unit-1-statistical-representation-of-data-unit-2-sampling",
+          "name": "Unit 1: Statistical Representation of Data; Unit 2: Sampling",
+          "section": "Part C: Statistics (40 Marks)",
+          "topics": [
+            {
+              "key": "diagrammatic-representation-of-data",
+              "name": "Diagrammatic representation of data",
+              "kind": "concept"
+            },
+            {
+              "key": "frequency-distribution",
+              "name": "Frequency distribution",
+              "kind": "concept"
+            },
+            {
+              "key": "graphical-representation-of-frequency-distribution-histogram-frequency-polygon-ogive-pie-chart",
+              "name": "Graphical representation of Frequency Distribution – Histogram, Frequency Polygon, Ogive, Pie-chart",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-principles-of-sampling-theory",
+              "name": "Basic principles of sampling theory",
+              "kind": "concept"
+            },
+            {
+              "key": "comparison-between-sample-survey-and-complete-enumeration",
+              "name": "Comparison between sample survey and complete enumeration",
+              "kind": "concept"
+            },
+            {
+              "key": "some-important-terms-associated-sampling",
+              "name": "Some important terms associated sampling",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-sampling",
+              "name": "Types of sampling",
+              "kind": "concept"
+            },
+            {
+              "key": "sampling-and-non-sampling-errors",
+              "name": "Sampling and non-sampling errors",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "measures-of-central-tendency-and-dispersion",
+          "name": "Measures of Central tendency and Dispersion",
+          "section": "Part C: Statistics (40 Marks)",
+          "topics": [
+            {
+              "key": "measures-of-central-tendency-and-dispersion",
+              "name": "Measures of Central Tendency and Dispersion",
+              "kind": "concept"
+            },
+            {
+              "key": "mean-median",
+              "name": "Mean Median",
+              "kind": "concept"
+            },
+            {
+              "key": "mode",
+              "name": "Mode",
+              "kind": "concept"
+            },
+            {
+              "key": "mean-deviation",
+              "name": "Mean Deviation",
+              "kind": "concept"
+            },
+            {
+              "key": "quartiles-and-quartile-deviation",
+              "name": "Quartiles and Quartile Deviation",
+              "kind": "concept"
+            },
+            {
+              "key": "standard-deviation",
+              "name": "Standard Deviation",
+              "kind": "concept"
+            },
+            {
+              "key": "co-efficient-of-variation",
+              "name": "Co-efficient of Variation",
+              "kind": "concept"
+            },
+            {
+              "key": "coefficient-of-quartile-deviation",
+              "name": "Coefficient of Quartile Deviation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "probability",
+          "name": "Probability",
+          "section": "Part C: Statistics (40 Marks)",
+          "topics": [
+            {
+              "key": "independent-and-dependent-events",
+              "name": "Independent and dependent events",
+              "kind": "concept"
+            },
+            {
+              "key": "mutually-exclusive-events",
+              "name": "Mutually exclusive events",
+              "kind": "concept"
+            },
+            {
+              "key": "total-and-compound-probability-and-bayes-theorem",
+              "name": "Total and Compound Probability and Bayes’ theorem",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "theoretical-distributions",
+          "name": "Theoretical Distributions",
+          "section": "Part C: Statistics (40 Marks)",
+          "topics": [
+            {
+              "key": "random-variables",
+              "name": "Random variables",
+              "kind": "concept"
+            },
+            {
+              "key": "discrete-and-continuous-random-variables",
+              "name": "Discrete and Continuous Random variables",
+              "kind": "concept"
+            },
+            {
+              "key": "expectation-of-a-discrete-random-variable",
+              "name": "Expectation of a discrete random variable",
+              "kind": "concept"
+            },
+            {
+              "key": "theoretical-distributions-binomial-distribution",
+              "name": "Theoretical Distributions: Binomial Distribution",
+              "kind": "concept"
+            },
+            {
+              "key": "poisson-distribution-basic-application-and-normal-distribution-basic-applications",
+              "name": "Poisson distribution – basic application and Normal Distribution – basic applications",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "correlation-and-regression",
+          "name": "Correlation and Regression",
+          "section": "Part C: Statistics (40 Marks)",
+          "topics": [
+            {
+              "key": "scatter-diagram",
+              "name": "Scatter diagram",
+              "kind": "concept"
+            },
+            {
+              "key": "karl-pearsons-coefficient-of-correlation-rank-correlation",
+              "name": "Karl Pearson’s Coefficient of Correlation Rank Correlation",
+              "kind": "concept"
+            },
+            {
+              "key": "regression-lines",
+              "name": "Regression lines",
+              "kind": "concept"
+            },
+            {
+              "key": "regression-equations",
+              "name": "Regression equations",
+              "kind": "concept"
+            },
+            {
+              "key": "regression-coefficients",
+              "name": "Regression coefficients",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "index-numbers",
+          "name": "Index Numbers",
+          "section": "Part C: Statistics (40 Marks)",
+          "topics": [
+            {
+              "key": "uses-of-index-numbers",
+              "name": "Uses of Index Numbers",
+              "kind": "concept"
+            },
+            {
+              "key": "problems-involved-in-construction-of-index-numbers",
+              "name": "Problems involved in construction of Index Numbers",
+              "kind": "concept"
+            },
+            {
+              "key": "methods-of-construction-of-index-numbers",
+              "name": "Methods of construction of Index Numbers",
+              "kind": "concept"
+            },
+            {
+              "key": "bse-sensex-and-nse",
+              "name": "BSE SENSEX and NSE",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "total_marks": 100,
+      "kind": "theory"
+    },
+    {
+      "key": "business-economics",
+      "paper_number": 4,
+      "name": "Business Economics",
+      "source_url": "https://resource.cdn.icai.org/92170bos-aps5079-fnd-p4.pdf",
+      "chapters": [
+        {
+          "key": "introduction-to-business-economics",
+          "name": "Introduction to Business Economics",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-and-scope-of-business-economics",
+              "name": "Meaning and scope of Business Economics",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-problems-of-an-economy-and-role-of-price-mechanism",
+              "name": "Basic Problems of an Economy and Role of Price Mechanism",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "theory-of-demand-and-supply",
+          "name": "Theory of Demand and Supply",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-and-determinants-of-demand-law-of-demand-and-elasticity-of-demand-price-income-and-cross-elasticity",
+              "name": "Meaning and Determinants of Demand, Law of Demand and Elasticity of Demand – Price, Income and Cross Elasticity",
+              "kind": "concept"
+            },
+            {
+              "key": "theory-of-consumers-behaviour-indifference-curve-approach",
+              "name": "Theory of Consumer’s Behaviour –Indifference Curve approach",
+              "kind": "concept"
+            },
+            {
+              "key": "meaning-and-determinants-of-supply-law-of-supply-and-elasticity-of-supply-market-equilibrium-and-social-efficiency",
+              "name": "Meaning and Determinants of Supply, Law of Supply and Elasticity of Supply, Market Equilibrium and Social Efficiency",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "theory-of-production-and-cost",
+          "name": "Theory of Production and Cost",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning-and-factors-of-production-short-run-and-long-run",
+              "name": "Meaning and Factors of Production, Short Run and Long Run",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-production-the-law-of-variable-proportions-and-laws-of-returns-to-scale-producers-equilibrium",
+              "name": "Law of Production – The Law of Variable Proportions and Laws of Returns to Scale, Producer’s Equilibrium",
+              "kind": "concept"
+            },
+            {
+              "key": "concepts-of-costs-short-run-and-long-run-costs-average-and-marginal-costs-total-fixed-and-variable-costs",
+              "name": "Concepts of Costs – Short-run and long-run costs, Average and Marginal Costs, Total, Fixed and Variable Costs",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "price-determination-in-different-markets",
+          "name": "Price Determination in Different Markets",
+          "section": "",
+          "topics": [
+            {
+              "key": "market-structures-perfect-competition-monopoly-and-monopolistic-competition",
+              "name": "Market Structures: Perfect Competition, Monopoly and Monopolistic Competition",
+              "kind": "concept"
+            },
+            {
+              "key": "using-game-theory-to-study-oligopoly",
+              "name": "Using Game Theory to study Oligopoly",
+              "kind": "concept"
+            },
+            {
+              "key": "price-determination-in-these-markets",
+              "name": "Price Determination in these Markets",
+              "kind": "concept"
+            },
+            {
+              "key": "price-output-determination-under-different-market-forms",
+              "name": "Price- Output Determination under different Market Forms",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "determination-of-national-income",
+          "name": "Determination of National Income",
+          "section": "",
+          "topics": [
+            {
+              "key": "macro-economic-aggregates-and-measurement-of-national-income",
+              "name": "Macro Economic Aggregates and Measurement of National Income",
+              "kind": "concept"
+            },
+            {
+              "key": "determination-of-national-income-keynes-two-sector-basic-model-three-sectors-and-four-sectors-models",
+              "name": "Determination of National Income: Keynes’ Two Sector Basic Model, Three Sectors and Four Sectors Models",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-cycles",
+          "name": "Business Cycles",
+          "section": "",
+          "topics": [
+            {
+              "key": "meaning",
+              "name": "Meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "phases",
+              "name": "Phases",
+              "kind": "concept"
+            },
+            {
+              "key": "features",
+              "name": "Features",
+              "kind": "concept"
+            },
+            {
+              "key": "causes-behind-these-cycles",
+              "name": "Causes behind these Cycles",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "public-finance",
+          "name": "Public Finance",
+          "section": "",
+          "topics": [
+            {
+              "key": "fiscal-functions-an-overview-centre-and-state-finance",
+              "name": "Fiscal functions: An Overview, Centre and State Finance",
+              "kind": "concept"
+            },
+            {
+              "key": "market-failure-government-intervention-to-correct-market-failure",
+              "name": "Market Failure/ Government intervention to correct market failure",
+              "kind": "concept"
+            },
+            {
+              "key": "process-of-budget-making-sources-of-revenue-expenditure-management-and-management-of-public-debt",
+              "name": "Process of budget making: Sources of Revenue, Expenditure Management, and Management of Public Debt",
+              "kind": "concept"
+            },
+            {
+              "key": "fiscal-policy",
+              "name": "Fiscal Policy",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "money-market",
+          "name": "Money Market",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept-of-money-demand",
+              "name": "Concept of Money Demand",
+              "kind": "concept"
+            },
+            {
+              "key": "important-theories-of-demand-for-money",
+              "name": "Important theories of Demand for Money",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-money-supply-cryptocurrency-and-other-new-terminology",
+              "name": "Concept of Money Supply, Cryptocurrency and other new terminology",
+              "kind": "concept"
+            },
+            {
+              "key": "monetary-policy",
+              "name": "Monetary Policy",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "international-trade",
+          "name": "International Trade",
+          "section": "",
+          "topics": [
+            {
+              "key": "theories-of-international-trade-including-theories-of-intra-industry-trade-by-krugman",
+              "name": "Theories of International Trade including theories of intra-industry trade by Krugman",
+              "kind": "concept"
+            },
+            {
+              "key": "trade-policy-the-instruments-of-trade-policy",
+              "name": "Trade Policy – The Instruments of Trade Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "trade-negotiations",
+              "name": "Trade Negotiations",
+              "kind": "concept"
+            },
+            {
+              "key": "exchange-rates-and-its-economic-effects",
+              "name": "Exchange Rates and its economic effects",
+              "kind": "concept"
+            },
+            {
+              "key": "international-capital-movements-foreign-direct-investment",
+              "name": "International Capital Movements: Foreign Direct Investment",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-economy",
+          "name": "Indian Economy",
+          "section": "",
+          "topics": [
+            {
+              "key": "before-1950-chanakya-and-nand-vansh",
+              "name": "Before 1950 – Chanakya and Nand Vansh",
+              "kind": "concept"
+            },
+            {
+              "key": "oecd-paper-1950-1991",
+              "name": "OECD Paper (1950-1991)",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-knowledge-1991-onwards",
+              "name": "Basic knowledge 1991 Onwards",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "total_marks": 100,
+      "kind": "theory"
+    }
+  ]
+}

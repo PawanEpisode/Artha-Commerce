@@ -20,6 +20,7 @@ from .serializers import (
     SchemeSerializer,
     SubjectDetailSerializer,
     SubjectSerializer,
+    elective_slot_data,
 )
 
 PUBLIC_CACHE = "public, s-maxage=300, stale-while-revalidate=3600"
@@ -64,6 +65,7 @@ class LevelDetailView(PublicView):
             "schemes": SchemeSerializer(schemes, many=True).data,
             "groups": GroupSerializer(selectors.list_groups(scheme), many=True).data if scheme else [],
             "subjects": SubjectSerializer(selectors.list_subjects(scheme), many=True).data if scheme else [],
+            "elective_slots": [elective_slot_data(x) for x in selectors.elective_slots(scheme)] if scheme else [],
         }
         return Response(body)
 
@@ -104,7 +106,8 @@ class ChapterByKeyView(PublicView):
 
 class TermListView(PublicView):
     def get(self, request):
-        return Response(ExamTermSerializer(selectors.list_terms(request.query_params.get("course")), many=True).data)
+        terms = selectors.list_terms(request.query_params.get("course"), request.query_params.get("level"))
+        return Response(ExamTermSerializer(terms, many=True).data)
 
 
 class SitemapPathsView(PublicView):

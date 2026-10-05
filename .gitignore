@@ -18,3 +18,6 @@ venv/
 db.sqlite3
 /coverage/
 supabase/.temp/
+# Official ICAI PDFs downloaded locally; do not commit them.
+docs/syllabus-sources/ca/**/*.pdf
+docs/syllabus-sources/ca/**/*.part

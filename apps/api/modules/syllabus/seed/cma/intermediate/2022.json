@@ -1,0 +1,2924 @@
+{
+  "course": "cma",
+  "level": "intermediate",
+  "scheme": {
+    "code": "2022",
+    "name": "CMA Syllabus 2022",
+    "source_url": "https://icmai.in",
+    "notes": "Built from the ICMAI \"CMA Syllabus 2022\" PDF supplied by the founder (effective from the June 2023 exam term). Chapters are the syllabus modules, topics are the numbered sub-items, and each chapter carries its Section and weightage in \"section\". Chapter marks are the module weights from the syllabus table (weight source \"official\"). Where the table gives one combined weight for a group of modules, or only the section total, the remaining section weight is split evenly across those modules and marked \"analysis\" (indicative only). Needs editor review before publishing."
+  },
+  "groups": [
+    {
+      "key": "group-1",
+      "name": "Group I"
+    },
+    {
+      "key": "group-2",
+      "name": "Group II"
+    }
+  ],
+  "subjects": [
+    {
+      "key": "business-laws-and-ethics",
+      "paper_number": 5,
+      "name": "Business Laws and Ethics",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction-to-law-and-legal-system-in-india",
+          "name": "Introduction to Law and Legal System in India",
+          "section": "Section A: Commercial Laws (30%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-the-constitution-of-india",
+              "name": "Introduction to The Constitution of India",
+              "kind": "concept"
+            },
+            {
+              "key": "fundamental-rights",
+              "name": "Fundamental Rights",
+              "kind": "concept"
+            },
+            {
+              "key": "sources-of-law",
+              "name": "Sources of Law",
+              "kind": "concept"
+            },
+            {
+              "key": "primary-and-subordinate-legislations",
+              "name": "Primary and Subordinate Legislations",
+              "kind": "concept"
+            },
+            {
+              "key": "legislative-process-in-india",
+              "name": "Legislative Process in India",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-methods-including-judicial-alternative-dispute-resolution-adr-process-in-india",
+              "name": "Legal Methods including Judicial Alternative Dispute Resolution (ADR) Process in India",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-terminology-and-maxims",
+              "name": "Legal Terminology and Maxims",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-contracts-act-1872",
+          "name": "Indian Contracts Act, 1872",
+          "section": "Section A: Commercial Laws (30%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "essential-elements-of-a-contract-offer-and-acceptance",
+              "name": "Essential Elements of a Contract, Offer and Acceptance",
+              "kind": "concept"
+            },
+            {
+              "key": "void-and-voidable-agreements",
+              "name": "Void and Voidable Agreements",
+              "kind": "concept"
+            },
+            {
+              "key": "consideration",
+              "name": "Consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "legality-of-object",
+              "name": "Legality of Object",
+              "kind": "concept"
+            },
+            {
+              "key": "e-contracts-essential-requirements-for-enforceability",
+              "name": "E-contracts - Essential Requirements for Enforceability",
+              "kind": "concept"
+            },
+            {
+              "key": "constraints-to-enforce-contractual-obligations",
+              "name": "Constraints to Enforce Contractual Obligations",
+              "kind": "concept"
+            },
+            {
+              "key": "quasi-contracts-contingent-contracts-termination-or-discharge-of-contracts",
+              "name": "Quasi-Contracts, Contingent Contracts, Termination or Discharge of Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "assignment-of-contractual-rights-and-obligations",
+              "name": "Assignment of Contractual Rights and Obligations",
+              "kind": "concept"
+            },
+            {
+              "key": "representations-and-warranties",
+              "name": "Representations and Warranties",
+              "kind": "concept"
+            },
+            {
+              "key": "impossibility-and-force-majeure",
+              "name": "Impossibility and Force Majeure",
+              "kind": "concept"
+            },
+            {
+              "key": "termination-by-novation",
+              "name": "Termination by Novation",
+              "kind": "concept"
+            },
+            {
+              "key": "tender-procedure-of-government-contract",
+              "name": "Tender Procedure of Government Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "special-contracts-indemnity-and-guarantee-bailment-and-pledge-laws-of-agency",
+              "name": "Special Contracts - Indemnity and Guarantee, Bailment and Pledge, Laws of Agency",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sale-of-goods-act-1930",
+          "name": "Sale of Goods Act, 1930",
+          "section": "Section A: Commercial Laws (30%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "essential-conditions-of-a-contract-of-sale",
+              "name": "Essential Conditions of a Contract of Sale",
+              "kind": "concept"
+            },
+            {
+              "key": "transfer-of-ownership",
+              "name": "Transfer of Ownership",
+              "kind": "concept"
+            },
+            {
+              "key": "conditions-and-warranties",
+              "name": "Conditions and Warranties",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-of-the-contract-of-sale",
+              "name": "Performance of the Contract of Sale",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-of-unpaid-seller",
+              "name": "Rights of Unpaid Seller",
+              "kind": "concept"
+            },
+            {
+              "key": "auction-sales",
+              "name": "Auction Sales",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "negotiable-instruments-act-1881",
+          "name": "Negotiable Instruments Act, 1881",
+          "section": "Section A: Commercial Laws (30%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definition-and-features-of-negotiable-instrument",
+              "name": "Definition and Features of Negotiable Instrument",
+              "kind": "concept"
+            },
+            {
+              "key": "crossing-endorsement-and-material-alteration",
+              "name": "Crossing, Endorsement and Material Alteration",
+              "kind": "concept"
+            },
+            {
+              "key": "acceptance-assignment-and-negotiation",
+              "name": "Acceptance, Assignment and Negotiation",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-and-liabilities-of-parties",
+              "name": "Rights and Liabilities of Parties",
+              "kind": "concept"
+            },
+            {
+              "key": "dishonour-of-a-negotiable-instrument-with-special-emphasis-on-section-138",
+              "name": "Dishonour of a Negotiable Instrument (with Special Emphasis on Section 138)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-partnership-act-1932",
+          "name": "Indian Partnership Act, 1932",
+          "section": "Section A: Commercial Laws (30%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "nature-of-partnership",
+              "name": "Nature of Partnership",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-and-liabilities-of-partners",
+              "name": "Rights and Liabilities of Partners",
+              "kind": "concept"
+            },
+            {
+              "key": "formation-reconstitution-and-dissolution-of-firms",
+              "name": "Formation, Reconstitution and Dissolution of Firms",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "limited-liability-partnership-act-2008",
+          "name": "Limited Liability Partnership Act, 2008",
+          "section": "Section A: Commercial Laws (30%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "concept-formation-membership-and-functioning",
+              "name": "Concept, Formation, Membership and Functioning",
+              "kind": "concept"
+            },
+            {
+              "key": "dissolution",
+              "name": "Dissolution",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "factories-act-1948",
+          "name": "Factories Act, 1948",
+          "section": "Section B: Industrial Laws (15%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "payment-of-gratuity-act-1972",
+          "name": "Payment of Gratuity Act, 1972",
+          "section": "Section B: Industrial Laws (15%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "employees-provident-fund-and-miscellaneous-provisions-act-1952",
+          "name": "Employees Provident Fund and Miscellaneous Provisions Act, 1952",
+          "section": "Section B: Industrial Laws (15%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "employees-state-insurance-act-1948",
+          "name": "Employees State Insurance Act, 1948",
+          "section": "Section B: Industrial Laws (15%)",
+          "marks_min": 2.5,
+          "marks_max": 2.5,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "the-code-on-wages-2019",
+          "name": "The Code on Wages, 2019",
+          "section": "Section B: Industrial Laws (15%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "companies-act-2013",
+          "name": "Companies Act, 2013",
+          "section": "Section C: Corporate Laws (40%)",
+          "marks_min": 40,
+          "marks_max": 40,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "company-types-promotion-formation-and-related-procedures-sec-1-to-sec-122-of-companies-act-2013",
+              "name": "Company Types, Promotion, Formation and Related Procedures (Sec 1 to Sec 122 of Companies Act, 2013)",
+              "kind": "concept"
+            },
+            {
+              "key": "director-role-responsibilities-qualification-disqualification-appointment-retirement-resignation-removal-remuneration-an",
+              "name": "Director - Role, Responsibilities, Qualification, Disqualification, Appointment, Retirement, Resignation, Removal, Remuneration and Powers, Directors Identification Number",
+              "kind": "concept"
+            },
+            {
+              "key": "operational-and-financial-control",
+              "name": "Operational and Financial Control",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-financial-control-for-financial-reporting-section-134-143-and-177",
+              "name": "Internal Financial Control for Financial Reporting (Section 134, 143 and 177)",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-of-shareholders",
+              "name": "Rights of Shareholders",
+              "kind": "concept"
+            },
+            {
+              "key": "key-managerial-personnel",
+              "name": "Key Managerial Personnel",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-ethics-and-emotional-intelligence",
+          "name": "Business Ethics and Emotional Intelligence",
+          "section": "Section D: Business Ethics (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "ethics-meaning-importance-and-nature",
+              "name": "Ethics – Meaning, Importance and Nature",
+              "kind": "concept"
+            },
+            {
+              "key": "the-seven-principles-of-public-life-selflessness-integrity-objectivity-accountability-openness-honesty-and-leadership",
+              "name": "The “Seven Principles of Public Life” – Selflessness, Integrity, Objectivity, Accountability, Openness, Honesty and Leadership",
+              "kind": "concept"
+            },
+            {
+              "key": "the-relationship-between-ethics-and-law",
+              "name": "The Relationship between Ethics and Law",
+              "kind": "concept"
+            },
+            {
+              "key": "business-ethics-and-its-relevance-to-business",
+              "name": "Business Ethics and its Relevance to Business",
+              "kind": "concept"
+            },
+            {
+              "key": "values-and-attitudes-of-professional-accountants",
+              "name": "Values and Attitudes of Professional Accountants",
+              "kind": "concept"
+            },
+            {
+              "key": "primary-norms-of-business-ethics-honesty-accountability-etc-the-application-in-decisions-regarding-employers-finance-and",
+              "name": "Primary Norms of Business Ethics - Honesty, Accountability etc., the Application in Decisions regarding Employers, Finance and Trading",
+              "kind": "concept"
+            },
+            {
+              "key": "internal-code-of-ethics",
+              "name": "Internal Code of Ethics",
+              "kind": "concept"
+            },
+            {
+              "key": "ethics-in-business-dealings",
+              "name": "Ethics in Business Dealings",
+              "kind": "concept"
+            },
+            {
+              "key": "case-study-on-business-ethics",
+              "name": "Case Study on Business Ethics",
+              "kind": "concept"
+            },
+            {
+              "key": "emotional-intelligence-concept-and-importance",
+              "name": "Emotional Intelligence (Concept and Importance)",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1"
+    },
+    {
+      "key": "financial-accounting",
+      "paper_number": 6,
+      "name": "Financial Accounting",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "accounting-fundamentals",
+          "name": "Accounting Fundamentals",
+          "section": "Section A: Accounting Fundamentals (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "four-frameworks-of-accounting-conceptual-legal-institutional-and-regulatory",
+              "name": "Four Frameworks of Accounting (Conceptual, Legal, Institutional and Regulatory)",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-principles-concepts-and-conventions",
+              "name": "Accounting Principles, Concepts and Conventions",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-and-revenue-transactions-capital-and-revenue-expenditures-capital-and-revenue-receipts",
+              "name": "Capital and Revenue Transactions - Capital and Revenue Expenditures, Capital and Revenue Receipts",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-cycle-charts-of-accounts-and-codification-structure-analysis-of-transaction-accounting-equation-double-entry",
+              "name": "Accounting Cycle – Charts of Accounts and Codification Structure, Analysis of Transaction – Accounting Equation, Double Entry System, Books of Original Entry, Subsidiary Books and Finalisation of Accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "journal-day-books-and-journal-proper-opening-entries-transfer-entries-closing-entries-adjustment-entries-rectification-e",
+              "name": "Journal (Day Books and Journal Proper - Opening Entries, Transfer Entries, Closing Entries, Adjustment entries, Rectification entries), Ledger",
+              "kind": "concept"
+            },
+            {
+              "key": "cash-book-bank-book-bank-reconciliation-statement",
+              "name": "Cash Book, Bank Book, Bank Reconciliation Statement",
+              "kind": "concept"
+            },
+            {
+              "key": "trial-balance-preparation-and-scrutiny",
+              "name": "Trial Balance (Preparation and Scrutiny)",
+              "kind": "concept"
+            },
+            {
+              "key": "adjustments-and-rectifications-depreciation-and-amortisation",
+              "name": "Adjustments and Rectifications: Depreciation and Amortisation",
+              "kind": "concept"
+            },
+            {
+              "key": "adjustments-and-rectifications-adjustment-entries-and-rectification-of-errors",
+              "name": "Adjustments and Rectifications: Adjustment Entries and Rectification of Errors",
+              "kind": "concept"
+            },
+            {
+              "key": "adjustments-and-rectifications-accounting-treatment-of-bad-debts-and-provision-for-doubtful-debts-provision-for-discount",
+              "name": "Adjustments and Rectifications: Accounting Treatment of Bad Debts and Provision for Doubtful Debts, Provision for Discount on Debtors and Provision for Discount on Creditors",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "bills-of-exchange-consignment-joint-venture",
+          "name": "Bills of Exchange, Consignment, Joint Venture",
+          "section": "Section B: Accounting for Special Transactions (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "preparation-of-final-accounts-of-commercial-organisations-not-for-profit-organisations-and-from-inco",
+          "name": "Preparation of Final Accounts of Commercial Organisations, Not-for-Profit Organisations and from Incomplete Records",
+          "section": "Section C: Preparation of Financial Statements (20%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "preparation-of-financial-statements-of-commercial-organisations-other-than-corporate-form-of-organisation-income-stateme",
+              "name": "Preparation of Financial Statements of Commercial Organisations (other than Corporate Form of Organisation): Income Statement",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-commercial-organisations-other-than-corporate-form-of-organisation-balance-sheet",
+              "name": "Preparation of Financial Statements of Commercial Organisations (other than Corporate Form of Organisation): Balance Sheet",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-not-for-profit-organisation-preparation-of-receipts-and-payments-account",
+              "name": "Preparation of Financial Statements of Not-for-Profit Organisation: Preparation of Receipts and Payments Account",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-not-for-profit-organisation-preparation-of-income-and-expenditure-account",
+              "name": "Preparation of Financial Statements of Not-for-Profit Organisation: Preparation of Income and Expenditure Account",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-not-for-profit-organisation-preparation-of-balance-sheet",
+              "name": "Preparation of Financial Statements of Not-for-Profit Organisation: Preparation of Balance Sheet",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-from-incomplete-records",
+              "name": "Preparation of Financial Statements from Incomplete Records",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "partnership-accounting",
+          "name": "Partnership Accounting",
+          "section": "Section D: Partnership Accounting (20%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "admission-of-partner",
+              "name": "Admission of Partner",
+              "kind": "concept"
+            },
+            {
+              "key": "retirement-of-partner",
+              "name": "Retirement of Partner",
+              "kind": "concept"
+            },
+            {
+              "key": "death-of-partner",
+              "name": "Death of Partner",
+              "kind": "concept"
+            },
+            {
+              "key": "treatment-of-joint-life-policy",
+              "name": "Treatment of Joint Life Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "dissolution-of-partnership-firms-including-piecemeal-distribution",
+              "name": "Dissolution of Partnership Firms including Piecemeal Distribution",
+              "kind": "concept"
+            },
+            {
+              "key": "amalgamation-of-partnership-firms",
+              "name": "Amalgamation of Partnership Firms",
+              "kind": "concept"
+            },
+            {
+              "key": "conversion-of-partnership-firm-into-a-company-and-sale-of-partnership-firm-to-a-company",
+              "name": "Conversion of Partnership Firm into a Company and Sale of Partnership Firm to a Company",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-of-limited-liability-partnership",
+              "name": "Accounting of Limited Liability Partnership",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "lease-accounting",
+          "name": "Lease Accounting",
+          "section": "Section E: Lease, Branch and Departmental Accounts etc. (15%)",
+          "marks_min": 3.8,
+          "marks_max": 3.8,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "branch-including-foreign-branch-and-departmental-accounts",
+          "name": "Branch (including Foreign Branch) and Departmental Accounts",
+          "section": "Section E: Lease, Branch and Departmental Accounts etc. (15%)",
+          "marks_min": 3.8,
+          "marks_max": 3.8,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "insurance-claim-for-loss-of-stock-and-loss-of-profit",
+          "name": "Insurance Claim for Loss of Stock and Loss of Profit",
+          "section": "Section E: Lease, Branch and Departmental Accounts etc. (15%)",
+          "marks_min": 3.8,
+          "marks_max": 3.8,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "hire-purchase-and-installment-sale-transactions",
+          "name": "Hire Purchase and Installment Sale Transactions",
+          "section": "Section E: Lease, Branch and Departmental Accounts etc. (15%)",
+          "marks_min": 3.8,
+          "marks_max": 3.8,
+          "weight_source": "analysis",
+          "topics": []
+        },
+        {
+          "key": "accounting-standards",
+          "name": "Accounting Standards",
+          "section": "Section F: Accounting Standards (20%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-accounting-standards-gaap",
+              "name": "Introduction to Accounting Standards: GAAP",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-accounting-standards-as",
+              "name": "Introduction to Accounting Standards: AS",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-accounting-standards-convergence-to-ind-as-applicability-and-scope",
+              "name": "Introduction to Accounting Standards: Convergence to Ind AS – Applicability and Scope",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-accounting-standards-with-comparative-provisions-under-ind-as-disclosure-of-accounting-policies-as-1",
+              "name": "Specified Accounting Standards with Comparative Provisions under Ind AS: Disclosure of Accounting Policies (AS 1)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-accounting-standards-with-comparative-provisions-under-ind-as-property-plant-and-equipment-as-10",
+              "name": "Specified Accounting Standards with Comparative Provisions under Ind AS: Property Plant and Equipment (AS 10)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-accounting-standards-with-comparative-provisions-under-ind-as-the-effects-of-changes-in-foreign-exchange-rate",
+              "name": "Specified Accounting Standards with Comparative Provisions under Ind AS: The Effects of Changes in Foreign Exchange Rate (AS 11)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-accounting-standards-with-comparative-provisions-under-ind-as-accounting-for-government-grants-as-12",
+              "name": "Specified Accounting Standards with Comparative Provisions under Ind AS: Accounting for Government Grants (AS 12)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-accounting-standards-with-comparative-provisions-under-ind-as-borrowing-costs-as-16",
+              "name": "Specified Accounting Standards with Comparative Provisions under Ind AS: Borrowing Costs (AS 16)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-accounting-standards-with-comparative-provisions-under-ind-as-accounting-for-taxes-on-income-as-22",
+              "name": "Specified Accounting Standards with Comparative Provisions under Ind AS: Accounting for Taxes on Income (AS 22)",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1"
+    },
+    {
+      "key": "direct-and-indirect-taxation",
+      "paper_number": 7,
+      "name": "Direct and Indirect Taxation",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "basics-of-income-tax-act",
+          "name": "Basics of Income Tax Act",
+          "section": "Section A: Direct Taxation (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "basic-concepts-basis-of-charge-and-capital-and-revenue-receipts",
+              "name": "Basic Concepts, Basis of Charge and Capital & Revenue Receipts",
+              "kind": "concept"
+            },
+            {
+              "key": "residential-status-and-scope-of-total-income",
+              "name": "Residential Status and Scope of Total Income",
+              "kind": "concept"
+            },
+            {
+              "key": "agricultural-income",
+              "name": "Agricultural Income",
+              "kind": "concept"
+            },
+            {
+              "key": "income-which-do-not-form-part-of-total-income",
+              "name": "Income which do not form part of Total Income",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "heads-of-income",
+          "name": "Heads of Income",
+          "section": "Section A: Direct Taxation (50%)",
+          "marks_min": 25,
+          "marks_max": 25,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "salaries",
+              "name": "Salaries",
+              "kind": "concept"
+            },
+            {
+              "key": "income-from-house-property",
+              "name": "Income from House Property",
+              "kind": "concept"
+            },
+            {
+              "key": "profits-and-gains-of-business-or-profession-including-tax-audit-u-s-44ab-and-provisions-u-s-43a-43b-43aa-44ad-44ada-and",
+              "name": "Profits and Gains of Business or Profession including Tax Audit u/s 44AB; and Provisions u/s 43A, 43B, 43AA, 44AD, 44ADA and 44AE (excluding Sections 42 to 44DB)",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-gains",
+              "name": "Capital Gains",
+              "kind": "concept"
+            },
+            {
+              "key": "income-from-other-sources",
+              "name": "Income from Other Sources",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "total-income-and-tax-liability-of-individuals-and-huf",
+          "name": "Total Income and Tax Liability of Individuals & HUF",
+          "section": "Section A: Direct Taxation (50%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "income-of-other-person-included-in-assesses-total-income-clubbing-of-income",
+              "name": "Income of Other Person included in Assesses Total Income (Clubbing of Income)",
+              "kind": "concept"
+            },
+            {
+              "key": "set-off-and-carry-forward-of-losses",
+              "name": "Set off and Carry Forward of Losses",
+              "kind": "concept"
+            },
+            {
+              "key": "deductions-rebate-and-relief",
+              "name": "Deductions, Rebate and Relief",
+              "kind": "concept"
+            },
+            {
+              "key": "taxation-of-individual-including-amt-but-excluding-non-resident-and-huf",
+              "name": "Taxation of Individual (including AMT but excluding Non-resident) & HUF",
+              "kind": "concept"
+            },
+            {
+              "key": "advance-tax",
+              "name": "Advance Tax",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-deducted-at-source-and-tax-collected-at-source-excluding-non-resident",
+              "name": "Tax Deducted at Source & Tax Collected at Source (excluding Non-resident)",
+              "kind": "concept"
+            },
+            {
+              "key": "filing-of-return-of-income",
+              "name": "Filing of Return of Income",
+              "kind": "concept"
+            },
+            {
+              "key": "pan",
+              "name": "PAN",
+              "kind": "concept"
+            },
+            {
+              "key": "self-assessment-and-intimation",
+              "name": "Self-Assessment & Intimation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "concept-of-indirect-taxes",
+          "name": "Concept of Indirect Taxes",
+          "section": "Section B: Indirect Taxation (50%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concept-and-features-of-indirect-taxes",
+              "name": "Concept and Features of Indirect Taxes",
+              "kind": "concept"
+            },
+            {
+              "key": "difference-between-direct-and-indirect-taxes",
+              "name": "Difference between Direct and Indirect Taxes",
+              "kind": "concept"
+            },
+            {
+              "key": "background-of-erstwhile-indirect-taxes-central-excise-vat-etc",
+              "name": "Background of erstwhile Indirect Taxes (Central Excise, VAT etc.)",
+              "kind": "concept"
+            },
+            {
+              "key": "constitutional-validity-of-gst",
+              "name": "Constitutional Validity of GST",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "goods-and-services-tax-gst-laws",
+          "name": "Goods and Services Tax (GST) Laws",
+          "section": "Section B: Indirect Taxation (50%)",
+          "marks_min": 35,
+          "marks_max": 35,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-gst-law",
+              "name": "Introduction to GST Law",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-cgst-and-igst-application-of-cgst-igst-law",
+              "name": "Levy and Collection of CGST and IGST: Application of CGST/IGST law",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-cgst-and-igst-concept-of-supply-including-composite-and-mixed-supplies",
+              "name": "Levy and Collection of CGST and IGST: Concept of Supply including Composite and Mixed Supplies",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-cgst-and-igst-charge-of-tax-including-reverse-charge",
+              "name": "Levy and Collection of CGST and IGST: Charge of Tax including Reverse Charge",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-cgst-and-igst-exemption-from-tax",
+              "name": "Levy and Collection of CGST and IGST: Exemption from Tax",
+              "kind": "concept"
+            },
+            {
+              "key": "levy-and-collection-of-cgst-and-igst-composition-levy",
+              "name": "Levy and Collection of CGST and IGST: Composition Levy",
+              "kind": "concept"
+            },
+            {
+              "key": "basic-concepts-of-time-and-value-of-supply",
+              "name": "Basic concepts of Time and Value of Supply",
+              "kind": "concept"
+            },
+            {
+              "key": "input-tax-credit",
+              "name": "Input Tax Credit",
+              "kind": "concept"
+            },
+            {
+              "key": "computation-of-gst-liability",
+              "name": "Computation of GST Liability",
+              "kind": "concept"
+            },
+            {
+              "key": "registration",
+              "name": "Registration",
+              "kind": "concept"
+            },
+            {
+              "key": "tax-invoice-electronic-way-bill",
+              "name": "Tax Invoice – Electronic Way Bill",
+              "kind": "concept"
+            },
+            {
+              "key": "returns-and-payment-of-taxes",
+              "name": "Returns and Payment of Taxes",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "customs-act-and-rules",
+          "name": "Customs Act & Rules",
+          "section": "Section B: Indirect Taxation (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "customs-act-basic-concepts-and-definitions",
+              "name": "Customs Act-Basic Concepts and Definitions",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-duties",
+              "name": "Types of Duties",
+              "kind": "concept"
+            },
+            {
+              "key": "valuation-rules",
+              "name": "Valuation Rules",
+              "kind": "concept"
+            },
+            {
+              "key": "computation-of-assessable-value-and-duties",
+              "name": "Computation of Assessable Value and Duties",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1"
+    },
+    {
+      "key": "cost-accounting",
+      "paper_number": 8,
+      "name": "Cost Accounting",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction-to-cost-accounting",
+          "name": "Introduction to Cost Accounting",
+          "section": "Section A: Introduction to Cost Accounting (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "important-cost-accounting-terms",
+              "name": "Important Cost Accounting Terms",
+              "kind": "concept"
+            },
+            {
+              "key": "elements-of-cost",
+              "name": "Elements of Cost",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-cost",
+              "name": "Classification of Cost",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-cost-sheet-and-ascertainment-of-profit",
+              "name": "Preparation of Cost Sheet and Ascertainment of Profit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-ascertainment-elements-of-cost",
+          "name": "Cost Ascertainment – Elements of Cost",
+          "section": "Section A: Introduction to Cost Accounting (40%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "material-costs-procurement-of-materials",
+              "name": "Material Costs: Procurement of Materials",
+              "kind": "concept"
+            },
+            {
+              "key": "material-costs-inventory-management-and-control",
+              "name": "Material Costs: Inventory Management and Control",
+              "kind": "concept"
+            },
+            {
+              "key": "material-costs-inventory-accounting-and-valuation",
+              "name": "Material Costs: Inventory Accounting and Valuation",
+              "kind": "concept"
+            },
+            {
+              "key": "material-costs-physical-verification-slow-and-non-moving-stock-and-treatment-of-losses",
+              "name": "Material Costs: Physical Verification, Slow and Non-moving Stock and Treatment of Losses",
+              "kind": "concept"
+            },
+            {
+              "key": "material-costs-scrap-spoilage-defectives-and-wastages",
+              "name": "Material Costs: Scrap, Spoilage, Defectives and Wastages",
+              "kind": "concept"
+            },
+            {
+              "key": "employee-costs-time-keeping-time-booking-and-payroll",
+              "name": "Employee Costs: Time Keeping, Time Booking and Payroll",
+              "kind": "concept"
+            },
+            {
+              "key": "employee-costs-principles-and-methods-of-remuneration-and-incentive-schemes",
+              "name": "Employee Costs: Principles and Methods of Remuneration and Incentive Schemes",
+              "kind": "concept"
+            },
+            {
+              "key": "employee-costs-overtime-and-idle-time",
+              "name": "Employee Costs: Overtime and Idle Time",
+              "kind": "concept"
+            },
+            {
+              "key": "employee-costs-employee-cost-reporting",
+              "name": "Employee Costs: Employee Cost Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "employee-costs-labour-turnover",
+              "name": "Employee Costs: Labour Turnover",
+              "kind": "concept"
+            },
+            {
+              "key": "direct-expenses-definition-and-examples",
+              "name": "Direct Expenses: Definition and Examples",
+              "kind": "concept"
+            },
+            {
+              "key": "direct-expenses-nature-of-direct-expenses-or-chargeable-expenses",
+              "name": "Direct Expenses: Nature of Direct Expenses or Chargeable Expenses",
+              "kind": "concept"
+            },
+            {
+              "key": "direct-expenses-direct-vs-indirect-expense",
+              "name": "Direct Expenses: Direct vs. Indirect Expense",
+              "kind": "concept"
+            },
+            {
+              "key": "overheads-collection-classification-apportionment-and-allocation-of-overheads",
+              "name": "Overheads: Collection, Classification, Apportionment and Allocation of Overheads",
+              "kind": "concept"
+            },
+            {
+              "key": "overheads-absorption-and-treatment-of-over-or-under-absorption-of-overheads",
+              "name": "Overheads: Absorption and Treatment of Over or Under Absorption of Overheads",
+              "kind": "concept"
+            },
+            {
+              "key": "overheads-reporting-of-overhead-costs",
+              "name": "Overheads: Reporting of Overhead Costs",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-accounting-standards-cas-1-to-cas-24",
+          "name": "Cost Accounting Standards (CAS 1 to CAS 24)",
+          "section": "Section A: Introduction to Cost Accounting (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "cost-book-keeping",
+          "name": "Cost Book Keeping",
+          "section": "Section A: Introduction to Cost Accounting (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "cost-book-keeping",
+              "name": "Cost Book - Keeping",
+              "kind": "concept"
+            },
+            {
+              "key": "reconciliation-of-costing-and-financial-profit",
+              "name": "Reconciliation of Costing and Financial Profit",
+              "kind": "concept"
+            },
+            {
+              "key": "integrated-accounting-system",
+              "name": "Integrated Accounting System",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "methods-of-costing",
+          "name": "Methods of Costing",
+          "section": "Section B: Methods of Costing (30%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "job-costing",
+              "name": "Job Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "batch-costing",
+              "name": "Batch Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "contract-costing",
+              "name": "Contract Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "process-costing-normal-and-abnormal-losses-equivalent-production-inter-process-profit-joint-and-by-products",
+              "name": "Process Costing – Normal and Abnormal Losses, Equivalent Production, Inter-process Profit, Joint and By Products",
+              "kind": "concept"
+            },
+            {
+              "key": "operating-costing-transport-hotel-and-healthcare",
+              "name": "Operating Costing – Transport, Hotel and Healthcare",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cost-accounting-techniques",
+          "name": "Cost Accounting Techniques",
+          "section": "Section C: Cost Accounting Techniques (30%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "marginal-costing-concept-of-marginal-cost-and-marginal-costing",
+              "name": "Marginal Costing: Concept of Marginal Cost and Marginal Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-costing-absorption-costing-vs-marginal-costing",
+              "name": "Marginal Costing: Absorption Costing vs. Marginal Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-costing-cost-volume-profit-cvp-analysis",
+              "name": "Marginal Costing: Cost - Volume - Profit (CVP) Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-costing-margin-of-safety",
+              "name": "Marginal Costing: Margin of Safety",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-costing-application-of-marginal-costing-for-decision-making",
+              "name": "Marginal Costing: Application of Marginal Costing for Decision Making",
+              "kind": "concept"
+            },
+            {
+              "key": "standard-costing-and-variance-analysis-concept-of-standard-cost-and-standard-costing",
+              "name": "Standard Costing and Variance Analysis: Concept of Standard Cost and Standard Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "standard-costing-and-variance-analysis-advantages-and-limitations",
+              "name": "Standard Costing and Variance Analysis: Advantages and Limitations",
+              "kind": "concept"
+            },
+            {
+              "key": "standard-costing-and-variance-analysis-computation-and-analysis-of-variances-material-and-labour-costs-only",
+              "name": "Standard Costing and Variance Analysis: Computation and Analysis of Variances (Material and Labour Costs only)",
+              "kind": "concept"
+            },
+            {
+              "key": "budget-and-budgetary-control-concepts-types-of-budget",
+              "name": "Budget and Budgetary Control: Concepts, Types of Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "budget-and-budgetary-control-budgetary-control-vs-standard-costing",
+              "name": "Budget and Budgetary Control: Budgetary Control vs. Standard Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "budget-and-budgetary-control-advantages-and-limitations",
+              "name": "Budget and Budgetary Control: Advantages and Limitations",
+              "kind": "concept"
+            },
+            {
+              "key": "budget-and-budgetary-control-preparation-of-budgets",
+              "name": "Budget and Budgetary Control: Preparation of Budgets",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-1"
+    },
+    {
+      "key": "operations-management-and-strategic-management",
+      "paper_number": 9,
+      "name": "Operations Management and Strategic Management",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "scope",
+              "name": "Scope",
+              "kind": "concept"
+            },
+            {
+              "key": "characteristics-of-modern-operations-functions",
+              "name": "Characteristics of Modern Operations Functions",
+              "kind": "concept"
+            },
+            {
+              "key": "recent-trends-in-production-and-operations-management",
+              "name": "Recent Trends in Production and Operations Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "operations-planning",
+          "name": "Operations Planning",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "demand-forecasting",
+              "name": "Demand Forecasting",
+              "kind": "concept"
+            },
+            {
+              "key": "capacity-planning",
+              "name": "Capacity Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "facility-location-and-layout",
+              "name": "Facility Location and Layout",
+              "kind": "concept"
+            },
+            {
+              "key": "resource-aggregate-planning",
+              "name": "Resource Aggregate Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "material-requirements-planning",
+              "name": "Material Requirements Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "manufacturing-resource-planning",
+              "name": "Manufacturing Resource Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "economic-batch-quantity",
+              "name": "Economic Batch Quantity",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "designing-of-operational-systems-and-control",
+          "name": "Designing of Operational Systems and Control",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "product-design",
+              "name": "Product Design",
+              "kind": "concept"
+            },
+            {
+              "key": "process-design-and-selection",
+              "name": "Process Design and Selection",
+              "kind": "concept"
+            },
+            {
+              "key": "product-life-cycle",
+              "name": "Product Life Cycle",
+              "kind": "concept"
+            },
+            {
+              "key": "process-planning-and-selection",
+              "name": "Process Planning and Selection",
+              "kind": "concept"
+            },
+            {
+              "key": "design-thinking",
+              "name": "Design Thinking",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "application-of-operation-research-production-planning-and-control",
+          "name": "Application of Operation Research - Production Planning and Control",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "production-planning-and-control",
+              "name": "Production Planning and Control",
+              "kind": "concept"
+            },
+            {
+              "key": "control-measures-time-and-motion-study-method-study-work-study",
+              "name": "Control Measures – Time & Motion Study, Method Study, Work Study",
+              "kind": "concept"
+            },
+            {
+              "key": "optimum-allocation-of-resources-lpp",
+              "name": "Optimum Allocation of Resources - LPP",
+              "kind": "concept"
+            },
+            {
+              "key": "transportation",
+              "name": "Transportation",
+              "kind": "concept"
+            },
+            {
+              "key": "job-evaluation-job-allocation-assignment",
+              "name": "Job Evaluation, Job Allocation - Assignment",
+              "kind": "concept"
+            },
+            {
+              "key": "scheduling-and-queuing-models",
+              "name": "Scheduling and Queuing Models",
+              "kind": "concept"
+            },
+            {
+              "key": "simulation-and-line-balancing",
+              "name": "Simulation and Line Balancing",
+              "kind": "concept"
+            },
+            {
+              "key": "lean-operations",
+              "name": "Lean Operations",
+              "kind": "concept"
+            },
+            {
+              "key": "jit",
+              "name": "JIT",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "productivity-management-and-quality-management",
+          "name": "Productivity Management and Quality Management",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "measurement-techniques-of-productivity-index",
+              "name": "Measurement Techniques of Productivity Index",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-of-employee",
+              "name": "Productivity of Employee",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-of-materials",
+              "name": "Productivity of Materials",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-of-management-resources",
+              "name": "Productivity of Management Resources",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-of-other-factors",
+              "name": "Productivity of other factors",
+              "kind": "concept"
+            },
+            {
+              "key": "productivity-improving-methods",
+              "name": "Productivity Improving Methods",
+              "kind": "concept"
+            },
+            {
+              "key": "tqm-basic-tools-and-certification",
+              "name": "TQM Basic Tools and Certification",
+              "kind": "concept"
+            },
+            {
+              "key": "iso-standards-basics",
+              "name": "ISO Standards Basics",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "project-management-monitoring-and-control",
+          "name": "Project Management, Monitoring and Control",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "project-planning",
+              "name": "Project Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "project-life-cycle",
+              "name": "Project Life Cycle",
+              "kind": "concept"
+            },
+            {
+              "key": "gantt-charts",
+              "name": "Gantt Charts",
+              "kind": "concept"
+            },
+            {
+              "key": "pert-and-cpm",
+              "name": "PERT and CPM",
+              "kind": "concept"
+            },
+            {
+              "key": "basics-of-ms-project",
+              "name": "Basics of MS Project",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "economics-of-maintenance-and-spares-management",
+          "name": "Economics of Maintenance and Spares Management",
+          "section": "Section A: Operations Management (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "breakdown-maintenance",
+              "name": "Breakdown Maintenance",
+              "kind": "concept"
+            },
+            {
+              "key": "preventive-maintenance",
+              "name": "Preventive Maintenance",
+              "kind": "concept"
+            },
+            {
+              "key": "routine-maintenance",
+              "name": "Routine Maintenance",
+              "kind": "concept"
+            },
+            {
+              "key": "replacement-of-machine",
+              "name": "Replacement of Machine",
+              "kind": "concept"
+            },
+            {
+              "key": "spare-parts-management",
+              "name": "Spare Parts Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction-2",
+          "name": "Introduction",
+          "section": "Section B: Strategic Management (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-strategy-and-strategic-management",
+              "name": "Introduction to Strategy and Strategic Management",
+              "kind": "concept"
+            },
+            {
+              "key": "alignment-of-strategy-with-vision-mission-and-culture",
+              "name": "Alignment of Strategy with Vision, Mission and Culture",
+              "kind": "concept"
+            },
+            {
+              "key": "objectives-of-strategic-management",
+              "name": "Objectives of Strategic Management",
+              "kind": "concept"
+            },
+            {
+              "key": "organisational-genomics",
+              "name": "Organisational Genomics",
+              "kind": "concept"
+            },
+            {
+              "key": "alignment-with-individual-level-objective-and-organisational-objective",
+              "name": "Alignment with Individual Level Objective and Organisational Objective",
+              "kind": "concept"
+            },
+            {
+              "key": "balanced-score-card",
+              "name": "Balanced Score Card",
+              "kind": "concept"
+            },
+            {
+              "key": "eva-driven-responsibility-accounting",
+              "name": "EVA – Driven Responsibility Accounting",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "strategic-analysis-and-strategic-planning",
+          "name": "Strategic Analysis and Strategic Planning",
+          "section": "Section B: Strategic Management (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "analysis-of-business-environment",
+              "name": "Analysis of Business Environment",
+              "kind": "concept"
+            },
+            {
+              "key": "pestel-value-chain-and-porter-s-5-framework",
+              "name": "PESTEL, Value Chain and Porter’s 5 Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "swotc-analysis-industry-sector-and-company",
+              "name": "SWOTC Analysis (Industry Sector and Company)",
+              "kind": "concept"
+            },
+            {
+              "key": "portfolio-analysis-and-bcg-matrix",
+              "name": "Portfolio Analysis and BCG Matrix",
+              "kind": "concept"
+            },
+            {
+              "key": "stages-in-strategic-planning",
+              "name": "Stages in Strategic Planning",
+              "kind": "concept"
+            },
+            {
+              "key": "alternatives-in-strategic-planning",
+              "name": "Alternatives in Strategic Planning",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "formulation-and-implementation-of-strategy",
+          "name": "Formulation and Implementation of Strategy",
+          "section": "Section B: Strategic Management (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "strategy-formulation-production-strategy-supply-chain-strategy-marketing-strategy-human-resource-strategy",
+              "name": "Strategy Formulation - Production Strategy, Supply Chain Strategy, Marketing Strategy, Human Resource Strategy",
+              "kind": "concept"
+            },
+            {
+              "key": "structuring-of-organisation-for-implementation-of-strategy",
+              "name": "Structuring of Organisation for Implementation of Strategy",
+              "kind": "concept"
+            },
+            {
+              "key": "strategic-business-unit",
+              "name": "Strategic Business Unit",
+              "kind": "concept"
+            },
+            {
+              "key": "business-process-re-engineering",
+              "name": "Business Process Re-engineering",
+              "kind": "concept"
+            },
+            {
+              "key": "management-control-operational-control-and-task-control",
+              "name": "Management Control, Operational Control and Task Control",
+              "kind": "concept"
+            },
+            {
+              "key": "goal-congruence",
+              "name": "Goal Congruence",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "digital-strategy",
+          "name": "Digital Strategy",
+          "section": "Section B: Strategic Management (40%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "digital-transformation-for-competitive-advantages",
+              "name": "Digital Transformation for Competitive Advantages",
+              "kind": "concept"
+            },
+            {
+              "key": "innovations-and-disruptive-business-models",
+              "name": "Innovations and Disruptive Business Models",
+              "kind": "concept"
+            },
+            {
+              "key": "emerging-trends-in-digital-and-social-marketing-strategies",
+              "name": "Emerging Trends in Digital and Social Marketing Strategies",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-2"
+    },
+    {
+      "key": "corporate-accounting-and-auditing",
+      "paper_number": 10,
+      "name": "Corporate Accounting and Auditing",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "accounting-for-shares-and-debentures",
+          "name": "Accounting for Shares and Debentures",
+          "section": "Section A: Corporate Accounting (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "issue-of-shares-forfeiture-of-shares-rights-issue-bonus-issue-sweat-equity-shares-employee-stock-option-and-stock-purcha",
+              "name": "Issue of Shares, Forfeiture of Shares, Rights Issue, Bonus Issue, Sweat Equity Shares, Employee Stock Option and Stock Purchase Scheme, Buy-back of Shares",
+              "kind": "concept"
+            },
+            {
+              "key": "redemption-of-preference-shares-issue-and-redemption-of-debentures",
+              "name": "Redemption of Preference Shares, Issue and Redemption of Debentures",
+              "kind": "concept"
+            },
+            {
+              "key": "underwriting-of-securities",
+              "name": "Underwriting of Securities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "preparation-of-the-statement-of-profit-and-loss-and-balance-sheet-as-per-schedule-iii-of-companies-a",
+          "name": "Preparation of the Statement of Profit and Loss and Balance Sheet (As per Schedule III of Companies Act, 2013)",
+          "section": "Section A: Corporate Accounting (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "statement-of-profit-and-loss-as-per-division-i-of-schedule-iii",
+              "name": "Statement of Profit and Loss (as per Division I of Schedule III)",
+              "kind": "concept"
+            },
+            {
+              "key": "balance-sheet-as-per-division-i-of-schedule-iii",
+              "name": "Balance Sheet (as per Division I of Schedule III)",
+              "kind": "concept"
+            },
+            {
+              "key": "an-introduction-to-division-ii-of-schedule-iii",
+              "name": "An Introduction to Division II of Schedule III",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "cash-flow-statement",
+          "name": "Cash Flow Statement",
+          "section": "Section A: Corporate Accounting (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "accounts-of-banking-electricity-and-insurance-companies",
+          "name": "Accounts of Banking, Electricity and Insurance Companies",
+          "section": "Section A: Corporate Accounting (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": []
+        },
+        {
+          "key": "accounting-standards",
+          "name": "Accounting Standards",
+          "section": "Section A: Corporate Accounting (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "conceptual-framework",
+              "name": "Conceptual Framework",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-ind-as-with-comparative-provisions-under-as-presentation-of-financial-statements-ind-as-1",
+              "name": "Specified Ind AS with Comparative Provisions under AS: Presentation of Financial Statements (Ind AS 1)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-ind-as-with-comparative-provisions-under-as-inventories-ind-as-2",
+              "name": "Specified Ind AS with Comparative Provisions under AS: Inventories (Ind AS 2)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-ind-as-with-comparative-provisions-under-as-events-after-the-reporting-period-ind-as-10",
+              "name": "Specified Ind AS with Comparative Provisions under AS: Events after the Reporting Period (Ind AS 10)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-ind-as-with-comparative-provisions-under-as-employee-benefits-ind-as-19",
+              "name": "Specified Ind AS with Comparative Provisions under AS: Employee Benefits (Ind AS 19)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-ind-as-with-comparative-provisions-under-as-earnings-per-share-ind-as-33",
+              "name": "Specified Ind AS with Comparative Provisions under AS: Earnings per Share (Ind AS 33)",
+              "kind": "concept"
+            },
+            {
+              "key": "specified-ind-as-with-comparative-provisions-under-as-provisions-contingent-liabilities-and-contingent-assets-ind-as-37",
+              "name": "Specified Ind AS with Comparative Provisions under AS: Provisions, Contingent Liabilities and Contingent Assets (Ind AS 37)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "basic-concepts-of-auditing",
+          "name": "Basic Concepts of Auditing",
+          "section": "Section B: Auditing (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "nature-scope-objectives-and-significance-of-auditing",
+              "name": "Nature, Scope, Objectives and Significance of Auditing",
+              "kind": "concept"
+            },
+            {
+              "key": "brief-introduction-to-auditing-standards",
+              "name": "Brief Introduction to Auditing Standards",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-engagement-audit-program-audit-documentations-audit-evidence-audit-note-book",
+              "name": "Audit Engagement, Audit Program, Audit Documentations, Audit Evidence, Audit Note Book",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-risk-assessment-of-audit-risk-internal-control-internal-check-internal-audit-industry-specific",
+              "name": "Audit Risk, Assessment of Audit Risk, Internal Control, Internal Check, Internal Audit - Industry Specific",
+              "kind": "concept"
+            },
+            {
+              "key": "interplay-between-internal-audit-and-statutory-audit-risk-based-internal-audit-internal-financial-control-and-internal-c",
+              "name": "Interplay between Internal Audit and Statutory Audit, Risk Based Internal Audit, Internal Financial Control and Internal Control over Financial Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-sampling-audit-techniques-and-analytical-procedure-including-scrutiny-of-trial-balance-and-grouping-schedules",
+              "name": "Audit Sampling, Audit Techniques and Analytical Procedure (Including Scrutiny of Trial Balance and Grouping Schedules)",
+              "kind": "concept"
+            },
+            {
+              "key": "application-of-technology-in-audit-and-audit-trail",
+              "name": "Application of Technology in Audit and Audit Trail",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "provisions-relating-to-audit-under-companies-act-2013",
+          "name": "Provisions Relating to Audit under Companies Act, 2013",
+          "section": "Section B: Auditing (50%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "statutory-audit-auditor-s-eligibility-qualifications-disqualifications-appointment-resignation-rotation-remuneration-rem",
+              "name": "Statutory Audit – Auditor’s Eligibility, Qualifications, Disqualifications, Appointment, Resignation, Rotation, Remuneration, Removal, Rights and Duties, Liabilities, Branch Audit and Joint Audit, Role of Audit Committee",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-audit",
+              "name": "Cost Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "secretarial-audit",
+              "name": "Secretarial Audit",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-various-items-of-financial-statements-with-special-emphasis-on-audit-of-inventory-and-ppe",
+              "name": "Audit of Various Items of Financial Statements (with Special Emphasis on Audit of Inventory and PPE)",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-report-report-vs-certificate-reporting-requirements-under-companies-act-contents-of-the-reports-and-modifications",
+              "name": "Audit Report, Report vs. Certificate, Reporting Requirements under Companies Act, Contents of the Reports and Modifications in the Report (with Coverage of CARO)",
+              "kind": "concept"
+            },
+            {
+              "key": "report-on-internal-financial-control-over-financial-reporting",
+              "name": "Report on Internal Financial Control over Financial Reporting",
+              "kind": "concept"
+            },
+            {
+              "key": "national-financial-reporting-authority-nfra",
+              "name": "National Financial Reporting Authority (NFRA)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "auditing-of-different-types-of-undertakings",
+          "name": "Auditing of Different Types of Undertakings",
+          "section": "Section B: Auditing (50%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "audit-of-educational-institutions",
+              "name": "Audit of Educational Institutions",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-healthcare-organisations",
+              "name": "Audit of Healthcare Organisations",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-organisations-in-hospitality-sector",
+              "name": "Audit of Organisations in Hospitality Sector",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-banks",
+              "name": "Audit of Banks",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-co-operative-societies",
+              "name": "Audit of Co-operative Societies",
+              "kind": "concept"
+            },
+            {
+              "key": "audit-of-local-self-government",
+              "name": "Audit of Local Self-Government",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-2"
+    },
+    {
+      "key": "financial-management-and-business-data-analytics",
+      "paper_number": 11,
+      "name": "Financial Management and Business Data Analytics",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "fundamentals-of-financial-management",
+          "name": "Fundamentals of Financial Management",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-financial-management-fundamentals",
+              "name": "Introduction to Financial Management: Fundamentals",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-financial-management-objective-of-financial-management",
+              "name": "Introduction to Financial Management: Objective of Financial Management",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-financial-management-scope-and-functions-of-financial-management",
+              "name": "Introduction to Financial Management: Scope and Functions of Financial Management",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-financial-management-profit-optimisation-and-value-maximisation-principle",
+              "name": "Introduction to Financial Management: Profit Optimisation and Value Maximisation Principle",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-financial-management-dynamic-role-of-a-cfo-in-emerging-business-environment",
+              "name": "Introduction to Financial Management: Dynamic Role of a CFO in Emerging Business Environment",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-rationale",
+              "name": "Time Value of Money: Rationale",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-techniques",
+              "name": "Time Value of Money: Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-future-value-and-present-value-of-a-single-cash-flow",
+              "name": "Time Value of Money: Future Value and Present Value of a Single Cash Flow",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-annuity-and-perpetuity",
+              "name": "Time Value of Money: Annuity and Perpetuity",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-compound-annual-growth-rate-cagr",
+              "name": "Time Value of Money: Compound Annual Growth Rate (CAGR)",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-practical-applications",
+              "name": "Time Value of Money: Practical Applications",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-and-return-various-connotations-of-return",
+              "name": "Risk and Return: Various Connotations of Return",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-and-return-ex-ante-and-ex-post-return",
+              "name": "Risk and Return: Ex–ante and Ex–post Return",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-and-return-types-of-risks",
+              "name": "Risk and Return: Types of Risks",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-and-return-calculation-of-return-and-risk",
+              "name": "Risk and Return: Calculation of Return and Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "risk-and-return-capital-asset-pricing-model",
+              "name": "Risk and Return: Capital Asset Pricing Model",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "institutions-and-instruments-in-financial-markets",
+          "name": "Institutions and Instruments in Financial Markets",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "financial-institutions-reserve-bank-of-india",
+              "name": "Financial Institutions: Reserve Bank of India",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-institutions-commercial-banks",
+              "name": "Financial Institutions: Commercial Banks",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-institutions-nbfcs",
+              "name": "Financial Institutions: NBFCs",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-institutions-insurance-companies",
+              "name": "Financial Institutions: Insurance Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-institutions-pensions-funds",
+              "name": "Financial Institutions: Pensions Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-institutions-alternative-investment-funds-aif-angels-venture-capital-private-equity-and-hedge-funds",
+              "name": "Financial Institutions: Alternative Investment Funds (AIF): Angels, Venture Capital, Private Equity and Hedge Funds",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-institutions-sebi-regulations-including-aif-circulars",
+              "name": "Financial Institutions: SEBI Regulations (including AIF Circulars)",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-primary-and-secondary-markets-and-its-instruments",
+              "name": "Capital Market: Primary and Secondary Markets and its Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-compulsory-optionally-convertible-financial-instruments-deep-discount-bonds",
+              "name": "Capital Market: Compulsory / Optionally Convertible Financial Instruments, Deep Discount Bonds",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-euro-bond-and-masala-bond",
+              "name": "Capital Market: Euro Bond and Masala Bond",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-rolling-settlement-clearing-house-operations",
+              "name": "Capital Market: Rolling Settlement, Clearing House Operations",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-dematerialization-re-materialisation-and-depository-system",
+              "name": "Capital Market: Dematerialization, Re-materialisation and Depository System",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-initial-public-offering-ipo-follow-on-public-offer-fpo-book-building-green-shoe-option",
+              "name": "Capital Market: Initial Public Offering (IPO), Follow on Public Offer (FPO), Book Building, Green-shoe Option",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-offer-for-sale-private-placement-and-preferential-allotment",
+              "name": "Capital Market: Offer for Sale, Private Placement and Preferential Allotment",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-insider-trading",
+              "name": "Capital Market: Insider Trading",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-market-credit-rating-credit-rating-methods-and-rating-agencies-in-india",
+              "name": "Capital Market: Credit Rating - Credit Rating Methods and Rating Agencies in India",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-call-money",
+              "name": "Money Market: Call Money",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-treasury-bills",
+              "name": "Money Market: Treasury Bills",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-commercial-bills",
+              "name": "Money Market: Commercial Bills",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-commercial-paper",
+              "name": "Money Market: Commercial Paper",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-certificate-of-deposits",
+              "name": "Money Market: Certificate of Deposits",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-repo-reverse-repo",
+              "name": "Money Market: Repo, Reverse Repo",
+              "kind": "concept"
+            },
+            {
+              "key": "money-market-promissory-notes-and-government-securities",
+              "name": "Money Market: Promissory Notes and Government Securities",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "tools-for-financial-analyses",
+          "name": "Tools for Financial Analyses",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "comparative-common-size-financial-statements-and-trend-analysis",
+              "name": "Comparative, Common-Size Financial Statements and Trend Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-ratio-analysis-financial-ratio-analysis",
+              "name": "Financial Ratio Analysis: Financial Ratio Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-ratio-analysis-financial-scores-altman-s-z-score-beneish-m-score-piotroski-f-score",
+              "name": "Financial Ratio Analysis: Financial Scores: Altman’s Z Score, Beneish M Score, Piotroski F Score",
+              "kind": "concept"
+            },
+            {
+              "key": "fund-flow-statement-preparation-and-analysis",
+              "name": "Fund Flow Statement – Preparation and Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "cash-flow-statement-preparation-and-analysis",
+              "name": "Cash Flow Statement – Preparation and Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sources-of-finance-and-cost-of-capital",
+          "name": "Sources of Finance and Cost of Capital",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "sources-of-finance-long-term-and-short-term",
+              "name": "Sources of Finance: Long Term and Short Term",
+              "kind": "concept"
+            },
+            {
+              "key": "sources-of-finance-financing-a-start-up-alternative-investment-funds-and-crowd-funding",
+              "name": "Sources of Finance: Financing a Start-up – Alternative Investment Funds and Crowd Funding",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-of-capital-meaning-of-cost-of-capital",
+              "name": "Cost of Capital: Meaning of Cost of Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-of-capital-computation-of-weighted-average-cost-of-capital",
+              "name": "Cost of Capital: Computation of Weighted Average Cost of Capital",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "capital-budgeting",
+          "name": "Capital Budgeting",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-capital-budgeting",
+              "name": "Introduction to Capital Budgeting",
+              "kind": "concept"
+            },
+            {
+              "key": "identification-of-cash-flows-and-forecasting",
+              "name": "Identification of Cash Flows and Forecasting",
+              "kind": "concept"
+            },
+            {
+              "key": "cash-flow-vs-profit-of-the-firm",
+              "name": "Cash Flow vs. Profit of the Firm",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-techniques-non-discounted-and-discounted-cash-flow-methods",
+              "name": "Evaluation Techniques – Non-discounted and Discounted Cash Flow Methods",
+              "kind": "concept"
+            },
+            {
+              "key": "hurdle-rate-in-a-conglomerate-environment",
+              "name": "Hurdle Rate in a Conglomerate Environment",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "working-capital-management",
+          "name": "Working Capital Management",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-working-capital-management-theoretical-underpinnings",
+              "name": "Introduction to Working Capital Management: Theoretical Underpinnings",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-working-capital-management-planning-of-working-capital",
+              "name": "Introduction to Working Capital Management: Planning of Working Capital",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-working-capital-management-working-capital-cycle-and-cash-cycle",
+              "name": "Introduction to Working Capital Management: Working Capital Cycle and Cash Cycle",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-working-capital-management-estimation-of-working-capital-requirement",
+              "name": "Introduction to Working Capital Management: Estimation of Working Capital Requirement",
+              "kind": "concept"
+            },
+            {
+              "key": "receivable-management",
+              "name": "Receivable Management",
+              "kind": "concept"
+            },
+            {
+              "key": "payable-management",
+              "name": "Payable Management",
+              "kind": "concept"
+            },
+            {
+              "key": "inventory-management",
+              "name": "Inventory Management",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-cash-and-cash-equivalents-motives-of-holding-cash",
+              "name": "Management of Cash and Cash Equivalents: Motives of holding Cash",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-cash-and-cash-equivalents-objectives-of-cash-management",
+              "name": "Management of Cash and Cash Equivalents: Objectives of Cash Management",
+              "kind": "concept"
+            },
+            {
+              "key": "management-of-cash-and-cash-equivalents-models-of-cash-management",
+              "name": "Management of Cash and Cash Equivalents: Models of Cash Management",
+              "kind": "concept"
+            },
+            {
+              "key": "financing-working-capital-monthly-cash-flow-forecast-and-analysis",
+              "name": "Financing Working Capital: Monthly Cash Flow Forecast and Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "financing-working-capital-maximum-permissible-bank-finance-mpbf-calculation",
+              "name": "Financing Working Capital: Maximum Permissible Bank Finance (MPBF) Calculation",
+              "kind": "concept"
+            },
+            {
+              "key": "financing-working-capital-commercial-paper",
+              "name": "Financing Working Capital: Commercial Paper",
+              "kind": "concept"
+            },
+            {
+              "key": "financing-working-capital-export-financing-pre-shipment-and-post-shipment-packing-credit",
+              "name": "Financing Working Capital: Export Financing – Pre-shipment and Post-shipment Packing Credit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "financing-decisions-of-a-firm",
+          "name": "Financing Decisions of a Firm",
+          "section": "Section A: Financial Management (80%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "capital-structure-and-capital-stacking-collateral",
+              "name": "Capital Structure and Capital Stacking: Collateral",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structure-and-capital-stacking-covenant-financial-and-non-financial-negative-covenants-and-cross-default",
+              "name": "Capital Structure and Capital Stacking: Covenant (Financial and Non-financial), Negative Covenants and Cross Default",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structure-and-capital-stacking-capital-stacking-and-risk-analysis",
+              "name": "Capital Structure and Capital Stacking: Capital Stacking and Risk Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structure-and-capital-stacking-senior-and-junior-debt-management",
+              "name": "Capital Structure and Capital Stacking: Senior and Junior Debt Management",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-structure-and-capital-stacking-capital-structure-theories",
+              "name": "Capital Structure and Capital Stacking: Capital Structure Theories",
+              "kind": "concept"
+            },
+            {
+              "key": "leverage-analyses-and-ebit-eps-analysis",
+              "name": "Leverage Analyses and EBIT – EPS Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "dividend-decisions-and-dividend-theories",
+              "name": "Dividend Decisions and Dividend Theories",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "introduction-to-data-science-for-business-decision-making",
+          "name": "Introduction to Data Science for Business Decision-making",
+          "section": "Section B: Business Data Analytics (20%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "meaning-nature-properties-scope-of-data",
+              "name": "Meaning, Nature, Properties, Scope of Data",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-data-in-finance-and-costing",
+              "name": "Types of Data in Finance and Costing",
+              "kind": "concept"
+            },
+            {
+              "key": "digitization-of-data-and-information",
+              "name": "Digitization of Data and Information",
+              "kind": "concept"
+            },
+            {
+              "key": "transformation-of-data-to-decision-relevant-information",
+              "name": "Transformation of Data to Decision Relevant Information",
+              "kind": "concept"
+            },
+            {
+              "key": "communication-of-information-for-quality-decision-making",
+              "name": "Communication of Information for Quality Decision-making",
+              "kind": "concept"
+            },
+            {
+              "key": "professional-skepticism-regarding-data",
+              "name": "Professional Skepticism regarding Data",
+              "kind": "concept"
+            },
+            {
+              "key": "ethical-use-of-data-and-information",
+              "name": "Ethical Use of Data and Information",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "data-processing-organisation-cleaning-and-validation",
+          "name": "Data Processing, Organisation, Cleaning and Validation",
+          "section": "Section B: Business Data Analytics (20%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "development-of-data-processing",
+              "name": "Development of Data Processing",
+              "kind": "concept"
+            },
+            {
+              "key": "functions-of-data-processing",
+              "name": "Functions of Data Processing",
+              "kind": "concept"
+            },
+            {
+              "key": "data-organisation-and-distribution",
+              "name": "Data Organisation and Distribution",
+              "kind": "concept"
+            },
+            {
+              "key": "data-cleaning-and-validation",
+              "name": "Data Cleaning and Validation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "data-presentation-visualisation-and-graphical-presentation",
+          "name": "Data Presentation: Visualisation and Graphical Presentation",
+          "section": "Section B: Business Data Analytics (20%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "data-visualisation-of-financial-and-non-financial-data",
+              "name": "Data Visualisation of Financial and Non-financial Data",
+              "kind": "concept"
+            },
+            {
+              "key": "objective-and-function-of-data-presentation",
+              "name": "Objective and Function of Data Presentation",
+              "kind": "concept"
+            },
+            {
+              "key": "data-presentation-architecture",
+              "name": "Data Presentation Architecture",
+              "kind": "concept"
+            },
+            {
+              "key": "dashboard-graphs-diagrams-tables-report-design",
+              "name": "Dashboard, Graphs, Diagrams, Tables, Report Design",
+              "kind": "concept"
+            },
+            {
+              "key": "tools-and-techniques-of-visualisation-and-graphical-presentation",
+              "name": "Tools and Techniques of Visualisation and Graphical Presentation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "data-analysis-and-modelling",
+          "name": "Data Analysis and Modelling",
+          "section": "Section B: Business Data Analytics (20%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "process-benefits-and-types-of-data-analysis",
+              "name": "Process, Benefits and Types of Data Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "data-mining-and-implementation-of-data-mining",
+              "name": "Data Mining and Implementation of Data Mining",
+              "kind": "concept"
+            },
+            {
+              "key": "analytics-and-model-building-descriptive-diagnostic-predictive-prescriptive",
+              "name": "Analytics and Model Building (Descriptive, Diagnostic, Predictive, Prescriptive)",
+              "kind": "concept"
+            },
+            {
+              "key": "standards-for-data-tagging-and-reporting-xml-xbrl",
+              "name": "Standards for Data Tagging and Reporting (XML, XBRL)",
+              "kind": "concept"
+            },
+            {
+              "key": "cloud-computing-business-intelligence-artificial-intelligence-robotic-process-automation-and-machine-learning",
+              "name": "Cloud Computing, Business Intelligence, Artificial Intelligence, Robotic Process Automation and Machine Learning",
+              "kind": "concept"
+            },
+            {
+              "key": "model-vs-data-driven-decision-making",
+              "name": "Model vs. Data-driven Decision-making",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-2"
+    },
+    {
+      "key": "management-accounting",
+      "paper_number": 12,
+      "name": "Management Accounting",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction-to-management-accounting",
+          "name": "Introduction to Management Accounting",
+          "section": "Section A: Introduction to Management Accounting (5%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "conceptual-understanding",
+              "name": "Conceptual Understanding",
+              "kind": "concept"
+            },
+            {
+              "key": "relationship-between-management-accounting-and-cost-accounting",
+              "name": "Relationship between Management Accounting and Cost Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-a-management-accountant-in-modern-business-world",
+              "name": "Role of a Management Accountant in Modern Business World",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "activity-based-costing",
+          "name": "Activity Based Costing",
+          "section": "Section B: Activity Based Costing (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "traditional-cost-system",
+              "name": "Traditional Cost System",
+              "kind": "concept"
+            },
+            {
+              "key": "definition-and-meaning-of-activity-based-costing-abc",
+              "name": "Definition and Meaning of Activity Based Costing (ABC)",
+              "kind": "concept"
+            },
+            {
+              "key": "steps-in-abc-system",
+              "name": "Steps in ABC System",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-pools-and-cost-drivers",
+              "name": "Cost Pools and Cost Drivers",
+              "kind": "concept"
+            },
+            {
+              "key": "merits-and-demerits-of-abc-system",
+              "name": "Merits and Demerits of ABC System",
+              "kind": "concept"
+            },
+            {
+              "key": "activity-based-information-and-decision-making",
+              "name": "Activity Based Information and Decision Making",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "marginal-costing",
+          "name": "Marginal Costing",
+          "section": "Section C: Decision Making Tools (30%)",
+          "marks_min": 10.0,
+          "marks_max": 10.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "concept",
+              "name": "Concept",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-volume-profit-analysis",
+              "name": "Cost-Volume-Profit Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "break-even-charts-and-profit-charts",
+              "name": "Break-Even Charts and Profit Charts",
+              "kind": "concept"
+            },
+            {
+              "key": "multiple-product-break-even-analysis",
+              "name": "Multiple Product Break Even Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "differential-cost-analysis",
+              "name": "Differential Cost Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "marginal-costing-vs-absorption-costing-advanced-applications",
+              "name": "Marginal Costing Vs. Absorption Costing (advanced applications)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "applications-of-marginal-costing-in-short-term-decision-making",
+          "name": "Applications of Marginal Costing in Short Term Decision Making",
+          "section": "Section C: Decision Making Tools (30%)",
+          "marks_min": 10.0,
+          "marks_max": 10.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "pricing-decision",
+              "name": "Pricing Decision",
+              "kind": "concept"
+            },
+            {
+              "key": "make-or-buy-decisions",
+              "name": "Make or Buy decisions",
+              "kind": "concept"
+            },
+            {
+              "key": "accept-an-order-or-reject",
+              "name": "Accept an Order or Reject",
+              "kind": "concept"
+            },
+            {
+              "key": "optimum-utilization-of-factors-of-production-limiting-factor-analysis",
+              "name": "Optimum Utilization of Factors of Production [Limiting Factor Analysis]",
+              "kind": "concept"
+            },
+            {
+              "key": "replacement-decision",
+              "name": "Replacement Decision",
+              "kind": "concept"
+            },
+            {
+              "key": "evaluation-of-alternative-choices",
+              "name": "Evaluation of Alternative Choices",
+              "kind": "concept"
+            },
+            {
+              "key": "subcontracting-and-ancillarisation",
+              "name": "Subcontracting and Ancillarisation",
+              "kind": "concept"
+            },
+            {
+              "key": "expansion-of-business",
+              "name": "Expansion of Business",
+              "kind": "concept"
+            },
+            {
+              "key": "shutdown-or-continue",
+              "name": "Shutdown or Continue",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "transfer-pricing",
+          "name": "Transfer Pricing",
+          "section": "Section C: Decision Making Tools (30%)",
+          "marks_min": 10.0,
+          "marks_max": 10.0,
+          "weight_source": "analysis",
+          "topics": [
+            {
+              "key": "concept",
+              "name": "Concept",
+              "kind": "concept"
+            },
+            {
+              "key": "methods-and-techniques",
+              "name": "Methods and Techniques",
+              "kind": "concept"
+            },
+            {
+              "key": "divisional-performance-and-problem-of-goal-congruence",
+              "name": "Divisional Performance and Problem of Goal Congruence",
+              "kind": "concept"
+            },
+            {
+              "key": "determination-of-inter-departmental-or-inter-company-transfer-price",
+              "name": "Determination of Inter-departmental or Inter-company Transfer Price",
+              "kind": "concept"
+            },
+            {
+              "key": "international-transfer-pricing",
+              "name": "International Transfer Pricing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "standard-costing-and-variance-analysis",
+          "name": "Standard Costing and Variance analysis",
+          "section": "Section D: Standard Costing and Variance Analysis (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "material-and-labour-variances",
+              "name": "Material and Labour Variances",
+              "kind": "concept"
+            },
+            {
+              "key": "variable-overhead-variance",
+              "name": "Variable Overhead Variance",
+              "kind": "concept"
+            },
+            {
+              "key": "fixed-overhead-variance",
+              "name": "Fixed Overhead Variance",
+              "kind": "concept"
+            },
+            {
+              "key": "sales-variance",
+              "name": "Sales Variance",
+              "kind": "concept"
+            },
+            {
+              "key": "interpretation-of-variances-and-inferences-drawn",
+              "name": "Interpretation of Variances and Inferences Drawn",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "forecasting-budgeting-and-budgetary-control",
+          "name": "Forecasting, Budgeting and Budgetary Control",
+          "section": "Section E: Forecasting, Budgeting and Budgetary Control (15%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction",
+              "name": "Introduction",
+              "kind": "concept"
+            },
+            {
+              "key": "rationale-for-budgets",
+              "name": "Rationale for Budgets",
+              "kind": "concept"
+            },
+            {
+              "key": "general-principles-in-the-budgetary-process",
+              "name": "General principles in the Budgetary process",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-fixed-and-flexible-budgets",
+              "name": "Formulation of various types of Budgets: Fixed and Flexible Budgets",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-functional-budgets",
+              "name": "Formulation of various types of Budgets: Functional Budgets",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-master-budget",
+              "name": "Formulation of various types of Budgets: Master Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-cash-budget",
+              "name": "Formulation of various types of Budgets: Cash Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-zero-base-budget",
+              "name": "Formulation of various types of Budgets: Zero Base Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-performance-budget",
+              "name": "Formulation of various types of Budgets: Performance Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-programme-budget",
+              "name": "Formulation of various types of Budgets: Programme Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-rolling-budget",
+              "name": "Formulation of various types of Budgets: Rolling Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-outcome-budget",
+              "name": "Formulation of various types of Budgets: Outcome Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "formulation-of-various-types-of-budgets-budgetary-control-rationale-for-budgetary-control-importance-and-significance-of",
+              "name": "Formulation of various types of Budgets: Budgetary Control • Rationale for Budgetary Control • Importance and Significance of Budgetary Control",
+              "kind": "concept"
+            },
+            {
+              "key": "linkage-of-budgetary-control-with-standard-costing-and-profit-reconciliation-benchmarking-and-key-success-factor-interpr",
+              "name": "Linkage of Budgetary Control with Standard Costing and Profit Reconciliation • Benchmarking and Key Success Factor • Interpretation of Under and Over Performance and Inferences Drawn for Corrective Actions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "divisional-performance-measurement",
+          "name": "Divisional Performance Measurement",
+          "section": "Section F: Divisional Performance Measurement (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "organisations-with-multiple-divisions-benefits-of-decentralization",
+              "name": "Organisations with Multiple divisions, Benefits of Decentralization",
+              "kind": "concept"
+            },
+            {
+              "key": "dupont-analysis",
+              "name": "DuPont Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "divisional-performance-measurement-tools-roi-residual-income",
+              "name": "Divisional Performance Measurement tools – ROI, Residual Income",
+              "kind": "concept"
+            },
+            {
+              "key": "economic-value-added-definition-eva-centre-eva-drivers",
+              "name": "Economic Value Added – Definition, EVA Centre, EVA Drivers",
+              "kind": "concept"
+            },
+            {
+              "key": "introduction-to-learning-curve",
+              "name": "Introduction to Learning Curve",
+              "kind": "concept"
+            },
+            {
+              "key": "balanced-score-card-for-variable-pay-management",
+              "name": "Balanced Score Card for Variable Pay Management",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "responsibility-accounting",
+          "name": "Responsibility Accounting",
+          "section": "Section G: Responsibility Accounting (5%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concept-of-cost-revenue-profit-and-responsibility-centres",
+              "name": "Concept of Cost, Revenue, Profit and Responsibility Centres",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-responsibility-report",
+              "name": "Preparation of Responsibility Report",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "decision-theory",
+          "name": "Decision Theory",
+          "section": "Section H: Decision Theory (10%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "decision-making-under-certainty",
+              "name": "Decision Making under Certainty",
+              "kind": "concept"
+            },
+            {
+              "key": "decisions-making-under-risk",
+              "name": "Decisions Making under Risk",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-making-under-uncertainty",
+              "name": "Decision Making under Uncertainty",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-tree",
+              "name": "Decision Tree",
+              "kind": "concept"
+            }
+          ]
+        }
+      ],
+      "group": "group-2"
+    }
+  ]
+}

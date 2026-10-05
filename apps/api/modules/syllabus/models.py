@@ -8,6 +8,7 @@ See docs/product/erd/F-02-syllabus-structure-and-coverage.md.
 
 from decimal import Decimal
 
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
 
@@ -47,7 +48,10 @@ class Level(UUIDModel):
 
 
 class ExamTerm(UUIDModel):
-    course = models.ForeignKey(Course, on_delete=models.PROTECT, related_name="terms")
+    """An exam attempt of one level (CMA Foundation, CMA Intermediate and CMA Final each have their own attempts and dates)."""
+
+    course = models.ForeignKey(Course, on_delete=models.PROTECT, related_name="terms", editable=False)  # from `level`
+    level = models.ForeignKey(Level, on_delete=models.PROTECT, related_name="terms")
     code = models.CharField(max_length=16)  # 2027-05
     name = models.CharField(max_length=60)  # May 2027
     exam_start = models.DateField(null=True, blank=True)
@@ -57,10 +61,14 @@ class ExamTerm(UUIDModel):
     class Meta:
         db_table = "syllabus_examterm"
         ordering = ["code"]
-        constraints = [models.UniqueConstraint(fields=["course", "code"], name="syllabus_examterm_unique_code")]
+        constraints = [models.UniqueConstraint(fields=["level", "code"], name="syllabus_examterm_unique_level_code")]
+
+    def save(self, *args, **kwargs):
+        self.course_id = self.level.course_id
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
-        return f"{self.course.code} {self.name}"
+        return f"{self.course.code.upper()} {self.level.name} {self.name}"
 
 
 class Scheme(UUIDModel):
@@ -89,6 +97,12 @@ class Scheme(UUIDModel):
                 condition=Q(status__in=["draft", "published", "retired"]), name="syllabus_scheme_status_valid"
             ),
         ]
+
+    def clean(self):
+        for field in ("from_term", "to_term"):
+            term = getattr(self, field)
+            if term and self.level_id and term.level_id != self.level_id:
+                raise ValidationError({field: "Pick an exam term of this scheme's level."})
 
     def __str__(self) -> str:
         return f"{self.level} {self.code}"
@@ -129,6 +143,7 @@ class Subject(UUIDModel):
     exam_duration_minutes = models.SmallIntegerField(null=True, blank=True)
     kind = models.CharField(max_length=12, choices=Kind.choices, default=Kind.THEORY)
     is_optional = models.BooleanField(default=False)
+    source_url = models.URLField(max_length=500, blank=True)  # the institute document this paper was built from
     sort_order = models.SmallIntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
@@ -156,6 +171,8 @@ class Chapter(UUIDModel):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="chapters")
     key = models.SlugField(max_length=100)
     name = models.CharField(max_length=240)
+    # Section / Part of the paper this chapter sits in, e.g. "Section A: Direct Taxation (50%)". Flat label, no extra table.
+    section = models.CharField(max_length=200, blank=True)
     marks_min = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
     marks_max = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)
     weight_source = models.CharField(max_length=10, choices=WeightSource.choices, default=WeightSource.UNKNOWN)

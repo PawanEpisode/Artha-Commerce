@@ -1,0 +1,1107 @@
+{
+  "course": "cs",
+  "level": "foundation",
+  "scheme": {
+    "code": "2022",
+    "name": "ICSI Syllabus 2022 (CSEET)",
+    "source_url": "https://www.icsi.edu",
+    "notes": "CSEET structure from the ICSI Syllabus 2022 PDF supplied by the founder. Needs editor review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "business-communication",
+      "paper_number": 1,
+      "name": "Business Communication",
+      "total_marks": 50,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "essentials-of-good-english",
+          "name": "Essentials of Good English",
+          "section": "",
+          "topics": [
+            {
+              "key": "english-grammar-and-its-usage-noun-pronouns-verbs-adjectives-adverbs-prepositions-conjunctions-interjection-voice-articl",
+              "name": "English Grammar and its usage-Noun, Pronouns, Verbs, Adjectives, Adverbs, Prepositions, Conjunctions, Interjection, Voice, Articles, Tenses, Prefix, Suffix, Combination words and Punctuations",
+              "kind": "concept"
+            },
+            {
+              "key": "enriching-vocabulary-choice-of-words-synonyms-and-antonyms",
+              "name": "Enriching Vocabulary-Choice of words, Synonyms and Antonyms",
+              "kind": "concept"
+            },
+            {
+              "key": "common-errors-in-english",
+              "name": "Common errors in English",
+              "kind": "concept"
+            },
+            {
+              "key": "words-with-multiple-meaning",
+              "name": "Words with multiple meaning",
+              "kind": "concept"
+            },
+            {
+              "key": "one-word-substitution",
+              "name": "One word substitution",
+              "kind": "concept"
+            },
+            {
+              "key": "words-frequently-mis-spelt",
+              "name": "Words frequently mis-spelt",
+              "kind": "concept"
+            },
+            {
+              "key": "homophones",
+              "name": "Homophones",
+              "kind": "concept"
+            },
+            {
+              "key": "idioms-and-phrases",
+              "name": "Idioms and phrases",
+              "kind": "concept"
+            },
+            {
+              "key": "proverbs",
+              "name": "Proverbs",
+              "kind": "concept"
+            },
+            {
+              "key": "abbreviations",
+              "name": "Abbreviations",
+              "kind": "concept"
+            },
+            {
+              "key": "para-jumbles",
+              "name": "Para jumbles",
+              "kind": "concept"
+            },
+            {
+              "key": "sentence-completion",
+              "name": "Sentence completion",
+              "kind": "concept"
+            },
+            {
+              "key": "sentence-arrangement",
+              "name": "Sentence arrangement",
+              "kind": "concept"
+            },
+            {
+              "key": "sentence-correction",
+              "name": "Sentence correction",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-words-and-phrases-commonly-used",
+              "name": "Foreign words and phrases commonly used",
+              "kind": "concept"
+            },
+            {
+              "key": "comprehension-of-passage-and-art-of-summarizing",
+              "name": "Comprehension of passage and art of Summarizing",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "communication",
+          "name": "Communication",
+          "section": "",
+          "topics": [
+            {
+              "key": "concept-of-communication-meaning-and-significance-of-good-communication",
+              "name": "Concept of Communication, Meaning and Significance of Good Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "business-communication-principles-and-process",
+              "name": "Business Communication - Principles and Process",
+              "kind": "concept"
+            },
+            {
+              "key": "means-of-communication-written-oral-visual-audiovisual",
+              "name": "Means of Communication - Written, Oral, Visual Audiovisual",
+              "kind": "concept"
+            },
+            {
+              "key": "choice-of-modes-of-communication",
+              "name": "Choice of Modes of Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "communication-networks-vertical-circuit-chain-wheel-star",
+              "name": "Communication Networks- vertical, circuit, chain, wheel, star",
+              "kind": "concept"
+            },
+            {
+              "key": "commonly-used-mediums-of-digital-communication-email-sms-voice-mail-multimedia-teleconferencing-mobile-phone-conversatio",
+              "name": "Commonly used Mediums of Digital Communication - Email, SMS, Voice mail, Multimedia, Teleconferencing, Mobile Phone Conversation and Video Conferencing",
+              "kind": "concept"
+            },
+            {
+              "key": "listening-skills-types-purpose-steps-to-effective-listening-barriers-to-effective-listening-and-ways-to-overcome-the-bar",
+              "name": "Listening Skills-Types, Purpose, Steps to Effective Listening, Barriers to Effective Listening and Ways to overcome the Barriers",
+              "kind": "concept"
+            },
+            {
+              "key": "barriers-to-effective-communication-and-ways-to-overcome-the-barriers",
+              "name": "Barriers to Effective Communication and Ways to overcome the Barriers",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-correspondence",
+          "name": "Business Correspondence",
+          "section": "",
+          "topics": [
+            {
+              "key": "business-letters-its-essentials-parts-types-and-salutations",
+              "name": "Business Letters - Its Essentials, Parts, Types and Salutations",
+              "kind": "concept"
+            },
+            {
+              "key": "positive-messages-negative-messages-and-persuasive-messages",
+              "name": "Positive Messages, Negative Messages and Persuasive Messages",
+              "kind": "concept"
+            },
+            {
+              "key": "business-reports-inter-and-intra-departmental-communication-office-orders-office-circulars-memorandum-office-notes-and-m",
+              "name": "Business Reports, Inter and Intra-departmental Communication - Office Orders, Office Circulars, Memorandum, Office Notes and Management Information System (MIS)",
+              "kind": "concept"
+            },
+            {
+              "key": "concept-of-web-internet-and-e-correspondence",
+              "name": "Concept of Web, Internet and E-correspondence",
+              "kind": "concept"
+            },
+            {
+              "key": "intranet-benefit-and-purpose",
+              "name": "Intranet- Benefit and Purpose",
+              "kind": "concept"
+            },
+            {
+              "key": "email-features-procedure-to-write-a-formal-email-and-email-etiquettes",
+              "name": "Email - Features, Procedure to Write a Formal Email and Email Etiquettes",
+              "kind": "concept"
+            },
+            {
+              "key": "essential-elements-of-email-subject-line-formal-greeting-target-audience-reader-clarity-and-conciseness-formal-closing-p",
+              "name": "Essential Elements of Email- Subject line, Formal Greeting, Target Audience (Reader), Clarity and Conciseness, Formal Closing, Proof reading and Feedback",
+              "kind": "concept"
+            },
+            {
+              "key": "advantages-and-disadvantages-of-email",
+              "name": "Advantages and Disadvantages of Email",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "common-business-terminologies",
+          "name": "Common Business Terminologies",
+          "section": "",
+          "topics": [
+            {
+              "key": "terms-defined-under-various-laws-rules-and-regulations-including-financial-and-non-financial-terms-and-expressions",
+              "name": "Terms defined under various Laws, Rules and Regulations including Financial and Non-Financial terms and expressions.",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "legal-aptitude-and-logical-reasoning",
+      "paper_number": 2,
+      "name": "Legal Aptitude and Logical Reasoning",
+      "total_marks": 50,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "indian-constitution",
+          "name": "Indian Constitution",
+          "section": "Sub-part A: Legal Aptitude (30 Marks)",
+          "topics": [
+            {
+              "key": "preamble",
+              "name": "Preamble",
+              "kind": "concept"
+            },
+            {
+              "key": "fundamental-rights-and-fundamental-duties",
+              "name": "Fundamental Rights and Fundamental Duties",
+              "kind": "concept"
+            },
+            {
+              "key": "directive-principles-of-state-policy",
+              "name": "Directive Principles of State Policy",
+              "kind": "concept"
+            },
+            {
+              "key": "state-under-constitution",
+              "name": "State under Constitution",
+              "kind": "concept"
+            },
+            {
+              "key": "president-and-governors",
+              "name": "President and Governors",
+              "kind": "concept"
+            },
+            {
+              "key": "council-of-ministers-and-prime-minister",
+              "name": "Council of Ministers and Prime Minister",
+              "kind": "concept"
+            },
+            {
+              "key": "lok-sabha-rajya-sabha-and-legislative-assembly-legislative-council",
+              "name": "Lok Sabha, Rajya Sabha and Legislative Assembly, Legislative Council",
+              "kind": "concept"
+            },
+            {
+              "key": "supreme-court-and-high-courts",
+              "name": "Supreme Court and High Courts",
+              "kind": "concept"
+            },
+            {
+              "key": "landmark-amendment-in-constitution",
+              "name": "Landmark Amendment in Constitution",
+              "kind": "concept"
+            },
+            {
+              "key": "list-of-subjects-centre-state-and-concurrent",
+              "name": "List of subjects-Centre, State and Concurrent",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "elements-of-general-laws-indian-contract-act-and-law-of-torts",
+          "name": "Elements of General Laws (Indian Contract Act and Law of Torts)",
+          "section": "Sub-part A: Legal Aptitude (30 Marks)",
+          "topics": [
+            {
+              "key": "law-of-contract-offer-acceptance-consideration-and-competency-to-contract",
+              "name": "Law of Contract: Offer, Acceptance, Consideration and Competency to Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-contract-agreement",
+              "name": "Law of Contract: Agreement",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-contract-types-of-contract-void-voidable-unenforceable",
+              "name": "Law of Contract: Types of Contract: Void, Voidable, Unenforceable",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-contract-performance-of-contract",
+              "name": "Law of Contract: Performance of Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-contract-frustration-of-contract",
+              "name": "Law of Contract: Frustration of Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-contract-quasi-contract",
+              "name": "Law of Contract: Quasi Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-contract-breach-of-contract-and-remedies",
+              "name": "Law of Contract: Breach of Contract and Remedies",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-torts-basics-of-torts",
+              "name": "Law of Torts: Basics of Torts",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-torts-specific-defenses",
+              "name": "Law of Torts: Specific Defenses",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-torts-nuisance-and-negligence",
+              "name": "Law of Torts: Nuisance and Negligence",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-torts-strict-absolute-and-vicarious-liability",
+              "name": "Law of Torts: Strict, Absolute and Vicarious Liability",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-torts-trespass",
+              "name": "Law of Torts: Trespass",
+              "kind": "concept"
+            },
+            {
+              "key": "law-of-torts-malicious-prosecution",
+              "name": "Law of Torts: Malicious Prosecution",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "elements-of-company-secretaries-legislation",
+          "name": "Elements of Company Secretaries Legislation",
+          "section": "Sub-part A: Legal Aptitude (30 Marks)",
+          "topics": [
+            {
+              "key": "the-institute-of-company-secretaries-of-india",
+              "name": "The Institute of Company Secretaries of India",
+              "kind": "concept"
+            },
+            {
+              "key": "vision-mission-motto-and-core-values-of-the-institute",
+              "name": "Vision, Mission, Motto and Core Values of the Institute",
+              "kind": "concept"
+            },
+            {
+              "key": "company-secretary-under-company-secretaries-act-1980",
+              "name": "Company Secretary under Company Secretaries Act, 1980",
+              "kind": "concept"
+            },
+            {
+              "key": "functions-of-company-secretary-under-the-companies-act-2013",
+              "name": "Functions of Company Secretary under the Companies Act, 2013",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-company-secretary-in-employment",
+              "name": "Role of Company Secretary in Employment",
+              "kind": "concept"
+            },
+            {
+              "key": "role-of-company-secretary-in-practice",
+              "name": "Role of Company Secretary in Practice",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "elements-of-company-law",
+          "name": "Elements of Company Law",
+          "section": "Sub-part A: Legal Aptitude (30 Marks)",
+          "topics": [
+            {
+              "key": "meaning-and-nature-of-company",
+              "name": "Meaning and Nature of Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-companies",
+              "name": "Types of Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "incorporation-of-a-company",
+              "name": "Incorporation of a Company",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-capital",
+              "name": "Types of capital",
+              "kind": "concept"
+            },
+            {
+              "key": "board-of-directors-concept-appointment-and-removal-of-directors",
+              "name": "Board of Directors - (Concept, Appointment and Removal of Directors)",
+              "kind": "concept"
+            },
+            {
+              "key": "board-meetings-shareholders-meetings",
+              "name": "Board Meetings & Shareholders Meetings",
+              "kind": "concept"
+            },
+            {
+              "key": "corporate-social-responsibility",
+              "name": "Corporate Social Responsibility",
+              "kind": "concept"
+            },
+            {
+              "key": "business-ethics",
+              "name": "Business Ethics",
+              "kind": "concept"
+            },
+            {
+              "key": "ethical-dilemma",
+              "name": "Ethical Dilemma",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "legal-reasoning",
+          "name": "Legal Reasoning",
+          "section": "Sub-part A: Legal Aptitude (30 Marks)",
+          "topics": [
+            {
+              "key": "legal-fundamentals-and-terms",
+              "name": "Legal Fundamentals and Terms",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-problems-reading-and-understanding-a-case",
+              "name": "Legal Problems - Reading and understanding a case",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-terminology-and-maxims",
+              "name": "Legal Terminology and Maxims",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-reasoning-a-reasoning-by-analogy-b-inductive-and-deductive-reasoning",
+              "name": "Legal Reasoning - (a) Reasoning by Analogy (b) Inductive and Deductive Reasoning",
+              "kind": "concept"
+            },
+            {
+              "key": "questions-of-fact-or-factual-issues",
+              "name": "Questions of Fact (or factual issues)",
+              "kind": "concept"
+            },
+            {
+              "key": "questions-of-law-or-legal-issues",
+              "name": "Questions of Law (or legal issues)",
+              "kind": "concept"
+            },
+            {
+              "key": "landmark-judgments-of-supreme-court-and-high-court",
+              "name": "Landmark Judgments of Supreme Court and High Court",
+              "kind": "concept"
+            },
+            {
+              "key": "reading-comprehension",
+              "name": "Reading Comprehension",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "logical-reasoning",
+          "name": "Logical Reasoning",
+          "section": "Sub-part B: Logical Reasoning (20 Marks)",
+          "topics": [
+            {
+              "key": "calendars",
+              "name": "Calendars",
+              "kind": "concept"
+            },
+            {
+              "key": "cause-and-effect-reasoning",
+              "name": "Cause and Effect Reasoning",
+              "kind": "concept"
+            },
+            {
+              "key": "clocks",
+              "name": "Clocks",
+              "kind": "concept"
+            },
+            {
+              "key": "coding-and-decoding",
+              "name": "Coding and Decoding",
+              "kind": "concept"
+            },
+            {
+              "key": "deriving-conclusion-from-passages",
+              "name": "Deriving Conclusion from Passages",
+              "kind": "concept"
+            },
+            {
+              "key": "drawing-inference",
+              "name": "Drawing Inference",
+              "kind": "concept"
+            },
+            {
+              "key": "number-test",
+              "name": "Number Test",
+              "kind": "concept"
+            },
+            {
+              "key": "sequence-and-series",
+              "name": "Sequence and Series",
+              "kind": "concept"
+            },
+            {
+              "key": "statement-and-assumptions",
+              "name": "Statement and Assumptions",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "verbal-reasoning",
+          "name": "Verbal Reasoning",
+          "section": "Sub-part B: Logical Reasoning (20 Marks)",
+          "topics": [
+            {
+              "key": "alphabet-test",
+              "name": "Alphabet Test",
+              "kind": "concept"
+            },
+            {
+              "key": "alpha-numeric-sequence-puzzle",
+              "name": "Alpha Numeric Sequence Puzzle",
+              "kind": "concept"
+            },
+            {
+              "key": "analogy",
+              "name": "Analogy",
+              "kind": "concept"
+            },
+            {
+              "key": "assertion-and-reason",
+              "name": "Assertion and Reason",
+              "kind": "concept"
+            },
+            {
+              "key": "blood-relations",
+              "name": "Blood Relations",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-making",
+              "name": "Decision Making",
+              "kind": "concept"
+            },
+            {
+              "key": "inserting-missing-characters",
+              "name": "Inserting Missing Characters",
+              "kind": "concept"
+            },
+            {
+              "key": "logical-sequence-test",
+              "name": "Logical Sequence Test",
+              "kind": "concept"
+            },
+            {
+              "key": "logical-venn-diagram",
+              "name": "Logical Venn Diagram",
+              "kind": "concept"
+            },
+            {
+              "key": "number-ranking-and-time-sequence-test",
+              "name": "Number, Ranking and Time Sequence Test",
+              "kind": "concept"
+            },
+            {
+              "key": "syllogism",
+              "name": "Syllogism",
+              "kind": "concept"
+            },
+            {
+              "key": "truth-tellers-and-liars",
+              "name": "Truth Tellers and Liars",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "non-verbal-reasoning",
+          "name": "Non-Verbal Reasoning",
+          "section": "Sub-part B: Logical Reasoning (20 Marks)",
+          "topics": [
+            {
+              "key": "analytical-reasoning",
+              "name": "Analytical Reasoning",
+              "kind": "concept"
+            },
+            {
+              "key": "classification",
+              "name": "Classification",
+              "kind": "concept"
+            },
+            {
+              "key": "completion-of-incomplete-pattern",
+              "name": "Completion of Incomplete Pattern",
+              "kind": "concept"
+            },
+            {
+              "key": "figure-matrix",
+              "name": "Figure Matrix",
+              "kind": "concept"
+            },
+            {
+              "key": "grouping-of-identical-figures",
+              "name": "Grouping of Identical Figures",
+              "kind": "concept"
+            },
+            {
+              "key": "mirror-image",
+              "name": "Mirror Image",
+              "kind": "concept"
+            },
+            {
+              "key": "rule-detection",
+              "name": "Rule Detection",
+              "kind": "concept"
+            },
+            {
+              "key": "numeric-and-alphabet-series",
+              "name": "Numeric and Alphabet Series",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "economic-and-business-environment",
+      "paper_number": 3,
+      "name": "Economic and Business Environment",
+      "total_marks": 50,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "basics-of-demand-and-supply-and-forms-of-market-competition",
+          "name": "Basics of Demand and Supply and Forms of Market Competition",
+          "section": "Sub-part A: Economics (25 Marks)",
+          "topics": [
+            {
+              "key": "theory-of-demand-and-supply",
+              "name": "Theory of Demand and Supply",
+              "kind": "concept"
+            },
+            {
+              "key": "equilibrium-price",
+              "name": "Equilibrium Price",
+              "kind": "concept"
+            },
+            {
+              "key": "elasticity-of-demand-and-supply-and-other-related-concepts",
+              "name": "Elasticity of Demand and Supply and other related concepts",
+              "kind": "concept"
+            },
+            {
+              "key": "increase-and-decrease-in-demand-and-expansion-and-contraction-of-demand",
+              "name": "Increase and Decrease in Demand and Expansion and Contraction of Demand",
+              "kind": "concept"
+            },
+            {
+              "key": "forms-of-market-competition-monopoly-duopoly-oligopoly-perfect-competition-and-monopolistic-competition",
+              "name": "Forms of Market Competition- Monopoly, Duopoly, Oligopoly, Perfect Competition and Monopolistic Competition",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "national-income-accounting-and-related-concepts",
+          "name": "National Income Accounting and Related Concepts",
+          "section": "Sub-part A: Economics (25 Marks)",
+          "topics": [
+            {
+              "key": "meaning-and-methods-to-compute-national-income",
+              "name": "Meaning and methods to compute National Income",
+              "kind": "concept"
+            },
+            {
+              "key": "key-concepts-of-national-income-gnp-gdp-nnp-ndp-domestic-income-private-income-personal-income-disposable-income-real-in",
+              "name": "Key concepts of National Income (GNP, GDP, NNP, NDP, Domestic Income, Private Income, Personal Income, Disposable Income, Real Income and Per Capita Income)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-union-budget",
+          "name": "Indian Union Budget",
+          "section": "Sub-part A: Economics (25 Marks)",
+          "topics": [
+            {
+              "key": "key-terminologies-heads-covered-under-the-budget",
+              "name": "Key terminologies / heads covered under the budget",
+              "kind": "concept"
+            },
+            {
+              "key": "revenue-and-capital-budget",
+              "name": "Revenue and Capital Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "major-components-of-revenue-and-capital-budget",
+              "name": "Major components of Revenue and Capital Budget",
+              "kind": "concept"
+            },
+            {
+              "key": "meaning-of-fiscal-deficit",
+              "name": "Meaning of Fiscal Deficit",
+              "kind": "concept"
+            },
+            {
+              "key": "components-variables-covered-under-fiscal-deficit",
+              "name": "Components/ Variables covered under Fiscal Deficit",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-financial-markets",
+          "name": "Indian Financial Markets",
+          "section": "Sub-part A: Economics (25 Marks)",
+          "topics": [
+            {
+              "key": "overview-of-indian-financial-ecosystem",
+              "name": "Overview of Indian Financial Ecosystem",
+              "kind": "concept"
+            },
+            {
+              "key": "key-facets-of-indian-financial-system",
+              "name": "Key facets of Indian financial system",
+              "kind": "concept"
+            },
+            {
+              "key": "growth-of-financial-institutions",
+              "name": "Growth of Financial Institutions",
+              "kind": "concept"
+            },
+            {
+              "key": "public-and-private-sector-banks",
+              "name": "Public and private sector banks",
+              "kind": "concept"
+            },
+            {
+              "key": "industrial-finance-corporation-of-india-and-small-industries-development-bank-of-india",
+              "name": "Industrial Finance Corporation of India and Small Industries Development Bank of India",
+              "kind": "concept"
+            },
+            {
+              "key": "regional-rural-banks",
+              "name": "Regional Rural Banks",
+              "kind": "concept"
+            },
+            {
+              "key": "cooperative-banks",
+              "name": "Cooperative Banks",
+              "kind": "concept"
+            },
+            {
+              "key": "non-banking-finance-companies",
+              "name": "Non-Banking Finance Companies",
+              "kind": "concept"
+            },
+            {
+              "key": "basics-of-capital-market-types-of-shares-and-debentures",
+              "name": "Basics of Capital Market: Types of Shares and Debentures",
+              "kind": "concept"
+            },
+            {
+              "key": "financial-assistance-scenario-for-small-and-medium-enterprises-and-start-ups",
+              "name": "Financial assistance scenario for Small and Medium Enterprises and Start-Ups",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-economy",
+          "name": "Indian Economy",
+          "section": "Sub-part A: Economics (25 Marks)",
+          "topics": [
+            {
+              "key": "primary-agriculture-and-allied-activities",
+              "name": "Primary (Agriculture and allied activities)",
+              "kind": "concept"
+            },
+            {
+              "key": "secondary-manufacturing",
+              "name": "Secondary (Manufacturing)",
+              "kind": "concept"
+            },
+            {
+              "key": "tertiary-services",
+              "name": "Tertiary (Services)",
+              "kind": "concept"
+            },
+            {
+              "key": "current-scenario-of-agriculture-and-allied-activities-in-india",
+              "name": "Current scenario of agriculture and allied activities in India",
+              "kind": "concept"
+            },
+            {
+              "key": "agricultural-and-industrial-policies-of-india",
+              "name": "Agricultural and Industrial Policies of India",
+              "kind": "concept"
+            },
+            {
+              "key": "current-scenario-of-services-sector-in-india",
+              "name": "Current scenario of services sector in India",
+              "kind": "concept"
+            },
+            {
+              "key": "balance-of-payments",
+              "name": "Balance of Payments",
+              "kind": "concept"
+            },
+            {
+              "key": "components-of-balance-of-payments",
+              "name": "Components of Balance of Payments",
+              "kind": "concept"
+            },
+            {
+              "key": "favorable-and-unfavorable-balance-of-trade",
+              "name": "Favorable and Unfavorable Balance of Trade",
+              "kind": "concept"
+            },
+            {
+              "key": "foreign-investments-in-india-types-and-flows",
+              "name": "Foreign Investments in India- Types and Flows",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "entrepreneurship-scenario",
+          "name": "Entrepreneurship Scenario",
+          "section": "Sub-part B: Business Environment (25 Marks)",
+          "topics": [
+            {
+              "key": "government-initiatives-to-foster-entrepreneurship",
+              "name": "Government initiatives to foster entrepreneurship",
+              "kind": "concept"
+            },
+            {
+              "key": "need-for-entrepreneurship-in-india",
+              "name": "Need for entrepreneurship in India",
+              "kind": "concept"
+            },
+            {
+              "key": "bottlenecks-in-entrepreneurial-growth",
+              "name": "Bottlenecks in entrepreneurial growth",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-environment",
+          "name": "Business Environment",
+          "section": "Sub-part B: Business Environment (25 Marks)",
+          "topics": [
+            {
+              "key": "overview-of-business-environment",
+              "name": "Overview of Business Environment",
+              "kind": "concept"
+            },
+            {
+              "key": "features-and-factors-influencing-business-environment",
+              "name": "Features and factors influencing business environment",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-environment-economic-environment-socio-cultural-environment-political-environment-legal-and-technological-envir",
+              "name": "Types of environment: Economic environment, Socio-cultural environment, Political environment, Legal and Technological environment",
+              "kind": "concept"
+            },
+            {
+              "key": "ease-of-doing-business-index-by-world-bank-for-india-and-department-for-promotion-of-industry-and-internal-trade-dpiit-f",
+              "name": "Ease of Doing Business Index by World Bank for India and Department for Promotion of Industry and Internal Trade (DPIIT) for States",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "key-government-institutions",
+          "name": "Key Government Institutions",
+          "section": "Sub-part B: Business Environment (25 Marks)",
+          "topics": [
+            {
+              "key": "basic-awareness-about-various-institutions-and-regulatory-bodies-in-india-such-as-niti-aayog-mca-sebi-rbi-ibbi-cci-nclt",
+              "name": "Basic awareness about various institutions and regulatory bodies in India such as NITI Aayog, MCA, SEBI, RBI, IBBI, CCI, NCLT and NCLAT",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "current-affairs-and-quantitative-aptitude",
+      "paper_number": 4,
+      "name": "Current Affairs and Quantitative Aptitude",
+      "total_marks": 50,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "national-and-international-current-affairs",
+          "name": "National and International Current Affairs",
+          "section": "Sub-part A: Current Affairs (30 Marks)",
+          "topics": [
+            {
+              "key": "current-affairs-of-national-and-international-importance-relating-to",
+              "name": "Current affairs of National and International importance relating to:",
+              "kind": "concept"
+            },
+            {
+              "key": "international-bodies-such-as-asean-brics-saarc-g-20-bimstec",
+              "name": "International Bodies such as ASEAN, BRICS, SAARC, G-20, BIMSTEC",
+              "kind": "concept"
+            },
+            {
+              "key": "organizations-like-rbi-nabard-cci-ibbi-imf-oecd-adb-world-bank",
+              "name": "Organizations like, RBI, NABARD, CCI, IBBI, IMF, OECD, ADB, World Bank",
+              "kind": "concept"
+            },
+            {
+              "key": "summits-and-conferences",
+              "name": "Summits and Conferences",
+              "kind": "concept"
+            },
+            {
+              "key": "current-development-in-banking-and-finance-such-as-digital-banking-govt-initiatives-financial-inclusion",
+              "name": "Current development in Banking and Finance such as digital banking, govt. initiatives, financial inclusion",
+              "kind": "concept"
+            },
+            {
+              "key": "current-development-in-stock-markets",
+              "name": "Current development in stock markets",
+              "kind": "concept"
+            },
+            {
+              "key": "recent-important-judgments-passed-by-supreme-court-and-high-courts-of-india-tribunals",
+              "name": "Recent important judgments passed by Supreme Court and High Courts of India, Tribunals",
+              "kind": "concept"
+            },
+            {
+              "key": "current-affairs-related-to-cs-institute-profession-and-regulatory-bodies",
+              "name": "Current affairs related to CS Institute/Profession and Regulatory Bodies",
+              "kind": "concept"
+            },
+            {
+              "key": "current-updates-on-environment-bio-diversity-climate-change-and-sustainable-development",
+              "name": "Current updates on Environment, Bio-Diversity, Climate Change and Sustainable Development",
+              "kind": "concept"
+            },
+            {
+              "key": "latest-developments-in-science-and-technology-it-computers-and-space-science",
+              "name": "Latest Developments in Science And Technology, IT, Computers and Space Science",
+              "kind": "concept"
+            },
+            {
+              "key": "business-personalities-and-leaders",
+              "name": "Business Personalities and Leaders",
+              "kind": "concept"
+            },
+            {
+              "key": "committees-and-appointments",
+              "name": "Committees and Appointments",
+              "kind": "concept"
+            },
+            {
+              "key": "current-political-scenario",
+              "name": "Current Political Scenario",
+              "kind": "concept"
+            },
+            {
+              "key": "initiatives-schemes-of-the-government",
+              "name": "Initiatives/ Schemes of the Government",
+              "kind": "concept"
+            },
+            {
+              "key": "governance-and-ethics",
+              "name": "Governance and Ethics",
+              "kind": "concept"
+            },
+            {
+              "key": "international-diplomacy",
+              "name": "International Diplomacy",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-and-economy",
+          "name": "Business and Economy",
+          "section": "Sub-part A: Current Affairs (30 Marks)",
+          "topics": [
+            {
+              "key": "international-trade-agreements",
+              "name": "International Trade Agreements",
+              "kind": "concept"
+            },
+            {
+              "key": "export-import-scenarios",
+              "name": "Export Import Scenarios",
+              "kind": "concept"
+            },
+            {
+              "key": "recent-appointments-of-chairman-md-ceo-of-renowned-companies",
+              "name": "Recent Appointments of Chairman/MD/CEO of renowned companies",
+              "kind": "concept"
+            },
+            {
+              "key": "recent-mergers-and-acquisitions-of-companies-in-india-and-abroad",
+              "name": "Recent Mergers and Acquisitions of Companies in India and Abroad",
+              "kind": "concept"
+            },
+            {
+              "key": "other-recent-business-developments",
+              "name": "Other Recent Business Developments",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "number-systems",
+          "name": "Number Systems",
+          "section": "Sub-part B: Quantitative Aptitude (20 Marks)",
+          "topics": [
+            {
+              "key": "computation-of-whole-number",
+              "name": "Computation of Whole Number",
+              "kind": "concept"
+            },
+            {
+              "key": "decimal-and-fractions",
+              "name": "Decimal and Fractions",
+              "kind": "concept"
+            },
+            {
+              "key": "relationship-between-numbers",
+              "name": "Relationship between numbers",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fundamental-arithmetical-operations",
+          "name": "Fundamental arithmetical operations",
+          "section": "Sub-part B: Quantitative Aptitude (20 Marks)",
+          "topics": [
+            {
+              "key": "percentages",
+              "name": "Percentages",
+              "kind": "concept"
+            },
+            {
+              "key": "ratio-and-proportion",
+              "name": "Ratio and Proportion",
+              "kind": "concept"
+            },
+            {
+              "key": "square-roots",
+              "name": "Square roots",
+              "kind": "concept"
+            },
+            {
+              "key": "averages",
+              "name": "Averages",
+              "kind": "concept"
+            },
+            {
+              "key": "interest-simple-and-compound",
+              "name": "Interest (Simple and Compound)",
+              "kind": "concept"
+            },
+            {
+              "key": "profit-and-loss",
+              "name": "Profit and Loss",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

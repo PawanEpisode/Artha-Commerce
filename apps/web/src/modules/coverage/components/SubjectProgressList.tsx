@@ -2,15 +2,16 @@ import { Badge, Card, ChevronRight, ProgressBar } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { pick } from '../lib/formula'
-import type { GroupRow, SubjectRow } from '../lib/types'
+import type { ElectiveSlot, GroupRow, SubjectRow } from '../lib/types'
 
 interface Props {
   groups: GroupRow[]
   subjects: SubjectRow[]
+  electives?: ElectiveSlot[]
   weighted: boolean
 }
 
-function Row({ subject, weighted }: { subject: SubjectRow; weighted: boolean }) {
+function Row({ subject, weighted, notChosen }: { subject: SubjectRow; weighted: boolean; notChosen: boolean }) {
   const pct = pick(subject, weighted)
   const allExcluded = subject.chapters_total === 0
   return (
@@ -24,7 +25,10 @@ function Row({ subject, weighted }: { subject: SubjectRow; weighted: boolean }) 
           <span className="min-w-0 flex-1 space-y-2">
             <span className="flex flex-wrap items-center gap-2">
               <span className="font-semibold">{subject.name}</span>
-              {subject.excluded_chapters > 0 ? (
+              {subject.elective_slot ? (
+                <Badge variant="outline">{notChosen ? 'Elective: not chosen' : 'Your elective'}</Badge>
+              ) : null}
+              {subject.excluded_chapters > 0 && !subject.elective_slot ? (
                 <Badge variant="outline">{subject.excluded_chapters} excluded</Badge>
               ) : null}
             </span>
@@ -41,7 +45,13 @@ function Row({ subject, weighted }: { subject: SubjectRow; weighted: boolean }) 
 }
 
 /** Groups (Group 1, Group 2) with their papers, each with a bar and percent. */
-export function SubjectProgressList({ groups, subjects, weighted }: Props) {
+export function SubjectProgressList({ groups, subjects: allSubjects, electives = [], weighted }: Props) {
+  // Once an elective is chosen the other options are out of the student's syllabus; until then all of them are listed.
+  const chosenBySlot = new Map(electives.map((e) => [e.key, e.chosen]))
+  const subjects = allSubjects.filter((s) => {
+    const chosen = s.elective_slot ? chosenBySlot.get(s.elective_slot) : null
+    return !chosen || chosen === s.id
+  })
   const sections = groups.length
     ? [
         ...groups.map((g) => ({
@@ -73,7 +83,12 @@ export function SubjectProgressList({ groups, subjects, weighted }: Props) {
           ) : null}
           <ul className="space-y-3">
             {section.items.map((s) => (
-              <Row key={s.id} subject={s} weighted={weighted} />
+              <Row
+                key={s.id}
+                subject={s}
+                weighted={weighted}
+                notChosen={Boolean(s.elective_slot) && !chosenBySlot.get(s.elective_slot ?? '')}
+              />
             ))}
           </ul>
         </section>

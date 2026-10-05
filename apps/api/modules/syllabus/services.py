@@ -133,7 +133,7 @@ def load_scheme_from_dict(data: dict[str, Any], *, publish: bool = False) -> Sch
     spec = data["scheme"]
 
     def term(code: str | None) -> ExamTerm | None:
-        return ExamTerm.objects.get(course=course, code=code) if code else None
+        return ExamTerm.objects.get(level=level, code=code) if code else None
 
     scheme, created = Scheme.objects.get_or_create(
         level=level,
@@ -167,6 +167,7 @@ def load_scheme_from_dict(data: dict[str, Any], *, publish: bool = False) -> Sch
                 "exam_duration_minutes": s.get("exam_duration_minutes"),
                 "kind": s.get("kind", Subject.Kind.THEORY),
                 "is_optional": s.get("is_optional", False),
+                "source_url": s.get("source_url", ""),
                 "sort_order": s_order,
                 "is_active": True,
             },
@@ -188,6 +189,7 @@ def _load_chapters(subject: Subject, chapters: list[dict[str, Any]]) -> None:
             key=c["key"],
             defaults={
                 "name": c["name"],
+                "section": c.get("section", ""),
                 "marks_min": c.get("marks_min"),
                 "marks_max": c.get("marks_max"),
                 "weight_source": c.get("weight_source", Chapter.WeightSource.UNKNOWN),
@@ -312,6 +314,7 @@ def scheme_to_dict(scheme: Scheme) -> dict[str, Any]:
             entry: dict[str, Any] = {
                 "key": chapter.key,
                 "name": chapter.name,
+                "section": chapter.section or None,
                 "marks_min": num(chapter.marks_min),
                 "marks_max": num(chapter.marks_max),
                 "weight_source": chapter.weight_source,
@@ -337,6 +340,7 @@ def scheme_to_dict(scheme: Scheme) -> dict[str, Any]:
                     "exam_duration_minutes": subject.exam_duration_minutes,
                     "kind": subject.kind,
                     "is_optional": subject.is_optional,
+                    "source_url": subject.source_url or None,
                     "chapters": chapters,
                 }.items()
                 if v is not None
@@ -360,3 +364,26 @@ def scheme_to_dict(scheme: Scheme) -> dict[str, Any]:
         "groups": [{"key": g.key, "name": g.name} for g in scheme.groups.order_by("sort_order", "key")],
         "subjects": subjects,
     }
+
+
+LEGACY_SCHEME_CODES = ("indicative", "2023-sample")
+
+
+@transaction.atomic
+def prune_legacy_schemes(*, dry_run: bool = False) -> list[tuple[Scheme, str]]:
+    """Delete leftover placeholder schemes. Schemes with enrolled students are kept."""
+    schemes = Scheme.objects.filter(code__in=LEGACY_SCHEME_CODES).select_related("level__course")
+    results: list[tuple[Scheme, str]] = []
+    for scheme in schemes:
+        if scheme.enrollments.exists():
+            results.append((scheme, "kept (enrolled students)"))
+            continue
+        if dry_run:
+            results.append((scheme, "would delete"))
+            continue
+        # Subjects protect their group, so clear the tree before the scheme row.
+        scheme.subjects.all().delete()
+        scheme.groups.all().delete()
+        scheme.delete()
+        results.append((scheme, "deleted"))
+    return results

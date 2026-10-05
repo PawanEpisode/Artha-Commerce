@@ -1,0 +1,839 @@
+{
+  "course": "cma",
+  "level": "foundation",
+  "scheme": {
+    "code": "2022",
+    "name": "CMA Syllabus 2022",
+    "source_url": "https://icmai.in",
+    "notes": "Built from the ICMAI \"CMA Syllabus 2022\" PDF supplied by the founder (effective from the June 2023 exam term). Chapters are the syllabus modules, topics are the numbered sub-items, and each chapter carries its Section and weightage in \"section\". Chapter marks are the module weights from the syllabus table (weight source \"official\"). Where the table gives one combined weight for a group of modules, or only the section total, the remaining section weight is split evenly across those modules and marked \"analysis\" (indicative only). Needs editor review before publishing."
+  },
+  "groups": [],
+  "subjects": [
+    {
+      "key": "fundamentals-of-business-laws-and-business-communication",
+      "paper_number": 1,
+      "name": "Fundamentals of Business Laws and Business Communication",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "introduction",
+          "name": "Introduction",
+          "section": "Section A: Fundamentals of Business Laws (80%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "sources-of-law",
+              "name": "Sources of Law",
+              "kind": "concept"
+            },
+            {
+              "key": "legislative-process-in-india",
+              "name": "Legislative Process in India",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-methods-and-court-system-in-india",
+              "name": "Legal Methods and Court System in India",
+              "kind": "concept"
+            },
+            {
+              "key": "primary-and-subordinate-legislation",
+              "name": "Primary and Subordinate Legislation",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "indian-contracts-act-1872",
+          "name": "Indian Contracts Act, 1872",
+          "section": "Section A: Fundamentals of Business Laws (80%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "essential-elements-of-a-contract-types-of-contract-offer-and-acceptance",
+              "name": "Essential Elements of a Contract, Types of Contract, Offer and Acceptance",
+              "kind": "concept"
+            },
+            {
+              "key": "void-and-voidable-agreements-no-consideration-no-contract",
+              "name": "Void and Voidable Agreements, No Consideration No Contract",
+              "kind": "concept"
+            },
+            {
+              "key": "consideration-legality-of-object-and-consideration",
+              "name": "Consideration, Legality of Object and Consideration",
+              "kind": "concept"
+            },
+            {
+              "key": "capacity-of-parties-free-consent",
+              "name": "Capacity of Parties, Free Consent",
+              "kind": "concept"
+            },
+            {
+              "key": "quasi-and-contingent-contracts",
+              "name": "Quasi and Contingent Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-of-contracts",
+              "name": "Performance of Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "meaning-of-indemnity-guarantee-pledge-agent",
+              "name": "Meaning of Indemnity, Guarantee, Pledge, Agent",
+              "kind": "concept"
+            },
+            {
+              "key": "e-contracts-and-e-signature-meanings-and-requirements",
+              "name": "E-Contracts and E-Signature – Meanings and Requirements",
+              "kind": "concept"
+            },
+            {
+              "key": "discharge-of-contracts",
+              "name": "Discharge of Contracts",
+              "kind": "concept"
+            },
+            {
+              "key": "breach-of-contract-and-remedies-for-breach-of-contract",
+              "name": "Breach of Contract and Remedies for Breach of Contract",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "sale-of-goods-act-1930",
+          "name": "Sale of Goods Act, 1930",
+          "section": "Section A: Fundamentals of Business Laws (80%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "definition",
+              "name": "Definition",
+              "kind": "concept"
+            },
+            {
+              "key": "transfer-of-ownership",
+              "name": "Transfer of Ownership",
+              "kind": "concept"
+            },
+            {
+              "key": "essential-conditions-of-a-contract-of-sale",
+              "name": "Essential Conditions of a Contract of Sale",
+              "kind": "concept"
+            },
+            {
+              "key": "conditions-and-warranties",
+              "name": "Conditions and Warranties",
+              "kind": "concept"
+            },
+            {
+              "key": "performance-of-the-contract-of-sale",
+              "name": "Performance of the Contract of Sale",
+              "kind": "concept"
+            },
+            {
+              "key": "rights-of-unpaid-seller",
+              "name": "Rights of Unpaid Seller",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "negotiable-instruments-act-1881",
+          "name": "Negotiable Instruments Act, 1881",
+          "section": "Section A: Fundamentals of Business Laws (80%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "characteristics-of-negotiable-instruments",
+              "name": "Characteristics of Negotiable Instruments",
+              "kind": "concept"
+            },
+            {
+              "key": "definitions-of-promissory-note-bill-of-exchange-and-cheque",
+              "name": "Definitions of Promissory Note, Bill of Exchange and Cheque",
+              "kind": "concept"
+            },
+            {
+              "key": "difference-between-promissory-note-bill-of-exchange-and-cheque",
+              "name": "Difference between Promissory Note, Bill of Exchange and Cheque",
+              "kind": "concept"
+            },
+            {
+              "key": "crossing-meaning-definition-and-types-of-crossing",
+              "name": "Crossing – Meaning, Definition and Types of Crossing",
+              "kind": "concept"
+            },
+            {
+              "key": "dishonour-of-cheques-section-138",
+              "name": "Dishonour of Cheques (Section 138)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "business-communication",
+          "name": "Business Communication",
+          "section": "Section B: Business Communication (20%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-business-communication",
+              "name": "Introduction to Business Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "features-of-effective-business-communication",
+              "name": "Features of Effective Business Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "process-of-communication",
+              "name": "Process of Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-business-communication-formal-and-informal-communication",
+              "name": "Types of Business Communication: Formal and Informal Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-business-communication-verbal-non-verbal-and-written-communication",
+              "name": "Types of Business Communication: Verbal, Non-verbal and Written Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-business-communication-vertical-horizontal-and-diagonal-communication",
+              "name": "Types of Business Communication: Vertical, Horizontal and Diagonal Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-business-communication-upward-and-downward-communication",
+              "name": "Types of Business Communication: Upward and Downward Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "types-of-business-communication-lateral-communication",
+              "name": "Types of Business Communication: Lateral Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "internet-based-business-communication",
+              "name": "Internet Based Business Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "do-s-and-don-ts-of-communication-through-social-media",
+              "name": "Do’s and Don’ts of Communication through Social Media",
+              "kind": "concept"
+            },
+            {
+              "key": "writing-and-drafting-for-business-audiences-letter-and-memorandum",
+              "name": "Writing and Drafting for Business Audiences: Letter and Memorandum",
+              "kind": "concept"
+            },
+            {
+              "key": "writing-and-drafting-for-business-audiences-report-formal-and-informal",
+              "name": "Writing and Drafting for Business Audiences: Report – Formal and Informal",
+              "kind": "concept"
+            },
+            {
+              "key": "writing-and-drafting-for-business-audiences-business-proposal",
+              "name": "Writing and Drafting for Business Audiences: Business Proposal",
+              "kind": "concept"
+            },
+            {
+              "key": "writing-and-drafting-for-business-audiences-enhancement-of-writing-skills",
+              "name": "Writing and Drafting for Business Audiences: Enhancement of Writing Skills",
+              "kind": "concept"
+            },
+            {
+              "key": "intercultural-and-international-business-communication",
+              "name": "Intercultural and International Business Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "barriers-to-business-communication",
+              "name": "Barriers to Business Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "legal-aspects-of-business-communication",
+              "name": "Legal Aspects of Business Communication",
+              "kind": "concept"
+            },
+            {
+              "key": "use-of-graphics-and-references-for-business-communication",
+              "name": "Use of Graphics and References for Business Communication",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fundamentals-of-financial-and-cost-accounting",
+      "paper_number": 2,
+      "name": "Fundamentals of Financial and Cost Accounting",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "accounting-fundamentals",
+          "name": "Accounting Fundamentals",
+          "section": "Section A: Fundamentals of Financial Accounting (70%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "understanding-of-four-frameworks-of-accounting-conceptual-legal-institutional-and-regulatory-and-forms-of-organisation",
+              "name": "Understanding of Four Frameworks of Accounting (Conceptual, Legal, Institutional and Regulatory) and Forms of Organisation",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-principles-concepts-and-conventions",
+              "name": "Accounting Principles, Concepts and Conventions",
+              "kind": "concept"
+            },
+            {
+              "key": "capital-and-revenue-transactions-capital-and-revenue-expenditures-capital-and-revenue-receipts",
+              "name": "Capital and Revenue Transactions - Capital and Revenue Expenditures, Capital and Revenue Receipts",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-cycle-charts-of-accounts-and-codification-structure-analysis-of-transaction-accounting-equation-double-entry",
+              "name": "Accounting Cycle – Charts of Accounts and Codification Structure, Analysis of Transaction – Accounting Equation, Double Entry System, Books of Original Entry, Subsidiary Books and Finalisation of Accounts",
+              "kind": "concept"
+            },
+            {
+              "key": "journal-day-books-journal-proper-opening-transfer-closing-adjustment-and-rectification-entries-ledger",
+              "name": "Journal (Day Books; Journal Proper – Opening, Transfer, Closing, Adjustment and Rectification Entries), Ledger",
+              "kind": "concept"
+            },
+            {
+              "key": "cash-book-bank-book-petty-cash-book-bank-reconciliation-statement",
+              "name": "Cash Book, Bank Book, Petty Cash Book, Bank Reconciliation Statement",
+              "kind": "concept"
+            },
+            {
+              "key": "trial-balance",
+              "name": "Trial Balance",
+              "kind": "concept"
+            },
+            {
+              "key": "adjustment-entries-and-rectification-of-errors",
+              "name": "Adjustment Entries and Rectification of Errors",
+              "kind": "concept"
+            },
+            {
+              "key": "depreciation-straight-line-and-diminishing-balance-methods-only",
+              "name": "Depreciation (Straight Line and Diminishing Balance Methods only)",
+              "kind": "concept"
+            },
+            {
+              "key": "accounting-treatment-of-bad-debts-and-provision-for-doubtful-debts",
+              "name": "Accounting Treatment of Bad Debts and Provision for Doubtful Debts",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "accounting-for-special-transactions",
+          "name": "Accounting for Special Transactions",
+          "section": "Section A: Fundamentals of Financial Accounting (70%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "consignment",
+              "name": "Consignment",
+              "kind": "concept"
+            },
+            {
+              "key": "joint-venture",
+              "name": "Joint Venture",
+              "kind": "concept"
+            },
+            {
+              "key": "bills-of-exchange-excluding-accommodation-bill-insolvency",
+              "name": "Bills of Exchange (excluding Accommodation Bill, Insolvency)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "preparation-of-final-accounts",
+          "name": "Preparation of Final Accounts",
+          "section": "Section A: Fundamentals of Financial Accounting (70%)",
+          "marks_min": 25,
+          "marks_max": 25,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "preparation-of-financial-statements-of-sole-proprietorship-income-statement-balance-sheet",
+              "name": "Preparation of Financial Statements of Sole Proprietorship: Income Statement, Balance Sheet",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-a-not-for-profit-organisation-preparation-of-receipts-and-payments-account",
+              "name": "Preparation of Financial Statements of a Not-for-Profit Organisation: Preparation of Receipts and Payments Account",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-a-not-for-profit-organisation-preparation-of-income-and-expenditure-account",
+              "name": "Preparation of Financial Statements of a Not-for-Profit Organisation: Preparation of Income and Expenditure Account",
+              "kind": "concept"
+            },
+            {
+              "key": "preparation-of-financial-statements-of-a-not-for-profit-organisation-preparation-of-balance-sheet",
+              "name": "Preparation of Financial Statements of a Not-for-Profit Organisation: Preparation of Balance Sheet",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fundamentals-of-cost-accounting",
+          "name": "Fundamentals of Cost Accounting",
+          "section": "Section B: Fundamentals of Cost Accounting (30%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "meaning-definition-significance-of-cost-accounting-its-relationship-with-financial-accounting",
+              "name": "Meaning, Definition, Significance of Cost Accounting, its Relationship with Financial Accounting",
+              "kind": "concept"
+            },
+            {
+              "key": "application-of-cost-accounting-for-business-decisions",
+              "name": "Application of Cost Accounting for Business Decisions",
+              "kind": "concept"
+            },
+            {
+              "key": "definition-of-cost-cost-centre-cost-unit-and-cost-drivers",
+              "name": "Definition of Cost, Cost Centre, Cost Unit and Cost Drivers",
+              "kind": "concept"
+            },
+            {
+              "key": "classification-of-costs-with-reference-to-cost-accounting-standard-1",
+              "name": "Classification of Costs (with reference to Cost Accounting Standard 1)",
+              "kind": "concept"
+            },
+            {
+              "key": "ascertainment-of-cost-and-preparation-of-statement-of-cost-and-profit-cost-sheet",
+              "name": "Ascertainment of Cost and Preparation of Statement of Cost and Profit (Cost Sheet)",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fundamentals-of-business-mathematics-and-statistics",
+      "paper_number": 3,
+      "name": "Fundamentals of Business Mathematics and Statistics",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "arithmetic",
+          "name": "Arithmetic",
+          "section": "Section A: Fundamentals of Business Mathematics (40%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "ratios-variations-and-proportions",
+              "name": "Ratios, Variations and Proportions",
+              "kind": "concept"
+            },
+            {
+              "key": "time-value-of-money-and-annuity-simple-and-compound-interest",
+              "name": "Time Value of Money and Annuity – Simple and Compound Interest",
+              "kind": "concept"
+            },
+            {
+              "key": "arithmetic-progression-and-geometric-progression",
+              "name": "Arithmetic Progression and Geometric Progression",
+              "kind": "concept"
+            },
+            {
+              "key": "time-and-distance",
+              "name": "Time and Distance",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "algebra",
+          "name": "Algebra",
+          "section": "Section A: Fundamentals of Business Mathematics (40%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "set-theory-including-venn-diagram",
+              "name": "Set Theory, including Venn Diagram",
+              "kind": "concept"
+            },
+            {
+              "key": "indices-and-logarithms-basic-concepts",
+              "name": "Indices and Logarithms (Basic Concepts)",
+              "kind": "concept"
+            },
+            {
+              "key": "permutation-and-combinations-basic-concepts",
+              "name": "Permutation and Combinations (Basic Concepts)",
+              "kind": "concept"
+            },
+            {
+              "key": "quadratic-equations-basic-concepts",
+              "name": "Quadratic Equations (Basic Concepts)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "calculus-application-in-business",
+          "name": "Calculus - Application in Business",
+          "section": "Section A: Fundamentals of Business Mathematics (40%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concept-of-calculus-and-its-application-in-business",
+              "name": "Concept of Calculus and its Application in Business",
+              "kind": "concept"
+            },
+            {
+              "key": "revenue-and-cost-function",
+              "name": "Revenue and Cost Function",
+              "kind": "concept"
+            },
+            {
+              "key": "optimisation-techniques-basic-concepts",
+              "name": "Optimisation Techniques (Basic Concepts)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "statistical-representation-of-data",
+          "name": "Statistical Representation of Data",
+          "section": "Section B: Fundamentals of Business Statistics (60%)",
+          "marks_min": 5,
+          "marks_max": 5,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "diagrammatic-representation-of-data",
+              "name": "Diagrammatic Representation of Data",
+              "kind": "concept"
+            },
+            {
+              "key": "frequency-distribution",
+              "name": "Frequency Distribution",
+              "kind": "concept"
+            },
+            {
+              "key": "graphical-representation-of-frequency-distribution-histogram-frequency-polygon-curve-ogive-pie-chart",
+              "name": "Graphical Representation of Frequency Distribution – Histogram, Frequency Polygon Curve, Ogive, Pie-chart",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "measures-of-central-tendency-and-dispersion",
+          "name": "Measures of Central Tendency and Dispersion",
+          "section": "Section B: Fundamentals of Business Statistics (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "mean-median-mode-mean-deviation",
+              "name": "Mean, Median, Mode, Mean Deviation",
+              "kind": "concept"
+            },
+            {
+              "key": "range-quartiles-and-quartile-deviation",
+              "name": "Range, Quartiles and Quartile Deviation",
+              "kind": "concept"
+            },
+            {
+              "key": "standard-deviation",
+              "name": "Standard Deviation",
+              "kind": "concept"
+            },
+            {
+              "key": "co-efficient-of-variation",
+              "name": "Co-efficient of Variation",
+              "kind": "concept"
+            },
+            {
+              "key": "karl-pearson-and-bowley-s-co-efficient-of-skewness",
+              "name": "Karl Pearson and Bowley’s Co-efficient of Skewness",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "correlation-and-regression",
+          "name": "Correlation and Regression",
+          "section": "Section B: Fundamentals of Business Statistics (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "scatter-diagram",
+              "name": "Scatter Diagram",
+              "kind": "concept"
+            },
+            {
+              "key": "karl-pearson-s-co-efficient-of-correlation",
+              "name": "Karl Pearson’s Co-efficient of Correlation",
+              "kind": "concept"
+            },
+            {
+              "key": "regression-analysis",
+              "name": "Regression Analysis",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "probability",
+          "name": "Probability",
+          "section": "Section B: Fundamentals of Business Statistics (60%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "concepts-and-terminologies",
+              "name": "Concepts and Terminologies",
+              "kind": "concept"
+            },
+            {
+              "key": "primary-applications-of-probability-theorems",
+              "name": "Primary applications of Probability Theorems",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "index-numbers-and-time-series",
+          "name": "Index Numbers and Time Series",
+          "section": "Section B: Fundamentals of Business Statistics (60%)",
+          "marks_min": 10,
+          "marks_max": 10,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "uses-of-index-numbers-methods-of-construction-of-index-number",
+              "name": "Uses of Index Numbers, Methods of Construction of Index Number",
+              "kind": "concept"
+            },
+            {
+              "key": "components-of-time-series-and-calculation-of-trend-by-moving-average-method",
+              "name": "Components of Time Series and Calculation of Trend by Moving Average Method",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fundamentals-of-business-economics-and-management",
+      "paper_number": 4,
+      "name": "Fundamentals of Business Economics and Management",
+      "total_marks": 100,
+      "kind": "theory",
+      "chapters": [
+        {
+          "key": "basic-concepts",
+          "name": "Basic Concepts",
+          "section": "Section A: Fundamentals of Business Economics (70%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "the-fundamentals-of-economics",
+              "name": "The Fundamentals of Economics",
+              "kind": "concept"
+            },
+            {
+              "key": "utility-wealth-production",
+              "name": "Utility, Wealth, Production",
+              "kind": "concept"
+            },
+            {
+              "key": "theory-of-demand-meaning-determinants-of-demand-law-of-demand-elasticity-of-demand-price-income-and-cross-elasticity-the",
+              "name": "Theory of Demand (Meaning, Determinants of Demand, Law of Demand, Elasticity of Demand - Price, Income and Cross Elasticity, Theory of Consumer Behaviour, Demand Forecasting)",
+              "kind": "concept"
+            },
+            {
+              "key": "supply-meaning-determinants-law-of-supply-and-elasticity-of-supply",
+              "name": "Supply (Meaning, Determinants, Law of Supply and Elasticity of Supply)",
+              "kind": "concept"
+            },
+            {
+              "key": "equilibrium",
+              "name": "Equilibrium",
+              "kind": "concept"
+            },
+            {
+              "key": "theory-of-production-meaning-factors-laws-of-production-law-of-variable-proportion-laws-of-returns-to-scale",
+              "name": "Theory of Production (Meaning, Factors, Laws of Production - Law of Variable Proportion, Laws of Returns to Scale)",
+              "kind": "concept"
+            },
+            {
+              "key": "cost-of-production-concept-of-costs-short-run-and-long-run-costs-average-and-marginal-costs-total-fixed-and-variable-cos",
+              "name": "Cost of Production (Concept of Costs, Short-run and Long-run Costs, Average and Marginal Costs, Total, Fixed and Variable Costs)",
+              "kind": "concept"
+            },
+            {
+              "key": "means-of-production",
+              "name": "Means of Production",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "forms-of-market",
+          "name": "Forms of Market",
+          "section": "Section A: Fundamentals of Business Economics (70%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "pricing-of-products-and-services-in-various-forms-of-markets-perfect-competition-duopoly-oligopoly-monopoly-monopolistic",
+              "name": "Pricing of Products and Services in Various Forms of Markets – Perfect Competition, Duopoly, Oligopoly, Monopoly, Monopolistic Competition",
+              "kind": "concept"
+            },
+            {
+              "key": "price-discrimination",
+              "name": "Price Discrimination",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "money-and-banking",
+          "name": "Money and Banking",
+          "section": "Section A: Fundamentals of Business Economics (70%)",
+          "marks_min": 20,
+          "marks_max": 20,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "money-types-features-and-functions",
+              "name": "Money - Types, Features and Functions",
+              "kind": "concept"
+            },
+            {
+              "key": "banking-definition-functions-utility-principles",
+              "name": "Banking - Definition, Functions, Utility, Principles",
+              "kind": "concept"
+            },
+            {
+              "key": "commercial-banks-central-bank",
+              "name": "Commercial Banks, Central Bank",
+              "kind": "concept"
+            },
+            {
+              "key": "measures-of-credit-control-and-money-market",
+              "name": "Measures of Credit Control and Money Market",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "economic-and-business-environment",
+          "name": "Economic and Business Environment",
+          "section": "Section A: Fundamentals of Business Economics (70%)",
+          "marks_min": 15,
+          "marks_max": 15,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "pestel-political-economic-societal-technological-environmental-and-legal-analysis",
+              "name": "PESTEL (Political, Economic, Societal, Technological, Environmental and Legal) Analysis",
+              "kind": "concept"
+            },
+            {
+              "key": "emerging-dimensions-of-vucafu-volatility-uncertainty-complexity-ambiguity-fear-of-unknown-and-unprecedentedness",
+              "name": "Emerging Dimensions of VUCAFU (Volatility, Uncertainty, Complexity, Ambiguity, Fear of Unknown and Unprecedentedness)",
+              "kind": "concept"
+            }
+          ]
+        },
+        {
+          "key": "fundamentals-of-management",
+          "name": "Fundamentals of Management",
+          "section": "Section B: Fundamentals of Management (30%)",
+          "marks_min": 30,
+          "marks_max": 30,
+          "weight_source": "official",
+          "topics": [
+            {
+              "key": "introduction-to-management",
+              "name": "Introduction to Management",
+              "kind": "concept"
+            },
+            {
+              "key": "stewardship-theory-and-agency-theory-of-management",
+              "name": "Stewardship Theory and Agency Theory of Management",
+              "kind": "concept"
+            },
+            {
+              "key": "planning-organising-staffing-and-leading",
+              "name": "Planning, Organising, Staffing and Leading",
+              "kind": "concept"
+            },
+            {
+              "key": "communication-co-ordination-collaboration-monitoring-and-control",
+              "name": "Communication, Co-ordination, Collaboration, Monitoring and Control",
+              "kind": "concept"
+            },
+            {
+              "key": "organisation-structure-responsibility-accountability-and-delegation-of-authority",
+              "name": "Organisation Structure, Responsibility, Accountability and Delegation of Authority",
+              "kind": "concept"
+            },
+            {
+              "key": "leadership-and-motivation-concepts-and-theories",
+              "name": "Leadership and Motivation – Concepts and Theories",
+              "kind": "concept"
+            },
+            {
+              "key": "decision-making-types-and-process",
+              "name": "Decision-making – Types and Process",
+              "kind": "concept"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

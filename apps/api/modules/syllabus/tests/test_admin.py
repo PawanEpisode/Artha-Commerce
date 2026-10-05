@@ -205,3 +205,45 @@ def test_staff_groups_exist_with_the_right_permissions():
     assert not editors.permissions.filter(codename="publish_scheme").exists()
     assert publishers.permissions.filter(codename="publish_scheme").exists()
     assert editors.permissions.filter(codename="change_chapter").exists()
+
+
+def test_topic_list_filters_by_scheme_then_paper_then_chapter(admin_client, scheme):
+    url = reverse("admin:syllabus_topic_changelist")
+    taxation = Subject.objects.get(key="taxation")
+    gst = Chapter.objects.get(key="gst-itc")
+    base = {"chapter__subject__scheme__id__exact": str(scheme.id)}
+
+    page = admin_client.get(url, base)
+    assert page.status_code == 200 and "Taxation" in page.content.decode()
+    # Only a scheme is picked: the paper filter is offered, the chapter filter is not yet.
+    assert "By paper" in page.content.decode() and "By chapter" not in page.content.decode()
+
+    page = admin_client.get(url, {**base, "paper": str(taxation.id)})
+    assert "By chapter" in page.content.decode()
+    assert {t.chapter.subject.key for t in page.context["cl"].result_list} == {"taxation"}
+
+    page = admin_client.get(url, {**base, "paper": str(taxation.id), "chapter": str(gst.id)})
+    assert {t.chapter.key for t in page.context["cl"].result_list} == {"gst-itc"}
+    assert page.context["cl"].result_count == 4
+
+
+def test_paper_filter_ignores_a_paper_of_another_scheme(admin_client, scheme):
+    other = make_scheme(publish=False, code="2030")
+    stale = Subject.objects.get(scheme=other, key="taxation")
+    page = admin_client.get(
+        reverse("admin:syllabus_topic_changelist"),
+        {"chapter__subject__scheme__id__exact": str(scheme.id), "paper": str(stale.id)},
+    )
+    assert (
+        page.status_code == 200
+        and page.context["cl"].result_count == Topic.objects.filter(chapter__subject__scheme=scheme).count()
+    )
+
+
+def test_chapter_list_filters_by_paper(admin_client, scheme):
+    laws = Subject.objects.get(scheme=scheme, key="corporate-laws")
+    page = admin_client.get(
+        reverse("admin:syllabus_chapter_changelist"),
+        {"subject__scheme__id__exact": str(scheme.id), "paper": str(laws.id)},
+    )
+    assert {c.key for c in page.context["cl"].result_list} == {"companies-act"}
