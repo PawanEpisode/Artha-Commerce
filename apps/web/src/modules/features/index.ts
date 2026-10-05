@@ -1,2 +1,2 @@
-export { FeatureDetail } from './components/FeatureDetail'
-export { FeaturesIndex } from './components/FeaturesIndex'
+export { FeatureDetailContainer } from './containers/FeatureDetailContainer'
+export { FeaturesIndexContainer } from './containers/FeaturesIndexContainer'

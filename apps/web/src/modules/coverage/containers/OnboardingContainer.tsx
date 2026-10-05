@@ -1,7 +1,7 @@
 import { Alert, Container, Skeleton, Stepper } from '@artha/design-system'
 import { useQueries, useQuery } from '@tanstack/react-query'
 import { Navigate, useNavigate } from '@tanstack/react-router'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
 import { fetchCourses, fetchLevel, fetchTerms } from '~/modules/syllabus'
@@ -13,18 +13,27 @@ import { useCatchup, useCreateEnrollment } from '../hooks/useCoverageMutations'
 import { useOverview } from '../hooks/useCoverageQueries'
 import { getSubject } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
+import { prefillSelection } from '../lib/prefill'
 import type { Overview } from '../lib/types'
 
 type Stage = 'course' | 'term' | 'electives' | 'catchup'
 
 /** The first-run flow (PRD 5.1): course, level, attempt, elective papers (where the level has them), then Quick catch-up and the aha moment. */
-export function OnboardingContainer() {
+export function OnboardingContainer({
+  initialCourse,
+  initialLevel,
+}: {
+  /** Public course slug, from /courses, so the first step opens already chosen. */
+  initialCourse?: string
+  initialLevel?: string
+}) {
   const enabled = useFeatureFlag('syllabus_coverage')
   const navigate = useNavigate()
   const overview = useOverview()
   const [stage, setStage] = useState<Stage>('course')
   const [course, setCourse] = useState('')
   const [level, setLevel] = useState('')
+  const applied = useRef(false)
   const [termId, setTermId] = useState('')
   const [examDate, setExamDate] = useState('')
   const [dailyHours, setDailyHours] = useState('')
@@ -34,6 +43,14 @@ export function OnboardingContainer() {
   const [created, setCreated] = useState(false)
 
   const courses = useQuery({ queryKey: ['syllabus', 'courses'], queryFn: fetchCourses, staleTime: 5 * 60_000 })
+  useEffect(() => {
+    if (applied.current || !courses.data || !initialCourse) return
+    const next = prefillSelection(courses.data, initialCourse, initialLevel)
+    if (!next.course) return
+    applied.current = true
+    setCourse(next.course)
+    setLevel(next.level)
+  }, [courses.data, initialCourse, initialLevel])
   const levelSyllabus = useQuery({
     queryKey: ['syllabus', 'level', course, level],
     queryFn: () => fetchLevel(course, level),

@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { CourseDetail, loadCourse } from '~/modules/courses'
+import { CourseDetailContainer, loadCourse } from '~/modules/courses'
 import { breadcrumbJsonLd, buildHead, courseOgPath } from '~/modules/seo'
 
 export const Route = createFileRoute('/courses/$course/')({
@@ -28,6 +28,6 @@ export const Route = createFileRoute('/courses/$course/')({
   },
   component: function CourseRoute() {
     const { course } = Route.useLoaderData()
-    return <CourseDetail course={course} />
+    return <CourseDetailContainer course={course} />
   },
 })

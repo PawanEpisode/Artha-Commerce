@@ -1,23 +1,24 @@
 import type { Feature } from './types'
 
 /**
- * PROVISIONAL feature set. Replace/extend once the product feature screenshots are reviewed.
- * Adding an entry here automatically creates its /features/<slug> page, sitemap entry and landing card.
+ * Feature set for /features, the landing grid and the sitemap.
+ * `live` tools open a real workspace page. `soon` is not built yet and must stay labelled Coming soon.
  */
 export const features: Feature[] = [
   {
-    slug: 'study-planner',
-    title: 'Smart Study Planner',
-    tagline: 'A day-by-day plan built backwards from your exam date.',
+    slug: 'pomodoro-focus-timer',
+    title: 'Pomodoro Focus Timer',
+    tagline: 'Study in focused rounds, then rest, without losing your place.',
     description:
-      'Tell us your course, level, exam date and daily hours. ArthaCommerce splits your time across subjects and phases (learn, revise, mock) and re-plans when you fall behind.',
-    icon: 'calendar',
+      'Classic, Deep and Light rhythms or your own, with timed breaks, a gentle chime and a countdown in your browser tab. The clock runs on our server, so a reload or a second device shows the same time, and every finished round counts toward your daily goal.',
+    icon: 'timer',
     highlights: [
-      'Plans backwards from your exam date',
-      'Learn, revise and mock phases',
-      'Auto re-plan when you miss a day',
+      'Classic, Deep, Light and custom rhythms',
+      'Breaks, long breaks and +5 minute extensions',
+      'Counts toward your daily goal and streak',
     ],
-    status: 'soon',
+    status: 'live',
+    tool: { to: '/app/focus', cta: 'Start a focus round', flag: 'focus_timer' },
   },
   {
     slug: 'syllabus-tracker',
@@ -30,6 +31,52 @@ export const features: Feature[] = [
       'Chapter-wise progress for each paper',
       'Read, practise, revise states',
       'Readiness score per subject',
+    ],
+    status: 'live',
+    tool: {
+      to: '/app/syllabus',
+      cta: 'Open my coverage',
+      flag: 'syllabus_coverage',
+      browse: { to: '/courses', label: 'Browse the syllabus' },
+    },
+  },
+  {
+    slug: 'time-tracker',
+    title: 'Study Time Tracker',
+    tagline: 'Know where your hours really go.',
+    description:
+      'A stopwatch, manual entries and optional automatic logging while you read a chapter, with daily goals, a calendar heat map, time per subject and a comparison of time spent against chapters covered. Fix any entry, undo mistakes and download your data whenever you like.',
+    icon: 'flame',
+    highlights: [
+      'Stopwatch, manual and optional automatic logging',
+      'Daily and weekly goals with streaks',
+      'Time per subject compared with coverage',
+    ],
+    status: 'live',
+    tool: { to: '/app/tracker', cta: "Log today's hours", flag: 'time_tracker' },
+  },
+  {
+    slug: 'streaks-analytics',
+    title: 'Streaks and Analytics',
+    tagline: 'See your hours and your streak add up.',
+    description:
+      'Daily streaks, a calendar of hours, and time spent on each paper. The same numbers update when you finish a focus round or stop the stopwatch.',
+    icon: 'flame',
+    highlights: ['Daily study streaks', 'Time per subject', 'A calendar of hours studied'],
+    status: 'live',
+    tool: { to: '/app/tracker/reports', cta: 'See your study hours', flag: 'time_tracker' },
+  },
+  {
+    slug: 'study-planner',
+    title: 'Smart Study Planner',
+    tagline: 'A day-by-day plan built backwards from your exam date.',
+    description:
+      'Tell us your course, level, exam date and daily hours. ArthaCommerce splits your time across subjects and phases (learn, revise, mock) and re-plans when you fall behind.',
+    icon: 'calendar',
+    highlights: [
+      'Plans backwards from your exam date',
+      'Learn, revise and mock phases',
+      'Auto re-plan when you miss a day',
     ],
     status: 'soon',
   },
@@ -84,16 +131,6 @@ export const features: Feature[] = [
     status: 'soon',
   },
   {
-    slug: 'streaks-analytics',
-    title: 'Streaks and Analytics',
-    tagline: 'See your effort compound.',
-    description:
-      'Study streaks, time spent per subject and score trends make progress visible, so showing up every day feels rewarding.',
-    icon: 'flame',
-    highlights: ['Daily study streaks', 'Time per subject', 'Score trends over time'],
-    status: 'soon',
-  },
-  {
     slug: 'amendment-updates',
     title: 'Amendment and Notification Updates',
     tagline: 'Never study outdated law.',
@@ -101,34 +138,6 @@ export const features: Feature[] = [
       'Get alerts on law amendments and institute announcements that affect your attempt, mapped to the chapters they change.',
     icon: 'bell-ring',
     highlights: ['Mapped to affected chapters', 'Attempt-wise applicability', 'Institute announcement alerts'],
-    status: 'soon',
-  },
-  {
-    slug: 'pomodoro-focus-timer',
-    title: 'Pomodoro Focus Timer',
-    tagline: 'Study in focused rounds, then rest, without losing your place.',
-    description:
-      'Classic, Deep and Light rhythms or your own, with timed breaks, a gentle chime and a countdown in your browser tab. The clock runs on our server, so a reload or a second device shows the same time, and every finished round counts toward your daily goal.',
-    icon: 'timer',
-    highlights: [
-      'Classic, Deep, Light and custom rhythms',
-      'Breaks, long breaks and +5 minute extensions',
-      'Counts toward your daily goal and streak',
-    ],
-    status: 'soon',
-  },
-  {
-    slug: 'time-tracker',
-    title: 'Study Time Tracker',
-    tagline: 'Know where your hours really go.',
-    description:
-      'A stopwatch, manual entries and optional automatic logging while you read a chapter, with daily goals, a calendar heat map, time per subject and a comparison of time spent against chapters covered. Fix any entry, undo mistakes and download your data whenever you like.',
-    icon: 'flame',
-    highlights: [
-      'Stopwatch, manual and optional automatic logging',
-      'Daily and weekly goals with streaks',
-      'Time per subject compared with coverage',
-    ],
     status: 'soon',
   },
 ]

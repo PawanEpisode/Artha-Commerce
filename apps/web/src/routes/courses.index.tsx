@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { CoursesIndex, loadCourses } from '~/modules/courses'
+import { CoursesIndexContainer, loadCourses } from '~/modules/courses'
 import { buildHead } from '~/modules/seo'
 
 export const Route = createFileRoute('/courses/')({
@@ -14,6 +14,6 @@ export const Route = createFileRoute('/courses/')({
     }),
   component: function CoursesRoute() {
     const { courses } = Route.useLoaderData()
-    return <CoursesIndex courses={courses} />
+    return <CoursesIndexContainer courses={courses} />
   },
 })

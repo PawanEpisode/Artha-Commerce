@@ -21,12 +21,28 @@ export interface Course {
 export type FeatureIconKey =
   'calendar' | 'list-checks' | 'timer' | 'sparkles' | 'notebook-pen' | 'layers' | 'file-clock' | 'flame' | 'bell-ring'
 
-export interface Feature {
+export type LiveToolPath = '/app/focus' | '/app/syllabus' | '/app/tracker' | '/app/tracker/reports'
+
+export type FeatureFlagName = 'focus_timer' | 'time_tracker' | 'syllabus_coverage'
+
+/** Where a shipped tool opens. Absent on features that are not built yet. */
+export interface FeatureTool {
+  to: LiveToolPath
+  /** Imperative label, e.g. "Start a focus round". */
+  cta: string
+  /** Hidden for a student when this flag is explicitly off. */
+  flag: FeatureFlagName
+  /** A public page that is useful before sign-in. */
+  browse?: { to: '/courses'; label: string }
+}
+
+interface FeatureBase {
   slug: string
   title: string
   tagline: string
   description: string
   icon: FeatureIconKey
   highlights: string[]
-  status: 'live' | 'soon'
 }
+
+export type Feature = (FeatureBase & { status: 'live'; tool: FeatureTool }) | (FeatureBase & { status: 'soon' })

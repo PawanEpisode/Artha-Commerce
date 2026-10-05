@@ -1,4 +1,4 @@
-export { CourseDetail } from './components/CourseDetail'
-export { CoursesIndex } from './components/CoursesIndex'
-export { LevelDetail } from './components/LevelDetail'
+export { CourseDetailContainer } from './containers/CourseDetailContainer'
+export { CoursesIndexContainer } from './containers/CoursesIndexContainer'
+export { LevelDetailContainer } from './containers/LevelDetailContainer'
 export { findLevel, loadCourse, loadCourses, mergeCourse, type PublicCourse } from './lib/load'

@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
 import { getFeature } from '~/modules/catalog'
-import { FeatureDetail } from '~/modules/features'
+import { FeatureDetailContainer } from '~/modules/features'
 import { breadcrumbJsonLd, buildHead } from '~/modules/seo'
 
 export const Route = createFileRoute('/features/$slug')({
@@ -27,6 +27,6 @@ export const Route = createFileRoute('/features/$slug')({
   },
   component: function FeatureRoute() {
     const { feature } = Route.useLoaderData()
-    return <FeatureDetail feature={feature} />
+    return <FeatureDetailContainer feature={feature} />
   },
 })

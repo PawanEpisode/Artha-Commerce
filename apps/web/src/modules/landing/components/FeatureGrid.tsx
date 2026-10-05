@@ -22,7 +22,7 @@ export function FeatureGrid() {
                   <span className="grid size-11 place-items-center rounded-xl bg-secondary text-primary">
                     <FeatureIcon name={f.icon} className="size-5" />
                   </span>
-                  {f.status === 'soon' && <Badge variant="highlight">Early access</Badge>}
+                  {f.status === 'soon' ? <Badge variant="outline">Coming soon</Badge> : null}
                 </div>
                 <h3 className="text-lg font-semibold">{f.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{f.tagline}</p>

@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
-import { findLevel, LevelDetail, loadCourse } from '~/modules/courses'
+import { findLevel, LevelDetailContainer, loadCourse } from '~/modules/courses'
 import { breadcrumbJsonLd, buildHead, courseOgPath } from '~/modules/seo'
 import { fetchLevel, ReportIssue, SubjectList, SyllabusMeta } from '~/modules/syllabus'
 
@@ -35,7 +35,7 @@ export const Route = createFileRoute('/courses/$course/$level/')({
   component: function LevelRoute() {
     const { course, level, syllabus } = Route.useLoaderData()
     return (
-      <LevelDetail
+      <LevelDetailContainer
         course={course}
         level={level}
         subjectCount={syllabus?.subjects.length}

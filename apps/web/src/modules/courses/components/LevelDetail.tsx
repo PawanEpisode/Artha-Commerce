@@ -17,9 +17,11 @@ interface Props {
   meta?: ReactNode
   /** "Report a wrong item" control, shown under the papers when there is a curated syllabus. */
   report?: ReactNode
+  /** Next step: track this level, or continue coverage the student already has. */
+  prompt?: ReactNode
 }
 
-export function LevelDetail({ course, level, syllabus, subjectCount, meta, report }: Props) {
+export function LevelDetail({ course, level, syllabus, subjectCount, meta, report, prompt }: Props) {
   const count = subjectCount ?? level.subjects.length
   return (
     <Container className="max-w-3xl py-16 sm:py-24">
@@ -38,6 +40,7 @@ export function LevelDetail({ course, level, syllabus, subjectCount, meta, repor
           : `Syllabus shown is indicative; confirm the current scheme with ${course.body}.`}
       </p>
       {meta ? <div className="mt-3">{meta}</div> : null}
+      {prompt ? <div className="mt-8">{prompt}</div> : null}
       {syllabus ? (
         <div className="mt-10">{syllabus}</div>
       ) : (
@@ -53,9 +56,6 @@ export function LevelDetail({ course, level, syllabus, subjectCount, meta, repor
         </ol>
       )}
       {report ? <div className="mt-8">{report}</div> : null}
-      <Button size="lg" className="mt-10" asChild>
-        <Link to="/login">Plan my {level.name} prep</Link>
-      </Button>
     </Container>
   )
 }

@@ -12,11 +12,15 @@ import {
 } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
 
-/** The active enrolment's overview. `data` is undefined and `noEnrollment` true when the student has not enrolled. */
-export function useOverview() {
+/**
+ * The active enrolment's overview. `data` is undefined and `noEnrollment` true when the student has not enrolled.
+ * Pass `enabled: false` on public pages until the student is signed in, so guests never hit the authed endpoint.
+ */
+export function useOverview(enabled = true) {
   const query = useQuery({
     queryKey: coverageKeys.overview,
     queryFn: getOverview,
+    enabled,
     retry: (count, error) => !isNoEnrollment(error) && !isFeatureDisabled(error) && count < 1,
   })
   return { ...query, noEnrollment: isNoEnrollment(query.error), featureDisabled: isFeatureDisabled(query.error) }
