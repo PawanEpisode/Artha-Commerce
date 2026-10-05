@@ -77,6 +77,24 @@
   --tag-paper-fg: oklch(0.34 0.09 350);
   --tag-paper-border: oklch(0.6 0.12 350);
 
+  /* Avatar tokens: initials and preset artwork. Eight hues, each with a text colour that reads on it (check:contrast). */
+  --avatar-1: oklch(0.86 0.09 25);
+  --avatar-1-fg: oklch(0.3 0.09 25);
+  --avatar-2: oklch(0.86 0.09 60);
+  --avatar-2-fg: oklch(0.3 0.09 60);
+  --avatar-3: oklch(0.86 0.09 95);
+  --avatar-3-fg: oklch(0.3 0.09 95);
+  --avatar-4: oklch(0.86 0.09 150);
+  --avatar-4-fg: oklch(0.3 0.09 150);
+  --avatar-5: oklch(0.86 0.09 195);
+  --avatar-5-fg: oklch(0.3 0.09 195);
+  --avatar-6: oklch(0.86 0.09 245);
+  --avatar-6-fg: oklch(0.3 0.09 245);
+  --avatar-7: oklch(0.86 0.09 295);
+  --avatar-7-fg: oklch(0.3 0.09 295);
+  --avatar-8: oklch(0.86 0.09 340);
+  --avatar-8-fg: oklch(0.3 0.09 340);
+
   --shadow-soft: 0 1px 2px oklch(0.3 0.04 60 / 0.06), 0 8px 24px -8px oklch(0.35 0.08 60 / 0.14);
   --shadow-lift: 0 2px 4px oklch(0.3 0.04 60 / 0.07), 0 24px 48px -16px oklch(0.35 0.1 60 / 0.28);
 
@@ -143,6 +161,24 @@
   --tag-paper-bg: oklch(0.95 0.04 350);
   --tag-paper-fg: oklch(0.34 0.09 350);
   --tag-paper-border: oklch(0.62 0.12 350);
+
+  /* Avatar tokens: initials and preset artwork. Eight hues, each with a text colour that reads on it (check:contrast). */
+  --avatar-1: oklch(0.86 0.09 25);
+  --avatar-1-fg: oklch(0.3 0.09 25);
+  --avatar-2: oklch(0.86 0.09 60);
+  --avatar-2-fg: oklch(0.3 0.09 60);
+  --avatar-3: oklch(0.86 0.09 95);
+  --avatar-3-fg: oklch(0.3 0.09 95);
+  --avatar-4: oklch(0.86 0.09 150);
+  --avatar-4-fg: oklch(0.3 0.09 150);
+  --avatar-5: oklch(0.86 0.09 195);
+  --avatar-5-fg: oklch(0.3 0.09 195);
+  --avatar-6: oklch(0.86 0.09 245);
+  --avatar-6-fg: oklch(0.3 0.09 245);
+  --avatar-7: oklch(0.86 0.09 295);
+  --avatar-7-fg: oklch(0.3 0.09 295);
+  --avatar-8: oklch(0.86 0.09 340);
+  --avatar-8-fg: oklch(0.3 0.09 340);
 
   --shadow-soft: 0 1px 2px oklch(0.21 0.035 268 / 0.05), 0 8px 24px -8px oklch(0.3 0.12 270 / 0.12);
   --shadow-lift: 0 2px 4px oklch(0.21 0.035 268 / 0.06), 0 24px 48px -16px oklch(0.3 0.15 270 / 0.28);
@@ -212,6 +248,24 @@
   --tag-paper-fg: oklch(0.88 0.09 350);
   --tag-paper-border: oklch(0.5 0.11 350);
 
+  /* Avatar tokens: initials and preset artwork. Eight hues, each with a text colour that reads on it (check:contrast). */
+  --avatar-1: oklch(0.4 0.09 25);
+  --avatar-1-fg: oklch(0.93 0.05 25);
+  --avatar-2: oklch(0.4 0.09 60);
+  --avatar-2-fg: oklch(0.93 0.05 60);
+  --avatar-3: oklch(0.4 0.09 95);
+  --avatar-3-fg: oklch(0.93 0.05 95);
+  --avatar-4: oklch(0.4 0.09 150);
+  --avatar-4-fg: oklch(0.93 0.05 150);
+  --avatar-5: oklch(0.4 0.09 195);
+  --avatar-5-fg: oklch(0.93 0.05 195);
+  --avatar-6: oklch(0.4 0.09 245);
+  --avatar-6-fg: oklch(0.93 0.05 245);
+  --avatar-7: oklch(0.4 0.09 295);
+  --avatar-7-fg: oklch(0.93 0.05 295);
+  --avatar-8: oklch(0.4 0.09 340);
+  --avatar-8-fg: oklch(0.93 0.05 340);
+
   --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3), 0 8px 24px -8px oklch(0 0 0 / 0.5);
   --shadow-lift: 0 2px 4px oklch(0 0 0 / 0.4), 0 24px 48px -16px oklch(0.4 0.2 270 / 0.4);
 
@@ -252,6 +306,22 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-avatar-1: var(--avatar-1);
+  --color-avatar-1-fg: var(--avatar-1-fg);
+  --color-avatar-2: var(--avatar-2);
+  --color-avatar-2-fg: var(--avatar-2-fg);
+  --color-avatar-3: var(--avatar-3);
+  --color-avatar-3-fg: var(--avatar-3-fg);
+  --color-avatar-4: var(--avatar-4);
+  --color-avatar-4-fg: var(--avatar-4-fg);
+  --color-avatar-5: var(--avatar-5);
+  --color-avatar-5-fg: var(--avatar-5-fg);
+  --color-avatar-6: var(--avatar-6);
+  --color-avatar-6-fg: var(--avatar-6-fg);
+  --color-avatar-7: var(--avatar-7);
+  --color-avatar-7-fg: var(--avatar-7-fg);
+  --color-avatar-8: var(--avatar-8);
+  --color-avatar-8-fg: var(--avatar-8-fg);
   --color-success: var(--success);
   --color-success-bg: var(--success-bg);
   --color-success-fg: var(--success-fg);

@@ -1,0 +1,76 @@
+{
+ "cases": [
+  {
+   "name": "plain",
+   "input": "Aarav Mehta",
+   "ok": true,
+   "expected": "Aarav Mehta"
+  },
+  {
+   "name": "trims and collapses",
+   "input": "  Aarav   \t Mehta  ",
+   "ok": true,
+   "expected": "Aarav Mehta"
+  },
+  {
+   "name": "devanagari",
+   "input": "आरव मेहता",
+   "ok": true,
+   "expected": "आरव मेहता"
+  },
+  {
+   "name": "nfc",
+   "input": "Zoë",
+   "ok": true,
+   "expected": "Zoë"
+  },
+  {
+   "name": "zero width joiner allowed",
+   "input": "क्‍ष",
+   "ok": true,
+   "expected": "क्‍ष"
+  },
+  {
+   "name": "empty",
+   "input": "",
+   "ok": false,
+   "expected": "Enter your name."
+  },
+  {
+   "name": "only spaces",
+   "input": "   ",
+   "ok": false,
+   "expected": "Enter your name."
+  },
+  {
+   "name": "sixty ok",
+   "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "ok": true,
+   "expected": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  {
+   "name": "sixty one",
+   "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "ok": false,
+   "expected": "Use 60 characters or fewer."
+  },
+  {
+   "name": "bidi override",
+   "input": "Aarav ‮Mehta",
+   "ok": false,
+   "expected": "Use letters, numbers and normal punctuation only."
+  },
+  {
+   "name": "line separator",
+   "input": "Aarav Mehta",
+   "ok": false,
+   "expected": "Use letters, numbers and normal punctuation only."
+  },
+  {
+   "name": "control char",
+   "input": "Aarav\u0007",
+   "ok": false,
+   "expected": "Use letters, numbers and normal punctuation only."
+  }
+ ]
+}

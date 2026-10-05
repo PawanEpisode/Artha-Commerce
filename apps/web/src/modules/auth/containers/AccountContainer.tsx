@@ -31,8 +31,9 @@ function Section({ title, description, children }: { title: string; description:
   )
 }
 
-/** /app/account: change email, change password (with emailed code when the server asks for it), appearance, sign out. */
-export function AccountContainer() {
+/**
+ * /app/account: change email, change password (with emailed code when the server asks for it), appearance, sign out. */
+export function AccountContainer({ profileSlot }: { profileSlot?: React.ReactNode }) {
   const { user, signOut } = useAuth()
 
   const emailChange = useAsyncAction()
@@ -82,6 +83,8 @@ export function AccountContainer() {
         <h1 className="text-3xl font-extrabold">Account</h1>
         <p className="mt-1 text-muted-foreground">Signed in as {user?.email}</p>
       </header>
+
+      {profileSlot}
 
       <Section
         title="Appearance"

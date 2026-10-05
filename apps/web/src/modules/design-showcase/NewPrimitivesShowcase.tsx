@@ -1,5 +1,7 @@
 import {
   AlarmClock,
+  Avatar,
+  AVATAR_PRESET_KEYS,
   Button,
   ButtonLink,
   DurationField,
@@ -103,6 +105,25 @@ function ToastDemo() {
       <Button variant="ghost" onClick={() => toast.dismiss()}>
         Dismiss all
       </Button>
+    </div>
+  )
+}
+
+function AvatarDemo() {
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-end gap-4">
+        {([24, 32, 44, 96] as const).map((size) => (
+          <Avatar key={size} size={size} name="Aarav Mehta" seed="demo-user" />
+        ))}
+        <Avatar size={44} name="आरव मेहता" seed="demo-2" />
+        <Avatar size={44} loading />
+      </div>
+      <div className="grid max-w-md grid-cols-6 gap-3 sm:grid-cols-8">
+        {AVATAR_PRESET_KEYS.map((key) => (
+          <Avatar key={key} size={44} presetKey={key} name={key} />
+        ))}
+      </div>
     </div>
   )
 }
@@ -264,6 +285,10 @@ export function NewPrimitivesShowcase() {
             </EntityRow>
           ))}
         </div>
+      </Block>
+
+      <Block title="Avatar: initials, sizes, loading and the 24 presets">
+        <AvatarDemo />
       </Block>
 
       <Block title="Read toggle">

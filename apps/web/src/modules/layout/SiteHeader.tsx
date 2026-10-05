@@ -11,11 +11,11 @@ import {
   LogOut,
   Menu,
   ThemeSwitcher,
-  UserRound,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { useAuth } from '~/modules/auth'
+import { IdentityAvatar, useBootstrap } from '~/modules/personalization'
 
 import { useWorkspaceNav } from './useWorkspaceNav'
 import { workspaceIcon } from './workspace-icons'
@@ -42,15 +42,26 @@ function MenuLinks({ links }: { links: readonly WorkspaceLink[] }) {
 
 function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => void }) {
   const { study, settings } = useWorkspaceNav()
+  const { data } = useBootstrap()
+  const firstName = data?.first_name
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Account menu">
-          <UserRound />
+        {/* The 44 px target is the whole button; the first name is hidden under 640 px so nothing overflows at 320. */}
+        <Button variant="ghost" className="h-11 min-w-11 gap-2 rounded-full px-1 sm:pr-3" aria-label="Account menu">
+          <IdentityAvatar size={32} decorative />
+          {firstName ? <span className="hidden max-w-28 truncate sm:inline">{firstName}</span> : null}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        {email && <DropdownMenuLabel className="tracking-normal break-all normal-case">{email}</DropdownMenuLabel>}
+        {data?.full_name ? (
+          <DropdownMenuLabel className="tracking-normal normal-case">
+            <span className="block max-w-56 truncate text-foreground">{data.full_name}</span>
+            {email ? <span className="block max-w-56 truncate font-normal">{email}</span> : null}
+          </DropdownMenuLabel>
+        ) : email ? (
+          <DropdownMenuLabel className="tracking-normal break-all normal-case">{email}</DropdownMenuLabel>
+        ) : null}
         <DropdownMenuItem asChild>
           <Link to="/app">Workspace</Link>
         </DropdownMenuItem>

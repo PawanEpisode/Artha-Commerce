@@ -111,6 +111,14 @@ const REQUIRED = [
   ['tag-paper', 'card', 3, 'tag-paper icon, dot and rail on card (WCAG 1.4.11)'],
   ['tag-paper', 'background', 3, 'tag-paper accent on page'],
   ['tag-paper-border', 'background', 1.5, 'tag-paper border is decorative'],
+  ['avatar-1-fg', 'avatar-1', 4.5, 'initials on avatar colour 1'],
+  ['avatar-2-fg', 'avatar-2', 4.5, 'initials on avatar colour 2'],
+  ['avatar-3-fg', 'avatar-3', 4.5, 'initials on avatar colour 3'],
+  ['avatar-4-fg', 'avatar-4', 4.5, 'initials on avatar colour 4'],
+  ['avatar-5-fg', 'avatar-5', 4.5, 'initials on avatar colour 5'],
+  ['avatar-6-fg', 'avatar-6', 4.5, 'initials on avatar colour 6'],
+  ['avatar-7-fg', 'avatar-7', 4.5, 'initials on avatar colour 7'],
+  ['avatar-8-fg', 'avatar-8', 4.5, 'initials on avatar colour 8'],
 ]
 const ADVISORY = []
 
