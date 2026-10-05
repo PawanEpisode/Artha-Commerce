@@ -77,6 +77,10 @@ def get_session(user_id, session_id) -> StudySession | None:
     return StudySession.objects.select_related("subject", "chapter").filter(user_id=user_id, pk=session_id).first()
 
 
+def session_by_client_id(user_id, client_id) -> StudySession | None:
+    return StudySession.objects.filter(user_id=user_id, client_id=client_id).first() if client_id else None
+
+
 def get_audit(user_id, token) -> SessionAudit | None:
     return SessionAudit.objects.filter(user_id=user_id, pk=token).first()
 

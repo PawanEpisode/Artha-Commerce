@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     "modules.syllabus",
     "modules.coverage",
     "modules.tracking",
+    "modules.focus",
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,7 @@ REST_FRAMEWORK = {
         "tracking_write": "60/min",
         "tracking_reports": "120/min",
         "tracking_export": "6/hour",
+        "focus_write": "120/min",
     },
     "UNAUTHENTICATED_USER": None,
 }
