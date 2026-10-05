@@ -36,9 +36,9 @@ export function Stepper({ steps, current, className, ...props }: StepperProps) {
             </span>
             <span
               className={cn(
-                'truncate',
+                // On phones only the numbered dots show (a clipped label helps nobody); the text stays for screen readers.
+                'truncate max-sm:sr-only',
                 active ? 'font-semibold' : 'text-muted-foreground',
-                !active && 'hidden sm:inline',
               )}
             >
               {label}
