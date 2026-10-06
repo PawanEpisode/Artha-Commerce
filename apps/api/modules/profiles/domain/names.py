@@ -39,11 +39,8 @@ def first_name(full_name: str) -> str:
     return full_name.split(" ", 1)[0] if full_name else ""
 
 
-def suggested_name(claims: Mapping[str, Any], email: str = "") -> str:
-    """
-    Prefill for the onboarding form, never stored until the student confirms: the provider's name (Google), else the
-    email's local part made readable ("aarav.mehta2@x.com" becomes "Aarav Mehta"). Empty when nothing usable.
-    """
+def provider_name(claims: Mapping[str, Any]) -> str:
+    """The name the sign-in provider (Google) vouches for, normalised; empty when absent or unusable."""
     meta = claims.get("user_metadata") or {}
     for key in ("full_name", "name"):
         candidate = meta.get(key)
@@ -52,6 +49,16 @@ def suggested_name(claims: Mapping[str, Any], email: str = "") -> str:
                 return normalize_name(candidate)
             except InvalidName:
                 continue
+    return ""
+
+
+def suggested_name(claims: Mapping[str, Any], email: str = "") -> str:
+    """
+    Prefill for the name field when none is stored: the provider's name, else the email's local part made readable
+    ("aarav.mehta2@x.com" becomes "Aarav Mehta"). Empty when nothing usable.
+    """
+    if name := provider_name(claims):
+        return name
     local = re.sub(r"\d+", "", (email or claims.get("email") or "").split("@", 1)[0])
     words = [w for w in re.split(r"[._\-+]+", local) if w]
     try:

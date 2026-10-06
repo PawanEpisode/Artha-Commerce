@@ -18,6 +18,7 @@ What ships: the `profiles` API module (profile, avatar, onboarding state machine
 - The last-visit beacon is `POST /me/last-visit/` with the token in a `text/plain` body (1 KB cap), so it works from `pagehide`. Only paths on the allow-list are stored (`profiles/domain/restorable.py`, mirrored in `personalization/lib/restorable.ts`, both tested against `tests/fixtures/restorable_cases.json`).
 - The landing page and `/courses` carry one tiny inline script each. They read the Supabase session key (`^sb-.+-auth-token$`) to send a signed-in student straight to the home. Crawlers and guests get the public HTML unchanged.
 - `/` is the signed-in course home. `/courses?all=1` ("Explore other courses") is never redirected.
+- Google sign-ups start with Google's name and photo. On the first request the API saves the provider name (so the name step is already satisfied; the student can still edit it with Back in onboarding or in Account) and, with `profile_avatar` on, fetches the photo once from `*.googleusercontent.com`, re-encodes it and stores it as the avatar. Never hotlinked; a failed fetch leaves initials. Removing the photo sticks (it is not imported again). Email sign-ups still confirm a suggested name.
 - Account deletion runs the registry in `core`: each module registers an exporter and a deleter, so a later feature adds one registration, not a change here.
 - The vestigial columns left by the old coverage onboarding are kept for two releases. Drop them in a later migration.
 

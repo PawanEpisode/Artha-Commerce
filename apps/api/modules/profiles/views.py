@@ -4,16 +4,15 @@ from __future__ import annotations
 
 import time
 
+from core.authentication import BeaconBodyAuthentication, SupabaseJWTAuthentication
+from core.feature_flags import flag_enabled
+from core.http import tagged_response
+from core.parsers import PlainTextJSONParser
 from rest_framework.parsers import JSONParser, MultiPartParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
-
-from core.authentication import BeaconBodyAuthentication, SupabaseJWTAuthentication
-from core.feature_flags import flag_enabled
-from core.http import tagged_response
-from core.parsers import PlainTextJSONParser
 
 from . import registry, selectors, serializers, services
 from .avatar_urls import avatar_summary
@@ -28,9 +27,9 @@ from .errors import (
     PersonalizationDisabled,
     StepNotFound,
 )
+from .flags import AVATAR_FLAG
 
 PERSONALIZATION_FLAG = "personalization"
-AVATAR_FLAG = "profile_avatar"
 #: Multipart framing on top of the file itself.
 MULTIPART_OVERHEAD = 4_096
 
