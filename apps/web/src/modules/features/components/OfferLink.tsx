@@ -1,4 +1,4 @@
-import { Button, type ButtonProps } from '@artha/design-system'
+import { Button, type ButtonProps, cn } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ComponentProps } from 'react'
 
@@ -53,19 +53,27 @@ export function OfferButton({
   if (offer.destination === 'soon') return null
   const destination = offer.destination
   const onClick = () => onOpen(offer.feature.slug, destination)
+  const label = <span className="min-w-0 text-balance">{offer.label}</span>
   const link =
     offer.destination === 'login' && offer.nextPath ? (
       <Link to="/login" search={{ next: offer.nextPath }} onClick={onClick}>
-        {offer.label}
+        {label}
       </Link>
     ) : (
       <AppPathLink path={offer.appPath ?? ''} onClick={onClick}>
-        {offer.label}
+        {label}
       </AppPathLink>
     )
   if (!link) return null
   return (
-    <Button variant={variant} size={size} arrow={arrow} fullWidth={fullWidth} className={className} asChild>
+    <Button
+      variant={variant}
+      size={size}
+      arrow={arrow}
+      fullWidth={fullWidth}
+      className={cn('h-auto max-w-full min-w-0 py-2.5 whitespace-normal', className)}
+      asChild
+    >
       {link}
     </Button>
   )
