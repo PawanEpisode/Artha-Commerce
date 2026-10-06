@@ -21,7 +21,7 @@ vi.mock('~/modules/auth', async (original) => ({
   ...(await original<Record<string, unknown>>()),
   useAuth: () => ({ user: { id: 'u1' }, signOut: vi.fn() }),
 }))
-vi.mock('~/modules/observability', () => ({ useFeatureFlag: () => state.flag }))
+vi.mock('~/modules/observability', () => ({ useFeatureFlag: () => state.flag, track: vi.fn() }))
 vi.mock('../hooks/useBootstrap', () => ({ useBootstrap: () => state.boot }))
 vi.mock('../lib/completedCache', () => ({ rememberCompleted: vi.fn(), wasCompleted: () => state.completed }))
 

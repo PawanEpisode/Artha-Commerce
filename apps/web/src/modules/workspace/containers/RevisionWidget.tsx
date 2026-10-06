@@ -4,6 +4,7 @@ import { useOnline } from '~/modules/personalization'
 import { DueView } from '../components/DueView'
 import { WidgetCard } from '../components/WidgetCard'
 import { widgetState } from '../hooks/useWidgetState'
+import { trackWidgetClicked } from '../hooks/useWorkspaceAnalytics'
 import { topDue } from '../lib/summaries'
 
 /** Up to three chapters due for revision. Hidden when none, except a short "Nothing due" for students who study. */
@@ -24,6 +25,7 @@ export function RevisionWidget() {
       state={widgetState(due)}
       onRetry={() => void due.refetch()}
       offline={!online}
+      onInteract={() => trackWidgetClicked('revision')}
     >
       {rows.length > 0 ? (
         <DueView rows={topDue(rows)} total={rows.length} />

@@ -4,6 +4,7 @@ import { useOnline } from '~/modules/personalization'
 import { ProgressView } from '../components/ProgressView'
 import { WidgetCard } from '../components/WidgetCard'
 import { widgetState } from '../hooks/useWidgetState'
+import { trackWidgetClicked } from '../hooks/useWorkspaceAnalytics'
 import { weakestSubjects } from '../lib/summaries'
 
 /** Average progress across chapters, in numbers and words, and the three papers furthest behind. */
@@ -19,6 +20,7 @@ export function ProgressWidget() {
       state={widgetState(overview)}
       onRetry={() => void overview.refetch()}
       offline={!online}
+      onInteract={() => trackWidgetClicked('progress')}
       skeletonHeight="h-52"
     >
       {data ? (

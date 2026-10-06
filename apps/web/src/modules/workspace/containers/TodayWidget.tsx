@@ -6,6 +6,7 @@ import { formatDuration, isTrackerOff, useGoals } from '~/modules/tracker'
 import { TodayView } from '../components/TodayView'
 import { WidgetCard } from '../components/WidgetCard'
 import { widgetState } from '../hooks/useWidgetState'
+import { trackWidgetClicked } from '../hooks/useWorkspaceAnalytics'
 import { todayAction } from '../lib/today'
 
 /** Time today against the daily goal, the streak and the one button that starts or resumes studying. */
@@ -25,6 +26,7 @@ export function TodayWidget() {
       state={widgetState(goals)}
       onRetry={() => void goals.refetch()}
       offline={!online}
+      onInteract={() => trackWidgetClicked('today')}
     >
       {daily && goals.data ? (
         <TodayView

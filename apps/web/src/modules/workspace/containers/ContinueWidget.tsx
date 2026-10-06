@@ -6,6 +6,7 @@ import { cleanVisit, useBootstrap, useOnline, visitHref } from '~/modules/person
 import { ContinueView } from '../components/ContinueView'
 import { WidgetCard } from '../components/WidgetCard'
 import { widgetState } from '../hooks/useWidgetState'
+import { trackWidgetClicked } from '../hooks/useWorkspaceAnalytics'
 
 /** The chapter studied most recently; failing that the last visited page; on day one, the syllabus map. */
 export function ContinueWidget() {
@@ -25,6 +26,7 @@ export function ContinueWidget() {
       state={widgetState(query)}
       onRetry={() => void query.refetch()}
       offline={!online}
+      onInteract={() => trackWidgetClicked('continue')}
     >
       {query.data !== undefined ? (
         <ContinueView chapter={query.data} onReturn={returnTo ? () => router.history.push(returnTo) : undefined} />

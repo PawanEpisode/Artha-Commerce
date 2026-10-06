@@ -2,6 +2,7 @@ import { useNavigate } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
 import { useAuth } from '~/modules/auth'
+import { track } from '~/modules/observability'
 
 import { CoursesIndex } from '../components/CoursesIndex'
 import type { PublicCourse } from '../lib/load'
@@ -23,6 +24,10 @@ export function CoursesIndexContainer({
   useEffect(() => {
     if (redirect) void navigate({ to: '/', replace: true })
   }, [redirect, navigate])
+
+  useEffect(() => {
+    if (signedIn && exploreAll) track('courses_scope_toggled', { all: true })
+  }, [signedIn, exploreAll])
 
   if (redirect) return null
   return <CoursesIndex courses={courses} prompt={<CoveragePrompt surface="home" />} backHome={signedIn} />

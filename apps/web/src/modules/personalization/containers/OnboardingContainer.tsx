@@ -1,6 +1,6 @@
 import { Alert, Celebration, StepFlow } from '@artha/design-system'
 import { useRouter } from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { useAuth } from '~/modules/auth'
 import { track } from '~/modules/observability'
@@ -58,6 +58,19 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
   const resolved = walk && state.data ? resolveStep(walk, state.data.steps, search.step) : null
   const current = resolved?.key ?? null
 
+  // PRD 10: one `started` per run of the flow, one `viewed` per step shown (`resumed` = not the first step).
+  const started = useRef(false)
+  useEffect(() => {
+    if (!walk || !state.data) return
+    if (!started.current) {
+      started.current = true
+      track('onboarding_started', { version: state.data.required_version, has_deep_link: Boolean(search.next) })
+    }
+  }, [walk, state.data, search.next])
+  useEffect(() => {
+    if (current && walk) track('onboarding_step_viewed', { step: current, resumed: current !== walk[0] })
+  }, [current, walk])
+
   // Keep the URL honest: no step, an unknown one, or one past a missing mandatory step is corrected in place.
   useEffect(() => {
     if (current && current !== search.step) onStep(current, { replace: true })
@@ -75,7 +88,11 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
     complete.mutate(undefined, {
       onSuccess: (completion) => {
         const version = completion.state.required_version
-        track('onboarding_completed', { mode: completion.state.mode })
+        track('onboarding_completed', {
+          version,
+          mode: completion.state.mode,
+          skipped_steps: completion.state.steps.filter((step) => step.state === 'skipped').map((step) => step.key),
+        })
         if (celebrationSeen(version)) return leave()
         markCelebrated(version)
         setCelebrating(true)

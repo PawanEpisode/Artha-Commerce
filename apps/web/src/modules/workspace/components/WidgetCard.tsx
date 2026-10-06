@@ -14,6 +14,8 @@ interface Props {
   /** Reserves the card's height while loading so nothing jumps when data arrives. */
   skeletonHeight?: string
   className?: string
+  /** Called when a link or button inside the card is used (analytics). */
+  onInteract?: () => void
   children: ReactNode
 }
 
@@ -29,11 +31,20 @@ export function WidgetCard({
   offline,
   skeletonHeight = 'h-36',
   className,
+  onInteract,
   children,
 }: Props) {
   return (
     <Card className={className}>
-      <section aria-labelledby={id} className="flex h-full flex-col gap-4 p-5 sm:p-6" aria-busy={state === 'loading'}>
+      <section
+        aria-labelledby={id}
+        data-widget={id}
+        className="flex h-full flex-col gap-4 p-5 sm:p-6"
+        aria-busy={state === 'loading'}
+        onClickCapture={(event) => {
+          if (onInteract && (event.target as HTMLElement).closest('a,button')) onInteract()
+        }}
+      >
         <div className="flex items-center justify-between gap-2">
           <h2 id={id} className="text-base font-bold">
             {title}
