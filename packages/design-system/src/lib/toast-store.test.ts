@@ -74,3 +74,15 @@ describe('apiErrorMessage', () => {
     expect(apiErrorMessage('boom', 'fb')).toBe('fb')
   })
 })
+
+describe('toast observers', () => {
+  it('sees shown toasts but not loading placeholders, and can unsubscribe', () => {
+    const seen: string[] = []
+    const off = toastStore.onShow((r) => seen.push(`${r.variant}:${r.id}`))
+    toast.success('A', { id: 'a' })
+    toast.custom('B', { id: 'b' })
+    off()
+    toast.success('C', { id: 'c' })
+    expect(seen).toEqual(['success:a', 'default:b'])
+  })
+})

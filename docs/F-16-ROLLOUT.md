@@ -36,11 +36,10 @@ What ships: the `profiles` API module (profile, avatar, onboarding state machine
 ## D. Support and operations
 
 - To pull a student back through onboarding, bump `ONBOARDING_VERSION` in `profiles/domain/onboarding.py`; only new mandatory steps are asked.
-- Events (PostHog): `onboarding_started`, `onboarding_step_viewed`, `onboarding_step_completed`, `onboarding_step_skipped`, `onboarding_completed`, `onboarding_gate_redirected`, `avatar_*`, `study_targets_changed`, `activity_log_blocked`, `workspace_viewed`, `workspace_widget_clicked`, `courses_scope_toggled`, `account_exported`, `account_deleted`, `coverage_prompt_opened`, `study_home_viewed`, `feature_opened`. No names, emails or free text are sent.
-- Not yet emitted: `last_visit_restored`, `landing_redirected`, `profile_name_changed`, `confidence_blocked`, `toast_shown`.
+- Events (PostHog): `onboarding_started`, `onboarding_step_viewed`, `onboarding_step_completed`, `onboarding_step_skipped`, `onboarding_completed`, `onboarding_gate_redirected`, `avatar_*`, `study_targets_changed`, `activity_log_blocked`, `confidence_blocked`, `profile_name_changed`, `last_visit_restored`, `landing_redirected`, `toast_shown`, `workspace_viewed`, `workspace_widget_clicked`, `courses_scope_toggled`, `account_exported`, `account_deleted`, `coverage_prompt_opened`, `study_home_viewed`, `feature_opened`. No names, emails or free text are sent.
+- `last_visit_restored`, `landing_redirected`, `profile_name_changed`, `confidence_blocked` and `toast_shown` are emitted too. Notes: `confidence_blocked` fires when the locked picker appears (disabled buttons take no clicks); `toast_shown` sends the toast id and variant only, errors and warnings always and the rest sampled at 10%, and toasts without a stable id are skipped; `landing_redirected` fires on the `/app?from=landing` path only, because the inline scripts on `/` and `/courses` run before PostHog loads.
 
 ## E. Known limits
 
-- The Targets snapshot widget on the home is not built yet (P2).
 - `workspace_viewed` reads which widgets are on screen two seconds after load.
 - Last-visit restore never overrides an explicit deep link.

@@ -19,6 +19,7 @@ import {
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
+import { coverageBucket, track } from '~/modules/observability'
 import { CRUMB_LINK_CLASS, EntityCrumb, ReportIssue } from '~/modules/syllabus'
 
 import { CalculationPopover } from '../components/CalculationPopover'
@@ -200,6 +201,7 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
           How confident do you feel?
         </h2>
         <ConfidencePicker
+          onLockedShown={() => track('confidence_blocked', { coverage_bucket: coverageBucket(chapter.coverage_pct) })}
           value={chapter.confidence}
           coveragePct={chapter.coverage_pct}
           unlocked={confidenceAllowed(chapter.coverage_pct)}

@@ -3,8 +3,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { RestoreOnLanding } from './RestoreOnLanding'
 
-const go = vi.fn()
+const go = vi.fn().mockResolvedValue('/app')
 vi.mock('~/modules/auth', () => ({ useGoAfterAuth: () => go }))
+vi.mock('~/modules/observability', () => ({ track: vi.fn() }))
 
 describe('RestoreOnLanding', () => {
   beforeEach(() => go.mockClear())

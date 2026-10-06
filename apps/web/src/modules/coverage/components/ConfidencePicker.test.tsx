@@ -20,4 +20,17 @@ describe('ConfidencePicker', () => {
     await userEvent.click(screen.getByRole('button', { pressed: true }))
     expect(onChange).toHaveBeenLastCalledWith(null)
   })
+
+  it('reports the lock once when it appears, and never when unlocked', () => {
+    const shown = vi.fn()
+    const { rerender } = render(
+      <ConfidencePicker value={null} onChange={vi.fn()} coveragePct={20} unlocked={false} onLockedShown={shown} />,
+    )
+    rerender(
+      <ConfidencePicker value={null} onChange={vi.fn()} coveragePct={25} unlocked={false} onLockedShown={shown} />,
+    )
+    expect(shown).toHaveBeenCalledTimes(1)
+    rerender(<ConfidencePicker value={null} onChange={vi.fn()} coveragePct={60} unlocked onLockedShown={shown} />)
+    expect(shown).toHaveBeenCalledTimes(1)
+  })
 })

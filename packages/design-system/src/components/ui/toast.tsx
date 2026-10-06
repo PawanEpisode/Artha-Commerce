@@ -7,7 +7,8 @@ import { cn } from '../../lib/utils'
 
 export { apiErrorMessage } from '../../lib/api-error-message'
 export type { ToastAction, ToastOptions, ToastVariant } from '../../lib/toast-store'
-export { toast } from '../../lib/toast-store'
+export type { ToastRecord } from '../../lib/toast-store'
+export { toast, toastStore } from '../../lib/toast-store'
 
 /** Shows a friendly toast for a failed API call (envelope message, status mapping, or your fallback). */
 export function toastApiError(error: unknown, fallback: string, options?: { id?: string }) {
