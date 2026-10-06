@@ -600,7 +600,7 @@ Goal: be able to see problems before students do, then run the device matrix.
 - Sentry tags (FR-N23): every structured line carries `push_log` (its name) and, when it has one, `notification_event`, so an alert rule or a filter can pick `push_failed` or one event type.
 - Logs: a test runs a send, a revoked device, a suppression and a sweep, and fails if any line holds an endpoint, a key, an auth secret or the notification text, or uses a forbidden field name.
 - Declarative push (FR-N35): `NOTIFICATIONS_DECLARATIVE_PUSH=true` adds Safari's declarative fields (`web_push: 8030` and a `notification` object with an absolute `navigate` link) beside the worker fields; every other browser ignores them and the worker path is unchanged. **Leave it off until spike S3 passes on a real device.** It needs `NOTIFICATIONS_WEB_BASE_URL` (the web origin, https), and the API refuses to start with the switch on and no origin.
-- Web analytics: nothing new. Every PRD section 10 event the web owns already exists (`alerts_step_*`, `push_permission_*`, `push_test_requested`, `push_device_removed`, `notification_pref_changed`, `push_clicked`, `local_alert_shown`); `inbox_opened` arrives with the inbox in W3.1.
+- Web analytics: nothing new. Every PRD section 10 event the web owns already exists (`alerts_step_*`, `push_permission_*`, `push_test_requested`, `push_device_removed`, `notification_pref_changed`, `push_clicked`, `local_alert_shown`); `inbox_opened` arrives with the inbox in W3.1 (done: `lib/analytics.ts`).
 
 **Configure:** the Sentry alert rule and the PostHog dashboard (below), the sweeper (below), and optionally the two declarative variables.
 
@@ -718,15 +718,46 @@ Every wave starts and ends as in section 0, and uses the deploy order in section
 
 ### W3.1 Inbox and bell
 
-No migration: the bell polls, so no student-facing database policy and no Realtime exposure are needed (the Data API stays disabled as in `docs/SETUP.md` 2.4).
+Goal: a push missed on the phone is readable in the app (FR-N8), with an unread count on a bell. No migration, no Realtime and no student-facing database policy: the bell polls through Django (PRD C7), and the Supabase Data API stays disabled as in `docs/SETUP.md` 2.4.
+
+**What changed**
+
+- API, `GET /notifications/inbox/` (`selectors/inbox.py`, `views/inbox.py`): the student's own notifications, newest first, cursor paged (`limit` 1 to 50, default 20), **never past the newest 50** visible rows (the cursor carries how many rows were served, so the cap holds across pages). The answer is `{results, next_cursor, unread_count}`; each result has `id, category, category_label, title, body, deep_link, read, created_at`. `unread_count` covers every visible unread item, not only the page.
+- **Hidden and expired items are left out of the list and the count.** Expired means `expires_at` has passed. Hidden means the student switched that category off for the **inbox** channel in settings (the row still exists, so switching it back on shows it again); a push switch alone never hides anything. The test push has no switch and always shows. There is no new column.
+- API, `POST /notifications/inbox/read/` (`services/inbox.py: mark_read`): body `{"ids": [...]}` (1 to 50 ids) or `{"all": true}`, exactly one of the two. It only touches the student's own visible unread rows, so another student's id, an unknown id, a hidden or an expired one is skipped without an error and never reveals anything. Idempotent; the first `read_at` is kept. The answer is `{"unread_count": n}`. Marking from the inbox does not mark pushes as clicked (only `?n=` and the click endpoint do).
+- Both endpoints use the existing `NotificationsView`: signed-in only, `notifications_read` for the list and `notifications_write` for marking, and 403 `notifications_disabled` when the environment switch or the `notifications_ui` flag is off. A bad cursor or limit is a 400 (`bad_cursor`, or the field error).
+- Erasure and export: nothing to change. `delete_all_for_user` already deletes every `Notification` and `export_all` already lists them, and a test now covers the inbox rows (FR-N25 holds).
+- Web, `notifications` module: `BellContainer` (mounted in `SiteHeader` for signed-in students, so it is on every `/app` page; it renders nothing while the feature is off), `InboxContainer` at `/app/notifications` (one `h1`, "Inbox"), `InboxList`, `BellButton`, and the hooks in `hooks/useInbox.ts`.
+- The bell asks for the unread count every 60 seconds while the tab is visible (`INBOX_POLL_MS`), on every window focus, and **at once when the service worker posts `artha:push-received` after showing a push**. The worker change is new in this wave (`src/sw/handlers.ts`, `messages.ts`): after `showNotification` it tells open pages that a push arrived, with no content at all, and a failure to tell them never affects the alert. `public/sw.js` is generated, so a deploy rebuilds it; open tabs pick the new worker up on their next visit.
+- Opening an item reports `inbox_opened` (`category`, `seconds_since_sent`; never text, ids or links), marks it read, and follows its `deep_link` **only if it is an allow-listed relative path** (checked again on the page with the same rules as the worker). Anything else only marks the item read. A ctrl, cmd, shift or middle click is left to the browser, so "open in a new tab" works.
+- Marking read updates the list and the bell at once, rolls back on a failure, and takes the server's count when the answer arrives.
+- Accessibility: one `h1`; items are `h2`; the title is a real link; unread items say "New" in words and are bold (the left bar is decoration); a polite live region announces count changes (silent on first load) both on the bell and on the page; the bell link is named "Notifications, 3 unread notifications"; mark-read buttons are named per item; 44 px targets; no motion except the load spinner, which stops under reduced motion; colours are tokens only.
+- Gate: the `notifications_ui` flag on the web (fails open) and the same flag on the API. When it is off the bell is gone, `/app/notifications` says "Notifications are not available yet", and the rest of the app is unchanged.
+
+**Configure:** nothing new. The wave rides on `NOTIFICATIONS_ENABLED` and the `notifications_ui` flag already set up in W2.
 
 ```bash
 cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w3-1-inbox
-cd apps/api && source .venv/bin/activate && pytest modules/notifications -q && cd "$ROOT"
-pnpm --filter @artha/web exec vitest run src/modules/notifications && pnpm check
+cd apps/api && source .venv/bin/activate
+python manage.py makemigrations --check --dry-run          # No changes detected: this wave has no migration
+pytest modules/notifications -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm --filter @artha/web exec vitest run src/modules/notifications src/sw && pnpm check
 ```
 
-API: `services/inbox.py`, `selectors/inbox.py`, `views/inbox.py` (list with cursor, unread count, mark read). Web: `BellContainer` (React Query with `refetchInterval` 60 seconds, refetch on window focus, and an immediate refetch when the service worker posts a message after a push), `InboxContainer` at `/app/notifications`, `InboxList`. Check: send a test push, the bell count rises within a minute (at once if the tab is open); open the inbox, mark read; four themes and 320 to 1280 px.
+**Roll back:** set the PostHog flag `notifications_ui` to 0% (the bell disappears and both endpoints answer 403 within about a minute), or set `NOTIFICATIONS_ENABLED=false` and redeploy. Nothing is deleted, no database change is involved, and pushes keep working because they do not depend on the inbox screens. To undo the code, revert the wave's commit: the worker's extra message is ignored by older pages.
+
+**Check on real devices** (after deploy, with `notifications_ui` on for you):
+
+1. Desktop Chrome, signed in with a device registered: the bell shows in the header. Send a test push from Settings, Notifications. With the tab open the count rises at once (not after a minute); with the tab hidden for a minute, switch back and it is current.
+2. Open `/app/notifications`: the test push is listed with "New". Click its title: you land on `/app/settings/notifications` and the item is read; go back and the bell is one lower.
+3. "Mark all as read" sets the bell to nothing and disables the button. The check button on a single row marks only that row.
+4. Android Chrome: receive a timer push with the app closed, open the app, and the inbox lists it even if you never tapped the push. Tap a push with the app already open: you land on the page and the bell drops.
+5. iPhone Home Screen app: same as 4, then pull the app to the background for two minutes and bring it back; the count is current.
+6. Settings, Notifications: switch a category off for the inbox. Its items leave the list and the count; switch it back on and they return.
+7. Ctrl or cmd click an item title: it opens in a new tab and the item is read in the first.
+8. Keyboard only: Tab to the bell, Enter, Tab through titles and mark-read buttons; screen reader: the count change after a new push is spoken once, politely, and not on page load.
+9. Reading, Light, Dark and System themes at 320, 390, 768 and 1280 px: no horizontal scroll, the badge never covers the bell icon or the account button, 200% zoom still works.
+10. Turn `notifications_ui` to 0%: the bell is gone, `/app/notifications` shows the "not available yet" message, and the focus timer, tracker and coverage pages work as before.
 
 ### W3.2 Tracker alerts and deferred delivery
 

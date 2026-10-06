@@ -127,6 +127,14 @@ def category_spec(category: str) -> CategorySpec:
         raise UnknownSwitch(f"Unknown category: {category}") from None
 
 
+def category_label(category: str) -> str:
+    """The student-facing name of a category; the system one (the test push) reads "Test"."""
+    try:
+        return category_spec(category).label
+    except UnknownSwitch:
+        return "Test" if category == Category.SYSTEM else "Notification"
+
+
 def is_default_enabled(category: str, channel: str) -> bool:
     return Channel(channel) in category_spec(category).default_channels
 

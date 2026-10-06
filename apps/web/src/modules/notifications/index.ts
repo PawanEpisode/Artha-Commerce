@@ -1,5 +1,7 @@
 export { AlertsStepContainer } from './containers/AlertsStepContainer'
+export { BellContainer } from './containers/BellContainer'
 export { FollowUpAskContainer } from './containers/FollowUpAskContainer'
+export { InboxContainer } from './containers/InboxContainer'
 export { NotificationsAppEffects } from './containers/NotificationsAppEffects'
 export { NotificationsBoot } from './containers/NotificationsBoot'
 export { NotificationSettingsContainer } from './containers/NotificationSettingsContainer'

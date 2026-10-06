@@ -33,6 +33,12 @@ class InvalidDeepLink(CodedError):
     default_code = "invalid_deep_link"
 
 
+class InvalidCursor(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "That page cursor is not valid."
+    default_code = "bad_cursor"
+
+
 class InternalUnauthorized(CodedError):
     """The queue signature or the cron secret is missing or wrong. Nothing about why is revealed."""
 

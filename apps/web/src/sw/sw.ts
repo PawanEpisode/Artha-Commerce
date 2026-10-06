@@ -56,7 +56,11 @@ function pushText(event: PushEventLike): string | null {
 on('push', (event: PushEventLike) => {
   event.waitUntil(
     handlePush(
-      { show: (title, options) => sw.registration.showNotification(title, options), swVersion: SW_VERSION },
+      {
+        show: (title, options) => sw.registration.showNotification(title, options),
+        swVersion: SW_VERSION,
+        clients: sw.clients,
+      },
       pushText(event),
     ),
   )

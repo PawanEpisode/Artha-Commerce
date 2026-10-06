@@ -7,6 +7,10 @@ import {
   deviceIdResponseSchema,
   type DeviceRegistration,
   devicesResponseSchema,
+  type InboxPage,
+  inboxPageSchema,
+  inboxReadResponseSchema,
+  type InboxReadTarget,
   type NotificationCategory,
   type NotificationDevice,
   type NotificationSettings,
@@ -59,6 +63,21 @@ export async function postClick(notificationId: string): Promise<ClickInfo> {
   const result = await send<unknown>('POST', `${BASE}/inbox/${encodeURIComponent(notificationId)}/click/`, {})
   const parsed = clickResponseSchema.safeParse(result ?? {})
   return parsed.success ? parsed.data : {}
+}
+
+/** One page of the inbox (newest first, at most the last 50 in all) and the unread count. */
+export async function getInbox({ cursor, limit }: { cursor?: string | null; limit?: number } = {}): Promise<InboxPage> {
+  const query = new URLSearchParams()
+  if (cursor) query.set('cursor', cursor)
+  if (limit) query.set('limit', String(limit))
+  const suffix = query.size > 0 ? `?${query.toString()}` : ''
+  return inboxPageSchema.parse(await api<unknown>(`${BASE}/inbox/${suffix}`))
+}
+
+/** Marks some or all inbox items read; answers with the new unread count. */
+export async function postInboxRead(target: InboxReadTarget): Promise<number> {
+  const body = 'all' in target ? { all: true } : { ids: target.ids }
+  return inboxReadResponseSchema.parse(await send<unknown>('POST', `${BASE}/inbox/read/`, body)).unread_count
 }
 
 const codeOf = (error: unknown): string | undefined => (error instanceof ApiError ? error.code : undefined)

@@ -11,3 +11,9 @@ export const TEST_COOLDOWN_SECONDS = 60
 export const TEST_COOLDOWN_MAX_SECONDS = 300
 /** How long a registration refresh is skipped after a successful one (the settings screen always refreshes). */
 export const RESYNC_MIN_INTERVAL_MS = 12 * 60 * 60 * 1000
+/** The bell asks for the unread count this often while the tab is visible (no Realtime in this release, PRD C7). */
+export const INBOX_POLL_MS = 60_000
+/** Notifications per inbox page; the API caps the whole inbox at its newest 50. */
+export const INBOX_PAGE_SIZE = 20
+/** The bell shows this many and then "99+". */
+export const BELL_COUNT_MAX = 99

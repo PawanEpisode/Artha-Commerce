@@ -1,7 +1,9 @@
-import { Alert, Bell, Button, Container, EmptyState, Skeleton } from '@artha/design-system'
+import { Alert, Button, Container, Skeleton } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
+
+import { NotificationsOff } from '../components/NotificationsOff'
 
 /**
  * Frame for the notification settings: the page's one `h1`, the `notifications_ui` flag (web), and the loading and
@@ -31,11 +33,7 @@ export function NotificationsShell({
         )}
       </header>
       {off ? (
-        <EmptyState
-          icon={<Bell aria-hidden />}
-          title="Notifications are not available yet"
-          description="We are rolling them out gradually. Everything else in Artha works as usual. Please check back soon."
-        />
+        <NotificationsOff />
       ) : state === 'loading' ? (
         <div aria-busy="true" className="space-y-4">
           <span className="sr-only" role="status">

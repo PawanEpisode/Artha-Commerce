@@ -1,5 +1,10 @@
 import { resolveDeepLink, safeDeepLink } from './deeplink'
-import { type SubscriptionChangedMessage, SW_MESSAGE_SUBSCRIPTION_CHANGED } from './messages'
+import {
+  type PushReceivedMessage,
+  type SubscriptionChangedMessage,
+  SW_MESSAGE_PUSH_RECEIVED,
+  SW_MESSAGE_SUBSCRIPTION_CHANGED,
+} from './messages'
 import { type NotificationContent, parsePushPayload } from './payload'
 import type {
   ClientsLike,
@@ -29,12 +34,18 @@ export function buildNotificationOptions(content: NotificationContent, swVersion
 export interface PushDeps {
   show(title: string, options: NotificationOptionsLike): Promise<void>
   swVersion: string
+  /** When given, open pages are told a push arrived so the inbox bell can refresh at once (W3.1). */
+  clients?: ClientsLike
 }
 
-/** Push: always shows exactly one notification, whatever the payload looks like. */
+/**
+ * Push: always shows exactly one notification, whatever the payload looks like. Then, best effort, open pages hear
+ * that a push arrived (no content, only the fact); failing to tell them never undoes or delays the alert.
+ */
 export async function handlePush(deps: PushDeps, raw: string | null): Promise<void> {
   const { content } = parsePushPayload(raw)
   await deps.show(content.title, buildNotificationOptions(content, deps.swVersion))
+  if (deps.clients) await postToPages(deps.clients, { type: SW_MESSAGE_PUSH_RECEIVED })
 }
 
 /** Reads the data the worker attached to a notification, trusting nothing: the link is checked again. */
@@ -130,10 +141,14 @@ export async function handleSubscriptionChange(
 
 async function notifyPages(clients: ClientsLike, resubscribed: boolean): Promise<void> {
   const message: SubscriptionChangedMessage = { type: SW_MESSAGE_SUBSCRIPTION_CHANGED, resubscribed }
+  await postToPages(clients, message)
+}
+
+async function postToPages(clients: ClientsLike, message: SubscriptionChangedMessage | PushReceivedMessage) {
   try {
     const open = await clients.matchAll({ type: 'window', includeUncontrolled: true })
     for (const client of open) (client as WindowClientLike & { postMessage?(m: unknown): void }).postMessage?.(message)
   } catch {
-    // no open page: the next visit re-registers on its own
+    // no open page: the next visit picks the change up on its own
   }
 }

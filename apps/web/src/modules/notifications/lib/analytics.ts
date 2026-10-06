@@ -12,6 +12,7 @@ export const NOTIFICATION_EVENTS = {
   deviceRemoved: 'push_device_removed',
   prefChanged: 'notification_pref_changed',
   pushClicked: 'push_clicked',
+  inboxOpened: 'inbox_opened',
   alertsStepViewed: 'alerts_step_viewed',
   alertsStepCompleted: 'alerts_step_completed',
   localAlertShown: 'local_alert_shown',
@@ -51,4 +52,7 @@ export const notificationAnalytics = {
       ...(info.category === undefined ? {} : { category: info.category }),
       ...(info.seconds_since_sent === undefined ? {} : { seconds_since_sent: info.seconds_since_sent }),
     }),
+  /** An inbox item was opened (PRD section 10). Only the category and the age leave the page, never the text. */
+  inboxOpened: (info: { category: string; seconds_since_sent: number }) =>
+    track(NOTIFICATION_EVENTS.inboxOpened, { category: info.category, seconds_since_sent: info.seconds_since_sent }),
 }

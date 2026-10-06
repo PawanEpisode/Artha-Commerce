@@ -6,7 +6,7 @@ from django.utils import timezone
 from rest_framework import serializers
 
 from .domain import enums
-from .domain.catalogue import CATEGORIES
+from .domain.catalogue import CATEGORIES, category_label
 from .domain.enums import choices
 from .domain.followup import followup_due
 from .services.settings import EDITABLE
@@ -107,4 +107,34 @@ def settings_dict(row) -> dict:
             row.permission_decided_at,
             timezone.now(),
         ),
+    }
+
+
+class InboxQuerySerializer(serializers.Serializer):
+    cursor = serializers.CharField(required=False, max_length=200)
+    limit = serializers.IntegerField(required=False, min_value=1, max_value=50, default=20)
+
+
+class InboxReadSerializer(serializers.Serializer):
+    """Mark some (`ids`) or all (`all: true`) read. Exactly one of the two."""
+
+    ids = serializers.ListField(child=serializers.UUIDField(), required=False, allow_empty=False, max_length=50)
+    all = serializers.BooleanField(required=False)
+
+    def validate(self, attrs):
+        if ("ids" in attrs) == bool(attrs.get("all")):
+            raise serializers.ValidationError("Send either a list of ids or all: true.")
+        return attrs
+
+
+def inbox_item_dict(row) -> dict:
+    return {
+        "id": str(row.id),
+        "category": row.category,
+        "category_label": category_label(row.category),
+        "title": row.title,
+        "body": row.body,
+        "deep_link": row.deep_link,
+        "read": row.read_at is not None,
+        "created_at": row.created_at.isoformat(),
     }

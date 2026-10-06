@@ -16,6 +16,7 @@ describe('notification analytics (PRD 10)', () => {
       deviceRemoved: 'push_device_removed',
       prefChanged: 'notification_pref_changed',
       pushClicked: 'push_clicked',
+      inboxOpened: 'inbox_opened',
       alertsStepViewed: 'alerts_step_viewed',
       alertsStepCompleted: 'alerts_step_completed',
       localAlertShown: 'local_alert_shown',
@@ -67,5 +68,10 @@ describe('notification analytics (PRD 10)', () => {
     notificationAnalytics.pushClicked({})
     expect(track).toHaveBeenNthCalledWith(1, 'push_clicked', { category: 'timer', seconds_since_sent: 42 })
     expect(track).toHaveBeenNthCalledWith(2, 'push_clicked', {})
+  })
+
+  it('sends the category and the age of an opened inbox item, and no text or id', () => {
+    notificationAnalytics.inboxOpened({ category: 'timer', seconds_since_sent: 90 })
+    expect(track).toHaveBeenCalledWith('inbox_opened', { category: 'timer', seconds_since_sent: 90 })
   })
 })

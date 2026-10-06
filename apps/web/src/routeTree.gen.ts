@@ -18,6 +18,7 @@ import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppAccountRouteImport } from './routes/app.account'
+import { Route as AppNotificationsRouteImport } from './routes/app.notifications'
 import { Route as AppOnboardingRouteImport } from './routes/app.onboarding'
 import { Route as AppRevisionRouteImport } from './routes/app.revision'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
@@ -91,6 +92,11 @@ const AppIndexRoute = AppIndexRouteImport.update({
 const AppAccountRoute = AppAccountRouteImport.update({
   id: '/account',
   path: '/account',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotificationsRoute = AppNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
   getParentRoute: () => AppRoute,
 } as any)
 const AppOnboardingRoute = AppOnboardingRouteImport.update({
@@ -253,6 +259,7 @@ export interface FileRoutesByFullPath {
   '/signup': typeof SignupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/account': typeof AppAccountRoute
+  '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
@@ -292,6 +299,7 @@ export interface FileRoutesByTo {
   '/signup': typeof SignupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/account': typeof AppAccountRoute
+  '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
@@ -333,6 +341,7 @@ export interface FileRoutesById {
   '/signup': typeof SignupRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/account': typeof AppAccountRoute
+  '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
@@ -375,6 +384,7 @@ export interface FileRouteTypes {
     | '/signup'
     | '/sitemap.xml'
     | '/app/account'
+    | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
     | '/auth/callback'
@@ -414,6 +424,7 @@ export interface FileRouteTypes {
     | '/signup'
     | '/sitemap.xml'
     | '/app/account'
+    | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
     | '/auth/callback'
@@ -454,6 +465,7 @@ export interface FileRouteTypes {
     | '/signup'
     | '/sitemap.xml'
     | '/app/account'
+    | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
     | '/auth/callback'
@@ -571,6 +583,13 @@ declare module '@tanstack/react-router' {
       path: '/account'
       fullPath: '/app/account'
       preLoaderRoute: typeof AppAccountRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notifications': {
+      id: '/app/notifications'
+      path: '/notifications'
+      fullPath: '/app/notifications'
+      preLoaderRoute: typeof AppNotificationsRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/onboarding': {
@@ -781,6 +800,7 @@ declare module '@tanstack/react-router' {
 
 interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
+  AppNotificationsRoute: typeof AppNotificationsRoute
   AppOnboardingRoute: typeof AppOnboardingRoute
   AppRevisionRoute: typeof AppRevisionRoute
   AppIndexRoute: typeof AppIndexRoute
@@ -802,6 +822,7 @@ interface AppRouteChildren {
 
 const AppRouteChildren: AppRouteChildren = {
   AppAccountRoute: AppAccountRoute,
+  AppNotificationsRoute: AppNotificationsRoute,
   AppOnboardingRoute: AppOnboardingRoute,
   AppRevisionRoute: AppRevisionRoute,
   AppIndexRoute: AppIndexRoute,

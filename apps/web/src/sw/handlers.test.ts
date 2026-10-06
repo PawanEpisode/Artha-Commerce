@@ -9,7 +9,7 @@ import {
   NOTIFICATION_ICON,
   readNotificationData,
 } from './handlers'
-import { SW_MESSAGE_SUBSCRIPTION_CHANGED } from './messages'
+import { SW_MESSAGE_PUSH_RECEIVED, SW_MESSAGE_SUBSCRIPTION_CHANGED } from './messages'
 import { fallbackContent, parsePushPayload } from './payload'
 import type { ClientsLike, WindowClientLike } from './types'
 
@@ -48,6 +48,31 @@ describe('handlePush', () => {
     expect(show).toHaveBeenCalledTimes(1)
     expect(show.mock.calls[0]?.[0]).toBe(fallbackContent().title)
     expect(show.mock.calls[0]?.[1]).toMatchObject({ renotify: false, data: { url: '/app' } })
+  })
+
+  it('tells every open page a push arrived, after the notification is shown and without its content', async () => {
+    const order: string[] = []
+    const show = vi.fn().mockImplementation(async () => void order.push('show'))
+    const page = { ...client({ url: `${ORIGIN}/app` }), postMessage: vi.fn(() => void order.push('post')) }
+    const clients = { matchAll: vi.fn().mockResolvedValue([page]) } as unknown as ClientsLike
+    await handlePush({ show, swVersion: 'dev', clients }, payload)
+    expect(order).toEqual(['show', 'post'])
+    expect(page.postMessage).toHaveBeenCalledWith({ type: SW_MESSAGE_PUSH_RECEIVED })
+  })
+
+  it('still resolves when no page can be reached', async () => {
+    const show = vi.fn().mockResolvedValue(undefined)
+    const clients = { matchAll: vi.fn().mockRejectedValue(new Error('gone')) } as unknown as ClientsLike
+    await expect(handlePush({ show, swVersion: 'dev', clients }, payload)).resolves.toBeUndefined()
+    expect(show).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not post when the notification could not be shown', async () => {
+    const show = vi.fn().mockRejectedValue(new Error('denied'))
+    const page = { ...client({ url: `${ORIGIN}/app` }), postMessage: vi.fn() }
+    const clients = { matchAll: vi.fn().mockResolvedValue([page]) } as unknown as ClientsLike
+    await expect(handlePush({ show, swVersion: 'dev', clients }, payload)).rejects.toThrow('denied')
+    expect(page.postMessage).not.toHaveBeenCalled()
   })
 
   it('leaves out the actions key when there are none', () => {

@@ -12,6 +12,8 @@ urlpatterns = [
     path(
         "notifications/devices/<uuid:device_id>/test/", views.DeviceTestView.as_view(), name="notifications-device-test"
     ),
+    path("notifications/inbox/", views.InboxView.as_view(), name="notifications-inbox"),
+    path("notifications/inbox/read/", views.InboxReadView.as_view(), name="notifications-inbox-read"),
     path(
         "notifications/inbox/<uuid:notification_id>/click/",
         views.InboxClickView.as_view(),

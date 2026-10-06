@@ -114,3 +114,28 @@ export const clickResponseSchema = z.object({
   seconds_since_sent: z.number().optional(),
 })
 export type ClickInfo = z.infer<typeof clickResponseSchema>
+
+export const inboxItemSchema = z.object({
+  id: z.string(),
+  category: z.string(),
+  category_label: z.string(),
+  title: z.string(),
+  body: z.string(),
+  /** A relative path the API checked against its allow-list; the page checks it again before following it. */
+  deep_link: z.string(),
+  read: z.boolean(),
+  created_at: z.string(),
+})
+export type InboxItem = z.infer<typeof inboxItemSchema>
+
+export const inboxPageSchema = z.object({
+  results: z.array(inboxItemSchema),
+  next_cursor: z.string().nullable(),
+  unread_count: z.number().int().nonnegative(),
+})
+export type InboxPage = z.infer<typeof inboxPageSchema>
+
+export const inboxReadResponseSchema = z.object({ unread_count: z.number().int().nonnegative() })
+
+/** What "mark read" covers: some items by id, or everything. */
+export type InboxReadTarget = { ids: readonly string[] } | { all: true }

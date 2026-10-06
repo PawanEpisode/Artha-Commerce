@@ -16,6 +16,7 @@ import { Link } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
 import { useAuth } from '~/modules/auth'
+import { BellContainer } from '~/modules/notifications'
 import { IdentityAvatar, useBootstrap } from '~/modules/personalization'
 
 import { mainNav } from './main-nav'
@@ -120,6 +121,7 @@ export function SiteHeader() {
               <Button size="sm" className="hidden sm:inline-flex" asChild>
                 <Link to="/app">Open workspace</Link>
               </Button>
+              <BellContainer />
               <AccountMenu email={user?.email} onSignOut={() => void signOut()} />
             </>
           ) : (
