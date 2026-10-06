@@ -11,8 +11,10 @@ from dataclasses import dataclass, field
 from enum import StrEnum
 from typing import Any
 
-#: Raise when a release adds a MANDATORY step (give that step `since` = the new number). Optional steps never re-prompt.
-ONBOARDING_VERSION = 2
+#: Raise when a release adds a step (give that step `since` = the new number). A step only applies once the version
+#: reaches its `since`. Optional steps never re-prompt a student who already completed an earlier version.
+#: 3 = the push-notification `alerts` step (X-01.1, W2.5).
+ONBOARDING_VERSION = 3
 
 
 class StepState(StrEnum):

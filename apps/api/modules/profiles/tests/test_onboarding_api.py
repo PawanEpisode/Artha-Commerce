@@ -3,6 +3,7 @@
 import pytest
 
 from modules.coverage.models import CoverageSettings, Enrollment
+from modules.profiles.domain.onboarding import ONBOARDING_VERSION
 from modules.profiles.models import Onboarding
 from modules.profiles.tests.conftest import USER
 from modules.tracking.models import Goal
@@ -31,7 +32,10 @@ def test_the_step_list_starts_with_the_mandatory_steps_to_do(api):
     body = state(api)
     assert body["status"] == "not_started" and body["mode"] == "full"
     by_key = {s["key"]: s for s in body["steps"]}
-    assert [s["key"] for s in body["steps"]] == ["profile", "course", "hours", "targets", "catchup", "avatar"]
+    assert [s["key"] for s in body["steps"]] == ["profile", "course", "hours", "targets", "catchup", "avatar", "alerts"]
+    assert (
+        by_key["alerts"]["available"] is False
+    )  # hidden until the notifications UI is on (see test_onboarding_alerts)
     assert by_key["profile"] == {"key": "profile", "state": "todo", "mandatory": True, "available": True}
     assert by_key["avatar"]["mandatory"] is False
     assert "coaching" not in by_key  # hidden until F-12 registers it, not stubbed
@@ -66,7 +70,7 @@ def test_walking_the_whole_flow_through_the_owning_modules(api, ids):
     assert done.json_body["state"]["status"] == "completed"
     assert api.get("/me/").json_body["onboarding"]["status"] == "completed"
     row = Onboarding.objects.get(pk=USER)
-    assert row.completed_version == 2 and row.completed_at is not None and row.started_at is not None
+    assert row.completed_version == ONBOARDING_VERSION and row.completed_at is not None and row.started_at is not None
 
 
 def test_completing_before_the_mandatory_steps_are_done_lists_what_is_missing(api, ids):
@@ -83,7 +87,7 @@ def test_completing_twice_is_idempotent(api, ids):
     again = api.post("/me/onboarding/complete/")
     assert first.status_code == again.status_code == 200
     assert first.json_body["state"]["status"] == again.json_body["state"]["status"] == "completed"
-    assert Onboarding.objects.get(pk=USER).completed_version == 2
+    assert Onboarding.objects.get(pk=USER).completed_version == ONBOARDING_VERSION
 
 
 def test_saving_the_same_step_twice_returns_the_same_state_with_one_effect(api, ids):
@@ -247,4 +251,4 @@ def test_domain_events_fire_after_completion(api, ids, django_capture_on_commit_
             api.post("/me/onboarding/complete/")  # idempotent: no second event
     finally:
         events.clear()
-    assert len(seen) == 1 and seen[0]["version"] == 2 and seen[0]["course"] == "ca"
+    assert len(seen) == 1 and seen[0]["version"] == ONBOARDING_VERSION and seen[0]["course"] == "ca"

@@ -37,7 +37,7 @@ def test_the_bootstrap_creates_the_profile_and_onboarding_rows_lazily(api):
     assert body["onboarding"] == {
         "status": "not_started",
         "mode": "full",
-        "required_version": 2,
+        "required_version": 3,
         "completed_version": 0,
         "next_step": "profile",
         "missing": ["profile", "course", "hours", "targets"],

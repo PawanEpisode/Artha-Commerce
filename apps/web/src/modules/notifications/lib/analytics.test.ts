@@ -16,6 +16,9 @@ describe('notification analytics (PRD 10)', () => {
       deviceRemoved: 'push_device_removed',
       prefChanged: 'notification_pref_changed',
       pushClicked: 'push_clicked',
+      alertsStepViewed: 'alerts_step_viewed',
+      alertsStepCompleted: 'alerts_step_completed',
+      localAlertShown: 'local_alert_shown',
     })
     for (const name of Object.values(NOTIFICATION_EVENTS)) expect(name).toMatch(/^[a-z]+(_[a-z]+)+$/)
   })
@@ -25,6 +28,22 @@ describe('notification analytics (PRD 10)', () => {
     notificationAnalytics.permissionResult('granted', 'settings')
     expect(track).toHaveBeenNthCalledWith(1, 'push_permission_prompted', { source: 'settings' })
     expect(track).toHaveBeenNthCalledWith(2, 'push_permission_result', { result: 'granted', source: 'settings' })
+  })
+
+  it('sends the alerts step view and result with the platform and display mode only', () => {
+    const where = { platform: 'ios', displayMode: 'standalone' } as const
+    notificationAnalytics.alertsStepViewed('install', where)
+    notificationAnalytics.alertsStepCompleted('skipped_install', where)
+    expect(track).toHaveBeenNthCalledWith(1, 'alerts_step_viewed', {
+      branch: 'install',
+      platform: 'ios',
+      display_mode: 'standalone',
+    })
+    expect(track).toHaveBeenNthCalledWith(2, 'alerts_step_completed', {
+      result: 'skipped_install',
+      platform: 'ios',
+      display_mode: 'standalone',
+    })
   })
 
   it('sends the platform with test and removal, and nothing else about the device', () => {

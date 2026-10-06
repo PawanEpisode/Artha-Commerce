@@ -4,9 +4,7 @@ import type { ReactNode } from 'react'
 import type { PermissionView } from '../lib/permissionView'
 import { unblockSteps } from '../lib/permissionView'
 import type { Browser, Platform } from '../lib/platform'
-
-/** A long label wraps inside the card at 320 px instead of running past it (Button is nowrap by default). */
-const WRAP = 'h-auto max-w-full py-2.5 text-center whitespace-normal'
+import { WRAP_BUTTON as WRAP } from './classes'
 
 interface Props {
   view: PermissionView

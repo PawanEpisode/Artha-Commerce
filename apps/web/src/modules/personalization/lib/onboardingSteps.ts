@@ -47,6 +47,11 @@ export const STEP_COPY: Record<string, StepCopy> = {
     title: 'Add a face to your workspace',
     description: 'A photo or an avatar. You can skip this.',
   },
+  alerts: {
+    label: 'Alerts',
+    title: 'Stay on track with alerts',
+    description: 'Optional. You can change this any time in Settings.',
+  },
 }
 
 /** Keys the web has a screen for. A step the server lists that is not here (a later feature) is not walked. */
@@ -54,16 +59,34 @@ export const KNOWN_STEPS = Object.keys(STEP_COPY)
 
 export const copyFor = (key: string): StepCopy => STEP_COPY[key] ?? { label: key, title: key }
 
+export interface WalkOptions {
+  /**
+   * The step the URL asks for. A returning student who follows a "Finish your setup" card lands on an optional step
+   * they have not finished, which is otherwise not part of their walk.
+   */
+  requested?: string
+}
+
 /**
  * Steps this student walks, fixed when the flow opens so the progress bar does not shrink as steps get done.
- * A new student walks every available step; a returning student (`update`) only the mandatory ones still to do.
+ * A new student walks every available step; a returning student (`update`) only the mandatory ones still to do,
+ * plus the one optional step they asked for by URL.
  */
-export function walkOf(mode: FlowMode, steps: ReadonlyArray<StepInfo>): string[] {
+export function walkOf(mode: FlowMode, steps: ReadonlyArray<StepInfo>, options: WalkOptions = {}): string[] {
+  const { requested } = options
   return steps
     .filter((s) => s.available && KNOWN_STEPS.includes(s.key))
-    .filter((s) => (mode === 'full' ? true : s.mandatory && s.state === 'todo'))
+    .filter((s) => {
+      if (mode === 'full') return true
+      if (s.mandatory) return s.state === 'todo'
+      return s.key === requested && s.state !== 'done'
+    })
     .map((s) => s.key)
 }
+
+/** True when the walk holds only optional steps: finishing it should not throw a celebration at a returning student. */
+export const isOptionalOnly = (walk: ReadonlyArray<string>, steps: ReadonlyArray<StepInfo>): boolean =>
+  walk.every((key) => !steps.find((s) => s.key === key)?.mandatory)
 
 const stateOf = (steps: ReadonlyArray<StepInfo>, key: string) => steps.find((s) => s.key === key)
 

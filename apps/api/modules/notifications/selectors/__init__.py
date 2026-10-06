@@ -1,5 +1,6 @@
 """Reads. Other modules call the public functions re-exported here, never the models."""
 
+from ..flags import ui_enabled
 from .deliveries import sent_cap_count
 from .devices import active_push_devices, get_active_device, list_devices
 from .preferences import category_view, overrides
@@ -14,4 +15,5 @@ __all__ = [
     "overrides",
     "permission_decided",
     "sent_cap_count",
+    "ui_enabled",
 ]

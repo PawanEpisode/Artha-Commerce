@@ -57,7 +57,7 @@ def test_a_chosen_avatar_satisfies_that_step_from_the_profile():
 
 
 def test_completed_only_when_the_facts_hold_and_the_version_matches():
-    done = Stored(completed_version=2, started=True)
+    done = Stored(completed_version=flow.ONBOARDING_VERSION, started=True)
     assert flow.resolve(SPECS, complete_facts(stored=done)).status is Status.COMPLETED
     # Facts beat the flag: a completed student whose targets confirmation vanished must redo that step.
     gone = facts(name="A", enrollment=True, minutes=60, confirmed=False, stored=done)

@@ -512,21 +512,40 @@ pnpm build:web && pnpm --filter @artha/web start           # production build on
 
 ### W2.5 Permission step (web and api)
 
-Goal: the onboarding step `alerts`, follow-up asks and one alert per timer end.
+Goal: the onboarding step `alerts` and one alert per timer end. The follow-up ask after a "Not now" and after the first finished round (PRD 5.1, last paragraph) is **not** in this wave: it needs the focus round-end signal and the ask-count rule together, so it is tracked as W2.5b.
 
 ```bash
 cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w2-5-alerts-step
 ```
 
-API: register step `alerts` (`since = 3`, `is_satisfied` reads `notifications.selectors.permission_decided`) in `profiles/onboarding_steps.py` through the existing registry. Web: `AlertsStepContainer`, `AlertsPreCard`, `InstallGuide`, `UnblockSteps`, `lib/platform.ts` (pure, fully tested), the follow-up ask after the first finished round, and the shared `tag` (`timer:<client_id>`) in `modules/focus/hooks/useFocusAlerts.ts`.
+**What changed**
+
+- API: `profiles/onboarding_steps.py` registers `alerts` through the existing registry (`since = 3`, optional, order 80). It is available only while `notifications.selectors.ui_enabled` is true (environment switch plus the `notifications_ui` flag) and is done when `notifications.selectors.permission_decided` is true (facts over flags). Saving it is refused (400) until a decision exists. `ONBOARDING_VERSION` is now **3**, because a step applies only once the version reaches its `since`. No table, no migration.
+- Web: `notifications` module gains `AlertsStepContainer`, the cards (`AlertsPreCard`, `InstallGuide`, `UnblockSteps`, `InAppBrowserCard`, `AlertsOutcomeCard`), `lib/alertsStep.ts` (every branch of PRD 5.1 as pure functions), `lib/clipboard.ts` and `lib/alertTag.ts`. `personalization` renders it as `AlertsStep` (`?step=alerts`) and saves the onboarding step once the decision is recorded.
+- Every outcome is recorded with `POST permission-state` (source `onboarding`) before the step finishes, so a failed record never moves the student on without one. The device is registered on Allow (same `enableAlerts` flow as Settings). "Send me a test" is on the granted card.
+- Shared tag: `useFocusAlerts` gives the local browser notification the tag `timer:<client_id>`, the one the push carries (`notifications/domain/copy.py`), so a device that gets both shows one alert. A visible tab shows no system notification of its own, so the push is then the only one. `local_alert_shown` is sent with the tag.
+- Events: `alerts_step_viewed`, `alerts_step_completed` (`result`: granted, denied, dismissed, skipped_install, blocked, unsupported), plus the existing `push_permission_*` and `push_test_requested`.
+- Returning students: a student who completed an earlier version is not walked through it (optional steps never re-prompt). The "Finish your setup" card on `/app` offers it once (`workspace/lib/setupCards.ts`), and the link now works for returning students (`walkOf` accepts the step named in the URL). A returning student with nothing new to answer finishes quietly, without the celebration.
+
+**Configure:** nothing new. It needs the W2.1 to W2.4 settings: `NOTIFICATIONS_ENABLED=true`, `VITE_VAPID_PUBLIC_KEY`, the PostHog flag `notifications_ui` (fails open on the web, and the API step also needs the environment switch).
+
+**Roll back:** PostHog `notifications_ui` to 0% hides the step on the web and the API reports it unavailable within about a minute; `NOTIFICATIONS_ENABLED=false` hides it from the next deployment. Neither touches the rest of onboarding. Reverting the version bump is not needed.
 
 ```bash
-cd apps/api && source .venv/bin/activate && pytest modules/profiles modules/notifications -q && cd "$ROOT"
-pnpm --filter @artha/web exec vitest run src/modules/notifications src/modules/personalization src/modules/focus
+cd apps/api && source .venv/bin/activate && pytest modules/profiles modules/notifications -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm --filter @artha/web exec vitest run src/modules/notifications src/modules/personalization src/modules/workspace src/modules/focus
 pnpm check
 ```
 
-**Check every branch of PRD 5.1.** Desktop Chrome: normal path; blocked (`chrome://settings/content/notifications`, add the site to Block, reload, then Allow and press Check again); "Not now" then finish a round to see the follow-up ask. Phones: real iPhone in Safari (install guide), then the installed icon; inside WhatsApp's in-app browser (send yourself the link) to see "Open in browser". Finally, with the tab visible during a round end, confirm one alert only.
+**Check every branch of PRD 5.1** with `NOTIFICATIONS_ENABLED=true`, `VITE_VAPID_PUBLIC_KEY` set and a fresh account (open `/app/onboarding?step=alerts` to jump to the step; the other steps must be done first):
+
+1. Desktop Chrome, permission "Ask": pre-prompt, Turn on alerts, Allow, "Alerts are on", Send me a test, Continue. Repeat with Block (denied card), with the prompt closed (dismissed card, "Turn on alerts after all"), and with Not now.
+2. Desktop Chrome, blocked (`chrome://settings/content/notifications`, add the site to Block, reload): unblock steps, change the setting to Allow, press Check again (screen moves to "One more tap to finish"). Also Skip for now.
+3. Real iPhone, Safari tab: Home Screen guide, Continue without alerts. Then add to Home Screen, open the icon, go to the step: pre-prompt and push.
+4. WhatsApp or Instagram in-app browser (send yourself the link): Open Artha in your browser, Copy link, Continue without alerts.
+5. A browser without push (for example a Firefox private window with notifications off, or an old iOS): the unsupported note.
+6. Keyboard only on each screen (Tab order, Enter, focus lands on the card heading when a screen changes), a screen reader (the polite region speaks outcomes), reduced motion on (no tick animation), the four themes, 320 px width.
+7. One alert only: start a round, switch to another tab, let it end. One notification appears, not two.
 
 **Other tools:** PostHog, create an insight for `alerts_step_completed` broken down by `result`.
 

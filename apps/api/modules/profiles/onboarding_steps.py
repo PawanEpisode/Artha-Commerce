@@ -13,11 +13,13 @@ from modules.coverage import selectors as coverage_selectors
 from modules.coverage import serializers as coverage_serializers
 from modules.coverage import services as coverage
 from modules.coverage.errors import CoverageError, to_api_exception
+from modules.notifications import selectors as notifications_selectors
 from modules.tracking import selectors as tracking_selectors
 from modules.tracking import services as tracking
 
 from . import registry
 from .domain.names import InvalidName
+from .domain.onboarding import StepSpec
 from .services.profile import update_name
 
 
@@ -121,6 +123,15 @@ def _apply_nothing(user: SupabaseUser, data: dict) -> None:
     return None
 
 
+def _apply_alerts(user: SupabaseUser, data: dict) -> None:
+    """
+    The web records the browser result through `POST notifications/permission-state/` first (that is the consent
+    record); this only confirms a decision exists, so the step can never be marked done without one (facts over flags).
+    """
+    if not notifications_selectors.permission_decided(user.id):
+        raise serializers.ValidationError({"detail": "Choose an option for alerts first."})
+
+
 HANDLERS = {
     "profile": registry.StepHandler(ProfileStepSerializer, _apply_profile),
     "course": registry.StepHandler(CourseStepSerializer, _apply_course),
@@ -131,6 +142,20 @@ HANDLERS = {
 }
 
 
+#: X-01.1 W2.5. Optional (every outcome, including "Not now", finishes it), shown only while the notifications UI is
+#: on for this student (environment switch and `notifications_ui` flag), done once a decision is recorded.
+ALERTS = StepSpec(
+    "alerts",
+    80,
+    False,
+    3,
+    lambda f: notifications_selectors.permission_decided(f.user_id),
+    available=lambda f: notifications_selectors.ui_enabled(f.user_id),
+)
+ALERTS_HANDLER = registry.StepHandler(AcknowledgeSerializer, _apply_alerts)
+
+
 def register_built_in_handlers() -> None:
     for key, handler in HANDLERS.items():
         registry.register_handler(key, handler)
+    registry.register_onboarding_step(ALERTS, ALERTS_HANDLER)

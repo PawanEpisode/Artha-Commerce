@@ -1,11 +1,12 @@
 import { Alert, Celebration, StepFlow } from '@artha/design-system'
 import { useRouter } from '@tanstack/react-router'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { useAuth } from '~/modules/auth'
-import { track } from '~/modules/observability'
+import { track, useFeatureFlag } from '~/modules/observability'
 
 import { LoadErrorPanel, PageColumn, WorkspaceSkeleton } from '../components/LoadStates'
+import { AlertsStep } from '../components/steps/AlertsStep'
 import { AvatarStep } from '../components/steps/AvatarStep'
 import { CatchupStep } from '../components/steps/CatchupStep'
 import { CourseStep } from '../components/steps/CourseStep'
@@ -17,7 +18,7 @@ import { useBootstrap } from '../hooks/useBootstrap'
 import { useCompleteOnboarding, useOnboardingState } from '../hooks/useOnboarding'
 import { useSlow } from '../hooks/useSlow'
 import { celebrationMessage, celebrationSeen, markCelebrated } from '../lib/celebration'
-import { copyFor, nextAfter, previousBefore, resolveStep, walkOf } from '../lib/onboardingSteps'
+import { copyFor, isOptionalOnly, nextAfter, previousBefore, resolveStep, walkOf } from '../lib/onboardingSteps'
 import { describeStepError } from '../lib/stepErrors'
 
 export interface OnboardingSearch {
@@ -46,14 +47,21 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
   const boot = useBootstrap()
   const state = useOnboardingState()
   const complete = useCompleteOnboarding()
-  const [walk, setWalk] = useState<string[] | null>(null)
+  const [fixedWalk, setWalk] = useState<string[] | null>(null)
   const [celebrating, setCelebrating] = useState(false)
   const slow = useSlow(state.isPending || boot.isPending)
+  // X-01.1: the alerts step follows the web flag too. It fails open like every flag; only an explicit off hides it.
+  const alertsOn = useFeatureFlag('notifications_ui')
 
   // The walk is fixed once, when the state first arrives, so the progress bar never shrinks as steps get done.
   useEffect(() => {
-    if (state.data && walk === null) setWalk(walkOf(state.data.mode, state.data.steps))
-  }, [state.data, walk])
+    if (state.data && fixedWalk === null) setWalk(walkOf(state.data.mode, state.data.steps, { requested: search.step }))
+  }, [state.data, fixedWalk, search.step])
+  // A step switched off by a flag is taken out at render time, so a flag that answers late still applies.
+  const walk = useMemo(
+    () => (fixedWalk && !alertsOn ? fixedWalk.filter((key) => key !== 'alerts') : fixedWalk),
+    [fixedWalk, alertsOn],
+  )
 
   const resolved = walk && state.data ? resolveStep(walk, state.data.steps, search.step) : null
   const current = resolved?.key ?? null
@@ -79,12 +87,13 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
   // Nothing left to do (for example a returning student with no new steps): finish quietly.
   const ready = walk !== null && state.data !== undefined && resolved?.key === null
   useEffect(() => {
-    if (ready && !complete.isPending && !complete.isSuccess && !complete.isError) finish()
+    if (ready && !complete.isPending && !complete.isSuccess && !complete.isError) finish(state.data?.mode === 'update')
     // `finish` only reads stable mutation helpers; running it on `ready` is the point.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready])
 
-  function finish() {
+  /** `quiet`: a returning student with nothing new to answer (a version bump) is sent on without a celebration. */
+  function finish(quiet = false) {
     complete.mutate(undefined, {
       onSuccess: (completion) => {
         const version = completion.state.required_version
@@ -93,7 +102,7 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
           mode: completion.state.mode,
           skipped_steps: completion.state.steps.filter((step) => step.state === 'skipped').map((step) => step.key),
         })
-        if (celebrationSeen(version)) return leave()
+        if (quiet || celebrationSeen(version)) return leave()
         markCelebrated(version)
         setCelebrating(true)
       },
@@ -112,7 +121,7 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
     if (!walk) return
     const following = nextAfter(walk, from)
     if (following) onStep(following)
-    else finish()
+    else finish(state.data?.mode === 'update' && isOptionalOnly(walk, state.data.steps))
   }
 
   if (celebrating) {
@@ -171,6 +180,7 @@ export function OnboardingContainer({ search, onStep, destination }: Props) {
         {current === 'targets' ? <TargetsStep {...props} /> : null}
         {current === 'catchup' ? <CatchupStep {...props} /> : null}
         {current === 'avatar' ? <AvatarStep {...props} /> : null}
+        {current === 'alerts' ? <AlertsStep {...props} /> : null}
       </StepFlow>
     </PageColumn>
   )

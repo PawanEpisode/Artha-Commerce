@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import {
   firstBlocking,
   firstTodo,
+  isOptionalOnly,
   nextAfter,
   previousBefore,
   resolveStep,
@@ -40,6 +41,18 @@ describe('walkOf', () => {
   it('a returning student only walks the mandatory steps still to do', () => {
     const steps = fresh.map((s) => (['course'].includes(s.key) ? { ...s, state: 'done' as const } : s))
     expect(walkOf('update', steps)).toEqual(['profile', 'hours', 'targets'])
+  })
+  it('a returning student also walks the optional step the URL asks for, if it is not done', () => {
+    const steps = [...fresh.map((s) => ({ ...s, state: 'done' as const })), step('alerts', 'todo', false)]
+    expect(walkOf('update', steps)).toEqual([])
+    expect(walkOf('update', steps, { requested: 'alerts' })).toEqual(['alerts'])
+    expect(walkOf('update', steps, { requested: 'avatar' })).toEqual([]) // done: nothing to show
+    expect(walkOf('update', steps, { requested: 'nope' })).toEqual([])
+  })
+  it('a new student walks the alerts step last, and only while the server offers it', () => {
+    const steps = [...fresh, step('alerts', 'todo', false)]
+    expect(walkOf('full', steps).at(-1)).toBe('alerts')
+    expect(walkOf('full', [...fresh, step('alerts', 'unavailable', false, false)])).not.toContain('alerts')
   })
   it('ignores steps the web has no screen for', () => {
     expect(walkOf('full', [...fresh, step('coaching', 'todo', false)])).not.toContain('coaching')
@@ -84,5 +97,13 @@ describe('helpers', () => {
     expect(firstBlocking(walk, fresh)).toBe('profile')
     expect(firstTodo(['catchup'], fresh)).toBe('catchup')
     expect(firstBlocking(['catchup'], fresh)).toBeNull()
+  })
+})
+
+describe('isOptionalOnly', () => {
+  it('is true when no step in the walk is mandatory', () => {
+    const steps = [...fresh, step('alerts', 'todo', false)]
+    expect(isOptionalOnly(['alerts'], steps)).toBe(true)
+    expect(isOptionalOnly(['profile', 'alerts'], steps)).toBe(false)
   })
 })

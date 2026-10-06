@@ -1,3 +1,6 @@
+export { AlertsStepContainer } from './containers/AlertsStepContainer'
 export { NotificationsAppEffects } from './containers/NotificationsAppEffects'
 export { NotificationsBoot } from './containers/NotificationsBoot'
 export { NotificationSettingsContainer } from './containers/NotificationSettingsContainer'
+export type { AlertsResult } from './lib/alertsStep'
+export { reportLocalAlert, timerAlertTag } from './lib/alertTag'

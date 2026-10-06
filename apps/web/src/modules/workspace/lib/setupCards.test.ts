@@ -22,6 +22,18 @@ describe('skippedSteps', () => {
   })
 })
 
+describe('alerts card', () => {
+  it('is offered to a student who has not seen the step (added after they finished onboarding)', () => {
+    const state = { steps: [step('alerts', 'todo'), step('avatar', 'todo')] }
+    expect(skippedSteps(state, [])).toEqual(['alerts'])
+  })
+  it('goes away once the step is done, unavailable or hidden', () => {
+    expect(skippedSteps({ steps: [step('alerts', 'done')] }, [])).toEqual([])
+    expect(skippedSteps({ steps: [step('alerts', 'todo', { available: false })] }, [])).toEqual([])
+    expect(skippedSteps({ steps: [step('alerts', 'todo')] }, ['alerts'])).toEqual([])
+  })
+})
+
 describe('dismissal storage', () => {
   beforeEach(() => {
     const store = new Map<string, string>()

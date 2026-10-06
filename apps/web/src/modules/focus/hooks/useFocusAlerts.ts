@@ -1,11 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { reportLocalAlert, timerAlertTag } from '~/modules/notifications'
 import { track } from '~/modules/observability'
 
 import { type Alert, describeTransition, TARGET_REACHED } from '../lib/alerts'
 import { playChime } from '../lib/chime'
 import { notify } from '../lib/notify'
 import type { FocusSettings, FocusTimer } from '../lib/types'
+
+/** Used only when a timer has no id to tag by (should not happen). */
+export const FALLBACK_TAG = 'artha-focus'
 
 /**
  * Tells the student a phase ended, in every channel they have allowed: a chime, a browser notification when the tab
@@ -22,7 +26,7 @@ export function useFocusAlerts(
 
   // One delivery for every alert: a chime, a browser notification when the tab is hidden, vibration, a live region.
   const deliver = useCallback(
-    (alert: Alert) => {
+    (alert: Alert, clientId: string | null) => {
       if (!settings) return
       setAnnouncement(`${alert.title}. ${alert.body}`)
       if (settings.sound_enabled) playChime(settings.volume)
@@ -37,8 +41,11 @@ export function useFocusAlerts(
         Notification.permission === 'granted' &&
         document.visibilityState === 'hidden'
       ) {
+        // The tag is the one the push for this timer end carries (FR-N5), so a device that gets both shows one alert.
+        const tag = clientId ? timerAlertTag(clientId) : FALLBACK_TAG
         try {
-          new Notification(alert.title, { body: alert.body, tag: 'artha-focus' })
+          new Notification(alert.title, { body: alert.body, tag })
+          reportLocalAlert(tag)
         } catch {
           // some browsers only allow notifications from a service worker
         }
@@ -58,13 +65,13 @@ export function useFocusAlerts(
     if (!alert || !settings) return
     // The "did you finish?" question has its own dialog; a finished round or break gets a toast.
     if (timer === null || before?.client_id !== timer.client_id) notify.phaseEnded(alert)
-    deliver(alert)
+    deliver(alert, before?.client_id ?? null)
   }, [timer, settings, quiet, deliver])
 
   /** The planned length was reached and the round runs on: a toast and the same channels, but nothing ends. */
   const targetReached = useCallback(() => {
     notify.targetReached(TARGET_REACHED)
-    deliver(TARGET_REACHED)
+    deliver(TARGET_REACHED, prev.current?.client_id ?? null)
   }, [deliver])
 
   return { announcement, targetReached }
