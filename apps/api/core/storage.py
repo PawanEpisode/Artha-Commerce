@@ -12,6 +12,8 @@ from typing import Protocol
 import httpx
 from django.conf import settings
 
+from .http import service_role_headers
+
 logger = logging.getLogger(__name__)
 
 TIMEOUT = httpx.Timeout(10.0, connect=3.0)
@@ -34,7 +36,7 @@ class Storage(Protocol):
 class SupabaseStorage:
     def __init__(self, base_url: str, service_key: str):
         self._base = f"{base_url.rstrip('/')}/storage/v1"
-        self._headers = {"Authorization": f"Bearer {service_key}", "apikey": service_key}
+        self._headers = service_role_headers(service_key)
 
     def _request(self, method: str, url: str, **kwargs) -> httpx.Response:
         try:

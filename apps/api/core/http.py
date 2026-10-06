@@ -21,3 +21,14 @@ def tagged_response(request, payload: dict) -> Response:
         response = Response(payload)
     response["ETag"] = etag
     return response
+
+
+def service_role_headers(key: str) -> dict[str, str]:
+    """
+    Headers for Supabase REST calls made with the service-role key. A legacy key is a JWT and goes in both headers.
+    The newer `sb_secret_...` keys are not JWTs: sent as a Bearer token they are rejected, so they go in `apikey` only.
+    """
+    headers = {"apikey": key}
+    if key.count(".") == 2:
+        headers["Authorization"] = f"Bearer {key}"
+    return headers
