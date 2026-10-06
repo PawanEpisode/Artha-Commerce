@@ -9,7 +9,10 @@ from __future__ import annotations
 import base64
 import hashlib
 from collections import defaultdict
-from datetime import date, datetime, timedelta
+from dataclasses import dataclass
+from datetime import date, datetime, time, timedelta
+from uuid import UUID
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from django.db.models import Count, Max, QuerySet, Sum
 
@@ -17,7 +20,7 @@ from modules.coverage import selectors as coverage
 from modules.syllabus import selectors as syllabus
 from modules.syllabus.models import Chapter, Subject
 
-from .domain import durations, reports
+from .domain import durations, judgement, reports
 from .domain.reports import RangeError
 from .models import (
     ActiveStopwatch,
@@ -70,6 +73,32 @@ def stopwatch_dict(sw: ActiveStopwatch, now: datetime, settings: TrackerSettings
         "client_id": sw.client_id,
         "version": sw.version,
     }
+
+
+def stopwatch_running_judgement(
+    user_id, client_id, expected_version: int, now: datetime, *, after_seconds: int
+) -> judgement.RunJudgement:
+    """
+    Is stopwatch (`client_id`, `expected_version`) still running, with `after_seconds` of counted time reached? Read-only
+    (X-01.1 FR-N18): one plain SELECT, no lock, no idle settle, so asking never changes the stopwatch row.
+    """
+    row = (
+        ActiveStopwatch.objects.filter(pk=user_id)
+        .values(
+            "client_id",
+            "version",
+            "started_at",
+            "paused_at",
+            "paused_total_seconds",
+            "idle_pending",
+            "idle_prompted_at",
+        )
+        .first()
+    )
+    facts = judgement.StopwatchFacts(**row) if row else None
+    return judgement.judge_running(
+        facts, client_id=client_id, expected_version=expected_version, now=now, after_seconds=after_seconds
+    )
 
 
 # --- Sessions ------------------------------------------------------------------------------------------------------
@@ -161,6 +190,25 @@ def daily_goal_minutes_on(goals: list[Goal], day: date) -> int:
         if g.effective_from <= day and (g.effective_to is None or g.effective_to >= day):
             return g.target_minutes
     return DEFAULT_DAILY_GOAL_MINUTES
+
+
+@dataclass(frozen=True)
+class DayProgress:
+    """Counted study time on one local day against the overall daily goal in force that day."""
+
+    done_seconds: int
+    goal_minutes: int
+
+    @property
+    def met(self) -> bool:
+        return self.done_seconds >= self.goal_minutes * 60
+
+
+def daily_progress(user_id, day: date) -> DayProgress:
+    """The same daily goal and totals as `goals_progress` and `streak`, for one day, in two small queries."""
+    goals = list(goals_in_force(user_id, day).filter(period="daily", subject_key=""))
+    done = day_totals(user_id, day, day).get(day, 0)
+    return DayProgress(done, daily_goal_minutes_on(goals, day))
 
 
 # --- Roll-up helpers -----------------------------------------------------------------------------------------------
@@ -475,6 +523,68 @@ def streak(user_id, today: date, goals: list[Goal] | None = None) -> int:
     totals = day_totals(user_id, start, today)
     met = {d for d, s in totals.items() if s >= daily_goal_minutes_on(daily, d) * 60}
     return reports.streak(met, today)
+
+
+@dataclass(frozen=True)
+class GoalAtRisk:
+    """A student with a running streak whose daily goal is not met yet today."""
+
+    user_id: UUID
+    tz: str
+    local_date: date  # today in the student's own time zone
+    done_seconds: int
+    goal_minutes: int
+
+    @property
+    def remaining_seconds(self) -> int:
+        return max(0, self.goal_minutes * 60 - self.done_seconds)
+
+
+def streaks_at_risk(now: datetime, *, local_from: time) -> list[GoalAtRisk]:
+    """
+    Students whose streak ends at yesterday (the goal was met then) and whose goal is not met yet today, judged in each
+    student's own tracker time zone and only once their local clock has reached `local_from`. A student with no streak
+    (yesterday's goal missed or nothing studied) is never listed. Reads the roll-ups in bulk: a few queries per time
+    zone in use, however many students there are. The streak length is `streak(...)`, asked only for those who need it.
+    """
+    risks: list[GoalAtRisk] = []
+    for tz in sorted(TrackerSettings.objects.order_by().values_list("tz", flat=True).distinct()):
+        try:
+            local_now = now.astimezone(ZoneInfo(tz))
+        except (ZoneInfoNotFoundError, ValueError, OSError):
+            continue
+        if local_now.time() < local_from:
+            continue
+        today = local_now.date()
+        yesterday = today - timedelta(days=1)
+        in_zone = TrackerSettings.objects.filter(tz=tz).values("user_id")
+        studied = {
+            r["user_id"]: r["total"]
+            for r in DailyRollup.objects.filter(study_date=yesterday, user_id__in=in_zone)
+            .values("user_id")
+            .annotate(total=Sum("seconds"))
+            if r["total"]
+        }
+        if not studied:
+            continue
+        goals: dict[UUID, list[Goal]] = defaultdict(list)
+        for g in Goal.objects.filter(user_id__in=studied, period="daily", subject_key=""):
+            goals[g.user_id].append(g)
+        done_today = {
+            r["user_id"]: r["total"]
+            for r in DailyRollup.objects.filter(study_date=today, user_id__in=studied)
+            .values("user_id")
+            .annotate(total=Sum("seconds"))
+        }
+        for user_id, yesterday_seconds in studied.items():
+            if yesterday_seconds < daily_goal_minutes_on(goals[user_id], yesterday) * 60:
+                continue  # no streak to lose
+            goal_minutes = daily_goal_minutes_on(goals[user_id], today)
+            done = done_today.get(user_id) or 0
+            if done >= goal_minutes * 60:
+                continue  # today's goal is met: nothing at risk
+            risks.append(GoalAtRisk(user_id, tz, today, done, goal_minutes))
+    return risks
 
 
 def weekly_summary(user_id, today: date, week_first: date | None = None) -> dict:

@@ -761,18 +761,54 @@ pnpm --filter @artha/web exec vitest run src/modules/notifications src/sw && pnp
 
 ### W3.2 Tracker alerts and deferred delivery
 
+Goal: three alerts from the time tracker (a stopwatch left running, the daily goal reached, a streak about to break) and the second half of the policy, FR-N33: a push that quiet hours or the daily cap holds is delivered later instead of being lost. No migration: `stopwatch_long` and `deliver_deferred` were already job kinds in the W2.1 schema. No web change: `/app/tracker` is already on the deep-link allow-list (worker and API agree, covered by the existing parity test).
+
+**What changed**
+
+- `tracking` announcers (`tracking/events.py`): `announces_stopwatch` and `announces_goal` decorate the public actions in `tracking/services.py`. After commit, a stopwatch whose (`client_id`, state, counted seconds) moved emits `stopwatch_changed`; a day whose goal went from not met to met emits `goal_reached` (once per transition, not on every write). A rolled-back action and a no-op emit nothing, and nested calls announce once. `tracking/domain/judgement.py` is the pure rule (`judge_running`, `reaches_at`, with a 5 second early tolerance) and `selectors.stopwatch_running_judgement` is the read-only selector (FR-N18).
+- `stopwatch_long`: planned by `scheduling/planning.plan_stopwatch_long` when a stopwatch starts or resumes, to fire when its **counted time** reaches 3 hours (paused time does not count). Pause, stop, discard, or a new run supersedes the job (`cancel_for_stopwatch`); when the job fires, `StopwatchLongHandler` re-reads the run and sends only if it is still running and has really reached the threshold, otherwise it is skipped or re-planned for the new moment. Dedupe key `stopwatch_long:{client_id}`, expiry 1 hour. The threshold has no setting.
+- `goal_reached`: created by `subscribers.on_goal_reached`, dedupe key `goal:{local_date}` (one per student per local day), expiry 6 hours, and delivered by a `deliver_deferred` job 2 seconds later (`IMMEDIATE_DELAY`) so the request that crossed the goal never waits on a push. Quiet hours therefore hold it like any other alert.
+- `streak_at_risk`: a new sweep step (`scheduling/streak_alerts.send_streak_alerts`, after `fire_overdue_jobs`, bounded and guarded like the others) finds students with a live streak and no qualifying study today, whose local time is in the lead window before their day ends (`domain/tracker_alerts.streak_window`). Dedupe key `streak:{local_date}`, expiry 3 hours. Reads go through `tracking.selectors.streaks_at_risk` in batches of 500; a student whose goal is met, whose streak is zero, or who has switched the category off is never alerted.
+- Deferred delivery (FR-N33): `services/notify.deliver` runs the policy once; on DEFER it plans one `deliver_deferred` job (`planning.plan_deferred`) for the policy's `deliver_at`. `DeliverDeferredHandler` re-judges when the job fires: still unread, not expired, flag and master switch on, preferences unchanged. If the policy still defers (a new quiet window, the cap), it re-plans, at most `MAX_DEFERRALS` (5) times, then drops the notification with `push_dropped`. Past `expires_at` it is dropped. If the environment or the `notifications_send` flag is off when the job fires, the held row is closed (`dispatch.close_held`) and a `push_deferred`/`push_dropped` log line says why. The inbox row exists from the start, so a held alert is readable in the bell either way.
+- Copy: three builders in `domain/copy.py` (`stopwatch_long`, `goal_reached`, `streak_at_risk`), all linking to `/app/tracker`.
+- Priority and quiet hours: all three are priority 1, so quiet hours hold them (they are not exempt) and a priority 1 alert may use one slot beyond the daily cap of 3.
+- Per-student isolation: every job, dedupe key and query is scoped by student; one student's failure in the streak sweep is logged and skipped without stopping the batch.
+
+**Configure:** nothing new. The alerts ride on `NOTIFICATIONS_ENABLED`, the `notifications_send` flag (strict) and the existing per-category settings. The sweep step needs the per-minute sweep from W2.3 to be running.
+
 ```bash
-git switch -c feat/x-01-w3-2-tracker-alerts      # after syncing main
-cd apps/api && source .venv/bin/activate && pytest modules/tracking modules/notifications -q
+cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w3-2-tracker-alerts
+cd apps/api && source .venv/bin/activate
+python manage.py makemigrations --check --dry-run          # No changes detected: this wave has no migration
+pytest modules/tracking modules/notifications -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm check
 ```
 
-Build: `tracking` announcers for stopwatch and goal, handlers `stopwatch_long`, `goal_reached`, `streak_at_risk`, and the `deliver_deferred` job. Check quiet hours: set quiet hours around the current time (`PUT settings/` as in W2.1), reach the daily goal, and confirm the push is held:
+**Roll back:** add the event keys to `NOTIFICATIONS_DISABLED_EVENTS`, for example `stopwatch_long,goal_reached,streak_at_risk` (any subset), and redeploy; the announcers still run but nothing is created. Setting the `notifications_send` flag to 0% or `NOTIFICATIONS_ENABLED=false` stops all delivery, and already-held `deliver_deferred` jobs close themselves when they fire. Nothing is deleted and no database change is involved. To undo the code, revert the wave's commit; pending jobs of the new kinds are skipped by older code as unknown.
+
+Check the held alerts with:
 
 ```sql
-select kind, status, fire_at from notifications_scheduledjob where kind = 'deliver_deferred' order by created_at desc limit 5;
+select kind, status, fire_at, attempts from notifications_scheduledjob
+where kind in ('deliver_deferred', 'stopwatch_long') order by created_at desc limit 10;
 ```
 
-It must fire at the end of the window (or be dropped after `expires_at`). Confirm a goal alert comes once a day and the streak alert is skipped when the goal is met.
+**Check on real devices** (after deploy, with the flags on for you):
+
+1. Quiet hours set around now (`PUT settings/` as in W2.1): reach the daily goal. No push appears; the inbox shows the alert; a `deliver_deferred` job exists with `fire_at` at the end of the window. At that time the push arrives once.
+2. Goal reached at 06:00 with default quiet hours (22:00 to 07:00): the push arrives at 07:00, not at 06:00. Cross the goal again the same day: nothing new (one per day).
+3. Start the stopwatch and leave it for 3 counted hours (or shorten the job's `fire_at` in the database): one push, "still running". Pause before 3 hours, wait past the original time: nothing.
+4. Streak at risk: a student with a streak and no study today, local time 20:30, default quiet hours: the push arrives about 90 minutes before the day ends. With the goal already met: no push.
+5. With QStash configured, cross the goal and confirm the push arrives within a few seconds, not at the next sweep minute.
+6. Switch the Tracker category off for push: none of the three arrive; the inbox follows the inbox switch.
+7. Add `goal_reached` to `NOTIFICATIONS_DISABLED_EVENTS`, redeploy, reach a goal: nothing is created.
+8. Tap each push: you land on `/app/tracker` and the bell drops.
+
+**Decisions**
+
+- A student's "day end" for the streak alert is the start of their evening quiet window, with a floor of 16:00 local, because with default quiet hours a 22:30 alert would always be held until morning, after the streak had already broken.
+- The goal alert goes through a `deliver_deferred` job 2 seconds out rather than inline, so a push provider outage cannot slow a tracker write.
+- The stopwatch threshold counts running time only, and has no setting.
 
 ### W3.3 Daily thought and nudge
 

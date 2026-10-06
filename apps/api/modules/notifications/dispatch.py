@@ -5,8 +5,9 @@ No business rule lives here; `policy.decide` owns the rules and `device_health` 
 Records (one `Delivery` row per notification, channel and device, so a retry updates the same row):
   * a send writes one row per active device (`sent` or `failed`);
   * a suppression writes one device-less row carrying the reason;
-  * a deferral (quiet hours) writes one device-less `queued` row. The job that delivers it at the end of the window is
-    W3.2; until then a deferred notification stays visible in the inbox and is not pushed.
+  * a deferral (quiet hours) writes one device-less `queued` row and reports when to try again. `services.notify.deliver`
+    plans the `deliver_deferred` job for that moment (W3.2); the job calls dispatch again, which judges everything afresh
+    (preferences, quiet hours, cap, expiry). Until then the notification is visible in the inbox and is not pushed.
 Rows from an earlier decision (device-less `queued` or `suppressed`) are replaced when the notification is sent.
 
 `now` is when dispatch started and stamps every row, so a run is deterministic; the push call adds at most a few
@@ -98,8 +99,23 @@ def dispatch(
         return DispatchResult(Action.SUPPRESS, reason=decision.reason)
     if decision.action is Action.DEFER:
         _record_unsent(notification, DeliveryStatus.QUEUED, now)
+        _log(
+            logging.INFO,
+            "push_deferred",
+            event=spec.key,
+            wait_ms=int((decision.deliver_at - now).total_seconds() * 1000),
+        )
         return DispatchResult(Action.DEFER, deliver_at=decision.deliver_at)
     return _send(notification, spec, devices, delivered, now, intended_at)
+
+
+def close_held(notification_id, reason: SuppressReason, *, event: str, now: datetime) -> None:
+    """A held push that will never go out (its job was switched off): record why, so it does not stay `queued`."""
+    closed = Delivery.objects.filter(
+        notification_id=notification_id, channel=Channel.PUSH, device__isnull=True, status=DeliveryStatus.QUEUED
+    ).update(status=DeliveryStatus.SUPPRESSED, suppress_reason=reason, attempted_at=now, updated_at=now)
+    if closed:
+        _log(logging.INFO, "push_suppressed", event=event, reason=reason.value)
 
 
 def _facts(notification, spec, devices, now, intended_at) -> PolicyInput:

@@ -15,6 +15,7 @@ from .catalogue import UnknownEvent
 TITLE_LIMIT = 40
 BODY_LIMIT = 100
 FOCUS_LINK = "/app/focus"
+TRACKER_LINK = "/app/tracker"
 SETTINGS_LINK = "/app/settings/notifications"
 
 
@@ -58,6 +59,34 @@ def _break_over(context: Mapping[str, Any]) -> Copy:
     return Copy("Break over", body, FOCUS_LINK, f"timer:{context['client_id']}")
 
 
+def duration_label(minutes: int) -> str:
+    """Whole minutes as a short phrase: 45 min, 1 h, 3 h 12 min."""
+    minutes = max(0, int(minutes))
+    hours, rest = divmod(minutes, 60)
+    if not hours:
+        return f"{rest} min"
+    return f"{hours} h" if not rest else f"{hours} h {rest} min"
+
+
+def _stopwatch_long(context: Mapping[str, Any]) -> Copy:
+    """The stopwatch has counted three hours and is still running: a nudge to check it is not forgotten."""
+    body = f"{duration_label(int(context['minutes']))} so far. Pause or stop it if you are done."
+    return Copy("Stopwatch still running", _fit(body, BODY_LIMIT), TRACKER_LINK, f"stopwatch:{context['client_id']}")
+
+
+def _goal_reached(context: Mapping[str, Any]) -> Copy:
+    body = f"{duration_label(int(context['studied_minutes']))} studied today."
+    return Copy("Daily goal reached", _fit(body, BODY_LIMIT), TRACKER_LINK, f"goal:{context['local_date']}")
+
+
+def _streak_at_risk(context: Mapping[str, Any]) -> Copy:
+    """Today's goal is not met and the streak ends at yesterday: say how much is left, never shame."""
+    days = int(context["streak_days"])
+    title = f"Keep your {days}-day streak" if days > 1 else "Keep your streak going"
+    body = f"{duration_label(int(context['remaining_minutes']))} more today meets your goal."
+    return Copy(_fit(title, TITLE_LIMIT), _fit(body, BODY_LIMIT), TRACKER_LINK, f"streak:{context['local_date']}")
+
+
 def _test_push(context: Mapping[str, Any]) -> Copy:
     return Copy("Test notification", "Notifications are working on this device.", SETTINGS_LINK, "test_push")
 
@@ -65,6 +94,9 @@ def _test_push(context: Mapping[str, Any]) -> Copy:
 _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "timer_end": _timer_end,
     "break_over": _break_over,
+    "stopwatch_long": _stopwatch_long,
+    "goal_reached": _goal_reached,
+    "streak_at_risk": _streak_at_risk,
     "test_push": _test_push,
 }
 

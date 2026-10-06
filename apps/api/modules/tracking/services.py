@@ -25,6 +25,7 @@ from . import rollups, selectors
 from .domain import durations
 from .domain.durations import DurationError
 from .errors import ConflictError, GoneError, InvalidInput, NotFoundError
+from .events import announces_goal, announces_stopwatch
 from .models import (
     ActiveStopwatch,
     ActivityType,
@@ -232,6 +233,7 @@ def _new_session(
 
 
 @transaction.atomic
+@announces_goal
 def record_session(
     user_id,
     *,
@@ -494,6 +496,7 @@ def delete_session(user_id, session_id) -> SessionAudit:
 
 
 @transaction.atomic
+@announces_goal
 def undo(user_id, token, notes: dict | None = None) -> list[StudySession]:
     audit = SessionAudit.objects.select_for_update().filter(user_id=user_id, pk=token).first()
     if not audit or audit.action not in {"delete", "merge", "split"}:
@@ -530,6 +533,7 @@ def undo(user_id, token, notes: dict | None = None) -> list[StudySession]:
 
 # --- Edit, merge, split -----------------------------------------------------------------------------------------
 @transaction.atomic
+@announces_goal
 def edit_session(user_id, session_id, changes: dict) -> StudySession:
     session = _own_session(user_id, session_id)
     before_days = rollups.touched_days(session)
@@ -594,6 +598,7 @@ def edit_session(user_id, session_id, changes: dict) -> StudySession:
 
 
 @transaction.atomic
+@announces_goal
 def merge_sessions(user_id, session_ids: list, choice: dict) -> StudySession:
     """Merge adjacent same-day sessions (FR-13). Differing tags need an explicit pick in `choice`."""
     ids = list(dict.fromkeys(session_ids))
@@ -755,6 +760,7 @@ def _live_stopwatch(user_id, version, now) -> ActiveStopwatch:
 
 
 @transaction.atomic
+@announces_stopwatch
 def start_stopwatch(
     user_id, *, client_id, subject_id=None, chapter_id=None, activity_type=None, at: datetime | None = None
 ) -> tuple[ActiveStopwatch, bool]:
@@ -797,6 +803,7 @@ def start_stopwatch(
 
 
 @transaction.atomic
+@announces_stopwatch
 def pause_stopwatch(user_id, *, version=None, at: datetime | None = None) -> ActiveStopwatch:
     now = _now()
     sw = _live_stopwatch(user_id, version, now)
@@ -811,6 +818,7 @@ def pause_stopwatch(user_id, *, version=None, at: datetime | None = None) -> Act
 
 
 @transaction.atomic
+@announces_stopwatch
 def resume_stopwatch(user_id, *, version=None, at: datetime | None = None) -> ActiveStopwatch:
     now = _now()
     sw = _live_stopwatch(user_id, version, now)
@@ -825,6 +833,7 @@ def resume_stopwatch(user_id, *, version=None, at: datetime | None = None) -> Ac
 
 
 @transaction.atomic
+@announces_stopwatch
 def change_stopwatch_context(user_id, *, version, changes: dict) -> ActiveStopwatch:
     now = _now()
     sw = _live_stopwatch(user_id, version, now)
@@ -843,6 +852,7 @@ def change_stopwatch_context(user_id, *, version, changes: dict) -> ActiveStopwa
 
 
 @transaction.atomic
+@announces_stopwatch
 def answer_idle(user_id, *, answer: str) -> ActiveStopwatch:
     """The page tells us the "Still studying?" prompt was shown, or that the student said yes. Not a versioned change."""
     now = _now()
@@ -860,6 +870,7 @@ def answer_idle(user_id, *, answer: str) -> ActiveStopwatch:
 
 
 @transaction.atomic
+@announces_stopwatch
 def sync_stopwatch(user_id, *, alive: bool = False, active: bool = False) -> ActiveStopwatch | None:
     """
     What a page loads or polls. Applies a lapsed idle prompt, and records a heartbeat (`alive`) and user activity
@@ -879,6 +890,7 @@ def sync_stopwatch(user_id, *, alive: bool = False, active: bool = False) -> Act
 
 
 @transaction.atomic
+@announces_stopwatch
 def stop_stopwatch(
     user_id, *, client_id=None, version=None, save: bool = True, end_at: datetime | None = None
 ) -> tuple[StudySession | None, str]:
@@ -992,6 +1004,7 @@ def set_goals(user_id, goals: list[dict]) -> list[Goal]:
 
 # --- Data rights ----------------------------------------------------------------------------------------------
 @transaction.atomic
+@announces_stopwatch
 def delete_all_for_user(user_id) -> dict:
     """Removes every tracking row of the student (PRD FR-34). Called by the account deletion flow."""
     summary = {"sessions": StudySession.objects.filter(user_id=user_id).count()}

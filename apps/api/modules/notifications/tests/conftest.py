@@ -68,3 +68,11 @@ def scheme(db):
     from modules.syllabus.tests.helpers import make_scheme
 
     return make_scheme()
+
+
+@pytest.fixture
+def tracker(monkeypatch, django_capture_on_commit_callbacks):
+    """A student's stopwatch and study time on a movable clock, driven through the real `tracking` services."""
+    from modules.notifications.tests.tracker_bench import Tracker
+
+    return Tracker(monkeypatch, django_capture_on_commit_callbacks)

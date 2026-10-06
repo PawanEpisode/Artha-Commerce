@@ -21,8 +21,10 @@ from ..domain.copy import build_copy
 from ..domain.dedupe import build_dedupe_key, normalize_parts
 from ..domain.deeplinks import InvalidDeepLink as DeepLinkRejected
 from ..domain.deeplinks import validate_deep_link
+from ..domain.policy import Action
 from ..errors import InvalidDeepLink, NotificationsDisabled
 from ..models import Notification
+from ..scheduling import planning
 
 
 @dataclass(frozen=True)
@@ -70,6 +72,25 @@ def create_notification(
     )
 
 
+def deliver(
+    notification: Notification,
+    *,
+    now: datetime | None = None,
+    intended_at: datetime | None = None,
+    only_device_id=None,
+) -> dispatch_module.DispatchResult:
+    """
+    Send an existing notification through `dispatch`. When quiet hours hold it, plan the job that sends it at the end of
+    the window (FR-N33); that job calls this function again, so the rules are applied afresh at the moment of sending.
+    Safe to call again: dispatch skips devices that already have it, and the held job is an upsert.
+    """
+    now = now or timezone.now()
+    result = dispatch_module.dispatch(notification, now=now, intended_at=intended_at, only_device_id=only_device_id)
+    if result.action is Action.DEFER:
+        planning.plan_deferred(notification, result.deliver_at)
+    return result
+
+
 def notify(
     user_id,
     event_key: str,
@@ -91,7 +112,7 @@ def notify(
         dedupe_parts=normalize_parts(get_event(event_key), dedupe_ref),
         now=now,
     )
-    result = dispatch_module.dispatch(notification, now=now, intended_at=intended_at)
+    result = deliver(notification, now=now, intended_at=intended_at)
     return NotifyResult(notification, created, result)
 
 
