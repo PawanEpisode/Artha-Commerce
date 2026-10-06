@@ -35,19 +35,23 @@ export function useToday(): string {
 
 export const useGoals = () => useQuery({ queryKey: trackerKeys.goals, queryFn: getGoals, retry: noRetryWhenOff })
 
-export function useSessionsPage(params: {
-  from?: string
-  to?: string
-  subject_id?: string
-  source?: string
-  include_notes?: boolean
-}) {
+export function useSessionsPage(
+  params: {
+    from?: string
+    to?: string
+    subject_id?: string
+    source?: string
+    include_notes?: boolean
+  },
+  enabled = true,
+) {
   return useInfiniteQuery({
     queryKey: [...trackerKeys.sessions, params],
     queryFn: ({ pageParam }) => listSessions({ ...params, cursor: pageParam, limit: 50 }),
     initialPageParam: undefined as string | undefined,
     getNextPageParam: (last) => last.next_cursor ?? undefined,
     retry: noRetryWhenOff,
+    enabled,
   })
 }
 

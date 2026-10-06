@@ -3,6 +3,10 @@ import type { Feature, FeatureFlagName, LiveToolPath } from '~/modules/catalog'
 export interface FeatureViewer {
   signedIn: boolean
   flags: Record<FeatureFlagName, boolean>
+  /** Slugs of tools the student has already used. Unknown (guest, still loading) means no reordering. */
+  used?: ReadonlySet<string>
+  /** "CMA Final": names the student's course in the syllabus offer. */
+  courseName?: string
 }
 
 export type FeatureDestination = 'app' | 'login' | 'soon'
@@ -33,10 +37,17 @@ export function offerFor(feature: Feature, viewer: FeatureViewer): FeatureOffer 
       browse,
     }
   }
-  return { feature, destination: 'app', label: feature.tool.cta, appPath: feature.tool.to, browse }
+  const label =
+    viewer.courseName && feature.slug === 'syllabus-tracker'
+      ? `Open your ${viewer.courseName} syllabus`
+      : feature.tool.cta
+  return { feature, destination: 'app', label, appPath: feature.tool.to, browse }
 }
 
-/** Shipped tools first (catalog order), then anything still unbuilt or switched off. */
+/**
+ * Shipped tools first, then anything still unbuilt or switched off. Within the shipped ones a student sees the tools
+ * they have not used yet before the ones they have (catalog order inside each group); everyone else gets catalog order.
+ */
 export function groupFeatures(list: readonly Feature[], viewer: FeatureViewer) {
   const ready: FeatureOffer[] = []
   const soon: FeatureOffer[] = []
@@ -44,6 +55,11 @@ export function groupFeatures(list: readonly Feature[], viewer: FeatureViewer) {
     const offer = offerFor(feature, viewer)
     if (offer.destination === 'soon') soon.push(offer)
     else ready.push(offer)
+  }
+  const used = viewer.used
+  if (used && used.size > 0) {
+    const unused = ready.filter((o) => !used.has(o.feature.slug))
+    return { ready: [...unused, ...ready.filter((o) => used.has(o.feature.slug))], soon }
   }
   return { ready, soon }
 }
