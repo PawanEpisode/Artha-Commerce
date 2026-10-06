@@ -34,11 +34,27 @@ def test_settings_default_and_update(api):
         "sound_enabled": True,
         "volume": 70,
         "notifications_enabled": False,
+        "keep_awake": True,
+        "keep_awake_in_breaks": False,
         "intro_seen": False,
     }
     res = api.put("/focus/settings/", {"volume": 30, "sound_enabled": False, "preset": "light"})
     assert res.status_code == 200 and sorted(res.json_body["changed"]) == ["preset", "sound_enabled", "volume"]
     assert api.get("/focus/settings/").json_body["focus_minutes"] == 15
+
+
+def test_keep_awake_defaults_on_for_focus_only_and_follows_the_student(api):
+    body = api.get("/focus/settings/").json_body
+    assert body["keep_awake"] is True and body["keep_awake_in_breaks"] is False
+    res = api.put("/focus/settings/", {"keep_awake": False, "keep_awake_in_breaks": True})
+    assert res.status_code == 200 and sorted(res.json_body["changed"]) == ["keep_awake", "keep_awake_in_breaks"]
+    again = api.get("/focus/settings/").json_body
+    assert again["keep_awake"] is False and again["keep_awake_in_breaks"] is True
+
+
+def test_keep_awake_must_be_a_boolean(api):
+    assert api.put("/focus/settings/", {"keep_awake": "maybe"}).status_code == 400
+    assert api.get("/focus/settings/").json_body["keep_awake"] is True
 
 
 def test_editing_a_duration_makes_the_preset_custom_unless_it_matches_one(api):

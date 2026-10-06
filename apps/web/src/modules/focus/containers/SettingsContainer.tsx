@@ -2,6 +2,9 @@ import { Button } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
+import { isWakeLockSupported } from '~/modules/keepawake'
+import { useFeatureFlag } from '~/modules/observability'
+
 import { FocusSettingsForm } from '../components/FocusSettingsForm'
 import { requestNotifications } from '../hooks/useFocusAlerts'
 import { useFocusSettings, useSaveFocusSettings } from '../hooks/useFocusSettings'
@@ -18,6 +21,7 @@ const currentPermission = (): Permission =>
 
 function Body({ settings }: { settings: FocusSettings }) {
   const save = useSaveFocusSettings()
+  const keepAwakeFlag = useFeatureFlag('keep_awake')
   const [permission, setPermission] = useState<Permission>(currentPermission)
   const [volume, setVolume] = useState(settings.volume)
   const [confirmDelete, setConfirmDelete] = useState(false)
@@ -66,6 +70,8 @@ function Body({ settings }: { settings: FocusSettings }) {
           playChime(volume)
         }}
         permission={permission}
+        wakeLockSupported={isWakeLockSupported()}
+        showKeepAwake={keepAwakeFlag}
         busy={save.isPending}
       />
       <section aria-labelledby="focus-data" className="space-y-3 rounded-2xl border border-border bg-card p-6">

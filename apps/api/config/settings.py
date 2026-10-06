@@ -183,6 +183,12 @@ NOTIFICATIONS_ENABLED = env("NOTIFICATIONS_ENABLED", "false").lower() == "true"
 NOTIFICATIONS_DISABLED_EVENTS = frozenset(env_list("NOTIFICATIONS_DISABLED_EVENTS"))  # event keys switched off
 NOTIFICATIONS_QUEUE = env("NOTIFICATIONS_QUEUE", "null")  # "null" (local, tests) or "qstash"
 NOTIFICATIONS_PUBLIC_BASE_URL = env("NOTIFICATIONS_PUBLIC_BASE_URL").rstrip("/")  # origin the queue calls back
+# Declarative push (FR-N35): extra fields so Safari on iOS 18.4+ can show an alert without waking the worker. Off until
+# the Safari spike has passed on a real device. It needs the web origin, because the link in the message is absolute.
+NOTIFICATIONS_DECLARATIVE_PUSH = env("NOTIFICATIONS_DECLARATIVE_PUSH", "false").lower() == "true"
+NOTIFICATIONS_WEB_BASE_URL = env("NOTIFICATIONS_WEB_BASE_URL").rstrip("/")  # e.g. https://app.example.com
+if NOTIFICATIONS_DECLARATIVE_PUSH and not NOTIFICATIONS_WEB_BASE_URL.startswith("https://"):
+    raise RuntimeError("NOTIFICATIONS_DECLARATIVE_PUSH needs NOTIFICATIONS_WEB_BASE_URL set to an https URL")
 VAPID_PRIVATE_KEY = env("VAPID_PRIVATE_KEY")
 VAPID_SUBJECT = env("VAPID_SUBJECT")  # mailto: role address, shown to push services
 QSTASH_TOKEN = env("QSTASH_TOKEN")

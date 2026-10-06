@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { describe, expect, it } from 'vitest'
@@ -101,5 +102,36 @@ describe('no policy switches notifications or the wake lock off (PRD 11, securit
     expect(disables('notifications=none', 'notifications')).toBe(true)
     expect(disables('notifications=(self), camera=()', 'notifications')).toBe(false)
     expect(disables('camera=()', 'notifications')).toBe(false)
+  })
+})
+
+describe('FR-K7: nothing else sets a Permissions-Policy for the app routes', () => {
+  const webRoot = fileURLToPath(new URL('../../', import.meta.url))
+  const sourceFiles = (dir: string): string[] =>
+    readdirSync(dir).flatMap((name) => {
+      const path = join(dir, name)
+      if (statSync(path).isDirectory()) return sourceFiles(path)
+      return /\.(ts|tsx)$/.test(name) && !/\.test\.tsx?$/.test(name) ? [path] : []
+    })
+
+  it('sends no Permissions-Policy or Feature-Policy header from application code', () => {
+    const offenders = sourceFiles(join(webRoot, 'src')).filter((file) =>
+      /permissions-policy|feature-policy/i.test(readFileSync(file, 'utf8')),
+    )
+    expect(offenders).toEqual([])
+  })
+
+  it('has no static _headers file that could set one', () => {
+    expect(existsSync(join(webRoot, 'public', '_headers'))).toBe(false)
+  })
+
+  it('has no header rule for /app that switches the wake lock or notifications off', () => {
+    const appRules = (vercel.headers ?? []).filter((rule) => /^\/(app|\(\.\*\)|:path\*|\.\*)/.test(rule.source))
+    for (const rule of appRules) {
+      for (const h of rule.headers.filter((x) => /permissions-policy|feature-policy/i.test(x.key))) {
+        expect(disables(h.value, 'screen-wake-lock')).toBe(false)
+        expect(disables(h.value, 'notifications')).toBe(false)
+      }
+    }
   })
 })

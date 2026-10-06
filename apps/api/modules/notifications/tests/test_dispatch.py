@@ -453,3 +453,30 @@ def test_no_log_line_carries_an_endpoint_key_or_body(fake_push, device, caplog):
         "push_device_revoked",
         "push_sent",
     }
+
+
+# --- declarative push (FR-N35) -----------------------------------------------------------------------------------
+
+
+def test_declarative_fields_are_off_by_default(fake_push, device):
+    dispatch_module.dispatch(make_notification("timer_end", created_at=NOW), now=NOW)
+    payload = json.loads(fake_push.sent[0][1].body)
+    assert "web_push" not in payload and "notification" not in payload
+
+
+def test_declarative_fields_are_added_when_switched_on(fake_push, device, settings):
+    settings.NOTIFICATIONS_DECLARATIVE_PUSH = True
+    settings.NOTIFICATIONS_WEB_BASE_URL = "https://app.example.com"
+    n = make_notification("timer_end", created_at=NOW)
+    dispatch_module.dispatch(n, now=NOW)
+    payload = json.loads(fake_push.sent[0][1].body)
+    assert payload["web_push"] == 8030
+    assert payload["notification"]["navigate"] == f"https://app.example.com/app/focus?n={n.id}"
+    assert payload["url"] == f"/app/focus?n={n.id}" and payload["tag"] == "timer:abc"  # the worker path is unchanged
+
+
+def test_switching_it_on_without_a_web_origin_changes_nothing(fake_push, device, settings):
+    settings.NOTIFICATIONS_DECLARATIVE_PUSH = True
+    settings.NOTIFICATIONS_WEB_BASE_URL = ""
+    dispatch_module.dispatch(make_notification("timer_end", created_at=NOW), now=NOW)
+    assert "web_push" not in json.loads(fake_push.sent[0][1].body)

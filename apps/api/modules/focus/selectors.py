@@ -144,6 +144,8 @@ def settings_dict(s: FocusSettings) -> dict:
         "sound_enabled": s.sound_enabled,
         "volume": s.volume,
         "notifications_enabled": s.notifications_enabled,
+        "keep_awake": s.keep_awake,
+        "keep_awake_in_breaks": s.keep_awake_in_breaks,
         "intro_seen": s.intro_seen,
     }
 

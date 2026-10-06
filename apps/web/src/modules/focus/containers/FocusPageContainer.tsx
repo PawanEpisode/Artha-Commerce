@@ -2,6 +2,7 @@ import { Button } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
+import { KeepAwakeChip, useKeepAwake } from '~/modules/keepawake'
 import { FollowUpAskContainer } from '~/modules/notifications'
 import { track } from '~/modules/observability'
 import {
@@ -51,6 +52,8 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
   const rounds = useRoundsOn(today).data ?? 0
   const t = f.timer
   const settings = f.settings
+  // Keep awake (X-01 W2.6): the timer never depends on the lock. The settings are already loaded here.
+  const awake = useKeepAwake(t ? { running: t.status === 'running', focus: t.phase === 'focus' } : null, settings)
 
   const [timings, setTimings] = useState<{ timings: Timings; preset: PresetKey }>({
     timings: DEFAULT_TIMINGS,
@@ -198,6 +201,8 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onStopAndSave={() => f.end(true)}
         announcement={f.announcement}
       />
+
+      <KeepAwakeChip status={awake} />
 
       {/* X-01.1 W2.5b: after a finished round, a student who said "Not now" earlier may be asked once more. */}
       <FollowUpAskContainer roundsFinished={f.roundsFinished} />

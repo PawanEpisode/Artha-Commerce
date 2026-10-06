@@ -58,6 +58,30 @@ def build_payload(
     }
 
 
+DECLARATIVE_MAGIC = 8030  # Safari's marker for a Declarative Web Push message (WebKit, iOS and iPadOS 18.4+)
+
+
+def with_declarative_fields(payload: dict, *, web_origin: str) -> dict:
+    """
+    FR-N35: the same message with the declarative fields added beside the worker fields. Safari can then show the alert
+    itself, without waking the service worker; every other browser, and Safari's worker path, read the fields they
+    know and ignore the rest. `navigate` must be an absolute https URL, so the web origin is required.
+    """
+    origin = web_origin.rstrip("/")
+    if not origin.startswith("https://"):
+        raise ValueError("The declarative push needs the web origin as an https URL.")
+    return {
+        **payload,
+        "web_push": DECLARATIVE_MAGIC,
+        "notification": {
+            "title": payload["title"],
+            "body": payload["body"],
+            "navigate": f"{origin}{payload['url']}",
+            "silent": False,
+        },
+    }
+
+
 def encode_payload(payload: dict) -> str:
     """Compact JSON (UTF-8 under 3 KB) or `PayloadTooLarge`."""
     text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))

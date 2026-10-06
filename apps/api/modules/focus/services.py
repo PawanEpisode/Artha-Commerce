@@ -83,6 +83,8 @@ def update_settings(user_id, changes: dict) -> tuple[FocusSettings, list[str]]:
         "overtime_enabled",
         "sound_enabled",
         "notifications_enabled",
+        "keep_awake",
+        "keep_awake_in_breaks",
         "intro_seen",
     ):
         if key in changes and getattr(s, key) != changes[key]:

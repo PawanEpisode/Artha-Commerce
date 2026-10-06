@@ -19,11 +19,13 @@ import logging
 from dataclasses import dataclass
 from datetime import datetime
 
+from django.conf import settings
+
 from . import channels, flags, selectors
 from .channels import DeviceSecrets, PushMessage, SendResult, SendStatus, Urgency
 from .domain import catalogue
 from .domain.enums import Channel, DeliveryStatus, SuppressReason
-from .domain.payload import build_payload, delivery_window, encode_payload
+from .domain.payload import build_payload, delivery_window, encode_payload, with_declarative_fields
 from .domain.policy import Action, PolicyInput, QuietPreference, decide
 from .domain.quiet_hours import local_day_bounds
 from .logs import log_event
@@ -167,16 +169,17 @@ def _send(notification, spec, devices, delivered, now, intended_at) -> DispatchR
 
 
 def _encoded_payload(notification) -> str:
-    return encode_payload(
-        build_payload(
-            notification_id=notification.id,
-            category=notification.category,
-            title=notification.title,
-            body=notification.body,
-            tag=notification.tag,
-            deep_link=notification.deep_link,
-        )
+    payload = build_payload(
+        notification_id=notification.id,
+        category=notification.category,
+        title=notification.title,
+        body=notification.body,
+        tag=notification.tag,
+        deep_link=notification.deep_link,
     )
+    if flags.declarative_push_enabled():
+        payload = with_declarative_fields(payload, web_origin=settings.NOTIFICATIONS_WEB_BASE_URL)
+    return encode_payload(payload)
 
 
 def _claim_row(notification, device: Device, now) -> Delivery:

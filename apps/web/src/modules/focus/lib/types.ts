@@ -58,6 +58,10 @@ export interface FocusSettings {
   sound_enabled: boolean
   volume: number
   notifications_enabled: boolean
+  /** Hold the screen awake while a focus round runs (default on). */
+  keep_awake: boolean
+  /** Also hold it during breaks (default off). */
+  keep_awake_in_breaks: boolean
   intro_seen: boolean
 }
 

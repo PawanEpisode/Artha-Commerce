@@ -175,3 +175,38 @@ def test_dedupe_reference_needs_a_mapping_for_multi_part_templates():
     assert placeholders(spec) == ("client_id", "version")
     with pytest.raises(ValueError):
         normalize_parts(spec, "only-one")
+
+
+# --- declarative push (FR-N35) -----------------------------------------------------------------------------------
+
+
+def test_declarative_fields_sit_beside_the_worker_fields():
+    from modules.notifications.domain.payload import DECLARATIVE_MAGIC, with_declarative_fields
+
+    base = build_payload(
+        notification_id="n1",
+        category="timer",
+        title="Round 2 done",
+        body="25 min",
+        tag="timer:a",
+        deep_link="/app/focus",
+    )
+    out = with_declarative_fields(base, web_origin="https://app.example.com/")
+    assert out["web_push"] == DECLARATIVE_MAGIC == 8030
+    assert out["notification"] == {
+        "title": "Round 2 done",
+        "body": "25 min",
+        "navigate": "https://app.example.com/app/focus?n=n1",
+        "silent": False,
+    }
+    assert {k: out[k] for k in base} == base  # the worker's own fields are untouched
+    assert len(encode_payload(out).encode()) < MAX_PAYLOAD_BYTES
+
+
+@pytest.mark.parametrize("origin", ["", "http://app.example.com", "app.example.com"])
+def test_declarative_fields_need_an_https_origin(origin):
+    from modules.notifications.domain.payload import with_declarative_fields
+
+    base = build_payload(notification_id="n1", category="c", title="t", body="b", tag="x", deep_link="/app/focus")
+    with pytest.raises(ValueError):
+        with_declarative_fields(base, web_origin=origin)

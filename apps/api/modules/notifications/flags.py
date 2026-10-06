@@ -32,3 +32,10 @@ def sending_enabled(user_id) -> bool:
 def event_disabled(event_key: str) -> bool:
     """Ops kill switch for one event type (`NOTIFICATIONS_DISABLED_EVENTS`, comma separated)."""
     return event_key in set(getattr(settings, "NOTIFICATIONS_DISABLED_EVENTS", ()) or ())
+
+
+def declarative_push_enabled() -> bool:
+    """FR-N35: add Safari's declarative fields to each push. Off until the Safari spike (S3) has passed on a device."""
+    return bool(getattr(settings, "NOTIFICATIONS_DECLARATIVE_PUSH", False)) and bool(
+        getattr(settings, "NOTIFICATIONS_WEB_BASE_URL", "")
+    )

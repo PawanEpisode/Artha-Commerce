@@ -553,31 +553,63 @@ pnpm check
 
 ### W2.6 Keep awake (independent, can run in parallel)
 
+**What changed**
+
+- API: `focus_focussettings` gains `keep_awake` (default true) and `keep_awake_in_breaks` (default false), migration `focus.0003_keep_awake` (two columns with defaults, so it is safe on a live table). Both are in the settings serializer, the `PUT /focus/settings/` writer and `settings_dict`, so the choice follows the student across devices. The pop-out columns wait for P4.
+- Web: the `keepawake` module (below), two switches under a new "Screen" heading in `/app/settings/focus` (`focus` module), and the chip wired into `FocusPageContainer` and `TrackerContainer`.
+- The hook requests a screen lock when a focus round is **running** (a break only if "also during breaks" is on), and releases it on pause, end, skip, phase end and when the timer is claimed as away. The browser drops the lock whenever the tab is hidden, so the hook asks again on `visibilitychange`. A refusal (low battery, battery saver) is not an error and shows no toast: the chip says "Screen may sleep" and nothing else changes. One hold lasts at most four hours, then it is released and not asked for again until the timer is paused and resumed.
+- The chip ("Screen stays on" / "Screen may sleep") lives in a polite live region, uses an icon and words (never colour alone), and is hidden when the browser has no Wake Lock API. The settings page says so on such a browser but keeps the switches, because the setting is the student's, not the browser's.
+- Gate: PostHog flag `keep_awake` (fails open on the web, like `notifications_ui`). At 0% the screen lock is never requested, the chip is hidden and the "Screen" section disappears. The timer never depends on the lock.
+- Events: `keep_awake_refused` and `keep_awake_capped` (no properties), sent at most once per hold.
+- FR-K7: `src/sw/deploy-config.test.ts` fails if `vercel.json` has a `Permissions-Policy` or `Feature-Policy` header that switches off `screen-wake-lock`, `notifications` or `push`, if any application source file sets such a header, or if a static `public/_headers` file appears.
+- The stopwatch on `/app/tracker` holds the screen the same way (FR-K1 names both). Because `focus` imports `tracker`, the shared pieces live in their own web module, `keepawake` (`lib/wakeLock.ts`, `useWakeLock`, `useKeepAwake`, `KeepAwakeChip`); `focus` and `tracker` both import it through its barrel. `useKeepAwake` takes what the timer is doing (`running`, `focus`), applies the flag and the student's two switches, and reads them from `GET /focus/settings/` itself only when the page does not already have them. A stopwatch counts as focus time, and an unanswered "still studying?" prompt releases the lock like an away timer.
+
+**Configure:** create the PostHog flag `keep_awake` (0% to start). No environment variable.
+
 ```bash
 cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w2-6-keep-awake
 cd apps/api && source .venv/bin/activate
-# add keep_awake and keep_awake_in_breaks to FocusSettings (models, serializer, selectors.settings_dict), then:
-python manage.py makemigrations focus -n keep_awake
+python manage.py makemigrations --check --dry-run                # must say: No changes detected
 pytest modules/focus -q && cd "$ROOT"
-```
-
-Web: `useWakeLock` (request on start and resume, release on pause, end and phase end, re-request on `visibilitychange`, 4-hour cap), status chip, two switches in `/app/settings/focus`, a CI test that fails if a `Permissions-Policy` header disables `screen-wake-lock` or `notifications` on `/app/*`.
-
-```bash
-pnpm --filter @artha/web exec vitest run src/modules/focus && pnpm check
+pnpm --filter @artha/web exec vitest run src/modules/keepawake src/modules/focus src/modules/tracker src/sw && pnpm check
 curl -sI https://<your-web-domain>/app | grep -i permissions-policy       # after deploy; must not list screen-wake-lock
 ```
 
-Check on a real Android phone and an iPhone Home Screen app with a 10-minute screen timeout (PRD FR-K10). Production migration first (deploy order above). Roll back: flag `keep_awake` at 0%.
+**Check on real devices** (PRD FR-K10), each with the screen timeout set to its shortest value, 30 seconds or one minute, and a 5-minute round (Settings, Focus: keep the "Keep the screen on during focus rounds" switch on):
+
+1. Android Chrome: start a round, leave the phone alone. The chip says "Screen stays on" and the screen does not dim for the whole round. Press Pause: the screen dims after the timeout. Resume: it holds again.
+2. iPhone, Home Screen app (iOS 16.4 or later): same as 1. If it does not hold, note the iOS version in `docs/X-01-spike-results.md`; the chip should then say "Screen may sleep" and nothing else breaks.
+3. iPhone Safari tab, desktop Chrome, Edge, Firefox, Safari: same as 1 (desktop: set the display to sleep after one minute).
+4. Switch to another tab during a round for a minute and come back: the chip returns to "Screen stays on" without a reload.
+5. Turn on battery saver (Android) or low power mode (iPhone) and start a round: the chip says "Screen may sleep", with no error message.
+6. With "Also keep it on during breaks" off, let a round end: the chip disappears for the break. Switch it on and repeat: the chip stays through the break.
+7. A browser without the API (an old Firefox, for example): no chip, the settings page notes it, the timer works.
+   Stopwatch (`/app/tracker`): repeat 1, 4 and 5 with the stopwatch. Pause releases the screen; leave it running until the "still studying?" prompt appears and the chip disappears and the lock is released; answer it and the chip returns.
+8. Keyboard only through the Settings page switches, screen reader (the chip change is spoken once, politely), the four themes, 320 px width.
+
+Production migration first (deploy order above). Roll back: flag `keep_awake` at 0%.
 
 ### W2.7 Launch hardening
 
 Goal: be able to see problems before students do, then run the device matrix.
 
+**What changed**
+
+- Retention (FR-N24): `manage.py prune_notifications` (`services/retention.py`, rules in `domain/retention.py`) deletes deliveries 90 days after `attempted_at`, notifications 180 days after `created_at` (their deliveries go with them), jobs that are not pending 30 days after `updated_at`, and devices revoked more than 30 days ago (their delivery rows stay, with the device cleared). Each delete is its own transaction of at most 1000 rows, so no lock lasts long, and running it twice does nothing the second time. `--dry-run` prints counts and deletes nothing; `--batch` (at most 1000) and `--max-rows` bound a run. The sweep runs it by itself once a night, between 21:30 and 21:35 UTC (03:00 in India), at most 20,000 rows per run. Action tokens and shown-message memory do not exist yet and join the job with W3.3 and W3.6.
+- Delivery check (FR-N23): every sweep run judges the last 15 minutes of push attempts (`sent` plus `failed`; suppressed and queued rows are not attempts) and, when fewer than 98% were accepted or the 95th percentile of lateness is over 5 seconds, logs the error `push_slo_breach` with `attempts`, `accepted_ratio`, `p95_ms` and which target failed. **A window under 5 attempts never counts** (one failure out of two is noise); the number is `MIN_SAMPLE` in `domain/slo.py`. A failing check is logged as `sweep_step_failed` and never stops jobs from firing.
+- Sentry tags (FR-N23): every structured line carries `push_log` (its name) and, when it has one, `notification_event`, so an alert rule or a filter can pick `push_failed` or one event type.
+- Logs: a test runs a send, a revoked device, a suppression and a sweep, and fails if any line holds an endpoint, a key, an auth secret or the notification text, or uses a forbidden field name.
+- Declarative push (FR-N35): `NOTIFICATIONS_DECLARATIVE_PUSH=true` adds Safari's declarative fields (`web_push: 8030` and a `notification` object with an absolute `navigate` link) beside the worker fields; every other browser ignores them and the worker path is unchanged. **Leave it off until spike S3 passes on a real device.** It needs `NOTIFICATIONS_WEB_BASE_URL` (the web origin, https), and the API refuses to start with the switch on and no origin.
+- Web analytics: nothing new. Every PRD section 10 event the web owns already exists (`alerts_step_*`, `push_permission_*`, `push_test_requested`, `push_device_removed`, `notification_pref_changed`, `push_clicked`, `local_alert_shown`); `inbox_opened` arrives with the inbox in W3.1.
+
+**Configure:** the Sentry alert rule and the PostHog dashboard (below), the sweeper (below), and optionally the two declarative variables.
+
 ```bash
 cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w2-7-hardening
 cd apps/api && source .venv/bin/activate
+python manage.py makemigrations --check --dry-run          # No changes detected: this wave has no migration
 python manage.py prune_notifications --dry-run             # prints counts per table, deletes nothing
+python manage.py prune_notifications                       # run it once by hand; run it again: every count is 0
 pytest modules/notifications -q
 ```
 
@@ -621,9 +653,25 @@ from notifications_delivery
 where channel = 'push' and attempted_at > now() - interval '1 day' and status in ('sent', 'failed');
 ```
 
-Targets: `accepted_ratio >= 0.98`, `p95_ms <= 5000`. The sweep also runs the same check over the last 15 minutes and logs an error (`push_slo_breach`) when it fails; in **Sentry** create an alert rule on that message for the `artha-api` project, notify you by email. In **PostHog** build one dashboard from `alerts_step_completed`, `push_permission_result`, `push_clicked`, `notification_pref_changed`.
+Targets: `accepted_ratio >= 0.98`, `p95_ms <= 5000`. The sweep also runs the same check over the last 15 minutes and logs an error (`push_slo_breach`) when it fails; in **Sentry** create an alert rule for the `artha-api` project: when an event's message starts with `push_slo_breach` (or the tag `push_log` equals `push_slo_breach`), notify you by email, at most once an hour. A second rule on the tag `push_log` equal to `sweep_step_failed` catches a broken check. In **PostHog** build one dashboard from `alerts_step_completed`, `push_permission_result`, `push_clicked`, `notification_pref_changed`.
 
-**Device matrix** (sign off in `docs/X-01-spike-results.md` under a new heading): Android Chrome, iPhone Safari tab (install guide), iPhone Home Screen app, desktop Chrome, Edge, Firefox, Safari. Each: allow, test push, timer-end push with the tab closed, pause cancels, blocked flow, remove device.
+**Device matrix** (sign off in `docs/X-01-spike-results.md` under a new heading "W2.7 device matrix"; paste this table and fill it in): Android Chrome, iPhone Safari tab (install guide), iPhone Home Screen app, desktop Chrome, Edge, Firefox, Safari. Each: allow, test push, timer-end push with the tab closed, pause cancels, blocked flow, remove device, keep awake (W2.6).
+
+```
+## W2.7 device matrix
+
+| Device and version | Allow | Test push | Timer-end push, tab closed | Pause cancels | Blocked flow | Remove device | Keep awake | Signed off (date, initials) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Android Chrome | | | | | | | | |
+| iPhone Safari tab (install guide) | | n/a | n/a | n/a | n/a | n/a | | |
+| iPhone Home Screen app | | | | | | | | |
+| Desktop Chrome | | | | | | | | |
+| Edge | | | | | | | | |
+| Firefox | | | | | | | | |
+| Safari (macOS) | | | | | | | | |
+```
+
+Write pass, fail or the note ("late by 40 s") in each cell. Also on one device, with `NOTIFICATIONS_DECLARATIVE_PUSH` still off, repeat S3 and record the result: that decides whether the switch is ever turned on.
 
 Commit, production migrate if any, merge, deploy. Gate G1 is met when the matrix is signed off and the SQL above meets both targets on your own devices over two days.
 
@@ -822,6 +870,7 @@ Other tools and costs to arrange first: Apple Developer Program membership (Deve
 | `QSTASH_TOKEN`, `QSTASH_CURRENT_SIGNING_KEY`, `QSTASH_NEXT_SIGNING_KEY` | | yes | yes | P2 |
 | `QSTASH_URL` | | yes (only if the region needs it) | no | P2 |
 | `NOTIFICATIONS_ENABLED`, `NOTIFICATIONS_QUEUE`, `NOTIFICATIONS_PUBLIC_BASE_URL`, `NOTIFICATIONS_DISABLED_EVENTS` | | yes | no | P2 |
+| `NOTIFICATIONS_DECLARATIVE_PUSH`, `NOTIFICATIONS_WEB_BASE_URL` | | yes | no | P2 (W2.7, off until spike S3 passes) |
 | `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `DEFAULT_FROM_EMAIL` | | yes | no | P3 |
 | `EMAIL_HOST_PASSWORD` | | yes | yes | P3 |
 

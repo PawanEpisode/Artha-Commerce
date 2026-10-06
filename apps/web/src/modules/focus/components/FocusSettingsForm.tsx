@@ -9,6 +9,10 @@ interface Props {
   onChange: (patch: Partial<FocusSettings>) => void
   onTimingsChange: (timings: Timings, preset: PresetKey) => void
   onPreview: () => void
+  /** Whether this browser can hold the screen awake; the switches still save, the note says what will happen. */
+  wakeLockSupported?: boolean
+  /** The `keep_awake` flag: false hides the screen section. */
+  showKeepAwake?: boolean
   /** The browser's notification permission, so the switch can explain a block. */
   permission: 'granted' | 'denied' | 'default' | 'unsupported'
   busy: boolean
@@ -17,7 +21,17 @@ interface Props {
 }
 
 /** Controlled form for the timer's presets and alerts. Every change saves straight away; there is no Save button. */
-export function FocusSettingsForm({ value, onChange, onTimingsChange, onPreview, permission, busy, error }: Props) {
+export function FocusSettingsForm({
+  value,
+  onChange,
+  onTimingsChange,
+  onPreview,
+  permission,
+  busy,
+  error,
+  wakeLockSupported = true,
+  showKeepAwake = true,
+}: Props) {
   const timings: Timings = {
     focus_minutes: value.focus_minutes,
     short_break_minutes: value.short_break_minutes,
@@ -102,6 +116,34 @@ export function FocusSettingsForm({ value, onChange, onTimingsChange, onPreview,
           </Alert>
         ) : null}
       </section>
+      {showKeepAwake ? (
+        <section className="space-y-4 rounded-2xl border border-border bg-card p-6" aria-labelledby="screen-heading">
+          <h2 id="screen-heading" className="text-lg font-bold">
+            Screen
+          </h2>
+          <Row
+            id="keep-awake"
+            label="Keep the screen on during focus rounds"
+            hint="Stops your screen from dimming while a round runs. It only works while Artha is open and in front."
+            checked={value.keep_awake}
+            onChange={(v) => onChange({ keep_awake: v })}
+          />
+          <Row
+            id="keep-awake-breaks"
+            label="Also keep it on during breaks"
+            checked={value.keep_awake_in_breaks}
+            disabled={!value.keep_awake}
+            onChange={(v) => onChange({ keep_awake_in_breaks: v })}
+          />
+          {!wakeLockSupported ? (
+            <Alert variant="info">
+              <span role="status">
+                This browser cannot keep the screen on, so your screen may sleep during a round. The timer still runs.
+              </span>
+            </Alert>
+          ) : null}
+        </section>
+      ) : null}
       {error ? (
         <Alert variant="error">
           <span role="alert">{error}</span>
@@ -116,17 +158,19 @@ function Row({
   label,
   hint,
   checked,
+  disabled,
   onChange,
 }: {
   id: string
   label: string
   hint?: string
   checked: boolean
+  disabled?: boolean
   onChange: (v: boolean) => void
 }) {
   return (
     <div className="flex items-start gap-3">
-      <Switch id={id} checked={checked} onCheckedChange={onChange} className="mt-0.5" />
+      <Switch id={id} checked={checked} disabled={disabled} onCheckedChange={onChange} className="mt-0.5" />
       <div>
         <label htmlFor={id} className="text-sm font-medium">
           {label}

@@ -30,6 +30,9 @@ class FocusSettings(TimeStampedModel):
     sound_enabled = models.BooleanField(default=True)
     volume = models.SmallIntegerField(default=70)
     notifications_enabled = models.BooleanField(default=False)
+    # Hold the screen awake while a round runs (X-01 keep awake). Breaks only when the second switch is on too.
+    keep_awake = models.BooleanField(default=True)
+    keep_awake_in_breaks = models.BooleanField(default=False)
     intro_seen = models.BooleanField(default=False)
     # The remembered cycle: when a phase ends and nothing starts on its own the timer goes idle, but the round count and
     # the phase that is due next carry on ("Start round 3 of 4", "Start break").

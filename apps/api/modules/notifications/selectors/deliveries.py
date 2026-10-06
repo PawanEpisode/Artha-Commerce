@@ -23,3 +23,25 @@ def sent_cap_count(user_id, start: datetime, end: datetime, *, exclude_notificat
     if exclude_notification_id is not None:
         rows = rows.exclude(notification_id=exclude_notification_id)
     return rows.values("notification_id").distinct().count()
+
+
+def push_slo_counts(start: datetime, end: datetime, *, max_rows: int = 5000) -> tuple[int, int, list[int]]:
+    """
+    Push attempts in [start, end): (sent, failed, lateness in ms of the sent ones). Suppressed and queued rows are not
+    attempts. The lateness list is capped so a flood cannot make the sweep slow; it keeps the latest rows.
+    """
+    rows = Delivery.objects.filter(
+        channel=Channel.PUSH,
+        attempted_at__gte=start,
+        attempted_at__lt=end,
+        status__in=[DeliveryStatus.SENT, DeliveryStatus.FAILED],
+    )
+    failed = rows.filter(status=DeliveryStatus.FAILED).count()
+    sent_rows = rows.filter(status=DeliveryStatus.SENT)
+    sent = sent_rows.count()
+    lateness = list(
+        sent_rows.exclude(lateness_ms__isnull=True)
+        .order_by("-attempted_at")
+        .values_list("lateness_ms", flat=True)[:max_rows]
+    )
+    return sent, failed, lateness

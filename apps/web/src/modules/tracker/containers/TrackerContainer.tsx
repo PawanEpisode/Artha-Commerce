@@ -1,6 +1,7 @@
 import { Alert, Button, Plus, Skeleton } from '@artha/design-system'
 import { useEffect, useRef, useState } from 'react'
 
+import { KeepAwakeChip, useKeepAwake } from '~/modules/keepawake'
 import { track } from '~/modules/observability'
 
 import { GoalRings } from '../components/GoalRings'
@@ -20,6 +21,8 @@ function Today({ tz }: { tz: string }) {
   const today = useToday()
   const timer = useStopwatch()
   const sw = timer.stopwatch
+  // Keep awake (X-01 W2.6): held while the stopwatch runs; an unanswered "still studying?" counts as away and releases it.
+  const awake = useKeepAwake(sw ? { running: sw.status === 'running' && !sw.idle_pending, focus: true } : null)
   const subjects = useSubjectOptions()
   const [pick, setPick] = useState<{
     subject_id: string | null
@@ -87,6 +90,7 @@ function Today({ tz }: { tz: string }) {
         idlePending={!!sw?.idle_pending}
         onStillStudying={() => idle.mutate('still_studying')}
       />
+      <KeepAwakeChip status={awake} />
 
       {goals.data ? (
         <GoalRings progress={goals.data.progress} />

@@ -30,6 +30,8 @@ class SettingsSerializer(_Optional):
     sound_enabled = serializers.BooleanField(required=False)
     volume = serializers.IntegerField(required=False, min_value=0, max_value=100)
     notifications_enabled = serializers.BooleanField(required=False)
+    keep_awake = serializers.BooleanField(required=False)
+    keep_awake_in_breaks = serializers.BooleanField(required=False)
     intro_seen = serializers.BooleanField(required=False)
 
 
