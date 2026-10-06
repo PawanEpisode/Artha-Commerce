@@ -5,6 +5,7 @@ from __future__ import annotations
 import httpx
 from django.conf import settings
 
+from .http import service_role_headers
 from .storage import TIMEOUT
 
 
@@ -20,7 +21,7 @@ def delete_user(user_id: str) -> None:
     try:
         response = httpx.delete(
             f"{settings.SUPABASE_URL}/auth/v1/admin/users/{user_id}",
-            headers={"Authorization": f"Bearer {key}", "apikey": key},
+            headers=service_role_headers(key),
             timeout=TIMEOUT,
         )
     except httpx.HTTPError as exc:

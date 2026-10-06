@@ -15,7 +15,6 @@ export function useOnboardingState() {
     queryFn: getOnboarding,
     enabled: signedIn,
     staleTime: 0,
-    retry: 1,
   })
 }
 

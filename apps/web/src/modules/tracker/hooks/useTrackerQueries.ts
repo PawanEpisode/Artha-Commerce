@@ -10,7 +10,6 @@ import {
   getSummary,
   getTimeVsCoverage,
   getWeeklySummary,
-  isFeatureDisabled,
   listSessions,
   type ReportParams,
 } from '../lib/api'
@@ -21,10 +20,8 @@ import type { Group, SplitBy } from '../lib/types'
 
 /** Reports are cached on the server for 60 s (ETag), so the page treats them as fresh for the same time. */
 const REPORT_STALE_MS = 60_000
-const noRetryWhenOff = (count: number, error: unknown) => !isFeatureDisabled(error) && count < 1
 
-export const useTrackerSettings = () =>
-  useQuery({ queryKey: trackerKeys.settings, queryFn: getSettings, retry: noRetryWhenOff })
+export const useTrackerSettings = () => useQuery({ queryKey: trackerKeys.settings, queryFn: getSettings })
 
 /** Today's date in the student's tracker time zone, on the server's clock. Falls back to the device zone. */
 export function useToday(): string {
@@ -33,25 +30,28 @@ export function useToday(): string {
   return localDate(nowMs(), tz)
 }
 
-export const useGoals = () => useQuery({ queryKey: trackerKeys.goals, queryFn: getGoals, retry: noRetryWhenOff })
+export const useGoals = () => useQuery({ queryKey: trackerKeys.goals, queryFn: getGoals })
 
-export function useSessionsPage(params: {
-  from?: string
-  to?: string
-  subject_id?: string
-  source?: string
-  include_notes?: boolean
-}) {
+export function useSessionsPage(
+  params: {
+    from?: string
+    to?: string
+    subject_id?: string
+    source?: string
+    include_notes?: boolean
+  },
+  enabled = true,
+) {
   return useInfiniteQuery({
     queryKey: [...trackerKeys.sessions, params],
     queryFn: ({ pageParam }) => listSessions({ ...params, cursor: pageParam, limit: 50 }),
     initialPageParam: undefined as string | undefined,
     getNextPageParam: (last) => last.next_cursor ?? undefined,
-    retry: noRetryWhenOff,
+    enabled,
   })
 }
 
-const reportOptions = { staleTime: REPORT_STALE_MS, placeholderData: keepPreviousData, retry: noRetryWhenOff }
+const reportOptions = { staleTime: REPORT_STALE_MS, placeholderData: keepPreviousData }
 
 export const useSummary = (p: ReportParams & { compare?: boolean }) =>
   useQuery({ queryKey: [...trackerKeys.reports, 'summary', p], queryFn: () => getSummary(p), ...reportOptions })

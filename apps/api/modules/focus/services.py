@@ -72,7 +72,14 @@ def update_settings(user_id, changes: dict) -> tuple[FocusSettings, list[str]]:
                     changed.append("durations")
     except TimingError as exc:
         raise InvalidInput(exc.args[0], {exc.field or "detail": [exc.args[0]]}) from None
-    for key in ("auto_start_breaks", "auto_start_focus", "sound_enabled", "notifications_enabled", "intro_seen"):
+    for key in (
+        "auto_start_breaks",
+        "auto_start_focus",
+        "overtime_enabled",
+        "sound_enabled",
+        "notifications_enabled",
+        "intro_seen",
+    ):
         if key in changes and getattr(s, key) != changes[key]:
             setattr(s, key, changes[key])
             changed.append(key)
@@ -206,8 +213,18 @@ def _settle(timer: ActiveTimer | None, now: datetime, *, present: bool = False) 
                 timer.version += 1
                 timer.save()
                 return timer
-            _record_round(timer, ended_at=end_at, focus_seconds=timer.planned_seconds, auto_closed=not present)
-            timer = _after_focus(timer, end_at)
+            if timer.overtime_enabled:
+                # Past the planned length the round keeps counting until the student stops it. It only closes by
+                # itself when they have gone (or the extra time hits its cap), at the last time they were seen.
+                if timing.overtime_holds(end_at, timer.last_seen_at, now):
+                    return timer
+                stop = durations.whole_seconds(timing.overtime_stop(end_at, timer.last_seen_at))
+                counted = timing.elapsed(timer.started_at, stop, None, timer.paused_total_seconds)
+                _record_round(timer, ended_at=stop, focus_seconds=max(counted, timer.planned_seconds), auto_closed=True)
+                timer = _after_focus(timer, stop)
+            else:
+                _record_round(timer, ended_at=end_at, focus_seconds=timer.planned_seconds, auto_closed=not present)
+                timer = _after_focus(timer, end_at)
         else:
             timer = _after_break(timer, end_at)
         present = False
@@ -305,6 +322,7 @@ def start(
                 preset=settings.last_preset,
                 auto_start_breaks=settings.auto_start_breaks,
                 auto_start_focus=settings.auto_start_focus,
+                overtime_enabled=settings.overtime_enabled,
                 subject=subject,
                 chapter=chapter,
                 activity_type=tracking._check_activity(
@@ -349,6 +367,11 @@ def extend(user_id, *, version=None) -> ActiveTimer:
     timer = _require(_current(user_id, now, version))
     if timer.phase != "focus" or timer.away_pending:
         raise ConflictError("Only a focus round can be extended.", code="not_extendable")
+    if (
+        timer.overtime_enabled
+        and timing.elapsed(timer.started_at, now, timer.paused_at, timer.paused_total_seconds) >= timer.planned_seconds
+    ):
+        raise ConflictError("The round is already running past its planned length.", code="not_extendable")
     if timer.extension_count >= timing.MAX_EXTENSIONS:
         raise ConflictError("A round can be extended three times.", code="extension_limit")
     if timer.planned_seconds + timing.EXTEND_SECONDS > timing.PLANNED_MAX_SECONDS:
@@ -366,6 +389,11 @@ def complete(user_id, *, version=None) -> ActiveTimer | None:
     """
     now = _now()
     timer = _lock(user_id)
+    if timer and timer.phase == "focus" and timer.overtime_enabled and not timer.away_pending:
+        # Nothing closes at zero any more: the student's own Stop and save does. Reaching zero only shows they are here.
+        timer.last_seen_at = now
+        timer.save(update_fields=["last_seen_at", "updated_at"])
+        return _settle(timer, now)
     if timer and not timer.away_pending:
         due = timing.phase_end_at(timer.started_at, timer.planned_seconds, timer.paused_total_seconds)
         if timer.paused_at is None and 0 < (due - now).total_seconds() <= timing.COMPLETE_TOLERANCE_SECONDS:
@@ -388,8 +416,15 @@ def skip_break(user_id, *, version=None) -> ActiveTimer | None:
 
 
 @transaction.atomic
-def end(user_id, *, client_id=None, version=None, save: bool = True, reason: str = "") -> tuple[object | None, str]:
-    """Ends a focus round early. Returns (session, outcome) with outcome "saved", "too_short" or "discarded"."""
+def end(
+    user_id, *, client_id=None, version=None, save: bool = True, reason: str = ""
+) -> tuple[object | None, str, ActiveTimer | None]:
+    """
+    Ends a focus round. Returns (session, outcome, timer). Before the planned length it is an early end ("saved",
+    "too_short" or "discarded") and nothing follows. Once the round has reached its planned length (overtime) saving it
+    completes the round at the full counted time and the break that is due starts (`timer`), or waits when breaks do
+    not start on their own.
+    """
     now = _now()
     if reason and reason not in timing.REASONS:
         raise InvalidInput("Unknown reason.", {"reason": ["Pick one of the listed reasons."]})
@@ -397,10 +432,14 @@ def end(user_id, *, client_id=None, version=None, save: bool = True, reason: str
     if not timer:
         existing = tracking_selectors.session_by_client_id(user_id, client_id)
         if existing:
-            return existing, "saved"
+            return existing, "saved", _settle(_lock(user_id), now)
         raise NotFoundError("No timer is running.")
     timer = _settle(timer, now)
     if timer is None or timer.phase != "focus" or timer.away_pending:
+        # A retried end whose first attempt went through: the round is saved, and what runs now is whatever followed.
+        existing = tracking_selectors.session_by_client_id(user_id, client_id) if client_id else None
+        if existing:
+            return existing, "saved", timer
         raise _stale(timer, now) if timer else NotFoundError("No timer is running.")
     if version is not None and timer.version != version:
         raise _stale(timer, now)
@@ -408,6 +447,12 @@ def end(user_id, *, client_id=None, version=None, save: bool = True, reason: str
     counted = timing.elapsed(timer.started_at, now, timer.paused_at, timer.paused_total_seconds)
     session = None
     outcome = "discarded"
+    if save and timer.overtime_enabled and counted >= timer.planned_seconds:
+        ended = durations.whole_seconds(stop)
+        counted = min(counted, timer.planned_seconds + timing.OVERTIME_MAX_SECONDS)
+        if _record_round(timer, ended_at=ended, focus_seconds=counted, status="completed", auto_closed=False):
+            session = tracking_selectors.session_by_client_id(user_id, timer.client_id)
+            return session, "completed", _after_focus(timer, ended)
     if save and counted >= timing.MIN_ROUND_SECONDS:
         ended = durations.whole_seconds(stop)
         ok = _record_round(
@@ -420,7 +465,7 @@ def end(user_id, *, client_id=None, version=None, save: bool = True, reason: str
         outcome = "too_short"
     _remember(user_id, cycle_id=timer.cycle_id, cycle_round=timer.round_number - 1, next_phase="focus", at=now)
     timer.delete()
-    return session, outcome
+    return session, outcome, None
 
 
 @transaction.atomic

@@ -26,6 +26,7 @@ class SettingsSerializer(_Optional):
     rounds_before_long = serializers.IntegerField(required=False)
     auto_start_breaks = serializers.BooleanField(required=False)
     auto_start_focus = serializers.BooleanField(required=False)
+    overtime_enabled = serializers.BooleanField(required=False)
     sound_enabled = serializers.BooleanField(required=False)
     volume = serializers.IntegerField(required=False, min_value=0, max_value=100)
     notifications_enabled = serializers.BooleanField(required=False)

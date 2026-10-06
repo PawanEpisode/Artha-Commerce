@@ -37,6 +37,8 @@ def live_kind(user_id) -> str | None:
 def timer_dict(timer: ActiveTimer, now: datetime) -> dict:
     elapsed = timing.elapsed(timer.started_at, now, timer.paused_at, timer.paused_total_seconds)
     running = timer.paused_at is None
+    overtime = timer.phase == "focus" and timer.overtime_enabled and not timer.away_pending
+    extra = timing.overtime_seconds(elapsed, timer.planned_seconds) if overtime else 0
     return {
         "phase": timer.phase,
         "status": "away" if timer.away_pending else "paused" if timer.paused_at else "running",
@@ -50,8 +52,12 @@ def timer_dict(timer: ActiveTimer, now: datetime) -> dict:
             timer.planned_seconds, timer.started_at, now, timer.paused_at, timer.paused_total_seconds
         ),
         "extension_count": timer.extension_count,
+        "overtime_enabled": timer.overtime_enabled,
+        # Seconds counted beyond the planned length; the round keeps running until the student stops it.
+        "overtime_seconds": min(extra, timing.OVERTIME_MAX_SECONDS),
         "can_extend": timer.phase == "focus"
         and not timer.away_pending
+        and not (overtime and elapsed >= timer.planned_seconds)
         and timer.extension_count < timing.MAX_EXTENSIONS,
         "started_at": timer.started_at,
         "paused_at": timer.paused_at,
@@ -98,6 +104,7 @@ def settings_dict(s: FocusSettings) -> dict:
         "rounds_before_long": s.rounds_before_long,
         "auto_start_breaks": s.auto_start_breaks,
         "auto_start_focus": s.auto_start_focus,
+        "overtime_enabled": s.overtime_enabled,
         "sound_enabled": s.sound_enabled,
         "volume": s.volume,
         "notifications_enabled": s.notifications_enabled,

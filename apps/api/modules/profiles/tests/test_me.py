@@ -46,14 +46,22 @@ def test_the_bootstrap_creates_the_profile_and_onboarding_rows_lazily(api):
     assert Profile.objects.filter(pk=USER).exists() and Onboarding.objects.filter(pk=USER).exists()
 
 
-def test_the_provider_name_is_only_a_suggestion_until_the_student_confirms_it(make_token, db):
+def test_a_google_student_starts_with_the_provider_name_and_it_satisfies_the_name_step(make_token, db):
     from modules.profiles.tests.conftest import Api
 
     google = Api(make_token(user_metadata={"full_name": "Aarav Mehta", "picture": "https://img.example/a.png"}))
     body = google.get("/me/").json_body
-    assert body["full_name"] == "" and body["name_suggestion"] == "Aarav Mehta"
-    assert body["onboarding"]["next_step"] == "profile"  # confirming the name is a real step
-    assert Profile.objects.get(pk=USER).avatar_url == "https://img.example/a.png"  # kept for "Use my Google photo"
+    assert body["full_name"] == "Aarav Mehta" and body["first_name"] == "Aarav"
+    assert body["onboarding"]["next_step"] == "course" and "profile" not in body["onboarding"]["missing"]
+    assert Profile.objects.get(pk=USER).avatar_url == "https://img.example/a.png"  # not Google-hosted: never fetched
+
+
+def test_an_unusable_provider_name_is_not_stored(make_token, db):
+    from modules.profiles.tests.conftest import Api
+
+    google = Api(make_token(user_metadata={"full_name": "bad\u202ename"}))
+    body = google.get("/me/").json_body
+    assert body["full_name"] == "" and body["onboarding"]["next_step"] == "profile"
 
 
 def test_the_suggestion_comes_from_the_email_when_there_is_no_provider_name(api):

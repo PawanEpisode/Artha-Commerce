@@ -5,7 +5,16 @@ import type { ReactNode } from 'react'
 import type { PublicCourse } from '../lib/load'
 
 /** The public catalog. Signed-in students are sent home before this paints. */
-export function CoursesIndex({ courses, prompt }: { courses: PublicCourse[]; prompt?: ReactNode }) {
+export function CoursesIndex({
+  courses,
+  prompt,
+  backHome = false,
+}: {
+  courses: PublicCourse[]
+  prompt?: ReactNode
+  /** Signed-in student exploring other courses: offer the way back to their own. */
+  backHome?: boolean
+}) {
   return (
     <Container className="py-12 sm:py-20">
       <header className="max-w-2xl">
@@ -15,6 +24,13 @@ export function CoursesIndex({ courses, prompt }: { courses: PublicCourse[]; pro
           Open a course to read its papers and chapters. Tick what you have finished once you are signed in.
         </p>
       </header>
+      {backHome ? (
+        <p className="mt-6">
+          <Link to="/" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
+            Back to your course
+          </Link>
+        </p>
+      ) : null}
       {prompt ? <div className="mt-10">{prompt}</div> : null}
       <ul className="mt-8 grid list-none gap-5 md:grid-cols-3">
         {courses.map((c) => {

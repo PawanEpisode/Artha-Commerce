@@ -51,6 +51,7 @@ type Listener = () => void
 let records: ToastRecord[] = []
 let counter = 0
 const listeners = new Set<Listener>()
+const showListeners = new Set<(record: ToastRecord) => void>()
 
 function emit(next: ToastRecord[]) {
   records = next
@@ -65,6 +66,13 @@ export const toastStore = {
     }
   },
   getSnapshot: () => records,
+  /** Observes every toast that is shown or updated (analytics). Receives the record; returns an unsubscribe. */
+  onShow(listener: (record: ToastRecord) => void) {
+    showListeners.add(listener)
+    return () => {
+      showListeners.delete(listener)
+    }
+  },
   /** Physically remove a toast (after its exit animation). */
   remove(id: string) {
     emit(records.filter((r) => r.id !== id))
@@ -96,6 +104,8 @@ function push(variant: ToastVariant, title: string, options: ToastOptions = {}):
     const overflow = live.length >= MAX_VISIBLE ? live.slice(0, live.length - MAX_VISIBLE + 1).map((r) => r.id) : []
     emit([...records.filter((r) => !overflow.includes(r.id)), record])
   }
+  // A loading toast is only a placeholder for the result that follows it.
+  if (variant !== 'loading') showListeners.forEach((l) => l(record))
   return id
 }
 

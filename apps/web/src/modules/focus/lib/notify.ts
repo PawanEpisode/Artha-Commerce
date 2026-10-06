@@ -22,11 +22,13 @@ export const notify = {
   /** `outcome` is the server's word for what happened to the round. */
   ended: (opts: { saved: boolean; outcome?: string; queued?: boolean }) => {
     if (opts.queued) return notify.queued()
+    if (opts.saved && opts.outcome === 'completed') return toast.success('Round saved', { id: ID.timer })
     if (opts.saved && opts.outcome === 'saved') return toast.success('Saved as a partial round', { id: ID.timer })
     if (opts.saved && opts.outcome === 'too_short') return toast.info('Under a minute, so not saved', { id: ID.timer })
     return toast.info('Round discarded', { id: ID.timer, description: 'Nothing was saved.' })
   },
   /** A round or break ran out: "Focus round done" and what comes next. */
+  targetReached: (alert: Alert) => toast.success(alert.title, { id: ID.phase, description: alert.body }),
   phaseEnded: (alert: Alert) => toast.success(alert.title, { id: ID.phase, description: alert.body }),
   claimed: (counted: boolean) =>
     counted

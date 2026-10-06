@@ -311,6 +311,20 @@ class DueView(CoverageView):
         )
 
 
+class ContinueView(CoverageView):
+    """The most recently studied chapter with its percent, or `{"chapter": null}` when nothing was studied yet."""
+
+    def get(self, request):
+        enrollment = self.active_enrollment(request)
+        p = selectors.last_studied(enrollment)
+        if p is None:
+            return Response({"chapter": None})
+        counts = selectors.topic_counts(request.user.id, [p.chapter_id])
+        row = serializers.chapter_row(p.chapter, p, counts[p.chapter_id], selectors.get_targets(request.user.id))
+        subject = {"id": str(p.chapter.subject_id), "key": p.chapter.subject.key, "name": p.chapter.subject.name}
+        return Response({"chapter": {**row, "subject": subject}})
+
+
 class SettingsView(CoverageView):
     """
     GET reads (always allowed). PUT saves weights and revision gaps and/or the student's study targets. A write that

@@ -30,6 +30,7 @@ urlpatterns = [
     path("coverage/topics/<uuid:topic_id>/", views.TopicTickView.as_view(), name="coverage-topic"),
     path("coverage/catchup/", views.CatchupView.as_view(), name="coverage-catchup"),
     path("coverage/events/", views.EventView.as_view(), name="coverage-events"),
+    path("coverage/continue/", views.ContinueView.as_view(), name="coverage-continue"),
     path("coverage/due/", views.DueView.as_view(), name="coverage-due"),
     path("coverage/settings/", views.SettingsView.as_view(), name="coverage-settings"),
     path("coverage/settings/targets/preview/", views.TargetsPreviewView.as_view(), name="coverage-targets-preview"),

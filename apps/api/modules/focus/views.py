@@ -149,7 +149,7 @@ class TimerClaimView(WriteView):
 class TimerEndView(WriteView):
     def post(self, request):
         d = self.parse(serializers.EndSerializer, request.data).validated_data
-        session, outcome = services.end(
+        session, outcome, timer = services.end(
             request.user.id,
             client_id=d.get("client_id"),
             version=d.get("version"),
@@ -159,7 +159,7 @@ class TimerEndView(WriteView):
         return Response(
             _payload(
                 request.user.id,
-                None,
+                timer,
                 outcome=outcome,
                 session=session_dict(tracking_selectors.get_session(request.user.id, session.id)) if session else None,
             )

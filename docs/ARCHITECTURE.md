@@ -70,6 +70,7 @@ integrations/ (Gemini)  core/ (auth, errors, pagination, health)
 - **Connection management**: runtime through Supabase's transaction pooler (pgbouncer), prepared statements and server-side cursors disabled, `conn_max_age=0`. Migrations use the direct connection.
 - **Availability**: Vercel multi-instance serverless + Supabase Pro managed Postgres (backups, PITR add-on). `/health/` (liveness) and `/health/ready/` (readiness) for monitors.
 - **Security**: Supabase Data API disabled, RLS on every public table after migrate, DRF throttling, CORS allow-list, HSTS in production, per-user scoping.
+- **Request retries (web)**: one policy for every read, `apps/web/src/lib/retry.ts`. A failing request is tried at most 5 times in total (the first call included), with back-off and the server's `Retry-After` honoured; a 4xx answer other than 408, 425 and 429 is final and never repeated. Writes are not retried automatically; queued offline writes follow the same cap. Change `MAX_API_CALLS` there, nowhere else.
 - **Durability**: all state in Postgres. Long or retryable work is designed as idempotent jobs (Supabase `pg_cron` / Vercel Cron) rather than inside requests.
 - **Consistent contract**: errors are `{"error": {code, message, details}}`, lists are paginated.
 

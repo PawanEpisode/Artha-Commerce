@@ -25,6 +25,8 @@ class FocusSettings(TimeStampedModel):
     rounds_before_long = models.SmallIntegerField(default=4)
     auto_start_breaks = models.BooleanField(default=True)
     auto_start_focus = models.BooleanField(default=False)
+    # Keep a focus round running past its planned length until the student stops it (then the break starts).
+    overtime_enabled = models.BooleanField(default=True)
     sound_enabled = models.BooleanField(default=True)
     volume = models.SmallIntegerField(default=70)
     notifications_enabled = models.BooleanField(default=False)
@@ -88,6 +90,8 @@ class ActiveTimer(TimeStampedModel):
     rounds_before_long = models.SmallIntegerField()
     auto_start_breaks = models.BooleanField(default=True)
     auto_start_focus = models.BooleanField(default=False)
+    # Snapshot of the setting when the round started, like the other `auto_*` flags. Rows from before default to off.
+    overtime_enabled = models.BooleanField(default=False)
     subject = models.ForeignKey("syllabus.Subject", null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
     chapter = models.ForeignKey("syllabus.Chapter", null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
     activity_type = models.CharField(max_length=10, choices=ACTIVITY_CHOICES, default="other")

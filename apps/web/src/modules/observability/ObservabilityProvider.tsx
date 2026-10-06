@@ -6,6 +6,8 @@ import { type ReactNode, useEffect } from 'react'
 import { env } from '~/lib/env'
 import { useAuth } from '~/modules/auth'
 
+import { useToastAnalytics } from './toastAnalytics'
+
 let initialised = false
 
 function initOnce() {
@@ -40,6 +42,7 @@ function initOnce() {
 export function ObservabilityProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
   const { user } = useAuth()
+  useToastAnalytics()
 
   useEffect(() => {
     initOnce()

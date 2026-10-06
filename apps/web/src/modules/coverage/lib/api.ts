@@ -6,6 +6,7 @@ import type {
   ChapterCoverage,
   ChapterState,
   Confidence,
+  ContinueChapter,
   CoverageSettings,
   Due,
   ElectivesResult,
@@ -84,6 +85,7 @@ export const getOverview = () => api<Overview>('/coverage/overview/')
 export const getSubject = (id: string) => api<SubjectCoverage>(`/coverage/subjects/${id}/`)
 export const getChapter = (id: string) => api<ChapterCoverage>(`/coverage/chapters/${id}/`)
 export const getDue = () => api<Due>('/coverage/due/')
+export const getContinue = async () => (await api<{ chapter: ContinueChapter | null }>('/coverage/continue/')).chapter
 
 /** Path and body of each idempotent write, shared by the live call and the offline queue that replays it. */
 export const topicTickRequest = (topicId: string, done: boolean, clientId: string) => ({

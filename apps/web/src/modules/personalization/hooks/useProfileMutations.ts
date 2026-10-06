@@ -1,7 +1,7 @@
 import { type QueryClient, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useRef, useState } from 'react'
 
-import { track } from '~/modules/observability'
+import { lengthBucket, track } from '~/modules/observability'
 
 import { deleteAvatar, patchName, putPreset, uploadAvatar } from '../lib/api'
 import { personalizationKeys } from '../lib/keys'
@@ -17,8 +17,9 @@ export function useUpdateName() {
   const qc = useQueryClient()
   return useMutation({
     mutationFn: patchName,
-    onSuccess: (bootstrap) => {
+    onSuccess: (bootstrap, fullName) => {
       qc.setQueriesData({ queryKey: personalizationKeys.bootstrap }, bootstrap)
+      track('profile_name_changed', { length_bucket: lengthBucket(fullName.trim().length) })
       notify.nameSaved()
     },
   })

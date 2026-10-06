@@ -30,6 +30,7 @@ def test_settings_default_and_update(api):
         "rounds_before_long": 4,
         "auto_start_breaks": True,
         "auto_start_focus": False,
+        "overtime_enabled": True,
         "sound_enabled": True,
         "volume": 70,
         "notifications_enabled": False,

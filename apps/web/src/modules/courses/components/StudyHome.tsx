@@ -77,24 +77,35 @@ export function StudyHome({ courses, view, firstName, prompt }: Props) {
           <>
             {prompt ? <div className="mt-10">{prompt}</div> : null}
             {enrolled ? (
-              <Card className="mt-5 flex flex-col gap-6 p-7 sm:flex-row sm:items-center sm:justify-between">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-display text-5xl font-extrabold text-primary">{enrolled.name}</span>
-                    <Badge variant="accent">Your course</Badge>
+              <>
+                <Card className="mt-5 flex flex-col gap-6 p-7 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="font-display text-5xl font-extrabold text-primary">{enrolled.name}</span>
+                      <Badge variant="accent">Your course</Badge>
+                    </div>
+                    <h2 className="mt-4 text-lg font-semibold">{enrolled.fullName}</h2>
+                    <p className="mt-1 text-sm text-muted-foreground">{enrolled.tagline}</p>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {enrolled.levels.map((level) => level.name).join(' · ')}
+                    </p>
                   </div>
-                  <h2 className="mt-4 text-lg font-semibold">{enrolled.fullName}</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">{enrolled.tagline}</p>
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {enrolled.levels.map((level) => level.name).join(' · ')}
-                  </p>
-                </div>
-                <Button variant="outline" arrow className="w-full shrink-0 sm:w-auto" asChild>
-                  <Link to="/courses/$course" params={{ course: enrolled.slug }}>
-                    Browse {enrolled.name} papers
+                  <Button variant="outline" arrow className="w-full shrink-0 sm:w-auto" asChild>
+                    <Link to="/courses/$course" params={{ course: enrolled.slug }}>
+                      Browse {enrolled.name} papers
+                    </Link>
+                  </Button>
+                </Card>
+                <p className="mt-4">
+                  <Link
+                    to="/courses"
+                    search={{ all: 1 }}
+                    className="text-sm font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    Explore other courses
                   </Link>
-                </Button>
-              </Card>
+                </p>
+              </>
             ) : (
               <ul className="mt-8 grid list-none gap-5 md:grid-cols-3">
                 {courses.map((course) => (

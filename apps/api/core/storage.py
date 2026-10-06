@@ -12,6 +12,8 @@ from typing import Protocol
 import httpx
 from django.conf import settings
 
+from .http import service_role_headers
+
 logger = logging.getLogger(__name__)
 
 TIMEOUT = httpx.Timeout(10.0, connect=3.0)
@@ -34,11 +36,13 @@ class Storage(Protocol):
 class SupabaseStorage:
     def __init__(self, base_url: str, service_key: str):
         self._base = f"{base_url.rstrip('/')}/storage/v1"
-        self._headers = {"Authorization": f"Bearer {service_key}", "apikey": service_key}
+        self._headers = service_role_headers(service_key)
 
-    def _request(self, method: str, url: str, **kwargs) -> httpx.Response:
+    def _request(self, method: str, url: str, *, headers: dict[str, str] | None = None, **kwargs) -> httpx.Response:
         try:
-            response = httpx.request(method, url, headers=self._headers, timeout=TIMEOUT, **kwargs)
+            response = httpx.request(
+                method, url, headers={**self._headers, **(headers or {})}, timeout=TIMEOUT, **kwargs
+            )
         except httpx.HTTPError as exc:
             raise StorageError(f"Storage unreachable: {type(exc).__name__}") from exc
         if response.status_code >= 400:
@@ -51,7 +55,6 @@ class SupabaseStorage:
             f"{self._base}/object/{bucket}/{path}",
             content=data,
             headers={
-                **self._headers,
                 "content-type": content_type,
                 "cache-control": cache_control,
                 "x-upsert": "false",

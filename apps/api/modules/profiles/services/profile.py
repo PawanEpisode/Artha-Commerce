@@ -7,26 +7,36 @@ from django.utils import timezone
 
 from core import events
 from core.authentication import SupabaseUser
+from core.feature_flags import flag_enabled
 
-from ..domain.names import normalize_name
+from ..domain.names import normalize_name, provider_name
+from ..flags import AVATAR_FLAG
 from ..models import Onboarding, Profile
 from ..selectors import get_profile
+from .provider_photo import import_provider_photo
 
 
 def get_or_create_profile(user: SupabaseUser) -> Profile:
     """
-    Profiles are created lazily on the first authenticated request. The name is NOT copied from the provider: the
-    student confirms it in onboarding (the suggestion is served separately), so "has a name" always means they chose it.
-    The provider photo URL is kept only as the source for the optional "Use my Google photo" action.
+    Profiles are created lazily on the first authenticated request. A student who signs in with Google starts with the
+    name and photo Google vouches for, so the workspace greets them properly from the first screen; they can change
+    either in onboarding or in Account. Email sign-ups start empty and confirm a suggestion in onboarding.
     """
     existing = get_profile(user.id)
     if existing:
         return existing
     meta = user.claims.get("user_metadata", {}) or {}
-    profile, _ = Profile.objects.get_or_create(
+    photo = meta.get("avatar_url") or meta.get("picture") or ""
+    profile, created = Profile.objects.get_or_create(
         pk=user.id,
-        defaults={"email": user.email, "avatar_url": meta.get("avatar_url") or meta.get("picture") or ""},
+        defaults={
+            "email": user.email,
+            "full_name": provider_name(user.claims),
+            "avatar_url": photo if len(photo) <= 200 else "",
+        },
     )
+    if created and photo and flag_enabled(AVATAR_FLAG, user.id) and import_provider_photo(user.id, photo):
+        profile.refresh_from_db()
     return profile
 
 

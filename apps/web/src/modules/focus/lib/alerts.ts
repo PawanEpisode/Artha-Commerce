@@ -25,3 +25,9 @@ export function describeTransition(prev: FocusTimer | null, next: FocusTimer | n
     ? { title: 'Break is over', body: `Round ${next.round_number} of ${next.rounds_before_long} has started.` }
     : { title: 'Break is over', body: 'Ready for the next round?' }
 }
+
+/** The planned length was reached and the round keeps running: tell the student once, without ending anything. */
+export const TARGET_REACHED: Alert = {
+  title: 'Round target reached',
+  body: 'Keep going, or press Stop and save when you are done. Your break starts then.',
+}

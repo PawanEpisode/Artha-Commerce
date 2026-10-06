@@ -47,7 +47,7 @@ function Hero({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] 
         </div>
       </div>
       <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-        <OfferButton offer={offer} size="lg" variant="cta" className="w-full sm:w-auto" onOpen={onOpen} />
+        <OfferButton offer={offer} size="lg" variant="cta" className="w-full sm:w-auto sm:max-w-full" onOpen={onOpen} />
         <BrowseButton offer={offer} className="w-full sm:w-auto" onOpen={onOpen} />
         <HowItWorks slug={feature.slug} title={feature.title} className="w-full sm:w-auto" />
       </div>
@@ -58,13 +58,13 @@ function Hero({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] 
 function ReadyCard({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] }) {
   const { feature } = offer
   return (
-    <Card className="flex h-full flex-col p-6">
+    <Card className="flex h-full min-w-0 flex-col p-6">
       <span className="grid size-12 place-items-center rounded-xl bg-secondary text-primary">
         <FeatureIcon name={feature.icon} className="size-6" />
       </span>
       <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
       <p className="mt-1 flex-1 text-sm text-muted-foreground">{feature.tagline}</p>
-      <div className="mt-5 flex flex-col gap-2">
+      <div className="mt-5 flex min-w-0 flex-col gap-2">
         <OfferButton offer={offer} variant="default" fullWidth onOpen={onOpen} />
         <BrowseButton offer={offer} fullWidth onOpen={onOpen} />
         <HowItWorks slug={feature.slug} title={feature.title} fullWidth />
@@ -98,7 +98,7 @@ export function FeaturesIndex({ ready, soon, onOpen }: Props) {
       {rest.length > 0 ? (
         <ul className="mt-5 grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((offer) => (
-            <li key={offer.feature.slug}>
+            <li key={offer.feature.slug} className="min-w-0">
               <ReadyCard offer={offer} onOpen={onOpen} />
             </li>
           ))}

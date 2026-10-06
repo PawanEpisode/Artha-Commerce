@@ -62,3 +62,26 @@ describe('groupFeatures', () => {
     expect(soon.some((o) => o.feature.status === 'live')).toBe(false)
   })
 })
+
+describe('personalised ordering and wording', () => {
+  const slugs = (v: FeatureViewer) => groupFeatures(features, v).ready.map((o) => o.feature.slug)
+
+  it('keeps catalog order for a guest and for a student with no usage data', () => {
+    expect(slugs(guest)).toEqual(slugs(student))
+    expect(slugs({ ...student, used: new Set() })).toEqual(slugs(student))
+  })
+
+  it('puts tools the student has not used before the ones they have', () => {
+    const order = slugs({ ...student, used: new Set(['time-tracker', 'streaks-analytics', 'syllabus-tracker']) })
+    expect(order[0]).toBe('pomodoro-focus-timer')
+    expect(order.slice(-3)).toEqual(['syllabus-tracker', 'time-tracker', 'streaks-analytics'])
+  })
+
+  it('names the course on the syllabus offer, for a signed-in student only', () => {
+    expect(offerFor(bySlug('syllabus-tracker'), { ...student, courseName: 'CMA Final' }).label).toBe(
+      'Open your CMA Final syllabus',
+    )
+    expect(offerFor(bySlug('syllabus-tracker'), { ...guest, courseName: 'CMA Final' }).label).not.toMatch(/CMA/)
+    expect(offerFor(bySlug('time-tracker'), { ...student, courseName: 'CMA Final' }).label).toBe("Log today's hours")
+  })
+})

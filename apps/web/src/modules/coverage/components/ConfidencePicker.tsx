@@ -1,5 +1,5 @@
 import { Button, ConfidenceDot, confidenceLabel, Lock } from '@artha/design-system'
-import { useId } from 'react'
+import { useEffect, useId } from 'react'
 
 import { confidenceHint } from '../lib/rules'
 import type { Confidence } from '../lib/types'
@@ -16,6 +16,7 @@ export function ConfidencePicker({
   disabled,
   coveragePct,
   unlocked,
+  onLockedShown,
 }: {
   value: Confidence | null
   onChange: (v: Confidence | null) => void
@@ -23,8 +24,16 @@ export function ConfidencePicker({
   coveragePct: number
   /** `confidenceAllowed(coveragePct)`, passed in so the container owns the rule once. */
   unlocked: boolean
+  /** Fired once each time the locked state appears (the lock is the "blocked" moment: disabled buttons take no clicks). */
+  onLockedShown?: () => void
 }) {
   const hintId = useId()
+  const locked = !unlocked
+  useEffect(() => {
+    if (locked) onLockedShown?.()
+    // Once per appearance of the lock, not on every render of the callback.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locked])
   return (
     <div className="space-y-3">
       <div role="group" aria-label="How confident do you feel about this chapter?" className="flex flex-wrap gap-2">

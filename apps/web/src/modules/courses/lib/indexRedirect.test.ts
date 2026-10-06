@@ -13,10 +13,10 @@ function fakeStorage(initial: Record<string, string>) {
   }
 }
 
-function run(pathname: string, storage: Record<string, string>): string | null {
+function run(pathname: string, storage: Record<string, string>, search = ''): string | null {
   let to: string | null = null
   vi.stubGlobal('localStorage', fakeStorage(storage))
-  vi.stubGlobal('location', { pathname, replace: (url: string) => (to = url) })
+  vi.stubGlobal('location', { pathname, search, replace: (url: string) => (to = url) })
   new Function(COURSES_INDEX_REDIRECT_SCRIPT)()
   return to
 }
@@ -29,6 +29,12 @@ describe('courses index redirect', () => {
   it('sends a signed-in student from the index to the home', () => {
     expect(run('/courses', { 'sb-abc-auth-token': session })).toBe('/')
     expect(run('/courses/', { 'sb-abc-auth-token': session })).toBe('/')
+  })
+
+  it('keeps a signed-in student on the catalog when they asked to explore all courses', () => {
+    expect(run('/courses', { 'sb-abc-auth-token': session }, '?all=1')).toBeNull()
+    expect(run('/courses', { 'sb-abc-auth-token': session }, '?x=1&all=1')).toBeNull()
+    expect(run('/courses', { 'sb-abc-auth-token': session }, '?all=10')).toBe('/')
   })
 
   it('leaves the public catalog and the syllabus pages alone', () => {

@@ -2,13 +2,14 @@ import { useQueryClient } from '@tanstack/react-query'
 import { type ReactNode, useCallback } from 'react'
 
 import { PostAuthProvider, type PostAuthResolver, safeNextPath, useAuth } from '~/modules/auth'
-import { useFeatureFlag } from '~/modules/observability'
+import { track, useFeatureFlag } from '~/modules/observability'
 
 import { bootstrapKey } from '../hooks/useBootstrap'
 import { getBootstrap } from '../lib/api'
-import { resolvePostAuthDestination } from '../lib/destination'
+import { explicitDeepLink, resolvePostAuthDestination } from '../lib/destination'
 import { newestVisit, readLocalVisit } from '../lib/lastVisit'
 import { isRestorable } from '../lib/restorable'
+import { restoreEvent } from '../lib/visitAnalytics'
 
 /**
  * Plugs the destination rules (PRD 5.1) into every sign-in surface. Mounted once under the auth provider. When the
@@ -25,8 +26,12 @@ export function PersonalizedPostAuth({ children }: { children: ReactNode }) {
       if (!enabled || !userId) return safeNextPath(next)
       try {
         const facts = await qc.fetchQuery({ queryKey: bootstrapKey(userId), queryFn: getBootstrap, staleTime: 0 })
-        const last_visit = newestVisit(facts.last_visit, readLocalVisit(userId))
-        return resolvePostAuthDestination({ ...facts, last_visit }, next, { isRestorable })
+        const local = readLocalVisit(userId)
+        const last_visit = newestVisit(facts.last_visit, local)
+        const destination = resolvePostAuthDestination({ ...facts, last_visit }, next, { isRestorable })
+        const restored = restoreEvent(destination, last_visit, local)
+        if (restored && !explicitDeepLink(next)) track('last_visit_restored', { ...restored })
+        return destination
       } catch {
         return safeNextPath(next)
       }

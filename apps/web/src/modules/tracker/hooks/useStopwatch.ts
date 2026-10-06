@@ -64,7 +64,6 @@ export function useStopwatch() {
     },
     refetchInterval: (q) => (q.state.data?.stopwatch ? 30_000 : false),
     refetchOnWindowFocus: true,
-    retry: (count, error) => !isFeatureDisabled(error) && count < 1,
   })
   const state = query.data
   const sw = state?.stopwatch ?? null

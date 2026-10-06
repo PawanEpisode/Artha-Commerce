@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from '@tanstack/react-router'
 import { type ReactNode, useEffect } from 'react'
 
 import { useAuth } from '~/modules/auth'
-import { useFeatureFlag } from '~/modules/observability'
+import { track, useFeatureFlag } from '~/modules/observability'
 
 import { LoadErrorPanel, WorkspaceSkeleton } from '../components/LoadStates'
 import { useBootstrap } from '../hooks/useBootstrap'
@@ -34,7 +34,10 @@ export function RequireOnboarded({ children }: { children: ReactNode }) {
 
   const mustOnboard = enabled && !onOnboarding && complete === false
   useEffect(() => {
-    if (mustOnboard) void navigate({ to: onboardingPath(href), replace: true })
+    if (mustOnboard) {
+      track('onboarding_gate_redirected', { from_kind: 'app' })
+      void navigate({ to: onboardingPath(href), replace: true })
+    }
   }, [mustOnboard, navigate, href])
 
   if (!enabled || onOnboarding || complete) return <>{children}</>

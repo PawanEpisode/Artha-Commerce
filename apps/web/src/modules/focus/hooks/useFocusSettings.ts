@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 import { track } from '~/modules/observability'
 
-import { getSettings, isFeatureDisabled, putSettings } from '../lib/api'
+import { getSettings, putSettings } from '../lib/api'
 import { focusKeys } from '../lib/keys'
 import type { FocusSettings, FocusState } from '../lib/types'
 
@@ -10,7 +10,6 @@ export const useFocusSettings = () =>
   useQuery({
     queryKey: focusKeys.settings,
     queryFn: getSettings,
-    retry: (count, error) => !isFeatureDisabled(error) && count < 1,
   })
 
 export function useSaveFocusSettings() {

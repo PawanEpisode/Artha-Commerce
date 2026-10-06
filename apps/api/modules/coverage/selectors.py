@@ -249,6 +249,16 @@ def due_for_revision(enrollment: Enrollment, today: date) -> list[ChapterProgres
     return rows
 
 
+def last_studied(enrollment: Enrollment) -> ChapterProgress | None:
+    """The chapter the student touched most recently (any activity), for "Continue where you left off"."""
+    return (
+        ChapterProgress.objects.select_related("chapter__subject")
+        .filter(enrollment=enrollment, is_excluded=False, last_studied_at__isnull=False)
+        .order_by("-last_studied_at")
+        .first()
+    )
+
+
 def export_all(user_id) -> dict:
     """Everything coverage stores about the student (FR-29)."""
     settings = get_settings(user_id)

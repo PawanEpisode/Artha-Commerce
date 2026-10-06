@@ -30,6 +30,10 @@ MIN_ROUND_SECONDS = 60
 PLANNED_MIN_SECONDS, PLANNED_MAX_SECONDS = 60, 14400
 COMPLETE_TOLERANCE_SECONDS = 2  # the client may report the end a moment before the server's clock reaches it
 HEARTBEAT_SECONDS = 20
+# Overtime: a focus round that reaches its planned length keeps counting until the student stops it. It never runs
+# unattended: once the tab has not been seen for the presence window the round closes at the last sighting, and the
+# extra time is capped.
+OVERTIME_MAX_SECONDS = 2 * 3600
 
 PHASES = ("focus", "short_break", "long_break")
 REASONS = ("distracted", "phone_call", "tired", "urgent_work", "other")
@@ -116,3 +120,23 @@ def was_present(last_seen_at: datetime, end_at: datetime) -> bool:
 
 def cycle_fresh(updated_at: datetime | None, now: datetime) -> bool:
     return updated_at is not None and (now - updated_at).total_seconds() <= CYCLE_MEMORY_SECONDS
+
+
+def overtime_seconds(elapsed_seconds: int, planned: int) -> int:
+    """Seconds counted beyond the planned length of a focus round (0 until it is reached)."""
+    return max(0, elapsed_seconds - planned)
+
+
+def overtime_holds(end_at: datetime, last_seen_at: datetime, now: datetime) -> bool:
+    """
+    A round past its planned end keeps running while the student is still there (the tab was seen within the presence
+    window) and the extra time is under the cap. Otherwise it closes at the last sighting.
+    """
+    return (now - last_seen_at).total_seconds() <= PRESENCE_WINDOW_SECONDS and (
+        now - end_at
+    ).total_seconds() < OVERTIME_MAX_SECONDS
+
+
+def overtime_stop(end_at: datetime, last_seen_at: datetime) -> datetime:
+    """Where an abandoned overtime round closes: the last time the student was seen, never before the planned end."""
+    return min(max(end_at, last_seen_at), end_at + timedelta(seconds=OVERTIME_MAX_SECONDS))

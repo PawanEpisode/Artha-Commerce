@@ -16,6 +16,19 @@ export function remainingSeconds(t: Clocked & Pick<FocusTimer, 'planned_seconds'
   return Math.max(0, t.planned_seconds - elapsedSeconds(t, nowMs))
 }
 
+/**
+ * Extra focus time: how far a round has run past its planned length, or null when it has not (or cannot: breaks,
+ * rounds started with overtime off). Derived from the clock like everything else, so it matches the server.
+ */
+export function overtimeOf(
+  t: Clocked & Pick<FocusTimer, 'planned_seconds' | 'phase' | 'status' | 'overtime_enabled'>,
+  nowMs: number,
+): number | null {
+  if (t.phase !== 'focus' || !t.overtime_enabled || t.status === 'away') return null
+  const extra = elapsedSeconds(t, nowMs) - t.planned_seconds
+  return extra >= 0 ? extra : null
+}
+
 /** True once a running phase has reached zero. A paused phase never finishes by itself. */
 export function isFinished(t: Clocked & Pick<FocusTimer, 'planned_seconds' | 'status'>, nowMs: number): boolean {
   return t.status === 'running' && remainingSeconds(t, nowMs) === 0
@@ -24,6 +37,9 @@ export function isFinished(t: Clocked & Pick<FocusTimer, 'planned_seconds' | 'st
 export function percentDone(t: Clocked & Pick<FocusTimer, 'planned_seconds'>, nowMs: number): number {
   return t.planned_seconds > 0 ? Math.min(100, (elapsedSeconds(t, nowMs) / t.planned_seconds) * 100) : 0
 }
+
+/** `+12:03`: extra focus time after the planned length. */
+export const formatOvertime = (seconds: number) => `+${formatRemaining(seconds)}`
 
 /** 24:12 under an hour, 1:05:00 from one hour on. */
 export function formatRemaining(seconds: number): string {
@@ -52,7 +68,8 @@ export const PHASE_LABEL: Record<Phase, string> = {
 export function tabTitle(t: FocusTimer | null, nowMs: number, base: string): string {
   if (!t) return base
   if (t.status === 'away') return `Did you finish? · ${base}`
-  const clock = formatRemaining(remainingSeconds(t, nowMs))
+  const extra = overtimeOf(t, nowMs)
+  const clock = extra === null ? formatRemaining(remainingSeconds(t, nowMs)) : formatOvertime(extra)
   const label = t.phase === 'focus' ? 'Focus' : 'Break'
   return t.status === 'paused' ? `Paused ${clock}` : `${clock} ${label}`
 }

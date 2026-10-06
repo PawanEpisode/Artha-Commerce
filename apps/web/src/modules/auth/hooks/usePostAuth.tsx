@@ -20,12 +20,12 @@ export function PostAuthProvider({ resolve, children }: { resolve: PostAuthResol
 
 export const usePostAuthResolver = () => useContext(PostAuthContext)
 
-/** `goAfterAuth(next)` resolves the destination, then replaces the current history entry with it. */
+/** `goAfterAuth(next)` resolves the destination, replaces the current history entry with it and returns it. */
 export function useGoAfterAuth() {
   const resolve = usePostAuthResolver()
   const navigate = useNavigate()
   return useCallback(
-    async (next?: string) => {
+    async (next?: string): Promise<string> => {
       let to: string
       try {
         to = await resolve(next)
@@ -33,6 +33,7 @@ export function useGoAfterAuth() {
         to = safeNextPath(next)
       }
       await navigate({ to, replace: true })
+      return to
     },
     [resolve, navigate],
   )

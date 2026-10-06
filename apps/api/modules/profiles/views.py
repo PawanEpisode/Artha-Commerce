@@ -28,9 +28,9 @@ from .errors import (
     PersonalizationDisabled,
     StepNotFound,
 )
+from .flags import AVATAR_FLAG
 
 PERSONALIZATION_FLAG = "personalization"
-AVATAR_FLAG = "profile_avatar"
 #: Multipart framing on top of the file itself.
 MULTIPART_OVERHEAD = 4_096
 
