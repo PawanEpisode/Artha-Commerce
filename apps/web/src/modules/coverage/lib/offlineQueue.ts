@@ -7,6 +7,8 @@
  * fall back to memory when IndexedDB is unavailable (private mode, old browsers, SSR).
  */
 
+import { MAX_API_CALLS } from '~/lib/retry'
+
 export interface QueuedWrite {
   /** The idempotency key. Also the storage key, so queuing the same write twice keeps one entry. */
   clientId: string
@@ -23,8 +25,8 @@ export interface QueuedWrite {
 
 const DB_NAME = 'artha-coverage'
 const STORE = 'writes'
-/** A flush gives up on an entry the server keeps rejecting this many times in a row. */
-const MAX_ATTEMPTS = 8
+/** A flush gives up on an entry the server keeps failing this many times in a row (the same cap as every other call). */
+const MAX_ATTEMPTS = MAX_API_CALLS
 
 interface Backend {
   put: (entry: QueuedWrite) => Promise<void>

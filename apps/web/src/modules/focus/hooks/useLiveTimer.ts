@@ -12,7 +12,6 @@ export function useLiveTimer() {
   const query = useQuery({
     queryKey: focusKeys.timer,
     queryFn: fetchTimerState,
-    retry: (count, error) => !isFeatureDisabled(error) && count < 1,
   })
   return { live: query.data?.live ?? 'none', featureDisabled: isFeatureDisabled(query.error) }
 }

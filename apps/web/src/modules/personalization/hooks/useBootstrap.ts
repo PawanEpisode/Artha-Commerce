@@ -19,7 +19,6 @@ export function useBootstrap() {
     queryFn: getBootstrap,
     enabled: Boolean(user),
     staleTime: 60_000,
-    retry: 1,
   })
   return { ...query, signedIn: Boolean(user), authLoading: loading }
 }

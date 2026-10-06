@@ -22,7 +22,6 @@ export function useOverview(enabled = true) {
     queryKey: coverageKeys.overview,
     queryFn: getOverview,
     enabled,
-    retry: (count, error) => !isNoEnrollment(error) && !isFeatureDisabled(error) && count < 1,
   })
   return { ...query, noEnrollment: isNoEnrollment(query.error), featureDisabled: isFeatureDisabled(query.error) }
 }
@@ -39,7 +38,6 @@ export function useDue() {
   const query = useQuery({
     queryKey: coverageKeys.due,
     queryFn: getDue,
-    retry: (count, error) => !isNoEnrollment(error) && count < 1,
   })
   return { ...query, noEnrollment: isNoEnrollment(query.error) }
 }
@@ -49,7 +47,6 @@ export function useContinue() {
   const query = useQuery({
     queryKey: coverageKeys.continue,
     queryFn: getContinue,
-    retry: (count, error) => !isNoEnrollment(error) && !isFeatureDisabled(error) && count < 1,
   })
   return { ...query, noEnrollment: isNoEnrollment(query.error), featureDisabled: isFeatureDisabled(query.error) }
 }
