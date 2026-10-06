@@ -5,7 +5,6 @@ become the API's standard error shape; every timer answer carries `server_time` 
 
 from __future__ import annotations
 
-from core.feature_flags import flag_enabled
 from django.http import HttpResponse
 from rest_framework.exceptions import NotFound
 from rest_framework.permissions import BasePermission, IsAuthenticated
@@ -13,6 +12,7 @@ from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
 
+from core.feature_flags import flag_enabled
 from modules.tracking import selectors as tracking_selectors
 from modules.tracking import services as tracking
 from modules.tracking.serializers import session_dict

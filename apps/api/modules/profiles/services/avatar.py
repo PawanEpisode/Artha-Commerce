@@ -5,12 +5,13 @@ from __future__ import annotations
 import logging
 import secrets
 
-from core import events
-from core import storage as storage_module
-from core.storage import StorageError
 from django.conf import settings
 from django.db import transaction
 from django.utils import timezone
+
+from core import events
+from core import storage as storage_module
+from core.storage import StorageError
 
 from ..domain import avatars
 from ..domain.images import ImageRejected, process_avatar

@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
+from django.db import IntegrityError, transaction
+from django.utils import timezone
+
 from core import events
 from core.authentication import SupabaseUser
 from core.feature_flags import flag_enabled
-from django.db import IntegrityError, transaction
-from django.utils import timezone
 
 from ..domain.names import normalize_name, provider_name
 from ..flags import AVATAR_FLAG
