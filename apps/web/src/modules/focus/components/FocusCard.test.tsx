@@ -136,4 +136,32 @@ describe('FocusCard', () => {
     render(<FocusCard {...base} {...handlers()} timer={running({ status: 'away' })} />)
     expect(screen.queryByRole('button', { name: /pause|resume|end early|skip/i })).not.toBeInTheDocument()
   })
+
+  it('counts up in overtime and offers Stop and save instead of +5 and End early', async () => {
+    const h = { ...handlers(), onStopAndSave: vi.fn() }
+    render(
+      <FocusCard
+        {...base}
+        {...h}
+        timer={running({ overtime_enabled: true, can_extend: false })}
+        remainingSeconds={0}
+        overtimeSeconds={723}
+        percent={100}
+      />,
+    )
+    expect(screen.getByRole('timer')).toHaveAccessibleName(/extra focus: about 13 minutes past the round/i)
+    expect(screen.getByText('+12:03')).toBeInTheDocument()
+    expect(screen.getByText(/target reached/i)).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /end early|\+5 m/i })).not.toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: /stop and save/i }))
+    expect(h.onStopAndSave).toHaveBeenCalledOnce()
+    expect(h.onEndEarly).not.toHaveBeenCalled()
+  })
+
+  it('still lets the student pause during overtime', async () => {
+    const h = { ...handlers(), onStopAndSave: vi.fn() }
+    render(<FocusCard {...base} {...h} timer={running()} remainingSeconds={0} overtimeSeconds={5} />)
+    await userEvent.click(screen.getByRole('button', { name: /pause/i }))
+    expect(h.onPause).toHaveBeenCalledOnce()
+  })
 })

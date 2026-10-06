@@ -21,7 +21,7 @@ import {
 import { focusKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
 import { HEARTBEAT_SECONDS } from '../lib/presets'
-import { isFinished, localExtend, localPause, localResume, remainingSeconds } from '../lib/timer-math'
+import { isFinished, localExtend, localPause, localResume, overtimeOf, remainingSeconds } from '../lib/timer-math'
 import type { EndReason, FocusState, FocusTimer } from '../lib/types'
 import { useFocusAlerts } from './useFocusAlerts'
 
@@ -55,7 +55,6 @@ export function useFocusTimer() {
     queryFn: fetchTimerState,
     refetchInterval: (q) => (q.state.data?.timer ? HEARTBEAT_SECONDS * 1000 : false),
     refetchOnWindowFocus: true,
-    retry: (count, error) => !isFeatureDisabled(error) && count < 1,
   })
   const state = query.data
   const timer = state?.timer ?? null
@@ -71,7 +70,7 @@ export function useFocusTimer() {
   }, [timer])
 
   const quiet = useRef(false)
-  const announcement = useFocusAlerts(timer, state?.settings, quiet)
+  const { announcement, targetReached } = useFocusAlerts(timer, state?.settings, quiet)
 
   const put = useCallback(
     (next: Partial<FocusState>) =>
@@ -187,13 +186,23 @@ export function useFocusTimer() {
       queued: focusRequest.end({ client_id, save, reason }),
       local: () => null,
       said: (next, queued) => notify.ended({ saved: save, outcome: next?.outcome, queued }),
-      done: (next, b) =>
+      done: (next, b) => {
+        if (next.outcome === 'completed' && b)
+          return track('focus_session_completed', {
+            preset: b.preset,
+            round_number: b.round_number,
+            planned_seconds: b.planned_seconds,
+            pause_count: b.pause_count,
+            extension_count: b.extension_count,
+            overtime_seconds: overtimeOf(b, nowMs()) ?? 0,
+          })
         track('focus_session_abandoned', {
           saved: save && next.outcome === 'saved',
           outcome: next.outcome,
           reason: reason ?? null,
           seconds: b ? b.planned_seconds - remainingSeconds(b, nowMs()) : 0,
-        }),
+        })
+      },
     })
   }
 
@@ -248,13 +257,18 @@ export function useFocusTimer() {
   })
 
   // The countdown reached zero on this screen: ask the server to close the phase (once per phase).
+  // A focus round with overtime never closes at zero: it tells the student once and keeps counting.
   const completed = useRef<string | null>(null)
   const finished = timer ? isFinished(timer, nowMs()) : false
+  const keepsRunning = timer?.phase === 'focus' && timer.overtime_enabled
   useEffect(() => {
     if (!timer || !finished || completed.current === timer.client_id || complete.isPending) return
     completed.current = timer.client_id
-    complete.mutate()
-  }, [timer, finished, complete])
+    // Opening the page already deep in overtime (a reload, another device) is not news.
+    if (keepsRunning) {
+      if ((overtimeOf(timer, nowMs()) ?? 0) <= 5) targetReached()
+    } else complete.mutate()
+  }, [timer, finished, keepsRunning, complete, targetReached])
 
   return {
     query,
@@ -265,6 +279,8 @@ export function useFocusTimer() {
     live: state?.live ?? 'none',
     announcement,
     remaining: timer ? remainingSeconds(timer, nowMs()) : 0,
+    /** Extra focus time past the planned length, or null (not in overtime). */
+    overtime: timer ? overtimeOf(timer, nowMs()) : null,
     busy: act.isPending || complete.isPending || claim.isPending,
     error: act.error ?? complete.error ?? claim.error,
     clearError: () => act.reset(),

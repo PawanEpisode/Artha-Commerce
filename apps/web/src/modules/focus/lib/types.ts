@@ -17,6 +17,10 @@ export interface FocusTimer {
   elapsed_seconds: number
   remaining_seconds: number
   extension_count: number
+  /** The round keeps running past its planned length until the student stops it. */
+  overtime_enabled: boolean
+  /** Seconds counted beyond the planned length, as of the last read. */
+  overtime_seconds: number
   can_extend: boolean
   started_at: string
   paused_at: string | null
@@ -50,6 +54,7 @@ export interface FocusSettings {
   rounds_before_long: number
   auto_start_breaks: boolean
   auto_start_focus: boolean
+  overtime_enabled: boolean
   sound_enabled: boolean
   volume: number
   notifications_enabled: boolean
@@ -62,7 +67,7 @@ export interface FocusState {
   live: 'none' | 'stopwatch' | 'pomodoro'
   settings: FocusSettings
   server_time: string
-  outcome?: 'saved' | 'too_short' | 'discarded' | 'counted' | 'none'
+  outcome?: 'saved' | 'completed' | 'too_short' | 'discarded' | 'counted' | 'none'
   session?: StudySession | null
 }
 

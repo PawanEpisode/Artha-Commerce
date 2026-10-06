@@ -151,7 +151,12 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         if (!t) primaryStart()
         else if (t.phase === 'focus') (t.status === 'running' ? f.pause : f.resume)()
       } else if (action === 'skip' && t && t.phase !== 'focus' && !f.busy) f.skipBreak()
-      else if (action === 'end' && t?.phase === 'focus' && t.status !== 'away') setEnding(true)
+      else if (action === 'end' && t?.phase === 'focus' && t.status !== 'away') {
+        // Past the planned length there is nothing to explain: stopping saves the round and starts the break.
+        if (f.overtime !== null) {
+          if (!f.busy) f.end(true)
+        } else setEnding(true)
+      }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -171,6 +176,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         timer={t}
         idle={f.idle}
         remainingSeconds={f.remaining}
+        overtimeSeconds={f.overtime}
         percent={t ? percentDone(t, nowMs()) : 0}
         busy={f.busy}
         otherLive={f.live === 'stopwatch' ? 'stopwatch' : null}
@@ -188,6 +194,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onExtend={f.extend}
         onSkipBreak={f.skipBreak}
         onEndEarly={() => setEnding(true)}
+        onStopAndSave={() => f.end(true)}
         announcement={f.announcement}
       />
 

@@ -32,6 +32,13 @@ export function FocusSettingsForm({ value, onChange, onTimingsChange, onPreview,
         </h2>
         <PresetPicker value={timings} preset={value.preset} onChange={onTimingsChange} disabled={busy} />
         <Row
+          id="overtime"
+          label="Keep the timer running after the round ends"
+          hint="Extra focus time keeps counting until you press Stop and save. Your break starts then."
+          checked={value.overtime_enabled}
+          onChange={(v) => onChange({ overtime_enabled: v })}
+        />
+        <Row
           id="auto-breaks"
           label="Start breaks automatically"
           checked={value.auto_start_breaks}

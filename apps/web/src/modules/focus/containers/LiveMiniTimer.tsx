@@ -7,7 +7,7 @@ import { formatClock, spokenDuration, useStopwatch } from '~/modules/tracker'
 import { MiniTimerView } from '../components/MiniTimerView'
 import { useTimerTitle } from '../hooks/useDocumentTitle'
 import { useFocusTimer } from '../hooks/useFocusTimer'
-import { formatRemaining, PHASE_LABEL, spokenRemaining } from '../lib/timer-math'
+import { formatOvertime, formatRemaining, PHASE_LABEL, spokenRemaining } from '../lib/timer-math'
 
 const linkClass = 'outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40'
 
@@ -23,8 +23,14 @@ function FocusMini({ ownTitle }: { ownTitle: boolean }) {
       label={t.phase === 'focus' ? 'Focus round' : PHASE_LABEL[t.phase]}
       phase={t.phase}
       paused={t.status === 'paused'}
-      clock={away ? 'Done?' : formatRemaining(f.remaining)}
-      spoken={away ? 'The round ended while you were away' : `${spokenRemaining(f.remaining)} left`}
+      clock={away ? 'Done?' : f.overtime !== null ? formatOvertime(f.overtime) : formatRemaining(f.remaining)}
+      spoken={
+        away
+          ? 'The round ended while you were away'
+          : f.overtime !== null
+            ? `${spokenRemaining(f.overtime)} of extra focus`
+            : `${spokenRemaining(f.remaining)} left`
+      }
       busy={f.busy}
       onPause={t.phase === 'focus' && !away ? f.pause : undefined}
       onResume={t.phase === 'focus' && !away ? f.resume : undefined}

@@ -2,11 +2,13 @@ import { describe, expect, it } from 'vitest'
 
 import {
   elapsedSeconds,
+  formatOvertime,
   formatRemaining,
   isFinished,
   localExtend,
   localPause,
   localResume,
+  overtimeOf,
   percentDone,
   remainingSeconds,
   startLabel,
@@ -29,6 +31,8 @@ const timer = (patch: Partial<FocusTimer> = {}): FocusTimer => ({
   elapsed_seconds: 0,
   remaining_seconds: 1500,
   extension_count: 0,
+  overtime_enabled: false,
+  overtime_seconds: 0,
   can_extend: true,
   started_at: iso(0),
   paused_at: null,
@@ -127,5 +131,31 @@ describe('offline copies of the actions', () => {
     expect(t.extension_count).toBe(3)
     expect(t.planned_seconds).toBe(2400)
     expect(t.can_extend).toBe(false)
+  })
+})
+
+describe('overtime', () => {
+  const over = (patch = {}) => timer({ overtime_enabled: true, ...patch })
+
+  it('counts up from the planned length and not before', () => {
+    expect(overtimeOf(over(), at(1499))).toBeNull()
+    expect(overtimeOf(over(), at(1500))).toBe(0)
+    expect(overtimeOf(over(), at(1500 + 723))).toBe(723)
+    expect(formatOvertime(723)).toBe('+12:03')
+  })
+
+  it('freezes while paused', () => {
+    const paused = over({ status: 'paused', paused_at: iso(1800) })
+    expect(overtimeOf(paused, at(9999))).toBe(300)
+  })
+
+  it('does not apply to rounds started without it, breaks, or an away round', () => {
+    expect(overtimeOf(timer(), at(2000))).toBeNull()
+    expect(overtimeOf(over({ phase: 'short_break' }), at(2000))).toBeNull()
+    expect(overtimeOf(over({ status: 'away' }), at(2000))).toBeNull()
+  })
+
+  it('shows in the tab title', () => {
+    expect(tabTitle(over(), at(1500 + 65), 'Focus timer')).toBe('+01:05 Focus')
   })
 })

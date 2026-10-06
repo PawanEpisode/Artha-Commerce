@@ -25,6 +25,8 @@ interface Props {
   timer: FocusTimer | null
   idle: IdleInfo | null
   remainingSeconds: number
+  /** Extra focus time past the planned length, or null. The round runs on until Stop and save. */
+  overtimeSeconds?: number | null
   percent: number
   busy: boolean
   /** The other kind of live timer that blocks Start ("stopwatch"), if any. */
@@ -43,6 +45,8 @@ interface Props {
   onExtend: () => void
   onSkipBreak: () => void
   onEndEarly: () => void
+  /** Saves a round that reached its planned length (and starts the break). */
+  onStopAndSave?: () => void
   error?: string | null
   /** Polite live-region text for screen readers ("Focus round done. Time for a short break."). */
   announcement: string
@@ -54,9 +58,10 @@ export function FocusCard(p: Props) {
   const running = t?.status === 'running'
   const onBreak = t && t.phase !== 'focus'
   const dueBreak = !t && p.idle && p.idle.next_phase !== 'focus'
+  const overtime = p.overtimeSeconds ?? null
   const caption = t
     ? t.phase === 'focus'
-      ? `Round ${t.round_number} of ${t.rounds_before_long}`
+      ? `Round ${t.round_number} of ${t.rounds_before_long}${overtime !== null ? ' · target reached' : ''}`
       : `After round ${t.round_number}`
     : dueBreak
       ? 'A break is due'
@@ -75,6 +80,7 @@ export function FocusCard(p: Props) {
             phase={t?.phase ?? null}
             status={t?.status ?? null}
             remainingSeconds={t ? p.remainingSeconds : p.timings.focus_minutes * 60}
+            overtimeSeconds={overtime}
             percent={t ? p.percent : 0}
             caption={caption}
           />
@@ -153,13 +159,21 @@ export function FocusCard(p: Props) {
                   <Play aria-hidden /> Resume
                 </Button>
               )}
-              <Button size="lg" variant="outline" onClick={p.onExtend} disabled={p.busy || !t.can_extend}>
-                +{formatDuration(EXTEND_SECONDS / 60)}
-                {extensionsLeft > 0 ? ` (${extensionsLeft} left)` : ''}
-              </Button>
-              <Button size="lg" variant="outline" onClick={p.onEndEarly} disabled={p.busy}>
-                <Square aria-hidden /> End early
-              </Button>
+              {overtime !== null && p.onStopAndSave ? (
+                <Button size="lg" variant="cta" onClick={p.onStopAndSave} disabled={p.busy}>
+                  <Square aria-hidden /> Stop and save
+                </Button>
+              ) : (
+                <>
+                  <Button size="lg" variant="outline" onClick={p.onExtend} disabled={p.busy || !t.can_extend}>
+                    +{formatDuration(EXTEND_SECONDS / 60)}
+                    {extensionsLeft > 0 ? ` (${extensionsLeft} left)` : ''}
+                  </Button>
+                  <Button size="lg" variant="outline" onClick={p.onEndEarly} disabled={p.busy}>
+                    <Square aria-hidden /> End early
+                  </Button>
+                </>
+              )}
             </>
           )}
         </div>
@@ -179,7 +193,7 @@ export function FocusCard(p: Props) {
             </>
           ) : t ? (
             <>
-              , <Kbd>E</Kbd> ends early
+              , <Kbd>E</Kbd> {overtime !== null ? 'stops and saves' : 'ends early'}
             </>
           ) : null}
           .
