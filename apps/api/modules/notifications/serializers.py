@@ -5,7 +5,7 @@ from __future__ import annotations
 from rest_framework import serializers
 
 from .domain import enums
-from .domain.catalogue import Category
+from .domain.catalogue import CATEGORIES
 from .domain.enums import choices
 from .services.settings import EDITABLE
 
@@ -30,7 +30,7 @@ class SettingsWriteSerializer(serializers.Serializer):
 
 
 class PreferenceItemSerializer(serializers.Serializer):
-    category = serializers.ChoiceField(choices=[c.value for c in Category])
+    category = serializers.ChoiceField(choices=[c.key.value for c in CATEGORIES])
     channel = serializers.ChoiceField(choices=choices(enums.Channel))
     enabled = serializers.BooleanField()
 
@@ -42,6 +42,41 @@ class PreferencesWriteSerializer(serializers.Serializer):
 class PermissionStateSerializer(serializers.Serializer):
     state = serializers.ChoiceField(choices=choices(enums.PermissionState))
     source = serializers.ChoiceField(choices=choices(enums.PermissionSource))
+
+
+class SubscriptionKeysSerializer(serializers.Serializer):
+    p256dh = serializers.CharField(max_length=256)
+    auth = serializers.CharField(max_length=256)
+
+
+class SubscriptionSerializer(serializers.Serializer):
+    """The browser's `PushSubscription.toJSON()`. Meaning (host allow-list, key shape) is checked by the service."""
+
+    endpoint = serializers.CharField(max_length=2048)
+    keys = SubscriptionKeysSerializer()
+
+
+class DeviceRegisterSerializer(serializers.Serializer):
+    """`label` from older clients is accepted and ignored: the label is derived on the server from closed sets."""
+
+    subscription = SubscriptionSerializer()
+    platform = serializers.ChoiceField(choices=choices(enums.DevicePlatform), default=enums.DevicePlatform.OTHER)
+    browser = serializers.ChoiceField(choices=choices(enums.DeviceBrowser), default=enums.DeviceBrowser.OTHER)
+    display_mode = serializers.ChoiceField(choices=choices(enums.DisplayMode), default=enums.DisplayMode.BROWSER)
+    sw_version = serializers.CharField(required=False, allow_blank=True, allow_null=True, max_length=16)
+
+
+def device_dict(row: dict) -> dict:
+    """One entry of the device list (the selector already left the secrets out)."""
+    return {
+        "id": str(row["id"]),
+        "label": row["label"],
+        "platform": row["platform"],
+        "browser": row["browser"],
+        "display_mode": row["display_mode"],
+        "last_seen_at": row["last_seen_at"].isoformat(),
+        "created_at": row["created_at"].isoformat(),
+    }
 
 
 def _hhmm(value) -> str:

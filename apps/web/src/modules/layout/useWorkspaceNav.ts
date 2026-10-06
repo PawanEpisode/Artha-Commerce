@@ -8,6 +8,7 @@ export function useWorkspaceNav() {
     focus_timer: useFeatureFlag('focus_timer'),
     time_tracker: useFeatureFlag('time_tracker'),
     syllabus_coverage: useFeatureFlag('syllabus_coverage'),
+    notifications_ui: useFeatureFlag('notifications_ui'),
   }
   return {
     study: visibleLinks(STUDY_LINKS, enabled),

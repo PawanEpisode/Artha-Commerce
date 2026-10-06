@@ -10,3 +10,6 @@ apps/api
 *.md
 *.png
 *.svg
+
+# Generated service worker (apps/web/scripts/build-sw.mjs)
+apps/web/public/sw.js

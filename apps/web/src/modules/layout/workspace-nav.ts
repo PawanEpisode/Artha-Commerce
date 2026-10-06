@@ -1,5 +1,5 @@
 /** Signed-in destinations. A flag hides the link until that feature is on for this student. */
-export type WorkspaceFlag = 'focus_timer' | 'time_tracker' | 'syllabus_coverage'
+export type WorkspaceFlag = 'focus_timer' | 'time_tracker' | 'syllabus_coverage' | 'notifications_ui'
 
 export interface WorkspaceLink {
   to:
@@ -9,6 +9,7 @@ export interface WorkspaceLink {
     | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/settings/coverage'
+    | '/app/settings/notifications'
     | '/app/account'
   label: string
   description?: string
@@ -40,6 +41,7 @@ export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
   { to: '/app/settings/focus', label: 'Focus settings', flag: 'focus_timer' },
   { to: '/app/settings/tracker', label: 'Tracker settings', flag: 'time_tracker' },
   { to: '/app/settings/coverage', label: 'Coverage settings', flag: 'syllabus_coverage' },
+  { to: '/app/settings/notifications', label: 'Notification settings', flag: 'notifications_ui' },
   { to: '/app/account', label: 'Account' },
 ]
 
@@ -47,6 +49,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   focus_timer: true,
   time_tracker: true,
   syllabus_coverage: true,
+  notifications_ui: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

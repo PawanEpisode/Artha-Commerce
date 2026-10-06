@@ -8,6 +8,8 @@ import { codeInspectorPlugin } from 'code-inspector-plugin'
 import { nitro } from 'nitro/vite'
 import { createLogger, defineConfig, loadEnv } from 'vite'
 
+import { swVersionFrom } from './scripts/sw-build-options.mjs'
+
 // TanStack Start renders HTML itself, so the inspector client is injected into the router module.
 const codeInspectorTarget = fileURLToPath(new URL('./src/router.tsx', import.meta.url))
 
@@ -26,6 +28,8 @@ export default defineConfig(({ command, mode }) => {
   return {
     customLogger: logger,
     server: { port: 3000 },
+    // Same short commit id the service worker is built with (scripts/build-sw.mjs), sent with a device registration.
+    define: { __APP_BUILD__: JSON.stringify(swVersionFrom(process.env)) },
     resolve: { tsconfigPaths: true },
     // resvg is a native addon. The client prebundler tries to parse its .node binary as text and crashes dev startup.
     optimizeDeps: { exclude: ['@resvg/resvg-js'] },

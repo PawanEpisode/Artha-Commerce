@@ -3,6 +3,7 @@ import pytest
 from modules.notifications.domain.catalogue import (
     CATEGORIES,
     EVENTS,
+    SYSTEM_EVENTS,
     UnknownEvent,
     UnknownSwitch,
     get_event,
@@ -28,7 +29,7 @@ def test_event_keys_fit_the_database_column():
 
 
 def test_copy_builders_exist_only_for_catalogued_events():
-    assert set(_BUILDERS) <= set(EVENTS)
+    assert set(_BUILDERS) <= set(EVENTS) | set(SYSTEM_EVENTS)
 
 
 def test_defaults_progress_is_email_and_inbox_the_rest_push_and_inbox():
@@ -66,3 +67,13 @@ def test_dedupe_key_is_stable_and_checked():
 
 def test_break_over_shares_the_round_key_so_the_pair_never_double_fires():
     assert get_event("break_over").dedupe_template == get_event("timer_end").dedupe_template
+
+
+def test_system_events_are_exempt_unique_and_not_switchable():
+    spec = get_event("test_push")
+    assert spec.system and spec.exempt and spec.key not in EVENTS
+    assert all(len(key) <= 24 for key in SYSTEM_EVENTS)
+    assert build_dedupe_key(spec, nonce="a") != build_dedupe_key(spec, nonce="b")
+    assert "system" not in {c.key.value for c in CATEGORIES}
+    with pytest.raises(UnknownSwitch):
+        validate_switch("system", "push")

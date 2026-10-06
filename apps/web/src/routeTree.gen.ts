@@ -31,6 +31,7 @@ import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
+import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
 import { Route as AppTrackerIndexRouteImport } from './routes/app.tracker.index'
@@ -157,6 +158,12 @@ const AppSettingsFocusRoute = AppSettingsFocusRouteImport.update({
   path: '/settings/focus',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsNotificationsRoute =
+  AppSettingsNotificationsRouteImport.update({
+    id: '/settings/notifications',
+    path: '/settings/notifications',
+    getParentRoute: () => AppRoute,
+  } as any)
 const AppSettingsTrackerRoute = AppSettingsTrackerRouteImport.update({
   id: '/settings/tracker',
   path: '/settings/tracker',
@@ -259,6 +266,7 @@ export interface FileRoutesByFullPath {
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
@@ -297,6 +305,7 @@ export interface FileRoutesByTo {
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
@@ -337,6 +346,7 @@ export interface FileRoutesById {
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
@@ -378,6 +388,7 @@ export interface FileRouteTypes {
     | '/app/focus/history'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/notifications'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
@@ -416,6 +427,7 @@ export interface FileRouteTypes {
     | '/app/focus/history'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/notifications'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
@@ -455,6 +467,7 @@ export interface FileRouteTypes {
     | '/app/focus/history'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/notifications'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
@@ -651,6 +664,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSettingsFocusRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings/notifications': {
+      id: '/app/settings/notifications'
+      path: '/settings/notifications'
+      fullPath: '/app/settings/notifications'
+      preLoaderRoute: typeof AppSettingsNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/tracker': {
       id: '/app/settings/tracker'
       path: '/settings/tracker'
@@ -767,6 +787,7 @@ interface AppRouteChildren {
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
+  AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
   AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
@@ -787,6 +808,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
+  AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,
   AppSettingsTrackerRoute: AppSettingsTrackerRoute,
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,

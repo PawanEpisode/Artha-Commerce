@@ -230,6 +230,7 @@ Student avatars live in one **public** Storage bucket with random object keys (`
    | `VITE_POSTHOG_HOST` | `/ingest` |
    | `VITE_POSTHOG_UI_HOST` | `https://us.posthog.com` |
    | `VITE_SENTRY_DSN` | `artha-web` DSN |
+   | `VITE_VAPID_PUBLIC_KEY` | Public VAPID key for Web Push (`npx --yes web-push generate-vapid-keys --json`; see `docs/X-01-ROLLOUT.md` section 1). Optional until push is rolled out; redeploy after adding it |
    | `SENTRY_AUTH_TOKEN` | Sentry org token (build time only) |
    | `SENTRY_ORG` | Sentry org slug |
    | `SENTRY_PROJECT` | `artha-web` |
@@ -296,6 +297,7 @@ pnpm lint:api && pnpm test:api
 | `VITE_API_URL` | yes | | no |
 | `VITE_POSTHOG_KEY`, `VITE_POSTHOG_HOST`, `VITE_POSTHOG_UI_HOST` | yes | | no |
 | `VITE_SENTRY_DSN` | yes | | no |
+| `VITE_VAPID_PUBLIC_KEY`, `VITE_SW_DEV` | yes | | no (public by design) |
 | `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT` | yes (build) | | **yes** |
 | `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS` | | yes | **yes** (secret key) |
 | `DATABASE_URL`, `DIRECT_DATABASE_URL` | | yes | **yes** |

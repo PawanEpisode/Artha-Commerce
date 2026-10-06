@@ -17,6 +17,10 @@ const schema = z.object({
   VITE_POSTHOG_HOST: z.string().default('/ingest'),
   VITE_POSTHOG_UI_HOST: z.string().default('https://us.posthog.com'),
   VITE_SENTRY_DSN: z.string().optional(),
+  /** Public VAPID key for Web Push (`web-push generate-vapid-keys`). Public by design. Without it, push stays off. */
+  VITE_VAPID_PUBLIC_KEY: z.string().optional(),
+  /** `true` registers the service worker in `vite dev` too. Production builds always register it. */
+  VITE_SW_DEV: z.enum(['true', 'false']).optional(),
 })
 
 const parsed = schema.safeParse(import.meta.env)
@@ -29,3 +33,6 @@ export const env = parsed.success ? parsed.data : schema.parse({})
 
 /** Bare origin of the public site (https://host, no trailing slash). Build every absolute URL from this. */
 export const siteUrl = resolveSiteUrl(env.VITE_SITE_URL, import.meta.env.PROD)
+
+/** True in a production build (not `vite dev`, not tests). */
+export const isProduction: boolean = import.meta.env.PROD

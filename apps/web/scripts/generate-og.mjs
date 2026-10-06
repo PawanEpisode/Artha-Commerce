@@ -1,4 +1,4 @@
-// Generates the static 1200x630 social preview images and the app icon.
+// Generates the static 1200x630 social preview images and the app icons (512, 192 and maskable 512).
 // Run: pnpm --filter @artha/web og   (output is committed; re-run when branding or the headline copy changes)
 //
 // Colours come from the design system: --primary and --accent of the Reading theme in
@@ -148,6 +148,19 @@ for (const [name, card] of Object.entries(cards)) {
   console.log(`public/og/${name}.png ${(out.length / 1024).toFixed(0)} KB`)
 }
 
-const icon = `<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="${oklchToHex(primary.l, primary.c, primary.h)}"/><path d="M9 22 16 8l7 14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18h8" stroke="${MARK_AMBER}" stroke-width="2.6" stroke-linecap="round"/></svg>`
-await sharp(Buffer.from(icon)).png().toFile(`${root}/public/icon-512.png`)
-console.log('public/icon-512.png')
+// App icons. The rounded one is the "any" icon (and the apple-touch icon). The maskable one is full-bleed with the same
+// mark: Android crops it to a circle or squircle, and the mark sits well inside the centre 80% safe zone.
+const primaryHex = oklchToHex(primary.l, primary.c, primary.h)
+const iconSvg = ({ maskable }) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 32 32"><rect width="32" height="32"${maskable ? '' : ' rx="9"'} fill="${primaryHex}"/><path d="M9 22 16 8l7 14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18h8" stroke="${MARK_AMBER}" stroke-width="2.6" stroke-linecap="round"/></svg>`
+await sharp(Buffer.from(iconSvg({ maskable: false })))
+  .png()
+  .toFile(`${root}/public/icon-512.png`)
+await sharp(Buffer.from(iconSvg({ maskable: false })))
+  .resize(192, 192)
+  .png()
+  .toFile(`${root}/public/icon-192.png`)
+await sharp(Buffer.from(iconSvg({ maskable: true })))
+  .png()
+  .toFile(`${root}/public/icon-maskable-512.png`)
+console.log('public/icon-512.png, icon-192.png, icon-maskable-512.png')

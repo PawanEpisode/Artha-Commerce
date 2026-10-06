@@ -358,21 +358,21 @@ cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w
 cd apps/api && source .venv/bin/activate
 ```
 
-Build: `domain/devices.py` (allow-list, label), `channels/base.py` (`Channel` protocol, `SendResult`, registry), `channels/webpush.py` (the only `pywebpush` import; `ttl`, `Urgency` header, 5 s timeout, maps 404 and 410 to `gone`, 429 and 5xx to `retry`), `services/devices.py`, `dispatch.py` (send and record, no scheduling yet), `views/devices.py`, `management/commands/send_test_push.py`, throttles. Tests use a fake HTTP layer; no test touches the network.
+Build: `domain/push_hosts.py` (allow-list), `domain/devices.py` (label, key checks), `domain/payload.py` (payload v1), `channels/base.py` (`Channel` protocol, `SendResult`, `FakeChannel`) and `channels/__init__.py` (registry), `channels/webpush.py` (the only `pywebpush` import; `ttl`, `Urgency` header, 5 s timeout, maps 404 and 410 to `gone`, retries 429 and 5xx up to 3 attempts), `services/devices.py`, `services/notify.py` (`notify`, test push), `dispatch.py` (send and record, no scheduling yet), `views/devices.py`, `management/commands/send_test_push.py`, throttles. Tests use a fake HTTP layer; no test touches the network.
 
 ```bash
 pytest modules/notifications -q && ruff check . && ruff format .
 ```
 
-**Check with the spike subscription** (the `sub.json` from phase 1; the request shape is defined by `DeviceRegisterSerializer`):
+**Check with the spike subscription** (the `sub.json` from phase 1; the request shape is defined by `DeviceRegisterSerializer`; the device label is derived on the server, a `label` field is ignored; `NOTIFICATIONS_ENABLED=true`, the PostHog flags `notifications_ui` and `notifications_send`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` (a `mailto:` address), `FIELD_ENCRYPTION_KEYS` and `FIELD_HASH_PEPPER` must be set):
 
 ```bash
 TOKEN='<access_token>'
 curl -s -X POST localhost:8000/api/v1/notifications/devices/ -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
-  -d "{\"subscription\": $(cat ~/artha-push-spike/sub.json), \"platform\":\"macos\", \"browser\":\"chrome\", \"display_mode\":\"browser\", \"label\":\"Chrome on Mac\", \"sw_version\":\"dev\"}"
+  -d "{\"subscription\": $(cat ~/artha-push-spike/sub.json), \"platform\":\"macos\", \"browser\":\"chrome\", \"display_mode\":\"browser\", \"sw_version\":\"dev\"}"
 curl -s localhost:8000/api/v1/notifications/devices/ -H "Authorization: Bearer $TOKEN" | python -m json.tool     # no endpoint or keys in the answer
 curl -s -X POST localhost:8000/api/v1/notifications/devices/<device_id>/test/ -H "Authorization: Bearer $TOKEN"    # a real alert appears
-python manage.py send_test_push --device <device_id>                                                              # same, from the shell
+python manage.py send_test_push --user <user_uuid> --device <device_id>                                           # same, from the shell
 ```
 
 Then prove the failure path: delete the subscription in the browser (DevTools, Application, Service Workers, Unregister), send again, and confirm the device row shows `revoked_reason = gone`. A sixth test push in one minute returns 429.
@@ -434,6 +434,16 @@ Also confirm in the Upstash console (QStash, Logs) that the delivery to your tun
 
 Goal: service worker, manifest, settings screen, device list, test button.
 
+**As built (this wave is implemented).** Everything below under "Create" exists already; run the checks and the manual steps instead of re-creating files.
+
+- `apps/web/src/sw/` holds the worker (`sw.ts`) and its pure, tested parts: `payload.ts` (payload v1; an unknown version or bad JSON still shows one generic alert), `deeplink.ts` (the allow-list, mirrored from `apps/api/modules/notifications/domain/deeplinks.py`; `deeplink.test.ts` reads that file and fails when they drift), `handlers.ts` (push, click, `pushsubscriptionchange`), `applicationServerKey.ts`, `messages.ts`. There is no `fetch` handler and no Cache API use (a test checks the bundle).
+- `scripts/build-sw.mjs` compiles it to `public/sw.js` (generated, git-ignored, excluded from ESLint and Prettier). `pnpm dev` and `pnpm build` run it first. The worker version is the first 7 characters of `VERCEL_GIT_COMMIT_SHA` (else `dev`); the same id is sent as `sw_version` when a device registers.
+- `src/modules/notifications/` follows the module layout (components, containers, hooks, lib, barrel). Route `/app/settings/notifications` is gated by the PostHog flag `notifications_ui` (web, fails open) and by the API's 403 `notifications_disabled`. The link sits in the Settings menu (`modules/layout/workspace-nav.ts`).
+- `NotificationsBoot` (root layout) registers `/sw.js` after load in production builds, or in `pnpm dev` when `VITE_SW_DEV=true`. `NotificationsAppEffects` (`/app` layout) handles `?n=<id>` (one `POST inbox/{id}/click/`, then the parameter is removed) and refreshes this browser's registration at most every 12 hours, or at once when the worker re-subscribes.
+- Icons: `pnpm --filter @artha/web og` now also writes `public/icon-192.png` and `public/icon-maskable-512.png` from the same brand mark as `icon-512.png`.
+- Limits mirrored from the API live in `modules/notifications/lib/limits.ts` (`limits.test.ts` reads `apps/api/config/settings.py`).
+- Env: `VITE_VAPID_PUBLIC_KEY` (section 1) and the optional `VITE_SW_DEV` are declared in `src/lib/env.ts` and `.env.example`.
+
 ```bash
 cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w2-4-web-push-foundation
 pnpm --filter @artha/web add -D esbuild            # compiles the service worker (PRD Q5)
@@ -459,16 +469,7 @@ await build({
 ```
 
 3. `package.json` scripts in `apps/web`: `"build:sw": "node scripts/build-sw.mjs"`, and change `"dev"` to `"node scripts/build-sw.mjs && vite dev"` and `"build"` to `"node scripts/build-sw.mjs && vite build"`. Add `apps/web/public/sw.js` to `.gitignore` (generated).
-4. Icons and manifest. Chrome needs 192 and 512 px plus a maskable icon:
-
-```bash
-brew install imagemagick                                     # once
-cd "$ROOT/apps/web/public"
-sips -z 192 192 icon-512.png --out icon-192.png
-magick icon-512.png -resize 410x410 -background "#4a3fd6" -gravity center -extent 512x512 icon-maskable-512.png
-```
-
-Use your icon's real background colour in the last command, and have the designer confirm the maskable safe zone. Then add the two icons (`purpose: "maskable"` for the second), `id`, `scope` and a `shortcuts` entry for Start focus to `manifest.webmanifest`.
+4. Icons and manifest. Done by `pnpm --filter @artha/web og` (icons) and `public/manifest.webmanifest` (`id`, `scope`, 192, 512 and maskable icons, a Start focus shortcut). The maskable icon is the same mark on a full-bleed square; have the designer confirm the safe zone and replace the three PNGs with final art when it exists (keep the file names).
 5. `apps/web/vercel.json`: add
 
 ```json
@@ -490,7 +491,7 @@ pnpm build:web && pnpm --filter @artha/web start           # production build on
 
 **Check in Chrome** on `http://localhost:3000/app/settings/notifications`: DevTools, Application, Manifest (no installability warnings), Service Workers (status running), then Subscribe, Send me a test, and the alert appears with the tab closed. Repeat the visual check in all four themes and at 320, 768 and 1280 px, keyboard only.
 
-**Other tools:** Vercel web project must have `VITE_VAPID_PUBLIC_KEY` (section 1) and be redeployed after it is added. **Roll back:** flag `push_notifications` at 0% hides the screen.
+**Other tools:** Vercel web project must have `VITE_VAPID_PUBLIC_KEY` (section 1) and be redeployed after it is added. The API must have `NOTIFICATIONS_ENABLED=true` and the device endpoints from W2.2 deployed for the device list and test button to work; `POST inbox/{id}/click/` is not on the API yet, so `?n=` is a silent no-op until it is. **Roll back:** flag `notifications_ui` at 0% hides the screen and the Settings link (the worker stays registered; it caches nothing and only shows pushes).
 
 ### W2.5 Permission step (web and api)
 

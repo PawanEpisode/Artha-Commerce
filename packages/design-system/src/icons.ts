@@ -69,6 +69,7 @@ export {
   Settings,
   ShieldCheck,
   SkipForward,
+  Smartphone,
   Sparkles,
   Square,
   Sun,

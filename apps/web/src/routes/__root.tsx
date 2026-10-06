@@ -9,6 +9,7 @@ import { AuthProvider } from '~/modules/auth'
 import { LiveMiniTimer } from '~/modules/focus'
 import { SIGNED_IN_MARK_SCRIPT, SiteShell } from '~/modules/layout'
 import { ErrorFallback } from '~/modules/layout/ErrorFallback'
+import { NotificationsBoot } from '~/modules/notifications'
 import { ObservabilityProvider } from '~/modules/observability'
 import { PersonalizedPostAuth } from '~/modules/personalization'
 import appCss from '~/styles.css?url'
@@ -53,6 +54,7 @@ function RootComponent() {
                   <Outlet />
                 </SiteShell>
                 <LiveMiniTimer />
+                <NotificationsBoot />
                 {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}
                 <Toaster />
               </PersonalizedPostAuth>

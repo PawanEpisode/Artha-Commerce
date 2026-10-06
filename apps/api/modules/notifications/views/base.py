@@ -17,9 +17,12 @@ class NotificationsView(APIView):
     throttle_classes = [UserRateThrottle, ScopedRateThrottle]
     throttle_scope = "notifications_read"
 
-    def get_throttles(self):
+    def scope_for_request(self) -> str:
         # Reads and writes draw from separate budgets.
-        self.throttle_scope = "notifications_read" if self.request.method in ("GET", "HEAD") else "notifications_write"
+        return "notifications_read" if self.request.method in ("GET", "HEAD") else "notifications_write"
+
+    def get_throttles(self):
+        self.throttle_scope = self.scope_for_request()
         return super().get_throttles()
 
     def initial(self, request, *args, **kwargs):

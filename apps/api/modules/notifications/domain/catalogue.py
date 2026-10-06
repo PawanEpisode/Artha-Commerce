@@ -24,6 +24,7 @@ class Category(StrEnum):
     EXAM = "exam"
     PROGRESS = "progress"
     MOTIVATION = "motivation"
+    SYSTEM = "system"  # not switchable by the student (the test push); never listed in CATEGORIES
 
 
 class UnknownEvent(KeyError):
@@ -53,6 +54,11 @@ class EventSpec:
     @property
     def exempt(self) -> bool:
         return self.priority == 0
+
+    @property
+    def system(self) -> bool:
+        """System events answer a direct request of the student, so category switches do not apply to them."""
+        return self.category is Category.SYSTEM
 
 
 _PUSH_AND_INBOX = frozenset({Channel.PUSH, Channel.INBOX})
@@ -96,22 +102,28 @@ _EVENT_LIST: tuple[EventSpec, ...] = (
 )
 
 EVENTS: Mapping[str, EventSpec] = {spec.key: spec for spec in _EVENT_LIST}
+
+#: Events the student triggers directly. Exempt from quiet hours and the cap, not behind a category switch, and each
+#: one is unique (the dedupe key carries a nonce) so pressing "Send me a test" twice sends twice.
+SYSTEM_EVENTS: Mapping[str, EventSpec] = {
+    "test_push": EventSpec("test_push", Category.SYSTEM, 0, "test_push:{nonce}"),
+}
 _CATEGORY_BY_KEY: Mapping[Category, CategorySpec] = {spec.key: spec for spec in CATEGORIES}
 
 Overrides = Mapping[tuple[str, str], bool]
 
 
 def get_event(key: str) -> EventSpec:
-    try:
-        return EVENTS[key]
-    except KeyError:
-        raise UnknownEvent(key) from None
+    spec = EVENTS.get(key) or SYSTEM_EVENTS.get(key)
+    if spec is None:
+        raise UnknownEvent(key)
+    return spec
 
 
 def category_spec(category: str) -> CategorySpec:
     try:
         return _CATEGORY_BY_KEY[Category(category)]
-    except ValueError:
+    except (ValueError, KeyError):  # not a category, or a system one the student cannot switch
         raise UnknownSwitch(f"Unknown category: {category}") from None
 
 

@@ -15,6 +15,7 @@ from .catalogue import UnknownEvent
 TITLE_LIMIT = 40
 BODY_LIMIT = 100
 FOCUS_LINK = "/app/focus"
+SETTINGS_LINK = "/app/settings/notifications"
 
 
 @dataclass(frozen=True)
@@ -57,9 +58,14 @@ def _break_over(context: Mapping[str, Any]) -> Copy:
     return Copy("Break over", body, FOCUS_LINK, f"timer:{context['client_id']}")
 
 
+def _test_push(context: Mapping[str, Any]) -> Copy:
+    return Copy("Test notification", "Notifications are working on this device.", SETTINGS_LINK, "test_push")
+
+
 _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "timer_end": _timer_end,
     "break_over": _break_over,
+    "test_push": _test_push,
 }
 
 
