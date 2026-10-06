@@ -5,13 +5,12 @@ from __future__ import annotations
 import logging
 import secrets
 
-from django.conf import settings
-from django.db import transaction
-from django.utils import timezone
-
 from core import events
 from core import storage as storage_module
 from core.storage import StorageError
+from django.conf import settings
+from django.db import transaction
+from django.utils import timezone
 
 from ..domain import avatars
 from ..domain.images import ImageRejected, process_avatar
@@ -102,7 +101,9 @@ def set_upload(user_id, data: bytes) -> Profile:
             store.upload(_bucket(), path, blob, content_type=CONTENT_TYPE, cache_control=CACHE_CONTROL)
             stored.append(path)
         profile, previous = _change(user_id, kind=Profile.AvatarKind.UPLOAD, stem=stem)
-    except StorageError:
+    except StorageError as exc:
+        # The reason (no key, missing bucket, 4xx status) is for the operator's log; the student gets the generic copy.
+        logger.warning("avatar upload: storage unavailable: %s", exc)
         _remove_files(user_id, stored)
         raise StorageUnavailable from None
     except Exception:

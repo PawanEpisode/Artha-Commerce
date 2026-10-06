@@ -23,6 +23,7 @@ export {
   DEFAULT_PRESETS,
   DEFAULT_TARGETS,
   presetFor,
+  presetLabel,
   targetsEqual,
   targetsLine,
   targetsOfPreset,

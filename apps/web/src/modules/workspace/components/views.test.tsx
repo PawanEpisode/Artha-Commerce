@@ -7,6 +7,7 @@ import type { ContinueChapter, DueRow } from '~/modules/coverage'
 import { ContinueView } from './ContinueView'
 import { DueView } from './DueView'
 import { SetupCards } from './SetupCards'
+import { TargetsView } from './TargetsView'
 import { TodayView } from './TodayView'
 import { WidgetCard } from './WidgetCard'
 
@@ -126,5 +127,26 @@ describe('SetupCards', () => {
     expect(screen.getByRole('link', { name: /Finish Add a photo/ })).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'Hide Add a photo' }))
     expect(hide).toHaveBeenCalledWith('avatar')
+  })
+})
+
+describe('TargetsView', () => {
+  const rows = [
+    { label: 'practice sets', count: 2 },
+    { label: 'revision', count: null },
+    { label: 'mocks', count: 1 },
+  ]
+
+  it('shows counts, marks an untracked activity as Off, and links to settings', () => {
+    render(<TargetsView heading="Standard targets" rows={rows} confirmed />)
+    expect(screen.getByText('Standard targets. Every chapter counts toward these.')).toBeInTheDocument()
+    expect(screen.getByText('Off')).toBeInTheDocument()
+    expect(screen.getByText('revision not tracked')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Change targets' })).toHaveAttribute('href', '/app/settings/coverage')
+  })
+
+  it('invites an unconfirmed student to choose', () => {
+    render(<TargetsView heading="Standard targets" rows={rows} confirmed={false} />)
+    expect(screen.getByRole('link', { name: 'Choose targets' })).toBeInTheDocument()
   })
 })

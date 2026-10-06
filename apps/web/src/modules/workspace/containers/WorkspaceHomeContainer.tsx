@@ -9,6 +9,7 @@ import { ProgressWidget } from './ProgressWidget'
 import { RevisionWidget } from './RevisionWidget'
 import { SetupWidget } from './SetupWidget'
 import { StudyHeader } from './StudyHeader'
+import { TargetsWidget } from './TargetsWidget'
 import { TodayWidget } from './TodayWidget'
 
 /**
@@ -26,6 +27,7 @@ export function WorkspaceHomeContainer() {
         <ContinueWidget />
         <RevisionWidget />
         <ProgressWidget />
+        <TargetsWidget />
         <SetupWidget />
       </div>
       <ToolsAndSettings />
