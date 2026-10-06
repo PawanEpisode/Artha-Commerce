@@ -16,7 +16,10 @@ from modules.tracking.tests.conftest import (  # noqa: F401
 )
 
 
-def start(c, **extra):
+def start(c, *, overtime=False, **extra):
+    """Starts a round. Most tests exercise the classic behaviour (a round closes itself at zero), so overtime is off
+    unless a test asks for it; `test_overtime.py` covers the default."""
+    c.put("/focus/settings/", {"overtime_enabled": overtime})
     body = {"client_id": str(uuid.uuid4()), **extra}
     return c.post("/focus/timer/start/", body), body["client_id"]
 
