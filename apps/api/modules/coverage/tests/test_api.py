@@ -29,6 +29,7 @@ def chapter(api, chapter_id):
         ("get", "/coverage/overview/"),
         ("get", "/coverage/enrollments/"),
         ("get", "/coverage/due/"),
+        ("get", "/coverage/continue/"),
         ("get", "/coverage/settings/"),
         ("delete", "/coverage/"),
     ],
@@ -333,6 +334,24 @@ def test_due_list_orders_overdue_first_then_heavier_chapters(api, ids, enrolled)
     assert rows[0]["overdue_days"] == 0 and rows[0]["subject"]["key"] == "taxation"
     rows = api.get(f"/coverage/due/?today={days_from_now(10)}").json_body["results"]
     assert rows[0]["overdue_days"] == 7
+
+
+def test_continue_offers_the_most_recently_studied_chapter(api, ids, enrolled):
+    assert api.get("/coverage/continue/").json_body == {"chapter": None}
+    api.post("/coverage/events/", {"chapter_id": ids["residential"], "type": "practice_done"})
+    api.post("/coverage/events/", {"chapter_id": ids["gst"], "type": "practice_done"})
+    body = api.get("/coverage/continue/").json_body["chapter"]
+    assert body["id"] == ids["gst"] and body["subject"]["key"] == "taxation"
+    assert body["coverage_pct"] > 0 and body["last_studied_at"]
+    api.post("/coverage/events/", {"chapter_id": ids["residential"], "type": "practice_done"})
+    assert api.get("/coverage/continue/").json_body["chapter"]["id"] == ids["residential"]
+
+
+def test_continue_skips_excluded_chapters_and_needs_an_enrolment(api, other_api, ids, enrolled):
+    api.post("/coverage/events/", {"chapter_id": ids["gst"], "type": "practice_done"})
+    api.put(f"/coverage/chapters/{ids['gst']}/exclusion/", {"excluded": True})
+    assert api.get("/coverage/continue/").json_body == {"chapter": None}
+    assert other_api.get("/coverage/continue/").status_code == 404
 
 
 def test_chapter_detail_shows_topics_events_and_revision_history(api, ids, enrolled):
