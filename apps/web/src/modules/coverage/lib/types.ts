@@ -143,6 +143,11 @@ export interface DueRow extends ChapterRow {
   overdue_days: number
 }
 
+/** `GET /coverage/continue/`: the chapter studied most recently, with its subject. */
+export interface ContinueChapter extends ChapterRow {
+  subject: { id: string; key: string; name: string }
+}
+
 export interface Due {
   today: string
   results: DueRow[]

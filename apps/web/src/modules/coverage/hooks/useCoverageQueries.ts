@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 
 import {
   getChapter,
+  getContinue,
   getDue,
   getOverview,
   getSettings,
@@ -41,6 +42,16 @@ export function useDue() {
     retry: (count, error) => !isNoEnrollment(error) && count < 1,
   })
   return { ...query, noEnrollment: isNoEnrollment(query.error) }
+}
+
+/** The most recently studied chapter (null before the first activity). Same failure rules as the overview. */
+export function useContinue() {
+  const query = useQuery({
+    queryKey: coverageKeys.continue,
+    queryFn: getContinue,
+    retry: (count, error) => !isNoEnrollment(error) && !isFeatureDisabled(error) && count < 1,
+  })
+  return { ...query, noEnrollment: isNoEnrollment(query.error), featureDisabled: isFeatureDisabled(query.error) }
 }
 
 export const useCoverageSettings = () => useQuery({ queryKey: coverageKeys.settings, queryFn: getSettings })

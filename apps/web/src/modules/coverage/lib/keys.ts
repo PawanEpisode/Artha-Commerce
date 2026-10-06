@@ -7,5 +7,6 @@ export const coverageKeys = {
   subjects: ['coverage', 'subject'] as const,
   chapter: (id: string) => ['coverage', 'chapter', id] as const,
   due: ['coverage', 'due'] as const,
+  continue: ['coverage', 'continue'] as const,
   settings: ['coverage', 'settings'] as const,
 }

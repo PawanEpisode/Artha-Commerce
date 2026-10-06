@@ -25,6 +25,13 @@ import { isFinished, localExtend, localPause, localResume, remainingSeconds } fr
 import type { EndReason, FocusState, FocusTimer } from '../lib/types'
 import { useFocusAlerts } from './useFocusAlerts'
 
+/** One read of the timer state, shared by the timer hook and anything that only needs to know whether one is live. */
+export async function fetchTimerState() {
+  const data = await getTimer(document.visibilityState === 'visible' && recentlyActive(5 * 60_000))
+  setServerTime(data.server_time)
+  return data
+}
+
 type Local = (t: FocusTimer) => FocusTimer | null
 interface Action {
   online: ReturnType<(typeof focusRequest)[keyof typeof focusRequest]>
@@ -45,11 +52,7 @@ export function useFocusTimer() {
   const qc = useQueryClient()
   const query = useQuery({
     queryKey: focusKeys.timer,
-    queryFn: async () => {
-      const data = await getTimer(document.visibilityState === 'visible' && recentlyActive(5 * 60_000))
-      setServerTime(data.server_time)
-      return data
-    },
+    queryFn: fetchTimerState,
     refetchInterval: (q) => (q.state.data?.timer ? HEARTBEAT_SECONDS * 1000 : false),
     refetchOnWindowFocus: true,
     retry: (count, error) => !isFeatureDisabled(error) && count < 1,
