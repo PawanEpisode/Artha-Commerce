@@ -6,6 +6,8 @@
 | Companion document | [PRD](../prd/X-01-notifications-floating-timer-stay-awake.md) |
 | Module | New Django module `notifications`; five new columns in `focus` |
 
+> **Build source for the `notifications_*` tables:** [X-01.1 ERD](X-01.1-push-notifications.md) (column-level, with nine corrections listed in its section 0). The `focus` column changes here stay valid, split across W2.6 (keep awake) and P4 (pop-out).
+
 ## Overview
 
 One new Django module, `notifications`, owns nine tables. The `focus` module gets five new settings columns. No timer, session or syllabus data is copied: notifications refer to timers by `client_id` and to courses through the existing taxonomy. All user data is keyed by the Supabase user id (`user_id uuid`), and Django is the only writer, as everywhere else.

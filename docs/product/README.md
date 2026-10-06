@@ -33,7 +33,9 @@ docs/product/
 | F-15 | Recall system (spaced repetition) | [PRD](prd/F-15-recall-system.md) | [ERD](erd/F-15-recall-system.md) | `recall` | Written |
 | F-03 | Notes + PDF editor | [PRD](prd/F-03-notes-and-pdf-editor.md) | [ERD](erd/F-03-notes-and-pdf-editor.md) | `notes` | Written |
 | F-16 | Personalization, onboarding, profile, workspace home | [PRD](prd/F-16-personalization-onboarding-profile.md) | [ERD](erd/F-16-personalization-onboarding-profile.md) | `profiles` (extended), `coverage` (additive), web `personalization` | Written, build next |
-| X-01, X-02, X-03 | Notifications, context agent, gamification | not written | not written | `notifications` (proposed) | Next |
+| X-01 | Notifications, floating timer, keep awake (combined, approved 2026-10-06) | [PRD](prd/X-01-notifications-floating-timer-stay-awake.md) | [ERD](erd/X-01-notifications-floating-timer-stay-awake.md) | `notifications`, `focus` | Written; push part superseded for build by X-01.1 |
+| X-01.1 | Push notifications: build-ready, phase and wave plan | [PRD](prd/X-01.1-push-notifications.md) | [ERD](erd/X-01.1-push-notifications.md) | `notifications` (new), web `notifications` | Draft for founder review. Runbook: [`docs/X-01-ROLLOUT.md`](../X-01-ROLLOUT.md) |
+| X-02, X-03 | Context agent, gamification | not written | not written | later | Later |
 
 Validation: [F-02 / F-01 implementation audit](validation/F-02-F-01-implementation-audit-2026-10-05.md) (0 blockers, 7 major, 17 minor, 3 nits; 464 backend tests pass).
 
@@ -103,4 +105,4 @@ Authors worked in parallel, so a few interfaces are described from both sides sl
 | X-04 rights ledger | F-04 proposes `ingestion_sourcerights` and `capabilities`; F-12 and F-14 reuse it | Add to X-04 ERD when X-04 is sliced |
 | Account erasure and export registry | F-06, F-10, F-12 call it `[PROPOSED: profiles]`; audit AUD-004 | F-16 owns it: `profiles.registry.register_eraser` / `register_exporter`, `DELETE /me/`, `GET /me/export/` (F-16 ERD section 3). Modules register once when F-16 S5 ships |
 | Per-chapter targets and daily time | F-02 stores targets on `syllabus_chapter` and `daily_hours` on the enrolment | F-16 moves targets to the student (`coverage_settings.target_*`) and adds `daily_minutes`; F-02 ERD columns stay, unused for coverage |
-| X-01 `notifications.services.notify` | Referenced as `[PROPOSED]` by all docs (34 mentions) | Write X-01 PRD/ERD next |
+| X-01 `notifications.services.notify` | Referenced as `[PROPOSED]` by all docs (34 mentions) | Defined in X-01.1 PRD section 9.3: `notifications.services.notify(user_id, event_key, *, context, dedupe_ref)`. Event keys must exist in `domain/catalogue.py`. Other docs keep the name |

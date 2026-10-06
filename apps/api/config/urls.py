@@ -14,4 +14,5 @@ urlpatterns = [
     path("api/v1/", include("modules.coverage.urls")),
     path("api/v1/", include("modules.tracking.urls")),
     path("api/v1/", include("modules.focus.urls")),
+    path("api/v1/", include("modules.notifications.urls")),
 ]

@@ -9,7 +9,7 @@ from django.apps import apps
 from django.db import connection
 from django.db.models.signals import post_migrate
 
-APP_LABELS = ("syllabus", "coverage", "tracking", "focus", "profiles")
+APP_LABELS = ("syllabus", "coverage", "tracking", "focus", "profiles", "notifications")
 
 
 def app_tables(*labels: str) -> list[str]:
@@ -39,6 +39,17 @@ def test_the_tables_under_test_are_the_ones_we_think():
         "tracking_sessionaudit",
     } <= set(TABLES)
     assert {"focus_activetimer", "focus_focussettings"} <= set(TABLES)
+
+
+def test_the_notification_tables_are_covered():
+    assert {
+        "notifications_settings",
+        "notifications_preference",
+        "notifications_device",
+        "notifications_notification",
+        "notifications_delivery",
+        "notifications_scheduledjob",
+    } <= set(TABLES)
 
 
 def test_rls_is_switched_on_after_every_migrate():

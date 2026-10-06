@@ -6,7 +6,7 @@ export default {
     'subject-case': [0],
     'subject-empty': [0],
     'type-empty': [0],
-    'header-max-length': [2, 'always', 100],
+    'header-max-length': [2, 'always', 200],
     'body-max-line-length': [0],
   },
 }

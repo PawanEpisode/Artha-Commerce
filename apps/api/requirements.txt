@@ -10,3 +10,7 @@ whitenoise>=6.9
 posthog>=7,<8
 httpx>=0.28
 Pillow>=11
+pywebpush>=2.5,<3
+qstash>=3.4,<4
+cryptography>=44
+tzdata

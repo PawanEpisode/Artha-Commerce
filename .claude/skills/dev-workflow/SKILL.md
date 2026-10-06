@@ -23,7 +23,7 @@ pnpm test:web / test:api
   - types: `feat fix docs style refactor perf test build ci chore revert`
   - scopes: `web api ds docs ci deps db product tooling`
   - examples: `feat(web): add coverage ring`, `fix(api): scope profile query by user`, `docs(product): add F-02 PRD`
-- Small commits, one concern each. Imperative subject, no trailing period, max 100 chars.
+- Small commits, one concern each. Imperative subject, no trailing period, max 200 chars.
 
 ## Hooks (installed by `pnpm install` via Husky)
 

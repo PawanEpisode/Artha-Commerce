@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "modules.coverage",
     "modules.tracking",
     "modules.focus",
+    "modules.notifications",
 ]
 
 MIDDLEWARE = [
@@ -150,6 +151,10 @@ REST_FRAMEWORK = {
         "onboarding_write": "60/min",
         "account_export": "3/hour",
         "account_delete": "3/day",
+        # X-01 notifications
+        "notifications_read": "120/min",
+        "notifications_write": "60/min",
+        "notifications_test": "5/min",
     },
     "UNAUTHENTICATED_USER": None,
 }
@@ -169,6 +174,25 @@ POSTHOG_API_KEY = env("POSTHOG_API_KEY")
 POSTHOG_HOST = env("POSTHOG_HOST", "https://us.i.posthog.com")  # the real host, not the web's /ingest proxy
 POSTHOG_FLAG_TIMEOUT_SECONDS = float(env("POSTHOG_FLAG_TIMEOUT_SECONDS", "1.5"))
 FEATURE_FLAG_CACHE_SECONDS = int(env("FEATURE_FLAG_CACHE_SECONDS", "60"))
+# --- Notifications (X-01.1) -------------------------------------------------------------------
+# Master kill switch, read at start-up and OFF by default: nothing is scheduled or sent until it is set to "true".
+# The PostHog flag `push_notifications` (strict for sending) is the fast switch; this is the hard stop.
+NOTIFICATIONS_ENABLED = env("NOTIFICATIONS_ENABLED", "false").lower() == "true"
+NOTIFICATIONS_DISABLED_EVENTS = frozenset(env_list("NOTIFICATIONS_DISABLED_EVENTS"))  # event keys switched off
+NOTIFICATIONS_QUEUE = env("NOTIFICATIONS_QUEUE", "null")  # "null" (local, tests) or "qstash"
+NOTIFICATIONS_PUBLIC_BASE_URL = env("NOTIFICATIONS_PUBLIC_BASE_URL").rstrip("/")  # origin the queue calls back
+VAPID_PRIVATE_KEY = env("VAPID_PRIVATE_KEY")
+VAPID_SUBJECT = env("VAPID_SUBJECT")  # mailto: role address, shown to push services
+QSTASH_TOKEN = env("QSTASH_TOKEN")
+QSTASH_URL = env("QSTASH_URL")
+QSTASH_CURRENT_SIGNING_KEY = env("QSTASH_CURRENT_SIGNING_KEY")
+QSTASH_NEXT_SIGNING_KEY = env("QSTASH_NEXT_SIGNING_KEY")
+CRON_SECRET = env("CRON_SECRET")  # bearer secret for the sweep endpoint
+FIELD_ENCRYPTION_KEYS = env_list("FIELD_ENCRYPTION_KEYS")  # Fernet keys, newest first (core.fields)
+FIELD_HASH_PEPPER = env("FIELD_HASH_PEPPER")
+if NOTIFICATIONS_ENABLED and not DEBUG and not (FIELD_ENCRYPTION_KEYS and FIELD_HASH_PEPPER):
+    raise RuntimeError("NOTIFICATIONS_ENABLED needs FIELD_ENCRYPTION_KEYS and FIELD_HASH_PEPPER to be set")
+
 GEMINI_API_KEY = env("GEMINI_API_KEY")
 GEMINI_MODEL = env("GEMINI_MODEL", "gemini-flash-latest")
 

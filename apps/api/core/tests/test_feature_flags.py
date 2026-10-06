@@ -49,7 +49,7 @@ def test_a_posthog_failure_means_on_and_is_logged(posthog, caplog):
     posthog.result = TimeoutError("posthog is slow")
     with caplog.at_level(logging.WARNING, logger="core.feature_flags"):
         assert feature_flags.flag_enabled("syllabus_coverage", "u1") is True
-    assert "treating it as on" in caplog.text
+    assert "treating it as unknown" in caplog.text
 
 
 def test_the_student_id_is_the_distinct_id_and_flag_events_are_not_sent(posthog):
@@ -76,3 +76,31 @@ def test_failures_are_not_cached_so_the_next_request_tries_again(posthog):
     feature_flags.flag_enabled("syllabus_coverage", "u1")
     posthog.result = False
     assert feature_flags.flag_enabled("syllabus_coverage", "u1") is False
+
+
+def test_strict_mode_fails_closed_when_posthog_cannot_answer(posthog, settings, monkeypatch, caplog):
+    posthog.result = TimeoutError("down")
+    assert feature_flags.flag_enabled("push_notifications", "u1") is True  # default stays fail open
+    assert feature_flags.flag_enabled("push_notifications", "u1", strict=True) is False
+
+    feature_flags.clear_flag_cache()
+    posthog.result = None  # unknown flag
+    assert feature_flags.flag_enabled("push_notifications", "u1") is True
+    assert feature_flags.flag_enabled("push_notifications", "u1", strict=True) is False
+
+    settings.POSTHOG_API_KEY = ""
+    monkeypatch.setattr(feature_flags, "_client", None)
+    assert feature_flags.flag_enabled("push_notifications", "u1") is True
+    assert feature_flags.flag_enabled("push_notifications", "u1", strict=True) is False
+
+
+def test_strict_mode_needs_an_explicit_on_and_respects_an_explicit_off(posthog):
+    posthog.result = True
+    assert feature_flags.flag_enabled("push_notifications", "u1", strict=True) is True
+    feature_flags.clear_flag_cache()
+    posthog.result = "variant-a"
+    assert feature_flags.flag_enabled("push_notifications", "u1", strict=True) is True
+    feature_flags.clear_flag_cache()
+    posthog.result = False
+    assert feature_flags.flag_enabled("push_notifications", "u1", strict=True) is False
+    assert feature_flags.flag_enabled("push_notifications", "u1") is False

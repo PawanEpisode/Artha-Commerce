@@ -8,6 +8,8 @@
 | Companion document | [ERD](../erd/X-01-notifications-floating-timer-stay-awake.md) |
 | Builds on | F-01.1 Pomodoro, F-01.2 Time Tracker, F-16 Personalization and onboarding |
 
+> **Build source for push:** PRD A (push) is built from [X-01.1 Push Notifications](X-01.1-push-notifications.md), which adds module boundaries, failure handling, waves and gates, and fixes the phase numbering used in the tier table below (installed app = P2, pop-out = P4, companion = P5). PRD B (floating timer) and PRD C (keep awake) stay the source here. Steps and commands: [`docs/X-01-ROLLOUT.md`](../../X-01-ROLLOUT.md).
+
 
 ## Feasibility verdict
 
