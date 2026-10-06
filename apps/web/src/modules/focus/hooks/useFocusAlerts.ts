@@ -23,6 +23,8 @@ export function useFocusAlerts(
 ) {
   const prev = useRef<FocusTimer | null>(null)
   const [announcement, setAnnouncement] = useState('')
+  // Focus rounds that ended by themselves during this visit: the moment a follow-up alerts ask may appear.
+  const [roundsFinished, setRoundsFinished] = useState(0)
 
   // One delivery for every alert: a chime, a browser notification when the tab is hidden, vibration, a live region.
   const deliver = useCallback(
@@ -66,6 +68,7 @@ export function useFocusAlerts(
     // The "did you finish?" question has its own dialog; a finished round or break gets a toast.
     if (timer === null || before?.client_id !== timer.client_id) notify.phaseEnded(alert)
     deliver(alert, before?.client_id ?? null)
+    if (before?.phase === 'focus' && timer?.client_id !== before.client_id) setRoundsFinished((n) => n + 1)
   }, [timer, settings, quiet, deliver])
 
   /** The planned length was reached and the round runs on: a toast and the same channels, but nothing ends. */
@@ -74,7 +77,7 @@ export function useFocusAlerts(
     deliver(TARGET_REACHED, prev.current?.client_id ?? null)
   }, [deliver])
 
-  return { announcement, targetReached }
+  return { announcement, targetReached, roundsFinished }
 }
 
 /** Asks for the browser's notification permission and reports the answer. */

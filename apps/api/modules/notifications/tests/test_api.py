@@ -1,13 +1,18 @@
 import uuid
-from datetime import time
+from datetime import time, timedelta
 
 import pytest
+from django.utils import timezone
 
 from modules.notifications.models import NotificationSettings, Preference
 
 pytestmark = pytest.mark.django_db
 BASE = "/api/v1/notifications"
 USER = uuid.UUID("3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11")
+
+
+def get(client, path):
+    return client.get(f"{BASE}/{path}")
 
 
 def put(client, path, body):
@@ -109,11 +114,55 @@ def test_permission_state_counts_asks_and_records_decision(auth_client):
     assert r.json()["permission_decided"] is True and r.json()["permission_state"] == "granted"
 
 
-def test_permission_asks_are_capped_at_three(auth_client):
+def test_a_pre_prompt_never_undoes_a_decision_made_earlier(auth_client):
+    post(auth_client, "permission-state/", {"state": "dismissed", "source": "onboarding"})
+    r = post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "onboarding"})
+    assert r.json()["permission_state"] == "dismissed" and r.json()["permission_decided"] is True
+    assert r.json()["permission_ask_count"] == 0
+
+
+def test_settings_reports_when_a_follow_up_ask_is_due(auth_client):
+    assert get(auth_client, "settings/").json()["followup_due"] is False  # never asked
+    post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "onboarding"})
+    post(auth_client, "permission-state/", {"state": "dismissed", "source": "onboarding"})
+    assert get(auth_client, "settings/").json()["followup_due"] is False  # too soon: 14 days apart
+    NotificationSettings.objects.filter(user_id=USER).update(
+        last_asked_at=timezone.now() - timedelta(days=15), permission_decided_at=timezone.now() - timedelta(days=15)
+    )
+    assert get(auth_client, "settings/").json()["followup_due"] is True
+
+
+def test_a_follow_up_ask_is_counted_once_and_leaves_the_decision_alone(auth_client):
+    post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "onboarding"})
+    post(auth_client, "permission-state/", {"state": "dismissed", "source": "onboarding"})
+    early = post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "followup"})
+    assert early.json()["permission_ask_count"] == 1  # not due yet: nothing counted
+    long_ago = timezone.now() - timedelta(days=15)
+    NotificationSettings.objects.filter(user_id=USER).update(last_asked_at=long_ago, permission_decided_at=long_ago)
+    shown = post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "followup"}).json()
+    assert shown["permission_ask_count"] == 2 and shown["permission_state"] == "dismissed"
+    assert shown["permission_decided"] is True and shown["followup_due"] is False
+    again = post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "followup"}).json()
+    assert again["permission_ask_count"] == 2  # a reload does not use up another ask
+
+
+def test_follow_up_asks_stop_after_three_in_all(auth_client):
+    post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "onboarding"})
+    post(auth_client, "permission-state/", {"state": "dismissed", "source": "onboarding"})
     for _ in range(5):
-        post(auth_client, "permission-state/", {"state": "dismissed", "source": "followup"})
+        long_ago = timezone.now() - timedelta(days=15)
+        NotificationSettings.objects.filter(user_id=USER).update(last_asked_at=long_ago, permission_decided_at=long_ago)
         post(auth_client, "permission-state/", {"state": "pre_prompt_shown", "source": "followup"})
-    assert NotificationSettings.objects.get(user_id=USER).permission_ask_count == 3
+    row = NotificationSettings.objects.get(user_id=USER)
+    assert row.permission_ask_count == 3
+    NotificationSettings.objects.filter(user_id=USER).update(last_asked_at=long_ago, permission_decided_at=long_ago)
+    assert get(auth_client, "settings/").json()["followup_due"] is False
+
+
+def test_answering_a_follow_up_ask_records_the_new_decision(auth_client):
+    post(auth_client, "permission-state/", {"state": "dismissed", "source": "onboarding"})
+    r = post(auth_client, "permission-state/", {"state": "granted", "source": "followup"}).json()
+    assert r["permission_state"] == "granted" and r["followup_due"] is False
 
 
 def test_permission_state_rejects_unknown(auth_client):

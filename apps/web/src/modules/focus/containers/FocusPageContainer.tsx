@@ -2,6 +2,7 @@ import { Button } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
+import { FollowUpAskContainer } from '~/modules/notifications'
 import { track } from '~/modules/observability'
 import {
   type ActivityType,
@@ -197,6 +198,9 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onStopAndSave={() => f.end(true)}
         announcement={f.announcement}
       />
+
+      {/* X-01.1 W2.5b: after a finished round, a student who said "Not now" earlier may be asked once more. */}
+      <FollowUpAskContainer roundsFinished={f.roundsFinished} />
 
       <TodayCard
         doneSeconds={goals?.daily.done_seconds ?? 0}

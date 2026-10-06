@@ -36,6 +36,7 @@ const settings = {
   permission_decided: false,
   permission_ask_count: 0,
   last_asked_at: null,
+  followup_due: false,
 }
 const category = {
   key: 'timer',
@@ -56,6 +57,12 @@ const err = (status: number, code?: string) => new ApiError(status, 'x', code ? 
 beforeEach(() => api.mockReset())
 
 describe('settings and preferences', () => {
+  it('reads a missing followup_due (an older API) as false, so no ask is ever shown by mistake', async () => {
+    const { followup_due: _omitted, ...older } = settings
+    api.mockResolvedValue(older)
+    await expect(getSettings()).resolves.toMatchObject({ followup_due: false })
+  })
+
   it('reads and writes settings under /notifications/settings/', async () => {
     api.mockResolvedValue(settings)
     await expect(getSettings()).resolves.toEqual(settings)

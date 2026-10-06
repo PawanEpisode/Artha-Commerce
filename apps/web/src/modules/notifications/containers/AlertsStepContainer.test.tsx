@@ -59,6 +59,7 @@ const settings = (permission_state: NotificationSettings['permission_state'] = '
   permission_decided: permission_state !== 'not_asked' && permission_state !== 'pre_prompt_shown',
   permission_ask_count: 0,
   last_asked_at: null,
+  followup_due: false,
 })
 const device = {
   id: 'd1',

@@ -40,6 +40,8 @@ export const settingsSchema = z.object({
   permission_decided: z.boolean(),
   permission_ask_count: z.number().int(),
   last_asked_at: z.string().nullable(),
+  /** The server says a follow-up ask may be shown now (spacing and cap are its rules, W2.5b). */
+  followup_due: z.boolean().default(false),
 })
 export type NotificationSettings = z.infer<typeof settingsSchema>
 

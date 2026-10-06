@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+from django.utils import timezone
 from rest_framework import serializers
 
 from .domain import enums
 from .domain.catalogue import CATEGORIES
 from .domain.enums import choices
+from .domain.followup import followup_due
 from .services.settings import EDITABLE
 
 
@@ -97,4 +99,12 @@ def settings_dict(row) -> dict:
         "permission_decided": row.permission_decided_at is not None,
         "permission_ask_count": row.permission_ask_count,
         "last_asked_at": row.last_asked_at.isoformat() if row.last_asked_at else None,
+        # May the page show a follow-up ask now? The server owns the spacing and the cap (domain/followup.py).
+        "followup_due": followup_due(
+            row.permission_state,
+            row.permission_ask_count,
+            row.last_asked_at,
+            row.permission_decided_at,
+            timezone.now(),
+        ),
     }

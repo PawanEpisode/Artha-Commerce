@@ -16,6 +16,7 @@ const settings: NotificationSettings = {
   permission_decided: false,
   permission_ask_count: 0,
   last_asked_at: null,
+  followup_due: false,
 }
 const categories: NotificationCategory[] = [
   { key: 'timer', label: 'Timer', description: '', channels: { push: true, email: false, inbox: true } },

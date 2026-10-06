@@ -93,4 +93,20 @@ describe('useFocusAlerts: one alert per timer end (FR-N5)', () => {
     hook.rerender({ t: null })
     expect(shown).toHaveLength(0)
   })
+
+  it('counts a focus round that ended by itself, for the follow-up alerts ask, and not a break or a self-made end', () => {
+    stubBrowser('visible')
+    const quiet = { current: false }
+    const hook = renderHook(({ t }) => useFocusAlerts(t, settings, quiet), {
+      initialProps: { t: timer('round-1') as FocusTimer | null },
+    })
+    expect(hook.result.current.roundsFinished).toBe(0)
+    hook.rerender({ t: timer('break-1', { phase: 'short_break' }) })
+    expect(hook.result.current.roundsFinished).toBe(1)
+    hook.rerender({ t: timer('round-2') }) // a break ended: not a finished round
+    expect(hook.result.current.roundsFinished).toBe(1)
+    quiet.current = true // the student stopped it themselves
+    hook.rerender({ t: null })
+    expect(hook.result.current.roundsFinished).toBe(1)
+  })
 })

@@ -70,7 +70,7 @@ export function useFocusTimer() {
   }, [timer])
 
   const quiet = useRef(false)
-  const { announcement, targetReached } = useFocusAlerts(timer, state?.settings, quiet)
+  const { announcement, targetReached, roundsFinished } = useFocusAlerts(timer, state?.settings, quiet)
 
   const put = useCallback(
     (next: Partial<FocusState>) =>
@@ -278,6 +278,7 @@ export function useFocusTimer() {
     settings: state?.settings,
     live: state?.live ?? 'none',
     announcement,
+    roundsFinished,
     remaining: timer ? remainingSeconds(timer, nowMs()) : 0,
     /** Extra focus time past the planned length, or null (not in overtime). */
     overtime: timer ? overtimeOf(timer, nowMs()) : null,
