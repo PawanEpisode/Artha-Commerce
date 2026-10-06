@@ -6,7 +6,8 @@ from datetime import datetime
 
 from modules.tracking import services as tracking
 
-from .domain import timing
+from .domain import judgement, timing
+from .domain.judgement import TimerEndJudgement
 from .models import ActiveTimer, FocusSettings
 
 
@@ -32,6 +33,41 @@ def live_kind(user_id) -> str | None:
     ):
         return None
     return "pomodoro"
+
+
+def live_end_at(timer: ActiveTimer) -> datetime | None:
+    """When the phase reaches its planned end, or None while it cannot (paused, or the round already ended away)."""
+    if timer.paused_at is not None or timer.away_pending:
+        return None
+    return timing.phase_end_at(timer.started_at, timer.planned_seconds, timer.paused_total_seconds)
+
+
+def timer_end_judgement(
+    user_id, client_id, expected_version: int, now: datetime, *, planned_end: datetime | None = None
+) -> TimerEndJudgement:
+    """
+    Is the end of timer (`client_id`, `expected_version`) still real? Read-only (PRD FR-N18): one plain SELECT, no lock,
+    no `_settle`, no `sync`, so asking never changes the timer row. The answer comes from timestamps alone.
+    """
+    row = (
+        ActiveTimer.objects.filter(pk=user_id)
+        .values(
+            "client_id",
+            "version",
+            "phase",
+            "started_at",
+            "planned_seconds",
+            "paused_at",
+            "paused_total_seconds",
+            "away_pending",
+            "overtime_enabled",
+        )
+        .first()
+    )
+    facts = judgement.TimerFacts(**row) if row else None
+    return judgement.judge_timer_end(
+        facts, client_id=client_id, expected_version=expected_version, now=now, planned_end=planned_end
+    )
 
 
 def timer_dict(timer: ActiveTimer, now: datetime) -> dict:

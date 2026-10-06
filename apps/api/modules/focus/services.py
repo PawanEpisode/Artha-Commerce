@@ -5,6 +5,10 @@ nothing depends on a worker running at the moment a phase ends.
 
 Finished rounds are written through `tracking.services.record_session` (idempotent on `client_id`, forwarded to
 coverage). This module never touches tracking tables.
+
+Every action that can change the live timer is wrapped with `events.announces`, which emits one `timer_changed` after
+commit when the timer's `client_id` or `version` moved. `update_settings` is deliberately not announcing: a running
+phase snapshots its lengths and flags when it begins, so a settings change can never move a running end.
 """
 
 from __future__ import annotations
@@ -23,6 +27,7 @@ from . import selectors
 from .domain import timing
 from .domain.timing import TimingError
 from .errors import ConflictError, InvalidInput, NotFoundError
+from .events import announces
 from .models import ActiveTimer, FocusSettings
 
 logger = logging.getLogger(__name__)
@@ -253,6 +258,7 @@ def _bump(timer: ActiveTimer, now: datetime) -> ActiveTimer:
 
 # --- Actions --------------------------------------------------------------------------------------------------
 @transaction.atomic
+@announces
 def sync(user_id, *, alive: bool = False) -> ActiveTimer | None:
     """What a page loads or polls. `alive` is the heartbeat; it never changes `version`."""
     now = _now()
@@ -264,6 +270,7 @@ def sync(user_id, *, alive: bool = False) -> ActiveTimer | None:
 
 
 @transaction.atomic
+@announces
 def start(
     user_id,
     *,
@@ -337,6 +344,7 @@ def start(
 
 
 @transaction.atomic
+@announces
 def pause(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
     now = _now()
     timer = _require(_current(user_id, now, version))
@@ -350,6 +358,7 @@ def pause(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
 
 
 @transaction.atomic
+@announces
 def resume(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
     now = _now()
     timer = _require(_current(user_id, now, version))
@@ -362,6 +371,7 @@ def resume(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
 
 
 @transaction.atomic
+@announces
 def extend(user_id, *, version=None) -> ActiveTimer:
     now = _now()
     timer = _require(_current(user_id, now, version))
@@ -382,6 +392,7 @@ def extend(user_id, *, version=None) -> ActiveTimer:
 
 
 @transaction.atomic
+@announces
 def complete(user_id, *, version=None) -> ActiveTimer | None:
     """
     The student's own screen reached zero. The round counts without the presence check. A little clock disagreement is
@@ -406,6 +417,7 @@ def complete(user_id, *, version=None) -> ActiveTimer | None:
 
 
 @transaction.atomic
+@announces
 def skip_break(user_id, *, version=None) -> ActiveTimer | None:
     now = _now()
     timer = _require(_current(user_id, now, version))
@@ -416,6 +428,7 @@ def skip_break(user_id, *, version=None) -> ActiveTimer | None:
 
 
 @transaction.atomic
+@announces
 def end(
     user_id, *, client_id=None, version=None, save: bool = True, reason: str = ""
 ) -> tuple[object | None, str, ActiveTimer | None]:
@@ -469,6 +482,7 @@ def end(
 
 
 @transaction.atomic
+@announces
 def claim(user_id, *, count: bool, version=None) -> tuple[ActiveTimer | None, str]:
     """The student answers "did you study through that round?" after being away. Returns (timer, outcome)."""
     now = _now()
@@ -495,6 +509,7 @@ def claim(user_id, *, count: bool, version=None) -> tuple[ActiveTimer | None, st
 
 
 @transaction.atomic
+@announces
 def change_context(user_id, *, version, changes: dict) -> ActiveTimer:
     now = _now()
     timer = _require(_current(user_id, now, version))
@@ -510,6 +525,7 @@ def change_context(user_id, *, version, changes: dict) -> ActiveTimer:
 
 # --- Data rights ----------------------------------------------------------------------------------------------
 @transaction.atomic
+@announces
 def delete_all_for_user(user_id) -> dict:
     """Removes the timer and timer settings. Finished rounds are tracking sessions and go with the tracking data."""
     ActiveTimer.objects.filter(pk=user_id).delete()

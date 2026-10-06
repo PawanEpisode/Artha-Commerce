@@ -32,3 +32,39 @@ def _fresh_throttle_counters():
     cache.clear()
     yield
     cache.clear()
+
+
+@pytest.fixture(autouse=True)
+def fake_queue(settings):
+    """A recording queue for every test (FR-N31): nothing here can reach QStash. Callbacks point at a fixed origin."""
+    from modules.notifications.scheduling import queue
+
+    settings.NOTIFICATIONS_PUBLIC_BASE_URL = "https://api.example.test"
+    fake = queue.NullQueue()
+    queue.use_queue(fake)
+    yield fake
+    queue.reset_queue()
+
+
+@pytest.fixture(autouse=True)
+def _subscribers_registered():
+    """Another test module may clear the event bus; make sure the notifications subscriber is listening."""
+    from modules.notifications import handlers, subscribers
+
+    handlers.register_defaults()
+    subscribers.register()
+
+
+@pytest.fixture
+def bench(monkeypatch, django_capture_on_commit_callbacks):
+    """A student's Pomodoro timer on a movable clock, driven through the real focus services."""
+    from modules.notifications.tests.timer_bench import Bench
+
+    return Bench(monkeypatch, django_capture_on_commit_callbacks)
+
+
+@pytest.fixture
+def scheme(db):
+    from modules.syllabus.tests.helpers import make_scheme
+
+    return make_scheme()

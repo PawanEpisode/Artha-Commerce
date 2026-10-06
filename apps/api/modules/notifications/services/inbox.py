@@ -1,0 +1,31 @@
+"""Inbox writes. Reading the list arrives with W3.1; the click that a deep link reports exists from W2.3."""
+
+from __future__ import annotations
+
+from datetime import datetime
+
+from django.db import transaction
+from django.utils import timezone
+from rest_framework.exceptions import NotFound
+
+from ..domain.enums import DeliveryStatus
+from ..models import Delivery, Notification
+
+
+def mark_clicked(user_id, notification_id, *, now: datetime | None = None) -> None:
+    """
+    The student opened the app from a notification (`?n=<id>`): mark it read and its pushes clicked. Only the student's
+    own notification counts (another's, or an unknown id, is a 404). Idempotent: a repeat keeps the first timestamps.
+    The click does not say which device it came from, so every push already sent for this notification is marked.
+    """
+    now = now or timezone.now()
+    with transaction.atomic():
+        notification = Notification.objects.select_for_update().filter(id=notification_id, user_id=user_id).first()
+        if notification is None:
+            raise NotFound("Notification not found.")
+        if notification.read_at is None:
+            notification.read_at = now
+            notification.save(update_fields=["read_at", "updated_at"])
+        Delivery.objects.filter(
+            notification=notification, user_id=user_id, status=DeliveryStatus.SENT, clicked_at__isnull=True
+        ).update(clicked_at=now, updated_at=timezone.now())

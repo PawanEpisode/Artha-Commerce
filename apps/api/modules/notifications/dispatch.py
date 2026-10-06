@@ -26,10 +26,16 @@ from .domain.enums import Channel, DeliveryStatus, SuppressReason
 from .domain.payload import build_payload, delivery_window, encode_payload
 from .domain.policy import Action, PolicyInput, QuietPreference, decide
 from .domain.quiet_hours import local_day_bounds
+from .logs import log_event
 from .models import Delivery, Device, Notification
 from .services import devices as device_service
 
 logger = logging.getLogger(__name__)
+
+
+def _log(level: int, name: str, **fields: object) -> None:
+    log_event(level, name, source=logger, **fields)
+
 
 DEVICE_KIND_LOG = "web_push"
 
@@ -56,13 +62,6 @@ class DispatchResult:
         if self.failed:
             return "failed"
         return "already_sent"
-
-
-def _log(level: int, name: str, **fields: object) -> None:
-    """One structured line, `name key=value ...`. Callers pass only the fields PRD section 10 lists: no secrets."""
-    logger.log(
-        level, "%s %s", name, " ".join(f"{k}={v}" for k, v in fields.items() if v is not None), extra={"push": fields}
-    )
 
 
 def dispatch(

@@ -31,3 +31,19 @@ class InvalidDeepLink(CodedError):
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = "That link is not allowed."
     default_code = "invalid_deep_link"
+
+
+class InternalUnauthorized(CodedError):
+    """The queue signature or the cron secret is missing or wrong. Nothing about why is revealed."""
+
+    status_code = status.HTTP_401_UNAUTHORIZED
+    default_detail = "Not authorised."
+    default_code = "unauthorized"
+
+
+class TransientJobError(CodedError):
+    """A job could not be finished for a reason that may pass (database, push adapter). The queue should retry (5xx)."""
+
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+    default_detail = "The job could not be completed right now."
+    default_code = "job_failed"

@@ -286,7 +286,7 @@ git add requirements.txt && git commit -m "chore(deps): add pywebpush, qstash an
 
 # 2. module skeleton (layout from PRD 9.1)
 mkdir -p modules/notifications/{domain,services,selectors,channels,scheduling,views,management/commands,tests,migrations}
-touch modules/notifications/{apps,models,serializers,urls,admin,planner,subscribers,handlers,dispatch}.py
+touch modules/notifications/{apps,models,serializers,urls,admin,subscribers,handlers,dispatch}.py
 for d in "" domain services selectors channels scheduling views management management/commands tests migrations; do
   touch "modules/notifications/${d:+$d/}__init__.py"
 done
@@ -388,23 +388,36 @@ cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w
 cd apps/api && source .venv/bin/activate
 ```
 
-Build in this order:
+Build in this order (this is how it was built; every file has tests beside it):
 
-1. `focus/events.py` with `announce(user_id, timer)` and `focus/selectors.timer_end_state(...)` (read-only). Call `announce` from every public service action in `focus/services.py` and from the places that delete or begin a phase. Same for `tracking` (stopwatch, goal). A parametrised test calls every public service action and asserts exactly one emitted event.
-2. `scheduling/base.py`, `null.py`, `qstash.py` (the only `qstash` import), `signature.py` (verifies with the current and next signing keys against `NOTIFICATIONS_PUBLIC_BASE_URL` + path).
-3. `planner.py` and `subscribers.py`: upsert the job, cancel older pending jobs of the same timer, publish to the queue with a short timeout; a queue error is logged and ignored.
-4. `handlers.py` and `dispatch.py`: atomic claim, judge, policy, send, record. `views/internal.py`: `fire` and `sweep`, with the permission classes `HasQueueSignature` and `HasCronSecret`.
+1. **Announcer and judge in `focus`** (no migration: `ActiveTimer.version` already exists). `focus/events.py` holds one decorator, `announces`, applied to every public action in `focus/services.py` (`sync`, `start`, `pause`, `resume`, `extend`, `complete`, `skip_break`, `end`, `claim`, `change_context`, `delete_all_for_user`). After the action it compares the timer's (`client_id`, `version`) with what it was before and, if they differ, emits one `timer_changed` after commit (a rolled-back action and a no-op such as a heartbeat or a retried start emit nothing). The payload is small: `user_id`, `active`, `client_id`, `version`, `phase`, `ends_at`, `paused`, `overtime`, `round`, `minutes`, `subject_name`, `break_minutes`, `next_round`, `away_pending`, `at`. `update_settings` does not announce, because a running phase keeps the lengths and flags it started with. `focus/domain/judgement.py` is the pure rule and `focus.selectors.timer_end_judgement(user_id, client_id, expected_version, now)` is the read-only selector (one plain `SELECT`, never `sync` or `_settle`). `tests/test_announce.py` has a parametrised case per action and a guard that fails when a new public action is neither announcing nor listed as not moving the timer. The `tracking` announcers (`stopwatch_changed`, `goal_reached`) move to W3.2, where the alerts that use them are built.
+2. **Queue port.** `scheduling/queue.py`: `DelayedQueue` (`publish(job_id, fire_at)`, `cancel(external_id)`), `NullQueue` (records calls, the default and the test double), `QStashQueue` (callback `NOTIFICATIONS_PUBLIC_BASE_URL` + `/api/v1/notifications/internal/jobs/{id}/fire/`, not-before time, 3 retries, deduplication id = job id, 3 s timeout on the publish) and the QStash signature verifier. It is the only file that imports `qstash`.
+3. **Internal endpoints.** `scheduling/auth.py` and `views/internal.py`: `POST internal/jobs/{id}/fire/` needs a valid `Upstash-Signature` (current or next signing key, body hash and exact callback URL); `GET` and `POST internal/sweep/` need `Authorization: Bearer $CRON_SECRET`. Anything else is 401 with nothing done. No student login, no throttle, no UI flag; `CORS_URLS_REGEX` in `config/settings.py` keeps `internal/` out of CORS. The fire endpoint answers 200 for every outcome (sent, skipped, ignored) and 503 only when the work should be retried.
+4. **Jobs.** `scheduling/jobs.py`: `plan_timer_end` (upsert on student, kind, timer, version; publish; a queue failure is logged and ignored), `cancel_for_timer`, and `fire_job` (atomic claim `pending` to `fired`, then kill switches, then the handler's judgement, then `notify`). `handlers.py` maps a job kind to its event key and read-only judgement; `subscribers.py` turns `timer_changed` into plan or cancel and is registered in `apps.py`. Skip reasons recorded on the job: `changed`, `paused`, `gone`, `flag_off`, `disabled`, `stale`.
+5. **Sweep.** `scheduling/sweep.py`: fires pending jobs that are more than 10 seconds overdue, oldest first, at most 200 jobs and 20 seconds per run, and logs `sweep_run`. It is a list of steps (`STEPS`), so nudges, digests and pruning are added later as further steps.
+6. **Click.** `services/inbox.py` and `views/inbox.py`: `POST /api/v1/notifications/inbox/{id}/click/` marks the student's own notification read and its sent pushes clicked; 204, idempotent, 404 for anyone else's; same UI gate and `notifications_write` budget as the other student endpoints.
 
 ```bash
 pytest modules/focus modules/tracking modules/notifications -q     # existing focus and tracking tests must still pass
 ruff check . && ruff format .
 ```
 
-**Check locally without the queue** (`NOTIFICATIONS_QUEUE=null`): start a 5-minute round in the app with a registered device, wait, then run the sweep by hand. It fires overdue jobs:
+Two tests (`test_job_claim_postgres.py`) need real concurrent connections and the query planner, so they run on Postgres only: locally they are skipped on SQLite and CI runs them. To run them yourself, point `DATABASE_URL` at a local Postgres 15 or later.
+
+**Settings the internal endpoints need at runtime:** `NOTIFICATIONS_PUBLIC_BASE_URL`, `QSTASH_CURRENT_SIGNING_KEY` and `QSTASH_NEXT_SIGNING_KEY` for `fire` (without both keys every call is refused, on purpose), `CRON_SECRET` for `sweep`, and for publishing `NOTIFICATIONS_QUEUE=qstash` with `QSTASH_TOKEN` (and `QSTASH_URL` for a non-default region). Planning also needs `NOTIFICATIONS_ENABLED=true` and the PostHog flag `notifications_send` on for the student.
+
+**Check locally without the queue** (`NOTIFICATIONS_QUEUE=null`): start a 5-minute round in the app with a registered device, wait for the end, then run the sweep by hand (the sweep waits 10 seconds after the end before it steps in). It fires overdue jobs:
 
 ```bash
-curl -s -X POST localhost:8000/api/v1/notifications/internal/sweep/ -H "Authorization: Bearer $CRON_SECRET"
-curl -s -X POST localhost:8000/api/v1/notifications/internal/sweep/            # expect 401
+curl -s -X POST localhost:8000/api/v1/notifications/internal/sweep/ -H "Authorization: Bearer $CRON_SECRET"   # {"fired":1,...}
+curl -s localhost:8000/api/v1/notifications/internal/sweep/ -H "Authorization: Bearer $CRON_SECRET"            # GET works too (Vercel cron)
+curl -s -X POST localhost:8000/api/v1/notifications/internal/sweep/                                           # expect 401
+```
+
+**Check the click endpoint** (take a notification id from the push URL `?n=<id>`, or `select id from notifications_notification order by created_at desc limit 1;`):
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' -X POST localhost:8000/api/v1/notifications/inbox/<notification_id>/click/ -H "Authorization: Bearer $TOKEN"   # 204, twice
 ```
 
 **Check with the real queue** (needs a public URL for QStash to call):
@@ -419,16 +432,20 @@ export QSTASH_TOKEN=... QSTASH_CURRENT_SIGNING_KEY=... QSTASH_NEXT_SIGNING_KEY=.
 python manage.py runserver 8000
 ```
 
-Run these four cases and read the `job_fired` and `job_skipped` log lines in the terminal:
+Run these four cases and read the `job_fired`, `job_skipped` and `job_cancelled` log lines in the terminal; the job table shows what happened to each version:
 
-1. Start a 5-minute round, leave it: alert at 5:00 (lateness under 5 s).
-2. Start, pause at 4:59: nothing arrives; the log says `job_skipped` with reason `paused` or `changed`.
-3. Start, press +5 minutes: one alert, at the new end.
-4. Start, stop the API for the end time, start it again within a minute and run the sweep: the alert arrives late but once.
+```sql
+select status, skip_reason, expected_version, fire_at, fired_at, attempts from notifications_scheduledjob order by created_at desc limit 8;
+```
+
+1. Start a 5-minute round, leave it: alert at 5:00 (lateness under 5 s), job `fired`.
+2. Start, pause at 4:59: nothing arrives; the job is `cancelled` and the QStash log shows the message deleted. (`job_skipped` with reason `changed` appears only if the cancel call itself failed.)
+3. Start, press +5 minutes: one alert, at the new end; the first job is `cancelled`.
+4. Start, stop the API for the end time, start it again within a minute and run the sweep: the alert arrives late but once (QStash may also retry; the second call finds the job already claimed and does nothing).
 
 Also confirm in the Upstash console (QStash, Logs) that the delivery to your tunnel shows 200.
 
-**Other tools:** QStash console only for the logs. **Roll back:** `NOTIFICATIONS_ENABLED=false` (next deployment) or the PostHog flag at 0% (within about a minute).
+**Other tools:** QStash console only for the logs. **Roll back:** `NOTIFICATIONS_ENABLED=false` (next deployment) or the PostHog flag at 0% (within about a minute); messages already queued then arrive and are recorded `skipped: disabled` or `skipped: flag_off`.
 
 ### W2.4 Web foundation
 
@@ -491,7 +508,7 @@ pnpm build:web && pnpm --filter @artha/web start           # production build on
 
 **Check in Chrome** on `http://localhost:3000/app/settings/notifications`: DevTools, Application, Manifest (no installability warnings), Service Workers (status running), then Subscribe, Send me a test, and the alert appears with the tab closed. Repeat the visual check in all four themes and at 320, 768 and 1280 px, keyboard only.
 
-**Other tools:** Vercel web project must have `VITE_VAPID_PUBLIC_KEY` (section 1) and be redeployed after it is added. The API must have `NOTIFICATIONS_ENABLED=true` and the device endpoints from W2.2 deployed for the device list and test button to work; `POST inbox/{id}/click/` is not on the API yet, so `?n=` is a silent no-op until it is. **Roll back:** flag `notifications_ui` at 0% hides the screen and the Settings link (the worker stays registered; it caches nothing and only shows pushes).
+**Other tools:** Vercel web project must have `VITE_VAPID_PUBLIC_KEY` (section 1) and be redeployed after it is added. The API must have `NOTIFICATIONS_ENABLED=true` and the device endpoints from W2.2 deployed for the device list and test button to work; `POST inbox/{id}/click/` arrives with W2.3, so deploy W2.3 first or `?n=` is a silent no-op. **Roll back:** flag `notifications_ui` at 0% hides the screen and the Settings link (the worker stays registered; it caches nothing and only shows pushes).
 
 ### W2.5 Permission step (web and api)
 
@@ -793,7 +810,8 @@ Rule from `SETUP.md` stays: nothing secret gets a `VITE_` prefix.
 
 | Symptom | Likely cause and fix |
 | --- | --- |
-| `fire` returns 401 | Signature check failed. `NOTIFICATIONS_PUBLIC_BASE_URL` must equal the exact origin QStash calls (scheme and host, no trailing slash); the signing keys must match the QStash project; check that you read the raw body before parsing it |
+| `fire` returns 503 | A transient failure after the job was claimed (database or push adapter). The job went back to `pending` and the queue retries; after 3 attempts it is `failed`. Read the traceback logged just before |
+| `fire` returns 401 | Signature check failed. `NOTIFICATIONS_PUBLIC_BASE_URL` must equal the exact origin QStash calls (scheme and host, no trailing slash); the signing keys must match the QStash project; both signing keys must be set (with either missing every call is refused); the check uses the raw body |
 | `fire` returns 400 or 403 `Invalid host header` | The tunnel or domain is missing from `DJANGO_ALLOWED_HOSTS` |
 | Nothing is ever sent | `NOTIFICATIONS_ENABLED` is false, the PostHog flag is not true for your user (sending is strict), or no active device. `push_suppressed` logs say which |
 | Alert arrives late | The queue call failed at start and the sweep sent it. Look for `sweep_run` with `fired > 0`; check the QStash logs and the sweeper (`cron.job_run_details`) |

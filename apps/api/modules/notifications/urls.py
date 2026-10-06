@@ -12,4 +12,16 @@ urlpatterns = [
     path(
         "notifications/devices/<uuid:device_id>/test/", views.DeviceTestView.as_view(), name="notifications-device-test"
     ),
+    path(
+        "notifications/inbox/<uuid:notification_id>/click/",
+        views.InboxClickView.as_view(),
+        name="notifications-inbox-click",
+    ),
+    # Machines only: signature or cron secret, no student auth (views/internal.py).
+    path(
+        "notifications/internal/jobs/<uuid:job_id>/fire/",
+        views.JobFireView.as_view(),
+        name="notifications-internal-fire",
+    ),
+    path("notifications/internal/sweep/", views.SweepView.as_view(), name="notifications-internal-sweep"),
 ]

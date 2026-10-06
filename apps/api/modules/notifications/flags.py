@@ -19,9 +19,14 @@ def ui_enabled(user_id) -> bool:
     return master_enabled() and flag_enabled(UI_FLAG, user_id)
 
 
+def send_flag_enabled(user_id) -> bool:
+    """The PostHog sending flag alone, strict: only an explicit `on` counts."""
+    return flag_enabled(SEND_FLAG, user_id, strict=True)
+
+
 def sending_enabled(user_id) -> bool:
     """Allowed to send: the environment switch AND an explicit `on` from PostHog (fails closed)."""
-    return master_enabled() and flag_enabled(SEND_FLAG, user_id, strict=True)
+    return master_enabled() and send_flag_enabled(user_id)
 
 
 def event_disabled(event_key: str) -> bool:
