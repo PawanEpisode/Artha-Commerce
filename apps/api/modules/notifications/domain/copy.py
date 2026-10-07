@@ -18,6 +18,7 @@ FOCUS_LINK = "/app/focus"
 TRACKER_LINK = "/app/tracker"
 SETTINGS_LINK = "/app/settings/notifications"
 HOME_LINK = "/app"
+REVISION_LINK = "/app/revision"
 BODY_COLUMN_LIMIT = 240  # the notification body column; a motivation line fits whole, it is not cut like the others
 
 
@@ -98,6 +99,46 @@ def _daily_nudge(context: Mapping[str, Any]) -> Copy:
     return Copy("A thought for today", _fit(body, BODY_COLUMN_LIMIT), HOME_LINK, f"nudge:{context['local_date']}")
 
 
+def _revision_due(context: Mapping[str, Any]) -> Copy:
+    """Chapters whose revision day has come: how many, and the one to start with."""
+    count = int(context["due_count"])
+    chapter = str(context.get("first_chapter") or "").strip()
+    if count == 1:
+        body = f"{chapter} is due for revision today." if chapter else "1 chapter is due for revision today."
+    elif chapter:
+        body = f"{count} chapters are due for revision, starting with {chapter}."
+    else:
+        body = f"{count} chapters are due for revision today."
+    return Copy("Revision due", _fit(body, BODY_LIMIT), REVISION_LINK, f"revision:{context['local_date']}")
+
+
+_MILESTONE_WORDS = {
+    60: "About two months to go. A steady daily plan carries you there.",
+    30: "One month left. A good moment to check what is still unread.",
+    14: "Two weeks left. Revise what you have covered and fill the gaps.",
+    7: "One week left. Favour revision, and rest well.",
+    3: "Three days left. Keep revision light and your routine steady.",
+    1: "Revise lightly, sleep well and trust your preparation.",
+}
+
+
+def _exam_milestone(context: Mapping[str, Any]) -> Copy:
+    """A calm marker on the way to the exam date. Never shames, never counts down in capitals."""
+    days = int(context["days_left"])
+    title = "Your exam is tomorrow" if days == 1 else f"{days} days to your exam"
+    body = _MILESTONE_WORDS.get(days, f"{days} days left. Keep going at your own pace.")
+    return Copy(_fit(title, TITLE_LIMIT), _fit(body, BODY_LIMIT), HOME_LINK, f"exam:{days}")
+
+
+def _content_published(context: Mapping[str, Any]) -> Copy:
+    """New material for the student's course. The link is checked against the allow-list when the row is created."""
+    title = str(context["title"]).strip()
+    link = str(context.get("link") or HOME_LINK)
+    return Copy(
+        "New for your course", _fit(f"{title} is now available.", BODY_LIMIT), link, f"content:{context['item_id']}"
+    )
+
+
 def _test_push(context: Mapping[str, Any]) -> Copy:
     return Copy("Test notification", "Notifications are working on this device.", SETTINGS_LINK, "test_push")
 
@@ -109,6 +150,9 @@ _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "goal_reached": _goal_reached,
     "streak_at_risk": _streak_at_risk,
     "daily_nudge": _daily_nudge,
+    "revision_due": _revision_due,
+    "exam_milestone": _exam_milestone,
+    "content_published": _content_published,
     "test_push": _test_push,
 }
 

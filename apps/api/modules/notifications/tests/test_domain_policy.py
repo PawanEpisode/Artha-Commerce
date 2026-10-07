@@ -114,7 +114,13 @@ def test_visited_today_comes_after_preference_and_device_and_before_quiet_hours_
     assert decide(facts(opened_today=True, sent_today=DAILY_CAP)).reason is SuppressReason.VISITED_TODAY
 
 
-def test_only_the_daily_nudge_asks_to_be_skipped_after_a_visit():
+def test_only_the_daily_nudge_and_revision_ask_to_be_skipped_after_a_visit():
     from modules.notifications.domain.catalogue import EVENTS
 
-    assert {key for key, spec in EVENTS.items() if spec.skip_if_opened} == {"daily_nudge"}
+    assert {key for key, spec in EVENTS.items() if spec.skip_if_opened} == {"daily_nudge", "revision_due"}
+
+
+def test_revision_is_skipped_after_a_visit_but_an_exam_milestone_is_not():
+    d = decide(facts(event="revision_due", opened_today=True))
+    assert (d.action, d.reason) == (Action.SUPPRESS, SuppressReason.VISITED_TODAY)
+    assert decide(facts(event="exam_milestone", opened_today=True)).action is Action.SEND

@@ -18,16 +18,21 @@ Nothing here judges whether to notify; that happens when the job fires, from the
 by its dedupe key) and handed to a `deliver_deferred` job due in a moment, so the push is sent by the queue or the sweep
 and never inside the student's own request. Quiet hours, the cap and the expiry are judged when that job fires.
 
+`content_published` (from whichever module owns study material): new material is live for a level or course. The service
+reaches the cohort, once per student per item (dedupe key `content:{item_id}`), through deferred jobs like `goal_reached`.
+Nothing publishes it yet; the listener is ready for the module that will.
+
 A queue problem is absorbed inside `scheduling.planning`; the sweep fires any job whose message never arrived.
 """
 
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 from uuid import UUID
 
 from core import events
+from core.events import CONTENT_PUBLISHED
 from modules.focus.events import TIMER_CHANGED
 from modules.tracking.domain.judgement import reaches_at
 from modules.tracking.events import GOAL_REACHED, STOPWATCH_CHANGED
@@ -36,13 +41,12 @@ from . import flags
 from .domain import tracker_alerts
 from .logs import log_event
 from .scheduling import jobs
+from .scheduling.planning import IMMEDIATE_DELAY
+from .services import content as content_service
 from .services import notify as notify_service
 
 ON_BREAK = "break_over"
 ON_FOCUS = "timer_end"
-IMMEDIATE_DELAY = timedelta(
-    seconds=2
-)  # a queue may refuse a "not before" that has already passed, so aim a moment ahead
 
 
 def _event_for(phase: str) -> str:
@@ -154,8 +158,13 @@ def on_goal_reached(
         jobs.plan_deferred(notification, (at or notification.created_at) + IMMEDIATE_DELAY)
 
 
+def on_content_published(*, item_id, title, level_id=None, course_id=None, link: str | None = None, **_ignored) -> None:
+    content_service.announce(item_id=item_id, title=title, level_id=level_id, course_id=course_id, link=link)
+
+
 def register() -> None:
     """Idempotent (`core.events.subscribe` ignores a repeat), so `AppConfig.ready` may run twice."""
     events.subscribe(TIMER_CHANGED, on_timer_changed)
     events.subscribe(STOPWATCH_CHANGED, on_stopwatch_changed)
     events.subscribe(GOAL_REACHED, on_goal_reached)
+    events.subscribe(CONTENT_PUBLISHED, on_content_published)

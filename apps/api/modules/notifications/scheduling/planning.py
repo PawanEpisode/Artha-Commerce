@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import logging
 from collections.abc import Mapping
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any
 
 from django.db import transaction
@@ -27,6 +27,9 @@ from . import queue
 #: A held notification is planned again each time its send finds quiet hours still on (the student moved them). The expiry
 #: bounds this in practice; the limit is the guard against a loop.
 MAX_DEFERRALS = 5
+#: A send that is due now but must not run inside the request that caused it. A queue may refuse a "not before" that has
+#: already passed, so aim a moment ahead.
+IMMEDIATE_DELAY = timedelta(seconds=2)
 
 
 def _plan(

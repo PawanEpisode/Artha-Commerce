@@ -96,7 +96,9 @@ _EVENT_LIST: tuple[EventSpec, ...] = (
     EventSpec(
         "daily_nudge", Category.MOTIVATION, 3, "nudge:{local_date}", expires_after=6 * _HOUR, skip_if_opened=True
     ),
-    EventSpec("revision_due", Category.REVISION, 2, "revision:{local_date}", expires_after=12 * _HOUR),
+    EventSpec(
+        "revision_due", Category.REVISION, 2, "revision:{local_date}", expires_after=12 * _HOUR, skip_if_opened=True
+    ),
     EventSpec("exam_milestone", Category.EXAM, 2, "exam:{days_left}", expires_after=12 * _HOUR),
     EventSpec("content_published", Category.CONTENT, 3, "content:{item_id}", expires_after=24 * _HOUR),
     EventSpec("evaluation_ready", Category.EVALUATION, 1, "evaluation:{attempt_id}", expires_after=24 * _HOUR),

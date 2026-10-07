@@ -249,6 +249,24 @@ def due_for_revision(enrollment: Enrollment, today: date) -> list[ChapterProgres
     return rows
 
 
+def audience_user_ids(*, level_id=None, course_id=None, after=None, limit: int = 500) -> list:
+    """
+    Students with an active enrolment on this level (or any level of this course), in `user_id` order, one page at a
+    time: pass the last id of the previous page as `after`. For other modules that need to reach a cohort (new content)
+    without reading enrolments themselves.
+    """
+    rows = Enrollment.objects.filter(status=Enrollment.Status.ACTIVE)
+    if level_id is not None:
+        rows = rows.filter(level_id=level_id)
+    elif course_id is not None:
+        rows = rows.filter(level__course_id=course_id)
+    else:
+        return []
+    if after is not None:
+        rows = rows.filter(user_id__gt=after)
+    return list(rows.order_by("user_id").values_list("user_id", flat=True).distinct()[:limit])
+
+
 def last_studied(enrollment: Enrollment) -> ChapterProgress | None:
     """The chapter the student touched most recently (any activity), for "Continue where you left off"."""
     return (

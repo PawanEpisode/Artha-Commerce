@@ -841,7 +841,7 @@ pnpm check
 
 Production: migrate first, merge, then run `python manage.py load_motivation_seed` against production the same way as the migration (section 3 environment). Then an editor opens `https://api.<your-domain>/<DJANGO_ADMIN_PATH>/`, Notifications, Messages, reviews the drafts, selects them and runs "Publish selected". Until then the card and the nudge have nothing to show and stay quiet.
 
-**Roll back:** add `daily_nudge` to `NOTIFICATIONS_DISABLED_EVENTS` and redeploy to stop the push (the sweep still plans the next time but creates nothing); set the `notifications_ui` flag to 0% to hide the card; retire lines in the admin to take them out of rotation. Setting `notifications_send` to 0% or `NOTIFICATIONS_ENABLED=false` stops all delivery. To undo the code, revert the commit; the two new tables can stay, because older code ignores them and `0002_motivation` only adds tables.
+**Roll back:** add `daily_nudge` to `NOTIFICATIONS_DISABLED_EVENTS` and redeploy to stop the push (the sweep leaves the due rows untouched; when the event is switched back on, anything more than 6 hours overdue is skipped as stale and replanned, so there is no burst); set the `notifications_ui` flag to 0% to hide the card; retire lines in the admin to take them out of rotation. Setting `notifications_send` to 0% or `NOTIFICATIONS_ENABLED=false` stops all delivery. To undo the code, revert the commit; the two new tables can stay, because older code ignores them and `0002_motivation` only adds tables.
 
 Check what was shown and sent with:
 
@@ -875,12 +875,57 @@ where n.event = 'daily_nudge' order by d.attempted_at desc limit 10;
 
 ### W3.4 Revision, exam countdown, content
 
+Goal: three more alerts on the machinery of W3.1 to W3.3: exam countdown milestones, revision that is due, and new content for a course. No migration, no web change (`/app` and `/app/revision` are already on the deep-link allow-list). `NOTIFICATIONS_DECLARATIVE_PUSH` stays off.
+
+**What changed**
+
+- One daily slot. Revision and the exam countdown do not get their own sweep step: they share the student's nudge time (`next_nudge_at`, W3.3) with the thought. `services/nudge.process_due_nudge` still claims the due time first (at most once), then `domain/daily_slot.choose` picks what the slot carries: an exam milestone, else revision if a chapter is due, else the daily thought. A student therefore never gets a thought and a revision reminder together. A category the student turned off for push, or an event on `NOTIFICATIONS_DISABLED_EVENTS`, is skipped so the next one goes out.
+- `exam_milestone`: on the exact local day the exam is 60, 30, 14, 7, 3 or 1 days away (`domain/daily_slot.MILESTONES`). Dedupe key `exam:{days_left}`, category exam, priority 2, expiry 12 hours. It is not skipped after a visit. A milestone is tied to its day: if the day is missed (sweep down, push held past expiry) it is not owed. Copy (`domain/copy`): "{n} days to your exam" (the last one reads "Your exam is tomorrow"), one calm line per milestone, links to `/app`.
+- `revision_due`: when `coverage.selectors.due_for_revision` has at least one chapter for today. Dedupe key `revision:{local_date}`, category revision, priority 2, expiry 12 hours. It replaces the thought that day and is skipped with `visited_today` when the student already opened the app (the same signal as the nudge, `skip_if_opened`). Copy names how many chapters are due and the one to start with (overdue first, then the heaviest); links to `/app/revision`. A revision push displaced by a milestone is not lost: the chapters are still due tomorrow and the same rule offers it then.
+- Reads: `selectors/daily.py` (`daily_facts`, `push_allowed`) reads through `coverage`'s public selectors and the student's own preferences; nothing reaches into another module's tables.
+- `content_published`: `core.events.CONTENT_PUBLISHED` is the event; the module that owns the content emits it once, after the item is live, with `item_id`, `title`, `level_id` or `course_id` and an optional `link`. `subscribers.on_content_published` calls `services/content.announce`, which pages through `coverage.selectors.audience_user_ids` (500 at a time, at most 5000 students per announcement), creates one notification per student (dedupe key `content:{item_id}`, category content, priority 3, expiry 24 hours) and plans a `deliver_deferred` job 2 seconds ahead, so no push is sent inside the publisher's request. Nothing publishes the event yet, so students see nothing until the publishing module exists. An announcement with no audience, no title or id, a link off the allow-list, or while a switch is off does nothing.
+- The 2 second delay moved to `scheduling/planning.IMMEDIATE_DELAY` so the goal alert and the content fan-out share one constant.
+- Kill switches: `exam_milestone`, `revision_due` and `content_published` can each be listed in `NOTIFICATIONS_DISABLED_EVENTS`. Listing `daily_nudge` stops the whole slot (thought, revision and milestones), because the slot is driven by it.
+
+**Configure:** nothing new. All three ride on `NOTIFICATIONS_ENABLED`, the strict `notifications_send` flag and the per-category switches (Revision, Exam countdown, New content). The slot needs the per-minute sweep from W2.3.
+
 ```bash
-git switch -c feat/x-01-w3-4-more-providers
-cd apps/api && source .venv/bin/activate && pytest modules/notifications modules/coverage -q
+cd "$ROOT/apps/api" && source .venv/bin/activate
+python manage.py makemigrations --check --dry-run          # No changes detected: this wave has no migration
+pytest modules/notifications modules/coverage -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm check
 ```
 
-Check with your account: set the exam date in coverage settings to 30 days ahead, wait for or force the morning run (as above), and confirm one milestone push; with chapters due for revision, one revision push that day, never two.
+**Roll back:** add `exam_milestone`, `revision_due` or `content_published` (any subset) to `NOTIFICATIONS_DISABLED_EVENTS` and redeploy; the slot falls back to the thought and the content listener creates nothing. `notifications_send` at 0% or `NOTIFICATIONS_ENABLED=false` stops all delivery. Nothing is deleted and no database change is involved. To undo the code, revert the commit.
+
+Check what was sent with:
+
+```sql
+select event, dedupe_key, created_at from notifications_notification
+where event in ('exam_milestone', 'revision_due', 'content_published') order by created_at desc limit 20;
+select n.event, d.status, d.suppress_reason from notifications_delivery d
+join notifications_notification n on n.id = d.notification_id
+where n.event in ('exam_milestone', 'revision_due') order by d.attempted_at desc limit 20;
+```
+
+**Check on real devices** (after deploy, with the flags on for you; use a student with an active enrolment):
+
+1. Exam countdown: set the exam date in coverage settings to exactly 30 days ahead (or 60, 14, 7, 3, 1). Force the nudge as in W3.3 (`update notifications_settings set next_nudge_at = now() where user_id = '<your uuid>';`, then run the sweep). One push, "30 days to your exam", opening `/app`. Run the sweep again: nothing new.
+2. Revision: with an exam date that is not a milestone and at least one chapter due, force the nudge without opening `/app` that day: one push, "Revision due", opening `/app/revision`, and no thought that day. With no chapter due: the thought arrives instead.
+3. Both at once (milestone day and a chapter due): exactly one push, the milestone. The next day, the revision push arrives.
+4. Open `/app` first, then force the nudge: no revision push (`visited_today`), but an exam milestone still arrives.
+5. Turn the Exam countdown category off for push on a milestone day with chapters due: the revision push goes out instead. Turn both off: the thought goes out.
+6. Quiet hours around now: the push is held and arrives when they end.
+7. Add `exam_milestone` to `NOTIFICATIONS_DISABLED_EVENTS`, redeploy, force a nudge on a milestone day: no milestone push.
+8. Content: from the Django shell run `from core import events; events.emit("content_published", item_id="test-1", title="Test amendment", level_id="<your level id>")`. Each student on that level gets one push within a few seconds (a queue) or at the next sweep minute; run it again: nothing new. Use a level with only test accounts.
+
+**Decisions**
+
+- The exam countdown uses 60, 30, 14, 7, 3 and 1 days (the first draft of the PRD said milestones without numbers). The exam day itself is left to the thought.
+- Revision, the exam countdown and the thought share one slot at the student's nudge time and the order is exam, revision, thought. This reads the PRD's "one revision push a day, never two" as one daily push from the family, which is also why the earlier rollout check of "one milestone push and one revision push that day" is now "one push that day, the other the next day".
+- Revision is skipped after a visit because the student has already seen what is due; the exam milestone is not, because it is a one-off marker.
+- `exam:{days_left}` is unique per student and number and notifications are kept 180 days, so an exam date that comes round again after a new cycle reuses a number only after the old row is pruned. A student who moves their exam date forward on the same days-left number inside 180 days will not get that one again.
+- The content fan-out is bounded in one request (5000 students, a logged error `content_audience_truncated` beyond that, and announcing again picks up the rest). It is meant for the first releases; a publishing module with large cohorts should move it to a cursor job.
 
 ### W3.5 Weekly email
 

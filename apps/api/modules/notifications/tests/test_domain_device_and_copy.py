@@ -57,7 +57,7 @@ def test_singular_minute_and_limits():
 def test_break_over_and_unknown():
     assert build_copy("break_over", {"client_id": "c1", "next_round": 3}).body == "Ready for round 3?"
     with pytest.raises(UnknownEvent):
-        build_copy("revision_due", {})  # an event whose copy is not written yet cannot be sent unreviewed
+        build_copy("plan_ready", {})  # an event whose copy is not written yet cannot be sent unreviewed
 
 
 def test_daily_nudge_copy_is_the_library_line_whole_and_links_home():

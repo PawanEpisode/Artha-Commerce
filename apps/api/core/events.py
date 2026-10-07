@@ -18,6 +18,12 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
+#: A new piece of study material went live for a course or level (an amendment, a mock test, a paper). Published by
+#: whichever module owns the content, once, after the item is visible to students. Payload: `item_id` (a stable id, used
+#: to send it at most once per student), `title` (what students read), `level_id` or `course_id` (who it is for; with
+#: neither, nobody is notified), optional `link` (a relative page inside the workspace; the home page when absent).
+CONTENT_PUBLISHED = "content_published"
+
 Subscriber = Callable[..., None]
 
 _subscribers: dict[str, list[Subscriber]] = defaultdict(list)
