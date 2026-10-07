@@ -1389,6 +1389,8 @@ pnpm --filter @artha/web exec vitest run src/modules/notifications src/modules/f
 
 Gate G4 (approved PRD): four weeks after P4, at least 25% of desktop focus students use the pop-out or the installed app, and feedback asks for "works when my browser is closed" or system-wide keep awake. If not met, stop here.
 
+The approved-for-review build document is `docs/X-01-P5-DESKTOP-COMPANION.md` (gate G4 met 2026-10-07; no code until it is approved).
+
 Before any code, write a build document like this one for the companion (new package `apps/desktop`, CI job, signing, release and update process), and have it approved. Setup commands when you start:
 
 ```bash
