@@ -38,6 +38,7 @@ def notification(age_days: int) -> Notification:
 
 
 def delivery(n: Notification, age_days: int) -> Delivery:
+    # No device: Postgres treats that null as equal, so two of these cannot share a notification.
     return Delivery.objects.create(
         notification=n, user_id=USER, channel="push", status="sent", attempted_at=days(age_days)
     )
@@ -59,8 +60,7 @@ def device(revoked_days_ago: int | None) -> Device:
 
 
 def test_deliveries_older_than_90_days_go_and_newer_ones_stay():
-    n = notification(10)
-    old, edge, new = delivery(n, 91), delivery(n, 90), delivery(n, 89)
+    old, edge, new = delivery(notification(10), 91), delivery(notification(10), 90), delivery(notification(10), 89)
     result = retention.prune(now=NOW)
     assert result.deliveries == 1
     assert not Delivery.objects.filter(id=old.id).exists()
@@ -115,9 +115,8 @@ def test_running_it_again_is_a_no_op():
 
 
 def test_it_deletes_in_batches_and_stops_at_the_row_limit():
-    n = notification(10)
     for _ in range(5):
-        delivery(n, 100)
+        delivery(notification(10), 100)
     deliveries_before = Delivery.objects.count()
     part = retention.prune(now=NOW, batch=2, max_rows=3)
     assert part.deliveries == 3 and part.more
@@ -127,9 +126,8 @@ def test_it_deletes_in_batches_and_stops_at_the_row_limit():
 
 
 def test_the_clock_can_stop_the_job_between_batches():
-    n = notification(10)
     for _ in range(4):
-        delivery(n, 100)
+        delivery(notification(10), 100)
     calls = {"n": 0}
 
     def out_of_time():
