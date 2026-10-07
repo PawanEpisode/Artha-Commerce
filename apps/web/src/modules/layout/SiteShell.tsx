@@ -1,9 +1,14 @@
+import { useMatches } from '@tanstack/react-router'
 import type { CSSProperties, ReactNode } from 'react'
 
+import { isBareChrome } from './chrome'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 
 export function SiteShell({ children }: { children: ReactNode }) {
+  const bare = useMatches({ select: isBareChrome })
+  // A page in its own small window (the fallback timer) has no header, footer or skip link.
+  if (bare) return <main id="main">{children}</main>
   return (
     // Sticky bars below the header (SectionTabs) read this var; the header is h-16 at every width.
     <div className="flex min-h-dvh flex-col" style={{ '--site-header-height': '4rem' } as CSSProperties}>

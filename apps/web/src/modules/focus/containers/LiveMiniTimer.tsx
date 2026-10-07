@@ -10,6 +10,7 @@ import { useTimerTitle } from '../hooks/useDocumentTitle'
 import { useFocusTimer } from '../hooks/useFocusTimer'
 import { usePopOut } from '../hooks/usePopOut'
 import { usePopoutSync } from '../hooks/usePopoutSync'
+import { MINI_PATH } from '../lib/mini-window'
 import { type PopoutControlId, popoutView } from '../lib/popout'
 import { PopOutButton } from './PopOutButton'
 import { PopOutFocus } from './PopOutFocus'
@@ -111,7 +112,8 @@ export function LiveMiniTimer() {
   const path = useRouterState({ select: (s) => s.location.pathname })
   const focusOn = useFeatureFlag('focus_timer')
   const trackerOn = useFeatureFlag('time_tracker')
-  if (loading || !user) return null
+  // The fallback window is its own timer page: the corner timer would be a second one in the same window.
+  if (loading || !user || path === MINI_PATH) return null
   return (
     <>
       {focusOn ? <FocusMini ownTitle={!path.startsWith('/app/focus')} /> : null}

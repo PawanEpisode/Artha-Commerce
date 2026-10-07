@@ -10,6 +10,7 @@ import { usePopOutSize } from './usePopOutSize'
 
 const api = (size: 'pill' | 'card', resize = vi.fn().mockResolvedValue(true)): PopOutApi => ({
   available: true,
+  fallback: false,
   isOpen: true,
   window: null,
   root: null,

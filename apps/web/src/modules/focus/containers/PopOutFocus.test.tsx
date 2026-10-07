@@ -72,6 +72,7 @@ function makeWindow() {
 }
 const context = (root: HTMLElement | null, size: 'pill' | 'card'): PopOutApi => ({
   available: true,
+  fallback: false,
   isOpen: !!root,
   window: null,
   root,

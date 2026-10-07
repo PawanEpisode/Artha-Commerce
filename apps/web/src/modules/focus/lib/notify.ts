@@ -41,6 +41,12 @@ export const notify = {
       description: 'Your browser opens it only from a click. Press Pop out again.',
     }),
 
+  miniWindowBlocked: () =>
+    toast.info('The small window was blocked', {
+      id: ID.timer,
+      description: 'Allow pop-ups for this site in your browser, then press Pop out again.',
+    }),
+
   settingsSaved: () => toast.success('Settings saved', { id: ID.settings }),
   exportStarted: () => toast.info('Preparing your timer data', { id: 'focus-export' }),
   exportFinished: () => toast.success('Timer data downloaded', { id: 'focus-export' }),

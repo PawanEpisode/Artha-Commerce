@@ -4,7 +4,7 @@ import { nowMs } from '~/modules/tracker'
 
 import { MiniTimerView } from '../components/MiniTimerView'
 import { useContextLabel } from '../hooks/useContextLabel'
-import type { FocusTimerApi } from '../hooks/useFocusTimer'
+import type { ActionSurface, FocusTimerApi } from '../hooks/useFocusTimer'
 import { useOpenOnStart } from '../hooks/useOpenOnStart'
 import { usePopOutSize } from '../hooks/usePopOutSize'
 import { unlockAudio } from '../lib/chime'
@@ -19,17 +19,38 @@ import {
 } from '../lib/popout'
 import { MIN_ROUND_SECONDS } from '../lib/presets'
 import { elapsedSeconds } from '../lib/timer-math'
+import type { PopOutSize } from '../lib/types'
 
-/** The browser can focus the opener tab from the window (spike S4.6). */
-const CAN_GO_BACK = true
+/**
+ * How the window is laid out when it is not the floating window: the fallback window picks its layout from its own
+ * size and has no size toggle (the student resizes it).
+ */
+export interface WindowLayout {
+  size: PopOutSize
+  onToggleSize?: () => void
+  /** Fill the parent instead of the whole window (the fallback window has a note above the timer). */
+  fillParent?: boolean
+}
+
+interface Props {
+  f: FocusTimerApi
+  /** Absent in the floating window, whose size toggle and memory come from `usePopOutSize`. */
+  layout?: WindowLayout
+  /** Where actions are reported from (`phase_end_acknowledged.surface`). */
+  surface?: Extract<ActionSurface, 'popout' | 'mini_window'>
+  /** "Back to Artha": the browser can focus the opener tab from the floating window (spike S4.6), not from a pop-up. */
+  canGoBack?: boolean
+}
 
 /**
  * The Pomodoro in the floating window. It draws the one `useFocusTimer` the corner timer owns and calls its actions, so
  * pausing here is pausing there; the controls are the focus page's, state by state (`popoutView`). Closing the window
  * never stops the timer.
  */
-export function PopOutFocus({ f }: { f: FocusTimerApi }) {
-  const { size, toggle } = usePopOutSize()
+export function PopOutFocus({ f, layout, surface = 'popout', canGoBack = true }: Props) {
+  const pipSize = usePopOutSize()
+  const size = layout?.size ?? pipSize.size
+  const toggle = layout ? layout.onToggleSize : pipSize.toggle
   const openOnStart = useOpenOnStart(f.settings)
   const t = f.timer
   // The subject and chapter of the last round shown: what "Start round N" continues.
@@ -43,10 +64,10 @@ export function PopOutFocus({ f }: { f: FocusTimerApi }) {
   const label = useContextLabel(last?.subject_id ?? null, last?.chapter_id ?? null)
   const view = popoutView(t, f.idle, null, nowMs(), last)
   const confirming = ending && view.controls.some((c) => c.id === 'end')
-  const controls = visibleControls(confirming ? END_CONFIRM_CONTROLS : view.controls, size, CAN_GO_BACK)
+  const controls = visibleControls(confirming ? END_CONFIRM_CONTROLS : view.controls, size, canGoBack)
 
   const act = (id: PopoutControlId) =>
-    f.from('popout', () => {
+    f.from(surface, () => {
       switch (id) {
         case 'pause':
           return f.pause()
@@ -98,6 +119,7 @@ export function PopOutFocus({ f }: { f: FocusTimerApi }) {
       prompt={confirming ? 'End this round?' : undefined}
       announcement={f.announcement}
       onToggleSize={toggle}
+      fillParent={layout?.fillParent}
     />
   )
 }

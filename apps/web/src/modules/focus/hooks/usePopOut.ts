@@ -18,6 +18,11 @@ export type PopOutCloseBy = 'student' | 'tab_closed' | 'flag_off'
  */
 export interface PopOutApi {
   available: boolean
+  /**
+   * True where the browser has no Document Picture-in-Picture but this is a desktop with the flag on and a student
+   * signed in: Pop out then opens the small separate window `/app/focus/mini`, which does not stay on top (W4.4).
+   */
+  fallback: boolean
   isOpen: boolean
   /** The window (null while closed): its timers and its document are the ones the timer hooks use while it is open. */
   window: Window | null
@@ -26,6 +31,10 @@ export interface PopOutApi {
   /** The layout in use, which can differ from the window's real size when the browser refuses to resize. */
   size: PopOutSize
   /** Must be called from a click or key press, and it asks the browser for the window before anything is awaited. */
+  /**
+   * Opens the floating window, or the fallback window where that is all there is. Must be called from a click or key
+   * press, first thing in the handler.
+   */
   open: (size: PopOutSize, meta: { source: PopOutSource; timer: PopOutTimerKind }) => Promise<boolean>
   close: () => void
   /** Switches the layout and asks the browser for the new size; true when the window really changed size. */
@@ -34,6 +43,7 @@ export interface PopOutApi {
 
 const CLOSED: PopOutApi = {
   available: false,
+  fallback: false,
   isOpen: false,
   window: null,
   root: null,

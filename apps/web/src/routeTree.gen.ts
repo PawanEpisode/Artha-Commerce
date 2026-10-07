@@ -31,6 +31,7 @@ import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
 import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
+import { Route as AppFocusMiniRouteImport } from './routes/app.focus.mini'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
 import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
@@ -160,6 +161,11 @@ const AppFocusHistoryRoute = AppFocusHistoryRouteImport.update({
   path: '/focus/history',
   getParentRoute: () => AppRoute,
 } as any)
+const AppFocusMiniRoute = AppFocusMiniRouteImport.update({
+  id: '/focus/mini',
+  path: '/focus/mini',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   id: '/settings/coverage',
   path: '/settings/coverage',
@@ -278,6 +284,7 @@ export interface FileRoutesByFullPath {
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
+  '/app/focus/mini': typeof AppFocusMiniRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
@@ -319,6 +326,7 @@ export interface FileRoutesByTo {
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
+  '/app/focus/mini': typeof AppFocusMiniRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
@@ -362,6 +370,7 @@ export interface FileRoutesById {
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
+  '/app/focus/mini': typeof AppFocusMiniRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
@@ -406,6 +415,7 @@ export interface FileRouteTypes {
     | '/courses/'
     | '/features/'
     | '/app/focus/history'
+    | '/app/focus/mini'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notifications'
@@ -447,6 +457,7 @@ export interface FileRouteTypes {
     | '/courses'
     | '/features'
     | '/app/focus/history'
+    | '/app/focus/mini'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notifications'
@@ -489,6 +500,7 @@ export interface FileRouteTypes {
     | '/courses/'
     | '/features/'
     | '/app/focus/history'
+    | '/app/focus/mini'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notifications'
@@ -689,6 +701,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppFocusHistoryRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/focus/mini': {
+      id: '/app/focus/mini'
+      path: '/focus/mini'
+      fullPath: '/app/focus/mini'
+      preLoaderRoute: typeof AppFocusMiniRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/coverage': {
       id: '/app/settings/coverage'
       path: '/settings/coverage'
@@ -825,6 +844,7 @@ interface AppRouteChildren {
   AppRevisionRoute: typeof AppRevisionRoute
   AppIndexRoute: typeof AppIndexRoute
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
+  AppFocusMiniRoute: typeof AppFocusMiniRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
   AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
@@ -847,6 +867,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppRevisionRoute: AppRevisionRoute,
   AppIndexRoute: AppIndexRoute,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
+  AppFocusMiniRoute: AppFocusMiniRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
   AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,

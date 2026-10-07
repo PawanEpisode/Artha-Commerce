@@ -41,6 +41,8 @@ interface Props {
   action?: ReactNode
   /** Window only: switches between the pill and the card. */
   onToggleSize?: () => void
+  /** Window only: fill the parent (the fallback window shares its height with a note) instead of the whole window. */
+  fillParent?: boolean
 }
 
 const ICONS: Record<Exclude<PopoutIcon, null>, LucideIcon> = {
@@ -158,7 +160,7 @@ export function MiniTimerView(p: Props) {
       />
     ))
   return (
-    <div className="@container h-dvh w-full">
+    <div className={cn('@container w-full', p.fillParent ? 'h-full' : 'h-dvh')}>
       <section
         aria-label="Artha timer"
         className={cn(

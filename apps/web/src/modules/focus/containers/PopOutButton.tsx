@@ -11,13 +11,15 @@ interface Props {
 }
 
 /**
- * Pop out the timer, or bring it back when it is already out. It renders nothing where the window is not offered (no
- * Document Picture-in-Picture, the `floating_timer` flag off, signed out). The click opens the window first and
+ * Pop out the timer, or bring it back when it is already out. It renders nothing where no window is offered (the
+ * `floating_timer` flag off, signed out, or not a desktop browser); without Document Picture-in-Picture it opens the
+ * small separate window instead. The click opens the window first and
  * only then does anything else, which is what the browser requires.
  */
 export function PopOutButton({ source, timer, size = 'pill' }: Props) {
   const pop = usePopOut()
-  if (!pop.available) return null
+  // Where only the separate window exists, a second press brings the same window forward, so there is no Bring back.
+  if (!pop.available && !pop.fallback) return null
   return pop.isOpen ? (
     <Button
       size="icon"

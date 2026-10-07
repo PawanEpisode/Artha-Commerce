@@ -19,6 +19,10 @@ describe('shared restorable cases (same file as the API tests)', () => {
 })
 
 describe('helpers', () => {
+  it('never restores the fallback timer window (a student must not land in a 320 px popup)', () => {
+    expect(cleanVisit('/app/focus/mini')).toBeNull()
+    expect(isRestorable('/app/focus/mini')).toBe(false)
+  })
   it('isRestorable takes a full target', () => {
     expect(isRestorable('/app/tracker/reports?range=7d')).toBe(true)
     expect(isRestorable('/app/account')).toBe(false)

@@ -52,8 +52,8 @@ export async function fetchTimerState() {
   return data
 }
 
-/** Where the student acted: the page, or the floating window (the baseline compares the two). */
-export type ActionSurface = 'tab' | 'popout'
+/** Where the student acted: the page, the floating window or the fallback window (the baseline compares them). */
+export type ActionSurface = 'tab' | 'popout' | 'mini_window'
 
 type Local = (t: FocusTimer) => FocusTimer | null
 interface Action {

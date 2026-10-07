@@ -4,8 +4,9 @@ import { useAuth } from '~/modules/auth'
 import { track, useFeatureFlag } from '~/modules/observability'
 
 import { useDocumentPip } from '../hooks/useDocumentPip'
-import { useDocumentPipSupported } from '../hooks/usePipSupport'
+import { useDesktopBrowser, useDocumentPipSupported } from '../hooks/usePipSupport'
 import { type PopOutApi, PopOutContext } from '../hooks/usePopOut'
+import { openMiniWindow } from '../lib/mini-window'
 import { notify } from '../lib/notify'
 
 /**
@@ -21,7 +22,10 @@ export function PopOutProvider({ children }: { children: ReactNode }) {
   const pip = useDocumentPip({
     onClosed: ({ by, secondsOpen }) => track('popout_closed', { seconds_open: secondsOpen, by }),
   })
+  const desktop = useDesktopBrowser()
   const available = supported && flagOn && !!user
+  // Where only the small separate window exists: desktop browsers without Document Picture-in-Picture.
+  const fallback = !supported && desktop && flagOn && !!user
 
   const { isOpen, close: closePip, open: openPip, resize: resizePip } = pip
   useEffect(() => {
@@ -30,7 +34,14 @@ export function PopOutProvider({ children }: { children: ReactNode }) {
 
   const open = useCallback<PopOutApi['open']>(
     (size, meta) => {
-      if (!available) return Promise.resolve(false)
+      if (!available) {
+        if (!fallback) return Promise.resolve(false)
+        // A plain pop-up, which the browser allows only from a click: it is the first thing this handler does.
+        const win = openMiniWindow()
+        if (win) track('popout_opened', { supported: 'window', size, source: meta.source, timer: meta.timer })
+        else notify.miniWindowBlocked()
+        return Promise.resolve(win !== null)
+      }
       // `openPip` asks the browser for the window before anything else, so the click is still fresh.
       return openPip(size).then((opened) => {
         if (opened) track('popout_opened', { supported: 'pip', size, source: meta.source, timer: meta.timer })
@@ -38,7 +49,7 @@ export function PopOutProvider({ children }: { children: ReactNode }) {
         return opened
       })
     },
-    [available, openPip],
+    [available, fallback, openPip],
   )
 
   const resize = useCallback<PopOutApi['resize']>(
@@ -53,6 +64,7 @@ export function PopOutProvider({ children }: { children: ReactNode }) {
   const value = useMemo<PopOutApi>(
     () => ({
       available,
+      fallback,
       isOpen,
       window: pip.window,
       root: pip.root,
@@ -61,7 +73,7 @@ export function PopOutProvider({ children }: { children: ReactNode }) {
       close: () => closePip(),
       resize,
     }),
-    [available, isOpen, pip.window, pip.root, pip.size, open, closePip, resize],
+    [available, fallback, isOpen, pip.window, pip.root, pip.size, open, closePip, resize],
   )
   return <PopOutContext.Provider value={value}>{children}</PopOutContext.Provider>
 }

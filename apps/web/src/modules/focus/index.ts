@@ -1,6 +1,7 @@
 export { FocusPageContainer, type FocusSearch } from './containers/FocusPageContainer'
 export { HistoryContainer, type HistorySearch } from './containers/HistoryContainer'
 export { LiveMiniTimer } from './containers/LiveMiniTimer'
+export { MiniWindowContainer } from './containers/MiniWindowContainer'
 export { PopOutProvider } from './containers/PopOutProvider'
 export { SettingsContainer } from './containers/SettingsContainer'
 export { useLiveTimer } from './hooks/useLiveTimer'
