@@ -21,7 +21,17 @@ import {
 import { focusKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
 import { HEARTBEAT_SECONDS } from '../lib/presets'
-import { isFinished, localExtend, localPause, localResume, overtimeOf, remainingSeconds } from '../lib/timer-math'
+import {
+  isFinished,
+  localExtend,
+  localPause,
+  localResume,
+  nextPendingEnd,
+  overtimeOf,
+  type PendingEnd,
+  phaseEndGap,
+  remainingSeconds,
+} from '../lib/timer-math'
 import type { EndReason, FocusState, FocusTimer } from '../lib/types'
 import { useFocusAlerts } from './useFocusAlerts'
 
@@ -70,6 +80,17 @@ export function useFocusTimer() {
   }, [timer])
 
   const quiet = useRef(false)
+  // The phase end the student has not answered yet; the first action after it is reported once (baseline for the pop-out).
+  const pendingEnd = useRef<PendingEnd | null>(null)
+  const acknowledge = useCallback(() => {
+    const pending = pendingEnd.current
+    pendingEnd.current = null
+    const seconds = pending ? phaseEndGap(pending.at, nowMs()) : null
+    if (pending && seconds !== null) track('phase_end_acknowledged', { seconds, surface: 'tab', phase: pending.phase })
+  }, [])
+  useEffect(() => {
+    pendingEnd.current = nextPendingEnd(pendingEnd.current, timer, nowMs())
+  }, [timer, state?.server_time])
   const { announcement, targetReached, roundsFinished } = useFocusAlerts(timer, state?.settings, quiet)
 
   const put = useCallback(
@@ -121,6 +142,7 @@ export function useFocusTimer() {
   })
 
   const start = (body: Omit<StartBody, 'client_id' | 'at'>, meta: { has_subject: boolean; resumed_cycle: boolean }) => {
+    acknowledge()
     quiet.current = true
     const client_id = newClientId()
     const req = focusRequest.start({ ...body, client_id, at: nowIso() })
@@ -169,6 +191,7 @@ export function useFocusTimer() {
       said: (_n, queued) => notify.extended(queued),
     })
   const skipBreak = () => {
+    acknowledge()
     quiet.current = true
     act.mutate({
       online: focusRequest.skipBreak({ version: v }),
@@ -180,6 +203,7 @@ export function useFocusTimer() {
   }
   const end = (save: boolean, reason?: EndReason) => {
     const client_id = timer?.client_id
+    acknowledge()
     quiet.current = true
     act.mutate({
       online: focusRequest.end({ client_id, version: v, save, reason }),
@@ -231,6 +255,7 @@ export function useFocusTimer() {
   const claim = useMutation({
     mutationFn: async (count: boolean) => {
       quiet.current = true
+      acknowledge()
       const next = await claimRound(count, v)
       setServerTime(next.server_time)
       put(next)

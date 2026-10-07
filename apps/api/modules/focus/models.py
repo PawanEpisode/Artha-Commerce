@@ -14,6 +14,7 @@ from modules.tracking.domain.durations import ACTIVITY_TYPES
 PRESET_CHOICES = [("classic", "Classic"), ("deep", "Deep"), ("light", "Light"), ("custom", "Custom")]
 ACTIVITY_CHOICES = [(a, a) for a in ACTIVITY_TYPES]
 PHASE_CHOICES = [("focus", "Focus"), ("short_break", "Short break"), ("long_break", "Long break")]
+POPOUT_SIZE_CHOICES = [("pill", "Pill"), ("card", "Card")]
 
 
 class FocusSettings(TimeStampedModel):
@@ -33,6 +34,10 @@ class FocusSettings(TimeStampedModel):
     # Hold the screen awake while a round runs (X-01 keep awake). Breaks only when the second switch is on too.
     keep_awake = models.BooleanField(default=True)
     keep_awake_in_breaks = models.BooleanField(default=False)
+    # The floating timer (X-01 P4). `popout_prompt_seen` is set when the start-of-round prompt is shown, not when answered.
+    popout_on_start = models.BooleanField(default=False)
+    popout_size = models.CharField(max_length=4, choices=POPOUT_SIZE_CHOICES, default="pill")
+    popout_prompt_seen = models.BooleanField(default=False)
     intro_seen = models.BooleanField(default=False)
     # The remembered cycle: when a phase ends and nothing starts on its own the timer goes idle, but the round count and
     # the phase that is due next carry on ("Start round 3 of 4", "Start break").
@@ -60,6 +65,9 @@ class FocusSettings(TimeStampedModel):
                 condition=Q(rounds_before_long__gte=2, rounds_before_long__lte=8), name="focus_settings_rounds_range"
             ),
             models.CheckConstraint(condition=Q(volume__gte=0, volume__lte=100), name="focus_settings_volume_range"),
+            models.CheckConstraint(
+                condition=Q(popout_size__in=["pill", "card"]), name="focus_settings_popout_size_valid"
+            ),
             models.CheckConstraint(
                 condition=Q(cycle_round__gte=0, cycle_round__lte=8), name="focus_settings_cycle_round"
             ),

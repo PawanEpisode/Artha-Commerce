@@ -11,6 +11,7 @@ from .domain import timing
 
 ACTIVITY_CHOICES = list(ACTIVITY_TYPES)
 PRESET_CHOICES = list(timing.PRESET_KEYS)
+POPOUT_SIZES = timing.POPOUT_SIZES
 
 
 class _Optional(serializers.Serializer):
@@ -32,6 +33,9 @@ class SettingsSerializer(_Optional):
     notifications_enabled = serializers.BooleanField(required=False)
     keep_awake = serializers.BooleanField(required=False)
     keep_awake_in_breaks = serializers.BooleanField(required=False)
+    popout_on_start = serializers.BooleanField(required=False)
+    popout_size = serializers.ChoiceField(choices=list(POPOUT_SIZES), required=False)
+    popout_prompt_seen = serializers.BooleanField(required=False)
     intro_seen = serializers.BooleanField(required=False)
 
 

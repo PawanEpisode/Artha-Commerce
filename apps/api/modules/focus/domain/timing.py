@@ -36,6 +36,8 @@ HEARTBEAT_SECONDS = 20
 OVERTIME_MAX_SECONDS = 2 * 3600
 
 PHASES = ("focus", "short_break", "long_break")
+# The floating timer's two sizes (X-01 PRD B). Only the name is stored; the web owns the pixel sizes.
+POPOUT_SIZES = ("pill", "card")
 REASONS = ("distracted", "phone_call", "tired", "urgent_work", "other")
 
 

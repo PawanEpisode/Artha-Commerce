@@ -115,3 +115,38 @@ export function localExtend(t: FocusTimer): FocusTimer {
       : new Date(Date.parse(t.started_at) + (planned_seconds + t.paused_total_seconds) * 1000).toISOString(),
   }
 }
+
+// --- How long a student takes to act once a phase has ended (X-01 PRD B, `phase_end_acknowledged`) ---------------
+/** A gap longer than this is reported as this: the student was simply away. */
+export const MAX_ACK_GAP_SECONDS = 7200
+
+/** A phase that ended and has not been acted on yet. */
+export interface PendingEnd {
+  clientId: string
+  phase: Phase
+  /** When the phase reached zero, in epoch milliseconds on the server's clock. */
+  at: number
+}
+
+/** When a phase that is not paused reaches zero (the web twin of `timing.phase_end_at`). */
+export function phaseEndMs(t: Pick<FocusTimer, 'started_at' | 'planned_seconds' | 'paused_total_seconds'>): number {
+  return Date.parse(t.started_at) + (t.planned_seconds + t.paused_total_seconds) * 1000
+}
+
+/**
+ * Keeps track of the phase end the student has yet to answer. A timer that has reached its end (or is "away") becomes
+ * the pending end; a different timer that is still running drops it; idle (no timer) keeps it, because the next Start
+ * is exactly the action being timed.
+ */
+export function nextPendingEnd(pending: PendingEnd | null, t: FocusTimer | null, nowMs: number): PendingEnd | null {
+  if (!t) return pending
+  if (pending?.clientId === t.client_id) return pending
+  if (t.status === 'away' || isFinished(t, nowMs)) return { clientId: t.client_id, phase: t.phase, at: phaseEndMs(t) }
+  return null
+}
+
+/** Whole seconds from the end of a phase to the student's action, capped; null when the action came first. */
+export function phaseEndGap(endAtMs: number, actionAtMs: number): number | null {
+  const seconds = Math.floor((actionAtMs - endAtMs) / 1000)
+  return seconds < 0 ? null : Math.min(seconds, MAX_ACK_GAP_SECONDS)
+}

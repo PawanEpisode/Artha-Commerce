@@ -86,11 +86,16 @@ def update_settings(user_id, changes: dict) -> tuple[FocusSettings, list[str]]:
         "notifications_enabled",
         "keep_awake",
         "keep_awake_in_breaks",
+        "popout_on_start",
+        "popout_prompt_seen",
         "intro_seen",
     ):
         if key in changes and getattr(s, key) != changes[key]:
             setattr(s, key, changes[key])
             changed.append(key)
+    if "popout_size" in changes and s.popout_size != changes["popout_size"]:
+        s.popout_size = changes["popout_size"]
+        changed.append("popout_size")
     if "volume" in changes and s.volume != changes["volume"]:
         s.volume = changes["volume"]
         changed.append("volume")

@@ -147,6 +147,9 @@ def settings_dict(s: FocusSettings) -> dict:
         "notifications_enabled": s.notifications_enabled,
         "keep_awake": s.keep_awake,
         "keep_awake_in_breaks": s.keep_awake_in_breaks,
+        "popout_on_start": s.popout_on_start,
+        "popout_size": s.popout_size,
+        "popout_prompt_seen": s.popout_prompt_seen,
         "intro_seen": s.intro_seen,
     }
 

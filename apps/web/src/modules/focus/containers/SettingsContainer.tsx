@@ -11,6 +11,7 @@ import { useFocusSettings, useSaveFocusSettings } from '../hooks/useFocusSetting
 import { deleteData, exportData, isFeatureDisabled } from '../lib/api'
 import { playChime, unlockAudio } from '../lib/chime'
 import { notify } from '../lib/notify'
+import { isDocumentPipSupported } from '../lib/pip'
 import type { PresetKey, Timings } from '../lib/presets'
 import type { FocusSettings } from '../lib/types'
 import { FocusShell } from './FocusShell'
@@ -22,6 +23,7 @@ const currentPermission = (): Permission =>
 function Body({ settings }: { settings: FocusSettings }) {
   const save = useSaveFocusSettings()
   const keepAwakeFlag = useFeatureFlag('keep_awake')
+  const floatingTimerFlag = useFeatureFlag('floating_timer')
   const [permission, setPermission] = useState<Permission>(currentPermission)
   const [volume, setVolume] = useState(settings.volume)
   const [confirmDelete, setConfirmDelete] = useState(false)
@@ -72,6 +74,8 @@ function Body({ settings }: { settings: FocusSettings }) {
         permission={permission}
         wakeLockSupported={isWakeLockSupported()}
         showKeepAwake={keepAwakeFlag}
+        showPopOut={floatingTimerFlag}
+        popoutSupported={isDocumentPipSupported()}
         busy={save.isPending}
       />
       <section aria-labelledby="focus-data" className="space-y-3 rounded-2xl border border-border bg-card p-6">

@@ -1,7 +1,7 @@
-import { Alert, Button, Label, Slider, Switch } from '@artha/design-system'
+import { Alert, Button, Label, SegmentedControl, Slider, Switch } from '@artha/design-system'
 
 import type { PresetKey, Timings } from '../lib/presets'
-import type { FocusSettings } from '../lib/types'
+import type { FocusSettings, PopOutSize } from '../lib/types'
 import { PresetPicker } from './PresetPicker'
 
 interface Props {
@@ -13,6 +13,10 @@ interface Props {
   wakeLockSupported?: boolean
   /** The `keep_awake` flag: false hides the screen section. */
   showKeepAwake?: boolean
+  /** Whether this browser has Document Picture-in-Picture (an always-on-top pop-out); otherwise a small window opens. */
+  popoutSupported?: boolean
+  /** The `floating_timer` flag: false hides the pop-out section. */
+  showPopOut?: boolean
   /** The browser's notification permission, so the switch can explain a block. */
   permission: 'granted' | 'denied' | 'default' | 'unsupported'
   busy: boolean
@@ -31,6 +35,8 @@ export function FocusSettingsForm({
   error,
   wakeLockSupported = true,
   showKeepAwake = true,
+  popoutSupported = true,
+  showPopOut = true,
 }: Props) {
   const timings: Timings = {
     focus_minutes: value.focus_minutes,
@@ -144,6 +150,40 @@ export function FocusSettingsForm({
           ) : null}
         </section>
       ) : null}
+      {showPopOut ? (
+        <section className="space-y-4 rounded-2xl border border-border bg-card p-6" aria-labelledby="popout-heading">
+          <h2 id="popout-heading" className="text-lg font-bold">
+            Pop-out timer
+          </h2>
+          <Row
+            id="popout-on-start"
+            label="Pop out when I start a round"
+            hint="Opens the small timer window as soon as you press Start, so it stays in view while you study elsewhere."
+            checked={value.popout_on_start}
+            onChange={(v) => onChange({ popout_on_start: v })}
+          />
+          <div className="space-y-1.5">
+            <Label>Pop-out size</Label>
+            <SegmentedControl<PopOutSize>
+              label="Pop-out size"
+              value={value.popout_size}
+              options={POPOUT_SIZE_OPTIONS}
+              onValueChange={(v) => onChange({ popout_size: v })}
+              disabled={busy}
+            />
+            <p className="text-sm text-muted-foreground">
+              Pill shows the time and one button. Card adds the progress ring, your subject and every control.
+            </p>
+          </div>
+          {!popoutSupported ? (
+            <Alert variant="info">
+              <span role="status">
+                This browser opens the timer in a small separate window, which does not stay on top of other apps.
+              </span>
+            </Alert>
+          ) : null}
+        </section>
+      ) : null}
       {error ? (
         <Alert variant="error">
           <span role="alert">{error}</span>
@@ -152,6 +192,11 @@ export function FocusSettingsForm({
     </div>
   )
 }
+
+const POPOUT_SIZE_OPTIONS = [
+  { value: 'pill', label: 'Pill' },
+  { value: 'card', label: 'Card' },
+] as const satisfies ReadonlyArray<{ value: PopOutSize; label: string }>
 
 function Row({
   id,

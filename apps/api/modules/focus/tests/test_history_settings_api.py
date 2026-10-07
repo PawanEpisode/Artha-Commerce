@@ -36,6 +36,9 @@ def test_settings_default_and_update(api):
         "notifications_enabled": False,
         "keep_awake": True,
         "keep_awake_in_breaks": False,
+        "popout_on_start": False,
+        "popout_size": "pill",
+        "popout_prompt_seen": False,
         "intro_seen": False,
     }
     res = api.put("/focus/settings/", {"volume": 30, "sound_enabled": False, "preset": "light"})
@@ -55,6 +58,34 @@ def test_keep_awake_defaults_on_for_focus_only_and_follows_the_student(api):
 def test_keep_awake_must_be_a_boolean(api):
     assert api.put("/focus/settings/", {"keep_awake": "maybe"}).status_code == 400
     assert api.get("/focus/settings/").json_body["keep_awake"] is True
+
+
+def test_popout_settings_default_off_and_follow_the_student(api):
+    body = api.get("/focus/settings/").json_body
+    assert (body["popout_on_start"], body["popout_size"], body["popout_prompt_seen"]) == (False, "pill", False)
+    res = api.put("/focus/settings/", {"popout_on_start": True, "popout_size": "card", "popout_prompt_seen": True})
+    assert res.status_code == 200
+    assert sorted(res.json_body["changed"]) == ["popout_on_start", "popout_prompt_seen", "popout_size"]
+    again = api.get("/focus/settings/").json_body
+    assert (again["popout_on_start"], again["popout_size"], again["popout_prompt_seen"]) == (True, "card", True)
+    # Saving the same values again changes nothing.
+    assert api.put("/focus/settings/", {"popout_size": "card"}).json_body["changed"] == []
+
+
+def test_popout_size_only_accepts_pill_or_card(api):
+    assert api.put("/focus/settings/", {"popout_size": "big"}).status_code == 400
+    assert api.put("/focus/settings/", {"popout_size": ""}).status_code == 400
+    assert api.put("/focus/settings/", {"popout_on_start": "maybe"}).status_code == 400
+    assert api.get("/focus/settings/").json_body["popout_size"] == "pill"
+
+
+def test_popout_size_check_constraint_rejects_a_raw_write(api):
+    from django.db import IntegrityError, transaction
+
+    api.put("/focus/settings/", {"volume": 10})  # a GET alone does not store a row
+    assert FocusSettings.objects.count() == 1
+    with pytest.raises(IntegrityError), transaction.atomic():
+        FocusSettings.objects.update(popout_size="big")
 
 
 def test_editing_a_duration_makes_the_preset_custom_unless_it_matches_one(api):
@@ -130,10 +161,12 @@ def test_the_shared_goal_counts_pomodoro_time(api, clock):
 
 
 def test_data_export_and_delete(api, clock):
-    api.put("/focus/settings/", {"volume": 10})
+    api.put("/focus/settings/", {"volume": 10, "popout_size": "card", "popout_prompt_seen": True})
     start(api)
     out = api.get("/focus/data/").json_body
     assert out["settings"]["volume"] == 10 and out["timer"]["phase"] == "focus"
+    assert out["settings"]["popout_size"] == "card" and out["settings"]["popout_prompt_seen"] is True
+    assert out["settings"]["popout_on_start"] is False
     assert api.delete("/focus/data/").status_code == 204
     assert not ActiveTimer.objects.exists() and not FocusSettings.objects.exists()
     assert api.get("/focus/data/").json_body == {"settings": None, "timer": None}

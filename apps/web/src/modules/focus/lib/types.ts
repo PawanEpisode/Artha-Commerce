@@ -4,6 +4,7 @@ import type { PresetKey } from './presets'
 
 export type Phase = 'focus' | 'short_break' | 'long_break'
 export type TimerStatus = 'running' | 'paused' | 'away'
+export type PopOutSize = 'pill' | 'card'
 export type EndReason = 'distracted' | 'phone_call' | 'tired' | 'urgent_work' | 'other'
 
 export interface FocusTimer {
@@ -62,6 +63,12 @@ export interface FocusSettings {
   keep_awake: boolean
   /** Also hold it during breaks (default off). */
   keep_awake_in_breaks: boolean
+  /** Open the pop-out timer when a round starts (default off). */
+  popout_on_start: boolean
+  /** The pop-out's size, remembered on the account. */
+  popout_size: PopOutSize
+  /** The start-of-round prompt has been shown once (set when shown, not when answered). */
+  popout_prompt_seen: boolean
   intro_seen: boolean
 }
 

@@ -8,8 +8,12 @@ import {
   localExtend,
   localPause,
   localResume,
+  MAX_ACK_GAP_SECONDS,
+  nextPendingEnd,
   overtimeOf,
   percentDone,
+  phaseEndGap,
+  phaseEndMs,
   remainingSeconds,
   startLabel,
   tabTitle,
@@ -157,5 +161,60 @@ describe('overtime', () => {
 
   it('shows in the tab title', () => {
     expect(tabTitle(over(), at(1500 + 65), 'Focus timer')).toBe('+01:05 Focus')
+  })
+})
+
+describe('phase end acknowledgement (baseline for the pop-out)', () => {
+  it('finds the end of a phase from its start, length and pause total', () => {
+    expect(phaseEndMs(timer())).toBe(at(1500))
+    expect(phaseEndMs(timer({ paused_total_seconds: 90 }))).toBe(at(1590))
+  })
+
+  it('measures the gap in whole seconds and never reports an action that came first', () => {
+    expect(phaseEndGap(at(1500), at(1500))).toBe(0)
+    expect(phaseEndGap(at(1500), at(1500) + 4900)).toBe(4)
+    expect(phaseEndGap(at(1500), at(1499))).toBeNull()
+  })
+
+  it('caps a long absence at two hours', () => {
+    expect(phaseEndGap(at(1500), at(1500 + 5 * 3600))).toBe(MAX_ACK_GAP_SECONDS)
+    expect(MAX_ACK_GAP_SECONDS).toBe(7200)
+  })
+
+  it('marks a round that reached its target as the pending end', () => {
+    const pending = nextPendingEnd(null, timer(), at(1510))
+    expect(pending).toEqual({ clientId: 'k', phase: 'focus', at: at(1500) })
+  })
+
+  it('does not mark a running or paused round before its end', () => {
+    expect(nextPendingEnd(null, timer(), at(600))).toBeNull()
+    expect(nextPendingEnd(null, timer({ status: 'paused', paused_at: iso(600) }), at(5000))).toBeNull()
+  })
+
+  it('marks a round that ended while the student was away', () => {
+    const t = timer({ status: 'away', away_pending: true })
+    expect(nextPendingEnd(null, t, at(1700))?.at).toBe(at(1500))
+  })
+
+  it('keeps the first end it saw for the same timer', () => {
+    const first = nextPendingEnd(null, timer(), at(1510))
+    expect(nextPendingEnd(first, timer(), at(1900))).toBe(first)
+  })
+
+  it('keeps the end while nothing runs, because the next Start is the action being timed', () => {
+    const first = nextPendingEnd(null, timer(), at(1510))
+    expect(nextPendingEnd(first, null, at(1600))).toBe(first)
+  })
+
+  it('drops the end when a different timer is running before its own end', () => {
+    const first = nextPendingEnd(null, timer(), at(1510))
+    const breakTimer = timer({ client_id: 'b', phase: 'short_break', planned_seconds: 300, started_at: iso(1500) })
+    expect(nextPendingEnd(first, breakTimer, at(1600))).toBeNull()
+  })
+
+  it('replaces it with the new timer when that one has also ended', () => {
+    const first = nextPendingEnd(null, timer(), at(1510))
+    const breakTimer = timer({ client_id: 'b', phase: 'short_break', planned_seconds: 300, started_at: iso(1500) })
+    expect(nextPendingEnd(first, breakTimer, at(1900))).toEqual({ clientId: 'b', phase: 'short_break', at: at(1800) })
   })
 })

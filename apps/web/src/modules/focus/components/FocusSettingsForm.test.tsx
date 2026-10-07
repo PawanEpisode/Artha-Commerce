@@ -19,12 +19,15 @@ const settings: FocusSettings = {
   notifications_enabled: false,
   keep_awake: true,
   keep_awake_in_breaks: false,
+  popout_on_start: false,
+  popout_size: 'pill',
+  popout_prompt_seen: false,
   intro_seen: true,
 }
 
 function setup(
   over: Partial<FocusSettings> = {},
-  props: { wakeLockSupported?: boolean; showKeepAwake?: boolean } = {},
+  props: { wakeLockSupported?: boolean; showKeepAwake?: boolean; showPopOut?: boolean; popoutSupported?: boolean } = {},
 ) {
   const onChange = vi.fn()
   render(
@@ -75,5 +78,44 @@ describe('FocusSettingsForm keep-awake switches (FR-K5)', () => {
   it('has one heading for the section, reachable by name', () => {
     setup()
     expect(screen.getByRole('heading', { name: 'Screen', level: 2 })).toBeInTheDocument()
+  })
+})
+
+describe('FocusSettingsForm pop-out section (X-01 P4)', () => {
+  it('shows the switch off and the size on Pill by default', () => {
+    setup()
+    expect(screen.getByRole('heading', { name: 'Pop-out timer', level: 2 })).toBeInTheDocument()
+    expect(screen.getByRole('switch', { name: 'Pop out when I start a round' })).not.toBeChecked()
+    expect(screen.getByRole('radio', { name: 'Pill' })).toBeChecked()
+  })
+
+  it('saves each change straight away', async () => {
+    const onChange = setup()
+    await userEvent.click(screen.getByRole('switch', { name: 'Pop out when I start a round' }))
+    expect(onChange).toHaveBeenCalledWith({ popout_on_start: true })
+    await userEvent.click(screen.getByRole('radio', { name: 'Card' }))
+    expect(onChange).toHaveBeenCalledWith({ popout_size: 'card' })
+  })
+
+  it('reflects the saved size', () => {
+    setup({ popout_size: 'card', popout_on_start: true })
+    expect(screen.getByRole('radio', { name: 'Card' })).toBeChecked()
+    expect(screen.getByRole('switch', { name: 'Pop out when I start a round' })).toBeChecked()
+  })
+
+  it('hides the section when the floating_timer flag is off', () => {
+    setup({}, { showPopOut: false })
+    expect(screen.queryByRole('heading', { name: 'Pop-out timer' })).not.toBeInTheDocument()
+  })
+
+  it('says plainly that a browser without Picture-in-Picture opens a window that is not on top', () => {
+    setup({}, { popoutSupported: false })
+    expect(screen.getByText(/does not stay on top/i)).toBeInTheDocument()
+    expect(screen.getByRole('switch', { name: 'Pop out when I start a round' })).toBeEnabled()
+  })
+
+  it('keeps quiet about it in a browser that supports it', () => {
+    setup()
+    expect(screen.queryByText(/does not stay on top/i)).not.toBeInTheDocument()
   })
 })
