@@ -215,7 +215,7 @@ We are honest about what is not possible: a live second-by-second countdown on a
 ### The experience
 
 1. **Start.** On starting a round the student sees a quiet prompt, once ever: "Keep the timer on top while you study?" with Pop out and Not now, and a checkbox "Do this every time I start a round". A setting, "Pop out when I start a round" (default off), makes it automatic, because the Start tap counts as the click the browser needs. Rules in "Start-of-round prompt" below.
-2. **Two sizes.** A pill (about 260 by 72 px): the time, one control, the phase colour. A card (about 320 by 190 px): the progress ring, subject and chapter, round number and the full controls. The student toggles size with one button and the choice is remembered on the account (`popout_size`). The controls per state are in "Behaviour per timer state".
+2. **Two sizes.** A pill (the compact layout, 320 by 156 px, the smallest window Chrome opens): the time, one control, the phase colour. A card (320 by 300 px): the progress ring, subject and chapter, round number and the full controls. The student toggles size with one button and the choice is remembered on the account (`popout_size`). The controls per state are in "Behaviour per timer state".
 3. **Live and in sync.** The window shows the same server timer as the main page, drawn from the server's end time, so it never drifts and a pause in the main tab appears in the pop-out within a second.
 4. **Round end.** The window turns to the phase-end colour, plays the chime if allowed (once, not once per window), and shows one large next-step button: "Start break" or "Start round N". It stays until the student acts, so they cannot miss it while reading.
 5. **Themes and motion.** The window copies the app's tokens and the active theme (Reading, Light, Dark, System), respects reduced motion, and keeps text above WCAG 2.2 AA contrast at pill size.
@@ -227,7 +227,7 @@ Fallback for browsers without Document Picture-in-Picture: a routed page, `/app/
 
 The pop-out mirrors the focus page (`FocusCard`): it offers what the page offers in that state, through the same `useFocusTimer` actions with `version`, so there is no new timer logic. Pill shows the clock and the first control; card shows everything.
 
-| Timer state | Pill (about 260 x 72) | Card (about 320 x 190) |
+| Timer state | Pill (320 x 156) | Card (320 x 300) |
 | --- | --- | --- |
 | Focus running, before the target | Clock, Pause | Ring, subject and chapter, "Round n of m", Pause, +5 (n left; disabled when `can_extend` is false), End |
 | Focus in overtime (past the target, overtime on) | "+mm:ss", **Start break** | Ring full, "Target reached", **Start break** (primary), Pause. +5 and End are hidden, as on the focus page: the server refuses an extension past the target |
@@ -423,7 +423,7 @@ Titles stay under about 40 characters and bodies under about 100 so lock screens
 ### Pop-out window
 
 ```
-Pill (about 260 x 72)                Card (about 320 x 190)
+Pill (320 x 156)                Card (320 x 300)
 +--------------------------+         +------------------------------+
 | (o) 24:12 Focus   [ || ] |         |  Taxation . GST: ITC         |
 +--------------------------+         |        ( ring )              |

@@ -1189,6 +1189,8 @@ Feature detection to paste into the console of any browser:
 ;({ pip: 'documentPictureInPicture' in window, wakeLock: 'wakeLock' in navigator, badge: 'setAppBadge' in navigator, installEvent: 'onbeforeinstallprompt' in window })
 ```
 
+**Results (2026-10-07, Chrome on macOS, Safari for S4.7; details in `docs/X-01-spike-results.md`):** Chrome enforces a minimum window of about 320x156 (260x72 is not possible; `resizeTo(320,190)` changed nothing at that size); clicks and keys reach a React portal; open-first works from click and Space and fails after 8 s; `window.focus()` returns to the tab; theme clone follows in 7 ms; Safari video trick and `window.open` popup work in Safari (Chrome opens a tab). Still to verify on the W4.2 build: 15 minute hidden run (S4.3), wake lock from the pop-out (S4.4), Edge, Firefox 151+, Windows, `resizeTo` above the minimum.
+
 **Decisions:** spikes run on the team's own machines (Windows and macOS, one second monitor); a failure in Firefox alone never blocks P4, because Firefox users get the fallback window.
 
 ### W4.1 Settings and baseline (api and web)
@@ -1239,15 +1241,15 @@ Goal: on Chrome, Edge and Firefox 151+ on desktop, one click on Pop out opens a 
 **What changes**
 
 - Design system: three Lucide icons added to `packages/design-system/src/icons.ts`: `PictureInPicture2` (Pop out), `Minimize2` and `Maximize2` (size toggle).
-- `focus/lib/popout.ts` (pure): `popoutView(timer, idle, stopwatch, nowMs, lastContext)` returns the kind, the clock text, the spoken text ("24 minutes 12 seconds left") and the controls for each state in PRD B "Behaviour per timer state"; `popoutAlive({ tabVisible, recentlyActive, popoutOpen, pastTarget, tappedSinceTarget })` is the presence rule (PRD B "Presence while the pop-out is open"); `POPOUT_SIZES = { pill: [260, 72], card: [320, 190] }`.
+- `focus/lib/popout.ts` (pure): `popoutView(timer, idle, stopwatch, nowMs, lastContext)` returns the kind, the clock text, the spoken text ("24 minutes 12 seconds left") and the controls for each state in PRD B "Behaviour per timer state"; `popoutAlive({ tabVisible, recentlyActive, popoutOpen, pastTarget, tappedSinceTarget })` is the presence rule (PRD B "Presence while the pop-out is open"); `POPOUT_SIZES = { pill: [320, 156], card: [320, 300] }` (Chrome will not open smaller than about 320x156; the pill is the compact layout).
 - `focus/lib/pip.ts`: support check, `copyStyles(from, to)` (clones every stylesheet link and style node), `mirrorTheme(fromRoot, toRoot)` (copies `data-theme`, `class`, `color-scheme`, then a `MutationObserver` keeps them in step), and the window title "Artha timer" (the window's accessible name).
-- `useDocumentPip()`: `open(size)` (must be called inside a click), `close()`, `resize(size)` (from a click inside the window; falls back to close and reopen if S4.1 said so), the window's `pagehide` closes the state, and a `presence` source the timer read uses.
-- `MiniTimerView` gets a `variant` (`corner`, `pill`, `card`); the corner keeps its fixed placement, the other two fill the window. The card adds `TimerRing`. One timer UI, as the PRD asks.
+- `useDocumentPip()`: `open(size)` (must be called inside a click), `close()`, `resize(size)` (from a click inside the window: tries `resizeTo`, verifies the new size and, if it did not change, only the layout switches; the window never closes and reopens, because reopening needs a click in the opener), the window's `pagehide` closes the state, and a `presence` source the timer read uses.
+- `MiniTimerView` gets a `variant` (`corner`, `pill`, `card`); the corner keeps its fixed placement, the other two fill the window. Layout follows the window width and height (container queries), so a window the browser makes bigger or smaller still works. The card adds `TimerRing`. One timer UI, as the PRD asks.
 - `LiveMiniTimer`: `FocusMini` keeps its `useFocusTimer` call mounted while the flag is on (the corner still hides when nothing runs), and renders `PopOutTimer`, a portal into the window. The stopwatch shows in the same window when it is the live timer.
 - Pop out buttons (40 px, icon with an accessible name "Pop out the timer"): on the corner mini timer, and on the focus card next to the controls. Both hidden when the flag is off or the window is already open (then "Bring back" closes it).
 - Sync: while the window is open, `useTick` and the heartbeat run on the window's own timers (`pipWindow.setInterval`) and the timer query polls in the background (`refetchIntervalInBackground`), per S4.3. `fetchTimerState` reads presence through `popoutAlive`.
 - Alerts: no browser notification from the pop-out; the round-end state is drawn in the phase-end colour with one large button, announced once in a polite live region inside the window. The chime plays from the one `useFocusAlerts` instance, so once.
-- Keep awake: only if S4.4 passed, `useKeepAwake` accepts a target window and requests the lock from the pop-out document while it is open (the `keepawake` module, through its barrel).
+- Keep awake: S4.4 showed the main tab's lock is released when the tab is hidden, so `useKeepAwake` accepts a target window and requests the lock from the pop-out document while it is open (the `keepawake` module, through its barrel).
 - Closing the window never stops the timer. Closing the Artha tab closes it (browser rule); the push still arrives.
 - Analytics: `popout_opened` (`supported: "pip"`, `size`, `source: mini | focus_page`, `timer`), `popout_closed`, `popout_size_changed`, `popout_session`, `phase_end_acknowledged` with `surface: "popout"` when the action came from the window.
 
@@ -1262,11 +1264,11 @@ pnpm build:web && pnpm --filter @artha/web start           # http://localhost:30
 
 **Tests:** `popoutView` for every row of the state table (before target with extensions left and none left, overtime with breaks on and off, paused, away, each break, phase waiting, idle with and without a remembered subject, stopwatch running and paused); `popoutAlive` across the target (before, after with and without a tap, tap after two minutes); size memory (toggle writes `popout_size`); `useDocumentPip` with a mocked `documentPictureInPicture` (open, `pagehide`, resize fallback, unsupported); `PopOutTimer` renders into the mocked window, clicks reach the actions, the flag turning off closes the window; `MiniTimerView` variants keep 40 px targets.
 
-**Check on real devices** (Chrome, Edge and Firefox 151+, on Windows and macOS; a second monitor on one of them):
+**Check on real devices** (Chrome, Edge and Firefox 151+, on Windows and macOS; a second monitor on one of them). These also close the open spikes: add a step 12 for S4.3 (15 minutes with the tab hidden, no gap above 25 s in the network log) and a step 13 for S4.4 (display stays on 5 minutes with the opener hidden):
 
 1. Start a 5-minute round on `/app/focus`, click Pop out on the focus card: a pill opens with the clock and Pause. Switch to a PDF in another app: the pill stays on top.
 2. Pause in the pill: the main tab shows paused within one second. Resume from the main tab: the pill follows within one second.
-3. Toggle to the card: ring, subject and chapter, Pause, +5 (3 left), End. Press +5 twice: "(1 left)". Close and reopen: it opens as a card.
+3. Toggle to the card (320x300, or layout only if the browser keeps the size): ring, subject and chapter, Pause, +5 (3 left), End. Press +5 twice: "(1 left)". Close and reopen: it opens as a card.
 4. Let the round reach its target with overtime on: the window turns to the phase-end colour, "+00:05", one large Start break; the chime plays once; at most one OS alert. +5 is not offered. Tap Start break: the break runs in the window and the round is saved in the tracker.
 5. Presence: run a round with the main tab hidden and do not touch anything for the whole round, then do not tap for 3 minutes after the target. The round is counted (not "away"), closed at its target, no overtime. Repeat and tap within two minutes: overtime keeps counting.
 6. Close the main tab: the window closes; the push for the round end still arrives.
@@ -1278,7 +1280,7 @@ pnpm build:web && pnpm --filter @artha/web start           # http://localhost:30
 
 **Roll back:** flag `floating_timer` at 0%.
 
-**Decisions:** controls mirror the focus page (D8); presence counts until the target and after a tap (D9); the window is a portal of the existing tree, not a separate render, so it shares the cache and the alerts; the window position is the browser's choice; End in the window does not ask for a reason.
+**Decisions:** Compact 320x156 and Card 320x300 after S4.1; the size toggle never closes the window; controls mirror the focus page (D8); presence counts until the target and after a tap (D9); the window is a portal of the existing tree, not a separate render, so it shares the cache and the alerts; the window position is the browser's choice; End in the window does not ask for a reason.
 
 ### W4.3 Start-of-round prompt and pop out on Start (web)
 
