@@ -24,6 +24,11 @@ def get_active_enrollment(user_id, enrollment_id=None) -> Enrollment | None:
     return qs.order_by("-created_at").first()
 
 
+def exam_date_of(enrollment: Enrollment) -> date | None:
+    """The student's own exam date, else the start of the term they chose (one rule for every module that counts down)."""
+    return enrollment.exam_date or (enrollment.target_term.exam_start if enrollment.target_term else None)
+
+
 @dataclass(frozen=True)
 class CourseSummary:
     """The student's course in one read-only value: what `/me/`, the workspace home and other modules show."""
@@ -50,7 +55,7 @@ def course_summary(user_id, today: date | None = None, enrollment: Enrollment | 
     if enrollment is None:
         return None
     today = today or date.today()
-    exam_date = enrollment.exam_date or (enrollment.target_term.exam_start if enrollment.target_term else None)
+    exam_date = exam_date_of(enrollment)
     level = enrollment.scheme.level
     term = enrollment.target_term
     return CourseSummary(

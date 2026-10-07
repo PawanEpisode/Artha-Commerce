@@ -20,6 +20,8 @@ urlpatterns = [
         name="notifications-inbox-click",
     ),
     path("notifications/thought/today/", views.ThoughtTodayView.as_view(), name="notifications-thought-today"),
+    # Public: the signed link in the weekly email is the credential (views/unsubscribe.py).
+    path("notifications/unsubscribe/", views.UnsubscribeView.as_view(), name="notifications-unsubscribe"),
     # Machines only: signature or cron secret, no student auth (views/internal.py).
     path(
         "notifications/internal/jobs/<uuid:job_id>/fire/",

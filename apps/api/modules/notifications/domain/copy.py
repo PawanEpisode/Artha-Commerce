@@ -143,6 +143,18 @@ def _test_push(context: Mapping[str, Any]) -> Copy:
     return Copy("Test notification", "Notifications are working on this device.", SETTINGS_LINK, "test_push")
 
 
+def _weekly_summary(context: Mapping[str, Any]) -> Copy:
+    """The inbox line of the weekly email (the email itself is `email_copy`): study time, with revision when it is due."""
+    from .email_copy import format_duration
+
+    seconds = int(context.get("study_seconds") or 0)
+    due = int(context.get("due_for_revision") or 0)
+    parts = [f"{format_duration(seconds)} of study"] if seconds else ["No study logged"]
+    if due:
+        parts.append(f"{_plural(due, 'chapter')} due for revision")
+    return Copy("Your week in Artha", _fit(". ".join(parts) + ".", BODY_LIMIT), TRACKER_LINK, "weekly")
+
+
 _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "timer_end": _timer_end,
     "break_over": _break_over,
@@ -153,6 +165,7 @@ _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "revision_due": _revision_due,
     "exam_milestone": _exam_milestone,
     "content_published": _content_published,
+    "weekly_summary": _weekly_summary,
     "test_push": _test_push,
 }
 

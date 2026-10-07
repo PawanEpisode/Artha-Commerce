@@ -53,3 +53,11 @@ class TransientJobError(CodedError):
     status_code = status.HTTP_503_SERVICE_UNAVAILABLE
     default_detail = "The job could not be completed right now."
     default_code = "job_failed"
+
+
+class InvalidUnsubscribeLink(CodedError):
+    """The signed link is malformed, was not signed by us, or names something that cannot be switched. Nothing says which."""
+
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "That unsubscribe link is not valid."
+    default_code = "invalid_link"

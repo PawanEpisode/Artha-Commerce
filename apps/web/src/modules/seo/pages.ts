@@ -68,6 +68,12 @@ export const STATIC_PAGES = {
       'Confirming your ArthaCommerce email link. If this page does not move on, request a new sign-in or reset link and try again.',
     noindex: true,
   },
+  '/unsubscribe': {
+    title: 'Unsubscribe',
+    description:
+      'Stop receiving the ArthaCommerce weekly summary email. This page opens from the signed link in the email and needs no sign-in.',
+    noindex: true,
+  },
   '/auth/forgot-password': {
     title: 'Reset your password',
     description:

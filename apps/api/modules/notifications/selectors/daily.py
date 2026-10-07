@@ -24,7 +24,8 @@ def daily_facts(user_id, local_date: date) -> DailyFacts:
     enrollment = coverage_selectors.get_active_enrollment(user_id)
     if enrollment is None:
         return DailyFacts(None, 0, None)
-    days_left = (enrollment.exam_date - local_date).days if enrollment.exam_date else None
+    exam_date = coverage_selectors.exam_date_of(enrollment)
+    days_left = (exam_date - local_date).days if exam_date else None
     due = coverage_selectors.due_for_revision(enrollment, local_date)
     return DailyFacts(days_left, len(due), due[0].chapter.name if due else None)
 

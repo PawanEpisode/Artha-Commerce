@@ -150,3 +150,11 @@ export const thoughtSchema = z.object({
 export type DailyThought = z.infer<typeof thoughtSchema>
 
 export const thoughtResponseSchema = z.object({ thought: thoughtSchema.nullable() })
+
+/** What an unsubscribe link is for (`GET`) or just did (`POST`): `/notifications/unsubscribe/`. */
+export const unsubscribeSchema = z.object({
+  category: z.string(),
+  label: z.string(),
+  unsubscribed: z.boolean(),
+})
+export type UnsubscribeResult = z.infer<typeof unsubscribeSchema>

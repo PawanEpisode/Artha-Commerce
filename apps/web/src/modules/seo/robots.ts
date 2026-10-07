@@ -1,7 +1,7 @@
 import { siteUrl } from '~/lib/env'
 
 /** Paths crawlers must not fetch. `/og/` stays open: link unfurlers (WhatsApp, X, LinkedIn) fetch preview images there. */
-export const DISALLOWED_PATHS = ['/app', '/auth/', '/design-system']
+export const DISALLOWED_PATHS = ['/app', '/auth/', '/design-system', '/unsubscribe']
 
 /** Social crawlers are named so a future blanket rule can never block them by accident. */
 const SOCIAL_BOTS = ['WhatsApp', 'facebookexternalhit', 'Twitterbot', 'LinkedInBot', 'Slackbot']

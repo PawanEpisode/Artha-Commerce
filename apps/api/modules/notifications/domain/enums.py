@@ -151,6 +151,7 @@ class SuppressReason(StrEnum):
     STALE = "stale"
     VISITED_TODAY = "visited_today"
     FLAG_OFF = "flag_off"
+    NO_ADDRESS = "no_address"  # email: the student has no address on file
 
 
 def choices(enum_class: type[StrEnum]) -> list[tuple[str, str]]:

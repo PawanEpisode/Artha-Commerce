@@ -4,6 +4,7 @@ from .internal import JobFireView, SweepView
 from .preferences import CategoriesView, PreferencesView
 from .settings import PermissionStateView, SettingsView
 from .thought import ThoughtTodayView
+from .unsubscribe import UnsubscribeView
 
 __all__ = [
     "CategoriesView",
@@ -19,4 +20,5 @@ __all__ = [
     "SettingsView",
     "SweepView",
     "ThoughtTodayView",
+    "UnsubscribeView",
 ]

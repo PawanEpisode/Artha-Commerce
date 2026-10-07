@@ -28,6 +28,15 @@ def fake_push():
 
 
 @pytest.fixture(autouse=True)
+def fake_email():
+    """A recording email channel for every test: nothing here can reach a mail server."""
+    fake = channels.FakeEmailChannel()
+    channels.use_channel(channels.EMAIL, fake)
+    yield fake
+    channels.reset_channels()
+
+
+@pytest.fixture(autouse=True)
 def _fresh_throttle_counters():
     cache.clear()
     yield

@@ -305,6 +305,8 @@ pnpm lint:api && pnpm test:api
 | `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AVATAR_BUCKET` | | yes | service role key **yes** (never in the web project) |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |
 | `SENTRY_DSN` | | yes | no |
+| `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `EMAIL_BACKEND`, `EMAIL_TIMEOUT`, `NOTIFICATIONS_EMAIL_FROM` (weekly email) | | yes | no |
+| `EMAIL_HOST_PASSWORD` (weekly email) | | yes | **yes** |
 
 Rule: nothing secret ever gets a `VITE_` prefix. Google and SMTP credentials stay in the Supabase dashboard.
 

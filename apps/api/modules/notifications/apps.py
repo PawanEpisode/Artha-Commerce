@@ -7,6 +7,12 @@ def _webpush_channel():
     return WebPushChannel()
 
 
+def _email_channel():
+    from .channels.email import DjangoEmailChannel
+
+    return DjangoEmailChannel()
+
+
 class NotificationsConfig(AppConfig):
     name = "modules.notifications"
     label = "notifications"
@@ -21,5 +27,6 @@ class NotificationsConfig(AppConfig):
         registry.register_eraser("notifications", erasure.delete_all_for_user)
         registry.register_exporter("notifications", export.export_all)
         channels.register_channel(channels.PUSH, _webpush_channel)
+        channels.register_channel(channels.EMAIL, _email_channel)
         handlers.register_defaults()
         subscribers.register()  # idempotent: ready() may run twice

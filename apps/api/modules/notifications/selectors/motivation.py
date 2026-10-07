@@ -35,7 +35,8 @@ def student_context(user_id, today: date) -> StudentContext:
     enrollment = coverage_selectors.get_active_enrollment(user_id)
     if enrollment is None:
         return StudentContext(None, None, None)
-    days_left = (enrollment.exam_date - today).days if enrollment.exam_date else None
+    exam_date = coverage_selectors.exam_date_of(enrollment)
+    days_left = (exam_date - today).days if exam_date else None
     return StudentContext(enrollment.level.course_id, enrollment.level_id, days_left)
 
 

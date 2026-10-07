@@ -236,3 +236,19 @@ def test_the_sending_flag_off_sends_nothing_and_creates_nothing(fake_push, schem
     monkeypatch.setattr("modules.notifications.flags.flag_enabled", lambda *a, **k: False)
     run()
     assert pushed(fake_push) == [] and not Notification.objects.exists()
+
+
+# --- the exam date falls back to the chosen term -----------------------------------------------------------------------
+
+
+def test_the_countdown_uses_the_term_start_when_the_student_set_no_exam_date(fake_push, scheme):
+    from modules.syllabus.models import ExamTerm
+
+    term = ExamTerm.objects.create(
+        level=scheme.level, code="2026-12", name="Dec 2026", exam_start=TODAY + timedelta(days=30)
+    )
+    Enrollment.objects.create(user_id=USER, scheme=scheme, level=scheme.level, target_term=term)
+    plan()
+    run()
+    assert events() == ["exam_milestone"]
+    assert "One month left" in pushed(fake_push)[0]["body"]

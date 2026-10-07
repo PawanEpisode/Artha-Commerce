@@ -155,6 +155,7 @@ REST_FRAMEWORK = {
         "notifications_read": "120/min",
         "notifications_write": "60/min",
         "notifications_test": "5/min",
+        "notifications_unsubscribe": "20/min",
     },
     "UNAUTHENTICATED_USER": None,
 }
@@ -196,6 +197,20 @@ QSTASH_URL = env("QSTASH_URL")
 QSTASH_CURRENT_SIGNING_KEY = env("QSTASH_CURRENT_SIGNING_KEY")
 QSTASH_NEXT_SIGNING_KEY = env("QSTASH_NEXT_SIGNING_KEY")
 CRON_SECRET = env("CRON_SECRET")  # bearer secret for the sweep endpoint
+# Weekly email (W3.5). The backend is SMTP in production and the console in development; sending needs a From address.
+EMAIL_BACKEND = env(
+    "EMAIL_BACKEND",
+    "django.core.mail.backends.console.EmailBackend" if DEBUG else "django.core.mail.backends.smtp.EmailBackend",
+)
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = int(env("EMAIL_PORT", "587"))
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS", "true").lower() == "true"
+EMAIL_TIMEOUT = int(env("EMAIL_TIMEOUT", "10"))
+NOTIFICATIONS_EMAIL_FROM = env(
+    "NOTIFICATIONS_EMAIL_FROM"
+)  # e.g. "ArthaCommerce <hello@mail.example.com>"; empty disables sending
 FIELD_ENCRYPTION_KEYS = env_list("FIELD_ENCRYPTION_KEYS")  # Fernet keys, newest first (core.fields)
 FIELD_HASH_PEPPER = env("FIELD_HASH_PEPPER")
 if NOTIFICATIONS_ENABLED and not DEBUG and not (FIELD_ENCRYPTION_KEYS and FIELD_HASH_PEPPER):

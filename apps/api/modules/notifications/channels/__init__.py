@@ -6,6 +6,7 @@ so importing Django does not import `pywebpush`. Tests install a `FakeChannel` w
 from __future__ import annotations
 
 from collections.abc import Callable
+from typing import Any
 
 from .base import (
     Channel,
@@ -17,28 +18,29 @@ from .base import (
     SendStatus,
     Urgency,
 )
+from .email import EMAIL, DjangoEmailChannel, EmailChannel, EmailMessage, FakeEmailChannel
 
 PUSH = "push"
 
-_factories: dict[str, Callable[[], Channel]] = {}
-_instances: dict[str, Channel] = {}
+_factories: dict[str, Callable[[], Any]] = {}
+_instances: dict[str, Any] = {}
 
 
 class UnknownChannel(KeyError):
     pass
 
 
-def register_channel(name: str, factory: Callable[[], Channel]) -> None:
+def register_channel(name: str, factory: Callable[[], Any]) -> None:
     _factories[name] = factory
     _instances.pop(name, None)
 
 
-def use_channel(name: str, channel: Channel) -> None:
+def use_channel(name: str, channel: Any) -> None:
     """Install a ready-made instance (tests, or a one-off script). Wins over the factory until `reset_channels`."""
     _instances[name] = channel
 
 
-def get_channel(name: str = PUSH) -> Channel:
+def get_channel(name: str = PUSH) -> Any:
     if name not in _instances:
         try:
             _instances[name] = _factories[name]()
@@ -53,11 +55,16 @@ def reset_channels() -> None:
 
 
 __all__ = [
+    "EMAIL",
     "PUSH",
     "Channel",
     "ChannelNotConfigured",
     "DeviceSecrets",
+    "DjangoEmailChannel",
+    "EmailChannel",
+    "EmailMessage",
     "FakeChannel",
+    "FakeEmailChannel",
     "PushMessage",
     "SendResult",
     "SendStatus",

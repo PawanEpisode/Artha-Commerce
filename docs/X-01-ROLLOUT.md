@@ -929,19 +929,67 @@ where n.event in ('exam_milestone', 'revision_due') order by d.attempted_at desc
 
 ### W3.5 Weekly email
 
-Django needs outgoing email (the existing SMTP is only inside Supabase Auth). Use the provider already set up in `docs/SETUP.md` 2.3.1; SPF, DKIM and DMARC are already in place.
+Goal: the first email the API sends itself. A weekly summary of the student's study, on Sunday at 18:00 in their own time zone, with a one-click unsubscribe that needs no login. It rides on the same per-minute sweep as the nudge, but email is its own small pipeline: it has no devices, quiet hours or daily cap, and a mail failure never touches a push device. One migration (`0003_weekly`), one new public web page (`/unsubscribe`). `NOTIFICATIONS_DECLARATIVE_PUSH` stays off.
+
+**What changed**
+
+- Schedule: `notifications_settings.next_weekly_at` (new column, partial index) holds the next Sunday 18:00 in the student's `timezone`, strictly after now and DST safe (`domain/weekly.next_weekly_at`). It is set when a settings row is created, moves when the time zone changes, and the sweep heals rows that have none (`backfill_next_weekly`, 200 a run). It does not depend on the category switch: whether the student wants the email is judged when it falls due.
+- Sweep step `scheduling/weekly.send_weekly_emails` (after the nudge step, guarded like the others) finds rows with `next_weekly_at <= now` in batches of 100, oldest first, and hands each to `services/weekly.process_due_weekly`. That claims the due time with a compare-and-set (moved to the following Sunday before anything is sent, so two sweeps never both send), skips a week more than 24 hours late (`stale`), reads the week, and skips it when there is nothing to say.
+- What is in it: the seven local days ending that Sunday. Study time and days studied (`tracking.selectors.day_totals`), the streak (`tracking.selectors.streak`), syllabus covered (the level roll-up percent from `coverage.selectors.overview`, 0% before any progress), chapters due for revision, and days to the exam when there is one. A week with no study time and nothing due for revision is skipped entirely (`domain/weekly.worth_sending`); no email and no inbox row.
+- Notification and inbox: a `weekly_summary` notification is created once per ISO week (dedupe key `weekly:2026-W41`), category Weekly summary, linking to `/app/tracker`. It shows in the inbox when the student keeps the inbox channel on for that category. It is never pushed.
+- Email policy (`domain/email_policy.decide_email`): the kill switches, then the master switch and the Weekly summary email switch (default on), then an address on the profile (`profiles.selectors.email_of`), then lateness. Each outcome is one `Delivery` row, channel `email`, no device; a suppression stores its reason (`flag_off`, `preference`, `no_address` (new), `stale`).
+- Channel: `channels/email.py` (`EmailMessage`, `DjangoEmailChannel`, `FakeEmailChannel`), registered as `email`. It sends multipart (plain text and HTML) through Django's mail backend. A missing sender raises `ChannelNotConfigured` (a deployment mistake).
+- Words and layout: `domain/email_copy.py` (subject "Your week: 5 h 20 min of study", plain text, HTML with every value escaped) on the same table layout as the auth emails. Colours are the fixed hex values of `domain/email_brand.py`, the sanctioned exception to "no raw hex"; a test reads `packages/email-templates/src/brand.ts` and fails when the two drift.
+- Failures: a failed send is retried 15 minutes later, up to 3 attempts in all (the count lives on the delivery row), then the week is dropped. A missing configuration puts the due time back 15 minutes and is counted as a failed run, so the problem shows in the sweep log.
+- Unsubscribe: every email carries `List-Unsubscribe: <https://<api>/api/v1/notifications/unsubscribe/?t=...>` and `List-Unsubscribe-Post: List-Unsubscribe=One-Click` (RFC 8058), and a footer link to `<web>/unsubscribe?t=...`. The token is stateless (HMAC of the student and category with `DJANGO_SECRET_KEY`), never expires and cannot be forged. `GET` describes the link, `POST` switches the email off (a normal preference change, so the student can turn it back on in settings). It works with no login, is throttled (20 a minute per address, `notifications_unsubscribe`) and still works when `NOTIFICATIONS_ENABLED` is false. The web page asks for one click instead of acting on load, so a mail scanner that opens the link cannot unsubscribe anyone; it is `noindex` and disallowed in `robots.txt`.
+- Exam date: one rule for "when is the exam", `coverage.selectors.exam_date_of` (the student's own date, else the start of the term they chose). The weekly email, the exam countdown and the daily thought now use it. Before this, a student who only picked a term got no countdown or exam-phase thought.
+
+**Configure** (API project, section 8 lists them): the provider already chosen in `docs/SETUP.md` 2.3.1 with SPF, DKIM and DMARC in place.
 
 ```bash
-git switch -c feat/x-01-w3-5-weekly-email
-cd apps/api && source .venv/bin/activate
 export EMAIL_HOST=smtp.resend.com EMAIL_PORT=587 EMAIL_HOST_USER=resend EMAIL_USE_TLS=true
-export EMAIL_HOST_PASSWORD='<provider api key>' DEFAULT_FROM_EMAIL='ArthaCommerce <no-reply@mail.<your-domain>>'
-python manage.py sendtestemail you@example.com                  # Django built-in; must land in the inbox, not spam
-python manage.py send_test_push --channel email --user <your uuid>
-pytest modules/notifications -q
+export EMAIL_HOST_PASSWORD='<provider api key>'                    # secret
+export NOTIFICATIONS_EMAIL_FROM='ArthaCommerce <no-reply@mail.<your-domain>>'   # empty disables sending
+# also needed by the links in the email: NOTIFICATIONS_WEB_BASE_URL (the web origin) and NOTIFICATIONS_PUBLIC_BASE_URL (the API origin)
+cd "$ROOT/apps/api" && source .venv/bin/activate
+python manage.py migrate                                           # 0003_weekly
+python manage.py sendtestemail you@example.com                     # Django built-in; must land in the inbox, not spam
+pytest modules/notifications modules/coverage -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm check
 ```
 
-Add the same six variables to the Vercel API project (`npx vercel env add ...` as in section 1; the password is a secret). Check the unsubscribe link and the `List-Unsubscribe` header in the received message, and that a student with email switched off gets none.
+Add the variables to the Vercel API project (`npx vercel env add ...` as in section 1; the password is a secret). The migration is additive (one nullable column, one index, a wider choices list that is not a database check), so it can go out before the code that uses it.
+
+**Roll back:** add `weekly_summary` to `NOTIFICATIONS_DISABLED_EVENTS` and redeploy: the step does nothing and no email is sent. `notifications_send` at 0% or `NOTIFICATIONS_ENABLED=false` stops it as well; the unsubscribe link keeps working. Nothing is deleted. To undo the code, revert the commit; the extra column is harmless and can stay.
+
+Check what was sent with:
+
+```sql
+select n.dedupe_key, d.status, d.suppress_reason, d.attempt, d.error_code, d.attempted_at
+from notifications_delivery d join notifications_notification n on n.id = d.notification_id
+where d.channel = 'email' order by d.attempted_at desc limit 20;
+select count(*) filter (where next_weekly_at is null) as unplanned, count(*) as total from notifications_settings;
+```
+
+**Check on real devices and inboxes** (use a student with a real address, a week of study and the flags on for you):
+
+1. Force it: `update notifications_settings set next_weekly_at = now() where user_id = '<your uuid>';` then run the sweep (or wait a minute). One email arrives with the subject "Your week: ...", looks right in light and dark mode, on a phone and in Gmail and Outlook, and the button opens `/app`. Run the sweep again: nothing new.
+2. Open the inbox: a "Your week in Artha" row. Turn the Weekly summary inbox switch off and it disappears.
+3. In Gmail, "Unsubscribe" appears next to the sender name; use it. Then check `select * from notifications_preference where category = 'progress'` shows an `email` row with `enabled = false`, and force another weekly: no email, a `suppressed` delivery with `preference`.
+4. Open the footer link in the email: the page names the weekly summary and asks for one click. A link with a letter changed shows "This link is not valid".
+5. Turn the Weekly summary email switch off in settings, force it: no email. Turn push off entirely (master switch): no email either.
+6. A student with no study and nothing due: force it, no email and no inbox row.
+7. Check the headers of a received message (Gmail, "Show original"): `List-Unsubscribe`, `List-Unsubscribe-Post`, and SPF, DKIM and DMARC all pass.
+8. Set `NOTIFICATIONS_EMAIL_FROM` empty on a preview deploy and force it: the sweep log shows a failed run and the week is retried 15 minutes later once it is set again.
+
+**Decisions**
+
+- Sunday 18:00 local, covering the seven days that end that Sunday. Chosen with you; the PRD said "weekly" with no time.
+- Audience is everyone whose Weekly summary email switch is on (the default), no push device needed, which is how the PRD reads email as the fallback. The master switch also stops it, because the ERD defines it as the switch for push and email. A student who has no settings row yet is not reached until one exists (a settings change, the permission step or a device registration creates it, and the sweep then plans their first Sunday); rows are not created in bulk. If you want every student from the first Sunday, a one-off insert of settings rows for all profiles does it, and the sweep plans the rest.
+- Content is study time, streak, syllabus covered, revision due and days to the exam; a week with no study and nothing due is skipped, so nobody gets a "you did nothing" email. Syllabus covered is the simple percentage (not the weighted one).
+- Email is deliberately outside the push policy: no quiet hours, no daily cap, no device health. It does not count towards the push cap.
+- The unsubscribe token is signed with `DJANGO_SECRET_KEY`. Rotating that key invalidates the links in emails already sent; they then show the not-valid page and the student can use settings instead.
+- Bounces and spam complaints are handled by the provider's suppression list; the API does not read them yet, so a student who bounces keeps being tried weekly until the provider suppresses the address.
 
 ### W3.6 Android notification buttons
 
@@ -1031,8 +1079,8 @@ Other tools and costs to arrange first: Apple Developer Program membership (Deve
 | `QSTASH_URL` | | yes (only if the region needs it) | no | P2 |
 | `NOTIFICATIONS_ENABLED`, `NOTIFICATIONS_QUEUE`, `NOTIFICATIONS_PUBLIC_BASE_URL`, `NOTIFICATIONS_DISABLED_EVENTS` | | yes | no | P2 |
 | `NOTIFICATIONS_DECLARATIVE_PUSH`, `NOTIFICATIONS_WEB_BASE_URL` | | yes | no | P2 (W2.7, off until spike S3 passes) |
-| `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `DEFAULT_FROM_EMAIL` | | yes | no | P3 |
-| `EMAIL_HOST_PASSWORD` | | yes | yes | P3 |
+| `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `EMAIL_BACKEND`, `EMAIL_TIMEOUT`, `NOTIFICATIONS_EMAIL_FROM` | | yes | no | P3 (W3.5) |
+| `EMAIL_HOST_PASSWORD` | | yes | yes | P3 (W3.5) |
 
 Rule from `SETUP.md` stays: nothing secret gets a `VITE_` prefix.
 

@@ -35,6 +35,7 @@ class NotificationSettings(TimeStampedModel):
     nudge_time = models.TimeField(default=time(10, 0))
     nudge_tone = models.CharField(max_length=12, choices=choices(enums.Tone), default=enums.Tone.CALM)
     next_nudge_at = models.DateTimeField(null=True, blank=True)
+    next_weekly_at = models.DateTimeField(null=True, blank=True)  # Sunday 18:00 local; the weekly email's clock
     permission_state = models.CharField(
         max_length=16, choices=choices(enums.PermissionState), default=enums.PermissionState.NOT_ASKED
     )
@@ -61,7 +62,12 @@ class NotificationSettings(TimeStampedModel):
                 fields=["next_nudge_at"],
                 name="notif_settings_nudge_idx",
                 condition=Q(nudge_enabled=True, push_master=True, next_nudge_at__isnull=False),
-            )
+            ),
+            models.Index(
+                fields=["next_weekly_at"],
+                name="notif_settings_weekly_idx",
+                condition=Q(next_weekly_at__isnull=False),
+            ),
         ]
 
 

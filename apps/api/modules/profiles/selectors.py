@@ -17,6 +17,11 @@ def get_profile(user_id) -> Profile | None:
     return Profile.objects.filter(pk=user_id).first()
 
 
+def email_of(user_id) -> str:
+    """The address on the student's profile, or an empty string when there is none (read by modules that send email)."""
+    return Profile.objects.filter(pk=user_id).values_list("email", flat=True).first() or ""
+
+
 def get_last_visit(user_id) -> LastVisit | None:
     return LastVisit.objects.filter(pk=user_id).first()
 

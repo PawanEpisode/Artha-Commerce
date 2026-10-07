@@ -29,6 +29,7 @@ from ..services import retention as retention_service
 from . import jobs
 from .nudges import send_daily_nudges
 from .streak_alerts import send_streak_alerts
+from .weekly import send_weekly_emails
 
 MAX_JOBS = 200
 MAX_SECONDS = 20.0
@@ -147,6 +148,7 @@ STEPS: tuple[Callable[[SweepRun], None], ...] = (
     fire_overdue_jobs,
     _guarded(send_streak_alerts),
     _guarded(send_daily_nudges),
+    _guarded(send_weekly_emails),
     _guarded(check_slo),
     _guarded(prune_nightly),
 )

@@ -70,7 +70,11 @@ describe('page copy', () => {
     for (const [path, page] of Object.entries(STATIC_PAGES)) {
       const noindex = meta(pageHead(path as keyof typeof STATIC_PAGES), 'name', 'robots') === 'noindex, nofollow'
       const isPrivate =
-        path === '/design-system' || path.startsWith('/auth/') || path === '/login' || path === '/signup'
+        path === '/design-system' ||
+        path.startsWith('/auth/') ||
+        path === '/login' ||
+        path === '/signup' ||
+        path === '/unsubscribe'
       expect(noindex, path).toBe(isPrivate)
       expect('noindex' in page && page.noindex === true, path).toBe(isPrivate)
     }
@@ -119,6 +123,7 @@ describe('sitemap and robots', () => {
     const txt = buildRobotsTxt()
     expect(txt).toContain('Disallow: /app')
     expect(txt).toContain('Disallow: /auth/')
+    expect(txt).toContain('Disallow: /unsubscribe')
     expect(txt).not.toMatch(/Disallow:\s*\/\s*$/m)
     expect(txt).not.toContain('Disallow: /og')
     for (const bot of ['WhatsApp', 'facebookexternalhit', 'Twitterbot']) expect(txt).toContain(`User-agent: ${bot}`)

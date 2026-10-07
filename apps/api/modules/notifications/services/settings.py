@@ -10,6 +10,7 @@ from django.utils import timezone
 
 from ..domain.nudge import schedule_nudge
 from ..domain.quiet_hours import is_valid_timezone
+from ..domain.weekly import next_weekly_at
 from ..errors import InvalidSettings
 from ..models import NotificationSettings
 
@@ -25,6 +26,32 @@ EDITABLE = (
 )
 #: Changing any of these moves the next nudge.
 _NUDGE_INPUTS = {"push_master", "timezone", "nudge_enabled", "nudge_time"}
+
+
+def _refresh_next_weekly(row: NotificationSettings, now: datetime) -> None:
+    """The weekly email follows the student's time zone only. Whether it is wanted is judged when it falls due."""
+    row.next_weekly_at = next_weekly_at(now, row.timezone)
+
+
+def ensure_next_weekly(row: NotificationSettings, now: datetime) -> bool:
+    """A row without a weekly time gets one. Changes the row in memory only; the caller saves."""
+    if row.next_weekly_at is not None:
+        return False
+    _refresh_next_weekly(row, now)
+    return True
+
+
+def backfill_next_weekly(now: datetime, *, limit: int) -> int:
+    """Self-healing for rows that predate the weekly email: give up to `limit` of them their first Sunday."""
+    done = 0
+    pending = NotificationSettings.objects.filter(next_weekly_at__isnull=True).order_by("created_at")[:limit]
+    for row in list(pending):
+        if not ensure_next_weekly(row, now):
+            continue
+        done += NotificationSettings.objects.filter(pk=row.pk, next_weekly_at__isnull=True).update(
+            next_weekly_at=row.next_weekly_at, updated_at=timezone.now()
+        )
+    return done
 
 
 def get_or_create_row(user_id) -> NotificationSettings:
@@ -88,6 +115,10 @@ def update_settings(user_id, changes: dict[str, Any], *, now: datetime | None = 
             _refresh_next_nudge(row, now)
         else:
             ensure_next_nudge(row, now)
+        if row._state.adding or "timezone" in changes:
+            _refresh_next_weekly(row, now)
+        else:
+            ensure_next_weekly(row, now)
         row.save()
     return row
 

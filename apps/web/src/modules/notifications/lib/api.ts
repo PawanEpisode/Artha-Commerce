@@ -21,6 +21,8 @@ import {
   type SettingsPatch,
   settingsSchema,
   thoughtResponseSchema,
+  type UnsubscribeResult,
+  unsubscribeSchema,
 } from './schemas'
 
 const send = <T>(method: string, path: string, body?: unknown) =>
@@ -103,3 +105,11 @@ export const isNotFound = (error: unknown) => error instanceof ApiError && error
  */
 export const getTodayThought = async (): Promise<DailyThought | null> =>
   thoughtResponseSchema.parse(await api<unknown>(`${BASE}/thought/today/`)).thought
+
+/** What the signed link in the weekly email is for. Public: the token is the credential, no sign-in needed. */
+export const previewUnsubscribe = async (token: string): Promise<UnsubscribeResult> =>
+  unsubscribeSchema.parse(await api<unknown>(`${BASE}/unsubscribe/?t=${encodeURIComponent(token)}`))
+
+/** Switches that email off. Safe to repeat. */
+export const confirmUnsubscribe = async (token: string): Promise<UnsubscribeResult> =>
+  unsubscribeSchema.parse(await send<unknown>('POST', `${BASE}/unsubscribe/`, { token }))
