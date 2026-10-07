@@ -5,7 +5,7 @@
  * The logic lives in `handlers.ts` and `payload.ts`, which are tested without a worker.
  */
 import { urlBase64ToUint8Array } from './applicationServerKey'
-import { handleNotificationClick, handlePush, handleSubscriptionChange } from './handlers'
+import { handleNotificationAction, handleNotificationClick, handlePush, handleSubscriptionChange } from './handlers'
 import type {
   ExtendableEventLike,
   NotificationClickEventLike,
@@ -17,6 +17,7 @@ import type {
 // Replaced by esbuild `define` (see scripts/build-sw.mjs). The fallbacks keep the file valid when it is not built.
 declare const __SW_VERSION__: string | undefined
 declare const __VAPID_PUBLIC_KEY__: string | undefined
+declare const __API_BASE_URL__: string | undefined
 
 const SW_VERSION = typeof __SW_VERSION__ === 'string' && __SW_VERSION__ ? __SW_VERSION__ : 'dev'
 
@@ -66,9 +67,29 @@ on('push', (event: PushEventLike) => {
   )
 })
 
+const API_BASE = typeof __API_BASE_URL__ === 'string' ? __API_BASE_URL__ : ''
+
 on('notificationclick', (event: NotificationClickEventLike) => {
   event.notification.close()
-  event.waitUntil(handleNotificationClick({ clients: sw.clients, origin: sw.location.origin }, event.notification.data))
+  const deps = { clients: sw.clients, origin: sw.location.origin }
+  if (!event.action) {
+    event.waitUntil(handleNotificationClick(deps, event.notification.data))
+    return
+  }
+  // A button (W3.6): act through the API and confirm in place; the app opens only from the notification itself.
+  event.waitUntil(
+    handleNotificationAction(
+      {
+        ...deps,
+        fetch: (url, init) => sw.fetch(url, init),
+        apiBase: API_BASE,
+        show: (title, options) => sw.registration.showNotification(title, options),
+        swVersion: SW_VERSION,
+      },
+      event.action,
+      event.notification.data,
+    ),
+  )
 })
 
 on('pushsubscriptionchange', (event: SubscriptionChangeEventLike) => {

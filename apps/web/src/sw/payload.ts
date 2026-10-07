@@ -15,10 +15,14 @@ const MAX_BODY = 300
 const MAX_ACTIONS = 2
 const TAG_PATTERN = /^[\w:.-]{1,80}$/
 const ID_PATTERN = /^[\w-]{1,64}$/
+/** 32 random bytes in base64url, as the API mints them. Anything else is dropped, never sent. */
+export const TOKEN_PATTERN = /^[A-Za-z0-9_-]{43}$/
 
 export interface PushAction {
   id: string
   title: string
+  /** One-time token the button sends to the API (W3.6). Absent for a button that only opens the app. */
+  token?: string
 }
 
 export interface NotificationContent {
@@ -62,10 +66,16 @@ function parseActions(value: unknown): PushAction[] {
     if (!isRecord(item)) continue
     const id = text(item.id, 32)
     const title = text(item.title, 40)
-    if (id && title) actions.push({ id, title })
+    const token = typeof item.token === 'string' && TOKEN_PATTERN.test(item.token) ? item.token : undefined
+    if (id && title) actions.push(token ? { id, title, token } : { id, title })
     if (actions.length === MAX_ACTIONS) break
   }
   return actions
+}
+
+/** Shared by the push payload and the answer to a button tap. */
+export function parseButtons(value: unknown): PushAction[] {
+  return parseActions(value)
 }
 
 /** Turns the raw push body (JSON text, or null for an empty push) into what to show. Pure and total. */

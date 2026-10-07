@@ -22,7 +22,7 @@ class Command(BaseCommand):
         except ValueError as exc:
             raise CommandError(str(exc)) from None
         verb = "would delete" if dry_run else "deleted"
-        for table in ("deliveries", "notifications", "jobs", "revoked_devices", "messages_shown"):
+        for table in ("deliveries", "notifications", "jobs", "revoked_devices", "messages_shown", "action_tokens"):
             self.stdout.write(f"{table}: {verb} {getattr(result, table)}")
         if result.more:
             self.stdout.write("more rows remain; run it again")

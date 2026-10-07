@@ -1,3 +1,4 @@
+import { actionsUrl, parseTapAnswer, tokenFor, unavailableContent } from './actions'
 import { resolveDeepLink, safeDeepLink } from './deeplink'
 import {
   type PushReceivedMessage,
@@ -8,6 +9,7 @@ import {
 import { type NotificationContent, parsePushPayload } from './payload'
 import type {
   ClientsLike,
+  FetchLike,
   NotificationData,
   NotificationOptionsLike,
   PushSubscriptionLike,
@@ -25,9 +27,13 @@ export function buildNotificationOptions(content: NotificationContent, swVersion
     renotify: false,
     icon: NOTIFICATION_ICON,
     lang: 'en-IN',
-    data: { url: content.url, id: content.id, category: content.category, swVersion },
+    data: { url: content.url, id: content.id, category: content.category, swVersion, tag: content.tag },
   }
-  if (content.actions.length > 0) options.actions = content.actions.map((a) => ({ action: a.id, title: a.title }))
+  if (content.actions.length > 0) {
+    options.actions = content.actions.map((a) => ({ action: a.id, title: a.title }))
+    const tokens = Object.fromEntries(content.actions.filter((a) => a.token).map((a) => [a.id, a.token as string]))
+    if (Object.keys(tokens).length > 0) options.data.tokens = tokens
+  }
   return options
 }
 
@@ -104,6 +110,65 @@ export async function handleNotificationClick(deps: ClickDeps, data: unknown): P
     // focus() and navigate() can reject (tab closed meanwhile, browser policy). A new window always works.
     return open()
   }
+}
+
+export interface ActionDeps extends ClickDeps {
+  fetch: FetchLike
+  /** API origin baked into the worker at build time (`VITE_API_URL`). */
+  apiBase: string | null | undefined
+  show(title: string, options: NotificationOptionsLike): Promise<void>
+  swVersion: string
+}
+
+export type ActionOutcome = 'done' | 'already' | 'stale' | 'needs_app' | 'unavailable' | 'opened'
+
+const OUTCOMES: readonly ActionOutcome[] = ['done', 'already', 'stale', 'needs_app']
+
+function readTag(data: unknown): string {
+  const tag = typeof data === 'object' && data !== null ? (data as { tag?: unknown }).tag : undefined
+  return typeof tag === 'string' ? tag : ''
+}
+
+/**
+ * A button on the alert was tapped (W3.6). A button with a one-time token is sent to the API and the answer replaces
+ * the alert with a short confirmation; the app is not opened. Without a token (an older payload) or without an API
+ * address the tap behaves like a tap on the notification itself. Any failure shows "open the app" in place of the
+ * alert, so the student is never left without a way forward.
+ */
+export async function handleNotificationAction(
+  deps: ActionDeps,
+  action: string,
+  data: unknown,
+): Promise<ActionOutcome> {
+  const token = tokenFor(data, action)
+  const url = actionsUrl(deps.apiBase)
+  if (!token || !url) {
+    await handleNotificationClick(deps, data)
+    return 'opened'
+  }
+  const fallback = { tag: readTag(data), url: readNotificationData(data).url }
+  let outcome: ActionOutcome = 'unavailable'
+  let content = unavailableContent(fallback)
+  try {
+    const response = await deps.fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token }),
+      credentials: 'omit',
+      mode: 'cors',
+    })
+    if (response.ok) {
+      const answer = await response.json()
+      const said = typeof answer === 'object' && answer !== null ? (answer as { outcome?: unknown }).outcome : null
+      outcome = OUTCOMES.find((o) => o === said) ?? 'unavailable'
+      content = parseTapAnswer(answer, fallback)
+    }
+  } catch {
+    // offline, blocked or a broken answer: the "open the app" notification below
+  }
+  await deps.show(content.title, buildNotificationOptions(content, deps.swVersion))
+  await postToPages(deps.clients, { type: SW_MESSAGE_PUSH_RECEIVED })
+  return outcome
 }
 
 export interface SubscriptionChangeDeps {

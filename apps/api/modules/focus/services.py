@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import logging
 import uuid
+from dataclasses import dataclass
 from datetime import datetime
 
 from django.db import IntegrityError, transaction
@@ -286,6 +287,31 @@ def start(
     at: datetime | None = None,
 ) -> tuple[ActiveTimer, bool]:
     """Starts a focus round (or the break that is due). Returns (timer, created); a retried start is a no-op."""
+    return _start(
+        user_id,
+        client_id=client_id,
+        phase=phase,
+        preset=preset,
+        custom=custom,
+        subject_id=subject_id,
+        chapter_id=chapter_id,
+        activity_type=activity_type,
+        at=at,
+    )
+
+
+def _start(
+    user_id,
+    *,
+    client_id,
+    phase: str = "focus",
+    preset: str | None = None,
+    custom: dict | None = None,
+    subject_id=None,
+    chapter_id=None,
+    activity_type: str | None = None,
+    at: datetime | None = None,
+) -> tuple[ActiveTimer, bool]:
     now = _now()
     timer = _current(user_id, now)
     if timer:
@@ -349,7 +375,10 @@ def start(
 @announces
 def pause(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
     now = _now()
-    timer = _require(_current(user_id, now, version))
+    return _pause(_require(_current(user_id, now, version)), now, at)
+
+
+def _pause(timer: ActiveTimer, now: datetime, at: datetime | None = None) -> ActiveTimer:
     if timer.phase != "focus" or timer.away_pending:
         raise ConflictError("Only a running focus round can be paused.", code="not_pausable")
     if timer.paused_at:
@@ -363,7 +392,10 @@ def pause(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
 @announces
 def resume(user_id, *, version=None, at: datetime | None = None) -> ActiveTimer:
     now = _now()
-    timer = _require(_current(user_id, now, version))
+    return _resume(_require(_current(user_id, now, version)), now, at)
+
+
+def _resume(timer: ActiveTimer, now: datetime, at: datetime | None = None) -> ActiveTimer:
     if not timer.paused_at:
         return timer
     resumed = max(timer.paused_at, min(durations.clamp_client_time(at, now), now))
@@ -440,6 +472,12 @@ def end(
     completes the round at the full counted time and the break that is due starts (`timer`), or waits when breaks do
     not start on their own.
     """
+    return _end(user_id, client_id=client_id, version=version, save=save, reason=reason)
+
+
+def _end(
+    user_id, *, client_id=None, version=None, save: bool = True, reason: str = ""
+) -> tuple[object | None, str, ActiveTimer | None]:
     now = _now()
     if reason and reason not in timing.REASONS:
         raise InvalidInput("Unknown reason.", {"reason": ["Pick one of the listed reasons."]})
@@ -523,6 +561,137 @@ def change_context(user_id, *, version, changes: dict) -> ActiveTimer:
     if "activity_type" in changes:
         timer.activity_type = tracking._check_activity(changes["activity_type"])
     return _bump(timer, now)
+
+
+# --- Buttons on a timer alert (X-01.1 FR-N12) -------------------------------------------------------------------
+BUTTON_ACTIONS = ("pause", "resume", "start_break", "start_focus")
+
+
+@dataclass(frozen=True)
+class ButtonResult:
+    """
+    What a tap on a timer alert did. `outcome` is `done` (the timer changed as asked), `already` (it was already so),
+    `stale` (the timer moved since the alert, so the tap changed nothing) or `needs_app` (the round waits for the
+    student to say whether they studied through it, which only the app can ask). The rest describes the timer after.
+    """
+
+    outcome: str
+    phase: str | None = None
+    client_id: uuid.UUID | None = None
+    version: int | None = None
+    paused: bool = False
+
+
+def _button_result(outcome: str, timer: ActiveTimer | None) -> ButtonResult:
+    if timer is None:
+        return ButtonResult(outcome)
+    return ButtonResult(outcome, timer.phase, timer.client_id, timer.version, timer.paused_at is not None)
+
+
+def _note_tap(timer: ActiveTimer, now: datetime) -> None:
+    """A tap on the alert is the student's own device saying they are here, like a heartbeat, inside the window."""
+    if timer.paused_at is not None:
+        return
+    end_at = timing.phase_end_at(timer.started_at, timer.planned_seconds, timer.paused_total_seconds)
+    if timing.present_by_tap(end_at, now) and now > timer.last_seen_at:
+        timer.last_seen_at = now
+        timer.save(update_fields=["last_seen_at", "updated_at"])
+
+
+def _same(timer: ActiveTimer | None, client_id) -> bool:
+    return timer is not None and str(timer.client_id) == str(client_id)
+
+
+@transaction.atomic
+@announces
+def act_from_notification(user_id, *, action: str, client_id, version: int, issued_at: datetime) -> ButtonResult:
+    """
+    A button on a timer alert. The tap may act only on the phase the alert was about (`client_id`, `version`); when the
+    timer moved since, nothing changes (`stale`). `issued_at` is when the button was made: an idle timer that was
+    touched after it is also stale. Errors of the underlying action (a stopwatch is running) are raised as usual and
+    roll everything back.
+    """
+    if action not in BUTTON_ACTIONS:
+        raise InvalidInput("Unknown action.", code="unknown_action")
+    now = _now()
+    timer = _lock(user_id)
+    if action == "start_focus":
+        return _start_focus_after_break(user_id, timer, client_id, version, issued_at, now)
+    if not _same(timer, client_id) or timer.phase != "focus":
+        return _button_result("stale", timer)
+    if timer.away_pending:
+        return _button_result("needs_app", timer)
+    if timer.version != version:
+        return _button_result("stale", timer)
+
+    _note_tap(timer, now)
+    timer = _settle(timer, now)
+    if timer is not None and timer.away_pending:
+        return _button_result("needs_app", timer)
+    if action == "start_break":
+        return _start_break_after_round(user_id, timer, client_id, now)
+    if not _same(timer, client_id):  # the round closed by itself: nothing left to pause or resume
+        return _button_result("stale", timer)
+    if action == "pause":
+        if timer.paused_at:
+            return _button_result("already", timer)
+        return _button_result("done", _pause(timer, now))
+    if not timer.paused_at:
+        return _button_result("already", timer)
+    return _button_result("done", _resume(timer, now))
+
+
+def _start_break_after_round(user_id, timer: ActiveTimer | None, client_id, now: datetime) -> ButtonResult:
+    """Close the round that reached its target (overtime keeps it running) and start the break that is due."""
+    round_id = uuid.UUID(str(client_id))
+    if _same(timer, client_id):
+        if not timing.finished(
+            timer.planned_seconds, timer.started_at, now, timer.paused_at, timer.paused_total_seconds
+        ):
+            return _button_result("stale", timer)
+        _, _, timer = _end(user_id, client_id=client_id, save=True)
+    if timer is not None:
+        began_itself = timer.phase in BREAKS and timer.client_id == uuid.uuid5(
+            round_id, f"{timer.phase}-{timer.round_number}"
+        )
+        return _button_result("done" if began_itself else "stale", timer)
+    idle = selectors.idle_dict(get_or_create_settings(user_id), now)
+    if idle["next_phase"] not in BREAKS:
+        return _button_result("stale", None)
+    timer, _ = _start(user_id, client_id=uuid.uuid5(round_id, "alert-break"), phase=idle["next_phase"])
+    return _button_result("done", timer)
+
+
+def _start_focus_after_break(
+    user_id, timer: ActiveTimer | None, client_id, version: int, issued_at: datetime, now: datetime
+) -> ButtonResult:
+    """Start the next round after a break, tagged like the round before it when the break row still says so."""
+    break_id = uuid.UUID(str(client_id))
+    new_id = uuid.uuid5(break_id, "alert-focus")
+    tags: dict = {}
+    if _same(timer, client_id):
+        if timer.version != version or timer.phase not in BREAKS:
+            return _button_result("stale", timer)
+        tags = {"subject_id": timer.subject_id, "chapter_id": timer.chapter_id, "activity_type": timer.activity_type}
+        _note_tap(timer, now)
+        timer = _settle(timer, now)
+        if timer is not None:  # the round began by itself (the student was there), or the break is not over yet
+            return _button_result("done" if timer.phase == "focus" else "stale", timer)
+    elif timer is not None:
+        began_itself = timer.phase == "focus" and timer.client_id == uuid.uuid5(break_id, f"focus-{timer.round_number}")
+        return _button_result("already" if timer.client_id == new_id or began_itself else "stale", timer)
+    else:
+        remembered = selectors.get_settings(user_id)
+        untouched = (
+            remembered is not None
+            and remembered.cycle_next_phase == "focus"
+            and remembered.cycle_updated_at is not None
+            and remembered.cycle_updated_at <= issued_at
+        )
+        if not untouched:
+            return _button_result("stale", None)
+    timer, _ = _start(user_id, client_id=new_id, phase="focus", **tags)
+    return _button_result("done", timer)
 
 
 # --- Data rights ----------------------------------------------------------------------------------------------

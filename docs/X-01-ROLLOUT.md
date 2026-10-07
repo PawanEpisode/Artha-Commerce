@@ -993,19 +993,64 @@ select count(*) filter (where next_weekly_at is null) as unplanned, count(*) as 
 
 ### W3.6 Android notification buttons
 
+Goal: the timer alert on an Android phone carries buttons, and a tap changes the timer without opening the app. Each button holds a one-time token that works once, for ten minutes, for the one timer phase the alert was about. One migration (`0004_actiontoken`), one public endpoint (`POST /api/v1/notifications/actions/`), no new environment variable. `NOTIFICATIONS_DECLARATIVE_PUSH` stays off.
+
+**What changed**
+
+- Buttons per alert (`domain/actions.buttons_for`): a round that reached its target and runs on in overtime (the default) gets **Start break** and **Pause**; a round that closed with its break waiting (breaks do not start by themselves) gets **Start break**; a round whose break begins by itself gets none; **break over** gets **Start round N**. A paused confirmation carries **Resume**. A round the student was away for gets no buttons (only the app can ask whether they studied through it). No "+5 min": focus refuses an extension once a round is past its target, which is always the case when the alert fires.
+- Tokens: `notifications_actiontoken` (ERD 2.8) stores the SHA-256 of a 32-byte random token (base64url, 43 characters), the student, the notification, the timer phase (`timer_client_id`, `timer_version`), the action, `expires_at` (10 minutes after the alert) and `used_at`. The token itself is only in the push; it is never stored or logged. Tokens are minted when the alert is sent, once per send, and only when at least one of the student's active devices has platform `android`; other devices get the same alert without buttons (`dispatch._message_with_buttons`). If buttons would push the payload past 3 KB they are dropped (logged `push_buttons_dropped`); with two buttons it is under 1 KB.
+- Use (`services/actions.tap`): one atomic `UPDATE ... WHERE token_hash = %s AND used_at IS NULL AND expires_at > now` spends the token, so a replay or a second tap racing the first does nothing. The tap then goes to `focus.services.act_from_notification` with the phase and version from the token. A timer that moved since (paused or stopped in the app, another round) is left untouched (`stale`). The tap marks the notification read and its pushes clicked.
+- Presence: a tap within two minutes after the round's end counts as the student being there (`focus.domain.timing.present_by_tap`, the same window as the tab heartbeat), so a phone that was locked through the round can still start the break. A later tap on a round nobody saw end answers `needs_app` and changes nothing; the app then asks the usual "did you study through it?".
+- Focus: `act_from_notification` is a new public, announcing service action (one `timer_changed` per tap that moves the timer). `start`, `pause`, `resume` and `end` were split into a thin public wrapper and an internal function so the button action reuses them without announcing twice. The timer-end judgement now also says whether the break starts by itself.
+- Endpoint: no sign-in (the service worker has none), the token in the JSON body is the credential. Malformed, unknown, used and expired tokens get one answer: `400 {"error": {"code": "action_unavailable", ...}}`. `403 notifications_disabled` when notifications are off, the student's `notifications_send` flag is off, or the button kill switch is set. Throttled at 30 a minute per address (`notifications_action`, plus the anonymous 60 a minute). CORS stays limited to `CORS_ALLOWED_ORIGINS` (the web origin). Sentry drops the body of this path and filters any key named `token` anywhere in request data and frame variables.
+- Answer: `200 {"outcome": "done" | "already" | "stale" | "needs_app", "notification": {title, body, tag, url, actions}}`. The service worker shows it in place of the alert (same tag), so the student sees "Timer paused" with a Resume button, "Break started", "Nothing changed" or "Open the app". Any failure (offline, refused, switched off) shows "Open the app" with the alert's link. Only a tap on the notification itself opens the app; `?n=<id>` click tracking is unchanged.
+- Worker: `src/sw/actions.ts` (pure helpers) and `handleNotificationAction` in `handlers.ts`; the API origin is baked in at build time from `VITE_API_URL` (already set for the web project), so no new variable.
+- Retention prunes tokens one day after they expire; account export lists buttons (action and dates, never the token or hash); account delete removes them.
+
+**Configure:** nothing new. Deploy the API first (the migration only adds a table), then the web (the new worker).
+
 ```bash
-cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-w3-6-action-buttons
-cd apps/api && source .venv/bin/activate
-python manage.py makemigrations notifications -n actiontoken && python manage.py migrate
-pytest modules/notifications -q
+cd "$ROOT/apps/api" && source .venv/bin/activate
+python manage.py migrate                                   # 0004_actiontoken
+pytest modules/notifications modules/focus core -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm --filter @artha/web exec vitest run src/sw && pnpm check
 ```
 
-Check on a real Android phone: the timer-end alert shows Start break and +5 min; tapping one changes the timer without opening the app. Replay the same token:
+**Roll back:** add `timer_buttons` to `NOTIFICATIONS_DISABLED_EVENTS` and redeploy the API: alerts go out without buttons and every tap is refused (the worker then shows "Open the app"). `notifications_send` at 0% or `NOTIFICATIONS_ENABLED=false` stops it too. To undo the code, revert the commit; the table can stay (retention empties it within a day).
 
-```bash
-curl -s -X POST https://api.<your-domain>/api/v1/notifications/actions/ -H 'Content-Type: application/json' -d '{"token":"<token from the payload>"}'
-# the second call must be rejected
+Check what the buttons did with:
+
+```sql
+select action, count(*) filter (where used_at is not null) as used, count(*) as made,
+       count(*) filter (where used_at is null and expires_at < now()) as expired_unused
+from notifications_actiontoken where created_at > now() - interval '1 day' group by action;
+select count(*) from notifications_actiontoken where expires_at < now() - interval '1 day';  -- 0 after the sweep's prune
 ```
+
+**Check on a real Android phone** (Chrome, the app installed or in the browser, push on, flags on for you, a second device on iPhone or desktop if you have one):
+
+1. Start a 1-minute custom round with overtime on, lock the phone. At the end the alert shows **Start break** and **Pause**; the iPhone or desktop alert shows no buttons.
+2. Tap **Pause** within two minutes: the alert turns into "Timer paused" with **Resume**, the app does not open; open the app: the round is paused. Tap **Resume** in the notification: the round runs again.
+3. Run another round, tap **Start break** at the end: "Break started", and the app shows the break running and the round saved in the tracker.
+4. Replay: copy a token from the push (Chrome `chrome://inspect` > the worker > Console, `self.registration.getNotifications()` then `.data.tokens`) and post it twice; the second answer is `400 action_unavailable`:
+
+   ```bash
+   curl -s -X POST https://api.<your-domain>/api/v1/notifications/actions/ -H 'Content-Type: application/json' -d '{"token":"<token>"}'
+   ```
+
+5. Stale: let a round end, pause it in the app, then tap **Start break** on the alert: "Nothing changed", and the timer is still paused.
+6. Late: let a round end with the phone locked and wait four minutes before tapping **Start break**: "Open the app"; open it and answer the question.
+7. Break over (breaks start by themselves, next round does not): at the end of the break the alert shows **Start round 2**; tapping it starts round 2 with the same subject (when the app was not opened in between; otherwise without one).
+8. Kill switch: set `NOTIFICATIONS_DISABLED_EVENTS=timer_buttons` on a preview deploy: the next alert has no buttons, and tapping an older one shows "Open the app".
+
+**Decisions**
+
+- Buttons: Start break and Pause on the overtime alert, Start break when the break waits, Start round N after a break, Resume on the paused confirmation (chosen with you). The PRD's "+5 min" is not offered because focus cannot extend a round that has reached its target; the `extend` action of the ERD was replaced by `start_focus`.
+- Token lifetime 10 minutes (the ERD's value, confirmed with you). The version check makes any later change a no-op regardless.
+- A tap counts as presence only within two minutes after the end, the same window as the heartbeat, so the button never credits a round that nobody saw end.
+- The token is spent even when the tap then turns out to be stale or switched off; a token is never reusable.
+- Tokens are shared by the student's Android devices for one alert: a tap on one phone spends it for the other.
+- Only devices registered as `android` get buttons. Desktop Chrome supports them too, but the PRD scoped this to Android; widening it is one line (`domain/actions.PLATFORMS`).
 
 ### W3.7 Fatigue controls
 

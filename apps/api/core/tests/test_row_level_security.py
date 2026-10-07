@@ -49,6 +49,7 @@ def test_the_notification_tables_are_covered():
         "notifications_notification",
         "notifications_delivery",
         "notifications_scheduledjob",
+        "notifications_actiontoken",
     } <= set(TABLES)
 
 

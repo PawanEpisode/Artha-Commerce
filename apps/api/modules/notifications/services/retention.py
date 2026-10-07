@@ -3,7 +3,8 @@ The retention job (FR-N24): deletes expired rows in batches of at most 1000, eac
 so it never holds a lock for long and can be stopped at any point. Running it again is a no-op.
 
 Order matters only for tidiness: deliveries first (they are the biggest table), then notifications (their remaining
-deliveries go with them), then finished jobs, then long-revoked devices (their deliveries keep the row, device NULL), then the shown-message memory.
+deliveries go with them), then finished jobs, then long-revoked devices (their deliveries keep the row, device NULL), then the shown-message memory, then
+expired button tokens.
 """
 
 from __future__ import annotations
@@ -20,7 +21,7 @@ from django.utils import timezone
 from ..domain import retention
 from ..domain.enums import JobStatus
 from ..logs import log_event
-from ..models import Delivery, Device, MessageShown, Notification, ScheduledJob
+from ..models import ActionToken, Delivery, Device, MessageShown, Notification, ScheduledJob
 
 
 @dataclass(frozen=True)
@@ -32,11 +33,19 @@ class PruneResult:
     jobs: int = 0
     revoked_devices: int = 0
     messages_shown: int = 0
+    action_tokens: int = 0
     more: bool = False
 
     @property
     def total(self) -> int:
-        return self.deliveries + self.notifications + self.jobs + self.revoked_devices + self.messages_shown
+        return (
+            self.deliveries
+            + self.notifications
+            + self.jobs
+            + self.revoked_devices
+            + self.messages_shown
+            + self.action_tokens
+        )
 
 
 def _querysets(now: datetime) -> dict[str, QuerySet]:
@@ -47,6 +56,7 @@ def _querysets(now: datetime) -> dict[str, QuerySet]:
         "jobs": ScheduledJob.objects.filter(updated_at__lt=c.jobs).exclude(status=JobStatus.PENDING),
         "revoked_devices": Device.objects.filter(Q(revoked_at__isnull=False) & Q(revoked_at__lt=c.revoked_devices)),
         "messages_shown": MessageShown.objects.filter(shown_on__lt=c.messages_shown),
+        "action_tokens": ActionToken.objects.filter(expires_at__lt=c.action_tokens),
     }
 
 

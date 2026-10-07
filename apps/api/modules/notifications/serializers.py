@@ -152,3 +152,27 @@ def thought_response(thought) -> dict:
             "shown_on": thought.shown_on.isoformat(),
         }
     }
+
+
+class _ButtonSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    title = serializers.CharField()
+    token = serializers.CharField()
+
+
+class _TapNotificationSerializer(serializers.Serializer):
+    title = serializers.CharField()
+    body = serializers.CharField()
+    tag = serializers.CharField()
+    url = serializers.CharField()
+    actions = _ButtonSerializer(many=True)
+
+
+class ActionTapSerializer(serializers.Serializer):
+    """`POST actions/` answer: what happened, and the notification the worker shows in place of the alert."""
+
+    outcome = serializers.CharField()
+    notification = serializers.SerializerMethodField()
+
+    def get_notification(self, result) -> dict:
+        return _TapNotificationSerializer(result).data

@@ -24,8 +24,18 @@ class PayloadTooLarge(ValueError):
 
 @dataclass(frozen=True)
 class PayloadAction:
+    """A button. `token` is the one-time token its tap sends to `actions/` (W3.6); it lives only in this payload."""
+
     id: str
     title: str
+    token: str | None = None
+
+
+def _action(action: PayloadAction) -> dict:
+    data = {"id": action.id, "title": action.title}
+    if action.token:
+        data["token"] = action.token
+    return data
 
 
 def link_with_notification(deep_link: str, notification_id: object) -> str:
@@ -54,7 +64,7 @@ def build_payload(
         "body": body,
         "tag": tag,
         "url": link_with_notification(deep_link, notification_id),
-        "actions": [{"id": action.id, "title": action.title} for action in actions],
+        "actions": [_action(action) for action in actions],
     }
 
 

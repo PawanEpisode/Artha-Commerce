@@ -296,3 +296,27 @@ class MessageShown(UUIDModel):
             models.CheckConstraint(condition=_in("channel", enums.ShownChannel), name="notif_messageshown_channel"),
         ]
         indexes = [models.Index(fields=["shown_on"], name="notif_messageshown_prune_idx")]
+
+
+class ActionToken(UUIDModel):
+    """
+    One-time permission for a button on a timer alert to act on one timer phase without a sign-in (ERD 2.8, W3.6).
+    Only the SHA-256 of the token is stored; the token itself exists only in the push payload. Using it is one
+    conditional UPDATE (`services.actions.consume`), so a token works at most once.
+    """
+
+    user_id = models.UUIDField()
+    notification = models.ForeignKey(Notification, on_delete=models.CASCADE, related_name="action_tokens")
+    timer_client_id = models.UUIDField()  # the timer phase this token may act on
+    timer_version = models.IntegerField()  # the version of that phase when the button was made
+    action = models.CharField(max_length=12, choices=choices(enums.ButtonAction))
+    token_hash = models.CharField(max_length=64, unique=True)
+    expires_at = models.DateTimeField()
+    used_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "notifications_actiontoken"
+        constraints = [
+            models.CheckConstraint(condition=_in("action", enums.ButtonAction), name="notif_actiontoken_action"),
+        ]
+        indexes = [models.Index(fields=["expires_at"], name="notif_token_expiry_idx")]

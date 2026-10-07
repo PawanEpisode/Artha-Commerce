@@ -101,7 +101,14 @@ class TimerEndHandler:
             case EndState.NOT_DUE:
                 return NotYet()
         # Ended. Whether the round is still running (overtime) or closed is a live fact, so it comes from the judge.
-        context = {**job.context, "client_id": job.subject_key, "overtime": judgement.overtime}
+        context = {
+            **job.context,
+            "client_id": job.subject_key,
+            "version": job.expected_version,
+            "overtime": judgement.overtime,
+            "away": judgement.away_pending,
+            "break_starts_itself": judgement.break_starts_itself,
+        }
         return Notify(self.event_key(job), context, {"client_id": job.subject_key, "version": job.expected_version})
 
 

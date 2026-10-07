@@ -98,6 +98,18 @@ def prepare_overtime(w):
         w.run(services.sync, alive=True)
 
 
+def prepare_at_target(w):
+    w.start(overtime=True)
+    w.go(minutes=25, seconds=30)  # the alert has just arrived; the round runs on in overtime
+
+
+def tap(w, action, **kw):
+    """A button on the timer alert (X-01.1 W3.6), for the phase that is live now unless told otherwise."""
+    timer = w.timer
+    kw = {"client_id": timer.client_id, "version": timer.version, "issued_at": w.now, **kw}
+    return w.run(services.act_from_notification, action=action, **kw)
+
+
 CASES = [
     ("start", prepare_nothing, lambda w: w.start(), 1),
     ("start_retried", prepare_running, lambda w: w.run(services.start, client_id=w.timer.client_id), 0),
@@ -131,6 +143,9 @@ CASES = [
     ),
     ("settle_into_away", lambda w: (w.start(), w.go(minutes=26)), lambda w: w.run(services.sync), 1),
     ("settle_through_a_whole_break", lambda w: (w.start(), w.go(minutes=40)), lambda w: w.run(services.sync), 1),
+    ("button_start_break", prepare_at_target, lambda w: tap(w, "start_break"), 1),
+    ("button_pause", prepare_at_target, lambda w: tap(w, "pause"), 1),
+    ("button_stale_version", prepare_at_target, lambda w: tap(w, "pause", version=w.timer.version + 1), 0),
     ("erase_with_timer", prepare_running, lambda w: w.run(services.delete_all_for_user), 1),
     ("erase_without_timer", prepare_nothing, lambda w: w.run(services.delete_all_for_user), 0),
 ]

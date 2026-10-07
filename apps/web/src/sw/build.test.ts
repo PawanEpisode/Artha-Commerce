@@ -34,6 +34,10 @@ describe('service worker bundle (FR-N30)', () => {
     expect(code).not.toContain('CacheStorage')
   })
 
+  it('bakes in the API origin that notification buttons post to', async () => {
+    expect(await bundle({ apiBaseUrl: 'https://api.example.test' })).toContain('https://api.example.test')
+  })
+
   it('falls back to the dev version when none is given', async () => {
     expect(await bundle({ version: 'dev' })).toContain('"dev"')
   })

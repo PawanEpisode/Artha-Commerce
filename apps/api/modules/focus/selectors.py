@@ -61,6 +61,7 @@ def timer_end_judgement(
             "paused_total_seconds",
             "away_pending",
             "overtime_enabled",
+            "auto_start_breaks",
         )
         .first()
     )

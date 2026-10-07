@@ -156,6 +156,7 @@ REST_FRAMEWORK = {
         "notifications_write": "60/min",
         "notifications_test": "5/min",
         "notifications_unsubscribe": "20/min",
+        "notifications_action": "30/min",
     },
     "UNAUTHENTICATED_USER": None,
 }

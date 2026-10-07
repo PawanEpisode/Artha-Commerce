@@ -55,6 +55,17 @@ class TransientJobError(CodedError):
     default_code = "job_failed"
 
 
+class ActionUnavailable(CodedError):
+    """
+    A notification button token that is malformed, unknown, used or expired (W3.6). One answer for all four, so a
+    caller learns nothing about which tokens exist.
+    """
+
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "This button no longer works. Open the app instead."
+    default_code = "action_unavailable"
+
+
 class InvalidUnsubscribeLink(CodedError):
     """The signed link is malformed, was not signed by us, or names something that cannot be switched. Nothing says which."""
 

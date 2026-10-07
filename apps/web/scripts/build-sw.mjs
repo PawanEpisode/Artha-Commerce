@@ -7,4 +7,10 @@ import { swBuildOptions, swVersionFrom } from './sw-build-options.mjs'
 
 const env = { ...loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), 'VITE_'), ...process.env }
 
-await build(swBuildOptions({ version: swVersionFrom(env), vapidPublicKey: env.VITE_VAPID_PUBLIC_KEY ?? '' }))
+await build(
+  swBuildOptions({
+    version: swVersionFrom(env),
+    vapidPublicKey: env.VITE_VAPID_PUBLIC_KEY ?? '',
+    apiBaseUrl: env.VITE_API_URL ?? 'http://localhost:8000',
+  }),
+)

@@ -2,7 +2,13 @@
  * esbuild options for the service worker, shared by `build-sw.mjs` and the test that checks the bundle.
  * One file out (`public/sw.js`), no code splitting, no runtime dependencies.
  */
-export function swBuildOptions({ version = 'dev', vapidPublicKey = '', outfile = 'public/sw.js', write = true } = {}) {
+export function swBuildOptions({
+  version = 'dev',
+  vapidPublicKey = '',
+  apiBaseUrl = '',
+  outfile = 'public/sw.js',
+  write = true,
+} = {}) {
   return {
     entryPoints: ['src/sw/sw.ts'],
     outfile,
@@ -17,6 +23,8 @@ export function swBuildOptions({ version = 'dev', vapidPublicKey = '', outfile =
     define: {
       __SW_VERSION__: JSON.stringify(version),
       __VAPID_PUBLIC_KEY__: JSON.stringify(vapidPublicKey),
+      // Where notification buttons send their one-time token (W3.6). The API origin is public, like the app's own.
+      __API_BASE_URL__: JSON.stringify(apiBaseUrl),
     },
   }
 }

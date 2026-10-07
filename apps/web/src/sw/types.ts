@@ -18,6 +18,10 @@ export interface NotificationData {
   id: string | null
   category: string | null
   swVersion: string
+  /** The alert's tag, so a confirmation after a button tap replaces it. */
+  tag?: string
+  /** Button id to its one-time token (W3.6). Only buttons that act through the API are listed. */
+  tokens?: Record<string, string>
 }
 
 export interface WindowClientLike {
@@ -45,15 +49,23 @@ export interface PushEventLike extends ExtendableEventLike {
   data: { text(): string } | null
 }
 export interface NotificationClickEventLike extends ExtendableEventLike {
+  /** The button that was tapped, or '' for the notification itself. */
   action: string
   notification: { data: unknown; close(): void }
 }
+
+/** The part of `fetch` the worker uses to send a button tap. */
+export type FetchLike = (
+  url: string,
+  init: { method: 'POST'; headers: Record<string, string>; body: string; credentials: 'omit'; mode: 'cors' },
+) => Promise<{ ok: boolean; status: number; json(): Promise<unknown> }>
 export interface SubscriptionChangeEventLike extends ExtendableEventLike {
   oldSubscription?: PushSubscriptionLike | null
 }
 
 export interface WorkerScopeLike extends EventTarget {
   location: { origin: string }
+  fetch: FetchLike
   clients: ClientsLike
   skipWaiting(): Promise<void>
   registration: {

@@ -24,13 +24,22 @@ from django.conf import settings
 
 from . import channels, flags, selectors
 from .channels import DeviceSecrets, PushMessage, SendResult, SendStatus, Urgency
+from .domain import actions as buttons
 from .domain import catalogue
 from .domain.enums import Channel, DeliveryStatus, SuppressReason
-from .domain.payload import build_payload, delivery_window, encode_payload, with_declarative_fields
+from .domain.payload import (
+    PayloadAction,
+    PayloadTooLarge,
+    build_payload,
+    delivery_window,
+    encode_payload,
+    with_declarative_fields,
+)
 from .domain.policy import Action, PolicyInput, QuietPreference, decide
 from .domain.quiet_hours import local_day_bounds
 from .logs import log_event
 from .models import Delivery, Device, Notification
+from .services import actions as action_service
 from .services import devices as device_service
 
 logger = logging.getLogger(__name__)
@@ -167,6 +176,10 @@ def _send(notification, spec, devices, delivered, now, intended_at) -> DispatchR
 
     ttl, urgency = delivery_window(spec.priority, now, notification.expires_at)
     message = PushMessage(body=_encoded_payload(notification), ttl_seconds=ttl, urgency=Urgency(urgency))
+    # Android shows buttons (W3.6): those devices get the same message plus one-time tokens, minted once for this send.
+    with_buttons = message
+    if any(device.platform in buttons.PLATFORMS and device.id not in delivered for device in devices):
+        with_buttons = _message_with_buttons(notification, message, now)
     channel = channels.get_channel(channels.PUSH)
     lateness_ms = max(0, int((now - (intended_at or notification.created_at)).total_seconds() * 1000))
 
@@ -176,7 +189,7 @@ def _send(notification, spec, devices, delivered, now, intended_at) -> DispatchR
             already += 1
             continue
         row = _claim_row(notification, device, now)
-        result = _call(channel, device, message)
+        result = _call(channel, device, with_buttons if device.platform in buttons.PLATFORMS else message)
         if result.status is SendStatus.SENT:
             sent += 1
             _mark_sent(row, result, spec, device, now, lateness_ms)
@@ -186,7 +199,7 @@ def _send(notification, spec, devices, delivered, now, intended_at) -> DispatchR
     return DispatchResult(Action.SEND, sent=sent, failed=failed, revoked=revoked, already_sent=already)
 
 
-def _encoded_payload(notification) -> str:
+def _encoded_payload(notification, actions: tuple[PayloadAction, ...] = ()) -> str:
     payload = build_payload(
         notification_id=notification.id,
         category=notification.category,
@@ -194,10 +207,24 @@ def _encoded_payload(notification) -> str:
         body=notification.body,
         tag=notification.tag,
         deep_link=notification.deep_link,
+        actions=actions,
     )
     if flags.declarative_push_enabled():
         payload = with_declarative_fields(payload, web_origin=settings.NOTIFICATIONS_WEB_BASE_URL)
     return encode_payload(payload)
+
+
+def _message_with_buttons(notification, message: PushMessage, now) -> PushMessage:
+    """The message with this alert's buttons, or the plain one when it has none (or they would not fit)."""
+    actions = tuple(action_service.mint(notification, now=now))
+    if not actions:
+        return message
+    try:
+        body = _encoded_payload(notification, actions)
+    except PayloadTooLarge:
+        _log(logging.WARNING, "push_buttons_dropped", event=notification.event, reason="too_large")
+        return message
+    return PushMessage(body=body, ttl_seconds=message.ttl_seconds, urgency=message.urgency)
 
 
 def _claim_row(notification, device: Device, now) -> Delivery:

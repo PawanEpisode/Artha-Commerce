@@ -118,6 +118,14 @@ def was_present(last_seen_at: datetime, end_at: datetime) -> bool:
     return last_seen_at >= end_at - timedelta(seconds=PRESENCE_WINDOW_SECONDS)
 
 
+def present_by_tap(end_at: datetime, tap_at: datetime) -> bool:
+    """
+    X-01.1 FR-N12: a tap on a button of the timer alert counts as the student being there when it comes no later than
+    the presence window after the end. A later tap is no evidence of the moment the round ended.
+    """
+    return tap_at <= end_at + timedelta(seconds=PRESENCE_WINDOW_SECONDS)
+
+
 def cycle_fresh(updated_at: datetime | None, now: datetime) -> bool:
     return updated_at is not None and (now - updated_at).total_seconds() <= CYCLE_MEMORY_SECONDS
 

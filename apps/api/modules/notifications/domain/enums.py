@@ -154,6 +154,15 @@ class SuppressReason(StrEnum):
     NO_ADDRESS = "no_address"  # email: the student has no address on file
 
 
+class ButtonAction(StrEnum):
+    """What a button on a timer alert does (W3.6, FR-N12). The meaning of each lives in `focus`."""
+
+    PAUSE = "pause"
+    RESUME = "resume"
+    START_BREAK = "start_break"
+    START_FOCUS = "start_focus"
+
+
 def choices(enum_class: type[StrEnum]) -> list[tuple[str, str]]:
     """Django `choices` for a model field."""
     return [(member.value, member.value) for member in enum_class]

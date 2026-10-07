@@ -37,6 +37,7 @@ class TimerFacts:
     paused_total_seconds: int
     away_pending: bool
     overtime_enabled: bool
+    auto_start_breaks: bool = True
 
 
 @dataclass(frozen=True)
@@ -47,6 +48,8 @@ class TimerEndJudgement:
     # A focus round that reached its target and keeps running (overtime). False once it is closed or the student is away.
     overtime: bool = False
     away_pending: bool = False
+    # The break that is due starts by itself once the round closes (X-01.1 W3.6: no "Start break" button is needed).
+    break_starts_itself: bool = False
 
 
 def judge_timer_end(
@@ -89,4 +92,5 @@ def judge_timer_end(
         ends_at=ends_at,
         overtime=facts.phase == "focus" and facts.overtime_enabled and not facts.away_pending,
         away_pending=facts.away_pending,
+        break_starts_itself=facts.phase == "focus" and facts.auto_start_breaks,
     )
