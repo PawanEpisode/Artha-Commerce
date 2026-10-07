@@ -8,7 +8,7 @@
 | Companion document | [ERD](../erd/X-01-notifications-floating-timer-stay-awake.md) |
 | Builds on | F-01.1 Pomodoro, F-01.2 Time Tracker, F-16 Personalization and onboarding |
 
-> **Build source for push:** PRD A (push) is built from [X-01.1 Push Notifications](X-01.1-push-notifications.md), which adds module boundaries, failure handling, waves and gates, and fixes the phase numbering used in the tier table below (installed app = P2, pop-out = P4, companion = P5). PRD B (floating timer) and PRD C (keep awake) stay the source here. Steps and commands: [`docs/X-01-ROLLOUT.md`](../../X-01-ROLLOUT.md).
+> **Build source for push:** PRD A (push) is built from [X-01.1 Push Notifications](X-01.1-push-notifications.md), which adds module boundaries, failure handling, waves and gates, and the phase numbering used everywhere (P1 spikes to P5 companion). PRD B (floating timer) and PRD C (keep awake) stay the source here; the P4 waves (W4.0 to W4.5) are in X-01.1 section 13.1. Steps and commands: [`docs/X-01-ROLLOUT.md`](../../X-01-ROLLOUT.md).
 
 
 ## Feasibility verdict
@@ -206,22 +206,63 @@ The targets below are starting hypotheses to calibrate after four weeks of data,
 
 | Tier | What the student gets | Needs | Where it works | Phase |
 | --- | --- | --- | --- | --- |
-| 1. Pop-out timer | A small always-on-top window with the live timer, Pause, +5 and End | One click, the Artha tab stays open (it can be in the background) | Chrome and Edge 116+, Firefox 151+ on desktop. Other browsers get a small separate window that is not always on top | 2 |
-| 2. Installed app | Artha in its own window, in the dock or taskbar, with an icon badge while a timer runs. On Android, a notification that shows the end time, with Pause and +5 buttons | "Install Artha" once | Chrome, Edge, Safari desktop and Android (iPhone with Home Screen install gets alerts and badge, no buttons) | 1 |
-| 3. Desktop companion | Timer in the menu bar or tray, a mini window that floats over every app, native alerts, optional start at login, and a system-wide keep-awake. Runs with the browser closed | Download and sign in once | Windows, macOS, Linux | 3, if the gate is met |
+| 1. Pop-out timer | A small always-on-top window with the live timer and the same controls as the focus page (see "Behaviour per timer state") | One click, the Artha tab stays open (it can be in the background) | Chrome and Edge 116+, Firefox 151+ on desktop. Other browsers get a small separate window that is not always on top | P4 |
+| 2. Installed app | Artha in its own window, in the dock or taskbar, with an icon badge while a timer runs. On Android, a notification with Start break, Pause, Resume and Start round N buttons (shipped in W3.6; +5 is not offered, see W3.6) | "Install Artha" once | Chrome, Edge, Safari desktop and Android (iPhone with Home Screen install gets alerts and badge, no buttons) | P2 (manifest, Android buttons in P3), install prompt and badge in P4 (W4.5) |
+| 3. Desktop companion | Timer in the menu bar or tray, a mini window that floats over every app, native alerts, optional start at login, and a system-wide keep-awake. Runs with the browser closed | Download and sign in once | Windows, macOS, Linux | P5, only if gate G4 is met |
 
 We are honest about what is not possible: a live second-by-second countdown on a phone lock screen needs a native app, so on phones the student gets the exact end time and the end-of-round push instead.
 
 ### The experience
 
-1. **Start.** On starting a round the student sees a quiet prompt, once: "Keep the timer on top while you study?" with Pop out and Not now. A setting, "Pop out when I start a round", makes it automatic, because the Start tap counts as the click the browser needs.
-2. **Two sizes.** A pill (about 260 by 72 px): the time, a Pause button, the phase colour. A card (about 320 by 190 px): the progress ring, subject and chapter, Pause or Resume, +5 min, End. The student toggles size with one button and the choice is remembered.
+1. **Start.** On starting a round the student sees a quiet prompt, once ever: "Keep the timer on top while you study?" with Pop out and Not now, and a checkbox "Do this every time I start a round". A setting, "Pop out when I start a round" (default off), makes it automatic, because the Start tap counts as the click the browser needs. Rules in "Start-of-round prompt" below.
+2. **Two sizes.** A pill (about 260 by 72 px): the time, one control, the phase colour. A card (about 320 by 190 px): the progress ring, subject and chapter, round number and the full controls. The student toggles size with one button and the choice is remembered on the account (`popout_size`). The controls per state are in "Behaviour per timer state".
 3. **Live and in sync.** The window shows the same server timer as the main page, drawn from the server's end time, so it never drifts and a pause in the main tab appears in the pop-out within a second.
-4. **Round end.** The window turns to the phase-end colour, plays the chime if allowed, and shows one large button: "Start break" or "Start next round". It stays until dismissed, so the student cannot miss it while reading.
+4. **Round end.** The window turns to the phase-end colour, plays the chime if allowed (once, not once per window), and shows one large next-step button: "Start break" or "Start round N". It stays until the student acts, so they cannot miss it while reading.
 5. **Themes and motion.** The window copies the app's tokens and the active theme (Reading, Light, Dark, System), respects reduced motion, and keeps text above WCAG 2.2 AA contrast at pill size.
 6. **Close.** Closing the pop-out never stops the timer. Closing the Artha tab closes the pop-out (a browser rule), and the end-of-round push still arrives.
 
 Fallback for browsers without Document Picture-in-Picture: a routed page, `/app/focus/mini`, opens in a small separate window. It is not always on top, and the app says so plainly. Whether Safari can float a timer through a video-based Picture-in-Picture trick is a spike (see open questions), not a promise.
+
+### Behaviour per timer state (approved 2026-10-07)
+
+The pop-out mirrors the focus page (`FocusCard`): it offers what the page offers in that state, through the same `useFocusTimer` actions with `version`, so there is no new timer logic. Pill shows the clock and the first control; card shows everything.
+
+| Timer state | Pill (about 260 x 72) | Card (about 320 x 190) |
+| --- | --- | --- |
+| Focus running, before the target | Clock, Pause | Ring, subject and chapter, "Round n of m", Pause, +5 (n left; disabled when `can_extend` is false), End |
+| Focus in overtime (past the target, overtime on) | "+mm:ss", **Start break** | Ring full, "Target reached", **Start break** (primary), Pause. +5 and End are hidden, as on the focus page: the server refuses an extension past the target |
+| Focus paused | Clock, Resume | Resume, End |
+| Away (the round ended unseen) | "Count it?" Yes, No | "The round ended while you were away. Did you study through it?" Yes, No (the existing claim action) |
+| Break running | Clock, Skip break | Ring, "Short break" or "Long break", Skip break |
+| Phase closed, next step waits | "Round done", **Start break** or **Start round N** | Same, one large button |
+| Nothing running, nothing due | "No timer running", Back to Artha | Same |
+| Stopwatch running or paused | Elapsed, Pause or Resume | Elapsed, subject, Pause or Resume |
+
+- **Start break in overtime** is the existing "Stop and save" (`end(save=true)`), which starts the break when breaks start by themselves (the default). When `auto_start_breaks` is off the button reads "Stop and save" and the card then shows the waiting "Start break".
+- **End** opens an inline confirm in the card ("Save and end", "Discard"; rounds under one minute show only "End"). The reason picker of the focus page is not asked; `reason` stays empty.
+- **Start round N** reuses the subject and chapter of the round just shown in the pop-out. When the pop-out never saw one (opened while idle) it shows "Back to Artha" instead, because a round needs a subject and chapter.
+- **Back to Artha** focuses the opener tab where the browser allows it (spike S4.6); otherwise the button is hidden and the browser's own "back to tab" control is the way back.
+
+### Presence while the pop-out is open (approved 2026-10-07)
+
+A round counts on its own only when the student was seen near its end (`PRESENCE_WINDOW_SECONDS = 120`), and overtime keeps running only while they are still seen. Today only a visible tab with a recent tap or key sends `alive=1`, so a student reading elsewhere with the pop-out on top would have every round end as "away". P4 changes the client's rule, not the server:
+
+1. While the pop-out (or the fallback window) is open and visible, the timer read sends `alive=1`, as a visible tab does, until the round reaches its target.
+2. From the target on, it needs one tap or key press in the pop-out (any control, or the round-end card) to keep counting. A tap within two minutes of the target keeps overtime running, and the open pop-out then counts again until the round ends (overtime cap two hours, unchanged). This is the same window as the Android buttons (`present_by_tap`).
+3. No tap within two minutes: the round still counts (the student was seen up to the target) and closes at its target, with no overtime credited.
+
+### Start-of-round prompt (approved 2026-10-07)
+
+- Shown at most once ever per student (`popout_prompt_seen`), on the first Start of a focus round on a desktop browser that supports Document Picture-in-Picture, with `floating_timer` on and "Pop out when I start a round" off. Not shown on the fallback browsers (that window is not on top, so the promise would be false).
+- It is an inline card under the focus card, never a modal. "Pop out" is the click the browser needs. The checkbox turns on `popout_on_start`.
+- It is recorded as seen when it is shown (like the digest offer), so a reload or ignoring it does not bring it back. The setting stays available in `/app/settings/focus`.
+
+### Alerts, sync and theme in the pop-out
+
+- **One React tree.** The pop-out is a React portal from the corner timer (`LiveMiniTimer`) into the Picture-in-Picture document. It uses the same `useFocusTimer` instance and query cache, so there is no second heartbeat, no second chime and no second source of truth; an action in either window shows in the other at once.
+- **Background tabs.** While the pop-out is open, the one-second tick and the 20-second heartbeat run on the pop-out window's timers and the query keeps polling in the background, because the opener tab may be hidden and throttled (spike S4.3).
+- **One alert.** The round-end state in the pop-out is drawn, not notified: it creates no browser notification. The device still shows at most one alert for the phase, the push or local alert tagged `timer:<client_id>`. The chime plays once per phase end across the tab, the pop-out and the fallback window (a per-phase claim shared by same-origin windows).
+- **Theme.** The pop-out document gets clones of the page's stylesheets and the `data-theme`, `class` and `color-scheme` of `<html>`, and follows changes (switcher, System at 06:00 and 18:00) by watching those attributes. Reduced motion is read from the pop-out's own media queries.
 
 ### The desktop companion (tier 3)
 
@@ -241,17 +282,19 @@ Built with Tauri 2 around the same React timer screens. It is a viewer of the se
 | ID | Requirement | Priority | Acceptance check |
 | --- | --- | --- | --- |
 | FR-C1 | Pop-out button on the mini timer and the focus page; opens Document Picture-in-Picture when supported | P0 | On Chrome 116+, a click opens a floating window with the live timer |
-| FR-C2 | Pill and card sizes, remembered; Pause or Resume, +5, End work from the window | P0 | An action in the window updates the main tab within one second |
+| FR-C2 | Pill and card sizes, remembered on the account; the controls per state mirror the focus page ("Behaviour per timer state"): +5 only before the target, Start break in overtime | P0 | An action in the window updates the main tab within one second; no +5 is offered in overtime |
 | FR-C3 | Window shows the server timer, drift-free, and the end state with one large next-step button | P0 | After 24 minutes 59 seconds the displayed time never differs from the server by more than one second |
 | FR-C4 | The window copies tokens and the current theme and follows theme changes | P0 | All four themes pass the contrast check at pill size |
-| FR-C5 | Setting "Pop out when I start a round" | P1 | With it on, pressing Start opens the window |
+| FR-C5 | Setting "Pop out when I start a round" (default off) and the once-ever start-of-round prompt | P1 | With it on, pressing Start opens the window; the prompt appears at most once per student |
 | FR-C6 | Fallback `/app/focus/mini` in a small separate window where Document Picture-in-Picture is missing | P0 | Works in Safari and Firefox below 151 |
-| FR-C7 | Install prompt (`beforeinstallprompt`) and an iPhone install guide, shown after a student's second completed round | P1 | Prompt appears once per 30 days at most |
-| FR-C8 | App badge flag while a timer runs, cleared when it ends | P2 | Icon shows a dot while running in browsers that support it |
-| FR-C9 | Android notification with end time and Pause and +5 buttons (see FR-N12) | P2 | Button press changes the timer without opening the app |
+| FR-C7 | Install prompt (`beforeinstallprompt`) and an iPhone install guide (reusing the W2.5 guide), shown after a student's second completed round on that device. P4, wave W4.5 | P1 | Prompt appears once per 30 days at most, never in the installed app |
+| FR-C8 | App badge flag while a timer runs, cleared when it ends. P4, wave W4.5 | P2 | Icon shows a dot while running in browsers that support it |
+| FR-C9 | Android notification buttons (see FR-N12). Shipped in W3.6 with Start break, Pause, Resume and Start round N; +5 dropped | P2 | Button press changes the timer without opening the app |
 | FR-C10 | Companion app: sign in, menu bar or tray timer, mini window, native alerts, start at login (off by default) | P1, gated | Timer shown and controllable with no browser running |
 | FR-C11 | Companion registers itself as a device (platform, version, last seen) and appears in the device list with Remove | P1, gated | Removing it signs the app out within one minute |
 | FR-C12 | Everything keyboard operable; the window has a visible focus ring and an accessible name; announcements are polite | P0 | Keyboard-only run of start, pause, end |
+| FR-C13 | An open, visible pop-out counts as presence until the target, and after the target once tapped (see "Presence while the pop-out is open") | P0 | A 25-minute round read elsewhere with the pop-out open is counted, not "away" |
+| FR-C14 | One alert and one chime per phase end across the tab, the pop-out and the fallback window | P0 | Round end with the pop-out open: one chime, at most one OS alert |
 
 ### Screens
 
@@ -259,17 +302,17 @@ Built with Tauri 2 around the same React timer screens. It is a viewer of the se
 | --- | --- | --- |
 | Pop-out window | opened from `/app/focus` | Same components as the mini timer, rendered into the Picture-in-Picture document |
 | Mini window fallback | `/app/focus/mini` | Private, `noindex`, chrome-less layout, 320 px wide |
-| Focus settings | `/app/settings/focus` | New: pop-out on start, default size |
+| Focus settings | `/app/settings/focus` | New "Pop-out" section: pop out when I start a round, size (pill or card) |
 | Companion download | `/app/settings/companion` | Detects the OS, shows download, status and last seen. A public page can follow later |
 
 ### Success measures
 
 | Measure | Target | PostHog event |
 | --- | --- | --- |
-| Desktop focus students who open the pop-out at least once | track, gate at 25% | `popout_opened` (supported, size) |
-| Rounds started with the pop-out open | track | `popout_session` |
-| Install prompts accepted | track | `pwa_install_result` |
-| Average gap between a round ending and the student's next action | lower than today | `phase_end_acknowledged` (seconds) |
+| Desktop focus students who open the pop-out at least once | track, gate at 25% | `popout_opened` (supported: pip or window, size, source, timer) |
+| Rounds started with the pop-out open | track | `popout_session` (round_number, completed, seconds_with_popout) |
+| Install prompts accepted | track | `pwa_install_result` (result, platform, browser) |
+| Average gap between a round ending and the student's next action | lower than today (baseline from W4.1, before the pop-out reaches students) | `phase_end_acknowledged` (seconds, surface) |
 
 ## PRD C: Keep the screen awake during focus (F-01.4)
 
@@ -287,7 +330,7 @@ The web lock is tied to what is on screen. The browser releases it the moment Ar
 | Artha's own notes or PDF reader (F-03) | Works | Solved in phase 1. A good reason to read inside Artha |
 | A PDF in another app or another browser tab, on a phone | Released when Artha is hidden | Not solvable on the web. The round-end push still arrives on the lock screen |
 | A PDF in another app or window, on a computer | Released when Artha is hidden | Solved only by the desktop companion, which holds a system-wide lock |
-| Artha's pop-out window open while reading elsewhere | Unknown: the pop-out is a separate document | Spike. Do not promise until tested on Chrome and Edge |
+| Artha's pop-out window open while reading elsewhere | Unknown: the pop-out is a separate document | P4 spike S4.4. If a lock requested from the pop-out document holds, W4.2 requests it there while the pop-out is open; if not, this row stays "companion only". Do not promise until tested on Chrome and Edge |
 
 We do not recommend the older "play a hidden video" trick to fake a lock. It is unreliable when the page is hidden, drains battery, and breaks without notice between browser versions.
 
@@ -484,7 +527,7 @@ The service worker is the baseline for every browser. For Safari 18.4 and later 
 | `apps/web/public/sw.js` | Hand-written service worker: `push`, `notificationclick`, `pushsubscriptionchange`, no page caching in the first release | Served at the root with `Cache-Control: no-cache` so updates are picked up |
 | `apps/web/public/manifest.webmanifest` | Add 192 px, 512 px and maskable icons, `id`, `scope`, `shortcuts` (Start focus) | Required for the Install prompt |
 | `apps/web/src/modules/notifications` | `components`, `containers`, `hooks` (`usePushSubscription`, `useNotificationSettings`), `lib` (platform detection, quiet-hours display), barrel `index.ts` | Onboarding step and settings screens use design system components |
-| `apps/web/src/modules/focus` | `PopOutTimer`, `useDocumentPip`, `useWakeLock`, `/app/focus/mini` route | Reuses `MiniTimerView` so there is one timer UI |
+| `apps/web/src/modules/focus` | `PopOutTimer`, `useDocumentPip`, `/app/focus/mini` route (`useWakeLock` shipped in the `keepawake` module in W2.6) | Reuses `MiniTimerView` so there is one timer UI |
 | `apps/desktop` | Tauri 2 app, built only if the gate is met | New package in the monorepo, reuses `@artha/design-system` |
 
 ### Configuration and flags
@@ -517,13 +560,13 @@ Bands are equal in size and not to scale. A phase starts only when the gate befo
 
 | Spike | Question | Done when |
 | --- | --- | --- |
-| Wake lock with the pop-out | Does a lock requested from the pop-out document keep the screen on while another app is in front? | Tested on Chrome and Edge, result written down |
+| Wake lock with the pop-out | Does a lock requested from the pop-out document keep the screen on while another app is in front? | Moved to P4 spike S4.4 (runbook W4.0) |
 | iPhone Home Screen app | Do Web Push, the Badging API and the wake lock all work on a current iPhone and iPad? | Tested on two real devices |
 | Safari 18.4 declarative push | Does the declarative payload display correctly beside our service worker? | One device each on iOS and macOS |
 | Android battery savers | Do pushes arrive on the phones students actually use when the browser is closed? | Tested on three popular brands, with and without battery saver |
 | Queue and cron details (including Supabase Cron and Queues as the queue) | Can a queued message be cancelled, and does our Vercel plan allow a per-minute sweep? | Confirmed against the provider docs and our plan |
-| Pop-out theming | Do copied tokens render all four themes inside the Picture-in-Picture document? | Screenshots in all four themes |
-| Safari floating timer | Can a video-based Picture-in-Picture show a timer on Safari? | Go or no-go recorded |
+| Pop-out theming | Do copied tokens render all four themes inside the Picture-in-Picture document? | Moved to P4 spike S4.5 (runbook W4.0) |
+| Safari floating timer | Can a video-based Picture-in-Picture show a timer on Safari? | Moved to P4 spike S4.7 (runbook W4.0); go or no-go only, nothing promised |
 
 ### Risks
 
@@ -552,6 +595,10 @@ Bands are equal in size and not to scale. A phase starts only when the gate befo
 | D5 | Default nudge time and who owns the motivation library? | 10:00 local, owned by a content editor with admin access |
 | D6 | Email fallback in this release or later? | Weekly summary email now, other emails later |
 | D7 | Android notification buttons (token-based actions) in release one? | Phase 3, after the core is stable |
+| D8 (2026-10-07) | Pop-out controls per state, +5 in overtime? | Mirror the focus page: +5 only before the target; in overtime Start break (Stop and save) and Pause |
+| D9 (2026-10-07) | Does an open pop-out count as presence? | Yes until the target; after it, one tap in the pop-out within two minutes keeps overtime going |
+| D10 (2026-10-07) | Install prompt (FR-C7) and badge (FR-C8) in P4? | Yes, last wave W4.5 (G4 counts the installed app too) |
+| D11 (2026-10-07) | Start-of-round prompt rules? | Once ever (`popout_prompt_seen`, recorded when shown), "Pop out when I start a round" default off |
 
 ### Sources
 

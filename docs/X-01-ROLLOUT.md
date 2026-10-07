@@ -7,7 +7,7 @@ Companion to `docs/product/prd/X-01.1-push-notifications.md` (waves, requirement
 | P1 | Spikes on real devices | none |
 | P2 | Alerts core (waves W2.1 to W2.7), includes keep awake | `push_notifications`, `keep_awake` |
 | P3 | More alerts (waves W3.1 to W3.7) | `push_notifications` |
-| P4 | Floating timer | `floating_timer` |
+| P4 | Floating timer (waves W4.0 to W4.5) | `floating_timer` |
 | P5 | Desktop companion, only if the gate passes | `desktop_companion` |
 
 Do the phases in order. A phase starts only when the gate before it is met (PRD 13.2).
@@ -1140,22 +1140,247 @@ delete from notifications_preference where user_id = '<uuid>' and channel = 'pus
 
 Roll out each P3 wave through the same flag ladder as section 4 (steps 2 to 4 are enough: 5%, 25%, 100%).
 
-## 6. Phase 4: floating timer (about 2 weeks, flag `floating_timer`)
+## 6. Phase 4: floating timer (about 3 weeks, flag `floating_timer`)
 
-Scope is the approved PRD B (pop-out, install prompt, `/app/focus/mini`). Web only, plus one small migration for three settings columns.
+Scope is PRD B (F-01.3) in the approved X-01 PRD: the pop-out (Document Picture-in-Picture), the `/app/focus/mini` fallback window, the start-of-round prompt, the install prompt (FR-C7) and the icon badge (FR-C8). FR-C9 (Android buttons) already shipped in W3.6. Waves and estimates: X-01.1 PRD section 13.1. Behaviour (controls per state, presence, prompt, alerts, theme): PRD B, sections "Behaviour per timer state" to "Alerts, sync and theme in the pop-out". Work on `main`, one pull request per wave.
+
+| Wave | Scope | Days | Risk |
+| --- | --- | --- | --- |
+| W4.0 | Spikes S4.1 to S4.7 on real browsers | 2 | Finds the blockers early |
+| W4.1 | `focus.0004_popout`, settings API and section, `phase_end_acknowledged` baseline | 2 | Low |
+| W4.2 | Pop-out core: pill and card, controls per state, presence, one alert, theme | 5 | High (new browser API, background throttling) |
+| W4.3 | Start-of-round prompt, pop out on Start | 2 | Low |
+| W4.4 | `/app/focus/mini` fallback window | 1.5 | Medium (duplicate alerts across windows) |
+| W4.5 | Install prompt, badge, G4 insight, device matrix | 2.5 | Low |
+
+**Rules for every P4 wave**
+
+- **No new timer logic.** Every control calls the existing `useFocusTimer` or `useStopwatch` actions with `version`. The server stays the only clock; the pop-out draws from `started_at`, `planned_seconds`, `paused_total_seconds` and the server clock offset.
+- **One timer instance.** The pop-out is a React portal rendered by `LiveMiniTimer` (which owns the one `useFocusTimer` call for the corner), so it shares the query cache, the heartbeat and the alerts. The fallback window is a separate page and runs its own reads; W4.4 makes its chime and alerts play once.
+- **Flag.** `floating_timer` is a web-only PostHog flag and fails open like `keep_awake` and `notifications_ui` (`useFeatureFlag` treats a missing flag as on). So **create it at 0% before W4.1 merges**. The API has no gate: the three settings columns are harmless, and the timer endpoints stay behind `focus_timer`. At 0% the Pop out buttons, the prompt, the settings section, the install offer and the badge disappear, and an open pop-out closes.
+- **Roll back** any wave with the flag at 0% (about a minute, flag cache). The migration is additive and stays. No environment variable is added in P4 (section 8 unchanged).
+- **Gate G4** (PRD 13.2) is read four weeks after the flag reaches 100%, from the insight built in W4.5.
+
+Ladder for P4 (after W4.5 is signed off; earlier waves stay at "team only"): team, then 5% (hold 3 days), 25% (hold 3 days), 100%. Checks at each step: no new Sentry issue tagged `popout`; in PostHog, `popout_closed` with `seconds_open < 10` below 20% of opens (accidental opens), and the share of focus rounds answered "away" for students who had the pop-out open is not higher than for those who did not (the presence rule works).
+
+### W4.0 Spikes (pop-out)
+
+Goal: answer the browser questions that can sink W4.2 before any feature code. A throwaway page outside the repository (or a temp folder that is not committed), signed out, opened on `localhost` and on a Vercel preview over HTTPS. Results go into a new "P4" section of `docs/X-01-spike-results.md` (create the file if it does not exist yet), with browser, version, OS and pass or fail per row.
+
+| Spike | Question | Pass when | If it fails |
+| --- | --- | --- | --- |
+| S4.1 Availability and React portal | Does `documentPictureInPicture.requestWindow({ width: 260, height: 72 })` open from a click on Chrome and Edge 116+ and Firefox 151+ (Windows and macOS)? Do clicks and keys in a React portal into the window reach their handlers? Does `pipWindow.resizeTo(320, 190)` from a click inside the window work? | Chrome and Edge pass all three on both OSes; Firefox result recorded | Chrome or Edge failing stops W4.2 (rethink); Firefox failing sends Firefox to the fallback window (W4.4); `resizeTo` failing means the size toggle closes and reopens the window at the new size |
+| S4.2 Open from Start | Does the window open when `requestWindow` is called first thing in the Start click handler, before the start request is awaited? From a Space key press? | Opens from both on Chrome and Edge | Pop out on start works from clicks only; the Space shortcut starts the round without opening the window (noted in PRD FR-C5) |
+| S4.3 Background throttling | With the window open, the opener tab hidden (another tab in front, then another app in front) for 15 minutes: does the clock tick every second when driven by `pipWindow.setInterval`, and does a 20 s fetch loop keep going? | Displayed time never more than 1 s off the server; no heartbeat gap above 25 s (network log) | Blocker for the presence rule: drive the heartbeat from the pop-out window's timers and retest; if still throttled, take the presence rule back to the owner |
+| S4.4 Wake lock in the pop-out | Does `pipWindow.navigator.wakeLock.request('screen')` keep the display on with the opener hidden and another app in front (display sleep set to 1 minute)? | Display stays on 5 minutes on Chrome and Edge, Windows and macOS | Nothing is built; PRD C row stays "companion only" |
+| S4.5 Theming | Do cloned `<link rel="stylesheet">` and `<style>` nodes plus the copied `data-theme`, `class` and `color-scheme` render all four themes? Does a switch in the main tab show in the window within 1 s? Do the fonts load? | Screenshots of pill and card in Reading, Light, Dark and System (day and night) attached; switch follows | Inline the token stylesheet into the window instead of cloning links, then retest |
+| S4.6 Back to the opener | Does `window.focus()` on the opener, called from a click in the window, bring the Artha tab forward? | Works on Chrome and Edge | "Back to Artha" is hidden; the browser's own back-to-tab control is the way back |
+| S4.7 Safari video trick | Can a canvas drawn every second, captured to a `<video>` and sent to Picture-in-Picture, show a readable timer on Safari 18 (macOS)? Does `window.open(..., 'popup,width=320,height=220')` honour the size on Safari? | Go or no-go recorded; nothing is promised or built in P4 | Go becomes a backlog item, not a P4 wave |
 
 ```bash
-cd "$ROOT" && git switch main && git pull --ff-only && git switch -c feat/x-01-p4-floating-timer
-cd apps/api && source .venv/bin/activate
-python manage.py makemigrations focus -n popout           # popout_on_start, popout_size, popout_prompt_seen
-pytest modules/focus -q && cd "$ROOT"
-pnpm --filter @artha/web exec vitest run src/modules/focus && pnpm check
-pnpm build:web && pnpm --filter @artha/web start
+cd "$ROOT"
+pgrep -x git >/dev/null || find .git -maxdepth 3 -name "*.lock" -print -delete
+git --no-optional-locks status --short          # must be empty: spikes are not committed
 ```
 
-Build: `useDocumentPip`, `PopOutTimer` (reuses `MiniTimerView`, copies design tokens and the theme into the pop-out document), `/app/focus/mini` fallback route (`noindex`, 320 px wide), the settings in `/app/settings/focus`, the install prompt (`beforeinstallprompt`, once per 30 days, after the second finished round), an iPhone install guide. Production migration first, then merge.
+Feature detection to paste into the console of any browser:
 
-Check: Chrome and Edge 116 or newer, Firefox 151 or newer: click Pop out, switch to another app, pause from the pop-out and see the main tab follow within one second; round end shows the large next-step button. All four themes inside the pop-out at pill size (contrast check). Safari and older Firefox: the fallback window. Real Android: the notification buttons from W3.6. PostHog: insight on `popout_opened` for desktop focus students (this is the input to gate G4).
+```js
+;({ pip: 'documentPictureInPicture' in window, wakeLock: 'wakeLock' in navigator, badge: 'setAppBadge' in navigator, installEvent: 'onbeforeinstallprompt' in window })
+```
+
+**Decisions:** spikes run on the team's own machines (Windows and macOS, one second monitor); a failure in Firefox alone never blocks P4, because Firefox users get the fallback window.
+
+### W4.1 Settings and baseline (api and web)
+
+Goal: the three pop-out settings exist on the account, the student can set them (behind the flag), and the "gap after a round ends" is measured before any pop-out reaches students, so FR success measure "lower than today" has a baseline.
+
+**What changes**
+
+- API: `focus_focussettings` gains `popout_on_start` (default false), `popout_size` (`pill` or `card`, default `pill`, check constraint `focus_settings_popout_size_valid`) and `popout_prompt_seen` (default false), migration `focus.0004_popout` (ERD 2.9). `SettingsSerializer` gets two booleans and `popout_size = ChoiceField(["pill", "card"])`; `services.update_settings` adds the two booleans to its list of switch keys and handles `popout_size`; `selectors.settings_dict` returns all three, so they also arrive in `state.settings` of `GET /focus/timer/`. Export carries them through the generic field dump; the eraser deletes the row as today.
+- Web: `FocusSettings` type, a "Pop-out" section in `FocusSettingsForm` on `/app/settings/focus` with "Pop out when I start a round" and "Size: Pill or Card". The section shows only with `floating_timer` on; on a browser without Document Picture-in-Picture it adds one line: "Your browser opens a small separate window instead, which does not stay on top."
+- Baseline: pure helper `phaseEndGap(phaseEndAt, actionAt)` in `focus/lib/timer-math.ts` (seconds, capped at 7200, null when the action came before the end). `useFocusTimer` sends `phase_end_acknowledged` (`seconds`, `surface: "tab"`, `phase`) once per phase end, on the first of: Stop and save in overtime, Start break, Skip break, Start round, the away claim. This event is not behind `floating_timer`.
+
+**Configure:** create the PostHog flag `floating_timer` at 0% now. No environment variable.
+
+```bash
+cd "$ROOT"
+pgrep -x git >/dev/null || find .git -maxdepth 3 -name "*.lock" -print -delete
+cd apps/api && source .venv/bin/activate
+python manage.py makemigrations focus -n popout            # creates 0004_popout; then edit nothing by hand
+python manage.py makemigrations --check --dry-run          # must say: No changes detected
+python manage.py migrate
+pytest modules/focus -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm --filter @artha/web exec vitest run src/modules/focus && pnpm check
+```
+
+Production migration first (the API deploy runs it; three columns with defaults are metadata-only, the check constraint scans a small table once), then the web.
+
+**SQL check** (Supabase SQL editor, after deploy):
+
+```sql
+select popout_size, popout_on_start, popout_prompt_seen, count(*) from focus_focussettings group by 1, 2, 3;
+select conname from pg_constraint where conname = 'focus_settings_popout_size_valid';   -- one row
+```
+
+**Tests:** serializer accepts `pill` and `card` and answers 400 for `big`; `update_settings` reports the changed names; a new row has the three defaults; the check constraint rejects a raw `update ... set popout_size = 'big'`; `export_all` includes the fields; erase leaves no row. Web: the form section hides with the flag off, saves both fields, keyboard and four themes; `phaseEndGap` edge cases (before end, exactly at end, over the cap).
+
+**Check on real devices:** with the flag on for you, change both settings on a laptop and reload on a phone: the values follow the account. With the flag at 0%: no section. Finish a round in the tab and act on it: one `phase_end_acknowledged` in PostHog with `surface = tab`.
+
+**Roll back:** flag at 0% hides the section; the baseline event keeps flowing (it changes nothing for the student). The columns stay.
+
+**Decisions:** the size is remembered on the account (ERD column), not per device; `popout_prompt_seen` is written when the prompt is shown (W4.3); the baseline event ships before the pop-out so the comparison is honest.
+
+### W4.2 Pop-out core (web)
+
+Goal: on Chrome, Edge and Firefox 151+ on desktop, one click on Pop out opens a small always-on-top window with the live timer and the controls of the focus page, in sync within one second, in all four themes, without a second source of truth.
+
+**What changes**
+
+- Design system: three Lucide icons added to `packages/design-system/src/icons.ts`: `PictureInPicture2` (Pop out), `Minimize2` and `Maximize2` (size toggle).
+- `focus/lib/popout.ts` (pure): `popoutView(timer, idle, stopwatch, nowMs, lastContext)` returns the kind, the clock text, the spoken text ("24 minutes 12 seconds left") and the controls for each state in PRD B "Behaviour per timer state"; `popoutAlive({ tabVisible, recentlyActive, popoutOpen, pastTarget, tappedSinceTarget })` is the presence rule (PRD B "Presence while the pop-out is open"); `POPOUT_SIZES = { pill: [260, 72], card: [320, 190] }`.
+- `focus/lib/pip.ts`: support check, `copyStyles(from, to)` (clones every stylesheet link and style node), `mirrorTheme(fromRoot, toRoot)` (copies `data-theme`, `class`, `color-scheme`, then a `MutationObserver` keeps them in step), and the window title "Artha timer" (the window's accessible name).
+- `useDocumentPip()`: `open(size)` (must be called inside a click), `close()`, `resize(size)` (from a click inside the window; falls back to close and reopen if S4.1 said so), the window's `pagehide` closes the state, and a `presence` source the timer read uses.
+- `MiniTimerView` gets a `variant` (`corner`, `pill`, `card`); the corner keeps its fixed placement, the other two fill the window. The card adds `TimerRing`. One timer UI, as the PRD asks.
+- `LiveMiniTimer`: `FocusMini` keeps its `useFocusTimer` call mounted while the flag is on (the corner still hides when nothing runs), and renders `PopOutTimer`, a portal into the window. The stopwatch shows in the same window when it is the live timer.
+- Pop out buttons (40 px, icon with an accessible name "Pop out the timer"): on the corner mini timer, and on the focus card next to the controls. Both hidden when the flag is off or the window is already open (then "Bring back" closes it).
+- Sync: while the window is open, `useTick` and the heartbeat run on the window's own timers (`pipWindow.setInterval`) and the timer query polls in the background (`refetchIntervalInBackground`), per S4.3. `fetchTimerState` reads presence through `popoutAlive`.
+- Alerts: no browser notification from the pop-out; the round-end state is drawn in the phase-end colour with one large button, announced once in a polite live region inside the window. The chime plays from the one `useFocusAlerts` instance, so once.
+- Keep awake: only if S4.4 passed, `useKeepAwake` accepts a target window and requests the lock from the pop-out document while it is open (the `keepawake` module, through its barrel).
+- Closing the window never stops the timer. Closing the Artha tab closes it (browser rule); the push still arrives.
+- Analytics: `popout_opened` (`supported: "pip"`, `size`, `source: mini | focus_page`, `timer`), `popout_closed`, `popout_size_changed`, `popout_session`, `phase_end_acknowledged` with `surface: "popout"` when the action came from the window.
+
+**Configure:** nothing new. Flag stays at "team only".
+
+```bash
+cd "$ROOT"
+pgrep -x git >/dev/null || find .git -maxdepth 3 -name "*.lock" -print -delete
+pnpm --filter @artha/web exec vitest run src/modules/focus src/modules/keepawake && pnpm check
+pnpm build:web && pnpm --filter @artha/web start           # http://localhost:3000, sign in, start a round
+```
+
+**Tests:** `popoutView` for every row of the state table (before target with extensions left and none left, overtime with breaks on and off, paused, away, each break, phase waiting, idle with and without a remembered subject, stopwatch running and paused); `popoutAlive` across the target (before, after with and without a tap, tap after two minutes); size memory (toggle writes `popout_size`); `useDocumentPip` with a mocked `documentPictureInPicture` (open, `pagehide`, resize fallback, unsupported); `PopOutTimer` renders into the mocked window, clicks reach the actions, the flag turning off closes the window; `MiniTimerView` variants keep 40 px targets.
+
+**Check on real devices** (Chrome, Edge and Firefox 151+, on Windows and macOS; a second monitor on one of them):
+
+1. Start a 5-minute round on `/app/focus`, click Pop out on the focus card: a pill opens with the clock and Pause. Switch to a PDF in another app: the pill stays on top.
+2. Pause in the pill: the main tab shows paused within one second. Resume from the main tab: the pill follows within one second.
+3. Toggle to the card: ring, subject and chapter, Pause, +5 (3 left), End. Press +5 twice: "(1 left)". Close and reopen: it opens as a card.
+4. Let the round reach its target with overtime on: the window turns to the phase-end colour, "+00:05", one large Start break; the chime plays once; at most one OS alert. +5 is not offered. Tap Start break: the break runs in the window and the round is saved in the tracker.
+5. Presence: run a round with the main tab hidden and do not touch anything for the whole round, then do not tap for 3 minutes after the target. The round is counted (not "away"), closed at its target, no overtime. Repeat and tap within two minutes: overtime keeps counting.
+6. Close the main tab: the window closes; the push for the round end still arrives.
+7. Drag the window to the second monitor, reopen: the browser places it (we do not control position).
+8. Theme: switch Reading, Light, Dark and System in the main tab: the window follows within a second. Check contrast of the clock, the button labels and the focus ring at pill size in all four. Reduced motion on in the OS: no tick animation in the ring.
+9. Keyboard only: Tab into the window, the focus ring is visible on every control, Enter and Space act; a screen reader reads "Artha timer" and "24 minutes 12 seconds left", and the round-end message once.
+10. Stopwatch: start it on `/app/tracker`, pop out from the corner timer: elapsed time and Pause or Resume.
+11. Flag at 0% while the window is open: it closes; no Pop out button anywhere.
+
+**Roll back:** flag `floating_timer` at 0%.
+
+**Decisions:** controls mirror the focus page (D8); presence counts until the target and after a tap (D9); the window is a portal of the existing tree, not a separate render, so it shares the cache and the alerts; the window position is the browser's choice; End in the window does not ask for a reason.
+
+### W4.3 Start-of-round prompt and pop out on Start (web)
+
+Goal: students discover the pop-out at the moment it helps, once, and can make it automatic.
+
+**What changes**
+
+- `focus/lib/popout.ts`: `promptEligible({ supported, desktop, flagOn, popoutPromptSeen, popoutOnStart, phase, popoutOpen })`: true only on a desktop browser with Document Picture-in-Picture, the flag on, the prompt never seen, the setting off, a focus round (not a break) and no window open.
+- `PopOutPromptCard` (presentational): inline under the focus card, "Keep the timer on top while you study?", Pop out (primary), Not now, and a checkbox "Do this every time I start a round". Not a modal; focus does not move to it; announced politely once.
+- When it shows, the page writes `popout_prompt_seen = true` (the same "counts when shown" rule as the digest offer). Pop out opens the window (the click) and, with the box ticked, writes `popout_on_start = true`.
+- Pop out on start: every Start handler (focus card button, the Space shortcut if S4.2 passed, Start round N in the window) calls `open(size)` before it sends the start request, when `popout_on_start` is on, the browser supports it and no window is open.
+- Analytics: `popout_prompt_shown`, `popout_prompt_answered` (`answer`, `always`), `popout_opened` with `source: prompt | auto_start`.
+
+**Configure:** nothing new.
+
+```bash
+cd "$ROOT"
+pgrep -x git >/dev/null || find .git -maxdepth 3 -name "*.lock" -print -delete
+pnpm --filter @artha/web exec vitest run src/modules/focus && pnpm check
+```
+
+**SQL check** (how many students saw the prompt and turned on the setting):
+
+```sql
+select count(*) filter (where popout_prompt_seen) as prompt_seen,
+       count(*) filter (where popout_on_start) as on_start
+from focus_focussettings;
+-- reset yourself to see the prompt again:
+update focus_focussettings set popout_prompt_seen = false, popout_on_start = false where user_id = '<uuid>';
+```
+
+**Tests:** `promptEligible` for each condition; the card writes `popout_prompt_seen` once when shown; Pop out with the box ticked writes `popout_on_start`; with the setting on, a mocked `requestWindow` is called inside the Start click before the request; Safari (no API) never shows the card.
+
+**Check on real devices:** reset with the SQL above. Chrome: start a round, the card appears, reload: it does not come back. Reset, tick the box and Pop out: the window opens; next round, pressing Start opens it with no prompt. Safari: no card. Phone: no card. Keyboard: the card's buttons reachable, four themes at 320 px (buttons wrap).
+
+**Roll back:** flag at 0%; students who turned the setting on keep it, but nothing opens while the flag is off.
+
+**Decisions:** once ever per student, recorded when shown, setting default off (D11); not offered where only the fallback window exists, because that window does not stay on top.
+
+### W4.4 Fallback window `/app/focus/mini` (web)
+
+Goal: Safari and Firefox below 151 get a small separate window with the same timer, honestly labelled as not always on top.
+
+**What changes**
+
+- Route `app.focus.mini.tsx` (URL `/app/focus/mini`, `buildHead` with `noindex`, `staticData: { chrome: 'bare' }`). `SiteShell` drops the header and footer for a bare route; the corner `LiveMiniTimer` and the bell are not drawn there. `LastVisitReporter` ignores the route so "last visit restore" never lands a student in it.
+- `MiniWindowContainer`: the same `PopOutTimer` view filling the window, pill below 300 px wide, card above. It runs its own `useFocusTimer` (it is its own page). A one-line note at the first open: "This window does not stay on top in this browser."
+- Pop out on a browser without Document Picture-in-Picture calls `window.open('/app/focus/mini', 'artha-timer', 'popup,width=320,height=220')` from the click; a second click focuses the same named window.
+- One chime and one alert per phase end across windows: before playing, `useFocusAlerts` claims `artha:alerted:<client_id>:<version>` in `localStorage` (shared by same-origin windows, wrapped in try and catch); only the first window plays. A local notification is skipped when any Artha window is visible. The push keeps its shared tag.
+- Presence: the fallback window uses the same rule as the pop-out (`popoutAlive`), judged by its own visibility. Because it is not on top, it often is hidden behind the PDF; then the round end follows the normal away rules, and the window says so in its note.
+- Analytics: `popout_opened` with `supported: "window"`, `phase_end_acknowledged` with `surface: "mini_window"`.
+
+**Configure:** nothing new.
+
+```bash
+cd "$ROOT"
+pgrep -x git >/dev/null || find .git -maxdepth 3 -name "*.lock" -print -delete
+pnpm --filter @artha/web exec vitest run src/modules/focus src/modules/layout src/modules/personalization && pnpm check
+pnpm build:web && grep -o '"/app/focus/mini"' apps/web/src/routeTree.gen.ts   # the generated tree has the route (commit it)
+```
+
+**Tests:** the route renders without the site header, has `noindex`, is skipped by the last-visit reporter; pill and card by width; with two windows mocked on one `localStorage`, the chime plays once; the note shows once.
+
+**Check on real devices:** Safari 18 on macOS and Firefox below 151 (or Firefox with the API turned off in `about:config`): Pop out opens a small window at about 320 by 220 (if Safari opens a tab instead, record it), controls work, the main tab follows within a second, round end plays one chime with both windows open, close the main tab: the small window keeps working (it is its own page) and becomes the one that chimes. Four themes, 320 px, keyboard.
+
+**Roll back:** flag at 0% (the route then redirects to `/app/focus`).
+
+**Decisions:** a separate page, not a portal, because `window.open` windows survive the opener and cannot share its React tree safely; the chime claim lives in `localStorage` because it is a per-device convenience, not shared state.
+
+### W4.5 Install prompt, badge and gate G4 (web)
+
+Goal: FR-C7 and FR-C8 (approved to stay in P4, D10), the G4 insight, and the P4 device matrix before the flag climbs.
+
+**What changes**
+
+- `notifications` module (it owns environment detection, `lib/platform.ts`, and the iPhone install steps): `useInstallPrompt` captures `beforeinstallprompt` at boot in `NotificationsBoot` (the event fires early) and `appinstalled`; `InstallOfferCard` shows on `/app/focus` after the student's second completed focus round on this device (a device counter in `localStorage`), at most once per 30 days (timestamp in `localStorage`), never in the installed app (`display_mode = standalone`), never in an in-app browser. Chrome and Edge: "Install Artha" calls `prompt()`. iPhone and iPad Safari: the install steps of `InstallGuide`, extracted into a shared presentational piece so the alerts step and this card use one copy. Safari on macOS: one line, "File, Add to Dock". Exported through the `notifications` barrel; `focus` imports only the barrel.
+- `display_mode` is registered as a PostHog super property at boot, so every event (including `focus_session_started`) carries it for G4.
+- Badge: `focus/lib/appBadge.ts` sets `navigator.setAppBadge()` (a dot, no number) while a focus round, break or stopwatch runs and clears it when idle, on sign-out and when the flag is off. Feature-detected; a stale dot after the tab closed mid-round clears on the next open (accepted).
+- Analytics: `pwa_install_result` (`accepted`, `dismissed`, `guide_shown`, `installed`).
+- PostHog insight **"G4 floating timer reach"** (Trends, unique users, last 28 days, filter `$device_type = Desktop`): series A `focus_session_started`; series B `popout_opened`; series C `focus_session_started` where `display_mode = standalone`; formula `(B + C) / A` (an upper bound if a student does both; for the exact figure, a cohort "opened pop-out or used installed app" divided by A). Pin it to the X-01 dashboard with the date the flag reached 100%.
+
+**Configure:** nothing new.
+
+```bash
+cd "$ROOT"
+pgrep -x git >/dev/null || find .git -maxdepth 3 -name "*.lock" -print -delete
+pnpm --filter @artha/web exec vitest run src/modules/notifications src/modules/focus && pnpm check
+```
+
+**Tests:** offer eligibility (round count, 30 days, standalone, in-app browser, unsupported); the prompt result is reported once; the shared install steps render in both places; badge set and cleared by state with a mocked `navigator`.
+
+**Check on real devices (P4 matrix, sign off in `docs/X-01-spike-results.md`):**
+
+1. Chrome and Edge on Windows: finish two rounds, the offer appears; install; the app opens in its own window; the taskbar icon shows a dot while a round runs and loses it at the end. The offer never shows inside the installed app.
+2. Chrome on macOS: same, dock icon dot.
+3. Android Chrome: the offer after two rounds; install; the W3.6 buttons still work.
+4. iPhone Safari: the card shows the install steps; after install, no card.
+5. Firefox 151+, Safari on macOS: pop-out or fallback per W4.2 and W4.4; no install button where the browser has none.
+6. All of W4.2 checks 8 and 9 (four themes at 320 px and at pill size, keyboard, screen reader, reduced motion) once more on the final build.
+
+**Roll back:** flag at 0% hides the offer and stops the badge (cleared on the next state change).
+
+**Decisions:** install prompt and badge stay in P4 because G4 counts the installed app (D10); the device counter and the 30-day memory are per device in `localStorage`, because installing is per device; the badge is a dot, never a count.
 
 ## 7. Phase 5: desktop companion (only if gate G4 passes)
 
@@ -1196,7 +1421,7 @@ Other tools and costs to arrange first: Apple Developer Program membership (Deve
 | `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `EMAIL_BACKEND`, `EMAIL_TIMEOUT`, `NOTIFICATIONS_EMAIL_FROM` | | yes | no | P3 (W3.5) |
 | `EMAIL_HOST_PASSWORD` | | yes | yes | P3 (W3.5) |
 
-Rule from `SETUP.md` stays: nothing secret gets a `VITE_` prefix.
+P4 (floating timer) adds no variable. Rule from `SETUP.md` stays: nothing secret gets a `VITE_` prefix.
 
 ## 9. Troubleshooting
 
