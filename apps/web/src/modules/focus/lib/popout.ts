@@ -422,3 +422,38 @@ export function advanceRound(
   const reachedTarget = settled.reachedTarget || remainingSeconds(round, nowMs) === 0
   return { next: { ...settled, reachedTarget, since: open ? nowMs : null }, report: null }
 }
+
+// --- start-of-round prompt and pop out on Start (X-01 W4.3) -------------------------------------------------------
+
+/**
+ * Whether to offer the start-of-round prompt "Keep the timer on top while you study?". Only on a desktop browser that
+ * has Document Picture-in-Picture (the fallback window does not stay on top, so it is never offered), with the
+ * `floating_timer` flag on, once ever per student (`popoutPromptSeen`), while the setting is still off, during a focus
+ * round (not a break) and while no window is open.
+ */
+export function promptEligible(i: {
+  supported: boolean
+  desktop: boolean
+  flagOn: boolean
+  popoutPromptSeen: boolean
+  popoutOnStart: boolean
+  phase: Phase | null
+  popoutOpen: boolean
+}): boolean {
+  return (
+    i.supported &&
+    i.desktop &&
+    i.flagOn &&
+    !i.popoutPromptSeen &&
+    !i.popoutOnStart &&
+    i.phase === 'focus' &&
+    !i.popoutOpen
+  )
+}
+
+/**
+ * Whether pressing Start should also open the floating window: the student asked for it (`popout_on_start`), the window
+ * is offered here (`available`: supported, flag on, signed in) and none is open yet.
+ */
+export const shouldOpenOnStart = (i: { available: boolean; popoutOnStart: boolean; popoutOpen: boolean }): boolean =>
+  i.available && i.popoutOnStart && !i.popoutOpen

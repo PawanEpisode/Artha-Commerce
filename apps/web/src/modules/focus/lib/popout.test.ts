@@ -14,7 +14,9 @@ import {
   PRESENCE_WINDOW_SECONDS,
   presenceAfterTap,
   presenceFlags,
+  promptEligible,
   rememberContext,
+  shouldOpenOnStart,
   visibleControls,
 } from './popout'
 import type { FocusSettings, FocusTimer, IdleInfo } from './types'
@@ -367,5 +369,51 @@ describe('advanceRound (popout_session)', () => {
         [null, false, 910],
       ]),
     ).toEqual([{ round_number: 2, completed: false, seconds_with_popout: 100 }])
+  })
+})
+
+describe('promptEligible (X-01 W4.3)', () => {
+  const eligible = {
+    supported: true,
+    desktop: true,
+    flagOn: true,
+    popoutPromptSeen: false,
+    popoutOnStart: false,
+    phase: 'focus' as const,
+    popoutOpen: false,
+  }
+
+  it('is true on a desktop browser with Document Picture-in-Picture, flag on, never seen, setting off, mid focus round', () => {
+    expect(promptEligible(eligible)).toBe(true)
+  })
+
+  it.each([
+    ['the browser has no Document Picture-in-Picture (Safari, Firefox below 151)', { supported: false }],
+    ['it is not a desktop browser', { desktop: false }],
+    ['the floating_timer flag is off', { flagOn: false }],
+    ['the prompt was already shown once', { popoutPromptSeen: true }],
+    ['pop out on start is already on', { popoutOnStart: true }],
+    ['it is a short break', { phase: 'short_break' as const }],
+    ['it is a long break', { phase: 'long_break' as const }],
+    ['nothing runs', { phase: null }],
+    ['a window is already open', { popoutOpen: true }],
+  ])('is false when %s', (_why, patch) => {
+    expect(promptEligible({ ...eligible, ...patch })).toBe(false)
+  })
+})
+
+describe('shouldOpenOnStart (X-01 W4.3)', () => {
+  const on = { available: true, popoutOnStart: true, popoutOpen: false }
+
+  it('opens the window when the setting is on, the window is offered and none is open', () => {
+    expect(shouldOpenOnStart(on)).toBe(true)
+  })
+
+  it.each([
+    ['the window is not offered (no support, flag off or signed out)', { available: false }],
+    ['the setting is off', { popoutOnStart: false }],
+    ['a window is already open', { popoutOpen: true }],
+  ])('does not when %s', (_why, patch) => {
+    expect(shouldOpenOnStart({ ...on, ...patch })).toBe(false)
   })
 })

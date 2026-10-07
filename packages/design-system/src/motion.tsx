@@ -38,4 +38,4 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
   )
 }
 
-export { motion }
+export { motion, useReducedMotion }

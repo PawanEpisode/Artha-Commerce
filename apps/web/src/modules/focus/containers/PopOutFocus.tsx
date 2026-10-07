@@ -5,6 +5,7 @@ import { nowMs } from '~/modules/tracker'
 import { MiniTimerView } from '../components/MiniTimerView'
 import { useContextLabel } from '../hooks/useContextLabel'
 import type { FocusTimerApi } from '../hooks/useFocusTimer'
+import { useOpenOnStart } from '../hooks/useOpenOnStart'
 import { usePopOutSize } from '../hooks/usePopOutSize'
 import { unlockAudio } from '../lib/chime'
 import {
@@ -29,6 +30,7 @@ const CAN_GO_BACK = true
  */
 export function PopOutFocus({ f }: { f: FocusTimerApi }) {
   const { size, toggle } = usePopOutSize()
+  const openOnStart = useOpenOnStart(f.settings)
   const t = f.timer
   // The subject and chapter of the last round shown: what "Start round N" continues.
   const [remembered, setRemembered] = useState<PopoutContext | null>(null)
@@ -74,6 +76,7 @@ export function PopOutFocus({ f }: { f: FocusTimerApi }) {
           return setEndingId(null)
         case 'start_next':
           if (!f.idle || !last || !f.settings) return
+          openOnStart()
           unlockAudio()
           return f.start(nextStartBody(f.idle, last, f.settings), {
             has_subject: !!last.subject_id,

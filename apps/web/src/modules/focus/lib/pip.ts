@@ -22,6 +22,12 @@ const pipApi = (): DocumentPipApi | null =>
 
 export const isDocumentPipSupported = (): boolean => pipApi() !== null
 
+/** A mouse or trackpad is the main pointer: a desktop or laptop, not a phone or a tablet. */
+export const isDesktopBrowser = (): boolean =>
+  typeof window === 'undefined' || typeof window.matchMedia !== 'function'
+    ? true
+    : window.matchMedia('(hover: hover) and (pointer: fine)').matches
+
 /** Opens the window. It must be called first thing in the click (or key) handler, before anything is awaited. */
 export function requestPipWindow(size: PopOutSize): Promise<Window> {
   const api = pipApi()

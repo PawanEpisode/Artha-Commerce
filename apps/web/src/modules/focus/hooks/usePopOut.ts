@@ -2,7 +2,10 @@ import { createContext, useContext } from 'react'
 
 import type { PopOutSize } from '../lib/types'
 
-/** Where the student pressed Pop out (`prompt` and `auto_start` arrive with the start-of-round prompt). */
+/**
+ * Where the window was opened from: the corner timer, the focus card, the start-of-round prompt (`prompt`) or a Start
+ * press with "pop out on start" on (`auto_start`).
+ */
 export type PopOutSource = 'mini' | 'focus_page' | 'prompt' | 'auto_start'
 /** Which timer was live at that moment, for the analytics event. */
 export type PopOutTimerKind = 'focus' | 'stopwatch' | 'idle'

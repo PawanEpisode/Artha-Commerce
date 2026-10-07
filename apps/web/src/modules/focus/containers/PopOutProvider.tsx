@@ -1,14 +1,12 @@
-import { type ReactNode, useCallback, useEffect, useMemo, useSyncExternalStore } from 'react'
+import { type ReactNode, useCallback, useEffect, useMemo } from 'react'
 
 import { useAuth } from '~/modules/auth'
 import { track, useFeatureFlag } from '~/modules/observability'
 
 import { useDocumentPip } from '../hooks/useDocumentPip'
+import { useDocumentPipSupported } from '../hooks/usePipSupport'
 import { type PopOutApi, PopOutContext } from '../hooks/usePopOut'
 import { notify } from '../lib/notify'
-import { isDocumentPipSupported } from '../lib/pip'
-
-const subscribeNever = () => () => undefined
 
 /**
  * Owns the floating window for the whole app (X-01 W4.2) and reports its life to analytics. Mounted once at the root,
@@ -18,8 +16,7 @@ const subscribeNever = () => () => undefined
 export function PopOutProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth()
   const flagOn = useFeatureFlag('floating_timer')
-  // False while rendering on the server and while hydrating, then what the browser says, so the two renders agree.
-  const supported = useSyncExternalStore(subscribeNever, isDocumentPipSupported, () => false)
+  const supported = useDocumentPipSupported()
 
   const pip = useDocumentPip({
     onClosed: ({ by, secondsOpen }) => track('popout_closed', { seconds_open: secondsOpen, by }),

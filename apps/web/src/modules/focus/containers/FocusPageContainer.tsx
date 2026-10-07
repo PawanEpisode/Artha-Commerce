@@ -27,6 +27,7 @@ import { useTimerTitle } from '../hooks/useDocumentTitle'
 import { useRoundsOn } from '../hooks/useFocusQueries'
 import { useSaveFocusSettings } from '../hooks/useFocusSettings'
 import { type FocusTimerApi, useFocusTimer } from '../hooks/useFocusTimer'
+import { useOpenOnStart } from '../hooks/useOpenOnStart'
 import { errorCode } from '../lib/api'
 import { unlockAudio } from '../lib/chime'
 import { matchPreset, type PresetKey, presetTimings, type Timings } from '../lib/presets'
@@ -34,6 +35,7 @@ import { shortcutFor } from '../lib/shortcuts'
 import { elapsedSeconds, percentDone } from '../lib/timer-math'
 import { FocusShell } from './FocusShell'
 import { PopOutButton } from './PopOutButton'
+import { PopOutPromptContainer } from './PopOutPromptContainer'
 
 export interface FocusSearch {
   subject?: string
@@ -54,6 +56,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
   const t = f.timer
   const settings = f.settings
   // Keep awake (X-01 W2.6): the timer never depends on the lock. The settings are already loaded here.
+  const openOnStart = useOpenOnStart(settings)
   const awake = useKeepAwake(t ? { running: t.status === 'running', focus: t.phase === 'focus' } : null, settings)
 
   const [timings, setTimings] = useState<{ timings: Timings; preset: PresetKey }>({
@@ -115,6 +118,8 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
 
   const doStart = (phase: 'focus' | 'short_break' | 'long_break' = 'focus') => {
     if (!hasSubjectAndChapter(pick)) return
+    // Pop out on start: first, before the start request, while the click or key press is still fresh.
+    openOnStart()
     unlockAudio()
     const body = timings.preset === 'custom' ? { preset: 'custom', ...timings.timings } : { preset: timings.preset }
     f.start(
@@ -203,6 +208,8 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         announcement={f.announcement}
         popOut={<PopOutButton source="focus_page" timer={t ? 'focus' : 'idle'} size={settings?.popout_size} />}
       />
+
+      <PopOutPromptContainer phase={t?.phase ?? null} settings={settings} />
 
       <KeepAwakeChip status={awake} />
 
