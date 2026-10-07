@@ -11,6 +11,7 @@ import {
   SkipForward,
   Square,
 } from '@artha/design-system'
+import type { ReactNode } from 'react'
 
 import { ContextPicker, hasSubjectAndChapter, type PickerValue } from '~/modules/tracker'
 
@@ -50,6 +51,8 @@ interface Props {
   error?: string | null
   /** Polite live-region text for screen readers ("Focus round done. Time for a short break."). */
   announcement: string
+  /** The Pop out button, drawn after the controls (the container decides whether it is offered). */
+  popOut?: ReactNode
 }
 
 /** The Pomodoro timer: ring, round dots, controls and, while nothing runs, the preset and context pickers. */
@@ -176,6 +179,7 @@ export function FocusCard(p: Props) {
               )}
             </>
           )}
+          {p.popOut}
         </div>
         {needsContext && !p.otherLive ? (
           <p id="focus-needs-context" className="text-center text-sm text-muted-foreground">

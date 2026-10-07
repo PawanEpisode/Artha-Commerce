@@ -1,73 +1,110 @@
 import { Link, useRouterState } from '@tanstack/react-router'
 
 import { useAuth } from '~/modules/auth'
+import { useKeepAwake } from '~/modules/keepawake'
 import { useFeatureFlag } from '~/modules/observability'
-import { formatClock, spokenDuration, useStopwatch } from '~/modules/tracker'
+import { nowMs, useStopwatch, useStopwatchLive } from '~/modules/tracker'
 
 import { MiniTimerView } from '../components/MiniTimerView'
 import { useTimerTitle } from '../hooks/useDocumentTitle'
 import { useFocusTimer } from '../hooks/useFocusTimer'
-import { formatOvertime, formatRemaining, PHASE_LABEL, spokenRemaining } from '../lib/timer-math'
+import { usePopOut } from '../hooks/usePopOut'
+import { usePopoutSync } from '../hooks/usePopoutSync'
+import { type PopoutControlId, popoutView } from '../lib/popout'
+import { PopOutButton } from './PopOutButton'
+import { PopOutFocus } from './PopOutFocus'
+import { PopOutStopwatch } from './PopOutStopwatch'
+import { PopOutWindow } from './PopOutWindow'
 
 const linkClass = 'outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40'
 
-/** A running (or paused) Pomodoro round or break. It also closes phases and plays the alerts while the student is elsewhere. */
+/**
+ * A running (or paused) Pomodoro round or break. It also closes phases and plays the alerts while the student is
+ * elsewhere, and it owns the one timer the floating window draws, so the window needs no timer of its own.
+ */
 function FocusMini({ ownTitle }: { ownTitle: boolean }) {
   const f = useFocusTimer()
+  const pop = usePopOut()
+  const stopwatchRuns = useStopwatchLive()
   const t = f.timer
   useTimerTitle(t, document.title || 'Artha', f.remaining, ownTitle)
-  if (f.featureDisabled || !t) return null
-  const away = t.status === 'away'
+
+  const popped = pop.isOpen && !stopwatchRuns && !f.featureDisabled
+  usePopoutSync(t, !!t && f.remaining === 0)
+  // While the window is out, the screen is held from its document: the tab's own lock is released once it is hidden.
+  useKeepAwake(
+    popped && t ? { running: t.status === 'running', focus: t.phase === 'focus' } : null,
+    f.settings,
+    pop.window,
+  )
+
+  const view = popoutView(t, f.idle, null, nowMs(), null)
+  const onControl = (id: PopoutControlId) => (id === 'resume' ? f.resume() : id === 'pause' ? f.pause() : undefined)
   return (
-    <MiniTimerView
-      label={t.phase === 'focus' ? 'Focus round' : PHASE_LABEL[t.phase]}
-      phase={t.phase}
-      paused={t.status === 'paused'}
-      clock={away ? 'Done?' : f.overtime !== null ? formatOvertime(f.overtime) : formatRemaining(f.remaining)}
-      spoken={
-        away
-          ? 'The round ended while you were away'
-          : f.overtime !== null
-            ? `${spokenRemaining(f.overtime)} of extra focus`
-            : `${spokenRemaining(f.remaining)} left`
-      }
-      busy={f.busy}
-      onPause={t.phase === 'focus' && !away ? f.pause : undefined}
-      onResume={t.phase === 'focus' && !away ? f.resume : undefined}
-      renderLink={(children) => (
-        <Link to="/app/focus" className={`flex items-center gap-2 ${linkClass}`}>
-          {children}
-        </Link>
+    <>
+      {f.featureDisabled || !t ? null : (
+        <MiniTimerView
+          variant="corner"
+          view={view}
+          controls={view.controls}
+          busy={f.busy}
+          onControl={onControl}
+          renderLink={(children) => (
+            <Link to="/app/focus" className={`flex items-center gap-2 ${linkClass}`}>
+              {children}
+            </Link>
+          )}
+          action={<PopOutButton source="mini" timer="focus" size={f.settings?.popout_size} />}
+        />
       )}
-    />
+      {popped ? (
+        <PopOutWindow>
+          <PopOutFocus f={f} />
+        </PopOutWindow>
+      ) : null}
+    </>
   )
 }
 
 function StopwatchMini() {
-  const sw = useStopwatch()
-  if (sw.featureDisabled || !sw.stopwatch) return null
+  const pop = usePopOut()
+  const sw = useStopwatch({ timers: pop.window })
+  const running = sw.stopwatch
+  useKeepAwake(
+    pop.isOpen && running ? { running: running.status === 'running' && !running.idle_pending, focus: true } : null,
+    undefined,
+    pop.window,
+  )
+  if (sw.featureDisabled || !running) return null
+  const view = popoutView(null, null, { paused: running.status === 'paused', seconds: sw.seconds }, nowMs(), null)
   return (
-    <MiniTimerView
-      label="Stopwatch"
-      phase="stopwatch"
-      paused={sw.stopwatch.status === 'paused'}
-      clock={formatClock(sw.seconds)}
-      spoken={`Elapsed ${spokenDuration(sw.seconds)}`}
-      busy={sw.busy}
-      onPause={() => sw.toggle.mutate('pause')}
-      onResume={() => sw.toggle.mutate('resume')}
-      renderLink={(children) => (
-        <Link to="/app/tracker" className={`flex items-center gap-2 ${linkClass}`}>
-          {children}
-        </Link>
-      )}
-    />
+    <>
+      <MiniTimerView
+        variant="corner"
+        view={view}
+        controls={view.controls}
+        busy={sw.busy}
+        onControl={(id) => sw.toggle.mutate(id === 'resume' ? 'resume' : 'pause')}
+        renderLink={(children) => (
+          <Link to="/app/tracker" className={`flex items-center gap-2 ${linkClass}`}>
+            {children}
+          </Link>
+        )}
+        action={<PopOutButton source="mini" timer="stopwatch" />}
+      />
+      {pop.isOpen ? (
+        <PopOutWindow>
+          <PopOutStopwatch sw={sw} />
+        </PopOutWindow>
+      ) : null}
+    </>
   )
 }
 
 /**
  * Shown on every page once a student is signed in. Whichever timer is running stays in the corner (only one can),
- * including on the focus and tracker screens. Each timer still follows its own feature flag.
+ * including on the focus and tracker screens, and either one can be popped out into the floating window. Each timer
+ * still follows its own feature flag.
  */
 export function LiveMiniTimer() {
   const { user, loading } = useAuth()

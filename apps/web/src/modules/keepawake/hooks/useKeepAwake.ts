@@ -18,8 +18,13 @@ const getKeepAwakeSettings = async (): Promise<KeepAwakeSettings> => {
  * timer is doing, or null when there is none. `settings` is optional: a page that already has the focus settings
  * hands them in; otherwise they are read here, and only while a timer exists. Until they are known, and if they
  * cannot be read, nothing is held. The PostHog flag `keep_awake` (fails open) switches the whole thing off.
+ * `target` is the window that holds the lock instead of this page (the floating timer's, while it is open).
  */
-export function useKeepAwake(activity: KeepAwakeActivity | null, settings?: KeepAwakeSettings): KeepAwakeStatus {
+export function useKeepAwake(
+  activity: KeepAwakeActivity | null,
+  settings?: KeepAwakeSettings,
+  target?: Window | null,
+): KeepAwakeStatus {
   const flagOn = useFeatureFlag('keep_awake')
   const own = useQuery({
     queryKey: keepAwakeKeys.settings,
@@ -28,5 +33,5 @@ export function useKeepAwake(activity: KeepAwakeActivity | null, settings?: Keep
     staleTime: 60_000,
   })
   const known = settings ?? own.data
-  return useWakeLock(flagOn && wantsWakeLock(activity, known))
+  return useWakeLock(flagOn && wantsWakeLock(activity, known), target ?? undefined)
 }

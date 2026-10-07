@@ -50,12 +50,14 @@ export function formatRemaining(seconds: number): string {
   return h > 0 ? `${h}:${pad(m)}:${pad(s % 60)}` : `${pad(m)}:${pad(s % 60)}`
 }
 
+/** "24 minutes 12 seconds": whole words, so a screen reader never says "min" or "s". */
 export function spokenRemaining(seconds: number): string {
   const s = Math.max(0, Math.floor(seconds))
   const m = Math.floor(s / 60)
   const rest = s % 60
-  if (m === 0) return `${rest} seconds`
-  return rest === 0 ? `${m} ${m === 1 ? 'minute' : 'minutes'}` : `${m} min ${rest} s`
+  const unit = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
+  if (m === 0) return unit(rest, 'second')
+  return rest === 0 ? unit(m, 'minute') : `${unit(m, 'minute')} ${unit(rest, 'second')}`
 }
 
 export const PHASE_LABEL: Record<Phase, string> = {

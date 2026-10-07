@@ -6,7 +6,7 @@ import type { ReactNode } from 'react'
 
 import { env } from '~/lib/env'
 import { AuthProvider } from '~/modules/auth'
-import { LiveMiniTimer } from '~/modules/focus'
+import { LiveMiniTimer, PopOutProvider } from '~/modules/focus'
 import { SIGNED_IN_MARK_SCRIPT, SiteShell } from '~/modules/layout'
 import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { NotificationsBoot } from '~/modules/notifications'
@@ -50,10 +50,13 @@ function RootComponent() {
           <AuthProvider>
             <ObservabilityProvider>
               <PersonalizedPostAuth>
-                <SiteShell>
-                  <Outlet />
-                </SiteShell>
-                <LiveMiniTimer />
+                {/* The floating timer window (X-01 P4) is shared by the corner timer and the focus page. */}
+                <PopOutProvider>
+                  <SiteShell>
+                    <Outlet />
+                  </SiteShell>
+                  <LiveMiniTimer />
+                </PopOutProvider>
                 <NotificationsBoot />
                 {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}
                 <Toaster />

@@ -15,6 +15,7 @@ import {
   phaseEndGap,
   phaseEndMs,
   remainingSeconds,
+  spokenRemaining,
   startLabel,
   tabTitle,
 } from './timer-math'
@@ -53,6 +54,16 @@ const timer = (patch: Partial<FocusTimer> = {}): FocusTimer => ({
   client_id: 'k',
   version: 1,
   ...patch,
+})
+
+describe('spokenRemaining', () => {
+  it('says whole words, in the singular where it is one', () => {
+    expect(spokenRemaining(24 * 60 + 12)).toBe('24 minutes 12 seconds')
+    expect(spokenRemaining(61)).toBe('1 minute 1 second')
+    expect(spokenRemaining(120)).toBe('2 minutes')
+    expect(spokenRemaining(45)).toBe('45 seconds')
+    expect(spokenRemaining(0)).toBe('0 seconds')
+  })
 })
 
 describe('countdown', () => {

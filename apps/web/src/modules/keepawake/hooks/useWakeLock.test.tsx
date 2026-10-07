@@ -160,3 +160,62 @@ describe('useWakeLock', () => {
     expect(sentinels[1]?.released).toBe(false)
   })
 })
+
+/** The floating timer's window: its own navigator holds the lock, and its own document says whether it is visible. */
+function otherWindow() {
+  const doc = Object.assign(new EventTarget(), { visibilityState: 'visible' as DocumentVisibilityState })
+  const mine: FakeSentinel[] = []
+  const request = vi.fn(() => {
+    const s = new FakeSentinel()
+    mine.push(s)
+    return Promise.resolve(s)
+  })
+  const win = {
+    navigator: { wakeLock: { request } },
+    document: doc,
+    setTimeout: window.setTimeout.bind(window),
+    clearTimeout: window.clearTimeout.bind(window),
+  }
+  return { win: win as unknown as Window, request, sentinels: mine, doc }
+}
+
+describe('useWakeLock for another window', () => {
+  it('asks that window, not this page, and says it is held', async () => {
+    const other = otherWindow()
+    const { result } = renderHook(() => useWakeLock(true, other.win))
+    await flush()
+    expect(other.request).toHaveBeenCalledWith('screen')
+    expect(request).not.toHaveBeenCalled()
+    expect(result.current).toBe('held')
+  })
+
+  it('reports unsupported when that window has no Wake Lock API', () => {
+    const other = otherWindow()
+    Reflect.deleteProperty(other.win.navigator, 'wakeLock')
+    const { result } = renderHook(() => useWakeLock(true, other.win))
+    expect(result.current).toBe('unsupported')
+  })
+
+  it('asks again when that window becomes visible again', async () => {
+    const other = otherWindow()
+    renderHook(() => useWakeLock(true, other.win))
+    await flush()
+    act(() => void other.sentinels[0]?.release())
+    other.doc.visibilityState = 'hidden'
+    other.doc.dispatchEvent(new Event('visibilitychange'))
+    await flush()
+    expect(other.request).toHaveBeenCalledTimes(1)
+    other.doc.visibilityState = 'visible'
+    other.doc.dispatchEvent(new Event('visibilitychange'))
+    await flush()
+    expect(other.request).toHaveBeenCalledTimes(2)
+  })
+
+  it('releases the lock in that window when it is no longer wanted', async () => {
+    const other = otherWindow()
+    const { rerender } = renderHook(({ want }) => useWakeLock(want, other.win), { initialProps: { want: true } })
+    await flush()
+    rerender({ want: false })
+    expect(other.sentinels[0]?.released).toBe(true)
+  })
+})

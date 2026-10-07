@@ -20,6 +20,8 @@ import {
 } from '../lib/api'
 import { focusKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
+import { popoutAlive } from '../lib/popout'
+import { popoutPresence } from '../lib/popout-presence'
 import { HEARTBEAT_SECONDS } from '../lib/presets'
 import {
   isFinished,
@@ -34,13 +36,24 @@ import {
 } from '../lib/timer-math'
 import type { EndReason, FocusState, FocusTimer } from '../lib/types'
 import { useFocusAlerts } from './useFocusAlerts'
+import { usePopOut } from './usePopOut'
 
 /** One read of the timer state, shared by the timer hook and anything that only needs to know whether one is live. */
 export async function fetchTimerState() {
-  const data = await getTimer(document.visibilityState === 'visible' && recentlyActive(5 * 60_000))
+  // Presence (X-01 PRD B): a visible tab with a recent tap counts as before; an open pop-out counts until the target,
+  // and after it once tapped.
+  const alive = popoutAlive({
+    tabVisible: document.visibilityState === 'visible',
+    recentlyActive: recentlyActive(5 * 60_000),
+    ...popoutPresence(),
+  })
+  const data = await getTimer(alive)
   setServerTime(data.server_time)
   return data
 }
+
+/** Where the student acted: the page, or the floating window (the baseline compares the two). */
+export type ActionSurface = 'tab' | 'popout'
 
 type Local = (t: FocusTimer) => FocusTimer | null
 interface Action {
@@ -60,15 +73,19 @@ interface Action {
  */
 export function useFocusTimer() {
   const qc = useQueryClient()
+  // While the floating window is open its timers drive the clock: the tab may be hidden, and a hidden tab's timers slow
+  // to a crawl (S4.3). The query then also polls in the background.
+  const timers = usePopOut().window
   const query = useQuery({
     queryKey: focusKeys.timer,
     queryFn: fetchTimerState,
     refetchInterval: (q) => (q.state.data?.timer ? HEARTBEAT_SECONDS * 1000 : false),
+    refetchIntervalInBackground: timers !== null,
     refetchOnWindowFocus: true,
   })
   const state = query.data
   const timer = state?.timer ?? null
-  useTick(timer?.status === 'running')
+  useTick(timer?.status === 'running', 1000, timers)
 
   useEffect(() => {
     if (!timer) return
@@ -82,11 +99,24 @@ export function useFocusTimer() {
   const quiet = useRef(false)
   // The phase end the student has not answered yet; the first action after it is reported once (baseline for the pop-out).
   const pendingEnd = useRef<PendingEnd | null>(null)
+  const surface = useRef<ActionSurface>('tab')
   const acknowledge = useCallback(() => {
     const pending = pendingEnd.current
     pendingEnd.current = null
     const seconds = pending ? phaseEndGap(pending.at, nowMs()) : null
-    if (pending && seconds !== null) track('phase_end_acknowledged', { seconds, surface: 'tab', phase: pending.phase })
+    if (pending && seconds !== null)
+      track('phase_end_acknowledged', { seconds, surface: surface.current, phase: pending.phase })
+  }, [])
+  /**
+   * Runs an action on behalf of another surface (the floating window). The mutation reads the surface a moment after
+   * `mutate` returns, so it is put back on the next task, not at the end of `run`.
+   */
+  const from = useCallback(<T>(next: ActionSurface, run: () => T): T => {
+    surface.current = next
+    setTimeout(() => {
+      surface.current = 'tab'
+    }, 0)
+    return run()
   }, [])
   useEffect(() => {
     pendingEnd.current = nextPendingEnd(pendingEnd.current, timer, nowMs())
@@ -319,6 +349,7 @@ export function useFocusTimer() {
     end,
     claim,
     context,
+    from,
   }
 }
 

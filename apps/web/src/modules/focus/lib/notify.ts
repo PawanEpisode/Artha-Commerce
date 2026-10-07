@@ -35,6 +35,12 @@ export const notify = {
       ? toast.success('Round counted', { id: ID.timer })
       : toast.info('Round discarded', { id: ID.timer, description: 'It was not counted.' }),
 
+  popOutFailed: () =>
+    toast.info('The pop-out did not open', {
+      id: ID.timer,
+      description: 'Your browser opens it only from a click. Press Pop out again.',
+    }),
+
   settingsSaved: () => toast.success('Settings saved', { id: ID.settings }),
   exportStarted: () => toast.info('Preparing your timer data', { id: 'focus-export' }),
   exportFinished: () => toast.success('Timer data downloaded', { id: 'focus-export' }),

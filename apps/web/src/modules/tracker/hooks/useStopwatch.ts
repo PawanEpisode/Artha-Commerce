@@ -26,14 +26,25 @@ export interface TimerContext {
   activity_type: ActivityType
 }
 
-/** Ticks once a second so the clock re-renders. The value shown is always derived from timestamps, never counted. */
-export function useTick(active: boolean, everyMs = 1000) {
+/**
+ * Ticks once a second so the clock re-renders. The value shown is always derived from timestamps, never counted.
+ * `timers` is the window whose timers drive it: the floating timer's window while it is open, because the page's own
+ * timers are throttled once its tab is hidden.
+ */
+export function useTick(active: boolean, everyMs = 1000, timers: Window | null = null) {
   const [, set] = useState(0)
   useEffect(() => {
     if (!active) return
-    const id = window.setInterval(() => set((n) => n + 1), everyMs)
-    return () => window.clearInterval(id)
-  }, [active, everyMs])
+    const win = timers ?? window
+    const id = win.setInterval(() => set((n) => n + 1), everyMs)
+    return () => win.clearInterval(id)
+  }, [active, everyMs, timers])
+}
+
+/** Whether a stopwatch exists, read from the cache the corner timer keeps fresh. It never fetches. */
+export function useStopwatchLive(): boolean {
+  const q = useQuery<StopwatchState>({ queryKey: trackerKeys.stopwatch, enabled: false })
+  return !!q.data?.stopwatch
 }
 
 /** Lets the server see that the student is at the screen: any pointer or key event counts. */
@@ -51,9 +62,10 @@ function useActivityMarker(enabled: boolean) {
 /**
  * The one active stopwatch. Reads the server's state (heartbeat every 30 s while it runs), applies each action
  * optimistically and queues it with the corrected moment when the network is down. The elapsed time comes from
- * timestamps, so a sleeping tab or a reload shows the right number.
+ * timestamps, so a sleeping tab or a reload shows the right number. `timers` is the floating timer's window while it
+ * is open (see `useTick`).
  */
-export function useStopwatch() {
+export function useStopwatch({ timers = null }: { timers?: Window | null } = {}) {
   const qc = useQueryClient()
   const query = useQuery({
     queryKey: trackerKeys.stopwatch,
@@ -67,7 +79,7 @@ export function useStopwatch() {
   })
   const state = query.data
   const sw = state?.stopwatch ?? null
-  useTick(sw?.status === 'running')
+  useTick(sw?.status === 'running', 1000, timers)
   useActivityMarker(sw !== null)
 
   const put = useCallback(

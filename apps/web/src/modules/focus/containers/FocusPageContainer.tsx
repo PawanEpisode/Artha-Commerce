@@ -33,6 +33,7 @@ import { matchPreset, type PresetKey, presetTimings, type Timings } from '../lib
 import { shortcutFor } from '../lib/shortcuts'
 import { elapsedSeconds, percentDone } from '../lib/timer-math'
 import { FocusShell } from './FocusShell'
+import { PopOutButton } from './PopOutButton'
 
 export interface FocusSearch {
   subject?: string
@@ -200,6 +201,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onEndEarly={() => setEnding(true)}
         onStopAndSave={() => f.end(true)}
         announcement={f.announcement}
+        popOut={<PopOutButton source="focus_page" timer={t ? 'focus' : 'idle'} size={settings?.popout_size} />}
       />
 
       <KeepAwakeChip status={awake} />

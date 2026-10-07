@@ -22,7 +22,11 @@ export interface KeepAwakeActivity {
   focus: boolean
 }
 
-export const isWakeLockSupported = (): boolean => typeof navigator !== 'undefined' && 'wakeLock' in navigator
+/** `target` is another window (the floating timer's), whose own navigator holds the lock. */
+export const isWakeLockSupported = (target?: Window): boolean => {
+  const nav = target ? target.navigator : typeof navigator !== 'undefined' ? navigator : undefined
+  return !!nav && 'wakeLock' in nav
+}
 
 /**
  * Whether a timer should hold the screen right now (FR-K1, FR-K2): only while it runs, only for focus unless the
