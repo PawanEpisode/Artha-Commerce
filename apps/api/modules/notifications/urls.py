@@ -19,6 +19,7 @@ urlpatterns = [
         views.InboxClickView.as_view(),
         name="notifications-inbox-click",
     ),
+    path("notifications/digest/", views.DigestView.as_view(), name="notifications-digest"),
     path("notifications/thought/today/", views.ThoughtTodayView.as_view(), name="notifications-thought-today"),
     # Public: the one-time token of a notification button is the credential (views/actions.py).
     path("notifications/actions/", views.ActionsView.as_view(), name="notifications-actions"),

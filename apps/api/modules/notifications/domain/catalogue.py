@@ -25,6 +25,7 @@ class Category(StrEnum):
     PROGRESS = "progress"
     MOTIVATION = "motivation"
     SYSTEM = "system"  # not switchable by the student (the test push); never listed in CATEGORIES
+    DIGEST = "digest"  # the daily digest (W3.7): its switch is `NotificationSettings.digest_enabled`, not a category
 
 
 class UnknownEvent(KeyError):
@@ -58,8 +59,11 @@ class EventSpec:
 
     @property
     def system(self) -> bool:
-        """System events answer a direct request of the student, so category switches do not apply to them."""
-        return self.category is Category.SYSTEM
+        """
+        System events answer a direct request of the student (the test push, the digest they chose), so category
+        switches do not apply to them. The master switch, quiet hours and the cap still do (by priority).
+        """
+        return self.category in (Category.SYSTEM, Category.DIGEST)
 
 
 _PUSH_AND_INBOX = frozenset({Channel.PUSH, Channel.INBOX})
@@ -104,6 +108,8 @@ _EVENT_LIST: tuple[EventSpec, ...] = (
     EventSpec("evaluation_ready", Category.EVALUATION, 1, "evaluation:{attempt_id}", expires_after=24 * _HOUR),
     EventSpec("plan_ready", Category.PLAN, 2, "plan:{local_date}", expires_after=12 * _HOUR),
     EventSpec("weekly_summary", Category.PROGRESS, 3, "weekly:{iso_week}", expires_after=24 * _HOUR),
+    # W3.7: one push a day at the nudge time for a student who chose the digest (FR-N34) instead of separate alerts.
+    EventSpec("daily_digest", Category.DIGEST, 3, "digest:{local_date}", expires_after=6 * _HOUR),
 )
 
 EVENTS: Mapping[str, EventSpec] = {spec.key: spec for spec in _EVENT_LIST}
@@ -137,6 +143,8 @@ def category_label(category: str) -> str:
     try:
         return category_spec(category).label
     except UnknownSwitch:
+        if category == Category.DIGEST:
+            return "Daily digest"
         return "Test" if category == Category.SYSTEM else "Notification"
 
 

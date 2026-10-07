@@ -17,7 +17,9 @@ from modules.notifications.domain.dedupe import build_dedupe_key
 
 def test_every_event_belongs_to_a_known_category():
     keys = {spec.key for spec in CATEGORIES}
-    assert all(event.category in keys for event in EVENTS.values())
+    # The daily digest (W3.7) has its own switch (`digest_enabled`), so it sits outside the category grid.
+    assert all(event.category in keys or event.system for event in EVENTS.values())
+    assert {key for key, spec in EVENTS.items() if spec.category not in keys} == {"daily_digest"}
 
 
 def test_only_timer_events_are_exempt():

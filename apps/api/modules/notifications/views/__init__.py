@@ -1,5 +1,6 @@
 from .actions import ActionsView
 from .devices import DeviceDetailView, DevicesView, DeviceTestView
+from .digest import DigestView
 from .inbox import InboxClickView, InboxReadView, InboxView
 from .internal import JobFireView, SweepView
 from .preferences import CategoriesView, PreferencesView
@@ -13,6 +14,7 @@ __all__ = [
     "DeviceDetailView",
     "DeviceTestView",
     "DevicesView",
+    "DigestView",
     "InboxClickView",
     "InboxReadView",
     "InboxView",

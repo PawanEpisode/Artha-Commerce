@@ -158,3 +158,11 @@ export const unsubscribeSchema = z.object({
   unsubscribed: z.boolean(),
 })
 export type UnsubscribeResult = z.infer<typeof unsubscribeSchema>
+
+/** `GET` and `POST digest/` (W3.7, FR-N34): whether to offer the digest, whether it is on, and its time. */
+export const digestSchema = z.object({ offer: z.boolean(), enabled: z.boolean(), time: timeSchema })
+export type DigestState = z.infer<typeof digestSchema>
+
+/** `seen`: the offer was shown. `stop`: back to separate alerts. */
+export const DIGEST_ANSWERS = ['seen', 'accept', 'decline', 'stop'] as const
+export type DigestAnswer = (typeof DIGEST_ANSWERS)[number]

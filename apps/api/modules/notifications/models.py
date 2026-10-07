@@ -44,6 +44,7 @@ class NotificationSettings(TimeStampedModel):
     permission_ask_count = models.SmallIntegerField(default=0)
     last_asked_at = models.DateTimeField(null=True, blank=True)
     digest_offered_at = models.DateTimeField(null=True, blank=True)
+    digest_enabled = models.BooleanField(default=False)  # W3.7: one daily digest instead of separate pushes
 
     class Meta:
         db_table = "notifications_settings"

@@ -30,7 +30,12 @@ def daily_facts(user_id, local_date: date) -> DailyFacts:
     return DailyFacts(days_left, len(due), due[0].chapter.name if due else None)
 
 
-def push_allowed(user_id, events: tuple[str, ...]) -> dict[str, bool]:
-    """For each event, whether the student's choice lets its category reach them by push (switches are checked apart)."""
+def allowed_on(user_id, events: tuple[str, ...], channel: Channel) -> dict[str, bool]:
+    """For each event, whether the student's choice lets its category reach them on `channel` (switches apart)."""
     chosen = preference_selectors.overrides(user_id)
-    return {event: is_enabled(get_event(event).category.value, Channel.PUSH.value, chosen) for event in events}
+    return {event: is_enabled(get_event(event).category.value, channel.value, chosen) for event in events}
+
+
+def push_allowed(user_id, events: tuple[str, ...]) -> dict[str, bool]:
+    """The daily slot's question. The digest asks about the inbox instead: on the digest that is where they arrive."""
+    return allowed_on(user_id, events, Channel.PUSH)

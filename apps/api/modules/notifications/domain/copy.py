@@ -139,6 +139,14 @@ def _content_published(context: Mapping[str, Any]) -> Copy:
     )
 
 
+def _daily_digest(context: Mapping[str, Any]) -> Copy:
+    """The one push of a student on the digest (W3.7): what the day holds and what waits in the inbox."""
+    from .digest import digest_lines
+
+    lines, link = digest_lines(context)
+    return Copy("Your daily digest", _fit(" ".join(lines), BODY_LIMIT), link, f"digest:{context['local_date']}")
+
+
 def _test_push(context: Mapping[str, Any]) -> Copy:
     return Copy("Test notification", "Notifications are working on this device.", SETTINGS_LINK, "test_push")
 
@@ -166,6 +174,7 @@ _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "exam_milestone": _exam_milestone,
     "content_published": _content_published,
     "weekly_summary": _weekly_summary,
+    "daily_digest": _daily_digest,
     "test_push": _test_push,
 }
 

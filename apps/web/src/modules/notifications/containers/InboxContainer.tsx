@@ -11,6 +11,7 @@ import { notificationAnalytics } from '../lib/analytics'
 import { isNotificationsDisabled } from '../lib/api'
 import { flattenInbox, followableLink, isModifiedClick, secondsSince, unreadPhrase } from '../lib/inbox'
 import type { InboxItem } from '../lib/schemas'
+import { DigestContainer } from './DigestContainer'
 
 /**
  * `/app/notifications`: the inbox. Opening an item marks it read and follows its link (only an allow-listed relative
@@ -73,6 +74,8 @@ export function InboxContainer() {
           </p>
         )}
       </header>
+
+      {off ? null : <DigestContainer place="inbox" />}
 
       {off ? (
         <NotificationsOff />

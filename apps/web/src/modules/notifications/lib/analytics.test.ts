@@ -20,8 +20,17 @@ describe('notification analytics (PRD 10)', () => {
       alertsStepViewed: 'alerts_step_viewed',
       alertsStepCompleted: 'alerts_step_completed',
       localAlertShown: 'local_alert_shown',
+      digestOfferShown: 'digest_offer_shown',
+      digestAnswered: 'digest_answered',
     })
     for (const name of Object.values(NOTIFICATION_EVENTS)) expect(name).toMatch(/^[a-z]+(_[a-z]+)+$/)
+  })
+
+  it('sends the digest offer and its answer with the place only (W3.7)', () => {
+    notificationAnalytics.digestOfferShown('inbox')
+    notificationAnalytics.digestAnswered('accept', 'settings')
+    expect(track).toHaveBeenNthCalledWith(1, 'digest_offer_shown', { place: 'inbox' })
+    expect(track).toHaveBeenNthCalledWith(2, 'digest_answered', { answer: 'accept', place: 'settings' })
   })
 
   it('sends the prompt and its result with the source', () => {

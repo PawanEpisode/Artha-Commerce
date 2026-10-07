@@ -95,6 +95,7 @@ def settings_dict(row) -> dict:
         "nudge_enabled": row.nudge_enabled,
         "nudge_time": _hhmm(row.nudge_time),
         "nudge_tone": row.nudge_tone,
+        "digest_enabled": row.digest_enabled,
         "permission_state": row.permission_state,
         "permission_decided": row.permission_decided_at is not None,
         "permission_ask_count": row.permission_ask_count,
@@ -176,3 +177,12 @@ class ActionTapSerializer(serializers.Serializer):
 
     def get_notification(self, result) -> dict:
         return _TapNotificationSerializer(result).data
+
+
+class DigestAnswerSerializer(serializers.Serializer):
+    answer = serializers.ChoiceField(choices=["seen", "accept", "decline", "stop"])
+
+
+def digest_dict(row, *, offer: bool) -> dict:
+    """`digest/`: whether to show the offer, whether the digest is on, and when it goes out (the nudge time)."""
+    return {"offer": offer, "enabled": row.digest_enabled, "time": _hhmm(row.nudge_time)}

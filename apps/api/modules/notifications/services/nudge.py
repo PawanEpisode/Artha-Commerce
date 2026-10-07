@@ -6,6 +6,9 @@ the daily thought: `domain.daily_slot`), create the notification once and hand i
 decided in one place (`domain.policy`). One slot, one push: a student never gets a thought and a revision reminder at
 the same time.
 
+A student on the daily digest (W3.7) gets the digest in this slot instead: one push saying what the day holds (the
+milestone, revision) and what waits in the inbox (`domain.digest`). A day with nothing to say sends nothing.
+
 At most once per due time. The claim is a compare-and-set that moves `next_nudge_at` to the next occurrence before
 anything is sent, so two sweeps, or a sweep and a retry, can never both send the same nudge; if a send fails after the
 claim, the day's nudge is lost, which for a motivational line is cheaper than sending it twice. The notification's dedupe
@@ -22,17 +25,21 @@ from django.utils import timezone
 
 from .. import flags
 from ..domain import daily_slot
-from ..domain.enums import ShownChannel
+from ..domain import digest as digest_rules
+from ..domain.catalogue import Category
+from ..domain.enums import Channel, ShownChannel
 from ..domain.nudge import NudgeVerdict, judge_nudge, next_nudge_at, nudge_local_date
 from ..logs import log_event
 from ..models import Delivery, NotificationSettings
 from ..selectors import daily as daily_selectors
+from ..selectors import inbox as inbox_selectors
 from . import notify as notify_service
 from . import thought as thought_service
 
 EVENT = "daily_nudge"
 EXAM_EVENT = "exam_milestone"
 REVISION_EVENT = "revision_due"
+DIGEST_EVENT = "daily_digest"
 
 
 class NudgeOutcome(StrEnum):
@@ -42,6 +49,7 @@ class NudgeOutcome(StrEnum):
     STALE = "stale"  # overdue by more than it stays useful: skipped, the next one is planned
     FLAG_OFF = "flag_off"  # sending is off for this student
     NO_MESSAGE = "no_message"  # nothing in the library may be shown to them today
+    NOTHING_NEW = "nothing_new"  # the digest had nothing to say today
 
 
 def process_due_nudge(user_id, *, now: datetime) -> NudgeOutcome:
@@ -66,6 +74,8 @@ def process_due_nudge(user_id, *, now: datetime) -> NudgeOutcome:
         return NudgeOutcome.FLAG_OFF
 
     local_date = nudge_local_date(due_at, row.timezone)
+    if row.digest_enabled:
+        return _send_digest(user_id, local_date, now=now, due_at=due_at)
     pick = _pick(user_id, local_date)
     log_event(logging.INFO, "nudge_slot", slot=pick.slot.value)
 
@@ -124,6 +134,33 @@ def _pick(user_id, local_date) -> daily_slot.Pick:
         due_count=facts.due_count,
         exam_on=allowed[EXAM_EVENT] and not flags.event_disabled(EXAM_EVENT),
         revision_on=allowed[REVISION_EVENT] and not flags.event_disabled(REVISION_EVENT),
+    )
+
+
+def _send_digest(user_id, local_date, *, now: datetime, due_at: datetime) -> NudgeOutcome:
+    """The digest for one day: the milestone and revision the student allows in their inbox, and the unread count."""
+    if flags.event_disabled(DIGEST_EVENT):
+        log_event(logging.INFO, "nudge_skipped", event=DIGEST_EVENT, reason="flag_off")
+        return NudgeOutcome.FLAG_OFF
+    facts = daily_selectors.daily_facts(user_id, local_date)
+    allowed = daily_selectors.allowed_on(user_id, (EXAM_EVENT, REVISION_EVENT), Channel.INBOX)
+    exam_on = allowed[EXAM_EVENT] and not flags.event_disabled(EXAM_EVENT)
+    revision_on = allowed[REVISION_EVENT] and not flags.event_disabled(REVISION_EVENT)
+    digest = digest_rules.DigestFacts(
+        unread=inbox_selectors.unread_count(user_id, now=now, exclude=(Category.DIGEST.value,)),
+        due_count=facts.due_count if revision_on else 0,
+        milestone=daily_slot.milestone_for(facts.days_left) if exam_on else None,
+    )
+    if not digest_rules.worth_sending(digest):
+        log_event(logging.INFO, "nudge_skipped", event=DIGEST_EVENT, reason="nothing_new")
+        return NudgeOutcome.NOTHING_NEW
+    return _send(
+        user_id,
+        DIGEST_EVENT,
+        context=digest_rules.context_for(digest, local_date.isoformat()),
+        dedupe_parts={"local_date": local_date},
+        now=now,
+        due_at=due_at,
     )
 
 

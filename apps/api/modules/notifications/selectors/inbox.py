@@ -37,8 +37,10 @@ def visible(user_id, *, now: datetime | None = None) -> QuerySet[Notification]:
     )
 
 
-def unread_count(user_id, *, now: datetime | None = None) -> int:
-    return visible(user_id, now=now).filter(read_at__isnull=True).count()
+def unread_count(user_id, *, now: datetime | None = None, exclude: tuple[str, ...] = ()) -> int:
+    """Unread visible items; `exclude` leaves categories out (the digest does not count its own earlier digests)."""
+    rows = visible(user_id, now=now).filter(read_at__isnull=True)
+    return (rows.exclude(category__in=exclude) if exclude else rows).count()
 
 
 def _encode_cursor(row: Notification, seen: int) -> str:

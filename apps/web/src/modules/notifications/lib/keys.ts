@@ -7,6 +7,7 @@ export const notificationKeys = {
   inbox: ['notifications', 'inbox'] as const,
   bell: ['notifications', 'inbox', 'bell'] as const,
   thought: ['notifications', 'thought'] as const,
+  digest: ['notifications', 'digest'] as const,
   unsubscribe: (token: string) => ['notifications', 'unsubscribe', token] as const,
   inboxList: ['notifications', 'inbox', 'list'] as const,
 }

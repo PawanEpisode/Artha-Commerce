@@ -16,6 +16,8 @@ export const NOTIFICATION_EVENTS = {
   alertsStepViewed: 'alerts_step_viewed',
   alertsStepCompleted: 'alerts_step_completed',
   localAlertShown: 'local_alert_shown',
+  digestOfferShown: 'digest_offer_shown',
+  digestAnswered: 'digest_answered',
 } as const
 
 export type PermissionResult = 'granted' | 'denied' | 'dismissed'
@@ -55,4 +57,9 @@ export const notificationAnalytics = {
   /** An inbox item was opened (PRD section 10). Only the category and the age leave the page, never the text. */
   inboxOpened: (info: { category: string; seconds_since_sent: number }) =>
     track(NOTIFICATION_EVENTS.inboxOpened, { category: info.category, seconds_since_sent: info.seconds_since_sent }),
+  /** The "switch to a daily digest" card was shown (W3.7). */
+  digestOfferShown: (place: 'settings' | 'inbox') => track(NOTIFICATION_EVENTS.digestOfferShown, { place }),
+  /** The student answered it, or switched the digest off again. */
+  digestAnswered: (answer: 'accept' | 'decline' | 'stop', place: 'settings' | 'inbox') =>
+    track(NOTIFICATION_EVENTS.digestAnswered, { answer, place }),
 }

@@ -8,6 +8,9 @@ import {
   deviceIdResponseSchema,
   type DeviceRegistration,
   devicesResponseSchema,
+  type DigestAnswer,
+  digestSchema,
+  type DigestState,
   type InboxPage,
   inboxPageSchema,
   inboxReadResponseSchema,
@@ -113,3 +116,10 @@ export const previewUnsubscribe = async (token: string): Promise<UnsubscribeResu
 /** Switches that email off. Safe to repeat. */
 export const confirmUnsubscribe = async (token: string): Promise<UnsubscribeResult> =>
   unsubscribeSchema.parse(await send<unknown>('POST', `${BASE}/unsubscribe/`, { token }))
+
+/** Whether the daily digest is on, and whether the offer to switch to it is due (W3.7). Reading never writes. */
+export const getDigest = async (): Promise<DigestState> => digestSchema.parse(await api<unknown>(`${BASE}/digest/`))
+
+/** Record that the offer was seen, answer it, or switch the digest off again. Safe to repeat. */
+export const postDigestAnswer = async (answer: DigestAnswer): Promise<DigestState> =>
+  digestSchema.parse(await send<unknown>('POST', `${BASE}/digest/`, { answer }))

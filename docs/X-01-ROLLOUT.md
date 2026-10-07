@@ -1054,13 +1054,29 @@ select count(*) from notifications_actiontoken where expires_at < now() - interv
 
 ### W3.7 Fatigue controls
 
+Goal: a student who keeps ignoring alerts is offered fewer of them. After five unclicked pushes in a row over at least three days, the inbox and the notifications settings show "Fewer alerts, one daily digest?" once per 30 days. Accepting moves every category but the timer to the inbox and sends one digest a day at the student's nudge time. One migration (`0005_digest`), one endpoint (`GET`/`POST /api/v1/notifications/digest/`), no new environment variable. Also the P3 hardening of gate G3.
+
+**What changed**
+
+- The rule (`domain/fatigue.should_offer`, pure): the last five sent pushes that count towards the cap (so timer alerts and the test push are left out), one per notification however many devices got it (`selectors/fatigue.recent_pushes`, on `notif_delivery_sent_idx`); none clicked (a click from the notification or the inbox resets the run); on at least three different days in the student's own time zone; no offer in the last 30 days (`digest_offered_at`); not already on the digest.
+- Offer: `GET digest/` answers `{offer, enabled, time}` and never writes. The card is shown in the inbox and in settings; as soon as it is shown the page posts `seen`, which records `digest_offered_at` (only when the offer is really due), so a reload does not bring it back. The card stays until answered. `decline` also records it.
+- Accept (`services/digest.answer`): push off and inbox on for tracker, revision, plan, content, evaluation, exam and motivation (the timer keeps its push; the weekly summary keeps its email), `digest_enabled` on, `nudge_enabled` on and the slot planned. `stop` (the "Switch back to separate alerts" button in settings) turns the digest off and puts those push switches back to their defaults.
+- The digest: new event `daily_digest` (catalogue category `digest`, outside the category grid, its switch is `digest_enabled`; priority 3, dedupe `digest:{local_date}`, expires after 6 hours). It rides the daily slot (`services/nudge`): for a student on the digest the slot sends the digest instead of the milestone, revision or thought push. It says, in this order, the exam milestone on its day, the chapters due for revision (both only when the student keeps that category in the inbox), and the unread inbox count, earlier digests not counted (`domain/digest`). It opens the inbox when something is unread, else revision, else home. A day with nothing to say sends nothing (logged `nudge_skipped reason=nothing_new`). Quiet hours, the cap, the master switch, `notifications_send` and `NOTIFICATIONS_DISABLED_EVENTS=daily_digest` apply as to any priority 3 push.
+- Web: `DigestContainer` (offer card, outcome card that takes focus and speaks politely, and in settings the "Daily digest is on" card with the way back), `useDigest`, `getDigest`/`postDigestAnswer` with Zod, analytics `digest_offer_shown` and `digest_answered` (`place`, `answer`). Design-system tokens and icons only; the buttons wrap at 320 px.
+- P3 hardening (`tests/test_p3_hardening.py`): every phase 3 push (stopwatch, goal, streak, nudge, revision, exam, content, digest) waits for the end of quiet hours, obeys its kill switch and the sending flag; a busy day of twenty alerts never goes past 3 counted pushes plus the one priority 1 slot; and on PostgreSQL the cap SQL below returns no rows.
+
+**Configure:** nothing new.
+
 ```bash
-git switch -c feat/x-01-w3-7-fatigue
-cd apps/api && source .venv/bin/activate && pytest modules/notifications -q && cd "$ROOT"
+cd "$ROOT/apps/api" && source .venv/bin/activate
+python manage.py migrate                                   # 0005_digest
+pytest modules/notifications -q && ruff check . && ruff format --check . && cd "$ROOT"
 pnpm --filter @artha/web exec vitest run src/modules/notifications && pnpm check
 ```
 
-Unit tests cover "five consecutive unclicked pushes over at least three days" and "offered once per 30 days". Gate G3 (PRD 13.2) is checked with the SQL from W2.7 plus this cap check, which must return no rows:
+**Roll back:** add `daily_digest` to `NOTIFICATIONS_DISABLED_EVENTS` to stop the digest pushes (students on the digest then only see the inbox and get timer alerts). The offer itself only shows with `notifications_ui`. To undo the code, revert the commit; the column can stay. Students already on the digest keep their push switches off until they switch back in settings (or run the reset SQL below).
+
+Gate G3 (PRD 13.2) uses the SQL from W2.7 plus this cap check, which must return no rows:
 
 ```sql
 select user_id, date_trunc('day', attempted_at at time zone 'Asia/Kolkata') as day, count(*)
@@ -1068,6 +1084,59 @@ from notifications_delivery
 where status = 'sent' and counts_toward_cap and attempted_at > now() - interval '7 days'
 group by 1, 2 having count(*) > 4;     -- cap is 3, plus one reserved slot for priority 1
 ```
+
+Who is on the digest and who has been offered it:
+
+```sql
+select count(*) filter (where digest_enabled) as on_digest,
+       count(*) filter (where digest_offered_at > now() - interval '30 days') as offered_30d
+from notifications_settings;
+```
+
+**Check on real devices** (a student with a phone, push on, flags on for you; use your own uuid):
+
+1. Force five ignored pushes over three days, then open the inbox: the offer card appears.
+
+   ```sql
+   update notifications_settings set digest_offered_at = null, digest_enabled = false where user_id = '<uuid>';
+   insert into notifications_notification (id, user_id, category, event, dedupe_key, title, body, deep_link, tag, priority, context, created_at, updated_at)
+   select gen_random_uuid(), '<uuid>', 'tracker', 'goal_reached', 'fatigue-test:' || g, 'Test', 'Test', '/app/tracker', '', 1, '{}', now() - (g || ' days')::interval, now()
+   from generate_series(0, 4) g;
+   insert into notifications_delivery (id, notification_id, user_id, channel, status, counts_toward_cap, attempt, attempted_at, sent_at, created_at, updated_at)
+   select gen_random_uuid(), n.id, n.user_id, 'push', 'sent', true, 1, n.created_at, n.created_at, now(), now()
+   from notifications_notification n where n.user_id = '<uuid>' and n.dedupe_key like 'fatigue-test:%';
+   ```
+
+2. Reload the inbox: the card is still there until you answer it; open settings in another tab: no second card (the offer was recorded).
+3. Choose "Keep separate alerts": "No change". Nothing in the category grid moved. `digest_offered_at` is now set; the card does not come back.
+4. Reset `digest_offered_at` to null, choose "Switch to a daily digest": in settings every category but Timer alerts has push off, and "Daily digest is on" shows your nudge time.
+5. Force the slot: `update notifications_settings set next_nudge_at = now() where user_id = '<uuid>';` and run the sweep: one push "Your daily digest" naming the unread count; it opens the inbox. Run the sweep again: nothing more.
+6. Start a 1-minute focus round: the timer alert still arrives at once.
+7. "Switch back to separate alerts": the push switches are back on and the next nudge is the thought again.
+8. Remove the test rows (deliveries first: the cascade lives in Django, not in the database):
+
+   ```sql
+   delete from notifications_delivery where notification_id in
+     (select id from notifications_notification where user_id = '<uuid>' and dedupe_key like 'fatigue-test:%');
+   delete from notifications_notification where user_id = '<uuid>' and dedupe_key like 'fatigue-test:%';
+   ```
+9. Check the card in Reading, Light, Dark and System at 320, 390, 768 and 1280 px: no horizontal scroll, buttons wrap, focus lands on the outcome card after answering.
+
+Reset a student who should not have been switched (the same as "Switch back"):
+
+```sql
+update notifications_settings set digest_enabled = false where user_id = '<uuid>';
+delete from notifications_preference where user_id = '<uuid>' and channel = 'push' and category <> 'timer' and enabled = false;
+```
+
+**Decisions**
+
+- The digest is a daily push at the nudge time that takes the daily slot's place (chosen with you), not the weekly email. It is built from what the slot already knows (milestone, revision) plus the unread count, so a student on the digest still hears about their exam and revision once a day.
+- Timer alerts are left out of the "unclicked" run (chosen with you): they are answered by acting on the timer, not by a click, and they never count towards the cap.
+- "Over at least 3 days" means three different calendar days in the student's time zone among the five pushes.
+- The offer counts as made when it is shown, not only when it is answered, so a student who ignores the card is not asked again for 30 days.
+- Accepting forces the inbox on for those categories (a student who had hidden one gets it back in the inbox), and turns the daily nudge on, because the digest goes out in that slot. Switching back restores the push defaults rather than the exact earlier choices (the earlier choices are not stored).
+- The digest has its own switch (`digest_enabled`) and is not a category in the grid; the master switch, quiet hours and the cap still apply to it.
 
 Roll out each P3 wave through the same flag ladder as section 4 (steps 2 to 4 are enough: 5%, 25%, 100%).
 

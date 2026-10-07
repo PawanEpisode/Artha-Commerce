@@ -28,6 +28,7 @@ import { notificationKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
 import type { NotificationSettings, SettingsPatch } from '../lib/schemas'
 import { browserTimeZone, proposeTimeZone, timeZoneOptions } from '../lib/timezone'
+import { DigestContainer } from './DigestContainer'
 import { NotificationsShell } from './NotificationsShell'
 
 const Card = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
@@ -84,6 +85,8 @@ function Body({ settings }: { settings: NotificationSettings }) {
         onEnable={() => void onEnable()}
         onCheckAgain={() => void capability.refresh()}
       />
+
+      <DigestContainer place="settings" />
 
       <Card id="master-heading" title="Alerts">
         <SwitchRow
