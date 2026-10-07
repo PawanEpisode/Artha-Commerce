@@ -2,15 +2,21 @@ import { describe, expect, it } from 'vitest'
 
 import { SETTINGS_LINKS, STUDY_LINKS, visibleLinks } from './workspace-nav'
 
-const off = { focus_timer: false, time_tracker: false, syllabus_coverage: false, notifications_ui: false }
+const off = { focus_timer: false, time_tracker: false, syllabus_coverage: false, notifications_ui: false, notes: false }
 
 describe('visibleLinks', () => {
   it('keeps every study and settings link when the flags are on', () => {
-    expect(visibleLinks(STUDY_LINKS).map((link) => link.to)).toEqual(['/app/focus', '/app/tracker', '/app/syllabus'])
+    expect(visibleLinks(STUDY_LINKS).map((link) => link.to)).toEqual([
+      '/app/focus',
+      '/app/tracker',
+      '/app/syllabus',
+      '/app/notes',
+    ])
     expect(visibleLinks(SETTINGS_LINKS).map((link) => link.to)).toEqual([
       '/app/settings/focus',
       '/app/settings/tracker',
       '/app/settings/coverage',
+      '/app/settings/notes',
       '/app/settings/notifications',
       '/app/account',
     ])
@@ -26,5 +32,14 @@ describe('visibleLinks', () => {
     const labels = (flags: typeof off) => visibleLinks(SETTINGS_LINKS, flags).map((link) => link.label)
     expect(labels(off)).toEqual(['Account'])
     expect(labels({ ...off, notifications_ui: true })).toEqual(['Notification settings', 'Account'])
+  })
+
+  it('shows Notes and its settings only when the notes flag is on', () => {
+    expect(visibleLinks(STUDY_LINKS, off).map((link) => link.label)).toEqual([])
+    expect(visibleLinks(STUDY_LINKS, { ...off, notes: true }).map((link) => link.label)).toEqual(['Notes'])
+    expect(visibleLinks(SETTINGS_LINKS, { ...off, notes: true }).map((link) => link.label)).toEqual([
+      'Notes settings',
+      'Account',
+    ])
   })
 })

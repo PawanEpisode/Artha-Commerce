@@ -269,6 +269,8 @@ def chapter_row(
             "mocks": student_targets.mocks,
         },
         "total_study_seconds": p.total_study_seconds if p else 0,
+        "notes_count": p.notes_count if p else 0,
+        "has_summary": p.has_summary if p else False,
         "last_studied_at": _iso(p.last_studied_at) if p else None,
         "last_revised_at": _iso(p.last_revised_at) if p else None,
         "next_revision_due": _iso(p.next_revision_due) if p else None,

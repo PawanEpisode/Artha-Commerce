@@ -183,6 +183,10 @@ class ChapterProgress(UUIDModel):
     mock_count = models.SmallIntegerField(default=0)
     revision_count = models.SmallIntegerField(default=0)
     total_study_seconds = models.IntegerField(default=0)
+    # Display only (F-03): items the student has in this chapter and whether an exam summary exists, from the latest
+    # `note_added` event. They never feed `coverage_pct` (ERD Q-F03-4).
+    notes_count = models.SmallIntegerField(default=0)
+    has_summary = models.BooleanField(default=False)
     first_started_at = models.DateTimeField(null=True, blank=True)
     last_studied_at = models.DateTimeField(null=True, blank=True)
     last_revised_at = models.DateTimeField(null=True, blank=True)

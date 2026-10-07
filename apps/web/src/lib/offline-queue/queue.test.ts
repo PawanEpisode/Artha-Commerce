@@ -7,10 +7,14 @@ import {
   enqueue,
   flush,
   isTransient,
+  parkedConflicts,
   pending,
   type QueuedWrite,
+  resetFlushState,
   resetOfflineQueue,
-} from './offlineQueue'
+  resolveParked,
+  withFlushLock,
+} from '.'
 
 const entry = (clientId: string, queuedAt: number, userId = 'u1'): QueuedWrite => ({
   clientId,
@@ -25,6 +29,7 @@ const httpError = (status: number) => Object.assign(new Error(`HTTP ${status}`),
 
 beforeEach(async () => {
   resetOfflineQueue()
+  resetFlushState()
   await clearOfflineQueue()
 })
 
@@ -116,5 +121,90 @@ describe('flush', () => {
     await flush('u1', send)
     expect(send).not.toHaveBeenCalled()
     expect(await pending('u2')).toHaveLength(1)
+  })
+})
+
+describe('scopes', () => {
+  const inScope = (clientId: string, queuedAt: number, scope: string): QueuedWrite => ({
+    ...entry(clientId, queuedAt),
+    scope,
+  })
+
+  it('keeps lanes apart: entries without a scope belong to the shared lane', async () => {
+    await enqueue(entry('core1', 10))
+    await enqueue(inScope('note1', 5, 'notes'))
+    expect((await pending('u1')).map((e) => e.clientId)).toEqual(['core1'])
+    expect((await pending('u1', 'notes')).map((e) => e.clientId)).toEqual(['note1'])
+  })
+
+  it('flushes one lane without touching the others', async () => {
+    await enqueue(entry('core1', 10))
+    await enqueue(inScope('note1', 5, 'notes'))
+    const send = vi.fn().mockResolvedValue({})
+    await flush('u1', send, { scope: 'notes' })
+    expect(send.mock.calls.map(([e]) => (e as QueuedWrite).clientId)).toEqual(['note1'])
+    expect(await pending('u1')).toHaveLength(1)
+  })
+
+  it('a stuck lane does not block another lane', async () => {
+    await enqueue(entry('core1', 10))
+    await enqueue(inScope('note1', 5, 'notes'))
+    const stuck = vi.fn().mockRejectedValue(new TypeError('offline'))
+    const fine = vi.fn().mockResolvedValue({})
+    await flush('u1', stuck, { scope: 'notes' })
+    const result = await flush('u1', fine)
+    expect(result.sent).toBe(1)
+    expect(await pending('u1', 'notes')).toHaveLength(1)
+  })
+})
+
+describe('parked conflicts', () => {
+  const conflict = Object.assign(new Error('conflict'), { status: 409 })
+  const parkOn = (error: unknown) => ((error as { status?: number }).status === 409 ? { theirs: 'x' } : null)
+
+  it('parks a refused write, keeps flushing the writes behind it and reports the count', async () => {
+    await enqueue(entry('a', 10))
+    await enqueue(entry('b', 20))
+    const send = vi.fn().mockRejectedValueOnce(conflict).mockResolvedValueOnce({})
+    const onParked = vi.fn()
+    const result = await flush('u1', send, { parkOn, onParked })
+    expect(result).toEqual({ sent: 1, dropped: 0, remaining: 0, parked: 1 })
+    expect(onParked).toHaveBeenCalledOnce()
+    expect(await pending('u1')).toHaveLength(0)
+    const parked = await parkedConflicts('u1', 'core')
+    expect(parked.map((p) => p.clientId)).toEqual(['a'])
+    expect(parked[0]!.detail).toEqual({ theirs: 'x' })
+  })
+
+  it('forgets a conflict once it is resolved, and never shows it to another user', async () => {
+    await enqueue(entry('a', 10))
+    await flush('u1', vi.fn().mockRejectedValue(conflict), { parkOn })
+    expect(await parkedConflicts('u2', 'core')).toHaveLength(0)
+    await resolveParked('a')
+    expect(await parkedConflicts('u1', 'core')).toHaveLength(0)
+  })
+
+  it('still drops an error that is not a conflict', async () => {
+    await enqueue(entry('a', 10))
+    const result = await flush('u1', vi.fn().mockRejectedValue(httpError(422)), { parkOn })
+    expect(result).toEqual({ sent: 0, dropped: 1, remaining: 0 })
+  })
+})
+
+describe('flush lock', () => {
+  it('runs the task when the browser has no Web Locks', async () => {
+    await expect(withFlushLock('x', async () => 7)).resolves.toBe(7)
+  })
+
+  it('reports busy and sends nothing when another tab holds the lock', async () => {
+    const locks = { request: vi.fn(async (_n: string, _o: unknown, cb: (l: null) => Promise<unknown>) => cb(null)) }
+    vi.stubGlobal('navigator', { locks })
+    await enqueue(entry('a', 10))
+    const send = vi.fn()
+    const result = await flush('u1', send)
+    vi.unstubAllGlobals()
+    expect(send).not.toHaveBeenCalled()
+    expect(result).toEqual({ sent: 0, dropped: 0, remaining: 1, busy: true })
+    expect(locks.request).toHaveBeenCalledWith('artha-flush:u1:core', { ifAvailable: true }, expect.any(Function))
   })
 })

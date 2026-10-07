@@ -18,6 +18,7 @@ export function useFeatureViewer(): FeatureViewer {
     focus_timer: useFeatureFlag('focus_timer'),
     time_tracker: useFeatureFlag('time_tracker'),
     syllabus_coverage: useFeatureFlag('syllabus_coverage'),
+    notes: useFeatureFlag('notes'),
   }
   const overview = useOverview(signedIn && flags.syllabus_coverage)
   const sessions = useSessionsPage({}, signedIn && flags.time_tracker)

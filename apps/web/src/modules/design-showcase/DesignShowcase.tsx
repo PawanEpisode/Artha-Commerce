@@ -77,6 +77,7 @@ import {
 import { useState } from 'react'
 
 import { NewPrimitivesShowcase } from './NewPrimitivesShowcase'
+import { NotesPrimitivesShowcase } from './NotesPrimitivesShowcase'
 
 const swatches = [
   ['background', 'bg-background'],
@@ -456,6 +457,7 @@ export function DesignShowcase() {
       </Block>
 
       <NewPrimitivesShowcase />
+      <NotesPrimitivesShowcase />
 
       <Block title="Motion">
         <Reveal>

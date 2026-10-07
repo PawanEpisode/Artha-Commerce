@@ -1,0 +1,85 @@
+{
+  "note": "Render-only checks for the web twin (the lint and plain-text corpus is shared with the server: apps/api/core/tests/richtext_cases.json).",
+  "cases": [
+    {
+      "id": "inline-formula",
+      "markdown": "The ratio is $\\frac{a}{b}$ here.",
+      "html_includes": ["katex"]
+    },
+    {
+      "id": "display-formula",
+      "markdown": "$$\n\\frac{a}{b}\n$$",
+      "html_includes": ["katex-display"]
+    },
+    {
+      "id": "broken-formula-does-not-throw",
+      "markdown": "Half typed $\\frac{a$ formula",
+      "html_includes": ["katex"]
+    },
+    {
+      "id": "heading-2",
+      "markdown": "## Section 17(5)\n\nBlocked credits.",
+      "html_includes": ["<h2>"]
+    },
+    {
+      "id": "task-list",
+      "markdown": "- [ ] Read\n- [x] Revise",
+      "html_includes": ["checkbox"]
+    },
+    {
+      "id": "table-scrolls-in-its-own-box",
+      "markdown": "| Rate | Item |\n| --- | --- |\n| 5% | Milk |",
+      "html_includes": ["<table>", "<th>", "overflow-x-auto"]
+    },
+    {
+      "id": "script-never-renders",
+      "markdown": "<script>alert(1)</script>\n\nSafe",
+      "html_excludes": ["<script", "<\\/script"]
+    },
+    {
+      "id": "event-handler-stripped",
+      "markdown": "<img src=x onerror=alert(1)>",
+      "html_excludes": ["onerror", "<img"]
+    },
+    {
+      "id": "javascript-link-stripped",
+      "markdown": "[click](javascript:alert(1))",
+      "html_excludes": ["javascript:"]
+    },
+    {
+      "id": "data-link-stripped",
+      "markdown": "[x](data:text/html;base64,AAAA)",
+      "html_excludes": ["data:"]
+    },
+    {
+      "id": "http-link-stripped",
+      "markdown": "[x](http://example.org)",
+      "html_excludes": ["http://example.org"]
+    },
+    {
+      "id": "https-link-opens-safely",
+      "markdown": "[ICAI](https://www.icai.org)",
+      "html_includes": ["https://www.icai.org", "noopener noreferrer"]
+    },
+    {
+      "id": "code-fence-is-text",
+      "markdown": "```\n![x](http://a.b/c.png) <b>\n```",
+      "html_includes": ["<pre>"]
+    },
+    {
+      "id": "blockquote",
+      "markdown": "> Section 16 is the key.",
+      "html_includes": ["<blockquote>"]
+    },
+    {
+      "id": "rule",
+      "markdown": "above\n\n---\n\nbelow",
+      "html_includes": ["<hr"]
+    },
+    {
+      "id": "external-image-not-fetched",
+      "markdown": "![x](https://example.org/i.png)",
+      "html_excludes": ["https://example.org/i.png"]
+    }
+  ]
+}

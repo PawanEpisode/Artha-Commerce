@@ -15,4 +15,6 @@ urlpatterns = [
     path("api/v1/", include("modules.tracking.urls")),
     path("api/v1/", include("modules.focus.urls")),
     path("api/v1/", include("modules.notifications.urls")),
+    path("api/v1/", include("modules.media.urls")),
+    path("api/v1/", include("modules.notes.urls")),
 ]

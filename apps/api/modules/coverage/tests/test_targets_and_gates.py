@@ -122,7 +122,7 @@ def test_two_mocks_never_show_two_of_one(api, ids, enrolled):
     assert row["mock_count"] == 1 and row["activities"]["mocks"]["done"] <= row["targets"]["mocks"]
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 @pytest.mark.skipif(connection.vendor != "postgresql", reason="row locks only serialise on PostgreSQL (CI runs it)")
 def test_two_parallel_logs_for_the_last_slot_create_exactly_one_event(api, ids, enrolled):
     user_id = Enrollment.objects.get().user_id

@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useCallback, useEffect, useState } from 'react'
 
-import { QueuedOffline, writeOrQueue } from '~/modules/coverage'
+import { QueuedOffline, writeOrQueue } from '~/lib/offline-queue'
 import { track } from '~/modules/observability'
 
 import {

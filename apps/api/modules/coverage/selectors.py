@@ -327,6 +327,8 @@ def export_all(user_id) -> dict:
                 "mock_count": p.mock_count,
                 "revision_count": p.revision_count,
                 "total_study_seconds": p.total_study_seconds,
+                "notes_count": p.notes_count,
+                "has_summary": p.has_summary,
                 "next_revision_due": p.next_revision_due.isoformat() if p.next_revision_due else None,
             }
             for p in ChapterProgress.objects.filter(user_id=user_id).select_related("chapter__subject")

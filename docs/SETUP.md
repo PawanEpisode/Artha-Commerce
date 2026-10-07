@@ -304,6 +304,7 @@ pnpm lint:api && pnpm test:api
 | `SUPABASE_URL`, `SUPABASE_JWT_SECRET` | | yes | JWT secret **yes** |
 | `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AVATAR_BUCKET` | | yes | service role key **yes** (never in the web project) |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |
+| `NOTES_TICK_SECRET` (F-03 notes cron tick; set `CRON_SECRET` to the same value for Vercel Cron) | | yes | **yes** |
 | `SENTRY_DSN` | | yes | no |
 | `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `EMAIL_BACKEND`, `EMAIL_TIMEOUT`, `NOTIFICATIONS_EMAIL_FROM` (weekly email) | | yes | no |
 | `EMAIL_HOST_PASSWORD` (weekly email) | | yes | **yes** |

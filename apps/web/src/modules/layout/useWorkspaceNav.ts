@@ -9,6 +9,7 @@ export function useWorkspaceNav() {
     time_tracker: useFeatureFlag('time_tracker'),
     syllabus_coverage: useFeatureFlag('syllabus_coverage'),
     notifications_ui: useFeatureFlag('notifications_ui'),
+    notes: useFeatureFlag('notes'),
   }
   return {
     study: visibleLinks(STUDY_LINKS, enabled),

@@ -30,9 +30,9 @@ export type FeatureIconKey =
   | 'study-time'
   | 'bell-ring'
 
-export type LiveToolPath = '/app/focus' | '/app/syllabus' | '/app/tracker' | '/app/tracker/reports'
+export type LiveToolPath = '/app/focus' | '/app/syllabus' | '/app/tracker' | '/app/tracker/reports' | '/app/notes'
 
-export type FeatureFlagName = 'focus_timer' | 'time_tracker' | 'syllabus_coverage'
+export type FeatureFlagName = 'focus_timer' | 'time_tracker' | 'syllabus_coverage' | 'notes'
 
 /** Where a shipped tool opens. Absent on features that are not built yet. */
 export interface FeatureTool {

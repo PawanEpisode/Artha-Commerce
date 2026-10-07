@@ -32,8 +32,13 @@ import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
 import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
 import { Route as AppFocusMiniRouteImport } from './routes/app.focus.mini'
+import { Route as AppNotesIndexRouteImport } from './routes/app.notes.index'
+import { Route as AppNotesNewRouteImport } from './routes/app.notes.new'
+import { Route as AppNotesSearchRouteImport } from './routes/app.notes.search'
+import { Route as AppNotesTrashRouteImport } from './routes/app.notes.trash'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
+import { Route as AppSettingsNotesRouteImport } from './routes/app.settings.notes'
 import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
@@ -43,6 +48,9 @@ import { Route as AppTrackerLogRouteImport } from './routes/app.tracker.log'
 import { Route as AppTrackerReportsRouteImport } from './routes/app.tracker.reports'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
 import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course'
+import { Route as AppNotesSubjectIndexRouteImport } from './routes/app.notes.$subject.index'
+import { Route as AppNotesSubjectChapterRouteImport } from './routes/app.notes.$subject.$chapter'
+import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteId'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
@@ -166,6 +174,26 @@ const AppFocusMiniRoute = AppFocusMiniRouteImport.update({
   path: '/focus/mini',
   getParentRoute: () => AppRoute,
 } as any)
+const AppNotesIndexRoute = AppNotesIndexRouteImport.update({
+  id: '/notes/',
+  path: '/notes/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotesNewRoute = AppNotesNewRouteImport.update({
+  id: '/notes/new',
+  path: '/notes/new',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotesSearchRoute = AppNotesSearchRouteImport.update({
+  id: '/notes/search',
+  path: '/notes/search',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotesTrashRoute = AppNotesTrashRouteImport.update({
+  id: '/notes/trash',
+  path: '/notes/trash',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   id: '/settings/coverage',
   path: '/settings/coverage',
@@ -174,6 +202,11 @@ const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
 const AppSettingsFocusRoute = AppSettingsFocusRouteImport.update({
   id: '/settings/focus',
   path: '/settings/focus',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsNotesRoute = AppSettingsNotesRouteImport.update({
+  id: '/settings/notes',
+  path: '/settings/notes',
   getParentRoute: () => AppRoute,
 } as any)
 const AppSettingsNotificationsRoute =
@@ -221,6 +254,21 @@ const OgCoursesCourseRoute = OgCoursesCourseRouteImport.update({
   id: '/og/courses/$course',
   path: '/og/courses/$course',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AppNotesSubjectIndexRoute = AppNotesSubjectIndexRouteImport.update({
+  id: '/notes/$subject/',
+  path: '/notes/$subject/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotesSubjectChapterRoute = AppNotesSubjectChapterRouteImport.update({
+  id: '/notes/$subject/$chapter',
+  path: '/notes/$subject/$chapter',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotesNNoteIdRoute = AppNotesNNoteIdRouteImport.update({
+  id: '/notes/n/$noteId',
+  path: '/notes/n/$noteId',
+  getParentRoute: () => AppRoute,
 } as any)
 const AppSyllabusSubjectIndexRoute = AppSyllabusSubjectIndexRouteImport.update({
   id: '/syllabus/$subject/',
@@ -285,8 +333,12 @@ export interface FileRoutesByFullPath {
   '/features/': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
+  '/app/notes/new': typeof AppNotesNewRoute
+  '/app/notes/search': typeof AppNotesSearchRoute
+  '/app/notes/trash': typeof AppNotesTrashRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
@@ -294,11 +346,15 @@ export interface FileRoutesByFullPath {
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus/': typeof AppFocusIndexRoute
+  '/app/notes/': typeof AppNotesIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
+  '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
+  '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
@@ -327,8 +383,12 @@ export interface FileRoutesByTo {
   '/features': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
+  '/app/notes/new': typeof AppNotesNewRoute
+  '/app/notes/search': typeof AppNotesSearchRoute
+  '/app/notes/trash': typeof AppNotesTrashRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
@@ -336,11 +396,15 @@ export interface FileRoutesByTo {
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus': typeof AppFocusIndexRoute
+  '/app/notes': typeof AppNotesIndexRoute
   '/app/syllabus': typeof AppSyllabusIndexRoute
   '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
+  '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
+  '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
+  '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
@@ -371,8 +435,12 @@ export interface FileRoutesById {
   '/features/': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
+  '/app/notes/new': typeof AppNotesNewRoute
+  '/app/notes/search': typeof AppNotesSearchRoute
+  '/app/notes/trash': typeof AppNotesTrashRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
@@ -380,11 +448,15 @@ export interface FileRoutesById {
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus/': typeof AppFocusIndexRoute
+  '/app/notes/': typeof AppNotesIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
+  '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
+  '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
@@ -416,8 +488,12 @@ export interface FileRouteTypes {
     | '/features/'
     | '/app/focus/history'
     | '/app/focus/mini'
+    | '/app/notes/new'
+    | '/app/notes/search'
+    | '/app/notes/trash'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
@@ -425,11 +501,15 @@ export interface FileRouteTypes {
     | '/app/tracker/reports'
     | '/og/courses/$course'
     | '/app/focus/'
+    | '/app/notes/'
     | '/app/syllabus/'
     | '/app/tracker/'
     | '/courses/$course/'
+    | '/app/notes/$subject/$chapter'
+    | '/app/notes/n/$noteId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
+    | '/app/notes/$subject/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
     | '/courses/$course/$level/$subject/$chapter'
@@ -458,8 +538,12 @@ export interface FileRouteTypes {
     | '/features'
     | '/app/focus/history'
     | '/app/focus/mini'
+    | '/app/notes/new'
+    | '/app/notes/search'
+    | '/app/notes/trash'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
@@ -467,11 +551,15 @@ export interface FileRouteTypes {
     | '/app/tracker/reports'
     | '/og/courses/$course'
     | '/app/focus'
+    | '/app/notes'
     | '/app/syllabus'
     | '/app/tracker'
     | '/courses/$course'
+    | '/app/notes/$subject/$chapter'
+    | '/app/notes/n/$noteId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
+    | '/app/notes/$subject'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
     | '/courses/$course/$level/$subject/$chapter'
@@ -501,8 +589,12 @@ export interface FileRouteTypes {
     | '/features/'
     | '/app/focus/history'
     | '/app/focus/mini'
+    | '/app/notes/new'
+    | '/app/notes/search'
+    | '/app/notes/trash'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
@@ -510,11 +602,15 @@ export interface FileRouteTypes {
     | '/app/tracker/reports'
     | '/og/courses/$course'
     | '/app/focus/'
+    | '/app/notes/'
     | '/app/syllabus/'
     | '/app/tracker/'
     | '/courses/$course/'
+    | '/app/notes/$subject/$chapter'
+    | '/app/notes/n/$noteId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
+    | '/app/notes/$subject/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
     | '/courses/$course/$level/$subject/$chapter'
@@ -708,6 +804,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppFocusMiniRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/notes/': {
+      id: '/app/notes/'
+      path: '/notes'
+      fullPath: '/app/notes/'
+      preLoaderRoute: typeof AppNotesIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notes/new': {
+      id: '/app/notes/new'
+      path: '/notes/new'
+      fullPath: '/app/notes/new'
+      preLoaderRoute: typeof AppNotesNewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notes/search': {
+      id: '/app/notes/search'
+      path: '/notes/search'
+      fullPath: '/app/notes/search'
+      preLoaderRoute: typeof AppNotesSearchRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notes/trash': {
+      id: '/app/notes/trash'
+      path: '/notes/trash'
+      fullPath: '/app/notes/trash'
+      preLoaderRoute: typeof AppNotesTrashRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/coverage': {
       id: '/app/settings/coverage'
       path: '/settings/coverage'
@@ -720,6 +844,13 @@ declare module '@tanstack/react-router' {
       path: '/settings/focus'
       fullPath: '/app/settings/focus'
       preLoaderRoute: typeof AppSettingsFocusRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings/notes': {
+      id: '/app/settings/notes'
+      path: '/settings/notes'
+      fullPath: '/app/settings/notes'
+      preLoaderRoute: typeof AppSettingsNotesRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/settings/notifications': {
@@ -785,6 +916,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OgCoursesCourseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/notes/$subject/': {
+      id: '/app/notes/$subject/'
+      path: '/notes/$subject'
+      fullPath: '/app/notes/$subject/'
+      preLoaderRoute: typeof AppNotesSubjectIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notes/$subject/$chapter': {
+      id: '/app/notes/$subject/$chapter'
+      path: '/notes/$subject/$chapter'
+      fullPath: '/app/notes/$subject/$chapter'
+      preLoaderRoute: typeof AppNotesSubjectChapterRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notes/n/$noteId': {
+      id: '/app/notes/n/$noteId'
+      path: '/notes/n/$noteId'
+      fullPath: '/app/notes/n/$noteId'
+      preLoaderRoute: typeof AppNotesNNoteIdRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/syllabus/$subject/': {
       id: '/app/syllabus/$subject/'
       path: '/syllabus/$subject'
@@ -845,18 +997,26 @@ interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppFocusMiniRoute: typeof AppFocusMiniRoute
+  AppNotesNewRoute: typeof AppNotesNewRoute
+  AppNotesSearchRoute: typeof AppNotesSearchRoute
+  AppNotesTrashRoute: typeof AppNotesTrashRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
+  AppSettingsNotesRoute: typeof AppSettingsNotesRoute
   AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
   AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
+  AppNotesIndexRoute: typeof AppNotesIndexRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
+  AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
+  AppNotesNNoteIdRoute: typeof AppNotesNNoteIdRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
+  AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
 }
 
@@ -868,18 +1028,26 @@ const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppFocusMiniRoute: AppFocusMiniRoute,
+  AppNotesNewRoute: AppNotesNewRoute,
+  AppNotesSearchRoute: AppNotesSearchRoute,
+  AppNotesTrashRoute: AppNotesTrashRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
+  AppSettingsNotesRoute: AppSettingsNotesRoute,
   AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,
   AppSettingsTrackerRoute: AppSettingsTrackerRoute,
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,
   AppTrackerReportsRoute: AppTrackerReportsRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
+  AppNotesIndexRoute: AppNotesIndexRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
   AppTrackerIndexRoute: AppTrackerIndexRoute,
+  AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
+  AppNotesNNoteIdRoute: AppNotesNNoteIdRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
+  AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
 }
 

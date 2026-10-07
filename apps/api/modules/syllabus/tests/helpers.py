@@ -57,3 +57,17 @@ def make_scheme(*, publish: bool = True, code: str = "2023", spec: dict | None =
 
         publish_scheme(scheme)
     return scheme
+
+
+def switch_scheme(old: Scheme, mutate=None, *, code: str = "2025") -> Scheme:
+    """Publishes a second scheme for the same level (old one ends at the May 2027 term, the new one starts in Sep 2027)."""
+    from modules.syllabus.services import publish_scheme
+
+    spec = deepcopy(SPEC)
+    if mutate:
+        mutate(spec)
+    new = make_scheme(publish=False, code=code, spec=spec, from_term="2027-09")
+    old.to_term = old.level.terms.get(code="2027-05")
+    old.save()
+    publish_scheme(new)
+    return new

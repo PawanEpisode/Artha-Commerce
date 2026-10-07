@@ -8,6 +8,7 @@ const flagsOn: FeatureViewer['flags'] = {
   focus_timer: true,
   time_tracker: true,
   syllabus_coverage: true,
+  notes: true,
 }
 
 const guest: FeatureViewer = { signedIn: false, flags: flagsOn }
@@ -57,6 +58,7 @@ describe('groupFeatures', () => {
       'syllabus-tracker',
       'time-tracker',
       'streaks-analytics',
+      'smart-notes',
     ])
     expect(soon.map((o) => o.feature.slug)).toContain('study-planner')
     expect(soon.some((o) => o.feature.status === 'live')).toBe(false)

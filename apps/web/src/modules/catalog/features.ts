@@ -105,10 +105,11 @@ export const features: Feature[] = [
     title: 'Smart Notes',
     tagline: 'Your notes, organised by chapter, searchable in a second.',
     description:
-      'Capture notes, highlights and formulae against the exact chapter they belong to, and find them instantly when you revise.',
+      'Write notes with headings, tables and formulas, file each one under the exact chapter it belongs to, and find it instantly when you revise. Notes save as you type, work offline and keep every version. Highlights and PDF notes are coming next.',
     icon: 'notebook-pen',
-    highlights: ['Notes linked to chapters', 'Instant search', 'Formula and section shortcuts'],
-    status: 'soon',
+    highlights: ['Notes linked to chapters', 'Instant search', 'Formulas, tables and offline writing'],
+    status: 'live',
+    tool: { to: '/app/notes', cta: 'Open my notes', flag: 'notes' },
   },
   {
     slug: 'flashcards',

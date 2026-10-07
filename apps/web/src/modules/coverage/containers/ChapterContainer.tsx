@@ -18,6 +18,7 @@ import {
   Switch,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+import type { ReactNode } from 'react'
 
 import { coverageBucket, track } from '~/modules/observability'
 import { CRUMB_LINK_CLASS, EntityCrumb, ReportIssue } from '~/modules/syllabus'
@@ -38,7 +39,22 @@ import { CoverageShell } from './CoverageShell'
 const date = (iso: string | null) =>
   iso ? new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : null
 
-function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: string }) {
+/** What another module needs to put its own section on the chapter page (stable keys, never ids). */
+export interface ChapterSlotContext {
+  subjectKey: string
+  chapterKey: string
+  chapterName: string
+}
+
+function ChapterBody({
+  subjectId,
+  chapterId,
+  renderNotes,
+}: {
+  subjectId: string
+  chapterId: string
+  renderNotes?: (context: ChapterSlotContext) => ReactNode
+}) {
   const { data, isPending, isError } = useChapterCoverage(chapterId)
   const { data: settings } = useCoverageSettings()
   const ctx = {
@@ -170,6 +186,10 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
         />
       </section>
 
+      {renderNotes
+        ? renderNotes({ subjectKey: subject.key, chapterKey: chapter.key, chapterName: chapter.name })
+        : null}
+
       <Card className="space-y-4 p-6">
         <h2 className="font-display text-xl font-bold">What makes up the percent</h2>
         <ComponentBreakdown chapter={chapter} weights={weights} />
@@ -234,6 +254,19 @@ function ChapterBody({ subjectId, chapterId }: { subjectId: string; chapterId: s
   )
 }
 
-export function ChapterContainer({ subjectId, chapterId }: { subjectId: string; chapterId: string }) {
-  return <CoverageShell>{() => <ChapterBody subjectId={subjectId} chapterId={chapterId} />}</CoverageShell>
+export function ChapterContainer({
+  subjectId,
+  chapterId,
+  renderNotes,
+}: {
+  subjectId: string
+  chapterId: string
+  /** A slot after the topics, for the notes section. Kept as a render prop so coverage never imports notes. */
+  renderNotes?: (context: ChapterSlotContext) => ReactNode
+}) {
+  return (
+    <CoverageShell>
+      {() => <ChapterBody subjectId={subjectId} chapterId={chapterId} renderNotes={renderNotes} />}
+    </CoverageShell>
+  )
 }

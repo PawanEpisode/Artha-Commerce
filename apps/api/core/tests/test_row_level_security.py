@@ -9,7 +9,7 @@ from django.apps import apps
 from django.db import connection
 from django.db.models.signals import post_migrate
 
-APP_LABELS = ("syllabus", "coverage", "tracking", "focus", "profiles", "notifications")
+APP_LABELS = ("syllabus", "coverage", "tracking", "focus", "profiles", "notifications", "core", "media", "notes")
 
 
 def app_tables(*labels: str) -> list[str]:
@@ -39,6 +39,21 @@ def test_the_tables_under_test_are_the_ones_we_think():
         "tracking_sessionaudit",
     } <= set(TABLES)
     assert {"focus_activetimer", "focus_focussettings"} <= set(TABLES)
+
+
+def test_the_notes_media_and_core_tables_are_covered():
+    assert {"core_job", "media_attachment"} <= set(TABLES)
+    assert {
+        "notes_quotaplan",
+        "notes_quotausage",
+        "notes_note",
+        "notes_noteversion",
+        "notes_tag",
+        "notes_itemtag",
+        "notes_noteimage",
+        "notes_settings",
+        "notes_monthlyusage",
+    } <= set(TABLES)
 
 
 def test_the_notification_tables_are_covered():

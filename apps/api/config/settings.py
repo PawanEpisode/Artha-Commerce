@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     "modules.tracking",
     "modules.focus",
     "modules.notifications",
+    "modules.media",
+    "modules.notes",
 ]
 
 MIDDLEWARE = [
@@ -157,6 +159,13 @@ REST_FRAMEWORK = {
         "notifications_test": "5/min",
         "notifications_unsubscribe": "20/min",
         "notifications_action": "30/min",
+        # F-03 notes (PRD 9). Cost-bearing limits are database quotas, not throttles: throttle state is per instance.
+        "notes_read": "300/min",
+        "notes_write": "600/min",
+        "notes_search": "60/min",
+        "notes_account": "6/hour",
+        "media_upload": "120/hour",
+        "media_read": "300/min",
     },
     "UNAUTHENTICATED_USER": None,
 }
@@ -164,7 +173,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", "http://localhost:3000")
 CORS_ALLOW_CREDENTIALS = False  # bearer tokens, not cookies
 # The queue and the scheduler call `notifications/internal/` server to server: never a browser, so never CORS.
-CORS_URLS_REGEX = r"^(?!/api/v1/notifications/internal/).*$"
+CORS_URLS_REGEX = r"^(?!/api/v1/(notifications|notes)/internal/).*$"
 
 # --- Supabase / Gemini ------------------------------------------------------------------------
 SUPABASE_URL = env("SUPABASE_URL").rstrip("/")
@@ -198,6 +207,10 @@ QSTASH_URL = env("QSTASH_URL")
 QSTASH_CURRENT_SIGNING_KEY = env("QSTASH_CURRENT_SIGNING_KEY")
 QSTASH_NEXT_SIGNING_KEY = env("QSTASH_NEXT_SIGNING_KEY")
 CRON_SECRET = env("CRON_SECRET")  # bearer secret for the sweep endpoint
+# F-03 notes: shared secret for the cron tick `/api/v1/notes/internal/tick/` (header X-Notes-Tick-Secret or Authorization: Bearer).
+# Empty means the tick refuses every caller. For Vercel Cron, which can only send `Authorization: Bearer $CRON_SECRET`, set it
+# to the same value as CRON_SECRET.
+NOTES_TICK_SECRET = env("NOTES_TICK_SECRET")
 # Weekly email (W3.5). The backend is SMTP in production and the console in development; sending needs a From address.
 EMAIL_BACKEND = env(
     "EMAIL_BACKEND",

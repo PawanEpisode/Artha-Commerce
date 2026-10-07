@@ -14,3 +14,4 @@ pywebpush>=2.5,<3
 qstash>=3.4,<4
 cryptography>=44
 tzdata
+diff-match-patch>=20241021

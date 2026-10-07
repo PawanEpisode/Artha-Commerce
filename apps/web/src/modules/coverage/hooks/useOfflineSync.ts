@@ -1,11 +1,11 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect } from 'react'
 
+import { flushQueue, pendingCount, type QueuedWrite } from '~/lib/offline-queue'
+
 import { ruleViolation } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
-import type { QueuedWrite } from '../lib/offlineQueue'
-import { flushQueue, pendingCount } from '../lib/queuedWrites'
 import { EVENT_ACTIVITY } from '../lib/rules'
 import type { EventType } from '../lib/types'
 
@@ -34,14 +34,14 @@ export function reportFlush(result: { sent: number; dropped: number } | null, re
  */
 export function useOfflineSync() {
   const qc = useQueryClient()
-  const count = useQuery({ queryKey: key, queryFn: pendingCount })
+  const count = useQuery({ queryKey: key, queryFn: () => pendingCount() })
   const waiting = count.data ?? 0
 
   useEffect(() => {
     let alive = true
     const sync = async () => {
       const refused: Array<[QueuedWrite, unknown]> = []
-      const result = await flushQueue((entry, error) => refused.push([entry, error])).catch(() => null)
+      const result = await flushQueue({ onDropped: (entry, error) => refused.push([entry, error]) }).catch(() => null)
       reportFlush(result, refused)
       if (!alive) return
       // What the server now holds is the truth; refresh everything the replayed writes touched.
@@ -60,7 +60,7 @@ export function useOfflineSync() {
     if (waiting === 0) return
     const timer = window.setInterval(() => {
       const refused: Array<[QueuedWrite, unknown]> = []
-      void flushQueue((entry, error) => refused.push([entry, error]))
+      void flushQueue({ onDropped: (entry, error) => refused.push([entry, error]) })
         .then((result) => reportFlush(result, refused))
         .then(() => qc.invalidateQueries({ queryKey: key }))
     }, 30_000)

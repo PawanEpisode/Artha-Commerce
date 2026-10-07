@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import hmac
 import json
 
 from rest_framework.response import Response
@@ -32,3 +33,17 @@ def service_role_headers(key: str) -> dict[str, str]:
     if key.count(".") == 2:
         headers["Authorization"] = f"Bearer {key}"
     return headers
+
+
+def request_has_secret(request, secret: str, header: str) -> bool:
+    """
+    True when the request carries `secret` in `header` or as `Authorization: Bearer <secret>` (what Vercel Cron sends).
+    Constant-time comparison, and an unset secret never matches, so an unconfigured deploy refuses every caller.
+    """
+    if not secret:
+        return False
+    supplied = request.headers.get(header, "")
+    if not supplied:
+        auth = request.headers.get("Authorization", "")
+        supplied = auth[len("Bearer ") :] if auth.startswith("Bearer ") else ""
+    return hmac.compare_digest(supplied.encode(), secret.encode())

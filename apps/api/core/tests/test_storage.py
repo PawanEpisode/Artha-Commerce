@@ -44,3 +44,26 @@ def test_a_refusal_becomes_a_storage_error(calls):
     calls.status = 404
     with pytest.raises(StorageError, match="404"):
         SupabaseStorage("https://x.supabase.co", "k").delete("avatars", ["p"])
+
+
+def test_signed_upload_and_read_urls_are_absolute_storage_urls(monkeypatch):
+    def fake(method, url, **kwargs):
+        body = {"url": "/object/upload/sign/b/p?token=t", "token": "t"} if "upload/sign" in url else None
+        body = body or {"signedURL": "/object/sign/b/p?token=r"}
+        return httpx.Response(200, json=body, request=httpx.Request(method, url))
+
+    monkeypatch.setattr(httpx, "request", fake)
+    store = SupabaseStorage("https://x.supabase.co", "k")
+    up = store.create_signed_upload("b", "p")
+    assert (up.url, up.token) == ("https://x.supabase.co/storage/v1/object/upload/sign/b/p?token=t", "t")
+    assert store.create_signed_url("b", "p", 3600) == "https://x.supabase.co/storage/v1/object/sign/b/p?token=r"
+
+
+def test_exists_is_false_on_404_and_errors_on_other_failures(calls):
+    store = SupabaseStorage("https://x.supabase.co", "k")
+    assert store.exists("b", "p") is True
+    calls.status = 404
+    assert store.exists("b", "p") is False
+    calls.status = 500
+    with pytest.raises(StorageError):
+        store.exists("b", "p")

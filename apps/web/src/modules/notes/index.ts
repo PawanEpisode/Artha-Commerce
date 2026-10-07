@@ -1,0 +1,13 @@
+// Public surface of the notes module. Other modules import from here only.
+export { ChapterNotesContainer } from './containers/ChapterNotesContainer'
+export { ChapterNotesSlot } from './containers/ChapterNotesSlot'
+export { NewNoteContainer, NoteEditorContainer } from './containers/NoteEditorContainer'
+export { NotesHubContainer } from './containers/NotesHubContainer'
+export { NotesSearchContainer } from './containers/NotesSearchContainer'
+export { NotesSettingsContainer } from './containers/NotesSettingsContainer'
+export { NotesTrashContainer } from './containers/NotesTrashContainer'
+export { SaveToNotes, type SaveToNotesProps } from './containers/SaveToNotes'
+export { SubjectNotesContainer } from './containers/SubjectNotesContainer'
+export { useChapterNotesOverview } from './hooks/useNotesQueries'
+export { newNoteSchema, noteEditorSchema, noteFilterSchema, noteSearchSchema } from './lib/filter-schema'
+export type { ChapterOverview, ClipSource } from './lib/types'

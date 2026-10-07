@@ -1,0 +1,561 @@
+{
+ "version": 1,
+ "cases": [
+  {
+   "id": "valid-plain-paragraph",
+   "profile": "note",
+   "markdown": "Section 17(5) blocks credit.",
+   "errors": [],
+   "warnings": [],
+   "text": "Section 17(5) blocks credit."
+  },
+  {
+   "id": "valid-plain-paragraph-q",
+   "profile": "question",
+   "markdown": "Which section applies?",
+   "errors": [],
+   "warnings": [],
+   "text": "Which section applies?"
+  },
+  {
+   "id": "valid-emphasis",
+   "profile": "note",
+   "markdown": "This is **strong**, *emphasis* and ~~gone~~.",
+   "errors": [],
+   "warnings": [],
+   "text": "This is strong, emphasis and gone."
+  },
+  {
+   "id": "valid-lists",
+   "profile": "note",
+   "markdown": "- one\n- two\n\n1. first\n2. second",
+   "errors": [],
+   "warnings": [],
+   "text": "one\ntwo\nfirst\nsecond"
+  },
+  {
+   "id": "valid-blockquote",
+   "profile": "question",
+   "markdown": "> quoted text\n\nanswer",
+   "errors": [],
+   "warnings": [],
+   "text": "quoted text\nanswer"
+  },
+  {
+   "id": "valid-inline-math",
+   "profile": "question",
+   "markdown": "Evaluate $\\frac{a}{b}$ when $a=2$.",
+   "errors": [],
+   "warnings": [],
+   "text": "Evaluate \\frac{a}{b} when a=2."
+  },
+  {
+   "id": "valid-display-math",
+   "profile": "note",
+   "markdown": "$$\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\n$$",
+   "errors": [],
+   "warnings": [],
+   "text": "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}"
+  },
+  {
+   "id": "valid-prices-are-not-math",
+   "profile": "note",
+   "markdown": "It costs $5 and then $10 more.",
+   "errors": [],
+   "warnings": [],
+   "text": "It costs 5 and then 10 more."
+  },
+  {
+   "id": "valid-escaped-dollar",
+   "profile": "question",
+   "markdown": "Pay \\$100 now.",
+   "errors": [],
+   "warnings": [],
+   "text": "Pay $100 now."
+  },
+  {
+   "id": "valid-https-link",
+   "profile": "note",
+   "markdown": "See [the Act](https://example.org/act).",
+   "errors": [],
+   "warnings": [],
+   "text": "See the Act."
+  },
+  {
+   "id": "valid-anchor-link",
+   "profile": "note",
+   "markdown": "Jump to [top](#top).",
+   "errors": [],
+   "warnings": [],
+   "text": "Jump to top."
+  },
+  {
+   "id": "valid-attachment-image",
+   "profile": "note",
+   "markdown": "![Balance sheet](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [],
+   "warnings": [],
+   "text": "Balance sheet"
+  },
+  {
+   "id": "valid-attachment-image-q",
+   "profile": "question",
+   "markdown": "![Figure 1](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [],
+   "warnings": [],
+   "text": "Figure 1"
+  },
+  {
+   "id": "valid-table",
+   "profile": "note",
+   "markdown": "| a | b |\n| --- | :-: |\n| 1 | 2 |\n| 3 | 4 |",
+   "errors": [],
+   "warnings": [],
+   "text": "a b\n1 2\n3 4"
+  },
+  {
+   "id": "valid-note-headings",
+   "profile": "note",
+   "markdown": "## Heading two\n\n### Heading three\n\n#### Heading four",
+   "errors": [],
+   "warnings": [],
+   "text": "Heading two\nHeading three\nHeading four"
+  },
+  {
+   "id": "valid-note-task-list",
+   "profile": "note",
+   "markdown": "- [ ] todo\n- [x] done",
+   "errors": [],
+   "warnings": [],
+   "text": "todo\ndone"
+  },
+  {
+   "id": "valid-note-rule",
+   "profile": "note",
+   "markdown": "above\n\n---\n\nbelow",
+   "errors": [],
+   "warnings": [],
+   "text": "above\nbelow"
+  },
+  {
+   "id": "valid-code-fence-hides-html",
+   "profile": "note",
+   "markdown": "```html\n<script>alert(1)</script>\n[x](javascript:alert(1))\n```",
+   "errors": [],
+   "warnings": [],
+   "text": "<script>alert(1)</script>\n[x](javascript:alert(1))"
+  },
+  {
+   "id": "valid-inline-code-hides-html",
+   "profile": "note",
+   "markdown": "Use `<b>` and `![x](http://e.com/i.png)` literally.",
+   "errors": [],
+   "warnings": [],
+   "text": "Use <b> and ![x](http://e.com/i.png) literally."
+  },
+  {
+   "id": "valid-hindi",
+   "profile": "note",
+   "markdown": "आयकर अधिनियम की धारा 80C",
+   "errors": [],
+   "warnings": [],
+   "text": "आयकर अधिनियम की धारा 80C"
+  },
+  {
+   "id": "valid-zwj-kept",
+   "profile": "note",
+   "markdown": "क्‍ष",
+   "errors": [],
+   "warnings": [],
+   "text": "क्‍ष",
+   "sanitised": "क्‍ष"
+  },
+  {
+   "id": "valid-empty",
+   "profile": "note",
+   "markdown": "",
+   "errors": [],
+   "warnings": [],
+   "text": ""
+  },
+  {
+   "id": "valid-table-at-limit-q",
+   "profile": "question",
+   "markdown": "| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |\n| - | - | - | - | - | - | - | - | - | - | - | - |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |\n| x | x | x | x | x | x | x | x | x | x | x | x |",
+   "errors": [],
+   "warnings": []
+  },
+  {
+   "id": "warn-raw-html",
+   "profile": "note",
+   "markdown": "<b>bold</b> text",
+   "errors": [],
+   "warnings": [
+    "raw_html"
+   ],
+   "text": "bold text"
+  },
+  {
+   "id": "warn-html-comment",
+   "profile": "question",
+   "markdown": "text <!-- hidden --> more",
+   "errors": [],
+   "warnings": [
+    "raw_html"
+   ],
+   "text": "text hidden more"
+  },
+  {
+   "id": "warn-note-missing-alt",
+   "profile": "note",
+   "markdown": "![](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [],
+   "warnings": [
+    "missing_alt"
+   ],
+   "text": ""
+  },
+  {
+   "id": "bad-javascript-link",
+   "profile": "note",
+   "markdown": "[x](javascript:alert(1))",
+   "errors": [
+    "link_scheme"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-data-link",
+   "profile": "question",
+   "markdown": "[x](data:text/html;base64,AAAA)",
+   "errors": [
+    "link_scheme"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-file-link",
+   "profile": "note",
+   "markdown": "[x](file:///etc/passwd)",
+   "errors": [
+    "link_scheme"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-http-link",
+   "profile": "note",
+   "markdown": "[x](http://example.org)",
+   "errors": [
+    "link_scheme"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-autolink-ftp",
+   "profile": "note",
+   "markdown": "<ftp://example.org/x>",
+   "errors": [
+    "link_scheme"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-external-image",
+   "profile": "note",
+   "markdown": "![x](https://example.org/i.png)",
+   "errors": [
+    "image_not_attachment"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-data-image",
+   "profile": "question",
+   "markdown": "![x](data:image/png;base64,AAAA)",
+   "errors": [
+    "image_not_attachment"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-svg-image",
+   "profile": "note",
+   "markdown": "![x](https://example.org/i.svg)",
+   "errors": [
+    "image_not_attachment"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-attachment-not-uuid",
+   "profile": "note",
+   "markdown": "![x](attachment:../../etc/passwd)",
+   "errors": [
+    "image_not_attachment"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-missing-alt",
+   "profile": "question",
+   "markdown": "![](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [
+    "missing_alt"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-href",
+   "profile": "question",
+   "markdown": "$\\href{http://e.com}{x}$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-url",
+   "profile": "note",
+   "markdown": "$\\url{http://e.com}$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-includegraphics",
+   "profile": "note",
+   "markdown": "$$\\includegraphics{x}$$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-html",
+   "profile": "note",
+   "markdown": "$\\htmlClass{x}{y}$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-def",
+   "profile": "note",
+   "markdown": "$\\def\\x{1}$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-newcommand",
+   "profile": "question",
+   "markdown": "$\\newcommand{\\x}{1}$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-tex-input",
+   "profile": "note",
+   "markdown": "$\\input{x}$",
+   "errors": [
+    "forbidden_tex"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "valid-tex-lookalikes",
+   "profile": "note",
+   "markdown": "$\\defeq \\urlx$ and $\\det A$",
+   "errors": [],
+   "warnings": [],
+   "text": "\\defeq \\urlx and \\det A"
+  },
+  {
+   "id": "bad-formula-too-long",
+   "profile": "note",
+   "markdown": "$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx$",
+   "errors": [
+    "formula_too_long"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-too-many-formulas",
+   "profile": "question",
+   "markdown": "$a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$ $a$",
+   "errors": [
+    "too_many_formulas"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-heading",
+   "profile": "question",
+   "markdown": "## not allowed",
+   "errors": [
+    "heading_level"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-note-heading-1",
+   "profile": "note",
+   "markdown": "# Title",
+   "errors": [
+    "heading_level"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-note-heading-5",
+   "profile": "note",
+   "markdown": "##### deep",
+   "errors": [
+    "heading_level"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-note-setext-1",
+   "profile": "note",
+   "markdown": "Title\n=====",
+   "errors": [
+    "heading_level"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-task-list",
+   "profile": "question",
+   "markdown": "- [ ] item",
+   "errors": [
+    "task_list_not_allowed"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-rule",
+   "profile": "question",
+   "markdown": "a\n\n---\n\nb",
+   "errors": [
+    "rule_not_allowed"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-footnote",
+   "profile": "note",
+   "markdown": "text[^1]\n\n[^1]: note",
+   "errors": [
+    "footnote_not_allowed"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-note-too-many-rows",
+   "profile": "note",
+   "markdown": "| a |\n| - |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |",
+   "errors": [
+    "table_too_large"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-note-too-many-cols",
+   "profile": "note",
+   "markdown": "| c | c | c | c | c | c | c | c | c | c | c | c | c |\n| - | - | - | - | - | - | - | - | - | - | - | - | - |\n| x | x | x | x | x | x | x | x | x | x | x | x | x |",
+   "errors": [
+    "table_too_large"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-table-41-rows",
+   "profile": "question",
+   "markdown": "| a |\n| - |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |\n| x |",
+   "errors": [
+    "table_too_large"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-note-41-images",
+   "profile": "note",
+   "markdown": "![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [
+    "too_many_images"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-13-images",
+   "profile": "question",
+   "markdown": "![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)\n![a](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [
+    "too_many_images"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-question-too-long",
+   "profile": "question",
+   "markdown": null,
+   "errors": [
+    "too_long"
+   ],
+   "warnings": [],
+   "repeat": {
+    "unit": "a",
+    "times": 20001
+   }
+  },
+  {
+   "id": "bad-note-too-long",
+   "profile": "note",
+   "markdown": null,
+   "errors": [
+    "too_long"
+   ],
+   "warnings": [],
+   "repeat": {
+    "unit": "a",
+    "times": 100001
+   }
+  },
+  {
+   "id": "ok-note-at-limit",
+   "profile": "note",
+   "markdown": null,
+   "errors": [],
+   "warnings": [],
+   "repeat": {
+    "unit": "a",
+    "times": 100000
+   }
+  },
+  {
+   "id": "sanitise-crlf",
+   "profile": "note",
+   "markdown": "a\r\nb\rc",
+   "errors": [],
+   "warnings": [],
+   "text": "a\nb\nc",
+   "sanitised": "a\nb\nc"
+  },
+  {
+   "id": "sanitise-control-and-bidi",
+   "profile": "note",
+   "markdown": "a\u0000b‮c﻿d\u0007e",
+   "errors": [],
+   "warnings": [],
+   "text": "abcde",
+   "sanitised": "abcde"
+  }
+ ]
+}

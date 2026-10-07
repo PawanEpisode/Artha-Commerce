@@ -355,7 +355,10 @@ def apply_event(
     """Applies one ledger event to the derived counters of a chapter. Shared by the live path and the rebuild."""
     payload = payload or {}
     count = int(payload.get("count", 1))
-    if progress.first_started_at is None or occurred_at < progress.first_started_at:
+    # Keeping a note is not studying: a note event leaves the start date alone (and, like every event, the percentage).
+    if event_type != EventType.NOTE_ADDED and (
+        progress.first_started_at is None or occurred_at < progress.first_started_at
+    ):
         progress.first_started_at = occurred_at
     if event_type in {
         EventType.TOPIC_DONE,
@@ -381,6 +384,10 @@ def apply_event(
     elif event_type == EventType.STUDY_TIME:
         # A negative value is a correction from tracking (a session was edited or deleted); never below zero.
         progress.total_study_seconds = max(0, progress.total_study_seconds + int(value or 0))
+    elif event_type == EventType.NOTE_ADDED:
+        # The ledger holds the latest count; replaying in time order (rebuild) ends on the newest one.
+        progress.notes_count = max(0, min(int(value or 0), 32000))
+        progress.has_summary = bool(payload.get("has_summary"))
     elif event_type == EventType.CONFIDENCE_SET:
         progress.confidence = payload.get("rating", "") or ""
     elif event_type == EventType.EXCLUDED:
@@ -466,6 +473,8 @@ def _recompute_enrollment(
             "confidence",
             "is_excluded",
             "implicit_topic_done",
+            "notes_count",
+            "has_summary",
             "updated_at",
         ],
     )
@@ -1240,6 +1249,7 @@ def rebuild_enrollment(enrollment: Enrollment) -> None:
         p.practice_count = p.mock_count = p.revision_count = p.total_study_seconds = 0
         p.first_started_at = p.last_studied_at = p.last_revised_at = p.next_revision_due = None
         p.confidence, p.is_excluded, p.implicit_topic_done = "", False, False
+        p.notes_count, p.has_summary = 0, False
 
     topic_state: dict = {}  # topic_id -> (is_done, when)
     chapter_topics: dict = defaultdict(list)
@@ -1312,6 +1322,8 @@ def rebuild_enrollment(enrollment: Enrollment) -> None:
             "confidence",
             "is_excluded",
             "implicit_topic_done",
+            "notes_count",
+            "has_summary",
             "updated_at",
         ],
     )

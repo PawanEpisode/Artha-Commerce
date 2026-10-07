@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect } from 'react'
 
-import { flushQueue, pendingCount } from '~/modules/coverage'
+import { flushQueue, pendingCount } from '~/lib/offline-queue'
 
 import { trackerKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
@@ -19,7 +19,7 @@ function report(result: Awaited<ReturnType<typeof flushQueue>>) {
  */
 export function useTrackerSync() {
   const qc = useQueryClient()
-  const count = useQuery({ queryKey: trackerKeys.offline, queryFn: pendingCount })
+  const count = useQuery({ queryKey: trackerKeys.offline, queryFn: () => pendingCount() })
   const waiting = count.data ?? 0
 
   useEffect(() => {
