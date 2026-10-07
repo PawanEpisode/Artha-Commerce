@@ -19,6 +19,7 @@ urlpatterns = [
         views.InboxClickView.as_view(),
         name="notifications-inbox-click",
     ),
+    path("notifications/thought/today/", views.ThoughtTodayView.as_view(), name="notifications-thought-today"),
     # Machines only: signature or cron secret, no student auth (views/internal.py).
     path(
         "notifications/internal/jobs/<uuid:job_id>/fire/",

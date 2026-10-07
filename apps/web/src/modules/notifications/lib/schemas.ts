@@ -139,3 +139,14 @@ export const inboxReadResponseSchema = z.object({ unread_count: z.number().int()
 
 /** What "mark read" covers: some items by id, or everything. */
 export type InboxReadTarget = { ids: readonly string[] } | { all: true }
+
+/** The day's thought (`GET /notifications/thought/today/`): one line, or null when there is nothing to show. */
+export const thoughtSchema = z.object({
+  id: z.string(),
+  body: z.string(),
+  attribution: z.string().nullable(),
+  shown_on: z.string(),
+})
+export type DailyThought = z.infer<typeof thoughtSchema>
+
+export const thoughtResponseSchema = z.object({ thought: thoughtSchema.nullable() })

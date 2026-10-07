@@ -50,6 +50,7 @@ class EventSpec:
     priority: int  # 0 exempt from quiet hours and the daily cap, 3 lowest
     dedupe_template: str  # filled with `dedupe.build_dedupe_key`
     expires_after: timedelta | None = None  # how long a held or late notification stays worth sending
+    skip_if_opened: bool = False  # not worth a push when the student already opened the app today (FR-N10)
 
     @property
     def exempt(self) -> bool:
@@ -92,7 +93,9 @@ _EVENT_LIST: tuple[EventSpec, ...] = (
     EventSpec("stopwatch_long", Category.TRACKER, 1, "stopwatch_long:{client_id}", expires_after=_HOUR),
     EventSpec("goal_reached", Category.TRACKER, 1, "goal:{local_date}", expires_after=6 * _HOUR),
     EventSpec("streak_at_risk", Category.TRACKER, 1, "streak:{local_date}", expires_after=3 * _HOUR),
-    EventSpec("daily_nudge", Category.MOTIVATION, 3, "nudge:{local_date}", expires_after=6 * _HOUR),
+    EventSpec(
+        "daily_nudge", Category.MOTIVATION, 3, "nudge:{local_date}", expires_after=6 * _HOUR, skip_if_opened=True
+    ),
     EventSpec("revision_due", Category.REVISION, 2, "revision:{local_date}", expires_after=12 * _HOUR),
     EventSpec("exam_milestone", Category.EXAM, 2, "exam:{days_left}", expires_after=12 * _HOUR),
     EventSpec("content_published", Category.CONTENT, 3, "content:{item_id}", expires_after=24 * _HOUR),

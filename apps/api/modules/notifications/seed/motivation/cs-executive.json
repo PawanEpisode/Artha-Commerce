@@ -1,0 +1,60 @@
+{
+  "course": "cs",
+  "level": "executive",
+  "messages": [
+    {
+      "key": "cs-executive-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Executive level rewards steady reading. Take the legal topics one at a time."
+    },
+    {
+      "key": "cs-executive-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Read a provision, then say it in your own words. That is understanding."
+    },
+    {
+      "key": "cs-executive-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Keep a calm routine and revise a little every day."
+    },
+    {
+      "key": "cs-executive-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Law papers need repeated revision. Revisit yesterday's section first."
+    },
+    {
+      "key": "cs-executive-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Practise writing short, precise answers within the time limit."
+    },
+    {
+      "key": "cs-executive-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Make a one-page summary for each chapter and revise from it."
+    },
+    {
+      "key": "cs-executive-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You are building real knowledge of law and governance. Good work."
+    },
+    {
+      "key": "cs-executive-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Each module you clear at Executive is a step toward Professional."
+    },
+    {
+      "key": "cs-executive-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "The effort you put in this week will show. Keep going."
+    }
+  ]
+}

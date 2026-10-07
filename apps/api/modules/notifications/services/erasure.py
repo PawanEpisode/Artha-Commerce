@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from django.db import transaction
 
-from ..models import Device, Notification, NotificationSettings, Preference, ScheduledJob
+from ..models import Device, MessageShown, Notification, NotificationSettings, Preference, ScheduledJob
 
 
 def delete_all_for_user(user_id) -> dict:
@@ -15,6 +15,7 @@ def delete_all_for_user(user_id) -> dict:
             "devices": Device.objects.filter(user_id=user_id).delete()[0],
             "jobs": ScheduledJob.objects.filter(user_id=user_id).delete()[0],
             "preferences": Preference.objects.filter(user_id=user_id).delete()[0],
+            "messages_shown": MessageShown.objects.filter(user_id=user_id).delete()[0],
             "settings": NotificationSettings.objects.filter(user_id=user_id).delete()[0],
         }
     return counts

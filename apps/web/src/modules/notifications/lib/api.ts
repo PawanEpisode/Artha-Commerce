@@ -4,6 +4,7 @@ import {
   categoriesResponseSchema,
   type ClickInfo,
   clickResponseSchema,
+  type DailyThought,
   deviceIdResponseSchema,
   type DeviceRegistration,
   devicesResponseSchema,
@@ -19,6 +20,7 @@ import {
   type PreferenceChange,
   type SettingsPatch,
   settingsSchema,
+  thoughtResponseSchema,
 } from './schemas'
 
 const send = <T>(method: string, path: string, body?: unknown) =>
@@ -94,3 +96,10 @@ export const isDeviceLimit = (error: unknown) =>
 
 /** 404: the device is already gone (removed elsewhere or pruned after the push service refused it). */
 export const isNotFound = (error: unknown) => error instanceof ApiError && error.status === 404
+
+/**
+ * Today's thought, or null when the library has nothing for this student. The first call of the day picks the line;
+ * every later call returns the same one.
+ */
+export const getTodayThought = async (): Promise<DailyThought | null> =>
+  thoughtResponseSchema.parse(await api<unknown>(`${BASE}/thought/today/`)).thought

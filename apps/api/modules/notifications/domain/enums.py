@@ -52,6 +52,31 @@ class Tone(StrEnum):
     CELEBRATORY = "celebratory"
 
 
+class MessageStatus(StrEnum):
+    """Life of a motivation message. Only `published` ones are ever picked; a draft is never shown or sent."""
+
+    DRAFT = "draft"
+    PUBLISHED = "published"
+    RETIRED = "retired"
+
+
+class MessagePhase(StrEnum):
+    """How close the student's exam is. `any` fits every day; the others only fit their window (see `motivation`)."""
+
+    FAR = "far"
+    NEAR = "near"
+    FINAL_WEEK = "final_week"
+    EXAM_DAY = "exam_day"
+    ANY = "any"
+
+
+class ShownChannel(StrEnum):
+    """Where the day's message was first used. The first one wins the day (`messageshown` is unique per day)."""
+
+    INAPP = "inapp"
+    PUSH = "push"
+
+
 class DeviceKind(StrEnum):
     WEB_PUSH = "web_push"
     DESKTOP_APP = "desktop_app"

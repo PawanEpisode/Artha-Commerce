@@ -1,0 +1,60 @@
+{
+  "course": "cma",
+  "level": "foundation",
+  "messages": [
+    {
+      "key": "cma-foundation-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Foundation is the start of a long career. Learn the basics without rushing."
+    },
+    {
+      "key": "cma-foundation-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Costing begins with simple ideas. Understand them and the rest follows."
+    },
+    {
+      "key": "cma-foundation-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "One clear concept a day is a good pace for Foundation."
+    },
+    {
+      "key": "cma-foundation-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Practise numerical questions daily. Accuracy builds with repetition."
+    },
+    {
+      "key": "cma-foundation-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Make the fundamentals of accounting and law second nature now."
+    },
+    {
+      "key": "cma-foundation-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Time yourself on objective questions. Speed and accuracy go together."
+    },
+    {
+      "key": "cma-foundation-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You have taken the first step toward a CMA career. Celebrate it."
+    },
+    {
+      "key": "cma-foundation-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "A Foundation chapter done? That is a good day's work."
+    },
+    {
+      "key": "cma-foundation-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Every concept you grasp now makes the next level easier. Nicely done."
+    }
+  ]
+}

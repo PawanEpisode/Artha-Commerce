@@ -138,3 +138,17 @@ def inbox_item_dict(row) -> dict:
         "read": row.read_at is not None,
         "created_at": row.created_at.isoformat(),
     }
+
+
+def thought_response(thought) -> dict:
+    """`GET thought/today/`: today's thought, or null when there is nothing to show."""
+    if thought is None:
+        return {"thought": None}
+    return {
+        "thought": {
+            "id": thought.id,
+            "body": thought.body,
+            "attribution": thought.attribution,
+            "shown_on": thought.shown_on.isoformat(),
+        }
+    }

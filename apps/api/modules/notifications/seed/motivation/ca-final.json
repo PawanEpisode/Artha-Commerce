@@ -1,0 +1,60 @@
+{
+  "course": "ca",
+  "level": "final",
+  "messages": [
+    {
+      "key": "ca-final-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Final is a long stretch. Pace yourself and keep your routine kind."
+    },
+    {
+      "key": "ca-final-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Depth takes time. Stay with one difficult topic until it opens up."
+    },
+    {
+      "key": "ca-final-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "You have studied hard to be here. Trust the work already done."
+    },
+    {
+      "key": "ca-final-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Final rewards writing practice. Answer in full, against the clock."
+    },
+    {
+      "key": "ca-final-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Cover the high-value chapters first, then widen your revision."
+    },
+    {
+      "key": "ca-final-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Test papers expose gaps early. Use them, then fix what they show."
+    },
+    {
+      "key": "ca-final-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You have reached the last level. That took years of effort. Keep going."
+    },
+    {
+      "key": "ca-final-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Every full answer you write now is proof of how far you have come."
+    },
+    {
+      "key": "ca-final-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "The finish line is real and getting closer. Enjoy each milestone on the way."
+    }
+  ]
+}

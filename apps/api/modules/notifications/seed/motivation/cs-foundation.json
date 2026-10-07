@@ -1,0 +1,60 @@
+{
+  "course": "cs",
+  "level": "foundation",
+  "messages": [
+    {
+      "key": "cs-foundation-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Foundation is a gentle start. Read widely and let the ideas settle."
+    },
+    {
+      "key": "cs-foundation-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Business ideas make more sense when you connect them to real companies."
+    },
+    {
+      "key": "cs-foundation-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "One short session a day builds the habit for later levels."
+    },
+    {
+      "key": "cs-foundation-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Build a daily reading and recall routine. Test yourself on what you read."
+    },
+    {
+      "key": "cs-foundation-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Short quizzes after each chapter lock the learning in."
+    },
+    {
+      "key": "cs-foundation-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Set a weekly target and check it on Sunday."
+    },
+    {
+      "key": "cs-foundation-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You have begun the Company Secretary journey. That deserves a smile."
+    },
+    {
+      "key": "cs-foundation-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Each chapter you complete builds your base. Nicely done."
+    },
+    {
+      "key": "cs-foundation-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Starting is the hardest step and you have taken it."
+    }
+  ]
+}

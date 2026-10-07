@@ -6,5 +6,6 @@ export const notificationKeys = {
   /** Prefix of everything the bell and the inbox page show; invalidating it refreshes both. */
   inbox: ['notifications', 'inbox'] as const,
   bell: ['notifications', 'inbox', 'bell'] as const,
+  thought: ['notifications', 'thought'] as const,
   inboxList: ['notifications', 'inbox', 'list'] as const,
 }

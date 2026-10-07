@@ -1,0 +1,60 @@
+{
+  "course": "ca",
+  "level": "intermediate",
+  "messages": [
+    {
+      "key": "ca-intermediate-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Intermediate asks for depth. Take one subject at a time and let it settle."
+    },
+    {
+      "key": "ca-intermediate-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Connect today's topic to one you already know. Understanding grows that way."
+    },
+    {
+      "key": "ca-intermediate-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Many chapters, one steady routine. You can manage it."
+    },
+    {
+      "key": "ca-intermediate-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Intermediate is won on practice. Attempt the questions before reading the answers."
+    },
+    {
+      "key": "ca-intermediate-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Plan the group, divide the chapters, and protect your study hours."
+    },
+    {
+      "key": "ca-intermediate-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Revise the heavy subjects twice. Once is rarely enough at this level."
+    },
+    {
+      "key": "ca-intermediate-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Reaching Intermediate was an achievement. Keep adding to it today."
+    },
+    {
+      "key": "ca-intermediate-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Every subject you finish lightens the work ahead of you."
+    },
+    {
+      "key": "ca-intermediate-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You are building real professional knowledge. Notice how far it has come."
+    }
+  ]
+}

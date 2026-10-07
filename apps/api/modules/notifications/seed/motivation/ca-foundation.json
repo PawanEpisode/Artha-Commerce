@@ -1,0 +1,60 @@
+{
+  "course": "ca",
+  "level": "foundation",
+  "messages": [
+    {
+      "key": "ca-foundation-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Foundation is about clear basics. Understand each idea once, properly."
+    },
+    {
+      "key": "ca-foundation-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "A journal entry made calmly is a journal entry made right."
+    },
+    {
+      "key": "ca-foundation-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Read slowly, solve steadily. The basics reward patience."
+    },
+    {
+      "key": "ca-foundation-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Foundation papers reward practice. Solve ten problems before you stop."
+    },
+    {
+      "key": "ca-foundation-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Make the basics automatic now and the later levels feel lighter."
+    },
+    {
+      "key": "ca-foundation-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Time yourself on today's questions. Speed comes from repetition."
+    },
+    {
+      "key": "ca-foundation-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You have started the CA journey. Every Foundation chapter is a real step."
+    },
+    {
+      "key": "ca-foundation-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Finished a Foundation chapter today? That is progress worth noting."
+    },
+    {
+      "key": "ca-foundation-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "The first level is the base of everything after it. Well done for building it."
+    }
+  ]
+}

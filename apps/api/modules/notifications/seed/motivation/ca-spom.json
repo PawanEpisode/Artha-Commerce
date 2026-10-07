@@ -1,0 +1,60 @@
+{
+  "course": "ca",
+  "level": "spom",
+  "messages": [
+    {
+      "key": "ca-spom-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Self-paced learning works best with a gentle routine. Set a small daily slot."
+    },
+    {
+      "key": "ca-spom-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Finish the module you started. A calm, complete pass beats a rushed one."
+    },
+    {
+      "key": "ca-spom-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Learning online is flexible. Keep a steady rhythm that suits you."
+    },
+    {
+      "key": "ca-spom-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Self-paced still needs a schedule. Fix a time and keep it."
+    },
+    {
+      "key": "ca-spom-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Set a module deadline for this week and protect it."
+    },
+    {
+      "key": "ca-spom-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Apply what the module taught. Try one exercise right now."
+    },
+    {
+      "key": "ca-spom-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Each module completed is a real step. Well done for learning on your own."
+    },
+    {
+      "key": "ca-spom-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Learning on your own schedule takes discipline. You are showing it."
+    },
+    {
+      "key": "ca-spom-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Another module closer. Be glad of the habit you are building."
+    }
+  ]
+}

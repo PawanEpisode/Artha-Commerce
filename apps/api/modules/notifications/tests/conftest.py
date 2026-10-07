@@ -76,3 +76,30 @@ def tracker(monkeypatch, django_capture_on_commit_callbacks):
     from modules.notifications.tests.tracker_bench import Tracker
 
     return Tracker(monkeypatch, django_capture_on_commit_callbacks)
+
+
+class Clock:
+    """A movable `timezone.now()` for tests that go through HTTP or the sweep, where `now` cannot be passed in."""
+
+    def __init__(self, now):
+        self.now = now
+
+    def set(self, now):
+        self.now = now
+        return now
+
+    def advance(self, **delta):
+        from datetime import timedelta
+
+        self.now += timedelta(**delta)
+        return self.now
+
+
+@pytest.fixture
+def clock(monkeypatch):
+    """Noon in India on Wednesday 7 October 2026; `django.utils.timezone.now` follows it (timestamps included)."""
+    from datetime import UTC, datetime
+
+    c = Clock(datetime(2026, 10, 7, 6, 30, tzinfo=UTC))
+    monkeypatch.setattr("django.utils.timezone.now", lambda: c.now)
+    return c

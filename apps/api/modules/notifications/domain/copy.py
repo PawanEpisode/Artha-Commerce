@@ -17,6 +17,8 @@ BODY_LIMIT = 100
 FOCUS_LINK = "/app/focus"
 TRACKER_LINK = "/app/tracker"
 SETTINGS_LINK = "/app/settings/notifications"
+HOME_LINK = "/app"
+BODY_COLUMN_LIMIT = 240  # the notification body column; a motivation line fits whole, it is not cut like the others
 
 
 @dataclass(frozen=True)
@@ -87,6 +89,15 @@ def _streak_at_risk(context: Mapping[str, Any]) -> Copy:
     return Copy(_fit(title, TITLE_LIMIT), _fit(body, BODY_LIMIT), TRACKER_LINK, f"streak:{context['local_date']}")
 
 
+def _daily_nudge(context: Mapping[str, Any]) -> Copy:
+    """One line from the motivation library, whole (it was written to fit), with its attribution when it has one."""
+    body = str(context["message"]).strip()
+    attribution = str(context.get("attribution") or "").strip()
+    if attribution:
+        body = f"{body} ({attribution})"
+    return Copy("A thought for today", _fit(body, BODY_COLUMN_LIMIT), HOME_LINK, f"nudge:{context['local_date']}")
+
+
 def _test_push(context: Mapping[str, Any]) -> Copy:
     return Copy("Test notification", "Notifications are working on this device.", SETTINGS_LINK, "test_push")
 
@@ -97,6 +108,7 @@ _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "stopwatch_long": _stopwatch_long,
     "goal_reached": _goal_reached,
     "streak_at_risk": _streak_at_risk,
+    "daily_nudge": _daily_nudge,
     "test_push": _test_push,
 }
 

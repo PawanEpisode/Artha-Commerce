@@ -87,3 +87,34 @@ def test_cap_for_low_priority_and_one_extra_for_priority_one():
     assert decide(facts("goal_reached", sent_today=DAILY_CAP)).action is Action.SEND
     assert decide(facts("goal_reached", sent_today=DAILY_CAP + 1)).reason is SuppressReason.CAP
     assert decide(facts("revision_due", sent_today=DAILY_CAP)).reason is SuppressReason.CAP  # priority 2: no extra
+
+
+# --- the daily nudge is pointless once the student opened the app today (FR-N10) ---------------------------------
+
+
+def test_the_nudge_is_suppressed_when_the_student_opened_the_app_today():
+    d = decide(facts(opened_today=True))
+    assert (d.action, d.reason) == (Action.SUPPRESS, SuppressReason.VISITED_TODAY)
+
+
+def test_the_nudge_is_sent_when_they_did_not():
+    assert decide(facts(opened_today=False)).action is Action.SEND
+
+
+def test_other_events_ignore_the_visit():
+    assert decide(facts(event="streak_at_risk", opened_today=True)).action is Action.SEND
+    assert decide(facts(event="timer_end", opened_today=True)).action is Action.SEND
+
+
+def test_visited_today_comes_after_preference_and_device_and_before_quiet_hours_and_the_cap():
+    assert decide(facts(opened_today=True, channel_enabled=False)).reason is SuppressReason.PREFERENCE
+    assert decide(facts(opened_today=True, has_active_device=False)).reason is SuppressReason.NO_DEVICE
+    assert decide(facts(opened_today=True, event_disabled=True)).reason is SuppressReason.FLAG_OFF
+    assert decide(facts(opened_today=True, now=NIGHT_IST)).reason is SuppressReason.VISITED_TODAY
+    assert decide(facts(opened_today=True, sent_today=DAILY_CAP)).reason is SuppressReason.VISITED_TODAY
+
+
+def test_only_the_daily_nudge_asks_to_be_skipped_after_a_visit():
+    from modules.notifications.domain.catalogue import EVENTS
+
+    assert {key for key, spec in EVENTS.items() if spec.skip_if_opened} == {"daily_nudge"}

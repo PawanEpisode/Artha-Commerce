@@ -2,8 +2,8 @@
 The per-minute safety net (PRD 9.2, FR-N16/N17). Called by pg_cron (POST) or Vercel cron (GET) with the cron secret.
 
 A run is a list of steps sharing one budget (jobs and seconds), so a Vercel function (30 s limit) never times out
-mid-batch; whatever is left runs in the next minute. Steps: firing overdue jobs, the streak-at-risk alert (W3.2), the delivery check (`push_slo_breach`) and the nightly
-retention prune. Nudges and digests (waves W3.x) are further steps appended to `STEPS`: each takes a `SweepRun` and reports what it did.
+mid-batch; whatever is left runs in the next minute. Steps: firing overdue jobs, the streak-at-risk alert (W3.2), the daily nudge (W3.3), the delivery check (`push_slo_breach`) and the nightly
+retention prune. Digests and the other calendar alerts (waves W3.x) are further steps appended to `STEPS`: each takes a `SweepRun` and reports what it did.
 
 Safe to run concurrently with itself and with the queue: each job is claimed atomically by `fire_job`, so two workers
 that pick the same job produce one delivery, and the loser simply moves on.
@@ -27,6 +27,7 @@ from ..models import ScheduledJob
 from ..selectors import push_slo_counts
 from ..services import retention as retention_service
 from . import jobs
+from .nudges import send_daily_nudges
 from .streak_alerts import send_streak_alerts
 
 MAX_JOBS = 200
@@ -145,6 +146,7 @@ def _guarded(step: Callable[[SweepRun], None]) -> Callable[[SweepRun], None]:
 STEPS: tuple[Callable[[SweepRun], None], ...] = (
     fire_overdue_jobs,
     _guarded(send_streak_alerts),
+    _guarded(send_daily_nudges),
     _guarded(check_slo),
     _guarded(prune_nightly),
 )

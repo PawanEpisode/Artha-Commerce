@@ -10,6 +10,7 @@ import { RevisionWidget } from './RevisionWidget'
 import { SetupWidget } from './SetupWidget'
 import { StudyHeader } from './StudyHeader'
 import { TargetsWidget } from './TargetsWidget'
+import { ThoughtWidget } from './ThoughtWidget'
 import { TodayWidget } from './TodayWidget'
 
 /**
@@ -22,6 +23,7 @@ export function WorkspaceHomeContainer() {
   return (
     <Container ref={root} className="space-y-8 py-8 sm:py-12">
       <StudyHeader />
+      <ThoughtWidget />
       <div className="grid items-stretch gap-4 lg:grid-cols-2">
         <TodayWidget />
         <ContinueWidget />

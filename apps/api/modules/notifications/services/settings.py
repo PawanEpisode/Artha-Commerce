@@ -8,7 +8,7 @@ from typing import Any
 from django.db import transaction
 from django.utils import timezone
 
-from ..domain.nudge import next_nudge_at
+from ..domain.nudge import schedule_nudge
 from ..domain.quiet_hours import is_valid_timezone
 from ..errors import InvalidSettings
 from ..models import NotificationSettings
@@ -33,8 +33,42 @@ def get_or_create_row(user_id) -> NotificationSettings:
 
 
 def _refresh_next_nudge(row: NotificationSettings, now: datetime) -> None:
-    due = row.nudge_enabled and row.push_master
-    row.next_nudge_at = next_nudge_at(now, row.timezone, row.nudge_time) if due else None
+    row.next_nudge_at = schedule_nudge(
+        now=now,
+        enabled=row.nudge_enabled,
+        master_on=row.push_master,
+        tz_name=row.timezone,
+        nudge_time=row.nudge_time,
+    )
+
+
+def ensure_next_nudge(row: NotificationSettings, now: datetime) -> bool:
+    """
+    A row that wants a nudge but has no time yet (created by the permission journey, which does not touch the nudge
+    settings) gets its first one. Changes the row in memory only; the caller saves. True when it set one.
+    """
+    if row.next_nudge_at is not None or not (row.nudge_enabled and row.push_master):
+        return False
+    _refresh_next_nudge(row, now)
+    return True
+
+
+def backfill_next_nudges(now: datetime, *, limit: int) -> int:
+    """
+    Self-healing for rows that predate `ensure_next_nudge` (or were written by hand): give up to `limit` of them their
+    first nudge time. A compare-and-set per row, so a student who changes their settings at the same moment wins.
+    """
+    done = 0
+    pending = NotificationSettings.objects.filter(
+        nudge_enabled=True, push_master=True, next_nudge_at__isnull=True
+    ).order_by("created_at")[:limit]
+    for row in list(pending):
+        if not ensure_next_nudge(row, now):
+            continue
+        done += NotificationSettings.objects.filter(pk=row.pk, next_nudge_at__isnull=True).update(
+            next_nudge_at=row.next_nudge_at, updated_at=timezone.now()
+        )
+    return done
 
 
 def update_settings(user_id, changes: dict[str, Any], *, now: datetime | None = None) -> NotificationSettings:
@@ -50,8 +84,10 @@ def update_settings(user_id, changes: dict[str, Any], *, now: datetime | None = 
         for field, value in changes.items():
             setattr(row, field, value)
         _validate(row)
-        if row._state.adding or _NUDGE_INPUTS & set(changes) or (row.nudge_enabled and row.next_nudge_at is None):
+        if row._state.adding or _NUDGE_INPUTS & set(changes):
             _refresh_next_nudge(row, now)
+        else:
+            ensure_next_nudge(row, now)
         row.save()
     return row
 

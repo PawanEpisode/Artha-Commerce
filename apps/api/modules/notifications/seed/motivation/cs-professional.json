@@ -1,0 +1,60 @@
+{
+  "course": "cs",
+  "level": "professional",
+  "messages": [
+    {
+      "key": "cs-professional-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Professional is an advanced stage. Move steadily and keep your notes tidy."
+    },
+    {
+      "key": "cs-professional-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Complex topics become clear with patient, repeated reading."
+    },
+    {
+      "key": "cs-professional-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Rest well before long study days. Clear thinking needs it."
+    },
+    {
+      "key": "cs-professional-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Apply provisions to case situations. That is how Professional is tested."
+    },
+    {
+      "key": "cs-professional-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Attempt drafting and case questions regularly, not only at the end."
+    },
+    {
+      "key": "cs-professional-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Revise the high-weight topics first, then the rest."
+    },
+    {
+      "key": "cs-professional-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You are near the finish of a long professional journey. Be proud."
+    },
+    {
+      "key": "cs-professional-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Every module you complete is proof of your commitment."
+    },
+    {
+      "key": "cs-professional-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "The end is in sight. Keep enjoying the progress you are making."
+    }
+  ]
+}

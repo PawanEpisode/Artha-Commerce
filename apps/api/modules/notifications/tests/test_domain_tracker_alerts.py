@@ -126,4 +126,4 @@ def test_every_tracker_alert_fits_a_lock_screen_and_links_inside_the_allow_list(
 
 def test_events_still_without_a_builder_stay_unsendable():
     with pytest.raises(UnknownEvent):
-        build_copy("daily_nudge", {})
+        build_copy("revision_due", {})

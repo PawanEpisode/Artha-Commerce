@@ -133,6 +133,8 @@ def _facts(notification, spec, devices, now, intended_at) -> PolicyInput:
         event_disabled=flags.event_disabled(spec.key) or not flags.sending_enabled(user_id),
         intended_at=intended_at,
         expires_at=notification.expires_at,
+        # Only asked for events that are pointless after a visit (the daily nudge), so no other send pays for the reads.
+        opened_today=spec.skip_if_opened and selectors.opened_app_since(user_id, start),
     )
 
 

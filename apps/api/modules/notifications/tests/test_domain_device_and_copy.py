@@ -57,4 +57,21 @@ def test_singular_minute_and_limits():
 def test_break_over_and_unknown():
     assert build_copy("break_over", {"client_id": "c1", "next_round": 3}).body == "Ready for round 3?"
     with pytest.raises(UnknownEvent):
-        build_copy("daily_nudge", {})
+        build_copy("revision_due", {})  # an event whose copy is not written yet cannot be sent unreviewed
+
+
+def test_daily_nudge_copy_is_the_library_line_whole_and_links_home():
+    c = build_copy("daily_nudge", {"message": "Small steps still count.", "local_date": "2026-10-07"})
+    assert (c.title, c.body, c.deep_link, c.tag) == (
+        "A thought for today",
+        "Small steps still count.",
+        "/app",
+        "nudge:2026-10-07",
+    )
+
+
+def test_daily_nudge_copy_adds_the_attribution_and_never_overflows_the_body_column():
+    c = build_copy("daily_nudge", {"message": "Keep going.", "attribution": "A. Teacher", "local_date": "d"})
+    assert c.body == "Keep going. (A. Teacher)"
+    long = build_copy("daily_nudge", {"message": "x" * 400, "local_date": "d"})
+    assert len(long.body) == 240 and long.body.endswith("…")

@@ -6,11 +6,12 @@ Order of the rules matters and is part of the contract:
   1. the event or the whole feature is switched off          -> suppress (flag_off)
   2. the student switched the category, channel or master off -> suppress (preference)
   3. the student has no device to reach                       -> suppress (no_device)
-  4. exempt events (timer) are sent at once, unless they are too late to be useful -> send or suppress (stale)
-  5. other events past their useful life                      -> suppress (stale)
-  6. inside quiet hours                                       -> defer to the end of the window, or suppress when it would expire first
-  7. the daily cap is used up                                 -> suppress (cap)
-  8. otherwise                                                -> send
+  4. an event that is pointless once the student opened the app today (the daily nudge) and they did -> suppress (visited_today)
+  5. exempt events (timer) are sent at once, unless they are too late to be useful -> send or suppress (stale)
+  6. other events past their useful life                      -> suppress (stale)
+  7. inside quiet hours                                       -> defer to the end of the window, or suppress when it would expire first
+  8. the daily cap is used up                                 -> suppress (cap)
+  9. otherwise                                                -> send
 """
 
 from __future__ import annotations
@@ -54,6 +55,7 @@ class PolicyInput:
     event_disabled: bool = False  # kill switch for the event or the feature, decided by the caller
     intended_at: datetime | None = None  # when the moment happened (a timer end); None means now
     expires_at: datetime | None = None
+    opened_today: bool = False  # the student opened the app since their local day began (read by the caller)
 
 
 @dataclass(frozen=True)
@@ -74,6 +76,8 @@ def decide(facts: PolicyInput) -> Decision:
         return _suppress(SuppressReason.PREFERENCE)
     if not facts.has_active_device:
         return _suppress(SuppressReason.NO_DEVICE)
+    if facts.spec.skip_if_opened and facts.opened_today:
+        return _suppress(SuppressReason.VISITED_TODAY)
 
     if facts.spec.exempt:
         late = facts.intended_at is not None and facts.now - facts.intended_at > EXEMPT_STALE_AFTER

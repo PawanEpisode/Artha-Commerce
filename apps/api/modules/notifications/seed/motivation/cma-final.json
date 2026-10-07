@@ -1,0 +1,60 @@
+{
+  "course": "cma",
+  "level": "final",
+  "messages": [
+    {
+      "key": "cma-final-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "The Final level calls for patience. Keep a steady plan and trust it."
+    },
+    {
+      "key": "cma-final-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Strategy and analysis are best learned by thinking, not rushing."
+    },
+    {
+      "key": "cma-final-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Take short breaks between long sessions. Your focus will last longer."
+    },
+    {
+      "key": "cma-final-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Case-style answers need practice. Write one in full today."
+    },
+    {
+      "key": "cma-final-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Prioritise the heavy papers and give them your best hours."
+    },
+    {
+      "key": "cma-final-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Mock tests under time reveal what to revise. Take one this week."
+    },
+    {
+      "key": "cma-final-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You are near the end of a demanding qualification. Well done so far."
+    },
+    {
+      "key": "cma-final-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "The depth you have gained is real. Let it give you confidence."
+    },
+    {
+      "key": "cma-final-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Every paper you prepare is a story you can be proud of."
+    }
+  ]
+}

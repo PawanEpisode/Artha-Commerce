@@ -1,0 +1,222 @@
+{
+  "course": null,
+  "level": null,
+  "messages": [
+    {
+      "key": "generic-any-calm-01",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Small steps, taken daily, cover more ground than you expect."
+    },
+    {
+      "key": "generic-any-calm-02",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Open the book for ten minutes. The rest tends to follow."
+    },
+    {
+      "key": "generic-any-calm-03",
+      "tone": "calm",
+      "phase": "any",
+      "body": "A quiet hour with one chapter is a good day's work."
+    },
+    {
+      "key": "generic-any-calm-04",
+      "tone": "calm",
+      "phase": "any",
+      "body": "You do not need a perfect day. You need a day that counts."
+    },
+    {
+      "key": "generic-any-calm-05",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Rest is part of the plan. Come back to it with a clear head."
+    },
+    {
+      "key": "generic-any-calm-06",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Pick one topic and make it clear. That is enough for now."
+    },
+    {
+      "key": "generic-any-calm-07",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Steady beats fast. Keep your pace and keep showing up."
+    },
+    {
+      "key": "generic-any-calm-08",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Whatever you finish today, you will know more than you did yesterday."
+    },
+    {
+      "key": "generic-any-driven-01",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Set a timer, pick a chapter, and start. Momentum does the rest."
+    },
+    {
+      "key": "generic-any-driven-02",
+      "tone": "driven",
+      "phase": "any",
+      "body": "One focused session now is worth three distracted ones later."
+    },
+    {
+      "key": "generic-any-driven-03",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Aim at your weakest topic first. That is where the marks are."
+    },
+    {
+      "key": "generic-any-driven-04",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Discipline is deciding once and starting before you feel ready."
+    },
+    {
+      "key": "generic-any-driven-05",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Practise the questions you avoid. They are the ones that move your score."
+    },
+    {
+      "key": "generic-any-driven-06",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Make today's target small enough to finish and firm enough to matter."
+    },
+    {
+      "key": "generic-any-driven-07",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Revise what you studied last week before it fades."
+    },
+    {
+      "key": "generic-any-driven-08",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Finish the chapter you started before you open a new one."
+    },
+    {
+      "key": "generic-any-celebratory-01",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Every chapter you complete is real progress. Take a moment to notice it."
+    },
+    {
+      "key": "generic-any-celebratory-02",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You keep going, and that is the hardest part. Well done."
+    },
+    {
+      "key": "generic-any-celebratory-03",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Look at how much of the syllabus is behind you now. That is your work."
+    },
+    {
+      "key": "generic-any-celebratory-04",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Showing up is a win on its own. Today can be another one."
+    },
+    {
+      "key": "generic-any-celebratory-05",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Consistency is building quietly. Your future self will thank you."
+    },
+    {
+      "key": "generic-any-celebratory-06",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Another day, another step forward. Celebrate it, then go again."
+    },
+    {
+      "key": "generic-any-celebratory-07",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You turned effort into progress this week. Keep that feeling close."
+    },
+    {
+      "key": "generic-any-celebratory-08",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Good habits are winning. Be proud of the routine you have built."
+    },
+    {
+      "key": "generic-far-calm",
+      "tone": "calm",
+      "phase": "far",
+      "body": "There is plenty of time. Build the base now, without hurry."
+    },
+    {
+      "key": "generic-far-driven",
+      "tone": "driven",
+      "phase": "far",
+      "body": "The early months decide the final weeks. Lay the groundwork now."
+    },
+    {
+      "key": "generic-far-celebratory",
+      "tone": "celebratory",
+      "phase": "far",
+      "body": "A long road, and you have started it. That already counts."
+    },
+    {
+      "key": "generic-near-calm",
+      "tone": "calm",
+      "phase": "near",
+      "body": "The exam is getting closer. Keep your routine and trust it."
+    },
+    {
+      "key": "generic-near-driven",
+      "tone": "driven",
+      "phase": "near",
+      "body": "Revision time. Cycle through your notes and test yourself often."
+    },
+    {
+      "key": "generic-near-celebratory",
+      "tone": "celebratory",
+      "phase": "near",
+      "body": "You have come a long way already. The finish is in sight."
+    },
+    {
+      "key": "generic-final_week-calm",
+      "tone": "calm",
+      "phase": "final_week",
+      "body": "Last week: light revision, good sleep, and no new panic."
+    },
+    {
+      "key": "generic-final_week-driven",
+      "tone": "driven",
+      "phase": "final_week",
+      "body": "Final week. Revise key points, then practise under time."
+    },
+    {
+      "key": "generic-final_week-celebratory",
+      "tone": "celebratory",
+      "phase": "final_week",
+      "body": "You prepared for this. This week is for polishing, not starting over."
+    },
+    {
+      "key": "generic-exam_day-calm",
+      "tone": "calm",
+      "phase": "exam_day",
+      "body": "Breathe. You know more than you think. Read each question slowly."
+    },
+    {
+      "key": "generic-exam_day-driven",
+      "tone": "driven",
+      "phase": "exam_day",
+      "body": "Exam day. Start with what you know well, and manage your time."
+    },
+    {
+      "key": "generic-exam_day-celebratory",
+      "tone": "celebratory",
+      "phase": "exam_day",
+      "body": "Today is the day you prepared for. Go and show what you have learned."
+    }
+  ]
+}

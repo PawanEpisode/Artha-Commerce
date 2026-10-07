@@ -11,6 +11,7 @@ from ..domain.enums import DECIDED_STATES, PermissionSource, PermissionState
 from ..domain.followup import MAX_ASKS, followup_due
 from ..errors import InvalidSettings
 from ..models import NotificationSettings
+from . import settings as settings_service
 
 
 def record_permission_state(user_id, state: str, source: str, *, now: datetime | None = None) -> NotificationSettings:
@@ -47,5 +48,6 @@ def record_permission_state(user_id, state: str, source: str, *, now: datetime |
             row.permission_decided_at = now
         row.permission_state = new_state
         row.permission_source = new_source
+        settings_service.ensure_next_nudge(row, now)  # this journey creates the row: the nudge needs a first time
         row.save()
     return row

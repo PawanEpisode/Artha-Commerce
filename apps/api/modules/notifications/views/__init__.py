@@ -3,6 +3,7 @@ from .inbox import InboxClickView, InboxReadView, InboxView
 from .internal import JobFireView, SweepView
 from .preferences import CategoriesView, PreferencesView
 from .settings import PermissionStateView, SettingsView
+from .thought import ThoughtTodayView
 
 __all__ = [
     "CategoriesView",
@@ -17,4 +18,5 @@ __all__ = [
     "PreferencesView",
     "SettingsView",
     "SweepView",
+    "ThoughtTodayView",
 ]

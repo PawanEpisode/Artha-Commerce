@@ -234,3 +234,59 @@ class ScheduledJob(UUIDModel):
                 fields=["updated_at"], name="notif_job_prune_idx", condition=~Q(status=enums.JobStatus.PENDING)
             ),
         ]
+
+
+class Message(UUIDModel):
+    """
+    One line of the motivation library (ERD 2.7). Editors write and publish them in the Django admin; only `published`
+    ones are ever picked, so nothing is shown or sent from a draft. `course` and `level` narrow who may get it (null
+    means anyone), `phase` narrows the exam window. Rows are retired, not deleted, once a student has seen them.
+    """
+
+    body = models.CharField(
+        max_length=240
+    )  # original text; a quote from a real person only with attribution and permission
+    attribution = models.CharField(max_length=80, null=True, blank=True)
+    course = models.ForeignKey("syllabus.Course", null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
+    level = models.ForeignKey("syllabus.Level", null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
+    tone = models.CharField(max_length=12, choices=choices(enums.Tone))
+    phase = models.CharField(max_length=12, choices=choices(enums.MessagePhase), default=enums.MessagePhase.ANY)
+    locale = models.CharField(max_length=8, default="en")
+    status = models.CharField(max_length=10, choices=choices(enums.MessageStatus), default=enums.MessageStatus.DRAFT)
+    published_at = models.DateTimeField(null=True, blank=True)
+    #: Stable name of a line that came from a seed file, so loading the seed twice never duplicates it. Null for
+    #: lines an editor wrote by hand.
+    seed_key = models.CharField(max_length=60, null=True, blank=True, unique=True)
+
+    class Meta:
+        db_table = "notifications_message"
+        constraints = [
+            models.CheckConstraint(condition=_in("tone", enums.Tone), name="notif_message_tone"),
+            models.CheckConstraint(condition=_in("phase", enums.MessagePhase), name="notif_message_phase"),
+            models.CheckConstraint(condition=_in("status", enums.MessageStatus), name="notif_message_status"),
+            models.CheckConstraint(
+                condition=~Q(status=enums.MessageStatus.PUBLISHED) | Q(published_at__isnull=False),
+                name="notif_message_published_at",
+            ),
+        ]
+        indexes = [models.Index(fields=["status", "tone", "phase"], name="ix_notif_message_pick")]
+
+    def __str__(self) -> str:
+        return self.body[:60]
+
+
+class MessageShown(UUIDModel):
+    """Which message a student got on which local day: one a day, shared by the thought card and the nudge push."""
+
+    user_id = models.UUIDField()
+    message = models.ForeignKey(Message, on_delete=models.PROTECT, related_name="shown")
+    shown_on = models.DateField()  # the student's local date
+    channel = models.CharField(max_length=8, choices=choices(enums.ShownChannel))  # the first one to use it wins
+
+    class Meta:
+        db_table = "notifications_messageshown"
+        constraints = [
+            models.UniqueConstraint(fields=["user_id", "shown_on"], name="notif_messageshown_day"),
+            models.CheckConstraint(condition=_in("channel", enums.ShownChannel), name="notif_messageshown_channel"),
+        ]
+        indexes = [models.Index(fields=["shown_on"], name="notif_messageshown_prune_idx")]

@@ -7,7 +7,7 @@ from django.db.models import Q, QuerySet
 from django.utils import timezone
 
 from ..domain.catalogue import CATEGORIES, is_enabled
-from ..domain.enums import Channel
+from ..domain.enums import Channel, SuppressReason
 from ..errors import InvalidCursor
 from ..models import Notification
 from .preferences import overrides
@@ -24,12 +24,16 @@ def hidden_categories(user_id) -> list[str]:
 
 
 def visible(user_id, *, now: datetime | None = None) -> QuerySet[Notification]:
-    """The student's own notifications that may show: not expired, and not in a category switched off for the inbox."""
+    """
+    The student's own notifications that may show: not expired, not in a category switched off for the inbox, and not a
+    nudge that was never sent because the student had already opened the app that day (they have seen the thought).
+    """
     now = now or timezone.now()
     return (
         Notification.objects.filter(user_id=user_id)
         .filter(Q(expires_at__isnull=True) | Q(expires_at__gt=now))
         .exclude(category__in=hidden_categories(user_id))
+        .exclude(deliveries__suppress_reason=SuppressReason.VISITED_TODAY)
     )
 
 

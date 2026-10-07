@@ -595,7 +595,7 @@ Goal: be able to see problems before students do, then run the device matrix.
 
 **What changed**
 
-- Retention (FR-N24): `manage.py prune_notifications` (`services/retention.py`, rules in `domain/retention.py`) deletes deliveries 90 days after `attempted_at`, notifications 180 days after `created_at` (their deliveries go with them), jobs that are not pending 30 days after `updated_at`, and devices revoked more than 30 days ago (their delivery rows stay, with the device cleared). Each delete is its own transaction of at most 1000 rows, so no lock lasts long, and running it twice does nothing the second time. `--dry-run` prints counts and deletes nothing; `--batch` (at most 1000) and `--max-rows` bound a run. The sweep runs it by itself once a night, between 21:30 and 21:35 UTC (03:00 in India), at most 20,000 rows per run. Action tokens and shown-message memory do not exist yet and join the job with W3.3 and W3.6.
+- Retention (FR-N24): `manage.py prune_notifications` (`services/retention.py`, rules in `domain/retention.py`) deletes deliveries 90 days after `attempted_at`, notifications 180 days after `created_at` (their deliveries go with them), jobs that are not pending 30 days after `updated_at`, and devices revoked more than 30 days ago (their delivery rows stay, with the device cleared). Each delete is its own transaction of at most 1000 rows, so no lock lasts long, and running it twice does nothing the second time. `--dry-run` prints counts and deletes nothing; `--batch` (at most 1000) and `--max-rows` bound a run. The sweep runs it by itself once a night, between 21:30 and 21:35 UTC (03:00 in India), at most 20,000 rows per run. Shown-message memory (`MessageShown`, 120 days) joined the job with W3.3; action tokens join with W3.6.
 - Delivery check (FR-N23): every sweep run judges the last 15 minutes of push attempts (`sent` plus `failed`; suppressed and queued rows are not attempts) and, when fewer than 98% were accepted or the 95th percentile of lateness is over 5 seconds, logs the error `push_slo_breach` with `attempts`, `accepted_ratio`, `p95_ms` and which target failed. **A window under 5 attempts never counts** (one failure out of two is noise); the number is `MIN_SAMPLE` in `domain/slo.py`. A failing check is logged as `sweep_step_failed` and never stops jobs from firing.
 - Sentry tags (FR-N23): every structured line carries `push_log` (its name) and, when it has one, `notification_event`, so an alert rule or a filter can pick `push_failed` or one event type.
 - Logs: a test runs a send, a revoked device, a suppression and a sweep, and fails if any line holds an endpoint, a key, an auth secret or the notification text, or uses a forbidden field name.
@@ -812,18 +812,66 @@ where kind in ('deliver_deferred', 'stopwatch_long') order by created_at desc li
 
 ### W3.3 Daily thought and nudge
 
+Goal: one short motivational line a day, shown in the app (a card on `/app`) and sent once as the daily nudge push, from a library that editors write and publish in the Django admin. One migration (`0002_motivation`: `Message` and `MessageShown`). `NOTIFICATIONS_DECLARATIVE_PUSH` stays off.
+
+**What changed**
+
+- Library: `Message` (body up to 240 characters, optional attribution, course and level or generic, tone, phase `far`/`near`/`final_week`/`exam_day`/`any`, language `en`, status `draft`/`published`/`retired`, `seed_key`). A published message must have `published_at`. `MessageShown` records what a student was shown, one row per student per local day (unique on `user_id`, `shown_on`), with the channel (`inapp` or `push`).
+- Editors: Django admin, Notifications, Messages. New lines start as drafts; the actions "Publish selected" and "Retire selected" call `services/motivation.publish` and `retire`, which refuse a line that fails the checks (empty, over 240 characters, a course and level that do not match). Once a line is not a draft its text and targeting are locked; only drafts can be deleted. Nothing is ever sent from a draft.
+- Seed: `manage.py load_motivation_seed` reads `seed/motivation/*.json` (126 short original lines: 36 generic, 9 for each of the ten levels). It loads drafts only, matches rows by `seed_key`, never overwrites or publishes an existing row, and skips (and reports) a course or level that is missing. Safe to run twice.
+- Thought: `GET /notifications/thought/today/` (`ThoughtTodayView`, throttled like the other notification reads, behind the `notifications_ui` flag; 403 `notifications_disabled` when off or when the student switched the motivation inbox off). The first call of the student's local day picks one published line and records it; every later call that day returns the same one. Response: `{"thought": null}` or `{"thought": {"id", "body", "attribution", "shown_on"}}`.
+- Choice (`domain/motivation.choose`, pure): a line never repeats for the same student within 60 days (shown on day D, it can return on D + 60). The pool is narrowed by the exam phase (a `final_week` line only in the last seven days; no exam date means `any` lines only), preferring the student's tone, then relaxing it: tone and phase, tone and any phase, any tone and phase, any tone and any phase. The pick inside a tier is a hash of student and date, so a retry chooses the same line. When every fitting line was seen in the last 60 days, or none fits, the answer is "exhausted" or "empty": nothing is shown or sent and nothing is repeated to fill the gap (the card hides, no push).
+- Nudge schedule: `NotificationSettings.next_nudge_at` is kept per student from the time zone, the nudge time and the master and category switches (`domain/nudge.schedule_nudge`, `zoneinfo`). A time that does not exist on the day the clocks go forward is sent at the first moment after the gap; a repeated hour is sent once. Changing the zone, the time or a switch recomputes it; a student who has none gets one from a bounded backfill (200 rows per sweep minute) and from the permission journey.
+- Nudge sweep: `scheduling/nudges.send_daily_nudges`, after the streak step, guarded and bounded like the others (batches of 100, oldest due first, one student's failure is logged by error type and skipped). Per student `services/nudge.process_due_nudge` claims the row with a compare-and-set on `next_nudge_at` (so two overlapping sweeps send at most one), judges it read-only (`judge_nudge`: more than 6 hours late is stale, skipped and re-planned), checks the strict `notifications_send` flag, reserves a line (channel `push`), creates the notification and calls `notify.deliver`. Dedupe key `nudge:{local_date}` is the second guard.
+- Visited today: `daily_nudge` has `skip_if_opened`. In the policy, a student who opened the app on their local day gets `push_suppressed` with reason `visited_today`, and the inbox hides that row. "Opened" means a last-visit report from the web (sent when the tab hides) or a thought card fetch that day. The rule sits in the policy, so the deferred re-judge honours it too: a visit during quiet hours cancels the later push.
+- Existing rules all apply to the nudge: priority 3 (held by quiet hours, subject to the daily cap), master switch, category and channel preferences, `NOTIFICATIONS_DISABLED_EVENTS`, the deep-link allow-list (`/app`).
+- Retention and privacy: `MessageShown` rows are pruned after 120 days by `prune_notifications` (`messages_shown` in its report), deleted with the account (`messages_shown` in the erasure count) and listed in the account export as `daily_thoughts`.
+- Web: `useTodayThought` (notifications barrel) and a `ThoughtWidget` on `/app` in the workspace module, an independent card with its own skeleton, error and Try again. It hides itself when the flag is off, the server says notifications are disabled, or there is no line. Design-system tokens and the `Sparkles` icon only.
+
+**Configure:** nothing new. The thought and the nudge ride on `NOTIFICATIONS_ENABLED`, the `notifications_ui` flag (card) and the strict `notifications_send` flag (push). The nudge needs the per-minute sweep from W2.3.
+
 ```bash
-git switch -c feat/x-01-w3-3-thought-nudge
-cd apps/api && source .venv/bin/activate
-python manage.py makemigrations notifications -n motivation
+cd "$ROOT/apps/api" && source .venv/bin/activate
+python manage.py makemigrations --check --dry-run          # No changes detected once 0002_motivation exists
 python manage.py migrate
-python manage.py load_motivation_seed              # loads drafts only; safe to run twice
-pytest modules/notifications -q
+python manage.py load_motivation_seed                      # drafts only; safe to run twice
+pytest modules/notifications -q && ruff check . && ruff format --check . && cd "$ROOT"
+pnpm check
 ```
 
-Production: migrate first, merge, then `python manage.py load_motivation_seed` against production the same way as the migration (section 3 environment), then an editor opens `https://api.<your-domain>/<DJANGO_ADMIN_PATH>/`, Notifications, Messages, reviews the drafts and publishes them. Nothing is sent from a draft.
+Production: migrate first, merge, then run `python manage.py load_motivation_seed` against production the same way as the migration (section 3 environment). Then an editor opens `https://api.<your-domain>/<DJANGO_ADMIN_PATH>/`, Notifications, Messages, reviews the drafts, selects them and runs "Publish selected". Until then the card and the nudge have nothing to show and stay quiet.
 
-Check: first open of the day shows one thought card; reload shows the same one. For the nudge, in the SQL editor `update notifications_settings set next_nudge_at = now() where user_id = '<your uuid>';`, then run the sweep (section 3, W2.3 curl). A student who opened the app today gets no push (`push_suppressed`, reason `visited_today`); one who did not, gets exactly one. Change the time zone in settings and confirm `next_nudge_at` moves.
+**Roll back:** add `daily_nudge` to `NOTIFICATIONS_DISABLED_EVENTS` and redeploy to stop the push (the sweep still plans the next time but creates nothing); set the `notifications_ui` flag to 0% to hide the card; retire lines in the admin to take them out of rotation. Setting `notifications_send` to 0% or `NOTIFICATIONS_ENABLED=false` stops all delivery. To undo the code, revert the commit; the two new tables can stay, because older code ignores them and `0002_motivation` only adds tables.
+
+Check what was shown and sent with:
+
+```sql
+select user_id, shown_on, channel, message_id from notifications_messageshown order by created_at desc limit 10;
+select user_id, next_nudge_at from notifications_notificationsettings where next_nudge_at is not null limit 10;
+select status, suppress_reason, attempted_at from notifications_delivery d
+join notifications_notification n on n.id = d.notification_id
+where n.event = 'daily_nudge' order by d.attempted_at desc limit 10;
+```
+
+**Check on real devices** (after deploy and after an editor published at least one line for your course and level):
+
+1. Open `/app` for the first time today: one "A thought for today" card. Reload and come back later: the same line. The next day: a different one.
+2. In the SQL editor `update notifications_settings set next_nudge_at = now() where user_id = '<your uuid>';`, close the app without opening `/app` that day (or use another account), then run the sweep (section 3, W2.3 curl): one push, "A thought for today", and tapping it opens `/app`. `next_nudge_at` moves to tomorrow. Run the sweep again: nothing new.
+3. Repeat step 2 on an account that opened `/app` today: no push; the delivery row is `suppressed` with reason `visited_today`, and the inbox does not show the nudge.
+4. Change the time zone or the nudge time in settings: `next_nudge_at` moves to the next occurrence in the new zone.
+5. Quiet hours around now: the nudge is held and arrives at the end of the window, unless you open the app first, in which case it never arrives.
+6. Turn the Motivation category off for push: no nudge. Turn the Motivation inbox switch off: the card disappears.
+7. Add `daily_nudge` to `NOTIFICATIONS_DISABLED_EVENTS`, redeploy, run the sweep: nothing is created.
+8. Check all four themes and widths from 320 to 1280 px for the card.
+
+**Decisions**
+
+- Visited today uses the existing last-visit report plus the thought card fetch, because the report is sent only when the tab hides and a student who is still reading `/app` would otherwise get a nudge.
+- The visited rule lives in the policy rather than the sweep, so the deferred re-judge applies it as well.
+- A nudge more than 6 hours late (the sweep was down) is skipped, not sent, and the next one is planned; this is the catalogue's expiry for `daily_nudge`.
+- Sending is claim-first (compare-and-set on `next_nudge_at`) rather than holding row locks during a network call; the dedupe key is the backstop.
+- When the library is exhausted or empty, nothing is shown or sent. Repeating a line inside 60 days was judged worse than a quiet day.
+- Seed lines are original and short (at most 82 characters, plain ASCII), with no quotations, so there is no copyright question and no attribution is needed.
 
 ### W3.4 Revision, exam countdown, content
 

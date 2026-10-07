@@ -1,0 +1,60 @@
+{
+  "course": "cma",
+  "level": "intermediate",
+  "messages": [
+    {
+      "key": "cma-intermediate-calm-1",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Intermediate is demanding but manageable. One paper at a time."
+    },
+    {
+      "key": "cma-intermediate-calm-2",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Work through a costing problem slowly and check each step."
+    },
+    {
+      "key": "cma-intermediate-calm-3",
+      "tone": "calm",
+      "phase": "any",
+      "body": "Allow yourself time to understand, not just to memorise."
+    },
+    {
+      "key": "cma-intermediate-driven-1",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Solve costing and management problems every day. Practice is the method."
+    },
+    {
+      "key": "cma-intermediate-driven-2",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Work backwards from past questions to find what matters most."
+    },
+    {
+      "key": "cma-intermediate-driven-3",
+      "tone": "driven",
+      "phase": "any",
+      "body": "Revise formulas weekly so they are ready when you need them."
+    },
+    {
+      "key": "cma-intermediate-celebratory-1",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "You are well into the CMA journey. Look at what you already know."
+    },
+    {
+      "key": "cma-intermediate-celebratory-2",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Each paper you prepare is a mark of growth. Keep it up."
+    },
+    {
+      "key": "cma-intermediate-celebratory-3",
+      "tone": "celebratory",
+      "phase": "any",
+      "body": "Your numbers are getting sharper every week. Be proud of that."
+    }
+  ]
+}

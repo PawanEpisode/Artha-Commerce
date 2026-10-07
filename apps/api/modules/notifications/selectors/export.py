@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from ..models import Device, Notification, NotificationSettings, Preference
+from django.db.models import F
+
+from ..models import Device, MessageShown, Notification, NotificationSettings, Preference
 
 
 def export_all(user_id) -> dict:
@@ -18,5 +20,11 @@ def export_all(user_id) -> dict:
             Notification.objects.filter(user_id=user_id)
             .order_by("-created_at")
             .values("event", "category", "title", "body", "deep_link", "read_at", "created_at")[:500]
+        ),
+        # The daily thoughts the student was given (what the card or the nudge showed, and where it was first used).
+        "daily_thoughts": list(
+            MessageShown.objects.filter(user_id=user_id)
+            .order_by("-shown_on")
+            .values("shown_on", "channel", text=F("message__body"))
         ),
     }

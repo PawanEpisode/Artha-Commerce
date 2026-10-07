@@ -53,7 +53,7 @@ def test_unknown_event_and_event_without_copy_are_refused_and_store_nothing():
     with pytest.raises(UnknownEvent):
         create_notification(USER, "nope", context={}, dedupe_parts={}, now=NOW)
     with pytest.raises(UnknownEvent):  # catalogued but no reviewed copy yet
-        create_notification(USER, "daily_nudge", context={}, dedupe_parts={"local_date": "x"}, now=NOW)
+        create_notification(USER, "revision_due", context={}, dedupe_parts={"local_date": "x"}, now=NOW)
     assert not Notification.objects.exists()
 
 
