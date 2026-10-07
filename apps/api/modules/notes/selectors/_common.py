@@ -9,13 +9,13 @@ from dataclasses import dataclass, field
 from datetime import date, datetime, time, timedelta
 from typing import Any, Generic, TypeVar
 
-from django.db.models import Q, QuerySet
+from django.db.models import Exists, OuterRef, Q, QuerySet
 
 from modules.syllabus import selectors as syllabus
 
 from ..domain.quota import IST
 from ..errors import BadCursor
-from ..models import ItemTag, Note, NoteImage, Tag
+from ..models import Document, DocumentChapter, ItemTag, Note, NoteImage, Tag
 
 MAX_LIMIT = 100
 T = TypeVar("T")
@@ -107,6 +107,42 @@ def live_notes(user_id) -> QuerySet[Note]:
     return Note.objects.filter(user_id=user_id, deleted_at__isnull=True)
 
 
+UNLISTED_DOCUMENT_STATUSES = (
+    "reserved",
+    "expired",
+    "rejected",
+)  # no file in the library: an upload that never finished
+
+
+def live_documents(user_id) -> QuerySet[Document]:
+    """Documents that count in a chapter or the aggregated view: not in the trash, and a real library entry."""
+    return Document.objects.filter(user_id=user_id, deleted_at__isnull=True).exclude(
+        status__in=UNLISTED_DOCUMENT_STATUSES
+    )
+
+
+def document_scope(qs: QuerySet[Document], f: NoteFilter) -> QuerySet[Document]:
+    """
+    Documents "in" a subject or chapter: by their own (default) link OR by a page range that maps pages to it. Documents and
+    their ranges carry the same link columns, so one condition serves both. `unfiled` means no default and no range at all.
+    """
+    where = Q()
+    if f.level_id:
+        where &= Q(level_id=f.level_id)
+    if f.subject_key:
+        where &= Q(subject_key=f.subject_key)
+    if f.chapter_key:
+        where &= Q(chapter_key=f.chapter_key)
+    if f.topic_key:
+        where &= Q(topic_key=f.topic_key)
+    ranged = DocumentChapter.objects.filter(document_id=OuterRef("pk"))
+    if where:
+        qs = qs.filter(where | Exists(ranged.filter(where)))
+    if f.unfiled:
+        qs = qs.filter(chapter__isnull=True).exclude(Exists(ranged))
+    return qs
+
+
 def day_start(day: date) -> datetime:
     return datetime.combine(day, time.min, tzinfo=IST)
 
@@ -172,7 +208,19 @@ def cards(notes: Sequence[Note]) -> list[NoteCard]:
         .values_list("note_id", "attachment_id")
     ):
         image_map.setdefault(note_id, []).append(attachment_id)
-    linked = [n for n in notes if n.chapter_id]
+    links = link_views(notes)
+    return [
+        NoteCard(n, link, tuple(tag_map.get(n.id, ())), tuple(image_map.get(n.id, ())))
+        for n, link in zip(notes, links, strict=True)
+    ]
+
+
+def link_views(rows: Sequence[Any]) -> list[LinkView]:
+    """
+    The syllabus link of any rows that carry link columns (notes, documents, marks, page ranges), one `LinkView` per row, in a
+    fixed number of queries. See `cards` for the resolution rule (stable keys against the level's current scheme).
+    """
+    linked = [n for n in rows if n.chapter_id]
     current: dict[tuple, Any] = {}
     for level_id in {n.level_id for n in linked}:
         pairs = {(n.subject_key, n.chapter_key) for n in linked if n.level_id == level_id}
@@ -180,13 +228,10 @@ def cards(notes: Sequence[Note]) -> list[NoteCard]:
             current[(level_id, *pair)] = ref
     stored = syllabus.chapter_refs([n.chapter_id for n in linked])
     topics = syllabus.topic_refs([n.topic_id for n in linked if n.topic_id])
-    return [
-        NoteCard(n, _link(n, current, stored, topics), tuple(tag_map.get(n.id, ())), tuple(image_map.get(n.id, ())))
-        for n in notes
-    ]
+    return [_link(n, current, stored, topics) for n in rows]
 
 
-def _link(note: Note, current: dict, stored: dict, topics: dict) -> LinkView:
+def _link(note: Any, current: dict, stored: dict, topics: dict) -> LinkView:
     if not note.chapter_id:
         return LinkView()
     ref = current.get((note.level_id, note.subject_key, note.chapter_key))

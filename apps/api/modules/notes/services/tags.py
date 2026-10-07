@@ -72,3 +72,22 @@ def set_note_tags(user_id, note: Note, tag_ids: Iterable[UUID]) -> list[Tag]:
         [ItemTag(user_id=user_id, tag=t, note=note) for t in tags if t.id not in have], ignore_conflicts=True
     )
     return tags
+
+
+@transaction.atomic
+def set_annotation_tags(user_id, annotation, tag_ids: Iterable[UUID]) -> bool:
+    """
+    Replace a mark's tag set (every id must be the student's: `unknown_tag` otherwise, which is also what a foreign id
+    answers). Returns whether anything changed, so a replayed write stays a no-op.
+    """
+    tags = owned_tags(user_id, tag_ids)
+    keep = {t.id for t in tags}
+    have = set(ItemTag.objects.filter(annotation=annotation).values_list("tag_id", flat=True))
+    if keep == have:
+        return False
+    ItemTag.objects.filter(annotation=annotation).exclude(tag_id__in=keep).delete()
+    ItemTag.objects.bulk_create(
+        [ItemTag(user_id=user_id, tag=t, annotation=annotation) for t in tags if t.id not in have],
+        ignore_conflicts=True,
+    )
+    return True

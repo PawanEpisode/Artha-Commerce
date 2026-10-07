@@ -3,7 +3,6 @@ import { Link, useNavigate } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
 import { attachmentRefs } from '~/lib/richtext'
-import { useChapterCoverage } from '~/modules/coverage'
 
 import { ConflictSheet } from '../components/ConflictSheet'
 import { ImagePickerDialog } from '../components/ImagePickerDialog'
@@ -15,18 +14,12 @@ import { useAttachmentUrls } from '../hooks/useAttachmentUrls'
 import { useImagePicker } from '../hooks/useImagePicker'
 import { useNoteActions } from '../hooks/useNoteActions'
 import { useNoteEditor } from '../hooks/useNoteEditor'
-import {
-  useChapterNotesOverview,
-  useChapterSuggestions,
-  useLevelId,
-  useTags,
-  useVersion,
-  useVersions,
-} from '../hooks/useNotesQueries'
+import { useChapterSuggestions, useLevelId, useTags, useVersion, useVersions } from '../hooks/useNotesQueries'
 import { useSyncView } from '../hooks/useNotesSync'
-import { type LinkSelection, selectionFromOverview, selectionFromSuggestion } from '../lib/chapter-link'
-import type { NewNoteSearch, NoteEditorSearch } from '../lib/filter-schema'
+import { selectionFromSuggestion } from '../lib/chapter-link'
+import type { NoteEditorSearch } from '../lib/filter-schema'
 import { formatTime } from '../lib/format'
+import { showUnsynced } from '../lib/sync-state'
 import { ChapterPicker } from './ChapterPicker'
 import { NotesShell, useNotesChrome } from './NotesShell'
 
@@ -75,28 +68,26 @@ function EditorStates({ status, onRetry }: { status: 'loading' | 'error' | 'notf
 }
 
 interface ScreenProps {
-  noteId: string | null
-  prefill?: LinkSelection | null
+  noteId: string
   search?: NoteEditorSearch
-  onCreated?: (id: string) => void
 }
 
-function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps) {
+function EditorScreen({ noteId, search }: ScreenProps) {
   const navigate = useNavigate()
   const chrome = useNotesChrome()
   const levelId = useLevelId()
   const actions = useNoteActions()
   const tags = useTags()
   const picker = useImagePicker()
-  const editor = useNoteEditor({ noteId, prefill, onCreated: (note) => onCreated?.(note.id) })
+  const editor = useNoteEditor({ noteId })
   const sync = useSyncView(editor.saving)
   const [mode, setMode] = useState<VersionMode>('view')
   const [restoring, setRestoring] = useState(false)
 
   const note = editor.note
-  const panelOpen = noteId !== null && (search?.panel === 'history' || search?.v !== undefined)
-  const versions = useVersions(noteId ?? '', panelOpen && editor.online)
-  const version = useVersion(noteId ?? '', panelOpen ? search?.v : undefined)
+  const panelOpen = search?.panel === 'history' || search?.v !== undefined
+  const versions = useVersions(noteId, panelOpen && editor.online && !editor.localOnly)
+  const version = useVersion(noteId, panelOpen && !editor.localOnly ? search?.v : undefined)
 
   const imageIds = useMemo(
     () => [
@@ -109,12 +100,12 @@ function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps
   const resolveImage = useAttachmentUrls(imageIds, editor.online)
 
   const unfiled = !editor.selection && !(note && note.link.chapter_id)
-  const suggestions = useChapterSuggestions(noteId ?? '', `${editor.title}\n${editor.body}`, noteId !== null && unfiled)
+  const suggestions = useChapterSuggestions(noteId, `${editor.title}\n${editor.body}`, unfiled && !editor.localOnly)
 
   if (editor.status !== 'ready') return <EditorStates status={editor.status} onRetry={() => void editor.refetch()} />
 
   const setPanel = (next: { panel?: 'history'; v?: number }) =>
-    noteId && void navigate({ to: '/app/notes/n/$noteId', params: { noteId }, search: next, replace: true })
+    void navigate({ to: '/app/notes/n/$noteId', params: { noteId }, search: next, replace: true })
 
   const trashed = Boolean(note?.deleted_at)
   const link = note?.link ?? {
@@ -137,7 +128,7 @@ function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps
       onTitle={editor.setTitle}
       body={editor.body}
       onBody={editor.setBody}
-      isNew={editor.isNew}
+      localOnly={showUnsynced(note)}
       sync={sync}
       onSyncPress={chrome.openConflicts}
       savedText={editor.savedAt ? `Saved ${formatTime(new Date(editor.savedAt).toISOString())}` : undefined}
@@ -159,7 +150,7 @@ function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps
               })
           : undefined
       }
-      onHistory={noteId ? () => setPanel({ panel: 'history' }) : undefined}
+      onHistory={editor.localOnly ? undefined : () => setPanel({ panel: 'history' })}
       onSave={() => void editor.saveNow()}
       onPickImage={picker.onPickImage}
       resolveImage={resolveImage}
@@ -179,11 +170,11 @@ function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps
         <div className="flex min-w-0 flex-col gap-2">
           <ChapterPicker
             link={link}
-            selection={editor.isNew ? editor.selection : undefined}
+            selection={editor.localOnly ? editor.selection : undefined}
             disabled={trashed}
             onSelect={(selection) => void editor.setSelection(selection)}
           />
-          {noteId && unfiled && (suggestions.data?.length ?? 0) > 0 && levelId ? (
+          {unfiled && (suggestions.data?.length ?? 0) > 0 && levelId ? (
             <SuggestionBar
               suggestions={suggestions.data ?? []}
               onPick={(s) => void editor.setSelection(selectionFromSuggestion(s, levelId), 'suggestion')}
@@ -193,7 +184,7 @@ function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps
         </div>
       }
       tagsControl={
-        noteId && note ? (
+        note ? (
           <TagEditor
             tags={tags.data ?? []}
             selectedIds={note.tags.map((t) => t.id)}
@@ -208,14 +199,12 @@ function EditorScreen({ noteId, prefill = null, search, onCreated }: ScreenProps
             onCreate={actions.addTag}
             createDisabledReason={editor.online ? undefined : 'Making a tag needs a connection.'}
           />
-        ) : (
-          <p className="text-sm text-muted-foreground">You can add tags once the note is saved.</p>
-        )
+        ) : null
       }
       overlays={
         <>
           <ImagePickerDialog {...picker.dialog} />
-          {noteId && note ? (
+          {note && !editor.localOnly ? (
             <VersionPanel
               open={panelOpen}
               onOpenChange={(open) => !open && setPanel({})}
@@ -263,36 +252,6 @@ export function NoteEditorContainer({ noteId, search }: { noteId: string; search
   return (
     <NotesShell bare>
       <EditorScreen key={noteId} noteId={noteId} search={search} />
-    </NotesShell>
-  )
-}
-
-/** `/app/notes/new`: waits for the `?chapter=` prefill (if any), then opens an empty editor that creates on the first save. */
-function NewScreen({ search }: { search: NewNoteSearch }) {
-  const navigate = useNavigate()
-  const wants = Boolean(search.subject && search.chapter)
-  const overview = useChapterNotesOverview(search.subject ?? '', search.chapter ?? '', wants)
-  const chapter = useChapterCoverage(overview.data?.chapter.id ?? '')
-  const topic = search.topic ? chapter.data?.topics.find((t) => t.key === search.topic) : undefined
-  const waiting = wants && (overview.isPending || (Boolean(search.topic) && chapter.isPending && overview.isSuccess))
-  const prefill = overview.data ? selectionFromOverview(overview.data, topic) : null
-
-  if (waiting) return <EditorStates status="loading" onRetry={() => undefined} />
-  return (
-    <EditorScreen
-      noteId={null}
-      prefill={prefill}
-      onCreated={(id) => {
-        void navigate({ to: '/app/notes/n/$noteId', params: { noteId: id }, search: {}, replace: true })
-      }}
-    />
-  )
-}
-
-export function NewNoteContainer({ search }: { search: NewNoteSearch }) {
-  return (
-    <NotesShell bare>
-      <NewScreen search={search} />
     </NotesShell>
   )
 }

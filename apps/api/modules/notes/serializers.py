@@ -24,7 +24,9 @@ from .selectors import (
     TagView,
     UsageView,
 )
+from .services.settings import capabilities
 
+MARK_COLORS = ["y", "g", "b", "p", "o", "i1", "i2", "i3", "i4", "i5"]  # markup keys and ink keys (ERD 2.6)
 MAX_BODY = 250_000  # a transport bound; the real limit (100,000 characters) is a lint error with a message
 
 
@@ -51,7 +53,7 @@ class NoteListQuery(serializers.Serializer):
 
 class AggregateQuery(NoteListQuery):
     tab = serializers.ChoiceField(choices=["all", "notes", "highlights", "documents"], required=False, default="all")
-    color = serializers.CharField(required=False, allow_blank=True, max_length=2)  # R2
+    color = serializers.ChoiceField(choices=MARK_COLORS, required=False)  # R2: marks only
     doc = serializers.UUIDField(required=False)  # R2
 
     def __init__(self, *args, **kwargs):
@@ -62,7 +64,10 @@ class AggregateQuery(NoteListQuery):
 
 
 class NoteCreateSerializer(serializers.Serializer):
-    client_id = serializers.UUIDField()
+    """`POST notes/` (optional `id`) and the body of `PUT notes/{id}/` (the id is in the path). `client_id` defaults to the id."""
+
+    id = serializers.UUIDField(required=False)
+    client_id = serializers.UUIDField(required=False)
     title = serializers.CharField(required=False, allow_blank=True, max_length=200, default="")
     body_md = serializers.CharField(
         required=False, allow_blank=True, max_length=MAX_BODY, default="", trim_whitespace=False
@@ -70,6 +75,17 @@ class NoteCreateSerializer(serializers.Serializer):
     chapter_id = serializers.UUIDField(required=False, allow_null=True, default=None)
     topic_id = serializers.UUIDField(required=False, allow_null=True, default=None)
     tag_ids = serializers.ListField(child=serializers.UUIDField(), required=False, max_length=20, default=list)
+
+    def __init__(self, *args, path_id=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.path_id = path_id
+
+    def validate(self, attrs):
+        if self.path_id is not None:
+            attrs["id"] = self.path_id
+        if "id" not in attrs and "client_id" not in attrs:
+            raise serializers.ValidationError({"client_id": "Send a client_id or an id."})
+        return attrs
 
 
 class NotePatchSerializer(serializers.Serializer):
@@ -237,6 +253,14 @@ def version_detail(v: NoteVersion) -> dict:
 
 
 def aggregate_item(item: AggregateItem) -> dict:
+    """`{type: "note" | "highlight" | "document", ...}`: the leg's own summary shape, tagged with its type."""
+    from .serializers_annotations import annotation_dict  # local: those modules import this one for `link_dict`
+    from .serializers_documents import document_summary
+
+    if item.type == "highlight":
+        return {"type": "highlight", **annotation_dict(item.card)}
+    if item.type == "document":
+        return {"type": "document", **document_summary(item.card)}
     return {"type": item.type, **note_summary(item.card)}
 
 
@@ -266,6 +290,7 @@ def settings_dict(s: Settings) -> dict:
         "finger_draws": s.finger_draws,
         "ocr_default": s.ocr_default,
         "ocr_lang": s.ocr_lang,
+        "capabilities": capabilities(),
     }
 
 
@@ -310,6 +335,8 @@ def subject_counts_dict(c: SubjectCounts) -> dict:
 
 
 def overview_dict(o: ChapterOverview) -> dict:
+    from .serializers_documents import document_summary  # local: see `aggregate_item`
+
     ref = o.chapter
     counts = counts_dict(o.counts)
     return {
@@ -326,7 +353,7 @@ def overview_dict(o: ChapterOverview) -> dict:
         "last_noted_at": counts["last_noted_at"],
         "current_summary": note_summary(o.current_summary) if o.current_summary else None,
         "recent": [note_summary(c) for c in o.recent],
-        "documents": [],
+        "documents": [document_summary(v) for v in o.documents],
     }
 
 

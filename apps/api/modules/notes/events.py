@@ -18,6 +18,8 @@ from django.db import transaction
 from core import events as bus
 
 NOTES_CHAPTER_COUNTS_CHANGED = "notes_chapter_counts_changed"
+NOTES_DOCUMENT_READY = "notes_document_ready"
+NOTES_EXPORT_READY = "notes_export_ready"
 
 # (level_id, subject_key, chapter_key, chapter_id) as returned by `Note.link_key()`
 LinkKey = tuple
@@ -53,3 +55,28 @@ def _emit_all(user_id, keys: list[LinkKey], reason: str) -> None:
             has_summary=counts.has_summary,
             reason=reason,
         )
+
+
+def announce_document_ready(user_id, document_id, *, pages, scanned, encrypted, stage: str) -> None:
+    """`notes_document_ready` (ERD 3.4): `stage` is `readable` (inspected) or `searchable` (text extracted). Ids and counts only."""
+    bus.emit(
+        NOTES_DOCUMENT_READY,
+        user_id=str(user_id),
+        document_id=str(document_id),
+        pages=pages,
+        scanned=bool(scanned),
+        encrypted=bool(encrypted),
+        stage=stage,
+    )
+
+
+def announce_export_ready(user_id, export_id, *, kind: str, document_id=None, page_count=None) -> None:
+    """`notes_export_ready` (ERD 3.4): a flattened PDF or the notes archive can be downloaded. Ids and counts only."""
+    bus.emit(
+        NOTES_EXPORT_READY,
+        user_id=str(user_id),
+        export_id=str(export_id),
+        kind=kind,
+        document_id=str(document_id) if document_id else None,
+        page_count=page_count,
+    )

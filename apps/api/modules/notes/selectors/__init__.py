@@ -9,28 +9,70 @@ Public read interface of notes (ERD 3.2). Other modules import from here, never 
     usage(user_id)                                                             plan limits and what is used
 """
 
-from ._common import LinkView, NoteCard, NoteFilter, Page
+from ._common import LinkView, NoteCard, NoteFilter, Page, link_views
 from ._common import cards as cards_of
 from .aggregate import AggregateItem, aggregate
+from .annotations import (
+    AnnotationCard,
+    AnnotationDelta,
+    annotation_cards,
+    annotation_document_id,
+    delta_annotations,
+    get_annotation,
+)
 from .counts import (
     ChapterCountRow,
     ChapterCounts,
     ChapterOverview,
     SubjectCounts,
     chapter_counts,
+    chapter_documents,
     chapter_overview,
     counts_for_chapters,
     subject_counts,
     unfiled_count,
 )
+from .documents import (
+    DocumentFilter,
+    DocumentView,
+    PageText,
+    Processing,
+    TextPage,
+    get_document,
+    get_page_text,
+    get_processing,
+    largest_documents,
+    list_documents,
+)
 from .export import export_all
 from .notes import changes, get_note, get_version, list_notes, list_trash, list_versions, recent
+from .pdf_search import DocumentSearch, MarkHit, PdfHit, PdfSearch, search_document, search_marks, search_pdf
 from .search import SearchHit, search
 from .suggest import suggestions_for
 from .tags import TagView, get_tag, list_tags
 from .usage import UsageView, usage
 
 __all__ = [
+    "AnnotationCard",
+    "AnnotationDelta",
+    "DocumentFilter",
+    "DocumentSearch",
+    "DocumentView",
+    "MarkHit",
+    "PageText",
+    "PdfHit",
+    "PdfSearch",
+    "Processing",
+    "TextPage",
+    "get_document",
+    "get_page_text",
+    "get_processing",
+    "largest_documents",
+    "link_views",
+    "list_documents",
+    "search_document",
+    "search_marks",
+    "search_pdf",
     "AggregateItem",
     "ChapterCountRow",
     "ChapterCounts",
@@ -44,6 +86,11 @@ __all__ = [
     "TagView",
     "UsageView",
     "aggregate",
+    "annotation_cards",
+    "annotation_document_id",
+    "chapter_documents",
+    "delta_annotations",
+    "get_annotation",
     "cards_of",
     "changes",
     "chapter_counts",

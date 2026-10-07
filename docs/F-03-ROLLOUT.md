@@ -33,6 +33,8 @@ Plan limits live in the `notes_quotaplan` row `free` (Django admin, **Quota plan
 
 Notes needs a small periodic job: it purges notes that were in the trash for 30 days (and queues their image files for deletion), thins old versions (one autosave a day after the first 24 hours, 90 days), recomputes usage counters and logs any drift, and releases uploads that were never completed.
 
+**Crons (R2 note).** From R2 the tick should run **every 5 minutes**: it expires upload reservations (a PDF upload that was never completed holds quota and a document slot for 30 minutes), so a 15-minute or daily schedule makes a failed upload block the quota for much longer. Call `POST /api/v1/notes/internal/tick/` with the header `X-Notes-Tick-Secret: <NOTES_TICK_SECRET>` from a Render Cron Job or a Zoho Catalyst Cron on `*/5 * * * *`. The Vercel `crons` entry below is now optional: use it only if you stay on Vercel, where the free plan allows daily schedules only. The tick never runs heavy jobs (virus scan, PDF inspection, text extraction, OCR, export); those wait for the always-on worker.
+
 1. Add to `apps/api/vercel.json` (Vercel Cron works on every plan, but the free plan allows only daily schedules; use `0 3 * * *` there):
    ```json
    "crons": [{ "path": "/api/v1/notes/internal/tick/", "schedule": "*/15 * * * *" }]
@@ -44,6 +46,14 @@ Notes needs a small periodic job: it purges notes that were in the trash for 30 
 ## E. PostHog
 
 Create the flag `notes` (percentage rollout, start with your own account). Off means every notes endpoint answers 403 `feature_disabled` and the web shows "not available yet"; image uploads of kind `note_image` are blocked by the same flag. These stay open with the flag off, so a student can always take their data out: `GET /api/v1/notes/export/`, `DELETE /api/v1/notes/` and the cron tick. Create `notes_pdf` later (R2); until then `search/?scope=pdf` answers 403 when it is off.
+
+### Flag behaviour (decision)
+
+The `notes` and `notes_pdf` flags **fail open**: only an explicit `false` from PostHog turns a feature off. No `POSTHOG_API_KEY`, a flag that does not exist yet, a timeout or a PostHog outage all mean **on**. This is `core.feature_flags.flag_enabled(name, user_id)` with its default `strict=False`, the same rule as the web hook `useFeatureFlag`, so web and API always agree.
+
+Why: notes hold a student's own work. A flag outage must never lock a student out of their notes or their reading, and local development and CI have no PostHog key. The flag is a rollout switch, not a safety control. The things that must never happen by accident are protected elsewhere: quotas are database facts, uploads are scanned, data export and erasure ignore the flag.
+
+The cost of fail open: if you create `notes_pdf` with a 0% rollout and PostHog is unreachable at that moment, students are let in for the length of the outage (the API caches answers for 60 seconds). The alternative is `strict=True` (fail closed): only an explicit `true` counts, so a missing key or an outage means off. It is right for things like sending notifications and wrong for reading a student's own files. If you want a closed launch of `notes_pdf` (for example while ClamAV is not yet live), change `flag_required(PDF_FLAG, ...)` and the `flag` check in `media.create_upload` to pass `strict=True` for that flag; nothing else needs to change. Until then do not enable `notes_pdf` in production before `MEDIA_SCANNER=clamd` is set (R2 section in `docs/SETUP.md`).
 
 Coverage shows the number of notes on each chapter row from the `notes_chapter_counts_changed` event. This is display only: notes never change a chapter's coverage percentage or start date.
 

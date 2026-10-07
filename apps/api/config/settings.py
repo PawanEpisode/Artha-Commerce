@@ -164,6 +164,8 @@ REST_FRAMEWORK = {
         "notes_write": "600/min",
         "notes_search": "60/min",
         "notes_account": "6/hour",
+        "notes_upload": "30/hour",  # R2: reserving PDF uploads
+        "notes_export": "6/hour",  # R2: building flattened PDFs and archives
         "media_upload": "120/hour",
         "media_read": "300/min",
     },
@@ -211,6 +213,13 @@ CRON_SECRET = env("CRON_SECRET")  # bearer secret for the sweep endpoint
 # Empty means the tick refuses every caller. For Vercel Cron, which can only send `Authorization: Bearer $CRON_SECRET`, set it
 # to the same value as CRON_SECRET.
 NOTES_TICK_SECRET = env("NOTES_TICK_SECRET")
+# Upload scanning (F-03 R2, media). `null` marks files clean without scanning (development and tests only); `clamd` streams them
+# to a ClamAV daemon over a unix socket (CLAMD_SOCKET, wins when set) or TCP (CLAMD_HOST, CLAMD_PORT). clamd needs
+# `StreamMaxLength 64M`. The scan itself runs in the worker (`media.scan` job).
+MEDIA_SCANNER = env("MEDIA_SCANNER", "null").lower()
+CLAMD_HOST = env("CLAMD_HOST")
+CLAMD_PORT = int(env("CLAMD_PORT", "3310"))
+CLAMD_SOCKET = env("CLAMD_SOCKET")
 # Weekly email (W3.5). The backend is SMTP in production and the console in development; sending needs a From address.
 EMAIL_BACKEND = env(
     "EMAIL_BACKEND",

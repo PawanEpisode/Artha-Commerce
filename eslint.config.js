@@ -6,6 +6,16 @@ import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
+/**
+ * `pdfjs-dist` may be imported only by the PDF engine adapter (ERD decision 1): swapping the engine must touch one
+ * folder. Everything else talks to the `PdfEngine` interfaces in `lib/pdf-engine/index.ts`.
+ */
+const PDF_ENGINE_DIR = 'apps/web/src/modules/notes/lib/pdf-engine/**/*.{ts,tsx}'
+const pdfjsOnlyInEngine = {
+  group: ['pdfjs-dist', 'pdfjs-dist/*'],
+  message: 'pdfjs-dist is imported only inside apps/web/src/modules/notes/lib/pdf-engine. Use the PdfEngine adapter.',
+}
+
 export default tseslint.config(
   {
     ignores: [
@@ -85,6 +95,7 @@ export default tseslint.config(
             },
           ],
           patterns: [
+            pdfjsOnlyInEngine,
             {
               group: ['~/modules/*/*/*'],
               message: 'Import from the module barrel (~/modules/<name>), not its internals.',
@@ -102,6 +113,37 @@ export default tseslint.config(
   {
     // Module code must not reach into routes.
     files: ['apps/web/src/modules/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'lucide-react',
+              message:
+                "Import icons from '@artha/design-system' (add new icons to packages/design-system/src/icons.ts).",
+            },
+          ],
+          patterns: [
+            pdfjsOnlyInEngine,
+            { group: ['~/routes/*'], message: 'Modules must not import from routes.' },
+            {
+              group: ['~/modules/*/*/*'],
+              message: 'Import from the module barrel (~/modules/<name>), not its internals.',
+            },
+            {
+              group: ['@artha/design-system/src/*'],
+              message: "Import from '@artha/design-system', not its source files.",
+            },
+            { group: ['**/components/ui/*'], message: 'UI primitives live in @artha/design-system.' },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // The one place that may import pdfjs-dist. Same architecture guards as the modules block, minus the pdf.js rule.
+    files: [PDF_ENGINE_DIR],
     rules: {
       'no-restricted-imports': [
         'error',

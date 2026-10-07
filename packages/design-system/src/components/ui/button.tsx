@@ -22,14 +22,15 @@ export const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        sm: 'h-9 min-h-9 px-3.5',
+        /** 44 px on a phone (WCAG 2.2 target size, audit AUD-010), the compact 36 px from `sm` upward. */
+        sm: 'h-11 min-h-11 px-3.5 sm:h-9 sm:min-h-9',
         default: 'h-11 min-h-11 px-5',
         lg: 'h-12 min-h-12 rounded-xl px-7 text-base',
         xl: 'h-14 min-h-14 rounded-xl px-8 text-base sm:text-lg',
-        icon: 'size-10',
+        icon: 'size-11 sm:size-10',
       },
       /** `h-auto` lets a long label wrap inside the button instead of growing past its container. */
-      fullWidth: { true: 'h-auto w-full min-w-0 py-2.5 text-center whitespace-normal', false: '' },
+      fullWidth: { true: 'h-auto w-full min-w-0 py-2.5 text-center whitespace-normal sm:h-auto', false: '' },
     },
     defaultVariants: { variant: 'default', size: 'default', fullWidth: false },
   },

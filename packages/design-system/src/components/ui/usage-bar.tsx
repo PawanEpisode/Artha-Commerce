@@ -20,15 +20,26 @@ interface UsageBarProps extends Omit<React.ComponentProps<'div'>, 'children'> {
   format?: (value: number) => string
   /** Shown when the limit is reached, for example "Storage full". */
   fullText?: string
+  /** A unit said once after the numbers: "412 of 500 MB". Leave out when `format` already adds one. */
+  unit?: string
 }
 
 const defaultFormat = (n: number) => n.toLocaleString('en-IN')
 
 /** A quota meter with the numbers in text ("412 of 500 MB"), so the meaning never rests on the bar's colour. */
-export function UsageBar({ label, used, limit, format = defaultFormat, fullText, className, ...props }: UsageBarProps) {
+export function UsageBar({
+  label,
+  used,
+  limit,
+  format = defaultFormat,
+  fullText,
+  unit,
+  className,
+  ...props
+}: UsageBarProps) {
   const level = usageLevel(used, limit)
   const percent = limit > 0 ? Math.min(100, Math.round((used / limit) * 100)) : 0
-  const text = `${format(used)} of ${format(limit)}`
+  const text = `${format(used)} of ${format(limit)}${unit ? ` ${unit}` : ''}`
   return (
     <div data-slot="usage-bar" data-level={level} className={cn('space-y-1.5', className)} {...props}>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3">

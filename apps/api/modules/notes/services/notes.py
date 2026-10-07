@@ -57,11 +57,23 @@ def get_locked(user_id, note_id) -> Note:
     return note
 
 
+def _stored(user_id, note_id: UUID | None, client_id: UUID) -> Note | None:
+    """The student's note a create refers to: by id first, then by `client_id`. Someone else's id is `NotFound`."""
+    if note_id is not None:
+        row = Note.objects.filter(pk=note_id).first()
+        if row is not None:
+            if str(row.user_id) != str(user_id):
+                raise NotFound("Note not found.")
+            return row
+    return Note.objects.filter(user_id=user_id, client_id=client_id).first()
+
+
 # --- Create ---------------------------------------------------------------------------------------------------------------
 def create_note(
     user_id,
     *,
-    client_id: UUID,
+    client_id: UUID | None = None,
+    note_id: UUID | None = None,
     title: str = "",
     body_md: str = "",
     chapter_id: UUID | None = None,
@@ -70,8 +82,15 @@ def create_note(
     origin: str = Note.Origin.TYPED,
     clip_source: Mapping[str, str] | None = None,
 ) -> CreateResult:
-    """Idempotent on `client_id`: a replay returns the stored note (created False) and takes no quota."""
-    existing = Note.objects.filter(user_id=user_id, client_id=client_id).first()
+    """
+    Idempotent on `note_id` (the client owns the id, contract "R1 follow-up") and on `client_id` (which defaults to the id): a
+    replay returns the stored note unchanged (created False) and takes no quota. An id that belongs to another student is
+    `NotFound`, exactly as for a missing note, so the answer never hints that the row exists.
+    """
+    if client_id is None and note_id is None:
+        raise ValueError("create_note needs a client_id or a note_id.")
+    client_id = client_id or note_id
+    existing = _stored(user_id, note_id, client_id)
     if existing:
         return CreateResult(existing, False)
     title = bodies.clean_title(title)
@@ -82,6 +101,7 @@ def create_note(
         with transaction.atomic():
             quota.reserve_note(user_id)
             note = Note.objects.create(
+                **({"id": note_id} if note_id else {}),
                 user_id=user_id,
                 client_id=client_id,
                 origin=origin,
@@ -98,8 +118,8 @@ def create_note(
             tags.set_note_tags(user_id, note, tag_ids)
             search_index.refresh(note)
             events.announce_counts(user_id, [note.link_key()], "created")
-    except IntegrityError:  # a retry of the same client_id raced us; the quota reservation rolled back with it
-        existing = Note.objects.filter(user_id=user_id, client_id=client_id).first()
+    except IntegrityError:  # a retry of the same id or client_id raced us; the quota reservation rolled back with it
+        existing = _stored(user_id, note_id, client_id)
         if existing is None:
             raise
         return CreateResult(existing, False)

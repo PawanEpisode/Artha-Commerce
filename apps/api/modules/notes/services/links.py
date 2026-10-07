@@ -46,3 +46,17 @@ def link_columns(chapter_id: UUID | None, topic_id: UUID | None = None) -> dict[
         "chapter_key": chapter.key,
         "topic_key": topic.key if topic else None,
     }
+
+
+def columns_key(columns: dict[str, Any]) -> tuple | None:
+    """`link_key` of a dict of link columns (what `link_columns` returns)."""
+    if columns.get("chapter_id") is None:
+        return None
+    return (columns["level_id"], columns["subject_key"], columns["chapter_key"], columns["chapter_id"])
+
+
+def link_key(row) -> tuple | None:
+    """`(level_id, subject_key, chapter_key, chapter_id)` of any row with link columns, or None when Unfiled (what counts group by)."""
+    if row.chapter_id is None:
+        return None
+    return (row.level_id, row.subject_key, row.chapter_key, row.chapter_id)

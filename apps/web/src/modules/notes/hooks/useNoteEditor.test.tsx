@@ -7,8 +7,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { ApiError } from '~/lib/api'
 import { clearOfflineQueue, resetOfflineQueue } from '~/lib/offline-queue'
+import { track } from '~/modules/observability'
 
-import { resetOfflineStore, saveDraft } from '../lib/offline-store'
+import { buildLocalNote } from '../lib/local-note'
+import { cacheNote, loadDraft, readCachedNote, resetOfflineStore, saveDraft } from '../lib/offline-store'
+import { queuedNoteWrites } from '../lib/queue'
 import { makeNote } from '../lib/testing'
 import { useNoteEditor } from './useNoteEditor'
 
@@ -40,6 +43,7 @@ const NOTE = makeNote({
   body_md: 'first line',
   updated_at: '2026-10-01T10:00:00Z',
 })
+const LOCAL = '22222222-2222-4222-8222-222222222222'
 const USAGE = {
   plan: 'free',
   limits: { max_storage_mb: 500, max_notes: 2000, max_note_chars: 100000, max_note_images: 40, max_tags: 200 },
@@ -70,8 +74,9 @@ beforeEach(async () => {
     if (call.path === '/notes/usage/') return USAGE
     if (call.method === 'GET' && call.path === `/notes/${NOTE.id}/`) return NOTE
     if (call.method === 'PATCH') return { ...NOTE, rev: 3, ...call.body }
-    if (call.method === 'POST' && call.path === '/notes/')
-      return { ...NOTE, id: '22222222-2222-4222-8222-222222222222', rev: 1, ...call.body }
+    if (call.method === 'PUT' && call.path === `/notes/${LOCAL}/`)
+      return { ...NOTE, id: LOCAL, title: '', body_md: '', rev: 1, ...call.body }
+    if (call.method === 'PUT' && call.path === '/notes/items/tags/') return { tags: [] }
     throw new Error(`unexpected ${call.method} ${call.path}`)
   }
   mocks.api.mockImplementation(async (path: string, init?: { method?: string; body?: string }) => {
@@ -248,15 +253,30 @@ describe('useNoteEditor: an existing note', () => {
   })
 })
 
-describe('useNoteEditor: a new note', () => {
-  it('sends nothing while empty, then creates once with a client id and tells the screen', async () => {
-    const onCreated = vi.fn()
-    const { result } = renderHook(() => useNoteEditor({ noteId: null, onCreated }), { wrapper })
-    await waitFor(() => expect(result.current.status).toBe('ready'))
+describe('useNoteEditor: a note born on this device', () => {
+  const seed = async (selection: Parameters<typeof buildLocalNote>[1] = {}) =>
+    cacheNote('u1', buildLocalNote(LOCAL, selection), { pending: true })
+  const open = async () => {
+    const hook = renderHook(() => useNoteEditor({ noteId: LOCAL }), { wrapper })
+    await waitFor(() => expect(hook.result.current.status).toBe('ready'))
+    return hook
+  }
+
+  it('opens without asking the server, empty, flagged as only on this device', async () => {
+    await seed()
+    const { result } = await open()
+    expect(result.current.localOnly).toBe(true)
+    expect(result.current.title).toBe('')
+    expect(calls).toEqual([expect.objectContaining({ path: '/notes/usage/' })])
+  })
+
+  it('sends nothing while empty, then creates once with PUT and the client id', async () => {
+    await seed()
+    const { result } = await open()
     await act(async () => {
       await result.current.saveNow()
     })
-    expect(calls.filter((c) => c.method === 'POST')).toHaveLength(0)
+    expect(calls.filter((c) => c.method === 'PUT')).toHaveLength(0)
 
     act(() => {
       result.current.setTitle('Idea')
@@ -265,48 +285,118 @@ describe('useNoteEditor: a new note', () => {
     await act(async () => {
       await result.current.saveNow()
     })
-    await waitFor(() => expect(onCreated).toHaveBeenCalledTimes(1))
-    const created = calls.find((c) => c.method === 'POST' && c.path === '/notes/')
-    expect(created?.body).toMatchObject({ title: 'Idea', body_md: 'body', chapter_id: null })
-    expect(typeof created?.body?.client_id).toBe('string')
+    const puts = calls.filter((c) => c.method === 'PUT')
+    expect(puts).toHaveLength(1)
+    expect(puts[0]).toMatchObject({
+      path: `/notes/${LOCAL}/`,
+      body: { client_id: LOCAL, title: 'Idea', body_md: 'body', chapter_id: null },
+    })
+    await waitFor(() => expect(result.current.localOnly).toBe(false))
+    expect((await readCachedNote('u1', LOCAL))?.note.local_only).toBeUndefined()
+    expect(await loadDraft('u1', `note:${LOCAL}`)).toBeUndefined()
+    // After the create the next save is an ordinary edit with the revision the create produced.
+    act(() => result.current.setBody('body 2'))
+    await act(async () => {
+      await result.current.saveNow()
+    })
+    expect(patches().at(-1)?.body).toMatchObject({ base_rev: 1, body_md: 'body 2' })
   })
 
-  it('files a new note under the prefilled chapter', async () => {
-    const prefill = {
-      levelId: 'l',
-      subjectId: 's',
-      subjectKey: 'tax',
-      subjectName: 'Taxation',
-      chapterId: 'chapter-1',
-      chapterKey: 'itc',
-      chapterName: 'ITC',
-      topicId: null,
-      topicKey: null,
-      topicName: null,
-    }
-    const { result } = renderHook(() => useNoteEditor({ noteId: null, prefill }), { wrapper })
-    await waitFor(() => expect(result.current.status).toBe('ready'))
+  it('files the note under the chapter it started with', async () => {
+    await seed({
+      selection: {
+        levelId: 'l',
+        subjectId: 's',
+        subjectKey: 'tax',
+        subjectName: 'Taxation',
+        chapterId: 'chapter-1',
+        chapterKey: 'itc',
+        chapterName: 'ITC',
+        topicId: null,
+        topicKey: null,
+        topicName: null,
+      },
+    })
+    const { result } = await open()
+    expect(result.current.selection?.chapterId).toBe('chapter-1')
     act(() => result.current.setBody('x'))
     await act(async () => {
       await result.current.saveNow()
     })
-    await waitFor(() => expect(calls.some((c) => c.method === 'POST')).toBe(true))
-    expect(calls.find((c) => c.method === 'POST')?.body).toMatchObject({ chapter_id: 'chapter-1', topic_id: null })
+    expect(calls.find((c) => c.method === 'PUT')?.body).toMatchObject({ chapter_id: 'chapter-1', topic_id: null })
   })
 
-  it('brings back an unsaved draft of a new note', async () => {
+  it('offline: keeps the text on the device, folds later saves into the one waiting create and fires note_created once', async () => {
+    mocks.online.value = false
+    Object.defineProperty(navigator, 'onLine', { value: false, configurable: true })
+    await seed()
+    const { result } = await open()
+    for (const text of ['one', 'one two', 'one two three']) {
+      act(() => result.current.setBody(text))
+      await act(async () => {
+        await result.current.saveNow()
+      })
+    }
+    expect(calls.filter((c) => c.method === 'PUT')).toHaveLength(0)
+    const waiting = await queuedNoteWrites()
+    expect(waiting).toHaveLength(1)
+    expect(waiting[0]).toMatchObject({ method: 'PUT', path: `/notes/${LOCAL}/`, body: { body_md: 'one two three' } })
+    expect((await readCachedNote('u1', LOCAL))?.note).toMatchObject({ body_md: 'one two three', local_only: true })
+    expect(result.current.localOnly).toBe(true)
+    expect(vi.mocked(track).mock.calls.filter(([name]) => name === 'note_created')).toHaveLength(1)
+  })
+
+  it('restores the text of a crash as a recovered draft', async () => {
+    await seed()
     await saveDraft({
       userId: 'u1',
-      key: 'new:abc',
-      noteId: null,
-      clientId: 'abc',
+      key: `note:${LOCAL}`,
+      noteId: LOCAL,
+      clientId: LOCAL,
       title: 'Half written',
       body: 'text',
-      baseRev: null,
-      updatedAt: Date.now(),
+      baseRev: 1,
+      updatedAt: Date.now() + 5000,
     })
-    const { result } = renderHook(() => useNoteEditor({ noteId: null }), { wrapper })
-    await waitFor(() => expect(result.current.recovered).toBe(true))
+    const { result } = await open()
+    expect(result.current.recovered).toBe(true)
     expect(result.current.title).toBe('Half written')
+    expect(result.current.body).toBe('text')
+  })
+
+  it('a refused create (lint, 422) shows the server problems and keeps the text', async () => {
+    await seed()
+    respond = (call) => {
+      if (call.path === '/notes/usage/') return USAGE
+      throw new ApiError(422, 'x', {
+        error: { code: 'invalid_body', details: { errors: [{ code: 'x', message: 'Bad link', line: 2 }] } },
+      })
+    }
+    const { result } = await open()
+    act(() => result.current.setBody('[a](javascript:x)'))
+    await act(async () => {
+      await result.current.saveNow()
+    })
+    await waitFor(() => expect(result.current.problems?.kind).toBeDefined())
+    expect(result.current.body).toBe('[a](javascript:x)')
+    expect(result.current.localOnly).toBe(true)
+  })
+
+  it('a refused create (429 quota) keeps the text and marks the save as failed', async () => {
+    await seed()
+    respond = (call) => {
+      if (call.path === '/notes/usage/') return USAGE
+      throw new ApiError(429, 'x', {
+        error: { code: 'quota_exceeded', details: { kind: 'notes', used: 2000, limit: 2000, plan: 'free' } },
+      })
+    }
+    const { result } = await open()
+    act(() => result.current.setBody('my text'))
+    await act(async () => {
+      await result.current.saveNow()
+    })
+    await waitFor(() => expect(result.current.saveFailed).toBe(true))
+    expect(result.current.body).toBe('my text')
+    expect(await queuedNoteWrites()).toHaveLength(0)
   })
 })

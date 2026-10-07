@@ -305,7 +305,9 @@ pnpm lint:api && pnpm test:api
 | `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AVATAR_BUCKET` | | yes | service role key **yes** (never in the web project) |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |
 | `NOTES_TICK_SECRET` (F-03 notes cron tick; set `CRON_SECRET` to the same value for Vercel Cron) | | yes | **yes** |
+| `MEDIA_SCANNER` (F-03 R2: `null` clean at once, development only, or `clamd`; **must be `clamd` in production**), `CLAMD_HOST`, `CLAMD_PORT` (3310), `CLAMD_SOCKET` (wins over host and port; clamd needs `StreamMaxLength 64M`). Used by the worker's `media.scan` job | | yes (worker) | no |
 | `SENTRY_DSN` | | yes | no |
+| `WORKER_TYPE_LIMITS`, `WORKER_SHUTDOWN_GRACE_SECONDS`, `WORKER_HEARTBEAT_SECONDS`, `WORKER_FONTS_DIR`, `WORKER_LIVENESS_FILE` (F-03 PDF worker container only, see `docs/F-03-WORKER.md`) | | worker | no |
 | `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_USE_TLS`, `EMAIL_BACKEND`, `EMAIL_TIMEOUT`, `NOTIFICATIONS_EMAIL_FROM` (weekly email) | | yes | no |
 | `EMAIL_HOST_PASSWORD` (weekly email) | | yes | **yes** |
 

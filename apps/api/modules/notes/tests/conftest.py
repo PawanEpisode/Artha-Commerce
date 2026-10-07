@@ -59,3 +59,10 @@ def age_versions(note_id, **delta):
         NoteVersion.objects.filter(pk=v.pk).update(
             created_at=v.created_at - timedelta(**delta), updated_at=v.updated_at - timedelta(**delta)
         )
+
+
+from .documents_support import (  # noqa: E402, F401 - fixtures of the R2 document tests
+    capture_events,
+    fake_storage,
+    pdf_flag_off,
+)

@@ -1,0 +1,16 @@
+# Build context is apps/api (see render.yaml and docker-compose.worker.yml).
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.hypothesis
+.env
+.env.*
+!.env.example
+**/tests
+conftest.py
+.git
+*.md
+!worker/*.md

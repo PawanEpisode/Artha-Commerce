@@ -1,12 +1,16 @@
 import { Alert, Button, CloudOff, Skeleton } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
-import type { NoteSummary } from '../lib/types'
+import type { AggregateItem, NoteSummary } from '../lib/types'
 import { NoteCard } from './NoteCard'
+
+/** A row of the list: a note, or (R2) a mark or a document from the aggregate feed. */
+export type ListRow = NoteSummary | AggregateItem
+const isNoteRow = (row: ListRow): row is NoteSummary => !('type' in row) || row.type === 'note'
 
 interface NotesListProps {
   label: string
-  items: readonly NoteSummary[]
+  items: readonly ListRow[]
   isPending: boolean
   isError: boolean
   onRetry: () => void
@@ -22,6 +26,8 @@ interface NotesListProps {
   onTrash?: (note: NoteSummary) => void
   /** Rows to put before a note (an inline suggestion bar for the unfiled inbox). */
   renderExtra?: (note: NoteSummary) => ReactNode
+  /** How a mark or a document row is drawn (notes always use the note card). */
+  renderOther?: (row: Exclude<ListRow, NoteSummary>) => ReactNode
 }
 
 /** A list of notes with all four states: loading, error with retry, empty, and the items with "Load more". */
@@ -40,6 +46,7 @@ export function NotesList({
   onPin,
   onTrash,
   renderExtra,
+  renderOther,
 }: NotesListProps) {
   if (isPending) {
     return (
@@ -79,17 +86,21 @@ export function NotesList({
         empty
       ) : (
         <ul aria-label={label} className="space-y-3">
-          {items.map((note) => (
-            <li key={note.id} className="space-y-2">
-              <NoteCard
-                note={note}
-                showLocation={showLocation}
-                onPin={onPin ? (pinned) => onPin(note, pinned) : undefined}
-                onTrash={onTrash ? () => onTrash(note) : undefined}
-              />
-              {renderExtra?.(note)}
-            </li>
-          ))}
+          {items.map((row) =>
+            isNoteRow(row) ? (
+              <li key={row.id} className="space-y-2">
+                <NoteCard
+                  note={row}
+                  showLocation={showLocation}
+                  onPin={onPin ? (pinned) => onPin(row, pinned) : undefined}
+                  onTrash={onTrash ? () => onTrash(row) : undefined}
+                />
+                {renderExtra?.(row)}
+              </li>
+            ) : (
+              <li key={`${row.type}-${row.id}`}>{renderOther?.(row as Exclude<ListRow, NoteSummary>)}</li>
+            ),
+          )}
         </ul>
       )}
       {hasMore && onLoadMore ? (

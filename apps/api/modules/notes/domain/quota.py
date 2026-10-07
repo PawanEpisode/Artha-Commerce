@@ -72,6 +72,18 @@ def fits(used: int, add: int, limit: int) -> bool:
     return used + add <= limit
 
 
+def document_limit_hit(bytes_used: int, docs_active: int, add_bytes: int, limits: Limits) -> str | None:
+    """
+    Which limit a new document would break: `storage` (checked first, it is the one a clean-up of big files fixes) or
+    `documents`, else None. The same two inequalities `reserve_document` writes in SQL.
+    """
+    if not fits(bytes_used, add_bytes, limits.storage_bytes):
+        return "storage"
+    if not fits(docs_active, 1, limits.max_documents):
+        return "documents"
+    return None
+
+
 def month_start(now: datetime) -> date:
     """First day of the month in India time: the key of the monthly counters, so they reset at midnight in Delhi."""
     local = now.astimezone(IST)

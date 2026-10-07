@@ -1,0 +1,60 @@
+# Local development stack for the PDF worker: Postgres + the worker image.
+#   docker compose -f docker-compose.worker.yml up --build
+# Then apply migrations once from the host or the same image:
+#   docker compose -f docker-compose.worker.yml run --rm migrate
+# ClamAV is off here (MEDIA_SCANNER=null: every upload counts as clean), which keeps the container small (about 1 GB less RAM).
+# Set MEDIA_SCANNER=clamd to run the real scanner.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: artha
+      POSTGRES_PASSWORD: artha
+      POSTGRES_DB: artha
+    ports:
+      - '5433:5432'
+    volumes:
+      - worker-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U artha -d artha']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    build: &worker-build
+      context: ./apps/api
+      dockerfile: worker/Dockerfile
+    environment: &worker-env
+      DJANGO_SECRET_KEY: local-only-not-secret
+      DJANGO_DEBUG: 'false'
+      DATABASE_URL: postgres://artha:artha@db:5432/artha
+      DIRECT_DATABASE_URL: postgres://artha:artha@db:5432/artha
+      SUPABASE_URL: ${SUPABASE_URL:-http://localhost:54321}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:-local}
+      SUPABASE_JWT_SECRET: ${SUPABASE_JWT_SECRET:-local-jwt-secret-local-jwt-secret-32b}
+      MEDIA_SCANNER: ${MEDIA_SCANNER:-null}
+      WORKER_TYPE_LIMITS: notes.ocr=1,notes.export_pdf=1,notes.export_archive=1
+      WORKER_SHUTDOWN_GRACE_SECONDS: '20'
+    command: ['python', 'manage.py', 'migrate', '--noinput']
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ['tools']
+
+  worker:
+    build: *worker-build
+    environment: *worker-env
+    depends_on:
+      db:
+        condition: service_healthy
+    stop_grace_period: 30s
+    init: false # the image already runs tini as PID 1
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4g
+
+volumes:
+  worker-db:

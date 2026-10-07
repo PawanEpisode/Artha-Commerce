@@ -5,9 +5,66 @@
 
 export const MAX_QUERY_LENGTH = 200
 
-/** Trim, collapse runs of whitespace and cut at the server's 200 character limit (code points, never mid-emoji). */
+/** NFKC (the server does the same, so "ＩＴＣ" and "ITC" match), trim, collapse whitespace, cut at 200 code points (never mid-emoji). */
 export function normaliseQuery(raw: string): string {
-  return [...raw.trim().replace(/\s+/g, ' ')].slice(0, MAX_QUERY_LENGTH).join('')
+  return [...raw.normalize('NFKC').trim().replace(/\s+/g, ' ')].slice(0, MAX_QUERY_LENGTH).join('')
+}
+
+const TOKEN = /"[^"]*"|\S+/g // a quoted phrase stays one token
+const NUMBER = /^[0-9]+[A-Za-z]{0,3}$/ // 149, 80C, 115BAA, 143A
+const TRAILING_PUNCTUATION = /[.,;:!?]+$/
+const CITATION_PREFIXES = new Set([
+  'section',
+  'sec',
+  'rule',
+  'regulation',
+  'reg',
+  'clause',
+  'article',
+  'schedule',
+  'para',
+  'paragraph',
+  'sa',
+  'as',
+  'ifrs',
+  'ias',
+])
+
+/** Digits with brackets, such as `17(5)` or `16(2)(a)`. */
+const isReference = (token: string) =>
+  !token.startsWith('"') && /\p{Nd}/u.test(token) && token.includes('(') && token.includes(')')
+const isNumber = (token: string) => !token.startsWith('"') && NUMBER.test(token.replace(TRAILING_PUNCTUATION, ''))
+
+/**
+ * The query as the server reads it (twin of `prepare_query`, shared `search_query_cases.json`): references become phrases,
+ * so `17(5)` is not "17" and "5", `Section 149` and `Ind AS 115` are one thing to find. Use it for local PDF search too.
+ */
+export function prepareQuery(raw: string): string {
+  const tokens = normaliseQuery(raw).match(TOKEN) ?? []
+  const out: string[] = []
+  let i = 0
+  while (i < tokens.length) {
+    const word = (tokens[i] as string).toLowerCase()
+    let width = 0
+    if (
+      word === 'ind' &&
+      (tokens[i + 1] ?? '').toLowerCase() === 'as' &&
+      i + 2 < tokens.length &&
+      isNumber(tokens[i + 2] as string)
+    )
+      width = 3
+    else if (CITATION_PREFIXES.has(word) && i + 1 < tokens.length && isNumber(tokens[i + 1] as string)) width = 2
+    if (width > 0) {
+      const words = tokens.slice(i, i + width)
+      words[width - 1] = (words[width - 1] as string).replace(TRAILING_PUNCTUATION, '')
+      out.push(`"${words.join(' ')}"`)
+      i += width
+    } else {
+      out.push(isReference(tokens[i] as string) ? `"${tokens[i]}"` : (tokens[i] as string))
+      i += 1
+    }
+  }
+  return out.join(' ')
 }
 
 export const isSearchable = (raw: string) => normaliseQuery(raw).length > 0

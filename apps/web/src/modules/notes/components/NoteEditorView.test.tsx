@@ -11,7 +11,7 @@ const base = {
   onTitle: () => undefined,
   body: 'Hello',
   onBody: () => undefined,
-  isNew: false,
+  localOnly: false,
   sync: { state: 'saved' as const, count: 0 },
   recovered: false,
   onDiscardRecovered: () => undefined,
@@ -73,10 +73,18 @@ describe('NoteEditorView', () => {
     expect(screen.getByText('Line 3: Links must start with https.')).toBeInTheDocument()
   })
 
-  it('titles the primary button for a new note, and says images need a connection offline', () => {
-    render(<NoteEditorView {...base} isNew online={false} />)
-    expect(screen.getByRole('button', { name: 'Save note' })).toBeInTheDocument()
+  it('says a note that only exists on this device waits to sync, and that images need a connection offline', () => {
+    render(<NoteEditorView {...base} localOnly savedText="Saved 4:30 pm" online={false} />)
+    expect(screen.getByText('Saved on this device, waiting to sync')).toBeInTheDocument()
+    expect(screen.queryByText('Saved 4:30 pm')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Save now' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /image/i })).toBeDisabled()
+  })
+
+  it('shows the last saved time once the note is known to the server', () => {
+    render(<NoteEditorView {...base} savedText="Saved 4:30 pm" />)
+    expect(screen.getByText('Saved 4:30 pm')).toBeInTheDocument()
+    expect(screen.queryByText(/waiting to sync/)).not.toBeInTheDocument()
   })
 
   it('edits the title through its label and pins, shows history and trash when allowed', async () => {

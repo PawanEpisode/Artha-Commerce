@@ -1,11 +1,14 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useNavigate } from '@tanstack/react-router'
 import { useCallback, useEffect, useRef } from 'react'
 
 import type { QueuedWrite } from '~/lib/offline-queue'
 import { useOnline } from '~/modules/personalization'
 
 import { notesAnalytics } from '../lib/analytics'
+import { quotaExceeded } from '../lib/errors'
 import { notesKeys } from '../lib/keys'
+import { isCreateEntry } from '../lib/local-note'
 import { notify } from '../lib/notify'
 import { flushNotes, parkedNoteConflicts, queuedNoteWrites } from '../lib/queue'
 import { deriveSync, type SyncInput, type SyncView } from '../lib/sync-state'
@@ -35,25 +38,40 @@ export function useSyncView(saving: boolean): SyncView {
  */
 export function useNotesFlusher(enabled = true) {
   const qc = useQueryClient()
+  const navigate = useNavigate()
   const { queued, oldestQueuedAt } = useNotesQueueState()
   const oldest = useRef(oldestQueuedAt)
   oldest.current = oldestQueuedAt
 
   const run = useCallback(async () => {
-    const dropped: QueuedWrite[] = []
-    const result = await flushNotes({ onDropped: (entry) => dropped.push(entry) }).catch(() => null)
+    const dropped: { entry: QueuedWrite; error: unknown }[] = []
+    const result = await flushNotes({
+      onDropped: (entry, error) => dropped.push({ entry, error }),
+      // The note's id was replaced (it collided with another student's): follow it if it is open.
+      onRekeyed: (oldId, newId) => {
+        if (window.location.pathname.includes(oldId))
+          void navigate({ to: '/app/notes/n/$noteId', params: { noteId: newId }, search: {}, replace: true })
+      },
+    }).catch(() => null)
     if (result && !result.busy) {
       if (result.sent > 0) {
         notify.synced(result.sent)
         notesAnalytics.queueReplayed(result.sent, oldest.current)
       }
-      if (dropped.length > 0) notify.syncDropped(dropped.length)
+      // A note that hit the quota says so as the quota message does; its text stays on this device.
+      const quota = dropped.map((d) => (isCreateEntry(d.entry) ? quotaExceeded(d.error) : null)).find(Boolean)
+      if (quota) {
+        notesAnalytics.quotaBlocked(quota.kind)
+        notify.quotaFull(quota.kind)
+      }
+      const others = dropped.filter((d) => !(isCreateEntry(d.entry) && quotaExceeded(d.error)))
+      if (others.length > 0) notify.syncDropped(others.length)
     }
     const changed = result ? result.sent + result.dropped + (result.parked ?? 0) > 0 : false
     // What the server now holds is the truth: refresh every note view the replayed writes touched.
     await qc.invalidateQueries({ queryKey: changed ? notesKeys.all : notesKeys.queue })
     await qc.invalidateQueries({ queryKey: notesKeys.parked })
-  }, [qc])
+  }, [qc, navigate])
 
   useEffect(() => {
     if (!enabled) return

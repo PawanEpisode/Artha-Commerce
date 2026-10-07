@@ -73,4 +73,21 @@ describe('ConflictSheet', () => {
     )
     expect(screen.getByText(/theirs is/)).toHaveTextContent('theirs is “Old”, yours is “New”')
   })
+
+  it('can say "mark" for a conflict on a comment of a highlight, drawing or pin (the same sheet, the same three choices)', () => {
+    render(
+      <ConflictSheet
+        open
+        onOpenChange={() => undefined}
+        noun="mark"
+        theirs={{ title: '', body_md: 'Section 17(5) blocks cars', updated_at: '2026-10-05T10:30:00Z' }}
+        mine={{ title: '', body: 'Section 17(5) blocks cars and boats' }}
+        deviceLabel="Pixel 7"
+        busy={false}
+        onResolve={() => undefined}
+      />,
+    )
+    expect(screen.getByRole('dialog')).toHaveTextContent('This mark changed somewhere else')
+    expect(screen.getByRole('dialog')).toHaveTextContent('Pixel 7 saved a version')
+  })
 })

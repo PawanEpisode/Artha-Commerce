@@ -1,0 +1,585 @@
+{
+ "normalise": [
+  {
+   "name": "ERD worked example",
+   "page": [
+    595,
+    842
+   ],
+   "pt": [
+    119,
+    168.4,
+    238,
+    13.4
+   ],
+   "expected": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ]
+  },
+  {
+   "name": "whole page",
+   "page": [
+    595,
+    842
+   ],
+   "pt": [
+    0,
+    0,
+    595,
+    842
+   ],
+   "expected": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "name": "landscape page",
+   "page": [
+    842,
+    595
+   ],
+   "pt": [
+    84.2,
+    59.5,
+    421,
+    29.75
+   ],
+   "expected": [
+    0.1,
+    0.1,
+    0.5,
+    0.05
+   ]
+  },
+  {
+   "name": "tiny rectangle rounds",
+   "page": [
+    612,
+    792
+   ],
+   "pt": [
+    10,
+    10,
+    0.01,
+    0.01
+   ],
+   "expected": [
+    0.01634,
+    0.01263,
+    2e-05,
+    1e-05
+   ]
+  }
+ ],
+ "denormalise": [
+  {
+   "name": "ERD worked example",
+   "page": [
+    595,
+    842
+   ],
+   "rect": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ],
+   "expected": [
+    119.0,
+    168.4,
+    238.0,
+    13.39622
+   ]
+  },
+  {
+   "name": "whole page",
+   "page": [
+    595,
+    842
+   ],
+   "rect": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+   ],
+   "expected": [
+    0.0,
+    0.0,
+    595.0,
+    842.0
+   ]
+  },
+  {
+   "name": "landscape page",
+   "page": [
+    842,
+    595
+   ],
+   "rect": [
+    0.1,
+    0.1,
+    0.5,
+    0.05
+   ],
+   "expected": [
+    84.2,
+    59.5,
+    421.0,
+    29.75
+   ]
+  }
+ ],
+ "rotate_rect": [
+  {
+   "name": "rect 0",
+   "rect": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ],
+   "rotation": 0,
+   "expected": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ]
+  },
+  {
+   "name": "rect 90",
+   "rect": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ],
+   "rotation": 90,
+   "expected": [
+    0.75,
+    0.1,
+    0.05,
+    0.3
+   ]
+  },
+  {
+   "name": "rect 180",
+   "rect": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ],
+   "rotation": 180,
+   "expected": [
+    0.6,
+    0.75,
+    0.3,
+    0.05
+   ]
+  },
+  {
+   "name": "rect 270",
+   "rect": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ],
+   "rotation": 270,
+   "expected": [
+    0.2,
+    0.6,
+    0.05,
+    0.3
+   ]
+  },
+  {
+   "name": "rect -90",
+   "rect": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ],
+   "rotation": -90,
+   "expected": [
+    0.2,
+    0.6,
+    0.05,
+    0.3
+   ]
+  },
+  {
+   "name": "rect 450",
+   "rect": [
+    0.1,
+    0.2,
+    0.3,
+    0.05
+   ],
+   "rotation": 450,
+   "expected": [
+    0.75,
+    0.1,
+    0.05,
+    0.3
+   ]
+  },
+  {
+   "name": "full page stays full at 90",
+   "rect": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "rotation": 90,
+   "expected": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "name": "top-left strip goes to the top-right at 90",
+   "rect": [
+    0,
+    0,
+    0.5,
+    0.1
+   ],
+   "rotation": 90,
+   "expected": [
+    0.9,
+    0.0,
+    0.1,
+    0.5
+   ]
+  }
+ ],
+ "rotate_point": [
+  {
+   "name": "point 0",
+   "pt": [
+    0.25,
+    0.75
+   ],
+   "rotation": 0,
+   "expected": [
+    0.25,
+    0.75
+   ]
+  },
+  {
+   "name": "point 90",
+   "pt": [
+    0.25,
+    0.75
+   ],
+   "rotation": 90,
+   "expected": [
+    0.25,
+    0.25
+   ]
+  },
+  {
+   "name": "point 180",
+   "pt": [
+    0.25,
+    0.75
+   ],
+   "rotation": 180,
+   "expected": [
+    0.75,
+    0.25
+   ]
+  },
+  {
+   "name": "point 270",
+   "pt": [
+    0.25,
+    0.75
+   ],
+   "rotation": 270,
+   "expected": [
+    0.75,
+    0.75
+   ]
+  },
+  {
+   "name": "corner at 90",
+   "pt": [
+    0,
+    0
+   ],
+   "rotation": 90,
+   "expected": [
+    1.0,
+    0.0
+   ]
+  }
+ ],
+ "viewport": [
+  {
+   "name": "100% unrotated",
+   "page": [
+    595,
+    842
+   ],
+   "zoom": 1,
+   "rotation": 0,
+   "rect": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ],
+   "size": [
+    595,
+    842
+   ],
+   "expected": [
+    119.0,
+    168.4,
+    238.0,
+    13.39622
+   ]
+  },
+  {
+   "name": "150% unrotated",
+   "page": [
+    595,
+    842
+   ],
+   "zoom": 1.5,
+   "rotation": 0,
+   "rect": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ],
+   "size": [
+    892.5,
+    1263.0
+   ],
+   "expected": [
+    178.5,
+    252.60000000000002,
+    357.0,
+    20.09433
+   ]
+  },
+  {
+   "name": "200% at 90",
+   "page": [
+    595,
+    842
+   ],
+   "zoom": 2,
+   "rotation": 90,
+   "rect": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ],
+   "size": [
+    1684,
+    1190
+   ],
+   "expected": [
+    1320.4075599999999,
+    238.0,
+    26.79244,
+    476.0
+   ]
+  },
+  {
+   "name": "100% at 180",
+   "page": [
+    595,
+    842
+   ],
+   "zoom": 1,
+   "rotation": 180,
+   "rect": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ],
+   "size": [
+    595,
+    842
+   ],
+   "expected": [
+    238.0,
+    660.2037799999999,
+    238.0,
+    13.39622
+   ]
+  },
+  {
+   "name": "75% at 270",
+   "page": [
+    595,
+    842
+   ],
+   "zoom": 0.75,
+   "rotation": 270,
+   "rect": [
+    0.1,
+    0.1,
+    0.2,
+    0.3
+   ],
+   "size": [
+    631.5,
+    446.25
+   ],
+   "expected": [
+    63.150000000000006,
+    312.375,
+    189.45,
+    89.25
+   ]
+  }
+ ],
+ "user_space": [
+  {
+   "name": "unrotated page",
+   "intrinsic_rotate": 0,
+   "box": [
+    595,
+    842
+   ],
+   "rect": [
+    0.2,
+    0.2,
+    0.4,
+    0.01591
+   ],
+   "expected": [
+    119.0,
+    660.204,
+    238.0,
+    13.396
+   ]
+  },
+  {
+   "name": "page rotated 90, displayed corner is the raw bottom-left",
+   "intrinsic_rotate": 90,
+   "box": [
+    595,
+    842
+   ],
+   "rect": [
+    0,
+    0,
+    0.1,
+    0.1
+   ],
+   "expected": [
+    0.0,
+    0.0,
+    59.5,
+    84.2
+   ]
+  },
+  {
+   "name": "page rotated 180",
+   "intrinsic_rotate": 180,
+   "box": [
+    595,
+    842
+   ],
+   "rect": [
+    0,
+    0,
+    0.1,
+    0.1
+   ],
+   "expected": [
+    535.5,
+    0.0,
+    59.5,
+    84.2
+   ]
+  },
+  {
+   "name": "page rotated 270",
+   "intrinsic_rotate": 270,
+   "box": [
+    595,
+    842
+   ],
+   "rect": [
+    0,
+    0,
+    0.1,
+    0.1
+   ],
+   "expected": [
+    535.5,
+    757.8,
+    59.5,
+    84.2
+   ]
+  },
+  {
+   "name": "sticky point on a rotated page",
+   "intrinsic_rotate": 90,
+   "box": [
+    595,
+    842
+   ],
+   "rect": [
+    0.5,
+    0.25,
+    0,
+    0
+   ],
+   "expected": [
+    148.75,
+    421.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "negative rotate wraps",
+   "intrinsic_rotate": -90,
+   "box": [
+    595,
+    842
+   ],
+   "rect": [
+    0,
+    0,
+    0.1,
+    0.1
+   ],
+   "expected": [
+    535.5,
+    757.8,
+    59.5,
+    84.2
+   ]
+  }
+ ],
+ "invalid_rotations": [
+  45,
+  91,
+  0.5
+ ]
+}

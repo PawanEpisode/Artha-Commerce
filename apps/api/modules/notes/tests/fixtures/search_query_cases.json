@@ -1,0 +1,154 @@
+{
+ "prepare": [
+  {
+   "input": "17(5)",
+   "expected": "\"17(5)\""
+  },
+  {
+   "input": "section 17(5) itc",
+   "expected": "section \"17(5)\" itc"
+  },
+  {
+   "input": "Ind AS 115",
+   "expected": "\"Ind AS 115\""
+  },
+  {
+   "input": "ind as 115 revenue",
+   "expected": "\"ind as 115\" revenue"
+  },
+  {
+   "input": "Section 149 of the Companies Act",
+   "expected": "\"Section 149\" of the Companies Act"
+  },
+  {
+   "input": "section 149, directors",
+   "expected": "\"section 149\" directors"
+  },
+  {
+   "input": "SA 200 audit",
+   "expected": "\"SA 200\" audit"
+  },
+  {
+   "input": "AS 2 valuation of inventories",
+   "expected": "\"AS 2\" valuation of inventories"
+  },
+  {
+   "input": "section 115BAA",
+   "expected": "\"section 115BAA\""
+  },
+  {
+   "input": "rule 5(1)",
+   "expected": "rule \"5(1)\""
+  },
+  {
+   "input": "\"blocked credit\" 17(5)",
+   "expected": "\"blocked credit\" \"17(5)\""
+  },
+  {
+   "input": "section",
+   "expected": "section"
+  },
+  {
+   "input": "section abc",
+   "expected": "section abc"
+  },
+  {
+   "input": "as per the rules",
+   "expected": "as per the rules"
+  },
+  {
+   "input": "80C deduction",
+   "expected": "80C deduction"
+  },
+  {
+   "input": "  gst   itc ",
+   "expected": "gst itc"
+  },
+  {
+   "input": "Ind AS",
+   "expected": "Ind AS"
+  },
+  {
+   "input": "ind as 115 and as 2",
+   "expected": "\"ind as 115\" and \"as 2\""
+  },
+  {
+   "input": "\"abc 17(5)",
+   "expected": "\"abc \"17(5)\""
+  },
+  {
+   "input": "धारा १७(५)",
+   "expected": "धारा \"१७(५)\""
+  },
+  {
+   "input": "ｓｅｃｔｉｏｎ １４９",
+   "expected": "\"section 149\""
+  },
+  {
+   "input": "16(2)(a) conditions",
+   "expected": "\"16(2)(a)\" conditions"
+  },
+  {
+   "input": "clause 49 listing",
+   "expected": "\"clause 49\" listing"
+  },
+  {
+   "input": "article 370.",
+   "expected": "\"article 370\""
+  },
+  {
+   "input": "para 5 of SA 700",
+   "expected": "\"para 5\" of \"SA 700\""
+  },
+  {
+   "input": "(5) alone",
+   "expected": "\"(5)\" alone"
+  },
+  {
+   "input": "17(5",
+   "expected": "17(5"
+  },
+  {
+   "input": "section 149 section 150",
+   "expected": "\"section 149\" \"section 150\""
+  },
+  {
+   "input": "ind as 115 ind as 116",
+   "expected": "\"ind as 115\" \"ind as 116\""
+  },
+  {
+   "input": "Ind as",
+   "expected": "Ind as"
+  },
+  {
+   "input": "IND AS 1,",
+   "expected": "\"IND AS 1\""
+  }
+ ],
+ "clean": [
+  {
+   "input": "  section   17(5)  ",
+   "expected": "section 17(5)"
+  },
+  {
+   "input": "ＩＴＣ",
+   "expected": "ITC"
+  },
+  {
+   "input": "a b",
+   "expected": "a b"
+  },
+  {
+   "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "expected": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  {
+   "input": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+   "expected": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+  },
+  {
+   "input": "",
+   "expected": ""
+  }
+ ]
+}

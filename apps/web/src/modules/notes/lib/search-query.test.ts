@@ -1,8 +1,12 @@
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+
 import { describe, expect, it } from 'vitest'
 
 import {
   isSearchable,
   normaliseQuery,
+  prepareQuery,
   queryLengthBucket,
   queryTerms,
   resultBucket,
@@ -58,5 +62,23 @@ describe('buckets', () => {
     expect(queryLengthBucket('a'.repeat(20))).toBe('11-30')
     expect(queryLengthBucket('a'.repeat(50))).toBe('31+')
     expect([0, 3, 10, 40].map(resultBucket)).toEqual(['0', '1-5', '6-20', '21+'])
+  })
+})
+
+// The same fixtures the Python tests use: the two implementations must agree on every case.
+const fixtures = JSON.parse(
+  readFileSync(
+    fileURLToPath(new URL('../../../../../api/modules/notes/tests/fixtures/search_query_cases.json', import.meta.url)),
+    'utf8',
+  ),
+) as { prepare: { input: string; expected: string }[]; clean: { input: string; expected: string }[] }
+
+describe('prepareQuery (shared with the server)', () => {
+  it.each(fixtures.prepare.map((c) => [c.input, c] as const))('%j', (_input, c) => {
+    expect(prepareQuery(c.input)).toBe(c.expected)
+  })
+
+  it.each(fixtures.clean.map((c) => [c.input.slice(0, 12), c] as const))('normaliseQuery %j', (_input, c) => {
+    expect(normaliseQuery(c.input)).toBe(c.expected)
   })
 })

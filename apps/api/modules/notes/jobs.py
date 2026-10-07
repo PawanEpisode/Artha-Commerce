@@ -1,8 +1,9 @@
 """
 Light background work (ERD 3.3, 6.5), run from the cron tick `POST /api/v1/notes/internal/tick/` (or the worker). Handlers are
-thin and idempotent; the heavy ones (PDF inspection, OCR, export) arrive with R2 and run in the always-on worker.
+thin and idempotent; the heavy ones (`HEAVY_TYPES`: virus scan, PDF inspection, text extraction, OCR, export) run only in the
+always-on worker, because the tick claims `LIGHT_TYPES` and nothing else.
 
-    notes.purge             hard-delete notes whose 30 trash days are over, queue their image files for deletion
+    notes.purge             hard-delete notes whose 30 trash days are over (and mark tombstones past theirs), queue image files for deletion
     notes.thin_versions     keep one autosave a day after the first 24 hours (see domain.retention)
     notes.reconcile_usage   recompute usage counters from the tables and log any drift (should be zero)
 
@@ -24,8 +25,8 @@ from core import jobs as core_jobs
 from modules.media import services as media
 
 from .domain.retention import VersionInfo, versions_to_delete
-from .models import Note, NoteVersion, QuotaUsage, Tag
-from .services import trash
+from .models import Document, Note, NoteVersion, QuotaUsage, Tag
+from .services import annotations, trash
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +34,25 @@ JOB_PURGE = "notes.purge"
 JOB_THIN = "notes.thin_versions"
 JOB_RECONCILE = "notes.reconcile_usage"
 JOB_EXPIRE_UPLOADS = media.JOB_EXPIRE
-LIGHT_TYPES = (JOB_PURGE, JOB_THIN, JOB_RECONCILE, JOB_EXPIRE_UPLOADS, media.JOB_DELETE)
+# R2 heavy jobs: queued by services and hooks, handled by the always-on worker (`run_worker`), never by the tick.
+JOB_INSPECT = "notes.inspect"  # payload {document_id}
+JOB_EXTRACT_TEXT = "notes.extract_text"
+JOB_OCR = "notes.ocr"
+JOB_EXPORT_PDF = "notes.export_pdf"
+JOB_EXPORT_ARCHIVE = "notes.export_archive"
+JOB_EXPIRE_DOCUMENTS = "notes.expire_reservations"  # light: unconfirmed uploads, old trash (see `jobs_pdf`)
+JOB_EXPIRE_EXPORTS = "notes.expire_exports"  # light: export rows and files past their 7 days (see `jobs_ocr_export`)
+HEAVY_TYPES = (JOB_INSPECT, JOB_EXTRACT_TEXT, JOB_OCR, JOB_EXPORT_PDF, JOB_EXPORT_ARCHIVE, media.JOB_SCAN)
+LIGHT_TYPES = (
+    JOB_PURGE,
+    JOB_THIN,
+    JOB_RECONCILE,
+    JOB_EXPIRE_DOCUMENTS,
+    JOB_EXPIRE_UPLOADS,
+    JOB_EXPIRE_EXPORTS,
+    media.JOB_DELETE,
+)
+assert not set(LIGHT_TYPES) & set(HEAVY_TYPES), "a job type is either light (the tick) or heavy (the worker)"
 BATCH = 200
 PURGE_BATCHES = 5
 TICK_BUDGET_SECONDS = 20
@@ -44,16 +63,29 @@ def register_handlers(jobs_module) -> None:
     jobs_module.register_handler(JOB_PURGE, purge_job)
     jobs_module.register_handler(JOB_THIN, thin_versions_job)
     jobs_module.register_handler(JOB_RECONCILE, reconcile_usage_job)
+    from . import (
+        jobs_ocr_export,  # OCR, export, archive and their expiry; local because it imports services that import this module
+    )
+
+    jobs_ocr_export.register_handlers(jobs_module)
+    from . import jobs_pdf  # inspection, text extraction, document expiry
+
+    jobs_pdf.register_handlers(jobs_module)
 
 
 def purge_job(payload: dict) -> dict:
-    purged = 0
+    purged = marks = 0
     for _ in range(PURGE_BATCHES):
         done = trash.purge_expired(limit=BATCH)
         purged += done
         if done < BATCH:
             break
-    return {"purged": purged}
+    for _ in range(PURGE_BATCHES):
+        done = annotations.purge_expired(limit=BATCH)
+        marks += done
+        if done < BATCH:
+            break
+    return {"purged": purged, "marks": marks}
 
 
 # --- Chains with a cursor -----------------------------------------------------------------------------------------------
@@ -103,6 +135,10 @@ def _reconcile_user(user_id) -> int:
     actual = {
         "notes_active": Note.objects.filter(user_id=user_id, deleted_at__isnull=True).count(),
         "tags_count": Tag.objects.filter(user_id=user_id).count(),
+        # an uploaded document holds its slot from the reservation until its purge; rejected and expired ones gave it back
+        "docs_active": Document.objects.filter(user_id=user_id, origin=Document.Origin.UPLOAD)
+        .exclude(status__in=[Document.Status.REJECTED, Document.Status.EXPIRED])
+        .count(),
         "bytes_used": Attachment.objects.filter(user_id=user_id, kind__in=NOTE_STORAGE_KINDS)
         .exclude(status=Attachment.Status.DELETING)
         .aggregate(total=Sum("bytes"))["total"]
@@ -123,7 +159,11 @@ def tick() -> dict:
     """Starts today's chains (once per day), queues the always-due jobs and runs what is due within the time budget."""
     today = timezone.now().date().isoformat()
     core_jobs.enqueue(JOB_PURGE, {}, dedupe_key=JOB_PURGE)
+    core_jobs.enqueue(
+        JOB_EXPIRE_DOCUMENTS, {}, dedupe_key=JOB_EXPIRE_DOCUMENTS
+    )  # before media's sweep: it keeps the row as `expired`
     core_jobs.enqueue(JOB_EXPIRE_UPLOADS, {}, dedupe_key=JOB_EXPIRE_UPLOADS)
+    core_jobs.enqueue(JOB_EXPIRE_EXPORTS, {}, dedupe_key=JOB_EXPIRE_EXPORTS)
     for job_type in (JOB_THIN, JOB_RECONCILE):
         core_jobs.enqueue(job_type, {"day": today}, dedupe_key=f"{job_type}:{today}:start", once=True)
     ran = core_jobs.run_pending(types=LIGHT_TYPES, budget_seconds=TICK_BUDGET_SECONDS, worker="notes-tick")

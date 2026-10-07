@@ -53,6 +53,12 @@ def test_the_notes_media_and_core_tables_are_covered():
         "notes_noteimage",
         "notes_settings",
         "notes_monthlyusage",
+        "notes_document",
+        "notes_filecontent",
+        "notes_filepage",
+        "notes_documentchapter",
+        "notes_annotation",
+        "notes_exportjob",
     } <= set(TABLES)
 
 

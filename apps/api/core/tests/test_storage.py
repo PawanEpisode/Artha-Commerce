@@ -67,3 +67,42 @@ def test_exists_is_false_on_404_and_errors_on_other_failures(calls):
     calls.status = 500
     with pytest.raises(StorageError):
         store.exists("b", "p")
+
+
+def _range_server(monkeypatch, status, body=b"0123456789"):
+    seen = []
+
+    def fake(method, url, **kwargs):
+        seen.append((method, url, kwargs.get("headers", {})))
+        if "/object/sign/" in url and method == "POST":
+            return httpx.Response(
+                200, json={"signedURL": "/object/sign/b/p?token=r"}, request=httpx.Request(method, url)
+            )
+        return httpx.Response(status, content=body, request=httpx.Request(method, url))
+
+    monkeypatch.setattr(httpx, "request", fake)
+    return seen
+
+
+def test_read_range_sends_a_range_header_to_a_signed_url_without_the_service_key(monkeypatch):
+    seen = _range_server(monkeypatch, 206, b"234")
+    assert SupabaseStorage("https://x.supabase.co", "sb_secret").read_range("b", "p", 2, 4) == b"234"
+    method, url, headers = seen[-1]
+    assert (method, url) == ("GET", "https://x.supabase.co/storage/v1/object/sign/b/p?token=r")
+    assert headers == {"Range": "bytes=2-4"}  # a read capability needs no credentials
+
+
+def test_read_range_slices_when_the_server_ignores_the_range(monkeypatch):
+    _range_server(monkeypatch, 200)
+    assert SupabaseStorage("https://x.supabase.co", "k").read_range("b", "p", 2, 4) == b"234"
+
+
+def test_read_range_past_the_end_is_empty_and_failures_are_storage_errors(monkeypatch):
+    _range_server(monkeypatch, 416)
+    store = SupabaseStorage("https://x.supabase.co", "k")
+    assert store.read_range("b", "p", 100, 200) == b""
+    _range_server(monkeypatch, 500)
+    with pytest.raises(StorageError, match="500"):
+        store.read_range("b", "p", 0, 9)
+    with pytest.raises(ValueError):
+        store.read_range("b", "p", 5, 1)

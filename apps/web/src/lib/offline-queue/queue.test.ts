@@ -208,3 +208,12 @@ describe('flush lock', () => {
     expect(locks.request).toHaveBeenCalledWith('artha-flush:u1:core', { ifAvailable: true }, expect.any(Function))
   })
 })
+
+describe('queue order', () => {
+  it('stamps writes made in the same millisecond with strictly increasing times', async () => {
+    const { queueStamp } = await import('./write')
+    const stamps = [queueStamp(), queueStamp(), queueStamp()]
+    expect(stamps[1]).toBeGreaterThan(stamps[0] as number)
+    expect(stamps[2]).toBeGreaterThan(stamps[1] as number)
+  })
+})

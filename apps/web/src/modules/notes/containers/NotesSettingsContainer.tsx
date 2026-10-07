@@ -3,6 +3,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 
 import { currentUserId, removeEntry } from '~/lib/offline-queue'
+import { useFeatureFlag } from '~/modules/observability'
 
 import { DeleteNotesDialog } from '../components/DeleteNotesDialog'
 import { UsageSection } from '../components/UsageSection'
@@ -14,6 +15,7 @@ import { notify } from '../lib/notify'
 import { clearUserData } from '../lib/offline-store'
 import { queuedNoteWrites } from '../lib/queue'
 import { NotesShell } from './NotesShell'
+import { PdfSettingsContainer } from './PdfSettingsContainer'
 
 /** Starts a download of `data` as a JSON file, from a Blob URL that is released right after. */
 function download(data: unknown, filename: string) {
@@ -30,6 +32,7 @@ function download(data: unknown, filename: string) {
 function Settings() {
   const qc = useQueryClient()
   const usage = useUsage()
+  const pdfOn = useFeatureFlag('notes_pdf')
   const [exporting, setExporting] = useState(false)
   const [confirming, setConfirming] = useState(false)
   const [deleting, setDeleting] = useState(false)
@@ -81,11 +84,13 @@ function Settings() {
       ) : (
         <UsageSection
           usage={usage.data}
+          hideStorage={pdfOn}
           exporting={exporting}
           onExport={() => void onExport()}
           onDeleteAll={() => setConfirming(true)}
         />
       )}
+      {pdfOn ? <PdfSettingsContainer /> : null}
       <DeleteNotesDialog
         open={confirming}
         onOpenChange={setConfirming}

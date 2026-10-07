@@ -59,7 +59,8 @@ def test_every_student_on_the_level_gets_one_notification_and_a_job_outside_the_
     assert ScheduledJob.objects.filter(kind="deliver_deferred").count() == 2 and not Delivery.objects.exists()
 
 
-def test_the_push_goes_out_when_the_job_fires(scheme, fake_push):
+def test_the_push_goes_out_when_the_job_fires(scheme, fake_push, clock):
+    # `clock` is noon in India: without it the test followed the real time of day and failed inside quiet hours (22:00 to 08:00 IST).
     enroll(scheme, USER)
     publish(scheme, link="/app/syllabus")
     fire_all()

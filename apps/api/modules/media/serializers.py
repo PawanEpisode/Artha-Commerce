@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import Attachment
-from .registry import kind_names
+from .registry import public_kind_names
 
 
 class CreateUploadSerializer(serializers.Serializer):
@@ -10,7 +10,7 @@ class CreateUploadSerializer(serializers.Serializer):
     bytes = serializers.IntegerField(min_value=1)
 
     def validate_kind(self, value):
-        if value not in kind_names():
+        if value not in public_kind_names():
             raise serializers.ValidationError("Unknown kind.")
         return value
 

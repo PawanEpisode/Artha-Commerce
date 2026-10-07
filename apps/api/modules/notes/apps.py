@@ -11,9 +11,10 @@ class NotesConfig(AppConfig):
 
         from . import jobs as notes_jobs
         from . import selectors, services
-        from .media_kinds import NOTE_IMAGE
+        from .media_kinds import NOTE_EXPORT, NOTE_IMAGE, NOTE_PDF
 
-        media_registry.register_kind(NOTE_IMAGE)
+        for kind in (NOTE_IMAGE, NOTE_PDF, NOTE_EXPORT):
+            media_registry.register_kind(kind)
         notes_jobs.register_handlers(jobs)
         registry.register_eraser("notes", services.account.delete_all_for_user)
         registry.register_exporter("notes", selectors.export_all)

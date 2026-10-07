@@ -21,6 +21,7 @@ export const notify = {
       duration: UNDO_MS,
       action: { label: 'Undo', onClick: onUndo },
     }),
+  discarded: () => toast.info('Draft deleted', { id: ID.trash, description: 'It was only on this device.' }),
   restored: () => toast.success('Note restored'),
   versionRestored: (rev: number) =>
     toast.success(`Restored version ${rev}`, { description: 'It is now the latest version.' }),

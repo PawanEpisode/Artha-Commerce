@@ -63,6 +63,8 @@ export interface AggregateParams {
   topic?: string
   tab: NoteTab
   tag?: string
+  color?: string
+  doc?: string
   from?: string
   to?: string
   unfiled?: boolean
@@ -83,6 +85,8 @@ export function aggregateParams(
     topic: search.topic,
     tab: tabOf(search),
     tag: search.tag,
+    color: search.color,
+    doc: search.doc,
     from: ordered ? search.to : search.from,
     to: ordered ? search.from : search.to,
     cursor: search.cursor,
@@ -99,6 +103,8 @@ export function aggregateQuery(params: AggregateParams, limit?: number): string 
   add('topic', params.topic)
   add('tab', params.tab)
   add('tag', params.tag)
+  add('color', params.color)
+  add('doc', params.doc)
   add('from', params.from)
   add('to', params.to)
   add('q', params.q)

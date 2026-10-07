@@ -1,4 +1,6 @@
 /** Shapes returned by the notes API (`/api/v1/notes/...`). Mirrors docs/F-03-API-CONTRACT.md. */
+import type { DocumentSummary } from './document-types'
+import type { DocumentRow, HighlightRow } from './library-types'
 
 export type NoteKind = 'note' | 'exam_summary'
 export type NoteOrigin = 'typed' | 'clip' | 'ai_summary' | 'import'
@@ -49,6 +51,11 @@ export interface NoteSummary {
   purge_after: string | null
   /** Set by the offline cache, never by the server: this row is a copy kept on the device. */
   offline_copy?: boolean
+  /**
+   * Set by this device only: the note was created here and the server has not confirmed its row yet (the id is
+   * client generated). Cleared when the create reaches the server.
+   */
+  local_only?: boolean
 }
 
 export interface ClipSource {
@@ -70,7 +77,8 @@ export interface Page<T> {
   next_cursor: string | null
 }
 
-export type AggregateItem = NoteSummary & { type: 'note' }
+/** Rows of `GET aggregate/`: notes, and from R2 marks and documents (`tab=highlights|documents|all`). */
+export type AggregateItem = (NoteSummary & { type: 'note' }) | HighlightRow | DocumentRow
 
 export interface ChapterCountsRow {
   chapter_id: string
@@ -107,7 +115,7 @@ export interface ChapterOverview {
   last_noted_at: string | null
   current_summary: NoteSummary | null
   recent: NoteSummary[]
-  documents: unknown[]
+  documents: DocumentSummary[]
 }
 
 export interface SearchHit {
@@ -160,6 +168,8 @@ export interface Usage {
   limits: UsageLimits
   used: { storage_bytes: number; notes: number; tags: number; [key: string]: number }
   resets_on: string
+  /** R2: the five largest documents (trashed ones included) for the quota sheet. */
+  largest_documents?: Array<{ id: string; title: string; bytes: number }>
 }
 
 /** What a 409 `note_conflict` carries: their version, what you sent, and a best-effort merge. */

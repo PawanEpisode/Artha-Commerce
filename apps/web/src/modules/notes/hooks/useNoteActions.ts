@@ -13,16 +13,17 @@ import { removeCachedNote } from '../lib/offline-store'
 import type { LocalEdit } from '../lib/optimistic'
 import {
   clipOrQueue,
-  createNoteOrQueue,
   deleteNoteOrQueue,
+  ensureCreateQueued,
   patchNoteOrQueue,
   restoreNoteOrQueue,
+  setNoteTagsAfterCreate,
   type WriteOutcome,
 } from '../lib/queue'
 import type { Note, NotePatch, PatchResult, TagRef } from '../lib/types'
-import { applyEditLocally, storeNote } from './noteCache'
+import { applyEditLocally, localNote, storeNote } from './noteCache'
 
-type NoteRef = Pick<Note, 'id' | 'rev' | 'title' | 'created_at'> & Partial<Pick<Note, 'pinned' | 'link'>>
+type NoteRef = Pick<Note, 'id' | 'rev' | 'title' | 'created_at'> & Partial<Pick<Note, 'pinned' | 'link' | 'local_only'>>
 
 /** What the server said about a saved edit besides the new note: it brought the note back, or replaced another device's value. */
 export function reportPatch(result: PatchResult) {
@@ -92,9 +93,14 @@ export function useNoteActions() {
         const userId = await currentUserId()
         if (userId) await removeCachedNote(userId, note.id)
         qc.removeQueries({ queryKey: notesKeys.note(note.id) })
-        if (result.status === 'queued') notify.queued()
         notesAnalytics.noteDeleted(note.created_at)
-        notify.trashed(() => void restore(note))
+        if (result.status === 'discarded') {
+          // Never reached the server: its waiting writes were dropped, so there is nothing to undo or restore.
+          notify.discarded()
+        } else {
+          if (result.status === 'queued') notify.queued()
+          notify.trashed(() => void restore(note))
+        }
         await refresh()
         return true
       } catch (error) {
@@ -129,6 +135,27 @@ export function useNoteActions() {
       }
       if (Object.keys(base).length > 0) patch.base = base
       try {
+        const local = note.local_only ? await localNote(qc, note.id) : undefined
+        if (local?.local_only) {
+          // The server has no row yet: queue the create first, so tags, filing and a pin all land behind it.
+          const onlyTags = meta.tagIds !== undefined && meta.pinned === undefined && meta.selection === undefined
+          const createdFresh = onlyTags
+            ? (await setNoteTagsAfterCreate(local, meta.tagIds ?? [])).createdFresh
+            : await ensureCreateQueued(local)
+          if (createdFresh) {
+            notesAnalytics.noteCreated({
+              source: local.link.chapter_id ? 'capture' : 'new',
+              hasChapter: Boolean(local.link.chapter_id),
+              first: false,
+            })
+          }
+          if (onlyTags) {
+            const saved = await applyEditLocally(qc, note.id, edit, true)
+            notify.queued()
+            await refresh()
+            return saved
+          }
+        }
         const result: WriteOutcome<PatchResult> = await patchNoteOrQueue(note.id, patch, note.title)
         const saved =
           result.status === 'saved'
@@ -153,16 +180,6 @@ export function useNoteActions() {
       return done
     },
     [change],
-  )
-
-  const create = useCallback(
-    async (input: Parameters<typeof createNoteOrQueue>[0]) => {
-      const result = await createNoteOrQueue(input)
-      if (result.status === 'saved') await storeNote(qc, result.data)
-      await refresh()
-      return result
-    },
-    [qc, refresh],
   )
 
   const clip = useCallback(
@@ -206,5 +223,5 @@ export function useNoteActions() {
     [qc, handleQuota],
   )
 
-  return { create, clip, trash, restore, pin, change, restoreOldVersion, addTag, refresh, handleQuota }
+  return { clip, trash, restore, pin, change, restoreOldVersion, addTag, refresh, handleQuota }
 }

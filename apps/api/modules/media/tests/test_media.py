@@ -22,7 +22,7 @@ def test_every_endpoint_needs_a_token(client):
 
 def test_the_note_image_kind_is_registered_with_its_rules():
     spec = registry.get_kind("note_image")
-    assert spec.bucket == "notes-private" and spec.scan == "none" and spec.flag == "notes"
+    assert spec.bucket == "notes-private" and spec.scan == "clamav" and spec.flag == "notes"
     assert spec.mimes == {"image/png", "image/jpeg", "image/webp"} and "note_image" in registry.kind_names()
     with pytest.raises(registry.UnknownKind):
         registry.get_kind("nope")

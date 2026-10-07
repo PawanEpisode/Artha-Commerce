@@ -25,3 +25,10 @@ def update_settings(user_id, changes: dict) -> Settings:
             setattr(settings, key, cleaned_legend(changes[key]) if key == "color_legend" else changes[key])
     settings.save()
     return settings
+
+
+def capabilities() -> dict[str, bool]:
+    """What this deployment can do, for the settings screen: recall exists only once F-15 registers a provider."""
+    from core.recall_port import get_recall_provider
+
+    return {"recall": get_recall_provider() is not None, "ocr_hindi": True, "ai_ocr": False}

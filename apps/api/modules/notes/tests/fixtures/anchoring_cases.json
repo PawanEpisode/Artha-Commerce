@@ -1,0 +1,947 @@
+{
+ "normalise": [
+  {
+   "name": "collapses whitespace and folds case",
+   "input": "Input  Tax\nCredit",
+   "text": "input tax credit",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ]
+  },
+  {
+   "name": "drops a soft hyphen",
+   "input": "in­put",
+   "text": "input",
+   "starts": [
+    0,
+    1,
+    3,
+    4,
+    5
+   ],
+   "ends": [
+    1,
+    2,
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "name": "drops zero-width characters",
+   "input": "tax​ credit﻿!",
+   "text": "tax credit!",
+   "starts": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13
+   ]
+  },
+  {
+   "name": "joins a hyphenated line break",
+   "input": "deduc-\ntion of tax",
+   "text": "deduction of tax",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ]
+  },
+  {
+   "name": "joins across CRLF and indentation",
+   "input": "pre-\r\n   paid",
+   "text": "prepaid",
+   "starts": [
+    0,
+    1,
+    2,
+    9,
+    10,
+    11,
+    12
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "name": "keeps a real hyphen",
+   "input": "well-known",
+   "text": "well-known",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  {
+   "name": "keeps a hyphen before a capital",
+   "input": "state-\nOwned",
+   "text": "state- owned",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "name": "keeps a hyphen after a digit",
+   "input": "17-\nA",
+   "text": "17- a",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "name": "expands ligatures and folds full width",
+   "input": "ﬁnal ﬂow ＩＴＣ",
+   "text": "final flow itc",
+   "starts": [
+    0,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "ends": [
+    1,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "name": "non-breaking space is a space",
+   "input": "a  b",
+   "text": "a b",
+   "starts": [
+    0,
+    1,
+    3
+   ],
+   "ends": [
+    1,
+    3,
+    4
+   ]
+  },
+  {
+   "name": "devanagari spacing",
+   "input": "आगत  कर\nक्रेडिट",
+   "text": "आगत कर क्रेडिट",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    8,
+    10,
+    10,
+    12,
+    12,
+    14
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    10,
+    10,
+    12,
+    12,
+    14,
+    14,
+    15
+   ]
+  },
+  {
+   "name": "devanagari hyphenated line break",
+   "input": "कर-\nनिर्धारण",
+   "text": "करनिर्धारण",
+   "starts": [
+    0,
+    1,
+    4,
+    4,
+    6,
+    6,
+    8,
+    8,
+    10,
+    11
+   ],
+   "ends": [
+    1,
+    2,
+    6,
+    6,
+    8,
+    8,
+    10,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "name": "a combining accent stays with its letter",
+   "input": "café au lait",
+   "text": "café au lait",
+   "starts": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "ends": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "name": "leading and trailing spaces are kept as one",
+   "input": "  a  ",
+   "text": " a ",
+   "starts": [
+    0,
+    2,
+    3
+   ],
+   "ends": [
+    2,
+    3,
+    5
+   ]
+  },
+  {
+   "name": "empty",
+   "input": "",
+   "text": "",
+   "starts": [],
+   "ends": []
+  }
+ ],
+ "selector": [
+  {
+   "name": "middle of a page",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "start": 0,
+   "end": 16,
+   "expected": {
+    "quote_exact": "Input tax credit",
+    "quote_prefix": "",
+    "quote_suffix": " shall not be available in respe",
+    "text_start": 0,
+    "text_end": 16
+   }
+  },
+  {
+   "name": "with context on both sides",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "start": 110,
+   "end": 130,
+   "expected": {
+    "quote_exact": " 17(5) lists blocked",
+    "quote_prefix": "or personal consumption. Section",
+    "quote_suffix": " credits. Input tax credit is al",
+    "text_start": 110,
+    "text_end": 130
+   }
+  },
+  {
+   "name": "near the end",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "start": 172,
+   "end": 192,
+   "expected": {
+    "quote_exact": " for motor vehicles.",
+    "quote_prefix": "Input tax credit is also blocked",
+    "quote_suffix": "",
+    "text_start": 172,
+    "text_end": 192
+   }
+  },
+  {
+   "name": "clamped to the page",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "start": -5,
+   "end": 10,
+   "expected": {
+    "quote_exact": "Input tax ",
+    "quote_prefix": "",
+    "quote_suffix": "credit shall not be available in",
+    "text_start": 0,
+    "text_end": 10
+   }
+  },
+  {
+   "name": "long selection is cut at 1000",
+   "page_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "start": 100,
+   "end": 1300,
+   "expected": {
+    "quote_exact": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "quote_prefix": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "quote_suffix": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "text_start": 100,
+    "text_end": 1300
+   }
+  }
+ ],
+ "locate": [
+  {
+   "name": "exact and unique",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "blocked credits",
+   "quote_prefix": "Section 17(5) lists ",
+   "quote_suffix": ". Input",
+   "hint_start": 0,
+   "expect_text": "blocked credits",
+   "result": [
+    123,
+    138,
+    1.0
+   ],
+   "matched": "blocked credits"
+  },
+  {
+   "name": "a quote with a reference",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Section 17(5)",
+   "quote_prefix": "",
+   "quote_suffix": " lists",
+   "hint_start": null,
+   "expect_text": "Section 17(5)",
+   "result": [
+    103,
+    116,
+    1.0
+   ],
+   "matched": "Section 17(5)"
+  },
+  {
+   "name": "case does not matter",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "SECTION 17(5) LISTS",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "Section 17(5) lists",
+   "result": [
+    103,
+    122,
+    1.0
+   ],
+   "matched": "Section 17(5) lists"
+  },
+  {
+   "name": "repeated phrase: suffix picks the first",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit",
+   "quote_prefix": "",
+   "quote_suffix": " shall not be available",
+   "hint_start": 120,
+   "expect_text": "Input tax credit",
+   "result": [
+    0,
+    16,
+    1.0
+   ],
+   "matched": "Input tax credit"
+  },
+  {
+   "name": "repeated phrase: prefix picks the second",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit",
+   "quote_prefix": "Section 17(5) lists blocked credits. ",
+   "quote_suffix": "",
+   "hint_start": 0,
+   "expect_text": "Input tax credit",
+   "result": [
+    140,
+    156,
+    1.0
+   ],
+   "matched": "Input tax credit"
+  },
+  {
+   "name": "repeated phrase, no context: the hint decides",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": 112,
+   "expect_text": "Input tax credit",
+   "result": [
+    140,
+    156,
+    1.0
+   ],
+   "matched": "Input tax credit"
+  },
+  {
+   "name": "repeated phrase, no context, no hint: the first, score is lower",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "Input tax credit",
+   "result": [
+    0,
+    16,
+    0.75
+   ],
+   "matched": "Input tax credit"
+  },
+  {
+   "name": "text shifted by an inserted heading",
+   "page_text": "Chapter 7: Credit\n\nInput tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "blocked credits",
+   "quote_prefix": "Section 17(5) lists ",
+   "quote_suffix": ". Input",
+   "hint_start": 105,
+   "expect_text": "blocked credits",
+   "result": [
+    142,
+    157,
+    1.0
+   ],
+   "matched": "blocked credits"
+  },
+  {
+   "name": "different spacing and line breaks",
+   "page_text": "Input tax  credit shall\nnot be   available in respect of goods",
+   "quote_exact": "tax credit shall not be available",
+   "quote_prefix": "Input ",
+   "quote_suffix": " in respect",
+   "hint_start": 6,
+   "expect_text": "tax  credit shall\nnot be   available",
+   "result": [
+    6,
+    42,
+    1.0
+   ],
+   "matched": "tax  credit shall\nnot be   available"
+  },
+  {
+   "name": "hyphenated line break in the page",
+   "page_text": "Input tax credit shall not be avail-\nable in respect of goods",
+   "quote_exact": "available in respect",
+   "quote_prefix": "not be ",
+   "quote_suffix": " of goods",
+   "hint_start": 30,
+   "expect_text": "avail-\nable in respect",
+   "result": [
+    30,
+    52,
+    1.0
+   ],
+   "matched": "avail-\nable in respect"
+  },
+  {
+   "name": "hyphenated line break in the quote",
+   "page_text": "Input tax credit shall not be available in respect of goods",
+   "quote_exact": "avail-\nable in respect",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "available in respect",
+   "result": [
+    30,
+    50,
+    1.0
+   ],
+   "matched": "available in respect"
+  },
+  {
+   "name": "soft hyphens and zero-width spaces in the page",
+   "page_text": "Input tax cre­dit shall​ not be available",
+   "quote_exact": "tax credit shall not",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "tax cre­dit shall​ not",
+   "result": [
+    6,
+    28,
+    1.0
+   ],
+   "matched": "tax cre­dit shall​ not"
+  },
+  {
+   "name": "ligature in the page",
+   "page_text": "The ﬁnal return is due on the twentieth",
+   "quote_exact": "final return is due",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "ﬁnal return is due",
+   "result": [
+    4,
+    22,
+    1.0
+   ],
+   "matched": "ﬁnal return is due"
+  },
+  {
+   "name": "OCR confuses I and l",
+   "page_text": "lnput tax credit shall not be avaiIable in respect of goods or services",
+   "quote_exact": "Input tax credit shall not be available in respect",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": 0,
+   "expect_text": "lnput tax credit shall not be avaiIable in respect",
+   "result": [
+    0,
+    50,
+    0.96
+   ],
+   "matched": "lnput tax credit shall not be avaiIable in respect"
+  },
+  {
+   "name": "OCR reads rn as m",
+   "page_text": "The modem approach to depreciation under the Companies Act",
+   "quote_exact": "The modern approach to depreciation",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "The modem approach to depreciation",
+   "result": [
+    0,
+    34,
+    0.9429
+   ],
+   "matched": "The modem approach to depreciation"
+  },
+  {
+   "name": "a word was added in the new edition",
+   "page_text": "Input tax credit shall generally not be available in respect of goods",
+   "quote_exact": "Input tax credit shall not be available in respect of goods",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "Input tax credit shall generally not be available in respect of goods",
+   "result": [
+    0,
+    69,
+    0.8305
+   ],
+   "matched": "Input tax credit shall generally not be available in respect of goods"
+  },
+  {
+   "name": "a word was removed in the new edition",
+   "page_text": "Input tax credit not be available in respect of goods or services",
+   "quote_exact": "Input tax credit shall not be available in respect of goods",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "Input tax credit not be available in respect of goods",
+   "result": [
+    0,
+    53,
+    0.8983
+   ],
+   "matched": "Input tax credit not be available in respect of goods"
+  },
+  {
+   "name": "similar sentences: context picks the right fuzzy match",
+   "page_text": "Rate of tax is 18 percent for services supplied by the contractor. Elsewhere the rate of tax is 12 percent for goods supplied by the contractor. Always check the rate of tax is stated on the invoice.",
+   "quote_exact": "rate of tax is 12 pecent for goods",
+   "quote_prefix": "Elsewhere the ",
+   "quote_suffix": " supplied by",
+   "hint_start": null,
+   "expect_text": "rate of tax is 12 percent for goods",
+   "result": [
+    81,
+    116,
+    0.9706
+   ],
+   "matched": "rate of tax is 12 percent for goods"
+  },
+  {
+   "name": "not found at all",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "depreciation on plant and machinery",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": null,
+   "result": null
+  },
+  {
+   "name": "too many edits",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit shall be refunded within sixty days always",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": null,
+   "result": null
+  },
+  {
+   "name": "short quote missing",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "xyz",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": null,
+   "result": null
+  },
+  {
+   "name": "empty quote",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "   ",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": null,
+   "result": null
+  },
+  {
+   "name": "empty page",
+   "page_text": "",
+   "quote_exact": "blocked credits",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": null,
+   "result": null
+  },
+  {
+   "name": "devanagari exact",
+   "page_text": "आगत कर क्रेडिट का दावा केवल तभी किया जा सकता है जब वस्तुएँ व्यावसायिक उपयोग के लिए हों। धारा 17(5) अवरुद्ध क्रेडिट बताती है।",
+   "quote_exact": "अवरुद्ध क्रेडिट",
+   "quote_prefix": "बताती",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "अवरुद्ध क्रेडिट",
+   "result": [
+    99,
+    114,
+    1.0
+   ],
+   "matched": "अवरुद्ध क्रेडिट"
+  },
+  {
+   "name": "devanagari with extra spaces and a line break",
+   "page_text": "आगत  कर\nक्रेडिट का दावा केवल तभी",
+   "quote_exact": "आगत कर क्रेडिट का दावा",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "आगत  कर\nक्रेडिट का दावा",
+   "result": [
+    0,
+    23,
+    1.0
+   ],
+   "matched": "आगत  कर\nक्रेडिट का दावा"
+  },
+  {
+   "name": "devanagari with one wrong matra",
+   "page_text": "आगत कर क्रेडिट का दावा केवल तभी कीया जा सकता है",
+   "quote_exact": "आगत कर क्रेडिट का दावा केवल तभी किया जा सकता",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "आगत कर क्रेडिट का दावा केवल तभी कीया जा सकता",
+   "result": [
+    0,
+    44,
+    0.9773
+   ],
+   "matched": "आगत कर क्रेडिट का दावा केवल तभी कीया जा सकता"
+  },
+  {
+   "name": "devanagari ocr noise",
+   "page_text": "आगत कर क्रडिट का दावा केवल तभी किया जा सकता है",
+   "quote_exact": "आगत कर क्रेडिट का दावा केवल तभी",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "आगत कर क्रडिट का दावा केवल तभी",
+   "result": [
+    0,
+    30,
+    0.9677
+   ],
+   "matched": "आगत कर क्रडिट का दावा केवल तभी"
+  },
+  {
+   "name": "hindi and english mixed",
+   "page_text": "ITC यानी input tax credit का दावा धारा 16 के अंतर्गत होता है",
+   "quote_exact": "input tax credit का दावा",
+   "quote_prefix": "यानी ",
+   "quote_suffix": " धारा",
+   "hint_start": null,
+   "expect_text": "input tax credit का दावा",
+   "result": [
+    9,
+    33,
+    1.0
+   ],
+   "matched": "input tax credit का दावा"
+  },
+  {
+   "name": "at the very start of the page",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit shall not",
+   "quote_prefix": "",
+   "quote_suffix": " be available",
+   "hint_start": 0,
+   "expect_text": "Input tax credit shall not",
+   "result": [
+    0,
+    26,
+    1.0
+   ],
+   "matched": "Input tax credit shall not"
+  },
+  {
+   "name": "at the very end of the page",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "for motor vehicles.",
+   "quote_prefix": "also blocked ",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": "for motor vehicles.",
+   "result": [
+    173,
+    192,
+    1.0
+   ],
+   "matched": "for motor vehicles."
+  },
+  {
+   "name": "a long quote with a few edits",
+   "page_text": "Preface.\nThe registered person shall be entitled to take credit of input tax charged on any supply of goods or services or both to him which are used or intended to be used in the course or furtherance of his business and the said amount shall be credited to the electronic  credit-ledger of such person, subject to such conditions and restrictions as may be prescribd and in the manner specified in section 49, and no credit shall be allowed unless the tax has actually been paid.",
+   "quote_exact": "The registered person shall be entitled to take credit of input tax charged on any supply of goods or services or both to him which are used or intended to be used in the course or furtherance of his business and the said amount shall be credited to the electronic credit ledger of such person, subject to such conditions and restrictions as may be prescribed and in the manner specified in section 49, and no credit shall be allowed unless the tax has actually been paid.",
+   "quote_prefix": "Preface.",
+   "quote_suffix": "",
+   "hint_start": 9,
+   "expect_text": "The registered person shall be entitled to take credit of input tax charged on any supply of goods or services or both to him which are used or intended to be used in the course or furtherance of his business and the said amount shall be credited to the electronic  credit-ledger of such person, subject to such conditions and restrictions as may be prescribd and in the manner specified in section 49, and no credit shall be allowed unless the tax has actually been paid.",
+   "result": [
+    9,
+    481,
+    0.9917
+   ],
+   "matched": "The registered person shall be entitled to take credit of input tax charged on any supply of goods or services or both to him which are used or intended to be used in the course or furtherance of his business and the said amount shall be credited to the electronic  credit-ledger of such person, subject to such conditions and restrictions as may be prescribd and in the manner specified in section 49, and no credit shall be allowed unless the tax has actually been paid."
+  },
+  {
+   "name": "ocr noise and a stale hint after a heading was inserted",
+   "page_text": "Chapter 7: Credit\n\nlnput tax credit shaII not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "Input tax credit shall not be available in respect",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": 0,
+   "expect_text": "lnput tax credit shaII not be available in respect",
+   "result": [
+    19,
+    69,
+    0.94
+   ],
+   "matched": "lnput tax credit shaII not be available in respect"
+  },
+  {
+   "name": "a long quote that is gone",
+   "page_text": "Input tax credit shall not be available in respect of goods or services used for personal consumption. Section 17(5) lists blocked credits. Input tax credit is also blocked for motor vehicles.",
+   "quote_exact": "The registered person shall be entitled to take credit of input tax charged on any supply of goods or services or both to him which are used or intended to be used in the course or furtherance of his business and the said amount shall be credited to the electronic credit ledger of such person, subject to such conditions and restrictions as may be prescribed and in the manner specified in section 49, and no credit shall be allowed unless the tax has actually been paid.",
+   "quote_prefix": "",
+   "quote_suffix": "",
+   "hint_start": null,
+   "expect_text": null,
+   "result": null
+  }
+ ]
+}

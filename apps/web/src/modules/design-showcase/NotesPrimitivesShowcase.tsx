@@ -35,6 +35,7 @@ export function NotesPrimitivesShowcase() {
         <h2 className="text-xl font-bold">Usage bar</h2>
         <div className="grid max-w-xl gap-4">
           <UsageBar label="Storage" used={120} limit={500} format={(n) => `${n} MB`} />
+          <UsageBar label="PDF storage" used={412} limit={500} unit="MB" />
           <UsageBar label="Notes" used={1900} limit={2000} />
           <UsageBar label="Storage" used={500} limit={500} format={(n) => `${n} MB`} fullText="Storage full" />
         </div>

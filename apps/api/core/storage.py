@@ -18,6 +18,8 @@ from .http import service_role_headers
 logger = logging.getLogger(__name__)
 
 TIMEOUT = httpx.Timeout(10.0, connect=3.0)
+READ_TIMEOUT = httpx.Timeout(30.0, connect=3.0)  # a range read moves megabytes
+READ_URL_SECONDS = 120
 
 
 class StorageError(Exception):
@@ -46,6 +48,8 @@ class Storage(Protocol):
     def create_signed_url(self, bucket: str, path: str, expires_in: int) -> str: ...
 
     def exists(self, bucket: str, path: str) -> bool: ...
+
+    def read_range(self, bucket: str, path: str, start: int, end: int) -> bytes: ...
 
     def ensure_bucket(self, bucket: str, *, public: bool = False) -> bool: ...
 
@@ -108,6 +112,26 @@ class SupabaseStorage:
 
     def exists(self, bucket: str, path: str) -> bool:
         return self._request("GET", f"{self._base}/object/info/{bucket}/{path}", allow=(404,)).status_code == 200
+
+    def read_range(self, bucket: str, path: str, start: int, end: int) -> bytes:
+        """
+        Bytes `start` to `end` inclusive of a private object (fewer when it is shorter, empty past its end): an HTTP Range
+        GET on a short-lived signed URL, so the API never downloads a whole file to look at its first kilobyte or to scan it
+        in chunks. A server that ignores the Range header answers 200 with the whole body, which is sliced here.
+        """
+        if start < 0 or end < start:
+            raise ValueError("read_range needs 0 <= start <= end.")
+        url = self.create_signed_url(bucket, path, READ_URL_SECONDS)
+        try:
+            response = httpx.request("GET", url, headers={"Range": f"bytes={start}-{end}"}, timeout=READ_TIMEOUT)
+        except httpx.HTTPError as exc:
+            raise StorageError(f"Storage unreachable: {type(exc).__name__}") from exc
+        if response.status_code == 416:  # the range starts past the end of the object
+            return b""
+        if response.status_code not in (200, 206):
+            raise StorageError(f"Storage answered {response.status_code}")
+        body = response.content
+        return body[start : end + 1] if response.status_code == 200 else body
 
     def ensure_bucket(self, bucket: str, *, public: bool = False) -> bool:
         """Creates the bucket when it is missing. True when it was created, False when it already existed."""

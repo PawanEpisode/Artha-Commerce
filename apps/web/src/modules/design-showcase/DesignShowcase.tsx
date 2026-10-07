@@ -76,6 +76,7 @@ import {
 } from '@artha/design-system'
 import { useState } from 'react'
 
+import { AnnotationPrimitivesShowcase } from './AnnotationPrimitivesShowcase'
 import { NewPrimitivesShowcase } from './NewPrimitivesShowcase'
 import { NotesPrimitivesShowcase } from './NotesPrimitivesShowcase'
 
@@ -458,6 +459,7 @@ export function DesignShowcase() {
 
       <NewPrimitivesShowcase />
       <NotesPrimitivesShowcase />
+      <AnnotationPrimitivesShowcase />
 
       <Block title="Motion">
         <Reveal>

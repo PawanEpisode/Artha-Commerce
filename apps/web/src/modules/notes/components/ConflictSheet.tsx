@@ -19,6 +19,8 @@ interface ConflictSheetProps {
   mine: { title: string; body: string }
   deviceLabel?: string
   busy: boolean
+  /** What the student sees changed: "note" (default) or "mark". */
+  noun?: string
   onResolve: (resolution: Resolution) => void
 }
 
@@ -29,14 +31,23 @@ const MARK = { same: '  ', theirs: 'Theirs', mine: 'Yours' } as const
  * differ (with words, not colour only) and lets the student keep mine, keep theirs, or keep both. Nothing is lost
  * until a choice is made, and "Keep both" loses nothing at all.
  */
-export function ConflictSheet({ open, onOpenChange, theirs, mine, deviceLabel, busy, onResolve }: ConflictSheetProps) {
+export function ConflictSheet({
+  open,
+  onOpenChange,
+  theirs,
+  mine,
+  deviceLabel,
+  busy,
+  noun = 'note',
+  onResolve,
+}: ConflictSheetProps) {
   const lines = diffLines(theirs.body_md, mine.body)
   const different = hasChanges(lines)
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="bottom" className="max-h-[92dvh] overflow-y-auto sm:mx-auto sm:max-w-2xl">
         <SheetHeader>
-          <SheetTitle>This note changed somewhere else</SheetTitle>
+          <SheetTitle>This {noun} changed somewhere else</SheetTitle>
           <SheetDescription>
             {deviceLabel ? `${deviceLabel} saved` : 'Another device saved'} a version on {formatDate(theirs.updated_at)}{' '}
             at {formatTime(theirs.updated_at)} while you were editing. Choose what to keep.

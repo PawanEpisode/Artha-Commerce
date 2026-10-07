@@ -111,6 +111,13 @@ export async function pending(userId: string, scope: string = DEFAULT_SCOPE): Pr
   return rows.filter((r) => r.userId === userId && scopeOf(r) === scope).sort((a, b) => a.queuedAt - b.queuedAt)
 }
 
+/** The lanes of one user that still have writes waiting whose name starts with `prefix` (one lane per PDF, for example). */
+export async function pendingScopes(userId: string, prefix: string): Promise<string[]> {
+  const rows = await guarded((b) => b.all())
+  const scopes = new Set(rows.filter((r) => r.userId === userId).map(scopeOf))
+  return [...scopes].filter((scope) => scope.startsWith(prefix)).sort()
+}
+
 /** Parks a refused write: it leaves the queue and waits for the student's choice. */
 export async function parkConflict(conflict: ParkedConflict) {
   await guarded((b) => b.park(conflict))

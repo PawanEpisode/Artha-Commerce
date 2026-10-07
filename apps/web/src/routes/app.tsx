@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 import { RequireAuth } from '~/modules/auth'
+import { UploadProgressContainer } from '~/modules/notes'
 import { NotificationsAppEffects } from '~/modules/notifications'
 import { LastVisitReporter, RequireOnboarded } from '~/modules/personalization'
 
@@ -11,6 +12,7 @@ export const Route = createFileRoute('/app')({
       <RequireOnboarded>
         <LastVisitReporter />
         <NotificationsAppEffects />
+        <UploadProgressContainer />
         <Outlet />
       </RequireOnboarded>
     </RequireAuth>

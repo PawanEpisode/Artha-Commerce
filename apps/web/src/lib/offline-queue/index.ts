@@ -15,11 +15,22 @@ export {
 export {
   clearOfflineQueue,
   enqueue,
+  parkConflict,
   parkedConflicts,
   pending,
+  pendingScopes,
   removeEntry,
   resetOfflineQueue,
   resolveParked,
 } from './store'
 export { DEFAULT_SCOPE, type ParkedConflict, type QueuedWrite, scopeOf } from './types'
-export { currentUserId, flushQueue, type NewWrite, pendingCount, QueuedOffline, replay, writeOrQueue } from './write'
+export {
+  currentUserId,
+  flushQueue,
+  type NewWrite,
+  pendingCount,
+  QueuedOffline,
+  queueStamp,
+  replay,
+  writeOrQueue,
+} from './write'

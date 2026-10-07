@@ -19,6 +19,7 @@ import {
 } from '../lib/api'
 import type { AggregateParams } from '../lib/filter-schema'
 import { notesKeys } from '../lib/keys'
+import type { MarkSearchHit, PdfSearchHit, SearchMeta } from '../lib/library-types'
 import { filterCached, type LocalFilter, toSummary } from '../lib/local-filter'
 import { cachedNotes, cacheNote, readCachedNote } from '../lib/offline-store'
 import type { AggregateItem, Note, NoteSummary, Page, SearchHit } from '../lib/types'
@@ -121,6 +122,9 @@ export function useNote(id: string, enabled = id !== '') {
     queryKey: notesKeys.note(id),
     queryFn: async (): Promise<Note> => {
       const userId = await currentUserId()
+      // A note born on this device has no server row yet: this copy is the truth, and asking the server would only fail.
+      const local = userId ? (await readCachedNote(userId, id))?.note : undefined
+      if (local?.local_only) return local
       try {
         const note = await getNote(id)
         if (userId) await cacheNote(userId, note)
@@ -177,7 +181,7 @@ export const useVersion = (id: string, rev: number | undefined) =>
     enabled: rev !== undefined,
   })
 
-export type SearchPage = Page<SearchHit> & { offline?: true }
+export type SearchPage = Page<SearchHit | PdfSearchHit | MarkSearchHit> & { offline?: true; meta?: SearchMeta }
 
 /** Search from the server; with no network, a plain text match over the notes kept on this device. */
 export function useSearchNotes(params: { q: string; scope?: string; subject?: string; chapter?: string }) {
@@ -194,6 +198,8 @@ export function useSearchNotes(params: { q: string; scope?: string; subject?: st
         })
       } catch (error) {
         if (!isTransient(error)) throw error
+        // PDF text is searched on the server only: offline there is nothing on this device to match.
+        if (params.scope === 'pdf') return { items: [], next_cursor: null, offline: true }
         const userId = await currentUserId()
         const notes = userId ? await cachedNotes(userId) : []
         const items = filterCached(notes, { q: params.q, subject: params.subject, chapter: params.chapter }).map(

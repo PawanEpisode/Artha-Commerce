@@ -95,6 +95,38 @@
   --avatar-8: oklch(0.86 0.09 340);
   --avatar-8-fg: oklch(0.3 0.09 340);
 
+  /*
+   * Annotation marks (F-03). Highlight fills are drawn with mix-blend-mode (see --mark-blend below), so text under a
+   * highlight stays readable. Edge tokens are the stroke drawn under or around a highlight and the underline colour:
+   * they carry the 3:1 contrast (WCAG 1.4.11) that a pale fill physically cannot. Ink tokens are pen colours drawn
+   * normally. All of them are mid-tones (relative luminance about 0.13 to 0.3) so one value reads against white,
+   * paper and night pages and against every app surface. Verified in all tones by check:contrast.
+   * Keys: y g b p o (highlights), i1 to i5 (pens). Names are the student's legend, never these colour words.
+   */
+  --highlight-yellow: oklch(0.84 0.15 95);
+  --highlight-green: oklch(0.83 0.15 150);
+  --highlight-blue: oklch(0.82 0.09 245);
+  --highlight-pink: oklch(0.83 0.11 350);
+  --highlight-orange: oklch(0.82 0.11 55);
+  --highlight-yellow-edge: oklch(0.58 0.11 90);
+  --highlight-green-edge: oklch(0.58 0.13 150);
+  --highlight-blue-edge: oklch(0.58 0.14 245);
+  --highlight-pink-edge: oklch(0.58 0.17 350);
+  --highlight-orange-edge: oklch(0.58 0.135 55);
+  --ink-1: oklch(0.55 0.01 270);
+  --ink-2: oklch(0.56 0.2 27);
+  --ink-3: oklch(0.55 0.18 262);
+  --ink-4: oklch(0.54 0.14 150);
+  --ink-5: oklch(0.53 0.18 310);
+  /* The shape marker inside a swatch: dark on the highlight fills, light on the ink colours. */
+  --swatch-marker: oklch(0.22 0.03 270);
+  --swatch-marker-inverse: oklch(0.99 0.005 95);
+
+  /* Page tones of the PDF reader. Independent of the app theme: the page is a document, not an app surface. */
+  --page-original: oklch(1 0 0);
+  --page-paper: oklch(0.955 0.026 88);
+  --page-night: oklch(0.18 0.012 262);
+
   --shadow-soft: 0 1px 2px oklch(0.3 0.04 60 / 0.06), 0 8px 24px -8px oklch(0.35 0.08 60 / 0.14);
   --shadow-lift: 0 2px 4px oklch(0.3 0.04 60 / 0.07), 0 24px 48px -16px oklch(0.35 0.1 60 / 0.28);
 
@@ -179,6 +211,33 @@
   --avatar-7-fg: oklch(0.3 0.09 295);
   --avatar-8: oklch(0.86 0.09 340);
   --avatar-8-fg: oklch(0.3 0.09 340);
+
+  /*
+   * Annotation marks (F-03). Highlight fills are drawn with mix-blend-mode (see --mark-blend below), so text under a
+   * highlight stays readable. Edge tokens are the stroke drawn under or around a highlight and the underline colour:
+   * they carry the 3:1 contrast (WCAG 1.4.11) that a pale fill physically cannot. Ink tokens are pen colours drawn
+   * normally. All of them are mid-tones (relative luminance about 0.13 to 0.3) so one value reads against white,
+   * paper and night pages and against every app surface. Verified in all tones by check:contrast.
+   * Keys: y g b p o (highlights), i1 to i5 (pens). Names are the student's legend, never these colour words.
+   */
+  --highlight-yellow: oklch(0.84 0.15 95);
+  --highlight-green: oklch(0.83 0.15 150);
+  --highlight-blue: oklch(0.82 0.09 245);
+  --highlight-pink: oklch(0.83 0.11 350);
+  --highlight-orange: oklch(0.82 0.11 55);
+  --highlight-yellow-edge: oklch(0.58 0.11 90);
+  --highlight-green-edge: oklch(0.58 0.13 150);
+  --highlight-blue-edge: oklch(0.58 0.14 245);
+  --highlight-pink-edge: oklch(0.58 0.17 350);
+  --highlight-orange-edge: oklch(0.58 0.135 55);
+  --ink-1: oklch(0.55 0.01 270);
+  --ink-2: oklch(0.56 0.2 27);
+  --ink-3: oklch(0.55 0.18 262);
+  --ink-4: oklch(0.54 0.14 150);
+  --ink-5: oklch(0.53 0.18 310);
+  /* The shape marker inside a swatch: dark on the highlight fills, light on the ink colours. */
+  --swatch-marker: oklch(0.22 0.03 270);
+  --swatch-marker-inverse: oklch(0.99 0.005 95);
 
   --shadow-soft: 0 1px 2px oklch(0.21 0.035 268 / 0.05), 0 8px 24px -8px oklch(0.3 0.12 270 / 0.12);
   --shadow-lift: 0 2px 4px oklch(0.21 0.035 268 / 0.06), 0 24px 48px -16px oklch(0.3 0.15 270 / 0.28);
@@ -266,6 +325,33 @@
   --avatar-8: oklch(0.4 0.09 340);
   --avatar-8-fg: oklch(0.93 0.05 340);
 
+  /*
+   * Annotation marks (F-03). Highlight fills are drawn with mix-blend-mode (see --mark-blend below), so text under a
+   * highlight stays readable. Edge tokens are the stroke drawn under or around a highlight and the underline colour:
+   * they carry the 3:1 contrast (WCAG 1.4.11) that a pale fill physically cannot. Ink tokens are pen colours drawn
+   * normally. All of them are mid-tones (relative luminance about 0.13 to 0.3) so one value reads against white,
+   * paper and night pages and against every app surface. Verified in all tones by check:contrast.
+   * Keys: y g b p o (highlights), i1 to i5 (pens). Names are the student's legend, never these colour words.
+   */
+  --highlight-yellow: oklch(0.84 0.15 95);
+  --highlight-green: oklch(0.83 0.15 150);
+  --highlight-blue: oklch(0.82 0.09 245);
+  --highlight-pink: oklch(0.83 0.11 350);
+  --highlight-orange: oklch(0.82 0.11 55);
+  --highlight-yellow-edge: oklch(0.58 0.11 90);
+  --highlight-green-edge: oklch(0.58 0.13 150);
+  --highlight-blue-edge: oklch(0.58 0.14 245);
+  --highlight-pink-edge: oklch(0.58 0.17 350);
+  --highlight-orange-edge: oklch(0.58 0.135 55);
+  --ink-1: oklch(0.55 0.01 270);
+  --ink-2: oklch(0.56 0.2 27);
+  --ink-3: oklch(0.55 0.18 262);
+  --ink-4: oklch(0.54 0.14 150);
+  --ink-5: oklch(0.53 0.18 310);
+  /* The shape marker inside a swatch: dark on the highlight fills, light on the ink colours. */
+  --swatch-marker: oklch(0.22 0.03 270);
+  --swatch-marker-inverse: oklch(0.99 0.005 95);
+
   --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3), 0 8px 24px -8px oklch(0 0 0 / 0.5);
   --shadow-lift: 0 2px 4px oklch(0 0 0 / 0.4), 0 24px 48px -16px oklch(0.4 0.2 270 / 0.4);
 
@@ -297,6 +383,26 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
+  --color-highlight-yellow: var(--highlight-yellow);
+  --color-highlight-green: var(--highlight-green);
+  --color-highlight-blue: var(--highlight-blue);
+  --color-highlight-pink: var(--highlight-pink);
+  --color-highlight-orange: var(--highlight-orange);
+  --color-highlight-yellow-edge: var(--highlight-yellow-edge);
+  --color-highlight-green-edge: var(--highlight-green-edge);
+  --color-highlight-blue-edge: var(--highlight-blue-edge);
+  --color-highlight-pink-edge: var(--highlight-pink-edge);
+  --color-highlight-orange-edge: var(--highlight-orange-edge);
+  --color-ink-1: var(--ink-1);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
+  --color-ink-5: var(--ink-5);
+  --color-swatch-marker: var(--swatch-marker);
+  --color-swatch-marker-inverse: var(--swatch-marker-inverse);
+  --color-page-original: var(--page-original);
+  --color-page-paper: var(--page-paper);
+  --color-page-night: var(--page-night);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -555,5 +661,60 @@
   }
   .heat-5 {
     background-color: var(--primary);
+  }
+}
+
+/*
+ * Page tones and mark blending (F-03 PDF reader). Put data-page-tone="original|paper|night" on the page wrapper:
+ *   original  white page, marks multiply   paper  warm page (the Reading tone), marks multiply
+ *   night     dark page (the reader inverts the page, never the marks), marks screen
+ * `.page-surface` paints the page (and its text colour) and isolates it, so a child with `.mark-blend` blends with the page and not with
+ * the app behind it. `--mark-blend` and `--mark-fill-alpha` are the raw values if a canvas or SVG layer needs them in its own style.
+ */
+@layer utilities {
+  [data-page-tone] {
+    --mark-blend: multiply;
+    --mark-fill-alpha: 100%;
+  }
+  /* Screening a full-strength fill onto a dark page turns the words under it pale on pale, so the fill is dimmed. The
+     edge stroke and underline stay at full strength (they carry the 3:1). Use bg-highlight-yellow/(--mark-fill-alpha). */
+  [data-page-tone='night'] {
+    --mark-blend: screen;
+    --mark-fill-alpha: 40%;
+  }
+  .page-surface {
+    isolation: isolate;
+    background-color: var(--page-original);
+    color: oklch(0.2 0.015 262);
+  }
+  .page-surface[data-page-tone='paper'] {
+    background-color: var(--page-paper);
+  }
+  .page-surface[data-page-tone='night'] {
+    background-color: var(--page-night);
+    color: oklch(0.9 0.01 262);
+  }
+  .mark-blend {
+    mix-blend-mode: var(--mark-blend, multiply);
+  }
+  /* A mark found from the list: a ring that opens and fades once. With reduced motion it is a still ring, removed by the app. */
+  .mark-pulse {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .mark-pulse {
+      animation: mark-pulse 1.4s ease-out 1;
+    }
+  }
+}
+@keyframes mark-pulse {
+  from {
+    outline-color: var(--ring);
+    outline-offset: 0;
+  }
+  to {
+    outline-color: transparent;
+    outline-offset: 12px;
   }
 }

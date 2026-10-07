@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion -- the table and both line arrays are indexed inside their own bounds */
+import { both } from './reconcile'
 import type { NoteConflictDetail, Resolution } from './types'
 
 /** One line of a comparison: unchanged, only in theirs (removed from mine) or only in mine. */
@@ -42,7 +43,7 @@ export function diffLines(theirs: string, mine: string): DiffLine[] {
 export const hasChanges = (lines: DiffLine[]) => lines.some((line) => line.kind !== 'same')
 
 /** What "Keep both" produces, shown before the student chooses: theirs, a `---` line, then mine (the server does the same). */
-export const bothText = (theirs: string, mine: string) => `${theirs}\n\n---\n\n${mine}`
+export const bothText = both
 
 /** The text each choice leaves in the note. */
 export function resolvedBody(resolution: Resolution, detail: NoteConflictDetail, mineBody: string): string {

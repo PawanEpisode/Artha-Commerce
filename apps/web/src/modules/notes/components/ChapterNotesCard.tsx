@@ -1,4 +1,4 @@
-import { Alert, Button, Card, Notebook, Plus, Skeleton } from '@artha/design-system'
+import { Alert, Button, Card, FileText, Notebook, Plus, Skeleton } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { formatDate, pluralize } from '../lib/format'
@@ -60,6 +60,26 @@ export function ChapterNotesCard({ state, overview, subjectKey, chapterKey, leve
                 </li>
               ))}
             </ul>
+          ) : null}
+          {overview.documents.length > 0 ? (
+            <div className="space-y-1">
+              <h3 className="flex items-center gap-2 text-sm font-semibold">
+                <FileText aria-hidden className="size-4" /> {pluralize(overview.counts.documents, 'PDF')} linked here
+              </h3>
+              <ul aria-label="Linked PDFs" className="space-y-1">
+                {overview.documents.slice(0, 3).map((d) => (
+                  <li key={d.id}>
+                    <Link
+                      to="/app/notes/pdf/$docId"
+                      params={{ docId: d.id }}
+                      className="inline-flex min-h-11 items-center font-medium break-words underline-offset-4 hover:underline"
+                    >
+                      {d.title.trim() || 'Untitled PDF'}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : null}
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" asChild>

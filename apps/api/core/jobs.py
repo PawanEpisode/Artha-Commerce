@@ -15,12 +15,14 @@ with exponential backoff and end as `failed` after `max_attempts`; the error tex
 from __future__ import annotations
 
 import logging
+import os
+import threading
 import time
 from collections.abc import Callable, Iterable
 from datetime import datetime, timedelta
 from typing import Any
 
-from django.db import IntegrityError, transaction
+from django.db import IntegrityError, connection, connections, transaction
 from django.db.models import Q
 from django.utils import timezone
 
@@ -32,7 +34,12 @@ Handler = Callable[[dict], dict | None]
 
 VISIBILITY_TIMEOUT = timedelta(minutes=5)
 MAX_BACKOFF = timedelta(hours=1)
+HEARTBEAT_INTERVAL = (
+    60.0  # seconds; far under the 5 minute visibility timeout, so a healthy long job is never reclaimed
+)
+LIVENESS_FILE_DEFAULT = "/tmp/artha-worker.alive"  # noqa: S108 - a per-container liveness marker, not a secret
 _handlers: dict[str, Handler] = {}
+_local = threading.local()  # the job the current thread is running, so a handler can call `heartbeat()` between chunks
 
 
 def register_handler(job_type: str, fn: Handler) -> None:
@@ -86,22 +93,70 @@ def enqueue(
         return existing
 
 
+def parse_type_limits(spec: str | None, aliases: dict[str, tuple[str, ...]] | None = None) -> dict[str, int]:
+    """
+    "notes.ocr=1,notes.export_pdf=1" to {"notes.ocr": 1, "notes.export_pdf": 1}. `aliases` expands short names
+    ({"ocr": ("notes.ocr",)}). A limit of 0 means "never claim this type on any worker"; bad pieces raise ValueError.
+    """
+    limits: dict[str, int] = {}
+    for piece in (spec or "").split(","):
+        piece = piece.strip()
+        if not piece:
+            continue
+        name, sep, raw = piece.partition("=")
+        name = name.strip()
+        if not sep or not name or not raw.strip().isdigit():
+            raise ValueError(f"Bad concurrency limit {piece!r}; expected type=number.")
+        for full in (aliases or {}).get(name, (name,)):
+            limits[full] = int(raw)
+    return limits
+
+
+def _blocked_types(limits: dict[str, int], types: Iterable[str] | None, stale: datetime) -> list[str]:
+    """
+    Types already at their cap across ALL workers. Runs inside the claim transaction after taking one Postgres advisory
+    transaction lock per limited type (sorted, so two workers can never deadlock): the count and the claim that follows are
+    then one atomic step and two workers can never both take the last slot. Running jobs whose lock went stale do not count,
+    so a crashed job can be reclaimed even when the cap is 1.
+    """
+    wanted = [t for t in sorted(limits) if types is None or t in types]
+    blocked: list[str] = []
+    for job_type in wanted:
+        if connection.vendor == "postgresql":
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", [f"core_job:{job_type}"])
+        running = Job.objects.filter(type=job_type, status=Job.Status.RUNNING, locked_at__gte=stale).count()
+        if running >= limits[job_type]:
+            blocked.append(job_type)
+    return blocked
+
+
 def claim_next(
-    *, types: Iterable[str] | None = None, worker: str = "worker", now: datetime | None = None
+    *,
+    types: Iterable[str] | None = None,
+    worker: str = "worker",
+    now: datetime | None = None,
+    limits: dict[str, int] | None = None,
 ) -> Job | None:
     """
     Takes the next due job and marks it running, or None. Due means queued with `run_after` reached, or running but
     abandoned past the visibility timeout. A reclaimed job that is out of attempts is closed as failed, not retried.
+    `limits` ({type: max running at once, over every worker}) skips types that are at their cap.
     """
     now = now or timezone.now()
     stale = now - VISIBILITY_TIMEOUT
+    wanted = list(types) if types is not None else None
     while True:
         with transaction.atomic():
             candidates = Job.objects.filter(
                 Q(status=Job.Status.QUEUED, run_after__lte=now) | Q(status=Job.Status.RUNNING, locked_at__lt=stale)
             )
-            if types is not None:
-                candidates = candidates.filter(type__in=list(types))
+            if wanted is not None:
+                candidates = candidates.filter(type__in=wanted)
+            if limits:
+                blocked = _blocked_types(limits, wanted, stale)
+                if blocked:
+                    candidates = candidates.exclude(type__in=blocked)
             job = (
                 candidates.select_for_update(skip_locked=True).order_by("-priority", "run_after", "created_at").first()
             )
@@ -148,20 +203,137 @@ def fail(job: Job, error: str, *, retry: bool = True) -> None:
     job.save(update_fields=["status", "run_after", "last_error", "locked_at", "updated_at"])
 
 
-def run_job(job: Job) -> str:
-    """Runs one claimed job through its handler and records the outcome. Never raises. Returns the final status."""
+def heartbeat(job: Job | None = None) -> bool:
+    """
+    Refreshes a running job's `locked_at` so it is not reclaimed while healthy. With no argument, uses the job the current
+    thread is running (a long handler calls `jobs.heartbeat()` between chunks). Returns False when the lock is no longer
+    ours (the job finished or was reclaimed), which a handler may treat as "stop".
+    """
+    job = job or getattr(_local, "job", None)
+    if job is None:
+        return False
+    now = timezone.now()
+    updated = Job.objects.filter(pk=job.pk, status=Job.Status.RUNNING, locked_by=job.locked_by).update(
+        locked_at=now, updated_at=now
+    )
+    return bool(updated)
+
+
+def current_job() -> Job | None:
+    """The job the calling thread is running (None outside a handler): lets a handler see its own attempt count."""
+    return getattr(_local, "job", None)
+
+
+def requeue(job: Job) -> bool:
+    """
+    Hands a running job back untouched (graceful shutdown past the grace period): queued again at once and the attempt
+    refunded, because the job did not fail, the worker was told to stop. A no-op unless the job is still ours and running.
+    """
+    now = timezone.now()
+    updated = Job.objects.filter(pk=job.pk, status=Job.Status.RUNNING, locked_by=job.locked_by).update(
+        status=Job.Status.QUEUED,
+        attempts=max(job.attempts - 1, 0),
+        run_after=now,
+        locked_at=None,
+        locked_by="",
+        updated_at=now,
+    )
+    return bool(updated)
+
+
+def _execute(job: Job) -> tuple[bool, dict | None, str, bool]:
+    """Runs the handler. Returns (ok, result, error, retry). Never raises and never touches the job row."""
     fn = _handlers.get(job.type)
     if fn is None:
-        fail(job, f"No handler for job type {job.type!r}.", retry=False)
-        return job.status
+        return False, None, f"No handler for job type {job.type!r}.", False
+    _local.job = job
     try:
         result = fn(job.payload)
     except Exception as exc:  # noqa: BLE001 - a bad job must never stop the worker or the cron tick
         logger.exception("Job %s (%s) failed", job.id, job.type)
-        fail(job, f"{type(exc).__name__}: {exc}")
+        return False, None, f"{type(exc).__name__}: {exc}", True
+    finally:
+        _local.job = None
+    return True, result if isinstance(result, dict) else None, "", True
+
+
+def _record(job: Job, outcome: tuple[bool, dict | None, str, bool], started: float) -> str:
+    ok, result, error, retry = outcome
+    if ok:
+        complete(job, result)
     else:
-        complete(job, result if isinstance(result, dict) else None)
+        fail(job, error, retry=retry)
+    # One line per job, never the payload: type, outcome and how long it took.
+    logger.info(
+        "job type=%s status=%s attempts=%s duration_ms=%d",
+        job.type,
+        job.status,
+        job.attempts,
+        round((time.monotonic() - started) * 1000),
+    )
     return job.status
+
+
+def run_job(job: Job) -> str:
+    """Runs one claimed job through its handler and records the outcome. Never raises. Returns the final status."""
+    started = time.monotonic()
+    return _record(job, _execute(job), started)
+
+
+def run_supervised(
+    job: Job,
+    *,
+    stop: threading.Event | None = None,
+    heartbeat_interval: float = HEARTBEAT_INTERVAL,
+    grace: float | None = None,
+    poll: float = 0.25,
+    on_tick: Callable[[], None] | None = None,
+) -> str:
+    """
+    Runs the handler in a thread while this thread keeps the job's lock fresh (`heartbeat` every `heartbeat_interval`).
+    Once `stop` is set the job gets `grace` more seconds (None: as long as it needs); past that it is requeued and
+    abandoned and "queued" is returned. The outcome is only recorded here, from the calling thread, so an abandoned
+    handler can never overwrite a job that another worker has since claimed.
+    """
+    started = time.monotonic()
+    done = threading.Event()
+    box: dict[str, Any] = {}
+
+    def target() -> None:
+        try:
+            box["outcome"] = _execute(job)
+        finally:
+            connections.close_all()  # the thread's own database connection
+            done.set()
+
+    threading.Thread(target=target, name=f"job-{job.type}", daemon=True).start()
+    last_beat = time.monotonic()
+    stop_seen: float | None = None
+    while not done.wait(poll):
+        now = time.monotonic()
+        if on_tick:
+            on_tick()
+        if now - last_beat >= heartbeat_interval:
+            heartbeat(job)
+            last_beat = now
+        if stop is not None and stop.is_set():
+            stop_seen = stop_seen if stop_seen is not None else now
+            if grace is not None and now - stop_seen >= grace:
+                requeue(job)
+                logger.warning("job type=%s status=requeued reason=shutdown", job.type)
+                job.refresh_from_db()
+                return job.status
+    return _record(job, box["outcome"], started)
+
+
+def touch_liveness(path: str | None = None) -> None:
+    """Marks "the worker loop is alive" for `worker_health` and the container HEALTHCHECK (a file's mtime)."""
+    target = path or os.environ.get("WORKER_LIVENESS_FILE", LIVENESS_FILE_DEFAULT)
+    try:
+        with open(target, "a"):
+            os.utime(target, None)
+    except OSError:
+        pass  # a read-only filesystem must not stop the worker
 
 
 def run_pending(

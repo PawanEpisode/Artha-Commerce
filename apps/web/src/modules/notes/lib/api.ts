@@ -1,6 +1,7 @@
 import { api, ApiError } from '~/lib/api'
 
 import { type AggregateParams, aggregateQuery } from './filter-schema'
+import type { MarkSearchHit, PdfSearchHit, SearchMeta } from './library-types'
 import type {
   AggregateItem,
   ChangesPage,
@@ -55,7 +56,17 @@ export const listNotes = (params: ListParams = {}) => api<Page<NoteSummary>>(`/n
 export const getNote = (id: string) => api<Note>(`/notes/${id}/`)
 
 /** Request shapes are built apart from the call so the offline queue can store and replay exactly the same request. */
-export const createNoteRequest = (body: NoteCreate) => ({ method: 'POST' as const, path: '/notes/', body: { ...body } })
+/** The client owns the note id: `PUT notes/{id}/` is an idempotent create (201 new, 200 already there, 404 not yours). */
+export const createNoteRequest = (id: string, body: Omit<NoteCreate, 'client_id'>) => ({
+  method: 'PUT' as const,
+  path: `/notes/${id}/`,
+  body: { client_id: id, ...body },
+})
+export const setItemTagsRequest = (noteId: string, tagIds: string[]) => ({
+  method: 'PUT' as const,
+  path: '/notes/items/tags/',
+  body: { item_type: 'note', item_id: noteId, tag_ids: tagIds },
+})
 export const patchNoteRequest = (id: string, body: NotePatch) => ({
   method: 'PATCH' as const,
   path: `/notes/${id}/`,
@@ -76,7 +87,7 @@ type Request = { method: 'POST' | 'PATCH' | 'DELETE' | 'PUT'; path: string; body
 const send = <T>(request: Request) =>
   api<T>(request.path, { method: request.method, body: request.method === 'DELETE' ? undefined : json(request.body) })
 
-export const createNote = (body: NoteCreate) => send<Note>(createNoteRequest(body))
+export const createNote = (id: string, body: Omit<NoteCreate, 'client_id'>) => send<Note>(createNoteRequest(id, body))
 export const patchNote = (id: string, body: NotePatch) => send<PatchResult>(patchNoteRequest(id, body))
 export const deleteNote = (id: string) =>
   send<{ id: string; deleted_at: string; purge_after: string }>(deleteNoteRequest(id))
@@ -106,7 +117,7 @@ export const searchNotes = (params: {
   chapter?: string
   cursor?: string
   limit?: number
-}) => api<Page<SearchHit>>(`/notes/search/${qs({ ...params })}`)
+}) => api<Page<SearchHit | PdfSearchHit | MarkSearchHit> & { meta?: SearchMeta }>(`/notes/search/${qs({ ...params })}`)
 
 // ---- Tags and suggestions ---------------------------------------------------------------------------------------------
 
@@ -115,10 +126,7 @@ export const createTag = (input: { name: string; color_key?: string | null }) =>
   api<Tag>('/notes/tags/', { method: 'POST', body: json(input) })
 export const deleteTag = (id: string) => api<void>(`/notes/tags/${id}/`, { method: 'DELETE' })
 export const setItemTags = (noteId: string, tagIds: string[]) =>
-  api<{ tags: Tag[] }>('/notes/items/tags/', {
-    method: 'PUT',
-    body: json({ item_type: 'note', item_id: noteId, tag_ids: tagIds }),
-  })
+  send<{ tags: Tag[] }>(setItemTagsRequest(noteId, tagIds))
 export const suggestChapters = (text: string, levelId?: string) =>
   api<{ suggestions: ChapterSuggestion[] }>('/notes/items/chapter-suggest/', {
     method: 'POST',

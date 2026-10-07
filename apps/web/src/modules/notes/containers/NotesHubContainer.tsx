@@ -2,8 +2,12 @@ import { Alert, Button, EmptyState, Inbox, Notebook, Plus, Skeleton } from '@art
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef } from 'react'
 
+import { useFeatureFlag } from '~/modules/observability'
+
+import { ContinueReadingRow } from '../components/library/ContinueReadingRow'
 import { NotesList } from '../components/NotesList'
 import { SubjectGrid, type SubjectTile } from '../components/SubjectGrid'
+import { useContinueReading } from '../hooks/useLibrary'
 import { useNoteActions } from '../hooks/useNoteActions'
 import { flattenPages, useAllSubjectCounts, useEnrolledSubjects, useNoteList } from '../hooks/useNotesQueries'
 import { notesAnalytics } from '../lib/analytics'
@@ -22,6 +26,8 @@ function Hub() {
   const pinned = useNoteList({ pinned: true, limit: 10 })
   const unfiled = useNoteList({ unfiled: true, limit: 30 })
   const recent = useNoteList({ limit: 8 })
+  const pdfOn = useFeatureFlag('notes_pdf')
+  const reading = useContinueReading(pdfOn)
 
   const pinnedList = flattenPages(pinned.data?.pages)
   const unfiledList = flattenPages(unfiled.data?.pages)
@@ -29,13 +35,22 @@ function Hub() {
 
   const reported = useRef(false)
   useEffect(() => {
-    if (reported.current || recent.isPending || unfiled.isPending) return
+    if (reported.current || recent.isPending || unfiled.isPending || (pdfOn && reading.isPending)) return
     reported.current = true
     notesAnalytics.hubViewed({
       unfiled: unfiledList.items.length,
       notes: recentList.items.length,
+      docs: reading.items.length,
     })
-  }, [recent.isPending, unfiled.isPending, unfiledList.items.length, recentList.items.length])
+  }, [
+    recent.isPending,
+    unfiled.isPending,
+    unfiledList.items.length,
+    recentList.items.length,
+    pdfOn,
+    reading.isPending,
+    reading.items.length,
+  ])
 
   const tiles: SubjectTile[] = subjects.map((s, i) => {
     const q = counts[i]
@@ -62,6 +77,8 @@ function Hub() {
           </Link>
         </Button>
       </header>
+
+      <ContinueReadingRow items={reading.items} />
 
       {pinnedList.items.length > 0 ? (
         <section aria-labelledby="pinned-h" className="space-y-3">

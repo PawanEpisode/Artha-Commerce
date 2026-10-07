@@ -23,5 +23,13 @@ export const notesKeys = {
   usage: ['notes', 'usage'] as const,
   trash: ['notes', 'trash'] as const,
   queue: ['notes', 'offline-queue'] as const,
+  documents: (params: object) => ['notes', 'documents', params] as const,
+  documentLists: ['notes', 'documents'] as const,
+  document: (id: string) => ['notes', 'document', id] as const,
+  documentProcessing: (id: string) => ['notes', 'document', id, 'processing'] as const,
+  /** Text of a 20-page chunk (`chunk` = floor((page - 1) / 20)). */
+  pageText: (id: string, chunk: number) => ['notes', 'document', id, 'text', chunk] as const,
+  documentSearch: (id: string, q: string) => ['notes', 'document', id, 'search', q] as const,
+  exportJob: (id: string) => ['notes', 'export', id] as const,
   parked: ['notes', 'parked'] as const,
 }

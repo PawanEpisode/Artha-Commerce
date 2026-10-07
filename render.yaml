@@ -1,0 +1,62 @@
+# Render Blueprint for the F-03 PDF worker (docs/F-03-WORKER.md). Host-agnostic: one Dockerfile, configuration by env vars only.
+# Create with: Render dashboard > New > Blueprint > pick this repo. Secrets marked `sync: false` are asked for once at creation.
+services:
+  - type: worker # Background Worker: always on, no HTTP port
+    name: artha-worker
+    runtime: docker
+    region: singapore # cannot be changed after creation
+    # 2c-4g = 2 CPU, 4 GB. Plan prices were read on 2026-10-08 (see the doc): 1c-2g is 2 GB / $25, 2c-4g is 4 GB / $85 a month.
+    # ClamAV in the same container needs about 1 GB and a job may use 2 GB (ERD 6.5), so 4 GB is the safe default. Use 1c-2g
+    # only with MEDIA_SCANNER=null (development) or with clamd moved to a separate service.
+    plan: 2c-4g
+    dockerfilePath: ./apps/api/worker/Dockerfile
+    dockerContext: ./apps/api
+    maxShutdownDelaySeconds: 120 # SIGTERM to SIGKILL; WORKER_SHUTDOWN_GRACE_SECONDS below must stay under it
+    autoDeployTrigger: commit
+    envVars:
+      - key: DJANGO_DEBUG
+        value: 'false'
+      - key: DJANGO_SECRET_KEY
+        sync: false
+      - key: DATABASE_URL # Supabase transaction pooler (port 6543), the same value the API uses
+        sync: false
+      - key: DIRECT_DATABASE_URL # only needed if you ever run migrate from this service; the worker itself does not
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY # storage reads and writes: never ship to the browser
+        sync: false
+      - key: SUPABASE_JWT_SECRET # the settings module reads it at import; use the same value as the API
+        sync: false
+      - key: FIELD_HASH_PEPPER
+        sync: false
+      - key: SENTRY_DSN
+        sync: false
+      - key: POSTHOG_API_KEY # feature flags are read server-side
+        sync: false
+      - key: MEDIA_SCANNER # must be clamd in production
+        value: clamd
+      - key: WORKER_TYPE_LIMITS # at most one OCR and one export at a time over ALL instances
+        value: notes.ocr=1,notes.export_pdf=1,notes.export_archive=1
+      - key: WORKER_SHUTDOWN_GRACE_SECONDS
+        value: '100'
+      - key: WORKER_HEARTBEAT_SECONDS
+        value: '60'
+      # Gemini keys are NOT needed by the PDF jobs. Add GEMINI_API_KEY here only when AI jobs move to this worker.
+
+  # Light tick, option A: a Render Cron Job (uncomment). Option B is Zoho Catalyst Cron calling the same URL (docs/F-03-WORKER.md).
+  # It needs the API's public URL and the same NOTES_TICK_SECRET the API has.
+  # - type: cron
+  #   name: artha-notes-tick
+  #   runtime: docker
+  #   region: singapore
+  #   schedule: "*/5 * * * *"
+  #   dockerfilePath: ./apps/api/worker/Dockerfile
+  #   dockerContext: ./apps/api
+  #   dockerCommand: >-
+  #     python -c "import os,urllib.request as u;r=u.Request(os.environ['API_BASE_URL'].rstrip('/')+'/api/v1/notes/internal/tick/',data=b'',method='POST',headers={'X-Notes-Tick-Secret':os.environ['NOTES_TICK_SECRET']});print(u.urlopen(r,timeout=30).status)"
+  #   envVars:
+  #     - key: API_BASE_URL
+  #       sync: false
+  #     - key: NOTES_TICK_SECRET
+  #       sync: false

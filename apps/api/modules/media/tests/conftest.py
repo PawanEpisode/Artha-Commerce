@@ -41,6 +41,11 @@ class FakeStorage:
     def exists(self, bucket, path):
         return (bucket, path) in self.objects
 
+    def read_range(self, bucket, path, start, end):
+        if (bucket, path) not in self.objects:
+            raise storage.StorageError("Storage answered 404")
+        return self.objects[(bucket, path)][start : end + 1]
+
     def ensure_bucket(self, bucket, *, public=False):
         created = bucket not in self.buckets
         self.buckets.add(bucket)

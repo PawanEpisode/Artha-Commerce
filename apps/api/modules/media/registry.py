@@ -25,8 +25,14 @@ class KindSpec:
     release        `fn(user_id, bytes)` gives it back; must tolerate a student whose usage row is already gone
     path_for       `fn(user_id, attachment_id, mime) -> object path` (ids only: no file names in paths)
     on_clean       `fn(attachment_id)` once the file may be used (for example to queue inspection)
-    scan           "clamav" (the worker scans before `clean`) or "none" (trusted by construction, `clean` at completion)
+    on_reject      `fn(attachment_id, reason)` after a file was rejected (wrong content, malware, more bytes than declared)
+    sniff          `fn(first_bytes) -> reason | None`: a content check at completion, on the first `sniff_bytes` of the object
+    scan           "clamav" (a `media.scan` job scans before `clean`; with the null scanner it is `clean` at completion) or
+                   "none" (trusted by construction, `clean` at completion)
     flag           optional feature flag that must be on for the student to upload this kind
+    public         False for kinds the browser may not start through `/media/uploads/`: a module's own service creates them
+                   (documents reserve quota together with a row; exports are built by the worker)
+    retention_days how long the owning module keeps a finished object (exports: 7); the owner sets its expiry and purges it
     """
 
     name: str
@@ -37,8 +43,13 @@ class KindSpec:
     release: Callable[[str, int], None]
     path_for: Callable[[str, uuid.UUID, str], str]
     on_clean: Callable[[uuid.UUID], None] | None = None
+    on_reject: Callable[[uuid.UUID, str], None] | None = None
+    sniff: Callable[[bytes], str | None] | None = None
+    sniff_bytes: int = 1024
     scan: str = "clamav"
     flag: str | None = None
+    public: bool = True
+    retention_days: int | None = None
     read_url_seconds: int = DEFAULT_READ_URL_SECONDS
     reservation_minutes: int = DEFAULT_RESERVATION_MINUTES
 
@@ -67,3 +78,8 @@ def get_kind(name: str) -> KindSpec:
 
 def kind_names() -> list[str]:
     return sorted(_kinds)
+
+
+def public_kind_names() -> list[str]:
+    """The kinds a student may start through the generic upload endpoint."""
+    return sorted(name for name, spec in _kinds.items() if spec.public)

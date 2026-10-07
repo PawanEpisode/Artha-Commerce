@@ -1,0 +1,11 @@
+# Extra libraries for the always-on worker image (F-03 R2: inspect, extract, OCR, flattened export). The API (Vercel) never
+# installs this file. `-r` is relative to THIS file, hence the `..`.
+-r ../requirements.txt
+
+pikepdf>=10,<11        # qpdf bindings: structure, permissions, overlay streams (wheels bundle libqpdf)
+pypdf>=6,<7            # pure-Python fallback reader and test-time checks
+pypdfium2>=5,<6        # PDFium: text extraction, rendering, thumbnails (no scripting engine)
+fonttools>=4.50,<5     # subset the Noto fonts for export
+uharfbuzz>=0.40,<1     # text shaping, needed for Devanagari in exported text boxes and the appendix
+reportlab>=4.2,<6      # not used at runtime; test fixtures generate their PDFs with it
+# Tesseract is driven through its CLI (modules/notes/worker/ocr.py), so no pytesseract. PyMuPDF is excluded (AGPL).

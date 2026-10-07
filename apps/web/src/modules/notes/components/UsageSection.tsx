@@ -9,23 +9,27 @@ interface UsageSectionProps {
   onExport: () => void
   exporting: boolean
   onDeleteAll: () => void
+  /** The PDF usage card already shows storage (notes and PDFs share it). */
+  hideStorage?: boolean
 }
 
 /** What the student is using (storage, notes, tags) and the two things they own: export everything, delete everything. */
-export function UsageSection({ usage, onExport, exporting, onDeleteAll }: UsageSectionProps) {
+export function UsageSection({ usage, onExport, exporting, onDeleteAll, hideStorage }: UsageSectionProps) {
   const mb = (n: number) => `${formatBytes(n * 1024 * 1024)}`
   return (
     <div className="space-y-6">
       {usage ? (
         <Card className="space-y-4 p-6">
           <h2 className="font-display text-xl font-bold">Your space</h2>
-          <UsageBar
-            label="Storage"
-            used={usage.used.storage_bytes}
-            limit={usage.limits.max_storage_mb * 1024 * 1024}
-            format={formatBytes}
-            fullText="Storage full"
-          />
+          {hideStorage ? null : (
+            <UsageBar
+              label="Storage"
+              used={usage.used.storage_bytes}
+              limit={usage.limits.max_storage_mb * 1024 * 1024}
+              format={formatBytes}
+              fullText="Storage full"
+            />
+          )}
           <UsageBar
             label="Notes"
             used={usage.used.notes}

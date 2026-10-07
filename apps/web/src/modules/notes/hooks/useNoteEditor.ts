@@ -6,14 +6,14 @@ import { errorsOf, type Issue, lint } from '~/lib/richtext'
 import { useOnline } from '~/modules/personalization'
 
 import { notesAnalytics } from '../lib/analytics'
-import { getNote, newClientId, patchNote } from '../lib/api'
+import { getNote, patchNote } from '../lib/api'
 import { createAutosave } from '../lib/autosave'
 import { linkFields, linkFromSelection, type LinkSelection, selectionFromLink } from '../lib/chapter-link'
 import { type BodyError, invalidBody, isNotFound, noteConflict, quotaExceeded } from '../lib/errors'
 import { notesKeys } from '../lib/keys'
 import { FALLBACK_LIMITS } from '../lib/limits'
 import { notify } from '../lib/notify'
-import { clearDraft, type Draft, draftKey, loadDraft, saveDraft, unsavedNewDrafts } from '../lib/offline-store'
+import { clearDraft, type Draft, draftKey, loadDraft, saveDraft } from '../lib/offline-store'
 import { createNoteOrQueue, patchNoteOrQueue, queuedNoteWrites } from '../lib/queue'
 import type { Note, NoteConflictDetail, NotePatch, Resolution } from '../lib/types'
 import { applyEditLocally, storeNote } from './noteCache'
@@ -28,12 +28,8 @@ export interface EditorConflict {
 export type SaveProblem = { kind: 'lint'; issues: Issue[] } | { kind: 'server'; errors: BodyError[] }
 
 interface Options {
-  /** The note to edit, or null to write a new one. */
-  noteId: string | null
-  /** Where a new note starts out filed (`?chapter=` on /app/notes/new). */
-  prefill?: LinkSelection | null
-  /** A new note reached the server: the container moves to its own URL. */
-  onCreated?: (note: Note) => void
+  /** The note to edit. A new note has its id from the start (made on this device, see `useStartNote`). */
+  noteId: string
 }
 
 /**
@@ -41,16 +37,16 @@ interface Options {
  * of a draft after a crash, offline saves, auto merge notices and the conflict sheet. Everything the student types is
  * on this device before any request is made, so no failure here loses text.
  */
-export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
+export function useNoteEditor({ noteId }: Options) {
   const qc = useQueryClient()
   const online = useOnline()
-  const query = useNote(noteId ?? '', noteId !== null)
+  const query = useNote(noteId)
   const usage = useUsage()
   const maxChars = usage.data?.limits.max_note_chars ?? FALLBACK_LIMITS.maxNoteChars
 
   const [title, setTitleState] = useState('')
   const [body, setBodyState] = useState('')
-  const [selection, setSelectionState] = useState<LinkSelection | null>(prefill)
+  const [selection, setSelectionState] = useState<LinkSelection | null>(null)
   const [ready, setReady] = useState(false)
   const [recovered, setRecovered] = useState(false)
   const [saving, setSaving] = useState(false)
@@ -64,11 +60,11 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
   // Live values for the save function, which must always read the newest text without being rebuilt.
   const titleRef = useRef(title)
   const bodyRef = useRef(body)
-  const selectionRef = useRef<LinkSelection | null>(prefill)
+  const selectionRef = useRef<LinkSelection | null>(null)
   const baseRev = useRef<number | null>(null)
   const baseBody = useRef<string | undefined>(undefined)
-  const idRef = useRef<string | null>(noteId)
-  const clientId = useRef<string>(newClientId())
+  const idRef = useRef<string>(noteId)
+  const createdTracked = useRef(false)
   const conflictRef = useRef<EditorConflict | null>(null)
   const queuedBody = useRef<string | null>(null)
   const initialised = useRef(false)
@@ -80,9 +76,9 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
     if (!userId) return
     const draft: Draft = {
       userId,
-      key: draftKey(idRef.current, clientId.current),
+      key: draftKey(idRef.current, ''),
       noteId: idRef.current,
-      clientId: clientId.current,
+      clientId: idRef.current,
       title: titleRef.current,
       body: bodyRef.current,
       baseRev: baseRev.current,
@@ -95,7 +91,7 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
 
   const dropDraft = useCallback(async () => {
     const userId = await currentUserId()
-    if (userId) await clearDraft(userId, draftKey(idRef.current, clientId.current)).catch(() => undefined)
+    if (userId) await clearDraft(userId, draftKey(idRef.current, '')).catch(() => undefined)
   }, [])
 
   // ---- Start: the note from the server (or this device), or the draft of an unsaved new note ----------------------
@@ -104,23 +100,6 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
     let alive = true
     void (async () => {
       const userId = await currentUserId()
-      if (noteId === null) {
-        const draft = userId ? (await unsavedNewDrafts(userId))[0] : undefined
-        if (!alive) return
-        if (draft) {
-          clientId.current = draft.clientId
-          titleRef.current = draft.title
-          bodyRef.current = draft.body
-          selectionRef.current = draft.selection ?? prefill
-          setTitleState(draft.title)
-          setBodyState(draft.body)
-          setSelectionState(draft.selection ?? prefill)
-          setRecovered(true)
-        }
-        initialised.current = true
-        setReady(true)
-        return
-      }
       if (!note) return
       const draft = userId ? await loadDraft(userId, draftKey(noteId, '')) : undefined
       if (!alive) return
@@ -147,7 +126,7 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
     return () => {
       alive = false
     }
-  }, [noteId, note, prefill])
+  }, [noteId, note])
 
   // ---- Saving -------------------------------------------------------------------------------------------------------
 
@@ -229,19 +208,40 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
     [dropDraft],
   )
 
-  const saveNew = useCallback(
-    async (source: 'autosave' | 'manual') => {
+  /** Notes born on this device have no server row until the create is confirmed: the save is the idempotent create. */
+  const isLocalOnly = useCallback(
+    () => (qc.getQueryData<Note>(notesKeys.note(idRef.current)) ?? note)?.local_only === true,
+    [qc, note],
+  )
+
+  const trackCreated = useCallback(() => {
+    if (createdTracked.current) return
+    createdTracked.current = true
+    notesAnalytics.noteCreated({
+      source: selectionRef.current ? 'capture' : 'new',
+      hasChapter: selectionRef.current !== null,
+      first: usage.data?.used.notes === 0,
+    })
+  }, [usage.data?.used.notes])
+
+  const saveLocalOnly = useCallback(
+    async (id: string, source: 'autosave' | 'manual') => {
       const t = titleRef.current
       const b = bodyRef.current
-      if (t.trim() === '' && b.trim() === '') return
-      const fields = linkFields(selectionRef.current)
-      const result = await createNoteOrQueue({
-        client_id: clientId.current,
+      if (t.trim() === '' && b.trim() === '') return // an empty note is never sent
+      const link = linkFields(selectionRef.current)
+      const tags = qc.getQueryData<Note>(notesKeys.note(id))?.tags ?? []
+      const result = await createNoteOrQueue(id, {
         title: t,
         body_md: b,
-        ...fields,
+        ...link,
+        ...(tags.length > 0 ? { tag_ids: tags.map((tag) => tag.id) } : {}),
       })
       if (result.status === 'queued') {
+        // Waits in the queue (or was folded into the create already waiting there); the text stays on this device.
+        queuedBody.current = b
+        if (result.fresh) trackCreated()
+        await applyEditLocally(qc, id, { title: t, body_md: b }, true)
         notesAnalytics.noteSaved({ autosave: source === 'autosave', chars: b.length, offline: true })
         notesAnalytics.writeQueued((await queuedNoteWrites()).length)
         void qc.invalidateQueries({ queryKey: notesKeys.queue })
@@ -250,34 +250,27 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
       let created = result.data
       // A replay answers with the row stored first. Bring it up to the text on screen.
       if (created.body_md !== b || created.title !== t) {
-        const patched = await patchNote(created.id, {
+        created = await patchNote(created.id, {
           base_rev: created.rev,
           base_body_md: created.body_md,
           title: t,
           body_md: b,
           source,
         })
-        created = patched
       }
-      idRef.current = created.id
       baseRev.current = created.rev
       baseBody.current = created.body_md
       await storeNote(qc, created)
-      await dropDraft()
-      notesAnalytics.noteCreated({
-        source: prefill ? 'capture' : 'new',
-        hasChapter: selectionRef.current !== null,
-        first: usage.data?.used.notes === 0,
-      })
+      await dropDraftIfClean(b, t)
+      trackCreated()
       notesAnalytics.noteSaved({ autosave: source === 'autosave', chars: b.length, offline: false })
       void qc.invalidateQueries({ queryKey: notesKeys.lists })
       void qc.invalidateQueries({ queryKey: notesKeys.allCounts })
       setSavedAt(Date.now())
       setSaveFailed(false)
-      onCreated?.(created)
+      setServerProblems([])
     },
-
-    [qc, dropDraft, onCreated, prefill, usage.data?.used.notes],
+    [qc, dropDraftIfClean, trackCreated],
   )
 
   const lintIssues = useDeferredValue(useMemo(() => errorsOf(lint(body, 'note')), [body]))
@@ -287,8 +280,8 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
   blockedRef.current = blocked
 
   // The autosave closure is built once; it reaches the newest save functions through `latest`.
-  const latest = useRef({ saveExisting, saveNew })
-  latest.current = { saveExisting, saveNew }
+  const latest = useRef({ saveExisting, saveLocalOnly, isLocalOnly })
+  latest.current = { saveExisting, saveLocalOnly, isLocalOnly }
 
   const [autosaveInstance] = useState(() =>
     createAutosave({
@@ -297,8 +290,8 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
         if (conflictRef.current || blockedRef.current) return
         setSaving(true)
         try {
-          if (idRef.current) await latest.current.saveExisting(idRef.current, 'autosave')
-          else await latest.current.saveNew('autosave')
+          if (latest.current.isLocalOnly()) await latest.current.saveLocalOnly(idRef.current, 'autosave')
+          else await latest.current.saveExisting(idRef.current, 'autosave')
         } catch (error) {
           const detail = noteConflict(error)
           if (detail) {
@@ -364,7 +357,10 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
       selectionRef.current = next
       setSelectionState(next)
       const id = idRef.current
-      if (!id) {
+      if (latest.current.isLocalOnly()) {
+        // Not on the server yet: the filing is kept here and rides along with the create.
+        await applyEditLocally(qc, id, { link: linkFromSelection(next) }, true)
+        notesAnalytics.itemLinked(next ? via : 'manual')
         touch()
         return
       }
@@ -420,7 +416,7 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
 
   // Idle editor: follow the server (another device, a replayed queue, a version restore).
   useEffect(() => {
-    if (!note || !initialised.current || noteId === null) return
+    if (!note || !initialised.current || note.local_only) return
     if (autosave.current.status() !== 'idle' || conflictRef.current) return
     if (baseRev.current !== null && note.rev > baseRev.current && queuedBody.current === null) {
       baseRev.current = note.rev
@@ -492,20 +488,15 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
         ? { kind: 'server', errors: serverProblems }
         : null
 
-  const status =
-    noteId === null
-      ? ready
+  const status = query.isPending
+    ? 'loading'
+    : query.isError && !note
+      ? isNotFound(query.error)
+        ? 'notfound'
+        : 'error'
+      : ready
         ? 'ready'
         : 'loading'
-      : query.isPending
-        ? 'loading'
-        : query.isError && !note
-          ? isNotFound(query.error)
-            ? 'notfound'
-            : 'error'
-          : ready
-            ? 'ready'
-            : 'loading'
 
   return {
     status: status as 'loading' | 'ready' | 'error' | 'notfound',
@@ -531,6 +522,7 @@ export function useNoteEditor({ noteId, prefill = null, onCreated }: Options) {
     resolving,
     resolveConflict,
     refetch: query.refetch,
-    isNew: noteId === null,
+    /** The note exists only on this device: the server has not confirmed its row yet. */
+    localOnly: note?.local_only === true,
   }
 }

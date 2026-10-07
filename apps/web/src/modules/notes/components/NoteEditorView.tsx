@@ -17,13 +17,15 @@ import { type PickedImage, RichTextEditor } from '~/lib/richtext'
 
 import type { SaveProblem } from '../hooks/useNoteEditor'
 import { pluralize } from '../lib/format'
+import { UNSYNCED_TEXT } from '../lib/sync-state'
 
 interface NoteEditorViewProps {
   title: string
   onTitle: (value: string) => void
   body: string
   onBody: (value: string) => void
-  isNew: boolean
+  /** The note exists only on this device and waits to sync: say so next to the status chip. */
+  localOnly: boolean
   sync: { state: SyncState; count: number }
   onSyncPress?: () => void
   /** "Last saved 4:30 pm", or nothing before the first save. */
@@ -71,7 +73,11 @@ export function NoteEditorView(p: NoteEditorViewProps) {
             count={p.sync.count}
             onPress={p.sync.state === 'attention' ? p.onSyncPress : undefined}
           />
-          {p.savedText ? <span className="text-xs text-muted-foreground">{p.savedText}</span> : null}
+          {p.localOnly ? (
+            <span className="text-xs text-muted-foreground">{UNSYNCED_TEXT}</span>
+          ) : p.savedText ? (
+            <span className="text-xs text-muted-foreground">{p.savedText}</span>
+          ) : null}
         </div>
       </div>
 
@@ -192,7 +198,7 @@ export function NoteEditorView(p: NoteEditorViewProps) {
 
       <div>
         <Button onClick={p.onSave} variant="cta" disabled={p.overBy > 0 || p.readOnly}>
-          {p.isNew ? 'Save note' : 'Save now'}
+          Save now
         </Button>
       </div>
       {p.overlays}

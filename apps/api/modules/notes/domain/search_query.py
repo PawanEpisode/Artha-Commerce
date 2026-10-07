@@ -1,9 +1,11 @@
 """
-Search text helpers (ERD 6.3), all pure: a reference-aware query preprocessor, language detection that picks the stored
-vector's configuration, query terms for the SQLite fallback and snippets around a match.
+Search text helpers (ERD 6.3), all pure: a reference-aware query preprocessor, query terms for the SQLite fallback and
+snippets around a match. Language detection lives in `lang.py` (re-exported here for existing imports).
 
-The English parser splits "17(5)" and "Ind AS 115" into pieces that match far too much. `prepare_query` quotes tokens that
-contain digits and brackets so `websearch_to_tsquery` treats them as phrases.
+The English parser splits "17(5)" and "Ind AS 115" into pieces that match far too much. `prepare_query` turns references
+into phrases for `websearch_to_tsquery`: a token with digits and brackets ("17(5)") and a citation prefix followed by a number
+("Section 149", "Ind AS 115", "SA 200", "AS 2"). The TypeScript twin is `web/.../lib/search-query.ts` (`prepareQuery`), both
+read `tests/fixtures/search_query_cases.json`.
 """
 
 from __future__ import annotations
@@ -11,14 +13,44 @@ from __future__ import annotations
 import re
 import unicodedata
 
+from .lang import (  # noqa: F401 - re-exported: callers import them from here
+    config_for,
+    config_for_text,
+    detect_lang,
+    detect_search_config,
+)
+
 MAX_QUERY = 200
-_WORD = re.compile(r"\w+", re.UNICODE)
-_DEVANAGARI = re.compile("[ऀ-ॿ]")
-_LETTER = re.compile(r"[^\W\d_]", re.UNICODE)
+_TOKEN = re.compile(r'"[^"]*"|\S+')  # a quoted phrase stays one token
+_NUMBER = re.compile(r"[0-9]+[A-Za-z]{0,3}")  # 149, 80C, 115BAA, 143A
+# Words that make the number after them one thing to search for. "ind as" is handled on its own (two words).
+_CITATION_PREFIXES = frozenset(
+    {
+        "section",
+        "sec",
+        "rule",
+        "regulation",
+        "reg",
+        "clause",
+        "article",
+        "schedule",
+        "para",
+        "paragraph",
+        "sa",
+        "as",
+        "ifrs",
+        "ias",
+    }
+)
 
 
 def _is_reference(token: str) -> bool:
-    return not token.startswith('"') and any(c.isdigit() for c in token) and "(" in token and ")" in token
+    """Digits with brackets, such as `17(5)` or `16(2)(a)`."""
+    return not token.startswith('"') and any(c.isdecimal() for c in token) and "(" in token and ")" in token
+
+
+def _is_number(token: str) -> bool:
+    return not token.startswith('"') and _NUMBER.fullmatch(token.rstrip(".,;:!?")) is not None
 
 
 def clean_query(q: str) -> str:
@@ -26,9 +58,29 @@ def clean_query(q: str) -> str:
 
 
 def prepare_query(q: str) -> str:
-    """The query as `websearch_to_tsquery` should read it: reference-like tokens (digits with brackets) become phrases."""
-    tokens = clean_query(q).split()
-    return " ".join(f'"{t}"' if _is_reference(t) else t for t in tokens)
+    """
+    The query as `websearch_to_tsquery` should read it: references become phrases. `17(5)` -> `"17(5)"`, `Section 149` ->
+    `"Section 149"`, `Ind AS 115` -> `"Ind AS 115"`. A bracketed reference after a prefix stays separate (`section "16(2)"`),
+    already quoted phrases are left alone, and trailing punctuation after a number is dropped from the phrase.
+    """
+    tokens = _TOKEN.findall(clean_query(q))
+    out: list[str] = []
+    i = 0
+    while i < len(tokens):
+        low = tokens[i].casefold()
+        if low == "ind" and i + 2 < len(tokens) and tokens[i + 1].casefold() == "as" and _is_number(tokens[i + 2]):
+            width = 3
+        elif low in _CITATION_PREFIXES and i + 1 < len(tokens) and _is_number(tokens[i + 1]):
+            width = 2
+        else:
+            width = 0
+        if width:
+            out.append('"' + " ".join([*tokens[i : i + width - 1], tokens[i + width - 1].rstrip(".,;:!?")]) + '"')
+            i += width
+        else:
+            out.append(f'"{tokens[i]}"' if _is_reference(tokens[i]) else tokens[i])
+            i += 1
+    return " ".join(out)
 
 
 def terms(q: str) -> list[str]:
@@ -40,19 +92,6 @@ def terms(q: str) -> list[str]:
         if folded and folded not in out and folded not in {"or", "and", "-"} and not folded.startswith("-"):
             out.append(folded)
     return out
-
-
-def detect_lang(text: str) -> str:
-    """`en` (Latin script), `hi` (mostly Devanagari) or `mixed`. Decides between the `english` and `simple` configurations."""
-    letters = len(_LETTER.findall(text)) or 1
-    share = len(_DEVANAGARI.findall(text)) / letters
-    if share > 0.7:
-        return "hi"
-    return "mixed" if share > 0.3 else "en"
-
-
-def config_for(lang: str) -> str:
-    return "english" if lang == "en" else "simple"
 
 
 def make_snippet(text: str, query_terms: list[str], width: int = 160) -> str:

@@ -33,6 +33,7 @@ import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
 import { Route as AppFocusMiniRouteImport } from './routes/app.focus.mini'
 import { Route as AppNotesIndexRouteImport } from './routes/app.notes.index'
+import { Route as AppNotesLibraryRouteImport } from './routes/app.notes.library'
 import { Route as AppNotesNewRouteImport } from './routes/app.notes.new'
 import { Route as AppNotesSearchRouteImport } from './routes/app.notes.search'
 import { Route as AppNotesTrashRouteImport } from './routes/app.notes.trash'
@@ -51,6 +52,7 @@ import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course
 import { Route as AppNotesSubjectIndexRouteImport } from './routes/app.notes.$subject.index'
 import { Route as AppNotesSubjectChapterRouteImport } from './routes/app.notes.$subject.$chapter'
 import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteId'
+import { Route as AppNotesPdfDocIdRouteImport } from './routes/app.notes.pdf.$docId'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
@@ -179,6 +181,11 @@ const AppNotesIndexRoute = AppNotesIndexRouteImport.update({
   path: '/notes/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppNotesLibraryRoute = AppNotesLibraryRouteImport.update({
+  id: '/notes/library',
+  path: '/notes/library',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppNotesNewRoute = AppNotesNewRouteImport.update({
   id: '/notes/new',
   path: '/notes/new',
@@ -270,6 +277,11 @@ const AppNotesNNoteIdRoute = AppNotesNNoteIdRouteImport.update({
   path: '/notes/n/$noteId',
   getParentRoute: () => AppRoute,
 } as any)
+const AppNotesPdfDocIdRoute = AppNotesPdfDocIdRouteImport.update({
+  id: '/notes/pdf/$docId',
+  path: '/notes/pdf/$docId',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSyllabusSubjectIndexRoute = AppSyllabusSubjectIndexRouteImport.update({
   id: '/syllabus/$subject/',
   path: '/syllabus/$subject/',
@@ -333,6 +345,7 @@ export interface FileRoutesByFullPath {
   '/features/': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
+  '/app/notes/library': typeof AppNotesLibraryRoute
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
@@ -352,6 +365,7 @@ export interface FileRoutesByFullPath {
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
+  '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
@@ -383,6 +397,7 @@ export interface FileRoutesByTo {
   '/features': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
+  '/app/notes/library': typeof AppNotesLibraryRoute
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
@@ -402,6 +417,7 @@ export interface FileRoutesByTo {
   '/courses/$course': typeof CoursesCourseIndexRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
+  '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
@@ -435,6 +451,7 @@ export interface FileRoutesById {
   '/features/': typeof FeaturesIndexRoute
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
+  '/app/notes/library': typeof AppNotesLibraryRoute
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
@@ -454,6 +471,7 @@ export interface FileRoutesById {
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
+  '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
@@ -488,6 +506,7 @@ export interface FileRouteTypes {
     | '/features/'
     | '/app/focus/history'
     | '/app/focus/mini'
+    | '/app/notes/library'
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
@@ -507,6 +526,7 @@ export interface FileRouteTypes {
     | '/courses/$course/'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
+    | '/app/notes/pdf/$docId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
@@ -538,6 +558,7 @@ export interface FileRouteTypes {
     | '/features'
     | '/app/focus/history'
     | '/app/focus/mini'
+    | '/app/notes/library'
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
@@ -557,6 +578,7 @@ export interface FileRouteTypes {
     | '/courses/$course'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
+    | '/app/notes/pdf/$docId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject'
@@ -589,6 +611,7 @@ export interface FileRouteTypes {
     | '/features/'
     | '/app/focus/history'
     | '/app/focus/mini'
+    | '/app/notes/library'
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
@@ -608,6 +631,7 @@ export interface FileRouteTypes {
     | '/courses/$course/'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
+    | '/app/notes/pdf/$docId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
@@ -811,6 +835,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNotesIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/notes/library': {
+      id: '/app/notes/library'
+      path: '/notes/library'
+      fullPath: '/app/notes/library'
+      preLoaderRoute: typeof AppNotesLibraryRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/notes/new': {
       id: '/app/notes/new'
       path: '/notes/new'
@@ -937,6 +968,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNotesNNoteIdRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/notes/pdf/$docId': {
+      id: '/app/notes/pdf/$docId'
+      path: '/notes/pdf/$docId'
+      fullPath: '/app/notes/pdf/$docId'
+      preLoaderRoute: typeof AppNotesPdfDocIdRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/syllabus/$subject/': {
       id: '/app/syllabus/$subject/'
       path: '/syllabus/$subject'
@@ -997,6 +1035,7 @@ interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppFocusMiniRoute: typeof AppFocusMiniRoute
+  AppNotesLibraryRoute: typeof AppNotesLibraryRoute
   AppNotesNewRoute: typeof AppNotesNewRoute
   AppNotesSearchRoute: typeof AppNotesSearchRoute
   AppNotesTrashRoute: typeof AppNotesTrashRoute
@@ -1014,6 +1053,7 @@ interface AppRouteChildren {
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
   AppNotesNNoteIdRoute: typeof AppNotesNNoteIdRoute
+  AppNotesPdfDocIdRoute: typeof AppNotesPdfDocIdRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
@@ -1028,6 +1068,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppFocusMiniRoute: AppFocusMiniRoute,
+  AppNotesLibraryRoute: AppNotesLibraryRoute,
   AppNotesNewRoute: AppNotesNewRoute,
   AppNotesSearchRoute: AppNotesSearchRoute,
   AppNotesTrashRoute: AppNotesTrashRoute,
@@ -1045,6 +1086,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerIndexRoute: AppTrackerIndexRoute,
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
   AppNotesNNoteIdRoute: AppNotesNNoteIdRoute,
+  AppNotesPdfDocIdRoute: AppNotesPdfDocIdRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,

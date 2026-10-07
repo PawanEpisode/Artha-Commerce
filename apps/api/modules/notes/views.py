@@ -20,6 +20,7 @@ from core.permissions import ParsedAPIView, flag_required
 from . import jobs, selectors, serializers, services
 from .errors import NotesFeatureDisabled
 from .selectors import NoteFilter
+from .views_search import pdf_search_payload
 
 NOTES_FLAG = "notes"
 PDF_FLAG = "notes_pdf"
@@ -33,6 +34,16 @@ class NotesView(ParsedAPIView):
 
 
 class WriteView(NotesView):
+    throttle_scope = "notes_write"
+
+
+class PdfView(NotesView):
+    """R2 endpoints (documents, marks, exports): the `notes` flag AND the `notes_pdf` flag, both fail open like every flag."""
+
+    permission_classes = [*NotesView.permission_classes, flag_required(PDF_FLAG)]
+
+
+class PdfWriteView(PdfView):
     throttle_scope = "notes_write"
 
 
@@ -56,6 +67,7 @@ def _filter_of(d: dict) -> NoteFilter:
         q=d.get("q", ""),
         date_from=d.get("from"),
         date_to=d.get("to"),
+        extra={k: d[k] for k in ("color", "doc") if d.get(k)},
     )
 
 
@@ -74,23 +86,32 @@ class NoteListCreateView(WriteView):
         return Response(_page(page, serializers.note_summary))
 
     def post(self, request):
-        d = self.parse(serializers.NoteCreateSerializer, request.data).validated_data
-        result = services.create_note(
-            request.user.id,
-            client_id=d["client_id"],
-            title=d["title"],
-            body_md=d["body_md"],
-            chapter_id=d["chapter_id"],
-            topic_id=d["topic_id"],
-            tag_ids=d["tag_ids"],
-        )
-        card = _card_or_404(request.user.id, result.note.id)
-        return Response(serializers.note_detail(card), status=201 if result.created else 200)
+        return _create_note(self, request, None)
+
+
+def _create_note(view, request, note_id):
+    """`POST notes/` and `PUT notes/{id}/`: one idempotent create. 201 when new, 200 with the stored note when replayed."""
+    d = view.parse(serializers.NoteCreateSerializer, request.data, path_id=note_id).validated_data
+    result = services.create_note(
+        request.user.id,
+        client_id=d.get("client_id"),
+        note_id=d.get("id"),
+        title=d["title"],
+        body_md=d["body_md"],
+        chapter_id=d["chapter_id"],
+        topic_id=d["topic_id"],
+        tag_ids=d["tag_ids"],
+    )
+    card = _card_or_404(request.user.id, result.note.id)
+    return Response(serializers.note_detail(card), status=201 if result.created else 200)
 
 
 class NoteDetailView(WriteView):
     def get(self, request, note_id):
         return Response(serializers.note_detail(_card_or_404(request.user.id, note_id)))
+
+    def put(self, request, note_id):
+        return _create_note(self, request, note_id)
 
     def patch(self, request, note_id):
         s = self.parse(serializers.NotePatchSerializer, request.data)
@@ -207,15 +228,21 @@ class SearchView(NotesView):
 
     def get(self, request):
         d = self.parse(serializers.SearchQuery, request.query_params).validated_data
-        if d["scope"] == "pdf":  # PDF text search arrives with R2; until then the scope is closed
-            if not flag_enabled(PDF_FLAG, request.user.id):
-                raise FeatureDisabled
-            return Response({"items": [], "next_cursor": None})
+        scope = d["scope"]
+        pdf_on = scope != "notes" and flag_enabled(PDF_FLAG, request.user.id)  # R2: PDF text and marks need `notes_pdf`
+        if scope == "pdf" and not pdf_on:
+            raise FeatureDisabled
         flt = NoteFilter(level_id=d.get("level"), subject_key=d.get("subject"), chapter_key=d.get("chapter"))
-        page = selectors.search(
-            request.user.id, d["q"], scope=d["scope"], flt=flt, limit=d["limit"], cursor=d.get("cursor")
-        )
-        return Response(_page(page, serializers.search_hit))
+        page = selectors.search(request.user.id, d["q"], scope=scope, flt=flt, limit=d["limit"], cursor=d.get("cursor"))
+        body = _page(page, serializers.search_hit)
+        if pdf_on:
+            items, meta = pdf_search_payload(
+                request.user.id, d["q"], scope=scope, limit=d["limit"], first_page=not d.get("cursor"), flt=flt
+            )
+            body["items"] += items
+            if meta is not None:
+                body["meta"] = meta
+        return Response(body)
 
 
 # --- Tags -------------------------------------------------------------------------------------------------------------

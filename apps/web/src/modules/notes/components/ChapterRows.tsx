@@ -4,6 +4,17 @@ import { Link } from '@tanstack/react-router'
 import { formatDate, pluralize } from '../lib/format'
 import type { ChapterCountsRow, MovedChapterRow } from '../lib/types'
 
+/** "3 notes, 12 highlights, 1 PDF": only what exists; marks that are not highlights (sticky notes, drawings) count as marks. */
+function countsText(c: { notes: number; highlights: number; marks: number; documents: number }) {
+  const parts = [
+    c.notes > 0 ? pluralize(c.notes, 'note') : '',
+    c.highlights > 0 ? pluralize(c.highlights, 'highlight') : '',
+    c.marks > 0 ? pluralize(c.marks, 'mark') : '',
+    c.documents > 0 ? pluralize(c.documents, 'PDF') : '',
+  ].filter(Boolean)
+  return parts.length > 0 ? parts.join(', ') : null
+}
+
 interface ChapterRowsProps {
   subjectKey: string
   chapters: readonly ChapterCountsRow[]
@@ -31,7 +42,7 @@ export function ChapterRows({ subjectKey, chapters, moved, onRelink }: ChapterRo
                   </Link>
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {c.notes === 0 ? 'No notes yet' : pluralize(c.notes, 'note')}
+                  {countsText(c) ?? 'No notes yet'}
                   {c.last_noted_at ? `, last on ${formatDate(c.last_noted_at)}` : ''}
                 </p>
               </div>
@@ -44,11 +55,11 @@ export function ChapterRows({ subjectKey, chapters, moved, onRelink }: ChapterRo
       {moved.length > 0 ? (
         <section aria-labelledby="moved-h" className="space-y-3">
           <h2 id="moved-h" className="font-display text-xl font-bold">
-            Moved or removed
+            Moved or removed chapters
           </h2>
           <Alert variant="info">
-            These chapters are not in your current syllabus any more. Your notes are safe: re-file them under a chapter
-            that exists now.
+            These chapters are not in your current syllabus any more. Your notes, highlights and PDFs are safe: re-file
+            them under a chapter that exists now.
           </Alert>
           <ul className="space-y-2">
             {moved.map((m) => (
@@ -56,7 +67,7 @@ export function ChapterRows({ subjectKey, chapters, moved, onRelink }: ChapterRo
                 <Card className="flex flex-wrap items-center gap-3 px-4 py-3">
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold break-words">{m.chapter_name}</p>
-                    <p className="text-sm text-muted-foreground">{pluralize(m.notes, 'note')}</p>
+                    <p className="text-sm text-muted-foreground">{countsText(m) ?? 'Nothing filed here'}</p>
                   </div>
                   <Button variant="outline" onClick={() => onRelink(m)}>
                     Re-link

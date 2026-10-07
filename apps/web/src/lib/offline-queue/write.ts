@@ -21,6 +21,10 @@ export async function currentUserId(): Promise<string | null> {
 export const replay = (entry: QueuedWrite) =>
   api(entry.path, { method: entry.method, body: entry.method === 'DELETE' ? undefined : JSON.stringify(entry.body) })
 
+let lastStamp = 0
+/** A strictly increasing `queuedAt`, so two writes made in the same millisecond still replay in the order they were made. */
+export const queueStamp = () => (lastStamp = Math.max(Date.now(), lastStamp + 1))
+
 const offline = () => typeof navigator !== 'undefined' && navigator.onLine === false
 
 export type NewWrite = Omit<QueuedWrite, 'userId' | 'queuedAt'>
@@ -34,7 +38,7 @@ export async function writeOrQueue<T>(entry: NewWrite, send: () => Promise<T>): 
   const userId = await currentUserId()
   if (!userId) return send()
   const scope = entry.scope ?? DEFAULT_SCOPE
-  const queued: QueuedWrite = { ...entry, userId, queuedAt: Date.now() }
+  const queued: QueuedWrite = { ...entry, userId, queuedAt: queueStamp() }
   if (offline() || (await pending(userId, scope)).length > 0) {
     await enqueue(queued)
     void flushQueue({ scope })

@@ -25,7 +25,7 @@ export interface CachedNote {
 
 export interface Draft {
   userId: string
-  /** `note:<id>` for an existing note, `new:<clientId>` for one that was never saved. */
+  /** `note:<id>` for every note (a note born on this device has its id from the start); `new:<clientId>` only in drafts written by R1. */
   key: string
   noteId: string | null
   clientId: string
@@ -76,6 +76,58 @@ export async function cachedNotes(userId: string): Promise<Note[]> {
   return (await notes.all()).filter((e) => e.userId === userId).map((e) => ({ ...e.note, offline_copy: true }))
 }
 
+/** The create reached the server: the copy is no longer "only here". Everything else about it stays as it is. */
+export async function markNoteSynced(userId: string, noteId: string) {
+  const found = await readCachedNote(userId, noteId)
+  if (found?.note.local_only)
+    await notes.put(cacheKey(userId, noteId), { ...found, note: { ...found.note, local_only: undefined } })
+}
+
+/** Moves a note's copy and draft to a new id (the id collided with another student's note, ERD: practically never). */
+export async function renameLocalNote(userId: string, oldId: string, newId: string) {
+  const found = await readCachedNote(userId, oldId)
+  if (found) {
+    await notes.put(cacheKey(userId, newId), { ...found, note: { ...found.note, id: newId, client_id: newId } })
+    await notes.remove(cacheKey(userId, oldId))
+  }
+  const draft = await loadDraft(userId, draftKey(oldId, ''))
+  if (draft) {
+    await saveDraft({ ...draft, key: draftKey(newId, ''), noteId: newId, clientId: newId })
+    await clearDraft(userId, draft.key)
+  }
+}
+
+/** Local notes older than `graceMs` that never got any content and wait for nothing: stale "New note" taps. Pure. */
+export function pickEmptyLocalNotes(
+  entries: readonly CachedNote[],
+  userId: string,
+  waitingIds: ReadonlySet<string>,
+  now: number,
+  graceMs = 60_000,
+): string[] {
+  return entries
+    .filter(
+      (e) =>
+        e.userId === userId &&
+        e.note.local_only === true &&
+        !waitingIds.has(e.note.id) &&
+        e.note.title.trim() === '' &&
+        e.note.body_md.trim() === '' &&
+        e.note.tags.length === 0 &&
+        now - e.lastOpenedAt > graceMs,
+    )
+    .map((e) => e.note.id)
+}
+
+/** Forgets empty local notes (and their empty drafts) so a stray "New note" tap leaves nothing behind. */
+export async function purgeEmptyLocalNotes(userId: string, waitingIds: ReadonlySet<string>, now = Date.now()) {
+  for (const id of pickEmptyLocalNotes(await notes.all(), userId, waitingIds, now)) {
+    await notes.remove(cacheKey(userId, id))
+    const draft = await loadDraft(userId, draftKey(id, ''))
+    if (draft && draft.body.trim() === '' && draft.title.trim() === '') await clearDraft(userId, draft.key)
+  }
+}
+
 export const removeCachedNote = (userId: string, noteId: string) => notes.remove(cacheKey(userId, noteId))
 
 export const saveDraft = (draft: Draft) => drafts.put(`${draft.userId}:${draft.key}`, draft)
@@ -85,7 +137,7 @@ export async function loadDraft(userId: string, key: string): Promise<Draft | un
   return found?.userId === userId ? found : undefined
 }
 
-/** Drafts of notes that were never saved, newest first ("Recovered draft" on /app/notes/new). */
+/** Drafts of notes that were never saved, from before notes took a client id (R1): adopted when `/app/notes/new` opens. */
 export async function unsavedNewDrafts(userId: string): Promise<Draft[]> {
   return (await drafts.all())
     .filter((d) => d.userId === userId && d.noteId === null && (d.body.trim() !== '' || d.title.trim() !== ''))

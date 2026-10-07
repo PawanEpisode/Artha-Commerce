@@ -1,0 +1,811 @@
+{
+ "effective": [
+  {
+   "name": "explicit beats a range",
+   "page": 20,
+   "explicit": "mine",
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": "doc",
+   "expected": {
+    "chapter": "mine",
+    "source": "explicit"
+   }
+  },
+  {
+   "name": "a range beats the document default",
+   "page": 20,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": "doc",
+   "expected": {
+    "chapter": "gst-itc",
+    "source": "range"
+   }
+  },
+  {
+   "name": "first page of a range",
+   "page": 12,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": "gst-itc",
+    "source": "range"
+   }
+  },
+  {
+   "name": "last page of a range",
+   "page": 40,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": "gst-itc",
+    "source": "range"
+   }
+  },
+  {
+   "name": "the next range starts right after",
+   "page": 41,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": "gst-rcm",
+    "source": "range"
+   }
+  },
+  {
+   "name": "a one page range",
+   "page": 70,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": "single",
+    "source": "range"
+   }
+  },
+  {
+   "name": "a gap falls back to the document",
+   "page": 65,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": "doc",
+   "expected": {
+    "chapter": "doc",
+    "source": "document"
+   }
+  },
+  {
+   "name": "before every range, no default",
+   "page": 3,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": null,
+    "source": "none"
+   }
+  },
+  {
+   "name": "after every range, no default",
+   "page": 99,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": null,
+    "source": "none"
+   }
+  },
+  {
+   "name": "no ranges at all",
+   "page": 5,
+   "explicit": null,
+   "ranges": [],
+   "default": "doc",
+   "expected": {
+    "chapter": "doc",
+    "source": "document"
+   }
+  },
+  {
+   "name": "nothing anywhere",
+   "page": 5,
+   "explicit": null,
+   "ranges": [],
+   "default": null,
+   "expected": {
+    "chapter": null,
+    "source": "none"
+   }
+  },
+  {
+   "name": "a range without a chapter is skipped",
+   "page": 5,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 10,
+     "chapter": null
+    }
+   ],
+   "default": "doc",
+   "expected": {
+    "chapter": "doc",
+    "source": "document"
+   }
+  },
+  {
+   "name": "explicit link on a page outside the ranges",
+   "page": 99,
+   "explicit": "mine",
+   "ranges": [
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "chapter": "gst-itc"
+    },
+    {
+     "page_from": 41,
+     "page_to": 60,
+     "chapter": "gst-rcm"
+    },
+    {
+     "page_from": 70,
+     "page_to": 70,
+     "chapter": "single"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": "mine",
+    "source": "explicit"
+   }
+  },
+  {
+   "name": "overlapping ranges: the first listed wins",
+   "page": 15,
+   "explicit": null,
+   "ranges": [
+    {
+     "page_from": 10,
+     "page_to": 20,
+     "chapter": "first"
+    },
+    {
+     "page_from": 14,
+     "page_to": 30,
+     "chapter": "second"
+    }
+   ],
+   "default": null,
+   "expected": {
+    "chapter": "first",
+    "source": "range"
+   }
+  }
+ ],
+ "validate": [
+  {
+   "name": "empty",
+   "ranges": [],
+   "expected": null
+  },
+  {
+   "name": "one range",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": null
+  },
+  {
+   "name": "touching but not overlapping",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 6,
+     "page_to": 9,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": null
+  },
+  {
+   "name": "a gap is fine",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 8,
+     "page_to": 9,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": null
+  },
+  {
+   "name": "overlap by one page",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 5,
+     "page_to": 9,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "overlap",
+    "a": 0,
+    "b": 1
+   }
+  },
+  {
+   "name": "listed out of order, overlap",
+   "ranges": [
+    {
+     "page_from": 20,
+     "page_to": 30,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 25,
+     "page_to": 40,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "overlap",
+    "a": 0,
+    "b": 2
+   }
+  },
+  {
+   "name": "a range inside another",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 50,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 10,
+     "page_to": 20,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 60,
+     "page_to": 70,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "overlap",
+    "a": 0,
+    "b": 1
+   }
+  },
+  {
+   "name": "identical ranges",
+   "ranges": [
+    {
+     "page_from": 3,
+     "page_to": 4,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 3,
+     "page_to": 4,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "overlap",
+    "a": 0,
+    "b": 1
+   }
+  },
+  {
+   "name": "page_from after page_to",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 9,
+     "page_to": 8,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "invalid_range",
+    "a": 1,
+    "b": 1
+   }
+  },
+  {
+   "name": "page zero",
+   "ranges": [
+    {
+     "page_from": 0,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "invalid_range",
+    "a": 0,
+    "b": 0
+   }
+  },
+  {
+   "name": "not a whole number",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": "a",
+     "page_to": 3,
+     "chapter": "x"
+    }
+   ],
+   "expected": {
+    "code": "invalid_range",
+    "a": 1,
+    "b": 1
+   }
+  },
+  {
+   "name": "invalid is reported before overlap",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 5,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 4,
+     "page_to": 9,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 0,
+     "page_to": 1,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "invalid_range",
+    "a": 2,
+    "b": 2
+   }
+  },
+  {
+   "name": "the first overlap is reported even when more follow",
+   "ranges": [
+    {
+     "page_from": 1,
+     "page_to": 50,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 10,
+     "page_to": 12,
+     "chapter": "ch-%d"
+    },
+    {
+     "page_from": 30,
+     "page_to": 60,
+     "chapter": "ch-%d"
+    }
+   ],
+   "expected": {
+    "code": "overlap",
+    "a": 0,
+    "b": 1
+   }
+  }
+ ],
+ "outline": [
+  {
+   "name": "one range per top-level entry",
+   "outline": [
+    {
+     "title": "Intro",
+     "page": 1,
+     "children": [
+      {
+       "title": "Sub",
+       "page": 2,
+       "children": []
+      }
+     ]
+    },
+    {
+     "title": "GST: ITC",
+     "page": 12,
+     "children": []
+    },
+    {
+     "title": "GST: RCM",
+     "page": 41,
+     "children": []
+    }
+   ],
+   "page_count": 80,
+   "expected": [
+    {
+     "page_from": 1,
+     "page_to": 11,
+     "title": "Intro"
+    },
+    {
+     "page_from": 12,
+     "page_to": 40,
+     "title": "GST: ITC"
+    },
+    {
+     "page_from": 41,
+     "page_to": 80,
+     "title": "GST: RCM"
+    }
+   ]
+  },
+  {
+   "name": "the last entry runs to the end",
+   "outline": [
+    {
+     "title": "A",
+     "page": 5,
+     "children": []
+    },
+    {
+     "title": "B",
+     "page": 30,
+     "children": []
+    }
+   ],
+   "page_count": 100,
+   "expected": [
+    {
+     "page_from": 5,
+     "page_to": 29,
+     "title": "A"
+    },
+    {
+     "page_from": 30,
+     "page_to": 100,
+     "title": "B"
+    }
+   ]
+  },
+  {
+   "name": "entries out of order are sorted",
+   "outline": [
+    {
+     "title": "B",
+     "page": 30,
+     "children": []
+    },
+    {
+     "title": "A",
+     "page": 5,
+     "children": []
+    }
+   ],
+   "page_count": 100,
+   "expected": [
+    {
+     "page_from": 5,
+     "page_to": 29,
+     "title": "A"
+    },
+    {
+     "page_from": 30,
+     "page_to": 100,
+     "title": "B"
+    }
+   ]
+  },
+  {
+   "name": "two entries on one page keep the first",
+   "outline": [
+    {
+     "title": "A",
+     "page": 5,
+     "children": []
+    },
+    {
+     "title": "A2",
+     "page": 5,
+     "children": []
+    },
+    {
+     "title": "B",
+     "page": 9,
+     "children": []
+    }
+   ],
+   "page_count": 20,
+   "expected": [
+    {
+     "page_from": 5,
+     "page_to": 8,
+     "title": "A"
+    },
+    {
+     "page_from": 9,
+     "page_to": 20,
+     "title": "B"
+    }
+   ]
+  },
+  {
+   "name": "pages outside the document are skipped",
+   "outline": [
+    {
+     "title": "A",
+     "page": 0,
+     "children": []
+    },
+    {
+     "title": "B",
+     "page": 3,
+     "children": []
+    },
+    {
+     "title": "C",
+     "page": 500,
+     "children": []
+    },
+    {
+     "title": "D",
+     "page": null,
+     "children": []
+    }
+   ],
+   "page_count": 50,
+   "expected": [
+    {
+     "page_from": 3,
+     "page_to": 50,
+     "title": "B"
+    }
+   ]
+  },
+  {
+   "name": "a missing page is skipped",
+   "outline": [
+    {
+     "title": "X"
+    },
+    {
+     "title": "Y",
+     "page": 4,
+     "children": []
+    }
+   ],
+   "page_count": 10,
+   "expected": [
+    {
+     "page_from": 4,
+     "page_to": 10,
+     "title": "Y"
+    }
+   ]
+  },
+  {
+   "name": "empty outline",
+   "outline": [],
+   "page_count": 10,
+   "expected": []
+  },
+  {
+   "name": "single entry on the last page",
+   "outline": [
+    {
+     "title": "Z",
+     "page": 10,
+     "children": []
+    }
+   ],
+   "page_count": 10,
+   "expected": [
+    {
+     "page_from": 10,
+     "page_to": 10,
+     "title": "Z"
+    }
+   ]
+  },
+  {
+   "name": "the first entry need not be page 1",
+   "outline": [
+    {
+     "title": "A",
+     "page": 7,
+     "children": []
+    }
+   ],
+   "page_count": 9,
+   "expected": [
+    {
+     "page_from": 7,
+     "page_to": 9,
+     "title": "A"
+    }
+   ]
+  }
+ ]
+}

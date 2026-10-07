@@ -1,0 +1,655 @@
+{
+ "reconcile": [
+  {
+   "name": "nobody else touched it",
+   "stored": {
+    "comment": "a",
+    "color": "y"
+   },
+   "base": {
+    "comment": "a",
+    "color": "y"
+   },
+   "incoming": {
+    "comment": "b",
+    "color": "g"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "b",
+     "color": "g"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "a replay is accepted and not an overwrite",
+   "stored": {
+    "comment": "b",
+    "color": "g"
+   },
+   "base": {
+    "comment": "a",
+    "color": "y"
+   },
+   "incoming": {
+    "comment": "b",
+    "color": "g"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "b",
+     "color": "g"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "different fields on the two sides: the union",
+   "stored": {
+    "comment": "a",
+    "color": "g"
+   },
+   "base": {
+    "comment": "a",
+    "color": "y"
+   },
+   "incoming": {
+    "comment": "b"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "b"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "same scalar on both: last write wins and is reported",
+   "stored": {
+    "comment": "a",
+    "color": "p"
+   },
+   "base": {
+    "color": "y"
+   },
+   "incoming": {
+    "color": "g"
+   },
+   "expected": {
+    "accepted": {
+     "color": "g"
+    },
+    "overwritten": [
+     "color"
+    ],
+    "conflict": null
+   }
+  },
+  {
+   "name": "same scalar changed to the same value: nothing overwritten",
+   "stored": {
+    "color": "g"
+   },
+   "base": {
+    "color": "y"
+   },
+   "incoming": {
+    "color": "g"
+   },
+   "expected": {
+    "accepted": {
+     "color": "g"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "geometry on both: last write wins",
+   "stored": {
+    "geometry": {
+     "quads": [
+      [
+       0.3,
+       0.3,
+       0.2,
+       0.01
+      ]
+     ]
+    }
+   },
+   "base": {
+    "geometry": {
+     "quads": [
+      [
+       0.1,
+       0.1,
+       0.2,
+       0.01
+      ]
+     ]
+    }
+   },
+   "incoming": {
+    "geometry": {
+     "quads": [
+      [
+       0.5,
+       0.5,
+       0.2,
+       0.01
+      ]
+     ]
+    }
+   },
+   "expected": {
+    "accepted": {
+     "geometry": {
+      "quads": [
+       [
+        0.5,
+        0.5,
+        0.2,
+        0.01
+       ]
+      ]
+     }
+    },
+    "overwritten": [
+     "geometry"
+    ],
+    "conflict": null
+   }
+  },
+  {
+   "name": "geometry replay is not an overwrite",
+   "stored": {
+    "geometry": {
+     "quads": [
+      [
+       0.5,
+       0.5,
+       0.2,
+       0.01
+      ]
+     ]
+    }
+   },
+   "base": {
+    "geometry": {
+     "quads": [
+      [
+       0.1,
+       0.1,
+       0.2,
+       0.01
+      ]
+     ]
+    }
+   },
+   "incoming": {
+    "geometry": {
+     "quads": [
+      [
+       0.5,
+       0.5,
+       0.2,
+       0.01
+      ]
+     ]
+    }
+   },
+   "expected": {
+    "accepted": {
+     "geometry": {
+      "quads": [
+       [
+        0.5,
+        0.5,
+        0.2,
+        0.01
+       ]
+      ]
+     }
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "a scalar with no base is a plain write",
+   "stored": {
+    "color": "p"
+   },
+   "base": {},
+   "incoming": {
+    "color": "g"
+   },
+   "expected": {
+    "accepted": {
+     "color": "g"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "comment edited in different places merges",
+   "stored": {
+    "comment": "ALPHA beta gamma"
+   },
+   "base": {
+    "comment": "alpha beta gamma"
+   },
+   "incoming": {
+    "comment": "alpha beta GAMMA"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "ALPHA beta GAMMA"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "comment edited in the same place conflicts",
+   "stored": {
+    "comment": "alpha BETA gamma"
+   },
+   "base": {
+    "comment": "alpha beta gamma"
+   },
+   "incoming": {
+    "comment": "alpha Beta gamma"
+   },
+   "expected": {
+    "accepted": {},
+    "overwritten": [],
+    "conflict": {
+     "field": "comment",
+     "mine": "alpha Beta gamma",
+     "theirs": "alpha BETA gamma",
+     "merged": "alpha BETA gamma"
+    }
+   }
+  },
+  {
+   "name": "a conflict does not hide the other fields",
+   "stored": {
+    "comment": "alpha BETA gamma",
+    "color": "g"
+   },
+   "base": {
+    "comment": "alpha beta gamma",
+    "color": "y"
+   },
+   "incoming": {
+    "comment": "alpha Beta gamma",
+    "color": "p"
+   },
+   "expected": {
+    "accepted": {
+     "color": "p"
+    },
+    "overwritten": [
+     "color"
+    ],
+    "conflict": {
+     "field": "comment",
+     "mine": "alpha Beta gamma",
+     "theirs": "alpha BETA gamma",
+     "merged": "alpha BETA gamma"
+    }
+   }
+  },
+  {
+   "name": "a text field with no base conflicts instead of replacing",
+   "stored": {
+    "comment": "theirs"
+   },
+   "base": {},
+   "incoming": {
+    "comment": "mine"
+   },
+   "expected": {
+    "accepted": {},
+    "overwritten": [],
+    "conflict": {
+     "field": "comment",
+     "mine": "mine",
+     "theirs": "theirs",
+     "merged": "theirs"
+    }
+   }
+  },
+  {
+   "name": "a text field with no base and the same text is a no-op",
+   "stored": {
+    "comment": "same"
+   },
+   "base": {},
+   "incoming": {
+    "comment": "same"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "same"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "a missing stored comment counts as empty",
+   "stored": {
+    "comment": null
+   },
+   "base": {
+    "comment": ""
+   },
+   "incoming": {
+    "comment": "hello"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "hello"
+    },
+    "overwritten": [],
+    "conflict": null
+   }
+  },
+  {
+   "name": "empty base: both added text conflicts",
+   "stored": {
+    "comment": "theirs"
+   },
+   "base": {
+    "comment": ""
+   },
+   "incoming": {
+    "comment": "mine"
+   },
+   "expected": {
+    "accepted": {},
+    "overwritten": [],
+    "conflict": {
+     "field": "comment",
+     "mine": "mine",
+     "theirs": "theirs",
+     "merged": "theirs"
+    }
+   }
+  },
+  {
+   "name": "edits in several places on one side still merge in python",
+   "stored": {
+    "comment": "ONE two three four FIVE"
+   },
+   "base": {
+    "comment": "one two three four five"
+   },
+   "incoming": {
+    "comment": "one two THREE four five"
+   },
+   "expected": {
+    "accepted": {
+     "comment": "ONE two THREE four FIVE"
+    },
+    "overwritten": [],
+    "conflict": null
+   },
+   "ts_may_conflict": true
+  },
+  {
+   "name": "insertions that a diff could align two ways conflict (no duplicate text)",
+   "stored": {
+    "comment": "  "
+   },
+   "base": {
+    "comment": " "
+   },
+   "incoming": {
+    "comment": "2212X "
+   },
+   "expected": {
+    "accepted": {},
+    "overwritten": [],
+    "conflict": {
+     "field": "comment",
+     "mine": "2212X ",
+     "theirs": "  ",
+     "merged": "  "
+    }
+   }
+  },
+  {
+   "name": "nothing incoming",
+   "stored": {
+    "comment": "a"
+   },
+   "base": {
+    "comment": "a"
+   },
+   "incoming": {},
+   "expected": {
+    "accepted": {},
+    "overwritten": [],
+    "conflict": null
+   }
+  }
+ ],
+ "merge3": [
+  {
+   "name": "identical edits count once",
+   "base": "a b c",
+   "mine": "a X c",
+   "theirs": "a X c",
+   "text": "a X c",
+   "clean": true
+  },
+  {
+   "name": "only theirs changed",
+   "base": "a b c",
+   "mine": "a b c",
+   "theirs": "a b Z",
+   "text": "a b Z",
+   "clean": true
+  },
+  {
+   "name": "only mine changed",
+   "base": "a b c",
+   "mine": "a X c",
+   "theirs": "a b c",
+   "text": "a X c",
+   "clean": true
+  },
+  {
+   "name": "disjoint edits",
+   "base": "alpha beta gamma",
+   "mine": "ALPHA beta gamma",
+   "theirs": "alpha beta GAMMA",
+   "text": "ALPHA beta GAMMA",
+   "clean": true
+  },
+  {
+   "name": "adjacent edits are one disagreement",
+   "base": "abcdef",
+   "mine": "abXdef",
+   "theirs": "abcYef",
+   "text": "abcYef",
+   "clean": false
+  },
+  {
+   "name": "same place",
+   "base": "alpha beta gamma",
+   "mine": "alpha BETA gamma",
+   "theirs": "alpha Beta gamma",
+   "text": "alpha Beta gamma",
+   "clean": false
+  },
+  {
+   "name": "two regions on one side",
+   "base": "one two three four five",
+   "mine": "one two THREE four five",
+   "theirs": "ONE two three four FIVE",
+   "text": "ONE two THREE four FIVE",
+   "clean": true,
+   "ts_may_conflict": true
+  },
+  {
+   "name": "insert at the same spot",
+   "base": "ab",
+   "mine": "aXb",
+   "theirs": "aYb",
+   "text": "aYb",
+   "clean": false
+  },
+  {
+   "name": "everything deleted on one side",
+   "base": "abc",
+   "mine": "",
+   "theirs": "abc d",
+   "text": "abc d",
+   "clean": false
+  }
+ ],
+ "resolve": [
+  {
+   "name": "mine",
+   "resolution": "mine",
+   "mine": "my text",
+   "theirs": "their text",
+   "expected": "my text"
+  },
+  {
+   "name": "theirs",
+   "resolution": "theirs",
+   "mine": "my text",
+   "theirs": "their text",
+   "expected": "their text"
+  },
+  {
+   "name": "both keeps theirs, a rule, then mine",
+   "resolution": "both",
+   "mine": "my text",
+   "theirs": "their text",
+   "expected": "their text\n\n---\n\nmy text"
+  },
+  {
+   "name": "both with nothing of mine",
+   "resolution": "both",
+   "mine": "  ",
+   "theirs": "their text",
+   "expected": "their text"
+  },
+  {
+   "name": "both with nothing of theirs",
+   "resolution": "both",
+   "mine": "my text",
+   "theirs": "",
+   "expected": "my text"
+  },
+  {
+   "name": "both multi-line",
+   "resolution": "both",
+   "mine": "l1\nl2",
+   "theirs": "t1\nt2",
+   "expected": "t1\nt2\n\n---\n\nl1\nl2"
+  }
+ ],
+ "edit_vs_delete": [
+  {
+   "name": "edit on a live row, rev 3 vs base 3",
+   "stored_deleted": false,
+   "stored_rev": 3,
+   "base_rev": 3,
+   "op": "edit",
+   "expected": {
+    "action": "apply",
+    "restored": false
+   }
+  },
+  {
+   "name": "edit on a live row, rev 5 vs base 3",
+   "stored_deleted": false,
+   "stored_rev": 5,
+   "base_rev": 3,
+   "op": "edit",
+   "expected": {
+    "action": "apply",
+    "restored": false
+   }
+  },
+  {
+   "name": "delete on a live row, rev 3 vs base 3",
+   "stored_deleted": false,
+   "stored_rev": 3,
+   "base_rev": 3,
+   "op": "delete",
+   "expected": {
+    "action": "apply",
+    "restored": false
+   }
+  },
+  {
+   "name": "delete on a live row, rev 5 vs base 3",
+   "stored_deleted": false,
+   "stored_rev": 5,
+   "base_rev": 3,
+   "op": "delete",
+   "expected": {
+    "action": "keep",
+    "restored": false
+   }
+  },
+  {
+   "name": "edit on a deleted row, rev 3 vs base 3",
+   "stored_deleted": true,
+   "stored_rev": 3,
+   "base_rev": 3,
+   "op": "edit",
+   "expected": {
+    "action": "restore",
+    "restored": true
+   }
+  },
+  {
+   "name": "edit on a deleted row, rev 5 vs base 3",
+   "stored_deleted": true,
+   "stored_rev": 5,
+   "base_rev": 3,
+   "op": "edit",
+   "expected": {
+    "action": "restore",
+    "restored": true
+   }
+  },
+  {
+   "name": "delete on a deleted row, rev 3 vs base 3",
+   "stored_deleted": true,
+   "stored_rev": 3,
+   "base_rev": 3,
+   "op": "delete",
+   "expected": {
+    "action": "noop",
+    "restored": false
+   }
+  },
+  {
+   "name": "delete on a deleted row, rev 5 vs base 3",
+   "stored_deleted": true,
+   "stored_rev": 5,
+   "base_rev": 3,
+   "op": "delete",
+   "expected": {
+    "action": "noop",
+    "restored": false
+   }
+  }
+ ]
+}

@@ -1,5 +1,16 @@
 // Verifies WCAG contrast for every theme defined in src/styles.css. Run: pnpm --filter @artha/design-system check:contrast
 // Parses OKLCH tokens, converts to sRGB, checks the pairs components actually use. Exit code 1 on any failure.
+//
+// ANNOTATION MARKS (F-03, PRD FR-F03-15): highlight, ink and page tokens are checked against each page tone (original =
+// --page-original, paper = --page-paper, night = --page-night) in every theme, using the blend the reader really uses:
+// multiply on original and paper, screen on night, computed on gamma-encoded sRGB like a browser does.
+// DECISION, physical limit: a highlight FILL cannot reach 3:1 against a white or paper page and still be a highlight. With
+// multiply the page shows through, so the fill is the page times the colour; 3:1 would need a relative luminance below
+// about 0.30 (a mid-tone, close to the pen colours), which dims the very words it marks and removes the difference
+// between a highlighter and a marker. So the fill is held to a 1.5:1 sanity floor (it must not vanish) and the 3:1 rule
+// (WCAG 1.4.11) is enforced on --highlight-*-edge, the stroke the annotation layer draws under and around every
+// highlight and uses for underlines, plus on --ink-* (pens). Colour is never the only signal: SwatchPicker adds a name
+// and a shape. On a night page the fill is screened and easily clears 3:1 as well.
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
@@ -19,7 +30,11 @@ function block(selector) {
 }
 
 function tokens(selector) {
-  const out = {}
+  // Page tones belong to the document, not to a theme: they are declared once on :root and inherited by every theme.
+  const out =
+    selector === THEMES.reading
+      ? {}
+      : Object.fromEntries(Object.entries(tokens(THEMES.reading)).filter(([k]) => k.startsWith('page-')))
   for (const m of block(selector).matchAll(/--([a-z0-9-]+):\s*oklch\(([^)]+)\)/g)) {
     const [main, alpha] = m[2].split('/').map((s) => s.trim())
     const [l, c, h] = main.split(/\s+/).map(Number)
@@ -28,19 +43,31 @@ function tokens(selector) {
   return out
 }
 
-function toLinear({ l, c, h }) {
+function rawLinear({ l, c, h }) {
   const a = c * Math.cos((h * Math.PI) / 180)
   const b = c * Math.sin((h * Math.PI) / 180)
   const l_ = (l + 0.3963377774 * a + 0.2158037573 * b) ** 3
   const m_ = (l - 0.1055613458 * a - 0.0638541728 * b) ** 3
   const s_ = (l - 0.0894841775 * a - 1.291485548 * b) ** 3
-  const clamp = (x) => Math.min(1, Math.max(0, x))
   return [
-    clamp(4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_),
-    clamp(-1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_),
-    clamp(-0.0041960863 * l_ - 0.7034186147 * m_ + 1.707614701 * s_),
+    4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+    -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+    -0.0041960863 * l_ - 0.7034186147 * m_ + 1.707614701 * s_,
   ]
 }
+const clamp01 = (x) => Math.min(1, Math.max(0, x))
+const toLinear = (tok) => rawLinear(tok).map(clamp01)
+/** True when the colour is inside sRGB, so a browser and this script agree on it (no gamut mapping involved). */
+const inGamut = (tok) => rawLinear(tok).every((v) => v >= -0.0005 && v <= 1.0005)
+const encode = (v) => (v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055)
+const decode = (v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)
+/** Browsers blend on gamma-encoded sRGB values, not on linear light. */
+const blend = (mode, fg, page) =>
+  fg.map((v, i) => {
+    const s = encode(v)
+    const b = encode(page[i])
+    return decode(mode === 'multiply' ? s * b : mode === 'screen' ? 1 - (1 - s) * (1 - b) : s)
+  })
 
 const luminance = (rgb) => 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]
 const mix = (fg, bg, alpha) => fg.map((v, i) => v * alpha + bg[i] * (1 - alpha))
@@ -51,7 +78,7 @@ const contrast = (a, b) => {
 const toHex = (rgb) =>
   '#' +
   rgb
-    .map((v) => Math.round((v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055) * 255))
+    .map((v) => Math.round(encode(v) * 255))
     .map((n) => n.toString(16).padStart(2, '0'))
     .join('')
 
@@ -86,6 +113,7 @@ const REQUIRED = [
   ['chart-5', 'card', 3, 'chart series 5 on card (WCAG 1.4.11)'],
   ['error-fg', 'error-bg', 4.5, 'error text on its tint'],
   ['error', 'card', 3, 'error icon on card (WCAG 1.4.11)'],
+  ['error-fg', 'background', 4.5, 'error text on the page (dropzone error line)'],
   ['error-border', 'background', 1.5, 'error border is decorative'],
   ['success-fg', 'success-bg', 4.5, 'success text on its tint'],
   ['primary', 'success-bg', 3, 'floating timer: progress ring on the phase-end tint (WCAG 1.4.11)'],
@@ -125,6 +153,28 @@ const REQUIRED = [
 ]
 const ADVISORY = []
 
+// Annotation marks. Blend: multiply (original, paper) and screen (night) for highlights, normal for pens.
+const TONES = {
+  original: ['page-original', 'multiply'],
+  paper: ['page-paper', 'multiply'],
+  night: ['page-night', 'screen'],
+}
+const KEYS = ['yellow', 'green', 'blue', 'pink', 'orange']
+const PENS = [1, 2, 3, 4, 5]
+// [token, minimum ratio on the page, blend kind, why]
+const MARK_TOKENS = [
+  ...KEYS.map((k) => [
+    `highlight-${k}`,
+    1.5,
+    'highlight',
+    'fill: sanity floor, 3:1 is physically out of reach (see top of file)',
+  ]),
+  ...KEYS.map((k) => [`highlight-${k}-edge`, 3, 'highlight', 'edge and underline stroke (WCAG 1.4.11, FR-F03-15)']),
+  ...PENS.map((n) => [`ink-${n}`, 3, 'normal', 'pen stroke (WCAG 1.4.11)']),
+]
+// Strokes and pens as shown in a swatch on the app surface.
+const SWATCH_ON_CARD = [...KEYS.map((k) => `highlight-${k}-edge`), ...PENS.map((n) => `ink-${n}`)]
+
 let failures = 0
 for (const [theme, selector] of Object.entries(THEMES)) {
   const t = tokens(selector)
@@ -147,6 +197,37 @@ for (const [theme, selector] of Object.entries(THEMES)) {
     const ratio = contrast(rgbOf(fg, bgRgb), bgRgb)
     console.log(`  note ${fg} on ${bg}: ${ratio.toFixed(2)} (advisory ${min}) ${why}`)
   }
+
+  const report = (ok, label, ratio, min, why) => {
+    if (!ok) failures++
+    console.log(`  ${ok ? 'ok  ' : 'FAIL'} ${label}: ${ratio} (min ${min}) ${why}`)
+  }
+  for (const name of [...MARK_TOKENS.map(([n]) => n), 'swatch-marker', 'swatch-marker-inverse']) {
+    if (!t[name]) throw new Error(`${theme}: missing token --${name}`)
+    if (!inGamut(t[name]))
+      report(false, `--${name}`, 'outside sRGB', 'in gamut', 'a browser would gamut-map it differently')
+  }
+  for (const [tone, [pageToken, mode]] of Object.entries(TONES)) {
+    const page = rgbOf(pageToken)
+    console.log(`  marks on the ${tone} page (${toHex(page)}; highlights ${mode})`)
+    for (const [name, min, kind, why] of MARK_TOKENS) {
+      const ratio = contrast(blend(kind === 'highlight' ? mode : 'normal', rgbOf(name), page), page)
+      report(ratio >= min, `${name} on ${tone}`, ratio.toFixed(2), min, why)
+    }
+  }
+  for (const name of SWATCH_ON_CARD) {
+    const r = contrast(rgbOf(name), rgbOf('card'))
+    report(r >= 3, `${name} on card`, r.toFixed(2), 3, 'swatch outline on the app surface (WCAG 1.4.11)')
+  }
+  for (const k of KEYS) {
+    const r = contrast(rgbOf('swatch-marker'), rgbOf(`highlight-${k}`))
+    report(r >= 4.5, `swatch-marker on highlight-${k}`, r.toFixed(2), 4.5, 'shape marker in a highlight swatch')
+  }
+  for (const n of PENS) {
+    const r = contrast(rgbOf('swatch-marker-inverse'), rgbOf(`ink-${n}`))
+    report(r >= 4.5, `swatch-marker-inverse on ink-${n}`, r.toFixed(2), 4.5, 'shape marker in a pen swatch')
+  }
+  console.log('  sRGB: ' + MARK_TOKENS.map(([n]) => `${n} ${toHex(rgbOf(n))}`).join(', '))
 }
 
 if (failures > 0) {
