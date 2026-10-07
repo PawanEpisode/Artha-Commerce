@@ -22,6 +22,7 @@ describe('notification analytics (PRD 10)', () => {
       localAlertShown: 'local_alert_shown',
       digestOfferShown: 'digest_offer_shown',
       digestAnswered: 'digest_answered',
+      pwaInstallResult: 'pwa_install_result',
     })
     for (const name of Object.values(NOTIFICATION_EVENTS)) expect(name).toMatch(/^[a-z]+(_[a-z]+)+$/)
   })

@@ -6,10 +6,13 @@ import { useFeatureFlag } from '~/modules/observability'
 import { nowMs, useStopwatch, useStopwatchLive } from '~/modules/tracker'
 
 import { MiniTimerView } from '../components/MiniTimerView'
+import { useAppBadge } from '../hooks/useAppBadge'
 import { useTimerTitle } from '../hooks/useDocumentTitle'
 import { useFocusTimer } from '../hooks/useFocusTimer'
+import { useLiveTimer } from '../hooks/useLiveTimer'
 import { usePopOut } from '../hooks/usePopOut'
 import { usePopoutSync } from '../hooks/usePopoutSync'
+import { badgeWanted } from '../lib/appBadge'
 import { MINI_PATH } from '../lib/mini-window'
 import { type PopoutControlId, popoutView } from '../lib/popout'
 import { PopOutButton } from './PopOutButton'
@@ -67,6 +70,17 @@ function FocusMini({ ownTitle }: { ownTitle: boolean }) {
   )
 }
 
+/**
+ * The dot on the installed app's icon while a round, a break or the stopwatch runs (X-01 W4.5, FR-C8). It reads which
+ * timer is live from the cache the timers above keep fresh, and clears itself when it unmounts: signed out, flag off.
+ */
+function AppBadge() {
+  const flagOn = useFeatureFlag('floating_timer')
+  const { live } = useLiveTimer()
+  useAppBadge(badgeWanted({ flagOn, live }))
+  return null
+}
+
 function StopwatchMini() {
   const pop = usePopOut()
   const sw = useStopwatch({ timers: pop.window })
@@ -117,6 +131,7 @@ export function LiveMiniTimer() {
   return (
     <>
       {focusOn ? <FocusMini ownTitle={!path.startsWith('/app/focus')} /> : null}
+      {focusOn ? <AppBadge /> : null}
       {trackerOn ? <StopwatchMini /> : null}
     </>
   )

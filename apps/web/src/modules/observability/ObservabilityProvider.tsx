@@ -3,6 +3,7 @@ import { useRouter } from '@tanstack/react-router'
 import posthog from 'posthog-js'
 import { type ReactNode, useEffect } from 'react'
 
+import { displayMode } from '~/lib/display-mode'
 import { env } from '~/lib/env'
 import { useAuth } from '~/modules/auth'
 
@@ -32,6 +33,8 @@ function initOnce() {
       person_profiles: 'identified_only',
       defaults: '2025-05-24',
     })
+    // Every event carries how the app was opened (browser or installed), which gate G4 reads (X-01 W4.5).
+    posthog.register({ display_mode: displayMode() })
   }
 }
 

@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 import { KeepAwakeChip, useKeepAwake } from '~/modules/keepawake'
-import { FollowUpAskContainer } from '~/modules/notifications'
+import { FollowUpAskContainer, InstallOfferContainer } from '~/modules/notifications'
 import { track } from '~/modules/observability'
 import {
   type ActivityType,
@@ -215,6 +215,9 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
 
       {/* X-01.1 W2.5b: after a finished round, a student who said "Not now" earlier may be asked once more. */}
       <FollowUpAskContainer roundsFinished={f.roundsFinished} />
+
+      {/* X-01 W4.5: after the second finished round on this device, once in 30 days, offer to install the app. */}
+      <InstallOfferContainer roundsFinished={f.roundsFinished} />
 
       <TodayCard
         doneSeconds={goals?.daily.done_seconds ?? 0}

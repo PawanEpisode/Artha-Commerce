@@ -18,9 +18,12 @@ export const NOTIFICATION_EVENTS = {
   localAlertShown: 'local_alert_shown',
   digestOfferShown: 'digest_offer_shown',
   digestAnswered: 'digest_answered',
+  pwaInstallResult: 'pwa_install_result',
 } as const
 
 export type PermissionResult = 'granted' | 'denied' | 'dismissed'
+/** How an install offer ended: the browser's answer, the steps being shown, or the app being installed. */
+export type InstallResult = 'accepted' | 'dismissed' | 'guide_shown' | 'installed'
 
 const where = (environment: Pick<Environment, 'platform' | 'displayMode'>) => ({
   platform: environment.platform,
@@ -57,6 +60,9 @@ export const notificationAnalytics = {
   /** An inbox item was opened (PRD section 10). Only the category and the age leave the page, never the text. */
   inboxOpened: (info: { category: string; seconds_since_sent: number }) =>
     track(NOTIFICATION_EVENTS.inboxOpened, { category: info.category, seconds_since_sent: info.seconds_since_sent }),
+  /** The install offer's outcome (X-01 W4.5, FR-C7). `kind` is how this browser installs. */
+  pwaInstallResult: (result: InstallResult, kind: string, environment: Pick<Environment, 'platform' | 'displayMode'>) =>
+    track(NOTIFICATION_EVENTS.pwaInstallResult, { result, kind, ...where(environment) }),
   /** The "switch to a daily digest" card was shown (W3.7). */
   digestOfferShown: (place: 'settings' | 'inbox') => track(NOTIFICATION_EVENTS.digestOfferShown, { place }),
   /** The student answered it, or switched the digest off again. */
