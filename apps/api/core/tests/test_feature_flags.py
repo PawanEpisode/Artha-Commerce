@@ -52,6 +52,18 @@ def test_a_posthog_failure_means_on_and_is_logged(posthog, caplog):
     assert "treating it as unknown" in caplog.text
 
 
+def test_a_failed_lookup_is_cached_briefly_so_an_outage_costs_one_call(posthog, monkeypatch):
+    posthog.result = TimeoutError("posthog is down")
+    for _ in range(5):
+        assert feature_flags.flag_enabled("recall_system", "u1", strict=True) is False  # fail closed
+    assert len(posthog.calls) == 1
+    # ... and only briefly: after the error window the next request asks again
+    monkeypatch.setattr(feature_flags.time, "monotonic", lambda: 10_000_000.0)
+    posthog.result = True
+    assert feature_flags.flag_enabled("recall_system", "u1", strict=True) is True
+    assert len(posthog.calls) == 2
+
+
 def test_the_student_id_is_the_distinct_id_and_flag_events_are_not_sent(posthog):
     feature_flags.flag_enabled("syllabus_coverage", "3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11")
     assert posthog.calls == [
@@ -71,10 +83,11 @@ def test_answers_are_cached_per_student_and_flag(posthog, settings):
     assert len(posthog.calls) == 4
 
 
-def test_failures_are_not_cached_so_the_next_request_tries_again(posthog):
+def test_a_failure_is_retried_once_the_short_error_window_has_passed(posthog, monkeypatch):
     posthog.result = TimeoutError("down")
     feature_flags.flag_enabled("syllabus_coverage", "u1")
     posthog.result = False
+    monkeypatch.setattr(feature_flags.time, "monotonic", lambda: 10_000_000.0)
     assert feature_flags.flag_enabled("syllabus_coverage", "u1") is False
 
 

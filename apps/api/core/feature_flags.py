@@ -18,8 +18,13 @@ from django.conf import settings
 logger = logging.getLogger(__name__)
 
 _client = None
-_cache: dict[tuple[str, str], tuple[float, bool | None]] = {}
+_cache: dict[
+    tuple[str, str], tuple[float, bool | None, float | None]
+] = {}  # (stored at, answer, ttl; None = the setting)
 _CACHE_LIMIT = 10_000
+# A failed lookup is remembered briefly too, so a PostHog outage costs one slow call per student per interval, not one per
+# request (audit AUD-003). Short, so recovery is quick.
+_ERROR_CACHE_SECONDS = 15.0
 
 
 def _posthog():
@@ -41,6 +46,12 @@ def _posthog():
     return _client
 
 
+def _remember(key: tuple[str, str], now: float, answer: bool | None, ttl: float | None) -> None:
+    if len(_cache) >= _CACHE_LIMIT:
+        _cache.clear()
+    _cache[key] = (now, answer, ttl)
+
+
 def _lookup(name: str, distinct_id) -> bool | None:
     """True or False when PostHog answered; None when it could not (no key, unknown flag or any error)."""
     client = _posthog()
@@ -49,17 +60,16 @@ def _lookup(name: str, distinct_id) -> bool | None:
     key = (name, str(distinct_id))
     now = time.monotonic()
     cached = _cache.get(key)
-    if cached and now - cached[0] < settings.FEATURE_FLAG_CACHE_SECONDS:
+    if cached and now - cached[0] < (settings.FEATURE_FLAG_CACHE_SECONDS if cached[2] is None else cached[2]):
         return cached[1]
     try:
         value = client.get_feature_flag(name, str(distinct_id), send_feature_flag_events=False)
     except Exception:  # noqa: BLE001 - a flag service problem must never break the API
         logger.warning("PostHog flag lookup failed for %s; treating it as unknown", name, exc_info=True)
+        _remember(key, now, None, _ERROR_CACHE_SECONDS)
         return None
     answer = None if value is None else value is not False  # None: the flag does not exist or could not be evaluated
-    if len(_cache) >= _CACHE_LIMIT:
-        _cache.clear()
-    _cache[key] = (now, answer)
+    _remember(key, now, answer, None)
     return answer
 
 

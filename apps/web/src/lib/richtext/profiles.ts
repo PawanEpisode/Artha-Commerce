@@ -4,7 +4,7 @@
  * conformance corpus `apps/api/core/tests/richtext_cases.json` runs against both, so a difference fails a test.
  */
 
-export type RichTextProfile = 'question' | 'note'
+export type RichTextProfile = 'question' | 'note' | 'card'
 
 export interface ProfileRules {
   maxChars: number
@@ -46,5 +46,18 @@ export const PROFILES: Record<RichTextProfile, ProfileRules> = {
     altRequired: false,
     maxMathChars: 2000,
     maxMathCount: 200,
+  },
+  /** A recall card field (F-15): short, no images in R1, small tables. Twin of `CARD` in `core/richtext.py`. */
+  card: {
+    maxChars: 4000,
+    maxImages: 0,
+    maxTableRows: 10,
+    maxTableCols: 6,
+    headings: null,
+    taskLists: false,
+    rules: false,
+    altRequired: false,
+    maxMathChars: 1000,
+    maxMathCount: 40,
   },
 }

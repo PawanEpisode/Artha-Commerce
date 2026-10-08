@@ -123,6 +123,10 @@ if DATABASES["default"]["ENGINE"].endswith("postgresql"):
     DATABASES["default"]["DISABLE_SERVER_SIDE_CURSORS"] = True  # required by pgbouncer transaction mode
     DATABASES["default"].setdefault("OPTIONS", {})["prepare_threshold"] = None
 
+# Per-instance cache (flag answers use their own in-process cache; this is for small derived values and throttles).
+# Serverless instances do not share it, so nothing correctness-critical may live here: quotas are database facts.
+CACHES = {"default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache", "LOCATION": "artha-default"}}
+
 # --- API ---------------------------------------------------------------------------------------
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ["core.authentication.SupabaseJWTAuthentication"],

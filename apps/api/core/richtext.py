@@ -45,7 +45,22 @@ class Profile:
 
 QUESTION = Profile("question", 20_000, 12, 40, 12, headings=None, task_lists=False, rules=False, alt_required=True)
 NOTE = Profile("note", 100_000, 40, 100, 12, headings=(2, 4), task_lists=True, rules=True, alt_required=False)
-PROFILES = {p.name: p for p in (QUESTION, NOTE)}
+# A recall card field (F-15): short, no headings, lists-as-tasks or rules, no images in R1 (text-first keeps cards fast and
+# offline-sized), small tables that scroll inside their own box.
+CARD = Profile(
+    "card",
+    4_000,
+    0,
+    10,
+    6,
+    headings=None,
+    task_lists=False,
+    rules=False,
+    alt_required=False,
+    max_math_chars=1000,
+    max_math_count=40,
+)
+PROFILES = {p.name: p for p in (QUESTION, NOTE, CARD)}
 
 
 @dataclass(frozen=True)

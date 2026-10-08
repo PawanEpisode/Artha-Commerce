@@ -556,6 +556,68 @@
    "warnings": [],
    "text": "abcde",
    "sanitised": "abcde"
+  },
+  {
+   "id": "valid-card-formula",
+   "profile": "card",
+   "markdown": "EVA = NOPAT - (WACC x Capital)\n\n$EVA = NOPAT - WACC \\cdot C$",
+   "errors": [],
+   "warnings": [],
+   "text": "EVA = NOPAT - (WACC x Capital)\nEVA = NOPAT - WACC \\cdot C"
+  },
+  {
+   "id": "valid-card-cloze-marker",
+   "profile": "card",
+   "markdown": "ITC is blocked on {{c1::motor vehicles}} under Section 17(5).",
+   "errors": [],
+   "warnings": []
+  },
+  {
+   "id": "valid-card-small-table",
+   "profile": "card",
+   "markdown": "| a | b |\n| --- | --- |\n| 1 | 2 |",
+   "errors": [],
+   "warnings": []
+  },
+  {
+   "id": "bad-card-heading",
+   "profile": "card",
+   "markdown": "## Heading",
+   "errors": [
+    "heading_level"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-card-image",
+   "profile": "card",
+   "markdown": "![Chart](attachment:123e4567-e89b-12d3-a456-426614174000)",
+   "errors": [
+    "too_many_images"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-card-rule",
+   "profile": "card",
+   "markdown": "above\n\n---\n\nbelow",
+   "errors": [
+    "rule_not_allowed"
+   ],
+   "warnings": []
+  },
+  {
+   "id": "bad-card-too-long",
+   "profile": "card",
+   "markdown": null,
+   "errors": [
+    "too_long"
+   ],
+   "warnings": [],
+   "repeat": {
+    "unit": "a",
+    "times": 4001
+   }
   }
  ]
 }
