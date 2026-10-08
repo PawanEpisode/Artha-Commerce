@@ -58,6 +58,7 @@ import {
   Slider,
   Sparkles,
   StatTile,
+  StickyStory,
   Sun,
   SunMoon,
   Switch,
@@ -465,6 +466,38 @@ export function DesignShowcase() {
         <Reveal>
           <Card className="max-w-sm p-6">Fades up when it enters the viewport and respects reduced motion.</Card>
         </Reveal>
+        <p className="text-sm text-muted-foreground">
+          Sticky story: on a wide screen the rail stays put while you scroll; on a phone, or with reduced motion, every
+          step stacks.
+        </p>
+        <StickyStory
+          label="Showcase walkthrough"
+          stepVh={42}
+          steps={[
+            {
+              id: 'ds-story-plan',
+              rail: 'Plan',
+              content: (
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">Tell us the attempt</h3>
+                  <p className="text-muted-foreground">Course, level and exam date. Under a minute.</p>
+                </div>
+              ),
+              media: <Card className="w-full p-6 text-sm text-muted-foreground">Goal card</Card>,
+            },
+            {
+              id: 'ds-story-today',
+              rail: 'Today',
+              content: (
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">Follow the list</h3>
+                  <p className="text-muted-foreground">Learn, revise, practise — one focused day.</p>
+                </div>
+              ),
+              media: <Card className="w-full p-6 text-sm text-muted-foreground">Today list</Card>,
+            },
+          ]}
+        />
       </Block>
     </Container>
   )

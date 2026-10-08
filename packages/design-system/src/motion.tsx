@@ -38,4 +38,6 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
   )
 }
 
+export { StickyStory, type StickyStoryProps, type StickyStoryStep } from './components/ui/sticky-story'
+export { stepIndexFromProgress, stickyStepIndex, stickyStepScrollProgress } from './lib/sticky-story'
 export { motion, useReducedMotion }

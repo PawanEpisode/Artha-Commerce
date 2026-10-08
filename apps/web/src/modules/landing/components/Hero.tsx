@@ -91,8 +91,8 @@ export function Hero() {
             Your entire exam prep, <span className="text-gradient">in one calm workspace.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            Plan backwards from your exam date, track every chapter, practise with mocks and revise smarter. No more
-            juggling notebooks, PDFs and WhatsApp groups.
+            Coverage, hours, notes and a plan that starts from your exam date — not another folder of PDFs and WhatsApp
+            dumps. Built for CA, CS and CMA students in India.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button size="lg" variant="cta" arrow asChild>

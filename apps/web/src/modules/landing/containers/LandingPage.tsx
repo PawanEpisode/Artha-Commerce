@@ -6,16 +6,18 @@ import { PlannerPreview } from '~/modules/planner-preview'
 
 import { CourseCards } from '../components/CourseCards'
 import { Faq } from '../components/Faq'
-import { FeatureGrid } from '../components/FeatureGrid'
+import { FeatureWalkthrough } from '../components/FeatureWalkthrough'
 import { FinalCta } from '../components/FinalCta'
 import { Hero } from '../components/Hero'
 import { HowItWorks } from '../components/HowItWorks'
+import { InsightBand } from '../components/InsightBand'
 import { SIGNED_IN_MARK_CSS } from '../lib/sessionMark'
 
 function MarketingHome() {
   return (
     <div data-marketing-home>
       <Hero />
+      <InsightBand />
       <CourseCards />
       <Section
         id="planner"
@@ -26,7 +28,7 @@ function MarketingHome() {
       >
         <PlannerPreview />
       </Section>
-      <FeatureGrid />
+      <FeatureWalkthrough />
       <HowItWorks />
       <Faq />
       <FinalCta />
