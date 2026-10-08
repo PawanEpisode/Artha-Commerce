@@ -26,3 +26,11 @@ class FeatureDisabled(PermissionDenied):
 
     default_detail = "This feature is not available yet."
     default_code = "feature_disabled"
+
+
+class QuotaExceeded(CodedError):
+    """429 with `extra` `{kind, used, limit, plan}`. Quotas are database facts; a throttle is only politeness."""
+
+    status_code = status.HTTP_429_TOO_MANY_REQUESTS
+    default_detail = "You have reached a limit of your plan."
+    default_code = "quota_exceeded"

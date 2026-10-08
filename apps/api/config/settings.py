@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "modules.notifications",
     "modules.media",
     "modules.notes",
+    "modules.recall",
 ]
 
 MIDDLEWARE = [

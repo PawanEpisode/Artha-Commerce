@@ -47,6 +47,7 @@ Taken by me, to confirm when you approve this file (each is small and reversible
 | D6 | Deterministic fuzz seed is FNV-1a (32-bit) over the UTF-8 bytes of `"{card_id}:{reps}"`, mapped to a factor in [-1, 1); identical in Python and TypeScript, pinned by vectors. Oracle tests against the libraries run with fuzz off | The libraries' fuzz is random; ours must replay |
 | D7 | Time rules for parity: all instants are UTC; `elapsed_days` is whole days (floor) between the previous counted review and now, as py-fsrs; intervals are rounded half up to whole days, clamped to `[1, max_interval_days]`; stability and difficulty are doubles in the domain and rounded to `real` only on write | One rule, in `domain/limits.py` and `lib/limits.ts` with a parity test |
 | D8 | `py-fsrs` is added to `requirements-dev.txt` and `ts-fsrs` to `apps/web` devDependencies (one `pnpm-lock.yaml` change). Neither is imported by runtime code | Oracle only |
+| D9 | List columns (`tags`, `reference_keys`, `flags`, `learning_steps_min`, `relearning_steps_min`, `weights`) are JSON lists, not PostgreSQL arrays. The repo has no array columns and its quick tests run on SQLite. The two searched lists get `jsonb_path_ops` GIN indexes on PostgreSQL; the 21-weight length check is a PostgreSQL check constraint plus the domain validator | Same data, one schema on both databases | 
 
 ## 2. How each wave is worked
 
@@ -89,12 +90,13 @@ Exit: all green, `recall_check_vectors` (added in W5) can run them.
 `apps/web/src/modules/recall/lib/`: `fsrs6.ts`, `folding.ts`, `queue.ts`, `cloze.ts`, `render.ts`, `kinds.ts` (field forms), `limits.ts`. The vector files are the same bytes as the API's (a copy at `apps/web/src/modules/recall/lib/vectors/` and a test that fails if the two differ, so no cross-package import). Vitest runs every vector, a parity test for `limits.ts`, a property test for fold equals incremental, and an oracle test against `ts-fsrs` (dev dependency, fuzz off).
 Exit: same 40+ vectors give the same state within 1e-6 and the same intervals in both languages.
 
-### W3. Schema, plans and quotas
+### W3. Schema, plans and quotas (done 2026-10-09)
 
 - `core/plans.py` (D1) and `recall_quotaplan` (rows `free`, `pro`), `modules/recall/services/quota.py` in the notes pattern: one conditional `UPDATE` per reservation (cards, decks, cards per deck), never read then write; usage counters in `recall_quotausage`; reconcile command later. Reviewing is never limited.
 - Migrations (ERD section 8): `0001_content` (item incl. `origin_kind`, itemversion, deck, deckversion, deckversionitem, deckitem), `0002_student_state` (params + default row equal to py-fsrs defaults, settings, subscription, card, session, scheduleevent, quotaplan seed), `0003_reviewlog` (partitioned on Postgres, plain on SQLite; `managed = False` model; indexes; trigger `recall_reviewlog_immutable` with `recall.replaying` and `recall.erasing`), `0004_rollups` (daily and chapter rollups, auditlog). Sharing, report and AI tables are created in R2, not now (the ERD's `0004` bundles them; I split it so R1 ships no dead tables except `recall_report`, which FR-F15-52 needs, so that one is in `0004`).
 - Post-migrate RLS already runs on every public table; a new test asserts `relrowsecurity` on each `recall_*` table and on all 16 partitions.
 Tests: constraint tests (every enum check, `(state = 0) = (stability is null)`), partition routing and trigger (delete refused, fact update refused, derived columns updatable only under `recall.replaying`, delete allowed under `recall.erasing`), RLS, default weights equal the library's. Postgres-only tests skip on SQLite and are run on the private Postgres.
+Built: `0001_content`, `0002_student_state` (seeds `default` params and the `free` and `pro` plans), `0003_reviewlog` (DDL in `modules/recall/reviewlog_sql.py`), `0004_rollups` (rollups, report, audit log). `services/log_guard.py` has the `replaying()` and `erasing()` switches; they reset themselves because `SET LOCAL` outlives a savepoint. `QuotaExceeded` moved to `core.errors` (Notes keeps its own copy for now). Chapter rollup uniqueness is two partial indexes instead of `coalesce`, so SQLite and PostgreSQL agree.
 Rollback: drop the `recall_*` tables; nothing else changes.
 
 ### W4. Cards: services, endpoints, provider

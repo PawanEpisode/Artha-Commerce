@@ -78,7 +78,7 @@ Typed notes in Markdown with KaTeX, autosave, version history, trash, tags, link
 
 FSRS-6 pure scheduler in Python and TypeScript with shared golden vectors, seven card kinds, append-only review log, review screen, daily limits and catch-up, platform decks edited in Django admin, forgotten list, stats, export and delete, offline review. Open owner items from the PRD: Q-F15-3 (study day boundary, default 04:00), Q-F15-4 (who writes the first platform decks: two pilot subjects, about 12 chapters, 40 cards each).
 
-**Status 2026-10-09.** Build runbook written: `docs/F-15-ROLLOUT.md` (waves W0 to W12), waiting for owner approval. W0 is done: the missing richtext `card` profile (API and web) and flag-failure caching with `CACHES` (W0L.2, AUD-003) were fixed. No F-15 code exists yet.
+**Status 2026-10-09.** Runbook approved (`docs/F-15-ROLLOUT.md`). Done: W0 prerequisites, W1 Python domain (FSRS-6, replay, queue, cards, golden vectors, py-fsrs oracle), W2 TypeScript twin (same vectors, ts-fsrs oracle), W3 schema (four migrations, partitioned immutable review log on PostgreSQL, plans seam `core/plans.py`, quotas, RLS tests). Next: W4 card services, endpoints and the Notes provider. Nothing is user-visible yet and the flag `recall_system` stays off.
 
 ### 4.4 Owner tasks for this track
 
