@@ -143,3 +143,43 @@ Manual (cannot be run from the build environment):
 ## R2-G. Rollback
 
 Turn `notes_pdf` off: the reader, library and PDF endpoints answer 403 and the web hides them; typed notes are untouched; data export and delete-all stay open. Stop the worker if it misbehaves (jobs wait in `core_job`). Migrations are additive; to remove R2 drop the document, annotation and content tables and migrations 0003 to 0005.
+
+
+# R3: AI help, Replace edition, Unlock for search, resumable upload (flag `notes_ai`)
+
+What ships (migrations 0006 to 0009): an AI exam summary of a chapter (draft first, a note only when accepted), AI "Improve this page" for scanned pages, Replace edition with re-anchoring, Unlock for search and resumable upload of big PDFs. **Not built, on purpose:** share links (`notes_share`, parked, see `docs/BUILD-TRACKER.md` P1), offline packs and the recall bridge (blocked on F-15 and the owner). AI is private per student: nothing is shared, so the counsel review (Q-F03-3) stays deferred. Endpoint shapes: `docs/F-03-API-CONTRACT.md` (R3). Worker: `docs/F-03-WORKER.md` (R3 additions).
+
+## R3-A. Fail-closed gates (all must be true for any AI call)
+
+1. PostHog flag `notes_ai` is on for the student. **Fail closed**: a missing key, an unknown flag or an outage means off. Create it at **0%**.
+2. `GEMINI_API_KEY` is set (API and worker).
+3. `GEMINI_DATA_TIER=paid`. Set it only when the key's Google Cloud project has an active billing account (Gemini API "Paid Services": Google does not use the content to improve its products). A Gemini or Google AI Pro subscription for a personal account is a consumer product and does **not** count. Until you confirm this it stays `unconfirmed` and AI refuses.
+4. `NOTES_AI_CONSENT_APPROVED` equals the consent version in `apps/api/modules/notes/domain/ai_consent.py` (`VERSION`). The consent wording is a **draft marked [VERIFY]**: read it (it is what students agree to, and says what is sent to Google), have it checked, and only then copy the version string into the variable. Changing the wording means a new version, and every student is asked again.
+5. The kill switch of the feature is on (`NOTES_AI_SUMMARY_ENABLED`, `NOTES_AI_OCR_ENABLED`) and `NOTES_AI_DAILY_BUDGET_PAISE` is above 0 and not spent today. The budget is shared by all students (India day); when it runs out new requests answer 503 `ai_budget_exhausted` and nothing is charged.
+6. The student agreed to the current consent text in the app (Settings, Notes, AI help; or the first time they ask).
+
+Per student limits are plan columns in the admin (`ai_summaries_per_month`, `ai_ocr_pages_per_month`; the free plan has 0 pages, set them on the plan you want to offer). They are charged atomically before the job is queued and refunded when the job fails, is cancelled, or a page could not be read.
+
+## R3-B. Environment
+
+API **and** worker: `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_DATA_TIER`, `NOTES_AI_CONSENT_APPROVED`, `NOTES_AI_SUMMARY_ENABLED`, `NOTES_AI_OCR_ENABLED`, `NOTES_AI_DAILY_BUDGET_PAISE`, `GEMINI_PRICE_IN_PAISE_PER_M`, `GEMINI_PRICE_OUT_PAISE_PER_M`, `NOTES_UNLOCK_FERNET_KEYS`. API only: `NOTES_S3_ENDPOINT`, `NOTES_S3_REGION`, `NOTES_S3_ACCESS_KEY_ID`, `NOTES_S3_SECRET_ACCESS_KEY`. Gemini is called only from the API and the worker, never from the browser. Generate the Fernet key with `python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"`; to rotate, put the new key first and keep the old one after a comma for an hour. The price table is an assumption to re-check against Google's price page; `cost_paise` in the ledger (`notes_aijob`) is computed from it.
+
+## R3-C. Migrations (from your computer, `DIRECT_DATABASE_URL`)
+
+`python manage.py migrate` applies 0006 (AI ledger, consent, monthly counters), 0007 (replace edition: document columns and `notes_reanchoritem`), 0008 (unlock columns) and 0009 (resumable upload id). All are additive. RLS is switched on for the new tables automatically.
+
+## R3-D. Order of the first launch
+
+1. Deploy the API with the new migrations. With `notes_ai` at 0% nothing changes for students.
+2. Set the worker secrets and deploy it (`fly deploy` from `apps/api`; `docs/F-03-WORKER.md`). Check `fly logs` shows the new job types registered.
+3. Do the gates above one by one (billing account, wording approved, budget, Fernet key). Leave resumable upload for step 6.
+4. Raise `notes_ai` to your own account, then a handful of testers. Quick smoke test: agree to the notice; ask for a summary on a chapter with a few notes; open a scanned PDF page and tap "Improve this page"; replace an edition of a test PDF and open "Needs attention"; unlock a password-protected PDF and search it.
+5. Watch the daily budget (`notes_aijob.cost_paise` summed per day) and the worker memory for a day, then widen the percentage.
+6. Resumable upload last. In Supabase, Project settings, Storage, create an S3 access key, set the four `NOTES_S3_*` variables, and in the bucket's CORS (Storage settings) allow `PUT` from your web origin. Upload one PDF over 16 MiB with the network throttled and interrupted once. The S3 signing is tested against AWS's published example, but this exact Supabase endpoint is **[VERIFY]**: if it fails, unset the variables and every upload is a single PUT again.
+
+## R3-E. Operations and rollback
+
+- Kill switches without a deploy: `notes_ai` to 0% (everything above answers 403), or `NOTES_AI_SUMMARY_ENABLED=false` / `NOTES_AI_OCR_ENABLED=false` (503 `ai_unavailable`, queued jobs refund). Withdrawing consent deletes the student's unsaved drafts and cancels their queued jobs.
+- Replace edition never changes or deletes the old document. If a re-anchor misbehaves, the student still has the old edition with every mark; a failed re-anchor says so on the new edition.
+- Unlock for search stores no password and no unprotected file. If `NOTES_UNLOCK_FERNET_KEYS` is unset the button answers 503 `unlock_unavailable`.
+- Data rights: `DELETE /notes/` and the export include the AI ledger and the replace-edition items; erase removes them.

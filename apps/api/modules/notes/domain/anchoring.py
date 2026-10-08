@@ -276,3 +276,24 @@ def locate_quote(
         return None
     a, b, score = found
     return page.starts[a], page.ends[b - 1], score
+
+
+def locate_exact(
+    page_text: str, quote_exact: str, prefix: str = "", suffix: str = "", hint_start: int | None = None
+) -> tuple[int, int, float] | None:
+    """
+    Server-only shortcut (no TypeScript twin, the shared algorithm is untouched): step (a) of `locate_quote` alone, for the
+    many pages of a new edition where only an exact hit is worth looking for. Same offsets and score as `locate_quote` would
+    give when the quote occurs exactly.
+    """
+    page = normalise_for_match(page_text)
+    q = normalise_for_match(quote_exact).text.strip(" ")
+    if not q or q not in page.text:
+        return None
+    pre, suf = normalise_for_match(prefix).text, normalise_for_match(suffix).text
+    hint = None if hint_start is None else bisect_left(page.starts, hint_start)
+    found = _exact(page.text, q, pre, suf, hint)
+    if not found:
+        return None
+    a, b, score = found
+    return page.starts[a], page.ends[b - 1], score

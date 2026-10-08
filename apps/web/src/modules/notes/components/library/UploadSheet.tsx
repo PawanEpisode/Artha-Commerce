@@ -11,6 +11,7 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
+  TextField,
 } from '@artha/design-system'
 import { useState } from 'react'
 
@@ -36,6 +37,8 @@ interface UploadSheetProps {
   onChooseAnother: () => void
   /** A quota refusal opens the quota sheet from here. */
   onManageStorage: () => void
+  /** "Replace edition": the sheet says what is being replaced and asks for an optional edition name. */
+  replacing?: { title: string; label: string; onLabelChange: (label: string) => void }
 }
 
 const ACCEPT = '.pdf,application/pdf'
@@ -55,6 +58,7 @@ export function UploadSheet({
   onUpload,
   onChooseAnother,
   onManageStorage,
+  replacing,
 }: UploadSheetProps) {
   const [help, setHelp] = useState(false)
   const limitsText = `PDF only. Up to ${limits.maxFileMb} MB and ${limits.maxPages.toLocaleString('en-IN')} pages each.`
@@ -62,8 +66,11 @@ export function UploadSheet({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="bottom" className="max-h-[90dvh] overflow-y-auto sm:mx-auto sm:max-w-lg">
         <SheetHeader>
-          <SheetTitle>Upload a PDF</SheetTitle>
+          <SheetTitle>{replacing ? 'Replace with a newer edition' : 'Upload a PDF'}</SheetTitle>
           <SheetDescription>
+            {replacing
+              ? `Choose the newer file for “${replacing.title}”. Your marks move to it where the words match. `
+              : null}
             Your PDF is private to you.{' '}
             {usedText ?? `Your plan holds ${pluralize(limits.maxDocuments, 'PDF')} and ${limits.maxStorageMb} MB.`}
           </SheetDescription>
@@ -115,6 +122,15 @@ export function UploadSheet({
                 This PDF is locked. It is accepted, and opens with your password. Search and OCR need the password.
               </p>
             ) : null}
+            {replacing ? (
+              <TextField
+                label="Name this edition (optional)"
+                hint="For example: 2027 edition."
+                value={replacing.label}
+                maxLength={40}
+                onChange={(e) => replacing.onLabelChange(e.target.value)}
+              />
+            ) : null}
             <p className="text-sm text-muted-foreground">{limitsText} Space is reserved when you tap Upload.</p>
           </div>
         ) : null}
@@ -165,7 +181,7 @@ export function UploadSheet({
           ) : null}
           {state.step === 'ready' ? (
             <Button variant="cta" onClick={onUpload} disabled={!online}>
-              Upload
+              {replacing ? 'Replace' : 'Upload'}
             </Button>
           ) : null}
         </SheetFooter>

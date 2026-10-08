@@ -12,6 +12,7 @@ from . import selectors, services
 from . import serializers_documents as out
 from .errors import DocumentConflict
 from .selectors import DocumentFilter
+from .services import resumable
 from .views import PdfView, PdfWriteView
 
 
@@ -61,7 +62,7 @@ class DocumentListCreateView(PdfWriteView):
         )
         body = {
             "document": _detail_or_404(request.user.id, result.document.id),
-            "upload": out.upload_dict(result.upload),
+            "upload": out.upload_dict(result.upload, resumable.hint(request.user.id, result.document)),
         }
         return Response(body, status=201 if result.created else 200)
 

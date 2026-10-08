@@ -141,6 +141,7 @@ def expire_reservations(*, now=None, limit: int = 200) -> int:
             if document is None:
                 continue
             attachment = Attachment.objects.select_for_update().filter(pk=document.attachment_id).first()
+            documents._abort_parts_after_commit(document)
             if attachment is not None and documents.release_reserved(
                 document, attachment, new_status=Document.Status.EXPIRED
             ):

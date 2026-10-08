@@ -154,6 +154,7 @@ Student avatars live in one **public** Storage bucket with random object keys (`
 1. aistudio.google.com/apikey -> **Create API key** (in a new or existing Google Cloud project).
 2. Copy it to `GEMINI_API_KEY`. It goes **only** in the **api** Vercel project, never the web project.
 3. Optional: set `GEMINI_MODEL` (default `gemini-flash-latest`).
+4. **Notes AI (F-03 R3) needs more than the key.** A Gemini or Google AI Pro subscription for your own account does **not** make the API a "Paid Service". In Google Cloud Console open the project the key belongs to, link a **billing account**, and only then set `GEMINI_DATA_TIER=paid` (AI stays off while it is `unconfirmed`). Then set `NOTES_AI_CONSENT_APPROVED`, `NOTES_AI_DAILY_BUDGET_PAISE` and the rest as listed in `docs/F-03-ROLLOUT.md` (R3).
 
 ---
 
@@ -304,6 +305,9 @@ pnpm lint:api && pnpm test:api
 | `SUPABASE_URL`, `SUPABASE_JWT_SECRET` | | yes | JWT secret **yes** |
 | `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AVATAR_BUCKET` | | yes | service role key **yes** (never in the web project) |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |
+| `GEMINI_DATA_TIER`, `NOTES_AI_CONSENT_APPROVED`, `NOTES_AI_SUMMARY_ENABLED`, `NOTES_AI_OCR_ENABLED`, `NOTES_AI_DAILY_BUDGET_PAISE`, `GEMINI_PRICE_IN_PAISE_PER_M`, `GEMINI_PRICE_OUT_PAISE_PER_M` (F-03 R3 AI; all fail closed, see `docs/F-03-ROLLOUT.md`) | | yes (API **and** worker) | no |
+| `NOTES_UNLOCK_FERNET_KEYS` (F-03 R3 Unlock for search; the **same** value in the API and the worker) | | yes (API **and** worker) | **yes** |
+| `NOTES_S3_ENDPOINT`, `NOTES_S3_REGION`, `NOTES_S3_ACCESS_KEY_ID`, `NOTES_S3_SECRET_ACCESS_KEY` (F-03 R3 resumable upload; Supabase Storage S3 connection) | | yes (API only) | **yes** (the two keys) |
 | `NOTES_TICK_SECRET` (F-03 notes cron tick; set `CRON_SECRET` to the same value for Vercel Cron) | | yes | **yes** |
 | `MEDIA_SCANNER` (F-03 R2: `null` clean at once, development only, or `clamd`; **must be `clamd` in production**), `CLAMD_HOST`, `CLAMD_PORT` (3310), `CLAMD_SOCKET` (wins over host and port; clamd needs `StreamMaxLength 64M`). Used by the worker's `media.scan` job | | yes (worker) | no |
 | `SENTRY_DSN` | | yes | no |

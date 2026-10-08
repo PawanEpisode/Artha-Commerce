@@ -14,6 +14,17 @@ export type PageTone = 'original' | 'paper' | 'night'
 /** `fit` or a percent as text (`"120"`): CSS pixels per PDF point times 100. */
 export type StoredZoom = string
 
+export type UnlockStatus = 'none' | 'waiting' | 'running' | 'done' | 'failed'
+export type UnlockReason = 'wrong_password' | 'restricted' | 'unreadable' | 'expired'
+export type ReanchorStatus = 'none' | 'waiting' | 'running' | 'done' | 'failed'
+export interface ReanchorStats {
+  total: number
+  attached: number
+  moved: number
+  needs_attention: number
+  ranges_copied: number
+}
+
 export interface DocumentSummary {
   id: string
   origin: 'upload' | 'platform'
@@ -21,6 +32,13 @@ export interface DocumentSummary {
   original_filename: string
   source_kind: SourceKind
   edition_label: string | null
+  /** Set on a newer edition made with "Replace edition": the old document its marks came from. */
+  replaces_document_id: string | null
+  reanchor_status: ReanchorStatus
+  reanchor: ReanchorStats | null
+  /** Unlock for search: reading the text of a locked PDF with the student's password. */
+  unlock_status: UnlockStatus
+  unlock_reason: UnlockReason | null
   status: DocumentStatus
   status_reason: DocumentStatusReason | null
   bytes: number
@@ -97,11 +115,19 @@ export interface DocumentDetail extends DocumentSummary {
 /** The contract calls the detail shape `Document`; this name avoids the DOM global. */
 export type { DocumentDetail as Document }
 
+/** R3 resumable upload: a big file may be sent in parts (`documents/{id}/resumable/`). Absent for an ordinary single PUT. */
+export interface ResumableHint {
+  document_id: string
+  part_size: number
+  parts: number
+}
+
 export interface UploadTarget {
   url: string
   method: 'PUT'
   headers?: Record<string, string>
   expires_at: string
+  resumable?: ResumableHint
 }
 
 export interface ReserveBody {

@@ -108,6 +108,11 @@ def document_summary(v: DocumentView) -> dict:
         "original_filename": d.original_filename,
         "source_kind": d.source_kind,
         "edition_label": d.edition_label,
+        "replaces_document_id": d.replaces_document_id,
+        "reanchor_status": d.reanchor_status,
+        "reanchor": d.reanchor_stats,
+        "unlock_status": d.unlock_status,
+        "unlock_reason": d.unlock_reason,
         "status": d.status,
         "status_reason": d.status_reason,
         "bytes": d.bytes,
@@ -173,10 +178,13 @@ def document_detail(v: DocumentView) -> dict:
     }
 
 
-def upload_dict(upload) -> dict | None:
+def upload_dict(upload, resumable: dict | None = None) -> dict | None:
     if upload is None:
         return None
-    return {"url": upload.url, "method": "PUT", "headers": upload.headers, "expires_at": upload.expires_at}
+    body = {"url": upload.url, "method": "PUT", "headers": upload.headers, "expires_at": upload.expires_at}
+    if resumable:
+        body["resumable"] = resumable  # R3: the file may be sent in parts (`documents/{id}/resumable/`)
+    return body
 
 
 def processing_dict(p: Processing) -> dict:

@@ -24,6 +24,8 @@ import { requestIdOf } from '../lib/errors'
 import { notifyDocs } from '../lib/notify-documents'
 import { ChapterPicker } from './ChapterPicker'
 import { RangeEditorContainer } from './RangeEditorContainer'
+import { ReplaceSectionContainer } from './ReplaceSectionContainer'
+import { UnlockSectionContainer } from './UnlockSectionContainer'
 
 interface DocumentDetailsContainerProps {
   docId: string
@@ -84,6 +86,12 @@ function Loaded({ doc, onOpenChange }: { doc: DocumentDetail; onOpenChange: (ope
           />
         }
         rangesSlot={<RangeEditorContainer doc={doc} />}
+        replaceSlot={
+          <>
+            <UnlockSectionContainer doc={doc} />
+            <ReplaceSectionContainer doc={doc} />
+          </>
+        }
       />
       <DeleteDocumentDialog
         open={confirmDelete}

@@ -41,6 +41,20 @@ const base = (id: string) => `/notes/documents/${encodeURIComponent(id)}`
 export const reserveDocument = (body: ReserveBody) =>
   api<ReserveResult>('/notes/documents/', { method: 'POST', body: json(body) })
 
+/** "Replace edition": reserves the newer file as a document that remembers the old one (same answer as `reserveDocument`). */
+export const reserveReplacement = (target: { documentId: string; editionLabel?: string }, body: ReserveBody) =>
+  api<ReserveResult>(`${base(target.documentId)}/replace/`, {
+    method: 'POST',
+    body: json({
+      client_id: body.client_id,
+      filename: body.filename,
+      bytes: body.bytes,
+      mime: body.mime,
+      ...(body.page_count_hint ? { page_count_hint: body.page_count_hint } : {}),
+      ...(target.editionLabel?.trim() ? { edition_label: target.editionLabel.trim() } : {}),
+    }),
+  })
+
 export const completeDocument = (id: string) =>
   api<DocumentDetail>(`${base(id)}/complete/`, { method: 'POST', body: '{}' })
 
@@ -130,3 +144,38 @@ export const createDocumentExport = (id: string, body: { client_id: string; opti
 export const createArchiveExport = (clientId: string) =>
   api<{ export: ExportJob }>('/notes/export/archive/', { method: 'POST', body: json({ client_id: clientId }) })
 export const getExport = (id: string) => api<ExportJob>(`/notes/exports/${encodeURIComponent(id)}/`)
+
+// ---- Resumable upload (R3) ------------------------------------------------------------------------------------------
+
+export interface ResumableState {
+  part_size: number
+  parts: number
+  done: Array<{ number: number; etag: string; size: number }>
+}
+
+/** Opens the multipart upload, or says which parts storage already holds (so a retry continues where it stopped). */
+export const startResumable = (id: string) =>
+  api<ResumableState>(`${base(id)}/resumable/`, { method: 'POST', body: '{}' })
+
+/** One short-lived PUT URL per requested part (at most 20 at a time). */
+export const signParts = (id: string, numbers: number[]) =>
+  api<{ parts: Array<{ number: number; url: string }> }>(`${base(id)}/resumable/parts/`, {
+    method: 'POST',
+    body: json({ numbers }),
+  })
+
+/** Joins the parts. The server checks them against what storage holds. */
+export const finishResumable = (id: string, parts: number[]) =>
+  api<{ joined: number }>(`${base(id)}/resumable/complete/`, { method: 'POST', body: json({ parts }) })
+
+/** PUT one part to its signed URL, with progress. Same failure shape as `uploadDocumentBytes`. */
+export function putPart(
+  url: string,
+  part: Blob,
+  options: { signal?: AbortSignal; onProgress?: (loaded: number) => void } = {},
+): Promise<void> {
+  return uploadDocumentBytes({ url, method: 'PUT', expires_at: '' }, part, {
+    signal: options.signal,
+    onProgress: (loaded) => options.onProgress?.(loaded),
+  })
+}

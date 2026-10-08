@@ -65,10 +65,17 @@ export interface UploadOptions {
   sourceKind?: ReserveBody['source_kind']
   chapterId?: string | null
   topicId?: string | null
+  /** "Replace edition": the upload is a newer edition of this document (reserved through `documents/{id}/replace/`). */
+  replaces?: ReplaceTarget
+}
+
+export interface ReplaceTarget {
+  documentId: string
+  editionLabel?: string
 }
 
 export interface UploadDeps {
-  reserve: (body: ReserveBody) => Promise<ReserveResult>
+  reserve: (body: ReserveBody, replaces?: ReplaceTarget) => Promise<ReserveResult>
   send: (
     target: UploadTarget,
     file: Blob,
@@ -216,7 +223,7 @@ export function createUploadManager(deps: UploadDeps) {
     let step: 'reserve' | 'send' | 'complete' | 'other' = 'reserve'
     try {
       patch(id, { phase: 'reserving', loaded: 0, failure: undefined })
-      const reservation = await deps.reserve({
+      const body: ReserveBody = {
         client_id: id,
         filename: file.name,
         bytes: file.size,
@@ -224,7 +231,8 @@ export function createUploadManager(deps: UploadDeps) {
         ...(item.pages ? { page_count_hint: item.pages } : {}),
         ...(opts?.sourceKind ? { source_kind: opts.sourceKind } : {}),
         ...(opts?.chapterId ? { chapter_id: opts.chapterId, topic_id: opts.topicId ?? null } : {}),
-      })
+      }
+      const reservation = await (opts?.replaces ? deps.reserve(body, opts.replaces) : deps.reserve(body))
       const documentId = reservation.document.id
       patch(id, { documentId, reservedAt: item.reservedAt ?? deps.now() })
       if (controller.signal.aborted) {

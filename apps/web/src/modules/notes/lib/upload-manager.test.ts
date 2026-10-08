@@ -105,6 +105,16 @@ describe('upload manager: the happy path', () => {
     expect(item(id)?.phase).toBe('ready')
   })
 
+  it('reserves a newer edition through the replace endpoint when the upload replaces a document', async () => {
+    const { manager, deps } = setup()
+    manager.start(file(), { pages: 3, replaces: { documentId: 'old-1', editionLabel: '2027' } })
+    await flush()
+    expect(deps.reserve).toHaveBeenCalledWith(expect.objectContaining({ filename: 'tax.pdf' }), {
+      documentId: 'old-1',
+      editionLabel: '2027',
+    })
+  })
+
   it('skips the transfer when a replay says the bytes already arrived', async () => {
     const { manager, deps, item } = setup({
       reserve: vi.fn(async () => ({ document: makeDocument(), upload: null })),

@@ -2,11 +2,17 @@ import {
   abortDocument,
   completeDocument,
   deleteDocument,
+  finishResumable,
   getDocument,
   getProcessing,
+  putPart,
   reserveDocument,
+  reserveReplacement,
+  signParts,
+  startResumable,
   uploadDocumentBytes,
 } from './documents-api'
+import { uploadInParts } from './resumable-upload'
 import { createUploadManager } from './upload-manager'
 
 /**
@@ -14,8 +20,22 @@ import { createUploadManager } from './upload-manager'
  * navigates, and every screen reads the same list through `useUploads`.
  */
 export const uploadManager = createUploadManager({
-  reserve: reserveDocument,
-  send: (target, file, options) => uploadDocumentBytes(target, file, options),
+  reserve: (body, replaces) => (replaces ? reserveReplacement(replaces, body) : reserveDocument(body)),
+  send: (target, file, options) =>
+    target.resumable
+      ? uploadInParts(
+          {
+            start: startResumable,
+            sign: signParts,
+            put: putPart,
+            finish: finishResumable,
+            wait: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+          },
+          target.resumable,
+          file,
+          options,
+        )
+      : uploadDocumentBytes(target, file, options),
   complete: completeDocument,
   abort: abortDocument,
   processing: getProcessing,

@@ -7,7 +7,7 @@ daemon. Run the first build locally (section 1) before the first deploy; the Pyt
 
 One always-on container that runs `python manage.py run_worker`. It claims rows from `core_job` (Postgres, `FOR UPDATE SKIP LOCKED`)
 and runs the heavy F-03 jobs: `notes.inspect`, `notes.extract_text`, `notes.ocr`, `notes.export_pdf`, `notes.export_archive`, plus
-`media.scan` (ClamAV). The libraries live in `apps/api/modules/notes/worker/` (database-free: paths in, frozen dataclasses out); the
+`media.scan` (ClamAV). From R3 it also runs `notes.summarize` and `notes.ocr_ai` (they call Gemini, so the worker needs `GEMINI_API_KEY`, `GEMINI_DATA_TIER`, `GEMINI_MODEL`, `NOTES_AI_*`), `notes.reanchor` (opens two PDFs) and `notes.unlock` (needs `NOTES_UNLOCK_FERNET_KEYS`, the same value as the API's). The libraries live in `apps/api/modules/notes/worker/` (database-free: paths in, frozen dataclasses out); the
 job handlers that call them are glue in the notes module. Light jobs (purge, reconcile, reservations) still run from the cron tick
 `POST /api/v1/notes/internal/tick/` and never need the worker.
 
@@ -201,3 +201,11 @@ No new environment variables: the jobs use `WORKER_FONTS_DIR` (fonts for the app
 ## 13. When a worker goes silent
 
 A job whose worker stops heartbeating is handed to another worker after the visibility timeout. When it has no attempts left the queue closes it itself and calls the gave-up handler registered for its type; for OCR and exports that marks the record failed and refunds unspent pages.
+
+
+## R3 additions (flag `notes_ai`)
+
+- New heavy job types: `notes.summarize`, `notes.ocr_ai`, `notes.reanchor`, `notes.unlock`. The worker needs the same environment as the API for them: `GEMINI_API_KEY`, `GEMINI_DATA_TIER=paid`, `GEMINI_MODEL`, `NOTES_AI_CONSENT_APPROVED`, `NOTES_AI_SUMMARY_ENABLED`, `NOTES_AI_OCR_ENABLED`, `NOTES_AI_DAILY_BUDGET_PAISE`, the two `GEMINI_PRICE_*` values and `NOTES_UNLOCK_FERNET_KEYS`. On Fly: `fly secrets set -a artha-worker GEMINI_API_KEY=... NOTES_UNLOCK_FERNET_KEYS=...` from `apps/api`, plain values in `[env]` of `fly.toml`. A worker without a key still runs everything else; the AI jobs then end as `unavailable` and refund.
+- Suggested `WORKER_TYPE_LIMITS` (already in `fly.toml`): add `notes.ocr_ai=1,notes.summarize=2,notes.reanchor=1,notes.unlock=1` so a burst of AI or PDF work cannot exhaust the 2 GB machine.
+- `notes.unlock` holds a student's password in memory for the length of the job. It never logs it, never puts it in an error message, and clears the sealed token from `core_job.payload` when it ends (the tick's `notes.expire_unlock` clears any left over after an hour). Do not add the payload to any log or dashboard.
+- `notes.reanchor` needs the new edition only (the old one is read from the database), and runs in 40-mark batches with a heartbeat; a killed worker resumes without duplicating marks.

@@ -102,7 +102,7 @@ Backend: `apps/api/modules/notes` (documents, annotations, worker jobs). Sources
 ERD sections 2, 3, 6. This section fixes the exact shapes. Same conventions as R1 (error envelope, cursor lists, 404 for what the
 caller does not own, ids are UUID strings). Every endpoint below answers 403 `feature_disabled` when `notes_pdf` is off, except
 `GET export/`, `DELETE /notes/`, `GET usage/` and `GET settings/`, which stay open. `notes_ai`-only features (`mode: "ai"` OCR,
-summaries, share links, replace edition, offline packs, resumable upload, unlock for search) answer 403 `feature_disabled` in R2.
+summaries, share links, replace edition, offline packs, resumable upload, unlock for search) answer 403 `feature_disabled` in R2. They are specified in the R3 section at the end.
 
 ## R1 follow-up: the client owns the note id
 
@@ -159,7 +159,7 @@ error_code|null ("export_too_large"|"restricted"|"locked"|"failed"), download_ur
 | `POST documents/{id}/exports/` | `{client_id, options: {pages?: "1-40", include?: ["highlight","underline","ink","textbox","sticky","area"], colors?: [key], tags?: [uuid], appendix?: bool}}` throttle `notes_export` 6/h | 202 `{export: ExportJob}` (200 on replayed `client_id`) | 404; 422 `export_not_allowed` details `{reason: "restricted"\|"locked"\|"not_ready"}` (restricted = the file's flags forbid copying or modifying); 422 `invalid_options` details `{field}`; 429 `quota_exceeded` details `{kind: "export", used, limit, plan, resets_on}` |
 | `POST export/archive/` | `{client_id}` ("Download my notes": a zip of notes as Markdown with front matter and a highlight digest per document as Markdown and CSV; documents only when `notes_pdf` is on; flag `notes`; not charged to the monthly exports) | 202 `{export: ExportJob (kind "archive")}`; 200 with the stored job on a replayed `client_id` or while an earlier archive of the student is still being built | 429 (throttle `notes_export`) |
 | `GET exports/{id}/` | | 200 `ExportJob` (flag `notes`; a `pdf` export also needs `notes_pdf`, an `archive` does not) | 404 |
-| `POST documents/{id}/replace/` | | 403 `feature_disabled` (R3 stub) | |
+| `POST documents/{id}/replace/` | see R3 | see R3 | |
 
 Platform documents (`origin: "platform"`, created only by the service `open_platform_document`) appear in the library and open in the reader like any
 document; they count no bytes, cannot be re-uploaded, and `DELETE` removes only the student's row, marks and tags, never the shared object.
@@ -229,3 +229,58 @@ fill `highlights`, `marks`, `documents`, `last_noted_at` and `documents: Documen
 Job types: `notes.scan`/media scan, `notes.inspect`, `notes.extract_text` (20-page chunks), `notes.ocr` (10-page chunks, `dedupe_key = notes.ocr:<content_id>` for the first job of a request, `notes.ocr:<content_id>:<chain>:<first page>` for the chunks it chains), `notes.export_pdf`, `notes.export_archive`,
 `notes.expire_reservations`, `notes.expire_exports` (light, in the tick: exports past 7 days become `expired` and their files are deleted). Events: `notes_document_ready` `{document_id, pages, scanned, encrypted, stage: "readable"|"searchable"}`, `notes_export_ready`, plus `notes_chapter_counts_changed` for
 highlights (created, trashed, restored, re-linked). The worker host runs `python manage.py run_worker`; the tick (`POST internal/tick/`, every 5 minutes) runs only the light jobs.
+
+
+# R3: AI help, Replace edition, Unlock for search, resumable upload (flag `notes_ai`, FAILS CLOSED)
+
+Every endpoint below needs the `notes` flag and `notes_ai` (fail closed: only an explicit "on" counts; a missing key or a PostHog outage means off, 403 `feature_disabled`). Replace edition, unlock and resumable upload also need `notes_pdf`. Taking things back never needs the flag: `DELETE ai/consent/`, `POST ai/summary/{id}/discard|cancel/`, `POST ai/ocr/{id}/cancel/`. Share links (`notes_share`), offline packs and the recall bridge are NOT built: their routes are not present.
+
+`GET settings/` `capabilities` gains `ai_ocr`, `ai_summary`, `unlock` and `resumable_upload` (false when this deployment lacks the key, tier, approved wording, kill switch, budget, Fernet key or S3 credentials).
+
+## AI consent and gates
+
+| Endpoint | Body | Success | Errors |
+| --- | --- | --- | --- |
+| `GET ai/consent/` | | 200 `{version, text: {title, points: [{heading, text}], checkbox}, consented, consented_version, consented_at}` | |
+| `PUT ai/consent/` | `{version}` | 200 consent state | 409 `consent_version_mismatch` |
+| `DELETE ai/consent/` | | 200 `{consent, discarded_drafts, cancelled_jobs}` (drafts deleted, queued jobs cancelled and refunded) | |
+
+AI is available only when ALL hold: `GEMINI_API_KEY`, `GEMINI_DATA_TIER=paid`, `NOTES_AI_CONSENT_APPROVED` equals the consent version in code, the kill switch of the feature (`NOTES_AI_SUMMARY_ENABLED`, `NOTES_AI_OCR_ENABLED`) is on, `NOTES_AI_DAILY_BUDGET_PAISE` is above 0 and not spent today (India day), and the student agreed to the current version. Otherwise 503 `ai_unavailable` / `ai_budget_exhausted` (nothing charged), or 403 `ai_not_consented` `{version}`.
+
+## AI exam summary of a chapter
+
+| Endpoint | Body | Success | Errors |
+| --- | --- | --- | --- |
+| `POST ai/summary/` | `{client_id, chapter_id, include?: ["notes","highlights"]}` throttle `notes_ai` 20/h | 202 `SummaryJob` (200 when the same inputs were summarised before: `cached: true`, nothing charged) | 403 `ai_not_consented`; 422 `not_enough_material` `{items, chars, min_items, min_chars}`; 429 `quota_exceeded` `{kind: "ai_summary", used, limit, resets_on}`; 503 |
+| `GET ai/summary/?chapter_id=` | | 200 `{job: SummaryJob\|null}` (latest) | |
+| `GET ai/summary/{id}/` | | 200 `SummaryJob`: `{id, kind, status: queued\|running\|ready\|accepted\|discarded\|error\|expired\|cancelled, chapter, item_count, estimate_seconds, cached, error_code, charged, created_at, finished_at, expires_at, draft: {title, body_md, sources: [{n, kind, id, page, document_id, label}], dropped}\|null, result_note_id}` | 404 |
+| `POST ai/summary/{id}/accept/` | `{title?, body_md?}` | 200 `{job, note}` (a normal note filed under the chapter, sources linked; only here does anything become a note) | 409 |
+| `POST ai/summary/{id}/discard/`, `.../cancel/` | | 200 `SummaryJob` (cancel refunds the quota if still queued) | 404; 409 |
+
+A draft is never a note until accepted and expires after 14 days. Model output is parsed as data only; every claim carries a source number and unsourced lines are dropped (`dropped`).
+
+## AI page reading ("Improve this page")
+
+`POST documents/{id}/ocr/` with `{mode: "ai", pages: "3"|"1-5"}` (at most 10 pages, flag `notes_ai`): 202 `{job, charged_pages, estimate_seconds, skipped: {already_read: [], has_text: [], in_progress: []}}`, or 200 with `job: null` when every page was skipped. Pages that already have text of their own (native or a better read) are skipped and not charged. Errors: 403 `ai_not_consented`; 409 `locked` / `not_ready`; 422 `invalid_pages`, `nothing_to_do`, `not_openable`; 429 `quota_exceeded` `{kind: "ai_ocr_pages"}`; 503. `GET ai/ocr/{id}/` returns `{id, status, done: {page: "clear"|"partial"}, failed: {page: code}, charged_pages, refunded_pages, ...}` (never page text); `POST ai/ocr/{id}/cancel/` stops the rest and refunds the pages not yet read. A page stored with source `ai` ranks above `ocr` and `native` never loses to it.
+
+## Replace edition
+
+| Endpoint | Body | Success | Errors |
+| --- | --- | --- | --- |
+| `POST documents/{id}/replace/` | `{client_id, filename, bytes, mime, page_count_hint?, edition_label?}` throttle `notes_upload` | 201 `{document, upload}` exactly like `POST documents/` (200 on a replayed `client_id`). The new document has `replaces_document_id`, `reanchor_status: "waiting"`, the old one's title, chapter, source kind and tags. Then the ordinary `complete/` | 404; 409 `not_replaceable` (old document in the trash or not ready); every refusal of an upload (413, 415, 422, 429) |
+| `GET documents/{id}/attention/` | `?status=open\|kept\|noted\|dismissed` | 200 `{document_id, replaces_document_id, status: none\|waiting\|running\|done\|failed, stats: {total, attached, moved, needs_attention, ranges_copied}\|null, items: [{id, source_annotation_id, kind, page, color, quote, comment, reason, status, new_annotation_id, result_note_id, resolved_at}]}` | 404 |
+| `POST documents/{id}/attention/{item_id}/` | `{action: "keep"\|"note"\|"dismiss", page?}` | 200 item. `keep` puts the mark on the new edition (same shape, `page` or its old page); `note` saves quote and comment as a note; repeating the same decision is fine | 404; 409 `already_resolved`; 422 `page_out_of_range`, `nothing_to_save` |
+
+`Document` gains `replaces_document_id`, `reanchor_status`, `reanchor` (the stats). The old edition is never changed. When the new file is ready the inspection queues `notes.reanchor`: text marks are found again by their quote (nearest page first, fuzzy within 5 pages, exact beyond) and redrawn with the new words' rectangles; other marks follow their page only when its native text is unchanged; everything else becomes an item. Carried marks have id `uuid5(new document, old mark)`, so the job and "keep" are idempotent. Page ranges are copied when both editions have the same number of pages. Event `notes_reanchor_done` `{document_id, attached, needs_attention}`.
+
+## Unlock for search
+
+`POST documents/{id}/unlock/` `{password}` (throttle `notes_unlock` 20/h; five wrong passwords in an hour lock the document for an hour): 202 `{document_id, unlock_status: "waiting"}`. Errors: 404; 409 `not_locked` (not waiting for a password, or in the trash), 409 `unlock_in_progress`; 429 `too_many_attempts`; 503 `unlock_unavailable` (no `NOTES_UNLOCK_FERNET_KEYS`). `Document` gains `unlock_status` (`none|waiting|running|done|failed`) and `unlock_reason` (`wrong_password|restricted|unreadable|expired`); poll `GET documents/{id}/`. The password is sealed with Fernet into the job payload (token life one hour), used in memory by the worker and removed from the row when the job ends; a light job clears any left over. No unprotected copy of the file is made: the text is stored on a private content row of this document (identical files of other students get nothing). A PDF whose owner forbids copying text is `restricted`. On success the document becomes `ready` (still encrypted: the reader asks for the password as before) and searchable.
+
+## Resumable upload
+
+When the deployment has S3 credentials and `notes_ai` is on, the reservation answer for a file of 16 MiB or more carries `upload.resumable: {document_id, part_size: 8 MiB, parts}`. The browser then (instead of the single PUT): `POST documents/{id}/resumable/` (opens the multipart upload, or answers `{part_size, parts, done: [{number, etag, size}]}` with what storage already holds) , `POST documents/{id}/resumable/parts/` `{numbers: [<=20]}` -> `{parts: [{number, url}]}` (one PUT URL per part, one hour), PUT each part, `POST documents/{id}/resumable/complete/` `{parts: [every number]}` -> `{joined}`, then the ordinary `POST documents/{id}/complete/`. The server joins with storage's own ETags and refuses unless every part is there at its full size (422 `parts_incomplete`). Errors: 404; 409 `not_resumable` (not a waiting reservation); 503 `resumable_unavailable`. Abort or expiry aborts the multipart upload. Without S3 credentials nothing changes: one signed PUT.
+
+## R3 jobs and events
+
+Heavy (worker): `notes.summarize`, `notes.ocr_ai`, `notes.reanchor`, `notes.unlock`. Light (tick): `notes.expire_ai` (drafts past 14 days), `notes.expire_unlock` (password tokens past one hour). Events: `notes_summary_ready`, `notes_reanchor_done`, `notes_document_ready` (also after an unlock).

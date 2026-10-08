@@ -20,6 +20,6 @@ kill_timeout = 120              # seconds between SIGTERM and SIGKILL; WORKER_SH
 [env]
   DJANGO_DEBUG = "false"
   MEDIA_SCANNER = "clamd"
-  WORKER_TYPE_LIMITS = "notes.ocr=1,notes.export_pdf=1,notes.export_archive=1"
+  WORKER_TYPE_LIMITS = "notes.ocr=1,notes.export_pdf=1,notes.export_archive=1,notes.ocr_ai=1,notes.summarize=2,notes.reanchor=1,notes.unlock=1"
   WORKER_SHUTDOWN_GRACE_SECONDS = "100"
   WORKER_HEARTBEAT_SECONDS = "60"

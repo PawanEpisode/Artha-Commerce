@@ -148,6 +148,7 @@ def _settle(document_id, result: pdf_inspect.InspectResult | None, reject: str |
         cover = result.cover_webp
         wants_text = content.text_status == TextStatus.PENDING
         searchable = content.text_status == TextStatus.DONE
+        replaces = document.replaces_document_id is not None
     if cover:
         _attach_cover(document_id, cover)
     _announce(document, content, "readable")
@@ -159,6 +160,10 @@ def _settle(document_id, result: pdf_inspect.InspectResult | None, reject: str |
         )
     elif searchable:
         _announce(document, content, "searchable")
+    if replaces:
+        from .services import reanchor  # local: it imports services that import this module
+
+        reanchor.queue_reanchor(document)
     return {"status": "ready", "pages": content.page_count, "shared": not wants_text}
 
 

@@ -4,9 +4,9 @@ from typing import Any
 
 #: Paths whose request body is dropped from every event (the beacon body holds an access token; a notification button
 #: carries its one-time token).
-SCRUBBED_BODY_PATHS = ("/me/last-visit/", "/notifications/actions/")
+SCRUBBED_BODY_PATHS = ("/me/last-visit/", "/notifications/actions/", "/unlock/")
 #: Keys whose values are replaced wherever they appear in request data or local variables.
-SCRUBBED_KEYS = frozenset({"token"})
+SCRUBBED_KEYS = frozenset({"token", "password", "secret"})
 FILTERED = "[Filtered]"
 
 

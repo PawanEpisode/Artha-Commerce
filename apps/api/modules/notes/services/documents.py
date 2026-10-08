@@ -214,6 +214,14 @@ def release_reserved(document: Document, attachment: Attachment, *, new_status: 
     return True
 
 
+def _abort_parts_after_commit(document: Document) -> None:
+    """A cancelled or lapsed upload sent in parts leaves no half-file in the bucket (best effort, after the commit)."""
+    if document.resumable_upload_id:
+        from . import resumable  # local: it imports this module
+
+        transaction.on_commit(lambda: resumable.abort_quietly(document))
+
+
 @transaction.atomic
 def abort_document(user_id, document_id) -> Document:
     """The student cancelled before the upload finished. Idempotent. 409 `not_abortable` once the file was confirmed."""
@@ -223,6 +231,7 @@ def abort_document(user_id, document_id) -> Document:
     if document.status != Document.Status.RESERVED:
         raise NotAbortable
     attachment = Attachment.objects.select_for_update().get(pk=document.attachment_id)
+    _abort_parts_after_commit(document)
     if not release_reserved(document, attachment, new_status=Document.Status.EXPIRED):
         document.status = Document.Status.EXPIRED  # the media sweep got there first; the row goes with the attachment
     return document

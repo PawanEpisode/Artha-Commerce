@@ -34,6 +34,8 @@ interface DocumentDetailsSheetProps {
   chapterSlot: ReactNode
   /** The page-range editor. */
   rangesSlot: ReactNode
+  /** Replace edition (R3); nothing when the feature is off. */
+  replaceSlot?: ReactNode
   saving: boolean
   onSave: (draft: DetailsDraft) => void
   onTrash: () => void
@@ -55,6 +57,7 @@ export function DocumentDetailsSheet({
   onCreateTag,
   chapterSlot,
   rangesSlot,
+  replaceSlot,
   saving,
   onSave,
   onTrash,
@@ -133,6 +136,7 @@ export function DocumentDetailsSheet({
           </div>
 
           {rangesSlot}
+          {replaceSlot}
         </div>
 
         <SheetFooter className="mt-6">

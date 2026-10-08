@@ -26,6 +26,8 @@ interface UploadSheetContainerProps {
   onInitialConsumed?: () => void
   /** A quota refusal: the library opens the quota sheet with the details. */
   onQuota: (details: DocumentQuotaDetails) => void
+  /** "Replace edition": the file is a newer edition of this document. */
+  replace?: { docId: string; title: string }
 }
 
 /**
@@ -39,12 +41,14 @@ export function UploadSheetContainer({
   initialFiles,
   onInitialConsumed,
   onQuota,
+  replace,
 }: UploadSheetContainerProps) {
   const online = useOnline()
   const usage = useUsage()
   const { start } = useUploads()
   const [state, setState] = useState<UploadSheetState>({ step: 'choose' })
   const file = useRef<File | null>(null)
+  const [editionLabel, setEditionLabel] = useState('')
   const limits = limitsFromUsage(usage.data)
   const used = usage.data
     ? { storageBytes: usage.data.used.storage_bytes, documents: usage.data.used.documents ?? 0 }
@@ -104,13 +108,17 @@ export function UploadSheetContainer({
 
   const reset = () => {
     file.current = null
+    setEditionLabel('')
     setState({ step: 'choose' })
   }
 
   const startUpload = () => {
     if (state.step !== 'ready' || !file.current) return
     notesAnalytics.pdfUploadStarted({ bytes: state.file.bytes, pages: state.file.pages })
-    start(file.current, { pages: state.file.pages })
+    start(file.current, {
+      pages: state.file.pages,
+      ...(replace ? { replaces: { documentId: replace.docId, editionLabel } } : {}),
+    })
     onOpenChange(false)
     reset()
   }
@@ -139,6 +147,7 @@ export function UploadSheetContainer({
       onUpload={startUpload}
       onChooseAnother={reset}
       onManageStorage={manage}
+      replacing={replace ? { title: replace.title, label: editionLabel, onLabelChange: setEditionLabel } : undefined}
     />
   )
 }
