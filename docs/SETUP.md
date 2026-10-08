@@ -327,4 +327,7 @@ Rule: nothing secret ever gets a `VITE_` prefix. Google and SMTP credentials sta
 - **`prepared statement ... already exists`**: you pointed `DATABASE_URL` at the session/direct port. Use the transaction pooler (6543) for runtime.
 - **Migrate hangs**: run it with `DIRECT_DATABASE_URL` (5432), never the 6543 pooler.
 - **WhatsApp shows only the bare host, or no image**: view the page source and check `og:image`. It must be `https://<your domain>/og/default.png` and open in a browser. Causes seen: `VITE_SITE_URL` contained a path (`https://domain/login`, so every URL became `.../login/og/default.png`, a 404) or was unset; the image is over about 300 KB; WhatsApp cached the earlier bad result (see 8.1).
+- **A PDF stays in inspecting or scanning**: the worker is not running or cannot reach the database or storage. See `docs/F-03-WORKER.md` section 10 and the Render worker logs.
+- **PDF export fails and retries with `FontsMissing`**: the Noto fonts are missing; use the worker image (or set `WORKER_FONTS_DIR`).
+- **A test virus file is never rejected**: `MEDIA_SCANNER` is still `null`.
 - **Sentry shows minified stack traces**: the three `SENTRY_*` build vars are missing in the web project.

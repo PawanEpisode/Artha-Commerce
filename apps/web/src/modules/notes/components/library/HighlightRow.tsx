@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 
 import { isUnfiled, linkLabel } from '../../lib/chapter-link'
 import type { HighlightRow as Row, MarkKind } from '../../lib/library-types'
+import { markOpenedFrom } from '../../lib/opened-from'
 
 const KIND: Record<MarkKind, { icon: typeof Highlighter; label: string }> = {
   highlight: { icon: Highlighter, label: 'Highlight' },
@@ -54,6 +55,7 @@ export function HighlightRow({ row, colorName, documentTitle, showLocation = tru
               to="/app/notes/pdf/$docId"
               params={{ docId: row.document_id }}
               search={{ page: row.page, ann: row.id }}
+              onClick={() => markOpenedFrom('aggregate')}
               className="underline-offset-4 outline-none hover:underline focus-visible:underline focus-visible:ring-[3px] focus-visible:ring-ring/40"
             >
               <span className="sr-only">{kind.label}: </span>

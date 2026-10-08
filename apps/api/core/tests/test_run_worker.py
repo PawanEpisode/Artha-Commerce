@@ -136,7 +136,7 @@ def _wait_for(predicate, timeout=40.0):
     return False
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_a_worker_killed_mid_job_loses_nothing_the_job_is_reclaimed(tmp_path):
     job = jobs.enqueue("t.slow", {"s": 60})
     proc = _start_worker(tmp_path)
@@ -154,7 +154,7 @@ def test_a_worker_killed_mid_job_loses_nothing_the_job_is_reclaimed(tmp_path):
     assert again.pk == job.pk and again.attempts == 2 and again.locked_by == "survivor"
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_sigterm_lets_the_current_job_finish_then_exits_zero(tmp_path):
     job = jobs.enqueue("t.slow", {"s": 1.5})
     proc = _start_worker(tmp_path, WORKER_SHUTDOWN_GRACE_SECONDS="30")
@@ -169,7 +169,7 @@ def test_sigterm_lets_the_current_job_finish_then_exits_zero(tmp_path):
     assert code == 0 and job.status == "done" and job.result == {"slept": True}
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_sigterm_past_the_grace_period_requeues_the_job_and_exits_zero(tmp_path):
     job = jobs.enqueue("t.slow", {"s": 120})
     proc = _start_worker(tmp_path, WORKER_SHUTDOWN_GRACE_SECONDS="1")
@@ -185,7 +185,7 @@ def test_sigterm_past_the_grace_period_requeues_the_job_and_exits_zero(tmp_path)
     assert (job.status, job.attempts, job.locked_by) == ("queued", 0, "")  # handed back, attempt refunded
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_a_long_job_keeps_its_lock_fresh_with_heartbeats(tmp_path):
     job = jobs.enqueue("t.slow", {"s": 2.5})
     proc = _start_worker(tmp_path)  # heartbeat every 0.2 s in the script

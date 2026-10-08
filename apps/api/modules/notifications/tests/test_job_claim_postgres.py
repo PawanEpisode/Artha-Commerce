@@ -21,7 +21,7 @@ postgres_only = pytest.mark.skipif(connection.vendor != "postgresql", reason="ne
 
 
 @postgres_only
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_workers_firing_one_job_at_the_same_moment_make_one_delivery(bench, fake_push):
     register(USER)
     timer = bench.start()

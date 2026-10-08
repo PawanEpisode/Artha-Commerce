@@ -6,7 +6,6 @@ import type {
   BatchResponse,
   CardKind,
   DeltaPage,
-  NotesSettings,
   WriteResponse,
 } from './annotation-types'
 import { errorCode } from './errors'
@@ -17,8 +16,6 @@ const json = (body: unknown) => JSON.stringify(body)
 export const DELTA_LIMIT = 500
 /** Most operations the API takes in one batch. */
 export const MAX_BATCH = 100
-
-export const getSettings = () => api<NotesSettings>('/notes/settings/')
 
 /** Marks changed after `sinceSeq`, tombstones included, in `seq` order. */
 export const getDelta = (documentId: string, sinceSeq: number, limit = DELTA_LIMIT) =>

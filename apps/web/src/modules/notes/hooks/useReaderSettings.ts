@@ -3,8 +3,8 @@ import { useMemo } from 'react'
 
 import { DEFAULT_LEGEND, type Legend, legendOptions } from '../lib/annotation-legend'
 import type { MarkupColor, NotesSettings } from '../lib/annotation-types'
-import { getSettings } from '../lib/annotations-api'
 import { notesKeys } from '../lib/keys'
+import { getNotesSettings } from '../lib/settings-api'
 
 export interface ReaderSettings {
   legend: Legend
@@ -20,7 +20,7 @@ export interface ReaderSettings {
 export function useReaderSettings(): ReaderSettings {
   const query = useQuery<NotesSettings>({
     queryKey: notesKeys.settings,
-    queryFn: getSettings,
+    queryFn: getNotesSettings,
     staleTime: 5 * 60_000,
     retry: 1,
   })
@@ -32,7 +32,7 @@ export function useReaderSettings(): ReaderSettings {
       options: legendOptions(legend),
       defaultColor: data?.default_color ?? 'y',
       fingerDraws: data?.finger_draws ?? false,
-      canCard: data?.capabilities.recall === true,
+      canCard: data?.capabilities?.recall === true,
       loaded: !!data,
     }
   }, [data])

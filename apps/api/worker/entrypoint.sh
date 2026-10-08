@@ -15,7 +15,7 @@ if [ "${MEDIA_SCANNER:-null}" = "clamd" ]; then
   freshclam --config-file=/app/worker/freshclam.conf -d &
   echo "entrypoint: waiting for clamd (loading signatures needs about 1 GB of RAM and 20 to 90 seconds)"
   tries=0
-  until clamdscan --config-file=/app/worker/clamd.conf --ping 1 >/dev/null 2>&1; do
+  until python -c "import socket,sys; s=socket.socket(socket.AF_UNIX); s.settimeout(3); s.connect(sys.argv[1]); s.sendall(b'zPING\\0'); sys.exit(0 if s.recv(16).startswith(b'PONG') else 1)" "$CLAMD_SOCKET" >/dev/null 2>&1; do
     tries=$((tries + 1))
     if [ "$tries" -ge 150 ]; then
       echo "entrypoint: clamd did not become ready in time" >&2

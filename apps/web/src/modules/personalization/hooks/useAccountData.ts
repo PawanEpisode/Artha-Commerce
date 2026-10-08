@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
+import { clearAllLocalData } from '~/lib/local-data'
 import { useAuth } from '~/modules/auth'
 import { track } from '~/modules/observability'
 
@@ -37,6 +38,7 @@ export function useDeleteAccount(onDeleted: () => void) {
       if (user) {
         rememberCompleted(user.id, false)
         clearLocalVisit(user.id)
+        await clearAllLocalData(user.id)
       }
       await signOut({ silent: true })
       qc.clear()

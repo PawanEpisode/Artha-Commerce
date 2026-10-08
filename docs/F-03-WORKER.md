@@ -134,24 +134,7 @@ The Vercel `crons` entry in `apps/api/vercel.json` may stay as a slow backup.
 
 The same Dockerfile and env vars work anywhere that runs a long-lived container with at least 2 GB (4 GB with clamd).
 
-Fly.io: run from `apps/api` so the build context matches (`fly deploy --config fly.toml`), with this `fly.toml` (no `[http_service]`, so no port):
-```toml
-app = "artha-worker"
-primary_region = "sin"
-kill_timeout = 120
-[build]
-  dockerfile = "worker/Dockerfile"
-[processes]
-  worker = "python manage.py run_worker"
-[[vm]]
-  size = "shared-cpu-2x"
-  memory = "4gb"
-  processes = ["worker"]
-[env]
-  MEDIA_SCANNER = "clamd"
-  WORKER_TYPE_LIMITS = "notes.ocr=1,notes.export_pdf=1"
-```
-Secrets with `fly secrets set DATABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=...`.
+Fly.io: the config is `apps/api/fly.toml` (no `[http_service]`, so no port and no public IP; 2 GB `shared-cpu-2x` by default, about $13.39 a month running all the time in 2026-10). Run every command from `apps/api`: `fly apps create`, `fly secrets set ...`, `fly deploy --ha=false`, `fly scale count 1`. `fly deploy` makes two machines per process unless told not to, which doubles the bill. Fly machines can only be scheduled hourly at the finest, so the 5-minute tick must come from Catalyst Cron or a Render Cron Job (section 7), not from Fly. The step-by-step with cost controls is in the F-03 rollout notes given with the release.
 
 Railway: new service from the repo, then set `RAILWAY_DOCKERFILE_PATH=apps/api/worker/Dockerfile` and root directory `apps/api`; start
 command is the image's CMD; add the env vars above; Settings, Deploy, set the region (check Singapore availability), memory limit 4 GB,
@@ -210,3 +193,11 @@ Notes on `notes.ocr`:
   The original object is only read (range reads into a temp file, capped at the file's size).
 
 No new environment variables: the jobs use `WORKER_FONTS_DIR` (fonts for the appendix and text marks) and `WORKER_TYPE_LIMITS` from section 2.
+
+## 12. Checking the whole path locally
+
+`scripts/e2e/notes-r2/run.py` starts a fake Supabase Storage, the API and this worker (`run_worker --once`) against a throwaway database and drives upload, scan, extract, search, marks, OCR, export and archive over HTTP. `capacity.py` in the same folder prints indicative timings. Both need the API virtualenv, Postgres, Tesseract and the Noto fonts (`WORKER_FONTS_DIR`). They do not replace building the Docker image: it has not been built yet, so build it once before the first deploy.
+
+## 13. When a worker goes silent
+
+A job whose worker stops heartbeating is handed to another worker after the visibility timeout. When it has no attempts left the queue closes it itself and calls the gave-up handler registered for its type; for OCR and exports that marks the record failed and refunds unspent pages.

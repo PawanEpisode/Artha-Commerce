@@ -1,4 +1,6 @@
-# F-03 Smart Notes, release R1 (typed notes): rollout
+# F-03 Smart Notes, releases R1 (typed notes) and R2 (PDF reader, marks, OCR, export): rollout
+
+R1 is parts A to H below. **R2 is the part headed R2 at the end of this file** (migrations 0003 to 0005, the worker, flag `notes_pdf`, capacity runbook). Do R1 first if the environment has never had notes.
 
 What ships in the API: shared foundations (`core/richtext.py`, `core/jobs.py` and the `run_worker` command, `modules/media`, stable-key selectors in `syllabus`, display fields in `coverage`) and the `notes` module (`apps/api/modules/notes`). The web side is `apps/web/src/modules/notes`. The endpoint shapes are in `docs/F-03-API-CONTRACT.md`. PDF, highlights, OCR, AI summaries and sharing are R2 and later; nothing here depends on them.
 
@@ -73,3 +75,71 @@ Coverage shows the number of notes on each chapter row from the `notes_chapter_c
 ## H. Rollback
 
 Turn the `notes` flag off: the web hides notes and the API refuses them, while data stays intact. Migrations are additive; to remove the feature entirely drop the `notes_*` tables, `media_attachment` and `core_job` (nothing else references them) and revert `coverage.0005` (two display columns).
+
+
+---
+
+# R2: PDF reader, marks, search, OCR and export (flag `notes_pdf`)
+
+What ships: documents (upload, inspect, extract, trash, page ranges), the pdf.js reader (`/app/notes/pdf/$docId`), the library (`/app/notes/library`), sidecar marks (highlight, underline, area, ink, text box, sticky, bookmark) with offline sync, in-document and library PDF search, Tesseract OCR (English, English + Hindi), flattened PDF export with an appendix, and the notes archive. R3 items (AI OCR, AI summaries, share links, recall cards) answer 403 `feature_disabled`, or 503 `recall_unavailable` for cards, until their providers exist. Endpoint shapes: `docs/F-03-API-CONTRACT.md`. Worker: `docs/F-03-WORKER.md`.
+
+## R2-A. What must exist before the flag is on
+
+| Piece | Why |
+| --- | --- |
+| Worker container (Render Background Worker from `render.yaml`, 2 vCPU / 4 GB) | scan, inspect, extract, OCR and export run only there; without it uploads stay "inspecting" |
+| ClamAV in that container, `MEDIA_SCANNER=clamd` | with `null` every file is clean at once: development only |
+| Tick every 5 minutes | expires abandoned uploads (30 min) and exports (7 days), purges, reconciles usage |
+| Storage bucket `notes-private` | `python manage.py ensure_notes_buckets` |
+| Migrations 0003 to 0005 | below |
+
+## R2-B. Environment
+
+API project (Vercel): no new variables. Worker (Render): `DJANGO_SECRET_KEY`, `DATABASE_URL`, `DIRECT_DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_JWT_SECRET`, `SUPABASE_SERVICE_ROLE_KEY`, `SENTRY_DSN`, `MEDIA_SCANNER=clamd`, `NOTES_TICK_SECRET`; optional `WORKER_TYPE_LIMITS`, `WORKER_SHUTDOWN_GRACE_SECONDS`, `WORKER_HEARTBEAT_SECONDS`, `WORKER_FONTS_DIR`, `WORKER_LIVENESS_FILE`. `render.yaml` and `apps/api/.env.example` list them; `docs/SETUP.md` has the table.
+
+## R2-C. Migrations (from your computer, `DIRECT_DATABASE_URL`)
+
+`python manage.py migrate` applies `notes.0003_ownership_keys` (composite ownership foreign keys, Postgres only), `0004_documents` (creates the `btree_gin` and `btree_gist` extensions, `FileContent`, `FilePage`, documents, chapters, export jobs) and `0005_annotations_and_tags`. All additive. Supabase allows both extensions; confirm with `select extname from pg_extension where extname like 'btree%'`. New tables get Row Level Security from the post-migrate hook. Then `python manage.py ensure_notes_buckets`. Optional: `python manage.py reextract_content` re-reads stored text after an extractor change.
+
+## R2-D. Order of the first launch
+
+1. Deploy the worker; open its logs and confirm it started and reports healthy (`docs/F-03-WORKER.md` section 5).
+2. Run the migrations, create the bucket, deploy the API and the web.
+3. Schedule the tick every 5 minutes (part D, Crons note).
+4. Create the PostHog flag `notes_pdf` at 0% plus your own account. Do not raise it before `MEDIA_SCANNER=clamd` is confirmed (upload the harmless EICAR test file: it must end `rejected`).
+5. Check as a signed-in student: upload a text PDF, a scanned PDF and a password-protected PDF; mark, reload offline, edit on two tabs; search in the file and in the library; run OCR on the scan; export; delete all notes in Settings.
+6. Raise the percentage in steps.
+
+## R2-E. Capacity runbook
+
+Run locally (needs Postgres and the API virtualenv):
+
+```bash
+DATABASE_URL=postgres://user:pass@localhost:5432/e2e python scripts/e2e/notes-r2/run.py        # functional check, exits 1 on a failure
+DATABASE_URL=postgres://user:pass@localhost:5432/e2e python scripts/e2e/notes-r2/capacity.py   # indicative numbers
+```
+
+Baseline on one cloud CPU with the Django dev server (compare runs, do not treat as a production forecast): a 1,000-page PDF inspected in 2.9 s and fully searchable in 3.8 s; a 50 MB file ready 3.7 s after upload; in-document search over 1,000 pages p50 88 ms, p95 108 ms; library PDF search p50 80 ms, p95 98 ms; 8 writers each sending 25 marks to one document: 200 of 200 accepted in 1.1 s, batch p50 501 ms, `change_seq` gap free. Search endpoints are throttled at 60 a minute per student, so a search load test must use several users.
+
+Manual (cannot be run from the build environment):
+
+| Check | How | Pass |
+| --- | --- | --- |
+| Device matrix | Chrome and Safari on an Android phone, an iPhone, an iPad with Apple Pencil and a laptop; open a 200-page PDF, highlight by touch and by pen, pinch zoom, go offline and back | marks land under the finger or pen, the stylus draws without scrolling, queued marks sync, no horizontal scroll at 320 px |
+| 50 MB and 1,000 pages on the real worker | upload both on the Render worker; watch memory in the Render dashboard | ready within a minute, memory under 80%, no restart |
+| Scanned 1,000-page OCR | request OCR on a large scan | chunks of 10 pages, resumes after a worker restart, charged once |
+| ClamAV | upload EICAR, and a 50 MB clean file | EICAR `rejected`, the clean file passes |
+| Write load on the real API | run the writer from `capacity.py` against staging with 50 users | no 5xx, p95 under 1 s |
+| Search p95 on staging | 1,000 PDFs, 100 searches a minute spread over 5 users | p95 under 500 ms |
+| Accessibility | keyboard-only reader, screen reader on the library and mark list, 200% zoom, the four themes | no blocked path |
+
+## R2-F. Operations
+
+- Failed jobs stay in `core_job` with the error text for seven days. A job the queue closes after repeated worker silence now fails its OCR content or export and refunds unspent pages (`core.jobs.register_gave_up_handler`).
+- Quota plan `free` has the R2 limits (documents, file size, pages, marks per document, OCR pages and exports per month, offline documents). Change them in the admin; monthly counters reset on the first of the month in India time.
+- One recall card id is cached per mark (the first kind made). Another kind is created through the provider's idempotent `(student, mark, kind)` call but is not remembered on the mark.
+- Q-F03-3 (counsel): storing student PDFs, and the Devanagari export fonts (Noto, OFL), need written sign-off before a public launch.
+
+## R2-G. Rollback
+
+Turn `notes_pdf` off: the reader, library and PDF endpoints answer 403 and the web hides them; typed notes are untouched; data export and delete-all stay open. Stop the worker if it misbehaves (jobs wait in `core_job`). Migrations are additive; to remove R2 drop the document, annotation and content tables and migrations 0003 to 0005.

@@ -28,9 +28,10 @@ real_tesseract = pytest.mark.skipif(shutil.which("tesseract") is None, reason="T
 @pytest.fixture
 def ready_events():
     seen = []
-    bus.subscribe(events.NOTES_DOCUMENT_READY, lambda **payload: seen.append(payload))
+    listener = lambda **payload: seen.append(payload)  # noqa: E731
+    bus.subscribe(events.NOTES_DOCUMENT_READY, listener)
     yield seen
-    bus.clear()
+    bus._subscribers[events.NOTES_DOCUMENT_READY].remove(listener)
 
 
 def fake_engine(monkeypatch, *, fail_after=None, calls=None):
@@ -237,6 +238,22 @@ def test_a_job_that_runs_out_of_attempts_fails_the_content_and_refunds_the_unspe
     fake_engine(monkeypatch)
     again = api.post(URL.format(doc.id), {"mode": "tesseract"})
     assert again.json_body["charged_pages"] == 4 and used() == 6
+
+
+def test_a_worker_that_goes_silent_on_the_last_attempt_still_fails_the_content_and_refunds(
+    api, fake_storage, tmp_path, monkeypatch
+):
+    """The queue closes such a job itself (the handler never sees its last attempt), so it tells the OCR service."""
+    doc = scanned_document(fake_storage, USER, tmp_path, pages=6)
+    api.post(URL.format(doc.id), {"mode": "tesseract"})
+    assert used() == 6
+    Job.objects.filter(status="queued").update(max_attempts=1)
+    assert jobs.claim_next(types=TYPES) is not None  # a worker takes it and goes silent before reading a page
+    later = timezone.now() + jobs.VISIBILITY_TIMEOUT + timedelta(seconds=1)
+    assert jobs.claim_next(types=TYPES, now=later) is None
+    assert Job.objects.get(type="notes.ocr").status == "failed"
+    assert FileContent.objects.get(pk=doc.content_id).ocr_status == "failed"
+    assert used() == 0  # nothing was read, so everything is given back
 
 
 def test_a_page_the_engine_cannot_render_is_stored_empty_so_the_chain_moves_on(

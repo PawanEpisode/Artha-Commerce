@@ -295,7 +295,7 @@ def test_no_token_reaches_the_logs(bench, fake_push, client, clock, caplog):
 # --- concurrency, retention, data rights ---------------------------------------------------------------------------
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 @pytest.mark.skipif(connection.vendor != "postgresql", reason="Row locks need PostgreSQL (CI runs it)")
 def test_two_simultaneous_taps_act_once(bench, fake_push):
     _, found = alert(bench, fake_push)

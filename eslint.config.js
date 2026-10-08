@@ -22,6 +22,8 @@ export default tseslint.config(
       '**/node_modules/**',
       '**/.output/**',
       '**/dist/**',
+      // Copied from pdfjs-dist by scripts/copy-pdfjs-assets.mjs; generated and gitignored.
+      'apps/web/public/pdfjs/**',
       '**/.nitro/**',
       '**/.tanstack/**',
       '**/.vercel/**',

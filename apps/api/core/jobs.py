@@ -50,6 +50,32 @@ def register_handler(job_type: str, fn: Handler) -> None:
     _handlers[job_type] = fn
 
 
+_gave_up_handlers: dict[str, Handler] = {}
+
+
+def register_gave_up_handler(job_type: str, fn: Handler) -> None:
+    """
+    Called with the payload when the queue itself closes a job of this type as failed because a worker kept going silent
+    (so the job's own handler never saw its last attempt fail). Lets a feature refund what the job had charged and mark
+    its record failed. Idempotent like `register_handler`.
+    """
+    existing = _gave_up_handlers.get(job_type)
+    if existing is not None and existing is not fn:
+        raise ValueError(f"A gave-up handler for job type {job_type!r} is already registered.")
+    _gave_up_handlers[job_type] = fn
+
+
+def _notify_gave_up(job: Job) -> None:
+    fn = _gave_up_handlers.get(job.type)
+    if fn is None:
+        return
+    try:
+        with transaction.atomic():
+            fn(job.payload)
+    except Exception:  # noqa: BLE001 - cleanup must never stop the queue
+        logger.exception("Gave-up handler for job %s (%s) failed", job.id, job.type)
+
+
 def handler_types() -> list[str]:
     return sorted(_handlers)
 
@@ -164,6 +190,7 @@ def claim_next(
                 return None
             if job.attempts >= job.max_attempts:
                 _close_failed(job, "Gave up: no attempts left after a worker stopped responding.", now)
+                _notify_gave_up(job)
                 continue
             job.status = Job.Status.RUNNING
             job.attempts += 1

@@ -40,6 +40,7 @@ ENV PYTHONUNBUFFERED=1 \
     OMP_THREAD_LIMIT=1 \
     WORKER_FONTS_DIR=/usr/share/fonts/truetype/artha \
     WORKER_LIVENESS_FILE=/tmp/artha-worker.alive \
+    CLAMD_SOCKET=/tmp/clamd.sock \
     DJANGO_DEBUG=false
 
 # tini: PID 1 that forwards SIGTERM and reaps children (clamd, freshclam).

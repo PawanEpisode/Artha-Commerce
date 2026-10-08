@@ -17,6 +17,7 @@ import type { BatchOpBody } from '../lib/annotation-types'
 import type * as AnnotationsApi from '../lib/annotations-api'
 import { createFakeEngine } from '../lib/pdf-engine/fake-engine'
 import type { ReaderSearch } from '../lib/reader-schema'
+import type * as SettingsApi from '../lib/settings-api'
 import { DOC_ID, makeDocument, makeProcessing } from '../lib/testing-documents'
 
 const docs = vi.hoisted(() => ({
@@ -26,8 +27,8 @@ const docs = vi.hoisted(() => ({
   getPagesText: vi.fn(),
   searchDocument: vi.fn(),
 }))
+const settingsApi = vi.hoisted(() => ({ getNotesSettings: vi.fn() }))
 const marksApi = vi.hoisted(() => ({
-  getSettings: vi.fn(),
   getDelta: vi.fn(),
   batchMarks: vi.fn(),
   putMark: vi.fn(),
@@ -35,6 +36,10 @@ const marksApi = vi.hoisted(() => ({
 }))
 const track = vi.hoisted(() => vi.fn())
 vi.mock('../lib/documents-api', () => docs)
+vi.mock('../lib/settings-api', async (original) => ({
+  ...(await original<typeof SettingsApi>()),
+  ...settingsApi,
+}))
 vi.mock('../lib/annotations-api', async (original) => ({
   ...(await original<typeof AnnotationsApi>()),
   ...marksApi,
@@ -72,7 +77,7 @@ beforeEach(async () => {
     indexed_pages: 3,
     page_count: 3,
   })
-  marksApi.getSettings.mockResolvedValue({
+  settingsApi.getNotesSettings.mockResolvedValue({
     color_legend: { y: 'Important', g: 'Formula', b: 'Section or rule', p: 'Doubt', o: 'Example' },
     legend_schema: 1,
     default_color: 'y',

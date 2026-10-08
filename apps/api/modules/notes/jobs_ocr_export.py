@@ -52,8 +52,20 @@ def expire_exports_job(payload: dict) -> dict:
     return exports.expire_exports()
 
 
+def export_pdf_gave_up(payload: dict) -> None:
+    exports.give_up(payload["export_id"])
+
+
+def export_archive_gave_up(payload: dict) -> None:
+    archive.give_up(payload["export_id"])
+
+
 def register_handlers(jobs_module) -> None:
     jobs_module.register_handler(JOB_OCR, ocr_job)
     jobs_module.register_handler(JOB_EXPORT_PDF, export_pdf_job)
     jobs_module.register_handler(JOB_EXPORT_ARCHIVE, export_archive_job)
     jobs_module.register_handler(JOB_EXPIRE_EXPORTS, expire_exports_job)
+    # A worker that goes silent past the last attempt never reaches the handlers above; the queue tells us instead.
+    jobs_module.register_gave_up_handler(JOB_OCR, ocr.give_up)
+    jobs_module.register_gave_up_handler(JOB_EXPORT_PDF, export_pdf_gave_up)
+    jobs_module.register_gave_up_handler(JOB_EXPORT_ARCHIVE, export_archive_gave_up)

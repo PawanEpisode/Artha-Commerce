@@ -139,14 +139,4 @@ export interface AnnotationConflictDetail {
 
 export type CardKind = 'formula' | 'rule' | 'definition' | 'example' | 'doubt' | 'fact'
 
-export interface NotesSettings {
-  /** Colour key (y g b p o) to the name the student gave it. */
-  color_legend: Record<MarkupColor, string>
-  legend_schema: number
-  default_color: MarkupColor
-  page_tone: 'original' | 'paper' | 'night' | null
-  finger_draws: boolean
-  ocr_default: string
-  ocr_lang: string
-  capabilities: { recall: boolean; ocr_hindi: boolean; ai_ocr: boolean }
-}
+export type { NotesSettings } from './library-types'

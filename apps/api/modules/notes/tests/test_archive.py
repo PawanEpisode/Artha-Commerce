@@ -119,11 +119,12 @@ def test_the_zip_holds_notes_digests_and_a_readme_and_nothing_else(api, chapter,
     make_document(OTHER, title="Theirs", attachment=make_attachment(OTHER))
 
     seen = []
-    bus.subscribe(events.NOTES_EXPORT_READY, lambda **p: seen.append(p))
+    listener = lambda **p: seen.append(p)  # noqa: E731
+    bus.subscribe(events.NOTES_EXPORT_READY, listener)
     try:
         job_id = build(api)
     finally:
-        bus.clear()
+        bus._subscribers[events.NOTES_EXPORT_READY].remove(listener)
     zf = open_zip(fake_storage, job_id)
     names = zf.namelist()
     assert names[0].startswith("notes/") and names[-1] == "README.md"

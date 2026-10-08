@@ -2,7 +2,7 @@ import { Skeleton } from '@artha/design-system'
 import { useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 
-import { currentUserId, removeEntry } from '~/lib/offline-queue'
+import { currentUserId } from '~/lib/offline-queue'
 import { useFeatureFlag } from '~/modules/observability'
 
 import { DeleteNotesDialog } from '../components/DeleteNotesDialog'
@@ -11,9 +11,8 @@ import { useUsage } from '../hooks/useNotesQueries'
 import { notesAnalytics } from '../lib/analytics'
 import { deleteAll, exportAll } from '../lib/api'
 import { notesKeys } from '../lib/keys'
+import { clearNotesLocalData } from '../lib/local-data'
 import { notify } from '../lib/notify'
-import { clearUserData } from '../lib/offline-store'
-import { queuedNoteWrites } from '../lib/queue'
 import { NotesShell } from './NotesShell'
 import { PdfSettingsContainer } from './PdfSettingsContainer'
 
@@ -57,11 +56,7 @@ function Settings() {
     try {
       await deleteAll()
       const userId = await currentUserId()
-      if (userId) {
-        await clearUserData(userId)
-        // Anything still waiting to be sent would only recreate notes that were just deleted.
-        for (const entry of await queuedNoteWrites()) await removeEntry(entry.clientId)
-      }
+      if (userId) await clearNotesLocalData(userId)
       qc.removeQueries({ queryKey: notesKeys.all })
       await qc.invalidateQueries()
       setConfirming(false)

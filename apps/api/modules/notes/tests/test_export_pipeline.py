@@ -74,12 +74,13 @@ def test_a_pdf_with_marks_of_every_kind_is_built_stored_and_signed_on_demand(api
     add_all_kinds(doc)
     original = stored(fake_storage, doc.attachment)
     seen = []
-    bus.subscribe(events.NOTES_EXPORT_READY, lambda **p: seen.append(p))
+    listener = lambda **p: seen.append(p)  # noqa: E731
+    bus.subscribe(events.NOTES_EXPORT_READY, listener)
     try:
         job = post(api, doc).json_body["export"]
         assert run_jobs(TYPES) == 1
     finally:
-        bus.clear()
+        bus._subscribers[events.NOTES_EXPORT_READY].remove(listener)
     done = fetch(api, job["id"])
     assert (done["status"], done["progress"], done["page_count"], done["error_code"]) == ("done", 100, 3, None)
     assert done["download_url"].startswith("https://") and "/exports/" in done["download_url"]

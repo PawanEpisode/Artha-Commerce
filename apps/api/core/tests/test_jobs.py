@@ -73,6 +73,30 @@ def test_a_reclaimed_job_out_of_attempts_is_closed_as_failed():
     assert job.status == "failed" and "Gave up" in job.last_error
 
 
+def test_a_job_the_queue_closes_itself_tells_its_gave_up_handler():
+    seen = []
+    jobs.register_gave_up_handler("t.gone", seen.append)
+    try:
+        jobs.enqueue("t.gone", {"charged": 5}, max_attempts=1)
+        jobs.claim_next()
+        assert jobs.claim_next(now=timezone.now() + jobs.VISIBILITY_TIMEOUT + timedelta(seconds=1)) is None
+        assert seen == [{"charged": 5}]
+    finally:
+        jobs._gave_up_handlers.pop("t.gone", None)
+
+
+def test_a_failing_gave_up_handler_never_stops_the_queue():
+    jobs.register_gave_up_handler("t.gone2", lambda payload: 1 / 0)
+    try:
+        jobs.enqueue("t.gone2", max_attempts=1)
+        jobs.enqueue("t.next")
+        jobs.claim_next(types=["t.gone2"])
+        job = jobs.claim_next(now=timezone.now() + jobs.VISIBILITY_TIMEOUT + timedelta(seconds=1))
+        assert job is not None and job.type == "t.next"
+    finally:
+        jobs._gave_up_handlers.pop("t.gone2", None)
+
+
 def test_failures_back_off_and_end_as_failed():
     jobs.enqueue("t.a", max_attempts=3)
     waits = []
@@ -317,7 +341,7 @@ def test_touch_liveness_writes_a_file_and_swallows_errors(tmp_path):
     jobs.touch_liveness(str(tmp_path / "missing-dir" / "alive"))  # must not raise
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_concurrent_claims_never_exceed_a_cap_of_two():
     if connection.vendor != "postgresql":
         pytest.skip("advisory locks and SKIP LOCKED need Postgres")

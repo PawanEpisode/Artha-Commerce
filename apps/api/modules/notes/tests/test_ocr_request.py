@@ -220,7 +220,7 @@ def test_a_failed_charge_rolls_back_everything(api, scan, monkeypatch):
     assert FileContent.objects.get(pk=scan.content_id).ocr_status == "none"
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db(transaction=True, serialized_rollback=True)
 def test_two_requests_for_the_last_pages_admit_exactly_one(api, fake_storage, tmp_path):
     if connection.vendor != "postgresql":
         pytest.skip("needs row locks")

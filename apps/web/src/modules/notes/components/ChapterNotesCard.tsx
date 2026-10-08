@@ -2,6 +2,7 @@ import { Alert, Button, Card, FileText, Notebook, Plus, Skeleton } from '@artha/
 import { Link } from '@tanstack/react-router'
 
 import { formatDate, pluralize } from '../lib/format'
+import { markOpenedFrom } from '../lib/opened-from'
 import type { ChapterOverview } from '../lib/types'
 
 interface ChapterNotesCardProps {
@@ -72,6 +73,7 @@ export function ChapterNotesCard({ state, overview, subjectKey, chapterKey, leve
                     <Link
                       to="/app/notes/pdf/$docId"
                       params={{ docId: d.id }}
+                      onClick={() => markOpenedFrom('chapter')}
                       className="inline-flex min-h-11 items-center font-medium break-words underline-offset-4 hover:underline"
                     >
                       {d.title.trim() || 'Untitled PDF'}

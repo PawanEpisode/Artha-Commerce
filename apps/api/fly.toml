@@ -1,0 +1,25 @@
+# Fly.io config for the F-03 PDF worker (docs/F-03-WORKER.md section 8). Run every fly command from apps/api.
+# A worker has no [http_service]: no port, no public IP, so nothing extra is billed. ONE machine only (see the doc: `--ha=false`).
+app = "artha-worker"            # must be globally unique: change it if `fly launch`/`fly apps create` says it is taken
+primary_region = "sin"
+kill_timeout = 120              # seconds between SIGTERM and SIGKILL; WORKER_SHUTDOWN_GRACE_SECONDS stays below it
+
+[build]
+  dockerfile = "worker/Dockerfile"
+
+[processes]
+  worker = "python manage.py run_worker"
+
+# Start small: 2 GB is the cheapest size that can hold clamd (about 1 GB) plus one OCR or export job. If the machine is
+# killed for memory (`fly logs` shows "Out of memory"), raise it with `fly scale memory 4096` and keep one job at a time.
+[[vm]]
+  size = "shared-cpu-2x"
+  memory = "2gb"
+  processes = ["worker"]
+
+[env]
+  DJANGO_DEBUG = "false"
+  MEDIA_SCANNER = "clamd"
+  WORKER_TYPE_LIMITS = "notes.ocr=1,notes.export_pdf=1,notes.export_archive=1"
+  WORKER_SHUTDOWN_GRACE_SECONDS = "100"
+  WORKER_HEARTBEAT_SECONDS = "60"

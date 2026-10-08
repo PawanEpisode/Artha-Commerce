@@ -4,6 +4,7 @@ import { Link } from '@tanstack/react-router'
 import { linkLabel } from '../../lib/chapter-link'
 import { pluralize } from '../../lib/format'
 import type { ColorLegend, MarkSearchHit } from '../../lib/library-types'
+import { markOpenedFrom } from '../../lib/opened-from'
 import { type NotSearchable, type PdfGroup } from '../../lib/search-groups'
 import { splitHighlight } from '../../lib/search-query'
 import { ColorDot } from './HighlightRow'
@@ -51,7 +52,10 @@ export function PdfResultGroups({ groups, query, onOpen }: PdfResultGroupsProps)
                     to="/app/notes/pdf/$docId"
                     params={{ docId: group.documentId }}
                     search={{ page: hit.page, q: query }}
-                    onClick={onOpen}
+                    onClick={() => {
+                      markOpenedFrom('search')
+                      onOpen?.()
+                    }}
                     aria-label={`Open page ${hit.page} of ${group.title.trim() || 'this PDF'}`}
                     className="inline-flex min-h-11 items-center text-sm font-medium underline underline-offset-4 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40"
                   >
@@ -92,7 +96,10 @@ export function MarkResults({ hits, query, legend, onOpen }: MarkResultsProps) {
                 to="/app/notes/pdf/$docId"
                 params={{ docId: hit.document_id }}
                 search={{ page: hit.page, ann: hit.annotation_id }}
-                onClick={onOpen}
+                onClick={() => {
+                  markOpenedFrom('search')
+                  onOpen?.()
+                }}
                 className="min-w-0 underline-offset-4 outline-none hover:underline focus-visible:underline focus-visible:ring-[3px] focus-visible:ring-ring/40"
               >
                 <Marked text={hit.snippet} query={query} />
