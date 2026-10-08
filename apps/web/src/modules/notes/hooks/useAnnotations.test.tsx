@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto'
 
-import { act, renderHook, waitFor } from '@testing-library/react'
+import { act, cleanup, renderHook, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { clearOfflineQueue, resetFlushState, resetOfflineQueue } from '~/lib/offline-queue'
@@ -93,9 +93,13 @@ beforeEach(async () => {
   await clearAnnotationData('u1')
   await clearOfflineQueue()
 })
-afterEach(() => {
+afterEach(async () => {
   vi.clearAllMocks()
   vi.useRealTimers()
+  // Unmounting writes the cache once more (`void persist()`); let that land before the next test clears the stores,
+  // or on a slow runner it lands afterwards and leaks a mark into the next test.
+  cleanup()
+  await new Promise((resolve) => setTimeout(resolve, 50))
 })
 
 const open = async () => {

@@ -1,5 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": { "config/wsgi.py": { "maxDuration": 30 } },
-  "crons": [{ "path": "/api/v1/notes/internal/tick/", "schedule": "*/15 * * * *" }]
+  "functions": { "config/wsgi.py": { "maxDuration": 30 } }
 }

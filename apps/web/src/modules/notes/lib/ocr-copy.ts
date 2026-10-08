@@ -1,6 +1,5 @@
 import type { DocumentSummary } from './document-types'
 import { errorCode } from './errors'
-import { formatDate } from './format'
 import type { Usage } from './types'
 
 /** Seconds of Tesseract time per page, as measured on the worker; the real figure comes back from `POST ocr/`. */
@@ -56,9 +55,16 @@ export function ocrOffer(
   }
 }
 
-/** "1 Nov 2026" from the usage `resets_on` day. */
+/** "1 Nov 2026" from the usage `resets_on` day. A calendar day, so it is formatted in UTC and never shifts with the device zone. */
 export const resetDateText = (resetsOn: string | undefined | null) =>
-  resetsOn ? formatDate(`${resetsOn}T00:00:00+05:30`) : ''
+  resetsOn
+    ? new Date(`${resetsOn}T00:00:00Z`).toLocaleDateString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        timeZone: 'UTC',
+      })
+    : ''
 
 /** The line shown on a card or banner while OCR runs: "OCR 120 of 320, searchable as pages finish". */
 export const ocrProgressText = (done: number, total: number) =>
