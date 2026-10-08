@@ -8,19 +8,17 @@ from . import views_ocr_export as ocrx
 from . import views_replace as replace
 
 urlpatterns = [
-    # Account data and cron: never gated by the `notes` flag.
-    path("notes/", views.DeleteAllView.as_view(), name="notes-delete-all"),
+    # `DELETE notes/` (on the list view) and these two stay open with the `notes` flag off.
+    path("notes/", views.NoteListCreateView.as_view(), name="notes-list"),
     path("notes/export/", views.ExportView.as_view(), name="notes-export"),
     path("notes/internal/tick/", views.TickView.as_view(), name="notes-tick"),
-    # Notes
-    path("notes/notes/", views.NoteListCreateView.as_view(), name="notes-list"),
-    path("notes/notes/changes/", views.ChangesView.as_view(), name="notes-changes"),
-    path("notes/notes/<uuid:note_id>/", views.NoteDetailView.as_view(), name="notes-detail"),
-    path("notes/notes/<uuid:note_id>/restore/", views.NoteRestoreView.as_view(), name="notes-restore"),
-    path("notes/notes/<uuid:note_id>/versions/", views.VersionListView.as_view(), name="notes-versions"),
-    path("notes/notes/<uuid:note_id>/versions/<int:rev>/", views.VersionDetailView.as_view(), name="notes-version"),
+    path("notes/changes/", views.ChangesView.as_view(), name="notes-changes"),
+    path("notes/<uuid:note_id>/", views.NoteDetailView.as_view(), name="notes-detail"),
+    path("notes/<uuid:note_id>/restore/", views.NoteRestoreView.as_view(), name="notes-restore"),
+    path("notes/<uuid:note_id>/versions/", views.VersionListView.as_view(), name="notes-versions"),
+    path("notes/<uuid:note_id>/versions/<int:rev>/", views.VersionDetailView.as_view(), name="notes-version"),
     path(
-        "notes/notes/<uuid:note_id>/versions/<int:rev>/restore/",
+        "notes/<uuid:note_id>/versions/<int:rev>/restore/",
         views.VersionRestoreView.as_view(),
         name="notes-version-restore",
     ),

@@ -14,3 +14,6 @@ apps/api
 # Generated service worker (apps/web/scripts/build-sw.mjs)
 apps/web/public/sw.js
 apps/web/public/pdfjs
+
+# F-15 golden vectors: byte for byte copies of the API files (apps/api is not formatted)
+apps/web/src/modules/recall/lib/vectors

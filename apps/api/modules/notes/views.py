@@ -1,7 +1,7 @@
 """
 Thin views for /api/v1/notes/: auth, the `notes` flag, parse, call a service or selector, serialise. No ORM and no business
-rules here. Every view extends `NotesView` (flag gated) except the account data endpoints and the cron tick, which must work
-with the flag off (FR-F03-68): the flag test enumerates the URLs and checks that rule.
+rules here. Every view extends `NotesView` (flag gated) except export, the cron tick, and `DELETE` on the note list
+(the account wipe), which must work with the flag off (FR-F03-68): the flag test enumerates the URLs and checks that rule.
 """
 
 from __future__ import annotations
@@ -77,6 +77,21 @@ def _page(page, build) -> dict:
 
 # --- Notes ------------------------------------------------------------------------------------------------------------
 class NoteListCreateView(WriteView):
+    """
+    `GET`/`POST notes/` are the note list and create (flag gated). `DELETE notes/` wipes the account and stays open
+    with the flag off (FR-F03-68): it shares this path because the contract puts both on `notes/`.
+    """
+
+    def get_permissions(self):
+        if self.request.method == "DELETE":
+            return [IsAuthenticated()]
+        return super().get_permissions()
+
+    def get_throttles(self):
+        if self.request.method == "DELETE":
+            self.throttle_scope = "notes_account"
+        return super().get_throttles()
+
     def get(self, request):
         d = self.parse(serializers.NoteListQuery, request.query_params).validated_data
         if d["trashed"]:
@@ -87,6 +102,9 @@ class NoteListCreateView(WriteView):
 
     def post(self, request):
         return _create_note(self, request, None)
+
+    def delete(self, request):
+        return Response({"deleted": services.account.delete_all_for_user(request.user.id)})
 
 
 def _create_note(view, request, note_id):
@@ -313,11 +331,6 @@ class DataView(ParsedAPIView):
 class ExportView(DataView):
     def get(self, request):
         return Response(services.account.export_for_user(request.user.id))
-
-
-class DeleteAllView(DataView):
-    def delete(self, request):
-        return Response({"deleted": services.account.delete_all_for_user(request.user.id)})
 
 
 class TickView(ParsedAPIView):

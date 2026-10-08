@@ -4,7 +4,8 @@ Regenerates the golden vectors in `vectors/`. The TypeScript twin (`apps/web/src
     cd apps/api && PYTHONPATH=/path/to/fsrs python -m modules.recall.domain.tests.make_vectors
 
 Fuzz-off rows are cross-checked against py-fsrs while generating (needs `fsrs`); fuzz-on rows come from our own code, since
-the fuzz is ours (D6). Review the diff of the JSON files in the pull request: a change here is a change of behaviour.
+the fuzz is ours (D6). Then copy the three files to apps/web/src/modules/recall/lib/vectors/ (a web test fails when the copies differ).
+Review the diff of the JSON files in the pull request: a change here is a change of behaviour.
 """
 
 from __future__ import annotations
@@ -144,6 +145,10 @@ def fsrs_cases() -> dict:
         for d in (
             0.0,
             1 / 1440,
+            0.5 / 1440,
+            90 / 1440,
+            150 / 1440,
+            2.5,
             5 / 1440,
             59 / 1440,
             1 / 24,

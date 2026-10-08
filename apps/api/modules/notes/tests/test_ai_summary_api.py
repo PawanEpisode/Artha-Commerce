@@ -228,7 +228,7 @@ def test_regenerating_unchanged_inputs_returns_the_earlier_draft_for_free(ready,
 def test_changing_a_note_makes_the_next_request_a_new_paid_job(ready, chapter, gemini_fake):
     first = request_and_run(ready, chapter)
     note = Note.objects.filter(user_id=USER, kind="note").first()
-    ready.patch(f"/notes/notes/{note.id}/", {"base_rev": note.rev, "body_md": "Rewritten body. " * 40})
+    ready.patch(f"/notes/{note.id}/", {"base_rev": note.rev, "body_md": "Rewritten body. " * 40})
     again = post_summary(ready, chapter)
     assert again.status_code == 202 and again.json_body["id"] != first["id"] and used() == 2
 

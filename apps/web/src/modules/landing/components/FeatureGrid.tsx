@@ -32,7 +32,7 @@ export function FeatureGrid() {
                 <p className="mt-2 text-sm text-muted-foreground">{f.tagline}</p>
                 <span className="mt-4 block">
                   <span className={buttonVariants({ variant: 'outline', size: 'sm' })}>
-                    {f.status === 'soon' ? 'Preview' : 'See'} {f.title}
+                    Check out
                     <ArrowRight
                       aria-hidden
                       className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"

@@ -36,7 +36,7 @@ def level_id(scheme):  # noqa: F811
 
 def new_note(c, body="", title="", **extra):
     payload = {"client_id": str(uuid.uuid4()), "title": title, "body_md": body, **extra}
-    res = c.post("/notes/notes/", payload)
+    res = c.post("/notes/", payload)
     assert res.status_code == 201, res.json_body
     return res.json_body
 
@@ -44,7 +44,7 @@ def new_note(c, body="", title="", **extra):
 def edit(c, note, **fields):
     """PATCH against the note's current revision."""
     body = {"base_rev": note["rev"], **fields}
-    return c.patch(f"/notes/notes/{note['id']}/", body)
+    return c.patch(f"/notes/{note['id']}/", body)
 
 
 def later(clock, **kwargs):

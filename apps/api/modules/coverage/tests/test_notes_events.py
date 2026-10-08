@@ -81,9 +81,9 @@ def test_a_rebuild_replays_note_events_in_order(ids, enrolled, scheme):
 
 def test_end_to_end_through_the_notes_api(api, ids, enrolled, scheme, django_capture_on_commit_callbacks):
     with django_capture_on_commit_callbacks(execute=True):
-        res = api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "body_md": "hello", "chapter_id": ids["gst"]})
+        res = api.post("/notes/", {"client_id": str(uuid.uuid4()), "body_md": "hello", "chapter_id": ids["gst"]})
     assert res.status_code == 201
     assert _progress(ids).notes_count == 1
     with django_capture_on_commit_callbacks(execute=True):
-        api.delete(f"/notes/notes/{res.json_body['id']}/")
+        api.delete(f"/notes/{res.json_body['id']}/")
     assert _progress(ids).notes_count == 0

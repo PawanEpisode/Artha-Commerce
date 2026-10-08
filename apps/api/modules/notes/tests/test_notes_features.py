@@ -49,9 +49,9 @@ def test_item_tags_replace_the_set_and_listing_filters_by_tag(api):
     body = {"item_type": "note", "item_id": n["id"], "tag_ids": [t1, t2]}
     assert len(api.put("/notes/items/tags/", body).json_body["tags"]) == 2
     api.put("/notes/items/tags/", {**body, "tag_ids": [t2]})
-    assert [t["id"] for t in api.get(f"/notes/notes/{n['id']}/").json_body["tags"]] == [t2]
-    assert len(api.get(f"/notes/notes/?tag={t2}").json_body["items"]) == 1
-    assert api.get(f"/notes/notes/?tag={t1}").json_body["items"] == []
+    assert [t["id"] for t in api.get(f"/notes/{n['id']}/").json_body["tags"]] == [t2]
+    assert len(api.get(f"/notes/?tag={t2}").json_body["items"]) == 1
+    assert api.get(f"/notes/?tag={t1}").json_body["items"] == []
     assert {t["id"]: t["count"] for t in api.get("/notes/tags/").json_body["items"]} == {t1: 0, t2: 1}
 
 
@@ -134,7 +134,7 @@ def test_aggregate_filters(api, scheme, level_id):
 
 def test_a_trashed_note_leaves_the_aggregate(api):
     n = new_note(api, "x")
-    api.delete(f"/notes/notes/{n['id']}/")
+    api.delete(f"/notes/{n['id']}/")
     assert api.get("/notes/aggregate/").json_body["items"] == []
 
 
@@ -186,8 +186,8 @@ def test_notes_follow_a_scheme_switch_by_keys(api, scheme, level_id):
     assert [r["chapter_key"] for r in counts["moved_or_removed"]] == ["residential-status"]
     assert counts["moved_or_removed"][0]["notes"] == 1
     # the note itself still resolves, flagged where its chapter is gone from the current scheme
-    assert api.get(f"/notes/notes/{a['id']}/").json_body["link"]["chapter_key"] == "gst-itc"
-    assert api.get(f"/notes/notes/{b['id']}/").json_body["link"]["moved_or_removed"] is True
+    assert api.get(f"/notes/{a['id']}/").json_body["link"]["chapter_key"] == "gst-itc"
+    assert api.get(f"/notes/{b['id']}/").json_body["link"]["moved_or_removed"] is True
     assert (
         api.get(f"/notes/aggregate/?level={level_id}&subject=taxation&chapter=gst-itc").json_body["items"][0]["id"]
         == a["id"]
@@ -263,14 +263,14 @@ def test_usage_reports_plan_limits_and_use(api):
 def test_the_note_quota_stops_creation_with_429(api):
     new_note(api, "first")
     QuotaUsage.objects.update(notes_active=2000)
-    res = api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "body_md": "one more"})
+    res = api.post("/notes/", {"client_id": str(uuid.uuid4()), "body_md": "one more"})
     assert res.status_code == 429 and res.json_body["error"]["code"] == "quota_exceeded"
     assert res.json_body["error"]["details"] == {"kind": "notes", "used": 2000, "limit": 2000, "plan": "free"}
     assert Note.objects.count() == 1
 
 
 def test_a_body_over_the_character_limit_is_a_lint_error(api):
-    res = api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "body_md": "a" * 100_001})
+    res = api.post("/notes/", {"client_id": str(uuid.uuid4()), "body_md": "a" * 100_001})
     assert res.status_code == 422 and res.json_body["error"]["details"]["errors"][0]["code"] in (
         "too_long",
         "body_too_long",
@@ -279,9 +279,9 @@ def test_a_body_over_the_character_limit_is_a_lint_error(api):
 
 def test_restoring_from_trash_is_subject_to_the_quota(api):
     n = new_note(api, "x")
-    api.delete(f"/notes/notes/{n['id']}/")
+    api.delete(f"/notes/{n['id']}/")
     QuotaUsage.objects.update(notes_active=2000)
-    assert api.post(f"/notes/notes/{n['id']}/restore/").status_code == 429
+    assert api.post(f"/notes/{n['id']}/restore/").status_code == 429
 
 
 # --- Account data ---------------------------------------------------------------------------------------------------------
@@ -291,7 +291,7 @@ def _populate(c, chapter):
     edit(c, n, body_md="body 2", source="manual")
     c.put("/notes/settings/", {"page_tone": "paper"})
     gone = new_note(c, "trashed")
-    c.delete(f"/notes/notes/{gone['id']}/")
+    c.delete(f"/notes/{gone['id']}/")
     return n
 
 
@@ -348,8 +348,8 @@ def test_the_tick_purges_old_trash_and_is_repeatable(client, api, tick_secret):
     from django.utils import timezone
 
     old, fresh = new_note(api, "old"), new_note(api, "fresh")
-    api.delete(f"/notes/notes/{old['id']}/")
-    api.delete(f"/notes/notes/{fresh['id']}/")
+    api.delete(f"/notes/{old['id']}/")
+    api.delete(f"/notes/{fresh['id']}/")
     Note.objects.filter(pk=old["id"]).update(purge_after=timezone.now() - timedelta(days=1))
     for _ in range(2):
         res = client.post("/api/v1/notes/internal/tick/", HTTP_X_NOTES_TICK_SECRET=tick_secret)

@@ -347,17 +347,17 @@ def review(
 
 def format_interval(days: float) -> str:
     """The text under a rating button: `10 min`, `2 h`, `5 d`, `3 mo`, `1.5 y`. Mirrored in `lib/fsrs6.ts` and vector-tested."""
-    minutes = round(days * MINUTES_PER_DAY)
+    minutes = _round_half_up(days * MINUTES_PER_DAY)
     if minutes < 60:
         return f"{max(minutes, 1)} min"
     if minutes < MINUTES_PER_DAY:
-        return f"{round(minutes / 60)} h"
+        return f"{_round_half_up(minutes / 60)} h"
     whole = _round_half_up(days)
     if whole < 31:
         return f"{whole} d"
     if whole < 365:
         return f"{_round_half_up(whole / 30.4375)} mo"
-    years = round(whole / 365.0 * 10) / 10
+    years = _round_half_up(whole / 365.0 * 10) / 10
     return f"{years:g} y"
 
 

@@ -13,7 +13,7 @@ pytestmark = pytest.mark.django_db
 
 def test_every_notes_endpoint_needs_a_token(client):
     for path in (
-        "/notes/notes/",
+        "/notes/",
         "/notes/tags/",
         "/notes/settings/",
         "/notes/usage/",
@@ -28,38 +28,38 @@ def test_create_then_read_back(api, chapter):
     n = new_note(api, "## Heading\n\nSome **text** about GST", title="GST", chapter_id=str(chapter.id))
     assert n["rev"] == 1 and n["kind"] == "note" and n["title"] == "GST"
     assert n["link"]["chapter_key"] == "gst-itc" and n["link"]["moved_or_removed"] is False
-    got = api.get(f"/notes/notes/{n['id']}/").json_body
+    got = api.get(f"/notes/{n['id']}/").json_body
     assert got["body_md"].startswith("## Heading")
-    listed = api.get("/notes/notes/").json_body
+    listed = api.get("/notes/").json_body
     assert [i["id"] for i in listed["items"]] == [n["id"]] and "body_md" not in listed["items"][0]
 
 
 def test_create_is_idempotent_on_client_id(api):
     cid = str(uuid.uuid4())
-    a = api.post("/notes/notes/", {"client_id": cid, "body_md": "one"})
-    b = api.post("/notes/notes/", {"client_id": cid, "body_md": "one"})
+    a = api.post("/notes/", {"client_id": cid, "body_md": "one"})
+    b = api.post("/notes/", {"client_id": cid, "body_md": "one"})
     assert (a.status_code, b.status_code) == (201, 200)
     assert a.json_body["id"] == b.json_body["id"]
     assert Note.objects.count() == 1 and QuotaUsage.objects.get().notes_active == 1
 
 
 def test_validation_errors_are_400(api):
-    assert api.post("/notes/notes/", {"body_md": "no client id"}).status_code == 400
-    assert api.post("/notes/notes/", {"client_id": "nope"}).status_code == 400
-    assert api.get("/notes/notes/?limit=0").status_code == 400
-    assert api.get("/notes/notes/?subject=taxation").status_code == 400  # needs a level
-    assert api.get("/notes/notes/?cursor=%25%25").status_code in (400,)
+    assert api.post("/notes/", {"body_md": "no client id"}).status_code == 400
+    assert api.post("/notes/", {"client_id": "nope"}).status_code == 400
+    assert api.get("/notes/?limit=0").status_code == 400
+    assert api.get("/notes/?subject=taxation").status_code == 400  # needs a level
+    assert api.get("/notes/?cursor=%25%25").status_code in (400,)
 
 
 def test_a_body_that_breaks_the_note_profile_is_422(api):
-    res = api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "body_md": "# A top level heading"})
+    res = api.post("/notes/", {"client_id": str(uuid.uuid4()), "body_md": "# A top level heading"})
     assert res.status_code == 422
     body = res.json_body["error"]
     assert body["code"] == "invalid_body" and body["details"]["errors"][0]["code"] == "heading_level"
 
 
 def test_unknown_chapter_is_422(api, scheme):
-    res = api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "chapter_id": str(uuid.uuid4())})
+    res = api.post("/notes/", {"client_id": str(uuid.uuid4()), "chapter_id": str(uuid.uuid4())})
     assert res.status_code == 422 and res.json_body["error"]["code"] == "unknown_chapter"
 
 
@@ -75,7 +75,7 @@ def test_non_overlapping_edits_from_two_devices_merge(api):
     n = new_note(api, "alpha line\n\nbeta line\n\ngamma line")
     edit(api, n, body_md="alpha line\n\nbeta line\n\ngamma CHANGED")
     res = api.patch(
-        f"/notes/notes/{n['id']}/",
+        f"/notes/{n['id']}/",
         {"base_rev": 1, "base_body_md": n["body_md"], "body_md": "alpha EDITED\n\nbeta line\n\ngamma line"},
     )
     assert res.status_code == 200 and res.json_body["merged"] is True
@@ -86,7 +86,7 @@ def test_overlapping_edits_answer_409_with_theirs_mine_and_merged(api):
     n = new_note(api, "the quick brown fox")
     edit(api, n, body_md="the quick red fox")
     res = api.patch(
-        f"/notes/notes/{n['id']}/",
+        f"/notes/{n['id']}/",
         {"base_rev": 1, "base_body_md": n["body_md"], "body_md": "the quick green fox"},
     )
     assert res.status_code == 409 and res.json_body["error"]["code"] == "note_conflict"
@@ -100,7 +100,7 @@ def test_resolving_a_conflict(api, resolution, expected):
     n = new_note(api, "base text")
     current = edit(api, n, body_md="theirs text").json_body
     res = api.patch(
-        f"/notes/notes/{n['id']}/",
+        f"/notes/{n['id']}/",
         {"base_rev": current["rev"], "body_md": "mine text", "resolution": resolution},
     )
     assert res.status_code == 200 and res.json_body["body_md"] == expected
@@ -109,7 +109,7 @@ def test_resolving_a_conflict(api, resolution, expected):
 def test_resolution_both_keeps_everything(api):
     n = new_note(api, "base")
     current = edit(api, n, body_md="theirs").json_body
-    res = api.patch(f"/notes/notes/{n['id']}/", {"base_rev": current["rev"], "body_md": "mine", "resolution": "both"})
+    res = api.patch(f"/notes/{n['id']}/", {"base_rev": current["rev"], "body_md": "mine", "resolution": "both"})
     assert res.status_code == 200
     assert "theirs" in res.json_body["body_md"] and "mine" in res.json_body["body_md"]
 
@@ -117,14 +117,14 @@ def test_resolution_both_keeps_everything(api):
 def test_a_resolution_against_a_stale_revision_is_a_new_conflict(api):
     n = new_note(api, "base")
     edit(api, n, body_md="one")
-    res = api.patch(f"/notes/notes/{n['id']}/", {"base_rev": 1, "body_md": "mine", "resolution": "mine"})
+    res = api.patch(f"/notes/{n['id']}/", {"base_rev": 1, "body_md": "mine", "resolution": "mine"})
     assert res.status_code == 409
 
 
 def test_scalar_fields_last_write_wins_and_report_the_overwrite(api):
     n = new_note(api, "x", title="A")
     edit(api, n, title="B")
-    res = api.patch(f"/notes/notes/{n['id']}/", {"base_rev": 1, "base": {"title": "A"}, "title": "C"})
+    res = api.patch(f"/notes/{n['id']}/", {"base_rev": 1, "base": {"title": "A"}, "title": "C"})
     assert res.status_code == 200 and res.json_body["title"] == "C" and res.json_body["overwritten"] == ["title"]
 
 
@@ -138,7 +138,7 @@ def test_pin_and_move_and_tags(api, scheme):
     body = res.json_body
     assert body["pinned"] and body["link"]["chapter_key"] == "residential-status"
     assert [t["id"] for t in body["tags"]] == [tag["id"]]
-    assert api.get("/notes/notes/?unfiled=true").json_body["items"] == []
+    assert api.get("/notes/?unfiled=true").json_body["items"] == []
 
 
 def test_versions_are_listed_read_and_restored(api, clock):
@@ -147,12 +147,12 @@ def test_versions_are_listed_read_and_restored(api, clock):
     n2 = edit(api, n, body_md="v2").json_body
     clock.advance(minutes=30)
     edit(api, n2, body_md="v3", source="manual")
-    rows = api.get(f"/notes/notes/{n['id']}/versions/").json_body["items"]
+    rows = api.get(f"/notes/{n['id']}/versions/").json_body["items"]
     assert [r["rev"] for r in rows][:1] == [3] and len(rows) == 3
-    assert api.get(f"/notes/notes/{n['id']}/versions/1/").json_body["body_md"] == "v1"
-    restored = api.post(f"/notes/notes/{n['id']}/versions/1/restore/").json_body
+    assert api.get(f"/notes/{n['id']}/versions/1/").json_body["body_md"] == "v1"
+    restored = api.post(f"/notes/{n['id']}/versions/1/restore/").json_body
     assert restored["body_md"] == "v1" and restored["rev"] == 4
-    assert api.get(f"/notes/notes/{n['id']}/versions/99/").status_code == 404
+    assert api.get(f"/notes/{n['id']}/versions/99/").status_code == 404
 
 
 def test_autosaves_in_a_burst_coalesce_into_one_version(api, clock):
@@ -196,46 +196,46 @@ def test_a_manual_save_never_coalesces(api, clock):
 
 def test_trash_restore_and_edit_restores(api, clock):
     n = new_note(api, "keep me")
-    res = api.delete(f"/notes/notes/{n['id']}/")
+    res = api.delete(f"/notes/{n['id']}/")
     assert res.status_code == 200 and res.json_body["purge_after"]
-    assert api.get("/notes/notes/").json_body["items"] == []
-    assert [i["id"] for i in api.get("/notes/notes/?trashed=true").json_body["items"]] == [n["id"]]
+    assert api.get("/notes/").json_body["items"] == []
+    assert [i["id"] for i in api.get("/notes/?trashed=true").json_body["items"]] == [n["id"]]
     assert QuotaUsage.objects.get().notes_active == 0
-    back = api.post(f"/notes/notes/{n['id']}/restore/").json_body
+    back = api.post(f"/notes/{n['id']}/restore/").json_body
     assert back["deleted_at"] is None and QuotaUsage.objects.get().notes_active == 1
-    api.delete(f"/notes/notes/{n['id']}/")
-    cur = api.get(f"/notes/notes/{n['id']}/").json_body
+    api.delete(f"/notes/{n['id']}/")
+    cur = api.get(f"/notes/{n['id']}/").json_body
     res = edit(api, cur, body_md="edited in the trash")
     assert res.json_body["restored"] is True and res.json_body["deleted_at"] is None
 
 
 def test_trashing_twice_is_harmless(api):
     n = new_note(api, "x")
-    assert api.delete(f"/notes/notes/{n['id']}/").status_code == 200
-    assert api.delete(f"/notes/notes/{n['id']}/").status_code == 200
+    assert api.delete(f"/notes/{n['id']}/").status_code == 200
+    assert api.delete(f"/notes/{n['id']}/").status_code == 200
     assert QuotaUsage.objects.get().notes_active == 0
 
 
 def test_other_students_notes_are_404(api, other_api):
     n = new_note(api, "mine")
     nid = n["id"]
-    assert other_api.get(f"/notes/notes/{nid}/").status_code == 404
-    assert other_api.patch(f"/notes/notes/{nid}/", {"base_rev": 1, "body_md": "x"}).status_code == 404
-    assert other_api.delete(f"/notes/notes/{nid}/").status_code == 404
-    assert other_api.post(f"/notes/notes/{nid}/restore/").status_code == 404
-    assert other_api.get(f"/notes/notes/{nid}/versions/").status_code == 404
-    assert other_api.get(f"/notes/notes/{nid}/versions/1/").status_code == 404
-    assert other_api.post(f"/notes/notes/{nid}/versions/1/restore/").status_code == 404
-    assert other_api.get("/notes/notes/").json_body["items"] == []
+    assert other_api.get(f"/notes/{nid}/").status_code == 404
+    assert other_api.patch(f"/notes/{nid}/", {"base_rev": 1, "body_md": "x"}).status_code == 404
+    assert other_api.delete(f"/notes/{nid}/").status_code == 404
+    assert other_api.post(f"/notes/{nid}/restore/").status_code == 404
+    assert other_api.get(f"/notes/{nid}/versions/").status_code == 404
+    assert other_api.get(f"/notes/{nid}/versions/1/").status_code == 404
+    assert other_api.post(f"/notes/{nid}/versions/1/restore/").status_code == 404
+    assert other_api.get("/notes/").json_body["items"] == []
     assert other_api.put("/notes/items/tags/", {"item_type": "note", "item_id": nid, "tag_ids": []}).status_code == 404
 
 
 def test_changes_feed_returns_what_moved_since_the_cursor(api):
     a = new_note(api, "a")
-    first = api.get("/notes/notes/changes/").json_body
+    first = api.get("/notes/changes/").json_body
     assert [i["id"] for i in first["items"]] == [a["id"]] and first["has_more"] is False
     b = new_note(api, "b")
-    nxt = api.get(f"/notes/notes/changes/?since={first['next_since']}").json_body
+    nxt = api.get(f"/notes/changes/?since={first['next_since']}").json_body
     assert [i["id"] for i in nxt["items"]] == [b["id"]]
 
 
@@ -244,8 +244,8 @@ def test_list_paginates_with_a_cursor(api, clock):
     for i in range(5):
         clock.advance(seconds=1)
         ids.append(new_note(api, f"n{i}")["id"])
-    p1 = api.get("/notes/notes/?limit=2").json_body
-    p2 = api.get(f"/notes/notes/?limit=2&cursor={p1['next_cursor']}").json_body
-    p3 = api.get(f"/notes/notes/?limit=2&cursor={p2['next_cursor']}").json_body
+    p1 = api.get("/notes/?limit=2").json_body
+    p2 = api.get(f"/notes/?limit=2&cursor={p1['next_cursor']}").json_body
+    p3 = api.get(f"/notes/?limit=2&cursor={p2['next_cursor']}").json_body
     got = [i["id"] for p in (p1, p2, p3) for i in p["items"]]
     assert got == ids[::-1] and p3["next_cursor"] is None

@@ -15,8 +15,10 @@ from .conftest import edit, new_note
 
 pytestmark = pytest.mark.django_db
 
+# `DELETE notes/` wipes the account and shares the list path, so only that method stays open.
+OPEN_METHODS = {("notes-list", "delete")}
+
 OPEN_ENDPOINTS = {
-    "notes-delete-all",
     "notes-export",
     "notes-tick",
     # taking AI back (withdraw consent, cancel a request, discard a draft) never needs a flag
@@ -44,8 +46,8 @@ def test_a_note_can_embed_its_own_clean_image(api, fake_storage):
     aid = _clean_image(api, fake_storage)
     n = new_note(api, f"Look\n\n![the diagram](attachment:{aid})")
     assert NoteImage.objects.filter(note_id=n["id"], attachment_id=aid).count() == 1
-    assert api.get(f"/notes/notes/{n['id']}/").json_body["image_ids"] == [aid]
-    assert api.get("/notes/notes/").json_body["items"][0].get("image_ids") is None  # lists carry summaries only
+    assert api.get(f"/notes/{n['id']}/").json_body["image_ids"] == [aid]
+    assert api.get("/notes/").json_body["items"][0].get("image_ids") is None  # lists carry summaries only
     edit(api, n, body_md="no image now")
     assert NoteImage.objects.count() == 0
 
@@ -54,15 +56,14 @@ def test_another_students_or_unfinished_images_are_refused(api, other_api, fake_
     theirs = _clean_image(other_api, fake_storage)
     unfinished = upload_image(api, fake_storage, put=False)["id"]
     for aid in (theirs, unfinished, str(uuid.uuid4())):
-        res = api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "body_md": f"![x](attachment:{aid})"})
+        res = api.post("/notes/", {"client_id": str(uuid.uuid4()), "body_md": f"![x](attachment:{aid})"})
         assert res.status_code == 422, aid
         assert res.json_body["error"]["details"]["errors"][0]["code"] == "unknown_attachment"
 
 
 def test_a_note_without_alt_text_is_still_saved_but_a_foreign_url_is_not(api):
     assert (
-        api.post("/notes/notes/", {"client_id": str(uuid.uuid4()), "body_md": "![](https://x.test/a.png)"}).status_code
-        == 422
+        api.post("/notes/", {"client_id": str(uuid.uuid4()), "body_md": "![](https://x.test/a.png)"}).status_code == 422
     )
 
 
@@ -106,6 +107,8 @@ def _requests():
         view_class = pattern.callback.view_class
         assert issubclass(view_class, NotesView), f"{pattern.name} must extend NotesView"
         for method in ("get", "post", "put", "patch", "delete"):
+            if (pattern.name, method) in OPEN_METHODS:
+                continue
             if hasattr(view_class, method):
                 yield method, reverse(pattern.name, kwargs=kwargs), pattern.name
 

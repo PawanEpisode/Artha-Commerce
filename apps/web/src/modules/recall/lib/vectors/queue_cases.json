@@ -1,0 +1,1497 @@
+{
+ "cases": [
+  {
+   "name": "mixed_day",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 2,
+    "reviews_per_day": 100,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "l1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 1,
+     "stability": 0.5,
+     "last_review_at": "2026-03-20T08:45:36Z",
+     "due_at": "2026-03-20T08:58:33.600000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "l2",
+     "subject": "B",
+     "importance": 0,
+     "phase": 3,
+     "stability": 0.8,
+     "last_review_at": "2026-03-20T08:31:12Z",
+     "due_at": "2026-03-20T08:57:07.200000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r2",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r3",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-12T09:00:00Z",
+     "due_at": "2026-03-17T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r4",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 30.0,
+     "last_review_at": "2026-02-17T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r5",
+     "subject": "C",
+     "importance": 1,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r6",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-23T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n3",
+     "subject": "C",
+     "importance": 1,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "l2",
+     "l1",
+     "r2",
+     "r3",
+     "r5",
+     "n2",
+     "r1",
+     "r4",
+     "n3"
+    ],
+    "learning": 2,
+    "reviews": 5,
+    "new": 2,
+    "catchup": {
+     "active": false,
+     "due_count": 5,
+     "oldest_overdue_days": 3.0,
+     "days_to_clear": 1
+    }
+   }
+  },
+  {
+   "name": "reviews_limit_cuts_the_tail",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 10,
+    "reviews_per_day": 3,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "l1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 1,
+     "stability": 0.5,
+     "last_review_at": "2026-03-20T08:45:36Z",
+     "due_at": "2026-03-20T08:58:33.600000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "l2",
+     "subject": "B",
+     "importance": 0,
+     "phase": 3,
+     "stability": 0.8,
+     "last_review_at": "2026-03-20T08:31:12Z",
+     "due_at": "2026-03-20T08:57:07.200000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r2",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r3",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-12T09:00:00Z",
+     "due_at": "2026-03-17T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r4",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 30.0,
+     "last_review_at": "2026-02-17T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r5",
+     "subject": "C",
+     "importance": 1,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r6",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-23T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n3",
+     "subject": "C",
+     "importance": 1,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "l2",
+     "l1",
+     "r2",
+     "r3",
+     "r5",
+     "n2",
+     "n3",
+     "n1"
+    ],
+    "learning": 2,
+    "reviews": 3,
+    "new": 3,
+    "catchup": {
+     "active": false,
+     "due_count": 5,
+     "oldest_overdue_days": 3.0,
+     "days_to_clear": 2
+    }
+   }
+  },
+  {
+   "name": "new_limit_used_up",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 2,
+    "reviews_per_day": 100,
+    "new_done_today": 2,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "l1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 1,
+     "stability": 0.5,
+     "last_review_at": "2026-03-20T08:45:36Z",
+     "due_at": "2026-03-20T08:58:33.600000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "l2",
+     "subject": "B",
+     "importance": 0,
+     "phase": 3,
+     "stability": 0.8,
+     "last_review_at": "2026-03-20T08:31:12Z",
+     "due_at": "2026-03-20T08:57:07.200000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r2",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r3",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-12T09:00:00Z",
+     "due_at": "2026-03-17T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r4",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 30.0,
+     "last_review_at": "2026-02-17T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r5",
+     "subject": "C",
+     "importance": 1,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r6",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-23T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n3",
+     "subject": "C",
+     "importance": 1,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "l2",
+     "l1",
+     "r2",
+     "r3",
+     "r5",
+     "r1",
+     "r4"
+    ],
+    "learning": 2,
+    "reviews": 5,
+    "new": 0,
+    "catchup": {
+     "active": false,
+     "due_count": 5,
+     "oldest_overdue_days": 3.0,
+     "days_to_clear": 1
+    }
+   }
+  },
+  {
+   "name": "subjects_alternate",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 0,
+    "reviews_per_day": 100,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "a0",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-14T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "a1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-13T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "a2",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-12T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "a3",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-11T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "b1",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-17T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "a3",
+     "b1",
+     "a2",
+     "a1",
+     "a0"
+    ],
+    "learning": 0,
+    "reviews": 5,
+    "new": 0,
+    "catchup": {
+     "active": false,
+     "due_count": 5,
+     "oldest_overdue_days": 1.0,
+     "days_to_clear": 1
+    }
+   }
+  },
+  {
+   "name": "backlog_triggers_catchup_and_drops_new",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 5,
+    "reviews_per_day": 10,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "o0",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-28T09:00:00Z",
+     "due_at": "2026-03-15T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o1",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-27T09:00:00Z",
+     "due_at": "2026-03-14T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-26T09:00:00Z",
+     "due_at": "2026-03-13T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o3",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-25T09:00:00Z",
+     "due_at": "2026-03-12T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o4",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-24T09:00:00Z",
+     "due_at": "2026-03-11T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o5",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-23T09:00:00Z",
+     "due_at": "2026-03-10T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o6",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-22T09:00:00Z",
+     "due_at": "2026-03-09T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o7",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-21T09:00:00Z",
+     "due_at": "2026-03-08T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o8",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-20T09:00:00Z",
+     "due_at": "2026-03-07T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o9",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-19T09:00:00Z",
+     "due_at": "2026-03-06T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o10",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-18T09:00:00Z",
+     "due_at": "2026-03-05T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o11",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-17T09:00:00Z",
+     "due_at": "2026-03-04T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o12",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-16T09:00:00Z",
+     "due_at": "2026-03-03T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o13",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-15T09:00:00Z",
+     "due_at": "2026-03-02T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o14",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-14T09:00:00Z",
+     "due_at": "2026-03-01T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o15",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-13T09:00:00Z",
+     "due_at": "2026-02-28T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o16",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-12T09:00:00Z",
+     "due_at": "2026-02-27T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o17",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-11T09:00:00Z",
+     "due_at": "2026-02-26T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o18",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-10T09:00:00Z",
+     "due_at": "2026-02-25T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o19",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-09T09:00:00Z",
+     "due_at": "2026-02-24T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o20",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-08T09:00:00Z",
+     "due_at": "2026-02-23T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o21",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-07T09:00:00Z",
+     "due_at": "2026-02-22T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o22",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-06T09:00:00Z",
+     "due_at": "2026-02-21T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o23",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-05T09:00:00Z",
+     "due_at": "2026-02-20T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o24",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-04T09:00:00Z",
+     "due_at": "2026-02-19T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o25",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-03T09:00:00Z",
+     "due_at": "2026-02-18T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o26",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-02T09:00:00Z",
+     "due_at": "2026-02-17T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o27",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-01T09:00:00Z",
+     "due_at": "2026-02-16T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o28",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-01-31T09:00:00Z",
+     "due_at": "2026-02-15T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o29",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-01-30T09:00:00Z",
+     "due_at": "2026-02-14T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "n1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n3",
+     "subject": "C",
+     "importance": 1,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "o29",
+     "o26",
+     "o23",
+     "o20",
+     "o25",
+     "o28",
+     "o17",
+     "o22",
+     "o27",
+     "o14"
+    ],
+    "learning": 0,
+    "reviews": 10,
+    "new": 0,
+    "catchup": {
+     "active": true,
+     "due_count": 30,
+     "oldest_overdue_days": 34.0,
+     "days_to_clear": 3
+    }
+   }
+  },
+  {
+   "name": "catchup_forced_off",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "off",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 5,
+    "reviews_per_day": 10,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "o0",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-28T09:00:00Z",
+     "due_at": "2026-03-15T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o1",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-27T09:00:00Z",
+     "due_at": "2026-03-14T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-26T09:00:00Z",
+     "due_at": "2026-03-13T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o3",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-25T09:00:00Z",
+     "due_at": "2026-03-12T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o4",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-24T09:00:00Z",
+     "due_at": "2026-03-11T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o5",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-23T09:00:00Z",
+     "due_at": "2026-03-10T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o6",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-22T09:00:00Z",
+     "due_at": "2026-03-09T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o7",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-21T09:00:00Z",
+     "due_at": "2026-03-08T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o8",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-20T09:00:00Z",
+     "due_at": "2026-03-07T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o9",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-19T09:00:00Z",
+     "due_at": "2026-03-06T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "o10",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-18T09:00:00Z",
+     "due_at": "2026-03-05T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o11",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-17T09:00:00Z",
+     "due_at": "2026-03-04T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o12",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-16T09:00:00Z",
+     "due_at": "2026-03-03T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o13",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-15T09:00:00Z",
+     "due_at": "2026-03-02T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o14",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-14T09:00:00Z",
+     "due_at": "2026-03-01T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o15",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-13T09:00:00Z",
+     "due_at": "2026-02-28T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o16",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-12T09:00:00Z",
+     "due_at": "2026-02-27T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o17",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-11T09:00:00Z",
+     "due_at": "2026-02-26T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o18",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-10T09:00:00Z",
+     "due_at": "2026-02-25T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o19",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-09T09:00:00Z",
+     "due_at": "2026-02-24T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o20",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-08T09:00:00Z",
+     "due_at": "2026-02-23T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o21",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-07T09:00:00Z",
+     "due_at": "2026-02-22T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o22",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-06T09:00:00Z",
+     "due_at": "2026-02-21T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o23",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-05T09:00:00Z",
+     "due_at": "2026-02-20T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o24",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-04T09:00:00Z",
+     "due_at": "2026-02-19T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o25",
+     "subject": "A",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-03T09:00:00Z",
+     "due_at": "2026-02-18T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o26",
+     "subject": "B",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-02T09:00:00Z",
+     "due_at": "2026-02-17T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o27",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-02-01T09:00:00Z",
+     "due_at": "2026-02-16T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o28",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-01-31T09:00:00Z",
+     "due_at": "2026-02-15T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "o29",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 6.0,
+     "last_review_at": "2026-01-30T09:00:00Z",
+     "due_at": "2026-02-14T09:00:00Z",
+     "created_at": "2026-02-18T09:03:00Z"
+    },
+    {
+     "id": "n1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n3",
+     "subject": "C",
+     "importance": 1,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "o29",
+     "o26",
+     "o23",
+     "n2",
+     "o20",
+     "o25",
+     "o28",
+     "n3",
+     "o17",
+     "o22",
+     "o27",
+     "n1",
+     "o14"
+    ],
+    "learning": 0,
+    "reviews": 10,
+    "new": 3,
+    "catchup": {
+     "active": false,
+     "due_count": 30,
+     "oldest_overdue_days": 34.0,
+     "days_to_clear": 3
+    }
+   }
+  },
+  {
+   "name": "catchup_forced_on_small_queue",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "on",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 5,
+    "reviews_per_day": 100,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "l1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 1,
+     "stability": 0.5,
+     "last_review_at": "2026-03-20T08:45:36Z",
+     "due_at": "2026-03-20T08:58:33.600000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "l2",
+     "subject": "B",
+     "importance": 0,
+     "phase": 3,
+     "stability": 0.8,
+     "last_review_at": "2026-03-20T08:31:12Z",
+     "due_at": "2026-03-20T08:57:07.200000Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r2",
+     "subject": "A",
+     "importance": 2,
+     "phase": 2,
+     "stability": 10.0,
+     "last_review_at": "2026-03-08T09:00:00Z",
+     "due_at": "2026-03-18T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r3",
+     "subject": "B",
+     "importance": 1,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-12T09:00:00Z",
+     "due_at": "2026-03-17T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r4",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 30.0,
+     "last_review_at": "2026-02-17T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r5",
+     "subject": "C",
+     "importance": 1,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-19T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "r6",
+     "subject": "B",
+     "importance": 0,
+     "phase": 2,
+     "stability": 4.0,
+     "last_review_at": "2026-03-15T09:00:00Z",
+     "due_at": "2026-03-23T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n2",
+     "subject": "B",
+     "importance": 2,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "n3",
+     "subject": "C",
+     "importance": 1,
+     "phase": 0,
+     "stability": null,
+     "last_review_at": null,
+     "due_at": null,
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "l2",
+     "l1",
+     "r2",
+     "r3",
+     "r5",
+     "r1",
+     "r4"
+    ],
+    "learning": 2,
+    "reviews": 5,
+    "new": 0,
+    "catchup": {
+     "active": true,
+     "due_count": 5,
+     "oldest_overdue_days": 3.0,
+     "days_to_clear": 1
+    }
+   }
+  },
+  {
+   "name": "old_but_small_backlog",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": null,
+   "limits": {
+    "new_per_day": 5,
+    "reviews_per_day": 100,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "x1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-02-18T09:00:00Z",
+     "due_at": "2026-03-10T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "x1"
+    ],
+    "learning": 0,
+    "reviews": 1,
+    "new": 0,
+    "catchup": {
+     "active": false,
+     "due_count": 1,
+     "oldest_overdue_days": 10.0,
+     "days_to_clear": 1
+    }
+   }
+  },
+  {
+   "name": "day_end_includes_later_today",
+   "now": "2026-03-20T09:00:00Z",
+   "w20": 0.1542,
+   "mode": "auto",
+   "day_end": "2026-03-20T23:00:00Z",
+   "limits": {
+    "new_per_day": 0,
+    "reviews_per_day": 100,
+    "new_done_today": 0,
+    "reviews_done_today": 0
+   },
+   "cards": [
+    {
+     "id": "t1",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-16T09:00:00Z",
+     "due_at": "2026-03-20T16:12:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    },
+    {
+     "id": "t2",
+     "subject": "A",
+     "importance": 0,
+     "phase": 2,
+     "stability": 5.0,
+     "last_review_at": "2026-03-16T09:00:00Z",
+     "due_at": "2026-03-22T09:00:00Z",
+     "created_at": "2026-02-18T09:02:00Z"
+    }
+   ],
+   "expected": {
+    "ids": [
+     "t1"
+    ],
+    "learning": 0,
+    "reviews": 1,
+    "new": 0,
+    "catchup": {
+     "active": false,
+     "due_count": 1,
+     "oldest_overdue_days": 0.0,
+     "days_to_clear": 1
+    }
+   }
+  }
+ ]
+}

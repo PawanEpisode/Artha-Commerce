@@ -1,0 +1,872 @@
+{
+ "scheduler_version": "fsrs-6.0",
+ "cases": [
+  {
+   "name": "empty",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [],
+   "expected": {
+    "memory": {
+     "phase": 0,
+     "step": null,
+     "stability": null,
+     "difficulty": null,
+     "last_review_at": null,
+     "reps": 0,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": null,
+    "postponed_until": null,
+    "effective_due": null
+   }
+  },
+  {
+   "name": "plain",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r5",
+     "at": "2026-03-06T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 13.853686211890048,
+     "difficulty": 2.0905863426205253,
+     "last_review_at": "2026-03-06T08:00:00Z",
+     "reps": 5,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-22T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-22T08:00:00Z"
+   }
+  },
+  {
+   "name": "shuffled_with_duplicates",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r5",
+     "at": "2026-03-06T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 13.853686211890048,
+     "difficulty": 2.0905863426205253,
+     "last_review_at": "2026-03-06T08:00:00Z",
+     "reps": 5,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-22T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-22T08:00:00Z"
+   }
+  },
+  {
+   "name": "voided_review_is_skipped",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r5",
+     "at": "2026-03-06T08:00:00Z",
+     "rating": 1,
+     "counts": true,
+     "voided": true
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 2.3065,
+     "difficulty": 2.0974554287524394,
+     "last_review_at": "2026-03-03T08:00:00Z",
+     "reps": 4,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-05T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-05T08:00:00Z"
+   }
+  },
+  {
+   "name": "not_counted_review_is_skipped",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r5",
+     "at": "2026-03-06T08:00:00Z",
+     "rating": 1,
+     "counts": false,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 2.3065,
+     "difficulty": 2.0974554287524394,
+     "last_review_at": "2026-03-03T08:00:00Z",
+     "reps": 4,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-05T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-05T08:00:00Z"
+   }
+  },
+  {
+   "name": "forget_in_the_middle",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-02T20:00:00Z",
+     "kind": "forget",
+     "to_due": null,
+     "cap_days": null
+    },
+    {
+     "type": "review",
+     "id": "r6",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 4,
+     "counts": true,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 8.2956,
+     "difficulty": 1.0,
+     "last_review_at": "2026-03-03T08:00:00Z",
+     "reps": 1,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-13T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-13T08:00:00Z"
+   }
+  },
+  {
+   "name": "content_reset_caps_stability",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-08T08:00:00Z",
+     "kind": "content_reset",
+     "to_due": null,
+     "cap_days": 3.0
+    },
+    {
+     "type": "review",
+     "id": "r7",
+     "at": "2026-03-09T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 19.93298403124705,
+     "difficulty": 2.0905863426205253,
+     "last_review_at": "2026-03-09T08:00:00Z",
+     "reps": 5,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-04-01T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-04-01T08:00:00Z"
+   }
+  },
+  {
+   "name": "postpone_then_review_clears",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-04T08:00:00Z",
+     "kind": "postpone",
+     "to_due": "2026-03-22T08:00:00Z",
+     "cap_days": null
+    },
+    {
+     "type": "review",
+     "id": "r8",
+     "at": "2026-03-12T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 24.04345923325304,
+     "difficulty": 2.0905863426205253,
+     "last_review_at": "2026-03-12T08:00:00Z",
+     "reps": 5,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-04-08T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-04-08T08:00:00Z"
+   }
+  },
+  {
+   "name": "postpone_only",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-04T08:00:00Z",
+     "kind": "postpone",
+     "to_due": "2026-03-22T08:00:00Z",
+     "cap_days": null
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 2.3065,
+     "difficulty": 2.0974554287524394,
+     "last_review_at": "2026-03-03T08:00:00Z",
+     "reps": 4,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-05T08:00:00Z",
+    "postponed_until": "2026-03-22T08:00:00Z",
+    "effective_due": "2026-03-22T08:00:00Z"
+   }
+  },
+  {
+   "name": "unpostpone",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r4",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-04T08:00:00Z",
+     "kind": "postpone",
+     "to_due": "2026-03-22T08:00:00Z",
+     "cap_days": null
+    },
+    {
+     "type": "schedule",
+     "id": "s2",
+     "at": "2026-03-05T08:00:00Z",
+     "kind": "unpostpone",
+     "to_due": null,
+     "cap_days": null
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 2.3065,
+     "difficulty": 2.0974554287524394,
+     "last_review_at": "2026-03-03T08:00:00Z",
+     "reps": 4,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-05T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-05T08:00:00Z"
+   }
+  },
+  {
+   "name": "same_instant_reset_before_review",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-03T08:00:00Z",
+     "kind": "content_reset",
+     "to_due": null,
+     "cap_days": 1.0
+    },
+    {
+     "type": "review",
+     "id": "r9",
+     "at": "2026-03-03T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 1.0507203746232234,
+     "difficulty": 2.0974554287524394,
+     "last_review_at": "2026-03-03T08:00:00Z",
+     "reps": 4,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-04T08:00:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-04T08:00:00Z"
+   }
+  },
+  {
+   "name": "audit_only_kind_ignored",
+   "cfg": {
+    "desired_retention": 0.9,
+    "learning_steps": [
+     1,
+     10
+    ],
+    "relearning_steps": [
+     10
+    ],
+    "max_interval_days": 365,
+    "fuzz": true
+   },
+   "card_id": "card-f",
+   "events": [
+    {
+     "type": "review",
+     "id": "r1",
+     "at": "2026-03-02T08:00:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r2",
+     "at": "2026-03-02T08:01:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "review",
+     "id": "r3",
+     "at": "2026-03-02T08:11:00Z",
+     "rating": 3,
+     "counts": true,
+     "voided": false
+    },
+    {
+     "type": "schedule",
+     "id": "s1",
+     "at": "2026-03-03T08:00:00Z",
+     "kind": "rebalance_note",
+     "to_due": null,
+     "cap_days": null
+    }
+   ],
+   "expected": {
+    "memory": {
+     "phase": 2,
+     "step": null,
+     "stability": 2.3065,
+     "difficulty": 2.1043313908464474,
+     "last_review_at": "2026-03-02T08:11:00Z",
+     "reps": 3,
+     "lapses": 0,
+     "last_lapse_at": null
+    },
+    "due_scheduled_at": "2026-03-04T08:11:00Z",
+    "postponed_until": null,
+    "effective_due": "2026-03-04T08:11:00Z"
+   }
+  }
+ ]
+}
