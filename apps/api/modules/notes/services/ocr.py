@@ -416,6 +416,11 @@ def _queued_pages_beyond(content: FileContent, since, lang: str) -> bool:
     return any(p not in valid and p not in protected for p in _queued_pages(content.id))
 
 
+def announce_searchable(content_id) -> None:
+    """Tells every open document of these bytes that its text changed (the AI read uses this too)."""
+    _announce_all(content_id)
+
+
 def _announce_all(content_id) -> None:
     for document in Document.objects.filter(content_id=content_id, deleted_at__isnull=True, status="ready"):
         _announce(document)

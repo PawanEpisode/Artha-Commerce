@@ -13,6 +13,7 @@ import { deleteAll, exportAll } from '../lib/api'
 import { notesKeys } from '../lib/keys'
 import { clearNotesLocalData } from '../lib/local-data'
 import { notify } from '../lib/notify'
+import { AiSettingsContainer } from './AiSettingsContainer'
 import { NotesShell } from './NotesShell'
 import { PdfSettingsContainer } from './PdfSettingsContainer'
 
@@ -86,6 +87,7 @@ function Settings() {
         />
       )}
       {pdfOn ? <PdfSettingsContainer /> : null}
+      <AiSettingsContainer />
       <DeleteNotesDialog
         open={confirming}
         onOpenChange={setConfirming}

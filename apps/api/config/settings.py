@@ -166,6 +166,8 @@ REST_FRAMEWORK = {
         "notes_account": "6/hour",
         "notes_upload": "30/hour",  # R2: reserving PDF uploads
         "notes_export": "6/hour",  # R2: building flattened PDFs and archives
+        "notes_unlock": "20/hour",  # R3: trying a password on a locked PDF (also capped per document in the database)
+        "notes_ai": "20/hour",  # R3: asking for an AI summary or page reading (the money limit is the monthly quota)
         "media_upload": "120/hour",
         "media_read": "300/min",
     },
@@ -241,6 +243,28 @@ if NOTIFICATIONS_ENABLED and not DEBUG and not (FIELD_ENCRYPTION_KEYS and FIELD_
 
 GEMINI_API_KEY = env("GEMINI_API_KEY")
 GEMINI_MODEL = env("GEMINI_MODEL", "gemini-flash-latest")
+GEMINI_TIMEOUT_SECONDS = int(env("GEMINI_TIMEOUT_SECONDS", "90") or 90)
+# F-03 R3 (flag `notes_ai`). Every one of these fails closed: AI costs money and sends a student's text to Google.
+# `paid` only when the key's Google Cloud project has an active billing account (Gemini API "Paid Services": Google does not
+# use the content to improve its products). A consumer Gemini or Google AI Pro subscription does NOT count.
+GEMINI_DATA_TIER = env("GEMINI_DATA_TIER", "unconfirmed").lower()
+# The owner sets this to the consent version they approved (see modules/notes/domain/ai_consent.py); empty keeps AI off.
+NOTES_AI_CONSENT_APPROVED = env("NOTES_AI_CONSENT_APPROVED")
+NOTES_AI_SUMMARY_ENABLED = env("NOTES_AI_SUMMARY_ENABLED", "true").lower() == "true"  # kill switch
+NOTES_AI_OCR_ENABLED = env("NOTES_AI_OCR_ENABLED", "true").lower() == "true"  # kill switch
+NOTES_AI_DAILY_BUDGET_PAISE = int(env("NOTES_AI_DAILY_BUDGET_PAISE", "0") or 0)  # all students, India day; 0 = AI off
+# Unlock for search: Fernet keys (comma separated, newest first; `Fernet.generate_key()`) that seal a password for the hour it
+# is needed. Empty keeps the feature off (503 `unlock_unavailable`).
+NOTES_UNLOCK_FERNET_KEYS = env("NOTES_UNLOCK_FERNET_KEYS")
+# Resumable upload of big PDFs: Supabase Storage's S3 endpoint (Project settings, Storage, S3 connection) and an S3 access key.
+# All three empty keeps every upload a single signed PUT. [VERIFY] with one real upload before switching `notes_ai` on.
+NOTES_S3_ENDPOINT = env("NOTES_S3_ENDPOINT")  # https://<project-ref>.storage.supabase.co/storage/v1/s3
+NOTES_S3_REGION = env("NOTES_S3_REGION")
+NOTES_S3_ACCESS_KEY_ID = env("NOTES_S3_ACCESS_KEY_ID")
+NOTES_S3_SECRET_ACCESS_KEY = env("NOTES_S3_SECRET_ACCESS_KEY")
+# Price table in paise per million tokens (ERD 6.1 list price, assumptions to re-check): used to compute `cost_paise`.
+GEMINI_PRICE_IN_PAISE_PER_M = int(env("GEMINI_PRICE_IN_PAISE_PER_M", "13200") or 13200)
+GEMINI_PRICE_OUT_PAISE_PER_M = int(env("GEMINI_PRICE_OUT_PAISE_PER_M", "79200") or 79200)
 
 # --- Security ---------------------------------------------------------------------------------
 if not DEBUG:

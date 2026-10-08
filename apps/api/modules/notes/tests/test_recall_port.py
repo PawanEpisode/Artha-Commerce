@@ -97,7 +97,14 @@ def test_without_a_provider_the_card_is_503_and_the_capability_is_off(api):
     res = api.post(f"/notes/annotations/{mark['id']}/card/", {"client_id": str(uuid.uuid4())})
     assert res.status_code == 503 and res.json_body["error"]["code"] == "recall_unavailable"
     settings = api.get("/notes/settings/").json_body
-    assert settings["capabilities"] == {"recall": False, "ocr_hindi": True, "ai_ocr": False}
+    assert settings["capabilities"] == {
+        "recall": False,
+        "ocr_hindi": True,
+        "ai_ocr": False,
+        "ai_summary": False,
+        "unlock": False,
+        "resumable_upload": False,
+    }
     assert (
         api.get(f"/notes/documents/{mark['document_id']}/annotations/").json_body["items"][0]["recall_card_id"] is None
     )

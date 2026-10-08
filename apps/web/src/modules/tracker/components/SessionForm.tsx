@@ -12,6 +12,8 @@ interface Props {
   errors: FormErrors
   subjects: Array<{ id: string; name: string }>
   chapters: Array<{ id: string; name: string }>
+  subjectsLoading?: boolean
+  chaptersLoading?: boolean
   /** Edits keep the start and end; there is no duration shortcut. */
   allowDuration: boolean
   /** The server said this overlaps other study time: ask what to do. */
@@ -29,6 +31,8 @@ export function SessionForm({
   errors,
   subjects,
   chapters,
+  subjectsLoading,
+  chaptersLoading,
   allowDuration,
   overlap,
   needsConfirm,
@@ -83,6 +87,8 @@ export function SessionForm({
       <ContextPicker
         subjects={subjects}
         chapters={chapters}
+        subjectsLoading={subjectsLoading}
+        chaptersLoading={chaptersLoading}
         value={{ subject_id: values.subject_id, chapter_id: values.chapter_id, activity_type: values.activity_type }}
         onChange={onChange}
       />

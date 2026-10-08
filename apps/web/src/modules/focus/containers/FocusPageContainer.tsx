@@ -10,9 +10,9 @@ import {
   hasSubjectAndChapter,
   nowMs,
   type PickerValue,
-  useChapterOptions,
+  useChapterOptionsState,
   useGoals,
-  useSubjectOptions,
+  useSubjectOptionsState,
   useToday,
   useTrackerSettings,
 } from '~/modules/tracker'
@@ -49,7 +49,7 @@ const DEFAULT_TIMINGS: Timings = presetTimings('classic')
 function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
   const save = useSaveFocusSettings()
   const trackerSettings = useTrackerSettings().data
-  const subjects = useSubjectOptions()
+  const { options: subjects, loading: subjectsLoading } = useSubjectOptionsState()
   const today = useToday()
   const goals = useGoals().data?.progress
   const rounds = useRoundsOn(today).data ?? 0
@@ -99,7 +99,9 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
     const s = subjects.find((x) => x.id === search.subject || x.key === search.subject)
     if (s) setPick((p) => ({ ...p, subject_id: s.id }))
   }, [search.subject, subjects])
-  const chapterOptions = useChapterOptions(t ? t.subject_id : pick.subject_id)
+  const { options: chapterOptions, loading: chaptersLoading } = useChapterOptionsState(
+    t ? t.subject_id : pick.subject_id,
+  )
   const linkedChapter = useRef(false)
   useEffect(() => {
     if (linkedChapter.current || !search.chapter || chapterOptions.length === 0 || !pick.subject_id) return
@@ -195,6 +197,8 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
         onTimingsChange={(next, preset) => setTimings({ timings: next, preset })}
         subjects={subjects}
         chapters={chapterOptions}
+        subjectsLoading={subjectsLoading}
+        chaptersLoading={chaptersLoading}
         value={shown}
         onValueChange={onPick}
         onStart={primaryStart}

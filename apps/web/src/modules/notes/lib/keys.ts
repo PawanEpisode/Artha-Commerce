@@ -32,4 +32,10 @@ export const notesKeys = {
   documentSearch: (id: string, q: string) => ['notes', 'document', id, 'search', q] as const,
   exportJob: (id: string) => ['notes', 'export', id] as const,
   parked: ['notes', 'parked'] as const,
+  aiConsent: ['notes', 'ai', 'consent'] as const,
+  summary: (id: string) => ['notes', 'ai', 'summary', id] as const,
+  summaries: ['notes', 'ai', 'summary'] as const,
+  attention: (docId: string) => ['notes', 'document', docId, 'attention'] as const,
+  aiOcr: (id: string) => ['notes', 'ai', 'ocr', id] as const,
+  chapterSummary: (chapterId: string) => ['notes', 'ai', 'chapter-summary', chapterId] as const,
 }

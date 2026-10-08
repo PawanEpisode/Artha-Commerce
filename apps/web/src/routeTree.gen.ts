@@ -53,6 +53,8 @@ import { Route as AppNotesSubjectIndexRouteImport } from './routes/app.notes.$su
 import { Route as AppNotesSubjectChapterRouteImport } from './routes/app.notes.$subject.$chapter'
 import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteId'
 import { Route as AppNotesPdfDocIdRouteImport } from './routes/app.notes.pdf.$docId'
+import { Route as AppNotesSummaryJobIdRouteImport } from './routes/app.notes.summary.$jobId'
+import { Route as AppNotesSummaryNewRouteImport } from './routes/app.notes.summary.new'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
@@ -282,6 +284,16 @@ const AppNotesPdfDocIdRoute = AppNotesPdfDocIdRouteImport.update({
   path: '/notes/pdf/$docId',
   getParentRoute: () => AppRoute,
 } as any)
+const AppNotesSummaryJobIdRoute = AppNotesSummaryJobIdRouteImport.update({
+  id: '/notes/summary/$jobId',
+  path: '/notes/summary/$jobId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotesSummaryNewRoute = AppNotesSummaryNewRouteImport.update({
+  id: '/notes/summary/new',
+  path: '/notes/summary/new',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSyllabusSubjectIndexRoute = AppSyllabusSubjectIndexRouteImport.update({
   id: '/syllabus/$subject/',
   path: '/syllabus/$subject/',
@@ -366,6 +378,8 @@ export interface FileRoutesByFullPath {
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
+  '/app/notes/summary/$jobId': typeof AppNotesSummaryJobIdRoute
+  '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
@@ -418,6 +432,8 @@ export interface FileRoutesByTo {
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
+  '/app/notes/summary/$jobId': typeof AppNotesSummaryJobIdRoute
+  '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
@@ -472,6 +488,8 @@ export interface FileRoutesById {
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
+  '/app/notes/summary/$jobId': typeof AppNotesSummaryJobIdRoute
+  '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
@@ -527,6 +545,8 @@ export interface FileRouteTypes {
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
+    | '/app/notes/summary/$jobId'
+    | '/app/notes/summary/new'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
@@ -579,6 +599,8 @@ export interface FileRouteTypes {
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
+    | '/app/notes/summary/$jobId'
+    | '/app/notes/summary/new'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject'
@@ -632,6 +654,8 @@ export interface FileRouteTypes {
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
+    | '/app/notes/summary/$jobId'
+    | '/app/notes/summary/new'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
@@ -975,6 +999,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNotesPdfDocIdRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/notes/summary/$jobId': {
+      id: '/app/notes/summary/$jobId'
+      path: '/notes/summary/$jobId'
+      fullPath: '/app/notes/summary/$jobId'
+      preLoaderRoute: typeof AppNotesSummaryJobIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notes/summary/new': {
+      id: '/app/notes/summary/new'
+      path: '/notes/summary/new'
+      fullPath: '/app/notes/summary/new'
+      preLoaderRoute: typeof AppNotesSummaryNewRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/syllabus/$subject/': {
       id: '/app/syllabus/$subject/'
       path: '/syllabus/$subject'
@@ -1054,6 +1092,8 @@ interface AppRouteChildren {
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
   AppNotesNNoteIdRoute: typeof AppNotesNNoteIdRoute
   AppNotesPdfDocIdRoute: typeof AppNotesPdfDocIdRoute
+  AppNotesSummaryJobIdRoute: typeof AppNotesSummaryJobIdRoute
+  AppNotesSummaryNewRoute: typeof AppNotesSummaryNewRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
@@ -1087,6 +1127,8 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
   AppNotesNNoteIdRoute: AppNotesNNoteIdRoute,
   AppNotesPdfDocIdRoute: AppNotesPdfDocIdRoute,
+  AppNotesSummaryJobIdRoute: AppNotesSummaryJobIdRoute,
+  AppNotesSummaryNewRoute: AppNotesSummaryNewRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,

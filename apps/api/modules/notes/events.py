@@ -20,6 +20,8 @@ from core import events as bus
 NOTES_CHAPTER_COUNTS_CHANGED = "notes_chapter_counts_changed"
 NOTES_DOCUMENT_READY = "notes_document_ready"
 NOTES_EXPORT_READY = "notes_export_ready"
+NOTES_SUMMARY_READY = "notes_summary_ready"
+NOTES_REANCHOR_DONE = "notes_reanchor_done"
 
 # (level_id, subject_key, chapter_key, chapter_id) as returned by `Note.link_key()`
 LinkKey = tuple
@@ -79,4 +81,20 @@ def announce_export_ready(user_id, export_id, *, kind: str, document_id=None, pa
         kind=kind,
         document_id=str(document_id) if document_id else None,
         page_count=page_count,
+    )
+
+
+def announce_summary_ready(user_id, job_id, *, items: int, cost_paise: int) -> None:
+    """`notes_summary_ready` (ERD 3.4): a draft is waiting for review. Ids and counts only, never the text."""
+    bus.emit(NOTES_SUMMARY_READY, user_id=str(user_id), job_id=str(job_id), items=items, cost_paise=cost_paise)
+
+
+def announce_reanchor_done(user_id, document_id, *, attached: int, needs_attention: int) -> None:
+    """`notes_reanchor_done`: the marks of an old edition were carried over. Ids and counts only."""
+    bus.emit(
+        NOTES_REANCHOR_DONE,
+        user_id=str(user_id),
+        document_id=str(document_id),
+        attached=attached,
+        needs_attention=needs_attention,
     )

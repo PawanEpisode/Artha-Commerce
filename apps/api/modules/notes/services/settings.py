@@ -6,6 +6,7 @@ from django.db import transaction
 
 from ..domain.legend import cleaned_legend
 from ..models import Settings
+from . import ai_gate, resumable, unlock
 
 WRITABLE = ("color_legend", "default_color", "page_tone", "finger_draws", "ocr_default", "ocr_lang")
 
@@ -31,4 +32,11 @@ def capabilities() -> dict[str, bool]:
     """What this deployment can do, for the settings screen: recall exists only once F-15 registers a provider."""
     from core.recall_port import get_recall_provider
 
-    return {"recall": get_recall_provider() is not None, "ocr_hindi": True, "ai_ocr": False}
+    return {
+        "recall": get_recall_provider() is not None,
+        "ocr_hindi": True,
+        "ai_ocr": ai_gate.available("ocr"),
+        "ai_summary": ai_gate.available("summary"),
+        "unlock": unlock.available(),
+        "resumable_upload": resumable.available(),
+    }

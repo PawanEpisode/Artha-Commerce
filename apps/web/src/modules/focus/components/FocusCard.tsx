@@ -37,6 +37,8 @@ interface Props {
   onTimingsChange: (timings: Timings, preset: PresetKey) => void
   subjects: Array<{ id: string; name: string }>
   chapters: Array<{ id: string; name: string }>
+  subjectsLoading?: boolean
+  chaptersLoading?: boolean
   value: PickerValue
   onValueChange: (patch: Partial<PickerValue>) => void
   onStart: () => void
@@ -114,6 +116,8 @@ export function FocusCard(p: Props) {
             <ContextPicker
               subjects={p.subjects}
               chapters={p.chapters}
+              subjectsLoading={p.subjectsLoading}
+              chaptersLoading={p.chaptersLoading}
               value={p.value}
               onChange={p.onValueChange}
               disabled={p.busy}
@@ -123,6 +127,8 @@ export function FocusCard(p: Props) {
           <ContextPicker
             subjects={p.subjects}
             chapters={p.chapters}
+            subjectsLoading={p.subjectsLoading}
+            chaptersLoading={p.chaptersLoading}
             value={p.value}
             onChange={p.onValueChange}
             disabled={p.busy || t.status === 'away'}

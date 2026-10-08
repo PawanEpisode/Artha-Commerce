@@ -8,7 +8,7 @@ import { GoalRings } from '../components/GoalRings'
 import { StopwatchCard } from '../components/StopwatchCard'
 import { WeeklySummaryCard } from '../components/WeeklySummaryCard'
 import { useStopwatch } from '../hooks/useStopwatch'
-import { useChapterOptions, useSubjectOptions } from '../hooks/useTagOptions'
+import { useChapterOptionsState, useSubjectOptionsState } from '../hooks/useTagOptions'
 import { useGoals, useSessionsPage, useToday, useTrackerSettings, useWeeklySummary } from '../hooks/useTrackerQueries'
 import { formatDuration } from '../lib/duration'
 import type { ActivityType } from '../lib/types'
@@ -23,14 +23,14 @@ function Today({ tz }: { tz: string }) {
   const sw = timer.stopwatch
   // Keep awake (X-01 W2.6): held while the stopwatch runs; an unanswered "still studying?" counts as away and releases it.
   const awake = useKeepAwake(sw ? { running: sw.status === 'running' && !sw.idle_pending, focus: true } : null)
-  const subjects = useSubjectOptions()
+  const { options: subjects, loading: subjectsLoading } = useSubjectOptionsState()
   const [pick, setPick] = useState<{
     subject_id: string | null
     chapter_id: string | null
     activity_type: ActivityType
   }>({ subject_id: null, chapter_id: null, activity_type: settings?.default_activity_type ?? 'other' })
   const shown = sw ? { subject_id: sw.subject_id, chapter_id: sw.chapter_id, activity_type: sw.activity_type } : pick
-  const chapters = useChapterOptions(shown.subject_id)
+  const { options: chapters, loading: chaptersLoading } = useChapterOptionsState(shown.subject_id)
   const [adding, setAdding] = useState(false)
   const goals = useGoals()
   const weekly = useWeeklySummary()
@@ -80,6 +80,8 @@ function Today({ tz }: { tz: string }) {
         otherLive={timer.state?.live ?? null}
         subjects={subjects}
         chapters={chapters}
+        subjectsLoading={subjectsLoading}
+        chaptersLoading={chaptersLoading}
         value={shown}
         onValueChange={onPick}
         onStart={() => timer.start.mutate(pick)}

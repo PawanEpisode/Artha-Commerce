@@ -58,5 +58,10 @@ export const notify = {
   exportStarted: () => toast.info('Preparing your export'),
   allDeleted: () => toast.success('All your notes were deleted'),
 
+  aiPageRead: (page: number) =>
+    toast.success(`Page ${page} improved`, { description: 'AI read it. Check it against the page.' }),
+
+  aiWithdrawn: () => toast.success('Consent withdrawn', { description: 'Unsaved AI drafts were deleted.' }),
+
   error: (error: unknown, fallback: string) => toastApiError(error, fallback),
 }

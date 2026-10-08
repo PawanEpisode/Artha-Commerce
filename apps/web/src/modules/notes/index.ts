@@ -14,6 +14,8 @@ export { PdfReaderContainer } from './containers/PdfReaderLazy'
 export type { ReaderApi, ReaderExtensions } from './containers/reader-extensions'
 export { SaveToNotes, type SaveToNotesProps } from './containers/SaveToNotes'
 export { SubjectNotesContainer } from './containers/SubjectNotesContainer'
+export { SummaryContainer } from './containers/SummaryContainer'
+export { SummaryStartContainer } from './containers/SummaryStartContainer'
 export { UploadProgressContainer } from './containers/UploadProgressContainer'
 export {
   useDocument,

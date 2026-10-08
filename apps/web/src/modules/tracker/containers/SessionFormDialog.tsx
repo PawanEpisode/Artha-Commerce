@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import { SessionForm } from '../components/SessionForm'
 import { useAddManual, useEditSession } from '../hooks/useSessionActions'
-import { useChapterOptions, useSubjectOptions } from '../hooks/useTagOptions'
+import { useChapterOptionsState, useSubjectOptionsState } from '../hooks/useTagOptions'
 import { errorCode, errorMessage, newClientId } from '../lib/api'
 import { nowMs } from '../lib/clock'
 import { fromLocalInput, toLocalInput } from '../lib/duration'
@@ -61,8 +61,8 @@ export function SessionFormDialog({ open, onOpenChange, tz, session, defaultActi
   const [message, setMessage] = useState<string | null>(null)
   // One idempotency key per opening of the form: pressing Save twice, or a retry after a lost reply, adds one entry.
   const [clientId, setClientId] = useState(newClientId)
-  const subjects = useSubjectOptions()
-  const chapters = useChapterOptions(values.subject_id)
+  const { options: subjects, loading: subjectsLoading } = useSubjectOptionsState()
+  const { options: chapters, loading: chaptersLoading } = useChapterOptionsState(values.subject_id)
   const add = useAddManual()
   const edit = useEditSession()
   const busy = add.isPending || edit.isPending
@@ -145,6 +145,8 @@ export function SessionFormDialog({ open, onOpenChange, tz, session, defaultActi
             errors={errors}
             subjects={subjects}
             chapters={chapters}
+            subjectsLoading={subjectsLoading}
+            chaptersLoading={chaptersLoading}
             allowDuration={!editing}
             overlap={overlap}
             needsConfirm={needsConfirm || isOld}

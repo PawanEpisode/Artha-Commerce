@@ -12,6 +12,8 @@ import { Link, useNavigate } from '@tanstack/react-router'
 
 import { useChapterCoverage } from '~/modules/coverage'
 
+import { SummaryOffer } from '../components/ai/SummaryOffer'
+import { useAiAvailable, useChapterSummary } from '../hooks/useAi'
 import { useChapterNotesOverview, useEnrolledSubjects, useLevelId } from '../hooks/useNotesQueries'
 import { isNotFound } from '../lib/errors'
 import type { NoteFilterSearch } from '../lib/filter-schema'
@@ -24,6 +26,9 @@ function ChapterNotes({ subject, chapter, search }: { subject: string; chapter: 
   const { subjects } = useEnrolledSubjects()
   const overview = useChapterNotesOverview(subject, chapter)
   const topics = useChapterCoverage(overview.data?.chapter.id ?? '')
+  const ai = useAiAvailable()
+  const chapterId = overview.data?.chapter.id
+  const summary = useChapterSummary(chapterId, ai.available)
   const subjectName = overview.data?.chapter.subject_name ?? subjects.find((s) => s.key === subject)?.name ?? subject
 
   if (overview.isPending && levelId !== undefined) return <Skeleton className="h-40 w-full" />
@@ -78,6 +83,7 @@ function ChapterNotes({ subject, chapter, search }: { subject: string; chapter: 
         <h1 className="font-display text-3xl font-extrabold break-words">{name}</h1>
         <NewNoteLink levelId={levelId} subject={subject} chapter={chapter} topic={search.topic} />
       </header>
+      {ai.available && chapterId ? <SummaryOffer chapterId={chapterId} job={summary.data} /> : null}
       <AggregateSection
         levelId={levelId}
         subject={subject}

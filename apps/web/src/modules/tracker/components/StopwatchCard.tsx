@@ -13,6 +13,8 @@ interface Props {
   otherLive: string | null
   subjects: Array<{ id: string; name: string }>
   chapters: Array<{ id: string; name: string }>
+  subjectsLoading?: boolean
+  chaptersLoading?: boolean
   value: PickerValue
   onValueChange: (patch: Partial<PickerValue>) => void
   onStart: () => void
@@ -86,6 +88,8 @@ export function StopwatchCard(props: Props) {
         <ContextPicker
           subjects={props.subjects}
           chapters={props.chapters}
+          subjectsLoading={props.subjectsLoading}
+          chaptersLoading={props.chaptersLoading}
           value={props.value}
           onChange={props.onValueChange}
           disabled={busy}

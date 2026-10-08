@@ -5,6 +5,7 @@ from __future__ import annotations
 from modules.media import services as media
 
 from ..models import (
+    AiJob,
     Annotation,
     Document,
     DocumentChapter,
@@ -15,6 +16,7 @@ from ..models import (
     NoteImage,
     NoteVersion,
     QuotaUsage,
+    ReanchorItem,
     Settings,
     Tag,
 )
@@ -59,10 +61,14 @@ def delete_all_for_user(user_id) -> dict:
         "marks": Annotation.objects.filter(user_id=user_id).count(),
         "page_ranges": DocumentChapter.objects.filter(user_id=user_id).count(),
         "exports": ExportJob.objects.filter(user_id=user_id).count(),
+        "ai_jobs": AiJob.objects.filter(user_id=user_id).count(),
+        "reanchor_items": ReanchorItem.objects.filter(user_id=user_id).count(),
         "files": len({*image_ids, *pdf_ids, *cover_ids, *export_ids}),
     }
     media.queue_delete({*image_ids, *pdf_ids, *cover_ids, *export_ids})
     ItemTag.objects.filter(user_id=user_id).delete()
+    AiJob.objects.filter(user_id=user_id).delete()
+    ReanchorItem.objects.filter(user_id=user_id).delete()
     ExportJob.objects.filter(user_id=user_id).delete()
     DocumentChapter.objects.filter(user_id=user_id).delete()
     Annotation.objects.filter(user_id=user_id).delete()

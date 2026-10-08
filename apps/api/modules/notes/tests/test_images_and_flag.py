@@ -15,7 +15,16 @@ from .conftest import edit, new_note
 
 pytestmark = pytest.mark.django_db
 
-OPEN_ENDPOINTS = {"notes-delete-all", "notes-export", "notes-tick"}
+OPEN_ENDPOINTS = {
+    "notes-delete-all",
+    "notes-export",
+    "notes-tick",
+    # taking AI back (withdraw consent, cancel a request, discard a draft) never needs a flag
+    "notes-ai-consent-withdraw",
+    "notes-ai-summary-cancel",
+    "notes-ai-summary-discard",
+    "notes-ai-ocr-cancel",
+}
 
 
 @pytest.fixture

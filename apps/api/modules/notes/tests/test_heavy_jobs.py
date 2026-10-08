@@ -9,7 +9,7 @@ from modules.notes import jobs as notes_jobs
 pytestmark = pytest.mark.django_db
 
 
-def test_light_and_heavy_types_do_not_overlap_and_cover_the_r2_work():
+def test_light_and_heavy_types_do_not_overlap_and_cover_the_r2_and_r3_work():
     assert not set(notes_jobs.LIGHT_TYPES) & set(notes_jobs.HEAVY_TYPES)
     assert set(notes_jobs.HEAVY_TYPES) == {
         "notes.inspect",
@@ -17,6 +17,10 @@ def test_light_and_heavy_types_do_not_overlap_and_cover_the_r2_work():
         "notes.ocr",
         "notes.export_pdf",
         "notes.export_archive",
+        "notes.summarize",
+        "notes.ocr_ai",  # R3: waits on Google, so it runs in the worker, never in the tick
+        "notes.reanchor",  # R3: opens two PDFs, so it runs in the worker
+        "notes.unlock",  # R3: holds a password for a moment and reads a whole PDF, so the worker
         "media.scan",
     }
     assert notes_jobs.JOB_INSPECT == "notes.inspect"

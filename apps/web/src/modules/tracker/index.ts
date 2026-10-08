@@ -10,7 +10,12 @@ export { TrackerContainer } from './containers/TrackerContainer'
 export { TrackerSettingsContainer } from './containers/TrackerSettingsContainer'
 export { useAutoCapture } from './hooks/useAutoCapture'
 export { type TimerContext, useStopwatch, useStopwatchLive, useTick } from './hooks/useStopwatch'
-export { useChapterOptions, useSubjectOptions } from './hooks/useTagOptions'
+export {
+  useChapterOptions,
+  useChapterOptionsState,
+  useSubjectOptions,
+  useSubjectOptionsState,
+} from './hooks/useTagOptions'
 export { useGoals, useSessionsPage, useToday, useTrackerSettings } from './hooks/useTrackerQueries'
 export { useTrackerSync } from './hooks/useTrackerSync'
 export { isFeatureDisabled as isTrackerOff } from './lib/api'

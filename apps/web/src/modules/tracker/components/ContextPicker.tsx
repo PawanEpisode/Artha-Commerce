@@ -20,10 +20,21 @@ interface Props {
   value: PickerValue
   onChange: (patch: Partial<PickerValue>) => void
   disabled?: boolean
+  /** Options are still being fetched: the open menus show a loader instead of looking empty. */
+  subjectsLoading?: boolean
+  chaptersLoading?: boolean
 }
 
 /** What the time is for: subject, chapter and kind of study. All optional, so the timer never waits on a choice. */
-export function ContextPicker({ subjects, chapters, value, onChange, disabled }: Props) {
+export function ContextPicker({
+  subjects,
+  chapters,
+  value,
+  onChange,
+  disabled,
+  subjectsLoading,
+  chaptersLoading,
+}: Props) {
   const id = useId()
   return (
     <div className="grid gap-3 sm:grid-cols-3">
@@ -32,6 +43,9 @@ export function ContextPicker({ subjects, chapters, value, onChange, disabled }:
         <SelectField
           id={`${id}-subject`}
           disabled={disabled}
+          loading={subjectsLoading}
+          loadingText="Loading subjects…"
+          emptyText="No subjects yet. Choose your course first."
           value={value.subject_id ?? ''}
           onValueChange={(subjectId) => onChange({ subject_id: subjectId || null, chapter_id: null })}
           options={[{ value: '', label: 'No subject' }, ...subjects.map((s) => ({ value: s.id, label: s.name }))]}
@@ -42,6 +56,9 @@ export function ContextPicker({ subjects, chapters, value, onChange, disabled }:
         <SelectField
           id={`${id}-chapter`}
           disabled={disabled || !value.subject_id}
+          loading={chaptersLoading}
+          loadingText="Loading chapters…"
+          emptyText="No chapters for this subject"
           value={value.chapter_id ?? ''}
           onValueChange={(chapterId) => onChange({ chapter_id: chapterId || null })}
           options={[{ value: '', label: 'No chapter' }, ...chapters.map((c) => ({ value: c.id, label: c.name }))]}

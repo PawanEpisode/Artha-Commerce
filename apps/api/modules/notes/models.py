@@ -555,6 +555,19 @@ class Document(LinkColumns, UUIDModel):
     change_seq = models.BigIntegerField(default=0)  # bumped under the row lock on every accepted mark write
     marks_count = models.IntegerField(default=0)  # live marks, same transaction as the write
     reservation_expires_at = models.DateTimeField(null=True, blank=True)
+    # R3 Replace edition: this document is the newer edition of `replaces_document_id` (the old one is left as it was).
+    replaces_document_id = models.UUIDField(null=True, blank=True)
+    reanchor_status = models.CharField(max_length=8, default="none")  # none | waiting | running | done | failed
+    reanchor_stats = models.JSONField(null=True, blank=True)  # {total, attached, moved, needs_attention, ranges_copied}
+    # R3 Unlock for search: the student's password turned the text of a locked PDF into searchable text (never stored).
+    unlock_status = models.CharField(max_length=8, default="none")  # none | waiting | running | done | failed
+    unlock_reason = models.CharField(max_length=16, null=True, blank=True)  # noqa: DJ001 - NULL: no failure
+    unlock_failures = models.SmallIntegerField(
+        default=0
+    )  # wrong passwords since the last success, for the attempt limit
+    unlock_failed_at = models.DateTimeField(null=True, blank=True)
+    # R3 resumable upload: the open multipart upload of a reserved document (cleared when it completes or is aborted).
+    resumable_upload_id = models.CharField(max_length=255, null=True, blank=True)  # noqa: DJ001 - NULL: single PUT
     rev = models.IntegerField(default=1)
     deleted_at = models.DateTimeField(null=True, blank=True)
     purge_after = models.DateTimeField(null=True, blank=True)
@@ -570,6 +583,14 @@ class Document(LinkColumns, UUIDModel):
                 name="notes_document_client_id_unique",
             ),
             models.CheckConstraint(condition=Q(origin__in=["upload", "platform"]), name="notes_document_origin_valid"),
+            models.CheckConstraint(
+                condition=Q(reanchor_status__in=["none", "waiting", "running", "done", "failed"]),
+                name="notes_document_reanchor_valid",
+            ),
+            models.CheckConstraint(
+                condition=Q(unlock_status__in=["none", "waiting", "running", "done", "failed"]),
+                name="notes_document_unlock_valid",
+            ),
             models.CheckConstraint(
                 condition=Q(
                     status__in=[
@@ -859,3 +880,159 @@ class ExportJob(UUIDModel):
                 fields=["expires_at"], condition=Q(expires_at__isnull=False), name="notes_exportjob_expiry_idx"
             ),
         ]
+
+
+class AiJob(UUIDModel):
+    """
+    One paid AI request of a student (ERD 2.9, lifecycle 1.3): an exam summary of a chapter, or an AI read of scanned pages.
+    The quota charge happens in the same transaction that creates the row; `charged` says whether it still stands (a failed
+    or cancelled job refunds it). `result_md` (and `result_json`, the draft's sources) hold the draft only until it is
+    accepted, discarded, withdrawn or expired: the row then keeps numbers and ids, never the student's text.
+    """
+
+    class Kind(models.TextChoices):
+        EXAM_SUMMARY = "exam_summary", "Exam summary"
+        OCR_PAGE_AI = "ocr_page_ai", "AI page reading"
+
+    class Status(models.TextChoices):
+        QUEUED = "queued", "Queued"
+        RUNNING = "running", "Running"
+        READY = "ready", "Ready"
+        ACCEPTED = "accepted", "Accepted"
+        DISCARDED = "discarded", "Discarded"
+        EXPIRED = "expired", "Expired"
+        FAILED = "failed", "Failed"
+        CANCELLED = "cancelled", "Cancelled"
+        BUDGET_BLOCKED = "budget_blocked", "Budget blocked"
+
+    ACTIVE = ("queued", "running")
+
+    user_id = models.UUIDField()
+    client_id = models.UUIDField()
+    kind = models.CharField(max_length=12, choices=Kind.choices)
+    scope = models.JSONField(
+        default=dict
+    )  # ids only: {chapter_id, include, items: [{kind, id}]} or {document_id, pages}
+    scope_schema = models.SmallIntegerField(default=1)
+    input_hash = models.CharField(
+        max_length=64
+    )  # SHA-256 of the canonical inputs, prompt version and model: the cache key
+    status = models.CharField(max_length=14, choices=Status.choices, default=Status.QUEUED)
+    model = models.CharField(max_length=64, null=True, blank=True)  # noqa: DJ001 - NULL until a model ran
+    prompt_version = models.CharField(max_length=32, null=True, blank=True)  # noqa: DJ001 - NULL until a prompt ran
+    input_tokens = models.IntegerField(default=0)
+    output_tokens = models.IntegerField(default=0)
+    cost_paise = models.IntegerField(default=0)
+    item_count = models.IntegerField(default=0)
+    result_md = models.TextField(null=True, blank=True)  # noqa: DJ001 - NULL: no draft stored (cleared after use)
+    result_json = models.JSONField(null=True, blank=True)  # the draft's sources, for the review screen
+    result_note_id = models.UUIDField(null=True, blank=True)
+    charged = models.BooleanField(default=True)
+    error_code = models.CharField(max_length=20, null=True, blank=True)  # noqa: DJ001 - NULL: no error
+    started_at = models.DateTimeField(null=True, blank=True)
+    finished_at = models.DateTimeField(null=True, blank=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "notes_aijob"
+        constraints = [
+            models.UniqueConstraint(fields=["user_id", "client_id"], name="notes_aijob_client_id_unique"),
+            models.UniqueConstraint(fields=["id", "user_id"], name="notes_aijob_id_user_unique"),
+            models.CheckConstraint(
+                condition=Q(kind__in=["exam_summary", "ocr_page_ai"]), name="notes_aijob_kind_valid"
+            ),
+            models.CheckConstraint(
+                condition=Q(
+                    status__in=[
+                        "queued",
+                        "running",
+                        "ready",
+                        "accepted",
+                        "discarded",
+                        "expired",
+                        "failed",
+                        "cancelled",
+                        "budget_blocked",
+                    ]
+                ),
+                name="notes_aijob_status_valid",
+            ),
+            models.CheckConstraint(
+                condition=Q(error_code__isnull=True)
+                | Q(
+                    error_code__in=[
+                        "budget",
+                        "model_error",
+                        "blocked",
+                        "too_little",
+                        "consent_withdrawn",
+                        "unavailable",
+                    ]
+                ),
+                name="notes_aijob_error_valid",
+            ),
+            models.CheckConstraint(
+                condition=Q(input_tokens__gte=0, output_tokens__gte=0, cost_paise__gte=0, item_count__gte=0),
+                name="notes_aijob_nonnegative",
+            ),
+        ]
+        indexes = [
+            models.Index(
+                fields=["user_id", "kind", "input_hash", "-created_at"],
+                condition=Q(status__in=["ready", "accepted"]),
+                name="notes_aijob_cache_idx",
+            ),
+            models.Index(
+                fields=["status", "created_at"],
+                condition=Q(status__in=["queued", "running"]),
+                name="notes_aijob_active_idx",
+            ),
+            models.Index(fields=["user_id", "-created_at"], name="notes_aijob_owner_idx"),
+            models.Index(fields=["expires_at"], condition=Q(status="ready"), name="notes_aijob_expiry_idx"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.kind} {self.pk}"  # never the scope or the draft
+
+
+class ReanchorItem(UUIDModel):
+    """
+    A mark of the old edition that did not follow the student to the new one (Replace edition, FR-F03-10): "Needs attention".
+    It keeps what the student wrote (quote, comment) so nothing is lost, and what they decide: keep the mark where it was, turn
+    it into a note, or dismiss it.
+    """
+
+    class Status(models.TextChoices):
+        OPEN = "open", "Open"
+        KEPT = "kept", "Kept"
+        NOTED = "noted", "Saved as a note"
+        DISMISSED = "dismissed", "Dismissed"
+
+    REASONS = ("not_found", "low_score", "page_changed", "cannot_compare", "no_page", "invalid")
+
+    user_id = models.UUIDField()
+    document = models.ForeignKey(Document, on_delete=models.CASCADE, related_name="reanchor_items")  # the NEW edition
+    source_annotation_id = models.UUIDField()
+    kind = models.CharField(max_length=9)
+    page = models.IntegerField()  # the page in the OLD edition
+    color = models.CharField(max_length=2, null=True, blank=True)  # noqa: DJ001 - NULL: no colour
+    quote_exact = models.TextField(null=True, blank=True)  # noqa: DJ001 - NULL: not a text mark
+    comment = models.TextField(blank=True, default="")
+    geometry = models.JSONField()
+    reason = models.CharField(max_length=14)
+    status = models.CharField(max_length=9, choices=Status.choices, default=Status.OPEN)
+    new_annotation_id = models.UUIDField(null=True, blank=True)
+    result_note_id = models.UUIDField(null=True, blank=True)
+    resolved_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "notes_reanchoritem"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["document", "source_annotation_id"], name="notes_reanchoritem_source_unique"
+            ),
+            models.CheckConstraint(
+                condition=Q(status__in=["open", "kept", "noted", "dismissed"]), name="notes_reanchoritem_status_valid"
+            ),
+        ]
+        indexes = [models.Index(fields=["document", "status", "page"], name="notes_reanchoritem_doc_idx")]

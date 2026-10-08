@@ -16,7 +16,7 @@ export interface NotesSettings {
   finger_draws: boolean
   ocr_default: OcrDefault
   ocr_lang: OcrLang
-  capabilities?: { recall: boolean; ocr_hindi: boolean; ai_ocr: boolean }
+  capabilities?: { recall: boolean; ocr_hindi: boolean; ai_ocr: boolean; ai_summary?: boolean }
 }
 export type NotesSettingsPatch = Partial<Omit<NotesSettings, 'legend_schema' | 'capabilities'>>
 

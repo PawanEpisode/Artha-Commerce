@@ -1,9 +1,11 @@
 from django.urls import path
 
 from . import views
+from . import views_ai as ai
 from . import views_annotations as marks
 from . import views_documents as docs
 from . import views_ocr_export as ocrx
+from . import views_replace as replace
 
 urlpatterns = [
     # Account data and cron: never gated by the `notes` flag.
@@ -69,6 +71,39 @@ urlpatterns = [
     ),
     path("notes/documents/<uuid:document_id>/search/", docs.DocumentSearchView.as_view(), name="notes-document-search"),
     # OCR and export (R2): `notes_pdf`, the archive only `notes`
+    path(
+        "notes/documents/<uuid:document_id>/replace/",
+        replace.DocumentReplaceView.as_view(),
+        name="notes-document-replace",
+    ),
+    path(
+        "notes/documents/<uuid:document_id>/attention/",
+        replace.AttentionView.as_view(),
+        name="notes-document-attention",
+    ),
+    path(
+        "notes/documents/<uuid:document_id>/attention/<uuid:item_id>/",
+        replace.AttentionItemView.as_view(),
+        name="notes-document-attention-item",
+    ),
+    path(
+        "notes/documents/<uuid:document_id>/resumable/",
+        replace.ResumableView.as_view(),
+        name="notes-document-resumable",
+    ),
+    path(
+        "notes/documents/<uuid:document_id>/resumable/parts/",
+        replace.ResumablePartsView.as_view(),
+        name="notes-document-resumable-parts",
+    ),
+    path(
+        "notes/documents/<uuid:document_id>/resumable/complete/",
+        replace.ResumableFinishView.as_view(),
+        name="notes-document-resumable-complete",
+    ),
+    path(
+        "notes/documents/<uuid:document_id>/unlock/", replace.DocumentUnlockView.as_view(), name="notes-document-unlock"
+    ),
     path("notes/documents/<uuid:document_id>/ocr/", ocrx.DocumentOcrView.as_view(), name="notes-document-ocr"),
     path(
         "notes/documents/<uuid:document_id>/exports/", ocrx.DocumentExportView.as_view(), name="notes-document-exports"
@@ -91,4 +126,14 @@ urlpatterns = [
     path(
         "notes/annotations/<uuid:annotation_id>/card/", marks.AnnotationCardView.as_view(), name="notes-annotation-card"
     ),
+    # AI (R3, flag `notes_ai`, fail closed); taking things back needs no flag
+    path("notes/ai/consent/", ai.ConsentView.as_view(), name="notes-ai-consent"),
+    path("notes/ai/consent/withdraw/", ai.ConsentWithdrawView.as_view(), name="notes-ai-consent-withdraw"),
+    path("notes/ai/summary/", ai.SummaryListCreateView.as_view(), name="notes-ai-summary"),
+    path("notes/ai/summary/<uuid:job_id>/", ai.SummaryDetailView.as_view(), name="notes-ai-summary-detail"),
+    path("notes/ai/summary/<uuid:job_id>/accept/", ai.SummaryAcceptView.as_view(), name="notes-ai-summary-accept"),
+    path("notes/ai/summary/<uuid:job_id>/discard/", ai.SummaryDiscardView.as_view(), name="notes-ai-summary-discard"),
+    path("notes/ai/summary/<uuid:job_id>/cancel/", ai.SummaryCancelView.as_view(), name="notes-ai-summary-cancel"),
+    path("notes/ai/ocr/<uuid:job_id>/", ai.AiOcrDetailView.as_view(), name="notes-ai-ocr-detail"),
+    path("notes/ai/ocr/<uuid:job_id>/cancel/", ai.AiOcrCancelView.as_view(), name="notes-ai-ocr-cancel"),
 ]

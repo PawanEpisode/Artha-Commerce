@@ -1,6 +1,6 @@
 # Build tracker
 
-One page for what is pending, what is next and what is parked. Updated 2026-10-07. Statuses marked "verified" were checked against the code on that date; "not verified" means taken from a document or from the owner and not confirmed in the repository.
+One page for what is pending, what is next and what is parked. Updated 2026-10-08. Statuses marked "verified" were checked against the code on that date; "not verified" means taken from a document or from the owner and not confirmed in the repository.
 
 **Review ritual.** Every time you close an item in section 1 or 3 (an X-01 check, an audit fix, a Wave 0-lite item), re-read section 2 (Desktop companion) and say whether anything unblocks it. The companion is parked on purpose, not forgotten.
 
@@ -85,4 +85,35 @@ FSRS-6 pure scheduler in Python and TypeScript with shared golden vectors, seven
 | PostHog flags `notes` and `recall_system` at 0% | Before the first Notes or Recall merge |
 | Closed beta list (the same 50 students as F-01 and F-02) | Before Notes R1 beta |
 | Editors for the first platform decks and the Django admin accounts | Before Recall R1 beta |
-| Counsel review of the copyright posture (Q-F03-3, Q-F15-8) | Before Notes R2 and Recall R2 (not R1) |
+| Counsel review of the copyright posture (Q-F03-3, Q-F15-8) | Deferred by the owner on 2026-10-08, see section 5 |
+
+## 5. Parked: share links and legal (owner decision, 2026-10-08)
+
+Notes R2 (`notes_pdf`) is launched and the flag is raised. Two things are parked on purpose, not forgotten.
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| P1 | F-03 R3 share links (flag `notes_share`, FR-F03-66 and 67) | Parked, not built | Anyone with the link can open a read-only page, no sign-in, to a typed note or a highlight digest (quotes up to 300 characters, page numbers, optional comments). Never the PDF. Expires in 30 days by default (7, 30 or never), revocable at once, `noindex`, "Save a copy" after sign-in, "Report" link and an admin report queue. Documents marked coaching or Institute material cannot be shared. Limit 20 active links. The quota fields and 403 `feature_disabled` stubs already exist. Spec: PRD sections L and "Share (R3) and public page" in `docs/product/prd/F-03-notes-and-pdf-editor.md`. Do the legal review (P2) before building this: sharing is where copyright risk grows |
+| P2 | Counsel sign-off Q-F03-3: storing student PDFs and the Devanagari export fonts (Noto, OFL) | Deferred, open | Not needed to run R2 privately for students. Do it before a broad public launch, before share links, or once there is real traffic. Brief for counsel: (1) students upload files they may not own, and the platform scans, extracts, indexes, OCRs and exports them privately for that student; (2) embedding Noto fonts in exported PDFs under the SIL Open Font License, with the notice shown where required |
+| P3 | Terms of service line: students may upload only material they have the right to use and are responsible for it | Open, small | Do before a broad public launch |
+| P4 | A rights-holder contact or takedown email, and a way for us to remove a file on request | Open, small | Do before a broad public launch |
+| P5 | R2 manual checks that need real hardware: device matrix (touch, Apple Pencil), 50 MB and 1,000-page upload and 1,000-page OCR on the live worker, 50-user write load, search p95 on staging, accessibility | Not run, accepted | Owner will not run them. Automated tests, the e2e script and the capacity baseline stand in. Fix on the first real report |
+
+
+## 6. F-03 R3 (flag `notes_ai`): built 2026-10-08, owner tasks
+
+Built: AI exam summary, AI "Improve this page", Replace edition with re-anchoring, Unlock for search, resumable upload (API, web, tests, `scripts/e2e/notes-r3`). All behind `notes_ai`, which fails closed. Details: `docs/F-03-ROLLOUT.md` (R3), `docs/F-03-API-CONTRACT.md` (R3).
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| R3-1 | Create PostHog flag `notes_ai` at 0% | Open (owner) | |
+| R3-2 | Gemini billing tier: link a Google Cloud billing account to the API key's project, then set `GEMINI_DATA_TIER=paid` | Open (owner) | A Gemini / Google AI Pro subscription does not count as a paid API tier. AI refuses while the value is `unconfirmed` |
+| R3-3 | Approve the consent wording (draft, [VERIFY]) and set `NOTES_AI_CONSENT_APPROVED` to its version | Open (owner) | `apps/api/modules/notes/domain/ai_consent.py`; the text says what is sent to Google (note and highlight text of the chapter, page pictures) |
+| R3-4 | Set `NOTES_AI_DAILY_BUDGET_PAISE`, plan columns `ai_summaries_per_month` and `ai_ocr_pages_per_month` in the admin; re-check the two `GEMINI_PRICE_*` values | Open (owner) | |
+| R3-5 | `NOTES_UNLOCK_FERNET_KEYS` in the API and the worker (same value) | Open (owner) | Unlock answers 503 until set |
+| R3-6 | Deploy the worker with the new job types and secrets | Open (owner) | `docs/F-03-WORKER.md` |
+| R3-7 | Resumable upload: S3 access key, `NOTES_S3_*`, bucket CORS, one throttled test upload | Open (owner), [VERIFY] | Optional: without it every upload is a single PUT. Signing is unit-tested against AWS's published vector; the live Supabase S3 endpoint is not verified |
+| R3-8 | Offline PDF packs (item 6) | Blocked, not built | Needs the offline-store design and a service-worker decision. Stubs unchanged |
+| R3-9 | Recall bridge (item 7) | Blocked, not built | Waits for F-15 to register a provider (`core/recall_port.py`) |
+| R3-10 | Share links | Parked (see P1) | Counsel review first (P2) |
+| R3-11 | Postgres run of `modules/notes core` (concurrency, RLS, quota races) | Not run here | The sandbox ran SQLite; Postgres-only tests skip. Run `pytest modules/notes core` against a Postgres once before the flag goes up |

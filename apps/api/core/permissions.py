@@ -9,16 +9,17 @@ from core.errors import FeatureDisabled
 from core.feature_flags import flag_enabled
 
 
-def flag_required(flag: str, error: type[Exception] = FeatureDisabled) -> type[BasePermission]:
+def flag_required(flag: str, error: type[Exception] = FeatureDisabled, *, strict: bool = False) -> type[BasePermission]:
     """
     A permission class for one PostHog flag. Off for this student means `error` (403 `feature_disabled` by default), so
     a module gates every endpoint the same way and the web shows its own "not available yet" state. Fails open like the
-    web hook (`core.feature_flags`): only an explicit off blocks.
+    web hook (`core.feature_flags`): only an explicit off blocks. `strict=True` fails closed (only an explicit on counts):
+    for features that cost money or send content to a third party.
     """
 
     class FlagEnabled(BasePermission):
         def has_permission(self, request, view):
-            if not flag_enabled(flag, request.user.id):
+            if not flag_enabled(flag, request.user.id, strict=strict):
                 raise error
             return True
 

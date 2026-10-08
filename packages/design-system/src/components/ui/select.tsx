@@ -1,7 +1,7 @@
 import { Select as SelectPrimitive } from 'radix-ui'
 import * as React from 'react'
 
-import { Check, ChevronDown } from '../../icons'
+import { Check, ChevronDown, LoaderCircle } from '../../icons'
 import { cn } from '../../lib/utils'
 
 /**
@@ -93,6 +93,26 @@ interface SelectFieldProps {
   disabled?: boolean
   className?: string
   'aria-label'?: string
+  /** The options are still being fetched: the open menu shows a spinner row instead of looking empty. */
+  loading?: boolean
+  loadingText?: string
+  /** Shown in the open menu when there is nothing to choose besides the "none" entry. */
+  emptyText?: string
+}
+
+/** A row of the open menu that says what is going on (loading, nothing to choose). Not selectable. */
+function SelectStatus({ loading, children }: { loading?: boolean; children: React.ReactNode }) {
+  return (
+    <div
+      data-slot="select-status"
+      role="status"
+      aria-live="polite"
+      className="flex min-h-11 items-center gap-2 px-3 py-2 text-sm text-muted-foreground"
+    >
+      {loading ? <LoaderCircle className="size-4 animate-spin motion-reduce:animate-none" aria-hidden /> : null}
+      {children}
+    </div>
+  )
 }
 
 /**
@@ -108,7 +128,11 @@ export function SelectField({
   disabled,
   className,
   'aria-label': ariaLabel,
+  loading = false,
+  loadingText = 'Loading…',
+  emptyText = 'No options available',
 }: SelectFieldProps) {
+  const choices = options.filter((option) => option.value !== '').length
   const blank = options.find((option) => option.value === '')
   return (
     <Select value={toItem(value)} onValueChange={(next) => onValueChange(fromItem(next))} disabled={disabled}>
@@ -121,6 +145,8 @@ export function SelectField({
             {option.label}
           </SelectItem>
         ))}
+        {loading ? <SelectStatus loading>{loadingText}</SelectStatus> : null}
+        {!loading && choices === 0 ? <SelectStatus>{emptyText}</SelectStatus> : null}
       </SelectContent>
     </Select>
   )

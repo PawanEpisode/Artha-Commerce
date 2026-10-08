@@ -34,6 +34,7 @@ import {
   ttfpBucket,
 } from '../lib/reader-state'
 import { formatStoredZoom } from '../lib/reader-zoom'
+import { AiPageReadContainer } from './AiPageReadContainer'
 import type { ReaderApi, ReaderExtensions } from './reader-extensions'
 
 const A4: PageBox = { w: 595, h: 842 }
@@ -406,6 +407,7 @@ export function ReaderSession({
           }}
         />
       ) : null}
+      {isScanned || ocrStatus !== 'none' ? <AiPageReadContainer docId={doc.id} page={page} /> : null}
       {showLarge ? <LargeDocumentNotice onDismiss={() => setLargeSeen(true)} /> : null}
       {showNight ? (
         <NightToneHint

@@ -13,10 +13,11 @@ from rest_framework.response import Response
 from core.feature_flags import flag_enabled
 from core.permissions import flag_required
 
+from . import serializers_ai as ai_out
 from . import serializers_ocr_export as out
 from .errors import NotesFeatureDisabled
 from .selectors import exports as export_selectors
-from .services import archive, exports, ocr
+from .services import ai_ocr, archive, exports, ocr
 from .views import NOTES_FLAG, PDF_FLAG, NotesView
 
 
@@ -33,10 +34,20 @@ class DocumentOcrView(PdfNotesView):
 
     def post(self, request, document_id):
         d = self.parse(out.OcrBody, request.data).validated_data
+        if d["mode"] == "ai":
+            return self._ai(request, document_id, d)
         result = ocr.request_ocr(
             request.user.id, document_id, mode=d["mode"], lang=d.get("lang"), pages=d.get("pages") or None
         )
         return Response(out.ocr_out(result), status=status.HTTP_202_ACCEPTED)
+
+    def _ai(self, request, document_id, d):
+        """`mode: "ai"` ("Improve this page"): needs `notes_ai` too, which fails closed. 202 with the job, or 200 when nothing was needed."""
+        if not flag_required("notes_ai", NotesFeatureDisabled, strict=True)().has_permission(request, self):
+            raise NotesFeatureDisabled
+        result = ai_ocr.request_ai_ocr(request.user.id, document_id, pages=d.get("pages") or None)
+        code = status.HTTP_202_ACCEPTED if result.job else status.HTTP_200_OK
+        return Response(ai_out.ai_ocr_out(result), status=code)
 
 
 class DocumentExportView(PdfNotesView):

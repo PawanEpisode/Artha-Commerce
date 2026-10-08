@@ -42,7 +42,26 @@ JOB_EXPORT_PDF = "notes.export_pdf"
 JOB_EXPORT_ARCHIVE = "notes.export_archive"
 JOB_EXPIRE_DOCUMENTS = "notes.expire_reservations"  # light: unconfirmed uploads, old trash (see `jobs_pdf`)
 JOB_EXPIRE_EXPORTS = "notes.expire_exports"  # light: export rows and files past their 7 days (see `jobs_ocr_export`)
-HEAVY_TYPES = (JOB_INSPECT, JOB_EXTRACT_TEXT, JOB_OCR, JOB_EXPORT_PDF, JOB_EXPORT_ARCHIVE, media.JOB_SCAN)
+JOB_SUMMARIZE = "notes.summarize"  # R3, heavy: waits on Google (see `jobs_ai`)
+JOB_OCR_AI = "notes.ocr_ai"  # R3, heavy: one Gemini call per page (see `jobs_ai`)
+JOB_EXPIRE_AI = "notes.expire_ai"  # R3, light: drafts past their 14 days (see `jobs_ai`)
+JOB_UNLOCK = (
+    "notes.unlock"  # R3, heavy: opens a locked PDF with the student's password and reads its text (see `jobs_ai`)
+)
+JOB_EXPIRE_UNLOCK = "notes.expire_unlock"  # R3, light: clears password tokens older than an hour (see `jobs_ai`)
+JOB_REANCHOR = "notes.reanchor"  # R3, heavy: opens two PDFs to carry marks to a new edition (see `jobs_ai`)
+HEAVY_TYPES = (
+    JOB_INSPECT,
+    JOB_EXTRACT_TEXT,
+    JOB_OCR,
+    JOB_EXPORT_PDF,
+    JOB_EXPORT_ARCHIVE,
+    JOB_SUMMARIZE,
+    JOB_OCR_AI,
+    JOB_REANCHOR,
+    JOB_UNLOCK,
+    media.JOB_SCAN,
+)
 LIGHT_TYPES = (
     JOB_PURGE,
     JOB_THIN,
@@ -50,6 +69,8 @@ LIGHT_TYPES = (
     JOB_EXPIRE_DOCUMENTS,
     JOB_EXPIRE_UPLOADS,
     JOB_EXPIRE_EXPORTS,
+    JOB_EXPIRE_AI,
+    JOB_EXPIRE_UNLOCK,
     media.JOB_DELETE,
 )
 assert not set(LIGHT_TYPES) & set(HEAVY_TYPES), "a job type is either light (the tick) or heavy (the worker)"
@@ -71,6 +92,9 @@ def register_handlers(jobs_module) -> None:
     from . import jobs_pdf  # inspection, text extraction, document expiry
 
     jobs_pdf.register_handlers(jobs_module)
+    from . import jobs_ai  # R3: AI summary and its draft expiry
+
+    jobs_ai.register_handlers(jobs_module)
 
 
 def purge_job(payload: dict) -> dict:
@@ -164,6 +188,8 @@ def tick() -> dict:
     )  # before media's sweep: it keeps the row as `expired`
     core_jobs.enqueue(JOB_EXPIRE_UPLOADS, {}, dedupe_key=JOB_EXPIRE_UPLOADS)
     core_jobs.enqueue(JOB_EXPIRE_EXPORTS, {}, dedupe_key=JOB_EXPIRE_EXPORTS)
+    core_jobs.enqueue(JOB_EXPIRE_AI, {}, dedupe_key=JOB_EXPIRE_AI)
+    core_jobs.enqueue(JOB_EXPIRE_UNLOCK, {}, dedupe_key=JOB_EXPIRE_UNLOCK)
     for job_type in (JOB_THIN, JOB_RECONCILE):
         core_jobs.enqueue(job_type, {"day": today}, dedupe_key=f"{job_type}:{today}:start", once=True)
     ran = core_jobs.run_pending(types=LIGHT_TYPES, budget_seconds=TICK_BUDGET_SECONDS, worker="notes-tick")

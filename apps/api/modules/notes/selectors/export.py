@@ -5,6 +5,7 @@ from __future__ import annotations
 from core.serialization import row_to_dict
 
 from ..models import (
+    AiJob,
     Annotation,
     Document,
     DocumentChapter,
@@ -14,6 +15,7 @@ from ..models import (
     Note,
     NoteVersion,
     QuotaUsage,
+    ReanchorItem,
     Settings,
     Tag,
 )
@@ -54,6 +56,14 @@ def export_all(user_id) -> dict:
         "exports": [
             row_to_dict(e, exclude=frozenset({"user_id"}))
             for e in ExportJob.objects.filter(user_id=user_id).order_by("created_at", "id")
+        ],
+        "ai_requests": [
+            row_to_dict(j, exclude=frozenset({"user_id"}))
+            for j in AiJob.objects.filter(user_id=user_id).order_by("created_at", "id")
+        ],
+        "replace_edition_items": [
+            row_to_dict(i, exclude=frozenset({"user_id"}))
+            for i in ReanchorItem.objects.filter(user_id=user_id).order_by("document_id", "page", "id")
         ],
         "tags": [row_to_dict(t) for t in Tag.objects.filter(user_id=user_id).order_by("name_norm")],
         "settings": row_to_dict(settings) if settings else None,
