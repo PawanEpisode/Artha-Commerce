@@ -1,7 +1,7 @@
 -r requirements.txt
 -r worker/requirements-worker.txt  # the notes tests import pikepdf, pypdfium2, pypdf and reportlab
 pytest>=8.3
-pytest-django>=4.9
+pytest-django>=4.14.0
 ruff>=0.9
 pytest-env>=1.1
 hypothesis>=6.100
