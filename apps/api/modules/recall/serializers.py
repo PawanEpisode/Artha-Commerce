@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import uuid
+
 from rest_framework import serializers
 
 from .domain.limits import REBALANCE_DEFAULT_DAYS, REBALANCE_MAX_DAYS_AHEAD
@@ -9,9 +11,11 @@ from .models import ITEM_IMPORTANCES, ITEM_KINDS
 from .models import REVIEWLOG_MODES as REVIEW_MODES
 from .selectors import CardView
 from .selectors.cards import SORTS, STATES
+from .selectors.queue import SOURCES as QUEUE_SOURCES
+from .selectors.stats import RANGES as STATS_RANGES
 from .services.cards import BULK_ACTIONS, SELECTION_ORIGINS
 from .services.reviews import ReviewIn
-from .vocab import STATE_NAMES
+from .vocab import IMPORTANCE_INT, STATE_NAMES
 
 KIND = serializers.CharField(max_length=24)  # the registry decides what exists: 422 `unknown_kind`, not 400
 
@@ -264,4 +268,169 @@ def session_dict(row) -> dict:
         "local_date": row.local_date.isoformat(),
         "planned_count": row.planned_count,
         "reviewed": row.reviewed,
+    }
+
+
+# --- read side (W6) --------------------------------------------------------------------------------------------------
+class TodayQuery(serializers.Serializer):
+    tz = serializers.CharField(required=False, max_length=64)
+
+
+class QueueQuery(serializers.Serializer):
+    source = serializers.ChoiceField(choices=QUEUE_SOURCES, default="today")
+    chapter_id = serializers.UUIDField(required=False)
+    deck_id = serializers.UUIDField(required=False)
+    kind = serializers.ChoiceField(choices=ITEM_KINDS, required=False)
+    tier = serializers.ChoiceField(choices=tuple(IMPORTANCE_INT), required=False)
+    limit = serializers.IntegerField(required=False, min_value=1, max_value=50, default=20)
+    exclude = serializers.CharField(required=False, allow_blank=True, max_length=3000)
+    extra = serializers.IntegerField(required=False, min_value=0, max_value=100, default=0)  # "Do 20 more"
+    tz = serializers.CharField(required=False, max_length=64)
+
+    def validate_exclude(self, value):
+        try:
+            return [str(uuid.UUID(v.strip())) for v in value.split(",") if v.strip()][:200]
+        except ValueError as exc:
+            raise serializers.ValidationError("Send card ids separated by commas.") from exc
+
+
+class PackQuery(serializers.Serializer):
+    limit = serializers.IntegerField(required=False, min_value=1, max_value=1000)
+
+
+class StatsQuery(serializers.Serializer):
+    range = serializers.ChoiceField(choices=tuple(STATS_RANGES), required=False, default="30d")
+    days = serializers.IntegerField(required=False, min_value=1, max_value=90, default=30)
+    tz = serializers.CharField(required=False, max_length=64)
+
+
+class ForgottenQuery(serializers.Serializer):
+    subject_key = serializers.CharField(required=False, max_length=80)
+    limit = serializers.IntegerField(required=False, min_value=1, max_value=50, default=20)
+    window_days = serializers.IntegerField(required=False, min_value=1, max_value=90, default=30)
+
+
+SETTINGS_KEYS = (
+    "desired_retention",
+    "new_per_day",
+    "reviews_per_day",
+    "learning_steps_min",
+    "relearning_steps_min",
+    "max_interval_days",
+    "leech_threshold",
+    "day_start_hour",
+    "tz",
+    "bury_siblings",
+    "interleave",
+    "catchup_mode",
+    "pause_new_in_catchup",
+    "exam_horizon",
+    "recall_counts_as_revision",
+    "gestures",
+    "show_intervals",
+    "quick_minutes_per_day",
+    "improve_scheduler_consent",
+)
+
+
+def settings_dict(s, version: str = "fsrs-6.0") -> dict:
+    out = {k: getattr(s, k) for k in SETTINGS_KEYS}
+    out["desired_retention"] = float(s.desired_retention)
+    out["vacation_until"] = s.vacation_until.isoformat() if s.vacation_until else None
+    out["consent_at"] = iso(s.consent_at)
+    out["scheduler_version"] = version
+    return out
+
+
+def _chapter_ref(ref, chapter_id):
+    if ref is not None:
+        return {"id": str(ref.id), "key": ref.key, "name": ref.name}
+    return {"id": str(chapter_id), "key": None, "name": None} if chapter_id else None
+
+
+def queue_card_dict(q) -> dict:
+    c = q.card
+    item = c.item
+    return {
+        "id": str(c.id),
+        "rev": c.rev,
+        "item_id": str(item.id),
+        "item_version_id": str(c.item_version_id),
+        "kind": item.kind,
+        "ordinal": c.ordinal,
+        "front_md": q.front_md,
+        "back_md": q.back_md,
+        "state": c.state,
+        "badges": list(q.badges),
+        "importance": c.importance,
+        "chapter": _chapter_ref(q.chapter, c.chapter_id),
+        "previews": {str(r): p.label for r, p in q.previews.items()},
+        "preview_days": {str(r): round(p.scheduled_days, 6) for r, p in q.previews.items()},
+        "source": (
+            {"origin": item.origin, "module": item.origin_module, "ref_id": item.origin_ref}
+            if item.origin_module
+            else None
+        ),
+    }
+
+
+def memory_dict(c) -> dict:
+    return {
+        "stability": c.stability,
+        "difficulty": c.difficulty,
+        "due_scheduled_at": iso(c.due_scheduled_at),
+        "postponed_until": iso(c.postponed_until),
+        "due_at": iso(c.due_at),
+        "last_review_at": iso(c.last_review_at),
+        "reps": c.reps,
+        "lapses": c.lapses,
+        "step": c.step,
+    }
+
+
+def forgotten_dict(r) -> dict:
+    from .selectors import render_card
+
+    front, back = render_card(r.card.item, r.card.item_version.fields, r.card.ordinal)
+    return {
+        "card_id": str(r.card.id),
+        "kind": r.card.item.kind,
+        "front_md": front,
+        "back_md": back,
+        "subject_key": r.card.subject_key,
+        "chapter_id": str(r.card.chapter_id) if r.card.chapter_id else None,
+        "importance": r.card.importance,
+        "score": r.score,
+        "lapses": r.lapses,
+        "agains": r.agains,
+        "last_again_at": iso(r.last_again_at),
+    }
+
+
+def today_dict(p, now) -> dict:
+    s = p.study
+    return {
+        "server_time": iso(now),
+        "local_date": s.today.isoformat(),
+        "tz": s.tz,
+        "mode": p.mode,
+        "counts": {"new": p.new, "learning": p.learning, "due": p.due},
+        "queue_size": p.queue_size,
+        "deferred": p.deferred,
+        "days_to_clear": p.days_to_clear,
+        "est_minutes": p.est_minutes,
+        "next_due_at": iso(p.next_due_at),
+        "new_available": p.new_available,
+        "limits": {
+            "new_per_day": s.settings.new_per_day,
+            "reviews_per_day": s.settings.reviews_per_day,
+            "new_done": s.new_done,
+            "reviews_done": s.reviews_done,
+        },
+        "catchup": {"active": p.mode == "catchup", "due": p.catchup_due, "oldest_overdue_days": p.oldest_overdue_days},
+        "vacation_until": s.settings.vacation_until.isoformat() if s.settings.vacation_until else None,
+        "streak": p.streak,
+        "tiles": [{"subject_key": t.subject_key, "total": t.total, "kinds": t.kinds} for t in p.tiles],
+        "forgotten": [forgotten_dict(r) for r in p.forgotten],
+        "exam": None,
     }

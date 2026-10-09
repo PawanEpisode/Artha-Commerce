@@ -16,6 +16,7 @@ __all__ = [
     "BatchTooLarge",
     "InvalidFields",
     "InvalidSetting",
+    "NotInThisRelease",
     "NotUndoable",
     "QuotaExceeded",
     "RecallFeatureDisabled",
@@ -80,6 +81,14 @@ class NotUndoable(Conflict):
 
     default_detail = "That review can no longer be undone."
     default_code = "not_undoable"
+
+
+class NotInThisRelease(CodedError):
+    """422: the source exists in the contract but not in R1 (quick revision and cram arrive in R2)."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That is not available in this release."
+    default_code = "not_in_this_release"
 
 
 class BatchTooLarge(CodedError):

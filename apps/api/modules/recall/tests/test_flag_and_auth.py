@@ -25,6 +25,13 @@ URLS = [
     ("post", f"/recall/sessions/{CARD}/close/"),
     ("post", "/recall/catchup/rebalance/"),
     ("put", "/recall/vacation/"),
+    ("get", "/recall/today/"),
+    ("get", "/recall/queue/"),
+    ("get", "/recall/pack/"),
+    ("get", "/recall/forgotten/"),
+    *[("get", f"/recall/stats/{name}/") for name in ("summary", "retention", "forecast", "chapters")],
+    ("get", "/recall/settings/"),
+    ("put", "/recall/settings/"),
 ]
 TICK = "/recall/internal/tick/"  # authenticated by a shared secret, open whatever the flag says (tested in test_reviews_api)
 

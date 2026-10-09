@@ -19,8 +19,9 @@ from core.permissions import ParsedAPIView
 from . import selectors, serializers, services
 from .errors import BatchTooLarge, CardDeleted
 from .permissions import RecallFlagEnabled
-from .selectors import CardFilter
+from .selectors import CardFilter, QueueFilters
 from .services.cards import UNDO_SECONDS, SelectionSource
+from .vocab import IMPORTANCE_INT
 
 RECALL_OPEN_PATHS: tuple[str, ...] = ()
 
@@ -306,3 +307,124 @@ class TickView(ParsedAPIView):
         return Response({"sessions_closed": services.sessions.close_idle()})
 
     get = post = _tick
+
+
+# --- read side (W6): GETs never write ----------------------------------------------------------------------------------
+class TodayView(RecallView):
+    def get(self, request):
+        d = self.parse(serializers.TodayQuery, request.query_params).validated_data
+        now = timezone.now()
+        return Response(serializers.today_dict(selectors.today_plan(request.user.id, now=now, tz=d.get("tz")), now))
+
+
+class QueueView(RecallView):
+    def get(self, request):
+        d = self.parse(serializers.QueueQuery, request.query_params).validated_data
+        now = timezone.now()
+        study = selectors.load_study(request.user.id, now, d.get("tz"))
+        forgotten_ids: list[str] = []
+        if d["source"] == "forgotten":
+            forgotten_ids = [str(r.card.id) for r in selectors.forgotten(request.user.id, now=now, limit=50)]
+        cards = selectors.build_queue(
+            study,
+            d["source"],
+            limit=d["limit"],
+            filters=QueueFilters(
+                chapter_id=d.get("chapter_id"),
+                deck_id=d.get("deck_id"),
+                kind=d.get("kind"),
+                tier=IMPORTANCE_INT[d["tier"]] if d.get("tier") else None,
+            ),
+            exclude=d.get("exclude", []),
+            forgotten_ids=forgotten_ids,
+            extra=d["extra"],
+        )
+        return Response(
+            {
+                "source": d["source"],
+                "server_time": serializers.iso(now),
+                "cards": [serializers.queue_card_dict(c) for c in cards],
+            }
+        )
+
+
+class PackView(RecallView):
+    def get(self, request):
+        d = self.parse(serializers.PackQuery, request.query_params).validated_data
+        now = timezone.now()
+        pack = selectors.pack_for_device(request.user.id, now=now, limit=d.get("limit"))
+        s = pack.study
+        cards = []
+        for q in pack.cards:
+            cards.append({**serializers.queue_card_dict(q), **serializers.memory_dict(q.card)})
+        return Response(
+            {
+                "pack_id": pack.pack_id,
+                "generated_at": serializers.iso(now),
+                "server_time": serializers.iso(now),
+                "expires_at": serializers.iso(pack.expires_at),
+                "settings": serializers.settings_dict(s.settings, s.scheduler_version),
+                "weights": list(s.weights),
+                "scheduler_version": s.scheduler_version,
+                "cards": cards,
+                "counters": {
+                    "new_done_today": s.new_done,
+                    "reviews_done_today": s.reviews_done,
+                    "local_date": s.today.isoformat(),
+                },
+            }
+        )
+
+
+class ForgottenView(RecallView):
+    def get(self, request):
+        d = self.parse(serializers.ForgottenQuery, request.query_params).validated_data
+        rows = selectors.forgotten(
+            request.user.id,
+            now=timezone.now(),
+            window_days=d["window_days"],
+            limit=d["limit"],
+            subject_key=d.get("subject_key"),
+        )
+        return Response({"items": [serializers.forgotten_dict(r) for r in rows]})
+
+
+class StatsView(RecallView):
+    """`stats/<name>/`: a report with an `ETag` (the web keeps it for 60 seconds), 304 when it has not changed."""
+
+    report: str = ""
+
+    def get(self, request):
+        d = self.parse(serializers.StatsQuery, request.query_params).validated_data
+        now, uid, tz = timezone.now(), request.user.id, d.get("tz")
+        if self.report == "summary":
+            rep = selectors.stats_summary(uid, range_=d["range"], now=now, tz=tz)
+        elif self.report == "retention":
+            rep = selectors.stats_retention(uid, range_=d["range"], now=now, tz=tz)
+        elif self.report == "forecast":
+            rep = selectors.stats_forecast(uid, now=now, days=d["days"], tz=tz)
+        else:
+            rep = selectors.stats_chapters(uid, now=now, tz=tz)
+        headers = {"ETag": rep.etag, "Cache-Control": "private, no-cache"}
+        if request.headers.get("If-None-Match") == rep.etag:
+            return Response(status=304, headers=headers)
+        return Response(rep.data, headers=headers)
+
+
+class SettingsView(RecallView):
+    def get_throttles(self):
+        if self.request.method == "PUT":
+            self.throttle_classes, self.throttle_scope = [ScopedRateThrottle], "recall_write"
+        return super().get_throttles()
+
+    def get(self, request):
+        s = selectors.get_settings(request.user.id)
+        return Response(serializers.settings_dict(s, selectors.active_params(s)[2]))
+
+    def put(self, request):
+        data = request.data if isinstance(request.data, dict) else {}
+        unknown = sorted(set(data) - set(serializers.SETTINGS_KEYS))
+        if unknown:
+            raise ValidationError({k: "Unknown setting." for k in unknown})
+        row = services.preferences.update_settings(request.user.id, data)
+        return Response(serializers.settings_dict(row, selectors.active_params(row)[2]))

@@ -31,5 +31,14 @@ urlpatterns += [
     path("recall/sessions/<uuid:session_id>/close/", views.SessionCloseView.as_view(), name="recall-session-close"),
     path("recall/catchup/rebalance/", views.RebalanceView.as_view(), name="recall-rebalance"),
     path("recall/vacation/", views.VacationView.as_view(), name="recall-vacation"),
+    path("recall/today/", views.TodayView.as_view(), name="recall-today"),
+    path("recall/queue/", views.QueueView.as_view(), name="recall-queue"),
+    path("recall/pack/", views.PackView.as_view(), name="recall-pack"),
+    path("recall/forgotten/", views.ForgottenView.as_view(), name="recall-forgotten"),
+    *(
+        path(f"recall/stats/{name}/", views.StatsView.as_view(report=name), name=f"recall-stats-{name}")
+        for name in ("summary", "retention", "forecast", "chapters")
+    ),
+    path("recall/settings/", views.SettingsView.as_view(), name="recall-settings"),
     path("recall/internal/tick/", views.TickView.as_view(), name="recall-tick"),
 ]
