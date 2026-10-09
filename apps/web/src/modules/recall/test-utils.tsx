@@ -1,5 +1,5 @@
 /** Helpers for the recall component tests. Not part of the module's public surface. */
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { onlineManager, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render } from '@testing-library/react'
 import axe from 'axe-core'
 import type { ReactElement } from 'react'
@@ -25,6 +25,8 @@ export async function expectNoA11yViolations(container: Element) {
 }
 
 export function setOnline(value: boolean) {
+  // TanStack Query keeps its own idea of being online between tests, so tell it as well as the browser.
+  onlineManager.setOnline(value)
   Object.defineProperty(window.navigator, 'onLine', { value, configurable: true })
   window.dispatchEvent(new Event(value ? 'online' : 'offline'))
 }

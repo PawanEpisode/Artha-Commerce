@@ -1,4 +1,4 @@
-import { Bell, Clock, ListChecks, type LucideIcon, Notebook, Settings, Timer } from '@artha/design-system'
+import { Bell, Clock, Layers, ListChecks, type LucideIcon, Notebook, Settings, Timer } from '@artha/design-system'
 
 import type { WorkspaceLink } from './workspace-nav'
 
@@ -7,6 +7,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/tracker': Clock,
   '/app/syllabus': ListChecks,
   '/app/notes': Notebook,
+  '/app/recall': Layers,
   '/app/settings/focus': Timer,
   '/app/settings/tracker': Clock,
   '/app/settings/coverage': ListChecks,

@@ -41,7 +41,7 @@ def _card_payload(user_id, card_id) -> dict:
     view = selectors.get_card(user_id, card_id)
     if view is None:
         raise NotFound("Card not found.")
-    return serializers.card_dict(view)
+    return serializers.card_detail_dict(view)
 
 
 def _created_payload(user_id, result) -> dict:
@@ -142,7 +142,7 @@ class CardDetailView(RecallView):
             raise NotFound("Card not found.")
         if view.card.status == "deleted":
             raise CardDeleted
-        return Response(serializers.card_dict(view))
+        return Response(serializers.card_detail_dict(view))
 
     def patch(self, request, card_id):
         d = self.parse(serializers.CardPatchSerializer, request.data).validated_data
@@ -161,6 +161,14 @@ class CardDetailView(RecallView):
     def delete(self, request, card_id):
         _, token = services.cards.set_card_status(request.user.id, card_id, "delete")
         return Response({"deleted": True, "card_id": str(card_id), "undo_token": token, "undo_seconds": UNDO_SECONDS})
+
+
+class CardHistoryView(RecallView):
+    def get(self, request, card_id):
+        if selectors.get_card(request.user.id, card_id) is None:
+            raise NotFound("Card not found.")
+        rows = selectors.card_history(request.user.id, card_id)
+        return Response({"items": [serializers.review_row_dict(r) for r in rows]})
 
 
 class CardActionView(WriteView):

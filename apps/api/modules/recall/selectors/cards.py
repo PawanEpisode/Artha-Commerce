@@ -18,7 +18,7 @@ from django.db.models import Exists, OuterRef, Q, QuerySet
 from ..adapters import syllabus as syllabus_adapter
 from ..domain import cards as domain
 from ..errors import BadCursor
-from ..models import RecallCard, RecallDeckItem, RecallItem
+from ..models import RecallCard, RecallDeckItem, RecallItem, RecallReviewLog
 from ..vocab import IMPORTANCE_INT
 
 MAX_LIMIT = 100
@@ -194,3 +194,16 @@ def cards_for_source(user_id, module: str | None, ref_ids: Sequence[UUID]) -> di
     for ref, card_id in rows:
         out.setdefault(wanted[ref], card_id)
     return out
+
+
+HISTORY_LIMIT = 50
+
+
+def card_history(user_id, card_id, limit: int = HISTORY_LIMIT) -> list[RecallReviewLog]:
+    """The latest reviews of one of her cards, newest first. Undone reviews are left out. Empty for another student's card."""
+    undone = RecallReviewLog.objects.filter(user_id=user_id, kind="undo").values("voids_id")
+    return list(
+        RecallReviewLog.objects.filter(user_id=user_id, card_id=card_id, kind="review")
+        .exclude(id__in=undone)
+        .order_by("-reviewed_at", "-id")[: min(limit, HISTORY_LIMIT)]
+    )

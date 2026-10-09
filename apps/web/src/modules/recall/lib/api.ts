@@ -8,12 +8,17 @@ import { setServerTime } from './clock'
 import {
   type ApiPack,
   batchResponseSchema,
+  bulkResultSchema,
+  cardDetailSchema,
   cardPageSchema,
+  createdCardsSchema,
+  deletedCardSchema,
   forgottenListSchema,
   packSchema,
   queueSchema,
   rebalanceSchema,
   type RecallSettings,
+  reviewHistorySchema,
   sessionCloseSchema,
   sessionSchema,
   settingsSchema,
@@ -118,8 +123,67 @@ export const recallApi = {
     await api<unknown>(`/recall/cards/${cardId}/${action}/`, jsonBody({}))
   },
 
+  /** Suspend, bring back, bury, reset memory, or confirm a rechecked card. Answers the card. */
+  setCardState: async (cardId: string, action: CardStateAction) =>
+    parse(cardDetailSchema, await api<unknown>(`/recall/cards/${cardId}/${action}/`, jsonBody({}))),
+
+  card: async (cardId: string) => parse(cardDetailSchema, await api<unknown>(`/recall/cards/${cardId}/`)),
+
+  cardHistory: async (cardId: string) =>
+    parse(reviewHistorySchema, await api<unknown>(`/recall/cards/${cardId}/reviews/`)),
+
+  /** `client_id` makes a retry safe: the same id never makes a second card. `force` keeps a duplicate on purpose. */
+  createCard: async (body: CreateCardBody) =>
+    parse(createdCardsSchema, await api<unknown>('/recall/cards/', jsonBody(body))),
+
+  /** `base_rev` is the revision she started from; a 409 `edit_conflict` carries the server's fields. */
+  patchCard: async (cardId: string, body: PatchCardBody) =>
+    parse(
+      cardDetailSchema,
+      await api<unknown>(`/recall/cards/${cardId}/`, { method: 'PATCH', body: JSON.stringify(body) }),
+    ),
+
+  deleteCard: async (cardId: string) =>
+    parse(deletedCardSchema, await api<unknown>(`/recall/cards/${cardId}/`, { method: 'DELETE' })),
+
+  undoDelete: async (undoToken: string) =>
+    parse(cardDetailSchema, await api<unknown>('/recall/cards/undo-delete/', jsonBody({ undo_token: undoToken }))),
+
+  bulkCards: async (ids: string[], action: BulkAction, args: BulkArgs = {}) =>
+    parse(bulkResultSchema, await api<unknown>('/recall/cards/bulk/', jsonBody({ ids, action, ...args }))),
+
   cards: async (p: Record<string, string | number | undefined> = {}) =>
     learnClock(parse(cardPageSchema, await api<unknown>(`/recall/cards/${qs(p)}`))),
+}
+
+export type CardStateAction = 'suspend' | 'unsuspend' | 'bury' | 'reset' | 'recheck-ok'
+export type BulkAction = 'move_chapter' | 'set_importance' | 'add_tag' | 'suspend' | 'delete' | 'add_to_deck'
+export interface BulkArgs {
+  chapter_id?: string | null
+  importance?: 'bullet' | 'important' | 'mandatory'
+  tag?: string
+  deck_id?: string
+}
+
+export interface CreateCardBody {
+  client_id: string
+  kind: string
+  fields: Record<string, string>
+  chapter_id?: string | null
+  topic_id?: string | null
+  importance?: 'bullet' | 'important' | 'mandatory'
+  tags?: string[]
+  deck_ids?: string[]
+  force?: boolean
+}
+
+export interface PatchCardBody {
+  base_rev: number
+  fields?: Record<string, string>
+  importance?: 'bullet' | 'important' | 'mandatory'
+  tags?: string[]
+  chapter_id?: string | null
+  topic_id?: string | null
 }
 
 /** One review as sent to the server. No card text ever travels back: only ids, the rating and the timing. */

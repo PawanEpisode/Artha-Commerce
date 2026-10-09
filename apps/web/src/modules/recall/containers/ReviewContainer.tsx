@@ -94,6 +94,7 @@ function Review({ search }: { search: ReviewSearch }) {
         setIntroDone(true)
       }}
       onLeave={leave}
+      onEdit={(cardId) => void navigate({ to: '/app/recall/cards/$cardId', params: { cardId } })}
     />
   )
 }

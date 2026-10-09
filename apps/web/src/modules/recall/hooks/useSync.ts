@@ -37,6 +37,8 @@ export function useSync(enabled = true): SyncState {
     queryFn: () => (userId ? eventStore.pendingCount(userId) : 0),
     enabled: enabled && userId !== null,
     staleTime: 0,
+    // Reads this device's own storage, so it must run offline too (the default would pause it).
+    networkMode: 'always',
   })
   const pending = count.data ?? 0
 

@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { keepPreviousData, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useCallback } from 'react'
 
 import { trackRecall } from '../lib/analytics'
@@ -31,6 +31,10 @@ export function usePack(enabled = true): PackState {
     queryKey: [...recallKeys.pack, userId, online],
     enabled: enabled && userId !== null,
     staleTime: 5 * 60_000,
+    // Reads this device's own storage, so it must run offline too (the default would pause it).
+    networkMode: 'always',
+    // Going offline changes the key: keep showing the pack in hand while the stored copy loads, so a session never blinks.
+    placeholderData: keepPreviousData,
     queryFn: async (): Promise<StoredPack | null> => {
       if (!userId) return null
       const stored = await eventStore.loadPack(userId)

@@ -302,3 +302,48 @@ export const cardPageSchema = z.object({
   next_cursor: z.string().nullable(),
   server_time: iso,
 })
+
+/** Her memory of one card, for the card page. */
+export const cardMemorySchema = z.object({
+  stability: z.number().nullable(),
+  difficulty: z.number().nullable(),
+  due_scheduled_at: isoOrNull,
+  postponed_until: isoOrNull,
+  due_at: isoOrNull,
+  last_review_at: isoOrNull,
+  reps: z.number(),
+  lapses: z.number(),
+  step: z.number().nullable(),
+})
+export type CardMemory = z.infer<typeof cardMemorySchema>
+
+export const cardDetailSchema = cardSchema.extend({ memory: cardMemorySchema.optional() })
+export type RecallCardDetail = z.infer<typeof cardDetailSchema>
+
+export const createdCardsSchema = z.object({
+  item_id: z.string(),
+  kind: z.string(),
+  existing: z.boolean(),
+  cards: z.array(cardDetailSchema),
+})
+
+export const deletedCardSchema = z.object({
+  deleted: z.boolean(),
+  card_id: z.string(),
+  undo_token: z.string(),
+  undo_seconds: z.number(),
+})
+
+export const bulkResultSchema = z.object({ count: z.number() })
+
+export const reviewRowSchema = z.object({
+  id: z.string(),
+  rating: z.number().nullable(),
+  reviewed_at: iso,
+  mode: z.string(),
+  duration_ms: z.number().nullable(),
+  scheduled_days: z.number().nullable(),
+  retrievability_before: z.number().nullable(),
+})
+export type ReviewRow = z.infer<typeof reviewRowSchema>
+export const reviewHistorySchema = z.object({ items: z.array(reviewRowSchema) })

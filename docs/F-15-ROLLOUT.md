@@ -70,10 +70,17 @@ Taken by me, to confirm when you approve this file (each is small and reversible
 | D29 | The review route file is `app.recall.review.index.tsx` so the summary route can nest under it | TanStack file routes |
 | D30 | `axe-core` added as a devDependency of `@artha/web` (already a transitive dependency at 4.13.0); needs `pnpm install` | Axe checks in component tests |
 | D31 | No navigation entry yet: the layout module needs owner approval before it is touched | Module rules |
-| D32 | The `E` key and Edit button stay hidden until the W10 card editor exists | Nothing to open yet |
+| D32 | The `E` key and Edit card button in the review player open the card page (wired in W10; they were hidden in W9) | Card editor exists now |
 | D33 | `useDecks`, `useSubscription`, `useQuickPlan`, `useSuggestions` and `useShare` are not built: they belong to R2 or later | Scope |
 | D34 | `FlipCard` gained `focusOnFlip` (default off) so the keyboard path moves focus to the answer when the card is turned by a key | Review player |
 | D35 | 320 px width is checked in jsdom by class assertions only, not by a real layout | jsdom has no layout |
+| D36 | `GET cards/{id}/` now also returns a `memory` block (stability, difficulty, due, reps, lapses, step), and a new `GET cards/{id}/reviews/` returns her last 50 reviews of the card (undone ones left out) | PRD 9.2 lists no history read; the card page needs both |
+| D37 | The creator and the browser take chapter, topic and deck from the URL only (Notes and the reader hand them over). There is no chapter picker yet | A picker needs a syllabus search the syllabus module does not export |
+| D38 | Cards written offline wait in local storage (50 at most, one `client_id` each), not IndexedDB | A few small cards; the event store is for reviews |
+| D39 | Editing a card needs a connection. Her typed text stays on screen, the Save button waits | The runbook queues offline saves for the creator only |
+| D40 | Bulk actions in the browser: pause, mark as must know, delete (with a confirmation). Move to chapter, add tag and add to deck wait for the pickers (D37) and decks (R2) | Scope |
+| D41 | The live preview uses the shared `card` rich-text profile and the W2 `render` twin; the server stays the authority and may refuse a text the preview accepted | One renderer, no copy |
+| D42 | W9 test review found three faults, now fixed: the offline pack read was paused by TanStack Query's default network mode, an error loading the pack never reached the player, and going offline mid-session briefly dropped the pack | `networkMode: 'always'` on local reads, `packState.error` in the effect deps, `keepPreviousData` |
 
 ## 2. How each wave is worked
 
@@ -176,7 +183,9 @@ Built (W8 and W9): `lib/` (IndexedDB event store with a 5,000-event quota and 48
 Routes (thin): `/app/recall`, `/app/recall/review` (search params `source`, `chapter`, `deck`, `kind`, `tier`, `n`, session `s`), `/app/recall/review/summary/$sessionId`, `/app/recall/stats`, `/app/recall/forgotten`, `/app/settings/recall`; all `noindex`. Containers and presentational components per ERD 9. States: zero cards, all caught up, huge backlog (never a red giant number), vacation, offline, sync conflict, flag off, error, loading skeletons. Review player: keyboard (Space/Enter, 1 to 4, U, E, S, B, ?), swipe (left Again, right Good, always with buttons), bottom thumb controls, visual-viewport layout, first-time intro, honest-rating hint, leech chip, "Review ahead 10 cards". PostHog events from PRD 10.1 with an allow-list of properties (no card text); `useFeatureFlag('recall_system')` with the fail-closed rule.
 Tests: component tests for each state, keyboard path completes a session, axe checks, event allow-list test.
 
-### W10. Cards screens
+### W10. Cards screens (done 2026-10-09)
+
+Built: `/app/recall/cards` (filters in the URL: search, kind, importance, status, chapter, deck, order; cursor pagination; select with a pause, must-know and delete bar; empty, no-match, loading and error states), `/app/recall/cards/new` (seven kind forms from the W2 specs, field counters, live preview of every face, duplicate warning with "Keep both", server field errors, plan limit message, prefill from `kind`, `chapter`, `topic`, `deck`, `from=selection`, `draft`, offline queue with a stable `client_id`), `/app/recall/cards/$cardId` (edit with `base_rev`, quiet three way merge and a per-field conflict dialog, memory in plain words, review history, pause, bring back, skip to tomorrow, reset memory with confirmation, delete with an undo toast). A "Cards" tab joins the recall tabs, and "Revision" joins the study links in the workspace menu behind `recall_system` (approved by the owner 2026-10-09). Tests: form validation for all seven kinds, the three way merge, failure mapping, the offline queue, URL filters, and component tests for the browser, creator and card page (including the conflict dialog and the duplicate flow). The missing W9 review player tests were added: keyboard-only session, offline and sync, 48 h warning, 5,000-event refusal, intro, shortcuts, analytics allow-list.
 
 `/app/recall/cards`, `/app/recall/cards/new` (prefill via `?kind=&chapter=&topic=&deck=&from=selection&draft=`), `/app/recall/cards/$cardId`: browser with filters in the URL and cursor pagination, bulk select, creator with the seven kind forms and live KaTeX preview, duplicate warning, field counters, offline save queued, edit with `base_rev` and the 3-way conflict dialog, card memory stats, review history, suspend, bury, reset, delete with undo toast.
 Tests: form validation per kind, conflict dialog, duplicate flow, URL-driven filters.

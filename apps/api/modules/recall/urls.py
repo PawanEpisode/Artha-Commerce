@@ -8,6 +8,7 @@ urlpatterns = [
     path("recall/cards/undo-delete/", views.CardUndoView.as_view(), name="recall-cards-undo"),
     path("recall/cards/bulk/", views.CardBulkView.as_view(), name="recall-cards-bulk"),
     path("recall/cards/<uuid:card_id>/", views.CardDetailView.as_view(), name="recall-card"),
+    path("recall/cards/<uuid:card_id>/reviews/", views.CardHistoryView.as_view(), name="recall-card-history"),
     *(
         path(
             f"recall/cards/<uuid:card_id>/{slug}/",

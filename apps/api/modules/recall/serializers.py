@@ -388,6 +388,23 @@ def memory_dict(c) -> dict:
     }
 
 
+def review_row_dict(r) -> dict:
+    return {
+        "id": str(r.id),
+        "rating": r.rating,
+        "reviewed_at": iso(r.reviewed_at),
+        "mode": r.mode,
+        "duration_ms": r.duration_ms,
+        "scheduled_days": r.scheduled_days,
+        "retrievability_before": r.retrievability_before,
+    }
+
+
+def card_detail_dict(view: CardView) -> dict:
+    """A card with her memory of it (stability, difficulty, due ...), for the card page."""
+    return card_dict(view) | {"memory": memory_dict(view.card)}
+
+
 def forgotten_dict(r) -> dict:
     from .selectors import render_card
 

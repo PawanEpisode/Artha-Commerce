@@ -2,7 +2,14 @@ import { describe, expect, it } from 'vitest'
 
 import { SETTINGS_LINKS, STUDY_LINKS, visibleLinks } from './workspace-nav'
 
-const off = { focus_timer: false, time_tracker: false, syllabus_coverage: false, notifications_ui: false, notes: false }
+const off = {
+  focus_timer: false,
+  time_tracker: false,
+  syllabus_coverage: false,
+  notifications_ui: false,
+  notes: false,
+  recall_system: false,
+}
 
 describe('visibleLinks', () => {
   it('keeps every study and settings link when the flags are on', () => {
@@ -11,6 +18,7 @@ describe('visibleLinks', () => {
       '/app/tracker',
       '/app/syllabus',
       '/app/notes',
+      '/app/recall',
     ])
     expect(visibleLinks(SETTINGS_LINKS).map((link) => link.to)).toEqual([
       '/app/settings/focus',
@@ -41,5 +49,10 @@ describe('visibleLinks', () => {
       'Notes settings',
       'Account',
     ])
+  })
+
+  it('shows Revision only when the recall_system flag is on', () => {
+    expect(visibleLinks(STUDY_LINKS, off).map((link) => link.label)).toEqual([])
+    expect(visibleLinks(STUDY_LINKS, { ...off, recall_system: true }).map((link) => link.to)).toEqual(['/app/recall'])
   })
 })

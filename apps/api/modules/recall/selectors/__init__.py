@@ -1,6 +1,16 @@
 """Reads of the recall module. Selectors never write, and a student only ever reads her own rows."""
 
-from .cards import CardFilter, CardView, Page, card_for_source, cards_for_source, get_card, list_cards, render_card
+from .cards import (
+    CardFilter,
+    CardView,
+    Page,
+    card_for_source,
+    card_history,
+    cards_for_source,
+    get_card,
+    list_cards,
+    render_card,
+)
 from .forgotten import ForgottenRow, forgotten
 from .pack import Pack, pack_for_device
 from .queue import QueueCard, QueueFilters, build_queue
@@ -36,6 +46,7 @@ __all__ = [
     "active_params",
     "build_queue",
     "card_for_source",
+    "card_history",
     "cards_for_source",
     "due_counts",
     "forgotten",

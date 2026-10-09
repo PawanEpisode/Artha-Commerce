@@ -59,6 +59,9 @@ import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteI
 import { Route as AppNotesPdfDocIdRouteImport } from './routes/app.notes.pdf.$docId'
 import { Route as AppNotesSummaryJobIdRouteImport } from './routes/app.notes.summary.$jobId'
 import { Route as AppNotesSummaryNewRouteImport } from './routes/app.notes.summary.new'
+import { Route as AppRecallCardsIndexRouteImport } from './routes/app.recall.cards.index'
+import { Route as AppRecallCardsCardIdRouteImport } from './routes/app.recall.cards.$cardId'
+import { Route as AppRecallCardsNewRouteImport } from './routes/app.recall.cards.new'
 import { Route as AppRecallReviewIndexRouteImport } from './routes/app.recall.review.index'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
@@ -320,6 +323,21 @@ const AppNotesSummaryNewRoute = AppNotesSummaryNewRouteImport.update({
   path: '/notes/summary/new',
   getParentRoute: () => AppRoute,
 } as any)
+const AppRecallCardsIndexRoute = AppRecallCardsIndexRouteImport.update({
+  id: '/recall/cards/',
+  path: '/recall/cards/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallCardsCardIdRoute = AppRecallCardsCardIdRouteImport.update({
+  id: '/recall/cards/$cardId',
+  path: '/recall/cards/$cardId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallCardsNewRoute = AppRecallCardsNewRouteImport.update({
+  id: '/recall/cards/new',
+  path: '/recall/cards/new',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppRecallReviewIndexRoute = AppRecallReviewIndexRouteImport.update({
   id: '/recall/review/',
   path: '/recall/review/',
@@ -421,9 +439,12 @@ export interface FileRoutesByFullPath {
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
   '/app/notes/summary/$jobId': typeof AppNotesSummaryJobIdRoute
   '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
+  '/app/recall/cards/$cardId': typeof AppRecallCardsCardIdRoute
+  '/app/recall/cards/new': typeof AppRecallCardsNewRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
+  '/app/recall/cards/': typeof AppRecallCardsIndexRoute
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
@@ -481,9 +502,12 @@ export interface FileRoutesByTo {
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
   '/app/notes/summary/$jobId': typeof AppNotesSummaryJobIdRoute
   '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
+  '/app/recall/cards/$cardId': typeof AppRecallCardsCardIdRoute
+  '/app/recall/cards/new': typeof AppRecallCardsNewRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
+  '/app/recall/cards': typeof AppRecallCardsIndexRoute
   '/app/recall/review': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
@@ -543,9 +567,12 @@ export interface FileRoutesById {
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
   '/app/notes/summary/$jobId': typeof AppNotesSummaryJobIdRoute
   '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
+  '/app/recall/cards/$cardId': typeof AppRecallCardsCardIdRoute
+  '/app/recall/cards/new': typeof AppRecallCardsNewRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
+  '/app/recall/cards/': typeof AppRecallCardsIndexRoute
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
@@ -606,9 +633,12 @@ export interface FileRouteTypes {
     | '/app/notes/pdf/$docId'
     | '/app/notes/summary/$jobId'
     | '/app/notes/summary/new'
+    | '/app/recall/cards/$cardId'
+    | '/app/recall/cards/new'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
+    | '/app/recall/cards/'
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
@@ -666,9 +696,12 @@ export interface FileRouteTypes {
     | '/app/notes/pdf/$docId'
     | '/app/notes/summary/$jobId'
     | '/app/notes/summary/new'
+    | '/app/recall/cards/$cardId'
+    | '/app/recall/cards/new'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject'
+    | '/app/recall/cards'
     | '/app/recall/review'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
@@ -727,9 +760,12 @@ export interface FileRouteTypes {
     | '/app/notes/pdf/$docId'
     | '/app/notes/summary/$jobId'
     | '/app/notes/summary/new'
+    | '/app/recall/cards/$cardId'
+    | '/app/recall/cards/new'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
+    | '/app/recall/cards/'
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
@@ -1114,6 +1150,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNotesSummaryNewRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/recall/cards/': {
+      id: '/app/recall/cards/'
+      path: '/recall/cards'
+      fullPath: '/app/recall/cards/'
+      preLoaderRoute: typeof AppRecallCardsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/recall/cards/$cardId': {
+      id: '/app/recall/cards/$cardId'
+      path: '/recall/cards/$cardId'
+      fullPath: '/app/recall/cards/$cardId'
+      preLoaderRoute: typeof AppRecallCardsCardIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/recall/cards/new': {
+      id: '/app/recall/cards/new'
+      path: '/recall/cards/new'
+      fullPath: '/app/recall/cards/new'
+      preLoaderRoute: typeof AppRecallCardsNewRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/recall/review/': {
       id: '/app/recall/review/'
       path: '/recall/review'
@@ -1213,9 +1270,12 @@ interface AppRouteChildren {
   AppNotesPdfDocIdRoute: typeof AppNotesPdfDocIdRoute
   AppNotesSummaryJobIdRoute: typeof AppNotesSummaryJobIdRoute
   AppNotesSummaryNewRoute: typeof AppNotesSummaryNewRoute
+  AppRecallCardsCardIdRoute: typeof AppRecallCardsCardIdRoute
+  AppRecallCardsNewRoute: typeof AppRecallCardsNewRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
+  AppRecallCardsIndexRoute: typeof AppRecallCardsIndexRoute
   AppRecallReviewIndexRoute: typeof AppRecallReviewIndexRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
   AppRecallReviewSummarySessionIdRoute: typeof AppRecallReviewSummarySessionIdRoute
@@ -1254,9 +1314,12 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesPdfDocIdRoute: AppNotesPdfDocIdRoute,
   AppNotesSummaryJobIdRoute: AppNotesSummaryJobIdRoute,
   AppNotesSummaryNewRoute: AppNotesSummaryNewRoute,
+  AppRecallCardsCardIdRoute: AppRecallCardsCardIdRoute,
+  AppRecallCardsNewRoute: AppRecallCardsNewRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,
+  AppRecallCardsIndexRoute: AppRecallCardsIndexRoute,
   AppRecallReviewIndexRoute: AppRecallReviewIndexRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
   AppRecallReviewSummarySessionIdRoute: AppRecallReviewSummarySessionIdRoute,

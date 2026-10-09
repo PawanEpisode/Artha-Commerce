@@ -17,6 +17,7 @@ URLS = [
     ("get", f"/recall/cards/{CARD}/"),
     ("patch", f"/recall/cards/{CARD}/"),
     ("delete", f"/recall/cards/{CARD}/"),
+    ("get", f"/recall/cards/{CARD}/reviews/"),
     *[("post", f"/recall/cards/{CARD}/{slug}/") for slug in ("suspend", "unsuspend", "bury", "reset", "recheck-ok")],
     ("post", "/recall/reviews/"),
     ("post", "/recall/reviews/batch/"),

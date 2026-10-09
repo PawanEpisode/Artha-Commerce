@@ -13,7 +13,7 @@ from django.utils import timezone
 from modules.recall.models import RecallCard, RecallQuotaPlan, RecallSettings
 from modules.recall.services import reviews
 
-from .w5 import ME, ev
+from .w5 import ME, card, ev
 from .w6 import done_today, library
 
 pytestmark = pytest.mark.django_db
@@ -400,3 +400,20 @@ def test_the_number_of_queries_does_not_grow_with_the_library(api, path):
 
     small, large = count(40), count(5000)
     assert small == large and large <= 20, (path, small, large)
+
+
+def test_card_page_has_memory_and_review_history(api, other_api):
+    c = card()
+    api.post(
+        "/recall/reviews/",
+        {"id": str(uuid.uuid4()), "card_id": str(c.id), "rating": 3, "reviewed_at": timezone.now().isoformat()},
+    )
+    detail = api.get(f"/recall/cards/{c.id}/").json_body
+    assert {"stability", "difficulty", "due_at", "reps", "lapses", "step"} <= set(detail["memory"])
+    assert detail["memory"]["reps"] == 1
+    hist = api.get(f"/recall/cards/{c.id}/reviews/")
+    assert hist.status_code == 200 and [r["rating"] for r in hist.json_body["items"]] == [3]
+    assert set(hist.json_body["items"][0]) == {
+        "id", "rating", "reviewed_at", "mode", "duration_ms", "scheduled_days", "retrievability_before",
+    }  # fmt: skip
+    assert other_api.get(f"/recall/cards/{c.id}/reviews/").status_code == 404

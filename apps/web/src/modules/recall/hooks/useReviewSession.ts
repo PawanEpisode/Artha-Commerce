@@ -193,7 +193,7 @@ export function useReviewSession(params: ReviewParams, enabled = true): ReviewSe
       }
     })()
     // The session is built once per round; later pack refreshes must not reshuffle a session in progress.
-  }, [enabled, userId, pack, round]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [enabled, userId, pack, packState.error, round]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const card = state ? currentCard(state) : null
   useEffect(() => {

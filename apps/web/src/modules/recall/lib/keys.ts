@@ -9,6 +9,8 @@ export const recallKeys = {
   forgotten: (params: object = {}) => ['recall', 'forgotten', params] as const,
   stats: (report: string, params: object = {}) => ['recall', 'stats', report, params] as const,
   cards: (params: object = {}) => ['recall', 'cards', params] as const,
+  card: (id: string) => ['recall', 'card', id] as const,
+  cardHistory: (id: string) => ['recall', 'card', id, 'history'] as const,
   offline: ['recall', 'offline'] as const,
   summary: (sessionId: string) => ['recall', 'summary', sessionId] as const,
 }

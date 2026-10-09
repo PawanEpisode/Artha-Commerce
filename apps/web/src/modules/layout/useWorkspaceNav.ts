@@ -10,6 +10,8 @@ export function useWorkspaceNav() {
     syllabus_coverage: useFeatureFlag('syllabus_coverage'),
     notifications_ui: useFeatureFlag('notifications_ui'),
     notes: useFeatureFlag('notes'),
+    // Fails closed: the link shows only once the flag is known to be on.
+    recall_system: useFeatureFlag('recall_system', { strict: true }),
   }
   return {
     study: visibleLinks(STUDY_LINKS, enabled),

@@ -39,6 +39,7 @@ export function useSessionSummary(sessionId: string, synced: boolean) {
     queryKey: [...recallKeys.summary(sessionId), 'local'],
     queryFn: async () => (await eventStore.getSession(sessionId))?.summary ?? null,
     enabled: userId !== null,
+    networkMode: 'always', // local storage: works offline
   })
   const remote = useQuery({
     queryKey: recallKeys.summary(sessionId),

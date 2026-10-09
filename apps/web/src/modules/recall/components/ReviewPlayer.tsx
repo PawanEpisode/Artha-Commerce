@@ -31,7 +31,7 @@ export interface ReviewPlayerProps {
   introDone: boolean
   onIntroDone: () => void
   onLeave: () => void
-  /** Open the card editor. Left out until the cards screens exist; then the E key and the menu item are hidden. */
+  /** Open the card editor. When left out, the E key and the Edit card button are hidden. */
   onEdit?: (cardId: string) => void
 }
 

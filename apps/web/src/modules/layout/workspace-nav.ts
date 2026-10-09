@@ -1,5 +1,6 @@
 /** Signed-in destinations. A flag hides the link until that feature is on for this student. */
-export type WorkspaceFlag = 'focus_timer' | 'time_tracker' | 'syllabus_coverage' | 'notifications_ui' | 'notes'
+export type WorkspaceFlag =
+  'focus_timer' | 'time_tracker' | 'syllabus_coverage' | 'notifications_ui' | 'notes' | 'recall_system'
 
 export interface WorkspaceLink {
   to:
@@ -7,6 +8,7 @@ export interface WorkspaceLink {
     | '/app/tracker'
     | '/app/syllabus'
     | '/app/notes'
+    | '/app/recall'
     | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/settings/coverage'
@@ -43,6 +45,12 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     description: 'Write notes and find them by chapter.',
     flag: 'notes',
   },
+  {
+    to: '/app/recall',
+    label: 'Revision',
+    description: 'Flashcards that come back just before you forget.',
+    flag: 'recall_system',
+  },
 ]
 
 export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
@@ -60,6 +68,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   syllabus_coverage: true,
   notifications_ui: true,
   notes: true,
+  recall_system: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

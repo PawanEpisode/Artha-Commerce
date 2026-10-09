@@ -33,3 +33,12 @@ export function tokenize(text: string): Paragraph[] {
     .filter((p) => p.length > 0)
     .map((p) => p.split('\n').map(tokenizeLine))
 }
+
+/** The text of a Markdown-lite string with its marks removed, on one line. For lists and labels. */
+export function plain(markdown: string): string {
+  return tokenize(markdown)
+    .map((p) => p.map((l) => l.map((i) => i.text).join('')).join(' '))
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
