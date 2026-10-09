@@ -59,7 +59,7 @@ export function AvatarPicker({
             disabled={busy}
             onClick={() => onPreset(key)}
             className={cn(
-              'grid size-14 place-items-center justify-self-center rounded-full outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:opacity-50',
+              'grid size-14 cursor-pointer place-items-center justify-self-center rounded-full outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50',
               selected && 'ring-2 ring-primary ring-offset-2 ring-offset-card',
             )}
           >

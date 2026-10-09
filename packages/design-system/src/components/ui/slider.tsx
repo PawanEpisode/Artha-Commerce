@@ -17,7 +17,7 @@ export function Slider({ value, onValueChange, label, className, ...props }: Sli
       data-slot="slider"
       value={[value]}
       onValueChange={([v]) => onValueChange(v ?? value)}
-      className={cn('relative flex h-11 w-full touch-none items-center select-none', className)}
+      className={cn('relative flex h-11 w-full cursor-pointer touch-none items-center select-none', className)}
       {...props}
     >
       <SliderPrimitive.Track className="relative h-2 grow overflow-hidden rounded-full bg-secondary">
@@ -25,7 +25,7 @@ export function Slider({ value, onValueChange, label, className, ...props }: Sli
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
         aria-label={label}
-        className="block size-6 rounded-full border-2 border-primary bg-card shadow outline-none before:absolute before:-inset-3 before:content-[''] focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:opacity-50"
+        className="block size-6 cursor-pointer rounded-full border-2 border-primary bg-card shadow outline-none before:absolute before:-inset-3 before:content-[''] focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50"
       />
     </SliderPrimitive.Root>
   )

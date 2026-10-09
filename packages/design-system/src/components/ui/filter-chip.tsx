@@ -27,7 +27,7 @@ export function FilterChip({ children, removeLabel, onRemove, className, ...prop
         type="button"
         aria-label={removeLabel}
         onClick={onRemove}
-        className="grid size-11 shrink-0 place-items-center rounded-full text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
+        className="grid size-11 shrink-0 cursor-pointer place-items-center rounded-full text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
       >
         <X aria-hidden className="size-3.5" />
       </button>

@@ -140,7 +140,7 @@ export function SwatchPicker({
           data-slot="swatch"
           data-swatch={option.key}
           className={cn(
-            'group/swatch relative inline-flex min-h-11 max-w-full min-w-11 items-center justify-center gap-2 rounded-xl text-left text-sm font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-not-allowed disabled:opacity-50',
+            'group/swatch relative inline-flex min-h-11 max-w-full min-w-11 cursor-pointer items-center justify-center gap-2 rounded-xl text-left text-sm font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-not-allowed disabled:opacity-50',
             showNames && 'justify-start border border-input bg-card py-1 ps-2 pe-3 hover:bg-muted',
             showNames && 'data-[state=checked]:border-foreground data-[state=checked]:bg-secondary',
           )}

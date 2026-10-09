@@ -43,7 +43,7 @@ export function PresetChips<T extends string>({
             disabled={disabled}
             onClick={() => onValueChange(o.value)}
             className={cn(
-              'flex min-h-16 flex-col items-start gap-0.5 rounded-xl border-2 border-input bg-card p-3 text-left transition-colors outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50',
+              'flex min-h-16 cursor-pointer flex-col items-start gap-0.5 rounded-xl border-2 border-input bg-card p-3 text-left transition-colors outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50',
               pressed && 'border-primary bg-secondary',
             )}
           >

@@ -121,7 +121,7 @@ export function RatingButtons({
             onKeyDown={(e) => onKeyDown(e, i)}
             onClick={() => onRate(r.rating)}
             className={cn(
-              'flex min-h-14 min-w-11 flex-col items-center justify-center gap-0.5 rounded-xl border px-1 py-2 text-sm font-semibold transition-shadow outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 enabled:active:scale-[0.98] disabled:opacity-50 motion-reduce:transition-none motion-reduce:active:scale-100',
+              'flex min-h-14 min-w-11 cursor-pointer flex-col items-center justify-center gap-0.5 rounded-xl border px-1 py-2 text-sm font-semibold transition-shadow outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 enabled:active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none motion-reduce:active:scale-100',
               r.tone,
             )}
           >

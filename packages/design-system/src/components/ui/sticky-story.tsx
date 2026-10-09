@@ -162,7 +162,7 @@ function StickyTrack({
                     onClick={() => goTo(i)}
                     onKeyDown={onRailKey}
                     className={cn(
-                      'flex min-h-11 w-full items-center rounded-xl px-3 text-left text-sm font-semibold transition-colors outline-none motion-reduce:transition-none',
+                      'flex min-h-11 w-full cursor-pointer items-center rounded-xl px-3 text-left text-sm font-semibold transition-colors outline-none motion-reduce:transition-none',
                       'focus-visible:ring-[3px] focus-visible:ring-ring/40',
                       current
                         ? 'bg-primary text-primary-foreground shadow-soft'

@@ -24,7 +24,7 @@ export function DialogContent({ className, children, ...props }: React.Component
         {children}
         <DialogPrimitive.Close
           aria-label="Close"
-          className="absolute top-3 right-3 grid size-11 place-items-center rounded-lg text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
+          className="absolute top-3 right-3 grid size-11 cursor-pointer place-items-center rounded-lg text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
         >
           <X className="size-4" aria-hidden />
         </DialogPrimitive.Close>

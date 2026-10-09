@@ -61,7 +61,7 @@ export function SegmentedControl<T extends string>({
           key={o.value}
           value={o.value}
           className={cn(
-            'inline-flex h-9 min-w-11 items-center justify-center rounded-lg px-3 text-sm font-semibold text-muted-foreground transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 data-[state=checked]:bg-card data-[state=checked]:text-foreground data-[state=checked]:shadow-soft',
+            'inline-flex h-9 min-w-11 cursor-pointer items-center justify-center rounded-lg px-3 text-sm font-semibold text-muted-foreground transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 data-[state=checked]:bg-card data-[state=checked]:text-foreground data-[state=checked]:shadow-soft',
             size === 'lg' && 'h-11 min-w-11',
             stretch && 'h-11 min-w-0 flex-1 basis-0 px-1',
             o.icon ? 'gap-2 [&_svg]:size-4 [&_svg]:shrink-0' : null,

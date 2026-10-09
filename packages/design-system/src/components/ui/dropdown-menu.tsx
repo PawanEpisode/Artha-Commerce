@@ -31,7 +31,7 @@ export function DropdownMenuContent({
 }
 
 const itemBase =
-  'relative flex min-h-11 cursor-default items-center gap-3 rounded-lg px-3 py-2 text-sm outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[highlighted]:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 sm:min-h-10 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*="size-"])]:size-4'
+  'relative flex min-h-11 cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[highlighted]:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 sm:min-h-10 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*="size-"])]:size-4'
 
 export function DropdownMenuItem({ className, ...props }: React.ComponentProps<typeof DropdownMenuPrimitive.Item>) {
   return <DropdownMenuPrimitive.Item data-slot="dropdown-menu-item" className={cn(itemBase, className)} {...props} />

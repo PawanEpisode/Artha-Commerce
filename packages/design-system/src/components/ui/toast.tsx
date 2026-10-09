@@ -151,7 +151,7 @@ function ToastItem({ record }: { record: ToastRecord }) {
               record.action?.onClick()
               toast.dismiss(id)
             }}
-            className="mt-2 inline-flex min-h-11 items-center rounded-lg border border-current px-3.5 text-sm font-semibold outline-none hover:bg-foreground/10 focus-visible:ring-[3px] focus-visible:ring-ring/60"
+            className="mt-2 inline-flex min-h-11 cursor-pointer items-center rounded-lg border border-current px-3.5 text-sm font-semibold outline-none hover:bg-foreground/10 focus-visible:ring-[3px] focus-visible:ring-ring/60"
           >
             {record.action.label}
           </button>
@@ -161,7 +161,7 @@ function ToastItem({ record }: { record: ToastRecord }) {
         type="button"
         aria-label="Dismiss notification"
         onClick={() => toast.dismiss(id)}
-        className="-my-0.5 grid size-11 shrink-0 place-items-center rounded-lg outline-none hover:bg-foreground/10 focus-visible:ring-[3px] focus-visible:ring-ring/60"
+        className="-my-0.5 grid size-11 shrink-0 cursor-pointer place-items-center rounded-lg outline-none hover:bg-foreground/10 focus-visible:ring-[3px] focus-visible:ring-ring/60"
       >
         <X className="size-4" aria-hidden />
       </button>

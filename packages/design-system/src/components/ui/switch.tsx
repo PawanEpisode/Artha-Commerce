@@ -8,7 +8,7 @@ export function Switch({ className, ...props }: React.ComponentProps<typeof Swit
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        'relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border-2 border-input bg-card transition-colors outline-none before:absolute before:-inset-2 before:content-[""] focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary data-[state=checked]:bg-primary',
+        'relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full border-2 border-input bg-card transition-colors outline-none before:absolute before:-inset-2 before:content-[""] focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-primary data-[state=checked]:bg-primary',
         className,
       )}
       {...props}

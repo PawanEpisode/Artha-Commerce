@@ -20,7 +20,7 @@ export function SelectTrigger({ className, children, ...props }: React.Component
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       className={cn(
-        'flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-input bg-card px-3.5 text-left text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&>span]:line-clamp-1',
+        'flex h-11 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-input bg-card px-3.5 text-left text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&>span]:line-clamp-1',
         className,
       )}
       {...props}
@@ -63,7 +63,7 @@ export function SelectItem({ className, children, ...props }: React.ComponentPro
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        'relative flex min-h-11 w-full cursor-default items-center rounded-lg py-2 pr-8 pl-3 text-sm outline-none select-none focus:bg-muted data-disabled:pointer-events-none data-disabled:opacity-50',
+        'relative flex min-h-11 w-full cursor-pointer items-center rounded-lg py-2 pr-8 pl-3 text-sm outline-none select-none focus:bg-muted data-disabled:pointer-events-none data-disabled:opacity-50',
         className,
       )}
       {...props}

@@ -17,7 +17,7 @@ export function RadioCardItem({
     <RadioGroupPrimitive.Item
       data-slot="radio-card-item"
       className={cn(
-        'group flex min-h-16 w-full items-start gap-3 rounded-xl border border-input bg-card p-4 text-left transition-colors outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 data-[state=checked]:border-primary data-[state=checked]:bg-secondary',
+        'group flex min-h-16 w-full cursor-pointer items-start gap-3 rounded-xl border border-input bg-card p-4 text-left transition-colors outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 data-[state=checked]:border-primary data-[state=checked]:bg-secondary',
         className,
       )}
       {...props}

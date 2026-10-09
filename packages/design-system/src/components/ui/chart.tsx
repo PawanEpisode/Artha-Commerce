@@ -73,7 +73,7 @@ export function BarChart({ title, series, columns, format, height = 160, labelEv
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onBlur={() => setActive(null)}
-              className="group flex h-full min-w-0 flex-1 flex-col-reverse justify-start gap-0.5 rounded-sm px-px outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40"
+              className="group flex h-full min-w-0 flex-1 cursor-pointer flex-col-reverse justify-start gap-0.5 rounded-sm px-px outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40"
             >
               {series.map((s, si) => {
                 const v = c.values[s.key] ?? 0
@@ -205,7 +205,7 @@ export function Heatmap({ title, cells, onSelect, weekdayLabels, legend, classNa
               title={c.label}
               onClick={() => onSelect?.(c.date)}
               className={cn(
-                'size-4 rounded-[3px] border border-border outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40',
+                'size-4 cursor-pointer rounded-[3px] border border-border outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40',
                 `heat-${c.level}`,
               )}
             />

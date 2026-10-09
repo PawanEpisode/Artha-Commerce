@@ -36,7 +36,7 @@ export function ReadToggle({
         if (!pending) onChange(!checked)
       }}
       className={cn(
-        'inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress motion-reduce:transition-none motion-reduce:active:translate-y-0',
+        'inline-flex min-h-11 shrink-0 cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress motion-reduce:transition-none motion-reduce:active:translate-y-0',
         checked
           ? 'border-success-border bg-success-bg text-success-fg hover:brightness-95'
           : 'border-input bg-card text-foreground hover:bg-muted',
