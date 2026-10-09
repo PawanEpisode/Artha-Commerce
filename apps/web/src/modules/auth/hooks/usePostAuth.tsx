@@ -32,7 +32,7 @@ export function useGoAfterAuth() {
       } catch {
         to = safeNextPath(next)
       }
-      await navigate({ to, replace: true })
+      await navigate({ href: to, replace: true })
       return to
     },
     [resolve, navigate],

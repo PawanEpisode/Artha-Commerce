@@ -1,5 +1,5 @@
 import { env } from '~/lib/env'
-import { getSupabase } from '~/lib/supabase'
+import { getSupabase, peekAccessToken } from '~/lib/supabase'
 
 export class ApiError extends Error {
   /** Seconds the server asks us to wait (429 `Retry-After`), when it said. */
@@ -25,10 +25,17 @@ const retryAfterOf = (value: string | null): number | undefined => {
   return Number.isFinite(seconds) && seconds > 0 ? seconds : undefined
 }
 
+/** The in-memory token when auth has already reported it. Otherwise the session, which takes the auth lock. */
+export async function readAccessToken(): Promise<string | undefined> {
+  const known = peekAccessToken()
+  if (known !== undefined) return known ?? undefined
+  const { data } = (await getSupabase()?.auth.getSession()) ?? { data: { session: null } }
+  return data.session?.access_token
+}
+
 /** Typed fetch wrapper for the Django API. Attaches the Supabase access token automatically. */
 export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
-  const { data } = (await getSupabase()?.auth.getSession()) ?? { data: { session: null } }
-  const token = data.session?.access_token
+  const token = await readAccessToken()
 
   const res = await fetch(`${env.VITE_API_URL}/api/v1${path}`, {
     ...init,
@@ -69,8 +76,7 @@ export async function apiUpload<T>(
   form: FormData,
   options: { signal?: AbortSignal; onProgress?: (percent: number) => void } = {},
 ): Promise<T> {
-  const { data } = (await getSupabase()?.auth.getSession()) ?? { data: { session: null } }
-  const token = data.session?.access_token
+  const token = await readAccessToken()
 
   return new Promise<T>((resolve, reject) => {
     const xhr = new XMLHttpRequest()

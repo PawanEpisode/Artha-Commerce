@@ -1,6 +1,6 @@
-import { Button } from '@artha/design-system'
+import { Button, LoaderCircle } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { AuthCard } from '../components/AuthCard'
 import { CodeForm } from '../components/CodeForm'
@@ -17,14 +17,34 @@ export function SignupContainer() {
   const { user, configured, signInWithGoogle } = useAuth()
   const goAfterAuth = useGoAfterAuth()
   const [email, setEmail] = useState<string>()
+  const [signingIn, setSigningIn] = useState(false)
+  const handedOff = useRef(false)
   const signUp = useAsyncAction()
   const verify = useAsyncAction()
   const resend = useAsyncAction()
   const cooldown = useCooldown()
 
   useEffect(() => {
-    if (user) void goAfterAuth()
+    if (user && !handedOff.current) void goAfterAuth()
   }, [user, goAfterAuth])
+
+  async function submitCode(code: string) {
+    if (!email) return
+    handedOff.current = true
+    const result = await verify.run(async () => {
+      const verified = await verifyEmailCode(email, code, 'signup')
+      if (verified.error) return verified
+      setSigningIn(true)
+      await goAfterAuth()
+      return verified
+    })
+    if (result.error) {
+      handedOff.current = false
+      setSigningIn(false)
+      return
+    }
+    notify.signedUp()
+  }
 
   async function create({ email: address, password }: { email: string; password: string }) {
     const result = await signUp.run(() => signUpWithPassword(address, password))
@@ -56,23 +76,28 @@ export function SignupContainer() {
   if (email) {
     return (
       <AuthCard title="Confirm your email" description="One last step to activate your account." footer={footer}>
-        <CodeForm
-          email={email}
-          submitLabel="Confirm and continue"
-          pending={verify.pending}
-          error={verify.error}
-          resendSeconds={cooldown.secondsLeft}
-          resendPending={resend.pending}
-          resendNotice={resend.status === 'success' ? 'We sent a new code.' : resend.error}
-          onSubmit={(code) =>
-            void verify.run(() => verifyEmailCode(email, code, 'signup')).then((r) => !r.error && notify.signedUp())
-          }
-          onResend={() => void resendCode()}
-          onChangeEmail={() => {
-            setEmail(undefined)
-            verify.reset()
-          }}
-        />
+        {signingIn ? (
+          <p className="flex items-center justify-center gap-2 py-6 text-sm text-muted-foreground" role="status">
+            <LoaderCircle className="animate-spin" aria-hidden />
+            Signing you in…
+          </p>
+        ) : (
+          <CodeForm
+            email={email}
+            submitLabel="Confirm and continue"
+            pending={verify.pending}
+            error={verify.error}
+            resendSeconds={cooldown.secondsLeft}
+            resendPending={resend.pending}
+            resendNotice={resend.status === 'success' ? 'We sent a new code.' : resend.error}
+            onSubmit={(code) => void submitCode(code)}
+            onResend={() => void resendCode()}
+            onChangeEmail={() => {
+              setEmail(undefined)
+              verify.reset()
+            }}
+          />
+        )}
         <p className="text-center text-xs text-muted-foreground">
           If this email already has an account, no code is sent. Sign in instead.
         </p>

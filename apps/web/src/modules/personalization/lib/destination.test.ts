@@ -41,6 +41,10 @@ describe('explicitDeepLink', () => {
     '/\\evil',
     '/app/onboarding',
     '/app/onboarding?step=hours',
+    '/login',
+    '/login?next=/app/notes/trash',
+    '/signup',
+    '/auth/callback',
   ])('ignores %j', (value) => expect(explicitDeepLink(value)).toBeNull())
 })
 

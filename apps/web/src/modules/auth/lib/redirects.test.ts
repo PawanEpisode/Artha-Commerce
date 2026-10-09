@@ -15,6 +15,20 @@ describe('safeNextPath', () => {
     expect(safeNextPath(42)).toBe('/app')
   })
   it('uses the given fallback', () => expect(safeNextPath('//x', '/login')).toBe('/login'))
+  it('refuses sign-in pages, including a next that wraps another next', () => {
+    for (const auth of [
+      '/login',
+      '/login?next=/app/notes/trash',
+      '/signup',
+      '/signup?x=1',
+      '/auth',
+      '/auth/callback',
+      '/auth/confirm?token_hash=abc',
+    ]) {
+      expect(safeNextPath(auth)).toBe('/app')
+    }
+    expect(safeNextPath('/app/notes/trash')).toBe('/app/notes/trash')
+  })
 })
 
 describe('postConfirmPath', () => {

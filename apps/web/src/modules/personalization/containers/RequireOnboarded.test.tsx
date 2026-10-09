@@ -50,7 +50,7 @@ describe('RequireOnboarded', () => {
     state.boot = onboarding('not_started')
     ui()
     expect(screen.queryByText('workspace')).toBeNull()
-    expect(navigate).toHaveBeenCalledWith({ to: '/app/onboarding?next=%2Fapp%2Ftracker%3Fx%3D1', replace: true })
+    expect(navigate).toHaveBeenCalledWith({ href: '/app/onboarding?next=%2Fapp%2Ftracker%3Fx%3D1', replace: true })
   })
 
   it('does not loop on the onboarding page itself', () => {

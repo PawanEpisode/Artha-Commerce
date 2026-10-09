@@ -1,4 +1,4 @@
-import { api, ApiError } from '~/lib/api'
+import { api, ApiError, readAccessToken } from '~/lib/api'
 import { newClientId } from '~/modules/coverage'
 
 import type {
@@ -167,10 +167,8 @@ export async function downloadCsv(
   params: Record<string, string | number | boolean | undefined>,
   name: string,
 ) {
-  const { getSupabase } = await import('~/lib/supabase')
   const { env } = await import('~/lib/env')
-  const { data } = (await getSupabase()?.auth.getSession()) ?? { data: { session: null } }
-  const token = data.session?.access_token
+  const token = await readAccessToken()
   const res = await fetch(`${env.VITE_API_URL}/api/v1${path}${qs(params)}`, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   })

@@ -36,7 +36,7 @@ export function RequireOnboarded({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (mustOnboard) {
       track('onboarding_gate_redirected', { from_kind: 'app' })
-      void navigate({ to: onboardingPath(href), replace: true })
+      void navigate({ href: onboardingPath(href), replace: true })
     }
   }, [mustOnboard, navigate, href])
 

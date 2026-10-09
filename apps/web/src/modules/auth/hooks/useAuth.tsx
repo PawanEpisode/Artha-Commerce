@@ -1,7 +1,7 @@
 import type { Session, User } from '@supabase/supabase-js'
 import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from 'react'
 
-import { getSupabase, isSupabaseConfigured } from '~/lib/supabase'
+import { getSupabase, isSupabaseConfigured, rememberAccessToken } from '~/lib/supabase'
 
 import { notify } from '../lib/notify'
 import { callbackUrl } from '../lib/redirects'
@@ -30,10 +30,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return
     }
     supabase.auth.getSession().then(({ data }) => {
+      rememberAccessToken(data.session?.access_token ?? null)
       setSession(data.session)
       setLoading(false)
     })
-    const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next))
+    const { data } = supabase.auth.onAuthStateChange((_event, next) => {
+      rememberAccessToken(next?.access_token ?? null)
+      setSession(next)
+    })
     return () => data.subscription.unsubscribe()
   }, [])
 

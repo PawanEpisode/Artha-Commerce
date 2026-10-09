@@ -4,6 +4,20 @@ import { env } from '~/lib/env'
 
 let client: SupabaseClient | null = null
 
+/**
+ * The access token from the latest auth event. `undefined` until that event; `null` when signed out.
+ * Written synchronously inside `onAuthStateChange` so the first API call after a code does not take the auth lock.
+ */
+let accessToken: string | null | undefined
+
+export function rememberAccessToken(token: string | null): void {
+  accessToken = token
+}
+
+export function peekAccessToken(): string | null | undefined {
+  return accessToken
+}
+
 export const isSupabaseConfigured = Boolean(env.VITE_SUPABASE_URL && env.VITE_SUPABASE_ANON_KEY)
 
 /** Browser Supabase client (auth only). All domain data goes through the Django API. */
