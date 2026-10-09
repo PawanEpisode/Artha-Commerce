@@ -28,12 +28,12 @@ def update_settings(user_id, changes: dict) -> Settings:
     return settings
 
 
-def capabilities() -> dict[str, bool]:
-    """What this deployment can do, for the settings screen: recall exists only once F-15 registers a provider."""
-    from core.recall_port import get_recall_provider
+def capabilities(user_id=None) -> dict[str, bool]:
+    """What this student can do, for the settings screen: recall needs a registered provider that is on for her (F-15 flag)."""
+    from core.recall_port import get_recall_provider, recall_available
 
     return {
-        "recall": get_recall_provider() is not None,
+        "recall": recall_available(user_id) if user_id is not None else get_recall_provider() is not None,
         "ocr_hindi": True,
         "ai_ocr": ai_gate.available("ocr"),
         "ai_summary": ai_gate.available("summary"),

@@ -1,9 +1,84 @@
 """Errors of the recall module. Shared ones come from `core.errors`; nothing is copied per module."""
 
+from rest_framework import status
+
 from core.errors import CodedError, Conflict, FeatureDisabled, QuotaExceeded
 
-__all__ = ["CodedError", "Conflict", "FeatureDisabled", "QuotaExceeded", "RecallFeatureDisabled"]
+__all__ = [
+    "BadCursor",
+    "BulkTooLarge",
+    "CardDeleted",
+    "CodedError",
+    "Conflict",
+    "DuplicateCard",
+    "EditConflict",
+    "FeatureDisabled",
+    "InvalidFields",
+    "QuotaExceeded",
+    "RecallFeatureDisabled",
+    "UndoExpired",
+    "UnknownChapter",
+    "UnknownKind",
+]
 
 
 class RecallFeatureDisabled(FeatureDisabled):
     default_detail = "Recall is not available yet."
+
+
+class InvalidFields(CodedError):
+    """422: a field breaks a rule of its kind or of the `card` Markdown profile. `details` `{errors: [{field, code, message}]}`."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "This card cannot be saved as it is."
+    default_code = "invalid_fields"
+
+
+class UnknownKind(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That card kind does not exist."
+    default_code = "unknown_kind"
+
+
+class UnknownChapter(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That chapter is not in your syllabus."
+    default_code = "unknown_chapter"
+
+
+class BulkTooLarge(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "A bulk change takes at most 200 cards."
+    default_code = "bulk_too_large"
+
+
+class DuplicateCard(Conflict):
+    """409 with `details` `{card_id, item_id}` of the card she already has; send `force` to keep both."""
+
+    default_detail = "You already have a card with this text."
+    default_code = "duplicate_card"
+
+
+class EditConflict(Conflict):
+    """409 with `details` `{server_fields, rev}`: the card changed elsewhere. Nothing was written."""
+
+    default_detail = "This card was changed somewhere else."
+    default_code = "edit_conflict"
+
+
+class CardDeleted(CodedError):
+    status_code = status.HTTP_410_GONE
+    default_detail = "This card was deleted."
+    default_code = "card_deleted"
+
+
+class UndoExpired(CodedError):
+    status_code = status.HTTP_410_GONE
+    default_detail = "It is too late to undo that."
+    default_code = "undo_expired"
+
+
+class BadCursor(CodedError):
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = "That cursor is not valid."
+    default_code = "bad_cursor"

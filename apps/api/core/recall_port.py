@@ -11,6 +11,8 @@ A provider implements `RecallProvider`:
 - `create_card_from_source` is idempotent on `(user_id, source.ref_id, kind)` and on `client_id`: a second call for the
   same mark and kind returns the first card with `existing=True`.
 - `cards_for_source` maps source ids to the cards that already exist for them.
+- `available_for` (optional) says whether this student can use recall right now (a provider that is gated by a flag answers
+  False for students outside it). `recall_available(user_id)` is what a caller asks; a provider without the method counts as on.
 """
 
 from __future__ import annotations
@@ -19,6 +21,10 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any, Protocol, runtime_checkable
 from uuid import UUID
+
+from rest_framework import status
+
+from core.errors import CodedError
 
 CARD_KINDS = ("formula", "rule", "definition", "example", "doubt", "fact")
 
@@ -39,8 +45,16 @@ class CardRef:
     existing: bool = False
 
 
-class RecallUnavailable(Exception):
-    """Raised by a provider (or `NullRecallProvider`) that cannot make cards right now."""
+class RecallUnavailable(CodedError):
+    """
+    Raised by a provider (or `NullRecallProvider`) that cannot make cards right now, for example because the student's recall
+    flag is off. It is an API error in its own right (503 `recall_unavailable`, the same answer Notes gives when no provider is
+    registered), so a caller that does not catch it still answers correctly instead of with a 500.
+    """
+
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+    default_detail = "Flashcards are not available yet."
+    default_code = "recall_unavailable"
 
 
 @runtime_checkable
@@ -83,3 +97,17 @@ def register_recall_provider(provider: RecallProvider | None) -> None:
 def get_recall_provider() -> RecallProvider | None:
     """The registered provider, or None when recall is absent (nothing registered, or the Null provider)."""
     return None if isinstance(_provider, NullRecallProvider) else _provider
+
+
+def recall_available(user_id: Any) -> bool:
+    """Whether recall works for this student: a provider is registered and (when it can tell) it is on for her. Never raises."""
+    provider = get_recall_provider()
+    if provider is None:
+        return False
+    check = getattr(provider, "available_for", None)
+    if check is None:
+        return True
+    try:
+        return bool(check(user_id))
+    except Exception:  # noqa: BLE001 - a capability probe must never break a settings read
+        return False

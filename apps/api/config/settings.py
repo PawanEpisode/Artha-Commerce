@@ -173,6 +173,10 @@ REST_FRAMEWORK = {
         "notes_export": "6/hour",  # R2: building flattened PDFs and archives
         "notes_unlock": "20/hour",  # R3: trying a password on a locked PDF (also capped per document in the database)
         "notes_ai": "20/hour",  # R3: asking for an AI summary or page reading (the money limit is the monthly quota)
+        # F-15 recall: reviews are never limited by plan, so these are only politeness (PRD 9)
+        "recall_review": "600/min",  # W5: review events and batches
+        "recall_write": "120/min",  # card, deck and settings writes
+        "recall_export": "6/hour",  # W11: streamed CSV and JSON export
         "media_upload": "120/hour",
         "media_read": "300/min",
     },
@@ -220,6 +224,12 @@ CRON_SECRET = env("CRON_SECRET")  # bearer secret for the sweep endpoint
 # Empty means the tick refuses every caller. For Vercel Cron, which can only send `Authorization: Bearer $CRON_SECRET`, set it
 # to the same value as CRON_SECRET.
 NOTES_TICK_SECRET = env("NOTES_TICK_SECRET")
+# F-15 recall (flag `recall_system`, fails closed). RECALL_TICK_SECRET guards the cron tick that arrives in W5 (same rules as
+# NOTES_TICK_SECRET: empty refuses every caller). RECALL_PACK_MAX caps the offline pack a client may ask for, whatever the
+# plan allows (W6). RECALL_DEFAULT_WEIGHTS_VERSION names the seeded default parameter set new cards start on.
+RECALL_TICK_SECRET = env("RECALL_TICK_SECRET")
+RECALL_PACK_MAX = int(env("RECALL_PACK_MAX", "500"))
+RECALL_DEFAULT_WEIGHTS_VERSION = env("RECALL_DEFAULT_WEIGHTS_VERSION", "fsrs-6.0")
 # Upload scanning (F-03 R2, media). `null` marks files clean without scanning (development and tests only); `clamd` streams them
 # to a ClamAV daemon over a unix socket (CLAMD_SOCKET, wins when set) or TCP (CLAMD_HOST, CLAMD_PORT). clamd needs
 # `StreamMaxLength 64M`. The scan itself runs in the worker (`media.scan` job).

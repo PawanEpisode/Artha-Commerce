@@ -290,7 +290,7 @@ def settings_dict(s: Settings) -> dict:
         "finger_draws": s.finger_draws,
         "ocr_default": s.ocr_default,
         "ocr_lang": s.ocr_lang,
-        "capabilities": capabilities(),
+        "capabilities": capabilities(s.user_id),
     }
 
 

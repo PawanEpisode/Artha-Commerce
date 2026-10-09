@@ -287,6 +287,15 @@ pnpm check
 pnpm lint:api && pnpm test:api
 ```
 
+**F-15 recall: Postgres-only tests and throttles.** The recall tests run on SQLite by default; the partition, trigger, RLS and concurrency tests need PostgreSQL and skip otherwise. To run them, start any local Postgres 15+ and point the suite at it:
+
+```bash
+cd apps/api
+DATABASE_URL=postgresql://postgres@127.0.0.1:5432/artha_test DJANGO_DEBUG=true python -m pytest modules/recall core/tests/test_row_level_security.py -q
+```
+
+The recall API uses three throttle scopes (`DEFAULT_THROTTLE_RATES` in `config/settings.py`): `recall_review` 600/min (reviews, from W5), `recall_write` 120/min (card and deck writes), `recall_export` 6/hour (export, from W11). Plan limits are database rows in `recall_quotaplan`, not throttles. The endpoints answer 403 `feature_disabled` until the PostHog flag `recall_system` is on for the student; with no PostHog key the flag is off (it fails closed).
+
 ---
 
 ## 10. Environment variable master list
@@ -309,6 +318,7 @@ pnpm lint:api && pnpm test:api
 | `NOTES_UNLOCK_FERNET_KEYS` (F-03 R3 Unlock for search; the **same** value in the API and the worker) | | yes (API **and** worker) | **yes** |
 | `NOTES_S3_ENDPOINT`, `NOTES_S3_REGION`, `NOTES_S3_ACCESS_KEY_ID`, `NOTES_S3_SECRET_ACCESS_KEY` (F-03 R3 resumable upload; Supabase Storage S3 connection) | | yes (API only) | **yes** (the two keys) |
 | `NOTES_TICK_SECRET` (F-03 notes cron tick; set `CRON_SECRET` to the same value for Vercel Cron) | | yes | **yes** |
+| `RECALL_TICK_SECRET` (F-15 recall cron tick, used from W5; empty refuses every caller; may equal `NOTES_TICK_SECRET`), `RECALL_PACK_MAX` (500, cap on the offline pack), `RECALL_DEFAULT_WEIGHTS_VERSION` (`fsrs-6.0`) | | yes | **yes** (the secret) |
 | `MEDIA_SCANNER` (F-03 R2: `null` clean at once, development only, or `clamd`; **must be `clamd` in production**), `CLAMD_HOST`, `CLAMD_PORT` (3310), `CLAMD_SOCKET` (wins over host and port; clamd needs `StreamMaxLength 64M`). Used by the worker's `media.scan` job | | yes (worker) | no |
 | `SENTRY_DSN` | | yes | no |
 | `WORKER_TYPE_LIMITS`, `WORKER_SHUTDOWN_GRACE_SECONDS`, `WORKER_HEARTBEAT_SECONDS`, `WORKER_FONTS_DIR`, `WORKER_LIVENESS_FILE` (F-03 PDF worker container only, see `docs/F-03-WORKER.md`) | | worker | no |
