@@ -18,19 +18,23 @@ import { ApiError } from '~/lib/api'
 import { CardFields, CardPreview, type Importance, ImportanceField, TagsField } from '../components/CardEditor'
 import { kindLabel } from '../components/CardFace'
 import { CardMemoryPanel, ReviewHistory } from '../components/CardMemory'
+import { ChapterPicker, type PickedChapter } from '../components/ChapterPicker'
 import { ConflictDialog } from '../components/ConflictDialog'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import {
+  useBulkCards,
   useCard,
   useCardHistory,
+  useCardQueue,
   useCardState,
   useDeleteCard,
   usePatchCard,
   useUndoDelete,
 } from '../hooks/useCardScreens'
-import { useOnlineStatus } from '../hooks/useRecallBasics'
+import { useOnlineStatus, useRecallUser } from '../hooks/useRecallBasics'
 import { recallApi } from '../lib/api'
 import { type Merge, mergeFields } from '../lib/cardConflict'
+import { cardEditQueue, type QueuedEdit } from '../lib/cardEditQueue'
 import { cardFailure } from '../lib/cardErrors'
 import {
   type CardKind,
@@ -62,15 +66,28 @@ const baseOf = (card: RecallCardDetail, kind: CardKind): Base => ({
 
 function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
   const online = useOnlineStatus()
+  const userId = useRecallUser()
   const patch = usePatchCard(card.id)
-  const [base, setBase] = useState<Base>(() => baseOf(card, kind))
-  const [fields, setFields] = useState<Fields>(base.fields)
-  const [importance, setImportance] = useState<Importance>(base.importance)
-  const [tags, setTags] = useState(base.tags)
+  const offline = useCardQueue()
+  // An edit written offline (or one the server sent back) is picked up where she left it.
+  const [queued] = useState<QueuedEdit | null>(() => (userId ? cardEditQueue.get(userId, card.id) : null))
+  const [base, setBase] = useState<Base>(() => {
+    const b = baseOf(card, kind)
+    return queued ? { ...b, rev: queued.baseRev, fields: queued.base } : b
+  })
+  const [fields, setFields] = useState<Fields>(queued ? queued.fields : base.fields)
+  const [importance, setImportance] = useState<Importance>(queued ? queued.importance : base.importance)
+  const [tags, setTags] = useState(queued ? queued.tags.join(', ') : base.tags)
   const [attempted, setAttempted] = useState(false)
   const [serverIssues, setServerIssues] = useState<FieldIssue[]>([])
   const [problem, setProblem] = useState<string | null>(null)
-  const [merge, setMerge] = useState<{ merge: Merge; rev: number } | null>(null)
+  const [keptOffline, setKeptOffline] = useState(queued !== null && queued.attention === null)
+  const [merge, setMerge] = useState<{ merge: Merge; rev: number } | null>(() =>
+    queued?.attention?.kind === 'conflict'
+      ? { merge: mergeFields(queued.base, queued.fields, queued.attention.theirs), rev: queued.attention.rev }
+      : null,
+  )
+  const [lost, setLost] = useState(queued?.attention?.kind === 'deleted')
 
   const tagList = useMemo(() => parseTags(tags), [tags])
   const tagError = validateTags(tagList)
@@ -93,6 +110,24 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
     setProblem(null)
   }
 
+  /** No connection: the edit waits on this device with the version she started from, and is sent when it is back. */
+  const queueIt = (nextFields: Fields) => {
+    const outcome = offline.queueEdit({
+      cardId: card.id,
+      kind,
+      baseRev: base.rev,
+      base: base.fields,
+      fields: nextFields,
+      importance,
+      tags: tagList,
+    })
+    setMerge(null)
+    if (outcome === 'queued') setKeptOffline(true)
+    else if (outcome === 'full')
+      setProblem('Too many edits are waiting on this device. Connect to the internet so they can be sent.')
+    else setProblem('This device could not keep your edit. Copy your text and try again when you are online.')
+  }
+
   const send = (rev: number, nextFields: Fields) =>
     patch.mutate(
       {
@@ -103,6 +138,9 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
       },
       {
         onSuccess: (saved) => {
+          offline.dropEdit(card.id)
+          setKeptOffline(false)
+          setLost(false)
           apply(saved)
           toast.success('Saved')
         },
@@ -127,8 +165,7 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
           }
           if (f.kind === 'invalid') return setServerIssues(f.issues)
           if (f.kind === 'deleted') return setProblem('This card was deleted somewhere else.')
-          if (f.kind === 'network')
-            return setProblem('You seem to be offline. Your changes are still here; save again when you are connected.')
+          if (f.kind === 'network') return queueIt(nextFields)
           setProblem(errorText(error, 'We could not save your changes. Please try again.'))
         },
       },
@@ -138,6 +175,7 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
     setAttempted(true)
     setProblem(null)
     if (local.length > 0 || tagError) return
+    if (!online) return queueIt(fields)
     send(base.rev, fields)
   }
 
@@ -164,11 +202,39 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
       <ImportanceField value={importance} onChange={setImportance} />
       <TagsField value={tags} onChange={setTags} error={attempted ? tagError : null} />
       <CardPreview kind={kind} fields={fields} />
-      {!online ? <Alert variant="info">You are offline. Connect to save your changes.</Alert> : null}
+      {lost ? (
+        <Alert variant="info">
+          <span className="flex flex-wrap items-center gap-3">
+            This card was deleted somewhere else. Your edit is kept here so you can copy it.
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => {
+                offline.dropEdit(card.id)
+                setLost(false)
+              }}
+            >
+              Discard my edit
+            </Button>
+          </span>
+        </Alert>
+      ) : null}
+      {queued?.attention?.kind === 'invalid' ? (
+        <Alert variant="error">Your offline edit could not be saved: {queued.attention.message}</Alert>
+      ) : null}
+      {keptOffline ? (
+        <Alert variant="info">
+          {online
+            ? 'Your edit is waiting to be sent.'
+            : 'Saved on this device. It will be sent when you are back online.'}
+        </Alert>
+      ) : !online ? (
+        <Alert variant="info">You are offline. You can keep editing; the change is sent when you are back.</Alert>
+      ) : null}
       {problem ? <Alert variant="error">{problem}</Alert> : null}
       <div className="flex flex-wrap gap-3">
-        <Button type="submit" size="lg" disabled={!dirty || patch.isPending || !online}>
-          {patch.isPending ? 'Saving…' : 'Save changes'}
+        <Button type="submit" size="lg" disabled={!dirty || patch.isPending}>
+          {patch.isPending ? 'Saving…' : online ? 'Save changes' : 'Save on this device'}
         </Button>
         {dirty ? (
           <Button
@@ -197,6 +263,57 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
         />
       ) : null}
     </form>
+  )
+}
+
+function ChapterMove({ card }: { card: RecallCardDetail }) {
+  const online = useOnlineStatus()
+  const bulk = useBulkCards()
+  const [open, setOpen] = useState(false)
+  const [picked, setPicked] = useState<PickedChapter | null>(null)
+
+  const move = () => {
+    if (!picked) return
+    bulk.mutate(
+      { ids: [card.id], action: 'move_chapter', args: { chapter_id: picked.id } },
+      {
+        onSuccess: () => {
+          setOpen(false)
+          setPicked(null)
+          toast.success(`Moved to ${picked.name}`)
+        },
+        onError: (e) => toast.error(errorText(e, 'We could not move this card. Nothing was changed.')),
+      },
+    )
+  }
+
+  return (
+    <section aria-labelledby="chapter-heading" className="space-y-3">
+      <h2 id="chapter-heading" className="font-display text-xl font-bold">
+        Chapter
+      </h2>
+      <p className="text-muted-foreground">
+        {card.chapter?.name ? `This card belongs to ${card.chapter.name}.` : 'This card is not in a chapter.'}
+      </p>
+      {!open ? (
+        <Button variant="outline" disabled={!online} onClick={() => setOpen(true)}>
+          Move to another chapter
+        </Button>
+      ) : (
+        <div className="space-y-3">
+          <ChapterPicker label="Move to" onPick={setPicked} />
+          <div className="flex gap-3">
+            <Button disabled={!picked || bulk.isPending} onClick={move}>
+              {bulk.isPending ? 'Moving…' : 'Move card'}
+            </Button>
+            <Button variant="ghost" onClick={() => setOpen(false)}>
+              Cancel
+            </Button>
+          </div>
+        </div>
+      )}
+      {!online ? <p className="text-sm text-muted-foreground">Moving a card needs the internet.</p> : null}
+    </section>
   )
 }
 
@@ -373,6 +490,8 @@ function Detail({ id }: { id: string }) {
 
       {/* Remounting on the card id only: a background refresh never throws away what she is typing. */}
       <Editor key={card.id} card={card} kind={card.kind} />
+
+      <ChapterMove card={card} />
 
       <Actions card={card} />
 

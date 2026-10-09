@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto'
 
-import { screen, waitFor, within } from '@testing-library/react'
+import { fireEvent, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { IDBFactory } from 'fake-indexeddb'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
@@ -270,5 +270,41 @@ describe('the review player', () => {
     await user.click(screen.getByRole('button', { name: 'Edit card' }))
     expect(h.navigate).toHaveBeenCalledWith(expect.objectContaining({ to: '/app/recall/cards/$cardId' }))
     void within
+  })
+
+  it.each([
+    ['left', 200, 50, 1],
+    ['right', 50, 200, 3],
+  ] as const)(
+    'a swipe %s rates the card, and the buttons stay for anyone who cannot swipe',
+    async (_name, from, to, rating) => {
+      const user = userEvent.setup()
+      await eventStore.savePack('u1', apiPack(cards(2)))
+      setOnline(false)
+      renderWithQuery(<ReviewContainer search={search} />)
+      await flip(user)
+      expect(screen.getByRole('button', { name: /Good/ })).toBeInTheDocument()
+      const card = screen.getByRole('group', { name: 'Flashcard' })
+      fireEvent.pointerDown(card, { clientX: from, clientY: 0 })
+      fireEvent.pointerUp(card, { clientX: to, clientY: 0 })
+      await waitFor(async () =>
+        expect((await eventStore.pendingEvents('u1')).map((e) => e.body.rating)).toEqual([rating]),
+      )
+    },
+  )
+
+  it('does not swipe before the answer is shown, or on a short drag', async () => {
+    const user = userEvent.setup()
+    await eventStore.savePack('u1', apiPack(cards(2)))
+    setOnline(false)
+    renderWithQuery(<ReviewContainer search={search} />)
+    await screen.findByRole('button', { name: /Show answer/ })
+    const card = screen.getByRole('group', { name: 'Flashcard' })
+    fireEvent.pointerDown(card, { clientX: 200, clientY: 0 })
+    fireEvent.pointerUp(card, { clientX: 50, clientY: 0 })
+    await flip(user)
+    fireEvent.pointerDown(card, { clientX: 100, clientY: 0 })
+    fireEvent.pointerUp(card, { clientX: 110, clientY: 0 })
+    expect(await eventStore.pendingCount('u1')).toBe(0)
   })
 })

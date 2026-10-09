@@ -18,10 +18,13 @@ import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useMemo, useState } from 'react'
 
 import { CardRow } from '../components/CardRow'
+import { ChapterPicker, type PickedChapter } from '../components/ChapterPicker'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import { useCards } from '../hooks/useCards'
-import { useBulkCards } from '../hooks/useCardScreens'
+import { useBulkCards, useCardQueue } from '../hooks/useCardScreens'
+import type { BulkArgs } from '../lib/api'
 import { KIND_LABELS } from '../lib/cardKinds'
+import { parseTags, validateTags } from '../lib/cardKinds'
 import { CARD_STATES, type CardsSearch, hasFilters, listParams } from '../lib/cardSearch'
 import { errorText } from '../lib/errors'
 
@@ -65,8 +68,14 @@ function Cards({ search }: { search: CardsSearch }) {
   const params = useMemo(() => listParams(search), [search])
   const q = useCards(params)
   const bulk = useBulkCards()
+  const offline = useCardQueue()
   const [picked, setPicked] = useState<ReadonlySet<string>>(new Set())
   const [confirmDelete, setConfirmDelete] = useState(false)
+  const [dialog, setDialog] = useState<'move' | 'tag' | null>(null)
+  const [chapter, setChapter] = useState<PickedChapter | null>(null)
+  const [tagText, setTagText] = useState('')
+  const tagList = parseTags(tagText)
+  const tagError = tagList.length === 1 ? validateTags(tagList) : tagList.length > 1 ? 'Add one tag at a time.' : null
 
   const cards = useMemo(() => q.data?.pages.flatMap((p) => p.items) ?? [], [q.data])
   // A selection never outlives the cards on screen: a changed filter drops the ticks it can no longer show.
@@ -81,22 +90,26 @@ function Cards({ search }: { search: CardsSearch }) {
   const set = (patch: Partial<CardsSearch>) =>
     void navigate({ to: '/app/recall/cards', search: { ...search, ...patch }, replace: true })
 
-  const act = (
-    action: 'suspend' | 'delete' | 'set_importance',
-    args?: { importance?: 'bullet' | 'important' | 'mandatory' },
-  ) =>
+  const act = (action: 'suspend' | 'delete' | 'set_importance' | 'move_chapter' | 'add_tag', args?: BulkArgs) =>
     bulk.mutate(
       { ids: [...picked], action, args },
       {
         onSuccess: (r) => {
           setPicked(new Set())
           setConfirmDelete(false)
+          setDialog(null)
+          setChapter(null)
+          setTagText('')
           toast.success(
             action === 'delete'
               ? `Deleted ${r.count} ${r.count === 1 ? 'card' : 'cards'}`
-              : action === 'suspend'
-                ? `Paused ${r.count} ${r.count === 1 ? 'card' : 'cards'}`
-                : `Updated ${r.count} ${r.count === 1 ? 'card' : 'cards'}`,
+              : action === 'move_chapter'
+                ? `Moved ${r.count} ${r.count === 1 ? 'card' : 'cards'}`
+                : action === 'add_tag'
+                  ? `Tagged ${r.count} ${r.count === 1 ? 'card' : 'cards'}`
+                  : action === 'suspend'
+                    ? `Paused ${r.count} ${r.count === 1 ? 'card' : 'cards'}`
+                    : `Updated ${r.count} ${r.count === 1 ? 'card' : 'cards'}`,
           )
         },
         onError: (e) => toast.error(errorText(e, 'That did not work. Nothing was changed.')),
@@ -126,6 +139,34 @@ function Cards({ search }: { search: CardsSearch }) {
           </Link>
         </ButtonLink>
       </header>
+
+      {offline.attention.length > 0 ? (
+        <Alert variant="error">
+          <span className="block space-y-2">
+            <span className="block font-medium">
+              {offline.attention.length === 1
+                ? '1 edit you made offline needs your attention.'
+                : `${offline.attention.length} edits you made offline need your attention.`}
+            </span>
+            <span className="flex flex-wrap gap-2">
+              {offline.attention.map((e) => (
+                <ButtonLink key={e.cardId} variant="outline" asChild>
+                  <Link to="/app/recall/cards/$cardId" params={{ cardId: e.cardId }}>
+                    Open {KIND_LABELS[e.kind as keyof typeof KIND_LABELS]?.label.toLowerCase() ?? 'card'}
+                  </Link>
+                </ButtonLink>
+              ))}
+            </span>
+          </span>
+        </Alert>
+      ) : null}
+      {offline.pending + offline.editsWaiting > 0 ? (
+        <Alert variant="info">
+          {offline.pending + offline.editsWaiting === 1
+            ? '1 change is waiting on this device and will be sent when you are online.'
+            : `${offline.pending + offline.editsWaiting} changes are waiting on this device and will be sent when you are online.`}
+        </Alert>
+      ) : null}
 
       <section aria-label="Filters" className="space-y-3 rounded-2xl border border-border bg-card p-4">
         <Search value={search.q ?? ''} onCommit={(v) => set({ q: v.trim() || undefined })} />
@@ -196,6 +237,12 @@ function Cards({ search }: { search: CardsSearch }) {
             onClick={() => act('set_importance', { importance: 'mandatory' })}
           >
             Mark as must know
+          </Button>
+          <Button variant="outline" disabled={bulk.isPending} onClick={() => setDialog('move')}>
+            Move to chapter
+          </Button>
+          <Button variant="outline" disabled={bulk.isPending} onClick={() => setDialog('tag')}>
+            Add tag
           </Button>
           <Button variant="danger" disabled={bulk.isPending} onClick={() => setConfirmDelete(true)}>
             Delete
@@ -278,6 +325,54 @@ function Cards({ search }: { search: CardsSearch }) {
           {q.isFetchNextPageError ? <Alert variant="error">We could not load more cards. Try again.</Alert> : null}
         </>
       )}
+
+      <Dialog open={dialog === 'move'} onOpenChange={(o) => setDialog(o ? 'move' : null)}>
+        <DialogContent>
+          <DialogTitle>
+            Move {picked.size} {picked.size === 1 ? 'card' : 'cards'} to a chapter
+          </DialogTitle>
+          <DialogDescription>Pick the chapter they belong in.</DialogDescription>
+          <ChapterPicker label="Move to" onPick={setChapter} />
+          <div className="flex justify-end gap-3">
+            <Button variant="outline" onClick={() => setDialog(null)}>
+              Cancel
+            </Button>
+            <Button
+              disabled={!chapter || bulk.isPending}
+              onClick={() => chapter && act('move_chapter', { chapter_id: chapter.id })}
+            >
+              Move
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={dialog === 'tag'} onOpenChange={(o) => setDialog(o ? 'tag' : null)}>
+        <DialogContent>
+          <DialogTitle>
+            Add a tag to {picked.size} {picked.size === 1 ? 'card' : 'cards'}
+          </DialogTitle>
+          <DialogDescription>Tags help you find cards later.</DialogDescription>
+          <div className="grid gap-1">
+            <label htmlFor="bulk-tag" className="text-sm font-medium">
+              Tag
+            </label>
+            <Input id="bulk-tag" value={tagText} onChange={(e) => setTagText(e.target.value)} />
+            {tagError ? <p className="text-danger text-sm">{tagError}</p> : null}
+          </div>
+          <div className="flex justify-end gap-3">
+            <Button variant="outline" onClick={() => setDialog(null)}>
+              Cancel
+            </Button>
+            <Button
+              disabled={tagList.length !== 1 || Boolean(tagError) || bulk.isPending}
+              onClick={() => act('add_tag', { tag: tagList[0] })}
+            >
+              Add tag
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
         <DialogContent>

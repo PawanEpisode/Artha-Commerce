@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import {
   type BulkAction,
@@ -9,6 +9,8 @@ import {
   type PatchCardBody,
   recallApi,
 } from '../lib/api'
+import { cardEditQueue } from '../lib/cardEditQueue'
+import { flushEdits } from '../lib/cardEditSync'
 import { cardFailure } from '../lib/cardErrors'
 import { cardQueue } from '../lib/cardQueue'
 import { recallKeys } from '../lib/keys'
@@ -78,15 +80,26 @@ export function useBulkCards() {
 }
 
 /**
- * Cards written offline. `save` tries the server first when online, and queues the card (with its own id, so a retry
- * never doubles it) when the network fails or the student is offline. The queue is sent on mount and when back online.
+ * Cards and edits written offline. `queue` keeps a new card (with its own id, so a retry never doubles it) and
+ * `queueEdit` keeps an edit of an existing one. Both are sent on mount and when the connection is back; `attention` lists
+ * the edits the server could not take on its own.
  */
 export function useCardQueue() {
   const userId = useRecallUser()
   const online = useOnlineStatus()
   const refresh = useRefresh()
-  const [pending, setPending] = useState(() => (userId ? cardQueue.count(userId) : 0))
+  const [tick, setTick] = useState(0)
   const running = useRef(false)
+  const snapshot = useMemo(
+    () => ({
+      pending: userId ? cardQueue.count(userId) : 0,
+      editsWaiting: userId ? cardEditQueue.waiting(userId) : 0,
+      attention: userId ? cardEditQueue.needsAttention(userId) : [],
+    }),
+    // `tick` is the signal that local storage changed
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [userId, tick],
+  )
 
   const flush = useCallback(async () => {
     if (!userId || running.current) return
@@ -98,31 +111,60 @@ export function useCardQueue() {
           cardQueue.remove(userId, item.body.client_id)
         } catch (error) {
           const failure = cardFailure(error)
-          if (failure.kind === 'network' || failure.kind === 'throttled') break
+          if (failure.kind === 'network' || failure.kind === 'throttled') return
           // The server will not take this one (duplicate, invalid, over the limit): keep nothing that can never succeed.
           cardQueue.remove(userId, item.body.client_id)
         }
       }
+      await flushEdits(userId)
     } finally {
       running.current = false
-      setPending(cardQueue.count(userId))
+      setTick((t) => t + 1)
       refresh()
     }
   }, [userId, refresh])
 
+  const waiting = snapshot.pending + snapshot.editsWaiting
   useEffect(() => {
-    if (online && pending > 0) void flush()
-  }, [online, pending, flush])
+    if (online && waiting > 0) void flush()
+  }, [online, waiting, flush])
 
   const queue = useCallback(
     (body: CreateCardBody) => {
       if (!userId) return 'unsaved' as const
       const outcome = cardQueue.add(userId, body)
-      setPending(cardQueue.count(userId))
+      setTick((t) => t + 1)
       return outcome
     },
     [userId],
   )
 
-  return { pending, queue, flush }
+  const queueEdit = useCallback(
+    (edit: Parameters<typeof cardEditQueue.put>[1]) => {
+      if (!userId) return 'unsaved' as const
+      const outcome = cardEditQueue.put(userId, edit)
+      setTick((t) => t + 1)
+      return outcome
+    },
+    [userId],
+  )
+
+  /** Drops an edit the student chose to give up on, or one she has just settled on the card page. */
+  const dropEdit = useCallback(
+    (cardId: string) => {
+      if (userId) cardEditQueue.remove(userId, cardId)
+      setTick((t) => t + 1)
+    },
+    [userId],
+  )
+
+  return {
+    pending: snapshot.pending,
+    editsWaiting: snapshot.editsWaiting,
+    attention: snapshot.attention,
+    queue,
+    queueEdit,
+    dropEdit,
+    flush,
+  }
 }

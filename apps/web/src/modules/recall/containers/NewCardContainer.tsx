@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { useMemo, useRef, useState } from 'react'
 
 import { CardFields, CardPreview, type Importance, ImportanceField, TagsField } from '../components/CardEditor'
+import { ChapterPicker, type PickedChapter } from '../components/ChapterPicker'
 import { RecallShell } from '../components/RecallShell'
 import { useCardQueue, useCreateCard } from '../hooks/useCardScreens'
 import { useOnlineStatus } from '../hooks/useRecallBasics'
@@ -39,6 +40,7 @@ function NewCard({ search }: { search: NewCardSearch }) {
   const [fields, setFields] = useState<Fields>(draft ? withDraft(initialKind, draft) : emptyFields(initialKind))
   const [importance, setImportance] = useState<Importance>('bullet')
   const [tags, setTags] = useState('')
+  const [chapter, setChapter] = useState<PickedChapter | null>(null)
   const [attempted, setAttempted] = useState(false)
   const [serverIssues, setServerIssues] = useState<FieldIssue[]>([])
   const [duplicate, setDuplicate] = useState<{ cardId: string | null } | null>(null)
@@ -79,7 +81,7 @@ function NewCard({ search }: { search: NewCardSearch }) {
     fields,
     importance,
     tags: tagList,
-    chapter_id: search.chapter ?? null,
+    chapter_id: chapter?.id ?? search.chapter ?? null,
     topic_id: search.topic ?? null,
     deck_ids: search.deck ? [search.deck] : [],
     force,
@@ -203,6 +205,15 @@ function NewCard({ search }: { search: NewCardSearch }) {
         />
         <ImportanceField value={importance} onChange={setImportance} />
         <TagsField value={tags} onChange={setTags} error={attempted ? tagError : null} />
+
+        <div className="space-y-2">
+          <ChapterPicker label="Chapter (optional)" onPick={setChapter} />
+          {!chapter && search.chapter ? (
+            <p className="text-sm text-muted-foreground">
+              It will go in the chapter you came from unless you pick another.
+            </p>
+          ) : null}
+        </div>
 
         <CardPreview kind={kind} fields={fields} />
 

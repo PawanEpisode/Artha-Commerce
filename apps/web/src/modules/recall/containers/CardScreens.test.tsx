@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from '@testing-library/react'
+import { act, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
@@ -24,7 +24,9 @@ const h = vi.hoisted(() => ({
     setCardState: vi.fn(),
     bulkCards: vi.fn(),
   },
+  syl: { fetchCourses: vi.fn(), fetchLevel: vi.fn(), fetchSubject: vi.fn() },
 }))
+vi.mock('~/modules/syllabus', () => h.syl)
 
 vi.mock('@tanstack/react-router', async () => ({
   ...(await import('~/test/router-stub')).routerStub,
@@ -100,7 +102,33 @@ beforeEach(() => {
   setOnline(true)
   h.api.cards.mockResolvedValue({ items: [], next_cursor: null, server_time: '2026-10-09T05:00:00Z' })
   h.api.cardHistory.mockResolvedValue({ items: [] })
+  h.syl.fetchCourses.mockResolvedValue([
+    {
+      id: 'ca',
+      code: 'ca',
+      name: 'CA',
+      institute_name: '',
+      institute_url: '',
+      description: '',
+      levels: [{ id: 'l', code: 'inter', name: 'Inter', sort_order: 1 }],
+    },
+  ])
+  h.syl.fetchLevel.mockResolvedValue({ subjects: [{ key: 'p1', name: 'Paper 1' }] })
+  h.syl.fetchSubject.mockResolvedValue({ chapters: [{ id: 'ch9', name: 'Chapter Nine' }] })
 })
+
+async function pickChapter(
+  user: ReturnType<typeof userEvent.setup>,
+  root: ReturnType<typeof within> = within(document.body),
+) {
+  for (const [trigger, option] of [
+    ['Paper', 'Paper 1'],
+    ['Chapter', 'Chapter Nine'],
+  ] as const) {
+    await user.click(await root.findByRole('combobox', { name: trigger }))
+    await user.click(await screen.findByRole('option', { name: option }))
+  }
+}
 
 describe('the cards browser', () => {
   it('sends the URL’s filters to the API and shows them as removable chips', async () => {
@@ -164,6 +192,45 @@ describe('the cards browser', () => {
       expect(h.api.bulkCards).toHaveBeenCalledWith([expect.any(String), expect.any(String)], 'delete', undefined),
     )
     expect(h.toast.success).toHaveBeenCalledWith('Deleted 2 cards')
+  })
+
+  it('moves the selected cards to a chosen chapter', async () => {
+    const user = userEvent.setup()
+    h.api.cards.mockResolvedValue({ items: [row(1), row(2)], next_cursor: null, server_time: '2026-10-09T05:00:00Z' })
+    h.api.bulkCards.mockResolvedValue({ count: 2 })
+    renderWithQuery(<CardsContainer search={{}} />)
+    const boxes = await screen.findAllByRole('checkbox')
+    await user.click(boxes[0]!)
+    await user.click(boxes[1]!)
+    await user.click(screen.getByRole('button', { name: 'Move to chapter' }))
+    const dialog = await screen.findByRole('dialog')
+    expect(within(dialog).getByRole('button', { name: 'Move' })).toBeDisabled()
+    await pickChapter(user, within(dialog))
+    await user.click(within(dialog).getByRole('button', { name: 'Move' }))
+    await waitFor(() =>
+      expect(h.api.bulkCards).toHaveBeenCalledWith(expect.any(Array), 'move_chapter', { chapter_id: 'ch9' }),
+    )
+    expect(h.toast.success).toHaveBeenCalledWith('Moved 2 cards')
+  })
+
+  it('adds one tag to the selected cards and refuses a list of tags', async () => {
+    const user = userEvent.setup()
+    h.api.cards.mockResolvedValue({ items: [row(1)], next_cursor: null, server_time: '2026-10-09T05:00:00Z' })
+    h.api.bulkCards.mockResolvedValue({ count: 1 })
+    renderWithQuery(<CardsContainer search={{}} />)
+    await user.click(await screen.findByRole('checkbox'))
+    await user.click(screen.getByRole('button', { name: 'Add tag' }))
+    const dialog = await screen.findByRole('dialog')
+    await user.type(within(dialog).getByLabelText('Tag'), 'gst, itc')
+    expect(within(dialog).getByText('Add one tag at a time.')).toBeInTheDocument()
+    expect(within(dialog).getByRole('button', { name: 'Add tag' })).toBeDisabled()
+    await user.clear(within(dialog).getByLabelText('Tag'))
+    await user.type(within(dialog).getByLabelText('Tag'), 'gst')
+    await user.click(within(dialog).getByRole('button', { name: 'Add tag' }))
+    await waitFor(() =>
+      expect(h.api.bulkCards).toHaveBeenCalledWith(['c-1'.length ? expect.any(String) : ''], 'add_tag', { tag: 'gst' }),
+    )
+    expect(h.toast.success).toHaveBeenCalledWith('Tagged 1 card')
   })
 
   it('offers a retry when the list cannot load', async () => {
@@ -284,6 +351,18 @@ describe('making a card', () => {
     expect(await screen.findByRole('heading', { name: 'Saved on this device' })).toBeInTheDocument()
   })
 
+  it('files a new card under the chapter she picks', async () => {
+    const user = userEvent.setup()
+    h.api.createCard.mockResolvedValue({ item_id: 'i1', kind: 'pointer', existing: false, cards: [detail()] })
+    renderWithQuery(<NewCardContainer search={{}} />)
+    await user.type(screen.getByLabelText(/Question/), 'What is GST?')
+    await user.type(screen.getByLabelText(/Answer/), 'A tax on supply.')
+    await pickChapter(user)
+    await user.click(screen.getByRole('button', { name: 'Save card' }))
+    await screen.findByRole('heading', { name: 'Card made' })
+    expect(h.api.createCard.mock.calls[0]![0]).toMatchObject({ chapter_id: 'ch9' })
+  })
+
   it('prefills from a selection and suggests the kind', async () => {
     renderWithQuery(
       <NewCardContainer search={{ from: 'selection', draft: 'Section 80C allows a deduction of Rs 1.5 lakh.' }} />,
@@ -384,6 +463,28 @@ describe('a card’s page', () => {
     await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
   })
 
+  it('moves the card to another chapter, and needs the internet to do it', async () => {
+    const user = userEvent.setup()
+    h.api.card.mockResolvedValue(detail({ chapter: { id: 'old', key: null, name: 'Old chapter' } }))
+    h.api.bulkCards.mockResolvedValue({ count: 1 })
+    renderWithQuery(<CardDetailContainer cardId="c1" />)
+    expect(await screen.findByText('This card belongs to Old chapter.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Move to another chapter' }))
+    await pickChapter(user)
+    await user.click(screen.getByRole('button', { name: 'Move card' }))
+    await waitFor(() => expect(h.api.bulkCards).toHaveBeenCalledWith(['c1'], 'move_chapter', { chapter_id: 'ch9' }))
+    expect(h.toast.success).toHaveBeenCalledWith('Moved to Chapter Nine')
+  })
+
+  it('disables moving a card while offline', async () => {
+    h.api.card.mockResolvedValue(detail())
+    renderWithQuery(<CardDetailContainer cardId="c1" />)
+    const button = await screen.findByRole('button', { name: 'Move to another chapter' })
+    act(() => setOnline(false))
+    await waitFor(() => expect(button).toBeDisabled())
+    expect(screen.getByText('Moving a card needs the internet.')).toBeInTheDocument()
+  })
+
   it('deletes with an undo that brings the card back', async () => {
     const user = userEvent.setup()
     h.api.card.mockResolvedValue(detail())
@@ -420,14 +521,92 @@ describe('a card’s page', () => {
     expect(await screen.findByText('This card was deleted.')).toBeInTheDocument()
   })
 
-  it('keeps what she typed and says so when she is offline', async () => {
+  it('saves an edit made offline on the device, then sends it against the revision she started from', async () => {
     const user = userEvent.setup()
     h.api.card.mockResolvedValue(detail())
     renderWithQuery(<CardDetailContainer cardId="c1" />)
     await user.type(await screen.findByLabelText(/Question/), ' more')
     setOnline(false)
-    expect(await screen.findByText(/You are offline. Connect to save/)).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Save changes' })).toBeDisabled()
+    await user.click(await screen.findByRole('button', { name: 'Save on this device' }))
+    expect(await screen.findByText(/Saved on this device/)).toBeInTheDocument()
+    expect(h.api.patchCard).not.toHaveBeenCalled()
     expect(screen.getByLabelText(/Question/)).toHaveValue('Question 1? more')
+    h.api.patchCard.mockResolvedValue(detail({ rev: 4 }))
+    setOnline(true)
+    await waitFor(() => expect(h.api.patchCard).toHaveBeenCalledTimes(1))
+    expect(h.api.patchCard).toHaveBeenCalledWith(
+      'c1',
+      expect.objectContaining({ base_rev: 3, fields: expect.objectContaining({ prompt_md: 'Question 1? more' }) }),
+    )
+    await waitFor(() => expect(window.localStorage.getItem('artha.recall.cardEdits.v1.u1')).toBeNull())
+  })
+
+  it('opens the conflict dialog for an offline edit the server could not merge, with her text intact', async () => {
+    const { cardEditQueue } = await import('../lib/cardEditQueue')
+    cardEditQueue.put('u1', {
+      cardId: 'c1',
+      kind: 'pointer',
+      baseRev: 3,
+      base: { prompt_md: 'Question 1?', answer_md: 'Answer 1' },
+      fields: { prompt_md: 'Mine?', answer_md: 'Answer 1' },
+      importance: 'bullet',
+      tags: [],
+    })
+    cardEditQueue.flag('u1', 'c1', {
+      kind: 'conflict',
+      theirs: { prompt_md: 'Theirs?', answer_md: 'Answer 1' },
+      rev: 5,
+    })
+    const user = userEvent.setup()
+    h.api.card.mockResolvedValue(detail({ rev: 5 }))
+    h.api.patchCard.mockResolvedValue(detail({ rev: 6 }))
+    renderWithQuery(<CardDetailContainer cardId="c1" />)
+    const dialog = await screen.findByRole('dialog')
+    await user.click(within(dialog).getByRole('radio', { name: /Your version/ }))
+    await user.click(within(dialog).getByRole('button', { name: 'Save this version' }))
+    await waitFor(() =>
+      expect(h.api.patchCard).toHaveBeenCalledWith(
+        'c1',
+        expect.objectContaining({ base_rev: 5, fields: expect.objectContaining({ prompt_md: 'Mine?' }) }),
+      ),
+    )
+    await waitFor(() => expect(cardEditQueue.get('u1', 'c1')).toBeNull())
+  })
+
+  it('tells her a card was deleted elsewhere and lets her discard the kept edit', async () => {
+    const { cardEditQueue } = await import('../lib/cardEditQueue')
+    cardEditQueue.put('u1', {
+      cardId: 'c1',
+      kind: 'pointer',
+      baseRev: 3,
+      base: { prompt_md: 'Question 1?', answer_md: 'Answer 1' },
+      fields: { prompt_md: 'Mine?', answer_md: 'Answer 1' },
+      importance: 'bullet',
+      tags: [],
+    })
+    cardEditQueue.flag('u1', 'c1', { kind: 'deleted' })
+    const user = userEvent.setup()
+    h.api.card.mockResolvedValue(detail())
+    renderWithQuery(<CardDetailContainer cardId="c1" />)
+    await user.click(await screen.findByRole('button', { name: 'Discard my edit' }))
+    expect(cardEditQueue.get('u1', 'c1')).toBeNull()
+  })
+
+  it('points to edits that need attention on the cards list', async () => {
+    const { cardEditQueue } = await import('../lib/cardEditQueue')
+    cardEditQueue.put('u1', {
+      cardId: 'c9',
+      kind: 'formula',
+      baseRev: 1,
+      base: {},
+      fields: {},
+      importance: 'bullet',
+      tags: [],
+    })
+    cardEditQueue.flag('u1', 'c9', { kind: 'deleted' })
+    setOnline(false)
+    renderWithQuery(<CardsContainer search={{}} />)
+    expect(await screen.findByText('1 edit you made offline needs your attention.')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Open formula' })).toHaveAttribute('href', '/app/recall/cards/c9')
   })
 })
