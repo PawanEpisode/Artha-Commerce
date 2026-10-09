@@ -37,10 +37,14 @@ import { Route as AppNotesLibraryRouteImport } from './routes/app.notes.library'
 import { Route as AppNotesNewRouteImport } from './routes/app.notes.new'
 import { Route as AppNotesSearchRouteImport } from './routes/app.notes.search'
 import { Route as AppNotesTrashRouteImport } from './routes/app.notes.trash'
+import { Route as AppRecallIndexRouteImport } from './routes/app.recall.index'
+import { Route as AppRecallForgottenRouteImport } from './routes/app.recall.forgotten'
+import { Route as AppRecallStatsRouteImport } from './routes/app.recall.stats'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
 import { Route as AppSettingsNotesRouteImport } from './routes/app.settings.notes'
 import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
+import { Route as AppSettingsRecallRouteImport } from './routes/app.settings.recall'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
 import { Route as AppTrackerIndexRouteImport } from './routes/app.tracker.index'
@@ -55,10 +59,12 @@ import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteI
 import { Route as AppNotesPdfDocIdRouteImport } from './routes/app.notes.pdf.$docId'
 import { Route as AppNotesSummaryJobIdRouteImport } from './routes/app.notes.summary.$jobId'
 import { Route as AppNotesSummaryNewRouteImport } from './routes/app.notes.summary.new'
+import { Route as AppRecallReviewIndexRouteImport } from './routes/app.recall.review.index'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
 import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
+import { Route as AppRecallReviewSummarySessionIdRouteImport } from './routes/app.recall.review.summary.$sessionId'
 import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
 import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
 import { Route as OgCoursesCourseLevelSubjectChapterRouteImport } from './routes/og.courses.$course.$level.$subject.$chapter'
@@ -203,6 +209,21 @@ const AppNotesTrashRoute = AppNotesTrashRouteImport.update({
   path: '/notes/trash',
   getParentRoute: () => AppRoute,
 } as any)
+const AppRecallIndexRoute = AppRecallIndexRouteImport.update({
+  id: '/recall/',
+  path: '/recall/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallForgottenRoute = AppRecallForgottenRouteImport.update({
+  id: '/recall/forgotten',
+  path: '/recall/forgotten',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallStatsRoute = AppRecallStatsRouteImport.update({
+  id: '/recall/stats',
+  path: '/recall/stats',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   id: '/settings/coverage',
   path: '/settings/coverage',
@@ -224,6 +245,11 @@ const AppSettingsNotificationsRoute =
     path: '/settings/notifications',
     getParentRoute: () => AppRoute,
   } as any)
+const AppSettingsRecallRoute = AppSettingsRecallRouteImport.update({
+  id: '/settings/recall',
+  path: '/settings/recall',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsTrackerRoute = AppSettingsTrackerRouteImport.update({
   id: '/settings/tracker',
   path: '/settings/tracker',
@@ -294,6 +320,11 @@ const AppNotesSummaryNewRoute = AppNotesSummaryNewRouteImport.update({
   path: '/notes/summary/new',
   getParentRoute: () => AppRoute,
 } as any)
+const AppRecallReviewIndexRoute = AppRecallReviewIndexRouteImport.update({
+  id: '/recall/review/',
+  path: '/recall/review/',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSyllabusSubjectIndexRoute = AppSyllabusSubjectIndexRouteImport.update({
   id: '/syllabus/$subject/',
   path: '/syllabus/$subject/',
@@ -315,6 +346,12 @@ const CoursesCourseLevelIndexRoute = CoursesCourseLevelIndexRouteImport.update({
   path: '/courses/$course/$level/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppRecallReviewSummarySessionIdRoute =
+  AppRecallReviewSummarySessionIdRouteImport.update({
+    id: '/recall/review/summary/$sessionId',
+    path: '/recall/review/summary/$sessionId',
+    getParentRoute: () => AppRoute,
+  } as any)
 const CoursesCourseLevelSubjectIndexRoute =
   CoursesCourseLevelSubjectIndexRouteImport.update({
     id: '/courses/$course/$level/$subject/',
@@ -361,10 +398,13 @@ export interface FileRoutesByFullPath {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/recall/forgotten': typeof AppRecallForgottenRoute
+  '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
+  '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
@@ -372,6 +412,7 @@ export interface FileRoutesByFullPath {
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
+  '/app/recall/': typeof AppRecallIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
@@ -383,8 +424,10 @@ export interface FileRoutesByFullPath {
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
+  '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
@@ -415,10 +458,13 @@ export interface FileRoutesByTo {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/recall/forgotten': typeof AppRecallForgottenRoute
+  '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
+  '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
@@ -426,6 +472,7 @@ export interface FileRoutesByTo {
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus': typeof AppFocusIndexRoute
   '/app/notes': typeof AppNotesIndexRoute
+  '/app/recall': typeof AppRecallIndexRoute
   '/app/syllabus': typeof AppSyllabusIndexRoute
   '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
@@ -437,8 +484,10 @@ export interface FileRoutesByTo {
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
+  '/app/recall/review': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
+  '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
   '/courses/$course/$level/$subject': typeof CoursesCourseLevelSubjectIndexRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
@@ -471,10 +520,13 @@ export interface FileRoutesById {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/recall/forgotten': typeof AppRecallForgottenRoute
+  '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
+  '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
@@ -482,6 +534,7 @@ export interface FileRoutesById {
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
+  '/app/recall/': typeof AppRecallIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
@@ -493,8 +546,10 @@ export interface FileRoutesById {
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
+  '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
@@ -528,10 +583,13 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/recall/forgotten'
+    | '/app/recall/stats'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/recall'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
@@ -539,6 +597,7 @@ export interface FileRouteTypes {
     | '/og/courses/$course'
     | '/app/focus/'
     | '/app/notes/'
+    | '/app/recall/'
     | '/app/syllabus/'
     | '/app/tracker/'
     | '/courses/$course/'
@@ -550,8 +609,10 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
+    | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
+    | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/'
     | '/og/courses/$course/$level/$subject/$chapter'
@@ -582,10 +643,13 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/recall/forgotten'
+    | '/app/recall/stats'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/recall'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
@@ -593,6 +657,7 @@ export interface FileRouteTypes {
     | '/og/courses/$course'
     | '/app/focus'
     | '/app/notes'
+    | '/app/recall'
     | '/app/syllabus'
     | '/app/tracker'
     | '/courses/$course'
@@ -604,8 +669,10 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject'
+    | '/app/recall/review'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
+    | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject'
     | '/og/courses/$course/$level/$subject/$chapter'
@@ -637,10 +704,13 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/recall/forgotten'
+    | '/app/recall/stats'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/recall'
     | '/app/settings/tracker'
     | '/app/tracker/goals'
     | '/app/tracker/log'
@@ -648,6 +718,7 @@ export interface FileRouteTypes {
     | '/og/courses/$course'
     | '/app/focus/'
     | '/app/notes/'
+    | '/app/recall/'
     | '/app/syllabus/'
     | '/app/tracker/'
     | '/courses/$course/'
@@ -659,8 +730,10 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
+    | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
+    | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/'
     | '/og/courses/$course/$level/$subject/$chapter'
@@ -887,6 +960,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNotesTrashRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/recall/': {
+      id: '/app/recall/'
+      path: '/recall'
+      fullPath: '/app/recall/'
+      preLoaderRoute: typeof AppRecallIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/recall/forgotten': {
+      id: '/app/recall/forgotten'
+      path: '/recall/forgotten'
+      fullPath: '/app/recall/forgotten'
+      preLoaderRoute: typeof AppRecallForgottenRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/recall/stats': {
+      id: '/app/recall/stats'
+      path: '/recall/stats'
+      fullPath: '/app/recall/stats'
+      preLoaderRoute: typeof AppRecallStatsRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/coverage': {
       id: '/app/settings/coverage'
       path: '/settings/coverage'
@@ -913,6 +1007,13 @@ declare module '@tanstack/react-router' {
       path: '/settings/notifications'
       fullPath: '/app/settings/notifications'
       preLoaderRoute: typeof AppSettingsNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings/recall': {
+      id: '/app/settings/recall'
+      path: '/settings/recall'
+      fullPath: '/app/settings/recall'
+      preLoaderRoute: typeof AppSettingsRecallRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/settings/tracker': {
@@ -1013,6 +1114,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppNotesSummaryNewRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/recall/review/': {
+      id: '/app/recall/review/'
+      path: '/recall/review'
+      fullPath: '/app/recall/review/'
+      preLoaderRoute: typeof AppRecallReviewIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/syllabus/$subject/': {
       id: '/app/syllabus/$subject/'
       path: '/syllabus/$subject'
@@ -1040,6 +1148,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/courses/$course/$level/'
       preLoaderRoute: typeof CoursesCourseLevelIndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/app/recall/review/summary/$sessionId': {
+      id: '/app/recall/review/summary/$sessionId'
+      path: '/recall/review/summary/$sessionId'
+      fullPath: '/app/recall/review/summary/$sessionId'
+      preLoaderRoute: typeof AppRecallReviewSummarySessionIdRouteImport
+      parentRoute: typeof AppRoute
     }
     '/courses/$course/$level/$subject/': {
       id: '/courses/$course/$level/$subject/'
@@ -1077,16 +1192,20 @@ interface AppRouteChildren {
   AppNotesNewRoute: typeof AppNotesNewRoute
   AppNotesSearchRoute: typeof AppNotesSearchRoute
   AppNotesTrashRoute: typeof AppNotesTrashRoute
+  AppRecallForgottenRoute: typeof AppRecallForgottenRoute
+  AppRecallStatsRoute: typeof AppRecallStatsRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
   AppSettingsNotesRoute: typeof AppSettingsNotesRoute
   AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
+  AppSettingsRecallRoute: typeof AppSettingsRecallRoute
   AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
   AppNotesIndexRoute: typeof AppNotesIndexRoute
+  AppRecallIndexRoute: typeof AppRecallIndexRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
@@ -1097,7 +1216,9 @@ interface AppRouteChildren {
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
+  AppRecallReviewIndexRoute: typeof AppRecallReviewIndexRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
+  AppRecallReviewSummarySessionIdRoute: typeof AppRecallReviewSummarySessionIdRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
@@ -1112,16 +1233,20 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesNewRoute: AppNotesNewRoute,
   AppNotesSearchRoute: AppNotesSearchRoute,
   AppNotesTrashRoute: AppNotesTrashRoute,
+  AppRecallForgottenRoute: AppRecallForgottenRoute,
+  AppRecallStatsRoute: AppRecallStatsRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
   AppSettingsNotesRoute: AppSettingsNotesRoute,
   AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,
+  AppSettingsRecallRoute: AppSettingsRecallRoute,
   AppSettingsTrackerRoute: AppSettingsTrackerRoute,
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,
   AppTrackerReportsRoute: AppTrackerReportsRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
   AppNotesIndexRoute: AppNotesIndexRoute,
+  AppRecallIndexRoute: AppRecallIndexRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
   AppTrackerIndexRoute: AppTrackerIndexRoute,
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
@@ -1132,7 +1257,9 @@ const AppRouteChildren: AppRouteChildren = {
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,
+  AppRecallReviewIndexRoute: AppRecallReviewIndexRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
+  AppRecallReviewSummarySessionIdRoute: AppRecallReviewSummarySessionIdRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)

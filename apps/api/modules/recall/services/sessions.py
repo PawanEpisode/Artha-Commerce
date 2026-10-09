@@ -54,7 +54,9 @@ def open_session(
             return existing, False
         try:
             with transaction.atomic():
+                # The id is the client's id, so an offline device can tag reviews with it before the session is opened
                 row = RecallSession.objects.create(
+                    id=client_id,
                     user_id=user_id,
                     client_id=client_id,
                     source=source,

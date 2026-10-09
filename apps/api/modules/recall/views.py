@@ -343,7 +343,7 @@ class QueueView(RecallView):
             {
                 "source": d["source"],
                 "server_time": serializers.iso(now),
-                "cards": [serializers.queue_card_dict(c) for c in cards],
+                "cards": [{**serializers.queue_card_dict(c), **serializers.memory_dict(c.card)} for c in cards],
             }
         )
 

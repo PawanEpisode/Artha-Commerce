@@ -149,6 +149,13 @@ def test_the_queue_puts_learning_first_then_reviews_by_risk_with_new_cards_woven
         "state",
         "chapter",
         "source",
+        "stability",
+        "difficulty",
+        "due_scheduled_at",
+        "last_review_at",
+        "step",
+        "reps",
+        "lapses",
     }
     assert set(first["previews"]) == {"1", "2", "3", "4"} and first["front_md"].startswith("Question")
 

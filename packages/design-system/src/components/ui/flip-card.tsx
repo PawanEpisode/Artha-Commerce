@@ -29,6 +29,8 @@ interface FlipCardProps extends Omit<React.ComponentProps<'div'>, 'children'> {
   flipLabel?: string
   /** Show the Show answer button under the card (on by default). Turn it off when the caller supplies its own. */
   showFlipButton?: boolean
+  /** Move focus to the answer whenever the card turns, whatever turned it (a key, a gesture, the caller's own button). */
+  focusOnFlip?: boolean
 }
 
 /**
@@ -46,6 +48,7 @@ export function FlipCard({
   label = 'Flashcard',
   flipLabel = 'Show answer',
   showFlipButton = true,
+  focusOnFlip = false,
   className,
   ...props
 }: FlipCardProps) {
@@ -53,12 +56,14 @@ export function FlipCard({
   const backRef = React.useRef<HTMLDivElement>(null)
   const start = React.useRef<{ x: number; y: number } | null>(null)
   const turnedByButton = React.useRef(false)
+  const wasFlipped = React.useRef(flipped)
 
   React.useEffect(() => {
     // Only when this card was turned by its own button (which leaves the page as the card turns): a new card keeps the caller's focus
-    if (flipped && turnedByButton.current) backRef.current?.focus()
+    if (flipped && (turnedByButton.current || (focusOnFlip && !wasFlipped.current))) backRef.current?.focus()
+    wasFlipped.current = flipped
     turnedByButton.current = false
-  }, [flipped])
+  }, [flipped, focusOnFlip])
 
   const onPointerDown = (e: React.PointerEvent) => {
     start.current = swipeEnabled && flipped ? { x: e.clientX, y: e.clientY } : null

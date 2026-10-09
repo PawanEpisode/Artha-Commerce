@@ -224,3 +224,32 @@ describe('Recall showcase', () => {
     expect(container.querySelector('[class*="max-w-xl"]')?.className).toContain('w-full')
   })
 })
+
+describe('FlipCard focusOnFlip', () => {
+  function Controlled({ focusOnFlip }: { focusOnFlip: boolean }) {
+    const [flipped, setFlipped] = useState(false)
+    return (
+      <>
+        <button onClick={() => setFlipped(true)}>Outside flip</button>
+        <FlipCard
+          flipped={flipped}
+          onFlip={() => setFlipped(true)}
+          focusOnFlip={focusOnFlip}
+          front={<p>Front text</p>}
+          back={<p>Back text</p>}
+        />
+      </>
+    )
+  }
+
+  it('moves focus to the answer when the card is turned from outside, only if asked', async () => {
+    const user = userEvent.setup()
+    const { unmount } = render(<Controlled focusOnFlip />)
+    await user.click(screen.getByRole('button', { name: 'Outside flip' }))
+    expect(screen.getByText('Back text').parentElement).toHaveFocus()
+    unmount()
+    render(<Controlled focusOnFlip={false} />)
+    await user.click(screen.getByRole('button', { name: 'Outside flip' }))
+    expect(screen.getByText('Back text').parentElement).not.toHaveFocus()
+  })
+})

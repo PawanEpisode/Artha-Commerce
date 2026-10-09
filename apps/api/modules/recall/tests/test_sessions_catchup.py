@@ -24,7 +24,7 @@ def test_opening_a_session_is_idempotent_on_the_client_id():
     cid = uuid.uuid4()
     a, created = sessions.open_session(ME, cid, source="today", planned_count=20, now=NOW)
     b, again = sessions.open_session(ME, cid, source="today", now=NOW)
-    assert created and not again and a.id == b.id
+    assert created and not again and a.id == b.id == cid  # reviews can carry the client id before the session is opened
     assert (a.local_date, a.tz, a.planned_count, a.status) == (NOW.date(), "Asia/Kolkata", 20, "open")
 
 
