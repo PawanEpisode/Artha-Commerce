@@ -6,16 +6,18 @@ must keep working with the flag off (data export and delete-all arrive in W11, D
 
 from __future__ import annotations
 
+from django.conf import settings
 from django.utils import timezone
-from rest_framework.exceptions import NotFound
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import NotFound, ValidationError
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle
 
+from core.http import request_has_secret
 from core.permissions import ParsedAPIView
 
 from . import selectors, serializers, services
-from .errors import CardDeleted
+from .errors import BatchTooLarge, CardDeleted
 from .permissions import RecallFlagEnabled
 from .selectors import CardFilter
 from .services.cards import UNDO_SECONDS, SelectionSource
@@ -184,3 +186,123 @@ class CardBulkView(WriteView):
         args = {k: d[k] for k in ("chapter_id", "topic_id", "importance", "tag", "deck_id") if k in d}
         result = services.cards.bulk_update(request.user.id, d["ids"], d["action"], **args)
         return Response({"count": result.count})
+
+
+# --- reviews, sessions, catch-up (W5) ---------------------------------------------------------------------------------
+TICK_HEADER = "X-Recall-Tick-Secret"
+
+
+class ReviewView(RecallView):
+    """Rating a card is never limited by quota; the `recall_review` throttle (600/min) is only politeness."""
+
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "recall_review"
+
+
+class ReviewSubmitView(ReviewView):
+    def post(self, request):
+        event = self.parse(serializers.ReviewSerializer, request.data).to_event()
+        result = services.reviews.submit_review(request.user.id, event)
+        if result.status == services.reviews.INVALID:
+            if result.reason == "unknown_card":
+                raise NotFound("Card not found.")
+            raise ValidationError({"detail": result.reason, "code": result.reason})
+        return Response(serializers.review_result_dict(result), status=200 if result.status == "duplicate" else 201)
+
+
+class ReviewBatchView(ReviewView):
+    def post(self, request):
+        raw = self.parse(serializers.ReviewBatchSerializer, request.data).validated_data["events"]
+        if len(raw) > services.reviews.lim.BATCH_MAX_EVENTS:
+            raise BatchTooLarge
+        events = []
+        rejected: dict[int, str] = {}
+        for i, item in enumerate(raw):
+            s = serializers.ReviewSerializer(data=item)
+            if s.is_valid():
+                events.append(s.to_event())
+            else:
+                rejected[i] = "invalid_event"
+        results, cards = services.reviews.submit_reviews(request.user.id, events)
+        body = [serializers.review_result_dict(r) for r in results]
+        body += [
+            {
+                "event_id": str(raw[i].get("id", "")),
+                "status": "invalid",
+                "reason": reason,
+                "merged": False,
+                "card": None,
+            }
+            for i, reason in rejected.items()
+        ]
+        return Response(
+            {
+                "results": body,
+                "cards": [serializers.review_card_dict(c) for c in cards],
+                "server_time": serializers.iso(timezone.now()),
+            }
+        )
+
+
+class ReviewUndoView(ReviewView):
+    def post(self, request):
+        d = self.parse(serializers.ReviewUndoSerializer, request.data).validated_data
+        result = services.reviews.undo_review(request.user.id, d["undo_id"], d["voids_id"])
+        return Response(
+            {
+                "undo_id": str(result.undo_id),
+                "voids_id": str(result.voids_id),
+                "card": serializers.review_card_dict(result.card) if result.card else None,
+            }
+        )
+
+
+class SessionOpenView(ReviewView):
+    def post(self, request):
+        d = self.parse(serializers.SessionOpenSerializer, request.data).validated_data
+        row, created = services.sessions.open_session(
+            request.user.id,
+            d["client_id"],
+            source=d["source"],
+            spec=d["spec"],
+            tz=d["tz"],
+            planned_count=d["planned_count"],
+        )
+        return Response(serializers.session_dict(row), status=201 if created else 200)
+
+
+class SessionCloseView(ReviewView):
+    def post(self, request, session_id):
+        row, summary = services.sessions.close_session(request.user.id, session_id)
+        return Response({**serializers.session_dict(row), "summary": summary})
+
+
+class RebalanceView(WriteView):
+    def post(self, request):
+        d = self.parse(serializers.RebalanceSerializer, request.data or {}).validated_data
+        return Response(services.catchup.rebalance(request.user.id, d["days"]))
+
+
+class VacationView(WriteView):
+    def put(self, request):
+        d = self.parse(serializers.VacationSerializer, request.data).validated_data
+        result = services.preferences.set_vacation(request.user.id, d["until"])
+        return Response({**result, "vacation_until": d["until"].isoformat() if d["until"] else None})
+
+
+class TickView(ParsedAPIView):
+    """
+    Cron entry (Vercel Cron GET or a POST from any scheduler): closes sessions idle for 60 minutes. Authenticated by a shared
+    secret, not a student token, open whatever the flag says, bounded and safe to repeat.
+    """
+
+    authentication_classes: list = []
+    permission_classes = [AllowAny]
+    throttle_classes: list = []
+
+    def _tick(self, request):
+        if not request_has_secret(request, settings.RECALL_TICK_SECRET, TICK_HEADER):
+            return Response({"error": {"code": "forbidden", "message": "Not allowed.", "details": None}}, status=403)
+        return Response({"sessions_closed": services.sessions.close_idle()})
+
+    get = post = _tick

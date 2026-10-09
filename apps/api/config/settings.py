@@ -186,7 +186,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", "http://localhost:3000")
 CORS_ALLOW_CREDENTIALS = False  # bearer tokens, not cookies
 # The queue and the scheduler call `notifications/internal/` server to server: never a browser, so never CORS.
-CORS_URLS_REGEX = r"^(?!/api/v1/(notifications|notes)/internal/).*$"
+CORS_URLS_REGEX = r"^(?!/api/v1/(notifications|notes|recall)/internal/).*$"
 
 # --- Supabase / Gemini ------------------------------------------------------------------------
 SUPABASE_URL = env("SUPABASE_URL").rstrip("/")

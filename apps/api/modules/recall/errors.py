@@ -13,7 +13,10 @@ __all__ = [
     "DuplicateCard",
     "EditConflict",
     "FeatureDisabled",
+    "BatchTooLarge",
     "InvalidFields",
+    "InvalidSetting",
+    "NotUndoable",
     "QuotaExceeded",
     "RecallFeatureDisabled",
     "UndoExpired",
@@ -70,6 +73,27 @@ class CardDeleted(CodedError):
     status_code = status.HTTP_410_GONE
     default_detail = "This card was deleted."
     default_code = "card_deleted"
+
+
+class NotUndoable(Conflict):
+    """409: only the last 10 reviews of a session, received less than 30 minutes ago, can be undone (once)."""
+
+    default_detail = "That review can no longer be undone."
+    default_code = "not_undoable"
+
+
+class BatchTooLarge(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "A batch takes at most 100 reviews."
+    default_code = "batch_too_large"
+
+
+class InvalidSetting(CodedError):
+    """422 with `details` `{errors: [{field, code, message}]}`."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That setting is not valid."
+    default_code = "invalid_setting"
 
 
 class UndoExpired(CodedError):

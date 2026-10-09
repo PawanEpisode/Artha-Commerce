@@ -4,10 +4,13 @@ from __future__ import annotations
 
 from rest_framework import serializers
 
+from .domain.limits import REBALANCE_DEFAULT_DAYS, REBALANCE_MAX_DAYS_AHEAD
 from .models import ITEM_IMPORTANCES, ITEM_KINDS
+from .models import REVIEWLOG_MODES as REVIEW_MODES
 from .selectors import CardView
 from .selectors.cards import SORTS, STATES
 from .services.cards import BULK_ACTIONS, SELECTION_ORIGINS
+from .services.reviews import ReviewIn
 from .vocab import STATE_NAMES
 
 KIND = serializers.CharField(max_length=24)  # the registry decides what exists: 422 `unknown_kind`, not 400
@@ -173,4 +176,92 @@ def card_dict(view: CardView) -> dict:
         "lapses": c.lapses,
         "created_at": iso(c.created_at),
         "updated_at": iso(c.updated_at),
+    }
+
+
+# --- reviews (W5) ----------------------------------------------------------------------------------------------------
+class ReviewSerializer(serializers.Serializer):
+    id = serializers.UUIDField()
+    card_id = serializers.UUIDField()
+    rating = serializers.IntegerField(min_value=1, max_value=4)
+    reviewed_at = serializers.DateTimeField()
+    duration_ms = serializers.IntegerField(
+        required=False, allow_null=True, default=None, min_value=0, max_value=3_600_000
+    )
+    session_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    mode = serializers.ChoiceField(choices=REVIEW_MODES, required=False, default="normal")
+    item_version_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    device_id = serializers.CharField(required=False, allow_null=True, default=None, max_length=64)
+    tz_offset_min = serializers.IntegerField(required=False, default=0, min_value=-840, max_value=840)
+
+    def to_event(self) -> ReviewIn:
+        return ReviewIn(**self.validated_data)
+
+
+class ReviewBatchSerializer(serializers.Serializer):
+    # The 100 cap is a 422 `batch_too_large` from the service, like the card bulk cap
+    events = serializers.ListField(child=serializers.DictField(), allow_empty=False, max_length=1000)
+
+
+class ReviewUndoSerializer(serializers.Serializer):
+    undo_id = serializers.UUIDField()
+    voids_id = serializers.UUIDField()
+
+
+class SessionOpenSerializer(serializers.Serializer):
+    client_id = serializers.UUIDField()
+    source = serializers.CharField(max_length=14)
+    spec = serializers.DictField(required=False, default=dict)
+    tz = serializers.CharField(required=False, allow_null=True, default=None, max_length=64)
+    planned_count = serializers.IntegerField(required=False, default=0, min_value=0, max_value=32000)
+
+
+class RebalanceSerializer(serializers.Serializer):
+    days = serializers.IntegerField(
+        required=False, default=REBALANCE_DEFAULT_DAYS, min_value=1, max_value=REBALANCE_MAX_DAYS_AHEAD
+    )
+
+
+class VacationSerializer(serializers.Serializer):
+    until = serializers.DateField(allow_null=True)
+
+
+def review_card_dict(card) -> dict:
+    """The part of a card a review changes; the client merges it into its copy (compare `rev`)."""
+    return {
+        "id": str(card.id),
+        "rev": card.rev,
+        "state": card.state,
+        "state_name": STATE_NAMES[card.state],
+        "status": card.status,
+        "due_at": iso(card.due_at),
+        "buried_until": iso(card.buried_until),
+        "reps": card.reps,
+        "lapses": card.lapses,
+        "leech": card.leech,
+        "needs_recheck": card.needs_recheck,
+    }
+
+
+def review_result_dict(result) -> dict:
+    return {
+        "event_id": str(result.event_id),
+        "status": result.status,
+        "reason": result.reason,
+        "merged": result.merged,
+        "card": review_card_dict(result.card) if result.card is not None else None,
+    }
+
+
+def session_dict(row) -> dict:
+    return {
+        "id": str(row.id),
+        "client_id": str(row.client_id),
+        "source": row.source,
+        "status": row.status,
+        "started_at": iso(row.started_at),
+        "ended_at": iso(row.ended_at),
+        "local_date": row.local_date.isoformat(),
+        "planned_count": row.planned_count,
+        "reviewed": row.reviewed,
     }

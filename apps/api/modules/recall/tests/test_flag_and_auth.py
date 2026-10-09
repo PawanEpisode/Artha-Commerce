@@ -18,7 +18,15 @@ URLS = [
     ("patch", f"/recall/cards/{CARD}/"),
     ("delete", f"/recall/cards/{CARD}/"),
     *[("post", f"/recall/cards/{CARD}/{slug}/") for slug in ("suspend", "unsuspend", "bury", "reset", "recheck-ok")],
+    ("post", "/recall/reviews/"),
+    ("post", "/recall/reviews/batch/"),
+    ("post", "/recall/reviews/undo/"),
+    ("post", "/recall/sessions/"),
+    ("post", f"/recall/sessions/{CARD}/close/"),
+    ("post", "/recall/catchup/rebalance/"),
+    ("put", "/recall/vacation/"),
 ]
+TICK = "/recall/internal/tick/"  # authenticated by a shared secret, open whatever the flag says (tested in test_reviews_api)
 
 
 def call(client, method, path):
@@ -58,7 +66,7 @@ def test_nothing_is_written_with_the_flag_off(api, flag_off):
 def test_every_recall_route_is_in_the_matrix():
     from modules.recall import urls
 
-    assert len(urls.urlpatterns) == len({path.replace(CARD, "<id>") for _, path in URLS})
+    assert len(urls.urlpatterns) == len({path.replace(CARD, "<id>") for _, path in URLS}) + 1  # + the tick
 
 
 def test_throttle_scopes_exist():

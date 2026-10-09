@@ -99,3 +99,37 @@ def test_fuzz_unit_is_in_range_and_stable(card_id, reps):
     u = fsrs6.fuzz_unit(card_id, reps)
     assert 0.0 <= u < 1.0
     assert u == fsrs6.fuzz_unit(card_id, reps)
+
+
+def test_fold_trace_ends_in_the_same_state_as_fold_and_reports_each_review():
+    import random
+    from datetime import UTC, datetime, timedelta
+
+    from modules.recall.domain.folding import fold_trace
+    from modules.recall.domain.fsrs6 import DEFAULT_WEIGHTS, Cfg
+
+    rng = random.Random(7)
+    base = datetime(2026, 10, 1, 8, tzinfo=UTC)
+    cfg = Cfg()
+    for _ in range(25):
+        events = [
+            ReviewEvent(
+                f"r{i}",
+                base + timedelta(hours=rng.randint(0, 900)),
+                rng.randint(1, 4),
+                rng.random() > 0.2,
+                rng.random() > 0.85,
+            )
+            for i in range(rng.randint(1, 15))
+        ]
+        if rng.random() > 0.5:
+            events.append(ScheduleEvent("s1", base + timedelta(hours=rng.randint(0, 900)), "forget"))
+        state, traces = fold_trace(events, DEFAULT_WEIGHTS, cfg, card_id="c1")
+        assert state == fold(events, DEFAULT_WEIGHTS, cfg, card_id="c1")
+        reviews = [e for e in events if isinstance(e, ReviewEvent)]
+        assert set(traces) == {e.id for e in reviews}
+        assert all(
+            (t.outcome is not None) == (e.counts_for_scheduling and not e.voided)
+            for e in reviews
+            for t in [traces[e.id]]
+        )

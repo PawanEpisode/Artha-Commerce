@@ -23,3 +23,13 @@ urlpatterns = [
         )
     ),
 ]
+urlpatterns += [
+    path("recall/reviews/", views.ReviewSubmitView.as_view(), name="recall-reviews"),
+    path("recall/reviews/batch/", views.ReviewBatchView.as_view(), name="recall-reviews-batch"),
+    path("recall/reviews/undo/", views.ReviewUndoView.as_view(), name="recall-reviews-undo"),
+    path("recall/sessions/", views.SessionOpenView.as_view(), name="recall-sessions"),
+    path("recall/sessions/<uuid:session_id>/close/", views.SessionCloseView.as_view(), name="recall-session-close"),
+    path("recall/catchup/rebalance/", views.RebalanceView.as_view(), name="recall-rebalance"),
+    path("recall/vacation/", views.VacationView.as_view(), name="recall-vacation"),
+    path("recall/internal/tick/", views.TickView.as_view(), name="recall-tick"),
+]

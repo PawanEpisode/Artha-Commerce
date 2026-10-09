@@ -10,7 +10,7 @@ from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from datetime import datetime
 
-from .fsrs6 import Cfg, MemoryState, cap_stability, review
+from .fsrs6 import Cfg, MemoryState, ReviewOutcome, cap_stability, review
 from .limits import CONTENT_RESET_STABILITY_CAP_DAYS, PHASE_NEW
 
 
@@ -93,3 +93,36 @@ def fold(events: Iterable[ReviewEvent | ScheduleEvent], w: Sequence[float], cfg:
         seen.add(key)
         state = apply_event(state, event, w, cfg, card_id=card_id)
     return state
+
+
+@dataclass(frozen=True)
+class Trace:
+    """What one review event did while folding: the phase the card was in before it, and the outcome if it counted."""
+
+    phase_before: int
+    state_before: MemoryState
+    outcome: ReviewOutcome | None  # None when the event does not count (cram, late, stale, voided)
+
+
+def fold_trace(
+    events: Iterable[ReviewEvent | ScheduleEvent], w: Sequence[float], cfg: Cfg, *, card_id: object
+) -> tuple[CardState, dict[str, Trace]]:
+    """`fold`, plus the per-review trace the replay service writes back into the log's derived columns."""
+    seen: set[tuple[str, str]] = set()
+    state = new_card_state()
+    traces: dict[str, Trace] = {}
+    for event in sorted(events, key=_order):
+        key = ("s" if isinstance(event, ScheduleEvent) else "r", event.id)
+        if key in seen:
+            continue
+        seen.add(key)
+        if isinstance(event, ReviewEvent):
+            outcome = None
+            if event.counts_for_scheduling and not event.voided:
+                outcome = review(state.memory, event.rating, event.at, w, cfg, card_id=card_id)
+            traces[event.id] = Trace(state.memory.phase, state.memory, outcome)
+            if outcome is not None:
+                state = CardState(outcome.state, outcome.due_at, None)
+            continue
+        state = apply_event(state, event, w, cfg, card_id=card_id)
+    return state, traces
