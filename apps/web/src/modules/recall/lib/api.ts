@@ -12,12 +12,17 @@ import {
   cardDetailSchema,
   cardPageSchema,
   createdCardsSchema,
+  deckDetailSchema,
+  deckLibrarySchema,
+  deckListSchema,
   deletedCardSchema,
+  eraseResultSchema,
   forgottenListSchema,
   packSchema,
   queueSchema,
   rebalanceSchema,
   type RecallSettings,
+  reportResultSchema,
   reviewHistorySchema,
   sessionCloseSchema,
   sessionSchema,
@@ -26,8 +31,10 @@ import {
   statsForecastSchema,
   statsRetentionSchema,
   statsSummarySchema,
+  subscribeResultSchema,
   todaySchema,
   undoResponseSchema,
+  unsubscribeResultSchema,
   vacationSchema,
 } from './schemas'
 
@@ -154,6 +161,49 @@ export const recallApi = {
 
   cards: async (p: Record<string, string | number | undefined> = {}) =>
     learnClock(parse(cardPageSchema, await api<unknown>(`/recall/cards/${qs(p)}`))),
+
+  // --- platform decks (W11) ---
+  deckLibrary: async (p: DeckLibraryParams = {}) =>
+    parse(deckLibrarySchema, await api<unknown>(`/recall/decks/library/${qs({ ...p })}`)),
+
+  myDecks: async () => parse(deckListSchema, await api<unknown>('/recall/decks/subscribed/')).items,
+
+  deck: async (deckId: string) => parse(deckDetailSchema, await api<unknown>(`/recall/decks/${deckId}/`)),
+
+  /** Copies the deck's cards into hers. Safe to repeat: a second tap answers 200 and changes nothing. */
+  subscribe: async (deckId: string, body: { min_importance?: Tier } = {}) =>
+    parse(subscribeResultSchema, await api<unknown>(`/recall/decks/${deckId}/subscribe/`, jsonBody(body))),
+
+  unsubscribe: async (subscriptionId: string) =>
+    parse(
+      unsubscribeResultSchema,
+      await api<unknown>(`/recall/subscriptions/${subscriptionId}/unsubscribe/`, jsonBody({})),
+    ),
+
+  resubscribe: async (subscriptionId: string) =>
+    parse(
+      subscribeResultSchema,
+      await api<unknown>(`/recall/subscriptions/${subscriptionId}/resubscribe/`, jsonBody({})),
+    ),
+
+  reportItem: async (itemId: string, body: { reason: ReportReason; note?: string }) =>
+    parse(reportResultSchema, await api<unknown>(`/recall/items/${itemId}/report/`, jsonBody(body))),
+
+  // --- her data (W11): open even when the feature is switched off ---
+  exportJson: async () => api<unknown>('/recall/export/'),
+
+  erase: async (confirm: string) =>
+    parse(eraseResultSchema, await api<unknown>('/recall/erase/', jsonBody({ confirm }))),
+}
+
+export type Tier = 'bullet' | 'important' | 'mandatory'
+export type ReportReason = 'wrong' | 'outdated' | 'copyright' | 'other'
+export interface DeckLibraryParams {
+  tier?: Tier
+  subject_key?: string
+  chapter_id?: string
+  cursor?: string
+  limit?: number
 }
 
 export type CardStateAction = 'suspend' | 'unsuspend' | 'bury' | 'reset' | 'recheck-ok'

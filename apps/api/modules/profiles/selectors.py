@@ -22,6 +22,18 @@ def email_of(user_id) -> str:
     return Profile.objects.filter(pk=user_id).values_list("email", flat=True).first() or ""
 
 
+def role_for_email(email: str) -> str | None:
+    """
+    The staff role (`student`, `editor`, `admin`) of the profile with this address, matched ignoring case. None when there is no
+    profile, or more than one (an ambiguous address never grants anything). Read by staff tools that map a Django staff login to
+    the platform role (recall admin scopes); never use it to identify a student.
+    """
+    if not email or not email.strip():
+        return None
+    roles = list(Profile.objects.filter(email__iexact=email.strip()).values_list("role", flat=True)[:2])
+    return roles[0] if len(roles) == 1 else None
+
+
 def get_last_visit(user_id) -> LastVisit | None:
     return LastVisit.objects.filter(pk=user_id).first()
 

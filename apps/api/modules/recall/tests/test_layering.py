@@ -39,7 +39,11 @@ def test_views_import_no_models_and_run_no_queries():
 
 
 def test_only_adapters_import_other_modules_and_only_through_selectors():
-    allowed = {"adapters/syllabus.py": "modules.syllabus", "adapters/coverage.py": None}
+    allowed = {
+        "adapters/syllabus.py": "modules.syllabus",
+        "adapters/coverage.py": None,
+        "adapters/profiles.py": "modules.profiles",
+    }
     other = re.compile(r"^\s*(?:from|import)\s+modules\.(?!recall\b)(\w+)", re.M)
     for path in sources():
         rel = str(path.relative_to(ROOT))
@@ -47,3 +51,4 @@ def test_only_adapters_import_other_modules_and_only_through_selectors():
         if found:
             assert rel in allowed, f"{rel} imports {found}"
     assert "selectors" in (ROOT / "adapters/syllabus.py").read_text()
+    assert "selectors" in (ROOT / "adapters/profiles.py").read_text()

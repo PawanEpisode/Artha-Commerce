@@ -5,14 +5,17 @@ from .avatar import remove_avatar, set_preset, set_upload
 from .lastvisit import record_visit
 from .onboarding import complete_onboarding, save_step, skip_step
 from .profile import (
+    StaffRoleError,
     ensure_student,
     get_or_create_onboarding,
     get_or_create_profile,
+    set_staff_role,
     update_name,
 )
 
 __all__ = [
     "CONFIRM_WORD",
+    "StaffRoleError",
     "complete_onboarding",
     "delete_account",
     "ensure_student",
@@ -23,6 +26,7 @@ __all__ = [
     "remove_avatar",
     "save_step",
     "set_preset",
+    "set_staff_role",
     "set_upload",
     "skip_step",
     "update_name",

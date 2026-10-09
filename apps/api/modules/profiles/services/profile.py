@@ -68,3 +68,29 @@ def update_name(user_id, raw_name: str) -> Profile:
 def touch(profile: Profile) -> None:
     """Bump `updated_at` after a change made through another table (used by avatar changes in later slices)."""
     Profile.objects.filter(pk=profile.pk).update(updated_at=timezone.now())
+
+
+class StaffRoleError(ValueError):
+    """The profile for an address is missing or ambiguous, or the role is not one of the three."""
+
+
+def set_staff_role(email: str, role: str) -> Profile:
+    """
+    Set `profiles.role` for the ONE profile with this address (ignoring case). Staff roles are never granted through the API
+    (the serializers do not expose `role`); this is the operator path behind the `grant_staff_role` command. The person must
+    have signed in once so the profile exists.
+    """
+    if role not in Profile.Role.values:
+        raise StaffRoleError(f"Role must be one of: {', '.join(Profile.Role.values)}.")
+    rows = list(Profile.objects.filter(email__iexact=(email or "").strip())[:2])
+    if not rows:
+        raise StaffRoleError(
+            f"No profile with the address {email!r}. Ask the person to sign in once, then run this again."
+        )
+    if len(rows) > 1:
+        raise StaffRoleError(f"More than one profile has the address {email!r}; fix that first.")
+    profile = rows[0]
+    if profile.role != role:
+        profile.role = role
+        profile.save(update_fields=["role", "updated_at"])
+    return profile

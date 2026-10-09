@@ -9,11 +9,13 @@ from rest_framework import serializers
 from .domain.limits import REBALANCE_DEFAULT_DAYS, REBALANCE_MAX_DAYS_AHEAD
 from .models import ITEM_IMPORTANCES, ITEM_KINDS
 from .models import REVIEWLOG_MODES as REVIEW_MODES
-from .selectors import CardView
+from .selectors import CardView, DeckItemView, DeckView
 from .selectors.cards import SORTS, STATES
+from .selectors.export import MAX_PAGE as MAX_CSV_PAGE
 from .selectors.queue import SOURCES as QUEUE_SOURCES
 from .selectors.stats import RANGES as STATS_RANGES
 from .services.cards import BULK_ACTIONS, SELECTION_ORIGINS
+from .services.erasure import CONFIRM_WORD as ERASE_WORD
 from .services.reviews import ReviewIn
 from .vocab import IMPORTANCE_INT, STATE_NAMES
 
@@ -450,4 +452,86 @@ def today_dict(p, now) -> dict:
         "tiles": [{"subject_key": t.subject_key, "total": t.total, "kinds": t.kinds} for t in p.tiles],
         "forgotten": [forgotten_dict(r) for r in p.forgotten],
         "exam": None,
+    }
+
+
+# --- platform decks, export and erase (W11) ---------------------------------------------------------------------------
+class DeckLibraryQuery(serializers.Serializer):
+    course = serializers.SlugField(required=False, max_length=16)
+    level = serializers.SlugField(required=False, max_length=32)
+    subject_key = serializers.SlugField(required=False, max_length=80)
+    chapter_id = serializers.UUIDField(required=False)
+    tier = serializers.ChoiceField(choices=ITEM_IMPORTANCES, required=False)
+    cursor = serializers.CharField(required=False, allow_blank=True)
+    limit = serializers.IntegerField(required=False, min_value=1, max_value=50)
+
+
+class SubscribeSerializer(serializers.Serializer):
+    follow_updates = serializers.BooleanField(required=False, default=True)
+    unlock_mode = serializers.ChoiceField(choices=("with_coverage", "all"), required=False, default="with_coverage")
+    min_importance = serializers.ChoiceField(choices=ITEM_IMPORTANCES, required=False, default="bullet")
+
+
+class ReportItemSerializer(serializers.Serializer):
+    reason = serializers.ChoiceField(choices=("wrong", "outdated", "copyright", "other"))
+    note = serializers.CharField(required=False, allow_blank=True, default="", max_length=500, trim_whitespace=True)
+
+
+class EraseSerializer(serializers.Serializer):
+    confirm = serializers.CharField(max_length=20)
+
+    def validate_confirm(self, value):
+        if value != ERASE_WORD:
+            raise serializers.ValidationError(f"Type {ERASE_WORD} to confirm.")
+        return value
+
+
+class CsvQuery(serializers.Serializer):
+    cursor = serializers.CharField(required=False, allow_blank=True)
+    limit = serializers.IntegerField(required=False, min_value=1, max_value=MAX_CSV_PAGE)
+
+
+def subscription_dict(s) -> dict | None:
+    if s is None:
+        return None
+    return {
+        "id": str(s.id),
+        "status": s.status,
+        "version_no": s.version_no,
+        "newer_versions": s.newer_versions,
+        "subscribed_at": iso(s.subscribed_at),
+        "min_importance": s.min_importance,
+    }
+
+
+def deck_dict(d: DeckView) -> dict:
+    return {
+        "id": str(d.id),
+        "slug": d.slug,
+        "title": d.title,
+        "description": d.description,
+        "course_id": str(d.course_id) if d.course_id else None,
+        "level_id": str(d.level_id) if d.level_id else None,
+        "subject_key": d.subject_key,
+        "subject_name": d.subject_name,
+        "chapter_id": str(d.chapter_id) if d.chapter_id else None,
+        "chapter_name": d.chapter_name,
+        "version_no": d.version_no,
+        "item_count": d.item_count,
+        "card_count": d.card_count,
+        "tiers": d.tiers,
+        "published_at": iso(d.published_at),
+        "changelog_md": d.changelog_md,
+        "subscription": subscription_dict(d.subscription),
+    }
+
+
+def deck_item_dict(i: DeckItemView) -> dict:
+    return {
+        "item_id": str(i.item_id),
+        "kind": i.kind,
+        "importance": i.importance,
+        "position": i.position,
+        "preview": i.preview,
+        "chapter_name": i.chapter_name,
     }

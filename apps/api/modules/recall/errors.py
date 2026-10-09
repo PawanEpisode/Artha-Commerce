@@ -7,6 +7,12 @@ from core.errors import CodedError, Conflict, FeatureDisabled, QuotaExceeded
 __all__ = [
     "BadCursor",
     "BulkTooLarge",
+    "DeckNotFound",
+    "DeckTooLarge",
+    "EmptyDeckVersion",
+    "ItemNotPublishable",
+    "RightsBlocked",
+    "VersionNotPublishable",
     "CardDeleted",
     "CodedError",
     "Conflict",
@@ -115,3 +121,48 @@ class BadCursor(CodedError):
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = "That cursor is not valid."
     default_code = "bad_cursor"
+
+
+class DeckNotFound(CodedError):
+    """404: no live platform deck with that id (drafts and withdrawn decks are invisible to students)."""
+
+    status_code = status.HTTP_404_NOT_FOUND
+    default_detail = "That deck was not found."
+    default_code = "deck_not_found"
+
+
+class DeckTooLarge(CodedError):
+    """422 with `details` `{cards, limit}`: a platform deck of more than 500 cards is never half copied (FR-F15-46)."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "This deck has too many cards to add in one go. Try a higher importance tier."
+    default_code = "deck_too_large"
+
+
+class RightsBlocked(CodedError):
+    """422 with `details` `{item_ids}` (ids only, no text): an item whose rights status is `unknown` cannot go live."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "Some items have an unknown rights status, so this version cannot be published."
+    default_code = "rights_blocked"
+
+
+class VersionNotPublishable(Conflict):
+    """409: only a draft or in-review deck version newer than the live one can be published."""
+
+    default_detail = "This deck version cannot be published."
+    default_code = "version_not_publishable"
+
+
+class EmptyDeckVersion(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "A deck version needs at least one item."
+    default_code = "empty_deck_version"
+
+
+class ItemNotPublishable(CodedError):
+    """422 with `details` `{item_ids}`: an item is withdrawn, deleted, not a platform item or has a withdrawn version."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "Some items in this version cannot be published."
+    default_code = "item_not_publishable"

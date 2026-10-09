@@ -43,3 +43,24 @@ urlpatterns += [
     path("recall/settings/", views.SettingsView.as_view(), name="recall-settings"),
     path("recall/internal/tick/", views.TickView.as_view(), name="recall-tick"),
 ]
+urlpatterns += [
+    path("recall/decks/library/", views.DeckLibraryView.as_view(), name="recall-deck-library"),
+    path("recall/decks/subscribed/", views.DeckSubscribedView.as_view(), name="recall-deck-subscribed"),
+    path("recall/decks/<uuid:deck_id>/", views.DeckDetailView.as_view(), name="recall-deck"),
+    path("recall/decks/<uuid:deck_id>/subscribe/", views.DeckSubscribeView.as_view(), name="recall-deck-subscribe"),
+    path(
+        "recall/subscriptions/<uuid:subscription_id>/unsubscribe/",
+        views.SubscriptionActionView.as_view(action="unsubscribe"),
+        name="recall-unsubscribe",
+    ),
+    path(
+        "recall/subscriptions/<uuid:subscription_id>/resubscribe/",
+        views.SubscriptionActionView.as_view(action="resubscribe"),
+        name="recall-resubscribe",
+    ),
+    path("recall/items/<uuid:item_id>/report/", views.ItemReportView.as_view(), name="recall-item-report"),
+    path("recall/export/", views.ExportView.as_view(), name="recall-export"),
+    path("recall/export/cards.csv", views.CsvExportView.as_view(which="cards"), name="recall-export-cards"),
+    path("recall/export/reviews.csv", views.CsvExportView.as_view(which="reviews"), name="recall-export-reviews"),
+    path("recall/erase/", views.EraseView.as_view(), name="recall-erase"),
+]

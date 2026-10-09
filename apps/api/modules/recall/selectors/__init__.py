@@ -11,6 +11,7 @@ from .cards import (
     list_cards,
     render_card,
 )
+from .decks import DeckDetail, DeckItemView, DeckView, SubscriptionView, deck_detail, library, my_subscriptions
 from .forgotten import ForgottenRow, forgotten
 from .pack import Pack, pack_for_device
 from .queue import QueueCard, QueueFilters, build_queue
@@ -30,6 +31,13 @@ from .today import ProviderResult, RecallTask, TodayPlan, provide_today, today_p
 
 __all__ = [
     "CardFilter",
+    "DeckDetail",
+    "DeckItemView",
+    "DeckView",
+    "SubscriptionView",
+    "deck_detail",
+    "library",
+    "my_subscriptions",
     "CardView",
     "DueCounts",
     "ForgottenRow",

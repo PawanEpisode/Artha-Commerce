@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "sample": false,
+  "_help": [
+    "Copy this file, rename it (no leading underscore) and fill in your decks. Files starting with an underscore are never loaded.",
+    "The loader ignores top-level keys that start with an underscore (this _help), but rejects unknown keys inside decks and items.",
+    "`ref` is yours and must never change: it is how a second load finds the item to update instead of duplicating it. `slug` does the same for a deck.",
+    "kind: pointer, formula, section, definition, mnemonic, case_law or cloze. The fields of each kind are listed in docs/F-15-ROLLOUT.md (W11, seed files).",
+    "importance: mandatory (must know), important or bullet. rights_status: original (our own words), licensed, institute_material, third_party_claimed or unknown. `unknown` blocks publishing.",
+    "Write every card in our own words (Q-F15-4). Markdown and $KaTeX$ are allowed, up to 4,000 characters per field.",
+    "change_kind on an edited item: typo or clarify (no effect on students' schedules), substantive or amendment (R2 sync brings the card back).",
+    "chapter_key is the stable key of the chapter in the syllabus (the last part of /courses/<course>/<level>/<subject>/<chapter>)."
+  ],
+  "decks": [
+    {
+      "slug": "ca-foundation-accounting-process",
+      "title": "Accounting process: key pointers",
+      "description": "The pointers you must know before the exam.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "ca",
+        "level": "foundation",
+        "subject_key": "accounting",
+        "chapter_key": "accounting-process"
+      },
+      "items": [
+        {
+          "ref": "ca-inter-gst-supply-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Question in your own words?",
+            "answer_md": "Short answer in your own words."
+          },
+          "tags": [
+            "gst"
+          ],
+          "reference_keys": [
+            "cgst:7"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

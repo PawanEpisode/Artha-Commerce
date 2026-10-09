@@ -57,3 +57,9 @@ def link_columns(chapter_id: UUID | None, topic_id: UUID | None = None) -> dict[
 def chapter_refs(chapter_ids: Iterable[UUID | None]) -> Mapping[UUID, ChapterRef]:
     """Display references for the visible chapters among the ids (one query); the rest are simply absent."""
     return syllabus.chapter_refs([c for c in set(chapter_ids) if c is not None])
+
+
+def chapter_id_by_keys(course_code: str, level_code: str, subject_key: str, chapter_key: str) -> UUID | None:
+    """The id of an active chapter of the CURRENT scheme by its stable keys (seed files name chapters by key), or None."""
+    chapter = syllabus.get_chapter_by_keys(course_code, level_code, subject_key, chapter_key)
+    return chapter.id if chapter is not None else None

@@ -347,3 +347,66 @@ export const reviewRowSchema = z.object({
 })
 export type ReviewRow = z.infer<typeof reviewRowSchema>
 export const reviewHistorySchema = z.object({ items: z.array(reviewRowSchema) })
+
+// ----------------------------------------------------------------------------------------- platform decks (W11)
+
+export const deckSubscriptionSchema = z
+  .object({
+    id: z.string(),
+    status: z.enum(['active', 'archived']),
+    version_no: z.number(),
+    /** How many newer versions exist. R1 shows this as a count only (nothing is pulled in until R2). */
+    newer_versions: z.number(),
+    subscribed_at: iso,
+    min_importance: z.string(),
+  })
+  .nullable()
+export type DeckSubscription = z.infer<typeof deckSubscriptionSchema>
+
+export const deckSchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  title: z.string(),
+  description: z.string(),
+  course_id: z.string().nullable(),
+  level_id: z.string().nullable(),
+  subject_key: z.string().nullable(),
+  subject_name: z.string().nullable(),
+  chapter_id: z.string().nullable(),
+  chapter_name: z.string().nullable(),
+  version_no: z.number(),
+  item_count: z.number(),
+  card_count: z.number(),
+  tiers: z.object({ mandatory: z.number(), important: z.number(), bullet: z.number() }).passthrough(),
+  published_at: isoOrNull,
+  changelog_md: z.string(),
+  subscription: deckSubscriptionSchema,
+})
+export type ApiDeck = z.infer<typeof deckSchema>
+
+export const deckLibrarySchema = z.object({ items: z.array(deckSchema), next_cursor: z.string().nullable() })
+export const deckListSchema = z.object({ items: z.array(deckSchema) })
+
+export const deckItemSchema = z.object({
+  item_id: z.string(),
+  kind: z.string(),
+  importance: z.string(),
+  position: z.number(),
+  preview: z.string(),
+  chapter_name: z.string().nullable(),
+})
+export type ApiDeckItem = z.infer<typeof deckItemSchema>
+
+export const deckDetailSchema = z.object({ deck: deckSchema, items: z.array(deckItemSchema) })
+
+export const subscribeResultSchema = z.object({
+  created: z.boolean(),
+  cards_created: z.number(),
+  cards_restored: z.number(),
+  deck: deckSchema,
+})
+export type SubscribeResult = z.infer<typeof subscribeResultSchema>
+
+export const unsubscribeResultSchema = z.object({ deck: deckSchema })
+export const reportResultSchema = z.object({ id: z.string(), created: z.boolean() })
+export const eraseResultSchema = z.object({ deleted: z.record(z.string(), z.number()) })

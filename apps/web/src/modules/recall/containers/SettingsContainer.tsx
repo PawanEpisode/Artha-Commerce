@@ -2,6 +2,7 @@ import {
   addIsoDays,
   Alert,
   Button,
+  Container,
   DatePicker,
   NumberStepper,
   SelectField,
@@ -13,11 +14,13 @@ import {
 } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
-import { LoadError, RecallShell } from '../components/RecallShell'
+import { LoadError, RecallShell, RecallUnavailable } from '../components/RecallShell'
+import { useRecallEnabled } from '../hooks/useRecallBasics'
 import { useSaveSettings, useSettings, useSetVacation } from '../hooks/useSettings'
 import { errorText } from '../lib/errors'
 import type { RecallSettings } from '../lib/schemas'
 import { CATCHUP_OPTIONS, changes, draftOf, type SettingsDraft, VACATION_MAX_DAYS, validate } from '../lib/settingsForm'
+import { DataControlsContainer } from './DataControlsContainer'
 
 function Row({ id, title, hint, children }: { id: string; title: string; hint: string; children: React.ReactNode }) {
   return (
@@ -233,11 +236,27 @@ function SettingsBody() {
       ) : (
         <Form settings={q.data} />
       )}
+      <DataControlsContainer />
     </>
   )
 }
 
+/**
+ * With the feature switched off the student still reaches "your data" (export and erase must never wait on a rollout
+ * flag, D4), under the usual "not available yet" message.
+ */
 export function SettingsContainer() {
+  const enabled = useRecallEnabled()
+  if (!enabled) {
+    return (
+      <>
+        <RecallUnavailable />
+        <Container className="max-w-3xl pb-14">
+          <DataControlsContainer />
+        </Container>
+      </>
+    )
+  }
   return (
     <RecallShell>
       <SettingsBody />

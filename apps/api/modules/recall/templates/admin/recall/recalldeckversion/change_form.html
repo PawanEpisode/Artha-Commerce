@@ -1,0 +1,9 @@
+{% extends "admin/change_form.html" %}
+{% block submit_buttons_bottom %}
+  {{ block.super }}
+  {% if can_publish and original and original.state == "draft" %}
+    <div class="submit-row">
+      <input type="submit" value="Save and publish (students see it at once)" name="_publish">
+    </div>
+  {% endif %}
+{% endblock %}

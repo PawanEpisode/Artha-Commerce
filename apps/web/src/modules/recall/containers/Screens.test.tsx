@@ -39,6 +39,11 @@ vi.mock('../hooks/useSettings', () => ({
   useSaveSettings: () => ({ mutate: h.save, isPending: false, isError: false, isSuccess: false }),
   useSetVacation: () => ({ mutate: h.vacation, isPending: false, isError: false }),
 }))
+vi.mock('../hooks/useDataControls', () => ({
+  useExportJson: () => ({ mutate: vi.fn(), isPending: false, isError: false }),
+  useExportCsv: () => ({ mutate: vi.fn(), isPending: false, isError: false }),
+  useEraseAll: () => ({ mutate: vi.fn(), reset: vi.fn(), isPending: false, isError: false }),
+}))
 vi.mock('../hooks/useForgotten', () => ({ useForgotten: () => h.forgotten }))
 vi.mock('../hooks/useStats', () => ({
   useStatsSummary: () => h.stats,

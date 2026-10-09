@@ -49,6 +49,7 @@ export {
   FileDown,
   FileText,
   FileUp,
+  Flag,
   Flame,
   FolderInput,
   GraduationCap,

@@ -82,6 +82,17 @@ Taken by me, to confirm when you approve this file (each is small and reversible
 | D40 | Bulk actions in the browser: pause, mark as must know, move to chapter, add one tag, delete (with a confirmation). Add to deck waits for decks (R2). Moving a single card to another chapter needs a connection | Scope |
 | D41 | The live preview uses the shared `card` rich-text profile and the W2 `render` twin; the server stays the authority and may refuse a text the preview accepted | One renderer, no copy |
 | D42 | W9 test review found three faults, now fixed: the offline pack read was paused by TanStack Query's default network mode, an error loading the pack never reached the player, and going offline mid-session briefly dropped the pack | `networkMode: 'always'` on local reads, `packState.error` in the effect deps, `keepPreviousData` |
+| D44 | Staff permissions come from `profiles.role` through the person's e-mail: a Django staff login is matched, ignoring case, to the one `profiles` row with the same address. `editor` carries `recall.deck.author` (items, versions, draft deck versions, reports); `admin` carries author plus `recall.deck.publish` (publish, quota plans, read-only student state); a superuser has both; a login with no matching or an ambiguous profile sees nothing. `profiles` gained `selectors.role_for_email`, `services.set_staff_role` and `manage.py grant_staff_role` | Django logins and Supabase users are separate tables; the address is the only link, and a missing or duplicate match never grants anything |
+| D45 | The review log has a composite primary key, which Django's admin cannot list, so it is a read-only page under Cards (`/admin/recall/recallcard/review-log/?user=<id>`): facts only (ids, rating, times), never card text | Admin limitation |
+| D46 | `load_recall_seed` without file names skips files starting with `_` and `sample_` unless `--include-sample`, and a file marked `"sample": true` is never published unless `--include-sample` is also given. An edited item becomes a new draft version; a deck holding an `unknown` rights item loads as a draft and is reported as not published | A demo file must not reach students by accident |
+| D47 | Unsubscribe archives every card of the deck, including ones she paused by hand; resubscribe brings them back active with their memory. A card whose item is also in another active deck stays active and moves to that deck | Simple rule; the manual pause is the one thing lost |
+| D48 | Resubscribe adds no new items (that is R2 sync); resubscribe and subscribe-after-unsubscribe answer 201 when cards came back, 200 when nothing changed | R1 has no pinned subscribers or follow-updates |
+| D49 | Platform card text is never in the CSV or JSON export: those cards are listed by ids, state and schedule; her own cards carry their fields. The closing line `#complete,<rows>` (or `#next,<cursor>`) says whether a CSV is whole, and the web refuses to save one without it | The platform's words are not exported in bulk; no silent cut |
+| D50 | A report is `POST items/{id}/report/` with reason `wrong`, `outdated`, `copyright` or `other` and an optional note of 500 characters; one open report per student and item, a second tap changes nothing; `handled_by` is not set because a Django login is not a student id | FR-F15-52 |
+| D51 | `GET decks/subscribed/` (her decks) and `GET decks/library/` (live platform decks, filters course, level, subject, chapter, tier, cursor) replace a single `decks/` list in R1 | Two different questions |
+| D52 | Audit rows written from the admin (`deck_publish`, `quota_change`) carry no actor id, for the same reason as D50; they hold ids and counts only | Same |
+| D53 | Export and erase stay reachable with `recall_system` off (D4), also on the web: the recall settings screen shows "Your revision data" under the "not available yet" message. A successful erase also clears the recall data kept on this device (offline pack, review events, queued cards and edits) and every cached answer | A rollout flag must never block erasure |
+| D54 | The design system gained the `Flag` icon (used by "Report this card") | One curated icon list |
 
 ## 2. How each wave is worked
 
@@ -192,12 +203,57 @@ Built: `/app/recall/cards` (filters in the URL: search, kind, importance, status
 Added after review: chapter picker, bulk move to chapter and add tag, offline edits queued with a needs-attention notice, swipe tests (D37, D39, D40, D43).
 Tests: form validation per kind, conflict dialog, duplicate flow, URL-driven filters, chapter picker, bulk move and tag, offline edit queue and flush, swipe.
 
-### W11. Platform decks, export, erase
+### W11. Platform decks, export, erase (done 2026-10-09)
+
+Built (API): `recall/admin.py` (platform items, item versions with draft-only editing and the kind's rules checked in the form, decks, deck versions edited as a list of `ref` or `ref@version` lines with Save and publish, reports queue with actioned, dismissed and flag-for-check actions, quota plans, read-only cards, review log and audit log; D44, D45), `services/decks.py` (atomic `publish_deck_version`), `services/subscriptions.py` (copy-on-subscribe up to 500 cards under a per-student-and-deck advisory lock, idempotent, unsubscribe and resubscribe), `services/reports.py`, `services/seed.py` and `manage.py load_recall_seed`, `services/erasure.py` and `selectors/export.py` (JSON and streamed CSV), and 11 new endpoints (all in the flag matrix test; export and erase stay open with the flag off). Built (web): `/app/recall/decks` and `/app/recall/decks/$deckId` (library with tier filter and show-more, her decks, add with "all, important and must know, or must know only", remove and bring back, "A newer version exists" as a count, too-large message, report a card), a Decks tab, and "Your revision data" (JSON, cards CSV, reviews CSV, erase with a typed word) on the recall settings screen. Tests: API 88 new tests (publish, subscribe, report, erasure, export of 20,000 reviews, seed loader, admin, staff roles, three Postgres-only concurrency tests) plus the 11 new URLs in the flag matrix; web screen tests with axe and 320 px class checks. See decisions D44 to D54.
+
+Plan for the wave (kept for the record):
 
 Django admin (`recall/admin.py`): item and version editor (change kinds, importance tiers, `rights_status`, `unknown` blocks publish, `source_label`), deck editor with draft versions, **atomic publish** (`publish_deck_version`: computes `change_vs_prev`, supersedes the old live version, a failure leaves the previous live version served), reports queue, quota plan editor, read-only views of cards and log (no card text of students). Permissions from `profiles.role` (scopes `recall.deck.author`, `recall.deck.publish`). `manage.py load_recall_seed [--publish]` (drafts, idempotent on `external_ref`), `seed/_TEMPLATE.json` and one example file clearly marked sample. Student side: `decks/library/`, `decks/{id}/subscribe/` (copy-on-subscribe in one transaction up to 500 cards, advisory lock, idempotent), unsubscribe (archive, progress kept) and resubscribe, report a platform item (FR-F15-52), `/app/recall/decks`, `/app/recall/decks/$deckId`. `services/erasure.py` (`delete_all_for_user`, `export_for_user`) registered in `RecallConfig.ready()` through `core/registry.py`; CSV exports of cards and reviews are streamed with a cursor and no silent cap. Pinned subscribers, follow-updates and diffs are R2: R1 subscribes at the live version and shows "A newer version exists" only as a count.
 Tests: publish atomicity, rights gate, double-tap subscribe, resubscribe restores progress, export of 20,000 reviews is complete, erase leaves no row (cards, items, log through `recall.erasing`, sessions, rollups, settings), Postgres test for the advisory lock.
 **Folded in here (owner, 2026-10-09):** the editors for the first platform decks, the Django admin accounts with the roles that carry `recall.deck.author` and `recall.deck.publish`, and the closed beta list (same 50 students as F-01, F-02, F-03) are part of this wave: the admin and seed loader above, a documented way to create the accounts and roles, and a documented way to put the beta students on the PostHog flag.
 Exit: R1 core complete.
+
+#### W11 operations: staff accounts, roles, seed files and the beta list
+
+**Create an editor or admin (once per person).**
+1. The person signs in to the web app once, so a `profiles` row with their e-mail exists.
+2. On a machine that can reach the production database (the API's shell on your host, or your computer with `DIRECT_DATABASE_URL` set), run, from `apps/api`:
+   `NEW_PW='a-long-password' python manage.py grant_staff_role --email person@example.com --role editor --admin-login --password-env NEW_PW`
+   Use `--role admin` for someone who may also publish. The command sets `profiles.role` and creates (or updates) a Django staff login with the **same e-mail**; without `--password-env` the login has no password and you give one with `python manage.py changepassword <username>`. `--role student` takes both the role and the staff flag away (a superuser keeps hers).
+3. They sign in at `/<DJANGO_ADMIN_PATH>/` (default `/admin/`). The roles: `editor` = scope `recall.deck.author`, `admin` = `recall.deck.author` + `recall.deck.publish`, a Django superuser = both. If the e-mail on the login and on the profile differ, or two profiles share an address, the person sees nothing; fix the address and run the command again.
+
+#### Command cheat sheet (run from `apps/api`, with the venv active)
+
+| Need | Command |
+| --- | --- |
+| Make someone an editor (writes decks, cannot publish) | `NEW_PW='long-password' python manage.py grant_staff_role --email person@example.com --role editor --admin-login --password-env NEW_PW` |
+| Make someone an admin (also publishes, edits plans) | `NEW_PW='long-password' python manage.py grant_staff_role --email person@example.com --role admin --admin-login --password-env NEW_PW` |
+| Change only the role, leave the login alone | `python manage.py grant_staff_role --email person@example.com --role editor` |
+| Take staff access away (a superuser keeps hers) | `python manage.py grant_staff_role --email person@example.com --role student` |
+| Set or reset a staff password | `python manage.py changepassword <username>` (the username is the lower-case e-mail) |
+| Create a Django superuser (full access, no profile role needed) | `python manage.py createsuperuser` |
+| Look at a seed file without saving anything | `python manage.py load_recall_seed path/to/file.json --dry-run` |
+| Load a seed file as drafts | `python manage.py load_recall_seed path/to/file.json` |
+| Load and publish (rights gate applies) | `python manage.py load_recall_seed path/to/file.json --publish` |
+| Include the shipped sample deck | add `--include-sample` (a sample is never published without it) |
+| Who has which role (Django shell) | `python manage.py shell -c "from modules.profiles.models import Profile as P; print(list(P.objects.exclude(role='student').values_list('email','role')))"` |
+| User ids for a PostHog cohort CSV | `python manage.py shell -c "from modules.profiles.models import Profile as P; print('distinct_id'); [print(i) for i in P.objects.filter(email__in=['a@x.com','b@x.com']).values_list('id', flat=True)]"` |
+| Run the recall tests | `python -m pytest modules/recall modules/profiles -q -p no:warnings` (add `DATABASE_URL=postgres://...` to include the Postgres-only lock tests) |
+
+Notes: a superuser already has every recall permission, so `grant_staff_role` is only needed for other people. The person must have signed in to the web app once before the command can find their profile. Never put the password on the command line; pass it through the environment variable named by `--password-env`.
+
+**Editing in the admin.** *Recall > Items*: add an item (pick the kind, paste its fields as JSON; the fields of each kind are listed below). Changing text never edits a live version: *Item versions* makes a draft, one at a time. *Decks*: create a deck (title, slug, chapter), then *Deck versions*: start a draft, list the items one per line (`ref` or `ref@3` to pin a version), and press **Save and publish** (needs `recall.deck.publish`). Publishing is all or nothing: an item with `rights_status = unknown`, or an item that is withdrawn, blocks it and the admin says which; the previous live version keeps being served. *Reports* is the queue students feed with "Report this card".
+
+**Fields per kind.** Fields marked "line" are plain one-line text, up to 200 characters; all others are Markdown with `$KaTeX$`, up to 4,000 characters. `pointer`: prompt_md, answer_md. `formula`: name (line), expression_md, variables_md (optional), when_md (optional). `section`: act (optional line), reference (line), prompt_md, gist_md, exceptions_md (optional). `definition`: term (line), definition_md, source_ref (optional line). `mnemonic`: mnemonic (line), expands_md, topic (optional line). `case_law`: case_name (line), citation, court and year (optional lines), facts_md (optional), held_md. `cloze`: `text_md` with `{{c1::answer}}` or `{{c1::answer::hint}}` markers; one card per number.
+
+**Seed files.** Copy `apps/api/modules/recall/seed/_TEMPLATE.json`, rename it without a leading underscore, fill it in (`ref` per item and `slug` per deck must never change: that is how a second load finds them), then `python manage.py load_recall_seed path/to/file.json` loads drafts, `--publish` also publishes (rights gate applies), `--dry-run` rolls everything back, and the sample file loads only with `--include-sample` (D46). Safe to repeat.
+
+**Put the 50 closed-beta students on `recall_system`.** The flag is fail closed, so it must be created **at 0% for everyone** and then opened for the beta group only:
+1. PostHog > Feature flags > `recall_system` > release condition: *Match by* `User ID` (the distinct id is the Supabase user id; the web calls `identify(user.id)` and the API evaluates the flag for the same id).
+2. Create a static cohort *Recall closed beta* (PostHog > People > Cohorts > new static cohort) and upload a CSV with one column `distinct_id` holding the 50 Supabase user ids. You can list them with `select id, email from profiles where email in (...)` on the production database, using the same 50 e-mails as for F-01, F-02 and F-03.
+3. Release condition: *Cohort* is *Recall closed beta*, rollout 100%. Leave the other conditions out. To add a student later, add them to the cohort; to switch the feature off for everyone, disable the flag (export and erase keep working, D53).
+Check with one beta account (the Revision entry appears in the study menu) and one account outside the cohort (it does not, and `GET /api/v1/recall/today/` answers 403 `feature_disabled`).
 
 ### W12. Close-out
 

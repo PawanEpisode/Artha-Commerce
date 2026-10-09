@@ -7,6 +7,7 @@ must keep working with the flag off (data export and delete-all arrive in W11, D
 from __future__ import annotations
 
 from django.conf import settings
+from django.http import StreamingHttpResponse
 from django.utils import timezone
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -20,10 +21,17 @@ from . import selectors, serializers, services
 from .errors import BatchTooLarge, CardDeleted
 from .permissions import RecallFlagEnabled
 from .selectors import CardFilter, QueueFilters
+from .selectors import export as csv_export
 from .services.cards import UNDO_SECONDS, SelectionSource
 from .vocab import IMPORTANCE_INT
 
-RECALL_OPEN_PATHS: tuple[str, ...] = ()
+#: Paths that keep working with the flag off (D4): data export and delete-all must never be blocked by a rollout switch.
+RECALL_OPEN_PATHS: tuple[str, ...] = (
+    "/recall/export/",
+    "/recall/export/cards.csv",
+    "/recall/export/reviews.csv",
+    "/recall/erase/",
+)
 
 
 class RecallView(ParsedAPIView):
@@ -436,3 +444,119 @@ class SettingsView(RecallView):
             raise ValidationError({k: "Unknown setting." for k in unknown})
         row = services.preferences.update_settings(request.user.id, data)
         return Response(serializers.settings_dict(row, selectors.active_params(row)[2]))
+
+
+# --- platform decks (W11) ----------------------------------------------------------------------------------------------
+class DeckLibraryView(RecallView):
+    def get(self, request):
+        d = self.parse(serializers.DeckLibraryQuery, request.query_params).validated_data
+        page = selectors.library(
+            request.user.id,
+            course=d.get("course"),
+            level=d.get("level"),
+            subject_key=d.get("subject_key"),
+            chapter_id=d.get("chapter_id"),
+            tier=d.get("tier"),
+            cursor=d.get("cursor"),
+            limit=d.get("limit"),
+        )
+        return Response({"items": [serializers.deck_dict(v) for v in page.items], "next_cursor": page.next_cursor})
+
+
+class DeckSubscribedView(RecallView):
+    def get(self, request):
+        return Response({"items": [serializers.deck_dict(v) for v in selectors.my_subscriptions(request.user.id)]})
+
+
+class DeckDetailView(RecallView):
+    def get(self, request, deck_id):
+        detail = selectors.deck_detail(request.user.id, deck_id)
+        return Response(
+            {"deck": serializers.deck_dict(detail.deck), "items": [serializers.deck_item_dict(i) for i in detail.items]}
+        )
+
+
+def _subscription_payload(user_id, deck_id, result) -> dict:
+    deck = selectors.deck_detail(user_id, deck_id).deck
+    return {
+        "created": result.created,
+        "cards_created": result.cards_created,
+        "cards_restored": result.cards_restored,
+        "deck": serializers.deck_dict(deck),
+    }
+
+
+class DeckSubscribeView(WriteView):
+    def post(self, request, deck_id):
+        d = self.parse(serializers.SubscribeSerializer, request.data).validated_data
+        result = services.subscriptions.subscribe(
+            request.user.id,
+            deck_id,
+            follow_updates=d["follow_updates"],
+            unlock_mode=d["unlock_mode"],
+            min_importance=d["min_importance"],
+        )
+        return Response(_subscription_payload(request.user.id, deck_id, result), status=201 if result.created else 200)
+
+
+class SubscriptionActionView(WriteView):
+    """`subscriptions/<id>/unsubscribe/` and `.../resubscribe/`: both idempotent."""
+
+    action: str = ""
+
+    def post(self, request, subscription_id):
+        if self.action == "resubscribe":
+            result = services.subscriptions.resubscribe(request.user.id, subscription_id)
+            return Response(
+                _subscription_payload(request.user.id, result.subscription.deck_id, result),
+                status=201 if result.created else 200,
+            )
+        sub = services.subscriptions.unsubscribe(request.user.id, subscription_id)
+        deck = selectors.deck_detail(request.user.id, sub.deck_id).deck
+        return Response({"deck": serializers.deck_dict(deck)})
+
+
+class ItemReportView(WriteView):
+    """FR-F15-52: a student reports a platform item. One open report per student and item."""
+
+    def post(self, request, item_id):
+        d = self.parse(serializers.ReportItemSerializer, request.data).validated_data
+        result = services.reports.report_item(request.user.id, item_id, reason=d["reason"], note=d["note"])
+        return Response({"id": str(result.report.id), "created": result.created}, status=201 if result.created else 200)
+
+
+# --- export and erase (W11): open with the flag off (D4) -------------------------------------------------------------
+class OpenView(ParsedAPIView):
+    """Signed in, no flag: data export and delete-all stay reachable whatever the rollout says."""
+
+    permission_classes = [IsAuthenticated]
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "recall_export"
+
+
+class ExportView(OpenView):
+    def get(self, request):
+        data = services.erasure.export_for_user(request.user.id)
+        return Response(data, headers={"Content-Disposition": 'attachment; filename="recall-export.json"'})
+
+
+class CsvExportView(OpenView):
+    """Streamed CSV; the last line is `#complete,<rows>` or `#next,<cursor>` (see `selectors/export.py`)."""
+
+    which: str = "cards"
+
+    def get(self, request):
+        d = self.parse(serializers.CsvQuery, request.query_params).validated_data
+        make = csv_export.cards_csv if self.which == "cards" else csv_export.reviews_csv
+        response = StreamingHttpResponse(
+            make(request.user.id, cursor=d.get("cursor"), limit=d.get("limit")), content_type="text/csv; charset=utf-8"
+        )
+        response["Content-Disposition"] = f'attachment; filename="recall-{self.which}.csv"'
+        response["Cache-Control"] = "no-store"
+        return response
+
+
+class EraseView(OpenView):
+    def post(self, request):
+        self.parse(serializers.EraseSerializer, request.data)
+        return Response({"deleted": services.erasure.delete_all_for_user(request.user.id)})

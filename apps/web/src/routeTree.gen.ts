@@ -62,6 +62,8 @@ import { Route as AppNotesSummaryNewRouteImport } from './routes/app.notes.summa
 import { Route as AppRecallCardsIndexRouteImport } from './routes/app.recall.cards.index'
 import { Route as AppRecallCardsCardIdRouteImport } from './routes/app.recall.cards.$cardId'
 import { Route as AppRecallCardsNewRouteImport } from './routes/app.recall.cards.new'
+import { Route as AppRecallDecksIndexRouteImport } from './routes/app.recall.decks.index'
+import { Route as AppRecallDecksDeckIdRouteImport } from './routes/app.recall.decks.$deckId'
 import { Route as AppRecallReviewIndexRouteImport } from './routes/app.recall.review.index'
 import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllabus.$subject.index'
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
@@ -338,6 +340,16 @@ const AppRecallCardsNewRoute = AppRecallCardsNewRouteImport.update({
   path: '/recall/cards/new',
   getParentRoute: () => AppRoute,
 } as any)
+const AppRecallDecksIndexRoute = AppRecallDecksIndexRouteImport.update({
+  id: '/recall/decks/',
+  path: '/recall/decks/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallDecksDeckIdRoute = AppRecallDecksDeckIdRouteImport.update({
+  id: '/recall/decks/$deckId',
+  path: '/recall/decks/$deckId',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppRecallReviewIndexRoute = AppRecallReviewIndexRouteImport.update({
   id: '/recall/review/',
   path: '/recall/review/',
@@ -441,10 +453,12 @@ export interface FileRoutesByFullPath {
   '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
   '/app/recall/cards/$cardId': typeof AppRecallCardsCardIdRoute
   '/app/recall/cards/new': typeof AppRecallCardsNewRoute
+  '/app/recall/decks/$deckId': typeof AppRecallDecksDeckIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards/': typeof AppRecallCardsIndexRoute
+  '/app/recall/decks/': typeof AppRecallDecksIndexRoute
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
@@ -504,10 +518,12 @@ export interface FileRoutesByTo {
   '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
   '/app/recall/cards/$cardId': typeof AppRecallCardsCardIdRoute
   '/app/recall/cards/new': typeof AppRecallCardsNewRoute
+  '/app/recall/decks/$deckId': typeof AppRecallDecksDeckIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards': typeof AppRecallCardsIndexRoute
+  '/app/recall/decks': typeof AppRecallDecksIndexRoute
   '/app/recall/review': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
@@ -569,10 +585,12 @@ export interface FileRoutesById {
   '/app/notes/summary/new': typeof AppNotesSummaryNewRoute
   '/app/recall/cards/$cardId': typeof AppRecallCardsCardIdRoute
   '/app/recall/cards/new': typeof AppRecallCardsNewRoute
+  '/app/recall/decks/$deckId': typeof AppRecallDecksDeckIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards/': typeof AppRecallCardsIndexRoute
+  '/app/recall/decks/': typeof AppRecallDecksIndexRoute
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
@@ -635,10 +653,12 @@ export interface FileRouteTypes {
     | '/app/notes/summary/new'
     | '/app/recall/cards/$cardId'
     | '/app/recall/cards/new'
+    | '/app/recall/decks/$deckId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
     | '/app/recall/cards/'
+    | '/app/recall/decks/'
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
@@ -698,10 +718,12 @@ export interface FileRouteTypes {
     | '/app/notes/summary/new'
     | '/app/recall/cards/$cardId'
     | '/app/recall/cards/new'
+    | '/app/recall/decks/$deckId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject'
     | '/app/recall/cards'
+    | '/app/recall/decks'
     | '/app/recall/review'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
@@ -762,10 +784,12 @@ export interface FileRouteTypes {
     | '/app/notes/summary/new'
     | '/app/recall/cards/$cardId'
     | '/app/recall/cards/new'
+    | '/app/recall/decks/$deckId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/notes/$subject/'
     | '/app/recall/cards/'
+    | '/app/recall/decks/'
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
@@ -1171,6 +1195,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRecallCardsNewRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/recall/decks/': {
+      id: '/app/recall/decks/'
+      path: '/recall/decks'
+      fullPath: '/app/recall/decks/'
+      preLoaderRoute: typeof AppRecallDecksIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/recall/decks/$deckId': {
+      id: '/app/recall/decks/$deckId'
+      path: '/recall/decks/$deckId'
+      fullPath: '/app/recall/decks/$deckId'
+      preLoaderRoute: typeof AppRecallDecksDeckIdRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/recall/review/': {
       id: '/app/recall/review/'
       path: '/recall/review'
@@ -1272,10 +1310,12 @@ interface AppRouteChildren {
   AppNotesSummaryNewRoute: typeof AppNotesSummaryNewRoute
   AppRecallCardsCardIdRoute: typeof AppRecallCardsCardIdRoute
   AppRecallCardsNewRoute: typeof AppRecallCardsNewRoute
+  AppRecallDecksDeckIdRoute: typeof AppRecallDecksDeckIdRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
   AppRecallCardsIndexRoute: typeof AppRecallCardsIndexRoute
+  AppRecallDecksIndexRoute: typeof AppRecallDecksIndexRoute
   AppRecallReviewIndexRoute: typeof AppRecallReviewIndexRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
   AppRecallReviewSummarySessionIdRoute: typeof AppRecallReviewSummarySessionIdRoute
@@ -1316,10 +1356,12 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesSummaryNewRoute: AppNotesSummaryNewRoute,
   AppRecallCardsCardIdRoute: AppRecallCardsCardIdRoute,
   AppRecallCardsNewRoute: AppRecallCardsNewRoute,
+  AppRecallDecksDeckIdRoute: AppRecallDecksDeckIdRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,
   AppRecallCardsIndexRoute: AppRecallCardsIndexRoute,
+  AppRecallDecksIndexRoute: AppRecallDecksIndexRoute,
   AppRecallReviewIndexRoute: AppRecallReviewIndexRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
   AppRecallReviewSummarySessionIdRoute: AppRecallReviewSummarySessionIdRoute,

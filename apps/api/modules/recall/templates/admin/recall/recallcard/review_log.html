@@ -1,0 +1,22 @@
+{% extends "admin/base_site.html" %}
+{% block breadcrumbs %}
+<div class="breadcrumbs"><a href="{% url 'admin:index' %}">Home</a> &rsaquo; Review log (read only)</div>
+{% endblock %}
+{% block content %}
+<p>Facts only: no card text and no student names. Filter by a student id with <code>?user=&lt;uuid&gt;</code>.</p>
+<table>
+  <thead><tr><th>Reviewed at</th><th>Student</th><th>Card</th><th>Kind</th><th>Rating</th><th>Mode</th><th>Counted</th><th>Flags</th></tr></thead>
+  <tbody>
+  {% for r in page %}
+    <tr><td>{{ r.reviewed_at|date:"Y-m-d H:i:s" }}</td><td><code>{{ r.user_id }}</code></td><td><code>{{ r.card_id }}</code></td><td>{{ r.kind }}</td><td>{{ r.rating|default_if_none:"" }}</td><td>{{ r.mode }}</td><td>{{ r.counts_for_scheduling|yesno:"yes,no" }}</td><td>{{ r.flags|join:", " }}</td></tr>
+  {% empty %}
+    <tr><td colspan="8">No reviews.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p>
+  {% if page.has_previous %}<a href="?page={{ page.previous_page_number }}{% if user_filter %}&amp;user={{ user_filter }}{% endif %}">Newer</a>{% endif %}
+  Page {{ page.number }} of {{ page.paginator.num_pages }}
+  {% if page.has_next %}<a href="?page={{ page.next_page_number }}{% if user_filter %}&amp;user={{ user_filter }}{% endif %}">Older</a>{% endif %}
+</p>
+{% endblock %}

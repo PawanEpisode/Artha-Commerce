@@ -18,10 +18,11 @@ export function activeSection(pathname: string, items: ReadonlyArray<SectionLink
   return best?.value
 }
 
-/** Sections of the recall area in release 1. Decks and quick revision join in later releases. */
+/** Sections of the recall area in release 1. Quick revision joins in a later release. */
 export const RECALL_SECTIONS: ReadonlyArray<SectionLink> = [
   { value: 'today', label: 'Today', to: '/app/recall' },
   { value: 'cards', label: 'Cards', to: '/app/recall/cards' },
+  { value: 'decks', label: 'Decks', to: '/app/recall/decks' },
   { value: 'forgotten', label: 'Forgotten', to: '/app/recall/forgotten' },
   { value: 'stats', label: 'Stats', to: '/app/recall/stats' },
   { value: 'settings', label: 'Settings', to: '/app/settings/recall' },

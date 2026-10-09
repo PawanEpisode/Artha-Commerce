@@ -33,6 +33,17 @@ URLS = [
     *[("get", f"/recall/stats/{name}/") for name in ("summary", "retention", "forecast", "chapters")],
     ("get", "/recall/settings/"),
     ("put", "/recall/settings/"),
+    ("get", "/recall/decks/library/"),
+    ("get", "/recall/decks/subscribed/"),
+    ("get", f"/recall/decks/{CARD}/"),
+    ("post", f"/recall/decks/{CARD}/subscribe/"),
+    ("post", f"/recall/subscriptions/{CARD}/unsubscribe/"),
+    ("post", f"/recall/subscriptions/{CARD}/resubscribe/"),
+    ("post", f"/recall/items/{CARD}/report/"),
+    ("get", "/recall/export/"),
+    ("get", "/recall/export/cards.csv"),
+    ("get", "/recall/export/reviews.csv"),
+    ("post", "/recall/erase/"),
 ]
 TICK = "/recall/internal/tick/"  # authenticated by a shared secret, open whatever the flag says (tested in test_reviews_api)
 
@@ -52,6 +63,21 @@ def test_every_recall_url_is_403_feature_disabled_with_the_flag_off(api, flag_of
         return  # W11: data export and delete-all stay open (D4)
     res = call(api.c, method, path)
     assert res.status_code == 403 and res.json()["error"]["code"] == "feature_disabled"
+
+
+def test_export_and_erase_stay_open_with_the_flag_off(api, flag_off):
+    """D4: a rollout switch must never block the student's data rights (DPDP)."""
+    assert RECALL_OPEN_PATHS == (
+        "/recall/export/",
+        "/recall/export/cards.csv",
+        "/recall/export/reviews.csv",
+        "/recall/erase/",
+    )
+    for path in RECALL_OPEN_PATHS:
+        res = api.c.generic(
+            "POST" if path.endswith("erase/") else "GET", f"/api/v1{path}", "{}", content_type="application/json"
+        )
+        assert res.status_code not in (401, 403), path
 
 
 def test_the_flag_fails_closed_without_posthog(api, monkeypatch):
