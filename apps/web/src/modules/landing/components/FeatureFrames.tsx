@@ -215,7 +215,7 @@ const frames = {
   'study-planner': PlannerFrame,
   'mock-tests': MocksFrame,
   'ai-doubt-solver': DoubtsFrame,
-  flashcards: CardsFrame,
+  revision: CardsFrame,
   'past-papers': PapersFrame,
   'amendment-updates': AmendmentsFrame,
 } as const

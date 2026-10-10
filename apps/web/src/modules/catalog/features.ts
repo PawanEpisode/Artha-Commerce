@@ -112,14 +112,19 @@ export const features: Feature[] = [
     tool: { to: '/app/notes', cta: 'Open my notes', flag: 'notes' },
   },
   {
-    slug: 'flashcards',
-    title: 'Flashcards and Spaced Revision',
+    slug: 'revision',
+    title: 'Revision',
     tagline: 'Revise what you are about to forget.',
     description:
-      'Turn sections, definitions and case laws into flashcards. Spaced repetition schedules each card right before you would forget it.',
+      'Flashcards for sections, definitions, case laws and formulas, scheduled by spaced repetition so each card returns just before you would forget it. Study ready-made decks for your chapters, add your own cards, and see what is due today.',
     icon: 'layers',
-    highlights: ['Spaced repetition scheduling', 'Cards from your notes', 'Daily revision queue'],
-    status: 'soon',
+    highlights: [
+      'Spaced repetition scheduling',
+      'Ready-made decks by chapter and your own cards',
+      'A daily revision queue',
+    ],
+    status: 'live',
+    tool: { to: '/app/recall', cta: 'Start revising', flag: 'recall_system' },
   },
   {
     slug: 'past-papers',

@@ -17,11 +17,33 @@ export function useFeatureFlag(name: string, options: { strict?: boolean } = {})
   const strict = options.strict === true
   const [enabled, setEnabled] = useState(!strict)
   useEffect(() => {
-    if (!posthog.__loaded) return
-    return posthog.onFeatureFlags(() => {
-      const value = posthog.isFeatureEnabled(name)
-      setEnabled(strict ? value === true : value !== false)
-    })
+    let stop: (() => void) | undefined
+    const subscribe = () => {
+      stop = posthog.onFeatureFlags(() => {
+        const value = posthog.isFeatureEnabled(name)
+        setEnabled(strict ? value === true : value !== false)
+      })
+    }
+    if (posthog.__loaded) {
+      subscribe()
+      return () => stop?.()
+    }
+    // PostHog starts in ObservabilityProvider's effect, which runs AFTER the effects of the components below it. Without
+    // waiting, a flag read on first mount never subscribes, and a strict flag would stay off for the whole visit.
+    let tries = 0
+    const timer = window.setInterval(() => {
+      tries += 1
+      if (posthog.__loaded) {
+        window.clearInterval(timer)
+        subscribe()
+      } else if (tries >= 100) {
+        window.clearInterval(timer) // ten seconds: PostHog is not configured or not reachable, keep the default
+      }
+    }, 100)
+    return () => {
+      window.clearInterval(timer)
+      stop?.()
+    }
   }, [name, strict])
   return enabled
 }

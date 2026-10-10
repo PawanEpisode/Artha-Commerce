@@ -144,6 +144,19 @@ export const featureBeats: readonly FeatureBeat[] = [
     cta: 'See smart notes',
   },
   {
+    slug: 'revision',
+    rail: 'Revision',
+    headline: 'Revise what you are about to forget, not what you already know.',
+    insight:
+      'Case laws, sections and formulas decay on a schedule. Revision puts each card in front of you just before it would have gone, which is the opposite of scrolling your highlights the night before.',
+    points: [
+      'Ready-made cards for sections, definitions and case laws, plus your own',
+      'A daily queue, not a 400-card pile',
+      'Scheduling that waits when you are sure, and returns when you are not',
+    ],
+    cta: 'See revision',
+  },
+  {
     slug: 'study-planner',
     rail: 'Planner',
     headline: 'Plan backwards from the exam date, not forwards from guilt.',
@@ -181,19 +194,6 @@ export const featureBeats: readonly FeatureBeat[] = [
       'Save a useful answer into your notes',
     ],
     cta: 'How doubts will work',
-  },
-  {
-    slug: 'flashcards',
-    rail: 'Cards',
-    headline: 'Revise what you are about to forget, not what you already know.',
-    insight:
-      'Case laws, sections and formulas decay on a schedule. Spaced revision puts each card in front of you just before it would have gone — which is the opposite of scrolling your highlights the night before.',
-    points: [
-      'Cards from sections, definitions and your own notes',
-      'A daily queue, not a 400-card pile',
-      'Scheduling that waits when you are sure, and returns when you are not',
-    ],
-    cta: 'How cards will work',
   },
   {
     slug: 'past-papers',

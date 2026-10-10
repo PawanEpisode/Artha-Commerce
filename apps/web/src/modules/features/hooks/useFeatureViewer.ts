@@ -8,7 +8,7 @@ import type { FeatureViewer } from '../lib/offers'
 import { usedTools } from '../lib/usage'
 
 /**
- * Signed-in state, the three tool flags and, for a signed-in student, which tools they already use and their course.
+ * Signed-in state, the tool flags and, for a signed-in student, which tools they already use and their course.
  * Guests until the session lookup finishes, so the first paint has a real action and the guest page never reorders.
  */
 export function useFeatureViewer(): FeatureViewer {
@@ -19,6 +19,8 @@ export function useFeatureViewer(): FeatureViewer {
     time_tracker: useFeatureFlag('time_tracker'),
     syllabus_coverage: useFeatureFlag('syllabus_coverage'),
     notes: useFeatureFlag('notes'),
+    // Fails closed, like the nav link: the card says Coming soon until PostHog explicitly turns the flag on.
+    recall_system: useFeatureFlag('recall_system', { strict: true }),
   }
   const overview = useOverview(signedIn && flags.syllabus_coverage)
   const sessions = useSessionsPage({}, signedIn && flags.time_tracker)
