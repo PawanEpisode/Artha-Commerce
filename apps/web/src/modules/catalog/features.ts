@@ -35,7 +35,7 @@ export const features: Feature[] = [
     status: 'live',
     tool: {
       to: '/app/syllabus',
-      cta: 'Open my coverage',
+      cta: 'Open Tracked Syllabus',
       flag: 'syllabus_coverage',
       browse: { to: '/courses', label: 'Browse the syllabus' },
     },

@@ -1,14 +1,13 @@
 import { useAuth } from '~/modules/auth'
 import { useOverview } from '~/modules/coverage'
 import { useFeatureFlag } from '~/modules/observability'
-import { useBootstrap } from '~/modules/personalization'
 import { useSessionsPage } from '~/modules/tracker'
 
 import type { FeatureViewer } from '../lib/offers'
 import { usedTools } from '../lib/usage'
 
 /**
- * Signed-in state, the tool flags and, for a signed-in student, which tools they already use and their course.
+ * Signed-in state, the tool flags and, for a signed-in student, which tools they already use.
  * Guests until the session lookup finishes, so the first paint has a real action and the guest page never reorders.
  */
 export function useFeatureViewer(): FeatureViewer {
@@ -25,10 +24,8 @@ export function useFeatureViewer(): FeatureViewer {
   const overview = useOverview(signedIn && flags.syllabus_coverage)
   const sessions = useSessionsPage({}, signedIn && flags.time_tracker)
   const pomodoro = useSessionsPage({ source: 'pomodoro' }, signedIn && flags.time_tracker)
-  const { data: me } = useBootstrap()
 
   if (!signedIn) return { signedIn, flags }
-  const course = me?.course
   return {
     signedIn,
     flags,
@@ -37,6 +34,5 @@ export function useFeatureViewer(): FeatureViewer {
       anySession: (sessions.data?.pages[0]?.results.length ?? 0) > 0,
       pomodoroSession: (pomodoro.data?.pages[0]?.results.length ?? 0) > 0,
     }),
-    courseName: course ? `${course.course.name} ${course.level.name}` : undefined,
   }
 }

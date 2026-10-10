@@ -81,11 +81,10 @@ describe('personalised ordering and wording', () => {
     expect(order.slice(-3)).toEqual(['syllabus-tracker', 'time-tracker', 'streaks-analytics'])
   })
 
-  it('names the course on the syllabus offer, for a signed-in student only', () => {
-    expect(offerFor(bySlug('syllabus-tracker'), { ...student, courseName: 'CMA Final' }).label).toBe(
-      'Open your CMA Final syllabus',
-    )
-    expect(offerFor(bySlug('syllabus-tracker'), { ...guest, courseName: 'CMA Final' }).label).not.toMatch(/CMA/)
-    expect(offerFor(bySlug('time-tracker'), { ...student, courseName: 'CMA Final' }).label).toBe("Log today's hours")
+  it('uses one short label for the syllabus tracker and opens notes and revision for a signed-in student', () => {
+    expect(offerFor(bySlug('syllabus-tracker'), student).label).toBe('Open Tracked Syllabus')
+    expect(offerFor(bySlug('smart-notes'), student)).toMatchObject({ destination: 'app', appPath: '/app/notes' })
+    expect(offerFor(bySlug('revision'), student)).toMatchObject({ destination: 'app', appPath: '/app/recall' })
+    expect(offerFor(bySlug('revision'), guest)).toMatchObject({ destination: 'login', nextPath: '/app/recall' })
   })
 })

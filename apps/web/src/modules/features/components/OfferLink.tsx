@@ -35,6 +35,10 @@ function AppPathLink({ path, ...props }: { path: string } & LinkPassThrough) {
       return <Link to="/app/tracker" {...props} />
     case '/app/tracker/reports':
       return <Link to="/app/tracker/reports" {...props} />
+    case '/app/notes':
+      return <Link to="/app/notes" {...props} />
+    case '/app/recall':
+      return <Link to="/app/recall" {...props} />
     default:
       return null
   }
