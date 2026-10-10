@@ -26,3 +26,7 @@ docs/syllabus-sources/ca/**/*.part
 apps/web/public/sw.js
 apps/web/public/pdfjs/
 .hypothesis/
+
+# Institute study material and past papers (copyrighted); never commit.
+docs/source-material/
+source-material/

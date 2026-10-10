@@ -100,7 +100,14 @@ class SupabaseStorage:
 
     def create_signed_upload(self, bucket: str, path: str) -> SignedUpload:
         """A one-object upload URL, so private files go from the browser straight to storage and never through Vercel."""
-        body = self._request("POST", f"{self._base}/object/upload/sign/{bucket}/{path}").json()
+        url = f"{self._base}/object/upload/sign/{bucket}/{path}"
+        response = self._request("POST", url, allow=(400, 404))
+        if response.status_code in (400, 404):
+            # Supabase answers 400/404 "Bucket not found" when the one-time `ensure_*_buckets` step was missed on this
+            # project. These buckets are private by design, so create it and sign again once instead of failing the student.
+            self.ensure_bucket(bucket, public=False)
+            response = self._request("POST", url)
+        body = response.json()
         return SignedUpload(url=f"{self._base}{body['url']}", token=body.get("token", ""))
 
     def create_signed_url(self, bucket: str, path: str, expires_in: int) -> str:

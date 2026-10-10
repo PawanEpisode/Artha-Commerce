@@ -1,0 +1,1363 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-the-competition-act-2002",
+      "title": "CEL: The Competition Act, 2002",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 5: agreements, abuse of dominance, combinations, the Commission, penalties, appeals and the 2025 cost of production regulations.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "the-competition-act-2002"
+      },
+      "items": [
+        {
+          "ref": "cel05-gen-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How did the Competition Act, 2002 replace the MRTP Act?",
+            "answer_md": "The MRTP Act, 1969 (in force from 1 June 1970) was the first competition-related law. A committee set up in October 1999 recommended moving from curbing monopolies to promoting competition. The Competition Act was enacted on 13 January 2003, amended in 2007, and repealed the MRTP Act and dissolved the MRTP Commission through notifications."
+          },
+          "tags": [
+            "competition",
+            "background",
+            "mrtp"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-gen-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the objectives of the Competition Act.",
+            "answer_md": "To prevent anti-competitive practices, promote and sustain competition, protect consumers' interests, ensure freedom of trade, and carry out competition advocacy by raising awareness among Government, industry and consumers. The Competition Commission of India is the instrument for achieving them."
+          },
+          "tags": [
+            "competition",
+            "objectives"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-gen-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When were the CCI established and when did the anti-competitive agreement and abuse provisions take effect?",
+            "answer_md": "The Competition Commission of India was established by the Central Government with effect from 14 October 2003. The provisions on anti-competitive agreements and abuse of dominant position were notified on 20 May 2009."
+          },
+          "tags": [
+            "competition",
+            "background",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Agreement (Competition Act)",
+            "definition_md": "Includes any arrangement, understanding or action in concert, whether or not formal or in writing, and whether or not intended to be enforceable by legal proceedings."
+          },
+          "tags": [
+            "competition",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Cartel",
+            "definition_md": "A group of producers, sellers, distributors, traders or service providers that agree among themselves to restrict, control or attempt to control the output, distribution, sale or price of goods, trade in them, or the supply of services."
+          },
+          "tags": [
+            "competition",
+            "definitions",
+            "cartel"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Consumer (Competition Act)",
+            "definition_md": "A person who buys goods or hires or avails of services for consideration paid, promised, partly paid or deferred, including any user or beneficiary acting with the buyer's approval, whether the purpose is resale, commercial use or personal use."
+          },
+          "tags": [
+            "competition",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-004",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Enterprise",
+            "definition_md": "Any person or Government department that is involved in producing, storing, supplying, distributing, acquiring or controlling goods, in providing services, or in investing in or dealing with the securities of another body corporate. Sovereign functions of the Government, including those of departments handling atomic energy, currency, defence and space, are excluded."
+          },
+          "tags": [
+            "competition",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Person (Competition Act)",
+            "definition_md": "Includes an individual, HUF, company, firm, association of persons or body of individuals (incorporated or not, in India or abroad), a statutory corporation or Government company, a foreign body corporate, a registered co-operative society, a local authority and every other artificial juridical person."
+          },
+          "tags": [
+            "competition",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Price (Competition Act)",
+            "definition_md": "Every valuable consideration, direct, indirect or deferred, including any consideration that in effect relates to the sale of goods or performance of services although apparently relating to another matter."
+          },
+          "tags": [
+            "competition",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-007",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Relevant market",
+            "definition_md": "The market the Commission determines by reference to the relevant product market, the relevant geographic market, or both."
+          },
+          "tags": [
+            "competition",
+            "definitions",
+            "relevant-market"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Relevant product market",
+            "definition_md": "A market comprising products or services that are interchangeable or substitutable by the consumer, by reason of their characteristics, prices and intended use."
+          },
+          "tags": [
+            "competition",
+            "definitions",
+            "relevant-market"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Relevant geographic market",
+            "definition_md": "The area in which the conditions of competition for supply of goods or services, or the demand for them, are similar and distinguishable from neighbouring areas."
+          },
+          "tags": [
+            "competition",
+            "definitions",
+            "relevant-market"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-def-010",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Acquisition (Competition Act)",
+            "definition_md": "Buying, or agreeing to buy, shares, voting rights or assets of an enterprise, or gaining control over its management or assets, whether directly or indirectly."
+          },
+          "tags": [
+            "competition",
+            "definitions",
+            "combination"
+          ],
+          "reference_keys": [
+            "competitionact:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Anti-competitive agreements (s 3)",
+            "prompt_md": "When is an agreement void under the Competition Act?",
+            "gist_md": "An agreement on production, supply, distribution, storage, acquisition or control of goods or services is void when it appreciably harms, or is likely to harm, competition within India. It may be written or oral, express or implied, and is assessed on facts and circumstantial evidence. Horizontal agreements are between competitors at the same stage; vertical ones are between parties at different stages of the supply chain."
+          },
+          "tags": [
+            "competition",
+            "agreements"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Horizontal agreements (s 3(3))",
+            "prompt_md": "Which horizontal agreements are presumed to have an appreciable adverse effect on competition?",
+            "gist_md": "Agreements, practices or concerted decisions (including cartels) between enterprises or associations engaged in identical or similar trade that directly or indirectly fix purchase or sale prices; limit or control production, supply, markets, technical development or investment; share the market or sources of production by allocating areas; or rig bids or collude in bidding. Bid rigging means any agreement that eliminates or reduces competition for bids or manipulates the bidding process, but joint ventures are excepted.",
+            "exceptions_md": "Joint venture agreements are excepted from the bid-rigging limb."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "horizontal",
+            "cartel",
+            "bid-rigging"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Vertical agreements",
+            "prompt_md": "List the vertical agreements the Act examines.",
+            "gist_md": "Tie-in arrangements, exclusive supply agreements, exclusive distribution agreements, refusal to deal and resale price maintenance."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "vertical"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a tie-in arrangement?",
+            "answer_md": "An agreement requiring a purchaser, as a condition of buying certain goods, to buy some other goods as well, which he may not need or which may not be commercially viable."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "vertical",
+            "tie-in"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is an exclusive supply agreement?",
+            "answer_md": "An agreement restricting the purchaser, in the course of his trade, from acquiring or dealing in goods other than those of the seller or of any person the seller names. Example: a supplier of raw materials is barred from doing business with others."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "vertical",
+            "exclusive-supply"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is an exclusive distribution agreement?",
+            "answer_md": "An agreement that limits, restricts or withholds the output or supply of goods, or allocates an area or market for their disposal or sale."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "vertical",
+            "exclusive-distribution"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a refusal to deal?",
+            "answer_md": "An agreement that limits, or is likely to limit, by whatever method, to whom goods may be sold or from whom they may be bought. For example, a fan dealer is barred from taking up dealerships for other products."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "vertical",
+            "refusal-to-deal"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is resale price maintenance?",
+            "answer_md": "An agreement to sell goods on condition that the buyer resells at prices stipulated by the seller, unless it is clearly stated that lower prices may be charged. It is why a maximum retail price is shown on packs."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "vertical",
+            "rpm"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What restrictions on agreements does section 3 not affect?",
+            "answer_md": "The right to restrain infringement of intellectual property rights under the Copyright, Patents, Trade Marks, Geographical Indications, Designs and Semiconductor Integrated Circuits Layout-Design laws, and the right to export goods to the extent the agreement relates solely to production, supply, distribution or control for export."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "exceptions"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is a leniency programme?",
+            "answer_md": "A protection for those who come forward and honestly disclose a cartel and cooperate with the Commission, who would otherwise face stringent action if the Commission detected it on its own. It grants a lesser penalty."
+          },
+          "tags": [
+            "competition",
+            "leniency",
+            "cartel"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-agr-011",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Factors for appreciable adverse effect",
+            "prompt_md": "What factors does the Commission weigh in deciding whether an agreement has an appreciable adverse effect?",
+            "gist_md": "Creation of barriers to new entrants; driving existing competitors out of the market; foreclosure of competition by blocking entry; accrual of benefits to consumers; improvements in production or distribution; and promotion of technical, scientific and economic development through production or distribution."
+          },
+          "tags": [
+            "competition",
+            "agreements",
+            "factors"
+          ],
+          "reference_keys": [
+            "competitionact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-abu-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Abuse of dominant position (s 4)",
+            "prompt_md": "What counts as abuse of a dominant position?",
+            "gist_md": "An enterprise or group abuses its dominance if it imposes unfair or discriminatory conditions or prices (including predatory pricing) in purchase or sale; limits or restricts production, services or the market, or technical or scientific development, to consumers' prejudice; denies market access; makes contracts subject to supplementary obligations unconnected with the subject; or uses dominance in one relevant market to enter or protect another relevant market."
+          },
+          "tags": [
+            "competition",
+            "abuse",
+            "s4"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-abu-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Dominant position",
+            "definition_md": "Strength an enterprise holds in the relevant market in India that lets it behave independently of the competitive forces there, or sway its rivals, consumers or the relevant market to its advantage."
+          },
+          "tags": [
+            "competition",
+            "abuse",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-abu-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Predatory price",
+            "definition_md": "Sale of goods or provision of services at a price below the cost of production or provision (as determined by regulations) with a view to reducing competition or eliminating competitors."
+          },
+          "tags": [
+            "competition",
+            "abuse",
+            "predatory-pricing",
+            "definitions"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-abu-004",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Factors for dominant position",
+            "prompt_md": "What factors does the Commission consider in deciding whether an enterprise is dominant?",
+            "gist_md": "Market share; size and resources of the enterprise; size and importance of competitors; economic power; vertical integration; dependence of consumers; monopoly status; entry barriers (regulatory, financial, capital cost, technical, scale economies, costly substitutes); countervailing buying power; market size; social obligations and social costs; relative advantage through contribution to economic development; and any other factor the Commission considers relevant."
+          },
+          "tags": [
+            "competition",
+            "abuse",
+            "factors"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-mkt-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which factors decide the relevant geographic market?",
+            "answer_md": "Regulatory trade barriers, local specification requirements, national procurement policies, adequacy of distribution facilities, transport costs, language, consumer preferences, and the need for secure or regular supplies or rapid after-sales services."
+          },
+          "tags": [
+            "competition",
+            "relevant-market",
+            "factors"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-mkt-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which factors decide the relevant product market?",
+            "answer_md": "Physical characteristics or end-use of goods, price of goods or service, consumer preferences, exclusion of in-house production, existence of specialised producers, and classification of industrial products."
+          },
+          "tags": [
+            "competition",
+            "relevant-market",
+            "factors"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Combinations defined (s 5)",
+            "prompt_md": "What is a combination and what is its test?",
+            "gist_md": "Acquiring enterprises, acquiring control by someone who already controls a competitor, or a merger or amalgamation, where the parties exceed the thresholds in the Act. If it appreciably harms, or is likely to harm, competition in the relevant market in India, the combination is prohibited and void."
+          },
+          "tags": [
+            "competition",
+            "combination"
+          ],
+          "reference_keys": [
+            "competitionact:5",
+            "competitionact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Thresholds for combinations (per the study text)",
+            "prompt_md": "What are the asset and turnover thresholds for a combination?",
+            "gist_md": "Parties' combined assets above ₹2,000 crore or turnover above ₹6,000 crore in India; with foreign assets or turnover, combined assets above US$1 billion including at least ₹1,000 crore in India, or turnover above US$3 billion including at least ₹3,000 crore in India. For the group, assets above ₹8,000 crore or turnover above ₹24,000 crore in India; or, with foreign presence, assets above US$4 billion including at least ₹1,000 crore in India, or turnover above US$12 billion including at least ₹3,000 crore in India."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "thresholds",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are assets valued for the combination thresholds?",
+            "answer_md": "At book value as shown in the audited accounts for the financial year before the proposed merger, less depreciation, and including brand value, goodwill and intellectual property such as copyright, patents, trade marks, registered users, geographical indications and designs."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "thresholds"
+          ],
+          "reference_keys": [
+            "competitionact:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-004",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Notice of combination (s 6)",
+            "prompt_md": "When must a combination be notified and when can it take effect?",
+            "gist_md": "The parties give notice to the Commission, in the specified form with fee, within 30 days of the Board's approval of a merger or amalgamation, or of executing the agreement for acquisition. No combination takes effect until 210 days after notice or until the Commission passes its order, whichever is earlier.",
+            "exceptions_md": "No advance notice is needed where a bank, venture capital fund, foreign institutional investor or public financial institution takes shares or gives finance under a loan or investment covenant; instead the details go to the Commission within 7 days of the acquisition."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "notice",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A combination must be notified within {{c1::30}} days of Board approval or agreement; it cannot take effect until {{c2::210}} days pass or the Commission orders; inquiry on its own knowledge cannot start after {{c3::one year}} of taking effect."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How often must the Central Government revisit the combination thresholds?",
+            "answer_md": "Every two years, in consultation with the Commission, by notification, on the basis of the wholesale price index or exchange-rate fluctuations, it may raise or lower the asset and turnover values."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "thresholds",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What factors does the Commission weigh when judging the effect of a combination?",
+            "answer_md": "Actual and potential competition through imports, barriers to entry, level of combination in the market, countervailing power, likelihood of higher prices or margins, extent of effective competition that will remain, availability of substitutes, market share, removal of a vigorous competitor, vertical integration, a failing business, innovation, contribution to economic development, and whether the benefits outweigh the adverse impact."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "factors"
+          ],
+          "reference_keys": [
+            "competitionact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-008",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Investigation of combinations: timelines",
+            "prompt_md": "What is the procedure if the Commission forms a primary opinion that a combination harms competition?",
+            "gist_md": "It issues a show-cause notice to the parties, who respond within 30 days, and may call for a report from the Director General. If it forms a prima facie opinion of adverse effect, within 7 working days it directs the parties to publish details within 10 working days; objections from the public are invited within 15 working days. It may then call for further information within 15 working days, to be furnished within 15 days, and within 45 working days of that it proceeds to pass orders under s 31."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "procedure",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:31"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-009",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Orders on combinations (s 31)",
+            "prompt_md": "What orders can the Commission pass on a combination?",
+            "gist_md": "It approves a combination that does not harm competition; directs a harmful one not to take effect; or proposes modifications that remove the harm. Parties accepting must carry out the modification in time or the combination is deemed harmful. Parties not accepting may submit amendments within 30 working days, and a further 30 working days if the Commission disagrees, failing which the combination is deemed harmful. If no order is passed within 210 days of notice (excluding those 30-working-day periods), the combination is deemed approved."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "orders",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:31"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-com-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What happens if the Commission declares a combination void?",
+            "answer_md": "The acquisition, control or merger is dealt with by the other statutory or judicial authorities as if it had not taken place, and proceedings already started or later started under other laws remain valid."
+          },
+          "tags": [
+            "competition",
+            "combination",
+            "orders"
+          ],
+          "reference_keys": [
+            "competitionact:31"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Constitution of the Commission",
+            "prompt_md": "How is the Competition Commission of India constituted?",
+            "gist_md": "One Chairperson plus between two and six other Members, all full-time and appointed by the Central Government. Each must be a person of ability, integrity and standing with at least 15 years' professional experience, in a field such as law, economics, finance, accountancy, management, commerce, industry, international trade, public affairs or competition law and policy. The term is 5 years, renewable, and members retire at 65."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "constitution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:competition"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the role of the Director General under the Act?",
+            "answer_md": "The Central Government may appoint a Director General to assist the Commission in inquiring into contraventions, supported by a Secretary, experts, professionals and officers."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "director-general"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Duties and powers of the Commission",
+            "prompt_md": "What is the Commission's mandate and on what basis can it inquire?",
+            "gist_md": "It takes actions and gives directions to eliminate practices that harm competition, promote and sustain competition, protect consumers and ensure freedom of trade of other participants in Indian markets. It can inquire into an alleged contravention on its own motion, on information from any person, consumer or trade association, or on a reference from the Central or a State Government or a statutory authority."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "powers"
+          ],
+          "reference_keys": [
+            "competitionact:competition"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-004",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Orders after inquiry into agreements or abuse",
+            "prompt_md": "What orders can the Commission pass against anti-competitive agreements or abuse of dominance?",
+            "gist_md": "Direct the enterprises to discontinue and not re-enter the agreement or abuse; impose a penalty; direct modification of the agreements; direct payment of costs and compliance with other directions; and pass any other order it considers fit. If an enterprise in breach is a member of a group, other group members that contributed to the contravention may also be proceeded against."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "orders"
+          ],
+          "reference_keys": [
+            "competitionact:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-005",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Penalty on cartels",
+            "prompt_md": "What is the maximum penalty on cartel members?",
+            "gist_md": "For each year the agreement continued, up to three times the member's profit or ten per cent of its turnover, whichever is higher, imposed on each producer, seller, distributor, trader or service provider in the cartel."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "cartel",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can the Commission break up an enterprise with a dominant position?",
+            "answer_md": "Yes. It may direct the division of an enterprise so that it does not abuse dominance because of its size, and the order may provide for transfer or vesting of property, rights, liabilities or obligations, adjustment of contracts, creation, allotment, surrender or cancellation of shares or securities, formation or winding up of an enterprise, and amendment of its memorandum or articles."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "division"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What procedural powers does the Commission have?",
+            "answer_md": "It follows natural justice and regulates its own procedure, has civil-court powers, may issue interim orders, may call on experts, and may direct any person to produce books and documents or furnish information to the Director General, the Secretary or an authorised officer."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "procedure"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is a quorum and a decision reached in Commission meetings?",
+            "answer_md": "Questions are decided by a majority of Members present and voting. The Chairperson or presiding Member has a second or casting vote on a tie, and the quorum is three Members."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "procedure",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is an unpaid monetary penalty recovered?",
+            "answer_md": "The Commission recovers it in the manner specified in its regulations, including by the procedure used for recovering income tax."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "penalty"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Does the Act apply to acts done outside India?",
+            "answer_md": "Yes. The Commission can pass orders even if the agreement was entered into outside India, any party to the agreement or the combination is outside India, the abusing enterprise is outside India, a combination took place abroad, or any related practice arises outside India."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "extraterritorial"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-011",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Penalty for non-compliance with Commission's orders",
+            "prompt_md": "What penalty follows failure to comply with the Commission's orders?",
+            "gist_md": "A fine of up to ₹1 lakh for each day of non-compliance, subject to a maximum of ₹10 crore. Failure to comply with the order or to pay the fine is also punishable with imprisonment."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:competition"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the penalty for not complying with directions of the Commission or the Director General?",
+            "answer_md": "A fine of up to ₹1 lakh for each day the failure continues, subject to a maximum of ₹1 crore."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:36",
+            "competitionact:41"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What penalty applies to false statements or omissions by a party to a combination?",
+            "answer_md": "A penalty of not less than ₹50 lakh, which may extend to ₹1 crore, determined by the Commission."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What penalty applies to false information or destroying required documents?",
+            "answer_md": "A fine that may extend to ₹1 crore, determined by the Commission, for making a statement known to be false, omitting a material fact knowingly, or wilfully altering, suppressing or destroying a required document."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "competitionact:44"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-015",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Lesser penalty (leniency)",
+            "prompt_md": "When may the Commission impose a lesser penalty on a cartel member?",
+            "gist_md": "When the member makes a full and true disclosure of the violation. It is not available if the investigation report under s 26 was received before the disclosure, or if the person does not continue to cooperate until proceedings finish. If the member breaches the condition, gives false evidence or the disclosure is not vital, it can be tried for the offence and the penalty that would otherwise have applied is imposed."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "leniency",
+            "cartel"
+          ],
+          "reference_keys": [
+            "competitionact:26"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who is liable when a company contravenes the Act?",
+            "answer_md": "The company and every person in charge of and responsible for its business at the time. A person escapes liability by proving the contravention happened without his knowledge or that he made all efforts to stop it. Any director, manager, secretary or officer through whose consent, connivance or neglect it happened is also liable."
+          },
+          "tags": [
+            "competition",
+            "cci",
+            "companies"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-017",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "Appellate Tribunal and appeals",
+            "prompt_md": "Which body hears appeals from the Commission and within what time?",
+            "gist_md": "The National Company Law Appellate Tribunal constituted under s 410 of the Companies Act, 2013. An aggrieved person appeals within 60 days of receiving the direction, decision or order; the Tribunal may confirm, modify or set aside it. It also adjudicates compensation claims. It has civil-court powers but is not bound by the Code of Civil Procedure and is guided by natural justice."
+          },
+          "tags": [
+            "competition",
+            "appeal",
+            "nclat",
+            "numerical"
+          ],
+          "reference_keys": [
+            "companiesact:410"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are the Appellate Tribunal's orders enforced and what penalty applies for contravening them?",
+            "answer_md": "They are enforced like a civil court decree, and may be sent for execution to the court with jurisdiction over the company's registered office or the person's residence or place of business. Contravening an order without reasonable ground attracts a penalty of up to ₹1 crore, or imprisonment up to 3 years, or both."
+          },
+          "tags": [
+            "competition",
+            "appeal",
+            "nclat",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "To whom can an appeal against the Appellate Tribunal's order be made?",
+            "answer_md": "The Supreme Court, by the Central or a State Government, the Commission, any statutory or local authority, any enterprise or any aggrieved person, within 60 days of communication of the Tribunal's decision."
+          },
+          "tags": [
+            "competition",
+            "appeal",
+            "supreme-court",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What powers does the Central Government have under the Act?",
+            "answer_md": "It makes rules, decides the staff and officers of the Commission and their salaries, may exempt any class from the Act or any provision for a period, and may issue directions. In an emergent situation it can supersede the Commission for up to 6 months."
+          },
+          "tags": [
+            "competition",
+            "central-government",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-cci-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Does a Competition Act proceeding bar action under other laws?",
+            "answer_md": "No. The Act is in addition to, and not in derogation of, any other law in force, so other laws continue to apply despite proceedings under it."
+          },
+          "tags": [
+            "competition",
+            "other-laws"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-rev-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Competition Act, 2002",
+            "reference": "2026 revision: CCI (Determination of Cost of Production) Regulations, 2025",
+            "prompt_md": "What are the new cost of production regulations and which provision do they serve?",
+            "gist_md": "Issued by the CCI on 7 May 2025, they supersede the 2009 regulations and give standard definitions and methods for determining cost in predatory pricing inquiries under s 4. They took effect immediately and apply prospectively to s 4 cases."
+          },
+          "tags": [
+            "competition",
+            "2026-revision",
+            "predatory-pricing",
+            "cost-of-production"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-rev-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "2026 revision: what is the primary cost benchmark in the 2025 regulations?",
+            "answer_md": "Average Variable Cost (AVC), calculated as total variable cost divided by total output, used to approximate marginal cost."
+          },
+          "tags": [
+            "competition",
+            "2026-revision",
+            "predatory-pricing",
+            "avc"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-rev-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: which other cost concepts do the 2025 regulations define, and can the CCI use others?",
+            "answer_md": "Four more measures are defined: Avoidable Cost, Long-Run Average Incremental Cost, Total Cost and Total Variable Cost. The CCI may instead rely on other measures, such as Average Total Cost and long-run incremental cost, provided it records its reasons."
+          },
+          "tags": [
+            "competition",
+            "2026-revision",
+            "predatory-pricing"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-rev-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: what is new about expert advisers in the 2025 cost regulations?",
+            "answer_md": "The involvement of expert advisers is formalised, for both the CCI and the parties to a dispute."
+          },
+          "tags": [
+            "competition",
+            "2026-revision",
+            "predatory-pricing"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel05-rev-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The CCI cost of production regulations of {{c1::7 May 2025}} supersede the {{c2::2009}} regulations and use {{c3::Average Variable Cost}} (total variable cost divided by total output) as the primary benchmark for {{c4::predatory pricing}} under s 4."
+          },
+          "tags": [
+            "competition",
+            "2026-revision",
+            "predatory-pricing"
+          ],
+          "reference_keys": [
+            "competitionact:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

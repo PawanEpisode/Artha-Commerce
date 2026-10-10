@@ -1,0 +1,1155 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-laws-and-regulations-related-to-insurance-sector",
+      "title": "CEL: Laws and Regulations Related to Insurance Sector",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 8: insurance law principles, key provisions of the Insurance Act, 1938 and the IRDA Act, 1999.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "laws-and-regulations-related-to-insurance-sector"
+      },
+      "items": [
+        {
+          "ref": "cel08-gen-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How did insurance legislation develop in India?",
+            "answer_md": "Before 1912 insurance companies were governed by the Indian Companies Act, 1882. The Indian Life Insurance Companies Act, 1912 and the Provident Insurance Societies Act dealt only with life insurance. The Insurance Act, 1938 came into force on 1 July 1939 and was comprehensively amended in 1950. Life insurance was nationalised in 1956 (LIC Act, 1956; LIC began on 1 September 1956), and general insurance in 1972 (General Insurance Business (Nationalisation) Act, 1972). The Marine Insurance Act was enacted in 1963."
+          },
+          "tags": [
+            "insurance",
+            "history",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-gen-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How was the insurance sector opened to private players?",
+            "answer_md": "On the report of the Malhotra Committee, the IRDA Act, 1999 opened the market to private insurers in 2000. Before that the industry had only two state insurers: LIC for life and GIC (with four subsidiaries) for general insurance."
+          },
+          "tags": [
+            "insurance",
+            "history",
+            "irda"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-gen-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What FDI limits does the study text give for insurance?",
+            "answer_md": "Up to 26% under the automatic route, FDI above that up to 49% with Central Government approval, and 100% in insurance intermediaries such as brokers, reinsurance brokers and consultants. The Indian insurance market is the 10th largest in the world."
+          },
+          "tags": [
+            "insurance",
+            "fdi",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does 'uberrimae fidei' mean for an insurance contract?",
+            "answer_md": "A contract of utmost good faith. Both parties must disclose every material fact known to them. The only difference from other contracts is this heightened duty (General Assurance Society Ltd v Chandumull Jain)."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "good-faith"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-002",
+          "kind": "case_law",
+          "importance": "important",
+          "fields": {
+            "case_name": "General Assurance Society Ltd v Chandumull Jain",
+            "citation": "AIR 1966 SC 1644",
+            "held_md": "A contract of insurance is one of utmost good faith, and there is no difference from other contracts except that this requirement applies.",
+            "court": "Supreme Court of India",
+            "year": "1966"
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "good-faith"
+          ],
+          "reference_keys": [
+            "case:general-assurance-society-ltd-v-chandumull-jain"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the legal effect of a representation in an insurance proposal?",
+            "answer_md": "A representation is a statement made before or when the contract is formed, about something that is not itself part of the contract. If it is made a basis of the contract it becomes a warranty, and if false the insurer may avoid the policy even where the loss has nothing to do with the untrue fact. Merely recording the statements in the proposal does not turn them into warranties. For the time limit on challenging a life policy, see the s 45 card."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "misrepresentation",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What three conditions show that a misrepresentation was wilful under the Insurance Act?",
+            "answer_md": "First, the statement concerns a material matter or hides facts that ought to have been disclosed because they were material. Second, the policyholder made or hid it fraudulently. Third, he knew when making it that it was false or that facts were being hidden."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "misrepresentation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a breach of warranty affect an insurance policy?",
+            "answer_md": "A breach of warranty avoids the policy, even if it does not relate to a matter material to the risk. Warranties may be express or implied; implied warranties are mostly confined to marine insurance."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "warranty"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish conditions precedent and conditions subsequent.",
+            "answer_md": "Conditions precedent are essential to create a valid contract, and failing to satisfy them makes the contract void ab initio. Conditions subsequent relate to continuance of a valid contract, and failure to fulfil them avoids the contract from the date of breach. Implied conditions, such as insurable interest and good faith, apply to every contract by law."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "conditions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "May a policy shorten the limitation period?",
+            "answer_md": "No. A condition that curtails the limitation period to less than the law allows is void, and the insurer cannot rely on a condition not mentioned in the policy to reduce liability (Modern Insulators Ltd v Oriental Insurance Co Ltd). A policy may, however, provide for forfeiture or waiver of the right (National Insurance Co Ltd v Sujir Ganesh Nayak and Co)."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "conditions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-008",
+          "kind": "case_law",
+          "importance": "bullet",
+          "fields": {
+            "case_name": "Modern Insulators Ltd v Oriental Insurance Co Ltd",
+            "citation": "(2000) 2 SCC 1014",
+            "held_md": "An insurer cannot rely on a condition that is not mentioned in the policy to reduce its liability.",
+            "court": "Supreme Court of India",
+            "year": "2000"
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "conditions"
+          ],
+          "reference_keys": [
+            "case:modern-insulators-ltd-v-oriental-insurance-co-ltd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-009",
+          "kind": "case_law",
+          "importance": "bullet",
+          "fields": {
+            "case_name": "National Insurance Co Ltd v Sujir Ganesh Nayak and Co",
+            "citation": "AIR 1997 SC 2049",
+            "held_md": "A policy may not curtail a right but may provide for its forfeiture or waiver, and such a provision is enforceable against either party.",
+            "court": "Supreme Court of India",
+            "year": "1997"
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "conditions"
+          ],
+          "reference_keys": [
+            "case:national-insurance-co-ltd-v-sujir-ganesh-nayak-and-co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the principle of indemnity and which policies does it not cover?",
+            "answer_md": "Every policy except life and personal accident is a contract of indemnity: the insurer makes good only the real loss caused by the insured event. Even if the cover is higher, the insured recovers no more than the loss he can prove (Vania Silk Mills (P) Ltd v CIT)."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "indemnity"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-011",
+          "kind": "case_law",
+          "importance": "bullet",
+          "fields": {
+            "case_name": "Vania Silk Mills (P) Ltd v CIT",
+            "citation": "(1991) 4 SCC 22",
+            "held_md": "Within the policy maximum, the insured cannot recover more than the actual loss he establishes.",
+            "court": "Supreme Court of India",
+            "year": "1991"
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "indemnity"
+          ],
+          "reference_keys": [
+            "case:vania-silk-mills-p-ltd-v-cit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What limits the amount of indemnity?",
+            "answer_md": "The loss must be proved; the indemnity is limited to the amount in the policy; the insured is indemnified only for the proximate cause of the loss; and the market value of the property determines the amount."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "indemnity"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the doctrine of proximate cause?",
+            "answer_md": "From the maxim causa proxima non remota spectatur: the proximate and not the remote cause is taken as the cause of loss. The insurer must make good a loss that clearly and proximately results, directly or indirectly, from the insured event, and the burden of proving this is on the insured."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "proximate-cause"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is subrogation?",
+            "answer_md": "After paying a claim, the insurer steps into the shoes of the insured to recover the loss from the person responsible. It is tied to indemnity: the insured must not profit from the loss. The study text places it with indemnity and notes that, on assignment of all rights, the insured generally loses standing to sue."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "subrogation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the Consumer Protection Act apply to insurance?",
+            "answer_md": "Insurance services fall within the Act, so deficiency in service (for example repudiating or mishandling a claim) lets the policyholder complain. An insurer is not a 'consumer' merely by subrogation, so its remedy is a civil suit (New India Assurance Co Ltd v B N Sainani). A business buying insurance to hedge its risk is still a consumer."
+          },
+          "tags": [
+            "insurance",
+            "consumer-protection"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-016",
+          "kind": "case_law",
+          "importance": "bullet",
+          "fields": {
+            "case_name": "New India Assurance Co Ltd v B N Sainani",
+            "citation": "(1997) 6 SCC 383",
+            "held_md": "An insurer that sues by subrogation is not a consumer, since no service is rendered to it, so it must file a civil suit to recover the loss.",
+            "court": "Supreme Court of India",
+            "year": "1997"
+          },
+          "tags": [
+            "insurance",
+            "consumer-protection",
+            "subrogation"
+          ],
+          "reference_keys": [
+            "case:new-india-assurance-co-ltd-v-b-n-sainani"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-017",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Insurable interest",
+            "prompt_md": "What is insurable interest and when must it exist?",
+            "gist_md": "The insured has an insurable interest if the peril, through its direct effect, would cost him a benefit or create a liability; the test is whether he would suffer a financial loss. Without it the policy is a wager and void. A limited interest can be insured: a creditor has one in his debtor, and an employee in his employer, up to the debt or pay due. Life and personal accident cover need it only when the policy is taken; fire and motor insurance need it at inception and at the time of loss; marine insurance does not need it at inception."
+          },
+          "tags": [
+            "principles",
+            "insurable-interest"
+          ],
+          "reference_keys": [
+            "insuranceact:principles"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-prin-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "From what time does a policy dated a particular day cover the insurer's liability?",
+            "answer_md": "From the midnight preceding that date, unless the policy contains a special contrary term, in which case the contract terms prevail and cover runs from the time of issue (New India Assurance Co Ltd v Ram Dayal; National Insurance Co Ltd v Jikubhai Nathuji Dabhi)."
+          },
+          "tags": [
+            "insurance",
+            "principles",
+            "commencement"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Indian insurance company (s 2(7A))",
+            "definition_md": "An insurer constituted as a public company limited by shares under the Companies Act, 2013, in which total foreign holding (portfolio investors included) is no more than 49% of paid-up equity, which is owned and controlled by Indians, and which exists only to do life, general, health or re-insurance business."
+          },
+          "tags": [
+            "insurance",
+            "definitions",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:2(7a)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Insurer (s 2(9))",
+            "definition_md": "Any of: an Indian insurance company; a body set up by an Act of Parliament to do insurance business; an insurance co-operative society; or a foreign re-insurer operating through a branch in India (Lloyd's and its Members included)."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [
+            "insuranceact:2(9)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Insurance agent (s 2(10))",
+            "definition_md": "A person who receives or agrees to receive commission or other remuneration for soliciting or procuring insurance business, including for continuance, renewal or revival of policies."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [
+            "insuranceact:2(10)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-004",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Investment company (s 2(10A))",
+            "definition_md": "A company whose main business is to buy shares, stocks, debentures or other securities."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [
+            "insuranceact:2(10a)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Life insurance business (s 2(11))",
+            "definition_md": "Effecting contracts of insurance upon human life, including contracts under which money is assured on death (other than death by accident only) or on a contingency dependent on human life, and contracts with premiums payable for a term dependent on human life. It includes disability and double or triple indemnity accident benefits, annuities upon human life, and superannuation allowances and benefits."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [
+            "insuranceact:2(11)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Re-insurance (s 2(16B))",
+            "definition_md": "One insurer covering a share of another insurer's risk, in return for a premium both agree on."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [
+            "insuranceact:2(16b)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "General insurance business",
+            "definition_md": "Insurance business covering fire, marine or miscellaneous risks, whether done separately or together."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Health insurance business",
+            "definition_md": "Writing contracts that pay for sickness, or for medical, surgical or hospital expenses (in-patient or out-patient), and also travel cover and personal accident cover."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-009",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Marine insurance business",
+            "definition_md": "Insuring vessels of every kind, cargo, freight and other lawfully insurable interests, and goods or property in transit by land, water or both (with or without warehouse risks), along with other risks usually included in marine policies."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-def-010",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Policy holder",
+            "definition_md": "Besides the original holder, it takes in someone to whom the holder's entire interest in the policy has been assigned outright; an assignee whose interest can be defeated or depends on a condition is excluded."
+          },
+          "tags": [
+            "insurance",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Insurance of Indian property with foreign insurers (s 2CB)",
+            "prompt_md": "Can Indian property be insured with a foreign insurer?",
+            "gist_md": "Only with IRDAI's permission. Otherwise nobody may take out or renew cover on property in India, or on an Indian-registered ship, vessel or aircraft, with an insurer whose main place of business is outside India."
+          },
+          "tags": [
+            "insurance",
+            "s2cb",
+            "foreign-insurers"
+          ],
+          "reference_keys": [
+            "insuranceact:2cb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Capital requirements (s 6)",
+            "prompt_md": "What minimum paid-up capital must an insurer have?",
+            "gist_md": "₹100 crore for life, general or health insurance, and ₹200 crore for reinsurance (per the study text), and net owned funds of at least ₹5,000 crore for registration. Capital must consist of equity shares each of a single face value, with voting rights restricted to equity shares, and the same paid-up amount on all shares (except for up to one year allowed for calls)."
+          },
+          "tags": [
+            "insurance",
+            "s6",
+            "capital",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Minimum paid-up capital under s 6 (per the text): life, general and health {{c1::₹100 crore}}; reinsurance {{c2::₹200 crore}}; net owned funds of at least {{c3::₹5,000 crore}}."
+          },
+          "tags": [
+            "insurance",
+            "s6",
+            "capital",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-004",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Accounts and returns (ss 12 and 15)",
+            "prompt_md": "How must an insurer submit its accounts?",
+            "gist_md": "Final accounts are made out in the prescribed format. The audited accounts and statements, with the abstract and statement referred to in s 13, are printed and four copies sent to the Authority within six months of the end of the period. One copy is signed by the chairman, two directors and the principal officer (and the managing director, if any); another by the auditor or the actuary. If a return is defective or inaccurate, the Authority may call for further information or a revised return."
+          },
+          "tags": [
+            "insurance",
+            "s12",
+            "s15",
+            "accounts",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:12",
+            "insuranceact:15"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-005",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Actuarial valuation (s 13)",
+            "prompt_md": "How often must a life insurer have its business valued?",
+            "gist_md": "At least once a year, an investigation of the life insurance business, including a valuation of liabilities, is made by an actuary and an abstract of the actuary's report is prepared per the regulations. If the valuation does not properly show the company's affairs, the Authority can require further investigation and valuation."
+          },
+          "tags": [
+            "insurance",
+            "s13",
+            "actuary",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-006",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Record of policies and claims (s 14)",
+            "prompt_md": "What records must an insurer keep?",
+            "gist_md": "A record of policies (policyholder's name and address, date effected, and any transfer, assignment or nomination notified) and a record of claims (each claim with date, claimant's name and address, date discharged or, if rejected, the date and grounds). Records may be in electronic form, and insurers should endeavour to issue policies above a specified sum assured and premium electronically."
+          },
+          "tags": [
+            "insurance",
+            "s14",
+            "records"
+          ],
+          "reference_keys": [
+            "insuranceact:14"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-007",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Investment of assets (s 27)",
+            "prompt_md": "How must a life insurer and a general insurer invest their assets?",
+            "gist_md": "Life insurer: assets equal to its liabilities to policyholders in India must be invested at all times, with 25% in Government securities and a further 25% at least in Government or other approved securities, and the balance in approved investments under regulations. General insurer: 25% of assets in Government securities, a further 10% at least in Government or other approved securities, and the balance as regulations permit."
+          },
+          "tags": [
+            "insurance",
+            "s27",
+            "investment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What other investment limits apply (ss 27A and 27C)?",
+            "answer_md": "A life insurer's controlled fund, and a general insurer's assets, may be invested only in approved investments as the regulations specify (s 27A). An insurer may invest not more than 5% in aggregate of its controlled fund or assets in companies belonging to its promoters, on conditions in the regulations (s 27C)."
+          },
+          "tags": [
+            "insurance",
+            "s27a",
+            "s27c",
+            "investment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:27a",
+            "insuranceact:27c"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-009",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Prohibition of loans (s 29)",
+            "prompt_md": "To whom can an insurer not grant loans?",
+            "gist_md": "No loans or temporary advances, whether on hypothecation, personal security or otherwise, to any director, manager, actuary, auditor or officer of the insurer, or to a company or firm in which any of them is a director, manager, actuary, officer or partner. Loans on the insurer's own life policies up to their surrender value are the exception, and loans to a banking company specified by the Authority are not covered."
+          },
+          "tags": [
+            "insurance",
+            "s29",
+            "loans"
+          ],
+          "reference_keys": [
+            "insuranceact:29"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What liability do directors bear under s 30?",
+            "answer_md": "If a contravention of ss 27, 27A, 27B, 27C, 27D or 29 causes loss to the insurer or policyholders, every director, manager or officer who was knowingly a party to it is jointly and severally liable to make good the loss, in addition to any other penalty."
+          },
+          "tags": [
+            "insurance",
+            "s30",
+            "directors"
+          ],
+          "reference_keys": [
+            "insuranceact:30"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the motor third-party obligation under s 32D?",
+            "answer_md": "Every general insurer must underwrite a minimum percentage of third-party motor vehicle risks, as specified by the regulations, with the Authority able to exempt insurers mainly in health, re-insurance, agriculture or export credit guarantee. Non-compliance with ss 32B, 32C and 32D attracts a penalty up to ₹25 crore (s 105B)."
+          },
+          "tags": [
+            "insurance",
+            "s32d",
+            "motor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:32d",
+            "insuranceact:105b"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-012",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Investigation and inspection (s 33)",
+            "prompt_md": "What powers does the Authority have over insurers and intermediaries?",
+            "gist_md": "It may investigate the affairs of any insurer or intermediary at any time through an Investigating Officer, who can engage auditors or actuaries and may inspect books notwithstanding s 210 of the Companies Act, 2013. A copy of the inspection report goes to the insurer. All concerned must cooperate. The expenses of an investigation are borne by the insurer or intermediary, rank in priority over its debts and are recoverable as arrears of land revenue."
+          },
+          "tags": [
+            "insurance",
+            "s33",
+            "investigation"
+          ],
+          "reference_keys": [
+            "insuranceact:33",
+            "companiesact:210"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-013",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Commission and agents (ss 40 and 42)",
+            "prompt_md": "Who can be paid commission for procuring insurance and what limits apply to agents?",
+            "gist_md": "Commission for soliciting or procuring insurance business in India may be paid only to an insurance agent or intermediary, as the regulations allow. Under s 42 a person may act for one life insurer, one general insurer, one health insurer and one insurer of each other mono-line class, and no more. Insurers cannot appoint principal, chief or special agents, multi-level marketing for insurance is banned, and an agent or intermediary needs the Authority's permission to be a director of an insurance company."
+          },
+          "tags": [
+            "insurance",
+            "s40",
+            "s42",
+            "agents",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:40",
+            "insuranceact:42"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-014",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Policy not to be called in question (s 45)",
+            "prompt_md": "When can a life insurer challenge a policy for fraud or misstatement?",
+            "gist_md": "Three years after the date of the policy, a life insurer cannot question it on any ground, whether fraud or an incorrect statement, or suppression, of a fact material to life expectancy. The insurer must give the insured, or his legal representatives, nominees or assignees, written reasons and the material behind its decision."
+          },
+          "tags": [
+            "insurance",
+            "s45",
+            "life",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:45"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-015",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Surveyors and loss assessors (s 64UM)",
+            "prompt_md": "What must a surveyor or loss assessor in general insurance have?",
+            "gist_md": "The academic qualifications the regulations specify, and membership of a professional body of surveyors and loss assessors (the Indian Institute of Insurance Surveyors and Loss Assessors). For a firm or company, all partners or directors who may be asked to survey or assess must meet the same requirements. Surveyors follow a code of conduct set by the regulations."
+          },
+          "tags": [
+            "insurance",
+            "s64um",
+            "surveyors"
+          ],
+          "reference_keys": [
+            "insuranceact:64um"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-sec-016",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insurance Act, 1938",
+            "reference": "Valuation and sufficiency of assets (s 64V)",
+            "prompt_md": "How are an insurer's assets valued and what solvency must it maintain?",
+            "gist_md": "Assets are valued at not more than market or realisable value, and every liability is properly valued. An auditor (general business) or actuary (life business) certifies a statement of assets and liabilities as on 31 March each year, filed with the returns. An insurer must always maintain an excess of assets over liabilities of not less than 50% of the minimum capital under s 6; failing this it is deemed insolvent and may be wound up by the court on the Authority's application. The Authority also sets a control level of solvency."
+          },
+          "tags": [
+            "insurance",
+            "s64v",
+            "solvency",
+            "numerical"
+          ],
+          "reference_keys": [
+            "insuranceact:64v",
+            "insuranceact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the objectives of the IRDA and its mission?",
+            "answer_md": "Established in 1999, to protect the interests of policyholders and to regulate, promote and ensure orderly growth of the insurance industry. Its mission includes securing fair treatment of policyholders, speedy and orderly growth of the sector for the common man and long-term funds, promoting high standards of integrity, financial soundness and fair dealing by insurers, ensuring speedy settlement of genuine claims, preventing fraud and malpractice, having a grievance redressal machinery, and promoting optimum self-regulation."
+          },
+          "tags": [
+            "irda",
+            "objectives"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What matters does the IRDA make regulations or policy on?",
+            "answer_md": "Nomination by policyholders, settlement of claims, training of agents and intermediaries, insurable interest, surrender value, code of conduct of intermediaries and surveyors, assistance in getting correct information about policies, management information systems, promotion of self-regulation, registration of insurers, regulation of investment by insurers, and supervising and monitoring insurance companies."
+          },
+          "tags": [
+            "irda",
+            "functions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "IRDA Act, 1999",
+            "reference": "Constitution of the Authority",
+            "prompt_md": "How is the IRDA constituted?",
+            "gist_md": "A body corporate appointed by the Central Government by notification, with its head office decided by the Government. It has a Chairperson, up to five whole-time members and up to four part-time members, with expertise in insurance, law, economics, accountancy and similar fields, and one member with knowledge of life insurance, general insurance and actuarial science. The Chairperson holds office for 5 years or until age 65, and a whole-time member until age 62. A member can resign on three months' notice."
+          },
+          "tags": [
+            "irda",
+            "insurance",
+            "constitution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "irdaact:constitution"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "On what grounds can a member of the IRDA be removed?",
+            "answer_md": "Insolvency, unsoundness of mind, conviction for an offence involving moral turpitude, illegally acquiring a financial interest in the Authority, or acting contrary to public interest (under s 6). The Chairperson and whole-time members cannot, for two years after leaving, hold office under the Central or State Government or in the insurance sector."
+          },
+          "tags": [
+            "irda",
+            "members",
+            "numerical"
+          ],
+          "reference_keys": [
+            "irdaact:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How are meetings of the Authority decided?",
+            "answer_md": "By a simple majority, with the Chairperson having a casting vote. If the Chairperson cannot attend, the members present choose one of themselves to preside. No act of the Authority is invalid merely because of a defect in the appointment of a member or a procedural irregularity."
+          },
+          "tags": [
+            "irda",
+            "meetings"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Intermediary or insurance intermediary",
+            "definition_md": "Includes insurance brokers, reinsurance brokers, insurance consultants, corporate agents, third party administrators, surveyors and loss assessors, and other entities the Authority notifies."
+          },
+          "tags": [
+            "irda",
+            "definitions"
+          ],
+          "reference_keys": [
+            "irdaact:2(f)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the duties and powers of the IRDA?",
+            "answer_md": "Its task is to regulate, control, promote and secure the orderly growth of insurance and re-insurance. Its powers include granting, changing and cancelling registrations; protecting policyholders; framing codes of conduct for surveyors; fixing qualifications and training for agents and intermediaries; charging fees; investigating insurance business; regulating business outside the Tariff Advisory Committee's control under s 64 of the Insurance Act; regulating investment of funds and solvency margins; settling disputes between intermediaries and insurers; and supervising the Tariff Advisory Committee."
+          },
+          "tags": [
+            "irda",
+            "powers"
+          ],
+          "reference_keys": [
+            "insuranceact:64"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is the IRDA funded and audited?",
+            "answer_md": "The Central Government grants funds, forming the IRDA of India Fund along with fees, charges and other sums; it covers salaries and other expenses. Accounts are kept as the Government prescribes in consultation with the CAG, audited by the CAG, and laid before Parliament by the Government."
+          },
+          "tags": [
+            "irda",
+            "finance"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can insurance business be transferred or amalgamated?",
+            "answer_md": "Only under a scheme prepared under the Act and approved by the Authority. The scheme sets out the agreement for the transfer or amalgamation and any further provisions needed to give effect to it."
+          },
+          "tags": [
+            "irda",
+            "amalgamation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel08-irda-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the relationship between the IRDA and the Central Government?",
+            "answer_md": "The Authority is bound by the Central Government's decisions on policy, but works independently on technical and administrative matters. If it persistently defaults on directions or in the public interest, the Government may supersede it for up to six months by notification and appoint a Controller of Insurance. It can set up an Insurance Advisory Committee of up to 25 members, delegate powers to its members or officers, and make regulations; the Government makes rules."
+          },
+          "tags": [
+            "irda",
+            "central-government",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

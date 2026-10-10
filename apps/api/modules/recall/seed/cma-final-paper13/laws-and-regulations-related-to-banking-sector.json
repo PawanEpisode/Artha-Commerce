@@ -1,0 +1,1269 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-laws-and-regulations-related-to-banking-sector",
+      "title": "CEL: Laws and Regulations Related to Banking Sector",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 7: Banking Regulation Act, role of the RBI, the SARFAESI Act and the 2025 RBI regulatory changes.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "laws-and-regulations-related-to-banking-sector"
+      },
+      "items": [
+        {
+          "ref": "cel07-bra-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the Banking Regulation Act, 1949 do?",
+            "answer_md": "It is the central law that regulates banking companies in India, supplementing the Companies Act. It lets the RBI license banks, regulate shareholding and voting rights, supervise the appointment of boards and management, regulate operations, lay down audit instructions, impose moratorium, supervise mergers and liquidation, issue directions in public interest and impose penalties. Primary agricultural credit societies and co-operative land mortgage banks are excluded."
+          },
+          "tags": [
+            "banking-regulation",
+            "overview"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Banking",
+            "definition_md": "Taking in money from the public as deposits, in order to lend or invest it, on terms that it is repayable on demand or otherwise and can be withdrawn by cheque, draft, order or in some other way. A banking company is one that carries on banking business."
+          },
+          "tags": [
+            "banking-regulation",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Forms of business of banking companies (s 6)",
+            "prompt_md": "What business may a banking company carry on besides banking?",
+            "gist_md": "Acting as agent for the Government, local authorities or other persons (but not as managing agent or secretary and treasurer of a company); underwriting and managing issues of securities; guarantee and indemnity business; managing and realising property taken in satisfaction of claims; holding property that secures its loans; undertaking trusts and administering estates; supporting employee welfare and charitable funds; building and dealing with its own property; taking over businesses of a similar nature; incidental activities; and any other business the Central Government notifies as lawful."
+          },
+          "tags": [
+            "banking-regulation",
+            "s6",
+            "business"
+          ],
+          "reference_keys": [
+            "bra:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-004",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Board composition",
+            "prompt_md": "What are the board composition requirements of a banking company?",
+            "gist_md": "Not less than 51% of the directors must have specialised knowledge or practical experience of accountancy, agriculture and rural economy, banking, co-operation, finance, law or small-scale industry, or of any other area the RBI finds useful. Of these, two or more need special knowledge of agriculture and rural economy, co-operation or small-scale industry. Except for the Chairman and whole-time directors, directors serve for at most 8 years. The RBI may order the board to be reconstituted, and one person should not sit on the boards of two banks."
+          },
+          "tags": [
+            "banking-regulation",
+            "board",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:board"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-005",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Chairman and managing director (ss 10B and 10BB)",
+            "prompt_md": "How is the chairman of a banking company appointed and what are the RBI's powers?",
+            "gist_md": "Every banking company has a director as Chairman, whole-time or part-time. A whole-time Chairman is entrusted with the management of the whole affairs of the company, subject to the Board's superintendence, control and direction. If the Chairman is part-time, management is entrusted to the Managing Director, both appointed with RBI approval for up to 5 years at a time. If the post of whole-time Chairman or MD is vacant and the vacancy would adversely affect the bank, the RBI may appoint a suitable person, who is deemed a director while holding office."
+          },
+          "tags": [
+            "banking-regulation",
+            "chairman",
+            "s10b",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:10b",
+            "bra:10bb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Minimum capital structure (ss 11 and 12)",
+            "prompt_md": "What proportion rules apply to a banking company's capital?",
+            "gist_md": "Subscribed capital must be at least half of authorised capital, and paid-up capital at least half of subscribed capital. When capital is increased, the proportion may be restored within two years or as the RBI allows. Shares may be equity or preference."
+          },
+          "tags": [
+            "banking-regulation",
+            "s12",
+            "capital",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:11",
+            "bra:12"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the main features of Basel III as set out in the study text?",
+            "answer_md": "Three pillars: minimum regulatory capital based on risk-weighted assets (credit, market and operational risk), supervisory review, and market discipline through disclosure. It requires better quality capital with buffers (capital conservation and counter-cyclical) and minimum common equity Tier I and Tier II. Indian banks were required to comply by 1 January 2019 with a minimum total capital of 9% of risk-weighted assets. Voting rights of a person are capped at 10% regardless of holding, which may go up to 20% in phases."
+          },
+          "tags": [
+            "banking-regulation",
+            "basel",
+            "capital-adequacy",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The three pillars of Basel III are {{c1::minimum regulatory capital}}, {{c2::supervisory review}} and {{c3::market discipline}}; the minimum total capital is {{c4::9%}} of risk-weighted assets."
+          },
+          "tags": [
+            "banking-regulation",
+            "basel",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-009",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Limit on payment of dividends (s 15)",
+            "prompt_md": "When can a banking company pay a dividend?",
+            "gist_md": "Not until all capitalised expenses such as preliminary expenses and brokerage or commission on issue of shares have been fully written off. It may pay dividend without writing off depreciation in approved securities (if not capitalised or accounted as a loss), depreciation in other investments where adequate provision is made and approved by the auditor, and bad debts where adequate provision is made and approved by the auditor."
+          },
+          "tags": [
+            "banking-regulation",
+            "s15",
+            "dividend"
+          ],
+          "reference_keys": [
+            "bra:15"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-010",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Transfer to reserve fund (s 17)",
+            "prompt_md": "How much profit must a banking company transfer to the reserve fund?",
+            "gist_md": "At least 20% of the profit each year, unless the reserve fund together with the share premium account already equals or exceeds the paid-up capital (or the Central Government exempts it on the RBI's recommendation). Any appropriation of reserves must be reported to the RBI within 21 days with reasons. Per the study text, scheduled commercial banks including foreign banks should transfer at least 25% of net profit before appropriations."
+          },
+          "tags": [
+            "banking-regulation",
+            "s17",
+            "reserve-fund",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:17"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-011",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Cash reserve for non-scheduled banks (s 18)",
+            "prompt_md": "What cash reserve must a non-scheduled bank maintain?",
+            "gist_md": "At least 3% of its time and demand liabilities on a daily basis, held with itself or in a current account with the RBI, the State Bank of India or a notified bank, and reported by the 20th of each month. For scheduled banks, the CRR is under s 42 of the RBI Act, 1934."
+          },
+          "tags": [
+            "banking-regulation",
+            "s18",
+            "crr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:18"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-012",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Restrictions on subsidiaries and shareholdings (s 19)",
+            "prompt_md": "What does s 19 restrict?",
+            "gist_md": "It stops a banking company from forming subsidiaries or holding shares in other companies to carry on activities by acquiring a controlling interest in non-banking companies. It may form a subsidiary for the purposes specified in the section and purposes incidental to banking, with the RBI's prior written permission."
+          },
+          "tags": [
+            "banking-regulation",
+            "s19",
+            "subsidiaries"
+          ],
+          "reference_keys": [
+            "bra:19"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-013",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Restrictions on loans and advances (ss 20 and 21)",
+            "prompt_md": "What lending restrictions apply to banks and what can the RBI direct?",
+            "gist_md": "A bank cannot lend to its own directors, to firms in which a director is interested, or to individuals for whom a director stands guarantor, and cannot lend on the security of its own shares. Under s 21 the RBI can give directions on the purposes for which advances may or may not be granted, margins on secured advances, interest rates and commission on guarantees, and the maximum advance or guarantee to a single party relative to the bank's paid-up capital, reserves and deposits."
+          },
+          "tags": [
+            "banking-regulation",
+            "s20",
+            "s21",
+            "lending"
+          ],
+          "reference_keys": [
+            "bra:20",
+            "bra:21"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-014",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Licensing of banking companies (s 22)",
+            "prompt_md": "Who needs a licence and on what grounds can the RBI cancel it?",
+            "gist_md": "No banking company can start or carry on banking business in India without a licence from the RBI. Before granting it, the RBI may inspect the books to be satisfied that the company can pay its depositors in full as claims accrue, its affairs will not be conducted to the detriment of depositors, and (for foreign companies) carrying on banking is in the public interest and the home country does not discriminate against Indian banks. It may cancel the licence if the company stops banking business in India or fails to comply with conditions. The company may appeal to the Central Government within 30 days, whose decision is final. Regional rural banks are established under the RRBs Act, 1976."
+          },
+          "tags": [
+            "banking-regulation",
+            "s22",
+            "licence",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:22"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is 'on tap' licensing of banks?",
+            "answer_md": "From the 2016 guidelines, RBI licences for new banks are available on tap, meaning there is no specific period for applications. Bandhan Bank and IDFC Bank were licensed in 2015, and payment bank licences were also announced."
+          },
+          "tags": [
+            "banking-regulation",
+            "licence"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-016",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Opening new places of business (s 23)",
+            "prompt_md": "When does a bank need RBI permission to open or shift a branch?",
+            "gist_md": "To open a new place of business in India or outside India, or to change the location of an existing one. No permission is needed to open a branch within the same city, town or village, or a temporary place of business for up to one month in a city where the bank already has a place, for events such as an exhibition, conference or mela."
+          },
+          "tags": [
+            "banking-regulation",
+            "s23",
+            "branches",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:23"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-017",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Statutory liquidity ratio (s 24)",
+            "prompt_md": "What is the SLR and what counts as liquid assets?",
+            "gist_md": "Every banking company must maintain in India liquid assets of not more than 40% of its total time and demand liabilities, at the percentage the RBI specifies by notification, as on the last Friday of the second preceding fortnight. Liquid assets include cash, gold and unencumbered approved securities, valued at no more than the current market price."
+          },
+          "tags": [
+            "banking-regulation",
+            "s24",
+            "slr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:24"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the requirement under s 25 on assets in India?",
+            "answer_md": "Assets in India must be at least 75% of the bank's demand and time liabilities in India at the close of business on the last Friday of every quarter."
+          },
+          "tags": [
+            "banking-regulation",
+            "s25",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:25"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What returns of unclaimed deposits must be submitted (s 26)?",
+            "answer_md": "A return in the prescribed form to the RBI giving particulars of accounts not operated for 10 years, within 30 days after the close of each calendar year. For fixed deposits, the 10 years run from the expiry of the fixed period. Regional rural banks send such returns to NABARD."
+          },
+          "tags": [
+            "banking-regulation",
+            "s26",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:26"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What monthly return must banks file with the RBI (s 27)?",
+            "answer_md": "A return in the prescribed form, before the close of the month following, showing assets and liabilities in India as on the last Friday of every month. The RBI may also direct banks to furnish any statement or information, and may call for half-yearly information on investments and the classification of advances to industry, commerce and agriculture."
+          },
+          "tags": [
+            "banking-regulation",
+            "s27",
+            "returns"
+          ],
+          "reference_keys": [
+            "bra:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-021",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Audit of accounts (s 30)",
+            "prompt_md": "What does the Act require for bank audits and publication of accounts?",
+            "gist_md": "Annual accounts are prepared in the prescribed format and audited. The RBI may order special inspections. A bank must obtain the RBI's previous approval before appointing, re-appointing or removing an auditor. The accounts, with the auditor's report, are published as prescribed, and three copies are sent to the RBI within three months of the period's end."
+          },
+          "tags": [
+            "banking-regulation",
+            "s30",
+            "audit",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:30"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-022",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "RBI's power to give directions (s 35A)",
+            "prompt_md": "When can the RBI issue directions to banks?",
+            "gist_md": "When satisfied that it is necessary in the public interest or in the interest of banking policy, to prevent the affairs of a bank being conducted to the detriment of depositors or prejudicially to the bank itself, or to secure proper management of a bank, it may give directions to banks generally or to a particular bank, which must comply."
+          },
+          "tags": [
+            "banking-regulation",
+            "s35a",
+            "directions"
+          ],
+          "reference_keys": [
+            "bra:35a"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can stressed assets be dealt with under the Act (ss 35AA and 35AB)?",
+            "answer_md": "The Central Government may authorise the RBI to direct banks to initiate insolvency resolution under the IBC for a default, and the RBI may issue directions for resolution of stressed assets and appoint authorities or committees to advise on them."
+          },
+          "tags": [
+            "banking-regulation",
+            "stressed-assets"
+          ],
+          "reference_keys": [
+            "bra:35ab"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-024",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What approvals does a bank need under s 35B and what powers does the RBI have to remove people?",
+            "answer_md": "A bank needs the RBI's prior approval to fix the number of its directors; to appoint, re-appoint, pay or remove its chairman or a director; and to amend its memorandum, articles, or any general meeting or Board resolution. Sections 36AA and 36AB let the RBI remove managerial and other personnel and add directors."
+          },
+          "tags": [
+            "banking-regulation",
+            "s35b",
+            "removal"
+          ],
+          "reference_keys": [
+            "bra:35b",
+            "bra:36aa",
+            "bra:36ab"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-025",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What happens when a bank is conducted detrimentally to depositors?",
+            "answer_md": "The RBI, or the Central Government in consultation with the RBI, may suspend the Board when affairs are conducted in a manner detrimental to depositors and against public interest, and under s 36E the Central Government may acquire the bank's undertaking."
+          },
+          "tags": [
+            "banking-regulation",
+            "suspension"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-026",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Moratorium (s 37)",
+            "prompt_md": "How can a bank get a moratorium?",
+            "gist_md": "A banking company temporarily unable to meet its obligations may apply to the High Court for a stay of all legal actions and proceedings against it for not more than 6 months. The application must be accompanied by an RBI report indicating that the company can pay its debts if the stay is granted; without that report the moratorium cannot be granted."
+          },
+          "tags": [
+            "banking-regulation",
+            "s37",
+            "moratorium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:37"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-027",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Winding up of banking companies (ss 38 to 44)",
+            "prompt_md": "When may the High Court wind up a banking company?",
+            "gist_md": "Notwithstanding the Companies Act, when the bank cannot pay its debts or the RBI applies under s 37 or s 38. The RBI may apply when the bank fails to meet the minimum paid-up capital and reserves requirement of s 11, has no licence under s 22, is prohibited from receiving fresh deposits, continues non-compliance after the RBI's call, the court-sanctioned compromise or arrangement cannot be worked, or the returns show it cannot pay its debts or its continuance is prejudicial to depositors. A bank cannot be wound up voluntarily unless the RBI certifies that it can pay its debts in full."
+          },
+          "tags": [
+            "banking-regulation",
+            "s38",
+            "winding-up"
+          ],
+          "reference_keys": [
+            "bra:38"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-028",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the Central Government acquire a banking company?",
+            "answer_md": "It may acquire a banking company by compulsorily transferring shares or otherwise."
+          },
+          "tags": [
+            "banking-regulation",
+            "acquisition"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-bra-029",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Banking Regulation Act, 1949",
+            "reference": "Amalgamation of banking companies (s 44A)",
+            "prompt_md": "How are two banking companies amalgamated?",
+            "gist_md": "The scheme is approved by a two-thirds majority in value of the shareholders of each company present in person or by proxy. Unwilling shareholders receive the value of their shares as determined by the RBI. The RBI sanctions the scheme after shareholder approval, directs the transfer of assets and liabilities, and orders dissolution of the transferor on a specified date. During preparation the RBI may suspend business with the Central Government's approval. Under the October 2020 amendment, the RBI may initiate a scheme for reconstruction and amalgamation without imposing a moratorium."
+          },
+          "tags": [
+            "banking-regulation",
+            "s44a",
+            "amalgamation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "bra:44a"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rbi-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the RBI's regulatory functions over commercial banks?",
+            "answer_md": "It inspects banks under the Banking Regulation Act; regulates licensing, branch expansion, statutory liquidity, management, amalgamation, reconstruction and liquidation; approves appointments of Chairman, MD and CEO of private banks; recommends appointments in public sector banks to the Government; issues branch authorisations; and formulates banking policy on capital adequacy, income recognition, asset classification, provisioning, investment valuation and exposure limits."
+          },
+          "tags": [
+            "rbi",
+            "role"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rbi-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What other roles does the RBI play for banks?",
+            "answer_md": "It issues directives on deposit interest rates and operations, collects and shares information on defaulting borrowers with outstanding of ₹1 crore and above (as on 31 March and 30 September), oversees Indian banks' overseas operations, authorises dealing in gold and silver imports, approves offshore banking units in SEZs, grants exemptions from the Act, acts as banker to banks and to the Central and State Governments, and oversees payment and settlement systems."
+          },
+          "tags": [
+            "rbi",
+            "role",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rbi-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the RBI's role in foreign exchange management?",
+            "answer_md": "It controls dealings through general or special permission, specifies conditions for capital account payments under s 6(2), regulates by regulations the transfer of foreign and Indian securities, foreign exchange borrowing and lending, export and import of currency, transfer of immovable property abroad and guarantees under s 6(3), specifies the period for realising export proceeds (s 8), grants exemptions from realisation and repatriation (s 9), and authorises and inspects authorised persons (ss 10, 11 and 12). Restrictions on current account transactions are imposed by the Central Government in consultation with the RBI."
+          },
+          "tags": [
+            "rbi",
+            "fema"
+          ],
+          "reference_keys": [
+            "fema:6",
+            "fema:8",
+            "fema:9",
+            "fema:10"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rbi-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the RBI's role under the PMLA?",
+            "answer_md": "It has set up an Anti-Money Laundering Cell to combat financing of terrorism and track domestic and global developments in AML and CFT."
+          },
+          "tags": [
+            "rbi",
+            "pmla"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the purpose of the SARFAESI Act, 2002?",
+            "answer_md": "It governs the securitisation and reconstruction of financial assets and the enforcement of security interests. In force from 21 June 2002 and amended in 2004 and 2012, it helps banks and financial institutions turn long-term assets into cash, handle liquidity and asset-liability mismatches, and recover dues by taking possession of and selling the security with no need to approach a court first."
+          },
+          "tags": [
+            "sarfaesi",
+            "overview",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Asset reconstruction",
+            "definition_md": "A securitisation or reconstruction company buying a bank's or financial institution's right or interest in a financial facility, so that it can recover the money."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Asset reconstruction company (ARC)",
+            "definition_md": "A company that holds a registration certificate from the Reserve Bank under section 3 and carries on asset reconstruction, securitisation, or both."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions"
+          ],
+          "reference_keys": [
+            "sarfaesi:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Default (SARFAESI)",
+            "definition_md": "Non-payment of any debt or amount payable by the borrower to a secured creditor, consequent to which the account is classified as a non-performing asset; or, for debt securities, non-payment after a 90-day notice demanding payment served by the debenture trustee or other authority holding the security interest."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Financial asset",
+            "definition_md": "Debt or receivables, including a claim to any debt or receivable (secured or unsecured), debt secured by mortgage or charge on immovable property, a mortgage, charge, hypothecation or pledge of movable property, any right or interest in the underlying security, any beneficial interest in property or in such debt, rights in tangible assets given on hire, financial lease or conditional sale, rights in intangible assets securing unpaid purchase price, and any financial assistance."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Non-performing asset (SARFAESI)",
+            "definition_md": "A borrower's account or asset that a bank or financial institution has graded as sub-standard, doubtful or loss, following the directions or guidelines of its own regulator, or those of the Reserve Bank where no other regulator applies."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions",
+            "npa"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Securitisation",
+            "definition_md": "Acquisition of financial assets by an asset reconstruction company from an originator, whether by raising funds from qualified buyers through issue of security receipts representing undivided interest in such assets or otherwise."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions",
+            "securitisation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-008",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Qualified buyer",
+            "definition_md": "A financial institution, insurer, bank, state financial corporation or state industrial development corporation; a trustee; a registered ARC; an asset management company investing for a mutual fund or pension fund; a registered foreign institutional investor; or any other body corporate the Board specifies."
+          },
+          "tags": [
+            "sarfaesi",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-009",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Registration of ARCs (s 3)",
+            "prompt_md": "What are the conditions for registering an ARC?",
+            "gist_md": "A certificate of registration is needed and owned funds of at least ₹2 crore (or a higher amount the RBI notifies). The RBI looks for no losses in the three preceding financial years, adequate arrangements for realising acquired assets and paying returns to qualified buyers, directors with professional experience in finance and reconstruction, directors not convicted of offences involving moral turpitude, a fit and proper sponsor, and compliance with RBI prudential norms. RBI approval is needed for a substantial change in management, change of registered office and change of name."
+          },
+          "tags": [
+            "sarfaesi",
+            "s3",
+            "arc",
+            "registration",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sarfaesi:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When can the RBI cancel an ARC's certificate of registration (s 4)?",
+            "answer_md": "If the ARC stops receiving or holding investment from qualified buyers or stops carrying on asset reconstruction, fails to comply with registration conditions or with the RBI's directions, fails to maintain accounts or to submit documents on inspection, among other grounds. Before cancelling, the RBI must give it an opportunity to comply."
+          },
+          "tags": [
+            "sarfaesi",
+            "s4",
+            "arc"
+          ],
+          "reference_keys": [
+            "sarfaesi:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-011",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Acquiring financial assets (s 5)",
+            "prompt_md": "How may an ARC acquire financial assets from a bank?",
+            "gist_md": "Notwithstanding any agreement or other law, by issuing a debenture, bond or similar security for an agreed consideration, or by an agreement for transfer on agreed terms. Documents executed in favour of the ARC for this purpose are exempt from stamp duty."
+          },
+          "tags": [
+            "sarfaesi",
+            "s5",
+            "arc",
+            "acquisition"
+          ],
+          "reference_keys": [
+            "sarfaesi:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-012",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Measures for asset reconstruction (s 9)",
+            "prompt_md": "What measures may an ARC adopt to reconstruct assets?",
+            "gist_md": "Take over or change the management of the borrower's business; sell or lease part or whole of the business; reschedule the debts; enforce security interest under the Act; settle dues; take possession of secured assets; and convert any portion of debt into shares of the borrower. The RBI determines the policy and issues directions, including on the fees to be charged."
+          },
+          "tags": [
+            "sarfaesi",
+            "s9",
+            "arc",
+            "reconstruction"
+          ],
+          "reference_keys": [
+            "sarfaesi:9"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What other functions can an ARC perform (s 10)?",
+            "answer_md": "Act as agent for a bank or financial institution to recover its dues for a fee, act as manager under s 13(4)(c) (but not if it gives rise to pecuniary liability), and act as receiver if appointed by a court or tribunal. It cannot carry on any other business without RBI approval, and the RBI may call for information and inspect it."
+          },
+          "tags": [
+            "sarfaesi",
+            "s10",
+            "arc"
+          ],
+          "reference_keys": [
+            "sarfaesi:10"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are disputes between banks, ARCs and qualified buyers settled (s 11)?",
+            "answer_md": "By conciliation or arbitration under the Arbitration and Conciliation Act, 1996, as if the parties had consented in writing."
+          },
+          "tags": [
+            "sarfaesi",
+            "s11",
+            "disputes"
+          ],
+          "reference_keys": [
+            "sarfaesi:11"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-015",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Enforcement of security interest: notice (s 13)",
+            "prompt_md": "How does a secured creditor start enforcement?",
+            "gist_md": "Where the borrower defaults and the account is classified as an NPA, the creditor gives a written notice requiring the borrower to discharge his liabilities in full within 60 days, stating the amount payable and the secured assets to be enforced. If the borrower objects, the creditor considers it and, if rejected, communicates the reasons within 15 days. No court or tribunal intervention is needed."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "enforcement",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sarfaesi:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-016",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Enforcement: measures after notice (s 13(4))",
+            "prompt_md": "What can the secured creditor do if the borrower does not pay within the notice period?",
+            "gist_md": "Take possession of the secured assets, including the right to transfer by lease, assignment or sale; take over management of the borrower's business (and transfer it only if a substantial part of the business is held as security); appoint a manager for the assets; or require any person who has acquired secured assets and owes money to the borrower to pay the creditor enough to settle the secured debt."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "enforcement"
+          ],
+          "reference_keys": [
+            "sarfaesi:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the 60% rule for joint financing under s 13?",
+            "answer_md": "Where a financial asset is financed by more than one secured creditor, no one may exercise enforcement rights unless creditors representing at least 60% in value of the amount outstanding on a record date agree, and the action binds all. For a company in liquidation, sale proceeds are distributed as s 326 of the Companies Act, 2013 (earlier s 529A) provides."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "joint-financing",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sarfaesi:13",
+            "companiesact:326"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What remains for the creditor if sale proceeds do not clear the debt?",
+            "answer_md": "It may apply to the Debts Recovery Tribunal (or a competent court) for recovery of the balance from the borrower, and may proceed against guarantors or sell pledged assets without first taking the measures in s 13(4)."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "drt"
+          ],
+          "reference_keys": [
+            "sarfaesi:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the borrower's position after a s 13 notice?",
+            "answer_md": "He cannot transfer any secured asset mentioned in the notice by sale, lease or otherwise (other than in the ordinary course of business) without the creditor's prior written consent. If dues with costs are tendered before the notice of auction or tender is published, the asset cannot be transferred."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "borrower"
+          ],
+          "reference_keys": [
+            "sarfaesi:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are recovered sums applied under s 13?",
+            "answer_md": "They are held in trust and applied first to the costs, charges and expenses properly incurred by the secured creditor, then to its dues, and any residue goes to the person entitled to it."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "application-of-proceeds"
+          ],
+          "reference_keys": [
+            "sarfaesi:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does a secured creditor bid at its own sale?",
+            "answer_md": "If a sale of immovable property with a reserve price is postponed for want of a bid at or above the reserve, an officer of the secured creditor may bid on its behalf at a later sale, and the price is adjusted against its claim."
+          },
+          "tags": [
+            "sarfaesi",
+            "s13",
+            "reserve-price"
+          ],
+          "reference_keys": [
+            "sarfaesi:13"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-022",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Takeover of management (s 15) and no compensation (s 16)",
+            "prompt_md": "What follows when management of a borrower is taken over?",
+            "gist_md": "The creditor or ARC may appoint directors (or administrators for a non-company). A notice is published in an English newspaper and in a newspaper in an Indian language where the principal office is. On publication, the existing directors or administrators are deemed to have vacated office and their contracts terminate. Shareholders cannot nominate directors without the creditor's approval, no winding up or receiver can be sought without the creditor's consent, and management is restored when the debt is realised in full. No compensation is payable for loss of office (s 16)."
+          },
+          "tags": [
+            "sarfaesi",
+            "s15",
+            "s16",
+            "management"
+          ],
+          "reference_keys": [
+            "sarfaesi:15",
+            "sarfaesi:16"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-sar-023",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SARFAESI Act, 2002",
+            "reference": "Appeals (ss 17 and 18)",
+            "prompt_md": "Where can a borrower appeal and what must be deposited?",
+            "gist_md": "An aggrieved borrower or other person appeals to the Debts Recovery Tribunal under s 17. An appeal against the DRT's order goes to the Appellate Tribunal within 30 days of receipt of the order under s 18. No appeal is entertained unless the borrower deposits 50% of the debt claimed or determined by the DRT, whichever is less; the Appellate Tribunal may reduce this for recorded reasons, but not below 25%."
+          },
+          "tags": [
+            "sarfaesi",
+            "s17",
+            "s18",
+            "appeal",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sarfaesi:17",
+            "sarfaesi:18"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rev-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "RBI regulatory framework",
+            "reference": "2026 revision: NBFC Scale Based Regulation",
+            "prompt_md": "What did the RBI's February 2025 directions on NBFCs change?",
+            "gist_md": "On 27 February 2025, through notification RBI/DoR/2023-24/106, the RBI updated its master directions with the RBI (NBFC Scale Based Regulation) Directions, 2023. The scale-based framework replaces the earlier Systemically Important (SI) and Non-Systemically Important (NSI) classification and the split between deposit-taking and non-deposit-taking NBFCs. NBFCs are now classified by size, activities and risk profile, so capital requirements, governance standards and prudential norms match their scale, to enhance financial stability and protect investors and depositors."
+          },
+          "tags": [
+            "banking-revision",
+            "2026-revision",
+            "nbfc",
+            "scale-based"
+          ],
+          "reference_keys": [
+            "rbi:nbfc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rev-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "2026 revision: what is the .bank.in domain requirement?",
+            "answer_md": "In late April 2025 the RBI told all scheduled banks to move their internet domains to the .bank.in namespace by 31 October 2025. It follows the RBI's February 2025 statement on the new .bank.in and .fin.in domains and aims to strengthen cybersecurity in digital banking; specific security standards are to follow."
+          },
+          "tags": [
+            "banking-revision",
+            "2026-revision",
+            "cybersecurity",
+            "domains"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rev-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: how was fraud monitoring and reporting strengthened for banks?",
+            "answer_md": "Banks must have real-time fraud monitoring systems, strengthen early warning signal (EWS) mechanisms, and report fraud incidents through integrated supervisory platforms. There is enhanced Board-level review of fraud risk management and periodic certification of fraud monitoring controls. This replaces delayed escalation and fragmented internal reporting."
+          },
+          "tags": [
+            "banking-revision",
+            "2026-revision",
+            "fraud",
+            "ews"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rev-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: what is expected of banks on digital compliance reporting?",
+            "answer_md": "A move towards automated regulatory reporting with standardised supervisory data submission formats. Banks must keep digital audit trails, automated compliance records and centralised reporting dashboards."
+          },
+          "tags": [
+            "banking-revision",
+            "2026-revision",
+            "digital-reporting"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel07-rev-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: what additional responsibilities fall on bank senior management?",
+            "answer_md": "Responsibility for risk governance oversight, accountability for compliance failures and strengthening of internal controls."
+          },
+          "tags": [
+            "banking-revision",
+            "2026-revision",
+            "governance"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

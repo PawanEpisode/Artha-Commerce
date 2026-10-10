@@ -1,0 +1,1327 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-insolvency-and-bankruptcy-code-2016",
+      "title": "CEL: Insolvency and Bankruptcy Code, 2016",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 2: definitions, CIRP, committee of creditors, resolution plan, liquidation, avoidance transactions and personal insolvency.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "insolvency-and-bankruptcy-code-2016"
+      },
+      "items": [
+        {
+          "ref": "cel02-ibc-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why was the IBC enacted, and which earlier laws did it replace or overlap?",
+            "answer_md": "India had many overlapping insolvency laws and forums (Companies Act chapters on winding up, SICA, RDDBFI Act, SARFAESI, the Presidency Towns and Provincial Insolvency Acts, the LLP Act) that made recovery slow. The Code, drafted on the Bankruptcy Law Reforms Committee's report, consolidates them into one creditor-driven, time-bound process."
+          },
+          "tags": [
+            "background"
+          ],
+          "reference_keys": [
+            "ibc:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the objectives of the Code.",
+            "answer_md": "To consolidate and amend the law on reorganisation and insolvency resolution of corporate persons, firms and individuals in a time-bound way; to maximise asset value and promote entrepreneurship and credit availability; to balance all stakeholders' interests including the priority of government dues; and to set up the Insolvency and Bankruptcy Board of India."
+          },
+          "tags": [
+            "objectives"
+          ],
+          "reference_keys": [
+            "ibc:2"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Applicability of the Code (s 2, s 3(7))",
+            "prompt_md": "To whom does the Code apply, and which entities are outside it?",
+            "gist_md": "It applies across India to companies (under the Companies Act or a special Act), LLPs, other bodies corporate the Government notifies, partnership and proprietorship firms, individuals, and personal guarantors to corporate debtors. 'Corporate person' excludes financial service providers, so banks, financial institutions, insurers, asset reconstruction companies, mutual funds, collective investment schemes and pension funds are not covered."
+          },
+          "tags": [
+            "ibc",
+            "applicability"
+          ],
+          "reference_keys": [
+            "ibc:2",
+            "ibc:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the five pillars of the IBC institutional framework.",
+            "answer_md": "The Insolvency and Bankruptcy Board of India, the Adjudicating Authority (NCLT for companies), Insolvency Professional Agencies, Insolvency Professionals, and Information Utilities."
+          },
+          "tags": [
+            "institutions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Corporate person and corporate debtor (s 3(7), 3(8))",
+            "definition_md": "A corporate person is a company, an LLP, or any other person incorporated with limited liability, excluding a financial service provider. A corporate debtor is a corporate person who owes a debt to any person."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Default (s 3(12))",
+            "definition_md": "Failure to pay a debt that has fallen due, whether it is the entire amount, part of it or an instalment, by the debtor or corporate debtor."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Claim (s 3(6))",
+            "definition_md": "A right to payment, or a right to a remedy for breach of contract that gives rise to a right to payment, whether or not reduced to judgment, fixed, matured, disputed, secured or unsecured."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Financial debt and financial creditor (s 5(8), 5(7))",
+            "definition_md": "Financial debt is a debt with interest, if any, disbursed against the consideration for the time value of money, such as money borrowed for interest, bonds and debentures, acceptance credit, finance leases, receivables sold with recourse, derivatives (at market value), counter-indemnities and guarantees for these, and amounts raised from real estate allottees. A financial creditor is a person owed a financial debt, including a person to whom it is assigned."
+          },
+          "tags": [
+            "definitions",
+            "financial-creditor"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Operational debt and operational creditor (s 5(20))",
+            "definition_md": "Operational debt is a claim for supply of goods or services including employment, or for dues under any law payable to the Central or State Government or a local authority. An operational creditor is a person owed such a debt, including one to whom it is assigned."
+          },
+          "tags": [
+            "definitions",
+            "operational-creditor"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-010",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Dispute (s 5(6))",
+            "definition_md": "A suit or arbitration relating to the existence of the debt, the quality of goods or services, or breach of a representation or warranty."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-011",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Corporate applicant (s 5(5))",
+            "definition_md": "The corporate debtor; a member or partner authorised by its constitutional document to apply; an individual in charge of managing its operations and resources; or a person controlling and supervising its financial affairs."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-012",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Initiation date and insolvency commencement date (s 5(11), 5(12))",
+            "definition_md": "The initiation date is the day an application for CIRP is filed. The insolvency commencement date is the day the Adjudicating Authority admits the application under s 7, 9 or 10, and if no interim professional is named in the order, the date he is appointed."
+          },
+          "tags": [
+            "definitions",
+            "timeline"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-013",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Insolvency resolution process period (s 5(14))",
+            "definition_md": "The 180 days beginning with the insolvency commencement date and ending on the 180th day."
+          },
+          "tags": [
+            "definitions",
+            "timeline",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-014",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Related party of a corporate debtor (s 5(24))",
+            "prompt_md": "Who counts as a related party of a corporate debtor?",
+            "gist_md": "Directors, partners, KMP and their relatives; firms or LLPs where a director, partner, manager or relative is a partner; a private or public company in which such a person is a director and holds with relatives more than 2% of capital; bodies corporate that act on a director's directions; its holding, subsidiary and associate companies; anyone controlling more than 20% of voting rights or whom the debtor controls to that extent; anyone who can control the board; and persons linked through policy-making, more than two common directors or interchange of managerial staff."
+          },
+          "tags": [
+            "ibc",
+            "definitions",
+            "related-party",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-015",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Resolution plan (s 5(26))",
+            "definition_md": "A plan proposed by a resolution applicant to resolve the corporate debtor as a going concern, which may include restructuring through merger, amalgamation or demerger."
+          },
+          "tags": [
+            "definitions",
+            "resolution-plan"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-016",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Resolution professional and interim resolution professional (s 5(27))",
+            "definition_md": "An insolvency professional appointed to conduct the CIRP, including an interim resolution professional who runs the debtor until a resolution professional is confirmed."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-017",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Security interest and secured creditor (s 3(31), 3(30))",
+            "definition_md": "Security interest is a right, title, interest or claim over property created to secure payment or performance of an obligation, including mortgage, charge, hypothecation, assignment and encumbrance. A secured creditor is one in whose favour it is created."
+          },
+          "tags": [
+            "definitions"
+          ],
+          "reference_keys": [
+            "ibc:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-018",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Who may start CIRP and the minimum default (s 6)",
+            "prompt_md": "Who may start a corporate insolvency resolution process and what is the minimum default?",
+            "gist_md": "When a corporate debtor defaults, the application can come from a financial creditor, an operational creditor or the debtor itself. Only defaults of ₹1 lakh or more fall under the Code, and the Central Government can lift that floor up to ₹1 crore."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "initiation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-019",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Who cannot start CIRP (s 11)",
+            "prompt_md": "Who is barred from applying to start a CIRP?",
+            "gist_md": "A corporate debtor already in CIRP or pre-packaged insolvency, or one that completed CIRP or had a pre-pack plan approved in the preceding twelve months; one who, or a financial creditor who, violated a resolution plan approved twelve months earlier; a debtor against which a liquidation order has been made; and a financial or operational creditor of a debtor undergoing a pre-packaged process."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "initiation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:11"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-020",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Application by a financial creditor (s 7)",
+            "prompt_md": "How does a financial creditor start CIRP and how does the Adjudicating Authority respond?",
+            "gist_md": "He may apply alone or jointly with other financial creditors, recording the default and naming a resolution professional. The Adjudicating Authority has 14 days to ascertain the default from the information utility's records or other evidence. It admits the application if a default has occurred, and may reject it if there is no default, the application is incomplete, or disciplinary proceedings are pending against the proposed professional, but must first give seven days to rectify. The CIRP begins on the date of admission."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "financial-creditor",
+            "s7",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:7"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-021",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Application by an operational creditor (s 8, s 9)",
+            "prompt_md": "What steps must an operational creditor follow before approaching the Adjudicating Authority?",
+            "gist_md": "He delivers a demand notice, or a copy of the invoice, for the unpaid operational debt. The corporate debtor has 10 days from receipt to either pay (giving proof of payment) or bring to notice an existing dispute or pending suit or arbitration. If there is no payment and no dispute after 10 days, the creditor files the application. The Adjudicating Authority decides within 14 days."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "operational-creditor",
+            "s9",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:8",
+            "ibc:9"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "On what conditions does the Adjudicating Authority admit an operational creditor's application, and can it test whether the dispute is genuine?",
+            "answer_md": "It admits if the application is complete, the debt is unpaid, the demand notice was delivered, no notice of dispute was received, and no disciplinary proceedings are pending against the proposed professional. If a dispute exists, the application is not admitted. The Adjudicating Authority does not examine whether the dispute is genuine or bogus at this stage; the existence of a dispute is enough."
+          },
+          "tags": [
+            "cirp",
+            "operational-creditor",
+            "s9"
+          ],
+          "reference_keys": [
+            "ibc:9"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-023",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Application by the corporate debtor (s 10)",
+            "prompt_md": "What must a corporate applicant file to start CIRP itself?",
+            "gist_md": "The books of account and other prescribed documents, the name of the proposed interim resolution professional, and proof of approval by a special resolution of the corporate debtor or by three-fourths of its partners. The Adjudicating Authority admits or rejects within 14 days, and gives seven days to cure defects before rejection."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "corporate-debtor",
+            "s10",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:10"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-024",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Time limit for CIRP (s 12)",
+            "prompt_md": "How long can a CIRP run?",
+            "gist_md": "It must be completed within 180 days of the date of admission. On a resolution of the committee of creditors passed by 66% of voting share, the resolution professional applies to extend it, and the Adjudicating Authority may allow up to a further 90 days."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "timeline",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:12"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-025",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Orders on admission (s 13, s 15)",
+            "prompt_md": "What must the Adjudicating Authority do after admitting a CIRP application?",
+            "gist_md": "Declare a moratorium, cause a public announcement of the initiation of CIRP calling for claims, and appoint an interim resolution professional. The announcement is made immediately after the appointment and contains the particulars specified in s 15."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "moratorium"
+          ],
+          "reference_keys": [
+            "ibc:13",
+            "ibc:15"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-026",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Moratorium (s 14)",
+            "prompt_md": "What does the moratorium prohibit, and when does it end?",
+            "gist_md": "Suits or pending proceedings and execution of judgments against the debtor; transfer, encumbrance or disposal of its assets; enforcement of security interests (including under SARFAESI); and recovery of property by an owner or lessor from the debtor. Supply of essential goods and services must continue. It runs from the order until the CIRP ends, or ends on approval of a resolution plan under s 31(1) or on a liquidation order. The period is excluded from limitation.",
+            "exceptions_md": "The moratorium does not apply to transactions notified by the Central Government with financial regulators, or to a surety in a contract of guarantee for the corporate debtor."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "moratorium",
+            "s14"
+          ],
+          "reference_keys": [
+            "ibc:14"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-027",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Management during CIRP (s 17)",
+            "prompt_md": "Who manages the corporate debtor once the interim resolution professional is appointed?",
+            "gist_md": "Its affairs vest in the interim resolution professional. The Board's or partners' powers are suspended and exercised by him, officers and managers report to him and give access to records, and banks act on his instructions on the debtor's accounts. He may act in the debtor's name on all deeds and receipts and access records from information utilities and others."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "irp",
+            "s17"
+          ],
+          "reference_keys": [
+            "ibc:17"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-028",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Duties of the interim resolution professional (s 18)",
+            "prompt_md": "List the duties of the interim resolution professional.",
+            "gist_md": "Collect information on the debtor's assets, finances and operations (including two years of business and payment data and a list of assets and liabilities on the initiation date); receive and collate creditors' claims; constitute the committee of creditors; monitor assets and run the business until a resolution professional is appointed; file information with the information utility; take control of assets the debtor owns on record; and perform other duties the Board specifies."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "irp",
+            "s18"
+          ],
+          "reference_keys": [
+            "ibc:18"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-029",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What must the debtor's personnel and promoters do for the interim resolution professional, and what if they refuse?",
+            "answer_md": "They must give all assistance and cooperation he requires. If they do not, he applies to the Adjudicating Authority, which issues directions."
+          },
+          "tags": [
+            "cirp",
+            "irp"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-030",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Committee of creditors: composition",
+            "prompt_md": "Who sits on the committee of creditors and how is voting power decided?",
+            "gist_md": "All financial creditors of the corporate debtor (or their representatives), each with a voting share proportional to the financial debt owed to it. A financial creditor who is a related party of the debtor has no right to participate or vote. A person who is both a financial and an operational creditor sits as a financial creditor for the financial debt only. Operational creditors do not sit on the committee."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "coc"
+          ],
+          "reference_keys": [
+            "ibc:cirp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-031",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Committee of creditors decisions need not less than {{c1::51%}} of voting share, but appointing or replacing the resolution professional, extending CIRP, approving a resolution plan, liquidating, and the s 28 actions need {{c2::66%}}."
+          },
+          "tags": [
+            "cirp",
+            "coc",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:22",
+            "ibc:28",
+            "ibc:30"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-032",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "First meeting of the committee and appointment of the resolution professional (s 22)",
+            "prompt_md": "When does the committee of creditors first meet and what does it decide?",
+            "gist_md": "Within seven days of its constitution. By 66% of voting share it resolves to confirm the interim resolution professional as the resolution professional or to replace him. A replacement is appointed only after the Insolvency Board confirms no disciplinary proceedings are pending, and until then the interim professional continues. The committee may also replace a resolution professional by 66% with the Adjudicating Authority's approval (s 27)."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "coc",
+            "rp",
+            "s22",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:22",
+            "ibc:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-033",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Meetings of the committee of creditors (s 24)",
+            "prompt_md": "Who must be notified of committee meetings and who may attend without voting?",
+            "gist_md": "The resolution professional runs the meetings, physically or electronically. Notice goes to the committee's members, the suspended Board's directors or partners, and operational creditors owed 10% or more of the total debt. Directors, partners and one operational-creditor representative can attend without a vote. A committee member may send an insolvency professional, other than the resolution professional, to represent it."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "coc",
+            "s24",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:24"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-034",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How quickly must the resolution professional give financial information the committee of creditors asks for?",
+            "answer_md": "Within seven days of the requisition."
+          },
+          "tags": [
+            "cirp",
+            "coc",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-035",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Duties of the resolution professional (s 25)",
+            "prompt_md": "What are the resolution professional's core duties?",
+            "gist_md": "Preserve and protect the debtor's assets including continued operations; carry out the actions listed in s 25(2); invite prospective resolution applicants with the committee's approval; and present all resolution plans to the committee. He conducts the entire CIRP and exercises the interim professional's powers. Actions in s 28 need the committee's prior approval."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "rp",
+            "s25"
+          ],
+          "reference_keys": [
+            "ibc:25"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-036",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Actions needing prior approval of the committee (s 28)",
+            "prompt_md": "Which actions can the resolution professional take only with the committee's 66% prior approval?",
+            "gist_md": "Raising interim finance; creating security over assets; changing the capital structure or recording a change in ownership; instructing banks on debit transactions; undertaking related-party transactions; amending constitutional documents; delegating authority; disposing of shareholders' shares to third parties; changing management of the debtor or its subsidiary; transferring rights under material contracts outside the ordinary course; changing key personnel or the statutory or internal auditors; and inviting resolution applicants meeting set criteria. Without approval the action is invalid and he may face action."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "rp",
+            "s28",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:28"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-037",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Information memorandum and resolution applicant (s 29, s 30(1))",
+            "prompt_md": "What is the information memorandum and what must a resolution applicant promise?",
+            "gist_md": "The resolution professional prepares it in the specified form with relevant information for formulating a plan, including the financial position and all disputes by or against the debtor, and gives applicants access to it. The applicant must keep it confidential, protect the debtor's intellectual property, and not share information with third parties unless those conditions are met."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "resolution-plan",
+            "s29"
+          ],
+          "reference_keys": [
+            "ibc:29",
+            "ibc:30"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-038",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Persons ineligible to submit a resolution plan (s 29A)",
+            "prompt_md": "Who cannot be a resolution applicant?",
+            "gist_md": "An undischarged insolvent; a wilful defaulter; a person whose account, or that of a company he manages or promotes, has been a non-performing asset for a year before CIRP started (unless he pays all overdue amounts with interest before submitting); one convicted with at least two years' imprisonment under the Twelfth Schedule offences or seven years under any law; a person disqualified as a director; one barred by SEBI from the securities market; a promoter or manager of a debtor in which a preferential, undervalued, extortionate or fraudulent transaction was ordered against; a person who gave a guarantee for the debtor to a creditor; one with equivalent disabilities abroad; and one with a connected person who is ineligible."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "resolution-plan",
+            "s29a"
+          ],
+          "reference_keys": [
+            "ibc:29a"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-039",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Contents of a resolution plan (s 30(2))",
+            "prompt_md": "What must a resolution plan provide?",
+            "gist_md": "Payment of insolvency resolution process costs in priority to other debts; payment to operational creditors of at least the amount they would get in liquidation under s 53 (or what they would get if the plan's amount were distributed in the s 53 order); management of the debtor after approval; implementation and supervision of the plan; and conformity with the law and the Board's requirements. The applicant files an affidavit of eligibility under s 29A."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "resolution-plan",
+            "s30"
+          ],
+          "reference_keys": [
+            "ibc:30",
+            "ibc:53"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-040",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Insolvency resolution process costs (s 5(13))",
+            "definition_md": "Interim finance and the cost of raising it, the fees of the resolution professional, costs of running the business as a going concern, costs borne by the Government to facilitate the process, and other costs the Board specifies. Interim finance is any financial debt raised by the resolution professional during the process (s 5(15))."
+          },
+          "tags": [
+            "cirp",
+            "costs"
+          ],
+          "reference_keys": [
+            "ibc:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-041",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Approval of the resolution plan (s 30(4), s 31)",
+            "prompt_md": "Who approves a resolution plan and what happens next?",
+            "gist_md": "The resolution professional presents the conforming plans to the committee of creditors, which approves one by 66% of voting share after considering feasibility and viability. The resolution applicant may attend the meeting but cannot vote unless he is a financial creditor. The Adjudicating Authority approves the plan if it meets the Code's requirements, and the plan then binds the debtor, employees, members, creditors, guarantors and other stakeholders. If it rejects the plan, liquidation begins."
+          },
+          "tags": [
+            "ibc",
+            "cirp",
+            "resolution-plan",
+            "s31",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:30",
+            "ibc:31"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-042",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Liquidation order (s 33)",
+            "prompt_md": "When does the Adjudicating Authority order liquidation of a corporate debtor?",
+            "gist_md": "When no resolution plan is received before the CIRP period (or the fast track period) expires; when it rejects a plan for non-compliance; when the resolution professional reports a 66% committee decision to liquidate before a plan is confirmed; or when the debtor contravenes an approved plan and an affected person applies. It orders the liquidation, issues a public announcement and sends the order to the authority where the debtor is registered. After the order no suit may be filed by or against the debtor, except by the liquidator with the Adjudicating Authority's approval."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "s33",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:33"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-043",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Appointment of the liquidator",
+            "prompt_md": "Who becomes liquidator and when is he replaced?",
+            "gist_md": "The resolution professional acts as liquidator on written consent unless the Adjudicating Authority replaces him. Replacement happens if his plan was rejected for non-compliance, the Board recommends it for recorded reasons, or he fails to give written consent. On liquidation all powers of the Board, KMP and partners cease and vest in the liquidator, and personnel must cooperate."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "liquidator"
+          ],
+          "reference_keys": [
+            "ibc:liquidation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-044",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Powers and duties of the liquidator",
+            "prompt_md": "What are the liquidator's main powers and duties?",
+            "gist_md": "Verify creditors' claims; take custody of all assets and actionable claims and protect and value them; carry on the business for beneficial liquidation; sell movable and immovable property (but not to persons ineligible as resolution applicants); invite and settle claims and distribute proceeds under the Code; sue or defend in the debtor's name; investigate the debtor's affairs for undervalued or preferential transactions; take professional help; and apply to the Adjudicating Authority for directions and report progress. Consultation with stakeholders is not binding on him."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "liquidator"
+          ],
+          "reference_keys": [
+            "ibc:liquidation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-045",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Liquidation estate",
+            "prompt_md": "What is the liquidation estate?",
+            "gist_md": "The pool of assets the liquidator forms and holds as a fiduciary for the benefit of all creditors. It includes assets the debtor owns on the balance sheet, an information utility or any registry or depository, and shares in its subsidiaries."
+          },
+          "tags": [
+            "ibc",
+            "liquidation"
+          ],
+          "reference_keys": [
+            "ibc:liquidation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-046",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is excluded from the liquidation estate?",
+            "answer_md": "Assets a third party owns but the debtor holds (trust property, bailment, and use-only contractual arrangements), workmen's and employees' provident, pension and gratuity fund dues, collateral held by financial service providers subject to netting or set-off in clearing, personal assets of shareholders or partners (unless tied to avoidable transactions), assets of Indian or foreign subsidiaries, and other assets the Board specifies."
+          },
+          "tags": [
+            "liquidation",
+            "estate"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-047",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where can a liquidator get information from?",
+            "answer_md": "An information utility, regulated credit information systems, any Central, State or local government agency including registration authorities, regulated systems on liabilities and on securities and security assets, any database kept by the Board, and other sources the Board specifies. Creditors asking for financial information must receive it within seven days or be given reasons for refusal."
+          },
+          "tags": [
+            "liquidation",
+            "liquidator"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-048",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Claims in liquidation (s 38, s 40)",
+            "prompt_md": "How are creditors' claims submitted and decided in liquidation?",
+            "gist_md": "The liquidator collects claims within 30 days of the commencement of liquidation. A financial creditor proves his claim through the record in an information utility or with supporting documents; an operational creditor submits with documents; a creditor who is partly both claims for each part separately. After verification the liquidator may admit or reject a claim in whole or part, recording reasons for any rejection, and tells the creditor and debtor within seven days. The decision may be appealed within 14 days."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "claims",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:38",
+            "ibc:40"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-049",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Preferential transactions (s 43)",
+            "prompt_md": "When is a transaction a preference, and what may the Adjudicating Authority order?",
+            "gist_md": "The debtor is deemed to have given a preference when it transfers property or an interest in it for the benefit of a creditor, surety or guarantor on account of an antecedent financial or operational debt, and the transfer puts that person in a better position than under the s 53 priorities. A transfer under a court order can still be a preference. On an application by the resolution professional or liquidator, the Adjudicating Authority may vest the property back in the debtor, release or discharge security interests, require payment for benefits received, revive guarantors' liabilities, and direct fresh security carrying the earlier priority."
+          },
+          "tags": [
+            "ibc",
+            "avoidance",
+            "preference",
+            "s43"
+          ],
+          "reference_keys": [
+            "ibc:43",
+            "ibc:53"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-050",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Undervalued transactions (s 45, s 46)",
+            "prompt_md": "What is an undervalued transaction and over what period can it be challenged?",
+            "gist_md": "A gift, or a transaction for consideration significantly below market value. It is reviewable if made in the year before the insolvency commencement date, or two years before if with a related party. The liquidator or resolution professional applies to have it declared void; if he does not, a creditor, member or partner may. The Adjudicating Authority may vest the property back in the debtor, release security granted, and require payment for benefits received."
+          },
+          "tags": [
+            "ibc",
+            "avoidance",
+            "undervalued",
+            "s45",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:45",
+            "ibc:46"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-051",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Transactions defrauding creditors (s 49)",
+            "prompt_md": "What can the Adjudicating Authority do about a transaction meant to defraud creditors?",
+            "gist_md": "Where it was done to keep assets beyond the reach of persons entitled to claim, or to adversely affect their interests, the Adjudicating Authority restores the position as it stood before the transaction and protects the interests of the persons who were its victims."
+          },
+          "tags": [
+            "ibc",
+            "avoidance",
+            "fraud",
+            "s49"
+          ],
+          "reference_keys": [
+            "ibc:49"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-052",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Secured creditor in liquidation (s 52)",
+            "prompt_md": "What choices does a secured creditor have once liquidation starts?",
+            "gist_md": "Relinquish the security interest to the liquidation estate and receive sale proceeds under the s 53 order, or realise the security himself, in which case the liquidator verifies the interest and lets him realise only security that is relevant. If the debtor or a connected person resists, he may apply to the Adjudicating Authority for help. Any surplus beyond his debt, after actual realisation costs, goes to the liquidator."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "secured-creditor",
+            "s52"
+          ],
+          "reference_keys": [
+            "ibc:52"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-053",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Order of distribution in liquidation (s 53)",
+            "prompt_md": "In what order are liquidation proceeds distributed?",
+            "gist_md": "(1) Insolvency resolution process costs and liquidation costs in full. (2) Equally: workmen's dues for the 24 months before liquidation, and debts owed to a secured creditor who relinquished his security. (3) Wages and unpaid dues of employees other than workmen for the 12 months before liquidation. (4) Financial debts owed to unsecured creditors. (5) Equally: government dues for the two years before liquidation, and secured creditors' unpaid balance after enforcement. Then preference shareholders, and last equity shareholders or partners."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "waterfall",
+            "s53",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:53"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-054",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "In the liquidation waterfall, workmen's dues are counted for {{c1::24 months}} before liquidation, employees' dues for {{c2::12 months}}, and government dues for {{c3::2 years}}. Costs rank {{c4::first}} and equity shareholders rank {{c5::last}}."
+          },
+          "tags": [
+            "liquidation",
+            "waterfall",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:53"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-055",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Dissolution of the corporate debtor",
+            "prompt_md": "How is a corporate debtor dissolved after liquidation?",
+            "gist_md": "When its assets are fully liquidated the liquidator applies to the Adjudicating Authority, which orders dissolution from the date of the order. A copy goes to the authority where the debtor is registered within seven days."
+          },
+          "tags": [
+            "ibc",
+            "liquidation",
+            "dissolution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:liquidation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-056",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Personal insolvency: bankruptcy application and interim moratorium",
+            "prompt_md": "Who can apply for the bankruptcy of an individual or partnership, and what is the effect of the application?",
+            "gist_md": "Any creditor, singly or jointly, may apply within three months of an order under s 100(4) (defrauding creditors), s 115(2) (rejected repayment plan) or s 118(3) (repayment plan not satisfied), with the order and proof of the claim. Secured and unsecured debts are treated separately, and the creditor may propose a bankruptcy trustee. The application cannot be withdrawn without permission. An interim moratorium runs from the date of application until the bankruptcy commencement date, staying all litigation, subject to any Central Government notification."
+          },
+          "tags": [
+            "ibc",
+            "personal-insolvency",
+            "bankruptcy",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:100",
+            "ibc:115",
+            "ibc:118"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-057",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Bankruptcy trustee and the creditors' committee",
+            "prompt_md": "How is the bankruptcy trustee appointed or replaced, and how is the creditors' committee formed?",
+            "gist_md": "The Adjudicating Authority confirms or rejects the proposed trustee on the Board's information, and if none is proposed asks the Board to nominate within 7 days and the Board does so within 10 days. The committee of creditors may replace the trustee by 75% voting with the consent of the Board and the Adjudicating Authority (ss 145, 146). It sends notice to creditors within 10 days, creditors register claims within 7 days of public notice, the trustee lists creditors within 14 days and calls the committee meeting within 21 days of commencement. Interested creditors cannot vote."
+          },
+          "tags": [
+            "ibc",
+            "personal-insolvency",
+            "bankruptcy",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:145",
+            "ibc:146"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-058",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Bankruptcy order and its effects (s 126)",
+            "prompt_md": "What follows when the Adjudicating Authority passes a bankruptcy order?",
+            "gist_md": "The order, made within 14 days of the Board's confirmation of the trustee, lasts until the debt is discharged. The estate vests in the trustee and creditors cannot act against the debtor or his property. Secured creditors must realise within 30 days or forfeit their interest. The bankrupt submits his statement of financial position. On discharge the trustee is released and the bankrupt is released from his debts."
+          },
+          "tags": [
+            "ibc",
+            "personal-insolvency",
+            "bankruptcy",
+            "s126",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:126"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-059",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What restrictions apply to an individual during bankruptcy?",
+            "answer_md": "He cannot be appointed as a trustee, public servant or local authority representative, cannot act as a director or take part in forming companies, must disclose the bankruptcy in all transactions, and is restricted from travelling overseas."
+          },
+          "tags": [
+            "personal-insolvency",
+            "bankruptcy"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-060",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "Adjudicating Authority for individuals (ss 179, 180)",
+            "prompt_md": "Which authority handles insolvency of individuals and partnership firms, and what is the appeal path?",
+            "gist_md": "The Debt Recovery Tribunal with territorial jurisdiction over where the debtor resides, carries on business or works for gain. It functions as a court under the Civil Procedure Code and civil courts have no jurisdiction. An appeal lies to the Debt Recovery Appellate Tribunal within 15 days, and on questions of law from there to the Supreme Court."
+          },
+          "tags": [
+            "ibc",
+            "personal-insolvency",
+            "adjudicating-authority",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:179",
+            "ibc:180"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel02-ibc-061",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Insolvency and Bankruptcy Code, 2016",
+            "reference": "2026 revision: digital filing of CIRP forms",
+            "prompt_md": "How did the 2025 revision change filing of corporate insolvency resolution forms?",
+            "gist_md": "CP-1 to CP-5, the CIRP forms, now have to be filed online with a digital signature and professional certification. A delay costs ₹500 for each month for each form, and the resolution professional may face disciplinary action."
+          },
+          "tags": [
+            "ibc",
+            "2026-revision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "ibc:ibc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

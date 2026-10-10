@@ -1,0 +1,670 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-specific-legal-provisions-related-to-msme-sector",
+      "title": "CEL: Specific Legal Provisions Related to MSME Sector",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 9: MSME classification (including the 2025 revision), the MSMED Act, delayed payment remedies and support schemes.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "specific-legal-provisions-related-to-msme-sector"
+      },
+      "items": [
+        {
+          "ref": "cel09-gen-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the MSME sector important, and who is primarily responsible for promoting it?",
+            "answer_md": "It creates large employment at lower capital cost than big industry, spreads industrialisation, reduces regional imbalance and supports large industry as ancillary units. The study text puts it at about 3.6 crore units and 8 crore jobs, the second largest employer after agriculture, with 45% of industrial production, 40% of exports and 37% of GDP. Primary responsibility for promotion lies with State Governments, with the Central Government supplementing their efforts."
+          },
+          "tags": [
+            "msme",
+            "overview",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-gen-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the key features of the MSMED Act, 2006?",
+            "answer_md": "It gives the first legal framework for the concept of 'enterprise', covering both manufacturing and service entities; creates a statutory consultative mechanism with advisory functions; provides for funds, schemes, progressive credit policies, preference in Government procurement, an effective remedy for delayed payments, and a scheme to ease closure of business."
+          },
+          "tags": [
+            "msme",
+            "overview"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Companies Act, 2013",
+            "reference": "Classification of MSMEs (from 1 July 2020, as in the study text)",
+            "prompt_md": "How were micro, small and medium enterprises classified from 1 July 2020?",
+            "gist_md": "On a composite criterion of investment in plant and machinery or equipment and annual turnover, for both manufacturing and service enterprises. Micro: investment not more than ₹1 crore and turnover not more than ₹5 crore. Small: investment not more than ₹10 crore and turnover not more than ₹50 crore. Medium: investment not more than ₹50 crore and turnover not more than ₹250 crore."
+          },
+          "tags": [
+            "definition",
+            "classification",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:definition"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-002",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Under the 2020 composite criteria: Micro up to ₹{{c1::1}} crore investment and ₹{{c2::5}} crore turnover; Small up to ₹{{c3::10}} crore and ₹{{c4::50}} crore; Medium up to ₹{{c5::50}} crore and ₹{{c6::250}} crore."
+          },
+          "tags": [
+            "msme",
+            "classification",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are investment and turnover calculated for MSME classification?",
+            "answer_md": "Investment in plant and machinery or equipment is linked to the ITR of the previous year (otherwise self-declaration), and covers tangible assets other than land and furniture and fittings. Turnover excludes exports and is linked to income tax and GST returns."
+          },
+          "tags": [
+            "msme",
+            "classification",
+            "calculation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What happens if an MSME moves to the next category or goes out of the MSME definition?",
+            "answer_md": "It continues to enjoy the non-tax benefits it was originally entitled to for 3 years from the time it comes into the next category (MSME Department notification of 1 November 2013)."
+          },
+          "tags": [
+            "msme",
+            "classification",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-rev-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "2026 revision: revised MSME criteria from 1 April 2025",
+            "prompt_md": "How did the Ministry of MSME revise the classification criteria in 2025?",
+            "gist_md": "The amendment announced on 21 March 2025, effective 1 April 2025, raised investment and turnover limits about 2.5 times. Micro: investment ₹2.5 crore (earlier ₹1 crore) and turnover ₹10 crore (earlier ₹5 crore). Small: investment ₹25 crore (earlier ₹10 crore) and turnover ₹100 crore (earlier ₹50 crore). Medium: investment ₹125 crore (earlier ₹50 crore) and turnover ₹500 crore (earlier ₹250 crore). Existing MSMEs keep their current status until the end of the fiscal year under reverse graduation rules, and businesses exceeding the earlier limits move to higher categories only after 31 March 2025, in accordance with Clause 8(6) of the Act."
+          },
+          "tags": [
+            "msme",
+            "2026-revision",
+            "classification",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:8(6)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-rev-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "From 1 April 2025: Micro investment ₹{{c1::2.5}} crore and turnover ₹{{c2::10}} crore; Small ₹{{c3::25}} crore and ₹{{c4::100}} crore; Medium ₹{{c5::125}} crore and ₹{{c6::500}} crore."
+          },
+          "tags": [
+            "msme",
+            "2026-revision",
+            "classification",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-gen-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "Measures for promotion and development (ss 9 and 10)",
+            "prompt_md": "What can the Central Government do under s 9 to promote MSMEs?",
+            "gist_md": "Notify programmes, guidelines or instructions on enhancing competitiveness, developing employee and entrepreneur skills, management, technological upgradation, marketing assistance, infrastructure and cluster development, strengthening backward and forward linkages, and credit policies and practices. Section 10 aims to ensure smooth credit facility to MSMEs."
+          },
+          "tags": [
+            "msme",
+            "s9",
+            "s10",
+            "promotion"
+          ],
+          "reference_keys": [
+            "msmedact:9",
+            "msmedact:10"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-gen-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the role of the Ministry of MSME?",
+            "answer_md": "It is the highest executive body for policy formulation and administration of rules and laws on micro, small and medium enterprises. It designs policies, promotes programmes, projects and schemes and monitors their implementation to help MSMEs scale up. It grew out of the Ministry of Small Scale Industries and Agro and Rural Industries created in October 1999."
+          },
+          "tags": [
+            "msme",
+            "ministry"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Appointed day (MSMED Act)",
+            "definition_md": "The day immediately after expiry of 15 days from the day of acceptance or deemed acceptance of goods or services by the buyer from the supplier."
+          },
+          "tags": [
+            "msme",
+            "definitions",
+            "delayed-payment",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Day of acceptance and deemed acceptance",
+            "definition_md": "Day of acceptance: the day of actual delivery of goods or rendering of services, or, if the buyer objects in writing within 15 days, the day the supplier removes the objection. Deemed acceptance: where no written objection is made within 15 days, the day of actual delivery or rendering of services."
+          },
+          "tags": [
+            "msme",
+            "definitions",
+            "delayed-payment",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Enterprise (MSMED Act)",
+            "definition_md": "A manufacturing or production concern (undertaking, business or other establishment) making goods in an industry covered by the First Schedule of the Industries (Development and Regulation) Act, 1951, or a concern that provides or renders services."
+          },
+          "tags": [
+            "msme",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-def-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Supplier",
+            "definition_md": "A micro or small enterprise that has filed a memorandum with the authority referred to in s 8(1). A buyer is whoever buys goods or receives services from a supplier for consideration."
+          },
+          "tags": [
+            "msme",
+            "definitions"
+          ],
+          "reference_keys": [
+            "msmedact:8"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-brd-001",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "National Board for MSME (s 3)",
+            "prompt_md": "What is the National Board and what does it do?",
+            "gist_md": "A Board with its head office at Delhi, chaired ex officio by the Minister in charge of the MSME Ministry, with the Minister of State or Deputy Minister as Vice-Chairperson, six State Ministers, three Members of Parliament (two from the Lok Sabha and one from the Rajya Sabha), senior Secretaries, chairs of NABARD, SIDBI and the Indian Banks Association, an RBI officer not below Executive Director, 20 representatives of MSME associations (at least 3 for women's and 3 for micro enterprises), three persons of eminence, two trade union representatives and a Member-Secretary. It meets at least once every three months. It examines factors affecting promotion and development, reviews Government policies and their impact, makes recommendations, and advises on the use of the Fund."
+          },
+          "tags": [
+            "msme",
+            "board",
+            "s3",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-adv-001",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "Advisory Committee (s 7(2))",
+            "prompt_md": "Who sits on the Advisory Committee and what does it do?",
+            "gist_md": "Chaired ex officio by the Secretary to the Government of India in the Ministry in charge of MSME; up to five Central Government officers with expertise; up to three State Government representatives; and one representative each of MSME associations; with the Board's Member-Secretary as its Member-Secretary. The Central Government obtains its recommendations before classifying enterprises, and it examines matters referred by the Board and furnishes its recommendations."
+          },
+          "tags": [
+            "msme",
+            "advisory-committee",
+            "s7",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:7"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-mem-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "Memorandum of micro, small and medium enterprise (s 8)",
+            "prompt_md": "Who must file a memorandum and with whom?",
+            "gist_md": "A person establishing a micro or small enterprise, or a medium enterprise providing services, may file at his discretion. A person establishing a medium enterprise engaged in manufacture or production of goods must file. The memorandum goes to the authority the State Government specifies. Persons who before the Act had a small-scale industry registration certificate, or an Industrial Entrepreneur's Memorandum for investment between ₹1 crore and ₹10 crore, had to file within 180 days of commencement of the Act."
+          },
+          "tags": [
+            "msme",
+            "memorandum",
+            "s8",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:8"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-dly-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "Delayed payments to micro and small enterprises",
+            "prompt_md": "What is the time limit for paying micro and small suppliers and what happens on delay?",
+            "gist_md": "Payment must not exceed 45 days from the day of acceptance or deemed acceptance. On delay, the buyer is liable to pay compound interest with monthly rests from the appointed day (or the day after the agreed date) at three times the bank rate notified by the RBI. Interest is not deductible from income. A buyer whose accounts are audited must show in its annual accounts the principal and the interest unpaid to any supplier at year-end."
+          },
+          "tags": [
+            "msme",
+            "delayed-payment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:msme"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-dly-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are disputes on delayed payment resolved (s 17 and s 18)?",
+            "answer_md": "Any party to a dispute may refer it to the Micro and Small Enterprises Facilitation Council. The Council conducts conciliation itself or through an alternate dispute resolution centre; if conciliation fails, it takes up arbitration itself or refers it. It has jurisdiction when the supplier is within its jurisdiction and the buyer is anywhere in India. A reference must be decided within 90 days."
+          },
+          "tags": [
+            "msme",
+            "facilitation-council",
+            "dispute",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:17",
+            "msmedact:18"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-dly-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is a Micro and Small Enterprises Facilitation Council constituted?",
+            "answer_md": "The State Government establishes one or more Councils by notification, each with three to five members drawn from the Director of Industries (or an officer not below that rank), office-bearers of MSE associations in the State, representatives of banks and financial institutions lending to MSEs, and persons with special knowledge of industry, finance, law, trade or commerce."
+          },
+          "tags": [
+            "msme",
+            "facilitation-council",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:18"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-dly-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is MSME Samadhan?",
+            "answer_md": "A delayed payment monitoring portal created by the Office of the DC (MSME), where micro and small enterprises file applications online about delayed payments to the Facilitation Council of their State or UT. It has a dashboard of pending amounts from CPSEs, Central Ministries and State Governments."
+          },
+          "tags": [
+            "msme",
+            "samadhan",
+            "delayed-payment"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-dly-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What must companies report about dues to MSEs?",
+            "answer_md": "All companies that receive goods or services and have payments outstanding for 45 days or more from the date of acceptance must file a half-yearly return with the MCA (MSME notification of 2 November 2018)."
+          },
+          "tags": [
+            "msme",
+            "delayed-payment",
+            "reporting",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-pol-001",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "Procurement preference policy (s 11)",
+            "prompt_md": "What does the Act provide on public procurement from MSMEs?",
+            "gist_md": "The Central and State Governments must issue a preference policy notification for public procurement from MSMEs; a detailed notification was issued on 23 March 2012. It provides for reservation of certain items for MSMEs, price preference, preference to women entrepreneurs, programmes for MSMEs and special vendor development."
+          },
+          "tags": [
+            "msme",
+            "s11",
+            "procurement",
+            "numerical"
+          ],
+          "reference_keys": [
+            "msmedact:11"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-fnd-001",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "MSMED Act, 2006",
+            "reference": "Funds for the sector (s 12)",
+            "prompt_md": "What does the Act say about dedicated funds?",
+            "gist_md": "One or more Funds are constituted by notification, credited with Central Government grants. They are administered by the Central Government as prescribed, used exclusively for the MSME sector, with the Central Government responsible for coordination and timely release of money. The Government has set up the MSME Fund under s 12."
+          },
+          "tags": [
+            "msme",
+            "s12",
+            "fund"
+          ],
+          "reference_keys": [
+            "msmedact:12"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-gen-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the closure scheme, and what other provisions does the Act contain?",
+            "answer_md": "The Act provides for a scheme to ease closure of business for MSMEs, officers and employees, penalties for contravention of s 8, s 22 or s 26, jurisdiction of courts, rule-making powers (Central and State Governments) and overriding effect over other laws."
+          },
+          "tags": [
+            "msme",
+            "closure",
+            "penalty"
+          ],
+          "reference_keys": [
+            "msmedact:8",
+            "msmedact:22",
+            "msmedact:26"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-001",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the single window registration and the revival framework for MSMEs?",
+            "answer_md": "A champions control room under the Ministry, with development institutes and DICs, facilitates single point registration. Banks that have lent to MSMEs may revive repayment schedules on set criteria through a bank committee for each such MSME, monitored by the bank's debt restructuring cell (MSME Department notification of 27 May 2015)."
+          },
+          "tags": [
+            "msme",
+            "revival",
+            "single-window",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is NSIC and what does it do?",
+            "answer_md": "The National Small Industries Corporation, established in 1955, promotes, aids and fosters growth of micro and small enterprises, generally on commercial lines, with support in raw material procurement, marketing, credit rating, technology acquisition and modern management practices."
+          },
+          "tags": [
+            "msme",
+            "nsic",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the Digital MSME Scheme?",
+            "answer_md": "A Government scheme to promote information and communication technology in MSMEs, offering services through providers such as ERP, accounting, manufacturing design and regulatory compliance including GST, and promoting digital literacy, training and digital marketing."
+          },
+          "tags": [
+            "msme",
+            "digital-msme",
+            "schemes"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the features of the Emergency Credit Line Guarantee Scheme (ECLGS), per the study text?",
+            "answer_md": "Launched during COVID-19 to give banks and NBFCs 100% guarantee coverage for emergency credit to businesses and MSMEs for additional term loans or working capital. Interest is capped at 9.25% for banks and 14% for NBFCs, the maximum tenure is 4 years from disbursement, and the moratorium on principal is 12 months. It was extended to 31 March 2022."
+          },
+          "tags": [
+            "msme",
+            "eclgs",
+            "schemes",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is SIDBI's Secured Business Loan for MSMEs?",
+            "answer_md": "A scheme for faster credit to MSMEs, especially manufacturing and services, with open term loans up to ₹10 crore and repayment up to 10 years including the moratorium. It also gives foreign currency assistance for tangible assets, subject to natural hedges and other conditions."
+          },
+          "tags": [
+            "msme",
+            "sidbi",
+            "schemes",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the PMEGP?",
+            "answer_md": "The Prime Minister's Employment Generation Programme, a credit-linked subsidy scheme to generate employment by setting up micro-enterprises in rural and urban areas."
+          },
+          "tags": [
+            "msme",
+            "pmegp",
+            "schemes"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What reservation and preference benefits do MSMEs get?",
+            "answer_md": "Items made in the small-scale sector have statutory reservation in Government procurement under the Industries (Development and Regulation) Act, 1951 (to increase consumer goods production in the sector and employment in remote areas), and units that produce an MSME registration certificate with licence or approval applications get priority and simpler processing. The International Cooperation Scheme reimburses costs of MSME business delegations abroad."
+          },
+          "tags": [
+            "msme",
+            "reservation",
+            "benefits"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel09-sch-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What was the 2020 relief package for MSMEs described in the study text?",
+            "answer_md": "A ₹3 lakh crore emergency working capital facility (additional working capital of 20% of outstanding credit as at 29 February 2020 as a concessional term loan); ₹20,000 crore subordinate debt for 2 lakh stressed or NPA MSMEs (banks give promoters subordinate debt of 15% of existing stake up to ₹75 lakh, with ₹4,000 crore support to CGTMSE); and a ₹10,000 crore Fund of Funds expected to mobilise about ₹50,000 crore of equity at 1:4 leverage."
+          },
+          "tags": [
+            "msme",
+            "relief-package",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

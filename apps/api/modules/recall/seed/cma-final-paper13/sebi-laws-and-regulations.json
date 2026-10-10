@@ -1,0 +1,1372 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-sebi-laws-and-regulations",
+      "title": "CEL: SEBI Laws and Regulations",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 4: public issues and book building, insider trading regulations and the takeover code.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "sebi-laws-and-regulations"
+      },
+      "items": [
+        {
+          "ref": "cel04-ipo-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Eligibility of the issuer: who cannot make a public or rights issue",
+            "prompt_md": "In which situations is an issuer barred from a public or rights issue of equity or convertible securities?",
+            "gist_md": "When the issuer, its promoters, promoter group, directors or selling shareholders are debarred from the capital market by SEBI (or the issuer is linked to a debarred company); when it has not applied to a stock exchange for in-principle listing approval; when it has no depository agreement for dematerialisation; when partly paid-up equity shares exist that are not fully paid or forfeited; when firm financing arrangements for 75% of the stated means of finance (excluding the issue and internal accruals) are not in place; or when the issuer, any promoter or director is a wilful defaulter. Promoters' holding must also be in demat form before the offer document is filed."
+          },
+          "tags": [
+            "ipo",
+            "eligibility",
+            "icdr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:eligibility"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Where must an IPO issuer apply for listing?",
+            "answer_md": "To at least one recognised stock exchange having nationwide trading terminals. When applying to one or more exchanges for in-principle approval, it must choose one as the designated stock exchange."
+          },
+          "tags": [
+            "ipo",
+            "eligibility",
+            "listing"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How much of the issue money may go to general corporate purposes?",
+            "answer_md": "Not more than 25% of the amount raised by the issuer, as stated in the objects in the draft offer document."
+          },
+          "tags": [
+            "ipo",
+            "eligibility",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "For how long can a public issue remain open, and what is the minimum subscription?",
+            "answer_md": "It must be open for at least 3 days and at most 10 days. The minimum subscription is 90% of the issue size, failing which application money is refunded within 15 days of closure."
+          },
+          "tags": [
+            "ipo",
+            "issue-period",
+            "subscription",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A public issue stays open for at least {{c1::3}} days and at most {{c2::10}} days, needs minimum subscription of {{c3::90%}}, and refunds are due within {{c4::15}} days of closure."
+          },
+          "tags": [
+            "ipo",
+            "issue-period",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Intermediaries to an issue",
+            "prompt_md": "Whom must an issuer appoint for a public issue?",
+            "gist_md": "One or more merchant bankers, at least one being the lead merchant banker, who guides the appointment of other SEBI-registered intermediaries. With several merchant bankers, each one's rights and obligations (disclosures, allotment, refund, underwriting) are fixed in advance and disclosed in the offer document. In a book-built issue it appoints syndicate members, in other issues bankers to the issue at various centres. It must also appoint a SEBI-registered Registrar to the issue that has connectivity with all depositories, and a compliance officer who monitors securities-law compliance and investor grievances."
+          },
+          "tags": [
+            "ipo",
+            "intermediaries",
+            "icdr"
+          ],
+          "reference_keys": [
+            "sebi-icdr:intermediaries"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-007",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Initial public offer: track record conditions",
+            "prompt_md": "What financial eligibility must an issuer meet to make an IPO under the normal route?",
+            "gist_md": "Net tangible assets of at least ₹3 crore in each of the preceding 3 full years, with no more than 50% held as monetary assets (otherwise a firm commitment to use the excess in the business); average pre-tax operating profit of at least ₹15 crore, restated and consolidated, in the 3 most profitable of the preceding 5 years; and net worth of at least ₹1 crore in each of the preceding 3 full years. If the name changed in the last year, at least 50% of revenue of the preceding year must come from the activity the new name suggests.",
+            "exceptions_md": "The 50% monetary-assets test does not apply where the IPO is entirely an offer for sale."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "eligibility",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:eligibility"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-008",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "IPO track record: net tangible assets of at least ₹{{c1::3}} crore in each of {{c2::3}} preceding years; average operating profit of ₹{{c3::15}} crore in the {{c4::3}} best of {{c5::5}} years; net worth of ₹{{c6::1}} crore in each of {{c7::3}} years."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "eligibility",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How can an issuer that fails the track-record test still make an IPO?",
+            "answer_md": "Through the book-building process, if it undertakes to allot at least 75% of the net offer to qualified institutional buyers and to refund the full subscription money if it cannot."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "eligibility",
+            "qib",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can an issuer offer convertible debt instruments in an IPO without a prior equity issue?",
+            "answer_md": "Yes, provided it has not defaulted on payment of principal or interest for 6 months."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "convertible-debt",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What restrictions apply on allotment and outstanding convertibles in an IPO?",
+            "answer_md": "Allotment cannot be made if the prospective allottees number fewer than one thousand. No IPO is allowed while there are outstanding convertible securities or any right entitling anyone to receive equity shares after the IPO."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "allottees",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When must the use of IPO proceeds be monitored, and by whom?",
+            "answer_md": "If the issue size exceeds ₹100 crore, a bank or public financial institution monitors and reports quarterly until 95% of the proceeds are used."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "monitoring",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Is IPO grading compulsory?",
+            "answer_md": "No. The issuer may obtain grading from one or more SEBI-registered credit rating agencies."
+          },
+          "tags": [
+            "ipo",
+            "ipo",
+            "grading"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-014",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Pricing of shares in a public issue",
+            "prompt_md": "How is the issue price fixed, and is there a floor?",
+            "gist_md": "The issuer fixes the price of equity shares and convertibles in consultation with the lead merchant banker or through book building. A price or price band may be stated in the offer document and a floor price in the red herring prospectus. For debt, the coupon rate and conversion price are fixed the same way. The issue price cannot be below the face value."
+          },
+          "tags": [
+            "ipo",
+            "pricing",
+            "icdr"
+          ],
+          "reference_keys": [
+            "sebi-icdr:pricing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-015",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Differential pricing",
+            "prompt_md": "Which categories may be given a price different from the general offer price?",
+            "gist_md": "Retail investors, existing shareholders or employees entitled to a reservation may be offered shares at a price not lower than 10% below the price for other categories. An anchor investor cannot get a price below that offered to other applicants. Under the alternate book-building method, employees may be offered shares below the floor price, with the difference not more than 10% of the floor price."
+          },
+          "tags": [
+            "ipo",
+            "pricing",
+            "differential-pricing",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:pricing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What face value may a company have in a public issue?",
+            "answer_md": "Face value may be below ₹10 but not below ₹1 if the issue price is ₹500 or more per share. If the issue price is below ₹500, the face value must be ₹10."
+          },
+          "tags": [
+            "ipo",
+            "pricing",
+            "face-value",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-017",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Promoters' contribution and lock-in",
+            "prompt_md": "What minimum promoters' contribution is needed in an IPO and how long is it locked in?",
+            "gist_md": "At least 20% of the post-issue capital. According to the text, the minimum contribution is locked in for 3 years from the date of commencement of commercial production or allotment in the public issue, whichever is later, and promoters' holding above the minimum contribution is locked in for 1 year. The excess contribution in a further public offer is not locked in."
+          },
+          "tags": [
+            "ipo",
+            "promoters",
+            "lock-in",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:promoters"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-018",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Book building",
+            "definition_md": "A process undertaken to elicit demand and assess the price for determining the quantum or value of specified securities."
+          },
+          "tags": [
+            "ipo",
+            "book-building",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-019",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Allocation in a book-built issue (regular route)",
+            "prompt_md": "How is the net offer to the public allocated in a normal book-built issue?",
+            "gist_md": "Not less than 35% to retail individual investors; not less than 15% to non-institutional investors; and not more than 50% to qualified institutional buyers, of which 5% is reserved for mutual funds (mutual funds may also take from the balance). Up to 60% of the QIB portion may be allotted to anchor investors."
+          },
+          "tags": [
+            "ipo",
+            "book-building",
+            "allocation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:book-building"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-020",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (ICDR) Regulations",
+            "reference": "Allocation in a book-built issue (Regulation 6(2) route)",
+            "prompt_md": "How is the net offer allocated where the issuer uses the QIB-heavy route?",
+            "gist_md": "Not more than 10% to retail individual investors, not more than 15% to non-institutional investors, and not less than 75% to qualified institutional buyers, 5% of which is reserved for mutual funds. Up to 60% of the QIB portion may go to anchor investors."
+          },
+          "tags": [
+            "ipo",
+            "book-building",
+            "allocation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:6(2)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-021",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Normal book-built allocation: retail not less than {{c1::35%}}, non-institutional not less than {{c2::15%}}, QIB not more than {{c3::50%}}; under Regulation 6(2): retail up to {{c4::10%}}, QIB at least {{c5::75%}}; anchor investors up to {{c6::60%}} of the QIB portion."
+          },
+          "tags": [
+            "ipo",
+            "book-building",
+            "allocation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-icdr:6(2)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-ipo-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the net offer allocated when there is no book building?",
+            "answer_md": "At least 30% to retail individual investors and the rest to other applicants, including corporate bodies and institutions, irrespective of the number of shares applied for. Unsubscribed portions in one category may go to applicants in the other. If the retail category is entitled to more than 50% on a proportionate basis, retail investors get that higher percentage."
+          },
+          "tags": [
+            "ipo",
+            "allocation",
+            "fixed-price",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which regulations govern insider trading in India?",
+            "answer_md": "The SEBI (Prohibition of Insider Trading) Regulations, 2015, which prevent trading while in possession of unpublished price sensitive information."
+          },
+          "tags": [
+            "insider-trading",
+            "pit"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Unpublished price sensitive information (UPSI)",
+            "definition_md": "Information relating to a company or its securities that is not generally available and that, once published, would be likely to materially affect the price of the securities. It ordinarily covers financial results, dividends, changes in capital structure, mergers, demergers, acquisitions, delistings, disposals and business expansion, and changes in key managerial personnel."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "upsi",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Generally available information",
+            "definition_md": "Information the public can access without discrimination between one person and another."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Insider",
+            "definition_md": "Any person who is a connected person, or who is in possession of or has access to unpublished price sensitive information."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "insider",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-005",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Connected person",
+            "prompt_md": "Who is a connected person?",
+            "gist_md": "Anyone associated with the company in any capacity (including by frequent communication with officers, a contractual, fiduciary or employment relationship, or as director, officer or employee, or a professional or business relationship) during the 6 months before the act, which gives or is reasonably expected to give access to UPSI. Presumed connected unless the contrary is shown: immediate relatives; holding, associate and subsidiary companies; intermediaries and their employees or directors; investment, trustee and asset management companies; officials of exchanges and clearing houses; mutual fund trustees and AMC directors or employees; directors or employees of public financial institutions; officials of recognised self-regulatory organisations; and the company's banker."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "connected-person",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Immediate relative",
+            "definition_md": "A person's spouse, and parent, sibling and child of the person or spouse, any of whom is financially dependent on the person or consults the person on decisions about trading in securities."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Compliance officer (insider trading)",
+            "definition_md": "A senior officer designated to report to the Board (or the head of the organisation), who is financially literate and able to appreciate the legal and regulatory requirements. He administers policies and procedures, keeps records, monitors the preservation of UPSI, monitors trades and implements the code of conduct under the Board's supervision."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "compliance-officer",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-008",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Communication of UPSI and trading restrictions",
+            "prompt_md": "What does the regulation prohibit regarding communication and trading by insiders?",
+            "gist_md": "No insider may communicate, provide or allow access to UPSI, or procure it, except for legitimate purposes (the Board's policy on this forms part of the Code of Fair Disclosure and Conduct). No insider may trade in listed or proposed-to-be-listed securities while holding UPSI. Insiders must be given notice to keep UPSI confidential."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "restrictions"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "On whom does the onus of proof lie in an insider trading case?",
+            "answer_md": "For connected persons, they must prove they did not possess UPSI. In other cases, the onus is on the Board (SEBI)."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "onus"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-010",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "UPSI shared in a transaction needing an open offer",
+            "prompt_md": "When may UPSI be shared in connection with a transaction?",
+            "gist_md": "When the transaction would require an open offer, or in other cases where the Board of directors determines that sharing is in the company's best interests and the UPSI is made generally available at least 2 trading days before the transaction. Confidentiality and non-disclosure agreements are executed and the recipients must not trade while holding the UPSI."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "upsi",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What must a company keep to track UPSI, and for how long?",
+            "answer_md": "A structured digital database of the persons with whom UPSI is shared and its nature, with adequate internal controls, kept for at least 8 years (longer if there is an investigation)."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "digital-database",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-012",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Trading plans",
+            "prompt_md": "What is a trading plan and what rules apply to it?",
+            "gist_md": "An insider may draw up a plan for his future trades and submit it to the compliance officer, who approves it and arranges public disclosure. The first trade under the plan cannot happen sooner than 6 months after disclosure, and the insider must stick to the plan. On approval the compliance officer informs the stock exchanges."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "trading-plan",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-013",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Disclosures by insiders",
+            "prompt_md": "What initial and continual disclosures must key managerial personnel and directors make?",
+            "gist_md": "Initial: KMP and directors disclose their holding of the company's securities as on the date of appointment. Continual: a disclosure within 2 trading days of any trade, if the value traded in a calendar quarter exceeds ₹10 lakh. Other connected persons give disclosures as the regulations require when the company asks."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "disclosures",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-014",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Continual disclosure of insider trades is due within {{c1::2}} trading days if the quarterly traded value exceeds ₹{{c2::10 lakh}}; a trading plan cannot start trading earlier than {{c3::6}} months after disclosure."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-015",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Code of Fair Disclosure (Schedule A principles)",
+            "prompt_md": "What principles must a listed company's Code of Fair Disclosure follow?",
+            "gist_md": "The Board frames and publishes it on the website and tells the stock exchanges. Principles: prompt public disclosure of UPSI as soon as credible and concrete information exists, with equal dissemination and no selective disclosure; appoint a senior officer as chief investor relations officer; give appropriate and fair responses to queries on news reports and verification of rumours; make sure information shared with analysts and research personnel is not UPSI; and publish transcripts or records of meetings with analysts and investors on the website."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "code-of-fair-disclosure",
+            "schedule-a"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-016",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Code of Conduct (Schedule B minimum standards)",
+            "prompt_md": "Who frames the code of conduct and what does it contain?",
+            "gist_md": "The CEO or managing director frames it to regulate, monitor and report trading by designated persons and their immediate relatives, with a senior officer to administer it. The Board, with the compliance officer, specifies who is a designated person based on role, access to UPSI, seniority and designation. The compliance officer reports to the Board, and to the Audit Committee if there is one. The code sets out the sanctions and disciplinary actions and formats for pre-clearance applications and trade reports."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "code-of-conduct",
+            "schedule-b"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the trading window and pre-clearance work under Schedule B?",
+            "answer_md": "The compliance officer decides when the window reopens, which cannot be earlier than 48 hours after the UPSI becomes generally available. While open, a designated person's trades above the Board's threshold need pre-clearance, and the compliance officer may seek a declaration that he holds no UPSI. Pre-cleared trades must be executed within the time set in the code, which cannot exceed 7 trading days, or fresh pre-clearance is needed."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "trading-window",
+            "pre-clearance",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-018",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The trading window reopens not earlier than {{c1::48 hours}} after UPSI becomes public; pre-cleared trades must be executed within {{c2::7}} trading days."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "trading-window",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What must designated persons disclose to the company each year?",
+            "answer_md": "Names and Permanent Account Numbers (or another identifier permitted by law) of specified persons, annually and whenever the information changes."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "designated-persons"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-pit-020",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "SEBI (Prohibition of Insider Trading) Regulations, 2015",
+            "reference": "Institutional mechanism to prevent insider trading",
+            "prompt_md": "What controls must a listed company put in place?",
+            "gist_md": "The CEO ensures adequate and effective internal controls. The Audit Committee reviews compliance with the regulations at least once a year and checks that controls are adequate and effective. The Board approves policies and procedures for inquiring into leaks of UPSI, and the company has a whistle-blower policy to report leaks. Intermediaries and fiduciaries must cooperate in any inquiry."
+          },
+          "tags": [
+            "insider-trading",
+            "pit",
+            "institutional-mechanism"
+          ],
+          "reference_keys": [
+            "sebi-pit:pit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do the SEBI SAST Regulations, 2011 cover?",
+            "answer_md": "Acquisitions of shares or voting rights in a target company, or of control over it, whether made directly or indirectly. A company listed on a recognised exchange's Innovators Growth Platform without a public issue is outside them."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "applicability"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Acquirer",
+            "definition_md": "Any person who, directly or indirectly, acquires or agrees to acquire, by himself or through or with persons acting in concert, shares or voting rights in, or control over, a target company."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Control (takeover code)",
+            "definition_md": "The power to name most of the directors, or to steer management or policy decisions. One or more persons, acting alone or in concert, may hold it directly or indirectly through shareholding, management rights, shareholder or voting agreements, or any other route."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "control",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Persons acting in concert (PAC)",
+            "definition_md": "Persons who, sharing the aim of acquiring shares or voting rights in a target company or exercising control over it, work together directly or indirectly under a formal or informal agreement or understanding."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "pac",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who are deemed to be persons acting in concert?",
+            "answer_md": "A company with its holding and subsidiary companies and companies under common management or control; a company with its directors and persons managing it; promoters and the promoter group; immediate relatives; a mutual fund with its sponsor, trustees, trustee company and AMC; a collective investment scheme and its related parties; a venture capital fund with related parties; an alternative investment fund with related parties; a merchant banker and its client who is an acquirer; and a portfolio manager and its client who is an acquirer."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "pac"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Target company",
+            "definition_md": "A company, including a body corporate or corporation established under a Central, State or Provincial law, whose shares are listed on a stock exchange."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Frequently traded shares",
+            "definition_md": "Shares of a target company whose traded turnover on any stock exchange in the 12 calendar months before the month of the public announcement is at least 10% of the total number of shares of that class."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "definitions",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Offer period",
+            "definition_md": "The span that starts on the date of an agreement (formal or informal) to acquire shares, voting rights or control that triggers a public announcement, or on the date of the announcement itself if that is how it arises, and ends when shareholders who accepted the open offer are paid, or when the offer is withdrawn."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "offer-period",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-009",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Tendering period",
+            "definition_md": "The window in which shareholders can offer their shares into the open offer. It stays open for 10 working days."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "tendering-period",
+            "definitions",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-010",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Volume weighted average market price (VWAMP)",
+            "definition_md": "Total value of equity shares traded on a stock exchange (number traded times the price of each) divided by the total number of shares traded on that exchange. Volume weighted average price (VWAP) is the same idea applied to the shares bought by the acquirer."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Distinguish friendly, hostile, horizontal, vertical and conglomerate takeovers.",
+            "answer_md": "Friendly: promoters voluntarily sell to the acquirer at an attractive price. Hostile: promoters resist and fight to keep ownership or control. Horizontal: acquisition of a company in the same industry. Vertical: acquisition of a supplier or customer (backward or forward integration). Conglomerate: acquisition of a company in an unrelated industry."
+          },
+          "tags": [
+            "takeover",
+            "kinds"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-012",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Continual disclosure of shareholding (Regulation 30)",
+            "prompt_md": "Who must disclose shareholding every year, and by when?",
+            "gist_md": "Promoters, regardless of shareholding, and any non-promoter who with PACs holds more than 25% must disclose their shareholding as on 31 March, within 7 working days of the financial year-end, to every stock exchange where the target's shares are listed and to the target's registered office. The obligation is on the acquirer, promoters and their PACs; the target has no obligation."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "disclosure",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:30"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-013",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Disclosure of encumbrance (Regulation 31)",
+            "prompt_md": "What must promoters disclose about pledged shares?",
+            "gist_md": "A promoter of every target company discloses the creation, invocation or release of any encumbrance (pledge, lien or any transaction creating a risk on ownership of promoter shares) within 7 working days of creation or invocation, to every exchange where the shares are listed and the registered office of the target. Acquisition by way of encumbrance counts as acquisition, and release counts as disposal, except for pledges to scheduled commercial banks or public financial institutions."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "encumbrance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:31"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-014",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Initial trigger for an open offer",
+            "prompt_md": "At what acquisition does an open offer become compulsory?",
+            "gist_md": "When an acquirer, with PACs, reaches or crosses 25% of the voting rights in the target. He must then make a public announcement of an open offer to acquire a further 26% of the target's shares."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "open-offer",
+            "trigger",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:sast"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-015",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Creeping acquisition (Regulation 3(2))",
+            "prompt_md": "How much may an acquirer holding 25% or more add each year without an open offer?",
+            "gist_md": "Not more than 5% of the target's shares in a financial year (starting 1 April) without first announcing an open offer for a further 26%. Post-acquisition holding with PACs must not exceed the maximum permissible non-public shareholding, so the minimum 25% public float is maintained."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "creeping",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:3(2)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-016",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Open offer trigger at {{c1::25%}} voting rights, offer for a further {{c2::26%}}, creeping acquisition up to {{c3::5%}} per financial year, tendering period of {{c4::10}} working days."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-017",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Conditions for a voluntary open offer",
+            "prompt_md": "What conditions must be met before a voluntary open offer?",
+            "gist_md": "Prior holding of at least 25% of voting rights; no acquisition in the preceding 52 weeks without attracting an obligation to make an open offer (no creeping acquisition); no acquisition during the offer period except under the open offer; and no further acquisition for 6 months after completion of the open offer except through another voluntary open offer or a competing offer. The acquirer may make the offer conditional on a minimum level of acceptance."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "voluntary-offer",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:sast"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-018",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Withdrawal of an open offer (Regulation 23)",
+            "prompt_md": "When may an open offer be withdrawn?",
+            "gist_md": "Only where statutory approvals required are refused, the acquirer being a natural person dies, a condition stipulated in the acquisition agreement is not met, or in circumstances SEBI considers merit withdrawal. Within 2 working days the merchant banker announces the withdrawal with reasons in newspapers and informs SEBI, the stock exchanges and the target's registered office."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "withdrawal",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:23"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-019",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Open offer process and timelines",
+            "prompt_md": "What are the steps and time limits of an open offer?",
+            "gist_md": "The acquirer submits a draft letter of offer to SEBI within 5 working days of the detailed public statement, with a non-refundable fee, and sends copies to the target and to the exchanges. The letter of offer is dispatched within 7 working days of receiving SEBI's comments or, if none, within 7 working days of the expiry of 15 working days from SEBI's receipt. The tendering period starts within 12 working days of SEBI's comments and stays open for 10 working days. Payment and completion follow within 10 working days of the last day of tendering."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "open-offer",
+            "process",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:sast"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the permitted modes of payment in an open offer?",
+            "answer_md": "Cash; issue, exchange or transfer of listed equity shares of the acquirer or any PAC; issue, exchange or transfer of listed secured debt instruments of the acquirer or any PAC rated not below investment grade by a SEBI-registered rating agency; and issue, exchange or transfer of convertible debt securities that entitle the holder to listed shares of the acquirer or PAC."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "payment"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-021",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Escrow account for the open offer",
+            "prompt_md": "When must the escrow account be opened and what form may it take?",
+            "gist_md": "At least 2 working days before the detailed public statement, as payment security for the acquirer's obligations. It may be cash deposited with a scheduled commercial bank, a bank guarantee in favour of the manager to the open offer, or a deposit of frequently traded, freely transferable equity shares or other freely transferable securities with an appropriate margin. The manager cannot release it until 30 days after payment to shareholders is completed, or earlier on fulfilling the other compliances under the regulations."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "escrow",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:sast"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-022",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Obligations of the target company during the offer",
+            "prompt_md": "What must the target company's Board do in an open offer?",
+            "gist_md": "Conduct the business in the ordinary course consistent with past practice during the offer period; not fix a record date for a corporate action from the third working day before the tendering period begins until it ends; and give the acquirer a list of shareholders (names, addresses, shareholding, folio numbers, pending transfer applications) within 2 working days of the identified date. During the offer period neither the target nor its subsidiaries may alienate material assets or enter agreements outside the ordinary course unless a special resolution by postal ballot approves it."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "target-obligations",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-sast:sast"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How must the independent directors' recommendation on an open offer be published?",
+            "answer_md": "In the form specified, at least 2 working days before the tendering period starts, in the same newspapers where the public announcement was published, and a copy goes simultaneously to SEBI, all stock exchanges and the merchant banker managing the offer."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "independent-directors",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-024",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (SAST) Regulations, 2011",
+            "reference": "Obligations of the acquirer",
+            "prompt_md": "What are the acquirer's key obligations in an open offer?",
+            "gist_md": "Ensure firm financial arrangements to meet payment obligations; be able to implement the offer, subject to statutory approvals; not alienate material assets of the target or its subsidiaries outside the ordinary course (unless the intention was declared in the detailed public statement and letter of offer, otherwise a special resolution by postal ballot is needed); not sell shares of the target during the offer period; and remain jointly and severally liable with PACs for the obligations."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "acquirer-obligations"
+          ],
+          "reference_keys": [
+            "sebi-sast:sast"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel04-tak-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which acquisitions are exempt from the takeover regulations?",
+            "answer_md": "Acquisitions in the ordinary course by a registered underwriter, by a stockbroker exercising a lien for a client, and by a merchant banker or nominated investor in market making; acquisitions under a scheme of safety net; a merchant banker acting as a stabilising agent; acquisitions under a disinvestment agreement; and acquisitions under court-ordered reconstruction, merger, amalgamation or demerger, under the SARFAESI Act, the delisting regulations, or upon forfeiture of shares."
+          },
+          "tags": [
+            "takeover",
+            "sast",
+            "exemptions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

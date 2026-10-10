@@ -106,3 +106,21 @@ def test_read_range_past_the_end_is_empty_and_failures_are_storage_errors(monkey
         store.read_range("b", "p", 0, 9)
     with pytest.raises(ValueError):
         store.read_range("b", "p", 5, 1)
+
+
+def test_signing_into_a_missing_bucket_creates_it_privately_and_retries_once(monkeypatch):
+    seen = []
+
+    def fake(method, url, **kwargs):
+        seen.append((method, url, kwargs.get("json")))
+        if url.endswith("/bucket"):
+            return httpx.Response(200, json={"name": "b"}, request=httpx.Request(method, url))
+        if sum("upload/sign" in u for _, u, _ in seen) == 1:
+            return httpx.Response(404, json={"message": "Bucket not found"}, request=httpx.Request(method, url))
+        return httpx.Response(200, json={"url": "/object/upload/sign/b/p?token=t", "token": "t"}, request=httpx.Request(method, url))
+
+    monkeypatch.setattr(httpx, "request", fake)
+    up = SupabaseStorage("https://x.supabase.co", "k").create_signed_upload("b", "p")
+    assert up.token == "t"
+    assert [u.rsplit("/", 1)[-1] for _, u, _ in seen] == ["p", "bucket", "p"]
+    assert seen[1][2] == {"id": "b", "name": "b", "public": False}

@@ -1,0 +1,571 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-laws-and-regulations-related-to-cyber-security-and-data-privacy",
+      "title": "CEL: Laws and Regulations Related to Cyber Security and Data Privacy",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 10: the IT Act, 2000, SPDI Rules, data protection, business intelligence and cyber crimes.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "laws-and-regulations-related-to-cyber-security-and-data-privacy"
+      },
+      "items": [
+        {
+          "ref": "cel10-it-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the objects of the IT Act, 2000?",
+            "answer_md": "To give legal recognition to electronic transactions and digital signatures; to facilitate electronic filing of documents and their retention in Government records (the public cannot insist on electronic mode only); to make consequential amendments to other Acts; and to set up licensing, monitoring and certifying authorities."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "objects"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-it-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is an electronic record dispatched and received?",
+            "answer_md": "Dispatch occurs when it enters a resource outside the originator's control. Unless agreed otherwise, receipt occurs when it enters the designated computer resource or, if none is designated, when the addressee retrieves it. The place of dispatch and receipt is deemed to be the respective place of business. A record may be sent by the originator, his agent or an automatically programmed system."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "dispatch-receipt"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-it-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Information Technology Act, 2000",
+            "reference": "Controller of Certifying Authorities",
+            "prompt_md": "What is the role of the Controller of Certifying Authorities (CCA)?",
+            "gist_md": "Appointed by the Central Government to recognise, license, regulate, standardise and supervise certifying authorities. Certifying authorities licensed by the CCA issue digital signature certificates and perform other functions the Controller decides. The Central Government may intercept information on any computer for security purposes and declare any system a protected system, restricting access to it."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "cca",
+            "digital-signature"
+          ],
+          "reference_keys": [
+            "itact:it-act"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-it-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "To whom do the IT Act's offences apply?",
+            "answer_md": "To any offence or contravention committed in any country by any person, if it involves a computer, system or network located in India."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "offences",
+            "extraterritorial"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-it-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the offences under the IT Act mentioned in the study text.",
+            "answer_md": "Tampering with computer source documents (s 65); hacking with computer systems and data alteration (s 66); publishing obscene information (s 67); unauthorised access to a protected system (s 70); breach of confidentiality and privacy (s 72); and publishing false digital signature certificates (s 73). The text also lists misrepresentation to the Controller or certifying authorities."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "offences",
+            "numerical"
+          ],
+          "reference_keys": [
+            "itact:65",
+            "itact:66",
+            "itact:67",
+            "itact:70",
+            "itact:72",
+            "itact:73"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-it-006",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "IT Act offences: tampering with source documents s {{c1::65}}; hacking and data alteration s {{c2::66}}; obscene information s {{c3::67}}; protected system s {{c4::70}}; breach of confidentiality s {{c5::72}}; false digital signature certificates s {{c6::73}}."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "offences",
+            "numerical"
+          ],
+          "reference_keys": [
+            "itact:65",
+            "itact:66",
+            "itact:67",
+            "itact:70",
+            "itact:72",
+            "itact:73"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-it-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are disputes under the IT Act settled?",
+            "answer_md": "The Central Government appoints adjudicating authorities with legal and IT knowledge, and a Cyber Regulations Appellate Tribunal has been constituted. A person unhappy with an order of the Controller or adjudicating authority may appeal within 45 days, and the Tribunal's decision may be appealed to the High Court within 60 days. Civil courts have no jurisdiction."
+          },
+          "tags": [
+            "cyber",
+            "it-act",
+            "disputes",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Data protection",
+            "definition_md": "Privacy laws, policies and procedures designed to limit the intrusion on privacy caused when personal data is collected, stored and shared. Personal data is information about an individual who can be identified from it, held by either the Government or a private body."
+          },
+          "tags": [
+            "cyber",
+            "data-protection",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How did India's data protection law develop under the IT Act, according to the study text?",
+            "answer_md": "The IT Act came into force on 17 October 2000 without provisions on protecting sensitive personal information. The IT (Amendment) Act, 2008, effective 27 October 2009, inserted s 43A, and the Central Government notified the 2011 Rules. The Supreme Court declared the right to privacy a fundamental right on 24 August 2017. The text notes that India had no separate data protection law."
+          },
+          "tags": [
+            "cyber",
+            "data-protection",
+            "history",
+            "numerical"
+          ],
+          "reference_keys": [
+            "itact:43a"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Information Technology Act, 2000",
+            "reference": "Compensation for failure to protect data (s 43A)",
+            "prompt_md": "When is a body corporate liable to pay damages for data failures?",
+            "gist_md": "When it possesses or deals with sensitive personal data or information, is negligent in maintaining reasonable security to protect it, and this causes wrongful loss or wrongful gain to any person. It must pay damages to the affected person."
+          },
+          "tags": [
+            "s43a",
+            "data-protection"
+          ],
+          "reference_keys": [
+            "itact:43a"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-004",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Information Technology Act, 2000",
+            "reference": "Punishment for disclosure in breach of lawful contract (s 72A)",
+            "prompt_md": "What is the punishment for disclosing information in breach of a lawful contract?",
+            "gist_md": "Imprisonment for up to three years, or a fine of up to ₹5 lakh, or both."
+          },
+          "tags": [
+            "s72a",
+            "data-protection",
+            "penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "itact:72a"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When were the IT rules on Reasonable Security Practices and Procedures and Sensitive Personal Data or Information notified, and who do they bind?",
+            "answer_md": "On 11 April 2011 (G.S.R. 313(E)). They apply only to bodies corporate and persons located in India."
+          },
+          "tags": [
+            "cyber",
+            "spdi-rules",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "IT (SPDI) Rules, 2011",
+            "reference": "Sensitive personal data (Rule 3, SPDI Rules)",
+            "prompt_md": "What is treated as sensitive personal data?",
+            "gist_md": "Information such as passwords, credit or debit card details, biometric information (DNA, fingerprints, voice patterns used for authentication), and physical, physiological and mental health condition, among others. Information freely available or accessible in the public domain is not sensitive personal data."
+          },
+          "tags": [
+            "spdi-rules",
+            "rule3"
+          ],
+          "reference_keys": [
+            "itrules-spdi:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-007",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "IT (SPDI) Rules, 2011",
+            "reference": "Privacy policy (Rule 4, SPDI Rules)",
+            "prompt_md": "What must a body corporate seeking sensitive personal data publish?",
+            "gist_md": "A privacy policy, easily accessible to those giving information and clearly published on its website. It must state the type of information collected, the purpose of collection and the reasonable security practices followed to maintain its confidentiality."
+          },
+          "tags": [
+            "spdi-rules",
+            "rule4"
+          ],
+          "reference_keys": [
+            "itrules-spdi:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-008",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "IT (SPDI) Rules, 2011",
+            "reference": "Collection of information (Rule 5, SPDI Rules)",
+            "prompt_md": "What duties apply when a body corporate collects sensitive personal data?",
+            "gist_md": "Obtain consent; collect only for a lawful purpose that is necessary; use it only for that purpose and not retain it longer than required; make the person aware that it is being collected, its purpose, recipients, and the names and addresses of the collecting and retaining agencies; let the person review and correct it; keep it secure; and designate a Grievance Officer whose name and contact details are on the website and who addresses grievances expeditiously."
+          },
+          "tags": [
+            "spdi-rules",
+            "rule5"
+          ],
+          "reference_keys": [
+            "itrules-spdi:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-dp-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does Rule 8 say about reasonable security practices?",
+            "answer_md": "A body corporate may implement a standard such as IS/ISO/IEC 27001. An auditor must audit the security practices and procedures at least once a year, or whenever the body corporate undertakes a significant upgrade of its processes and computer resource. Prior permission of the information provider is needed before disclosing information to a third party."
+          },
+          "tags": [
+            "cyber",
+            "spdi-rules",
+            "rule8"
+          ],
+          "reference_keys": [
+            "itrules-spdi:8"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-bi-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Business intelligence (BI)",
+            "definition_md": "A technology-based process of analysing data to give executives, managers and staff usable insights for better decisions. Data from internal and external sources is gathered, prepared, queried and shown through dashboards and reports."
+          },
+          "tags": [
+            "cyber",
+            "bi",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-bi-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the steps in the BI process?",
+            "answer_md": "Data preparation (organising and modelling data sets for analysis); analytical querying of the prepared data; distribution of key performance indicators and other findings to business users; and using the information to influence and drive business decisions. BI data is typically stored in a data warehouse or in smaller data marts."
+          },
+          "tags": [
+            "cyber",
+            "bi",
+            "process"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-bi-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What benefits does BI bring?",
+            "answer_md": "Faster and better decision-making, optimised internal processes, higher operational efficiency and productivity, spotting problems and emerging trends, stronger strategies, higher sales and new revenue, and a competitive edge."
+          },
+          "tags": [
+            "cyber",
+            "bi",
+            "benefits"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-bi-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the main types of BI tools and applications.",
+            "answer_md": "Ad hoc analysis; online analytical processing (OLAP); mobile BI; real-time BI; operational intelligence (operational BI); open source BI (OSBI); embedded BI; collaborative BI; and location intelligence."
+          },
+          "tags": [
+            "cyber",
+            "bi",
+            "tools"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-bi-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What do OLAP, OSBI and location intelligence mean?",
+            "answer_md": "OLAP lets users analyse data along multiple dimensions, suiting complex queries and calculations. OSBI is open source BI software with a free community edition and a paid commercial edition with vendor support. Location intelligence analyses location and geospatial data with map-based visualisation, for example for site selection or logistics."
+          },
+          "tags": [
+            "cyber",
+            "bi",
+            "tools"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-bi-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What do modern BI platforms include?",
+            "answer_md": "Data visualisation software; tools for dashboards, reports and performance scorecards; data storytelling features; and functions for usage monitoring, performance optimisation and security controls."
+          },
+          "tags": [
+            "cyber",
+            "bi",
+            "platforms"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-cc-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Cybercrime",
+            "definition_md": "Criminal activity in which a computer or network is a tool, a target or a place of crime. It covers phishing, credit card fraud, illegal downloading, industrial espionage, cyber terrorism, creating viruses, and traditional crimes enabled by computers. It has no geographical boundaries and the offender is often unknown."
+          },
+          "tags": [
+            "cyber",
+            "cybercrime",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-cc-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are cyber crimes categorised?",
+            "answer_md": "Against persons (such as harassment, cyber-stalking, obscenity, defamation, hacking, spoofing, carding, fraud and threats); against property (such as IPR violations, squatting, vandalism, hacktivism, viruses and worms, trespass); and against Government (such as cyber terrorism, cyber warfare, piracy and unauthorised access to information)."
+          },
+          "tags": [
+            "cyber",
+            "cybercrime",
+            "types"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-cc-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Define cyber-stalking, spoofing and carding.",
+            "answer_md": "Cyber-stalking: creating fear or physical threat using the internet, email, phones, text messages, webcams or websites. Spoofing: sending an email or SMS that misrepresents its origin, so it appears to come from someone else. Carding: using false ATM, debit or credit cards to withdraw money dishonestly."
+          },
+          "tags": [
+            "cyber",
+            "cybercrime",
+            "persons"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-cc-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Define cracking, cyber defamation, squatting and trespass.",
+            "answer_md": "Cracking: breaking into a computer system without the owner's knowledge or consent and tampering with confidential data. Defamation: lowering a person's dignity, for example by hacking their email account and sending vulgar mails to others. Squatting: two persons claiming the same domain name. Trespass: accessing someone's computer without authority without altering or damaging data."
+          },
+          "tags": [
+            "cyber",
+            "cybercrime",
+            "persons",
+            "property"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-cc-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What are cyber vandalism, viruses and cyber terrorism?",
+            "answer_md": "Vandalism: deliberately destroying or damaging another's data or computer or disrupting a network service. Virus: a program that attaches itself to files and spreads across a network, altering or deleting data; worms spread similarly. Cyber terrorism: attacks such as distributed denial of service, hate websites and emails and attacks on sensitive networks that endanger national sovereignty and integrity."
+          },
+          "tags": [
+            "cyber",
+            "cybercrime",
+            "property",
+            "government"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel10-cc-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which IPC sections did the study text link to cyber offences?",
+            "answer_md": "Threatening emails: s 503; defamatory messages: s 499; email abuse: s 500; forgery of electronic records and email spoofing: s 463; bogus websites and cyber frauds: s 420; web-jacking: s 383. Special Acts cover online sale of drugs under the NDPS Act and online sale of arms under the Arms Act."
+          },
+          "tags": [
+            "cyber",
+            "cybercrime",
+            "ipc",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

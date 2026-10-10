@@ -1,0 +1,1155 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-corporate-governance-social-responsibility-and-sustainability",
+      "title": "CEL: Corporate Governance, Social Responsibility and Sustainability",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 3: governance concepts and theories, Indian codes, Schedule IV, CSR, NGRBC, BRSR and sustainability.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "corporate-governance-social-responsibility-and-sustainability"
+      },
+      "items": [
+        {
+          "ref": "cel03-cg-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Corporate governance",
+            "definition_md": "The system of rules, practices and processes by which a company is directed and controlled, balancing the interests of shareholders, management, customers, suppliers, financiers, the Government and the community. The classic formulation is Cadbury's: the system by which companies are directed and controlled."
+          },
+          "tags": [
+            "corporate-governance",
+            "concepts",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the Narayana Murthy Committee view corporate governance?",
+            "answer_md": "As a means of maximising shareholder value on a sustainable basis while ensuring fairness to all stakeholders, namely customers, employees, investors, vendors, the Government and the society at large."
+          },
+          "tags": [
+            "corporate-governance",
+            "concepts",
+            "committees"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does Milton Friedman's view of corporate responsibility differ from the stakeholder view?",
+            "answer_md": "Friedman treats the manager's duty as running the business to maximise owners' profit within the law and ethical custom. The stakeholder view widens the duty to everyone affected by the business."
+          },
+          "tags": [
+            "corporate-governance",
+            "concepts",
+            "theories"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the objectives of corporate governance.",
+            "answer_md": "A clear and fair framework for the Board and management; protection of shareholders' rights, including minority and foreign holders; equitable treatment of all shareholders; recognising the rights of other stakeholders; timely and accurate disclosure on performance, ownership and governance; and an accountable Board that monitors management and gives strategic guidance."
+          },
+          "tags": [
+            "corporate-governance",
+            "objectives"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the key features of good corporate governance?",
+            "answer_md": "Transparency, prudent and participative management, enhancing value, accountability, innovation, professionalism and specialisation in management, and recognition of all stakeholders."
+          },
+          "tags": [
+            "corporate-governance",
+            "features"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-006",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Features of corporate governance include {{c1::transparency}}, {{c2::accountability}}, {{c3::prudent and participative management}} and {{c4::recognition of stakeholders}}."
+          },
+          "tags": [
+            "corporate-governance",
+            "features"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do ethics and corporate governance differ?",
+            "answer_md": "Ethics is about moral values and what is right or wrong, and it guides individual and organisational conduct voluntarily. Corporate governance is a structured set of rules, processes and disclosures through which the company is controlled, and parts of it are enforced by law and regulators."
+          },
+          "tags": [
+            "corporate-governance",
+            "concepts",
+            "ethics"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do management and corporate governance differ?",
+            "answer_md": "Management runs the business day to day to achieve its goals and is accountable to the Board. Governance sets the direction, supervises management and makes the company accountable to its shareholders and stakeholders. Management is about doing things right; governance is about ensuring the right things are done."
+          },
+          "tags": [
+            "corporate-governance",
+            "concepts",
+            "management"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why did corporate governance gain importance worldwide?",
+            "answer_md": "Large corporate failures and frauds, such as Enron, Worldcom and Satyam, showed that weak Boards, poor disclosure and compromised auditors can destroy investor wealth. Global capital flows, institutional investors' demands and the need for investor confidence pushed regulators to strengthen governance norms."
+          },
+          "tags": [
+            "corporate-governance",
+            "emergence",
+            "scandals"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What benefits does good corporate governance bring?",
+            "answer_md": "Better access to and lower cost of capital, higher investor confidence and valuation, better risk management and decisions, fewer frauds and disputes, improved reputation, and long-term sustainability of the business."
+          },
+          "tags": [
+            "corporate-governance",
+            "benefits"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-011",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Corporate governance (conceptual)",
+            "reference": "Stewardship theory",
+            "prompt_md": "What does the stewardship theory of corporate governance assume?",
+            "gist_md": "Managers are trustworthy stewards of the company's assets who are motivated by achievement and responsibility, not personal gain, so their interests align with those of the owners. Hence the theory favours giving them autonomy and a strong role, for example a combined chairman and CEO."
+          },
+          "tags": [
+            "corporate-governance",
+            "theories",
+            "stewardship"
+          ],
+          "reference_keys": [
+            "cg:corporate-governance"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-012",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Corporate governance (conceptual)",
+            "reference": "Agency theory",
+            "prompt_md": "What is the agency problem and how does the agency theory address it?",
+            "gist_md": "Shareholders (principals) delegate control to managers (agents) whose interests may differ and who may act for their own benefit. The theory focuses on monitoring and aligning interests through an independent Board, audit, disclosure and incentive pay linked to performance, accepting that these involve agency costs."
+          },
+          "tags": [
+            "corporate-governance",
+            "theories",
+            "agency"
+          ],
+          "reference_keys": [
+            "cg:corporate-governance"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-013",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Corporate governance (conceptual)",
+            "reference": "Stakeholder theory",
+            "prompt_md": "What does the stakeholder theory of corporate governance say?",
+            "gist_md": "A company is answerable not only to shareholders but to all groups affected by or affecting it, such as employees, customers, suppliers, lenders, the community and the Government. Directors must balance these interests, and long-term value depends on doing so."
+          },
+          "tags": [
+            "corporate-governance",
+            "theories",
+            "stakeholder"
+          ],
+          "reference_keys": [
+            "cg:corporate-governance"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-014",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Corporate governance (conceptual)",
+            "reference": "Trusteeship theory",
+            "prompt_md": "What is the core idea of the trusteeship theory?",
+            "gist_md": "Owners and managers hold the company's wealth in trust for society, using it for the good of all, and not for private gain. It draws on Gandhian thought and, with the stakeholder theory, underpins the Indian emphasis on social responsibility."
+          },
+          "tags": [
+            "corporate-governance",
+            "theories",
+            "trusteeship"
+          ],
+          "reference_keys": [
+            "cg:corporate-governance"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cg-015",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "SAST",
+            "expands_md": "Four theories of governance: Stewardship, Agency, Stakeholder and Trusteeship.",
+            "topic": "Theories of corporate governance"
+          },
+          "tags": [
+            "corporate-governance",
+            "theories"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What did the Cadbury Committee recommend about audit committees?",
+            "answer_md": "That a listed company's Board should have an audit committee of at least three non-executive directors, with written terms of reference, to review the financial statements and relations with the auditors. The committee is a key tool for Board oversight of financial reporting and controls."
+          },
+          "tags": [
+            "cg-codes",
+            "cadbury",
+            "audit-committee"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Cadbury Committee: which country's committee was it?",
+            "answer_md": "The United Kingdom's, set up in 1991 under Sir Adrian Cadbury after corporate scandals, and its 1992 report is the model for many national codes."
+          },
+          "tags": [
+            "cg-codes",
+            "cadbury"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What did the Rahul Bajaj Committee (CII) recommend on audit committees?",
+            "answer_md": "A listed company with turnover of ₹100 crore or paid-up capital of ₹20 crore, whichever is less, should set up an audit committee within two years."
+          },
+          "tags": [
+            "cg-codes",
+            "rahul-bajaj",
+            "audit-committee",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What did the Chandratre Committee propose for audit committees?",
+            "answer_md": "Companies with paid-up capital of ₹5 crore or more should set up an audit committee."
+          },
+          "tags": [
+            "cg-codes",
+            "chandratre",
+            "audit-committee",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who set up the Kumar Mangalam Birla Committee, and what is its significance?",
+            "answer_md": "SEBI set it up and its recommendations became the basis of Clause 49 of the listing agreement, and later of the governance provisions in the LODR Regulations."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Corporate governance codes (India)",
+            "reference": "Kumar Mangalam Birla Committee: Board composition",
+            "prompt_md": "What did the Birla Committee recommend about the composition of the Board?",
+            "gist_md": "A balanced Board mixing executive and non-executive directors, with non-executives making up no less than half. Where the chairman holds a non-executive post, independent directors should be a third or more of the Board; where the chairman is an executive, independents should be half or more."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla",
+            "board-composition",
+            "numerical"
+          ],
+          "reference_keys": [
+            "cg-codes:kumar-mangalam-birla"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-007",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Corporate governance codes (India)",
+            "reference": "Kumar Mangalam Birla Committee: audit committee",
+            "prompt_md": "What audit committee structure did the Birla Committee recommend?",
+            "gist_md": "At least three members, all non-executive, with a majority independent, chaired by an independent director. It should meet at least three times a year, including before approval of annual accounts, and have powers to investigate and seek information."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla",
+            "audit-committee",
+            "numerical"
+          ],
+          "reference_keys": [
+            "cg-codes:kumar-mangalam-birla"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What other committees did the Birla Committee recommend?",
+            "answer_md": "A remuneration committee of non-executive directors to fix executive directors' pay, and a shareholders' or investors' grievance committee to look into complaints on transfers, non-receipt of dividends and similar matters."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla",
+            "committees"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What limits on committee memberships did the Birla Committee suggest?",
+            "answer_md": "A director should not be a member of more than 10 committees or chair more than 5 committees across all companies in which he is a director."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla",
+            "committees",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What other disclosure and shareholder-related recommendations came from the Birla Committee?",
+            "answer_md": "A separate section on corporate governance in the annual report with a compliance certificate, and use of postal ballot for major decisions to widen shareholder participation."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla",
+            "disclosure"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-011",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Under the Birla Committee, the audit committee has at least {{c1::three}} members and meets at least {{c2::three}} times a year; a director can hold at most {{c3::10}} committee memberships and chair at most {{c4::5}}."
+          },
+          "tags": [
+            "cg-codes",
+            "kumar-mangalam-birla",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-012",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Companies Act, 2013",
+            "reference": "Schedule IV: Code for Independent Directors",
+            "prompt_md": "What is the purpose and scope of the Code for Independent Directors?",
+            "gist_md": "Schedule IV of the Companies Act, 2013 lays down guidelines of professional conduct, the role and functions, duties, manner of appointment, re-appointment, resignation or removal, separate meetings and evaluation of independent directors. It is meant to promote professionalism and improve the quality of Board oversight."
+          },
+          "tags": [
+            "cg-codes",
+            "independent-directors",
+            "schedule-iv"
+          ],
+          "reference_keys": [
+            "companiesact:149"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the guidelines of professional conduct for independent directors?",
+            "answer_md": "Uphold ethical standards of integrity and probity; act objectively and constructively; exercise responsibilities in good faith for the company's benefit; devote sufficient time; do not abuse position or seek personal advantage; refrain from any action that would lead to loss of independence; assist the company in implementing best governance practices; and disclose concerns about unethical conduct."
+          },
+          "tags": [
+            "cg-codes",
+            "independent-directors",
+            "schedule-iv"
+          ],
+          "reference_keys": [
+            "companiesact:149"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What role and functions does Schedule IV give to independent directors?",
+            "answer_md": "Help bring an independent judgment to Board deliberations on strategy, performance, resources and standards of conduct; scrutinise management's performance against goals; satisfy themselves on the integrity of financial information and robustness of risk and control systems; safeguard minority shareholders' interests; and balance conflicting interests of stakeholders."
+          },
+          "tags": [
+            "cg-codes",
+            "independent-directors",
+            "schedule-iv"
+          ],
+          "reference_keys": [
+            "companiesact:149"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What duties does Schedule IV impose on independent directors?",
+            "answer_md": "Undertake appropriate induction and keep skills up to date; attend Board and general meetings; participate constructively and actively in committees; strive to attend general meetings; report concerns on unethical behaviour or fraud; ensure the vigil mechanism is adequate; keep confidential information confidential; and act within the authority of the Board."
+          },
+          "tags": [
+            "cg-codes",
+            "independent-directors",
+            "schedule-iv"
+          ],
+          "reference_keys": [
+            "companiesact:149"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How must an independent director be appointed under Schedule IV?",
+            "answer_md": "Through a formal letter of appointment given to the director, setting out the terms and conditions, including the expectations of him, the Board's and committees' composition, his duties, and the code of conduct. The terms must be open for inspection and the company must disclose them on its website."
+          },
+          "tags": [
+            "cg-codes",
+            "independent-directors",
+            "schedule-iv"
+          ],
+          "reference_keys": [
+            "companiesact:149"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does a corporate governance rating assess?",
+            "answer_md": "It is an independent opinion of an agency on how well a company follows governance norms, looking at the ownership structure, Board composition and functioning, disclosure and transparency, shareholder relations, and treatment of stakeholders. It helps investors compare companies."
+          },
+          "tags": [
+            "cg-codes",
+            "cg-rating"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is an ESG rating?",
+            "answer_md": "An assessment of how a company performs on Environmental, Social and Governance factors, which investors use to gauge long-term risk and sustainability beyond financial results."
+          },
+          "tags": [
+            "cg-codes",
+            "esg"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-019",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (LODR) Regulations, 2015",
+            "reference": "Regulation 27(2) LODR: quarterly corporate governance report",
+            "prompt_md": "What must a listed entity file about corporate governance each quarter?",
+            "gist_md": "A quarterly compliance report on corporate governance, in the prescribed format, to the stock exchange within 21 days of the quarter-end. The format includes details of the Board composition, committees and their meetings, related-party transactions, affirmations and compliance with the governance regulations. It is also filed on the company's website."
+          },
+          "tags": [
+            "cg-codes",
+            "lodr",
+            "reg27",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-lodr:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-cod-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does Annex IV of the quarterly governance report cover?",
+            "answer_md": "A half-yearly disclosure of loans, guarantees, comfort letters and securities given to the promoter group entities, in the format that applied from FY 2021-22."
+          },
+          "tags": [
+            "cg-codes",
+            "lodr",
+            "reg27"
+          ],
+          "reference_keys": [
+            "sebi-lodr:27"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Corporate social responsibility",
+            "definition_md": "A company's commitment to operate ethically and contribute to the economic, social and environmental well-being of its stakeholders and society, going beyond profit. In India s 135 of the Companies Act turns part of it into a legal duty for qualifying companies."
+          },
+          "tags": [
+            "csr",
+            "concepts",
+            "definitions"
+          ],
+          "reference_keys": [
+            "companiesact:135"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-002",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Concern, Care, Share",
+            "expands_md": "The spirit of CSR: concern for the community, care for people and the environment, and sharing resources and benefits with society.",
+            "topic": "CSR concept"
+          },
+          "tags": [
+            "csr",
+            "concepts"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the UN Guiding Principles on Business and Human Rights?",
+            "answer_md": "A global framework adopted by the UN that sets out the State's duty to protect human rights, the corporate responsibility to respect them, and access to remedy for victims."
+          },
+          "tags": [
+            "csr",
+            "ungp"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the Sustainable Development Goals and when were they adopted?",
+            "answer_md": "A set of 17 global goals adopted by UN members in 2015 as a shared agenda for ending poverty, protecting the planet and ensuring prosperity by 2030. Companies use them to align CSR and sustainability efforts."
+          },
+          "tags": [
+            "csr",
+            "sdg",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the Paris Agreement and what is India's status?",
+            "answer_md": "A global climate agreement to hold the rise in global temperature well below 2 degrees Celsius above pre-industrial levels. India ratified it on 2 October 2016."
+          },
+          "tags": [
+            "csr",
+            "paris-agreement",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How did the National Voluntary Guidelines (2011) evolve?",
+            "answer_md": "The Ministry of Corporate Affairs issued the National Voluntary Guidelines on social, environmental and economic responsibilities of business in 2011. They were later revised and renamed the National Guidelines on Responsible Business Conduct (NGRBC)."
+          },
+          "tags": [
+            "csr",
+            "nvg",
+            "ngrbc"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What was the Business Responsibility Report requirement, and to whom did it apply?",
+            "answer_md": "SEBI required the top 100 listed companies by market capitalisation to file a business responsibility report from 2012; the requirement was later extended to the top 500 and then beyond. It reported on the NVG principles."
+          },
+          "tags": [
+            "csr",
+            "brr",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the nine principles of the NGRBC.",
+            "answer_md": "P1 Integrity, ethics, transparency and accountability; P2 Sustainable and safe goods and services; P3 Well-being of employees; P4 Responsiveness to stakeholders; P5 Respect for human rights; P6 Protection of the environment; P7 Responsible public policy advocacy; P8 Inclusive growth and equitable development; P9 Value to consumers."
+          },
+          "tags": [
+            "csr",
+            "ngrbc",
+            "principles"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-010",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Companies Act, 2013",
+            "reference": "Schedule VII: activities that count as CSR",
+            "prompt_md": "What kinds of activity qualify as CSR under Schedule VII?",
+            "gist_md": "Eradicating hunger, poverty and malnutrition, healthcare and sanitation; education and skill development; gender equality, women's empowerment and homes for the disadvantaged; environmental sustainability, animal welfare and conservation; protecting heritage, art and culture; support to armed forces veterans; promotion of rural and nationally recognised sports; contributions to specified government relief funds; contributions to approved research and incubators; and rural development and slum area development. It is to be interpreted liberally to capture the broad intent of the activities."
+          },
+          "tags": [
+            "csr",
+            "schedule-vii",
+            "s135"
+          ],
+          "reference_keys": [
+            "companiesact:135"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which activities are not treated as CSR spending?",
+            "answer_md": "Activities carried out only for publicity; those done to comply with other laws; benefits to employees and their families; activities for the production or distribution of the company's own products, services or marketing; and contributions to political parties."
+          },
+          "tags": [
+            "csr",
+            "exclusions",
+            "s135"
+          ],
+          "reference_keys": [
+            "companiesact:135"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are CSR activities implemented in practice?",
+            "answer_md": "The Board approves an annual action plan on the CSR Committee's recommendation; the company may carry out projects itself, through registered implementing agencies (such as a company-established foundation, trust or society), or collaborate with other companies on projects, with each company reporting separately."
+          },
+          "tags": [
+            "csr",
+            "implementation",
+            "s135"
+          ],
+          "reference_keys": [
+            "companiesact:135"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What due diligence should a company do before spending on a CSR project?",
+            "answer_md": "Assess the need and relevance, the track record and credentials of the implementing partner, legal and regulatory compliance, cost-reasonableness, the project's expected outcomes and impact, and conflicts of interest, among other factors, so that funds are used properly."
+          },
+          "tags": [
+            "csr",
+            "due-diligence"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare direct implementation of CSR with using a third-party implementing agency.",
+            "answer_md": "Direct implementation gives the company control, closer stakeholder contact and visible brand benefit, but needs in-house skills and management time. A third-party agency brings expertise, reach and efficiency, but risks weaker control, mismatch of objectives and misuse, so monitoring is needed."
+          },
+          "tags": [
+            "csr",
+            "implementation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What problems commonly arise in CSR implementation?",
+            "answer_md": "Lack of expertise and capacity at agencies, limited community participation, poor coordination between agencies, short-term and scattered projects, lack of data on impact, and difficulty in finding credible implementing partners."
+          },
+          "tags": [
+            "csr",
+            "implementation",
+            "problems"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is CSR impact assessment?",
+            "answer_md": "A systematic and independent evaluation, based on data, of the outcomes of a project soon after the benefits have appeared, to find out whether the project achieved its intended social change."
+          },
+          "tags": [
+            "csr",
+            "impact-assessment"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is CSR monitoring and who is responsible for it?",
+            "answer_md": "Tracking progress, spending and compliance against the approved plan. The CSR Committee sets up a transparent monitoring mechanism and the Board reviews the progress and discloses the CSR activities in its report."
+          },
+          "tags": [
+            "csr",
+            "monitoring",
+            "s135"
+          ],
+          "reference_keys": [
+            "companiesact:135"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-csr-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where are the CSR thresholds and CSR Committee covered?",
+            "answer_md": "In s 135 of the Companies Act, 2013: net worth of ₹500 crore, turnover of ₹1,000 crore or net profit of ₹5 crore, with a spend of at least 2% of average net profit of the preceding three years (see the Companies Act chapter)."
+          },
+          "tags": [
+            "csr",
+            "s135",
+            "numerical"
+          ],
+          "reference_keys": [
+            "companiesact:135"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Sustainable development",
+            "definition_md": "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs, as defined in the Brundtland Report, Our Common Future (1987)."
+          },
+          "tags": [
+            "sustainability",
+            "concepts",
+            "brundtland",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Triple bottom line",
+            "definition_md": "A framework that measures a business not only by financial profit but also by its social and environmental performance, summarised as the three Ps: Profit, Planet and People."
+          },
+          "tags": [
+            "sustainability",
+            "tbl",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-003",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "3 Ps",
+            "expands_md": "Profit (economic), Planet (environmental) and People (social) are the three bottoms of the triple bottom line.",
+            "topic": "Triple bottom line"
+          },
+          "tags": [
+            "sustainability",
+            "tbl"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the main steps in managing a business sustainably?",
+            "answer_md": "Embed sustainability in the company's vision and strategy; identify material issues and stakeholders; set targets and measurable indicators; integrate them into operations and supply chains; monitor performance; and report openly to stakeholders."
+          },
+          "tags": [
+            "sustainability",
+            "management"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the PRI and how widely is it adopted?",
+            "answer_md": "The Principles for Responsible Investment, a UN-backed initiative that encourages investors to include ESG factors in decisions. It has about 3,500 signatories."
+          },
+          "tags": [
+            "sustainability",
+            "pri",
+            "reporting"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "SEBI (LODR) Regulations, 2015",
+            "reference": "Business Responsibility and Sustainability Report (BRSR)",
+            "prompt_md": "What is the BRSR and how does it relate to the NGRBC?",
+            "gist_md": "A disclosure format introduced by SEBI in May 2021, replacing the older business responsibility report, that reports on environmental, social and governance performance. It is built on the nine principles of the NGRBC."
+          },
+          "tags": [
+            "sustainability",
+            "brsr",
+            "ngrbc"
+          ],
+          "reference_keys": [
+            "sebi-lodr:34"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who must file the BRSR and from when?",
+            "answer_md": "The top 1,000 listed companies by market capitalisation, from FY 2022-23. Filing for earlier years was voluntary."
+          },
+          "tags": [
+            "sustainability",
+            "brsr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sebi-lodr:34"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel03-sus-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which BRSR disclosures are mandatory and which are voluntary?",
+            "answer_md": "The essential indicators are mandatory for reporting companies, while the leadership indicators are voluntary and show best practice beyond the baseline."
+          },
+          "tags": [
+            "sustainability",
+            "brsr"
+          ],
+          "reference_keys": [
+            "sebi-lodr:34"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

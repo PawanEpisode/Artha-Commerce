@@ -125,3 +125,12 @@ def test_the_shipped_template_and_sample_are_valid_files():
         assert seed.problems_in(copy.deepcopy(data)) == [], name
     sample = json.loads((SEED_DIR / "sample_ca-foundation-accounting-process.json").read_text(encoding="utf-8"))
     assert sample["sample"] is True
+
+
+def test_the_command_takes_a_folder_and_loads_the_json_files_inside_it(scheme, tmp_path):
+    paper = tmp_path / "ca-foundation-paper1"
+    paper.mkdir()
+    (paper / "gst.json").write_text(json.dumps(file()), encoding="utf-8")
+    (paper / "_skipped.json").write_text("not json", encoding="utf-8")  # underscore files are ignored
+    call_command("load_recall_seed", str(paper), stdout=StringIO())
+    assert RecallDeck.objects.filter(slug="gst-pointers").exists()

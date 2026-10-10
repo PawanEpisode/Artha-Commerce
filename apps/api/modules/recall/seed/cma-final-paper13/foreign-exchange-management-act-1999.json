@@ -1,0 +1,1478 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-foreign-exchange-management-act-1999",
+      "title": "CEL: Foreign Exchange Management Act, 1999",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 6: FEMA basics, definitions, FDI, ECB and trade credit, the Liberalised Remittance Scheme and the 2025 FIRMS reporting changes.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "foreign-exchange-management-act-1999"
+      },
+      "items": [
+        {
+          "ref": "cel06-gen-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Trace the history of exchange control law in India up to FEMA.",
+            "answer_md": "Exchange control began through rules under the Defence of India Act, 1939 on a temporary basis, then the Foreign Exchange Regulation Act, 1947, replaced by FERA, 1973 (in force from 1 January 1974). After liberalisation in 1991 and the Tarapore Committee on Capital Account Convertibility (1997), FERA was repealed and replaced by FEMA, 1999, effective 1 June 2000."
+          },
+          "tags": [
+            "fema",
+            "background",
+            "fera"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-gen-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does FEMA differ from FERA in approach?",
+            "answer_md": "FERA aimed at conservation and regulation of foreign exchange and treated everything specified as controlled, being a criminal law with arrest and imprisonment even for minor offences and the burden on the accused. FEMA aims to facilitate external trade and payments, treats anything not expressly controlled as permitted, is a civil law, and puts the onus of proving guilt on the Enforcement Directorate."
+          },
+          "tags": [
+            "fema",
+            "fera",
+            "comparison"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-gen-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the legal structure of FEMA?",
+            "answer_md": "The Act has 7 chapters and 49 sections. Rules are made by the Central Government (under s 46) and regulations by the RBI (under s 47). In addition there are RBI Master Directions and circulars, the Consolidated FDI Policy issued by the Government, and the Enforcement Directorate as the enforcement agency."
+          },
+          "tags": [
+            "fema",
+            "structure",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:46",
+            "fema:47"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-gen-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the territorial scope of FEMA?",
+            "answer_md": "The Act covers all of India. It also reaches Indian-owned or Indian-controlled offices, branches and agencies located abroad, and any contravention committed outside India by someone the Act governs. An Indian citizen living abroad is outside it unless he is a resident of India."
+          },
+          "tags": [
+            "fema",
+            "applicability"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Authorised person (s 2(c))",
+            "definition_md": "An authorised dealer, money changer, off-shore banking unit or any other person authorised under s 10(1) to deal in foreign exchange or foreign securities."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [
+            "fema:2(c)",
+            "fema:10"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Capital account transaction (s 2(e))",
+            "definition_md": "Any transaction that changes what a resident of India owns or owes abroad (contingent liabilities included), or what a non-resident owns or owes in India. The transactions listed in s 6(3) are also covered."
+          },
+          "tags": [
+            "fema",
+            "definitions",
+            "capital-account"
+          ],
+          "reference_keys": [
+            "fema:2(e)",
+            "fema:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Current account transaction (s 2(j))",
+            "definition_md": "Every transaction that is not a capital account transaction. Examples: dues arising from foreign trade, other current business and services; ordinary short-term banking and credit facilities; loan interest and net income from investments; money sent abroad to maintain parents, spouse and children; and spending on their foreign travel, education and medical treatment."
+          },
+          "tags": [
+            "fema",
+            "definitions",
+            "current-account"
+          ],
+          "reference_keys": [
+            "fema:2(j)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-004",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Currency (s 2(h))",
+            "definition_md": "Covers notes, postal notes and orders, money orders and cheques, drafts, travellers cheques, credit cards, plus letters of credit, bills of exchange, promissory notes and any similar instrument the Reserve Bank may notify."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [
+            "fema:2(h)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Foreign exchange (s 2(n))",
+            "definition_md": "Foreign currency, together with deposits, credits and balances that are payable in it. Also instruments such as drafts, travellers cheques, letters of credit and bills of exchange that are written in Indian currency but payable in foreign currency, or issued by a bank or person abroad but payable in Indian currency."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [
+            "fema:2(n)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Foreign security (s 2(o))",
+            "definition_md": "A security (share, stock, bond, debenture or similar instrument) that is denominated or expressed in a foreign currency. A security expressed in foreign currency still counts if its redemption proceeds or returns such as interest or dividend are paid in Indian currency."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [
+            "fema:2(o)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-007",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Person resident in India (s 2(v))",
+            "definition_md": "Someone who lived in India for over 182 days in the previous financial year, but not a person who left or lives abroad for a job, business or profession, or in circumstances showing he means to stay abroad for an indefinite period; the mirror rule applies to one who arrived in India for other reasons. Entities registered or incorporated in India are residents too, as are Indian offices, branches and agencies owned or controlled by non-residents and overseas ones owned or controlled by residents."
+          },
+          "tags": [
+            "fema",
+            "definitions",
+            "resident",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:2(v)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Person (s 2(u))",
+            "definition_md": "Includes an individual, a Hindu undivided family, a company, a firm, an association of persons or body of individuals (incorporated or not), every artificial juridical person, and any agency, office or branch owned or controlled by such person."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [
+            "fema:2(u)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-009",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Foreign Currency Convertible Bond (FCCB)",
+            "definition_md": "A foreign-currency bond of an Indian company on which both principal and interest are paid in foreign currency. A non-resident buys it with foreign currency, and it can be converted, fully or in part, into the issuer's ordinary shares under the 1993 FCCB and Ordinary Shares (Depository Receipt Mechanism) Scheme."
+          },
+          "tags": [
+            "fema",
+            "definitions",
+            "fccb"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-010",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Foreign Direct Investment (general meaning)",
+            "definition_md": "A non-resident's investment in an Indian company's capital that falls under Schedule 1 of the Reserve Bank's rules for issue or transfer of securities to persons resident outside India (the Non-debt Instruments regime). The Act itself gives no definition; it comes from the Consolidated FDI Policy, and the money goes straight into the company rather than through an intermediary."
+          },
+          "tags": [
+            "fema",
+            "definitions",
+            "fdi"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-011",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Foreign Institutional Investor, Foreign Portfolio Investor and FVCI",
+            "definition_md": "FII: an entity established outside India that invests in India and is registered under the SEBI FII Regulations, 1995. FPI: a person registered under the SEBI (FPI) Regulations, 2014. FVCI: an investor incorporated outside India, registered under the SEBI (FVCI) Regulations, 2000, that invests under those regulations."
+          },
+          "tags": [
+            "fema",
+            "definitions",
+            "investors"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-012",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Investment on repatriable basis",
+            "definition_md": "Investment whose sale proceeds, net of taxes, can be repatriated out of India. Investment on a non-repatriable basis means the opposite."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-def-013",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Person of Indian Origin (PIO)",
+            "definition_md": "A citizen of any country other than Bangladesh or Pakistan who at any time held an Indian passport, or whose parent or grandparent was a citizen of India under the Constitution or Citizenship Act, or who is the spouse of an Indian citizen or of such a person."
+          },
+          "tags": [
+            "fema",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Dealing in foreign exchange (s 3)",
+            "prompt_md": "What does s 3 prohibit?",
+            "gist_md": "No person may deal in or transfer foreign exchange or foreign securities unless he is an authorised person; make any payment to or for the credit of a person resident outside India; receive payment from or on behalf of a person resident outside India otherwise than through an authorised person; or enter into a financial transaction in India as consideration for or in association with acquiring or creating a right to acquire an asset outside India."
+          },
+          "tags": [
+            "fema",
+            "s3"
+          ],
+          "reference_keys": [
+            "fema:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Holding foreign exchange (s 4)",
+            "prompt_md": "What does s 4 say about holding foreign exchange, security or property abroad?",
+            "gist_md": "A person resident in India cannot acquire, hold, own, possess or transfer foreign exchange, foreign security or immovable property outside India, except as provided in the Rules. Rules exempt property held abroad by a foreign citizen resident in India; property acquired on or before 8 July 1947 and held with RBI permission; property received by gift or inheritance from such persons; and property bought out of funds in an RFC account."
+          },
+          "tags": [
+            "fema",
+            "s4",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-003",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Current account transactions (s 5)",
+            "prompt_md": "How does s 5 treat current account transactions and what are the three Schedules?",
+            "gist_md": "Restrictions on drawing foreign exchange for current account transactions are removed, so no RBI permission is needed for trade remittances, and transactions are deemed permitted unless specifically restricted. Under the Current Account Transactions Rules, 2000: Schedule I lists transactions that are altogether prohibited; Schedule II lists those that need the approval of the Reserve Bank of India; Schedule III sets monetary ceilings for certain transactions."
+          },
+          "tags": [
+            "fema",
+            "s5",
+            "current-account"
+          ],
+          "reference_keys": [
+            "fema:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-004",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Capital account transactions (s 6)",
+            "prompt_md": "How are capital account transactions regulated?",
+            "gist_md": "For a capital account transaction, a person can sell foreign exchange to, or draw it from, an authorised person, within the Reserve Bank's regulations. In consultation with the Central Government, the RBI notes which classes of transactions are allowed and the ceilings. It may not curb drawals needed to repay loans or for ordinary depreciation of direct investments. Residents may hold or invest in foreign assets that they got while non-resident or inherited from a non-resident."
+          },
+          "tags": [
+            "fema",
+            "s6",
+            "capital-account"
+          ],
+          "reference_keys": [
+            "fema:6"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is a sale of Indian shares by an NRI a capital account transaction, and an import of goods a current account one?",
+            "answer_md": "The share sale changes the assets of a person resident outside India in India, so it is a capital account transaction (permitted under general RBI permission). Payment for imports is a payment in connection with foreign trade, a current account transaction that needs no specific approval."
+          },
+          "tags": [
+            "fema",
+            "capital-account",
+            "current-account"
+          ],
+          "reference_keys": [
+            "fema:2(e)",
+            "fema:2(j)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What directions can the RBI give exporters of goods and services?",
+            "answer_md": "The RBI can direct any exporter to take the steps it considers fit to ensure the full export value, or a reduced value it determines, is received without delay. An exporter of services must give a declaration to the RBI or other authority with true and correct particulars of payment for the services."
+          },
+          "tags": [
+            "fema",
+            "export",
+            "realisation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What can a resident person possess in foreign currency?",
+            "answer_md": "Authorised persons as per RBI limits; any person may hold foreign coins without restriction; a resident may retain foreign currency up to a notified aggregate limit; and a person resident in India but not permanently resident may hold unlimited foreign currency acquired while resident abroad and declared to Customs."
+          },
+          "tags": [
+            "fema",
+            "possession"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-sec-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How may a foreign company carry on business in India?",
+            "answer_md": "Either by forming an Indian company (a joint venture or a wholly owned subsidiary) under the Companies Act, or by opening a liaison, representative, project or branch office under the 2000 Regulations on setting up a branch or other place of business in India."
+          },
+          "tags": [
+            "fema",
+            "foreign-company",
+            "entry-forms"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who makes the FDI policy and what do the FEMA regulations add?",
+            "answer_md": "The Government of India (Department for Promotion of Industry and Internal Trade) issues the Consolidated FDI Policy each year. FEMA regulations prescribe the modes of investment, manner of receiving funds, pricing guidelines and reporting to the Reserve Bank."
+          },
+          "tags": [
+            "fdi",
+            "policy"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999 (FDI Master Direction)",
+            "reference": "FDI versus foreign portfolio investment",
+            "prompt_md": "How is FDI distinguished from foreign portfolio investment?",
+            "gist_md": "FDI means investment in capital instruments by a non-resident in an unlisted Indian company, or a stake of 10% or more (fully diluted, post-issue) in the paid-up equity of a listed one. A stake below 10% in a listed company, or below 10% of any one series of instruments, is portfolio investment. A holding that drops under 10% after being FDI remains FDI."
+          },
+          "tags": [
+            "fdi",
+            "fdi",
+            "fpi",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:fdi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-003",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "FDI in a listed company means holding {{c1::10%}} or more of its post-issue paid-up equity capital on a {{c2::fully diluted}} basis; below that level it is {{c3::portfolio}} investment."
+          },
+          "tags": [
+            "fdi",
+            "fdi",
+            "fpi",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is an investment vehicle under the FDI directions?",
+            "answer_md": "An entity registered and regulated by SEBI or another designated authority, namely REITs, InvITs and AIFs. A SEBI-registered venture capital fund is not treated as an investment vehicle."
+          },
+          "tags": [
+            "fdi",
+            "investment-vehicle"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is equity resulting from conversion of debt counted?",
+            "answer_md": "Equity held by a non-resident from conversion of any debt instrument is reckoned under the sectoral cap and for total foreign investment. FCCBs and depository receipts whose underlying is debt-like are not reckoned for total foreign investment."
+          },
+          "tags": [
+            "fdi",
+            "sectoral-cap",
+            "total-foreign-investment"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999 (FDI Master Direction)",
+            "reference": "Prohibited sectors for FDI",
+            "prompt_md": "In which sectors is FDI prohibited?",
+            "gist_md": "Lotteries of every type (government, private, online); gambling and betting, casinos included; chit funds (NRIs and OCIs may invest on a non-repatriable basis); Nidhi companies; trading in Transferable Development Rights; real estate business and building farmhouses; making cigars, cheroots, cigarillos and cigarettes from tobacco or its substitutes; and activities reserved from private investment, i.e. atomic energy and railway operations (other than permitted ones).",
+            "exceptions_md": "Real estate business does not include development of townships, construction of residential or commercial premises, roads and bridges, or REITs."
+          },
+          "tags": [
+            "fdi",
+            "prohibited",
+            "sectors"
+          ],
+          "reference_keys": [
+            "fema:fdi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are investments from Bangladesh and Pakistan treated?",
+            "answer_md": "Any investment by a citizen of, or an entity incorporated in, Bangladesh or Pakistan needs prior Government approval. A Pakistani citizen or entity can invest, with prior approval, only outside defence, space, atomic energy and sectors prohibited for foreign investment."
+          },
+          "tags": [
+            "fdi",
+            "prohibited",
+            "approval"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-008",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999 (FDI Master Direction)",
+            "reference": "Capital instruments and payment terms",
+            "prompt_md": "What are capital instruments and how is partly paid capital treated?",
+            "gist_md": "Equity shares, debentures, preference shares and share warrants issued by an Indian company (debentures and preference shares must be fully, compulsorily and mandatorily convertible; other forms are not capital instruments). For partly paid shares, at least 25% of the total consideration, including share premium, must be received upfront, and the balance within 12 months of issue."
+          },
+          "tags": [
+            "fdi",
+            "capital-instruments",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:fdi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-009",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999 (FDI Master Direction)",
+            "reference": "Entry routes",
+            "prompt_md": "What are the two entry routes for foreign investment?",
+            "gist_md": "Automatic route: no prior approval from the RBI or the Government. Government route: the relevant ministry must approve first. Up to 100% FDI is allowed under the automatic route in any sector that Regulation 16 of FEMA 20(R) does not list and that is not prohibited."
+          },
+          "tags": [
+            "fdi",
+            "entry-routes",
+            "automatic",
+            "government-route"
+          ],
+          "reference_keys": [
+            "fema:fdi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are sectoral caps?",
+            "answer_md": "The maximum limit up to which foreign investment is permitted in a sector or activity, subject to applicable laws, security and other conditions."
+          },
+          "tags": [
+            "fdi",
+            "sectoral-cap"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is minimum capitalisation computed for foreign investment?",
+            "answer_md": "It includes the premium received along with face value, but only when received by the company on issue to a non-resident. Amounts paid by a transferee above the issue price in a post-issue transfer are not counted."
+          },
+          "tags": [
+            "fdi",
+            "minimum-capitalisation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is foreign investment in investing companies treated?",
+            "answer_md": "In investing companies not registered as NBFCs or core investment companies, prior Government approval is required. In investing companies registered as NBFCs with the RBI, investment is under the 100% automatic route."
+          },
+          "tags": [
+            "fdi",
+            "investing-companies"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which investments by non-residents are covered by the annexures to the FDI Master Direction?",
+            "answer_md": "Capital instruments of Indian companies (Annex 1); purchase or sale on a stock exchange by FPIs (Annex 2); by NRIs and OCIs on repatriation basis (Annex 3) and on non-repatriation basis (Annex 4); securities other than capital instruments (Annex 5); LLPs (Annex 6); FVCIs (Annex 7); investment vehicles (Annex 8); depository receipts (Annex 9); and Indian Depository Receipts (Annex 10)."
+          },
+          "tags": [
+            "fdi",
+            "annexures"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Can a non-resident receive rights, bonus, ESOPs or sweat equity?",
+            "answer_md": "Yes. A non-resident may invest in rights and bonus issues, and an Indian company may issue ESOPs and sweat equity to resident-outside-India employees or directors of the company, its holding company, joint venture or wholly owned overseas subsidiary, subject to the regulations."
+          },
+          "tags": [
+            "fdi",
+            "rights",
+            "esop"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How much can a non-resident invest in convertible notes of an Indian startup?",
+            "answer_md": "₹25 lakh, subject to compliance with other provisions of the regulations."
+          },
+          "tags": [
+            "fdi",
+            "startup",
+            "convertible-notes",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the rule on mergers and demergers involving foreign investors?",
+            "answer_md": "The new or amalgamated company may issue capital instruments to non-resident holders of the transferor company, subject to the regulations. Prior Government approval is needed for any transfer if the company works in a sector that needs it."
+          },
+          "tags": [
+            "fdi",
+            "merger"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-017",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999 (FDI Master Direction)",
+            "reference": "Pricing guidelines for issue to non-residents",
+            "prompt_md": "What is the minimum issue price for capital instruments issued to a non-resident?",
+            "gist_md": "For a listed company (or one going through delisting), the price under the relevant SEBI guidelines. For an unlisted company, the valuation under an internationally accepted pricing methodology on an arm's length basis, certified by a chartered accountant, a SEBI-registered merchant banker or a practising cost accountant. For convertible instruments, the price or conversion formula is fixed upfront and the price at conversion cannot be lower than the fair value at the time of issue."
+          },
+          "tags": [
+            "fdi",
+            "pricing",
+            "valuation"
+          ],
+          "reference_keys": [
+            "fema:fdi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "At what price may shares be issued on subscription to the memorandum?",
+            "answer_md": "At face value, subject to the entry route and sectoral caps."
+          },
+          "tags": [
+            "fdi",
+            "pricing",
+            "memorandum"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the pricing rule for investment in an LLP?",
+            "answer_md": "Not less than the fair price under an internationally accepted valuation norm, with a valuation certificate from a chartered accountant, a practising cost accountant or an approved valuer on the Central Government's panel."
+          },
+          "tags": [
+            "fdi",
+            "llp",
+            "pricing"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is total foreign investment calculated for downstream investment?",
+            "answer_md": "Portfolio investment held on 31 March of the previous financial year in the Indian company that makes the downstream investment is added to the investee's total foreign investment. For a wholly owned subsidiary, its foreign investment is capped at the total foreign investment the investing parent received."
+          },
+          "tags": [
+            "fdi",
+            "downstream",
+            "total-foreign-investment"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-fdi-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the rules on exit of foreign investment?",
+            "answer_md": "In a foreign joint venture the Indian partner has the right of first refusal, otherwise sale is to a third party. Pricing needs valuation, subject to RBI guidelines and capital gains tax. A non-resident may transfer capital instruments held by a foreign-owned or foreign-controlled Indian company to another non-resident (with reporting in Form FC-TRS, pricing guidelines not applying) or to a resident (subject to pricing guidelines)."
+          },
+          "tags": [
+            "fdi",
+            "exit",
+            "fctrs"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "External Commercial Borrowing (ECB)",
+            "definition_md": "A commercial loan taken by a resident entity from an eligible non-resident lender. It has to meet set conditions: a minimum maturity, allowed and disallowed end-uses, and a ceiling on the all-in cost. All the conditions apply together, not one at a time."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What forms can an ECB take?",
+            "answer_md": "Bank loans and other loans; floating or fixed rate notes, bonds and debentures (not those that are fully and compulsorily convertible); trade credit running longer than 3 years; FCCBs; FCEBs; and financial leases. Rupee-denominated ECB further includes plain vanilla rupee bonds issued abroad and preference shares that are not fully convertible."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "forms"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who is an eligible ECB borrower and a recognised lender?",
+            "answer_md": "Borrowers: all entities eligible to receive FDI (for rupee ECB, also micro-finance and non-profit entities under conditions). Lenders: residents of FATF or IOSCO compliant countries, including multilateral and regional financial institutions of which India is a member, and foreign branches or subsidiaries of Indian banks (only for foreign-currency ECB other than FCCBs and FCEBs)."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "eligibility"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "The minimum average maturity period of ECB is {{c1::3}} years; an eligible borrower may raise up to US$ {{c2::750 million}} per financial year under the automatic route; the ECB liability-equity ratio for borrowing from a direct foreign equity holder cannot exceed {{c3::7:1}}, unless total ECB outstanding is up to US$ {{c4::5 million}}."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-005",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "ECB end-use negative list",
+            "prompt_md": "For what purposes can ECB proceeds generally not be used?",
+            "gist_md": "Real estate activities; investment in the capital market; equity investment; working capital purposes; general corporate purposes; repayment of rupee loans; and on-lending to entities for those activities. Exceptions apply to some borrowers such as NBFCs and for specified categories of ECB."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "end-use"
+          ],
+          "reference_keys": [
+            "fema:ecb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How may ECB proceeds be parked?",
+            "answer_md": "Proceeds meant for foreign-currency expenditure may be parked abroad in specified liquid assets until used. Proceeds meant for rupee expenditure must be repatriated immediately and credited to rupee accounts with AD Category I banks in India; they may also be kept in term deposits with such banks for up to 12 months cumulatively."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "parking",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which ECB can be raised through the automatic route?",
+            "answer_md": "All ECB that conform to the parameters of the framework. Cases outside the parameters are approval-route cases where the borrower approaches the RBI."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "routes"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is an untraceable entity in the ECB framework and what follows?",
+            "answer_md": "A borrower whose entity, auditors, directors or promoters cannot be reached or are unresponsive for at least two quarters, among other conditions. The AD bank stops processing fresh ECB applications, no inward remittance or debt servicing under the automatic route is permitted, the Enforcement Directorate is informed, and the outstanding amount is written off from India's external debt (though the lender may keep it on its books)."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "untraceable"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-009",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Refinancing and conversion of ECB",
+            "prompt_md": "On what conditions can ECB be refinanced or converted into equity?",
+            "gist_md": "Refinancing through fresh ECB is allowed if the outstanding maturity of the original ECB is not reduced and the all-in-cost of the fresh ECB is lower than the old one; Indian banks may take part only for AAA-rated corporates and Maharatna or Navratna PSUs. Conversion into equity (including matured but unpaid ECB) is allowed if the activity is under the automatic route or Government approval is obtained, the lender consents, there is no breach of sector caps, pricing guidelines are followed, and reporting is made in Form FC-GPR (with Form ECB 2 remarks)."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "refinance",
+            "conversion"
+          ],
+          "reference_keys": [
+            "fema:ecb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What security may be created for ECB and what restrictions apply to borrowers under resolution?",
+            "answer_md": "AD Category I banks may allow creation or cancellation of charges on immovable assets, movable assets and financial securities, and corporate or personal guarantees in favour of the overseas lender or security trustee. An entity under a restructuring scheme or insolvency resolution may raise ECB only if its resolution plan specifically permits. Entities under FEMA investigation or adjudication may raise ECB under normal norms if otherwise eligible."
+          },
+          "tags": [
+            "fema",
+            "ecb",
+            "security"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-tc-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Trade credit",
+            "definition_md": "Credit extended by an overseas supplier, bank, financial institution or other recognised lender, for the maturities prescribed, for import of capital or non-capital goods permitted under the Foreign Trade Policy. It includes suppliers' credit and buyers' credit."
+          },
+          "tags": [
+            "fema",
+            "trade-credit",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-tc-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Trade credit: amount and period",
+            "prompt_md": "How much trade credit can an importer raise and for how long?",
+            "gist_md": "Under the automatic route, up to US$150 million per import transaction for oil and gas refining and marketing, airline and shipping companies, and up to US$50 million per import transaction for others. Period from date of shipment: up to 3 years for capital goods; for non-capital goods, up to one year or the operating cycle, whichever is less (up to 3 years for shipyards and shipbuilders)."
+          },
+          "tags": [
+            "fema",
+            "trade-credit",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:trade-credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-tc-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who are the recognised lenders for trade credit?",
+            "answer_md": "For suppliers' credit, the supplier of goods located outside India. For buyers' credit, banks, financial institutions and foreign equity holders located outside India, and financial institutions in IFSCs in India. Foreign branches or subsidiaries of Indian banks are recognised lenders only for foreign-currency trade credit."
+          },
+          "tags": [
+            "fema",
+            "trade-credit",
+            "lenders"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-tc-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the all-in-cost ceiling for foreign-currency trade credit?",
+            "answer_md": "Benchmark rate plus 300 bps for new trade credit, and plus 350 bps for existing trade credit whose LIBOR benchmark has changed to an alternative reference rate. For rupee trade credit the ceiling is benchmark rate plus 250 bps."
+          },
+          "tags": [
+            "fema",
+            "trade-credit",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-tc-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What security and reporting apply to trade credit?",
+            "answer_md": "ADs may give bank guarantees for up to the amount and period of the trade credit, and the importer may offer movable or immovable assets or corporate or personal guarantees, with the arrangement co-terminus with the trade credit. AD Category I banks report monthly in Form TC and quarterly on the XBRL platform for bank guarantees."
+          },
+          "tags": [
+            "fema",
+            "trade-credit",
+            "security",
+            "reporting"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-tc-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "May trade credit be raised in an SEZ?",
+            "answer_md": "Yes. A unit or developer in an SEZ (including an FTWZ) may raise trade credit for purchase of capital or non-capital goods within an SEZ or from another SEZ, and a DTA entity may raise it for purchases from an SEZ unit or developer, in compliance with the SEZ Act, 2005."
+          },
+          "tags": [
+            "fema",
+            "trade-credit",
+            "sez"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When does a non-resident guarantee of a rupee facility attract FEMA?",
+            "answer_md": "A rupee loan between two residents does not attract FEMA. Where a rupee fund-based or non-fund-based facility of a resident subsidiary of a multinational is guaranteed by a non-resident, there is no foreign exchange transaction until the guarantee is invoked and the non-resident guarantor has to meet the liability."
+          },
+          "tags": [
+            "fema",
+            "guarantee"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-ecb-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is credit enhancement for domestic debt?",
+            "answer_md": "Eligible non-resident entities (multilateral and regional financial institutions, Government-owned financial institutions, direct or indirect equity holders) may enhance the credit of domestic debt raised through capital market instruments such as rupee bonds and debentures, for borrowers eligible to raise ECB under the automatic route."
+          },
+          "tags": [
+            "fema",
+            "credit-enhancement"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Liberalised Remittance Scheme: limit and eligibility",
+            "prompt_md": "Who can use the LRS and up to what limit?",
+            "gist_md": "Any resident individual, a minor included, may remit up to US$250,000 in a financial year (April to March) for a permitted current account or capital account transaction, or both together. The scheme began on 4 February 2004 at US$25,000 and was raised in steps. Companies, partnership firms, HUFs, trusts and similar entities cannot use it."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "numerical"
+          ],
+          "reference_keys": [
+            "fema:lrs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-002",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "LRS: prohibited remittances",
+            "prompt_md": "What cannot be remitted under the LRS?",
+            "gist_md": "Anything prohibited under Schedule I or restricted under Schedule II of the Current Account Transactions Rules (for example, lottery tickets, sweepstakes, proscribed magazines); margins or margin calls to overseas exchanges or counterparties; purchase of FCCBs of Indian companies in the overseas secondary market; trading in foreign exchange abroad; capital account remittances to FATF-identified non-cooperative countries; and remittances to individuals or entities posing significant risk of terrorism."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "prohibited"
+          ],
+          "reference_keys": [
+            "fema:lrs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "For what purposes may an individual remit under the LRS?",
+            "answer_md": "Private visits to any country except Nepal and Bhutan, gifts or donations, going abroad for employment, emigration, maintenance of close relatives abroad, business travel, conferences or training, medical treatment or check-up (including attendants), studies abroad, and any other current account transaction not otherwise covered."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "purposes"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are LRS limits applied across family members?",
+            "answer_md": "Remittances can be consolidated for close family members if each complies with the conditions, but clubbing by other family members is not permitted for capital account transactions such as bank accounts, investments or property unless they are co-owners or co-partners. There is no limit on frequency, but the cumulative total from all sources in a financial year must stay within US$250,000. A resident cannot gift to another resident in foreign currency for credit to the latter's foreign account abroad under the LRS."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "limits",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What must a remitter do to use the LRS for capital account remittances?",
+            "answer_md": "Designate one AD branch for all capital account remittances; have maintained a bank account with that bank for at least one year before the remittance; and remit in any freely convertible currency. The AD does due diligence and checks the source of funds."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "remitter"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "May ADs lend to residents to fund LRS remittances?",
+            "answer_md": "Not for capital account transactions. AD banks may extend fund-based and non-fund-based facilities to resident individuals for current account remittances under the scheme."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "ad-banks"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the LRS apply to a sole proprietor?",
+            "answer_md": "There is no legal distinction between the owner and the business, so the proprietor's own eligibility is reckoned. If he has remitted US$250,000 as an individual in a financial year, he cannot remit another US$250,000 as proprietor of the business."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "sole-proprietor",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What facilities exist for entities other than individuals?",
+            "answer_md": "Donations up to 1% of foreign exchange earnings of the previous three years or US$5 million, whichever is less, for chairs in educational institutes and related contributions; commission to agents abroad for sale of flats or plots up to US$25,000 or 5% of inward remittance, whichever is less; consultancy up to US$10 million per project for infrastructure and US$1 million for others; reimbursement of pre-incorporation expenses up to 5% of investment or US$100,000, whichever is less; and up to US$250,000 per year for purposes in Para 1 of Schedule III. Higher amounts need RBI approval."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "entities",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-lrs-009",
+          "kind": "section",
+          "importance": "important",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "Rupee loan and gift to NRI/PIO relatives",
+            "prompt_md": "When may a resident individual lend or gift rupees to a close relative who is an NRI or PIO?",
+            "gist_md": "The loan must be interest-free with a minimum maturity of one year, within the individual's US$250,000 LRS limit, used for the borrower's personal needs or business in India (not in activities closed to non-resident investment), credited to the borrower's NRO account, not remitted outside India, and repaid through inward remittance. A rupee gift to such a relative also counts within the US$250,000 limit. 'Relative' has the meaning in s 2(77) of the Companies Act, 2013."
+          },
+          "tags": [
+            "fema",
+            "lrs",
+            "nri",
+            "loan",
+            "gift",
+            "numerical"
+          ],
+          "reference_keys": [
+            "companiesact:2(77)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-rev-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Foreign Exchange Management Act, 1999",
+            "reference": "2026 revision: reporting through the FIRMS portal (ss 10(4) and 11(1))",
+            "prompt_md": "How did the 2025 changes alter foreign investment reporting under FEMA?",
+            "gist_md": "Reporting has migrated entirely to the FIRMS (Foreign Investment Reporting and Management System) portal, with integrated electronic submission for issue of shares to non-residents, transfer of capital instruments and downstream investment reporting. Electronic filing is mandatory, a digital acknowledgement is generated automatically, and filings can be tracked in real time. It replaces multiple forms, manual intervention and fragmented approval and reporting stages."
+          },
+          "tags": [
+            "fema",
+            "2026-revision",
+            "firms",
+            "reporting"
+          ],
+          "reference_keys": [
+            "fema:10(4)",
+            "fema:11(1)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-rev-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: what changed in reporting timelines under FEMA?",
+            "answer_md": "Timelines are harmonised across investment categories, replacing different deadlines for different filings, and the regularisation of delayed reporting is simplified through an online payment mechanism. This cuts procedural ambiguity and speeds compliance closure."
+          },
+          "tags": [
+            "fema",
+            "2026-revision",
+            "timelines"
+          ],
+          "reference_keys": [
+            "fema:10(4)",
+            "fema:11(1)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel06-rev-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: how was downstream investment reporting simplified?",
+            "answer_md": "A consolidated reporting format was introduced, the responsibility is placed clearly on the investing Indian entity, and the format is aligned with the FEMA (Non-Debt Instruments) Rules reporting structure. The aim is ease of doing business and better transparency in monitoring foreign capital."
+          },
+          "tags": [
+            "fema",
+            "2026-revision",
+            "downstream"
+          ],
+          "reference_keys": [
+            "fema:10(4)",
+            "fema:11(1)"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

@@ -914,7 +914,7 @@ Each Markdown field at most 4,000 characters; `reference`, `name`, `term`, `case
 | Plan codes | free, pro | rows in `recall_quotaplan` | admin |
 | Importance weight, thresholds | 1.0, 1.5, 2.0; catch-up 2x limit and 3 days; leech 8; stability cap 3 days; undo 10 events and 30 minutes; session idle close 60 minutes; offline event age 30 days; clock skew 5 minutes | constants in `domain/limits.py`, mirrored in `lib/limits.ts` with a parity test | code |
 
-**Seed data.** (1) The default `recall_params` row (FSRS-6 defaults). (2) `recall_quotaplan` rows. (3) Platform deck seed files `apps/api/modules/recall/seed/<course>/<level>/<subject>.json` loaded by `manage.py load_recall_seed` as **drafts** (idempotent on `external_ref`; `--publish` after an editor verified them), the same workflow as `load_syllabus_seed`. The pilot (Q-F15-4): two subjects, about 12 chapters, 40 cards each.
+**Seed data.** (1) The default `recall_params` row (FSRS-6 defaults). (2) `recall_quotaplan` rows. (3) Platform deck seed files `apps/api/modules/recall/seed/<course>-<level>-<paper>/<chapter-key>.json` (one folder per paper, one file per chapter; for example `cma-final-paper13/the-companies-act-2013.json`) loaded by `manage.py load_recall_seed <file or folder>` as **drafts** (idempotent on `external_ref`; `--publish` after an editor verified them), the same workflow as `load_syllabus_seed`. The pilot (Q-F15-4): two subjects, about 12 chapters, 40 cards each.
 
 ## 5. Query patterns
 

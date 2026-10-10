@@ -1,0 +1,528 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-cel-laws-and-regulations-related-to-anti-money-laundering",
+      "title": "CEL: Laws and Regulations Related to Anti-Money Laundering",
+      "description": "Recall cards for CMA Final Paper 13, Chapter 11: PMLA offence and process, authorities, reporting entity duties, the PML Rules and the 2025 AML updates.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "corporate-and-economic-laws",
+        "chapter_key": "laws-and-regulations-related-to-anti-money-laundering"
+      },
+      "items": [
+        {
+          "ref": "cel11-gen-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Money laundering",
+            "definition_md": "Washing the proceeds of crime so that their unlawful source is hidden and 'dirty money' looks clean. Under the PMLA, whoever directly or indirectly tries to engage in, knowingly helps with, is knowingly party to, or is in fact involved in any process connected with proceeds of crime (hiding, holding, acquiring, using, or presenting them as legitimate) commits the offence."
+          },
+          "tags": [
+            "pmla",
+            "concepts",
+            "definitions"
+          ],
+          "reference_keys": [
+            "pmla:3"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-gen-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the history and structure of the PMLA?",
+            "answer_md": "Enacted in January 2003; the Act and Rules came into force on 1 July 2005. It was amended in 2009 (w.e.f. 1 June 2009) and 2012 (w.e.f. 15 February 2013). It has ten chapters with 75 sections and one Schedule of three parts. Chapter I (ss 1-2): short title and definitions; Chapter II (ss 3-4): offences and punishment; Chapter III (ss 5-11): attachment, adjudication and confiscation; Chapter IV (ss 12-15): obligations of banks, financial institutions and intermediaries; Chapter V (ss 16-24): summons, searches and seizures."
+          },
+          "tags": [
+            "pmla",
+            "overview",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-gen-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the objects of the PMLA, and which international bodies has India joined?",
+            "answer_md": "To prevent and control money laundering, to confiscate and seize property obtained from laundered money, and to deal with connected issues. India is a member of the Financial Action Task Force and the Asia Pacific Group on money laundering, and the Act addresses obligations under the UN General Assembly's Political Declaration and Global Programme of Action."
+          },
+          "tags": [
+            "pmla",
+            "objects",
+            "fatf"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-gen-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the three stages of money laundering?",
+            "answer_md": "Placement: the launderer introduces illegal funds into the financial system, for example by breaking large cash into small deposits or buying cheques and drafts. Layering: a series of conversions or movements through numerous accounts, often across jurisdictions, to hide the origin. Integration: the funds re-enter the legitimate economy mixed with lawful income, for example through real estate, businesses or luxury assets."
+          },
+          "tags": [
+            "pmla",
+            "stages"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-gen-005",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "PLI",
+            "expands_md": "The three stages of money laundering in order: Placement, Layering, Integration.",
+            "topic": "Stages of money laundering"
+          },
+          "tags": [
+            "pmla",
+            "stages"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-off-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Prevention of Money Laundering Act, 2002",
+            "reference": "Offence of money laundering (s 3) and punishment (s 4)",
+            "prompt_md": "What is the punishment for money laundering?",
+            "gist_md": "Rigorous imprisonment of not less than three years, extendable to seven years, and a fine. Where the proceeds relate to an offence under paragraph 2 of Part A of the Schedule (narcotics), the maximum goes up to ten years. Property made out of the proceeds of crime is attached and confiscated."
+          },
+          "tags": [
+            "pmla",
+            "offence",
+            "punishment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "pmla:3",
+            "pmla:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-off-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are scheduled offences and predicate offences?",
+            "answer_md": "The offences listed in the Schedule to the Act, in three parts. Part A lists offences in 28 paragraphs, from the IPC, NDPS Act, Explosive Substances Act, UAPA, Arms Act, Wild Life Protection Act, Immoral Traffic Act, Prevention of Corruption Act, Antiquities and Art Treasures Act, SEBI Act, Customs Act and others. Part B covers offences with total value of ₹1 crore or more. Part C covers trans-border crimes. Every scheduled offence is a predicate offence, and its occurrence is a prerequisite for investigating money laundering."
+          },
+          "tags": [
+            "pmla",
+            "schedule",
+            "predicate-offence",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-off-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Schedule to the PMLA: Part {{c1::A}} lists predicate offences in 28 paragraphs, Part {{c2::B}} covers offences of ₹1 crore or more, and Part {{c3::C}} deals with trans-border crimes."
+          },
+          "tags": [
+            "pmla",
+            "schedule",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who investigates money laundering and who receives suspicious transaction information?",
+            "answer_md": "The Directorate of Enforcement (Department of Revenue, Ministry of Finance) investigates and prosecutes PMLA offences and attaches property. The Financial Intelligence Unit-India (FIU-IND) is the central agency for receiving, processing, analysing and disseminating information on suspect financial transactions to enforcement agencies and foreign FIUs."
+          },
+          "tags": [
+            "pmla",
+            "authorities",
+            "ed",
+            "fiu"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is FIU-IND and how is it organised?",
+            "answer_md": "Set up in November 2004, headed by a Director in the rank of Joint Secretary, as the central national agency to receive, process, analyse and disseminate information on suspect transactions and to coordinate national and international efforts against money laundering. It is an independent body reporting directly to the Economic Intelligence Council headed by the Finance Minister. It receives Cash Transaction Reports and Suspicious Transaction Reports under s 12, and the Director can impose fines on non-compliant reporting entities."
+          },
+          "tags": [
+            "pmla",
+            "authorities",
+            "fiu",
+            "numerical"
+          ],
+          "reference_keys": [
+            "pmla:12"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What else does the Directorate of Enforcement enforce?",
+            "answer_md": "It enforces the Foreign Exchange Management Act, 1999 as well as certain provisions of the PMLA, and works under the administrative control of the Department of Revenue for operational purposes."
+          },
+          "tags": [
+            "pmla",
+            "authorities",
+            "ed"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-004",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Prevention of Money Laundering Act, 2002",
+            "reference": "Adjudicating Authority (s 6)",
+            "prompt_md": "What is the role of the Adjudicating Authority?",
+            "gist_md": "The Central Government appoints it to exercise the jurisdiction, powers and authority conferred by the Act. Where it decides that property is involved in money laundering, it confirms in writing the attachment of property, or retention of property or records seized under s 5."
+          },
+          "tags": [
+            "pmla",
+            "adjudicating-authority",
+            "s6"
+          ],
+          "reference_keys": [
+            "pmla:6",
+            "pmla:5"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-005",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Prevention of Money Laundering Act, 2002",
+            "reference": "Appellate Tribunal (s 25)",
+            "prompt_md": "What is the Appellate Tribunal under the PMLA?",
+            "gist_md": "Established by the Central Government under s 25 to hear appeals against orders of the Adjudicating Authority and authorities such as the Director, FIU-IND. It has a Chairperson and two other Members; under s 28(4) a Chairperson or Member of another Tribunal may also be appointed to it. The Chairman and one Member of the Appellate Tribunal for Forfeited Property hold additional charge."
+          },
+          "tags": [
+            "pmla",
+            "appellate-tribunal",
+            "s25",
+            "numerical"
+          ],
+          "reference_keys": [
+            "pmla:25",
+            "pmla:28"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-006",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Prevention of Money Laundering Act, 2002",
+            "reference": "Special Courts",
+            "prompt_md": "Which courts try offences under the PMLA?",
+            "gist_md": "Courts of Session designated by the Central Government, in consultation with the Chief Justice of the High Court, as Special Courts for an area or class of cases. A Special Court trying a s 4 offence also tries the offences the accused may be charged with under the CrPC, and money laundering and its connected scheduled offence are tried by the Special Court for the area where the offence was committed."
+          },
+          "tags": [
+            "pmla",
+            "special-courts",
+            "s4"
+          ],
+          "reference_keys": [
+            "pmla:4"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-auth-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the Act deal with international cooperation?",
+            "answer_md": "It provides for reciprocal arrangements and bilateral agreements between countries to enforce the Act or exchange information that helps prevent offences under the Act or corresponding foreign laws."
+          },
+          "tags": [
+            "pmla",
+            "international-cooperation"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-re-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Prevention of Money Laundering Act, 2002",
+            "reference": "Obligations of reporting entities (s 12)",
+            "prompt_md": "What must a reporting entity do under s 12?",
+            "gist_md": "Keep records of all prescribed transactions in a form that lets each one be reconstructed; give the Director (FIU) information within the prescribed time; verify client identity and identify each client's beneficial owner; and retain identity records, account files and transaction records for five years (from the transaction, or from the end of the relationship or closure of the account, whichever is later). 'Reporting entity' covers banking companies, financial institutions, intermediaries and persons running a designated business or profession."
+          },
+          "tags": [
+            "pmla",
+            "reporting-entity",
+            "s12",
+            "numerical"
+          ],
+          "reference_keys": [
+            "pmla:12"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-re-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Suspicious transaction",
+            "definition_md": "A transaction, in cash or not, which a person acting in good faith has reasonable grounds to suspect involves proceeds of crime, looks unusually or needlessly complicated, or seems to lack any economic rationale or genuine purpose."
+          },
+          "tags": [
+            "pmla",
+            "str",
+            "definitions"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rules-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What records must reporting entities keep under the PML (Maintenance of Records) Rules, 2005?",
+            "answer_md": "Cash transactions above ₹10 lakh or the foreign currency equivalent; series of integrally connected transactions each below ₹10 lakh in a month; receipts of ₹10 lakh and more in foreign currency; transactions involving counterfeit currency; suspicious transactions in cash or otherwise (including demat, loan and credit facilities and transfers of immovable property); cross-border wire transfers above ₹5 lakh where the origin or destination is in India; and purchase or sale of immovable property valued at ₹50 lakh or more."
+          },
+          "tags": [
+            "pmla",
+            "rules",
+            "records",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rules-002",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "PML Rules record thresholds: cash above ₹{{c1::10 lakh}}; cross-border wire transfers above ₹{{c2::5 lakh}}; immovable property transactions of ₹{{c3::50 lakh}} or more; monthly return to FIU-IND by the {{c4::15th}} of the next month."
+          },
+          "tags": [
+            "pmla",
+            "rules",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rules-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who reports to FIU-IND and how often?",
+            "answer_md": "Every reporting entity designates a principal officer who reports to the Director of FIU-IND. The principal officer furnishes information on reportable transactions every month by the 15th of the succeeding month. Records are kept in a prescribed uniform format, and some are kept in hard copy only."
+          },
+          "tags": [
+            "pmla",
+            "rules",
+            "principal-officer",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rules-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What KYC duties do reporting entities have and by when must data go to the Central KYC Records Registry?",
+            "answer_md": "Every reporting entity identifies its clients and checks the status and authenticity of the details furnished, conducting client due diligence appropriate to each category of client. It files the client's electronic KYC data with the Central KYC Records Registry within 10 days."
+          },
+          "tags": [
+            "pmla",
+            "rules",
+            "kyc",
+            "numerical"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rules-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the Central KYC Records Registry and digital KYC?",
+            "answer_md": "The registry was constituted in 2015 to keep KYC data centrally; the RBI may call for information from it and inspect it. Digital KYC is an online, secured process for accepting, verifying, authenticating and certifying client KYC records. The Rules were last revised in March 2023."
+          },
+          "tags": [
+            "pmla",
+            "rules",
+            "kyc",
+            "central-registry"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rev-001",
+          "kind": "section",
+          "importance": "mandatory",
+          "fields": {
+            "act": "Prevention of Money Laundering Act, 2002",
+            "reference": "2026 revision: I4C added to 'financial institution' (s 66 PMLA)",
+            "prompt_md": "What did the April 2025 notification do for the Indian Cyber Crime Co-ordination Centre (I4C)?",
+            "gist_md": "By G.S.R. 261(E) of 25 April 2025 the Government amended the PMLA so that I4C counts as a 'financial institution' for s 66. I4C and the Enforcement Directorate can share financial intelligence in both directions and the ED can draw on I4C during money laundering investigations, which allows online money trails to be followed in real time and links cybercrime probes with AML work."
+          },
+          "tags": [
+            "pmla",
+            "2026-revision",
+            "i4c",
+            "s66"
+          ],
+          "reference_keys": [
+            "pmla:66"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rev-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "2026 revision: how was KYC and customer due diligence changed in 2025?",
+            "answer_md": "A risk-based KYC approach replaces risk-neutral periodic updates: enhanced due diligence for high-risk customers and simplified periodic updating for low-risk customers, with greater reliance on digital identity verification. Entities must also continuously monitor customer transactions and keep beneficial ownership information updated."
+          },
+          "tags": [
+            "pmla",
+            "2026-revision",
+            "kyc",
+            "cdd"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rev-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: what changed in STR reporting?",
+            "answer_md": "Reporting entities must submit Suspicious Transaction Reports through upgraded FIU reporting utilities, and improve accuracy and timeliness. They are also expected to use automated transaction monitoring systems and to document their risk classification methodology."
+          },
+          "tags": [
+            "pmla",
+            "2026-revision",
+            "str",
+            "fiu"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "cel11-rev-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "2026 revision: what is the beneficial ownership obligation?",
+            "answer_md": "Entities must identify ultimate beneficial owners more rigorously, keep ownership records updated, and make them available for regulatory inspection."
+          },
+          "tags": [
+            "pmla",
+            "2026-revision",
+            "beneficial-ownership"
+          ],
+          "reference_keys": [],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}
