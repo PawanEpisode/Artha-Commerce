@@ -15,7 +15,7 @@ import {
   Table,
   Textarea,
 } from '@artha/design-system'
-import { useDeferredValue, useLayoutEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useDeferredValue, useId, useRef, useState } from 'react'
 
 import {
   bulletList,
@@ -30,7 +30,10 @@ import {
 } from './edit-actions'
 import { PROFILES, type RichTextProfile } from './profiles'
 import { RichText } from './RichText'
+import type { SourceEditorHandle } from './source-editor/MarkdownSourceEditor'
 import { charCount } from './text'
+
+const SourceEditor = lazy(() => import('./source-editor/MarkdownSourceEditor'))
 
 export interface PickedImage {
   attachmentId: string
@@ -66,8 +69,8 @@ interface ToolbarItem {
 const WARN_AT = 0.9
 
 /**
- * Markdown plus KaTeX editor: a toolbar (headings, lists, table, formula, task list, image), the text box and a live
- * preview in the shared reading style. Below the `lg` breakpoint the student switches between Write and Preview; on a
+ * Markdown plus KaTeX editor: a toolbar (headings, lists, table, formula, task list, image), the text box (CodeMirror,
+ * so Enter continues lists, "1." becomes "2.") and a live preview in the shared reading style. Below the `lg` breakpoint the student switches between Write and Preview; on a
  * wide screen they sit side by side. The value is always plain Markdown.
  */
 export function RichTextEditor({
@@ -85,31 +88,16 @@ export function RichTextEditor({
   className,
 }: RichTextEditorProps) {
   const rules = PROFILES[profile]
-  const ref = useRef<HTMLTextAreaElement>(null)
-  const pending = useRef<{ start: number; end: number } | null>(null)
+  const editor = useRef<SourceEditorHandle>(null)
+  const tabHintId = useId()
   const [view, setView] = useState<'write' | 'preview'>('write')
   const [roving, setRoving] = useState(0)
   const preview = useDeferredValue(value)
   const chars = charCount(value)
   const nearLimit = chars >= rules.maxChars * WARN_AT
 
-  // Put the cursor where the last toolbar action wants it, once React has written the new value.
-  useLayoutEffect(() => {
-    const target = pending.current
-    const el = ref.current
-    if (!target || !el) return
-    pending.current = null
-    el.focus()
-    el.setSelectionRange(target.start, target.end)
-  }, [value])
-
   const apply = (action: (edit: Edit) => Edit) => {
-    const el = ref.current
-    if (!el || readOnly) return
-    const next = action({ value, start: el.selectionStart, end: el.selectionEnd })
-    pending.current = { start: next.start, end: next.end }
-    onChange(next.value)
-    if (next.value === value) el.setSelectionRange(next.start, next.end)
+    if (!readOnly) editor.current?.apply(action)
   }
 
   const items: ToolbarItem[] = [
@@ -136,13 +124,11 @@ export function RichTextEditor({
 
   const addImage = async () => {
     if (!onPickImage || readOnly) return
-    const el = ref.current
-    const at = { start: el?.selectionStart ?? value.length, end: el?.selectionEnd ?? value.length }
+    // The dialog takes focus away, so remember where the caret was.
+    const at = editor.current?.selection() ?? { start: value.length, end: value.length }
     const picked = await onPickImage()
     if (!picked) return
-    const next = insertImage({ value, ...at }, picked.attachmentId, picked.alt)
-    pending.current = { start: next.start, end: next.end }
-    onChange(next.value)
+    editor.current?.apply((edit) => insertImage(edit, picked.attachmentId, picked.alt), at)
   }
 
   const buttons = items.length + (onPickImage ? 1 : 0)
@@ -226,19 +212,35 @@ export function RichTextEditor({
       ) : null}
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <div className={cn(view === 'preview' && 'hidden lg:block')}>
-          <Textarea
-            ref={ref}
-            id={textareaId}
-            aria-label={label}
-            aria-describedby={describedBy}
-            value={value}
-            readOnly={readOnly}
-            spellCheck
-            placeholder={placeholder}
-            onChange={(e) => onChange(e.target.value)}
-            className="min-h-[45dvh] resize-y font-mono text-base leading-relaxed md:text-base"
-          />
+        <div className={cn('min-w-0', view === 'preview' && 'hidden lg:block')}>
+          <Suspense
+            fallback={
+              <Textarea
+                aria-label={label}
+                aria-busy="true"
+                value={value}
+                readOnly
+                placeholder="Loading the editor"
+                className="min-h-[45dvh] font-mono text-base leading-relaxed md:text-base"
+              />
+            }
+          >
+            <div className="rounded-lg border border-input bg-card font-mono text-base leading-relaxed transition-shadow focus-within:ring-[3px] focus-within:ring-ring/40">
+              <SourceEditor
+                ref={editor}
+                value={value}
+                onChange={onChange}
+                label={label}
+                placeholder={placeholder}
+                readOnly={readOnly}
+                id={textareaId}
+                describedBy={[describedBy, tabHintId].filter(Boolean).join(' ')}
+              />
+            </div>
+          </Suspense>
+          <p id={tabHintId} className="sr-only">
+            In a list, Tab indents the item. Press Escape, then Tab, to move focus out of the text box.
+          </p>
         </div>
         <section
           aria-label="Preview"

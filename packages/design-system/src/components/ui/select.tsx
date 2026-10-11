@@ -47,7 +47,7 @@ export function SelectContent({
         sideOffset={6}
         collisionPadding={12}
         className={cn(
-          'z-[60] max-h-72 min-w-(--radix-select-trigger-width) overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-lift data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
+          'z-60 max-h-72 max-w-(--radix-select-trigger-width) min-w-(--radix-select-trigger-width) overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-lift data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
           className,
         )}
         {...props}

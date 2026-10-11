@@ -2,6 +2,21 @@
   "note": "Render-only checks for the web twin (the lint and plain-text corpus is shared with the server: apps/api/core/tests/richtext_cases.json).",
   "cases": [
     {
+      "id": "single-enter-is-a-line-break",
+      "markdown": "first line\nsecond line",
+      "html_includes": ["first line<br/>", "second line"]
+    },
+    {
+      "id": "single-enter-inside-list-item",
+      "markdown": "1. first\n   still first\n2. second",
+      "html_includes": ["<ol>", "first<br/>", "<li>second</li>"]
+    },
+    {
+      "id": "line-break-leaves-formula-alone",
+      "markdown": "Value $\\frac{a}{b}$\nnext",
+      "html_includes": ["katex", "<br/>"]
+    },
+    {
       "id": "inline-formula",
       "markdown": "The ratio is $\\frac{a}{b}$ here.",
       "html_includes": ["katex"]

@@ -1,6 +1,7 @@
 import type { Options as MarkdownOptions } from 'react-markdown'
 import rehypeKatex from 'rehype-katex'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
+import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 
@@ -36,7 +37,8 @@ export function pipelineFor(
   _profile: RichTextProfile,
 ): Pick<MarkdownOptions, 'remarkPlugins' | 'rehypePlugins' | 'urlTransform'> {
   return {
-    remarkPlugins: [remarkGfm, [remarkMath, { singleDollarTextMath: true }]],
+    // A single Enter is a line break (students type notes, not prose for a typesetter). Needs no sanitiser change: `<br>` is allowed.
+    remarkPlugins: [remarkGfm, remarkBreaks, [remarkMath, { singleDollarTextMath: true }]],
     rehypePlugins: [
       [rehypeSanitize, schema],
       // Never throw on a half-typed formula; show the source in the error colour instead. `trust` stays off.

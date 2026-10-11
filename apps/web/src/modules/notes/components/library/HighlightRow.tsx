@@ -1,7 +1,7 @@
 import { Badge, BoxSelect, Card, Highlighter, Layers, StickyNote, Tag, Type, Underline } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { isUnfiled, linkLabel } from '../../lib/chapter-link'
+import { isUnfiled, linkLabel, shortLinkLabel } from '../../lib/chapter-link'
 import type { HighlightRow as Row, MarkKind } from '../../lib/library-types'
 import { markOpenedFrom } from '../../lib/opened-from'
 
@@ -79,7 +79,11 @@ export function HighlightRow({ row, colorName, documentTitle, showLocation = tru
         </div>
       </div>
       <div className="flex flex-wrap items-center gap-1.5 text-xs">
-        {showLocation && !isUnfiled(row.link) ? <Badge variant="outline">{linkLabel(row.link)}</Badge> : null}
+        {showLocation && !isUnfiled(row.link) ? (
+          <Badge variant="outline" className="max-w-full min-w-0 truncate" title={linkLabel(row.link)}>
+            {shortLinkLabel(row.link)}
+          </Badge>
+        ) : null}
         {row.link.moved_or_removed ? <Badge variant="outline">Chapter moved or removed</Badge> : null}
         {row.tags.map((tag) => (
           <Badge key={tag.id} variant="outline">

@@ -765,7 +765,7 @@ Emitted: `notes_chapter_counts_changed`, `notes_document_ready`, `notes_summary_
 | Q-F03-3 | Copyright posture for uploaded Institute and coaching PDFs, shared derived text, share restrictions | Private only; shares exclude PDFs and restricted source kinds; derived text shared across identical files; counsel review before R2 launch | Founder with counsel |
 | Q-F03-4 | Do notes change the coverage percent? | No, display only (`note_added` count, summary flag); "writing a note" is not mastery. Optional later: exam summary counts as one revision, off by default | Founder (F-02 owner) |
 | Q-F03-5 | OCR engine and who gets AI OCR | Tesseract for everyone within 300 pages a month; AI OCR paid and per page on demand | Founder |
-| Q-F03-6 | Note editor | Markdown source with toolbar in R1 (shared `RichTextEditor`); TipTap WYSIWYG skin after R2 if note usage justifies | Engineering |
+| Q-F03-6 | Note editor | Markdown source with toolbar in R1 (shared `RichTextEditor`, text box built on CodeMirror 6 so Enter continues lists, tasks and quotes; a single Enter renders as a line break via `remark-breaks`); TipTap WYSIWYG skin after R2 if note usage justifies | Engineering |
 | Q-F03-7 | Cross-user dedupe | Dedupe derived content (text, OCR, page sizes) by server-computed SHA-256; never dedupe the stored file bytes | Engineering with counsel |
 | Q-F03-8 | Tags: personal vocabulary or shared with F-06 | Personal per-student tags owned here; shared curated vocabulary stays in `questionbank_tag` | Engineering |
 | Q-F03-9 | AI consent wording and retention at Google | One versioned consent, withdrawable; check provider terms before R3 | Founder with counsel |
