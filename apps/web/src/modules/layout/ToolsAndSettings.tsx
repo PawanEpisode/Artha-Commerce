@@ -16,12 +16,16 @@ function LinkRow({
   if (items.length === 0) return null
   return (
     <nav aria-label={label}>
-      <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+      <ul className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
         {items.map((item) => {
           const Icon = workspaceIcon(item.to)
           return (
-            <li key={item.to}>
-              <Button variant={variant} className="w-full justify-start sm:w-auto" asChild>
+            <li key={item.to} className="min-w-0">
+              <Button
+                variant={variant}
+                className="h-auto min-h-11 w-full justify-start py-2 text-left whitespace-normal sm:w-auto"
+                asChild
+              >
                 <Link to={item.to}>
                   <Icon aria-hidden />
                   {item.label}

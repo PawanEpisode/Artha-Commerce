@@ -43,7 +43,7 @@ function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => vo
   const { data } = useBootstrap()
   const firstName = data?.first_name
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         {/* The 44 px target is the whole button; the first name is hidden under 640 px so nothing overflows at 320. */}
         <Button variant="ghost" className="h-11 min-w-11 gap-2 rounded-full px-1 sm:pr-3" aria-label="Account menu">
@@ -129,7 +129,7 @@ export function SiteHeader() {
               <Link to="/login">Start free</Link>
             </Button>
           )}
-          <DropdownMenu>
+          <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
                 <Menu />

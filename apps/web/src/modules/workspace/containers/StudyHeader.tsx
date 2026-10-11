@@ -11,10 +11,13 @@ export function StudyHeader() {
   const chip = examChip(data?.course ?? null)
   return (
     <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <h1 className="text-3xl font-extrabold">{headline(new Date().getHours(), data?.first_name ?? '')}</h1>
+      <h1 className="text-2xl font-extrabold sm:text-3xl">{headline(new Date().getHours(), data?.first_name ?? '')}</h1>
       {data ? (
         chip.dated ? (
-          <Badge variant="accent" className="self-start sm:self-auto">
+          <Badge
+            variant="accent"
+            className="h-auto max-w-full self-start text-left leading-snug whitespace-normal sm:self-auto"
+          >
             {chip.text}
           </Badge>
         ) : (

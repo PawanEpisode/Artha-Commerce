@@ -21,10 +21,10 @@ export function WorkspaceHomeContainer() {
   const root = useRef<HTMLDivElement>(null)
   useWorkspaceViewed(root)
   return (
-    <Container ref={root} className="space-y-8 py-8 sm:py-12">
+    <Container ref={root} className="min-w-0 space-y-6 py-6 sm:space-y-8 sm:py-12">
       <StudyHeader />
       <ThoughtWidget />
-      <div className="grid items-stretch gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-2 [&>*]:min-w-0">
         <TodayWidget />
         <ContinueWidget />
         <RevisionWidget />
