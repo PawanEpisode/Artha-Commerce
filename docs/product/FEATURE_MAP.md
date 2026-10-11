@@ -522,7 +522,7 @@ Notifications
  └─▶ [ADD] Template system and delivery log
 ```
 
-### X-02 Platform Context Agent  (page 3)
+### X-02 Platform Context Agent  (page 3) (superseded by F-17 AI Tutor and Context Agent, 11 Oct 2026)
 
 ```
 Context Agent
@@ -645,7 +645,8 @@ X-03 Gamification, X-02 Context Agent, payments, mentor mode, WhatsApp channel
 | 16 | **F-15 Recall System** | `prd/F-15-recall-system.md` | `erd/F-15-recall-system.md` | written (draft for review, 5 Oct 2026) |
 | 17 | **F-03 Notes and PDF editor** | `prd/F-03-notes-and-pdf-editor.md` | `erd/F-03-notes-and-pdf-editor.md` | written (draft for review, 5 Oct 2026) |
 | 18 | **F-16 Personalization, Onboarding, Profile and Workspace Home** | `prd/F-16-personalization-onboarding-profile.md` | `erd/F-16-personalization-onboarding-profile.md` | written (draft for review, 6 Oct 2026); **build before the practice engine** (slices S1 to S14) |
-| 19 | X-01 Notifications, X-03 Gamification, X-02 Context Agent | | | next to write |
+| 19 | X-01 Notifications, X-03 Gamification | | | next to write |
+| 20 | **F-17 AI Tutor and Context Agent** (supersedes X-02) | `prd/F-17-ai-tutor-and-context-agent.md` | `erd/F-17-ai-tutor-and-context-agent.md` | written (draft for review, 11 Oct 2026); vendors Anam, Deepgram, Cartesia assessed in PRD section 14 |
 
 Index, build waves and open decisions: `docs/product/README.md`. Implementation audit: `docs/product/validation/`.
 
