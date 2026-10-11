@@ -263,3 +263,85 @@ def test_a_failing_quick_plan_sends_no_card_text_or_ids_to_sentry(api, scheme, m
     dump = json.dumps(payloads, default=str)
     assert TEXT not in dump and all(str(c.id) not in dump for c in cards)
     assert all("query_string" not in (p.get("request") or {}) for p in payloads)
+
+
+# ------------------------------------------------------------------------------------------------------ R2-W2: living decks
+def _living_world():
+    """A deck whose items carry the distinctive text, a student who studies it, and a substantive change waiting."""
+    from .w22 import card_of, deck_with_student, edit, publish_next, really_review
+
+    deck, items, sub = deck_with_student(2)
+    really_review(card_of(items[0]))
+    edit(items[0], {"prompt_md": f"{TEXT} rewritten?", "answer_md": f"{TEXT} new answer"}, "substantive")
+    publish_next(deck, changelog=f"{TEXT} changelog")
+    return deck, items, sub
+
+
+def test_update_preview_apply_follow_and_the_amendment_jobs_write_nothing_personal_to_the_logs(api, capsys, caplog):
+    from core import events
+    from modules.recall import jobs, subscribers
+    from modules.recall.models import RecallCard
+    from modules.recall.models import RecallItem as Item
+
+    caplog.set_level(logging.DEBUG)
+    events.clear()
+    subscribers.register()
+    deck, items, sub = _living_world()
+    base = f"/recall/subscriptions/{sub.id}/"
+    assert api.get(base + "update/").status_code == 200
+    assert api.patch(base, {"follow_updates": False}).status_code == 200
+    assert api.patch(base, {"follow_updates": True}).status_code == 200
+    jobs.tick()
+    assert api.post(base + "apply-update/").status_code == 200
+    Item.objects.filter(pk=items[1].pk).update(reference_keys=["s17(5)"])
+    events.emit("amendment_published", amendment_id=str(uuid.uuid4()), provision_keys=["s17(5)"])
+    jobs.tick()
+    jobs.tick()
+    assert api.get("/recall/chapter-remaps/").status_code == 200
+    out, err = capsys.readouterr()
+    haystacks = [_text_of(r) for r in caplog.records] + [out, err]
+    cards = list(RecallCard.objects.all())
+    secrets = [TEXT] + [str(c.id) for c in cards] + [str(c.item_id) for c in cards]
+    assert [(s[:14], i) for i, h in enumerate(haystacks) for s in secrets if s in h] == []
+    events.clear()
+
+
+@pytest.mark.parametrize("action", ["update/", "apply-update/"])
+def test_a_failing_update_request_sends_no_card_text_or_ids_to_sentry(api, monkeypatch, sentry_capture, action):
+    from modules.recall import selectors, services
+    from modules.recall.models import RecallCard
+
+    deck, items, sub = _living_world()
+
+    def boom(*args, **kwargs):
+        raise RuntimeError("unexpected")
+
+    monkeypatch.setattr(selectors.updates, "preview", boom)
+    monkeypatch.setattr(services.sync, "apply_update", boom)
+    client = Client(raise_request_exception=False, HTTP_AUTHORIZATION=api.c.defaults["HTTP_AUTHORIZATION"])
+    method = client.get if action == "update/" else client.post
+    assert method(f"/api/v1/recall/subscriptions/{sub.id}/{action}").status_code == 500
+    sentry_sdk.flush()
+    payloads = _payloads(sentry_capture)
+    assert any("exception" in p for p in payloads)
+    dump = json.dumps(payloads, default=str)
+    cards = list(RecallCard.objects.all())
+    assert TEXT not in dump and all(str(c.id) not in dump for c in cards) and str(sub.id) not in dump
+
+
+def test_a_failing_amendment_job_sends_no_text_or_ids_to_sentry(api, monkeypatch, sentry_capture):
+    from core import jobs as core_jobs
+    from modules.recall import jobs
+    from modules.recall.services import amendments
+
+    _living_world()
+    amendments.queue_event("amendment_published", {"amendment_id": str(uuid.uuid4()), "provision_keys": ["s1"]})
+
+    def boom(*a, **k):
+        raise RuntimeError("unexpected")
+
+    monkeypatch.setattr(amendments, "_flag_platform", boom)
+    core_jobs.run_pending(types=jobs.LIGHT_TYPES, budget_seconds=10, worker="t")
+    sentry_sdk.flush()
+    dump = json.dumps(_payloads(sentry_capture), default=str)
+    assert TEXT not in dump

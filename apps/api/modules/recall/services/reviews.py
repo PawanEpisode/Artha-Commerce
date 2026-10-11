@@ -397,9 +397,10 @@ def replay_card(
         return _write_card(card, state, eng, now or timezone.now())
 
 
-def _write_card(card: RecallCard, state, eng: Engine, now: datetime) -> bool:
+def card_values(card: RecallCard, state, eng: Engine, now: datetime) -> dict[str, Any]:
+    """The memory columns of the card row for a folded state (the card is a cache of the log: this is the one mapping)."""
     m = state.memory
-    new_values = {
+    return {
         "state": m.phase,
         "step": m.step,
         "stability": m.stability,
@@ -412,6 +413,10 @@ def _write_card(card: RecallCard, state, eng: Engine, now: datetime) -> bool:
         "lapses": m.lapses,
         "last_lapse_at": m.last_lapse_at,
     }
+
+
+def _write_card(card: RecallCard, state, eng: Engine, now: datetime) -> bool:
+    new_values = card_values(card, state, eng, now)
     if all(getattr(card, k) == v for k, v in new_values.items()):
         return False
     for k, v in new_values.items():

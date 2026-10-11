@@ -40,6 +40,9 @@ export function apiCard(i: number, over: Partial<ApiQueueCard> = {}): ApiQueueCa
     back_md: `Answer ${i}`,
     state: 0,
     badges: [],
+    needs_recheck: false,
+    recheck_reason: null,
+    updated: false,
     importance: i % 3,
     chapter: { id: 'c1', key: 'ch-1', name: 'Chapter one', subject_key: i % 2 === 0 ? 'law' : 'audit' },
     previews: {},
@@ -105,6 +108,8 @@ export function todayPlan(over: Partial<TodayPlan> = {}): TodayPlan {
     tiles: [{ subject_key: 'law', total: 12, kinds: { definition: 12 } }],
     forgotten: [],
     exam: null,
+    recheck: { count: 0 },
+    needs_chapter: { count: 0 },
     ...over,
   }
 }

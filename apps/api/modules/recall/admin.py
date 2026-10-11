@@ -47,6 +47,7 @@ from .models import (
     RecallReviewLog,
 )
 from .services import decks as deck_service
+from .services import sync as sync_service
 
 # --- permissions (D44) --------------------------------------------------------------------------------------------
 
@@ -543,6 +544,16 @@ class PlatformDeckVersionAdmin(ScopedAdmin):
 
     def render_change_form(self, request, context, *args, **kwargs):
         context["can_publish"] = staff.PUBLISH in scopes_of(request)
+        obj = kwargs.get("obj") or (args[2] if len(args) > 2 else None)
+        context["publish_preview"], context["publish_preview_error"], context["fanout"] = None, "", None
+        if obj is not None and obj.pk:
+            if obj.state in ("draft", "in_review"):
+                try:
+                    context["publish_preview"] = deck_service.publish_preview(obj.deck_id, obj.pk)
+                except CodedError as exc:
+                    context["publish_preview_error"] = str(exc.detail)
+            elif obj.state in ("live", "superseded"):
+                context["fanout"] = sync_service.fanout_stats(obj.pk)
         return super().render_change_form(request, context, *args, **kwargs)
 
     def save_model(self, request, obj, form, change):
@@ -567,7 +578,10 @@ class PlatformDeckVersionAdmin(ScopedAdmin):
                         _actor(request), obj.deck_id, obj.pk, changelog_md=obj.changelog_md
                     )
                     messages.success(
-                        request, f"Published {obj.deck.title} version {version.version_no}: {version.diff_summary}"
+                        request,
+                        f"Published {obj.deck.title} version {version.version_no}: {version.diff_summary}. "
+                        "Followers are updated in the background (see the Updates panel of this version); "
+                        "pinned students see an update banner.",
                     )
                 except CodedError as exc:
                     ids = (exc.extra or {}).get("item_ids")
@@ -575,7 +589,25 @@ class PlatformDeckVersionAdmin(ScopedAdmin):
                     messages.error(request, f"Not published: {exc.detail}{detail} Nothing changed.")
         return super().response_change(request, obj)
 
-    actions = ["publish_selected"]
+    actions = ["publish_selected", "retry_failed_syncs"]
+
+    @admin.action(description="Retry the failed follower updates of the selected live versions")
+    def retry_failed_syncs(self, request, queryset):
+        if staff.PUBLISH not in scopes_of(request):
+            messages.error(request, "Retrying needs the recall.deck.publish scope.")
+            return
+        for version in queryset.select_related("deck"):
+            queued = sync_service.retry_failed(version.pk)
+            RecallAuditLog.objects.create(
+                actor_id=_actor(request),
+                action="deck_sync_retry",
+                target_kind="deck",
+                target_id=str(version.deck_id),
+                detail={"v": 1, "version_no": version.version_no, "requeued": queued},
+            )
+            messages.success(
+                request, f"{version.deck.title} v{version.version_no}: {queued} failed update job(s) queued again."
+            )
 
     @admin.action(description="Publish selected draft versions (students see them at once)")
     def publish_selected(self, request, queryset):

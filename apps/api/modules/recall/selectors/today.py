@@ -11,6 +11,7 @@ from django.db.models import Min
 
 from ..domain.scheduling import streak
 from ..models import RecallCard, RecallDailyRollup
+from . import remaps
 from .exam import exam_context
 from .forgotten import ForgottenRow, forgotten
 from .queue import plan_today
@@ -43,6 +44,8 @@ class TodayPlan:
     catchup_due: int = 0
     oldest_overdue_days: float = 0.0
     exam: dict | None = None
+    needs_chapter: int = 0  # her own cards waiting for a chapter after a scheme switch
+    recheck: int = 0  # cards waiting for "Still correct" (an updated deck or an amendment)
 
 
 def _next_due(study: Study) -> datetime | None:
@@ -92,6 +95,8 @@ def today_plan(user_id, *, now: datetime, tz: str | None = None) -> TodayPlan:
         catchup_due=queue.catchup.due_count,
         oldest_overdue_days=round(queue.catchup.oldest_overdue_days, 1),
         exam=exam_context(study),
+        needs_chapter=remaps.pending_count(user_id),
+        recheck=RecallCard.objects.filter(user_id=user_id, status="active", needs_recheck=True).count(),
     )
 
 

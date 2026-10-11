@@ -7,6 +7,7 @@ import { notesAnalytics } from '../lib/analytics'
 import { createTag, restoreVersion } from '../lib/api'
 import { linkFields, linkFromSelection, type LinkSelection } from '../lib/chapter-link'
 import { quotaExceeded } from '../lib/errors'
+import { invalidateAfterNoteLink } from '../lib/invalidate'
 import { notesKeys } from '../lib/keys'
 import { notify } from '../lib/notify'
 import { removeCachedNote } from '../lib/offline-store'
@@ -42,11 +43,12 @@ export interface MetaChange {
 
 /**
  * Every write a notes list or card can make, in one place: each one shows its result at once, goes to the offline
- * queue when the network is gone, and refreshes the lists, counts and overviews it touches.
+ * queue when the network is gone, and refreshes only the queries that write actually changes.
  */
 export function useNoteActions() {
   const qc = useQueryClient()
 
+  /** Trash, restore, clip: membership and quota both move. */
   const refresh = useCallback(
     () =>
       Promise.all([
@@ -55,8 +57,22 @@ export function useNoteActions() {
         qc.invalidateQueries({ queryKey: notesKeys.allCounts }),
         qc.invalidateQueries({ queryKey: notesKeys.overviews }),
         qc.invalidateQueries({ queryKey: notesKeys.usage }),
-        qc.invalidateQueries({ queryKey: notesKeys.tags }),
       ]),
+    [qc],
+  )
+
+  /** Pin / tags / chapter: invalidate only what that field touches. */
+  const refreshMeta = useCallback(
+    async (note: NoteRef, meta: MetaChange) => {
+      if (meta.selection !== undefined) {
+        await invalidateAfterNoteLink(qc, [note.link?.subject_key, meta.selection?.subjectKey])
+      } else {
+        await qc.invalidateQueries({ queryKey: notesKeys.lists })
+      }
+      if (meta.tagIds !== undefined) {
+        await qc.invalidateQueries({ queryKey: notesKeys.tags })
+      }
+    },
     [qc],
   )
 
@@ -152,7 +168,7 @@ export function useNoteActions() {
           if (onlyTags) {
             const saved = await applyEditLocally(qc, note.id, edit, true)
             notify.queued()
-            await refresh()
+            await refreshMeta(note, meta)
             return saved
           }
         }
@@ -163,14 +179,14 @@ export function useNoteActions() {
             : await applyEditLocally(qc, note.id, edit, true)
         if (result.status === 'queued') notify.queued()
         else reportPatch(result.data)
-        await refresh()
+        await refreshMeta(note, meta)
         return saved
       } catch (error) {
         notify.error(error, 'Could not save that change.')
         return undefined
       }
     },
-    [qc, refresh],
+    [qc, refreshMeta],
   )
 
   const pin = useCallback(

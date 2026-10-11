@@ -13,6 +13,9 @@ export function DeckCard({ deck }: { deck: ApiDeck }) {
     <li className="space-y-3 rounded-xl border border-border bg-card p-4 sm:p-5">
       <div className="flex flex-wrap items-center gap-2">
         {state === 'active' ? <Badge variant="accent">Subscribed</Badge> : null}
+        {state === 'active' && deck.subscription?.update_available ? (
+          <Badge variant="highlight">Update available</Badge>
+        ) : null}
         {state === 'archived' ? <Badge variant="outline">Unsubscribed</Badge> : null}
         {where ? <span className="min-w-0 text-xs text-muted-foreground">{where}</span> : null}
       </div>

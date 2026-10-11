@@ -6,7 +6,7 @@ from uuid import UUID
 
 from django.db.models import Prefetch, Q, QuerySet
 
-from .models import Chapter, Course, ExamTerm, Level, Scheme, Subject, SyllabusGroup, Topic
+from .models import Chapter, ChapterMap, Course, ExamTerm, Level, Scheme, Subject, SyllabusGroup, Topic
 
 
 def list_courses() -> QuerySet[Course]:
@@ -311,3 +311,30 @@ def chapters_for_scheme(scheme_id: UUID, subject_key: str | None = None) -> list
 def current_scheme_id(level_id: UUID) -> UUID | None:
     """The scheme a level currently shows students (most recently published)."""
     return _current_scheme_id(level_id)
+
+
+@dataclass(frozen=True)
+class ChapterMapRow:
+    """One row of `syllabus_chaptermap`: where a chapter of an older scheme goes in a newer one."""
+
+    from_chapter_id: UUID
+    to_chapter_id: UUID
+    relation: str  # same, split, merged, partial
+    carry_ratio: float
+    needs_review: bool  # proposed by the importer and not yet confirmed by an editor
+
+
+def chapter_maps_from(from_chapter_ids: Sequence[UUID], to_scheme_id: UUID) -> list[ChapterMapRow]:
+    """The map rows leaving these chapters and landing in the target scheme (only active target chapters), in a stable order."""
+    if not from_chapter_ids:
+        return []
+    rows = (
+        ChapterMap.objects.filter(
+            from_chapter_id__in=list(from_chapter_ids),
+            to_chapter__subject__scheme_id=to_scheme_id,
+            to_chapter__is_active=True,
+        )
+        .order_by("from_chapter_id", "to_chapter_id")
+        .values_list("from_chapter_id", "to_chapter_id", "relation", "carry_ratio", "needs_review")
+    )
+    return [ChapterMapRow(f, t, rel, float(ratio), bool(review)) for f, t, rel, ratio, review in rows]

@@ -15,7 +15,10 @@ describe('NoteCard', () => {
       '/app/notes/n/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
     )
     expect(screen.getByText('ITC is blocked for motor vehicles.')).toBeInTheDocument()
-    expect(screen.getByText('Taxation › GST: Input tax credit')).toBeInTheDocument()
+    const location = screen.getByText('GST: Input tax credit')
+    expect(location).toBeInTheDocument()
+    expect(location).toHaveAttribute('title', 'Taxation › GST: Input tax credit')
+    expect(location).toHaveClass('truncate')
   })
 
   it('says Unfiled for a note with no chapter, and Untitled for an empty title', () => {

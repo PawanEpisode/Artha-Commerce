@@ -1,4 +1,51 @@
 {% extends "admin/change_form.html" %}
+{% block form_top %}
+  {{ block.super }}
+  {% if publish_preview %}
+    <fieldset class="module aligned">
+      <h2>Before you publish</h2>
+      <div class="form-row">
+        <p>
+          {{ publish_preview.followers }} follower(s) will be updated within minutes;
+          {{ publish_preview.pinned }} pinned student(s) will see an update banner.
+          {% if publish_preview.returning_cards %}
+            <strong>{{ publish_preview.returning_cards }} studied card(s) will come back for a re-check</strong>
+            (their memory is softened, not erased).
+          {% endif %}
+        </p>
+        {% if publish_preview.changelog_required %}
+          <p><strong>This version changes the meaning of a card: a change note is required.</strong></p>
+        {% endif %}
+        {% if publish_preview.changes %}
+          <table>
+            <thead><tr><th>Item</th><th>Change</th></tr></thead>
+            <tbody>
+              {% for c in publish_preview.changes %}
+                <tr><td>{{ c.ref }}</td><td>{{ c.change }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>No item differs from the live version.</p>
+        {% endif %}
+      </div>
+    </fieldset>
+  {% elif publish_preview_error %}
+    <p class="errornote">This draft cannot be published yet: {{ publish_preview_error }}</p>
+  {% endif %}
+  {% if fanout %}
+    <fieldset class="module aligned">
+      <h2>Updates panel</h2>
+      <div class="form-row">
+        <p>
+          Follower update jobs: {{ fanout.queued }} queued, {{ fanout.running }} running,
+          {{ fanout.done }} done, {{ fanout.failed }} failed.
+          {% if fanout.failed %}Use the action "Retry the failed follower updates" on the list.{% endif %}
+        </p>
+      </div>
+    </fieldset>
+  {% endif %}
+{% endblock %}
 {% block submit_buttons_bottom %}
   {{ block.super }}
   {% if can_publish and original and original.state == "draft" %}

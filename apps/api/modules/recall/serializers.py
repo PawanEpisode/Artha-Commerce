@@ -137,6 +137,15 @@ def badges_of(view: CardView, now=None) -> list[str]:
     return out
 
 
+def recheck_dict(c) -> dict:
+    """What the re-check chip and the "Updated" badge read: `updated` is a content change of the deck, an amendment is its own chip."""
+    return {
+        "needs_recheck": c.needs_recheck,
+        "recheck_reason": c.recheck_reason if c.needs_recheck else None,
+        "updated": bool(c.needs_recheck and c.recheck_reason == "content_changed"),
+    }
+
+
 def source_dict(view: CardView) -> dict | None:
     item = view.item
     if not item.origin_module:
@@ -175,6 +184,8 @@ def card_dict(view: CardView) -> dict:
         "reference_keys": item.reference_keys,
         "deck_ids": [str(d) for d in view.deck_ids],
         "badges": badges_of(view),
+        **recheck_dict(c),
+        "under_review": view.under_review,
         "source": source_dict(view),
         "due_at": iso(c.due_at),
         "buried_until": iso(c.buried_until),
@@ -245,7 +256,7 @@ def review_card_dict(card) -> dict:
         "reps": card.reps,
         "lapses": card.lapses,
         "leech": card.leech,
-        "needs_recheck": card.needs_recheck,
+        **recheck_dict(card),
     }
 
 
@@ -389,6 +400,7 @@ def queue_card_dict(q) -> dict:
         "back_md": q.back_md,
         "state": c.state,
         "badges": list(q.badges),
+        **recheck_dict(c),
         "importance": c.importance,
         "chapter": _chapter_ref(q.chapter, c.chapter_id),
         "previews": {str(r): p.label for r, p in q.previews.items()},
@@ -477,6 +489,8 @@ def today_dict(p, now) -> dict:
         "tiles": [{"subject_key": t.subject_key, "total": t.total, "kinds": t.kinds} for t in p.tiles],
         "forgotten": [forgotten_dict(r) for r in p.forgotten],
         "exam": p.exam,
+        "recheck": {"count": p.recheck},
+        "needs_chapter": {"count": p.needs_chapter},
     }
 
 
@@ -526,6 +540,11 @@ def subscription_dict(s) -> dict | None:
         "newer_versions": s.newer_versions,
         "subscribed_at": iso(s.subscribed_at),
         "min_importance": s.min_importance,
+        "follow_updates": s.follow_updates,
+        "update_available": s.update_available,
+        "pending_changes": s.pending_changes,
+        "pending_version_no": s.pending_version_no,
+        "old_syllabus": s.old_syllabus,
     }
 
 
@@ -559,4 +578,68 @@ def deck_item_dict(i: DeckItemView) -> dict:
         "position": i.position,
         "preview": i.preview,
         "chapter_name": i.chapter_name,
+        "under_review": i.under_review,
+    }
+
+
+# --- living decks (R2-W2) ---------------------------------------------------------------------------------------------
+class SubscriptionPatchSerializer(serializers.Serializer):
+    follow_updates = serializers.BooleanField()
+
+
+def sync_result_dict(r) -> dict:
+    return r.as_dict()
+
+
+def update_preview_dict(p) -> dict:
+    """The update preview. Item labels are the student's own visible text and go to the signed-in owner only."""
+    return {
+        "subscription_id": str(p.subscription.id),
+        "update_available": p.available,
+        "follow_updates": p.subscription.follow_updates,
+        "from_version_no": p.from_no,
+        "to_version_no": p.to_no,
+        "versions_skipped": p.versions_skipped,
+        "changelog_md": p.changelog_md,
+        "counts": p.summary,
+        "items": {
+            kind: [{"item_id": str(i.item_id), "label": i.label, "importance": i.importance} for i in rows]
+            for kind, rows in p.items.items()
+        },
+        "more": p.more,
+        "returning_today": p.returning_today,
+    }
+
+
+class ChapterChoiceSerializer(serializers.Serializer):
+    chapter_id = serializers.UUIDField()
+
+
+def _ref_dict(ref) -> dict | None:
+    if ref is None:
+        return None
+    return {
+        "id": str(ref.id),
+        "key": ref.key,
+        "name": ref.name,
+        "subject_key": ref.subject_key,
+        "subject_name": ref.subject_name,
+    }
+
+
+def remap_screen_dict(screen) -> dict:
+    return {
+        "items": [
+            {
+                "id": str(i.id),
+                "relation": i.relation,
+                "label": i.label,
+                "card_count": i.card_count,
+                "from_chapter": _ref_dict(i.from_chapter),
+                "candidates": [_ref_dict(c) for c in i.candidates],
+            }
+            for i in screen.items
+        ],
+        "chapters": [_ref_dict(c) for c in screen.chapters],
+        "count": len(screen.items),
     }

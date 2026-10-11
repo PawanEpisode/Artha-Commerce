@@ -1,7 +1,7 @@
 import { Badge, Button, Card, CloudOff, Pin, PinOff, Tag, Trash2 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { isUnfiled, linkLabel } from '../lib/chapter-link'
+import { isUnfiled, linkLabel, shortLinkLabel } from '../lib/chapter-link'
 import { relativeTime } from '../lib/format'
 import type { NoteSummary } from '../lib/types'
 
@@ -16,6 +16,7 @@ interface NoteCardProps {
 /** One note in a list: title, a two line snippet, where it is filed, tags and the quick actions. */
 export function NoteCard({ note, showLocation = true, onPin, onTrash }: NoteCardProps) {
   const title = note.title.trim() || 'Untitled note'
+  const filed = !isUnfiled(note.link)
   return (
     <Card className="flex items-start gap-2 p-4">
       <div className="min-w-0 flex-1 space-y-2">
@@ -30,9 +31,15 @@ export function NoteCard({ note, showLocation = true, onPin, onTrash }: NoteCard
           </Link>
         </h3>
         {note.snippet ? <p className="line-clamp-2 text-sm break-words text-muted-foreground">{note.snippet}</p> : null}
-        <div className="flex flex-wrap items-center gap-1.5 text-xs">
+        <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-xs">
           {showLocation ? (
-            <Badge variant={isUnfiled(note.link) ? 'highlight' : 'outline'}>{linkLabel(note.link)}</Badge>
+            <Badge
+              variant={filed ? 'outline' : 'highlight'}
+              className="max-w-full min-w-0 truncate"
+              title={filed ? linkLabel(note.link) : undefined}
+            >
+              {filed ? shortLinkLabel(note.link) : 'Unfiled'}
+            </Badge>
           ) : null}
           {note.link.moved_or_removed ? <Badge variant="outline">Chapter moved or removed</Badge> : null}
           {note.tags.map((tag) => (

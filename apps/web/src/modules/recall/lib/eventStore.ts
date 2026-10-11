@@ -269,7 +269,19 @@ export const eventStore = {
         const p = by.get(c.id)
         if (!p || p.rev < c.rev) return [c]
         if (p.status !== 'active') return []
-        return [{ ...c, rev: p.rev, state: p.state, due_at: p.due_at, reps: p.reps, lapses: p.lapses }]
+        return [
+          {
+            ...c,
+            rev: p.rev,
+            state: p.state,
+            due_at: p.due_at,
+            reps: p.reps,
+            lapses: p.lapses,
+            needs_recheck: p.needs_recheck,
+            recheck_reason: p.recheck_reason,
+            updated: p.updated,
+          },
+        ]
       })
       await b.putPack({ ...row, pack: { ...row.pack, cards } })
     })

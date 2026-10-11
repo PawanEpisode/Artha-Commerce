@@ -106,6 +106,8 @@ describe('the pack', () => {
         lapses: 0,
         leech: false,
         needs_recheck: false,
+        recheck_reason: null,
+        updated: false,
       },
       {
         id: apiCard(2).id,
@@ -119,6 +121,8 @@ describe('the pack', () => {
         lapses: 0,
         leech: false,
         needs_recheck: false,
+        recheck_reason: null,
+        updated: false,
       },
     ])
     const cards = (await eventStore.loadPack('u1'))!.pack.cards

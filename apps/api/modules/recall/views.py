@@ -533,6 +533,52 @@ class SubscriptionActionView(WriteView):
         return Response({"deck": serializers.deck_dict(deck)})
 
 
+class SubscriptionSettingsView(WriteView):
+    """`PATCH subscriptions/<id>/`: switch between follow and pin (`follow_updates`). Pin to follow applies a waiting version through the job."""
+
+    def patch(self, request, subscription_id):
+        d = self.parse(serializers.SubscriptionPatchSerializer, request.data).validated_data
+        sub = services.sync.set_follow(request.user.id, subscription_id, d["follow_updates"])
+        deck = selectors.deck_detail(request.user.id, sub.deck_id).deck
+        return Response({"deck": serializers.deck_dict(deck)})
+
+
+class UpdatePreviewView(RecallView):
+    """`GET subscriptions/<id>/update/`: what an update would do, read only (counts by kind, a few labels, what returns today)."""
+
+    def get(self, request, subscription_id):
+        return Response(serializers.update_preview_dict(selectors.updates.preview(request.user.id, subscription_id)))
+
+
+class ApplyUpdateView(RecallView):
+    """`POST subscriptions/<id>/apply-update/`: sync to the live version now. Idempotent; its own throttle scope `recall_apply_update`."""
+
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "recall_apply_update"
+
+    def post(self, request, subscription_id):
+        result = services.sync.apply_update(request.user.id, subscription_id)
+        sub = selectors.updates.subscription_of(request.user.id, subscription_id)
+        deck = selectors.deck_detail(request.user.id, sub.deck_id).deck
+        return Response({"result": serializers.sync_result_dict(result), "deck": serializers.deck_dict(deck)})
+
+
+class ChapterRemapListView(RecallView):
+    """`GET chapter-remaps/`: her cards waiting for a chapter ("Needs a new chapter") with the targets offered."""
+
+    def get(self, request):
+        return Response(serializers.remap_screen_dict(selectors.remaps.pending(request.user.id)))
+
+
+class ChapterRemapChooseView(WriteView):
+    """`POST chapter-remaps/<id>/choose/`: pick a chapter of the new scheme. Safe to repeat."""
+
+    def post(self, request, remap_id):
+        d = self.parse(serializers.ChapterChoiceSerializer, request.data).validated_data
+        row = services.remap.choose_chapter(request.user.id, remap_id, d["chapter_id"])
+        return Response({"id": str(row.id), "status": row.status, "relation": row.relation})
+
+
 class ItemReportView(WriteView):
     """FR-F15-52: a student reports a platform item. One open report per student and item."""
 

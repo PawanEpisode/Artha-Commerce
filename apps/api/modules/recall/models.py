@@ -804,7 +804,7 @@ class RecallReport(UUIDModel):
 
 AUDITLOG_ACTIONS = (
     "deck_publish", "item_withdraw", "share_takedown", "attest_own_words", "params_activate", "force_replay",
-    "quota_change",
+    "quota_change", "deck_sync_retry",
 )  # fmt: skip
 
 
@@ -822,6 +822,61 @@ class RecallAuditLog(UUIDModel):
         db_table = "recall_auditlog"
         constraints = [in_("action", AUDITLOG_ACTIONS, "recall_auditlog_action_valid")]
         indexes = [models.Index(fields=["target_kind", "target_id", "created_at"], name="recall_audit_target_idx")]
+
+
+# --------------------------------------------------------------------------- R2-W2: living decks
+
+
+class RecallAmendmentFlag(UUIDModel):
+    """
+    "Under review after amendment" on a PLATFORM item (FR-F15-49), one row per (item, amendment). The ribbon shows while any row
+    exists; a retraction deletes the rows its amendment made. Platform content, no student text, ids only.
+    """
+
+    item = models.ForeignKey(RecallItem, on_delete=models.CASCADE, related_name="amendment_flags")
+    amendment_id = models.UUIDField()
+    revision_id = models.UUIDField(null=True, blank=True)
+
+    class Meta:
+        db_table = "recall_amendmentflag"
+        constraints = [
+            models.UniqueConstraint(fields=["item", "amendment_id"], name="recall_amendmentflag_item_amendment_uniq")
+        ]
+        indexes = [models.Index(fields=["amendment_id"], name="recall_amendflag_amend_idx")]
+
+
+REMAP_STATUSES = ("pending", "resolved")
+REMAP_RELATIONS = ("same", "split", "merged", "partial", "none")
+
+
+class RecallChapterRemap(UUIDModel):
+    STATUSES = REMAP_STATUSES
+    RELATIONS = REMAP_RELATIONS
+    """
+    A card of her own that lost its chapter in a scheme switch and waits for her choice ("Needs a new chapter", FR-F15-50).
+    `candidate_chapter_ids` are the chapters of the new scheme she may pick from (both halves of a split, or the unconfirmed
+    suggestions of a map row an editor has not confirmed yet); empty means nothing maps and she picks any chapter. One row per
+    item; resolving it sets the item's and its cards' chapter. The review log is never touched.
+    """
+
+    user_id = models.UUIDField()
+    item = models.ForeignKey(RecallItem, on_delete=models.CASCADE, related_name="+")
+    from_chapter_id = models.UUIDField(null=True, blank=True)
+    to_scheme_id = models.UUIDField()
+    relation = models.CharField(max_length=8, default="none")
+    candidate_chapter_ids = models.JSONField(default=list, blank=True)
+    status = models.CharField(max_length=10, default="pending")
+    to_chapter_id = models.UUIDField(null=True, blank=True)
+    resolved_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "recall_chapterremap"
+        constraints = [
+            in_("status", REMAP_STATUSES, "recall_chapterremap_status_valid"),
+            in_("relation", REMAP_RELATIONS, "recall_chapterremap_relation_valid"),
+            models.UniqueConstraint(fields=["user_id", "item"], name="recall_chapterremap_user_item_uniq"),
+        ]
+        indexes = [models.Index(fields=["user_id"], condition=Q(status="pending"), name="recall_remap_pending_idx")]
 
 
 # ------------------------------------------------------------------------------------------- quota

@@ -217,4 +217,8 @@ def resubscribe(user_id, subscription_id: UUID) -> SubscribeResult:
         ).first()
         if deck is None or not deck.live_version_id:
             raise DeckNotFound
-        return _reactivate(user_id, sub, deck)
+        out = _reactivate(user_id, sub, deck)
+        from . import sync  # local import: sync imports this module
+
+        sync.after_resubscribe(sub)
+        return out

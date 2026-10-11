@@ -18,14 +18,15 @@ from django.db.models import Exists, OuterRef, Q, QuerySet
 from ..adapters import syllabus as syllabus_adapter
 from ..domain import cards as domain
 from ..errors import BadCursor
-from ..models import RecallCard, RecallDeckItem, RecallItem, RecallReviewLog
+from ..models import RecallCard, RecallChapterRemap, RecallDeckItem, RecallItem, RecallReviewLog
 from ..vocab import IMPORTANCE_INT
+from .amendments import under_review_item_ids
 
 MAX_LIMIT = 100
 DEFAULT_LIMIT = 30
 T = TypeVar("T")
 SORTS = {"newest": ("created_at", True), "oldest": ("created_at", False), "updated": ("updated_at", True)}
-STATES = ("new", "learning", "review", "suspended", "tricky", "recheck")
+STATES = ("new", "learning", "review", "suspended", "tricky", "recheck", "needs_chapter")
 
 
 @dataclass(frozen=True)
@@ -43,6 +44,7 @@ class CardView:
     back_md: str
     chapter: Any = None  # a syllabus ChapterRef, or None when Unsorted or no longer visible
     deck_ids: tuple[UUID, ...] = ()
+    under_review: bool = False  # a platform item flagged after an amendment
 
 
 @dataclass(frozen=True)
@@ -69,14 +71,22 @@ def _views(cards: Sequence[RecallCard]) -> list[CardView]:
         "item_id", "deck_id"
     ):
         decks.setdefault(item_id, []).append(deck_id)
+    flagged = under_review_item_ids({c.item_id for c in cards})
     out = []
     for card in cards:
         fields = card.item_version.fields
         front, back = render_card(card.item, fields, card.ordinal)
         out.append(
             CardView(
-                card, card.item, fields, front, back, refs.get(card.chapter_id), tuple(decks.get(card.item_id, ()))
-            )
+                card,
+                card.item,
+                fields,
+                front,
+                back,
+                refs.get(card.chapter_id),
+                tuple(decks.get(card.item_id, ())),
+                card.item_id in flagged,
+            )  # fmt: skip
         )
     return out
 
@@ -98,6 +108,11 @@ def _state_q(state: str) -> Q:
         "suspended": Q(status="suspended"),
         "tricky": Q(leech=True),
         "recheck": Q(needs_recheck=True),
+        "needs_chapter": Exists(
+            RecallChapterRemap.objects.filter(
+                user_id=OuterRef("user_id"), item_id=OuterRef("item_id"), status="pending"
+            )
+        ),
     }[state]
 
 

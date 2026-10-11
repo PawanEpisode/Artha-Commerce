@@ -141,6 +141,28 @@ def test_pin_and_move_and_tags(api, scheme):
     assert api.get("/notes/?unfiled=true").json_body["items"] == []
 
 
+def test_filing_an_unfiled_note_accepts_null_base_links(api, scheme):
+    """The client sends base.chapter_id/topic_id as null when the note was unfiled (overwrite reporting)."""
+    from modules.syllabus.models import Chapter, Topic
+
+    n = new_note(api, "x")
+    chapter = Chapter.objects.get(key="residential-status")
+    topic = Topic.objects.create(chapter=chapter, key="domicile", name="Domicile")
+    res = api.patch(
+        f"/notes/{n['id']}/",
+        {
+            "base_rev": n["rev"],
+            "source": "manual",
+            "chapter_id": str(chapter.id),
+            "topic_id": str(topic.id),
+            "base": {"chapter_id": None, "topic_id": None},
+        },
+    )
+    assert res.status_code == 200, res.json_body
+    assert res.json_body["link"]["chapter_id"] == str(chapter.id)
+    assert res.json_body["link"]["topic_id"] == str(topic.id)
+
+
 def test_versions_are_listed_read_and_restored(api, clock):
     n = new_note(api, "v1")
     clock.advance(minutes=30)

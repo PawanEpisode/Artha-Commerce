@@ -7,16 +7,20 @@ import { api } from '~/lib/api'
 import { setServerTime } from './clock'
 import {
   type ApiPack,
+  applyUpdateResultSchema,
   batchResponseSchema,
   bulkResultSchema,
   cardDetailSchema,
   cardPageSchema,
+  chapterChoiceResultSchema,
+  chapterRemapSchema,
   createdCardsSchema,
   deckDetailSchema,
   deckLibrarySchema,
   deckListSchema,
   deletedCardSchema,
   eraseResultSchema,
+  followResultSchema,
   forgottenListSchema,
   packSchema,
   queueSchema,
@@ -36,6 +40,7 @@ import {
   todaySchema,
   undoResponseSchema,
   unsubscribeResultSchema,
+  updatePreviewSchema,
   vacationSchema,
 } from './schemas'
 
@@ -188,6 +193,33 @@ export const recallApi = {
     parse(
       subscribeResultSchema,
       await api<unknown>(`/recall/subscriptions/${subscriptionId}/resubscribe/`, jsonBody({})),
+    ),
+
+  /** What an update would do (read only), and the apply that does it. Apply is safe to repeat. */
+  updatePreview: async (subscriptionId: string) =>
+    parse(updatePreviewSchema, await api<unknown>(`/recall/subscriptions/${subscriptionId}/update/`)),
+
+  applyUpdate: async (subscriptionId: string) =>
+    parse(
+      applyUpdateResultSchema,
+      await api<unknown>(`/recall/subscriptions/${subscriptionId}/apply-update/`, jsonBody({})),
+    ),
+
+  setFollow: async (subscriptionId: string, follow: boolean) =>
+    parse(
+      followResultSchema,
+      await api<unknown>(`/recall/subscriptions/${subscriptionId}/`, {
+        method: 'PATCH',
+        body: JSON.stringify({ follow_updates: follow }),
+      }),
+    ),
+
+  chapterRemaps: async () => parse(chapterRemapSchema, await api<unknown>('/recall/chapter-remaps/')),
+
+  chooseChapter: async (remapId: string, chapterId: string) =>
+    parse(
+      chapterChoiceResultSchema,
+      await api<unknown>(`/recall/chapter-remaps/${remapId}/choose/`, jsonBody({ chapter_id: chapterId })),
     ),
 
   reportItem: async (itemId: string, body: { reason: ReportReason; note?: string }) =>

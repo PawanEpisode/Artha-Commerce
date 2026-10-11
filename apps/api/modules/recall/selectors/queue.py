@@ -19,6 +19,7 @@ from ..domain.fsrs6 import MemoryState, Preview, preview
 from ..domain.scheduling import CardView, Limits, Queue, plan_queue, review_ahead
 from ..models import RecallCard, RecallDeckItem
 from . import exam as exam_selectors
+from .amendments import under_review_item_ids
 from .cards import render_card
 from .study import Study
 
@@ -155,8 +156,10 @@ def plan_today(study: Study, f: QueueFilters = NO_FILTERS, extra: int = 0) -> tu
     return queue, rows
 
 
-def _badges(card: RecallCard) -> tuple[str, ...]:
+def _badges(card: RecallCard, flagged=frozenset()) -> tuple[str, ...]:
     out = []
+    if card.item_id in flagged:
+        out.append("under_review")
     if card.leech:
         out.append("tricky")
     if card.needs_recheck:
@@ -188,6 +191,7 @@ def render_cards(study: Study, ids: Sequence[str]) -> list[QueueCard]:
         )
     }
     ordered = [cards[i] for i in ids if i in cards]
+    flagged = under_review_item_ids({c.item_id for c in ordered})
     chapters = syllabus_adapter.chapter_refs(c.chapter_id for c in ordered)
     out = []
     for c in ordered:
@@ -199,7 +203,7 @@ def render_cards(study: Study, ids: Sequence[str]) -> list[QueueCard]:
                 back,
                 chapters.get(c.chapter_id),
                 preview(memory_of(c), study.now, study.weights, study.cfg_at(c.importance, study.now), card_id=c.id),
-                _badges(c),
+                _badges(c, flagged),
             )
         )
     return out

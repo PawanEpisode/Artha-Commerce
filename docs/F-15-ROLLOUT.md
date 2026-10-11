@@ -1,7 +1,7 @@
 # F-15 Flashcards and Spaced Revision, release R1 (flag `recall_system`): build and rollout runbook
 
 Status (2026-10-11): **R1 is built (waves W0 to W12 done) and verified by automated tests and two end-to-end scripts; it has not been run on your own Postgres, and no student can see it** (flag `recall_system` is fail closed and off). What is left is yours: section 7.
-Specs: `docs/product/prd/F-15-recall-system.md` (the PRD), `docs/product/erd/F-15-recall-system.md` (the ERD). This file says in what order R1 is built, what each wave changes, how it is proved, how it is rolled back and what you must arrange. R2 (quick revision, sharing, AI, deck sync) and R3 (parameter fit) are not in this file.
+Specs: `docs/product/prd/F-15-recall-system.md` (the PRD), `docs/product/erd/F-15-recall-system.md` (the ERD). This file says in what order R1 is built, what each wave changes, how it is proved, how it is rolled back and what you must arrange. R2 wave W2 (living decks) is section 8 below; the rest of R2 (sharing, AI) and R3 (parameter fit) are not in this file.
 
 R1 ships: seven card kinds, FSRS-6 as a pure versioned function in Python and TypeScript with shared golden vectors, an append-only idempotent review log, the review player (keyboard, swipe, undo, edit in place), daily limits, catch-up, rebalance, vacation, early review, forgotten list and leech notices, stats, platform decks edited in Django admin (copy-on-subscribe), offline review, export and delete-all, and the Notes provider (`create_card_from_source`, `cards_for_source`). **Not in R1:** AI (`recall_ai`), sharing (`recall_sharing`), quick revision and exam horizon, deck update sync (R2), the Notes "highlight to card" button, the F-13 Today registration (`provide_today` exists as a selector, nothing registers it), billing.
 
@@ -342,3 +342,51 @@ Done already: approval of this file, the build, the e2e and capacity scripts, th
 **What changed after the first version of this runbook (so nothing below surprises you).** Seed files live in one folder per paper (`seed/cma-final-paper13/`, one file per chapter) and `load_recall_seed` accepts a file or a folder. The Features page card `revision` (`modules/catalog/features.ts`: status `live`, tool `/app/recall`, flag `recall_system`) already follows the flag: it shows for students whose flag is on and is hidden otherwise, so the earlier plan to leave it at `soon` is superseded and nothing needs flipping at launch. `useFeatureFlag` now waits for PostHog to finish loading before it subscribes (it polls for up to ten seconds), so a strict flag such as `recall_system` no longer stays off for a whole visit when the component mounts first. The flag stays strict on the API and the web.
 
 **Which flag where.** `recall_system`: "team only" (the closed beta cohort) until your own Postgres run and the beta checks pass; only then widen the cohort. `recall_ai` and `recall_sharing` do not exist yet (R2).
+
+## 8. R2, wave W2: living decks (flag `recall_system`, no new flag)
+
+Built on top of R1 and R2-W1. Specs: PRD FR-F15-47 to FR-F15-50 and the ERD events section. Everything below is behind `recall_system` (fail closed). There are no new environment variables. The only new setting is the throttle scope `recall_apply_update` (30 per hour per student).
+
+### 8.1 What it does for a student
+
+- **Follow or pin.** A subscription follows updates by default. A new live version of the deck is applied for her by a job within one 5-minute tick cycle (see the capacity numbers). A pinned subscription is never changed by a job: it records the pending version and shows "Update available (N changes)" with "See what changed" and "Apply update". The switch is on the deck page ("Take updates automatically"). Pin to follow queues the sync as a job; follow to pin only stops future syncs. Both are safe to repeat.
+- **What a sync does.** New items become new cards (at or above her minimum tier, honouring `unlock_mode` at queue time). Removed items archive their cards (progress kept). `typo` and `clarify` changes swap the content silently. `substantive` and `amendment` changes write one `content_reset` schedule event per studied card (stability capped at 3 days, due today, `reason_code` = the change kind, `ref` = `dv:<deck_version_id>`) and set `needs_recheck` with the reason `content_changed` or `amendment`, so the card shows "Updated, please re-check" and "Still correct" clears it without touching memory. During a vacation the card is held until the vacation ends. A student who skipped versions gets the worst change of the versions she missed. The fold, the golden vectors and the review-log schema are unchanged: a content reset was already a schedule event.
+- **Amendment port.** F-14 is not built, so recall listens to its three events by name (`amendment_published`, `amendment_corrected` when `material` is true, `amendment_retracted`) and never imports F-14. A job (`recall.flag_amendment`, chunks of 1,000) flags platform items whose `reference_keys` share a provision key with the event (`needs_editor_check`, `check_reason = amendment`, a `RecallAmendmentFlag` row; students see "Under review after amendment" on the deck item) and puts a "Check against the amendment" chip on her **own** cards with a matching key. Her own cards get no schedule event and no change of memory. A retraction removes what that amendment set and nothing else. Without `provision_keys` the match is by chapter and only for platform items. `provision_keys[]` is a proposed extension of the F-14 events (as in the ERD); nothing breaks while it is missing.
+- **Scheme switch.** `coverage.switch_scheme` now emits `enrollment_scheme_changed(user_id, old_scheme_id, new_scheme_id)` after commit (recall also listens for the name the PRD proposed, `enrollment_scheme_switched`). A job moves her own cards through the F-02 chapter map: one confirmed row moves the card at once; a split, or several confirmed rows, or no confirmed row parks it under "Needs a new chapter" (`/app/recall/chapters`, card filter `state=needs_chapter`) with the map's candidates first. Rows an editor has not confirmed (`needs_review`) are never used automatically, only offered as suggestions: a wrong automatic move of a student's own cards is harder to see than a wrong carry of coverage progress. Platform deck cards are not moved; a deck for the previous scheme shows "This deck is for the old syllabus".
+- **Offline.** The pack carries `needs_recheck`, `recheck_reason`, `updated`; a review result or "Still correct" patches the stored pack by `rev`, and an older pack from R1 still parses (defaults).
+
+### 8.2 What staff see (Django admin, Platform deck versions)
+
+- A draft version page shows "Before you publish": the per-item diff against the live version (item reference and change kind, never card text), how many active followers will be updated and how many are pinned, and how many studied cards will come back for a re-check.
+- Publishing a version with a `substantive` or `amendment` item needs a change note (`422 changelog_required`; the admin shows "Not published"). Students read the note in the update sheet.
+- After a publish, the live version page has an "Updates panel": follower sync jobs queued, running, done, failed for that version. List action **Retry the failed follower updates** (needs `recall.deck.publish`, writes an audit row `deck_sync_retry`) requeues the failed jobs with their attempts reset. A failed single subscription also gets its own retry job automatically (`recall.sync_subscription`), so one bad subscription never stops a chunk.
+
+### 8.3 Operations
+
+| Question | Answer |
+| --- | --- |
+| How long until followers have it? | The publish queues `recall.sync_subscribers` (chunks of 200). The 5-minute tick runs it with a 20 s budget and chained chunks continue in the same tick while time remains. 1,000 followers took 53 s of work, so three ticks; worst case 15 minutes after the publish (PRD target: 15 minutes). Above about 1,000 followers per deck, call the tick more often or run the worker; the number scales linearly (about 53 ms per subscription) |
+| A follower did not update | Look at the Updates panel. Failed jobs: run the retry action. A student can also open the deck and apply the update herself (idempotent) |
+| A mistake in a published version | Publish a new version that fixes it. A version is never edited. Followers on the bad version get the fix as a normal update; cards already reset stay "to re-check" until she confirms |
+| Roll the feature back | The flag `recall_system` hides everything. Code rollback is safe: the two new tables and columns are additive and ignored by older code; the sync stops, nothing is lost |
+| Export and erase | Export has the new card columns (`needs_recheck`, `recheck_reason`, `recheck_ref`), subscription fields (`follow_updates`, pinned, synced and pending version, `last_sync_at`) and a `chapter_remaps` block. Erase deletes her `RecallChapterRemap` rows and the sync jobs of her subscriptions, and leaves platform content and amendment flags alone. Job payloads hold ids and provision keys only, never card text |
+
+### 8.4 Capacity (same sandbox as the R1 note: Linux x86-64, 2 CPUs, shared with the database and the dev server)
+
+Command: `DATABASE_URL=postgres://... python scripts/e2e/recall-r2/capacity_w2.py`.
+
+| Measure | Target | Result |
+| --- | --- | --- |
+| Update preview, 500 cards, 50 changes (p95 of 20 calls) | under 300 ms | 100 ms (p50 92), met |
+| Apply, 500 cards, 50 changes, over HTTP (first call) | under 2 s | 412 ms, 50 cards reset, met; a second apply 124 ms, no change; the same sync in-process 247 ms |
+| Fan-out to 1,000 followers of a 30-card deck | within 15 minutes of the publish | 53 s of work in 6 chunk jobs, 0 failed, all 1,000 on the new version; three 20 s ticks, so **15 minutes in the worst case with a 5-minute tick: met with no margin** |
+
+The two paths the sync shares with reviews (the card write and the fold) are unchanged, so the R1 and R2-W1 numbers stand.
+
+### 8.5 Not built in W2 (on purpose)
+
+A student-facing history of past updates, a per-card "what changed" view, daily "2 cards changed" notifications (F-13), and deck-level sharing (R2 later waves). The staff summary shows counts only.
+
+### 8.6 Proof
+
+Ruff and ruff format on `apps/api`; pytest `modules/coverage modules/recall modules/syllabus core` on SQLite (1,362 passed, 39 skipped that need PostgreSQL) and `modules/coverage modules/recall core` on PostgreSQL 16 (1,292 passed); `scripts/recall-seed-check.py`; recall, observability and features web unit tests (350 passed); `scripts/e2e/recall-r1/run.py` (42 checks) and `scripts/e2e/recall-r2/run.py` (R2-W1 and the W2 section) on PostgreSQL, all passed; `capacity_w2.py` above. Manual device and browser checks are not done (your standing rule).

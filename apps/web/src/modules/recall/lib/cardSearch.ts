@@ -5,7 +5,7 @@ import { CARD_KINDS } from './cardKinds'
 const uuid = z.string().uuid().optional().catch(undefined)
 const text = (max: number) => z.string().max(max).optional().catch(undefined)
 
-export const CARD_STATES = ['new', 'learning', 'review', 'suspended', 'tricky', 'recheck'] as const
+export const CARD_STATES = ['new', 'learning', 'review', 'suspended', 'tricky', 'recheck', 'needs_chapter'] as const
 export const CARD_SORTS = ['newest', 'oldest', 'updated'] as const
 
 /** `/app/recall/cards`: every filter lives in the URL, so a view can be shared, bookmarked and reloaded. */

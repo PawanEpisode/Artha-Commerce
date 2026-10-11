@@ -39,6 +39,11 @@ export const queueCardSchema = z.object({
   back_md: z.string(),
   state: z.number(),
   badges: z.array(z.string()),
+  needs_recheck: z.boolean().default(false),
+  /** `content_changed` (the deck changed the meaning) or `amendment` (a law changed); null when nothing is waiting. */
+  recheck_reason: z.string().nullable().default(null),
+  /** True for the "Updated" badge: the deck changed this card's meaning. */
+  updated: z.boolean().default(false),
   importance: z.number(),
   chapter: chapterRefSchema,
   previews: z.record(z.string(), z.string()),
@@ -189,6 +194,9 @@ export const todaySchema = z.object({
   ),
   forgotten: z.array(forgottenSchema),
   exam: examBlockSchema.nullable(),
+  /** R2-W2: cards waiting for "Still correct", and cards waiting for a chapter of the new syllabus. */
+  recheck: z.object({ count: z.number() }).default({ count: 0 }),
+  needs_chapter: z.object({ count: z.number() }).default({ count: 0 }),
 })
 export type TodayPlan = z.infer<typeof todaySchema>
 
@@ -204,7 +212,11 @@ export const reviewCardSchema = z.object({
   reps: z.number(),
   lapses: z.number(),
   leech: z.boolean(),
-  needs_recheck: z.boolean(),
+  needs_recheck: z.boolean().default(false),
+  /** `content_changed` (the deck changed the meaning) or `amendment` (a law changed); null when nothing is waiting. */
+  recheck_reason: z.string().nullable().default(null),
+  /** True for the "Updated" badge: the deck changed this card's meaning. */
+  updated: z.boolean().default(false),
 })
 export type ReviewCardPatch = z.infer<typeof reviewCardSchema>
 
@@ -332,6 +344,11 @@ export const cardSchema = z.object({
   reference_keys: z.array(z.string()).optional(),
   deck_ids: z.array(z.string()),
   badges: z.array(z.string()),
+  needs_recheck: z.boolean().default(false),
+  /** `content_changed` (the deck changed the meaning) or `amendment` (a law changed); null when nothing is waiting. */
+  recheck_reason: z.string().nullable().default(null),
+  /** True for the "Updated" badge: the deck changed this card's meaning. */
+  updated: z.boolean().default(false),
   source: sourceSchema,
   due_at: isoOrNull,
   buried_until: isoOrNull,
@@ -404,6 +421,13 @@ export const deckSubscriptionSchema = z
     newer_versions: z.number(),
     subscribed_at: iso,
     min_importance: z.string(),
+    /** Follow (default) takes updates by itself; pin waits for her to apply them. */
+    follow_updates: z.boolean().default(true),
+    update_available: z.boolean().default(false),
+    pending_changes: z.number().default(0),
+    pending_version_no: z.number().nullable().default(null),
+    /** The deck was written for the previous syllabus scheme. */
+    old_syllabus: z.boolean().default(false),
   })
   .nullable()
 export type DeckSubscription = z.infer<typeof deckSubscriptionSchema>
@@ -439,6 +463,8 @@ export const deckItemSchema = z.object({
   position: z.number(),
   preview: z.string(),
   chapter_name: z.string().nullable(),
+  /** A law changed and the editors have not checked this card yet. */
+  under_review: z.boolean().default(false),
 })
 export type ApiDeckItem = z.infer<typeof deckItemSchema>
 
@@ -455,3 +481,64 @@ export type SubscribeResult = z.infer<typeof subscribeResultSchema>
 export const unsubscribeResultSchema = z.object({ deck: deckSchema })
 export const reportResultSchema = z.object({ id: z.string(), created: z.boolean() })
 export const eraseResultSchema = z.object({ deleted: z.record(z.string(), z.number()) })
+
+// ------------------------------------------------------------------------------- living decks (R2-W2)
+
+export const CHANGE_KINDS = ['added', 'removed', 'typo', 'clarify', 'substantive', 'amendment'] as const
+export type ChangeKind = (typeof CHANGE_KINDS)[number]
+
+export const updatePreviewSchema = z.object({
+  subscription_id: z.string(),
+  update_available: z.boolean(),
+  follow_updates: z.boolean(),
+  from_version_no: z.number(),
+  to_version_no: z.number(),
+  versions_skipped: z.number(),
+  changelog_md: z.string(),
+  /** `{ added, removed, typo, clarify, substantive, amendment, total, recheck }` */
+  counts: z.record(z.string(), z.number()),
+  /** A few labels per kind (the student's own deck text, shown to her only). */
+  items: z.record(z.string(), z.array(z.object({ item_id: z.string(), label: z.string(), importance: z.string() }))),
+  more: z.record(z.string(), z.number()).default({}),
+  returning_today: z.number(),
+})
+export type UpdatePreview = z.infer<typeof updatePreviewSchema>
+
+export const syncResultSchema = z.object({
+  changed: z.boolean(),
+  from_version_no: z.number(),
+  to_version_no: z.number(),
+  versions_skipped: z.number(),
+  added: z.number(),
+  removed: z.number(),
+  silent: z.number(),
+  rechecked: z.number(),
+  cards_created: z.number(),
+  cards_restored: z.number(),
+  cards_archived: z.number(),
+  cards_updated: z.number(),
+  cards_reset: z.number(),
+})
+export type SyncResult = z.infer<typeof syncResultSchema>
+
+export const applyUpdateResultSchema = z.object({ result: syncResultSchema, deck: deckSchema })
+export const followResultSchema = z.object({ deck: deckSchema })
+
+export const chapterOptionSchema = z.object({ id: z.string(), key: z.string(), name: z.string() }).passthrough()
+export const chapterRemapSchema = z.object({
+  items: z.array(
+    z.object({
+      id: z.string(),
+      relation: z.string(),
+      label: z.string(),
+      card_count: z.number(),
+      from_chapter: chapterOptionSchema.nullable(),
+      candidates: z.array(chapterOptionSchema.nullable()).transform((c) => c.filter((x) => x !== null)),
+    }),
+  ),
+  chapters: z.array(chapterOptionSchema.nullable()).transform((c) => c.filter((x) => x !== null)),
+  count: z.number(),
+})
+export type ChapterRemap = z.infer<typeof chapterRemapSchema>
+export type ChapterRemapItem = ChapterRemap['items'][number]
+export const chapterChoiceResultSchema = z.object({ id: z.string(), status: z.string(), relation: z.string() })

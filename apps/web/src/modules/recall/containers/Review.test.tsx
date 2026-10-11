@@ -22,6 +22,7 @@ const h = vi.hoisted(() => ({
     submitBatch: vi.fn(),
     undo: vi.fn(),
     cardAction: vi.fn(),
+    setCardState: vi.fn(),
   },
 }))
 
@@ -224,6 +225,40 @@ describe('the review player', () => {
     h.api.pack.mockResolvedValue(apiPack(cards(2, { badges: ['tricky'], lapses: 9 })))
     renderWithQuery(<ReviewContainer search={search} />)
     expect(await screen.findByText('Tricky card')).toBeInTheDocument()
+  })
+
+  it('shows an updated card with its note, and "Still correct" clears it and the stored copy', async () => {
+    const user = userEvent.setup()
+    const first = cards(1, { needs_recheck: true, recheck_reason: 'content_changed', updated: true })[0]
+    h.api.pack.mockResolvedValue(apiPack([first]))
+    h.api.setCardState.mockResolvedValue({
+      ...first,
+      rev: 5,
+      state_name: 'review',
+      status: 'active',
+      buried_until: null,
+      needs_recheck: false,
+      recheck_reason: null,
+      updated: false,
+    })
+    renderWithQuery(<ReviewContainer search={search} />)
+    expect(await screen.findByText('Updated, please re-check')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Still correct' }))
+    expect(h.api.setCardState).toHaveBeenCalledWith(first.id, 'recheck-ok')
+    await waitFor(() => expect(screen.queryByText('Updated, please re-check')).toBeNull())
+    const stored = (await eventStore.loadPack('u1'))?.pack.cards.find((c) => c.id === first.id)
+    expect(stored?.needs_recheck).toBe(false)
+  })
+
+  it('keeps the note and says so when "Still correct" cannot be saved', async () => {
+    const user = userEvent.setup()
+    h.api.pack.mockResolvedValue(apiPack(cards(1, { needs_recheck: true, recheck_reason: 'amendment' })))
+    h.api.setCardState.mockRejectedValue(new TypeError('Failed to fetch'))
+    renderWithQuery(<ReviewContainer search={search} />)
+    expect(await screen.findByText('Check against the amendment')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Still correct' }))
+    expect(await screen.findByText(/Could not save that/)).toBeInTheDocument()
+    expect(screen.getByText('Check against the amendment')).toBeInTheDocument()
   })
 
   it('says there is nothing to review, and can look ahead', async () => {

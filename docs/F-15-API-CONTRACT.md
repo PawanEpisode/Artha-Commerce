@@ -17,7 +17,7 @@ Ids are UUID strings, timestamps are ISO 8601 UTC (`...Z`).
   endpoints that create cards answer when this module is not installed (`core/recall_port.py`).
 - **Lists:** cursor pagination `{"items": [...], "next_cursor": str|null}`; send `?cursor=<next_cursor>&limit=<n>`. Cursors are opaque, a bad one is 400 `bad_cursor`.
 - **Throttles (per student):** `recall_review` 600/min (reviews, batches, sessions), `recall_write` 120/min (card, deck, settings and catch-up writes),
-  `recall_export` 6/hour (JSON and CSV export and erase share it), every other read the default 300/min. Rating a card is never limited by quota; the throttle is politeness.
+  `recall_export` 6/hour (JSON and CSV export and erase share it), `recall_apply_update` 30/hour (applying a deck update), every other read the default 300/min. Rating a card is never limited by quota; the throttle is politeness.
 - **Idempotency:** every create takes a client generated UUID (`client_id` for cards, sessions and selections, `id` for a review event). A replay returns the stored row
   with 200 instead of 201. The review log is append only: an event id is recorded once and a resend answers `status: "duplicate"`.
 - **Privacy:** card text, note text, deck titles and ids leave the API only in response bodies, never in a log line, Sentry event or analytics event.
@@ -25,13 +25,13 @@ Ids are UUID strings, timestamps are ISO 8601 UTC (`...Z`).
 ## Cards
 
 `Card`: `{id, rev, item_id, item_version_id, kind, ordinal, front_md, back_md, fields, state (0..3), state_name, status: "active"|"suspended"|"archived"|"deleted",
-importance: "bullet"|"important"|"mandatory", chapter: {id, key, name, subject_key, subject_name}|null, subject_key, tags, reference_keys, deck_ids, badges: ("suspended"|"tricky"|"recheck"|"buried")[],
+importance: "bullet"|"important"|"mandatory", chapter: {id, key, name, subject_key, subject_name}|null, subject_key, tags, reference_keys, deck_ids, badges: ("suspended"|"tricky"|"recheck"|"buried")[], needs_recheck, recheck_reason: null|"content_changed"|"amendment", updated, under_review,
 source: {origin, module, ref_id, locator}|null, due_at, buried_until, reps, lapses, created_at, updated_at}`. `CardDetail` = `Card` + `memory`
 `{stability, difficulty, due_scheduled_at, postponed_until, due_at, last_review_at, reps, lapses, step}`.
 
 | Method and path | Body or query | Success | Errors |
 | --- | --- | --- | --- |
-| `GET recall/cards/` | `?subject_key&chapter_id&kind&tier&state=new\|learning\|review\|suspended\|tricky\|recheck&deck_id&q (<=200)&status&sort=newest\|oldest\|updated&cursor&limit<=100 (default 30)` | 200 `{items: Card[], next_cursor, server_time}`. `deck_id` filters cards of the student's own decks | 400 |
+| `GET recall/cards/` | `?subject_key&chapter_id&kind&tier&state=new\|learning\|review\|suspended\|tricky\|recheck\|needs_chapter&deck_id&q (<=200)&status&sort=newest\|oldest\|updated&cursor&limit<=100 (default 30)` | 200 `{items: Card[], next_cursor, server_time}`. `deck_id` filters cards of the student's own decks | 400 |
 | `POST recall/cards/` | `{client_id, kind, fields, chapter_id?, topic_id?, importance? (default "bullet"), tags?, reference_keys?, deck_ids?, force?}` | 201 `{item_id, kind, existing, cards: Card[]}` (200 with `existing: true` on replay) | 409 `duplicate_card` details `{card_id, item_id}` unless `force`; 422 `invalid_fields` details `{errors:[{field, code, message}]}`, `unknown_kind`, `unknown_chapter`; 429 `quota_exceeded` |
 | `POST recall/cards/from-selection/` | `{client_id, origin: "note_highlight"\|"solution_text"\|"chapter_page"\|"question_review", selection_text (<=8000), source: {module, object_id, locator?}, chapter_id?, topic_id?, kind?, quick? (true), cloze? (false), force?}` | 201 as create plus `{card_id, undo_token, undo_seconds}` (200 on replay) | as create |
 | `POST recall/cards/undo-delete/` | `{undo_token}` | 200 `CardDetail` (restores a card deleted within the last 10 seconds, or undoes a quick selection card) | 410 `undo_expired`; 409 `not_undoable` |
@@ -48,7 +48,7 @@ Edits create a new item version only when the text changes. `base_rev` must be t
 ## Reviews, sessions, catch-up, offline sync
 
 `ReviewEvent`: `{id (client event id), card_id, rating: 1..4, reviewed_at, duration_ms?, session_id?, mode? ("normal" default), item_version_id?, device_id? (<=64), tz_offset_min? (-840..840)}`.
-`CardPatch` (what a review changed): `{id, rev, state, state_name, status, due_at, buried_until, reps, lapses, leech, needs_recheck}`.
+`CardPatch` (what a review changed): `{id, rev, state, state_name, status, due_at, buried_until, reps, lapses, leech, needs_recheck, recheck_reason, updated}`.
 `ReviewResult`: `{event_id, status: "applied"|"duplicate"|"applied_to_deleted"|"stale_content"|"late_unapplied"|"invalid", reason, merged: bool, card: CardPatch|null}`.
 
 | Method and path | Body or query | Success | Errors |
@@ -71,9 +71,9 @@ the returned `cards` hold the final state to adopt (compare `rev`). An event dat
 
 | Method and path | Query | Success |
 | --- | --- | --- |
-| `GET recall/today/` | `tz?` | 200 `{server_time, local_date, tz, mode: "normal"\|"catchup"\|"vacation", counts: {new, learning, due}, queue_size, deferred, days_to_clear, est_minutes, next_due_at, new_available, limits: {new_per_day, reviews_per_day, new_done, reviews_done}, catchup: {active, due, oldest_overdue_days}, vacation_until, streak, tiles: [{subject_key, total, kinds}], forgotten: [...], exam: null \| {exam_date, days_to_exam, cram_open, quick: null \| {candidates, selected, cut_off, per_day, minutes_per_day, too_few}, pacing: null \| {unseen, window_days, new_per_day, introduced_at_limit, needed_per_day, feasible}}}`. `exam` is null without a future exam date; `quick` appears within 45 days of the exam, `pacing` within 90. A card due exactly at the end of the study day is due tomorrow |
+| `GET recall/today/` | `tz?` | 200 `{server_time, local_date, tz, mode: "normal"\|"catchup"\|"vacation", counts: {new, learning, due}, queue_size, deferred, days_to_clear, est_minutes, next_due_at, new_available, limits: {new_per_day, reviews_per_day, new_done, reviews_done}, catchup: {active, due, oldest_overdue_days}, vacation_until, streak, tiles: [{subject_key, total, kinds}], forgotten: [...], recheck: {count} (cards waiting for "Still correct"), needs_chapter: {count} (her cards waiting for a chapter), exam: null \| {exam_date, days_to_exam, cram_open, quick: null \| {candidates, selected, cut_off, per_day, minutes_per_day, too_few}, pacing: null \| {unseen, window_days, new_per_day, introduced_at_limit, needed_per_day, feasible}}}`. `exam` is null without a future exam date; `quick` appears within 45 days of the exam, `pacing` within 90. A card due exactly at the end of the study day is due tomorrow |
 | `GET recall/quick-revision/plan/` | `minutes?` (5..240, default her setting), `subject_key?`, `exam_date?` (preview), `tz?` | 200 `{exam_date, days_to_exam, window_days, budget_minutes_per_day, median_seconds, candidates, selected, cut_off, per_day, minutes_per_day, too_few, sample: [QueueCard + memory]}`. Mandatory and important cards of her enrolment whose predicted recall on exam day is under 0.90, plus unseen mandatory cards, ordered by importance times risk and cut to the minute budget over the days before exam minus 2. `too_few` is true under 20 candidates. 422 `no_exam_date`, `exam_passed` |
-| `GET recall/queue/` | `source=today\|chapter\|deck\|forgotten\|quick\|catchup\|cram\|review_ahead (default today)`, `chapter_id`, `deck_id`, `kind`, `tier`, `limit<=50 (20)`, `exclude` (comma separated card ids), `extra<=100` ("do 20 more"), `tz` | 200 `{source, server_time, cards: [QueueCard + memory]}`; `QueueCard`: `{id, rev, item_id, item_version_id, kind, ordinal, front_md, back_md, state, badges, importance, chapter, previews: {"1".."4": label}, preview_days, source}`. `quick` follows the quick-revision plan (below); `cram` serves her mandatory cards, most likely forgotten first, and only in the last 24 hours before the exam. 422 `no_exam_date`, `exam_passed` (quick) and `cram_not_open` (cram) |
+| `GET recall/queue/` | `source=today\|chapter\|deck\|forgotten\|quick\|catchup\|cram\|review_ahead (default today)`, `chapter_id`, `deck_id`, `kind`, `tier`, `limit<=50 (20)`, `exclude` (comma separated card ids), `extra<=100` ("do 20 more"), `tz` | 200 `{source, server_time, cards: [QueueCard + memory]}`; `QueueCard`: `{id, rev, item_id, item_version_id, kind, ordinal, front_md, back_md, state, badges, needs_recheck, recheck_reason: null\|"content_changed"\|"amendment", updated, importance, chapter, previews: {"1".."4": label}, preview_days, source}` (`badges` may hold `updated`, `amendment`, `under_review`, `tricky`, `new`; `updated` is true when the deck content changed and she has not yet pressed "Still correct"). `quick` follows the quick-revision plan (below); `cram` serves her mandatory cards, most likely forgotten first, and only in the last 24 hours before the exam. 422 `no_exam_date`, `exam_passed` (quick) and `cram_not_open` (cram) |
 | `GET recall/pack/` | `limit<=1000` (capped by the plan and `RECALL_PACK_MAX`) | 200 `{pack_id, generated_at, server_time, expires_at, settings, weights, scheduler_version, cards: [QueueCard + memory], counters: {new_done_today, reviews_done_today, local_date}}` |
 | `GET recall/forgotten/` | `subject_key`, `limit<=50 (20)`, `window_days<=90 (30)` | 200 `{items: [{card_id, kind, front_md, back_md, subject_key, chapter_id, importance, score, lapses, agains, last_again_at}]}` |
 | `GET recall/stats/summary/`, `retention/` | `range=7d\|30d\|90d\|1y (30d)`, `tz` | 200 report with an `ETag` and `Cache-Control: private, no-cache`; 304 when `If-None-Match` matches |
@@ -87,26 +87,32 @@ GETs never write. `desired_retention` is 0.80 to 0.97, `new_per_day` 0 to 100, `
 ## Platform decks
 
 `Deck`: `{id, slug, title, description, course_id, level_id, subject_key, subject_name, chapter_id, chapter_name, version_no, item_count, card_count, tiers, published_at, changelog_md,
-subscription: {id, status, version_no, newer_versions, subscribed_at, min_importance}|null}`.
+subscription: {id, status, version_no, newer_versions, subscribed_at, min_importance, follow_updates, update_available, pending_changes, pending_version_no, old_syllabus}|null}`.
+`version_no` is the deck version she has synced. `update_available` is true for an active subscription while a newer live version exists; `pending_changes` is the number of changes in it that concern her cards (the banner's number); `pending_version_no` is set for a pinned subscription once a newer version was published; `old_syllabus` is true when the deck is written for a scheme other than the one of her active enrolment.
 
 | Method and path | Body or query | Success | Errors |
 | --- | --- | --- | --- |
 | `GET recall/decks/library/` | `?course&level&subject_key&chapter_id&tier&cursor&limit<=50` | 200 `{items: Deck[], next_cursor}` (live decks only) | 400 |
 | `GET recall/decks/subscribed/` | | 200 `{items: Deck[]}` | |
-| `GET recall/decks/{id}/` | | 200 `{deck: Deck, items: [{item_id, kind, importance, position, preview, chapter_name}]}` | 404 `deck_not_found` |
+| `GET recall/decks/{id}/` | | 200 `{deck: Deck, items: [{item_id, kind, importance, position, preview, chapter_name, under_review}]}` (`under_review`: the "Under review after amendment" ribbon) | 404 `deck_not_found` |
 | `POST recall/decks/{id}/subscribe/` | `{follow_updates? (true), unlock_mode? ("with_coverage"\|"all"), min_importance? ("bullet")}` | 201 (200 when already subscribed) `{created, cards_created, cards_restored, deck}` | 404 `deck_not_found`; 422 `deck_too_large` details `{cards, limit}` (500); 429 `quota_exceeded` |
 | `POST recall/subscriptions/{id}/unsubscribe/` | | 200 `{deck}` (idempotent; the cards stay) | 404 |
 | `POST recall/subscriptions/{id}/resubscribe/` | | 201 or 200 `{created, cards_created, cards_restored, deck}` (idempotent) | 404; 422 |
+| `PATCH recall/subscriptions/{id}/` | `{follow_updates: bool}` | 200 `{deck}`. Switch between follow and pin. Pin to follow with a newer version waiting queues the sync job (the update is applied by the job within the tick, never inline); follow to pin only stops future syncs. Idempotent | 404; 400 |
+| `GET recall/subscriptions/{id}/update/` | | 200 `{subscription_id, update_available, follow_updates, from_version_no, to_version_no, versions_skipped, changelog_md, counts: {v, added, removed, typo, clarify, substantive, amendment, total, recheck}, items: {<kind>: [{item_id, label, importance}]} (at most 5 per kind), more: {<kind>: n}, returning_today}`. Read only. `label` is the first line of the item's own text and goes to the signed-in owner only. `returning_today` is how many of her cards come back for re-check at once. When she is already on the live version: `update_available: false` and empty counts | 404 |
+| `POST recall/subscriptions/{id}/apply-update/` | | 200 `{result: {changed, from_version_no, to_version_no, versions_skipped, added, removed, silent, rechecked, cards_created, cards_restored, cards_archived, cards_updated, cards_reset}, deck}`. Syncs to the live version now. Idempotent: a second call, or a call after another tab or the follower job got there first, answers `changed: false` and writes nothing. Throttle scope `recall_apply_update` (30/hour) | 404; 429 `throttled` |
+| `GET recall/chapter-remaps/` | | 200 `{items: [{id, relation: "split"\|"merged"\|"same"\|"partial"\|"none", label, card_count, from_chapter: ChapterRef\|null, candidates: ChapterRef[]}], chapters: ChapterRef[], count}`: her own cards waiting in "Needs a new chapter" after a scheme switch, the targets offered first, and every chapter of the new scheme for "pick any chapter". `ChapterRef`: `{id, key, name, subject_key, subject_name}` | |
+| `POST recall/chapter-remaps/{id}/choose/` | `{chapter_id}` | 200 `{id, status: "resolved", relation}`. The item's and her cards' chapter move to the chapter (a chapter of the new scheme). Safe to repeat | 404; 422 `unknown_chapter` |
 | `POST recall/items/{id}/report/` | `{reason: "wrong"\|"outdated"\|"copyright"\|"other", note? (<=500)}` | 201 `{id, created: true}` (200 `created: false` when she already has an open report on the item) | 404 |
 
 ## Export and erase (never gated by the flag)
 
 | Method and path | Query or body | Success |
 | --- | --- | --- |
-| `GET recall/export/` | | 200 JSON of everything the student owns in recall (cards, items and versions, review log, sessions, settings, subscriptions, reports), `Content-Disposition: attachment; filename="recall-export.json"` |
+| `GET recall/export/` | | 200 JSON of everything the student owns in recall (cards, items and versions, review log, sessions, settings, subscriptions with follow or pin, chapter remaps, reports), `Content-Disposition: attachment; filename="recall-export.json"` |
 | `GET recall/export/cards.csv` | `cursor?`, `limit<=100000?` | streamed `text/csv`, `Cache-Control: no-store`; the last line is `#complete,<rows>` or `#next,<cursor>` (call again with the cursor) |
 | `GET recall/export/reviews.csv` | as `cards.csv` | as `cards.csv`; the review log without card text |
-| `POST recall/erase/` | `{confirm: "ERASE"}` | 200 `{deleted: {reviewlog, scheduleevents, sessions, cards, subscriptions, item_versions, items, decks, daily_rollups, chapter_rollups, settings, params, quota, reports}}` (row counts): every recall row of the student is deleted, including the partitioned review log; nothing is kept. A wrong `confirm` word is 400 |
+| `POST recall/erase/` | `{confirm: "ERASE"}` | 200 `{deleted: {reviewlog, scheduleevents, sessions, cards, subscriptions, chapter_remaps, item_versions, items, decks, daily_rollups, chapter_rollups, settings, params, quota, reports}}` (row counts): every recall row of the student is deleted, including the partitioned review log; nothing is kept. A wrong `confirm` word is 400 |
 
 ## Notes for the web
 

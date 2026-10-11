@@ -51,7 +51,8 @@ class MarkFields(serializers.Serializer):
     tag_ids = serializers.ListField(child=serializers.UUIDField(), required=False, max_length=20)
     device_id = serializers.CharField(required=False, allow_null=True, max_length=36)
     base_rev = serializers.IntegerField(min_value=0, required=False, allow_null=True)
-    base = serializers.DictField(required=False, child=serializers.JSONField())
+    # Values last seen for overwrite reporting; chapter_id/topic_id are null when the mark had no explicit link.
+    base = serializers.DictField(required=False, child=serializers.JSONField(allow_null=True))
     resolution = serializers.ChoiceField(choices=["mine", "theirs", "both"], required=False, allow_null=True)
 
 

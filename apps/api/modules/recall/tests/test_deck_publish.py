@@ -83,7 +83,7 @@ def test_a_failed_publish_leaves_the_previous_live_version_served(monkeypatch):
 
     monkeypatch.setattr(RecallAuditLog.objects, "create", boom)  # the LAST write of the publish
     with pytest.raises(RuntimeError):
-        svc.publish_deck_version(EDITOR, deck.id, draft.id)
+        svc.publish_deck_version(EDITOR, deck.id, draft.id, changelog_md="Reworded.")
     deck.refresh_from_db()
     assert deck.live_version_id == v1.id and deck.draft_version_id == draft.id
     assert RecallDeckVersion.objects.get(pk=v1.id).state == "live"

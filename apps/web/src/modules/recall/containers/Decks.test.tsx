@@ -18,6 +18,11 @@ const sub = (over = {}) => ({
   newer_versions: 0,
   subscribed_at: '2026-10-01T00:00:00Z',
   min_importance: 'bullet',
+  follow_updates: true,
+  update_available: false,
+  pending_changes: 0,
+  pending_version_no: null,
+  old_syllabus: false,
   ...over,
 })
 
@@ -49,6 +54,7 @@ const item = (i: number, over: Partial<ApiDeckItem> = {}): ApiDeckItem => ({
   position: i,
   preview: `When is ITC blocked ${i}?`,
   chapter_name: null,
+  under_review: false,
   ...over,
 })
 
@@ -83,6 +89,10 @@ const h = vi.hoisted(() => ({
   erase: null as unknown,
   eraseDone: undefined as undefined | (() => void),
   settings: null as unknown,
+  preview: null as unknown,
+  apply: null as unknown,
+  follow: null as unknown,
+  toast: vi.fn(),
 }))
 
 vi.mock('@tanstack/react-router', async () => (await import('~/test/router-stub')).routerStub)
@@ -99,6 +109,11 @@ vi.mock('../hooks/useDecks', () => ({
   useUnsubscribe: () => h.unsubscribe,
   useResubscribe: () => h.resubscribe,
   useReportItem: () => h.report,
+}))
+vi.mock('../hooks/useUpdates', () => ({
+  useUpdatePreview: () => h.preview,
+  useApplyUpdate: () => h.apply,
+  useSetFollow: () => h.follow,
 }))
 vi.mock('../hooks/useDataControls', () => ({
   useExportJson: () => h.exportJson,
@@ -154,6 +169,9 @@ beforeEach(() => {
   h.exportCsv = mut()
   h.erase = mut()
   h.settings = query(undefined, { isPending: true })
+  h.preview = query(undefined, { isPending: true })
+  h.apply = mut()
+  h.follow = mut()
 })
 
 describe('decks library', () => {
@@ -284,6 +302,86 @@ describe('deck page', () => {
     rerender(<DeckDetailContainer deckId="d1" />)
     await user.click(screen.getByRole('button', { name: /try again/i }))
     expect(retry).toHaveBeenCalled()
+  })
+})
+
+describe('living deck updates', () => {
+  const updatePreview = {
+    subscription_id: 'sub1',
+    update_available: true,
+    follow_updates: true,
+    from_version_no: 1,
+    to_version_no: 2,
+    versions_skipped: 0,
+    changelog_md: 'Fixed the time limit.',
+    counts: { added: 0, removed: 0, typo: 0, clarify: 0, substantive: 1, amendment: 0, total: 1, recheck: 1 },
+    items: { substantive: [{ item_id: 'i1', label: 'When is ITC blocked 1?', importance: 'mandatory' }] },
+    more: {},
+    returning_today: 1,
+  }
+  const withUpdate = (over = {}) => {
+    h.detail = query({
+      deck: deck({ subscription: sub({ update_available: true, pending_changes: 1, newer_versions: 1, ...over }) }),
+      items: [item(1, { under_review: true })],
+    })
+  }
+
+  it('shows the banner and the follow switch, and passes axe', async () => {
+    withUpdate()
+    const { container } = renderWithQuery(<DeckDetailContainer deckId="d1" />)
+    expect(screen.getByText('Update available (1 change)')).toBeInTheDocument()
+    expect(screen.getByRole('switch', { name: 'Take updates automatically' })).toBeChecked()
+    expect(screen.getByText('Under review after amendment')).toBeInTheDocument()
+    expect(screen.queryByText(/Your cards stay as they are for now/)).toBeNull()
+    await expectNoA11yViolations(container)
+  })
+
+  it('previews the changes in a sheet and applies them', async () => {
+    const user = userEvent.setup()
+    withUpdate()
+    h.preview = query(updatePreview)
+    renderWithQuery(<DeckDetailContainer deckId="d1" />)
+    await user.click(screen.getByRole('button', { name: 'See what changed' }))
+    expect(screen.getByText('Fixed the time limit.')).toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'Apply update' }))
+    expect((h.apply as Mut).mutate).toHaveBeenCalledWith(undefined, expect.any(Object))
+  })
+
+  it('"Not now" closes the sheet without applying', async () => {
+    const user = userEvent.setup()
+    withUpdate()
+    h.preview = query(updatePreview)
+    renderWithQuery(<DeckDetailContainer deckId="d1" />)
+    await user.click(screen.getByRole('button', { name: 'See what changed' }))
+    await user.click(screen.getByRole('button', { name: 'Not now' }))
+    expect(screen.queryByRole('dialog')).toBeNull()
+    expect((h.apply as Mut).mutate).not.toHaveBeenCalled()
+  })
+
+  it('lets her pin a deck and says what pinning means', async () => {
+    const user = userEvent.setup()
+    withUpdate({ follow_updates: false })
+    renderWithQuery(<DeckDetailContainer deckId="d1" />)
+    expect(screen.getByText(/nothing changes until you apply it/)).toBeInTheDocument()
+    await user.click(screen.getByRole('switch', { name: 'Take updates automatically' }))
+    expect((h.follow as Mut).mutate).toHaveBeenCalledWith(true)
+  })
+
+  it('shows a failed apply or follow as a sentence and flags a deck for the old syllabus', () => {
+    withUpdate({ old_syllabus: true })
+    h.apply = mut({ isError: true, error: new Error('x') })
+    h.follow = mut({ isError: true, error: new Error('x') })
+    renderWithQuery(<DeckDetailContainer deckId="d1" />)
+    expect(screen.getByText(/deck is for the old syllabus/)).toBeInTheDocument()
+    expect(screen.getAllByRole('alert').length).toBeGreaterThanOrEqual(2)
+  })
+
+  it('marks an updatable deck in the library and in "Your decks"', () => {
+    const updated = deck({ subscription: sub({ update_available: true, pending_changes: 2 }) })
+    h.library = lib([updated])
+    h.mine = query([updated])
+    renderWithQuery(<DecksContainer />)
+    expect(screen.getAllByText('Update available').length).toBe(2)
   })
 })
 

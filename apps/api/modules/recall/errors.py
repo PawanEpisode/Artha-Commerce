@@ -147,6 +147,14 @@ class RightsBlocked(CodedError):
     default_code = "rights_blocked"
 
 
+class ChangelogRequired(CodedError):
+    """422: a version with a substantive or amendment change needs a change note (students read it before they update)."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "Write a change note: this version changes the meaning of at least one card."
+    default_code = "changelog_required"
+
+
 class VersionNotPublishable(Conflict):
     """409: only a draft or in-review deck version newer than the live one can be published."""
 

@@ -124,3 +124,16 @@ Built: AI exam summary, AI "Improve this page", Replace edition with re-anchorin
 | R3-9 | Recall bridge (item 7) | Blocked, not built | Waits for F-15 to register a provider (`core/recall_port.py`) |
 | R3-10 | Share links | Parked (see P1) | Counsel review first (P2) |
 | R3-11 | Postgres run of `modules/notes core` (concurrency, RLS, quota races) | Not run here | The sandbox ran SQLite; Postgres-only tests skip. Run `pytest modules/notes core` against a Postgres once before the flag goes up |
+
+
+## 7. F-15 R2, wave W2 (living decks): built 2026-10-11, owner tasks
+
+Built: sync service with follow or pin, update preview and apply endpoints with the web UI, amendment subscriber port (F-14 events by name), scheme switch through the F-02 chapter map, admin diff and staff notice, export and erase of all new data, offline pack and client fold. No new flag: `recall_system` stays fail-closed, beta cohort only. Details: `docs/F-15-ROLLOUT.md` (section 8), `docs/F-15-API-CONTRACT.md`.
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| W2-1 | Run `pytest modules/recall core` once on a real PostgreSQL before the cohort opens | Open (owner) | Verified here on a private PostgreSQL 16 and on SQLite |
+| W2-2 | Apply migration `0005` on staging, then check that the 5-minute tick drains the fan-out | Open (owner) | Fan-out reaches the 15-minute target only at the boundary in the worst case; see the capacity table |
+| W2-3 | Editors: every publish of a new deck version now needs a changelog note | Open (owner) | Answers 422 `changelog_required` |
+| W2-4 | Confirm F-14 emits the amendment events under the names the subscriber listens to | Open (owner), [VERIFY] | The coverage scheme event also has an alias subscription |
+| W2-5 | Manual device checks | Not run, accepted | Automated tests, e2e r1 and r2 and the W2 capacity script stand in |

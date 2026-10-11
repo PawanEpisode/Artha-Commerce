@@ -7,11 +7,17 @@ import { ApiError } from '~/lib/api'
 import { DeckItemRow } from '../components/DeckItemRow'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import { ReportDialog } from '../components/ReportDialog'
+import { FollowToggle, OldSyllabusFlag, UpdateBanner } from '../components/UpdateBanner'
+import { UpdateSheet } from '../components/UpdateSheet'
 import { useDeck, useReportItem, useResubscribe, useSubscribe, useUnsubscribe } from '../hooks/useDecks'
+import { useOnlineStatus } from '../hooks/useRecallBasics'
+import { useApplyUpdate, useSetFollow, useUpdatePreview } from '../hooks/useUpdates'
+import { trackRecall } from '../lib/analytics'
 import type { Tier } from '../lib/api'
 import { cardsText, newerText, subscribeMessage, subscriptionState, tiersText, tooLargeText } from '../lib/decks'
 import { errorText } from '../lib/errors'
 import type { ApiDeck, ApiDeckItem } from '../lib/schemas'
+import { appliedMessage } from '../lib/updates'
 
 function SubscribeBar({ deck }: { deck: ApiDeck }) {
   const state = subscriptionState(deck)
@@ -20,6 +26,12 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
   const resubscribe = useResubscribe()
   const [tier, setTier] = useState<Tier | undefined>(undefined)
   const sub = deck.subscription
+  const subId = sub?.id ?? ''
+  const [sheet, setSheet] = useState(false)
+  const offline = !useOnlineStatus()
+  const preview = useUpdatePreview(subId, sheet && subId !== '')
+  const apply = useApplyUpdate(subId)
+  const follow = useSetFollow(subId)
   const failure = subscribe.isError
     ? (tooLargeText(subscribe.error instanceof ApiError ? subscribe.error.body : undefined) ??
       errorText(subscribe.error, 'Could not add this deck. Please try again.'))
@@ -69,8 +81,48 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
           <p className="text-sm">
             <Badge variant="accent">Subscribed</Badge> <span className="ml-1">Version {sub?.version_no}</span>
           </p>
-          {newer ? (
+          {sub?.update_available ? (
+            <UpdateBanner changes={sub.pending_changes} follow={sub.follow_updates} onReview={() => setSheet(true)} />
+          ) : newer ? (
             <p className="text-xs text-muted-foreground">{newer}. Your cards stay as they are for now.</p>
+          ) : null}
+          {sub ? (
+            <FollowToggle
+              follow={sub.follow_updates}
+              pending={follow.isPending}
+              disabled={offline}
+              onChange={(v) => follow.mutate(v)}
+            />
+          ) : null}
+          {follow.isError ? (
+            <Alert variant="error">{errorText(follow.error, 'Could not change that. Please try again.')}</Alert>
+          ) : null}
+          {sub?.old_syllabus ? <OldSyllabusFlag /> : null}
+          {sub ? (
+            <UpdateSheet
+              open={sheet}
+              onOpenChange={(open) => {
+                setSheet(open)
+                if (!open) trackRecall('recall_update_dismissed')
+              }}
+              preview={preview.data}
+              loading={preview.isPending && sheet}
+              error={preview.isError ? errorText(preview.error, 'Could not load the changes.') : null}
+              applying={apply.isPending}
+              offline={offline}
+              onRetry={() => void preview.refetch()}
+              onApply={() =>
+                apply.mutate(undefined, {
+                  onSuccess: (r) => {
+                    setSheet(false)
+                    toast.success(appliedMessage(r.result))
+                  },
+                })
+              }
+            />
+          ) : null}
+          {apply.isError ? (
+            <Alert variant="error">{errorText(apply.error, 'Could not apply the update. Please try again.')}</Alert>
           ) : null}
           <Button
             variant="outline"

@@ -9,6 +9,10 @@ const TEXT = 'my private note about section 17(5)'
 describe('Sentry scrubbing for recall', () => {
   it('removes the query and the ids from a recall URL and leaves others alone', () => {
     expect(maskUrl(`/api/v1/recall/cards/${CARD}/?q=${TEXT}#x`)).toBe('/api/v1/recall/cards/{id}/')
+    expect(maskUrl(`/api/v1/recall/subscriptions/${CARD}/apply-update/`)).toBe(
+      '/api/v1/recall/subscriptions/{id}/apply-update/',
+    )
+    expect(maskUrl(`/api/v1/recall/chapter-remaps/${CARD}/choose/`)).toBe('/api/v1/recall/chapter-remaps/{id}/choose/')
     const crumb: Breadcrumb = {
       category: 'fetch',
       data: { url: `https://api.example.com/api/v1/recall/cards/${CARD}/?q=a`, status_code: 200 },

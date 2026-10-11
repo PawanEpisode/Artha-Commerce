@@ -59,6 +59,27 @@ urlpatterns += [
         views.SubscriptionActionView.as_view(action="resubscribe"),
         name="recall-resubscribe",
     ),
+    path(
+        "recall/subscriptions/<uuid:subscription_id>/",
+        views.SubscriptionSettingsView.as_view(),
+        name="recall-subscription",
+    ),
+    path(
+        "recall/subscriptions/<uuid:subscription_id>/update/",
+        views.UpdatePreviewView.as_view(),
+        name="recall-subscription-update",
+    ),
+    path(
+        "recall/subscriptions/<uuid:subscription_id>/apply-update/",
+        views.ApplyUpdateView.as_view(),
+        name="recall-subscription-apply-update",
+    ),
+    path("recall/chapter-remaps/", views.ChapterRemapListView.as_view(), name="recall-chapter-remaps"),
+    path(
+        "recall/chapter-remaps/<uuid:remap_id>/choose/",
+        views.ChapterRemapChooseView.as_view(),
+        name="recall-chapter-remap-choose",
+    ),
     path("recall/items/<uuid:item_id>/report/", views.ItemReportView.as_view(), name="recall-item-report"),
     path("recall/export/", views.ExportView.as_view(), name="recall-export"),
     path("recall/export/cards.csv", views.CsvExportView.as_view(which="cards"), name="recall-export-cards"),

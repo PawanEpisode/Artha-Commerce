@@ -1071,6 +1071,16 @@ def switch_scheme(user_id, enrollment: Enrollment, new_scheme_id, *, target_term
         carried_from=enrollment,
     )
 
+    old_scheme_id = str(enrollment.scheme_id)
+    transaction.on_commit(
+        lambda: events.emit(
+            "enrollment_scheme_changed",
+            user_id=str(user_id),
+            old_scheme_id=old_scheme_id,
+            new_scheme_id=str(new_scheme.id),
+        )
+    )  # recall moves the cards she wrote through the same chapter map (F-15 FR-F15-50)
+
     maps = defaultdict(list)
     for m in ChapterMap.objects.filter(
         from_chapter_id__in=list(old_rows), to_chapter__subject__scheme=new_scheme

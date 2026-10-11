@@ -1,6 +1,7 @@
 """Write paths of the recall module. Views call these; they never call views. Services are added wave by wave."""
 
 from . import (
+    amendments,
     cards,
     catchup,
     decks,
@@ -9,15 +10,18 @@ from . import (
     log_guard,
     preferences,
     quota,
+    remap,
     reports,
     reviews,
     rollups,
     sessions,
     student,
     subscriptions,
+    sync,
 )
 
 __all__ = [
+    "amendments",
     "cards",
     "catchup",
     "decks",
@@ -31,5 +35,7 @@ __all__ = [
     "rollups",
     "sessions",
     "student",
+    "remap",
     "subscriptions",
+    "sync",
 ]

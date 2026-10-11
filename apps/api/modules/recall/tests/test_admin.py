@@ -181,3 +181,65 @@ def test_a_quota_plan_change_needs_publish_and_writes_an_audit_row():
     assert res.status_code == 302, res.content.decode()[:2000]
     row = RecallAuditLog.objects.get(action="quota_change")
     assert row.detail["changed"] == {"max_cards": data["max_cards"]}
+
+
+# ------------------------------------------------------------------------------------------- R2-W2 living decks
+def _draft_with_substantive_change():
+    from modules.recall.services import decks as deck_service
+
+    from .w11 import EDITOR
+    from .w22 import deck_with_student, edit, pointer, unique
+
+    deck, items, sub = deck_with_student(3)
+    edit(items[0], pointer(unique("Rewritten")), "substantive")
+    draft = deck_service.start_draft_version(EDITOR, deck)
+    return deck, items, sub, draft
+
+
+def test_the_draft_page_shows_the_diff_the_follower_counts_and_asks_for_a_note():
+    deck, items, sub, draft = _draft_with_substantive_change()
+    c = login("admin")
+    page = c.get(f"/admin/recall/recalldeckversion/{draft.pk}/change/")
+    assert page.status_code == 200
+    html = page.content.decode()
+    assert "Before you publish" in html and "1 follower(s)" in html and "0 pinned" in html
+    assert "a change note is required" in html and "substantive" in html
+
+
+def test_publishing_a_substantive_change_without_a_note_is_refused_and_with_one_it_works():
+    deck, items, sub, draft = _draft_with_substantive_change()
+    c = login("admin")
+    base = f"/admin/recall/recalldeckversion/{draft.pk}/change/"
+    posted = {"deck": str(deck.pk), "changelog_md": "", "item_refs": "", "_publish": "1"}
+    res = c.post(base, posted, follow=True)
+    assert "Not published" in res.content.decode()
+    posted["changelog_md"] = "Reworded the first card."
+    res = c.post(base, posted, follow=True)
+    assert "Published" in res.content.decode()
+    deck.refresh_from_db()
+    assert deck.live_version_id == draft.pk
+
+
+def test_an_editor_cannot_retry_follower_updates_and_an_admin_can_with_an_audit_row():
+    from core.models import Job
+    from modules.recall.services import sync as sync_service
+
+    deck, items, sub, draft = _draft_with_substantive_change()
+    from modules.recall.services import decks as deck_service
+
+    from .w11 import EDITOR
+
+    version = deck_service.publish_deck_version(EDITOR, deck.id, draft.id, changelog_md="Note.")
+    Job.objects.create(
+        type=sync_service.JOB_SYNC_SUBSCRIBERS,
+        payload={"deck_version_id": str(version.id), "chunk": 0, "after": None},
+        status=Job.Status.FAILED,
+    )
+    data = {"action": "retry_failed_syncs", "_selected_action": [str(version.pk)]}
+    login("editor").post(url("recalldeckversion"), data)
+    assert sync_service.fanout_stats(version.id)["failed"] == 1
+    page = login("admin").get(f"/admin/recall/recalldeckversion/{version.pk}/change/")
+    assert "Updates panel" in page.content.decode() and "1 failed" in page.content.decode()
+    login("admin").post(url("recalldeckversion"), data, follow=True)
+    assert sync_service.fanout_stats(version.id)["failed"] == 0
+    assert RecallAuditLog.objects.filter(action="deck_sync_retry").count() == 1

@@ -20,6 +20,7 @@ from django.utils import timezone
 
 from ..models import (
     RecallCard,
+    RecallChapterRemap,
     RecallChapterRollup,
     RecallDailyRollup,
     RecallDeck,
@@ -43,16 +44,43 @@ def _count(qs) -> int:
     return qs.delete()[0]
 
 
+JOB_TYPES = (
+    "recall.exam_horizon",
+    "recall.scheme_changed",
+    "recall.sync_subscription",
+    "recall.sync_subscribers",
+    "recall.flag_amendment",
+)
+
+
+def _delete_jobs(user_id, subscription_ids: list) -> int:
+    """
+    Queued or finished background jobs that name the student: `user_id` payloads (exam horizon, scheme change) and the
+    one-subscription sync jobs of her subscriptions. Fan-out and amendment jobs carry deck, version and amendment ids only,
+    never a student, so they stay.
+    """
+    from core.models import Job
+
+    n = Job.objects.filter(type__in=JOB_TYPES, payload__user_id=str(user_id)).delete()[0]
+    for sid in subscription_ids:
+        n += Job.objects.filter(type="recall.sync_subscription", payload__subscription_id=str(sid)).delete()[0]
+    return n
+
+
 def delete_all_for_user(user_id) -> dict:
     """Erase everything recall holds for the student. Returns `{table_name: rows_deleted}`."""
     report: dict[str, int] = {}
     with transaction.atomic():
+        report["jobs"] = _delete_jobs(
+            user_id, [str(i) for i in RecallSubscription.objects.filter(user_id=user_id).values_list("id", flat=True)]
+        )
         with log_guard.erasing():
             report["reviewlog"] = _count(RecallReviewLog.objects.filter(user_id=user_id))
         report["scheduleevents"] = _count(RecallScheduleEvent.objects.filter(user_id=user_id))
         report["sessions"] = _count(RecallSession.objects.filter(user_id=user_id))
         report["cards"] = _count(RecallCard.objects.filter(user_id=user_id))
         report["subscriptions"] = _count(RecallSubscription.objects.filter(user_id=user_id))
+        report["chapter_remaps"] = _count(RecallChapterRemap.objects.filter(user_id=user_id))
         own_items = RecallItem.objects.filter(ownership="user", owner_user_id=user_id)
         report["item_versions"] = _count(RecallItemVersion.objects.filter(item__in=own_items))
         report["items"] = _count(RecallItem.objects.filter(ownership="user", owner_user_id=user_id))
@@ -81,7 +109,8 @@ def _row(values: dict) -> dict:
 
 CARD_COLUMNS = (
     "id", "item_id", "ordinal", "subscription_id", "item_version_id", "chapter_id", "subject_key", "importance", "state",
-    "step", "stability", "difficulty", "due_at", "last_review_at", "reps", "lapses", "leech", "status", "created_at",
+    "step", "stability", "difficulty", "due_at", "last_review_at", "reps", "lapses", "leech", "status", "needs_recheck",
+    "recheck_reason", "recheck_ref", "created_at",
 )  # fmt: skip
 REVIEW_COLUMNS = (
     "id", "kind", "card_id", "item_id", "item_version_id", "session_id", "rating", "reviewed_at", "received_at",
@@ -138,7 +167,20 @@ def export_for_user(user_id) -> dict:
             _row(r)
             for r in RecallSubscription.objects.filter(user_id=user_id)
             .order_by("subscribed_at", "id")
-            .values("id", "deck_id", "status", "unlock_mode", "min_importance", "subscribed_at", "archived_at")
+            .values(
+                "id",
+                "deck_id",
+                "status",
+                "unlock_mode",
+                "min_importance",
+                "follow_updates",
+                "pinned_version_id",
+                "synced_version_id",
+                "pending_version_id",
+                "subscribed_at",
+                "archived_at",
+                "last_sync_at",
+            )  # fmt: skip
         ],
         "sessions": [
             _row(r)
@@ -161,6 +203,23 @@ def export_for_user(user_id) -> dict:
             )  # fmt: skip
         ],
         "reviews": [_row(r) for r in _reviews(user_id)],
+        "chapter_remaps": [
+            _row(r)
+            for r in RecallChapterRemap.objects.filter(user_id=user_id)
+            .order_by("created_at", "id")
+            .values(
+                "id",
+                "item_id",
+                "from_chapter_id",
+                "to_scheme_id",
+                "relation",
+                "candidate_chapter_ids",
+                "status",
+                "to_chapter_id",
+                "created_at",
+                "resolved_at",
+            )  # fmt: skip
+        ],
         "reports": [
             _row(r)
             for r in RecallReport.objects.filter(reporter_user_id=user_id)

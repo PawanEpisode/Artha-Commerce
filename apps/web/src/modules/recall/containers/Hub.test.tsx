@@ -189,4 +189,22 @@ describe('the revision hub', () => {
     expect(screen.getByText(/7 waiting/)).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Sync now' })).toBeInTheDocument()
   })
+
+  it('points to the cards that need a chapter or a re-check', async () => {
+    const { container } = show(todayPlan({ needs_chapter: { count: 2 }, recheck: { count: 1 } }))
+    expect(screen.getByText(/2 cards need a chapter of your new syllabus/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Choose chapters' })).toHaveAttribute('href', '/app/recall/chapters')
+    expect(screen.getByText(/1 card was updated and needs a quick re-check/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'See them' })).toHaveAttribute(
+      'href',
+      expect.stringContaining('state=recheck'),
+    )
+    await expectNoA11yViolations(container)
+  })
+
+  it('shows neither notice when nothing is waiting', () => {
+    show(todayPlan())
+    expect(screen.queryByText(/need a chapter/)).toBeNull()
+    expect(screen.queryByText(/quick re-check/)).toBeNull()
+  })
 })

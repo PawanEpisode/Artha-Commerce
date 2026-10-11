@@ -22,6 +22,7 @@ import { useVisualViewportHeight } from '../hooks/useVisualViewport'
 import { trackRecall } from '../lib/analytics'
 import { CardFace } from './CardFace'
 import { FirstTimeIntro } from './FirstTimeIntro'
+import { RecheckNote } from './RecheckNote'
 import { ShortcutsDialog } from './ShortcutsDialog'
 import { SyncStatus } from './SyncStatus'
 
@@ -33,16 +34,28 @@ export interface ReviewPlayerProps {
   onLeave: () => void
   /** Open the card editor. When left out, the E key and the Edit card button are hidden. */
   onEdit?: (cardId: string) => void
+  /** Confirm a card the deck changed ("Still correct"). Resolves false when it could not be saved. When left out, the note is hidden. */
+  onStillCorrect?: (cardId: string) => Promise<boolean>
 }
 
 /**
  * The review screen. Full height of the visible viewport (keyboard and address bar aware), the card above, the answer
  * buttons in a bar at the bottom where a thumb reaches. Every gesture has a button and every button a key.
  */
-export function ReviewPlayer({ session, sync, introDone, onIntroDone, onLeave, onEdit }: ReviewPlayerProps) {
+export function ReviewPlayer({
+  session,
+  sync,
+  introDone,
+  onIntroDone,
+  onLeave,
+  onEdit,
+  onStillCorrect,
+}: ReviewPlayerProps) {
   const { card, flipped } = session
   const [help, setHelp] = useState(false)
   const [message, setMessage] = useState('')
+  const [confirmed, setConfirmed] = useState<ReadonlySet<string>>(new Set())
+  const [confirming, setConfirming] = useState(false)
   const vvh = useVisualViewportHeight()
   const edit = onEdit && card ? () => onEdit(card.id) : undefined
   const interactive = introDone && session.status === 'ready' && card !== null
@@ -94,6 +107,19 @@ export function ReviewPlayer({ session, sync, introDone, onIntroDone, onLeave, o
   }, [card?.id, flipped])
 
   const tricky = card?.badges.includes('tricky') === true
+  const recheck = card && onStillCorrect && card.recheck !== null && !confirmed.has(card.id) ? card : null
+  const stillCorrect = async () => {
+    if (!card || !onStillCorrect) return
+    setConfirming(true)
+    const ok = await onStillCorrect(card.id)
+    setConfirming(false)
+    if (ok) {
+      trackRecall('recall_recheck_dismissed', { reason: card.recheck ?? 'content_changed' })
+      setConfirmed((prev) => new Set(prev).add(card.id))
+    } else {
+      setMessage('Could not save that. Check your connection and try again.')
+    }
+  }
 
   return (
     <div
@@ -164,6 +190,14 @@ export function ReviewPlayer({ session, sync, introDone, onIntroDone, onLeave, o
                   You have missed this one a few times. Rewording it can help.
                 </span>
               </p>
+            ) : null}
+            {recheck ? (
+              <RecheckNote
+                reason={recheck.recheck}
+                pending={confirming}
+                offline={session.offline}
+                onConfirm={() => void stillCorrect()}
+              />
             ) : null}
             <FlipCard
               key={card.id}

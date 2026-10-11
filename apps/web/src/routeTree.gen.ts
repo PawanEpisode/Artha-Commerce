@@ -38,6 +38,7 @@ import { Route as AppNotesNewRouteImport } from './routes/app.notes.new'
 import { Route as AppNotesSearchRouteImport } from './routes/app.notes.search'
 import { Route as AppNotesTrashRouteImport } from './routes/app.notes.trash'
 import { Route as AppRecallIndexRouteImport } from './routes/app.recall.index'
+import { Route as AppRecallChaptersRouteImport } from './routes/app.recall.chapters'
 import { Route as AppRecallForgottenRouteImport } from './routes/app.recall.forgotten'
 import { Route as AppRecallQuickRouteImport } from './routes/app.recall.quick'
 import { Route as AppRecallStatsRouteImport } from './routes/app.recall.stats'
@@ -218,6 +219,11 @@ const AppNotesTrashRoute = AppNotesTrashRouteImport.update({
 const AppRecallIndexRoute = AppRecallIndexRouteImport.update({
   id: '/recall/',
   path: '/recall/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallChaptersRoute = AppRecallChaptersRouteImport.update({
+  id: '/recall/chapters',
+  path: '/recall/chapters',
   getParentRoute: () => AppRoute,
 } as any)
 const AppRecallForgottenRoute = AppRecallForgottenRouteImport.update({
@@ -434,6 +440,7 @@ export interface FileRoutesByFullPath {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/recall/chapters': typeof AppRecallChaptersRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
   '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
@@ -500,6 +507,7 @@ export interface FileRoutesByTo {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/recall/chapters': typeof AppRecallChaptersRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
   '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
@@ -568,6 +576,7 @@ export interface FileRoutesById {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/recall/chapters': typeof AppRecallChaptersRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
   '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
@@ -637,6 +646,7 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/recall/chapters'
     | '/app/recall/forgotten'
     | '/app/recall/quick'
     | '/app/recall/stats'
@@ -703,6 +713,7 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/recall/chapters'
     | '/app/recall/forgotten'
     | '/app/recall/quick'
     | '/app/recall/stats'
@@ -770,6 +781,7 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/recall/chapters'
     | '/app/recall/forgotten'
     | '/app/recall/quick'
     | '/app/recall/stats'
@@ -1039,6 +1051,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRecallIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/recall/chapters': {
+      id: '/app/recall/chapters'
+      path: '/recall/chapters'
+      fullPath: '/app/recall/chapters'
+      preLoaderRoute: typeof AppRecallChaptersRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/recall/forgotten': {
       id: '/app/recall/forgotten'
       path: '/recall/forgotten'
@@ -1306,6 +1325,7 @@ interface AppRouteChildren {
   AppNotesNewRoute: typeof AppNotesNewRoute
   AppNotesSearchRoute: typeof AppNotesSearchRoute
   AppNotesTrashRoute: typeof AppNotesTrashRoute
+  AppRecallChaptersRoute: typeof AppRecallChaptersRoute
   AppRecallForgottenRoute: typeof AppRecallForgottenRoute
   AppRecallQuickRoute: typeof AppRecallQuickRoute
   AppRecallStatsRoute: typeof AppRecallStatsRoute
@@ -1353,6 +1373,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesNewRoute: AppNotesNewRoute,
   AppNotesSearchRoute: AppNotesSearchRoute,
   AppNotesTrashRoute: AppNotesTrashRoute,
+  AppRecallChaptersRoute: AppRecallChaptersRoute,
   AppRecallForgottenRoute: AppRecallForgottenRoute,
   AppRecallQuickRoute: AppRecallQuickRoute,
   AppRecallStatsRoute: AppRecallStatsRoute,

@@ -25,6 +25,7 @@ from ..adapters import syllabus as syllabus_adapter
 from ..domain import cards as domain_cards
 from ..domain import decks as domain
 from ..errors import (
+    ChangelogRequired,
     DeckNotFound,
     EmptyDeckVersion,
     ItemNotPublishable,
@@ -294,6 +295,10 @@ def publish_deck_version(editor_id, deck_id, version_id, *, changelog_md: str = 
             raise VersionNotPublishable
         plan = _plan(deck, version)
 
+        summary = domain.diff_summary(plan.previous, plan.snapshot)
+        if summary["substantive"] + summary["amendment"] and not (changelog_md or version.changelog_md).strip():
+            raise ChangelogRequired(extra={"substantive": summary["substantive"], "amendment": summary["amendment"]})
+
         # Promote the draft item versions: what they replace is superseded first (one live version per item).
         drafts = [r for r in plan.rows if r.item_version.state == "draft"]
         draft_item_ids = [r.item_id for r in drafts]
@@ -318,7 +323,6 @@ def publish_deck_version(editor_id, deck_id, version_id, *, changelog_md: str = 
                 change_vs_prev=change
             )
 
-        summary = domain.diff_summary(plan.previous, plan.snapshot)
         tiers = domain.tier_counts(plan.snapshot)
         if previous_live is not None:
             previous_live.state = "superseded"
@@ -341,6 +345,7 @@ def publish_deck_version(editor_id, deck_id, version_id, *, changelog_md: str = 
         chapter_ids = sorted({str(r.item.chapter_id) for r in plan.rows if r.item.chapter_id})
         payload = {
             "deck_id": str(deck.id),
+            "deck_version_id": str(version.id),
             "version_no": version.version_no,
             "diff_summary": summary,
             "chapter_ids": chapter_ids,
@@ -348,6 +353,49 @@ def publish_deck_version(editor_id, deck_id, version_id, *, changelog_md: str = 
         }
         transaction.on_commit(lambda: events.emit(DECK_PUBLISHED, **payload))
     return version
+
+
+def publish_preview(deck_id, version_id) -> dict:
+    """
+    What publishing this draft would do, written nothing (staff, before the button): the per-item diff against the live version
+    (item references and change kinds only, never card text), how many active subscriptions follow and how many are pinned, and how
+    many studied cards would return for a re-check. Raises the same errors as the publish for a deck that cannot be published.
+    """
+    from ..models import RecallCard, RecallSubscription
+
+    deck = RecallDeck.objects.filter(pk=deck_id, kind="platform").first()
+    version = RecallDeckVersion.objects.filter(pk=version_id, deck_id=deck_id).first()
+    if deck is None or version is None:
+        raise DeckNotFound
+    plan = _plan(deck, version)
+    previous = plan.previous
+    changes: list[dict] = []
+    reset_items: list[str] = []
+    for row, snap in zip(plan.rows, plan.snapshot, strict=True):
+        kind = domain.change_vs_prev(previous, snap)
+        if kind == "unchanged":
+            continue
+        changes.append(
+            {"item_id": str(row.item_id), "ref": row.item.external_ref or str(row.item_id)[:8], "change": kind}
+        )
+        if kind in ("substantive", "amendment"):
+            reset_items.append(snap.item_id)
+    for item_id in domain.removed_item_ids(previous, plan.snapshot):
+        ref = RecallItem.objects.filter(pk=item_id).values_list("external_ref", flat=True).first()
+        changes.append({"item_id": item_id, "ref": ref or item_id[:8], "change": "removed"})
+    subs = RecallSubscription.objects.filter(deck=deck, status="active")
+    followers = subs.filter(follow_updates=True).count()
+    summary = domain.diff_summary(previous, plan.snapshot)
+    return {
+        "changes": changes,
+        "summary": summary,
+        "followers": followers,
+        "pinned": subs.count() - followers,
+        "returning_cards": RecallCard.objects.filter(
+            subscription__in=subs.filter(follow_updates=True), item_id__in=reset_items, status="active", state__gt=0
+        ).count(),
+        "changelog_required": bool(summary["substantive"] + summary["amendment"]),
+    }
 
 
 # ------------------------------------------------------------------------------------------ helpers

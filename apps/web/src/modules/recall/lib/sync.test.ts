@@ -42,6 +42,8 @@ const card = (id: string) => ({
   lapses: 0,
   leech: false,
   needs_recheck: false,
+  recheck_reason: null,
+  updated: false,
 })
 
 /** An honest server: answers every event, once, as `applied` or `duplicate` if it saw the id before. */

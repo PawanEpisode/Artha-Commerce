@@ -4,13 +4,17 @@ import { useEffect, useState } from 'react'
 
 import { LoadError, RecallGate } from '../components/RecallShell'
 import { ReviewPlayer } from '../components/ReviewPlayer'
+import { useRecallUser } from '../hooks/useRecallBasics'
 import { useReviewSession } from '../hooks/useReviewSession'
 import { useSync } from '../hooks/useSync'
+import { recallApi } from '../lib/api'
+import { eventStore } from '../lib/eventStore'
 import { introSeen, markIntroSeen } from '../lib/intro'
 import type { ReviewSearch } from '../lib/search'
 
 function Review({ search }: { search: ReviewSearch }) {
   const navigate = useNavigate()
+  const userId = useRecallUser()
   const sync = useSync()
   const session = useReviewSession({
     source: search.source,
@@ -23,6 +27,35 @@ function Review({ search }: { search: ReviewSearch }) {
   })
   const [introDone, setIntroDone] = useState(introSeen)
   const leave = () => void navigate({ to: '/app/recall' })
+
+  /** "Still correct": the server clears the note, the offline pack copy follows so it does not come back. */
+  const stillCorrect = async (cardId: string): Promise<boolean> => {
+    try {
+      const c = await recallApi.setCardState(cardId, 'recheck-ok')
+      if (userId) {
+        await eventStore.patchPack(userId, [
+          {
+            id: c.id,
+            rev: c.rev,
+            state: c.state,
+            state_name: c.state_name,
+            status: c.status,
+            due_at: c.due_at,
+            buried_until: c.buried_until,
+            reps: c.reps,
+            lapses: c.lapses,
+            leech: c.badges.includes('tricky'),
+            needs_recheck: c.needs_recheck,
+            recheck_reason: c.recheck_reason,
+            updated: c.updated,
+          },
+        ])
+      }
+      return true
+    } catch {
+      return false
+    }
+  }
 
   // Keep the session id in the URL so a reload carries on the same session
   const { status, sessionId } = session
@@ -94,6 +127,7 @@ function Review({ search }: { search: ReviewSearch }) {
         setIntroDone(true)
       }}
       onLeave={leave}
+      onStillCorrect={stillCorrect}
       onEdit={(cardId) => void navigate({ to: '/app/recall/cards/$cardId', params: { cardId } })}
     />
   )

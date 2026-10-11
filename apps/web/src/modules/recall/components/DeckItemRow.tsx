@@ -14,6 +14,7 @@ export function DeckItemRow({ item, onReport }: { item: ApiDeckItem; onReport: (
           <Badge variant={item.importance === 'mandatory' ? 'highlight' : 'default'}>
             {tierLabel(item.importance)}
           </Badge>
+          {item.under_review ? <Badge variant="highlight">Under review after amendment</Badge> : null}
         </div>
         <p className="text-sm break-words">{item.preview}</p>
       </div>

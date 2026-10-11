@@ -1,6 +1,7 @@
 // Public surface of the recall module. Other modules import from here only.
 export { CardDetailContainer } from './containers/CardDetailContainer'
 export { CardsContainer } from './containers/CardsContainer'
+export { ChapterRemapContainer } from './containers/ChapterRemapContainer'
 export { DeckDetailContainer } from './containers/DeckDetailContainer'
 export { DecksContainer } from './containers/DecksContainer'
 export { ForgottenContainer } from './containers/ForgottenContainer'

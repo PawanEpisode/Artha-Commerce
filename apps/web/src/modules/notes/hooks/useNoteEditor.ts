@@ -10,6 +10,7 @@ import { getNote, patchNote } from '../lib/api'
 import { createAutosave } from '../lib/autosave'
 import { linkFields, linkFromSelection, type LinkSelection, selectionFromLink } from '../lib/chapter-link'
 import { type BodyError, invalidBody, isNotFound, noteConflict, quotaExceeded } from '../lib/errors'
+import { invalidateAfterNoteLink } from '../lib/invalidate'
 import { notesKeys } from '../lib/keys'
 import { FALLBACK_LIMITS } from '../lib/limits'
 import { notify } from '../lib/notify'
@@ -384,9 +385,7 @@ export function useNoteEditor({ noteId }: Options) {
           notify.queued()
         }
         notesAnalytics.itemLinked(next ? via : 'manual')
-        void qc.invalidateQueries({ queryKey: notesKeys.lists })
-        void qc.invalidateQueries({ queryKey: notesKeys.allCounts })
-        void qc.invalidateQueries({ queryKey: notesKeys.overviews })
+        void invalidateAfterNoteLink(qc, [before?.link.subject_key, next?.subjectKey])
       } catch (error) {
         notify.error(error, 'Could not file the note.')
       }

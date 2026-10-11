@@ -60,6 +60,12 @@ describe('recall analytics allow-list', () => {
       'recall_quick_completed',
       'recall_cram_started',
       'recall_pacing_viewed',
+      'recall_update_previewed',
+      'recall_update_applied',
+      'recall_update_dismissed',
+      'recall_follow_toggled',
+      'recall_recheck_dismissed',
+      'recall_chapter_remap_chosen',
     ] as RecallEvent[]
     for (const e of events) {
       for (const key of allowedProperties(e))
@@ -72,6 +78,12 @@ describe('recall analytics privacy gate', () => {
   it('has exactly the events and properties reviewed for privacy: adding one needs this list changed on purpose', () => {
     expect(Object.fromEntries(Object.entries(ALLOWED).map(([event, keys]) => [event, [...keys].sort()]))).toEqual({
       recall_card_viewed: ['first', 'kind', 'state'],
+      recall_chapter_remap_chosen: ['relation'],
+      recall_follow_toggled: ['follow'],
+      recall_recheck_dismissed: ['reason'],
+      recall_update_applied: ['changes', 'recheck'],
+      recall_update_dismissed: [],
+      recall_update_previewed: ['changes', 'kinds_present'],
       recall_catchup_cleared: ['days_taken'],
       recall_catchup_started: ['due_total', 'overdue_days_max', 'queue_size'],
       recall_leech_action: ['action', 'lapses'],

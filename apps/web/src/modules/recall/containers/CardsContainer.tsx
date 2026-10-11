@@ -35,6 +35,7 @@ const STATE_LABEL: Record<string, string> = {
   suspended: 'Paused',
   tricky: 'Tricky',
   recheck: 'Needs a look',
+  needs_chapter: 'Needs a new chapter',
 }
 const TIER_LABEL: Record<string, string> = { bullet: 'Normal', important: 'Important', mandatory: 'Must know' }
 const SORT_LABEL: Record<string, string> = {

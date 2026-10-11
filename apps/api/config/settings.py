@@ -177,6 +177,7 @@ REST_FRAMEWORK = {
         "recall_review": "600/min",  # W5: review events and batches
         "recall_write": "120/min",  # card, deck and settings writes
         "recall_export": "6/hour",  # W11: streamed CSV and JSON export
+        "recall_apply_update": "30/hour",  # R2-W2: applying a deck update (one apply per subscription and version is normal)
         "media_upload": "120/hour",
         "media_read": "300/min",
     },

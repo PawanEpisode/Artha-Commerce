@@ -58,6 +58,11 @@ describe('deck words', () => {
       newer_versions: 0,
       subscribed_at: 'x',
       min_importance: 'bullet',
+      follow_updates: true,
+      update_available: false,
+      pending_changes: 0,
+      pending_version_no: null,
+      old_syllabus: false,
     }
     expect(subscriptionState(deck({ subscription: sub }))).toBe('archived')
     expect(subscriptionState(deck({ subscription: { ...sub, status: 'active' } }))).toBe('active')

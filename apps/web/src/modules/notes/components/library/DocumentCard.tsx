@@ -20,7 +20,7 @@ import {
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { isUnfiled, linkLabel } from '../../lib/chapter-link'
+import { isUnfiled, linkLabel, shortLinkLabel } from '../../lib/chapter-link'
 import { canOpenDocument, documentBadges, documentTitle, readPercent } from '../../lib/document-badges'
 import type { DocumentSummary } from '../../lib/document-types'
 import { formatBytes, pluralize } from '../../lib/format'
@@ -184,7 +184,11 @@ export function DocumentCard({
 
         {!compact || showLocation ? (
           <div className="flex flex-wrap items-center gap-1.5 text-xs">
-            {showLocation && !isUnfiled(doc.link) ? <Badge variant="outline">{linkLabel(doc.link)}</Badge> : null}
+            {showLocation && !isUnfiled(doc.link) ? (
+              <Badge variant="outline" className="max-w-full min-w-0 truncate" title={linkLabel(doc.link)}>
+                {shortLinkLabel(doc.link)}
+              </Badge>
+            ) : null}
             {doc.link.moved_or_removed ? <Badge variant="outline">Chapter moved or removed</Badge> : null}
             {!compact
               ? doc.tags.map((tag) => (

@@ -102,6 +102,29 @@ function HubBody({ plan }: { plan: TodayPlan }) {
     <>
       {hero}
       {plan.exam ? <ExamStrip exam={plan.exam} /> : null}
+      {plan.needs_chapter.count > 0 ? (
+        <Alert variant="info">
+          <span className="flex flex-wrap items-center gap-3">
+            {plural(plan.needs_chapter.count, 'card needs', 'cards need')} a chapter of your new syllabus.
+            <ButtonLink variant="outline" size="sm" asChild>
+              <Link to="/app/recall/chapters">Choose chapters</Link>
+            </ButtonLink>
+          </span>
+        </Alert>
+      ) : null}
+      {plan.recheck.count > 0 ? (
+        <Alert variant="info">
+          <span className="flex flex-wrap items-center gap-3">
+            {plural(plan.recheck.count, 'card was', 'cards were')} updated and{' '}
+            {plan.recheck.count === 1 ? 'needs' : 'need'} a quick re-check.
+            <ButtonLink variant="outline" size="sm" asChild>
+              <Link to="/app/recall/cards" search={{ state: 'recheck' }}>
+                See them
+              </Link>
+            </ButtonLink>
+          </span>
+        </Alert>
+      ) : null}
       {rebalance.isSuccess ? (
         <Alert variant="success">
           <span role="status">Done. Your backlog is spread over the coming days.</span>

@@ -68,6 +68,8 @@ export interface PlayerCard {
   back: string
   importance: number
   badges: string[]
+  /** Why the card waits for "Still correct" (`content_changed` or `amendment`), else null. */
+  recheck: string | null
   chapterName: string | null
   subjectKey: string | null
   memory: MemoryState
@@ -93,6 +95,7 @@ export function playerCardOf(c: ApiQueueCard, mode: ReviewMode = 'normal'): Play
     back: c.back_md,
     importance: c.importance,
     badges: c.badges,
+    recheck: c.needs_recheck ? (c.recheck_reason ?? 'content_changed') : null,
     chapterName: c.chapter?.name ?? null,
     subjectKey: c.chapter?.subject_key ?? null,
     memory: {

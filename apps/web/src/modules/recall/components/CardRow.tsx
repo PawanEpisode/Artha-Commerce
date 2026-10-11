@@ -9,6 +9,8 @@ const BADGE_TEXT: Record<string, string> = {
   suspended: 'Paused',
   tricky: 'Tricky',
   recheck: 'Needs a look',
+  updated: 'Updated',
+  amendment: 'Check against amendment',
   buried: 'Back tomorrow',
 }
 
@@ -42,11 +44,18 @@ export function CardRow({
         <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           <Badge variant="outline">{kindLabel(card.kind)}</Badge>
           {card.chapter?.name ? <span>{card.chapter.name}</span> : null}
-          {card.badges.map((b) => (
-            <Badge key={b} variant="outline">
-              {BADGE_TEXT[b] ?? b}
+          {card.needs_recheck ? (
+            <Badge variant="highlight">
+              {card.recheck_reason === 'amendment' ? BADGE_TEXT.amendment : BADGE_TEXT.updated}
             </Badge>
-          ))}
+          ) : null}
+          {card.badges
+            .filter((b) => !(card.needs_recheck && b === 'recheck'))
+            .map((b) => (
+              <Badge key={b} variant="outline">
+                {BADGE_TEXT[b] ?? b}
+              </Badge>
+            ))}
         </div>
       </div>
     </li>

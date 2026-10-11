@@ -91,7 +91,8 @@ class NoteCreateSerializer(serializers.Serializer):
 class NotePatchSerializer(serializers.Serializer):
     base_rev = serializers.IntegerField(min_value=1)
     base_body_md = serializers.CharField(required=False, allow_blank=True, max_length=MAX_BODY, trim_whitespace=False)
-    base = serializers.DictField(required=False, child=serializers.JSONField())
+    # Values last seen for overwrite reporting; chapter_id/topic_id are null when the note was unfiled.
+    base = serializers.DictField(required=False, child=serializers.JSONField(allow_null=True))
     title = serializers.CharField(required=False, allow_blank=True, max_length=200)
     body_md = serializers.CharField(required=False, allow_blank=True, max_length=MAX_BODY, trim_whitespace=False)
     chapter_id = serializers.UUIDField(required=False, allow_null=True)

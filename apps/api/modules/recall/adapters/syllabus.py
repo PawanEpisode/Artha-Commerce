@@ -63,3 +63,16 @@ def chapter_id_by_keys(course_code: str, level_code: str, subject_key: str, chap
     """The id of an active chapter of the CURRENT scheme by its stable keys (seed files name chapters by key), or None."""
     chapter = syllabus.get_chapter_by_keys(course_code, level_code, subject_key, chapter_key)
     return chapter.id if chapter is not None else None
+
+
+MapRow = syllabus.ChapterMapRow
+
+
+def chapters_of_scheme(scheme_id: UUID) -> list[ChapterRef]:
+    """Active chapters of a scheme in syllabus order (the chooser of "Needs a new chapter")."""
+    return syllabus.chapters_for_scheme(scheme_id)
+
+
+def chapter_maps_from(from_chapter_ids: Iterable[UUID], to_scheme_id: UUID) -> list[MapRow]:
+    """The chapter-map rows from these chapters into the new scheme (F-02's `syllabus_chaptermap`), through the selector."""
+    return syllabus.chapter_maps_from([c for c in set(from_chapter_ids) if c is not None], to_scheme_id)
