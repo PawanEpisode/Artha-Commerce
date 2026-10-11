@@ -197,7 +197,8 @@ def submit_review(user_id, ev: ReviewIn, *, now: datetime | None = None, eng: En
         return _insert(user_id, ev, card, eng, now)
 
 
-def _insert(user_id, ev: ReviewIn, card: RecallCard, eng: Engine, now: datetime) -> ReviewResult:
+def _classify(ev: ReviewIn, card: RecallCard, now: datetime) -> tuple[datetime, list[str], bool, bool, bool, bool]:
+    """Flags of one event against its card: (reviewed_at, flags, late, deleted, stale, counts). Shared with the bulk path."""
     flags: list[str] = []
     reviewed_at = ev.reviewed_at
     if reviewed_at > now + timedelta(minutes=lim.CLOCK_SKEW_MINUTES):
@@ -213,6 +214,11 @@ def _insert(user_id, ev: ReviewIn, card: RecallCard, eng: Engine, now: datetime)
     if stale:
         flags.append("stale_content")
     counts = ev.mode != "cram" and not late and not stale and not deleted
+    return reviewed_at, flags, late, deleted, stale, counts
+
+
+def _insert(user_id, ev: ReviewIn, card: RecallCard, eng: Engine, now: datetime) -> ReviewResult:
+    reviewed_at, flags, late, deleted, stale, counts = _classify(ev, card, now)
     duration = None if ev.duration_ms is None else max(0, min(int(ev.duration_ms), lim.DURATION_CAP_MS))
     session_id = ev.session_id
     if session_id is not None and not RecallSession.objects.filter(user_id=user_id, id=session_id).exists():
@@ -306,12 +312,24 @@ def submit_reviews(
         ids = sorted({e.card_id for e in evs}, key=str)
         # Lock every card of the batch up front in one fixed order, so two batches over the same cards cannot deadlock
         list(RecallCard.objects.select_for_update(of=("self",)).filter(user_id=user_id, id__in=ids).order_by("id"))
+        results = _apply_all(user_id, evs, order, eng, now)
+        cards = list(RecallCard.objects.filter(user_id=user_id, id__in=ids))
+    return [r for r in results if r is not None], cards
+
+
+def _apply_all(user_id, evs: Sequence[ReviewIn], order, eng: Engine, now: datetime) -> list[ReviewResult | None]:
+    """The bulk path first; if a concurrent writer breaks it (a unique-key race), the one-event path redoes the batch."""
+    from . import reviews_bulk
+
+    try:
+        with transaction.atomic():
+            return reviews_bulk.apply_batch(user_id, evs, order, eng, now)
+    except IntegrityError:
         results: list[ReviewResult | None] = [None] * len(evs)
         for i in order:
             with transaction.atomic():
                 results[i] = submit_review(user_id, evs[i], now=now, eng=eng)
-        cards = list(RecallCard.objects.filter(user_id=user_id, id__in=ids))
-    return [r for r in results if r is not None], cards
+        return results
 
 
 # ------------------------------------------------------------------------------------------------------ replay
