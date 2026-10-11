@@ -1,13 +1,14 @@
 import { useMatches } from '@tanstack/react-router'
 import type { CSSProperties, ReactNode } from 'react'
 
-import { isBareChrome } from './chrome'
+import { hasFooter, isBareChrome } from './chrome'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const bare = useMatches({ select: isBareChrome })
-  // A page in its own small window (the fallback timer) has no header, footer or skip link.
+  const footer = useMatches({ select: hasFooter })
+  // A page in its own small window (the fallback timer) has no header, footer or skip link. Otherwise the footer shows only on routes that ask for it (see `chrome.ts`).
   if (bare) return <main id="main">{children}</main>
   return (
     // Sticky bars below the header (SectionTabs) read this var; the header is h-16 at every width.
@@ -22,7 +23,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <main id="main" className="flex-1">
         {children}
       </main>
-      <SiteFooter />
+      {footer ? <SiteFooter /> : null}
     </div>
   )
 }

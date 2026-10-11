@@ -1,10 +1,12 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 
 import { findLevel, loadCourse } from '~/modules/courses'
+import { publicPage } from '~/modules/layout'
 import { subjectHead } from '~/modules/seo'
 import { fetchSubject, ReportIssue, SubjectView } from '~/modules/syllabus'
 
 export const Route = createFileRoute('/courses/$course/$level/$subject/')({
+  staticData: publicPage,
   loader: async ({ params }) => {
     const course = await loadCourse(params.course)
     const level = course && findLevel(course, params.level)
