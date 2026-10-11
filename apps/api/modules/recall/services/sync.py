@@ -52,6 +52,7 @@ from ..models import (
     RecallItemVersion,
     RecallScheduleEvent,
     RecallSubscription,
+    RecallSubscriptionUpdate,
 )
 from ..selectors import updates
 from ..vocab import IMPORTANCE_INT
@@ -64,6 +65,18 @@ logger = logging.getLogger(__name__)
 
 JOB_SYNC_SUBSCRIBERS = "recall.sync_subscribers"
 JOB_SYNC_SUBSCRIPTION = "recall.sync_subscription"
+#: The counts kept on an update in her history (what it did, not which cards).
+SUMMARY_KEYS = (
+    "added",
+    "removed",
+    "silent",
+    "rechecked",
+    "cards_created",
+    "cards_restored",
+    "cards_archived",
+    "cards_updated",
+    "cards_reset",
+)
 _CARD_FIELDS = (
     "item_version", "status", "subscription", "rev", "updated_at", "needs_recheck", "recheck_reason", "recheck_ref",
     "state", "step", "stability", "difficulty", "due_scheduled_at", "postponed_until", "due_at", "last_review_at", "reps",
@@ -158,10 +171,13 @@ def _card_kind(card: RecallCard, version: RecallItemVersion, history: dict) -> s
     return domain.worst_change(kinds) or "substantive"
 
 
-def sync_subscription(user_id, subscription_id, *, target_version_id=None, now: datetime | None = None) -> SyncResult:
+def sync_subscription(
+    user_id, subscription_id, *, target_version_id=None, now: datetime | None = None, trigger: str = "auto"
+) -> SyncResult:
     """
     Bring one active subscription to the target deck version (default: the live one). Idempotent per target: when she is already
-    there nothing is written. 404 for another student's subscription or a version that is not this deck's.
+    there nothing is written. 404 for another student's subscription or a version that is not this deck's. A change is recorded in
+    her update history (`RecallSubscriptionUpdate`) in the same transaction; `trigger` says whether she pressed Apply or the follow sync ran.
     """
     now = now or timezone.now()
     with transaction.atomic():
@@ -190,6 +206,20 @@ def sync_subscription(user_id, subscription_id, *, target_version_id=None, now: 
         )
         if plan is not None and plan.changes:
             _apply(sub, target, plan, result, now)
+        RecallSubscriptionUpdate.objects.get_or_create(
+            subscription=sub,
+            to_version=target,
+            defaults={
+                "user_id": user_id,
+                "from_version": sub.synced_version,
+                "from_no": result.from_version_no,
+                "to_no": result.to_version_no,
+                "versions_skipped": result.versions_skipped,
+                "trigger": trigger,
+                "summary": {"v": 1, **{k: getattr(result, k) for k in SUMMARY_KEYS}},
+                "applied_at": now,
+            },
+        )
         sub.synced_version = sub.pinned_version = target
         sub.pending_version, sub.last_sync_at = None, now
         sub.save(update_fields=["synced_version", "pinned_version", "pending_version", "last_sync_at"])
@@ -304,7 +334,7 @@ def _apply(sub: RecallSubscription, target: RecallDeckVersion, plan, result: Syn
 # ---------------------------------------------------------------------------------------- follow, pin, apply
 def apply_update(user_id, subscription_id) -> SyncResult:
     """She taps Apply: sync to the live version now. Idempotent; a second tab (or a follower job) that got there first makes it a no-op."""
-    return sync_subscription(user_id, subscription_id)
+    return sync_subscription(user_id, subscription_id, trigger="manual")
 
 
 def queue_sync(subscription_id, version_id) -> None:

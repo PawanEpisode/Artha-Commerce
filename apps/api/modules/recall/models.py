@@ -882,6 +882,43 @@ class RecallChapterRemap(UUIDModel):
         indexes = [models.Index(fields=["user_id"], condition=Q(status="pending"), name="recall_remap_pending_idx")]
 
 
+UPDATE_TRIGGERS = ("auto", "manual")
+
+
+class RecallSubscriptionUpdate(UUIDModel):
+    """
+    One update a student received on a subscription (R2-W4, her history of past updates): the deck version she moved from and to,
+    when, whether she pressed Apply (`manual`) or she follows the deck and the sync did it (`auto`), and the counts of what it did.
+    Written by the sync in the same transaction that moves `synced_version`, so a replay that changes nothing writes nothing.
+    Ids, numbers and counts only; a label of a changed card is read from the item version when she opens the history.
+    """
+
+    TRIGGERS = UPDATE_TRIGGERS
+
+    user_id = models.UUIDField()
+    subscription = models.ForeignKey(RecallSubscription, on_delete=models.CASCADE, related_name="+")
+    from_version = models.ForeignKey(RecallDeckVersion, on_delete=models.PROTECT, related_name="+")
+    to_version = models.ForeignKey(RecallDeckVersion, on_delete=models.PROTECT, related_name="+")
+    from_no = models.IntegerField()
+    to_no = models.IntegerField()
+    versions_skipped = models.SmallIntegerField(default=0)
+    trigger = models.CharField(max_length=6, default="auto")
+    summary = models.JSONField(
+        default=dict, blank=True
+    )  # {"v": 1, "added": n, "removed": n, "silent": n, "rechecked": n, ...}
+    applied_at = models.DateTimeField()
+
+    class Meta:
+        db_table = "recall_subscriptionupdate"
+        constraints = [
+            in_("trigger", UPDATE_TRIGGERS, "recall_subscriptionupdate_trigger_valid"),
+            models.UniqueConstraint(
+                fields=["subscription", "to_version"], name="recall_subscriptionupdate_sub_to_uniq"
+            ),
+        ]
+        indexes = [models.Index(fields=["user_id", "subscription", "-applied_at"], name="recall_subupd_sub_idx")]
+
+
 # ------------------------------------------------------------------------------------------- quota
 
 

@@ -350,6 +350,12 @@ export const cardSchema = z.object({
   /** True for the "Updated" badge: the deck changed this card's meaning. */
   updated: z.boolean().default(false),
   source: sourceSchema,
+  /** Whether Share may include this card. A selection card is private until she says the words are her own. */
+  shareable: z.boolean().default(false),
+  /** `required`: the "my own words" statement applies (a card made from a selection, a solution or a mistake). */
+  attestation: z
+    .object({ required: z.boolean(), attested: z.boolean(), attested_at: isoOrNull })
+    .default({ required: false, attested: false, attested_at: null }),
   due_at: isoOrNull,
   buried_until: isoOrNull,
   reps: z.number(),
@@ -388,6 +394,14 @@ export const createdCardsSchema = z.object({
   existing: z.boolean(),
   cards: z.array(cardDetailSchema),
 })
+
+/** `POST cards/from-question/`: the created cards plus the id and the 10-second undo token of a new one. */
+export const createdQuestionCardSchema = createdCardsSchema.extend({
+  card_id: z.string(),
+  undo_token: z.string().nullable(),
+  undo_seconds: z.number(),
+})
+export type CreatedQuestionCard = z.infer<typeof createdQuestionCardSchema>
 
 export const deletedCardSchema = z.object({
   deleted: z.boolean(),
@@ -576,3 +590,55 @@ export const importResultSchema = z.object({
   rows: z.array(importRowSchema),
 })
 export type ImportResult = z.infer<typeof importResultSchema>
+
+// ------------------------------------------------------------------------------- R2-W4: history, attestation, mistakes
+
+export const attestResultSchema = z.object({
+  card_id: z.string(),
+  changed: z.boolean(),
+  required: z.boolean(),
+  attested: z.boolean(),
+  attested_at: isoOrNull,
+  shareable: z.boolean(),
+})
+export type AttestResult = z.infer<typeof attestResultSchema>
+
+/** One update she received on a deck: the versions, how it came, and counts of what it did. */
+export const updateHistorySchema = z.object({
+  items: z.array(
+    z.object({
+      id: z.string(),
+      from_version_no: z.number(),
+      to_version_no: z.number(),
+      versions_skipped: z.number(),
+      trigger: z.enum(['auto', 'manual']),
+      applied_at: iso,
+      /** `{ added, removed, silent, rechecked, cards_created, cards_restored, cards_archived, cards_updated, cards_reset }` */
+      counts: z.record(z.string(), z.number()),
+      changelog_md: z.string(),
+    }),
+  ),
+})
+export type UpdateHistory = z.infer<typeof updateHistorySchema>
+export type UpdateHistoryRow = UpdateHistory['items'][number]
+
+export const cardChangesSchema = z.object({
+  card_id: z.string(),
+  item_id: z.string(),
+  platform: z.boolean(),
+  waiting: z.number(),
+  versions: z.array(
+    z.object({
+      version_no: z.number(),
+      change_kind: z.string(),
+      change_note: z.string(),
+      at: isoOrNull,
+      text: z.string(),
+      received: z.boolean(),
+      current: z.boolean(),
+    }),
+  ),
+  resets: z.array(z.object({ at: iso, reason: z.string() })),
+})
+export type CardChanges = z.infer<typeof cardChangesSchema>
+export type CardVersionRow = CardChanges['versions'][number]

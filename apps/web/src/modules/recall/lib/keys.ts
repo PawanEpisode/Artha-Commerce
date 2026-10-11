@@ -12,6 +12,8 @@ export const recallKeys = {
   cards: (params: object = {}) => ['recall', 'cards', params] as const,
   card: (id: string) => ['recall', 'card', id] as const,
   cardHistory: (id: string) => ['recall', 'card', id, 'history'] as const,
+  cardChanges: (id: string) => ['recall', 'card', id, 'changes'] as const,
+  updateHistory: (subscriptionId: string) => ['recall', 'decks', 'history', subscriptionId] as const,
   deckLibrary: (params: object = {}) => ['recall', 'decks', 'library', params] as const,
   myDecks: ['recall', 'decks', 'mine'] as const,
   deck: (id: string) => ['recall', 'decks', 'deck', id] as const,

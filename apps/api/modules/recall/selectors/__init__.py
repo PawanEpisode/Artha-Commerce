@@ -1,6 +1,6 @@
 """Reads of the recall module. Selectors never write, and a student only ever reads her own rows."""
 
-from . import amendments, exam, remaps, updates
+from . import amendments, exam, history, remaps, updates
 from .cards import (
     CardFilter,
     CardView,
@@ -35,6 +35,7 @@ from .today import ProviderResult, RecallTask, TodayPlan, provide_today, today_p
 __all__ = [
     "amendments",
     "exam",
+    "history",
     "remaps",
     "updates",
     "CardFilter",

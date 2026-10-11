@@ -34,6 +34,7 @@ from ..models import (
     RecallSession,
     RecallSettings,
     RecallSubscription,
+    RecallSubscriptionUpdate,
 )
 from . import log_guard
 
@@ -80,6 +81,7 @@ def delete_all_for_user(user_id) -> dict:
         report["scheduleevents"] = _count(RecallScheduleEvent.objects.filter(user_id=user_id))
         report["sessions"] = _count(RecallSession.objects.filter(user_id=user_id))
         report["cards"] = _count(RecallCard.objects.filter(user_id=user_id))
+        report["subscription_updates"] = _count(RecallSubscriptionUpdate.objects.filter(user_id=user_id))
         report["subscriptions"] = _count(RecallSubscription.objects.filter(user_id=user_id))
         report["chapter_remaps"] = _count(RecallChapterRemap.objects.filter(user_id=user_id))
         own_items = RecallItem.objects.filter(ownership="user", owner_user_id=user_id)
@@ -182,6 +184,12 @@ def export_for_user(user_id) -> dict:
                 "archived_at",
                 "last_sync_at",
             )  # fmt: skip
+        ],
+        "subscription_updates": [
+            _row(r)
+            for r in RecallSubscriptionUpdate.objects.filter(user_id=user_id)
+            .order_by("applied_at", "id")
+            .values("id", "subscription_id", "from_no", "to_no", "versions_skipped", "trigger", "summary", "applied_at")
         ],
         "sessions": [
             _row(r)

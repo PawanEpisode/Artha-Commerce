@@ -155,6 +155,45 @@ class CardFromSelectionView(WriteView):
         return Response(body, status=200 if result.existing else 201)
 
 
+class CardFromQuestionView(WriteView):
+    """`POST cards/from-question/`: a pointer card from the source of a question she got wrong (FR-F15-17). Idempotent per question."""
+
+    def post(self, request):
+        d = self.parse(serializers.QuestionCardSerializer, request.data).validated_data
+        result = services.question_cards.create_card_from_question(
+            request.user.id,
+            question_id=d["question_id"],
+            version_id=d["version_id"],
+            chapter_id=d["chapter_id"],
+            client_id=d["client_id"],
+            force=d["force"],
+        )
+        body = _created_payload(request.user.id, result)
+        body |= {
+            "card_id": str(result.card_id),
+            "undo_token": result.undo_token,
+            "undo_seconds": UNDO_SECONDS if result.undo_token else 0,
+        }
+        return Response(body, status=200 if result.existing else 201)
+
+
+class CardAttestView(WriteView):
+    """`POST cards/<id>/attest/`: say a card made from a selection is in her own words (shareable), or take it back (FR-F15-21)."""
+
+    def post(self, request, card_id):
+        d = self.parse(serializers.AttestSerializer, request.data).validated_data
+        result = services.attestation.set_own_words(request.user.id, card_id, own_words=d["own_words"])
+        view = selectors.get_card(request.user.id, card_id)
+        return Response(serializers.attestation_result_dict(card_id, view.item, result))
+
+
+class CardChangesView(RecallView):
+    """`GET cards/<id>/changes/`: the versions of the card's text and the times it came back for a re-check."""
+
+    def get(self, request, card_id):
+        return Response(serializers.card_changes_dict(selectors.history.card_changes(request.user.id, card_id)))
+
+
 class CardDetailView(RecallView):
     def get_throttles(self):
         if self.request.method != "GET":
@@ -574,6 +613,15 @@ class UpdatePreviewView(RecallView):
 
     def get(self, request, subscription_id):
         return Response(serializers.update_preview_dict(selectors.updates.preview(request.user.id, subscription_id)))
+
+
+class UpdateHistoryView(RecallView):
+    """`GET subscriptions/<id>/history/`: the updates she has received on this deck, newest first."""
+
+    def get(self, request, subscription_id):
+        return Response(
+            serializers.update_history_dict(selectors.history.update_history(request.user.id, subscription_id))
+        )
 
 
 class ApplyUpdateView(RecallView):

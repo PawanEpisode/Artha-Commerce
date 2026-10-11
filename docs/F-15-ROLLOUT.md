@@ -1,7 +1,7 @@
 # F-15 Flashcards and Spaced Revision, release R1 (flag `recall_system`): build and rollout runbook
 
 Status (2026-10-11): **R1 is built (waves W0 to W12 done) and verified by automated tests and two end-to-end scripts; it has not been run on your own Postgres, and no student can see it** (flag `recall_system` is fail closed and off). What is left is yours: section 7.
-Specs: `docs/product/prd/F-15-recall-system.md` (the PRD), `docs/product/erd/F-15-recall-system.md` (the ERD). This file says in what order R1 is built, what each wave changes, how it is proved, how it is rolled back and what you must arrange. R2 wave W2 (living decks) is section 8 below; the rest of R2 (sharing, AI) and R3 (parameter fit) are not in this file.
+Specs: `docs/product/prd/F-15-recall-system.md` (the PRD), `docs/product/erd/F-15-recall-system.md` (the ERD). This file says in what order R1 is built, what each wave changes, how it is proved, how it is rolled back and what you must arrange. R2 waves W2 (living decks), W3 (coverage, tracker, Today, import) and W4 (update history, own words, mistakes) are sections 8 to 10 below; the rest of R2 (sharing, AI) and R3 (parameter fit) are not in this file.
 
 R1 ships: seven card kinds, FSRS-6 as a pure versioned function in Python and TypeScript with shared golden vectors, an append-only idempotent review log, the review player (keyboard, swipe, undo, edit in place), daily limits, catch-up, rebalance, vacation, early review, forgotten list and leech notices, stats, platform decks edited in Django admin (copy-on-subscribe), offline review, export and delete-all, and the Notes provider (`create_card_from_source`, `cards_for_source`). **Not in R1:** AI (`recall_ai`), sharing (`recall_sharing`), quick revision and exam horizon, deck update sync (R2), the Notes "highlight to card" button, the F-13 Today registration (`provide_today` exists as a selector, nothing registers it), billing.
 
@@ -463,4 +463,61 @@ Sharing and share imports, AI suggestions and AI batches, `create_card_from_ques
 - `scripts/e2e/recall-r2/run.py` on PostgreSQL: 53 checks, all passed, including the new W3 section (strength, import preview, real call and replay, the 200 row cap, 60% is not a pass and 80% over two sessions counts one revision, a second pass in the week and a replayed job add nothing, the tracker is off by default then forwards one `auto` revision session and a replay adds none, export carries `chapter_passes`, erase leaves no rows, no card text in the server log). Writing it found one real fact worth knowing: the tracker never records more time than has really passed since the session opened, so a session that answers cards in a few real seconds is "too short" however long the cards claim to have taken.
 - The capacity comparison above.
 Manual device and browser checks are not done (your standing rule, an accepted risk).
+
+## 10. R2, wave W4: history of updates, "my own words", cards from mistakes (flag `recall_system`, no new flag)
+
+Built on top of R1 and R2-W1 to W3. Specs: PRD FR-F15-17 (card from a mistake), FR-F15-21 (selection cards are private unless she attests "in my own words") and the "student-facing history of past updates, per-card what changed" that section 8.5 left out. Everything is behind `recall_system` (fail closed). **No new flag, no new environment variable, no new throttle scope** (writes use `recall_write`). One schema change: migration `0007`, a new table `recall_subscriptionupdate` (one row per update a student received on a deck). It is the smaller of the three remaining R2 pieces on purpose; **sharing (`recall_sharing`) and AI suggestions (`recall_ai`) are not in it.**
+
+### 10.1 What it does for a student
+
+- **Past updates of a deck.** On a deck she has, an accordion "Past updates" lists the updates she received, newest first: the day, "Version 2 to version 5 (2 versions in between)", whether "You applied it" or "Applied for you", the editors' change log, and what it did to her cards ("1 new card, 2 cards to re-check."). Closed by default; nothing is read until she opens it. A deck that never changed says "No updates yet". Updates that happened before this wave are not listed (nothing recorded them).
+- **What changed in a card.** On the card page an accordion "Versions of this card": every version of its text (at most 20, newest first) with the kind of change ("Meaning changed", "Typo fixed", "Changed after a law amendment"), the day, the first lines of that version, which version her card shows, and a notice when newer versions are waiting in a pinned deck. Under it, the times the card came back for a re-check and why ("A law this card relies on was amended"). Her own cards show her edits the same way.
+- **"Are these your own words?" (FR-F15-21).** A card made from a highlight, a solution or a mistake is private. On its page a panel lets her say the words are her own ("Yes, these are my own words"); the card then becomes shareable, the time is kept, and she can take it back. Manual, imported and platform cards show no panel. Sharing itself is not built: this is the state Share will read, and it is already in the export.
+- **Card from a mistake (FR-F15-17).** `QuestionCardButton` ("Make a card from this") for the question bank to put on a wrong answer. The card is a pointer: the front asks "What is the rule in Section 17(5), CGST Act?", the back quotes the bank's explanation and names the source. One card per question; a second tap says "You already have a card for this question." **F-06 does not exist yet**, so nothing mounts the button and the endpoint answers 503 `question_source_unavailable` until F-06 registers its provider (9.2 below).
+
+### 10.2 What staff and integrations do
+
+- **F-06 registers a provider** from its `AppConfig.ready`: `core.question_port.register_question_provider(provider)` where `provider.source_for(user_id, question_id, version_id)` answers a `QuestionSource` (explanation, reference labels and keys, chapter and topic) or None. It must answer from the bank's own data and enforce who may see the question. Recall never calls a model and never invents a source. The port is the same shape as `core.recall_port` and `core.today_port`.
+- **F-06 then mounts** `QuestionCardButton` from the recall barrel on the wrong-answer screen (`questionId`, `versionId`, optional `onMade`). It renders nothing while recall is off for the student.
+- No new admin screen. The staff deck summary still shows counts only.
+
+### 10.3 Decisions and deviations
+
+| # | Decision | Why |
+| --- | --- | --- |
+| W4-1 | The history of updates is a new table, written by the sync | `pinned_version` is overwritten on every apply, so the start of her history cannot be derived. One row per `(subscription, to_version)`, written in the transaction that moves her version, so a replay changes and writes nothing. Ids, numbers and counts only. Updates before W4 are not listed. |
+| W4-2 | `trigger` is `manual` (she pressed Apply) or `auto` (the follow sync) | Stated in her words in the list. A pin switched to follow is queued, so its update is `auto`. |
+| W4-3 | "What changed" shows text, not a diff | Versions are immutable and short; the first 300 characters of each version are enough to see what moved and are read by the owner only. A word-level diff is a later refinement. |
+| W4-4 | The card from a question never takes text from the client | The ERD says never from model memory; here it is also never from the browser. The body is `{question_id, version_id}`. |
+| W4-5 | One card per question and student, whatever the version | The unique source key is `(owner, questionbank, question id, question_mistake)`; the version is kept in the locator. A deleted card can be made again. |
+| W4-6 | A bank chapter that is not in her scheme leaves the card Unsorted | Refusing would lose a mistake she wanted to keep. An explicit `chapter_id` that is not hers is still 422. |
+| W4-7 | Attestation applies to origins `selection`, `solution`, `mistake` only | Manual cards are shareable already; imports are never shareable (W3); platform cards are not hers. The others answer 422 `attestation_not_needed`. Editing a card does not clear the statement. |
+| W4-8 | No new audit action | `attest_own_words` existed in the audit enum since R1; the detail carries `own_words` true or false. |
+| W4-9 | The explanation on the back is cut at 1,500 characters and flattened | The card profile refuses headings and images and allows 4,000 characters; a good explanation must never fail the save. |
+
+### 10.4 Operations
+
+- Apply migration `0007` (a new table, no change to existing ones; older code ignores it). Rollback: remove the three routes and the sync write; the table can stay.
+- Erase deletes the table's rows with the student; export carries `subscription_updates`.
+- No job, tick or scheduler change. Nothing runs on the review path.
+- Logs carry counts only. A test proves no card text reaches the log for a card from a question.
+
+### 10.5 Reads (same sandbox as the earlier notes)
+
+| Read | Measured |
+| --- | --- |
+| `GET subscriptions/{id}/history/` | 52 ms over HTTP (first call, a deck with two updates) |
+| `GET cards/{id}/changes/` (7 versions) | 58 ms over HTTP (first call), at most 12 queries whatever the number of versions |
+
+The review path is untouched; the capacity script was re-run and its numbers are in 10.7.
+
+### 10.6 Not built in W4 (on purpose)
+
+Sharing by link and its abuse controls (`recall_sharing`), AI-suggested cards (`recall_ai`), a word-level diff in "what changed", daily "N cards changed" notifications (F-13), the Today screen, and the first mount of the question button (F-06).
+
+### 10.7 Proof
+
+Ruff and ruff format on `apps/api` (clean); pytest `modules/coverage modules/recall modules/syllabus modules/tracking modules/focus core` on SQLite (2,029 passed, 39 skipped that need PostgreSQL) and on PostgreSQL 16 (2,068 passed, 0 skipped, 0 failed); new API tests: 16 for the card from a question, 11 for the statement, 12 for the history and the card read (one asserts at most 12 queries for a card with seven versions), 10 for the pure card builder, 4 for the port, and the URL-conf contract drift test and the flag matrix over the four new paths; `pnpm check` (typecheck, lint, format, emails, contrast, 3,160 web tests in 322 files, production build) all green, 30 of those tests are new for W4 (and a few fixtures changed), and every new component has an axe test; `scripts/e2e/recall-r2/run.py` on PostgreSQL (W1 to W4 sections), all checks passed, including the history after a follower's update and her own, attest and take back, the 503 of the question card, the export of `subscription_updates`, the erase and the log search for card text.
+
+Capacity (same sandbox): review p95 76 ms alone, as in W3 (nothing new runs on the review path); `capacity_w2.py` on the original code and on W4: update preview p95 88 ms and 86 ms, apply over HTTP 340 ms and 356 ms, fan-out to 1,000 followers 48.3 s in both, so the extra history row per sync is not measurable. The 8-students-at-once misses on today, quick plan and quick queue were already there before W3. Manual device and browser checks are not done (your standing rule).
 

@@ -8,14 +8,17 @@ import { setServerTime } from './clock'
 import {
   type ApiPack,
   applyUpdateResultSchema,
+  attestResultSchema,
   batchResponseSchema,
   bulkResultSchema,
+  cardChangesSchema,
   cardDetailSchema,
   cardPageSchema,
   chapterChoiceResultSchema,
   chapterRemapSchema,
   chapterStrengthSchema,
   createdCardsSchema,
+  createdQuestionCardSchema,
   deckDetailSchema,
   deckLibrarySchema,
   deckListSchema,
@@ -42,6 +45,7 @@ import {
   todaySchema,
   undoResponseSchema,
   unsubscribeResultSchema,
+  updateHistorySchema,
   updatePreviewSchema,
   vacationSchema,
 } from './schemas'
@@ -116,6 +120,29 @@ export const recallApi = {
   /** The recall strength card of a chapter page. 0 cards for a chapter she has none in, never a 404. */
   chapterStrength: async (chapterId: string) =>
     parse(chapterStrengthSchema, await api<unknown>(`/recall/chapters/${chapterId}/strength/`)),
+
+  /**
+   * A card from a question she got wrong. The text comes from the question bank on the server (never from here); the same
+   * question gives the same card, so a second tap returns it with `existing: true`.
+   */
+  cardFromQuestion: async (body: {
+    question_id: string
+    version_id: string
+    client_id?: string
+    chapter_id?: string
+  }) => parse(createdQuestionCardSchema, await api<unknown>('/recall/cards/from-question/', jsonBody(body))),
+
+  /** "These are my own words": makes a selection card shareable, or takes the statement back. Idempotent. */
+  attest: async (cardId: string, ownWords: boolean) =>
+    parse(attestResultSchema, await api<unknown>(`/recall/cards/${cardId}/attest/`, jsonBody({ own_words: ownWords }))),
+
+  /** The versions of a card's text and the times it came back for a re-check. */
+  cardChanges: async (cardId: string) =>
+    parse(cardChangesSchema, await api<unknown>(`/recall/cards/${cardId}/changes/`)),
+
+  /** The updates she has received on a deck, newest first. */
+  updateHistory: async (subscriptionId: string) =>
+    parse(updateHistorySchema, await api<unknown>(`/recall/subscriptions/${subscriptionId}/history/`)).items,
 
   /** Paste or CSV import. `dry_run` judges every row and writes nothing; `client_id` makes a replay safe. */
   importCards: async (body: ImportBody) =>

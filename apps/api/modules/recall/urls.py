@@ -5,10 +5,13 @@ from . import views
 urlpatterns = [
     path("recall/cards/", views.CardListCreateView.as_view(), name="recall-cards"),
     path("recall/cards/from-selection/", views.CardFromSelectionView.as_view(), name="recall-cards-selection"),
+    path("recall/cards/from-question/", views.CardFromQuestionView.as_view(), name="recall-cards-question"),
     path("recall/cards/import/", views.CardImportView.as_view(), name="recall-cards-import"),
     path("recall/cards/undo-delete/", views.CardUndoView.as_view(), name="recall-cards-undo"),
     path("recall/cards/bulk/", views.CardBulkView.as_view(), name="recall-cards-bulk"),
     path("recall/cards/<uuid:card_id>/", views.CardDetailView.as_view(), name="recall-card"),
+    path("recall/cards/<uuid:card_id>/attest/", views.CardAttestView.as_view(), name="recall-card-attest"),
+    path("recall/cards/<uuid:card_id>/changes/", views.CardChangesView.as_view(), name="recall-card-changes"),
     path("recall/cards/<uuid:card_id>/reviews/", views.CardHistoryView.as_view(), name="recall-card-history"),
     *(
         path(
@@ -74,6 +77,11 @@ urlpatterns += [
         "recall/subscriptions/<uuid:subscription_id>/update/",
         views.UpdatePreviewView.as_view(),
         name="recall-subscription-update",
+    ),
+    path(
+        "recall/subscriptions/<uuid:subscription_id>/history/",
+        views.UpdateHistoryView.as_view(),
+        name="recall-subscription-history",
     ),
     path(
         "recall/subscriptions/<uuid:subscription_id>/apply-update/",

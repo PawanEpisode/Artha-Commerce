@@ -6,6 +6,7 @@ import uuid
 
 from rest_framework import serializers
 
+from .domain import attestation as attestation_rules
 from .domain.imports import TEXT_MAX_CHARS
 from .domain.limits import REBALANCE_DEFAULT_DAYS, REBALANCE_MAX_DAYS_AHEAD
 from .models import ITEM_IMPORTANCES, ITEM_KINDS
@@ -116,6 +117,20 @@ class SelectionSerializer(serializers.Serializer):
     force = serializers.BooleanField(required=False, default=False)
 
 
+class QuestionCardSerializer(serializers.Serializer):
+    """`POST cards/from-question/`. The text comes from the question bank, never from the client."""
+
+    question_id = serializers.UUIDField()
+    version_id = serializers.UUIDField()
+    client_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    chapter_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    force = serializers.BooleanField(required=False, default=False)
+
+
+class AttestSerializer(serializers.Serializer):
+    own_words = serializers.BooleanField()
+
+
 class CardPatchSerializer(serializers.Serializer):
     """Only the keys that were sent are applied (`chapter_id: null` means Unsorted, a missing key means unchanged)."""
 
@@ -210,6 +225,12 @@ def source_dict(view: CardView) -> dict | None:
     }
 
 
+def attestation_dict(item) -> dict:
+    """The "my own words" state of a card: does the statement apply, and has she made it (FR-F15-21)."""
+    state = attestation_rules.state_of(item.ownership, item.origin, item.shareable, item.shareable_attested_at)
+    return {**state, "attested_at": iso(state["attested_at"])}
+
+
 def card_dict(view: CardView) -> dict:
     c, item = view.card, view.item
     return {
@@ -235,6 +256,8 @@ def card_dict(view: CardView) -> dict:
         **recheck_dict(c),
         "under_review": view.under_review,
         "source": source_dict(view),
+        "shareable": item.shareable,
+        "attestation": attestation_dict(item),
         "due_at": iso(c.due_at),
         "buried_until": iso(c.buried_until),
         "reps": c.reps,
@@ -706,3 +729,49 @@ def remap_screen_dict(screen) -> dict:
         "chapters": [_ref_dict(c) for c in screen.chapters],
         "count": len(screen.items),
     }
+
+
+# --- R2-W4: history of updates, what changed in a card, attestation -------------------------------------------------------
+def update_history_dict(rows) -> dict:
+    return {
+        "items": [
+            {
+                "id": str(r.id),
+                "from_version_no": r.from_no,
+                "to_version_no": r.to_no,
+                "versions_skipped": r.versions_skipped,
+                "trigger": r.trigger,
+                "applied_at": iso(r.applied_at),
+                "counts": {k: v for k, v in r.summary.items() if k != "v"},
+                "changelog_md": r.changelog_md,
+            }
+            for r in rows
+        ]
+    }
+
+
+def card_changes_dict(c) -> dict:
+    """What changed in a card. `text` is the version's first lines, for the signed-in owner only."""
+    return {
+        "card_id": str(c.card_id),
+        "item_id": str(c.item_id),
+        "platform": c.platform,
+        "waiting": c.waiting,
+        "versions": [
+            {
+                "version_no": v.version_no,
+                "change_kind": v.change_kind,
+                "change_note": v.change_note,
+                "at": iso(v.at),
+                "text": v.text,
+                "received": v.received,
+                "current": v.current,
+            }
+            for v in c.versions
+        ],
+        "resets": [{"at": iso(r.at), "reason": r.reason} for r in c.resets],
+    }
+
+
+def attestation_result_dict(card_id, item, result) -> dict:
+    return {"card_id": str(card_id), "changed": result.changed, **attestation_dict(item), "shareable": item.shareable}

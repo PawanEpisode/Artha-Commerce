@@ -48,6 +48,8 @@ import {
 } from '../lib/cardKinds'
 import { errorText } from '../lib/errors'
 import type { RecallCardDetail } from '../lib/schemas'
+import { AttestationSection } from './AttestationSection'
+import { CardChangesSection } from './CardChangesSection'
 
 interface Base {
   rev: number
@@ -491,9 +493,13 @@ function Detail({ id }: { id: string }) {
       {/* Remounting on the card id only: a background refresh never throws away what she is typing. */}
       <Editor key={card.id} card={card} kind={card.kind} />
 
+      <AttestationSection card={card} />
+
       <ChapterMove card={card} />
 
       <Actions card={card} />
+
+      <CardChangesSection cardId={card.id} />
 
       <section aria-labelledby="history-heading" className="space-y-3">
         <h2 id="history-heading" className="font-display text-xl font-bold">

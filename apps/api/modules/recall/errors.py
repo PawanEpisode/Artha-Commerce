@@ -5,6 +5,8 @@ from rest_framework import status
 from core.errors import CodedError, Conflict, FeatureDisabled, QuotaExceeded
 
 __all__ = [
+    "AttestationNotNeeded",
+    "QuestionHasNoSource",
     "BadCursor",
     "BulkTooLarge",
     "DeckNotFound",
@@ -194,3 +196,19 @@ class CramNotOpen(CodedError):
     status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
     default_detail = "The cram preview opens 24 hours before your exam."
     default_code = "cram_not_open"
+
+
+class QuestionHasNoSource(CodedError):
+    """422: the question bank gave neither an explanation nor a reference, so there is nothing true to put on the card."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "This question has no explanation or source to make a card from."
+    default_code = "question_has_no_source"
+
+
+class AttestationNotNeeded(CodedError):
+    """422: only a card made from a selection, a solution or a mistake needs (or can give) the "my own words" statement."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "This card does not need that statement."
+    default_code = "attestation_not_needed"

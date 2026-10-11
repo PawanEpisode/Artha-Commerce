@@ -82,6 +82,8 @@ const detail = (over: Record<string, unknown> = {}) => ({
   kind: 'pointer',
   front_md: 'Question 1?',
   importance: 'bullet',
+  shareable: false,
+  attestation: { required: false, attested: false, attested_at: null },
   memory: {
     stability: 12.4,
     difficulty: 5.2,

@@ -152,3 +152,16 @@ Built: the chapter recall pass (rolling 7 days, one coverage revision per chapte
 | W3-6 | Editors and support: the import takes 200 rows a call and refuses duplicates; tell students to split long lists | Open (owner), copy | Row errors name the problem in words |
 | W3-7 | Manual device checks (chapter card, revision link, import on a phone) | Not run, accepted | Automated component, keyboard and axe tests, the e2e script and the capacity comparison stand in |
 
+## 9. F-15 R2, wave W4 (history of updates, "my own words", cards from mistakes): built 2026-10-11, owner tasks
+
+Built: the student's history of deck updates, "what changed" in a card, the "my own words" statement for cards made from a selection, and a card from a mistake through a question port that F-06 will fill. No new flag: `recall_system` stays fail-closed, beta cohort only. Sharing and AI suggestions are not in it. Details: `docs/F-15-ROLLOUT.md` section 10.
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| W4-1 | Apply migration `0007` (new table `recall_subscriptionupdate`) on staging before the web build that shows the history | Open (owner) | Additive; older code ignores it |
+| W4-2 | Run `pytest modules/coverage modules/recall modules/tracking modules/focus core` once on a real PostgreSQL, then `scripts/e2e/recall-r2/run.py`, `capacity.py` and `capacity_w2.py` | Open (owner) | Verified here on a private PostgreSQL 16 and on SQLite; keep the capacity output |
+| W4-3 | F-06: register `core.question_port.register_question_provider` and mount `QuestionCardButton` on the wrong-answer screen | Open (F-06) | Until then `POST recall/cards/from-question/` answers 503 `question_source_unavailable` and the button is not shown anywhere |
+| W4-4 | Sharing wave: read `item.shareable` (attested cards are shareable); legal posture Q-F15-8 and counsel's review come before it is opened | Open (later wave) | The statement and its audit trail exist; nothing reads them yet |
+| W4-5 | Update history starts at W4: updates applied before it are not listed | Accepted | Nothing recorded them; a deck that changes again fills the list |
+| W4-6 | Manual device checks (card page panels, deck page accordion on a phone) | Not run, accepted | Automated component, keyboard and axe tests and the e2e script stand in |
+

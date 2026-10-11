@@ -29,6 +29,10 @@ export const ALLOWED = {
   recall_chapter_remap_chosen: ['relation'],
   recall_import_previewed: ['rows', 'valid', 'invalid'],
   recall_import_done: ['rows', 'created', 'invalid'],
+  recall_own_words_set: ['attested'],
+  recall_question_card_made: ['existing'],
+  recall_update_history_viewed: ['updates'],
+  recall_card_changes_viewed: ['versions', 'waiting'],
   recall_pacing_viewed: ['feasible', 'needed_per_day', 'days_to_exam'],
 } as const satisfies Record<string, readonly string[]>
 

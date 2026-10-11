@@ -2,6 +2,7 @@
 
 from . import (
     amendments,
+    attestation,
     cards,
     catchup,
     decks,
@@ -10,6 +11,7 @@ from . import (
     imports,
     log_guard,
     preferences,
+    question_cards,
     quota,
     remap,
     reports,
@@ -23,6 +25,7 @@ from . import (
 
 __all__ = [
     "amendments",
+    "attestation",
     "cards",
     "catchup",
     "decks",
@@ -31,6 +34,7 @@ __all__ = [
     "imports",
     "log_guard",
     "preferences",
+    "question_cards",
     "quota",
     "reports",
     "reviews",

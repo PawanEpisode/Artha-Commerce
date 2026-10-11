@@ -18,6 +18,7 @@ import { cardsText, newerText, subscribeMessage, subscriptionState, tiersText, t
 import { errorText } from '../lib/errors'
 import type { ApiDeck, ApiDeckItem } from '../lib/schemas'
 import { appliedMessage } from '../lib/updates'
+import { UpdateHistorySection } from './UpdateHistorySection'
 
 function SubscribeBar({ deck }: { deck: ApiDeck }) {
   const state = subscriptionState(deck)
@@ -98,6 +99,7 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
             <Alert variant="error">{errorText(follow.error, 'Could not change that. Please try again.')}</Alert>
           ) : null}
           {sub?.old_syllabus ? <OldSyllabusFlag /> : null}
+          {sub ? <UpdateHistorySection subscriptionId={sub.id} /> : null}
           {sub ? (
             <UpdateSheet
               open={sheet}

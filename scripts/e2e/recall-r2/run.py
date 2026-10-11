@@ -5,6 +5,11 @@ active and a local PostgreSQL running:
 
     DATABASE_URL=postgres://... python scripts/e2e/recall-r2/run.py
 
+W4 (history, own words, mistakes): the updates she received are listed with who applied them (the follower job and her own Apply),
+a card shows the versions of its text and the times it came back, a card made from a selection is private until she says the words are
+her own (and she can take that back; a manual or platform card refuses), a card from a question answers 503 while no question bank
+exists, and export and erase cover the update history.
+
 W3 (Recall x Coverage, Tracker and Today): the strength read of a chapter, paste import (preview, atomic real call, replay, row cap),
 the chapter recall pass (80% of a set of at least 5 in 7 days counts ONE revision in coverage, once per week, replays add nothing)
 and the opt-in tracker session (off by default, one `auto` revision session per finished recall session, replays add nothing).
@@ -270,6 +275,125 @@ def w3(client: httpx.Client, base: str, ch: str, scheme: str) -> None:
     print(f"INFO  W3 strength read: {strength_ms:.0f} ms", flush=True)
 
 
+def w4(client: httpx.Client, sub_id: str, changed_card_id: str) -> None:
+    """R2 wave W4, over HTTP, after W2 has made one automatic and one manual update on `sub_id`."""
+    # C. History of updates: newest first, who applied each, counts only.
+    t0 = time.perf_counter()
+    res = client.get(f"/recall/subscriptions/{sub_id}/history/")
+    history_ms = (time.perf_counter() - t0) * 1000
+    rows = res.json().get("items", []) if res.status_code == 200 else []
+    check(
+        "the history lists the follower's update and her own, newest first",
+        [(r["from_version_no"], r["to_version_no"], r["trigger"]) for r in rows] == [(2, 3, "manual"), (1, 2, "auto")],
+        [(r["from_version_no"], r["to_version_no"], r["trigger"]) for r in rows],
+    )
+    check(
+        "an update in the history carries counts and no card text",
+        all(isinstance(v, int) for r in rows for v in r["counts"].values()) and MARK not in res.text,
+        rows[:1],
+    )
+    foreign = client.get(f"/recall/subscriptions/{uuid.uuid4()}/history/")
+    check(
+        "someone else's subscription is a 404",
+        foreign.status_code == 404,
+        foreign.status_code,
+    )
+    t1 = time.perf_counter()
+    ch = client.get(f"/recall/cards/{changed_card_id}/changes/")
+    changes_ms = (time.perf_counter() - t1) * 1000
+    body = ch.json() if ch.status_code == 200 else {}
+    check(
+        "a card whose meaning changed lists its versions and the re-check",
+        ch.status_code == 200
+        and body["platform"] is True
+        and len(body["versions"]) >= 2
+        and sum(1 for v in body["versions"] if v["current"]) == 1
+        and any(r["reason"] == "substantive" for r in body["resets"]),
+        {k: body.get(k) for k in ("platform", "waiting")},
+    )
+
+    # B. Own words.
+    picked = client.post(
+        "/recall/cards/from-selection/",
+        json={
+            "client_id": str(uuid.uuid4()),
+            "origin": "note_highlight",
+            "selection_text": f"{MARK} a rule worth remembering {uuid.uuid4().hex[:6]}",
+            "source": {
+                "module": "notes",
+                "object_id": f"w4-{uuid.uuid4().hex[:8]}",
+                "locator": {},
+            },
+        },
+    )
+    check(
+        "a card made from a selection starts private",
+        picked.status_code == 201,
+        picked.text[:160],
+    )
+    cid = picked.json()["card_id"]
+    detail = client.get(f"/recall/cards/{cid}/").json()
+    check(
+        "it says a statement applies and is not shareable",
+        detail["shareable"] is False and detail["attestation"]["required"] and not detail["attestation"]["attested"],
+        detail["attestation"],
+    )
+    yes = client.post(f"/recall/cards/{cid}/attest/", json={"own_words": True})
+    again = client.post(f"/recall/cards/{cid}/attest/", json={"own_words": True})
+    check(
+        "saying the words are hers makes it shareable, once",
+        yes.status_code == 200
+        and yes.json()["changed"]
+        and yes.json()["shareable"]
+        and again.json()["changed"] is False,
+        yes.text[:160],
+    )
+    back = client.post(f"/recall/cards/{cid}/attest/", json={"own_words": False})
+    check(
+        "she can take it back",
+        back.status_code == 200 and back.json()["shareable"] is False,
+        back.text[:160],
+    )
+    manual = client.post(
+        "/recall/cards/",
+        json={
+            "client_id": str(uuid.uuid4()),
+            "kind": "pointer",
+            "fields": {"prompt_md": f"{MARK} own?", "answer_md": "x"},
+        },
+    )
+    refused = client.post(
+        f"/recall/cards/{manual.json()['cards'][0]['id']}/attest/",
+        json={"own_words": True},
+    )
+    check(
+        "a card she wrote herself needs no statement",
+        refused.status_code == 422 and refused.json()["error"]["code"] == "attestation_not_needed",
+        refused.text[:160],
+    )
+    platform = client.post(f"/recall/cards/{changed_card_id}/attest/", json={"own_words": True})
+    check(
+        "a platform card cannot be attested",
+        platform.status_code == 422,
+        platform.status_code,
+    )
+
+    # A. A card from a question needs the question bank (F-06, not built): an honest 503.
+    q = client.post(
+        "/recall/cards/from-question/",
+        json={"question_id": str(uuid.uuid4()), "version_id": str(uuid.uuid4())},
+    )
+    check(
+        "a card from a question answers 503 while there is no question bank",
+        q.status_code == 503 and q.json()["error"]["code"] == "question_source_unavailable",
+        q.text[:160],
+    )
+    print(
+        f"INFO  W4 reads: history {history_ms:.0f} ms, card changes {changes_ms:.0f} ms",
+        flush=True,
+    )
+
+
 def main() -> int:
     tmp = Path(tempfile.mkdtemp(prefix="recall-r2-e2e-"))
     server_log = tmp / "server.log"
@@ -495,6 +619,8 @@ def main() -> int:
             back.status_code == 200 and back.json()["deck"]["subscription"]["follow_updates"] is True,
         )
 
+        w4(client, sub_id, flagged[0]["id"])
+
         # Amendment port: F-14 is not built, so the event is emitted the way it would: by name, from another process.
         key = f"s{uuid.uuid4().hex[:6]}"
         keyed = pool[10:12]
@@ -535,7 +661,8 @@ def main() -> int:
             "chapter_remaps" in body
             and "needs_recheck" in card_cols
             and "follow_updates" in (body.get("subscriptions") or [{}])[0]
-            and any("chapter_passes" in x for x in body.get("sessions") or []),
+            and any("chapter_passes" in x for x in body.get("sessions") or [])
+            and len(body.get("subscription_updates") or []) == 2,
             sorted(body)[:12],
         )
 
@@ -553,7 +680,7 @@ def main() -> int:
         log = server_log.read_text(errors="replace")
         check(
             "the server log holds no card text",
-            MARK not in log and "question" not in log.lower().replace("questions", ""),
+            MARK not in log and "question" not in log.lower().replace("questions", "").replace("from-question", ""),
             len(log),
         )
     finally:
