@@ -46,7 +46,7 @@ class TodayPlan:
 
 def _next_due(study: Study) -> datetime | None:
     return RecallCard.objects.filter(
-        user_id=study.user_id, status="active", deleted_at__isnull=True, state__gt=0, due_at__gt=study.day_end
+        user_id=study.user_id, status="active", deleted_at__isnull=True, state__gt=0, due_at__gte=study.day_end
     ).aggregate(m=Min("due_at"))["m"]
 
 
@@ -62,7 +62,7 @@ def today_plan(user_id, *, now: datetime, tz: str | None = None) -> TodayPlan:
         (SubjectTile(k, sum(c.values()), dict(c)) for k, c in tally.items()),
         key=lambda t: (-t.total, str(t.subject_key)),
     )
-    due_reviews = sum(1 for r in rows.values() if r[3] == 2 and r[6] <= study.day_end)
+    due_reviews = sum(1 for r in rows.values() if r[3] == 2 and r[6] < study.day_end)
     unseen = RecallCard.objects.filter(user_id=user_id, status="active", deleted_at__isnull=True, state=0).count()
     per_card = recent_seconds_per_review(user_id, study.today)
     mode = "vacation" if study.vacation else ("catchup" if queue.catchup.active else "normal")

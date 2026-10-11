@@ -4,6 +4,7 @@ import { chapterTitle, forecastColumns, retentionColumns, reviewColumns, strengt
 import { backlogSentence, estimate, minutesLabel, percent, plural, shortDate } from './format'
 import { hubStateOf } from './hub'
 import { tokenize, tokenizeLine } from './inline'
+import { type CardView, planQueue } from './queue'
 import { reviewSearchSchema, statsSearchSchema } from './search'
 import { activeSection, RECALL_SECTIONS } from './sections'
 import { changes, draftOf, validate } from './settingsForm'
@@ -163,5 +164,30 @@ describe('the settings form', () => {
     ])
     expect(errors.new_per_day).toBe('Choose between 0 and 100.')
     expect(validate(draftOf(SETTINGS))).toEqual({})
+  })
+})
+
+describe('due today', () => {
+  it('leaves out a review due at the first instant of tomorrow (rebalance and skip to tomorrow land exactly there)', () => {
+    const now = new Date('2026-03-10T09:00:00Z')
+    const dayEnd = new Date('2026-03-11T04:00:00Z')
+    const card = (id: string, due: Date): CardView => ({
+      id,
+      subject: 'A',
+      importance: 1,
+      phase: 2,
+      stability: 10,
+      lastReviewAt: new Date('2026-03-02T09:00:00Z'),
+      dueAt: due,
+    })
+    const cards = [
+      card('edge', dayEnd),
+      card('before', new Date(dayEnd.getTime() - 1000)),
+      card('later', new Date(dayEnd.getTime() + 3_600_000)),
+    ]
+    const q = planQueue(cards, now, { newPerDay: 10, reviewsPerDay: 100 }, 0.1542, { dayEnd })
+    expect(q.ids).toEqual(['before'])
+    expect(q.catchup.dueCount).toBe(1)
+    expect(planQueue([card('now', now)], now, { newPerDay: 10, reviewsPerDay: 100 }, 0.1542).ids).toEqual(['now'])
   })
 })

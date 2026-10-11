@@ -99,13 +99,20 @@ def test_an_unknown_chapter_fails_that_deck_only(scheme):
     assert not RecallDeck.objects.filter(slug="other").exists()
 
 
-def test_the_command_skips_template_and_sample_files_by_default(scheme):
-    with pytest.raises(CommandError):  # only the template and the sample ship, and neither loads without a flag
+def test_the_command_skips_template_and_sample_files_by_default(scheme, tmp_path):
+    with pytest.raises(
+        CommandError, match="No seed files"
+    ):  # only the template ships at the top level, and it never loads
         call_command("load_recall_seed", stdout=StringIO())
-    # With the sample asked for, it is read; the test scheme has no Foundation accounting chapter, so the deck is refused whole.
-    with pytest.raises(CommandError, match="not loaded"):
-        call_command("load_recall_seed", "--include-sample", stdout=StringIO())
+    paper = tmp_path / "paper"
+    paper.mkdir()
+    (paper / "sample_demo.json").write_text(json.dumps(file(sample=True)), encoding="utf-8")
+    with pytest.raises(CommandError, match="No seed files"):  # a folder holding only a sample loads nothing by default
+        call_command("load_recall_seed", str(paper), stdout=StringIO())
     assert not RecallDeck.objects.exists()
+    call_command("load_recall_seed", str(paper), "--include-sample", stdout=StringIO())
+    deck = RecallDeck.objects.get(slug="gst-pointers")
+    assert deck.live_version_id is None  # a sample is never published, even when it is loaded
 
 
 def test_the_command_loads_a_named_file_and_dry_run_rolls_back(scheme, tmp_path):
@@ -119,12 +126,9 @@ def test_the_command_loads_a_named_file_and_dry_run_rolls_back(scheme, tmp_path)
         call_command("load_recall_seed", str(tmp_path / "missing.json"), stdout=StringIO())
 
 
-def test_the_shipped_template_and_sample_are_valid_files():
-    for name in ("_TEMPLATE.json", "sample_ca-foundation-accounting-process.json"):
-        data = json.loads((SEED_DIR / name).read_text(encoding="utf-8"))
-        assert seed.problems_in(copy.deepcopy(data)) == [], name
-    sample = json.loads((SEED_DIR / "sample_ca-foundation-accounting-process.json").read_text(encoding="utf-8"))
-    assert sample["sample"] is True
+def test_the_shipped_template_is_a_valid_file():
+    data = json.loads((SEED_DIR / "_TEMPLATE.json").read_text(encoding="utf-8"))
+    assert seed.problems_in(copy.deepcopy(data)) == []
 
 
 def test_the_command_takes_a_folder_and_loads_the_json_files_inside_it(scheme, tmp_path):

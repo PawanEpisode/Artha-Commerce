@@ -1,19 +1,23 @@
 # F-15 Flashcards and Spaced Revision, release R1 (flag `recall_system`): build and rollout runbook
 
-Status: written 2026-10-09, **waiting for owner approval; no F-15 code exists yet** (Wave 0 below is the only code changed, and it is a prerequisite fix, not F-15).
+Status (2026-10-11): **R1 is built (waves W0 to W12 done) and verified by automated tests and two end-to-end scripts; it has not been run on your own Postgres, and no student can see it** (flag `recall_system` is fail closed and off). What is left is yours: section 7.
 Specs: `docs/product/prd/F-15-recall-system.md` (the PRD), `docs/product/erd/F-15-recall-system.md` (the ERD). This file says in what order R1 is built, what each wave changes, how it is proved, how it is rolled back and what you must arrange. R2 (quick revision, sharing, AI, deck sync) and R3 (parameter fit) are not in this file.
 
 R1 ships: seven card kinds, FSRS-6 as a pure versioned function in Python and TypeScript with shared golden vectors, an append-only idempotent review log, the review player (keyboard, swipe, undo, edit in place), daily limits, catch-up, rebalance, vacation, early review, forgotten list and leech notices, stats, platform decks edited in Django admin (copy-on-subscribe), offline review, export and delete-all, and the Notes provider (`create_card_from_source`, `cards_for_source`). **Not in R1:** AI (`recall_ai`), sharing (`recall_sharing`), quick revision and exam horizon, deck update sync (R2), the Notes "highlight to card" button, the F-13 Today registration (`provide_today` exists as a selector, nothing registers it), billing.
 
-## 0. Status check (verified 2026-10-08, against the code)
+## 0. Status
+
+R1 is built and closed out (W12, 2026-10-11): `ruff check` and `ruff format --check` are clean over 725 files; the API suite passes on PostgreSQL 16 (4,091 passed, 1 skipped) and on SQLite (4,015 passed, 76 skipped; the one failure there is a Notes OCR test that needs PostgreSQL full-text search and only runs where `tesseract` is installed, which this sandbox has and a plain SQLite run does not); the web recall, observability and features tests pass (295) and `pnpm check` passes (3,006 web tests, build); `recall-seed-check.py` and the CMA Final Paper 13 dry run are clean (11 files, 786 items); `run.py` passes 43 checks and `capacity.py` runs on PostgreSQL. Not done, on purpose: manual device and browser checks (your standing rule, an accepted risk, section 6), your own Postgres run, the beta cohort and the counsel review. The table below is the original check against the code (2026-10-08); every "missing" row has since been built, as noted.
+
+### 0.1 Original check (2026-10-08)
 
 | Item | State |
 | --- | --- |
 | Notes R1 to R3, `core/recall_port.py` (+ its use in `modules/notes`, 503 `recall_unavailable`, `capabilities.recall`) | Present |
 | `core/jobs` + worker + 5-minute tick, `core/registry.py` (erase and export), `core/feature_flags.py` (strict mode), base classes in `core/errors.py` and `core/permissions.py`, Sentry `before_send` scrubbing, syllabus selector extensions, `src/lib/offline-queue`, coverage selectors (`get_active_enrollment`, `exam_date_of`, `due_for_revision`) | Present |
-| `core/richtext` `card` profile (and its web twin) | **Missing, fixed in Wave 0** |
-| Flag lookup failure caching and `CACHES` (AUD-003, W0L.2) | **Missing, fixed in Wave 0** |
-| Design-system `RatingButtons`, `FlipCard`, `ProgressCounter`, `DatePicker` | Absent (built in Wave 7) |
+| `core/richtext` `card` profile (and its web twin) | Was missing, fixed in Wave 0 |
+| Flag lookup failure caching and `CACHES` (AUD-003, W0L.2) | Was missing, fixed in Wave 0 |
+| Design-system `RatingButtons`, `FlipCard`, `ProgressCounter`, `DatePicker` | Were absent, built in Wave 7 |
 | Billing selector | None. `plan_code_for` is a stub inside `notes/services/quota.py` (recall may not import notes); Wave 3 adds `core/plans.py` |
 | F-13 Today, coverage `recall` source value | Absent, by design (R1 does not need them) |
 | `core.events` | Synchronous in-memory `subscribe(name, fn)` / `emit(name, **payload)`; the ERD's `register_subscriber(..., mode=)` signature does not exist. R1 emits `recall_session_completed`, `recall_leech_detected` through the stand-in; no subscriber is registered yet |
@@ -112,7 +116,7 @@ One change set per wave, in this order; each ends with a short report and a "for
 | W9 | Web screens: hub, review player, summary, stats, settings | 10 (part) | large |
 | W10 | Cards browser, creator, detail, bulk, duplicate warning | 11 | medium |
 | W11 | Platform decks: admin editor, publish, seed loader, subscribe, library UI, reports, export and erase | 13 | large |
-| W12 | End-to-end script, capacity note, privacy checks, docs, tracker, close-out | | medium |
+| W12 | End-to-end script, capacity note, privacy checks, docs, tracker, close-out (done) | | medium |
 
 ## 3. Waves
 
@@ -256,9 +260,41 @@ Notes: a superuser already has every recall permission, so `grant_staff_role` is
 3. Release condition: *Cohort* is *Recall closed beta*, rollout 100%. Leave the other conditions out. To add a student later, add them to the cohort; to switch the feature off for everyone, disable the flag (export and erase keep working, D53).
 Check with one beta account (the Revision entry appears in the study menu) and one account outside the cohort (it does not, and `GET /api/v1/recall/today/` answers 403 `feature_disabled`).
 
-### W12. Close-out
+### W12. Close-out (done 2026-10-11)
 
-`scripts/e2e/recall-r1/run.py` (functional check on Postgres: seed a deck, subscribe, review 200 cards online and 100 offline with two devices, undo, catch-up, rebalance, export, erase; exits 1 on any failure) and `capacity.py` (reviews/min, queue and pack latency at 5,000 cards, 8 concurrent reviewers; numbers are indicative), a capacity note in this file, the privacy checks (Sentry scrubbing test for `recall` routes, PostHog property allow-list, log capture), `.env.example`, `docs/SETUP.md`, `docs/BUILD-TRACKER.md` (new section for F-15 R1 and its owner tasks), CLAUDE.md product status line, the catalog entry left at `soon` until the flag is fully on, and `docs/F-15-API-CONTRACT.md` with the endpoint shapes.
+Built: `scripts/e2e/recall-r1/run.py` (functional check on PostgreSQL; 43 PASS lines, exit 1 on any failure, no card text printed), `scripts/e2e/recall-r1/capacity.py` (reviews per minute, queue, today and pack latency, 5,000 cards, 8 concurrent reviewers), `scripts/e2e/recall-r1/serve.py` (runs the API with the flag answered locally), the privacy checks below, `apps/api/.env.example`, `docs/SETUP.md` (section 9.1), `docs/BUILD-TRACKER.md` (section 4.3 and 4.4), the CLAUDE.md status line, and `docs/F-15-API-CONTRACT.md` with `modules/recall/tests/test_api_contract.py`, which fails when a documented path no longer resolves or a route is undocumented.
+
+What `run.py` covers: a generated 320-card deck loaded with `load_recall_seed --publish`; one test student subscribes (201, then 200 on a repeat); 200 reviews online (150 backdated to create a backlog); an undo (and a repeat of it); 120 offline events over 100 cards from two devices ("phone" and "laptop") with 20 shared cards sent out of time order, so the replay and merge path runs; every event resent (all `duplicate`); a batch of 101 refused (422 `batch_too_large`); an export that holds every review exactly once; reps per card checked; `recall_replay --user` reports no change; Today shows catch-up mode, the rebalance moves cards and a second one moves none; queue, pack, stats ETag and 304, forgotten, settings, vacation and the tick with and without the secret; the two CSV exports end in `#complete,<rows>`; erase with the wrong word is refused, the real erase leaves no row in any recall table, including every partition of the review log, and the export is empty afterwards; the server log holds no card text. Export and erase share the 6 per hour `recall_export` throttle and the script uses exactly six calls.
+
+**Privacy checks (hard rule: no card text, note text, deck titles or ids in logs, Sentry or PostHog).**
+- Sentry, API: `core/sentry.py` did not scrub recall events (the ERD promised it); it now does. A recall event (URL, route, transaction or any frame in recall code) loses its request body, cookies, query string, `Authorization` header, breadcrumbs, extra data, frame variables and span data, and card, item and version ids in URLs, messages and exception values become `{id}`. `before_send_transaction` applies the same rules to performance events. `core/tests/test_sentry.py` (30 tests, 20 recall routes in one parametrized test) and `modules/recall/tests/test_privacy.py` (a real Sentry SDK with a capturing transport over create, edit, search, review, batch and selection requests that fail with a 500 while carrying card text) prove it.
+- Logs: Django's `django.request` lines for 4xx and 5xx responses carried card ids in the path; `core/privacy.py` (`MaskRecallIds`, attached in `config/settings.py` `LOGGING`) masks them. `test_privacy.py` captures every log record and stdout and stderr over a create, review, batch, edit, 409, 422, selection, search, queue, pack, export, CSV and erase flow and searches them for the text, the selection text and the card, item and version ids.
+- Sentry, web: `apps/web/src/modules/observability/sentryScrub.ts` (new, wired into `ObservabilityProvider.tsx` through `beforeBreadcrumb`, `beforeSend` and `beforeSendTransaction`) masks ids in recall URLs and drops console and input breadcrumbs on recall pages. 5 tests.
+- PostHog: `modules/recall/lib/analytics.ts` rejects any property not on the allow-list and any id-like string; `analytics.test.ts` snapshots the exact events and properties, sweeps leak candidates (text, titles, uuids, hex ids, objects) through every allowed key, and statically scans every `trackRecall` call site and every import of `posthog` and `track` in the module (a planted bad call was proved to fail the scan).
+- Limit, stated plainly: access logs kept by a host or CDN in front of the API (Vercel, Supabase) record request paths, which hold card ids but no text. They are outside the API's control; do not turn on request-body logging at any layer.
+
+**Found in W0 to W11 while closing out, and fixed.**
+1. Rebalance, and "skip to tomorrow", postpone a card to exactly the first instant of the next study day, but queue planning, Today, stats and the catch-up counters treated a card due at that instant as due today (`<=`). Rebalanced cards were still counted as due (150 before and after). They now compare with `<` against the end of the day (`domain/scheduling.py` `plan_queue`, `selectors/today.py`, `selectors/stats.py`, `apps/web/src/modules/recall/lib/queue.ts`). The scheduler maths and the golden vectors are unchanged (no vector has a card due at that instant). Tests: `test_a_review_due_at_the_first_instant_of_tomorrow_is_not_due_today`, `test_rebalanced_cards_are_not_due_today_in_the_counters` and a web test in `pure.test.ts`.
+2. The tests for the shipped sample seed file were stale (the sample moved out of the default load): rewritten around a temporary folder, plus a test that the shipped template is a valid file.
+3. The ERD-promised Sentry scrubbing and the `django.request` id leak (above).
+4. Format debt in `core/tests/test_storage.py` and `load_recall_seed.py` (ruff format only).
+
+### Capacity note
+
+Command: `DATABASE_URL=postgres://... python scripts/e2e/recall-r1/capacity.py [--cards 5000] [--reviewers 8] [--rounds 10] [--strict]`. Machine: the build sandbox, Linux x86-64 with 2 CPUs, Python 3.13, PostgreSQL 16 and the Django development server (one process, threaded, `DJANGO_DEBUG` off) on the same machine, so the database and the API compete for the same two cores. 8 students with 5,000 cards each (a quarter due, new, later and in learning) were seeded; students were erased afterwards. Targets are from the PRD, section 12. The ranges are three runs on 2026-10-11 (the sandbox is shared, so run to run spread is large).
+
+| Measure (p50 / p95, ms) | Target | One student, one request at a time | 8 reviewers at once |
+| --- | --- | --- | --- |
+| Today | p95 under 300 | 128 to 133 / 148 to 156 (met) | p95 about 524 to 709 (missed) |
+| Queue, 20 cards | p95 under 300 | 132 / 140 to 152 (met) | 274 to 424 / 560 to 655 (missed) |
+| One review | p95 under 200 | 68 to 80 / 72 to 88 (met) | 141 to 201 / 261 to 319 (missed) |
+| Pack of 300 cards | under 500 ms and 400 KB gzip | 158 to 167 / 181 to 187, 25 KB gzip (met) | not measured |
+| Batch of 100 reviews | under 800 ms | p50 1,150 to 1,430, max 1,300 to 1,470 (**missed**) | not measured |
+| Throughput | | | 1,600 reviews in 36 to 50 s, about 1,900 to 2,700 reviews per minute; 0 throttled, 0 failed |
+
+Said plainly: **two targets are missed.** (1) The batch of 100 takes about 1.2 to 1.5 s here against an 800 ms target. A profile shows about 15 queries per event (1,515 queries for 100 events, 1,174 ms, of which 396 ms in SQL), so the cost is mostly ORM and Python work per event, not the database; fewer queries per event (bulk fetch of the cards and bulk insert of the log) is the fix, it was not done in W12 because it touches the review service, which this close-out may not change. A real device sends a batch of 100 only after a long offline stretch, so the effect is a slower catch-up sync, not a slower review. (2) Queue, Today and review p95 exceed their targets when 8 reviewers hammer the single-process dev server with no think time at all; each met its target when run alone.
+
+What the numbers prove: the read and write paths are index-backed and do not degrade with 5,000 cards per student (a single request is fast and flat), nothing fails or is throttled at about 1,900 to 2,700 reviews per minute, the pack is small (25 KB gzip for 300 cards), and erase works at this size. What they do not prove: production latency (a different host, network, pooler, a multi-worker server and a managed database all change it, in both directions), behaviour under real student behaviour (a student reviews a card every few seconds, so 8 unthrottled reviewers are far busier than 8 students; at 50 beta students the load is a small fraction of what was measured), the web client, or scale beyond 8 concurrent writers. Treat the figures as a baseline to compare against: run the same command on your host before widening the beta and keep the output.
 
 ## 4. Environment and flags
 
@@ -268,7 +304,7 @@ Check with one beta account (the Revision entry appears in the study menu) and o
 | `RECALL_TICK_SECRET` | API | long random value; empty means the tick refuses everyone (sessions then close only when the student closes them) |
 | `RECALL_PACK_MAX` | API | upper bound on the offline pack, default 500 (the plan row decides the real size) |
 | `RECALL_DEFAULT_WEIGHTS_VERSION` | API | `fsrs-6.0` |
-| Throttles | `config/settings.py` | `recall_review`, `recall_write`, `recall_export` (new rates) |
+| Throttles | `config/settings.py` | `recall_review` 600/min, `recall_write` 120/min, `recall_export` 6/hour (shared by export and erase) |
 | Web | | no new `VITE_*` values |
 
 ## 5. Rollback
@@ -292,10 +328,17 @@ Turn `recall_system` off: the web hides recall, every endpoint except data expor
 
 ## 7. What you must arrange (in order)
 
-1. Approve this file, and say if any of D1 to D8 should change.
-2. Create the PostHog flag `recall_system` at 0% before the first merge.
-3. Editors for the two pilot subjects and Django admin accounts with the `profiles.role` that carries `recall.deck.author` and `recall.deck.publish` (before the beta, not before the build).
-4. The closed beta list (the same 50 students as F-01, F-02, F-03).
-5. A scheduler entry for `POST /api/v1/recall/internal/tick/` every 5 minutes, beside the notes tick (`POST` or `GET`, header `X-Recall-Tick-Secret: $RECALL_TICK_SECRET` or `Authorization: Bearer $RECALL_TICK_SECRET`; set `RECALL_TICK_SECRET` first, an empty value refuses everyone).
-6. Run `pytest` once against your own Postgres before the flag goes up (the sandbox run is evidence, not a substitute), and the e2e script from your computer.
-7. Counsel review of the copyright posture and the terms line for student-written cards: deferred, needed before R2 sharing.
+Done already: approval of this file, the build, the e2e and capacity scripts, the docs. What is left is yours.
+
+1. **Run the tests and both scripts on your own Postgres** (the sandbox run is evidence, not a substitute). From `apps/api`: `DATABASE_URL=postgresql://... DJANGO_DEBUG=true python -m pytest modules/recall core -q`, then `DATABASE_URL=... python scripts/e2e/recall-r1/run.py` and `capacity.py` (details: `docs/SETUP.md` section 9.1). The e2e script runs `migrate` and `load_syllabus_seed --publish` on that database and leaves one withdrawn `e2e-...` platform deck behind, so use a development or staging database. Keep the capacity output.
+2. **Create the PostHog flag `recall_system` at 0%** (before the first deploy that contains recall; it fails closed, so nothing shows without it).
+3. **Schedule the tick**: `POST /api/v1/recall/internal/tick/` every 5 minutes, beside the notes tick (header `X-Recall-Tick-Secret: $RECALL_TICK_SECRET` or `Authorization: Bearer $RECALL_TICK_SECRET`). Set `RECALL_TICK_SECRET` first (a long random value, it may equal `NOTES_TICK_SECRET`; an empty value refuses everyone). Without the tick sessions close only when the student closes them; nothing else breaks.
+4. **Staff accounts**: an editor and an admin through `grant_staff_role` (W11 operations above), before the beta.
+5. **Load the CMA Final Paper 13 decks**: `python manage.py load_recall_seed apps/api/modules/recall/seed/cma-final-paper13 --dry-run`, then without `--dry-run` (drafts). In the Django admin review each deck against the official syllabus, tie each deck to its CMA Final chapter, set `rights_status` on every item, then publish.
+6. **Closed beta**: put the 50 beta students into a PostHog cohort and set the `recall_system` release condition to that cohort at 100% (W11 operations above). Check with one beta account (the Features card `revision` and the study menu entry appear) and one account outside it (they do not, and `GET /api/v1/recall/today/` answers 403 `feature_disabled`).
+7. **Counsel review** of the copyright posture and the terms line for student-written cards: still deferred, needed before R2 sharing.
+8. Optional before widening the beta: speed up the review batch (the missed 800 ms target in the capacity note).
+
+**What changed after the first version of this runbook (so nothing below surprises you).** Seed files live in one folder per paper (`seed/cma-final-paper13/`, one file per chapter) and `load_recall_seed` accepts a file or a folder. The Features page card `revision` (`modules/catalog/features.ts`: status `live`, tool `/app/recall`, flag `recall_system`) already follows the flag: it shows for students whose flag is on and is hidden otherwise, so the earlier plan to leave it at `soon` is superseded and nothing needs flipping at launch. `useFeatureFlag` now waits for PostHog to finish loading before it subscribes (it polls for up to ten seconds), so a strict flag such as `recall_system` no longer stays off for a whole visit when the component mounts first. The flag stays strict on the API and the web.
+
+**Which flag where.** `recall_system`: "team only" (the closed beta cohort) until your own Postgres run and the beta checks pass; only then widen the cohort. `recall_ai` and `recall_sharing` do not exist yet (R2).

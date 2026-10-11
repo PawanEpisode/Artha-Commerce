@@ -117,7 +117,9 @@ def test_signing_into_a_missing_bucket_creates_it_privately_and_retries_once(mon
             return httpx.Response(200, json={"name": "b"}, request=httpx.Request(method, url))
         if sum("upload/sign" in u for _, u, _ in seen) == 1:
             return httpx.Response(404, json={"message": "Bucket not found"}, request=httpx.Request(method, url))
-        return httpx.Response(200, json={"url": "/object/upload/sign/b/p?token=t", "token": "t"}, request=httpx.Request(method, url))
+        return httpx.Response(
+            200, json={"url": "/object/upload/sign/b/p?token=t", "token": "t"}, request=httpx.Request(method, url)
+        )
 
     monkeypatch.setattr(httpx, "request", fake)
     up = SupabaseStorage("https://x.supabase.co", "k").create_signed_upload("b", "p")

@@ -169,7 +169,7 @@ def recall_strength(
     ):
         slot = acc.setdefault(chapter_id, [0, 0, 0.0, 0])  # cards, due, sum R, reviewed cards
         slot[0] += 1
-        if state > 0 and due is not None and due <= study.day_end:
+        if state > 0 and due is not None and due < study.day_end:
             slot[1] += 1
         if stability and last:
             elapsed = max(0.0, (now - last).total_seconds() / lim.SECONDS_PER_DAY)
@@ -221,6 +221,6 @@ def due_counts(
     agg = qs.aggregate(
         new=Count("id", filter=Q(state=0)),
         learning=Count("id", filter=Q(state__in=(1, 3), due_at__lte=now)),
-        due=Count("id", filter=Q(state=2, due_at__lte=study.day_end)),
+        due=Count("id", filter=Q(state=2, due_at__lt=study.day_end)),
     )
     return DueCounts(agg["new"], agg["learning"], agg["due"])

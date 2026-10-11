@@ -7,6 +7,7 @@ import { displayMode } from '~/lib/display-mode'
 import { env } from '~/lib/env'
 import { useAuth } from '~/modules/auth'
 
+import { scrubBreadcrumb, scrubEvent } from './sentryScrub'
 import { useToastAnalytics } from './toastAnalytics'
 
 let initialised = false
@@ -22,6 +23,9 @@ function initOnce() {
       tracesSampleRate: 0.1,
       replaysOnErrorSampleRate: 0.5,
       integrations: [Sentry.browserTracingIntegration()],
+      beforeBreadcrumb: (breadcrumb) => scrubBreadcrumb(breadcrumb),
+      beforeSend: scrubEvent,
+      beforeSendTransaction: scrubEvent,
     })
   }
 

@@ -63,3 +63,24 @@ def test_r2_stubs_are_not_implemented():
     for fn in (sc.horizon, sc.r_exam, sc.quick_set, sc.pacing):
         with pytest.raises(NotImplementedError):
             fn()
+
+
+def test_a_review_due_at_the_first_instant_of_tomorrow_is_not_due_today():
+    """Rebalance and "skip to tomorrow" postpone to exactly `day_end`; that card belongs to tomorrow, not to today."""
+    now = datetime(2026, 3, 10, 9, 0, tzinfo=UTC)
+    day_end = datetime(2026, 3, 11, 4, 0, tzinfo=UTC)
+    last = now - timedelta(days=8)
+
+    def card(i, due):
+        return sc.CardView(i, "A", 1, 2, 10.0, last, due)
+
+    cards = [
+        card("edge", day_end),
+        card("before", day_end - timedelta(seconds=1)),
+        card("later", day_end + timedelta(hours=1)),
+    ]
+    queue = sc.plan_queue(cards, now, sc.Limits(10, 100), 0.1542, day_end=day_end)
+    assert set(queue.ids) == {"before"} and queue.catchup.due_count == 1
+    assert sc.plan_queue([card("now", now)], now, sc.Limits(10, 100), 0.1542).ids == (
+        "now",
+    )  # without day_end: due now

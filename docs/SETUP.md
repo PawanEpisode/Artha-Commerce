@@ -296,6 +296,38 @@ DATABASE_URL=postgresql://postgres@127.0.0.1:5432/artha_test DJANGO_DEBUG=true p
 
 The recall API uses three throttle scopes (`DEFAULT_THROTTLE_RATES` in `config/settings.py`): `recall_review` 600/min (reviews, batches, undo, sessions), `recall_write` 120/min (card and deck writes), `recall_export` 6/hour (export, from W11). Plan limits are database rows in `recall_quotaplan`, not throttles. The endpoints answer 403 `feature_disabled` until the PostHog flag `recall_system` is on for the student; with no PostHog key the flag is off (it fails closed).
 
+### 9.1 F-15 Recall (flashcards and spaced revision), everything to set up
+
+**Environment values** (API; full list in section 10): `RECALL_TICK_SECRET` (a long random value; empty refuses every tick caller; it may equal `NOTES_TICK_SECRET`), `RECALL_PACK_MAX` (default 500, the cap on the offline pack whatever the plan says) and `RECALL_DEFAULT_WEIGHTS_VERSION` (default `fsrs-6.0`, the scheduler parameter set new students start on). The web needs no new `VITE_*` value.
+
+**Flag.** Create the PostHog flag `recall_system` at 0% for everyone, then release it to the closed beta cohort (steps: `docs/F-15-ROLLOUT.md`, "Put the 50 closed-beta students on `recall_system`"). It fails closed on the API (`strict=True`: no `POSTHOG_API_KEY`, an unknown flag or an outage mean off, 403 `feature_disabled`) and on the web. Data export and delete-all stay open with the flag off.
+
+**Tick scheduler.** Call `POST /api/v1/recall/internal/tick/` every 5 minutes (a Vercel Cron `GET` also works), beside the notes tick, with `X-Recall-Tick-Secret: $RECALL_TICK_SECRET` or `Authorization: Bearer $RECALL_TICK_SECRET`. It closes study sessions idle for 60 minutes. Without it nothing breaks; sessions then end only when the student ends them.
+
+**Throttle scopes** (`DEFAULT_THROTTLE_RATES`): `recall_review` 600/min, `recall_write` 120/min, `recall_export` 6/hour (JSON and CSV export and erase share it).
+
+**Platform decks.** Seed files live in one folder per paper, `apps/api/modules/recall/seed/<course>-<level>-<paper>/` (for example `cma-final-paper13/`), one file per chapter. From `apps/api`:
+
+```bash
+python manage.py load_recall_seed modules/recall/seed/cma-final-paper13 --dry-run   # check, saves nothing
+python manage.py load_recall_seed modules/recall/seed/cma-final-paper13             # load as drafts
+python manage.py load_recall_seed modules/recall/seed/cma-final-paper13 --publish   # only after an editor has verified the decks (rights gate applies)
+python ../../scripts/recall-seed-check.py                                           # structural check of every seed file
+```
+
+Review each deck in the Django admin (`/<DJANGO_ADMIN_PATH>/`, Recall), tie it to its chapter and publish there. Never copy source-book text or PDFs into the repository.
+
+**Staff roles.** Editors and admins are made with `grant_staff_role` (`NEW_PW='...' python manage.py grant_staff_role --email person@example.com --role editor --admin-login --password-env NEW_PW`; `--role admin` also publishes). The person signs in to the web app once first. Full cheat sheet: `docs/F-15-ROLLOUT.md`, "W11 operations".
+
+**Checks.** Unit and API tests: `python -m pytest modules/recall core -q` (SQLite) and, with a local PostgreSQL 15+, `DATABASE_URL=postgresql://... DJANGO_DEBUG=true python -m pytest modules/recall core -q` (adds the partition, trigger, RLS and concurrency tests). End to end and capacity, on a development database only (they run `migrate` and `load_syllabus_seed --publish` there and leave one withdrawn `e2e-...` deck):
+
+```bash
+DATABASE_URL=postgresql://postgres@127.0.0.1:5432/artha_e2e python scripts/e2e/recall-r1/run.py        # PASS/FAIL lines, exit 1 on failure
+DATABASE_URL=postgresql://postgres@127.0.0.1:5432/artha_e2e python scripts/e2e/recall-r1/capacity.py   # add --strict to exit 1 on a missed target
+```
+
+Both need `httpx`, `psycopg` and `PyJWT` (already in `requirements-dev.txt`) and print no card text. The capacity numbers and what they prove: `docs/F-15-ROLLOUT.md`, "Capacity note". The API shapes: `docs/F-15-API-CONTRACT.md`.
+
 ---
 
 ## 10. Environment variable master list

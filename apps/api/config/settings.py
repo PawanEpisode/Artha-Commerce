@@ -10,7 +10,7 @@ from pathlib import Path
 import dj_database_url
 import sentry_sdk
 
-from core.sentry import before_send
+from core.sentry import before_send, before_send_transaction
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -292,12 +292,22 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
 
 # --- Observability ----------------------------------------------------------------------------
+# The 4xx and 5xx lines Django logs carry the request path; recall paths hold card ids, which are masked (core/privacy.py).
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "filters": {"mask_recall_ids": {"()": "core.privacy.MaskRecallIds"}},
+    "loggers": {
+        "django.request": {"filters": ["mask_recall_ids"]},
+    },
+}
 if env("SENTRY_DSN"):
     sentry_sdk.init(
         dsn=env("SENTRY_DSN"),
         traces_sample_rate=0.1,
         send_default_pii=False,
         before_send=before_send,
+        before_send_transaction=before_send_transaction,
     )
 
 LANGUAGE_CODE = "en-in"

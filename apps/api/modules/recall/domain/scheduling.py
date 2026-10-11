@@ -175,7 +175,8 @@ def plan_queue(
         elif card.phase in (PHASE_LEARNING, PHASE_RELEARNING):
             if card.due_at <= now:
                 learning.append(card)
-        elif card.due_at <= (day_end or now):
+        elif card.due_at < day_end if day_end is not None else card.due_at <= now:
+            # `day_end` is the first instant of tomorrow, so a card due exactly then is tomorrow's, not today's
             reviews.append((priority(card.importance, _r_now(card, now, w20), overdue_days(card, now)), card))
 
     due_reviews = [c for _, c in reviews]

@@ -125,12 +125,12 @@ export function planQueue(
   const learning: CardView[] = []
   const reviews: { p: number; card: CardView }[] = []
   const fresh: CardView[] = []
-  const horizon = (options.dayEnd ?? now).getTime()
+  const dayEnd = options.dayEnd ? options.dayEnd.getTime() : null // the first instant of tomorrow: a card due then is not due today
   for (const card of cards) {
     if (card.phase === PHASE_NEW || card.dueAt === null) fresh.push(card)
     else if (card.phase === PHASE_LEARNING || card.phase === PHASE_RELEARNING) {
       if (card.dueAt.getTime() <= now.getTime()) learning.push(card)
-    } else if (card.dueAt.getTime() <= horizon) {
+    } else if (dayEnd !== null ? card.dueAt.getTime() < dayEnd : card.dueAt.getTime() <= now.getTime()) {
       reviews.push({ p: priority(card.importance, rNow(card, now, w20), overdueDays(card, now)), card })
     }
   }

@@ -1,11 +1,11 @@
 /**
  * Product events for the recall screens (PRD F-15 10.1). Every property goes through an allow-list per event and must be a
  * boolean, a number or a short token made of lower-case letters, digits, `_` and `-`. A card's text, a note or a name
- * cannot get through: a free string fails the token test and the property is dropped.
+ * cannot get through: a free string fails the token test and the property is dropped, and so does anything that looks like an id.
  */
 import { track } from '~/modules/observability'
 
-const ALLOWED = {
+export const ALLOWED = {
   recall_session_started: ['source', 'mode', 'planned', 'offline', 'first'],
   recall_card_viewed: ['first', 'kind', 'state'],
   recall_review_undone: ['within_seconds'],
@@ -22,6 +22,8 @@ const ALLOWED = {
 export type RecallEvent = keyof typeof ALLOWED
 
 const TOKEN = /^[a-z0-9_-]{1,32}$/
+// A value that looks like an identifier (a UUID, or a long run of hex digits) is never a token, even when it is short enough.
+const ID_LIKE = /^[0-9a-f-]{16,}$/
 
 export const allowedProperties = (event: RecallEvent): readonly string[] => ALLOWED[event]
 
@@ -36,7 +38,7 @@ export function cleanProperties(
     if (!allowed.includes(key)) continue
     if (typeof value === 'boolean') out[key] = value
     else if (typeof value === 'number' && Number.isFinite(value)) out[key] = value
-    else if (typeof value === 'string' && TOKEN.test(value)) out[key] = value
+    else if (typeof value === 'string' && TOKEN.test(value) && !ID_LIKE.test(value)) out[key] = value
   }
   return out
 }

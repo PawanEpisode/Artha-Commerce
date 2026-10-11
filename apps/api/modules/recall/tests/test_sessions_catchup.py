@@ -96,6 +96,21 @@ def test_rebalance_keeps_the_daily_limit_today_and_spreads_the_rest():
     assert catchup.rebalance(ME, 3, now=NOW)["moved"] == 0  # nothing left over the limit
 
 
+def test_rebalanced_cards_are_not_due_today_in_the_counters():
+    """They are postponed to the first instant of tomorrow, which is tomorrow's work: Today and the catch-up count drop."""
+    from modules.recall import selectors
+
+    RecallSettings.objects.update_or_create(user_id=ME, defaults={"reviews_per_day": 20})
+    overdue_cards(30)
+    RecallCard.objects.filter(user_id=ME).update(
+        due_at=NOW - timedelta(days=5), due_scheduled_at=NOW - timedelta(days=5)
+    )
+    assert selectors.today_plan(ME, now=NOW).catchup_due == 30
+    catchup.rebalance(ME, 3, now=NOW)
+    plan = selectors.today_plan(ME, now=NOW)
+    assert (plan.catchup_due, plan.deferred, plan.days_to_clear) == (20, 0, 1)
+
+
 def test_rebalance_never_moves_a_mandatory_card_that_is_slipping():
     RecallSettings.objects.update_or_create(user_id=ME, defaults={"reviews_per_day": 20})
     overdue_cards(25)

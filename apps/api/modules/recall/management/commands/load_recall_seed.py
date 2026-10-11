@@ -46,7 +46,9 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            "files", nargs="*", help="Seed files, or a folder (every *.json inside it, e.g. seed/cma-final-paper13). Default: every non-underscore *.json directly in modules/recall/seed."
+            "files",
+            nargs="*",
+            help="Seed files, or a folder (every *.json inside it, e.g. seed/cma-final-paper13). Default: every non-underscore *.json directly in modules/recall/seed.",
         )
         parser.add_argument(
             "--publish", action="store_true", help="Also publish the loaded drafts (rights gate applies)."
