@@ -60,6 +60,7 @@ export function useSync(enabled = true): SyncState {
       })
       void qc.invalidateQueries({ queryKey: recallKeys.today })
       void qc.invalidateQueries({ queryKey: ['recall', 'stats'] })
+      void qc.invalidateQueries({ queryKey: ['recall', 'chapter-strength'] }) // the chapter page card
     }
     void qc.invalidateQueries({ queryKey: recallKeys.offline })
     return result

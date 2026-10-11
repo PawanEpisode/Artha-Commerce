@@ -28,6 +28,8 @@ export const newCardSearchSchema = z.object({
   deck: uuid,
   from: z.enum(['selection']).optional().catch(undefined),
   draft: text(8000),
+  /** `import`: the paste and CSV import panel instead of the one-card form. */
+  mode: z.enum(['import']).optional().catch(undefined),
 })
 export type NewCardSearch = z.infer<typeof newCardSearchSchema>
 

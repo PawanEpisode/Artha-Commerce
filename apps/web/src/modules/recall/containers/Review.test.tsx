@@ -269,6 +269,21 @@ describe('the review player', () => {
     expect(screen.getByRole('link', { name: 'Back to revision' })).toHaveAttribute('href', '/app/recall')
   })
 
+  it('opens one chapter from its link, and an unknown or empty chapter is a calm empty state', async () => {
+    const chapter = '3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11'
+    h.api.pack.mockResolvedValue(apiPack(cards(3)))
+    h.api.queue.mockResolvedValue({ cards: [], server_time: '2026-10-09T08:00:00Z' })
+    renderWithQuery(<ReviewContainer search={{ source: 'chapter', chapter }} />)
+    expect(await screen.findByText('No cards to review in this chapter')).toBeInTheDocument()
+    expect(h.api.queue).toHaveBeenCalledWith('chapter', expect.objectContaining({ chapter_id: chapter }))
+    expect(screen.getByRole('link', { name: 'Make a card' })).toHaveAttribute(
+      'href',
+      `/app/recall/cards/new?chapter=${chapter}`,
+    )
+    expect(screen.queryByRole('button', { name: /Review ahead/ })).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Back to revision' })).toHaveAttribute('href', '/app/recall')
+  })
+
   it('offers a retry when the cards cannot be loaded and nothing is stored', async () => {
     h.api.pack.mockRejectedValue(new TypeError('Failed to fetch'))
     renderWithQuery(<ReviewContainer search={search} />)

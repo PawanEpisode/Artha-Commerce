@@ -14,6 +14,7 @@ import {
   cardPageSchema,
   chapterChoiceResultSchema,
   chapterRemapSchema,
+  chapterStrengthSchema,
   createdCardsSchema,
   deckDetailSchema,
   deckLibrarySchema,
@@ -22,6 +23,7 @@ import {
   eraseResultSchema,
   followResultSchema,
   forgottenListSchema,
+  importResultSchema,
   packSchema,
   queueSchema,
   quickPlanSchema,
@@ -111,6 +113,14 @@ export const recallApi = {
     parse(statsRetentionSchema, await api<unknown>(`/recall/stats/retention/${qs({ range })}`)),
   statsForecast: async (days = 30) =>
     parse(statsForecastSchema, await api<unknown>(`/recall/stats/forecast/${qs({ days })}`)),
+  /** The recall strength card of a chapter page. 0 cards for a chapter she has none in, never a 404. */
+  chapterStrength: async (chapterId: string) =>
+    parse(chapterStrengthSchema, await api<unknown>(`/recall/chapters/${chapterId}/strength/`)),
+
+  /** Paste or CSV import. `dry_run` judges every row and writes nothing; `client_id` makes a replay safe. */
+  importCards: async (body: ImportBody) =>
+    parse(importResultSchema, await api<unknown>('/recall/cards/import/', jsonBody(body))),
+
   statsChapters: async () => parse(statsChaptersSchema, await api<unknown>('/recall/stats/chapters/')),
 
   openSession: async (body: {
@@ -249,6 +259,14 @@ export interface BulkArgs {
   importance?: 'bullet' | 'important' | 'mandatory'
   tag?: string
   deck_id?: string
+}
+
+export interface ImportBody {
+  client_id: string
+  dry_run: boolean
+  text: string
+  chapter_id?: string | null
+  importance?: 'bullet' | 'important' | 'mandatory'
 }
 
 export interface CreateCardBody {

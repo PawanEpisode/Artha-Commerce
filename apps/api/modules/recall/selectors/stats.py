@@ -178,6 +178,14 @@ def recall_strength(
     return {c: StrengthRow(c, v[0], v[1], round(v[2] / v[3], 4) if v[3] else None) for c, v in acc.items()}
 
 
+def chapter_strength(user_id, chapter_id: UUID, *, now: datetime, tz: str | None = None) -> StrengthRow:
+    """FR-F15-65: one chapter's recall strength for its page. A chapter with no cards of hers is an empty row, never an error."""
+    study = load_study(user_id, now, tz)
+    return recall_strength(user_id, [chapter_id], now=now, study=study).get(chapter_id) or StrengthRow(
+        chapter_id, 0, 0, None
+    )
+
+
 def stats_chapters(user_id, *, now: datetime, tz: str | None = None) -> Report:
     study = load_study(user_id, now, tz)
     rows = recall_strength(user_id, None, now=now, study=study)

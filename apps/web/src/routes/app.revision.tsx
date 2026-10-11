@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { RevisionContainer } from '~/modules/coverage'
+import { ReviewCardsLink } from '~/modules/recall'
 import { buildHead } from '~/modules/seo'
 
 export const Route = createFileRoute('/app/revision')({
@@ -11,5 +12,14 @@ export const Route = createFileRoute('/app/revision')({
       path: '/app/revision',
       noindex: true,
     }),
-  component: RevisionContainer,
+  component: function RevisionRoute() {
+    // Coverage never imports recall: the route hangs the "Review cards" link under each row.
+    return (
+      <RevisionContainer
+        renderRowAction={({ chapterId, chapterName }) => (
+          <ReviewCardsLink chapterId={chapterId} chapterName={chapterName} />
+        )}
+      />
+    )
+  },
 })

@@ -56,6 +56,12 @@ def reserve_cards(user_id, amount: int = 1) -> None:
     _reserve(user_id, "cards_active", amount, limits_for(user_id).max_cards, "cards")
 
 
+def cards_room(user_id) -> int:
+    """How many more own cards fit in the plan right now (a read, for the import preview; the reservation is what decides)."""
+    used = RecallQuotaUsage.objects.filter(pk=user_id).values_list("cards_active", flat=True).first() or 0
+    return max(limits_for(user_id).max_cards - used, 0)
+
+
 def release_cards(user_id, amount: int = 1) -> None:
     _release(user_id, "cards_active", amount)
 

@@ -339,6 +339,7 @@ def test_no_public_action_can_be_added_without_announcing_or_being_listed_here()
         "record_session",
         "add_manual",
         "add_auto",
+        "add_auto_session",
         "delete_session",
         "undo",
         "edit_session",
@@ -354,7 +355,7 @@ def test_no_public_action_can_be_added_without_announcing_or_being_listed_here()
 
 def test_every_action_that_can_raise_todays_time_announces_the_goal_or_calls_one_that_does():
     announcing = {n for n in _public() if getattr(getattr(services, n), "announces_goal_reached", False)}
-    # `add_manual` and `add_auto` write through `record_session`; `delete_session` and `split_session` cannot raise the
+    # `add_manual`, `add_auto` and `add_auto_session` write through `record_session`; `delete_session` and `split_session` cannot raise the
     # total; `set_goals` changes the target, not the time, and a goal lowered on purpose is not "reached"; the stopwatch
     # saves through `record_session`.
     assert announcing == {"record_session", "edit_session", "undo", "merge_sessions"}

@@ -50,6 +50,7 @@ JOB_TYPES = (
     "recall.sync_subscription",
     "recall.sync_subscribers",
     "recall.flag_amendment",
+    "recall.chapter_pass",
 )
 
 
@@ -200,6 +201,7 @@ def export_for_user(user_id) -> dict:
                 "good",
                 "easy",
                 "active_seconds",
+                "chapter_passes",
             )  # fmt: skip
         ],
         "reviews": [_row(r) for r in _reviews(user_id)],

@@ -132,6 +132,19 @@ def candidates(
     return due, new
 
 
+def boosted_ids(study: Study) -> frozenset[str]:
+    """
+    The mandatory cards of the chapters that are due for revision (F-02), FR-F15-63: the revision she is about to do in
+    coverage is best served by recalling those cards first. Empty without an enrolment or a due chapter (then it costs only the
+    coverage read); one more query otherwise, no card text.
+    """
+    chapters = coverage_adapter.due_revision_chapter_ids(study.user_id, study.today)
+    if not chapters:
+        return frozenset()
+    found = _active(study).filter(importance=2, chapter_id__in=chapters).values_list("id", flat=True)
+    return frozenset(str(i) for i in found)
+
+
 def limits_of(study: Study, extra: int = 0) -> Limits:
     """The daily limits; `extra` is "Do 20 more": reviews allowed beyond the maximum (the new-card allowance is not raised)."""
     s = study.settings
@@ -146,9 +159,14 @@ def plan_today(study: Study, f: QueueFilters = NO_FILTERS, extra: int = 0) -> tu
     interleave = study.settings.interleave
     views = [_view(r, interleave) for r in rows.values()]
     s = study.settings
-    queue = plan_queue(views, study.now, limits, study.weights[20], mode=s.catchup_mode, day_end=study.day_end)
+    boosted = boosted_ids(study)
+    queue = plan_queue(
+        views, study.now, limits, study.weights[20], mode=s.catchup_mode, day_end=study.day_end, boosted=boosted
+    )
     if queue.catchup.active and not s.pause_new_in_catchup:
-        normal = plan_queue(views, study.now, limits, study.weights[20], mode="off", day_end=study.day_end)
+        normal = plan_queue(
+            views, study.now, limits, study.weights[20], mode="off", day_end=study.day_end, boosted=boosted
+        )
         added = tuple(i for i in normal.ids if i not in queue.ids and rows[i][3] == 0)
         queue = Queue(queue.ids + added, queue.learning, queue.reviews, queue.new + len(added), queue.catchup)
     if study.vacation:
@@ -228,7 +246,15 @@ def build_queue(
         due, _new = candidates(study, filters, new_room=0)
         views = [_view(r, study.settings.interleave) for r in due]
         order = list(
-            plan_queue(views, study.now, limits_of(study), study.weights[20], mode="on", day_end=study.day_end).ids
+            plan_queue(
+                views,
+                study.now,
+                limits_of(study),
+                study.weights[20],
+                mode="on",
+                day_end=study.day_end,
+                boosted=boosted_ids(study),
+            ).ids
         )
     elif source in ("chapter", "deck"):
         due, new = candidates(study, filters, new_room=NEW_POOL_CAP)

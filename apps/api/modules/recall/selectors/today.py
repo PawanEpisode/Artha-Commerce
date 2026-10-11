@@ -46,6 +46,9 @@ class TodayPlan:
     exam: dict | None = None
     needs_chapter: int = 0  # her own cards waiting for a chapter after a scheme switch
     recheck: int = 0  # cards waiting for "Still correct" (an updated deck or an amendment)
+    seconds_per_card: float = (
+        20.0  # her median over the last 14 days (20 until she has 20 reviews): the base of every estimate
+    )
 
 
 def _next_due(study: Study) -> datetime | None:
@@ -97,18 +100,22 @@ def today_plan(user_id, *, now: datetime, tz: str | None = None) -> TodayPlan:
         exam=exam_context(study),
         needs_chapter=remaps.pending_count(user_id),
         recheck=RecallCard.objects.filter(user_id=user_id, status="active", needs_recheck=True).count(),
+        seconds_per_card=per_card,
     )
 
 
-# ------------------------------------------------------------------------------- F-13 shape (nothing registers it in R1)
+# ------------------------------------------------------------------------------- F-13 shape (registered in R2-W3)
 @dataclass(frozen=True)
 class RecallTask:
-    kind: str  # recall_cards, forgotten_cards, recheck
+    kind: str  # recall_cards, forgotten_cards, recheck, quick_revision
     title: str
     count: int
     est_minutes: int = 0
     subject_key: str | None = None
     tiles: list[SubjectTile] = field(default_factory=list)
+    target: str = (
+        ""  # where the task opens, relative to `/app/recall`: "review?source=today", "cards?state=recheck", ...
+    )
 
 
 @dataclass(frozen=True)
@@ -117,9 +124,20 @@ class ProviderResult:
     tasks: list[RecallTask]
 
 
+def _minutes(count: int, seconds_per_card: float) -> int:
+    """Whole minutes for `count` cards at her own pace, at least one for a task that has any card."""
+    return max(1, math.ceil(count * seconds_per_card / 60)) if count else 0
+
+
 def provide_today(user_id, *, now: datetime) -> ProviderResult:
-    """What Today (F-13) would show from recall. Local dataclasses: F-13 does not exist yet and nothing is registered."""
+    """
+    What Today (F-13) shows from recall, through `core.today_port` (registered by `RecallConfig.ready`, behind the flag by
+    `provider.today_tasks`). Four tasks, each with minutes from her median seconds per card: "Recall: N cards due" (with the
+    per-subject tiles), "Forgotten: top 5", "Re-check after amendment" (cards waiting for "Still correct") and, within 45
+    days of her exam, "Quick revision" (today's share of the at-risk set). Pure reads, local dataclasses.
+    """
     plan = today_plan(user_id, now=now)
+    pace = plan.seconds_per_card
     tasks: list[RecallTask] = []
     if plan.queue_size:
         tasks.append(
@@ -129,11 +147,31 @@ def provide_today(user_id, *, now: datetime) -> ProviderResult:
                 plan.queue_size,
                 plan.est_minutes,
                 tiles=plan.tiles,
+                target="review?source=today",
             )
         )
     if plan.forgotten:
-        tasks.append(RecallTask("forgotten_cards", "Forgotten: top 5", len(plan.forgotten)))
-    rechecks = RecallCard.objects.filter(user_id=user_id, status="active", needs_recheck=True).count()
-    if rechecks:
-        tasks.append(RecallTask("recheck", "Re-check after amendment", rechecks))
+        n = len(plan.forgotten)
+        tasks.append(RecallTask("forgotten_cards", "Forgotten: top 5", n, _minutes(n, pace), target="forgotten"))
+    if plan.recheck:
+        tasks.append(
+            RecallTask(
+                "recheck",
+                "Re-check after amendment",
+                plan.recheck,
+                _minutes(plan.recheck, pace),
+                target="cards?state=recheck",
+            )
+        )
+    quick = (plan.exam or {}).get("quick")
+    if quick and quick["selected"] and not plan.study.vacation:
+        tasks.append(
+            RecallTask(
+                "quick_revision",
+                f"Quick revision: {quick['per_day']} cards today",
+                quick["per_day"],
+                quick["minutes_per_day"],
+                target="quick",
+            )
+        )
     return ProviderResult("recall", tasks)

@@ -17,7 +17,7 @@ from core.plans import plan_code_for
 from ..domain.quota import FREE
 from ..domain.scheduling import Limits, plan_queue
 from ..models import RecallQuotaPlan
-from .queue import QueueCard, _view, candidates, render_cards
+from .queue import QueueCard, _view, boosted_ids, candidates, render_cards
 from .study import Study, load_study
 
 PACK_TTL = timedelta(hours=6)
@@ -45,6 +45,7 @@ def pack_for_device(user_id, *, now: datetime, limit: int | None = None) -> Pack
     # Learning cards due by tomorrow's end go in too, so a student offline overnight still has her next steps
     due, new = candidates(study, learning_ahead=timedelta(days=1))
     views = [_view(r, s.interleave) for r in [*due, *new]]
+    boosted = boosted_ids(study)  # the chapters due for revision get their mandatory cards into a capped pack first
     real = plan_queue(
         views,
         now,
@@ -52,10 +53,19 @@ def pack_for_device(user_id, *, now: datetime, limit: int | None = None) -> Pack
         study.weights[20],
         mode=s.catchup_mode,
         day_end=study.day_end,
+        boosted=boosted,
     )
     paused = real.catchup.active and s.pause_new_in_catchup
     wide = Limits(0 if paused else s.new_per_day, limit, study.new_done, 0)
-    queue = plan_queue(views, now, wide, study.weights[20], mode="off", day_end=study.day_end + timedelta(days=1))
+    queue = plan_queue(
+        views,
+        now,
+        wide,
+        study.weights[20],
+        mode="off",
+        day_end=study.day_end + timedelta(days=1),
+        boosted=boosted,
+    )
     ids = list(queue.ids)
     ids += [str(r[0]) for r in sorted(due, key=lambda r: (r[6], str(r[0]))) if r[3] in (1, 3) and str(r[0]) not in ids]
     ids = [] if study.vacation else ids[:limit]

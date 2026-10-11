@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path("recall/cards/", views.CardListCreateView.as_view(), name="recall-cards"),
     path("recall/cards/from-selection/", views.CardFromSelectionView.as_view(), name="recall-cards-selection"),
+    path("recall/cards/import/", views.CardImportView.as_view(), name="recall-cards-import"),
     path("recall/cards/undo-delete/", views.CardUndoView.as_view(), name="recall-cards-undo"),
     path("recall/cards/bulk/", views.CardBulkView.as_view(), name="recall-cards-bulk"),
     path("recall/cards/<uuid:card_id>/", views.CardDetailView.as_view(), name="recall-card"),
@@ -40,6 +41,11 @@ urlpatterns += [
     *(
         path(f"recall/stats/{name}/", views.StatsView.as_view(report=name), name=f"recall-stats-{name}")
         for name in ("summary", "retention", "forecast", "chapters")
+    ),
+    path(
+        "recall/chapters/<uuid:chapter_id>/strength/",
+        views.ChapterStrengthView.as_view(),
+        name="recall-chapter-strength",
     ),
     path("recall/settings/", views.SettingsView.as_view(), name="recall-settings"),
     path("recall/internal/tick/", views.TickView.as_view(), name="recall-tick"),

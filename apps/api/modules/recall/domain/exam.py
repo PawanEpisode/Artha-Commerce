@@ -109,6 +109,9 @@ class QuickCard:
     phase: int
     stability: float | None
     last_review_at: datetime | None
+    boosted: bool = (
+        False  # a mandatory card of a chapter due for revision (FR-F15-63): taken before the rest when the budget cuts
+    )
 
 
 @dataclass(frozen=True)
@@ -139,6 +142,7 @@ def quick_set(
     left = days_between(exam_at, now)
     window = max(math.floor(left) - EXAM_WINDOW_END_DAYS, 0)
     scored: list[tuple[float, str]] = []
+    urgent: set[str] = set()
     for c in cards:
         if c.importance < QUICK_MIN_IMPORTANCE:
             continue
@@ -146,11 +150,15 @@ def quick_set(
         if c.phase == PHASE_NEW:
             if c.importance == MANDATORY:
                 scored.append((weight, c.id))
+                if c.boosted:
+                    urgent.add(c.id)
             continue
         r = r_exam(c.stability, c.last_review_at, exam_at, w20)
         if r is not None and r < QUICK_R_TARGET:
             scored.append((weight * (1.0 - r), c.id))
-    scored.sort(key=lambda t: (-t[0], t[1]))
+            if c.boosted:
+                urgent.add(c.id)
+    scored.sort(key=lambda t: (t[1] not in urgent, -t[0], t[1]))
     seconds = max(median_seconds, 1.0)
     size = math.floor(minutes_per_day * window * 60 / seconds) if window else 0
     chosen = tuple(i for _, i in scored[:size])

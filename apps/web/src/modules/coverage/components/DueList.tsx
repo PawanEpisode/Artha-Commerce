@@ -1,5 +1,6 @@
 import { Badge, BookOpen, ChevronRight, ConfidenceDot, EmptyState, EntityBadge, ListChecks } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+import type { ReactNode } from 'react'
 
 import { EntityIndex, EntityListRow, EntityTitle, ROW_LINK_CLASS } from '~/modules/syllabus'
 
@@ -10,8 +11,11 @@ function dueLabel(days: number) {
   return `${days} day${days === 1 ? '' : 's'} overdue`
 }
 
+/** What another module can hang under a row (its own link), composed by the route so coverage imports nothing of it. */
+export type DueRowAction = (row: { chapterId: string; chapterName: string }) => ReactNode
+
 /** Chapters whose next revision date has arrived. Overdue and high-weight first (the API orders them). */
-export function DueList({ rows }: { rows: DueRow[] }) {
+export function DueList({ rows, renderAction }: { rows: DueRow[]; renderAction?: DueRowAction }) {
   if (rows.length === 0) {
     return (
       <EmptyState
@@ -50,6 +54,9 @@ export function DueList({ rows }: { rows: DueRow[] }) {
               </span>
             </Link>
           </EntityListRow>
+          {renderAction ? (
+            <div className="mt-2 flex justify-end">{renderAction({ chapterId: r.id, chapterName: r.name })}</div>
+          ) : null}
         </li>
       ))}
     </ul>

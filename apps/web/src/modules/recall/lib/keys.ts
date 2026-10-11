@@ -16,6 +16,7 @@ export const recallKeys = {
   myDecks: ['recall', 'decks', 'mine'] as const,
   deck: (id: string) => ['recall', 'decks', 'deck', id] as const,
   updatePreview: (subscriptionId: string) => ['recall', 'decks', 'update', subscriptionId] as const,
+  chapterStrength: (chapterId: string) => ['recall', 'chapter-strength', chapterId] as const,
   chapterRemaps: ['recall', 'chapter-remaps'] as const,
   offline: ['recall', 'offline'] as const,
   summary: (sessionId: string) => ['recall', 'summary', sessionId] as const,

@@ -388,17 +388,28 @@ _SNAPSHOT_FIELDS = [
 
 
 @transaction.atomic
-def add_auto(user_id, *, client_id, chapter_id, started_at: datetime, seconds: int) -> tuple[StudySession | None, str]:
+def add_auto_session(
+    user_id,
+    *,
+    client_id,
+    started_at: datetime,
+    seconds: int,
+    activity_type: str,
+    chapter_id=None,
+    subject_id=None,
+) -> tuple[StudySession | None, str]:
     """
-    Opt-in auto capture (F-01.2 Q1): the web reports time spent actively on a syllabus chapter page. Returns
-    (session, outcome) where outcome is "saved", "too_short", "timer_running", "overlap" or "daily_cap". Auto time never
-    competes with a live timer or other recorded time, is capped per post and per day, and is not forwarded to coverage.
+    The one place the opt-in auto-capture rules live (F-01.2 Q1, F-15 FR-F15-73). Any module that observed study time reports it
+    here, idempotent on `client_id`. Returns (session, outcome) where outcome is "saved", "too_short", "timer_running", "overlap",
+    "daily_cap" or "auto_capture_off". Auto time never competes with a live timer or other recorded time, is capped per post
+    (`AUTO_MAX_CHUNK_SECONDS`) and per day (`AUTO_DAILY_CAP_SECONDS`), and is not forwarded to coverage. It is stored with
+    `source=auto` and the given activity type.
     """
     existing = selectors.session_by_client_id(user_id, client_id)
     if existing:
         return existing, "saved"
     if not get_or_create_settings(user_id).auto_capture_enabled:
-        raise ConflictError("Auto capture is switched off.", code="auto_capture_off")
+        return None, "auto_capture_off"
     if live_timer_kind(user_id) != "none":
         return None, "timer_running"
     now = _now()
@@ -409,7 +420,7 @@ def add_auto(user_id, *, client_id, chapter_id, started_at: datetime, seconds: i
     focus = durations.span_seconds(started, ended)
     if focus < durations.MIN_SESSION_SECONDS:
         return None, "too_short"
-    subject, chapter = _resolve_tags(None, chapter_id)
+    subject, chapter = _resolve_tags(subject_id, chapter_id)
     study_date = durations.local_date(started, get_timezone(user_id))
     if _overlapping(user_id, started, ended, study_date):
         return None, "overlap"
@@ -428,12 +439,30 @@ def add_auto(user_id, *, client_id, chapter_id, started_at: datetime, seconds: i
         ended_at=ended,
         focus_seconds=focus,
         subject_id=subject.id if subject else None,
-        chapter_id=chapter.id,
-        activity_type=ActivityType.READING,
+        chapter_id=chapter.id if chapter else None,
+        activity_type=activity_type,
         client_id=client_id,
         forward=False,
     )
     return session, "saved"
+
+
+def add_auto(user_id, *, client_id, chapter_id, started_at: datetime, seconds: int) -> tuple[StudySession | None, str]:
+    """
+    Opt-in auto capture (F-01.2 Q1): the web reports time spent actively on a syllabus chapter page. Same outcomes as
+    `add_auto_session` (which holds the rules); a student who has auto capture off gets 409 `auto_capture_off`.
+    """
+    session, outcome = add_auto_session(
+        user_id,
+        client_id=client_id,
+        started_at=started_at,
+        seconds=seconds,
+        activity_type=ActivityType.READING,
+        chapter_id=chapter_id,
+    )
+    if outcome == "auto_capture_off":
+        raise ConflictError("Auto capture is switched off.", code="auto_capture_off")
+    return session, outcome
 
 
 def _snapshot(session: StudySession) -> dict:

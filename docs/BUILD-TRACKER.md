@@ -137,3 +137,18 @@ Built: sync service with follow or pin, update preview and apply endpoints with 
 | W2-3 | Editors: every publish of a new deck version now needs a changelog note | Open (owner) | Answers 422 `changelog_required` |
 | W2-4 | Confirm F-14 emits the amendment events under the names the subscriber listens to | Open (owner), [VERIFY] | The coverage scheme event also has an alias subscription |
 | W2-5 | Manual device checks | Not run, accepted | Automated tests, e2e r1 and r2 and the W2 capacity script stand in |
+
+## 8. F-15 R2, wave W3 (Recall with Coverage, Tracker and Today, strength on chapter pages, paste import): built 2026-10-11, owner tasks
+
+Built: the chapter recall pass (rolling 7 days, one coverage revision per chapter per week), recall strength on chapter pages, the revision boost and "Review cards" deep links, the Today task port (`core/today_port.py`, no Today screen), the opt-in tracker session, and paste or CSV import with a preview. No new flag: `recall_system` stays fail-closed, beta cohort only. Details: `docs/F-15-ROLLOUT.md` (section 9), `docs/F-15-API-CONTRACT.md`.
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| W3-1 | Apply migration `0006` (one defaulted JSON column on `recall_session`) on staging before the web build that shows the chapter card | Open (owner) | Additive; older code ignores it |
+| W3-2 | Run `pytest modules/coverage modules/recall modules/tracking modules/focus core` once on a real PostgreSQL, then `scripts/e2e/recall-r2/run.py` and `capacity.py` | Open (owner) | Verified here on a private PostgreSQL 16 and on SQLite; keep the capacity output |
+| W3-3 | Decide whether "Recall counts as revision" stays on by default | Open (owner), decision | On means a passed chapter set moves the chapter's revision schedule in coverage without the student pressing anything. The setting already existed (R1) and defaults to on |
+| W3-4 | Tracker auto capture stays off by default; confirm the `time_tracker` flag is open for the cohort | Open (owner) | Recall time only reaches the tracker for students who switched auto capture on |
+| W3-5 | F-13 Today: when it is built, call `core.today_port.collect(user_id, now=)` once per load | Open (F-13) | The recall provider is registered and flag aware; the task shape is in section 9.2 |
+| W3-6 | Editors and support: the import takes 200 rows a call and refuses duplicates; tell students to split long lists | Open (owner), copy | Row errors name the problem in words |
+| W3-7 | Manual device checks (chapter card, revision link, import on a phone) | Not run, accepted | Automated component, keyboard and axe tests, the e2e script and the capacity comparison stand in |
+

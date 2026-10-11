@@ -60,9 +60,15 @@ def quick_plan(
     rows = (
         _scope(study, subject_key)
         .filter(importance__gte=lim.QUICK_MIN_IMPORTANCE)
-        .values_list("id", "importance", "state", "stability", "last_review_at")
+        .values_list("id", "importance", "state", "stability", "last_review_at", "chapter_id")
     )
-    cards = (exam.QuickCard(str(i), imp, state, stab, last) for i, imp, state, stab, last in rows)
+    due = coverage_adapter.due_revision_chapter_ids(
+        study.user_id, study.today
+    )  # FR-F15-63: chapters due for revision go first
+    cards = (
+        exam.QuickCard(str(i), imp, state, stab, last, boosted=imp == exam.MANDATORY and chapter in due)
+        for i, imp, state, stab, last, chapter in rows
+    )
     plan = exam.quick_set(cards, exam_at, minutes, median, study.now, study.weights[20])
     return QuickResult(plan, exam_at, _date_of(study, exam_at), minutes, median)
 

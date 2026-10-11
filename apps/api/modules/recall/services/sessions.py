@@ -119,7 +119,14 @@ def close_session(
             else ["status", "ended_at"]
         )
         data = summary(session, user_id, now)
-        payload = {"user_id": str(user_id), "auto": auto, "local_date": session.local_date.isoformat(), **data}
+        payload = {
+            "user_id": str(user_id),
+            "auto": auto,
+            "local_date": session.local_date.isoformat(),
+            "started_at": session.started_at.isoformat(),
+            "ended_at": session.ended_at.isoformat() if session.ended_at else None,
+            **data,
+        }
         transaction.on_commit(lambda: events.emit("recall_session_completed", **payload))
         return session, data
 

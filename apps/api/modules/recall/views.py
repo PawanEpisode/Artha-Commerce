@@ -112,6 +112,23 @@ class CardListCreateView(RecallView):
         return Response(_created_payload(request.user.id, result), status=200 if result.existing else 201)
 
 
+class CardImportView(WriteView):
+    """Paste or CSV import. `dry_run` previews every row and writes nothing; the real call creates only the valid rows, atomically."""
+
+    def post(self, request):
+        d = self.parse(serializers.ImportSerializer, request.data).validated_data
+        raw = services.imports.parse_input(text=d.get("text"), rows=d.get("rows"))
+        outcome = services.imports.run(
+            request.user.id,
+            raw,
+            batch_id=d["client_id"],
+            dry_run=d["dry_run"],
+            chapter_id=d["chapter_id"],
+            importance=d["importance"],
+        )
+        return Response(serializers.import_dict(outcome), status=201 if outcome.created else 200)
+
+
 class CardFromSelectionView(WriteView):
     def post(self, request):
         d = self.parse(serializers.SelectionSerializer, request.data).validated_data
@@ -442,6 +459,15 @@ class StatsView(RecallView):
         if request.headers.get("If-None-Match") == rep.etag:
             return Response(status=304, headers=headers)
         return Response(rep.data, headers=headers)
+
+
+class ChapterStrengthView(RecallView):
+    """`chapters/<id>/strength/`: "Recall strength 82%, 6 cards due" for the signed-in chapter page (FR-F15-65). Her own cards only."""
+
+    def get(self, request, chapter_id):
+        d = self.parse(serializers.ChapterStrengthQuery, request.query_params).validated_data
+        row = selectors.chapter_strength(request.user.id, chapter_id, now=timezone.now(), tz=d.get("tz"))
+        return Response(serializers.strength_dict(row), headers={"Cache-Control": "private, no-cache"})
 
 
 class SettingsView(RecallView):

@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { ChapterContainer } from '~/modules/coverage'
 import { ChapterNotesSlot } from '~/modules/notes'
+import { ChapterRecallSlot } from '~/modules/recall'
 import { buildHead } from '~/modules/seo'
 import { useAutoCapture } from '~/modules/tracker'
 
@@ -21,7 +22,10 @@ export const Route = createFileRoute('/app/syllabus/$subject/$chapter')({
         subjectId={subject}
         chapterId={chapter}
         renderNotes={({ subjectKey, chapterKey }) => (
-          <ChapterNotesSlot subjectKey={subjectKey} chapterKey={chapterKey} />
+          <>
+            <ChapterNotesSlot subjectKey={subjectKey} chapterKey={chapterKey} />
+            <ChapterRecallSlot chapterId={chapter} />
+          </>
         )}
       />
     )

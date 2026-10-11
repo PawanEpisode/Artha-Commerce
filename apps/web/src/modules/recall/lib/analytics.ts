@@ -27,6 +27,8 @@ export const ALLOWED = {
   recall_follow_toggled: ['follow'],
   recall_recheck_dismissed: ['reason'],
   recall_chapter_remap_chosen: ['relation'],
+  recall_import_previewed: ['rows', 'valid', 'invalid'],
+  recall_import_done: ['rows', 'created', 'invalid'],
   recall_pacing_viewed: ['feasible', 'needed_per_day', 'days_to_exam'],
 } as const satisfies Record<string, readonly string[]>
 

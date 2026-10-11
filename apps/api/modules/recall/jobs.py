@@ -8,6 +8,7 @@ Background work of recall (ERD 6.4), run by the cron tick `recall/internal/tick/
     recall.sync_subscription  one subscription to the live version (a retry, a pin switched to follow, a resubscribe)
     recall.flag_amendment     the two stages of an F-14 amendment event: platform ribbons, then chips on her own cards (1,000 a chunk)
     recall.scheme_changed     her own cards follow the chapter map after a scheme switch (payload `user_id`, `to_scheme_id`)
+    recall.chapter_pass       the chapter recall pass check of one closed session (payload `user_id`, `session_id`)
 
 The tick claims only `LIGHT_TYPES`. Payloads hold ids and cursors, never text.
 """
@@ -26,6 +27,7 @@ from .adapters import coverage as coverage_adapter
 from .domain import limits as lim
 from .models import RecallSubscription
 from .services import amendments as amendment_service
+from .services import chapter_pass as chapter_pass_service
 from .services import exam as exam_service
 from .services import remap as remap_service
 from .services import sync as sync_service
@@ -35,7 +37,15 @@ JOB_SYNC_SUBSCRIBERS = sync_service.JOB_SYNC_SUBSCRIBERS
 JOB_SYNC_SUBSCRIPTION = sync_service.JOB_SYNC_SUBSCRIPTION
 JOB_FLAG_AMENDMENT = amendment_service.JOB_FLAG_AMENDMENT
 JOB_SCHEME_CHANGED = remap_service.JOB_SCHEME_CHANGED
-LIGHT_TYPES = (JOB_EXAM_HORIZON, JOB_SYNC_SUBSCRIBERS, JOB_SYNC_SUBSCRIPTION, JOB_FLAG_AMENDMENT, JOB_SCHEME_CHANGED)
+JOB_CHAPTER_PASS = chapter_pass_service.JOB_CHAPTER_PASS
+LIGHT_TYPES = (
+    JOB_EXAM_HORIZON,
+    JOB_SYNC_SUBSCRIBERS,
+    JOB_SYNC_SUBSCRIPTION,
+    JOB_FLAG_AMENDMENT,
+    JOB_SCHEME_CHANGED,
+    JOB_CHAPTER_PASS,
+)
 BATCH = 100
 TICK_BUDGET_SECONDS = 20
 
@@ -46,6 +56,7 @@ def register_handlers(jobs_module=core_jobs) -> None:
     jobs_module.register_handler(JOB_SYNC_SUBSCRIPTION, sync_subscription_job)
     jobs_module.register_handler(JOB_FLAG_AMENDMENT, amendment_service.run_job)
     jobs_module.register_handler(JOB_SCHEME_CHANGED, scheme_changed_job)
+    jobs_module.register_handler(JOB_CHAPTER_PASS, chapter_pass_service.run_job)
 
 
 def queue_student(user_id) -> None:

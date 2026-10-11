@@ -4,6 +4,7 @@ import { useMemo, useRef, useState } from 'react'
 
 import { CardFields, CardPreview, type Importance, ImportanceField, TagsField } from '../components/CardEditor'
 import { ChapterPicker, type PickedChapter } from '../components/ChapterPicker'
+import { NewCardModes } from '../components/NewCardModes'
 import { RecallShell } from '../components/RecallShell'
 import { useCardQueue, useCreateCard } from '../hooks/useCardScreens'
 import { useOnlineStatus } from '../hooks/useRecallBasics'
@@ -24,10 +25,20 @@ import {
 } from '../lib/cardKinds'
 import type { NewCardSearch } from '../lib/cardSearch'
 import { errorText } from '../lib/errors'
+import { ImportContainer } from './ImportContainer'
 
 type Saved = { count: number; firstId: string | null; queued: boolean }
 
 const newId = (): string => crypto.randomUUID()
+
+function NewCardHeader() {
+  return (
+    <header className="space-y-1">
+      <h1 className="text-3xl font-extrabold">Make a card</h1>
+      <p className="text-muted-foreground">One idea per card works best.</p>
+    </header>
+  )
+}
 
 function NewCard({ search }: { search: NewCardSearch }) {
   const online = useOnlineStatus()
@@ -155,10 +166,8 @@ function NewCard({ search }: { search: NewCardSearch }) {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Make a card</h1>
-        <p className="text-muted-foreground">One idea per card works best.</p>
-      </header>
+      <NewCardHeader />
+      <NewCardModes search={search} />
 
       {search.from === 'selection' ? (
         <Alert variant="info">Made from the text you selected. Change it however you like.</Alert>
@@ -260,7 +269,14 @@ function NewCard({ search }: { search: NewCardSearch }) {
 export function NewCardContainer({ search }: { search: NewCardSearch }) {
   return (
     <RecallShell>
-      <NewCard search={search} />
+      {search.mode === 'import' ? (
+        <>
+          <NewCardHeader />
+          <ImportContainer search={search} />
+        </>
+      ) : (
+        <NewCard search={search} />
+      )}
     </RecallShell>
   )
 }

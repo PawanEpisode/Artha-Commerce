@@ -42,6 +42,7 @@ def test_only_adapters_import_other_modules_and_only_through_selectors():
     allowed = {
         "adapters/syllabus.py": "modules.syllabus",
         "adapters/coverage.py": None,
+        "adapters/tracking.py": None,
         "adapters/profiles.py": "modules.profiles",
     }
     other = re.compile(r"^\s*(?:from|import)\s+modules\.(?!recall\b)(\w+)", re.M)

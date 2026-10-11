@@ -160,11 +160,17 @@ def plan_queue(
     *,
     mode: str = "auto",
     day_end: datetime | None = None,
+    boosted: frozenset[str] = frozenset(),
 ) -> Queue:
     """
     Today's order: learning cards due now (by due time), then reviews by priority with subjects alternated, with one new
     card after every three reviews. New cards are cut at the daily new limit; reviews at the reviews limit. Catch-up
     mode drops new cards, because a backlog is cleared before more is added. `day_end` bounds "due today".
+
+    `boosted` (R2-W3, FR-F15-63) holds the ids of cards the student's chapter revision just made urgent (the mandatory cards of
+    a chapter due for revision). They are taken before any other card when the limits cut the list, and they are shown first
+    among the new cards; within each group the order is the usual one. With no boosted cards the result is exactly what it was
+    before: the golden vectors never pass any.
     """
     learning: list[CardView] = []
     reviews: list[tuple[float, CardView]] = []
@@ -184,11 +190,13 @@ def plan_queue(
     catchup = catchup_state(len(due_reviews), oldest, limits.reviews_per_day, mode)
 
     learning.sort(key=lambda c: (c.due_at, c.id))
-    reviews.sort(key=lambda t: (-t[0], t[1].due_at, t[1].id))
+    reviews.sort(key=lambda t: (t[1].id not in boosted, -t[0], t[1].due_at, t[1].id))
     room = max(limits.reviews_per_day - limits.reviews_done_today, 0)
-    ordered_reviews = _alternate_subjects([c for _, c in reviews][:room])
+    chosen = [c for _, c in reviews][:room]
+    first = [c for c in chosen if c.id in boosted]
+    ordered_reviews = _alternate_subjects(first) + _alternate_subjects([c for c in chosen if c.id not in boosted])
 
-    fresh.sort(key=lambda c: (-c.importance, c.created_at or now, c.id))
+    fresh.sort(key=lambda c: (c.id not in boosted, -c.importance, c.created_at or now, c.id))
     new_room = 0 if catchup.active else max(limits.new_per_day - limits.new_done_today, 0)
     new_cards = fresh[:new_room]
 

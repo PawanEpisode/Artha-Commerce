@@ -99,15 +99,29 @@ function Review({ search }: { search: ReviewSearch }) {
     )
   }
   if (status === 'empty') {
+    const forChapter = search.source === 'chapter' && search.chapter !== undefined
     return (
       <div className="mx-auto max-w-2xl px-4 py-10">
         <EmptyState
           icon={<CircleCheck aria-hidden />}
-          title="Nothing to review right now"
-          description="You are all caught up for this list. You can look at cards that are due soon."
+          title={forChapter ? 'No cards to review in this chapter' : 'Nothing to review right now'}
+          description={
+            forChapter
+              ? 'You have no cards here yet, or the chapter is not one of yours. You can make a card for it, or go back.'
+              : 'You are all caught up for this list. You can look at cards that are due soon.'
+          }
           action={
             <div className="flex flex-wrap justify-center gap-3">
-              {session.canReviewAhead ? <Button onClick={session.reviewAhead}>Review ahead 10 cards</Button> : null}
+              {session.canReviewAhead && !forChapter ? (
+                <Button onClick={session.reviewAhead}>Review ahead 10 cards</Button>
+              ) : null}
+              {forChapter ? (
+                <ButtonLink asChild>
+                  <Link to="/app/recall/cards/new" search={{ chapter: search.chapter }}>
+                    Make a card
+                  </Link>
+                </ButtonLink>
+              ) : null}
               <ButtonLink variant="outline" asChild>
                 <Link to="/app/recall">Back to revision</Link>
               </ButtonLink>

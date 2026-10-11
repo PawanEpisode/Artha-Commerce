@@ -390,3 +390,77 @@ A student-facing history of past updates, a per-card "what changed" view, daily 
 ### 8.6 Proof
 
 Ruff and ruff format on `apps/api`; pytest `modules/coverage modules/recall modules/syllabus core` on SQLite (1,362 passed, 39 skipped that need PostgreSQL) and `modules/coverage modules/recall core` on PostgreSQL 16 (1,292 passed); `scripts/recall-seed-check.py`; recall, observability and features web unit tests (350 passed); `scripts/e2e/recall-r1/run.py` (42 checks) and `scripts/e2e/recall-r2/run.py` (R2-W1 and the W2 section) on PostgreSQL, all passed; `capacity_w2.py` above. Manual device and browser checks are not done (your standing rule).
+
+## 9. R2, wave W3: Recall with Coverage, Tracker and Today, strength on chapter pages, paste import (flag `recall_system`, no new flag)
+
+Built on top of R1, R2-W1 and R2-W2. Specs: PRD FR-F15-61 to FR-F15-65, FR-F15-73 and FR-F13 (P2); ERD sections 3, 4 and the events table. Everything below is behind `recall_system` (fail closed). **No new flag, no new environment variable, no new throttle scope** (the import uses the existing `recall_write` scope). The only schema change is migration `0006`: one JSON column, `recall_session.chapter_passes` (default `[]`), which is the whole memory of the 7 day rule.
+
+### 9.1 What it does for a student
+
+- **Chapter recall pass (FR-F15-64).** A chapter's set is her active mandatory and important cards in it. When the set has at least 5 cards and at least 80% of them were reviewed Hard or better in the last 7 days, the chapter counts as revised: coverage gets ONE `revision_done` (source `system`) for it, so the chapter's revision schedule and "Due for revision" move on. It happens after a session closes, never while she reviews, and at most once per chapter per 7 days. It only counts while her setting "Recall counts as revision" (`recall_counts_as_revision`, on by default) is on. A student who is not enrolled, whose enrolment is archived or belongs to another scheme simply gets nothing and no error; a vacation does not pause the check (she reviewed the cards, so the chapter counts).
+- **Recall strength on the chapter page (FR-F15-65).** `/app/syllabus/$subject/$chapter` shows a "Recall" section: "Recall strength 82%, 6 cards due" (or "Not reviewed yet, 3 cards to learn", or "nothing due") and a "Review cards" button to `/app/recall/review?chapter=<id>`. Hidden with the flag off, while loading and for a chapter where she has no cards. It refreshes after a review has synced.
+- **Revision boost and deep links (FR-F15-63).** For a chapter that is due for revision, its mandatory cards come first in her daily queue, the catch-up list, the offline pack's plan and the quick revision plan (inside each group the usual priority order stays). A "Review cards" link sits under each row of `/app/revision`. The review screen honours `?chapter=<id>` (the id alone means "review this chapter"); a chapter she has no cards in, or an id that is not hers, shows "No cards to review in this chapter" with "Make a card" and "Back to revision".
+- **Tracker (FR-F15-73, opt-in).** With auto capture switched on in the time tracker settings (off by default), a finished recall session adds ONE tracker session with `source=auto` and activity "revision", under the tracker's own auto rules: no live timer running, no overlap with recorded time, the 4 hour daily cap, and at least one minute. The session carries a chapter only when one chapter holds at least half of its reviews. Closing again or replaying the event adds nothing.
+- **Import (FR-F13).** `/app/recall/cards/new?mode=import` ("Import many"): paste one card per line (`front :: back`) or a CSV with the header `kind,front,back,chapter`, or choose a file. "Check rows" shows every row in a table with its problem in words; "Import N rows" creates only the valid ones, all or nothing against her plan. Kinds with at most two required fields can be imported (pointer, formula, definition, mnemonic, case law, cloze); a section card needs the form. A card she already has, or a row repeated in the paste, is a row error, never a silent duplicate. A retry of the same paste cannot make the cards twice.
+
+### 9.2 What staff and integrations do
+
+- **Staff:** nothing new in the Django admin. The rule constants (5 cards, 80%, 7 days) live in `modules/recall/domain/chapter_pass.py` and are pinned by `domain/tests/vectors/chapter_pass_cases.json`; changing one is a code change with a test change.
+- **F-13 Today (not built):** `core/today_port.py` is the port, the same shape as `core/plans.py` and `core/recall_port.py`: `register_task_provider(key, fn)`, `NullTaskProvider`, `collect(user_id, now=)` (a provider that raises or answers nothing is left out, so one module can never blank Today). `RecallConfig.ready` registers `provide_today` through `provider.today_tasks`, which answers an empty result when the flag is off for the student. Tasks: "Recall: N cards due", "Forgotten: top 5", "Re-check after amendment" and, within 45 days of the exam, "Quick revision: N cards today"; each has `est_minutes` from her own median seconds per card (12 s until she has 30 reviews) and a `target` path under `/app/recall`. There is no Today UI.
+- **F-14 and the rest** are unchanged. Coverage does not import recall: the coverage rows reach recall only through `adapters/coverage.py`, and the "Review cards" link and the recall card are composed by the routes (`app.revision`, `app.syllabus.$subject.$chapter`).
+
+### 9.3 Decisions and deviations
+
+| Question | Decision |
+| --- | --- |
+| PRD "7 days" or ERD "ISO week" for the pass | **Rolling 7 days.** Reviews count while younger than 7 x 24 hours (a review exactly 7 days old has left the window); a pass blocks another pass of the same chapter for 7 days from the announced pass (a pass exactly 7 days old no longer blocks). An ISO week would allow two passes on a Sunday and the Monday after, and no pass for 13 days, which is not what "once a week" means to a student. Tested at 4 vs 5 cards, 79 vs 80 of 100, and 6 days 23 h vs 7 days |
+| Where the 7 day memory lives | In `recall_session.chapter_passes` (the pass is written on the session that earned it), so no new table and the cool-down is one indexed read of the last 8 days of her sessions. Export and erase cover it (the sessions block of the export carries it; erase deletes the sessions) |
+| Not on the review path | A closed session emits `recall_session_completed` (it already did); recall queues ONE light job per session (`recall.chapter_pass`, de-duplicated on the session id) and forwards the tracker session. `services/reviews.py` and `reviews_bulk.py` are unchanged |
+| Replays | The job re-emits the pass the session already carries (a crash between the commit and the emit loses nothing); coverage is called with a client id derived from user, chapter and session (`uuid5`), so a replay is a no-op there; the tracker call is idempotent on a client id derived from the session id |
+| Boost without touching the scheduler | `plan_queue(..., boosted=frozenset[str])` and `QuickCard.boosted` only change the sort key (boosted first, then the usual order). The fold and the golden vectors are untouched. The boost is the mandatory cards of due chapters; with no due chapter it costs one coverage read |
+| Tracker extraction | `tracking.services.add_auto_session(...)` is now the one place the auto rules live; `add_auto` (Notes and the reader's reading time) calls it with activity "reading". Recall reaches it through `adapters/tracking.py` with `forward=False`, so auto time is not sent on to coverage |
+| Import row limit | The ERD states none: **200 rows a call** (the same as a bulk change), 400,000 characters of pasted text. Over the limit is `422 import_too_large` and nothing is read |
+| Import atomicity | One `reserve_cards(total faces)` for the whole batch (`create_card(reserve_quota=False)` for each row), inside one transaction: a full plan creates nothing (`429 quota_exceeded`). The preview also says whether the valid rows fit (`quota.fits`) |
+| Review route | `?chapter=<id>` with no `source` now means `source=chapter` (the zod schema derives it); a malformed id falls back to Today as before |
+| "Review cards" under every due row | Shown when the flag is on, without asking the server per row; a chapter without cards opens the calm empty state |
+
+### 9.4 Operations
+
+| Question | Answer |
+| --- | --- |
+| A student says a chapter was not counted | Check that her "Recall counts as revision" setting is on, that the chapter has at least 5 mandatory or important cards, and that 80% of them were reviewed Hard or better in the 7 days before the session closed. The job is `recall.chapter_pass` in `core_job` (ids only); a failed one is retried by the tick. The session row shows what was announced (`chapter_passes`) |
+| Tracker time did not appear | Auto capture is off by default (tracker settings). It also needs the `time_tracker` flag, no running timer, no overlapping time, under 4 hours of auto time that day and at least a minute of reviews. The outcome word is logged at info level without any student text |
+| Roll back | The flag `recall_system` hides the screens and the endpoints answer 403 `feature_disabled`. The code is additive: migration `0006` is one defaulted column that older code ignores; the new job type is simply not claimed if the code is rolled back |
+| Export and erase | The sessions block of the export has `chapter_passes`; erase removes the sessions and the `recall.chapter_pass` jobs of the student. Imported cards are ordinary cards (origin `import_csv`, never shareable) and are covered as before |
+| Privacy | Events, jobs, logs, Sentry and PostHog carry ids and counts only. The import's analytics events are `recall_import_previewed` and `recall_import_done` (row counts); the API's preview echoes a 120 character excerpt of each row back to the same student in the response body and nothing is logged |
+
+### 9.5 Capacity (same sandbox as the earlier notes: Linux x86-64, 2 CPUs, shared with PostgreSQL 16 and the Django development server)
+
+Command: `DATABASE_URL=postgres://... python scripts/e2e/recall-r2/capacity.py` (8 students with 5,000 cards each, an exam in 40 days). To prove that W3 does not touch the review path, the script was run on the code before W3 and on the code after it, alternating (before, after, before, after) on the same machine and the same private PostgreSQL 16, because the sandbox is shared and a single run is noisy. p95 in ms, one student at a time unless noted:
+
+| Measure | Target | Before W3 (run 1, run 2) | After W3 (run 1, run 2) |
+| --- | --- | --- | --- |
+| One review with the exam horizon (40 calls) | under 200 ms | 76, 84 | 80, 80 (**did not move**) |
+| Batch of 100 reviews (max of 4 calls) | under 800 ms | 384, 379 | 386, 428 |
+| Today | under 300 ms | 276, 357 | 297, 304 |
+| Queue, 20 cards | under 300 ms | 184, 212 | 196, 214 |
+| Quick revision plan | under 300 ms | 156, 200 | 172, 184 |
+| Quick queue, 20 cards | under 300 ms | 168, 240 | 176, 188 |
+| Pack of 300 | under 500 ms | 212, 250 | 254, 243 |
+| 8 students at once, today (p95) | under 300 ms | 1,328, 1,236 | 1,451, 1,460 |
+
+Reading: review and batch are within the run to run spread (the batch maximum in one "after" run, 428 ms, is one slow call of four; the target is 800 ms). The read endpoints that plan a queue (today, queue, quick plan, quick queue, the pack) gained one coverage read for the revision boost (`due_revision_chapter_ids`, and one card query only when a chapter is due); the p50 moved by roughly 5 to 20 ms (for example today 208 and 224 before, 216 and 216 after) and the p95 stays inside the spread of the "before" runs for a single student. With 8 students hitting the development server at once the three read endpoints miss the 300 ms target both before and after W3 (the two cores run the database and a single-process server); the "after" runs are about 10% slower there. Production runs more than one worker. The new read, the chapter strength, took 25 ms; the import preview of 200 rows is a handful of queries (the 200 rows are checked with a fixed number of queries, one card query per created row on the real call).
+
+### 9.6 Not built in W3 (on purpose)
+
+Sharing and share imports, AI suggestions and AI batches, `create_card_from_question`, a student-facing history of passes or updates, any Today screen (F-13), parameter fitting, and an import of the section card kind (it has three required fields, so it stays in the form).
+
+### 9.7 Proof
+
+- `ruff check` and `ruff format --check` clean over `apps/api` (773 files).
+- API tests: `modules/coverage modules/recall modules/syllabus modules/tracking modules/focus core` on SQLite (1,968 passed, 39 skipped by design, 0 failed) and on PostgreSQL 16 (2,007 passed, 0 skipped, 0 failed). New and extended: pure domain tests with a vector file (4 vs 5 cards, 79 vs 80 of 100, 6 days 23 h vs 7 days, the cool-down), the chapter pass service (job, replay, cool-down, off switch; unenrolled, archived and other-scheme students never raise; a vacation does not stop it), the tracker forward (saved, timer running, overlap, daily cap, off switch, idempotent replay, a failing tracker never fails the close), the boost (`plan_queue`, quick plan, queue, pack, no boost without a due chapter), the strength read (a query-count test: the same number of queries for two cards or two hundred), the Today port and provider (flag on and off, minutes, exam, vacation), import (preview, partial validity, one atomic quota check, replay, row cap, chapters by id and key, no text in the logs), the URL-conf drift test for the contract and the flag matrix for the two new paths.
+- Web (clean install in a scratch copy): `pnpm typecheck`, `pnpm lint`, `pnpm format:check`, `pnpm emails:check`, `pnpm check:contrast`, the `@artha/web` tests (3,130 passed in 319 files, including new tests for the chapter card, the revision list slot and link, the review route parameter and its empty state, the import panel with its keyboard path, and the analytics allow-list) and `pnpm build:web` all pass.
+- `scripts/e2e/recall-r2/run.py` on PostgreSQL: 53 checks, all passed, including the new W3 section (strength, import preview, real call and replay, the 200 row cap, 60% is not a pass and 80% over two sessions counts one revision, a second pass in the week and a replayed job add nothing, the tracker is off by default then forwards one `auto` revision session and a replay adds none, export carries `chapter_passes`, erase leaves no rows, no card text in the server log). Writing it found one real fact worth knowing: the tracker never records more time than has really passed since the session opened, so a session that answers cards in a few real seconds is "too short" however long the cards claim to have taken.
+- The capacity comparison above.
+Manual device and browser checks are not done (your standing rule, an accepted risk).
+

@@ -23,13 +23,14 @@ export const useCardHistory = (id: string) =>
   useQuery({ queryKey: recallKeys.cardHistory(id), queryFn: () => recallApi.cardHistory(id), retry: false })
 
 /** Anything about the cards changed: the lists, the open card and what today's plan counts. */
-function useRefresh() {
+export function useRefresh() {
   const qc = useQueryClient()
   return useCallback(
     (id?: string) => {
       void qc.invalidateQueries({ queryKey: ['recall', 'cards'] })
       void qc.invalidateQueries({ queryKey: recallKeys.today })
       void qc.invalidateQueries({ queryKey: recallKeys.pack })
+      void qc.invalidateQueries({ queryKey: ['recall', 'chapter-strength'] })
       if (id) void qc.invalidateQueries({ queryKey: recallKeys.card(id) })
     },
     [qc],

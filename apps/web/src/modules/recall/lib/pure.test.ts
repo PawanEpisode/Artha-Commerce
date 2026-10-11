@@ -131,6 +131,13 @@ describe('URLs', () => {
     })
     expect(statsSearchSchema.parse({ range: '1y' })).toEqual({ range: '30d' })
   })
+  it('reads a link with only a chapter as a review of that chapter', () => {
+    const id = '3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11'
+    expect(reviewSearchSchema.parse({ chapter: id })).toEqual({ chapter: id, source: 'chapter' })
+    expect(reviewSearchSchema.parse({ chapter: id, source: 'deck' })).toMatchObject({ source: 'deck', chapter: id })
+    expect(reviewSearchSchema.parse({ chapter: 'not-an-id' })).toEqual({ source: 'today' }) // a hand-edited link is quiet
+    expect(reviewSearchSchema.parse({ source: 'forgotten' })).toEqual({ source: 'forgotten' })
+  })
   it('lights up the section of the current page', () => {
     expect(activeSection('/app/recall', RECALL_SECTIONS)).toBe('today')
     expect(activeSection('/app/recall/stats/', RECALL_SECTIONS)).toBe('stats')

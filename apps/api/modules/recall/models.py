@@ -585,6 +585,9 @@ class RecallSession(UUIDModel):
     good = models.IntegerField(default=0)
     easy = models.IntegerField(default=0)
     active_seconds = models.IntegerField(default=0)
+    # R2-W3: the chapter passes announced because of this session, `[{"chapter_id", "at", "set_size", "coverage_of_set"}]`. The "once
+    # per chapter per 7 days" rule reads it (no new table); it is erased and exported with the session.
+    chapter_passes = models.JSONField(default=list, blank=True)
 
     class Meta:
         db_table = "recall_session"

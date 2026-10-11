@@ -1,10 +1,10 @@
 import { Alert, Skeleton } from '@artha/design-system'
 
-import { DueList } from '../components/DueList'
+import { DueList, type DueRowAction } from '../components/DueList'
 import { useDue } from '../hooks/useCoverageQueries'
 import { CoverageShell } from './CoverageShell'
 
-function Body() {
+function Body({ renderRowAction }: { renderRowAction?: DueRowAction }) {
   const { data, isPending, isError } = useDue()
   return (
     <>
@@ -19,12 +19,12 @@ function Body() {
       ) : isError || !data ? (
         <Alert variant="error">We could not load your revisions.</Alert>
       ) : (
-        <DueList rows={data.results} />
+        <DueList rows={data.results} renderAction={renderRowAction} />
       )}
     </>
   )
 }
 
-export function RevisionContainer() {
-  return <CoverageShell>{() => <Body />}</CoverageShell>
+export function RevisionContainer({ renderRowAction }: { renderRowAction?: DueRowAction }) {
+  return <CoverageShell>{() => <Body renderRowAction={renderRowAction} />}</CoverageShell>
 }

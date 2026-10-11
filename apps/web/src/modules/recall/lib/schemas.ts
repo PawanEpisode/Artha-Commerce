@@ -542,3 +542,37 @@ export const chapterRemapSchema = z.object({
 export type ChapterRemap = z.infer<typeof chapterRemapSchema>
 export type ChapterRemapItem = ChapterRemap['items'][number]
 export const chapterChoiceResultSchema = z.object({ id: z.string(), status: z.string(), relation: z.string() })
+
+/** Recall strength of one chapter (FR-F15-65): `cards` is 0 when she has none there. */
+export const chapterStrengthSchema = z.object({
+  chapter_id: z.string(),
+  cards: z.number(),
+  due: z.number(),
+  strength: z.number().nullable(),
+  percent: z.number().nullable(),
+})
+export type ChapterStrength = z.infer<typeof chapterStrengthSchema>
+
+/** One row of a paste or CSV import, as the server judged it. */
+export const importRowSchema = z.object({
+  line: z.number(),
+  status: z.enum(['ok', 'error', 'created', 'existing']),
+  kind: z.string().nullable(),
+  front: z.string(),
+  back: z.string(),
+  issues: z.array(z.object({ field: z.string(), code: z.string(), message: z.string() })),
+  card_id: z.string().nullable(),
+})
+export type ImportRow = z.infer<typeof importRowSchema>
+
+export const importResultSchema = z.object({
+  dry_run: z.boolean(),
+  total: z.number(),
+  valid: z.number(),
+  invalid: z.number(),
+  created: z.number(),
+  existing: z.number(),
+  quota: z.object({ room: z.number(), needed: z.number(), fits: z.boolean() }),
+  rows: z.array(importRowSchema),
+})
+export type ImportResult = z.infer<typeof importResultSchema>

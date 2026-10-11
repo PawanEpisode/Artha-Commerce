@@ -64,6 +64,16 @@ def _enabled(user_id) -> bool:
         return False
 
 
+def today_tasks(user_id, *, now):
+    """
+    The recall tasks of Today (F-13) through `core.today_port` (R2-W3, FR-F15-61). Flag aware like the Notes provider: a student
+    outside the beta, or a flag lookup that fails, has no tasks (an empty result), never an error.
+    """
+    if not _enabled(user_id):
+        return selectors.ProviderResult("recall", [])
+    return selectors.provide_today(user_id, now=now)
+
+
 class RecallProviderImpl:
     def available_for(self, user_id) -> bool:
         """Notes' `capabilities.recall`: on only for students whose `recall_system` flag is on."""

@@ -5,6 +5,10 @@ active and a local PostgreSQL running:
 
     DATABASE_URL=postgres://... python scripts/e2e/recall-r2/run.py
 
+W3 (Recall x Coverage, Tracker and Today): the strength read of a chapter, paste import (preview, atomic real call, replay, row cap),
+the chapter recall pass (80% of a set of at least 5 in 7 days counts ONE revision in coverage, once per week, replays add nothing)
+and the opt-in tracker session (off by default, one `auto` revision session per finished recall session, replays add nothing).
+
 W2 (living decks): a new deck version reaches a follower through the job queue (cards whose meaning changed come back softened with
 a re-check note, typo fixes change nothing), a pinned subscription only records the pending version until she applies it, the
 amendment port flags platform items, "Still correct" clears a note, and export and erase cover the new columns and tables.
@@ -98,6 +102,172 @@ def study_age(client: httpx.Client, ids: list[str], first_review_days_ago: int, 
     for i, card_id in enumerate(ids):
         ev = r1.event(card_id, rating, start + timedelta(minutes=i), "r2-dev")
         client.post("/recall/reviews/", json=ev)
+
+
+def other_chapter_id(scheme: str, not_id: str) -> str:
+    out = r1.manage(
+        "shell",
+        "-c",
+        "from modules.syllabus.models import Chapter; "
+        f"print(Chapter.objects.filter(subject__scheme_id='{scheme}', is_active=True).exclude(id='{not_id}')"
+        ".order_by('id').values_list('id', flat=True).first())",
+    )
+    return out.stdout.strip().splitlines()[-1]
+
+
+def session_review(client: httpx.Client, card_ids: list[str], seconds_each: int = 20, wall_seconds: int = 0) -> str:
+    """
+    One closed recall session in which each card was answered Good, claiming `seconds_each` seconds a card. The tracker never
+    records more time than really passed since the session opened, so a check that needs a recorded minute waits `wall_seconds`.
+    Returns the session id.
+    """
+    sid = client.post("/recall/sessions/", json={"client_id": str(uuid.uuid4()), "source": "today"}).json()["id"]
+    time.sleep(wall_seconds)
+    now = datetime.now(UTC) - timedelta(seconds=len(card_ids) + 1)  # answered a moment ago, never in the server's future
+    for i, card_id in enumerate(card_ids):
+        ev = r1.event(card_id, 3, now + timedelta(seconds=i), "w3-dev", session=sid)
+        ev["duration_ms"] = seconds_each * 1000
+        res = client.post("/recall/reviews/", json=ev)
+        assert res.status_code in (200, 201), res.text[:200]
+    closed = client.post(f"/recall/sessions/{sid}/close/", json={})
+    assert closed.status_code == 200, closed.text[:200]
+    return sid
+
+
+def revisions_of(client: httpx.Client, chapter: str) -> int:
+    d = client.get(f"/coverage/chapters/{chapter}/").json()
+    return (d.get("chapter") or d).get("revision_count", -1)
+
+
+def revision_events(user: str, chapter: str) -> int:
+    """The same fact from the database: `revision_done` events of the system, for the student and chapter."""
+    with r1.pg() as conn:
+        return conn.execute(
+            "SELECT count(*) FROM coverage_event WHERE user_id = %s AND chapter_id = %s AND type = 'revision_done'",
+            [user, chapter],
+        ).fetchone()[0]
+
+
+def auto_revision_sessions(client: httpx.Client) -> list[dict]:
+    rows = client.get("/tracking/sessions/", params={"limit": 100}).json()["results"]
+    return [r for r in rows if r["source"] == "auto" and r["activity_type"] == "revision"]
+
+
+def w3(client: httpx.Client, base: str, ch: str, scheme: str) -> None:
+    """R2 wave W3, over HTTP, on the student of the earlier sections."""
+    # B. Recall strength of a chapter: one read, numbers only, a chapter she has no cards in is zeros and never a 404.
+    t0 = time.perf_counter()
+    res = client.get(f"/recall/chapters/{ch}/strength/")
+    strength_ms = (time.perf_counter() - t0) * 1000
+    body = res.json()
+    check(
+        "the strength of a chapter answers with cards, due and a percent",
+        res.status_code == 200
+        and body["cards"] > 0
+        and isinstance(body["due"], int)
+        and (body["percent"] is None or 0 <= body["percent"] <= 100),
+        body,
+    )
+    empty = client.get(f"/recall/chapters/{uuid.uuid4()}/strength/")
+    check(
+        "a chapter without cards is zeros, not a 404",
+        empty.status_code == 200 and empty.json()["cards"] == 0 and empty.json()["percent"] is None,
+        empty.text[:160],
+    )
+
+    # F. Paste import: a preview writes nothing, the real call creates only the valid rows, a replay creates nothing.
+    before = len(r1.all_cards(client))
+    text = f"{r1.MARK} import one? :: yes\n{r1.MARK} no back here\n{r1.MARK} import two? :: yes"
+    batch = str(uuid.uuid4())
+    dry = client.post("/recall/cards/import/", json={"client_id": batch, "dry_run": True, "text": text}).json()
+    check(
+        "the import preview judges every row and writes nothing",
+        [r["status"] for r in dry["rows"]] == ["ok", "error", "ok"]
+        and dry["rows"][1]["issues"][0]["code"] == "missing_back"
+        and dry["quota"]["fits"]
+        and len(r1.all_cards(client)) == before,
+        dry,
+    )
+    real = client.post("/recall/cards/import/", json={"client_id": batch, "dry_run": False, "text": text})
+    rb = real.json()
+    check(
+        "the real import creates only the valid rows",
+        real.status_code == 201 and rb["created"] == 2 and rb["invalid"] == 1 and len(r1.all_cards(client)) == before + 2,
+        (real.status_code, rb.get("created"), rb.get("invalid")),
+    )
+    again = client.post("/recall/cards/import/", json={"client_id": batch, "dry_run": False, "text": text})
+    check(
+        "replaying the same import creates and reserves nothing",
+        again.status_code == 200
+        and again.json()["created"] == 0
+        and again.json()["existing"] == 2
+        and len(r1.all_cards(client)) == before + 2,
+        again.text[:200],
+    )
+    big = "\n".join(f"{r1.MARK} bulk {i}? :: a" for i in range(201))
+    over = client.post("/recall/cards/import/", json={"client_id": str(uuid.uuid4()), "dry_run": True, "text": big})
+    check(
+        "more than 200 rows is refused",
+        over.status_code == 422 and over.json()["error"]["code"] == "import_too_large",
+        over.text[:160],
+    )
+
+    # A. The chapter recall pass. Five of her own mandatory cards in a second chapter: 4 of 5 (80%) within 7 days passes.
+    ch2 = other_chapter_id(scheme, ch)
+    own: list[str] = []
+    for i in range(5):
+        made = client.post(
+            "/recall/cards/",
+            json={
+                "client_id": str(uuid.uuid4()),
+                "kind": "pointer",
+                "fields": {"prompt_md": f"{r1.MARK} pass {i}?", "answer_md": f"{r1.MARK} a."},
+                "importance": "mandatory",
+                "chapter_id": ch2,
+            },
+        )
+        own.append(made.json()["cards"][0]["id"])
+    before_rev = revision_events(r1.USER, ch2)
+    revisions = lambda: revision_events(r1.USER, ch2)  # noqa: E731
+    session_review(client, own[:3])  # 3 of 5 = 60%
+    run_tick(base)
+    check("60% of a set is not a pass", revisions() == before_rev, (revisions(), before_rev))
+    session_review(client, own[3:4])  # 4 of 5 = 80% within the 7 days
+    run_tick(base)
+    check(
+        "80% of a set of five, over two sessions in a week, counts one revision",
+        revisions() == before_rev + 1,
+        (revisions(), before_rev, revisions_of(client, ch2)),
+    )
+    session_review(client, own[4:5])  # 5 of 5, but a pass was already announced this week
+    run_tick(base)
+    run_tick(base)
+    check(
+        "a second pass in the same week and a replayed job add nothing",
+        revisions() == before_rev + 1 and revisions_of(client, ch2) in (1, before_rev + 1),
+        (revisions(), revisions_of(client, ch2)),
+    )
+
+    # E. The tracker: off by default, so the sessions above left nothing; with auto capture on, one `auto` revision session each.
+    check("auto capture is off by default: no tracker session from recall yet", auto_revision_sessions(client) == [])
+    on = client.put("/tracking/settings/", json={"auto_capture_enabled": True})
+    check("auto capture can be switched on", on.status_code == 200, on.text[:160])
+    sid = session_review(client, [own[0], own[1], own[2]], seconds_each=30, wall_seconds=65)
+    forwarded = auto_revision_sessions(client)
+    check(
+        "a finished recall session becomes one auto revision session in the tracker",
+        len(forwarded) == 1 and forwarded[0]["focus_seconds"] >= 60,
+        forwarded,
+    )
+    replay = client.post(f"/recall/sessions/{sid}/close/", json={})
+    run_tick(base)
+    check(
+        "closing again or replaying adds no second tracker session",
+        replay.status_code == 200 and len(auto_revision_sessions(client)) == 1,
+        len(auto_revision_sessions(client)),
+    )
+    client.put("/tracking/settings/", json={"auto_capture_enabled": False})
+    print(f"INFO  W3 strength read: {strength_ms:.0f} ms", flush=True)
 
 
 def main() -> int:
@@ -353,6 +523,9 @@ def main() -> int:
             ),
         )
 
+        # W3 (runs here: the student has studied cards, an enrolment and the deck).
+        w3(client, base, ch, scheme_id())
+
         # Export and erase cover what W2 added.
         export = client.get("/recall/export/")
         body = export.json() if export.status_code == 200 else {}
@@ -361,7 +534,8 @@ def main() -> int:
             "export carries the new columns and tables",
             "chapter_remaps" in body
             and "needs_recheck" in card_cols
-            and "follow_updates" in (body.get("subscriptions") or [{}])[0],
+            and "follow_updates" in (body.get("subscriptions") or [{}])[0]
+            and any("chapter_passes" in x for x in body.get("sessions") or []),
             sorted(body)[:12],
         )
 

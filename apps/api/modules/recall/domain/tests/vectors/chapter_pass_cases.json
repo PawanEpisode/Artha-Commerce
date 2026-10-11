@@ -1,0 +1,140 @@
+{
+ "cooldown": [
+  {
+   "last": null,
+   "now": "2026-10-11T10:00:00Z",
+   "over": true
+  },
+  {
+   "last": "2026-10-10T10:00:00Z",
+   "now": "2026-10-11T10:00:00Z",
+   "over": false
+  },
+  {
+   "last": "2026-10-05T10:00:01Z",
+   "now": "2026-10-11T10:00:00Z",
+   "over": false
+  },
+  {
+   "last": "2026-10-04T10:00:00Z",
+   "now": "2026-10-11T10:00:00Z",
+   "over": true
+  },
+  {
+   "last": "2026-09-01T10:00:00Z",
+   "now": "2026-10-11T10:00:00Z",
+   "over": true
+  },
+  {
+   "last": "2026-10-04T23:30:00Z",
+   "now": "2026-10-11T00:30:00Z",
+   "over": false
+  }
+ ],
+ "evaluate": [
+  {
+   "eligible": false,
+   "ok": 0,
+   "passed": false,
+   "set_size": 0
+  },
+  {
+   "eligible": false,
+   "ok": 4,
+   "passed": false,
+   "set_size": 4
+  },
+  {
+   "eligible": true,
+   "ok": 3,
+   "passed": false,
+   "set_size": 5
+  },
+  {
+   "eligible": true,
+   "ok": 4,
+   "passed": true,
+   "set_size": 5
+  },
+  {
+   "eligible": true,
+   "ok": 5,
+   "passed": true,
+   "set_size": 5
+  },
+  {
+   "eligible": true,
+   "ok": 7,
+   "passed": false,
+   "set_size": 10
+  },
+  {
+   "eligible": true,
+   "ok": 8,
+   "passed": true,
+   "set_size": 10
+  },
+  {
+   "eligible": true,
+   "ok": 79,
+   "passed": false,
+   "set_size": 100
+  },
+  {
+   "eligible": true,
+   "ok": 80,
+   "passed": true,
+   "set_size": 100
+  },
+  {
+   "eligible": true,
+   "ok": 5,
+   "passed": false,
+   "set_size": 7
+  },
+  {
+   "eligible": true,
+   "ok": 6,
+   "passed": true,
+   "set_size": 7
+  },
+  {
+   "eligible": true,
+   "ok": 9,
+   "passed": true,
+   "set_size": 6
+  }
+ ],
+ "window": [
+  {
+   "in": true,
+   "now": "2026-10-11T10:00:00Z",
+   "reviewed_at": "2026-10-11T10:00:00Z"
+  },
+  {
+   "in": true,
+   "now": "2026-10-11T10:00:00Z",
+   "reviewed_at": "2026-10-05T10:00:00Z"
+  },
+  {
+   "in": true,
+   "now": "2026-10-11T10:00:00Z",
+   "reviewed_at": "2026-10-04T10:00:01Z"
+  },
+  {
+   "in": false,
+   "now": "2026-10-11T10:00:00Z",
+   "reviewed_at": "2026-10-04T10:00:00Z"
+  },
+  {
+   "in": false,
+   "now": "2026-10-11T10:00:00Z",
+   "reviewed_at": "2026-10-01T10:00:00Z"
+  },
+  {
+   "in": false,
+   "now": "2026-10-11T10:00:00Z",
+   "reviewed_at": "2026-10-11T10:00:01Z"
+  }
+ ]
+}

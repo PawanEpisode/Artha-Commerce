@@ -6,6 +6,7 @@ import uuid
 
 from rest_framework import serializers
 
+from .domain.imports import TEXT_MAX_CHARS
 from .domain.limits import REBALANCE_DEFAULT_DAYS, REBALANCE_MAX_DAYS_AHEAD
 from .models import ITEM_IMPORTANCES, ITEM_KINDS
 from .models import REVIEWLOG_MODES as REVIEW_MODES
@@ -47,6 +48,53 @@ class CardCreateSerializer(serializers.Serializer):
     reference_keys = serializers.ListField(child=serializers.JSONField(), required=False, default=list, max_length=50)
     deck_ids = serializers.ListField(child=serializers.UUIDField(), required=False, default=list, max_length=20)
     force = serializers.BooleanField(required=False, default=False)
+
+
+class ImportRowSerializer(serializers.Serializer):
+    kind = serializers.CharField(required=False, allow_blank=True, default="", max_length=24)
+    front = serializers.CharField(allow_blank=True, trim_whitespace=False, max_length=8000)
+    back = serializers.CharField(required=False, allow_blank=True, default="", trim_whitespace=False, max_length=8000)
+    chapter = serializers.CharField(required=False, allow_blank=True, default="", max_length=200)
+
+
+class ImportSerializer(serializers.Serializer):
+    """Rows as a list, or one pasted block (exactly one of the two). The 200-row cap is a 422 `import_too_large` from the service."""
+
+    client_id = serializers.UUIDField()
+    dry_run = serializers.BooleanField(required=False, default=False)
+    rows = serializers.ListField(child=ImportRowSerializer(), required=False, max_length=1000)
+    text = serializers.CharField(required=False, allow_blank=True, trim_whitespace=False, max_length=TEXT_MAX_CHARS)
+    chapter_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    importance = serializers.CharField(required=False, default="bullet", max_length=12)
+
+    def validate(self, attrs):
+        if ("rows" in attrs) == ("text" in attrs):
+            raise serializers.ValidationError("Send either rows or text.")
+        return attrs
+
+
+def import_dict(outcome) -> dict:
+    return {
+        "dry_run": outcome.dry_run,
+        "total": outcome.total,
+        "valid": outcome.valid,
+        "invalid": outcome.invalid,
+        "created": outcome.created,
+        "existing": outcome.existing,
+        "quota": {"room": outcome.room, "needed": outcome.needed, "fits": outcome.needed <= outcome.room},
+        "rows": [
+            {
+                "line": r.line,
+                "status": r.status,
+                "kind": r.kind,
+                "front": r.front,
+                "back": r.back,
+                "issues": r.issues,
+                "card_id": str(r.card_id) if r.card_id else None,
+            }
+            for r in outcome.rows
+        ],
+    }
 
 
 class SelectionSourceSerializer(serializers.Serializer):
@@ -312,6 +360,21 @@ class QuickPlanQuery(serializers.Serializer):
     subject_key = serializers.SlugField(required=False, max_length=80)
     exam_date = serializers.DateField(required=False)
     tz = serializers.CharField(required=False, max_length=64)
+
+
+class ChapterStrengthQuery(serializers.Serializer):
+    tz = serializers.CharField(required=False, max_length=64)
+
+
+def strength_dict(row) -> dict:
+    """`strength` is the mean predicted retrievability (0 to 1) of her reviewed cards in the chapter, `percent` the same as a whole number."""
+    return {
+        "chapter_id": str(row.chapter_id),
+        "cards": row.cards,
+        "due": row.due,
+        "strength": row.strength,
+        "percent": None if row.strength is None else round(row.strength * 100),
+    }
 
 
 def quick_plan_dict(result, sample: list) -> dict:

@@ -11,12 +11,14 @@ class RecallConfig(AppConfig):
         from core import jobs as core_jobs
         from core import registry as account_registry
         from core.recall_port import register_recall_provider
+        from core.today_port import register_task_provider
 
         from . import jobs, registry, subscribers  # noqa: F401
-        from .provider import RecallProviderImpl
+        from .provider import RecallProviderImpl, today_tasks
         from .services import erasure
 
         register_recall_provider(RecallProviderImpl())
+        register_task_provider("recall", today_tasks)  # F-13 Today collects it through `core.today_port` when it exists
         jobs.register_handlers(core_jobs)
         subscribers.register()
         account_registry.register_eraser("recall", erasure.delete_all_for_user)

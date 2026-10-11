@@ -287,11 +287,13 @@ def create_card(
     origin_module: str | None = None,
     origin_ref: str | None = None,
     shareable: bool | None = None,
+    reserve_quota: bool = True,
 ) -> CreatedCards:
     """
     Create an item with its first live version and one card per face (a cloze gives several). Idempotent on
     `(student, client_id)` (and on the source key when `source` and `origin_kind` are given): a replay returns the first
     result with `existing=True`. 409 `duplicate_card` unless `force`; 429 `quota_exceeded` when the plan is full.
+    `reserve_quota=False` is for a caller that already reserved the faces of a whole batch in one step (the import).
     """
     if origin not in ITEM_ORIGINS:
         raise ValueError(f"unknown origin {origin!r}")
@@ -317,7 +319,8 @@ def create_card(
             origin_module = origin_ref = None
         try:
             with transaction.atomic():  # a failure below undoes the quota reservation with it
-                quota.reserve_cards(user_id, len(faces))
+                if reserve_quota:
+                    quota.reserve_cards(user_id, len(faces))
                 for deck in decks:
                     quota.reserve_deck_member(user_id, deck.id, len(faces))
                 return _insert(

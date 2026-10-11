@@ -1,3 +1,4 @@
+export type { DueRowAction } from './components/DueList'
 export { ChapterContainer, type ChapterSlotContext } from './containers/ChapterContainer'
 export { CoverageSettingsContainer } from './containers/CoverageSettingsContainer'
 export { OnboardingContainer } from './containers/OnboardingContainer'

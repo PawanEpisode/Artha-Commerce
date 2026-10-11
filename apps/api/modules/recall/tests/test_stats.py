@@ -125,7 +125,7 @@ def test_selectors_for_other_features(api):
     assert strength[ch].cards == 8 and strength[ch].due == 4 and 0 < strength[ch].strength < 1
 
 
-def test_provide_today_has_the_shape_f13_will_read_and_nothing_registers_it():
+def test_provide_today_has_the_shape_f13_reads():
     now = timezone.now()
     assert selectors.provide_today(ME, now=now).tasks == []
     cs = library(12, shape=lambda i: "due")
@@ -135,6 +135,3 @@ def test_provide_today_has_the_shape_f13_will_read_and_nothing_registers_it():
     out = selectors.provide_today(ME, now=now)
     assert out.key == "recall" and [t.kind for t in out.tasks] == ["recall_cards", "forgotten_cards", "recheck"]
     assert out.tasks[0].count > 0 and out.tasks[0].tiles and out.tasks[2].count == 1
-    import modules.recall.provider as provider
-
-    assert "provide_today" not in vars(provider)
