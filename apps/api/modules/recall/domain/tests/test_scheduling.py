@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from datetime import UTC, date, datetime, timedelta
 
-import pytest
-
 from modules.recall.domain import scheduling as sc
 
 
@@ -57,12 +55,6 @@ def test_review_ahead_takes_the_weakest_not_yet_due():
 
     got = sc.review_ahead([c("strong", 100.0, 1), c("weak", 2.0, 5), c("mid", 10.0, 5)], now, 0.15, size=2)
     assert got == ("weak", "mid")
-
-
-def test_r2_stubs_are_not_implemented():
-    for fn in (sc.horizon, sc.r_exam, sc.quick_set, sc.pacing):
-        with pytest.raises(NotImplementedError):
-            fn()
 
 
 def test_a_review_due_at_the_first_instant_of_tomorrow_is_not_due_today():

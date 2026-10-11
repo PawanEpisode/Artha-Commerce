@@ -6,7 +6,7 @@ path must also reach. A property test applies random orders, duplicates and void
 
 from __future__ import annotations
 
-from collections.abc import Iterable, Sequence
+from collections.abc import Callable, Iterable, Sequence
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -59,14 +59,23 @@ def _order(event: ReviewEvent | ScheduleEvent) -> tuple[datetime, int, str]:
     return (event.at, 0 if isinstance(event, ScheduleEvent) else 1, event.id)
 
 
+CfgFor = Callable[[datetime], Cfg]
+
+
 def apply_event(
-    state: CardState, event: ReviewEvent | ScheduleEvent, w: Sequence[float], cfg: Cfg, *, card_id: object
+    state: CardState,
+    event: ReviewEvent | ScheduleEvent,
+    w: Sequence[float],
+    cfg: Cfg,
+    *,
+    card_id: object,
+    cfg_for: CfgFor | None = None,
 ) -> CardState:
     """One step of the fold. The incremental fast path of the review service is this function applied in time order."""
     if isinstance(event, ReviewEvent):
         if not event.counts_for_scheduling or event.voided:
             return state
-        out = review(state.memory, event.rating, event.at, w, cfg, card_id=card_id)
+        out = review(state.memory, event.rating, event.at, w, cfg_for(event.at) if cfg_for else cfg, card_id=card_id)
         return CardState(out.state, out.due_at, None)
     if event.kind == "forget":
         return new_card_state()
@@ -82,8 +91,18 @@ def apply_event(
     return state
 
 
-def fold(events: Iterable[ReviewEvent | ScheduleEvent], w: Sequence[float], cfg: Cfg, *, card_id: object) -> CardState:
-    """Rebuild a card from its facts. Order of the input does not matter; an event id seen twice counts once."""
+def fold(
+    events: Iterable[ReviewEvent | ScheduleEvent],
+    w: Sequence[float],
+    cfg: Cfg,
+    *,
+    card_id: object,
+    cfg_for: CfgFor | None = None,
+) -> CardState:
+    """
+    Rebuild a card from its facts. Order of the input does not matter; an event id seen twice counts once. `cfg_for(at)` (R2)
+    gives the configuration in force for a review at that instant (the exam retention boost); without it `cfg` applies to all.
+    """
     seen: set[tuple[str, str]] = set()
     state = new_card_state()
     for event in sorted(events, key=_order):
@@ -91,7 +110,7 @@ def fold(events: Iterable[ReviewEvent | ScheduleEvent], w: Sequence[float], cfg:
         if key in seen:
             continue
         seen.add(key)
-        state = apply_event(state, event, w, cfg, card_id=card_id)
+        state = apply_event(state, event, w, cfg, card_id=card_id, cfg_for=cfg_for)
     return state
 
 
@@ -105,7 +124,12 @@ class Trace:
 
 
 def fold_trace(
-    events: Iterable[ReviewEvent | ScheduleEvent], w: Sequence[float], cfg: Cfg, *, card_id: object
+    events: Iterable[ReviewEvent | ScheduleEvent],
+    w: Sequence[float],
+    cfg: Cfg,
+    *,
+    card_id: object,
+    cfg_for: CfgFor | None = None,
 ) -> tuple[CardState, dict[str, Trace]]:
     """`fold`, plus the per-review trace the replay service writes back into the log's derived columns."""
     seen: set[tuple[str, str]] = set()
@@ -119,10 +143,12 @@ def fold_trace(
         if isinstance(event, ReviewEvent):
             outcome = None
             if event.counts_for_scheduling and not event.voided:
-                outcome = review(state.memory, event.rating, event.at, w, cfg, card_id=card_id)
+                outcome = review(
+                    state.memory, event.rating, event.at, w, cfg_for(event.at) if cfg_for else cfg, card_id=card_id
+                )
             traces[event.id] = Trace(state.memory.phase, state.memory, outcome)
             if outcome is not None:
                 state = CardState(outcome.state, outcome.due_at, None)
             continue
-        state = apply_event(state, event, w, cfg, card_id=card_id)
+        state = apply_event(state, event, w, cfg, card_id=card_id, cfg_for=cfg_for)
     return state, traces

@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from decimal import Decimal
 
+from ..adapters import coverage as coverage_adapter
+from ..domain import exam
 from ..domain.fsrs6 import DEFAULT_WEIGHTS, Cfg, MemoryState
 from ..domain.scheduling import local_date_of
 from ..models import RecallCard, RecallParams, RecallSettings
@@ -18,6 +20,15 @@ class Engine:
     cfg: Cfg
     weights: tuple[float, ...]
     params_id: object
+    exam_at: datetime | None = None
+
+    def cfg_at(self, importance: int, at: datetime) -> Cfg:
+        """The configuration for a review at `at`: mandatory cards get the exam boost in the last 30 days (setting permitting)."""
+        return exam.cfg_at(self.cfg, importance, at, self.exam_at, enabled=self.settings.exam_horizon)
+
+    def horizon(self, card_id, due: datetime | None, last_review_at: datetime | None, now: datetime) -> datetime | None:
+        """The effective due with the exam horizon applied (`due` unchanged when there is no exam or the setting is off)."""
+        return exam.horizon(due, last_review_at, self.exam_at, card_id, now, enabled=self.settings.exam_horizon)
 
     def local_date(self, instant: datetime):
         return local_date_of(instant, self.settings.tz, self.settings.day_start_hour)
@@ -35,7 +46,8 @@ def load(user_id) -> Engine:
         max_interval_days=int(s.max_interval_days),
         fuzz=True,
     )
-    return Engine(s, cfg, weights, params.id if params is not None else None)
+    exam_at = coverage_adapter.exam_at(user_id, s.tz, s.day_start_hour)
+    return Engine(s, cfg, weights, params.id if params is not None else None, exam_at)
 
 
 def memory_of(card: RecallCard) -> MemoryState:

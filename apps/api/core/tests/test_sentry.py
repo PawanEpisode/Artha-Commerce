@@ -98,6 +98,7 @@ def recall_event(url=f"https://api.example.com/api/v1/recall/cards/{CARD}/?q={TE
         "queue/",
         "pack/",
         "forgotten/",
+        "quick-revision/plan/",
         "stats/summary/",
         "settings/",
         "decks/library/",

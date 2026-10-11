@@ -268,6 +268,9 @@ def update_enrollment(enrollment: Enrollment, *, data: dict[str, Any]) -> Enroll
     if data.get("archive"):
         enrollment.status = Enrollment.Status.ARCHIVED
     enrollment.save()
+    if "exam_date" in data or "target_term" in data or data.get("archive"):
+        user_id = str(enrollment.user_id)
+        transaction.on_commit(lambda: events.emit("enrollment_exam_changed", user_id=user_id))
     return enrollment
 
 

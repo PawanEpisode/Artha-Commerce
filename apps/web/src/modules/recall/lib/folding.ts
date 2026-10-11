@@ -27,6 +27,9 @@ export interface ScheduleEvent {
 
 export type CardEvent = ReviewEvent | ScheduleEvent
 
+/** The configuration in force for a review at an instant (the exam retention boost); without it one `cfg` applies to all. */
+export type CfgFor = (at: Date) => Cfg
+
 export interface CardState {
   memory: MemoryState
   dueScheduledAt: Date | null
@@ -58,10 +61,11 @@ export function applyEvent(
   w: readonly number[],
   cfg: Cfg,
   cardId: string,
+  cfgFor?: CfgFor,
 ): CardState {
   if (event.type === 'review') {
     if (event.countsForScheduling === false || event.voided === true) return state
-    const out = review(state.memory, event.rating, event.at, w, cfg, cardId)
+    const out = review(state.memory, event.rating, event.at, w, cfgFor ? cfgFor(event.at) : cfg, cardId)
     return { memory: out.state, dueScheduledAt: out.dueAt, postponedUntil: null }
   }
   if (event.kind === 'forget') return newCardState()
@@ -75,14 +79,20 @@ export function applyEvent(
   return state
 }
 
-export function fold(events: Iterable<CardEvent>, w: readonly number[], cfg: Cfg, cardId: string): CardState {
+export function fold(
+  events: Iterable<CardEvent>,
+  w: readonly number[],
+  cfg: Cfg,
+  cardId: string,
+  cfgFor?: CfgFor,
+): CardState {
   const seen = new Set<string>()
   let state = newCardState()
   for (const event of [...events].sort(compare)) {
     const key = `${event.type === 'schedule' ? 's' : 'r'}:${event.id}`
     if (seen.has(key)) continue
     seen.add(key)
-    state = applyEvent(state, event, w, cfg, cardId)
+    state = applyEvent(state, event, w, cfg, cardId, cfgFor)
   }
   return state
 }

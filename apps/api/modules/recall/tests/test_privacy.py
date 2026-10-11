@@ -188,3 +188,78 @@ def test_a_failing_recall_request_never_sends_card_text_or_ids_to_sentry(api, mo
     assert all(
         "data" not in (p.get("request") or {}) and "query_string" not in (p.get("request") or {}) for p in payloads
     )
+
+
+# ------------------------------------------------------------------------------------------------------ R2-W1: exam routes
+def _exam_world(scheme, monkeypatch):
+    """An enrolment 30 days out and a few weak mandatory cards whose text is the marker; the clock is frozen."""
+    from datetime import timedelta
+
+    from django.utils import timezone
+
+    from modules.coverage.models import Enrollment
+    from modules.recall.models import RecallItem
+
+    from .factories import make_card, make_item
+    from .w5 import ME
+
+    now = datetime(2026, 11, 1, 6, 0, tzinfo=UTC)
+    monkeypatch.setattr(timezone, "now", lambda: now)
+    Enrollment.objects.create(
+        user_id=ME, scheme=scheme, level=scheme.level, exam_date=(now + timedelta(days=30)).date()
+    )
+    cards = []
+    for i in range(3):
+        item = make_item(ME, text=f"{TEXT} exam {i}")
+        RecallItem.objects.filter(pk=item.pk).update(scheme_id=scheme.id)
+        last = now - timedelta(days=30)
+        cards.append(
+            make_card(
+                item, ME, importance=2, state=2, stability=3.0, difficulty=5.0, reps=3, last_review_at=last,
+                due_scheduled_at=last + timedelta(days=3), due_at=last + timedelta(days=3),
+            )
+        )  # fmt: skip
+    return cards
+
+
+def test_the_exam_screens_jobs_and_cram_write_no_card_text_or_ids_to_the_logs(api, scheme, capsys, caplog, monkeypatch):
+    from modules.recall import jobs
+    from modules.recall.services import exam as exam_service
+
+    from .w5 import ME
+
+    caplog.set_level(logging.DEBUG)
+    cards = _exam_world(scheme, monkeypatch)
+    assert api.get("/recall/quick-revision/plan/?minutes=20").status_code == 200
+    assert api.get("/recall/queue/?source=quick").status_code == 200
+    assert api.get("/recall/today/").status_code == 200
+    assert api.get("/recall/pack/").status_code == 200
+    assert (
+        api.get("/recall/queue/?source=cram").status_code == 422
+    )  # not open yet: a refusal logs nothing personal either
+    exam_service.reevaluate_student(ME)
+    jobs.tick()
+
+    out, err = capsys.readouterr()
+    haystacks = [_text_of(r) for r in caplog.records] + [out, err]
+    assert caplog.records
+    secrets = [TEXT] + [str(c.id) for c in cards] + [str(c.item_id) for c in cards]
+    assert [(s[:14], i) for i, h in enumerate(haystacks) for s in secrets if s in h] == []
+
+
+def test_a_failing_quick_plan_sends_no_card_text_or_ids_to_sentry(api, scheme, monkeypatch, sentry_capture):
+    cards = _exam_world(scheme, monkeypatch)
+    from modules.recall import selectors
+
+    def boom(*args, **kwargs):
+        raise RuntimeError("unexpected")
+
+    monkeypatch.setattr(selectors, "quick_plan", boom)
+    client = Client(raise_request_exception=False, HTTP_AUTHORIZATION=api.c.defaults["HTTP_AUTHORIZATION"])
+    assert client.get("/api/v1/recall/quick-revision/plan/?minutes=20").status_code == 500
+    sentry_sdk.flush()
+    payloads = _payloads(sentry_capture)
+    assert any("exception" in p for p in payloads)
+    dump = json.dumps(payloads, default=str)
+    assert TEXT not in dump and all(str(c.id) not in dump for c in cards)
+    assert all("query_string" not in (p.get("request") or {}) for p in payloads)

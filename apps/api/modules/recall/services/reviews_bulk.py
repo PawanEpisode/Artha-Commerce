@@ -184,7 +184,9 @@ def apply_batch(
         duration = None if ev.duration_ms is None else max(0, min(int(ev.duration_ms), lim.DURATION_CAP_MS))
         session_id = ev.session_id if ev.session_id in live_sessions else None
         memory = memory_of(card)
-        out = fsrs_review(memory, ev.rating, reviewed_at, eng.weights, eng.cfg, card_id=card.id)
+        out = fsrs_review(
+            memory, ev.rating, reviewed_at, eng.weights, eng.cfg_at(card.importance, reviewed_at), card_id=card.id
+        )
         local_date = eng.local_date(reviewed_at)
         pending.rows.append(
             RecallReviewLog(
@@ -213,7 +215,7 @@ def apply_batch(
                 **_derived(out, eng.params_id, lim.SCHEDULER_VERSION),
             )
         )
-        _apply_fast(card, out, eng)
+        _apply_fast(card, out, eng, now)
         pending.cards[card.id] = card
         last_review[card.id] = reviewed_at
         applied_ids.add(ev.id)

@@ -55,6 +55,11 @@ describe('recall analytics allow-list', () => {
       'recall_sync_completed',
       'recall_settings_changed',
       'recall_pack_downloaded',
+      'recall_quick_planned',
+      'recall_quick_started',
+      'recall_quick_completed',
+      'recall_cram_started',
+      'recall_pacing_viewed',
     ] as RecallEvent[]
     for (const e of events) {
       for (const key of allowedProperties(e))
@@ -72,6 +77,11 @@ describe('recall analytics privacy gate', () => {
       recall_leech_action: ['action', 'lapses'],
       recall_leech_shown: ['lapses'],
       recall_pack_downloaded: ['bytes_bucket', 'cards'],
+      recall_cram_started: ['set_size'],
+      recall_pacing_viewed: ['days_to_exam', 'feasible', 'needed_per_day'],
+      recall_quick_completed: ['reviewed', 'set_size'],
+      recall_quick_planned: ['cut_off', 'days_to_exam', 'minutes_per_day', 'set_size'],
+      recall_quick_started: ['set_size'],
       recall_rebalance_used: ['days', 'moved'],
       recall_review_undone: ['within_seconds'],
       recall_session_started: ['first', 'mode', 'offline', 'planned', 'source'],

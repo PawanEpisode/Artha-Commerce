@@ -1,6 +1,6 @@
 """
 The queue (PRD 9.1, ERD Q-1 and Q-3): which cards to study next, rendered, with the four interval previews. Pure reads; the
-order comes from `domain.scheduling.plan_queue`. Quick revision and cram are R2 and answer 422 `not_in_this_release`.
+order comes from `domain.scheduling.plan_queue`. Quick revision and cram (R2) come from `selectors.exam`; each answers 422 when there is no exam, it has passed or cram is not open.
 """
 
 from __future__ import annotations
@@ -12,12 +12,13 @@ from uuid import UUID
 
 from django.db.models import Exists, OuterRef
 
+from ..adapters import coverage as coverage_adapter
 from ..adapters import syllabus as syllabus_adapter
 from ..domain import limits as lim
 from ..domain.fsrs6 import MemoryState, Preview, preview
 from ..domain.scheduling import CardView, Limits, Queue, plan_queue, review_ahead
-from ..errors import NotInThisRelease
 from ..models import RecallCard, RecallDeckItem
+from . import exam as exam_selectors
 from .cards import render_card
 from .study import Study
 
@@ -86,6 +87,23 @@ def _view(row: tuple, interleave: bool) -> CardView:
     return CardView(str(id_), (subject or "") if interleave else "", importance, state, stability, last, due, created)
 
 
+def _locked_chapters(study: Study) -> list[UUID]:
+    """
+    Chapters whose new cards stay closed: cards of a `with_coverage` subscription in a chapter she has not started. Her own
+    cards, `all` subscriptions, cards without a chapter and everything within 60 days of the exam are never locked.
+    """
+    left = study.days_to_exam
+    if left is not None and left <= lim.UNLOCK_OPEN_DAYS:
+        return []
+    chapters = set(
+        _active(study)
+        .filter(state=0, subscription__unlock_mode="with_coverage", chapter_id__isnull=False)
+        .values_list("chapter_id", flat=True)
+        .distinct()
+    )
+    return sorted(chapters - coverage_adapter.started_chapter_ids(study.user_id, chapters), key=str)
+
+
 def candidates(
     study: Study,
     f: QueueFilters = NO_FILTERS,
@@ -104,11 +122,12 @@ def candidates(
     room = new_room if new_room is not None else max(study.settings.new_per_day - study.new_done, 0)
     new: list[tuple] = []
     if room > 0:
-        new = list(
-            _apply(_active(study).filter(state=0), f, study.user_id)
-            .order_by("-importance", "created_at", "id")
-            .values_list(*COLUMNS)[: min(room, NEW_POOL_CAP)]
-        )
+        fresh = _apply(_active(study).filter(state=0), f, study.user_id)
+        if f.chapter_id is None and f.deck_id is None:  # choosing a chapter or a deck is her own decision to start it
+            locked = _locked_chapters(study)
+            if locked:
+                fresh = fresh.exclude(subscription__unlock_mode="with_coverage", chapter_id__in=locked)
+        new = list(fresh.order_by("-importance", "created_at", "id").values_list(*COLUMNS)[: min(room, NEW_POOL_CAP)])
     return due, new
 
 
@@ -179,7 +198,7 @@ def render_cards(study: Study, ids: Sequence[str]) -> list[QueueCard]:
                 front,
                 back,
                 chapters.get(c.chapter_id),
-                preview(memory_of(c), study.now, study.weights, study.cfg, card_id=c.id),
+                preview(memory_of(c), study.now, study.weights, study.cfg_at(c.importance, study.now), card_id=c.id),
                 _badges(c),
             )
         )
@@ -196,8 +215,6 @@ def build_queue(
     forgotten_ids: Sequence[str] = (),
     extra: int = 0,
 ) -> list[QueueCard]:
-    if source in ("quick", "cram"):
-        raise NotInThisRelease
     limit = max(1, min(limit, MAX_LIMIT))
     skip = set(exclude)
     if source == "today":
@@ -215,6 +232,10 @@ def build_queue(
         big = Limits(study.settings.new_per_day, lim.OFFLINE_EVENT_CAP, 0, 0)
         ordered = plan_queue(views, study.now, big, study.weights[20], mode="off", day_end=study.day_end)
         order = list(ordered.ids) + [str(r[0]) for r in new]
+    elif source == "quick":
+        order = list(exam_selectors.quick_plan(study).plan.ids)
+    elif source == "cram":
+        order = exam_selectors.cram_ids(study)
     elif source == "forgotten":
         order = list(forgotten_ids)
     else:  # review_ahead

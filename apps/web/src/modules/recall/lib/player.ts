@@ -7,6 +7,7 @@
  */
 
 import type { ReviewEventBody, ReviewMode } from './api'
+import { cfgAt } from './exam'
 import { type Cfg, DEFAULT_CFG, type MemoryState, preview, review } from './fsrs6'
 import {
   DURATION_CAP_MS,
@@ -29,11 +30,24 @@ const CARDS_PER_MINUTE = 2
 export interface Scheduler {
   weights: readonly number[]
   cfg: Cfg
+  /** The exam instant and whether the horizon setting is on: the retention boost for mandatory cards follows them. */
+  examAt: Date | null
+  examHorizon: boolean
 }
 
-export function schedulerOf(settings: RecallSettings, weights: readonly number[]): Scheduler {
+/** The configuration for one card at one instant: the exam boost applies to mandatory cards in the last 30 days. */
+export const cfgFor = (sched: Scheduler, importance: number, at: Date): Cfg =>
+  cfgAt(sched.cfg, importance, at, sched.examAt, sched.examHorizon)
+
+export function schedulerOf(
+  settings: RecallSettings,
+  weights: readonly number[],
+  examAt: Date | null = null,
+): Scheduler {
   return {
     weights,
+    examAt,
+    examHorizon: settings.exam_horizon,
     cfg: {
       ...DEFAULT_CFG,
       desiredRetention: settings.desired_retention,
@@ -149,7 +163,7 @@ export const isFinished = (s: PlayerState): boolean => s.queue.length === 0
 
 /** What each answer would schedule for the card on screen ("10 min", "3 d"), from the local scheduler. */
 export function previewLabels(card: PlayerCard, now: Date, sched: Scheduler): Record<Rating, string> {
-  const p = preview(card.memory, now, sched.weights, sched.cfg, card.id)
+  const p = preview(card.memory, now, sched.weights, cfgFor(sched, card.importance, now), card.id)
   return { 1: p[1]?.label ?? '', 2: p[2]?.label ?? '', 3: p[3]?.label ?? '', 4: p[4]?.label ?? '' }
 }
 
@@ -172,7 +186,15 @@ export interface AnswerResult {
 export function answer(s: PlayerState, rating: Rating, ctx: AnswerContext): AnswerResult | null {
   const card = currentCard(s)
   if (!card) return null
-  const out = review(card.memory, rating, ctx.now, ctx.sched.weights, ctx.sched.cfg, card.id)
+  if (card.mode === 'cram') return answerCram(s, card, rating, ctx)
+  const out = review(
+    card.memory,
+    rating,
+    ctx.now,
+    ctx.sched.weights,
+    cfgFor(ctx.sched, card.importance, ctx.now),
+    card.id,
+  )
   const next: PlayerCard = {
     ...card,
     memory: out.state,
@@ -218,6 +240,45 @@ export function answer(s: PlayerState, rating: Rating, ctx: AnswerContext): Answ
       duration_ms: ctx.durationMs === null ? null : Math.min(Math.max(Math.round(ctx.durationMs), 0), DURATION_CAP_MS),
       session_id: ctx.sessionId,
       mode: card.mode,
+      item_version_id: card.itemVersionId,
+      device_id: ctx.deviceId,
+      tz_offset_min: ctx.tzOffsetMin,
+    },
+  }
+}
+
+/**
+ * The cram preview (last 24 hours): a read-through. The answer is logged with `mode: "cram"` (the server stores it with
+ * `counts_for_scheduling` false), the card's memory and due date stay as they were, and nothing is asked again.
+ */
+function answerCram(s: PlayerState, card: PlayerCard, rating: Rating, ctx: AnswerContext): AnswerResult {
+  const eventId = ctx.newId()
+  const ratings = { ...s.ratings }
+  ratings[ratingKey(rating)] += 1
+  const answered: Answered = {
+    eventId,
+    cardId: card.id,
+    rating,
+    at: ctx.now.getTime(),
+    before: card,
+    queueBefore: [...s.queue],
+  }
+  return {
+    state: {
+      ...s,
+      queue: s.queue.slice(1),
+      history: [...s.history, answered].slice(-UNDO_MAX_EVENTS),
+      answered: s.answered + 1,
+      ratings,
+    },
+    event: {
+      id: eventId,
+      card_id: card.id,
+      rating,
+      reviewed_at: ctx.now.toISOString(),
+      duration_ms: ctx.durationMs === null ? null : Math.min(Math.max(Math.round(ctx.durationMs), 0), DURATION_CAP_MS),
+      session_id: ctx.sessionId,
+      mode: 'cram',
       item_version_id: card.itemVersionId,
       device_id: ctx.deviceId,
       tz_offset_min: ctx.tzOffsetMin,

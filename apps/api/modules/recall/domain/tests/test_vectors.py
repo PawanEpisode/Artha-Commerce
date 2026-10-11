@@ -126,3 +126,60 @@ def test_queue(case):
     assert list(q.ids) == want["ids"]
     assert (q.learning, q.reviews, q.new) == (want["learning"], want["reviews"], want["new"])
     assert q.catchup.__dict__ == want["catchup"]
+
+
+# ---------------------------------------------------------------- exam (R2-W1)
+def _t(v):
+    return None if v is None else datetime.fromisoformat(v.replace("Z", "+00:00"))
+
+
+def test_the_exam_vectors_are_reproduced_by_the_domain():
+    from modules.recall.domain import exam
+    from modules.recall.domain.folding import ReviewEvent, effective_due, fold
+
+    data = json.loads((VECTORS / "exam_cases.json").read_text())
+    assert sum(len(v) for v in data.values()) >= 400
+    for c in data["horizon"]:
+        got = exam.horizon(
+            _t(c["due"]), _t(c["last_review"]), _t(c["exam"]), c["card_id"], _t(c["now"]), enabled=c["enabled"]
+        )
+        assert got == _t(c["expected"]), c["name"]
+    for c in data["retention"]:
+        assert exam.retention_for(c["importance"], c["desired"], c["left"], enabled=c["enabled"]) == c["expected"]
+    for c in data["r_exam"]:
+        got = exam.r_exam(c["stability"], _t(c["last_review"]), _t(c["exam"]), c["w20"])
+        assert got == c["expected"] if got is None else abs(got - c["expected"]) < 1e-12
+    for c in data["quick"]:
+        cards = [
+            exam.QuickCard(x["id"], x["importance"], x["phase"], x["stability"], _t(x["last_review"]))
+            for x in c["cards"]
+        ]
+        p = exam.quick_set(cards, _t(c["exam"]), c["minutes"], c["median"], _t(c["now"]), c["w20"])
+        want = c["expected"]
+        assert list(p.ids) == want["ids"] and p.candidates == want["candidates"] and p.cut_off == want["cut_off"], c[
+            "name"
+        ]
+        assert (p.days_to_exam, p.window_days, p.per_day, p.minutes_per_day, p.too_few) == (
+            want["days_to_exam"], want["window_days"], want["per_day"], want["minutes_per_day"], want["too_few"]
+        )  # fmt: skip
+    for c in data["cram"]:
+        assert exam.cram_open(_t(c["now"]), _t(c["exam"])) is c["expected"]
+    for c in data["pacing"]:
+        p = exam.pacing(c["unseen"], c["days_left"], c["new_per_day"])
+        want = c["expected"]
+        assert (p.unseen, p.window_days, p.introduced_at_limit, p.needed_per_day, p.feasible) == (
+            want["unseen"], want["window_days"], want["introduced_at_limit"], want["needed_per_day"], want["feasible"]
+        )  # fmt: skip
+    for c in data["fold_boost"]:
+        cfg = fsrs6.Cfg(fuzz=True)
+        events = [ReviewEvent(e["id"], _t(e["at"]), e["rating"]) for e in c["events"]]
+        state = fold(
+            events,
+            list(fsrs6.DEFAULT_WEIGHTS),
+            cfg,
+            card_id=c["card_id"],
+            cfg_for=lambda t, c=c, cfg=cfg: exam.cfg_at(cfg, c["importance"], t, _t(c["exam"])),
+        )
+        want = c["expected"]
+        assert state.memory.stability == want["stability"] and state.memory.reps == want["reps"], c["name"]
+        assert effective_due(state) == _t(want["effective_due"])

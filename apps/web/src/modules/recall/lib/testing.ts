@@ -83,7 +83,7 @@ export function rng(seed: number): () => number {
   }
 }
 
-import type { TodayPlan } from './schemas'
+import type { QuickPlan, TodayPlan } from './schemas'
 
 export function todayPlan(over: Partial<TodayPlan> = {}): TodayPlan {
   return {
@@ -105,6 +105,35 @@ export function todayPlan(over: Partial<TodayPlan> = {}): TodayPlan {
     tiles: [{ subject_key: 'law', total: 12, kinds: { definition: 12 } }],
     forgotten: [],
     exam: null,
+    ...over,
+  }
+}
+
+export function examBlock(over: Partial<NonNullable<TodayPlan['exam']>> = {}): NonNullable<TodayPlan['exam']> {
+  return {
+    exam_date: '2026-11-15',
+    days_to_exam: 36.4,
+    cram_open: false,
+    quick: null,
+    pacing: null,
+    ...over,
+  }
+}
+
+export function quickPlanBody(over: Partial<QuickPlan> = {}): QuickPlan {
+  return {
+    exam_date: '2026-11-15',
+    days_to_exam: 36,
+    window_days: 34,
+    budget_minutes_per_day: 20,
+    median_seconds: 12,
+    candidates: 400,
+    selected: 380,
+    cut_off: 20,
+    per_day: 12,
+    minutes_per_day: 3,
+    too_few: false,
+    sample: [],
     ...over,
   }
 }

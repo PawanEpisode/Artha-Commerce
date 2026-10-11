@@ -39,6 +39,7 @@ import { Route as AppNotesSearchRouteImport } from './routes/app.notes.search'
 import { Route as AppNotesTrashRouteImport } from './routes/app.notes.trash'
 import { Route as AppRecallIndexRouteImport } from './routes/app.recall.index'
 import { Route as AppRecallForgottenRouteImport } from './routes/app.recall.forgotten'
+import { Route as AppRecallQuickRouteImport } from './routes/app.recall.quick'
 import { Route as AppRecallStatsRouteImport } from './routes/app.recall.stats'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
@@ -222,6 +223,11 @@ const AppRecallIndexRoute = AppRecallIndexRouteImport.update({
 const AppRecallForgottenRoute = AppRecallForgottenRouteImport.update({
   id: '/recall/forgotten',
   path: '/recall/forgotten',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecallQuickRoute = AppRecallQuickRouteImport.update({
+  id: '/recall/quick',
+  path: '/recall/quick',
   getParentRoute: () => AppRoute,
 } as any)
 const AppRecallStatsRoute = AppRecallStatsRouteImport.update({
@@ -429,6 +435,7 @@ export interface FileRoutesByFullPath {
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
+  '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
@@ -494,6 +501,7 @@ export interface FileRoutesByTo {
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
+  '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
@@ -561,6 +569,7 @@ export interface FileRoutesById {
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
+  '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
@@ -629,6 +638,7 @@ export interface FileRouteTypes {
     | '/app/notes/search'
     | '/app/notes/trash'
     | '/app/recall/forgotten'
+    | '/app/recall/quick'
     | '/app/recall/stats'
     | '/app/settings/coverage'
     | '/app/settings/focus'
@@ -694,6 +704,7 @@ export interface FileRouteTypes {
     | '/app/notes/search'
     | '/app/notes/trash'
     | '/app/recall/forgotten'
+    | '/app/recall/quick'
     | '/app/recall/stats'
     | '/app/settings/coverage'
     | '/app/settings/focus'
@@ -760,6 +771,7 @@ export interface FileRouteTypes {
     | '/app/notes/search'
     | '/app/notes/trash'
     | '/app/recall/forgotten'
+    | '/app/recall/quick'
     | '/app/recall/stats'
     | '/app/settings/coverage'
     | '/app/settings/focus'
@@ -1034,6 +1046,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRecallForgottenRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/recall/quick': {
+      id: '/app/recall/quick'
+      path: '/recall/quick'
+      fullPath: '/app/recall/quick'
+      preLoaderRoute: typeof AppRecallQuickRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/recall/stats': {
       id: '/app/recall/stats'
       path: '/recall/stats'
@@ -1288,6 +1307,7 @@ interface AppRouteChildren {
   AppNotesSearchRoute: typeof AppNotesSearchRoute
   AppNotesTrashRoute: typeof AppNotesTrashRoute
   AppRecallForgottenRoute: typeof AppRecallForgottenRoute
+  AppRecallQuickRoute: typeof AppRecallQuickRoute
   AppRecallStatsRoute: typeof AppRecallStatsRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
@@ -1334,6 +1354,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesSearchRoute: AppNotesSearchRoute,
   AppNotesTrashRoute: AppNotesTrashRoute,
   AppRecallForgottenRoute: AppRecallForgottenRoute,
+  AppRecallQuickRoute: AppRecallQuickRoute,
   AppRecallStatsRoute: AppRecallStatsRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,

@@ -166,3 +166,23 @@ class ItemNotPublishable(CodedError):
     status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
     default_detail = "Some items in this version cannot be published."
     default_code = "item_not_publishable"
+
+
+class NoExamDate(CodedError):
+    """422: quick revision and the exam countdown need an exam date (her enrolment, else the term she chose)."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "Add your exam date to plan a quick revision."
+    default_code = "no_exam_date"
+
+
+class ExamPassed(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "Your exam date has passed. Update it."
+    default_code = "exam_passed"
+
+
+class CramNotOpen(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "The cram preview opens 24 hours before your exam."
+    default_code = "cram_not_open"

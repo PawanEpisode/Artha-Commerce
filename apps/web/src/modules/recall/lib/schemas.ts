@@ -96,6 +96,8 @@ export const packSchema = z.object({
   settings: settingsSchema,
   weights: z.array(z.number()),
   scheduler_version: z.string(),
+  /** The exam as an instant (her study day start), so the device applies the same horizon and retention boost. */
+  exam_at: isoOrNull.optional(),
   cards: z.array(queueCardSchema),
   counters: z.object({ new_done_today: z.number(), reviews_done_today: z.number(), local_date: z.string() }),
 })
@@ -117,6 +119,49 @@ export const forgottenSchema = z.object({
 export type ForgottenCard = z.infer<typeof forgottenSchema>
 
 export const forgottenListSchema = z.object({ items: z.array(forgottenSchema) })
+
+export const examBlockSchema = z.object({
+  exam_date: z.string(),
+  days_to_exam: z.number(),
+  cram_open: z.boolean(),
+  quick: z
+    .object({
+      candidates: z.number(),
+      selected: z.number(),
+      cut_off: z.number(),
+      per_day: z.number(),
+      minutes_per_day: z.number(),
+      too_few: z.boolean(),
+    })
+    .nullable(),
+  pacing: z
+    .object({
+      unseen: z.number(),
+      window_days: z.number(),
+      new_per_day: z.number(),
+      introduced_at_limit: z.number(),
+      needed_per_day: z.number(),
+      feasible: z.boolean(),
+    })
+    .nullable(),
+})
+export type ExamBlock = z.infer<typeof examBlockSchema>
+
+export const quickPlanSchema = z.object({
+  exam_date: z.string(),
+  days_to_exam: z.number(),
+  window_days: z.number(),
+  budget_minutes_per_day: z.number(),
+  median_seconds: z.number(),
+  candidates: z.number(),
+  selected: z.number(),
+  cut_off: z.number(),
+  per_day: z.number(),
+  minutes_per_day: z.number(),
+  too_few: z.boolean(),
+  sample: z.array(queueCardSchema),
+})
+export type QuickPlan = z.infer<typeof quickPlanSchema>
 
 export const todaySchema = z.object({
   server_time: iso,
@@ -143,7 +188,7 @@ export const todaySchema = z.object({
     z.object({ subject_key: z.string().nullable(), total: z.number(), kinds: z.record(z.string(), z.number()) }),
   ),
   forgotten: z.array(forgottenSchema),
-  exam: z.unknown().nullable(),
+  exam: examBlockSchema.nullable(),
 })
 export type TodayPlan = z.infer<typeof todaySchema>
 

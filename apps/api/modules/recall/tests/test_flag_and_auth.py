@@ -40,6 +40,7 @@ URLS = [
     ("post", f"/recall/subscriptions/{CARD}/unsubscribe/"),
     ("post", f"/recall/subscriptions/{CARD}/resubscribe/"),
     ("post", f"/recall/items/{CARD}/report/"),
+    ("get", "/recall/quick-revision/plan/"),
     ("get", "/recall/export/"),
     ("get", "/recall/export/cards.csv"),
     ("get", "/recall/export/reviews.csv"),

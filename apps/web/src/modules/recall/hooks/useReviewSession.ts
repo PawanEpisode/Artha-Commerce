@@ -120,7 +120,10 @@ export function useReviewSession(params: ReviewParams, enabled = true): ReviewSe
   const firstAnswer = useRef<number | null>(null)
   const packRef = useRef<ApiPack | null>(null)
   packRef.current = pack
-  const sched: Scheduler | null = useMemo(() => (pack ? schedulerOf(pack.settings, pack.weights) : null), [pack])
+  const sched: Scheduler | null = useMemo(
+    () => (pack ? schedulerOf(pack.settings, pack.weights, pack.exam_at ? new Date(pack.exam_at) : null) : null),
+    [pack],
+  )
   const schedRef = useRef<Scheduler | null>(null)
   schedRef.current = sched
   const alive = useRef(true)
@@ -162,7 +165,14 @@ export function useReviewSession(params: ReviewParams, enabled = true): ReviewSe
           const { source, n, sessionId: _resume, ...rest } = params
           const queueParams: QueueParams = { ...rest, limit: n ?? 20 }
           const queue = await recallApi.queue(source, queueParams)
-          const mode: ReviewMode = source === 'catchup' ? 'catchup' : 'normal'
+          const mode: ReviewMode =
+            source === 'catchup'
+              ? 'catchup'
+              : source === 'quick'
+                ? 'quick_revision'
+                : source === 'cram'
+                  ? 'cram'
+                  : 'normal'
           cards = queue.cards.map((c) => playerCardOf(c, mode))
           isCatchup = source === 'catchup'
         }
@@ -177,10 +187,12 @@ export function useReviewSession(params: ReviewParams, enabled = true): ReviewSe
         setStatus('ready')
         trackRecall('recall_session_started', {
           source: params.source,
-          mode: isCatchup ? 'catchup' : 'normal',
+          mode: isCatchup ? 'catchup' : (cards[0]?.mode ?? 'normal'),
           planned: cards.length,
           offline: !online,
         })
+        if (params.source === 'quick') trackRecall('recall_quick_started', { set_size: cards.length })
+        if (params.source === 'cram') trackRecall('recall_cram_started', { set_size: cards.length })
         if (isCatchup) {
           trackRecall('recall_catchup_started', {
             due_total: catchupDue,
@@ -215,12 +227,15 @@ export function useReviewSession(params: ReviewParams, enabled = true): ReviewSe
         activeSeconds: firstAnswer.current === null ? 0 : Math.round((nowMs() - firstAnswer.current) / 1000),
       }
       setSummary(done)
+      if (params.source === 'quick') {
+        trackRecall('recall_quick_completed', { set_size: finalState.total, reviewed: done.reviewed })
+      }
       const row = await eventStore.getSession(sessionId)
       if (row) await eventStore.saveSession({ ...row, closed: true, summary: done })
       setStatus('finished')
       void sync.syncNow().then(() => qc.invalidateQueries({ queryKey: recallKeys.all }))
     },
-    [userId, sessionId, sync, qc],
+    [userId, sessionId, sync, qc, params.source],
   )
 
   const rate = useCallback(

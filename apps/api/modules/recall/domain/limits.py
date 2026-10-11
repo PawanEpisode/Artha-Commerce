@@ -74,3 +74,20 @@ DEFAULT_MAX_INTERVAL_DAYS = 365
 MAX_INTERVAL_RANGE = (30, 3650)
 DEFAULT_DAY_START_HOUR = 4
 DAY_START_HOUR_RANGE = (0, 6)
+
+
+# ---------------------------------------------------------------------------------------------------- exam (R2-W1)
+UNLOCK_OPEN_DAYS = 60  # inside this many days of the exam every new card is open, started chapter or not
+EXAM_HORIZON_DAYS = 90  # the horizon applies from this many days before the exam
+EXAM_WINDOW_END_DAYS = 2  # cards due after `exam - 2d` are moved in front of it
+EXAM_WINDOW_START_DAYS = 7  # the final window is `[exam - 7d, exam - 3d]` (five slots, spread by the card id)
+EXAM_WINDOW_SLOTS = 5
+EXAM_LAST_REVIEW_DAYS = 6  # a card reviewed within the last 6 days before the exam is left alone
+EXAM_BOOST_DAYS = 30  # mandatory cards use a higher retention in the last 30 days
+EXAM_BOOST_RETENTION = 0.95
+QUICK_R_TARGET = 0.90  # cards below this retrievability on exam day are at risk
+QUICK_MIN_CARDS = 20  # fewer cards than this and there is no plan to make
+QUICK_MIN_IMPORTANCE = 1
+CRAM_HOURS = 24  # the cram preview opens this long before the exam
+PACING_LEAD_DAYS = 14  # new cards should all be introduced by `exam - 14d`
+DEFAULT_SECONDS_PER_CARD = 12.0  # until 30 reviews exist (ERD 3.5)

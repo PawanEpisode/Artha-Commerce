@@ -198,12 +198,6 @@ def test_exclude_limit_and_unknown_sources(api):
     assert get(api, "/recall/queue/", exclude="not-a-uuid").status_code == 400
 
 
-@pytest.mark.parametrize("source", ["quick", "cram"])
-def test_quick_and_cram_are_not_in_this_release(api, source):
-    res = get(api, "/recall/queue/", source=source)
-    assert res.status_code == 422 and res.json_body["error"]["code"] == "not_in_this_release"
-
-
 def test_chapter_deck_and_review_ahead_sources(api):
     from modules.recall.models import RecallDeckItem
     from modules.recall.tests.factories import make_deck

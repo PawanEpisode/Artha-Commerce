@@ -1,0 +1,7395 @@
+{
+ "cram": [
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": false,
+   "now": "2026-12-20T09:00:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": false,
+   "now": "2026-12-20T04:00:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": true,
+   "now": "2026-12-20T03:54:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": true,
+   "now": "2026-12-19T16:00:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": true,
+   "now": "2026-12-19T04:06:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": true,
+   "now": "2026-12-19T04:00:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": false,
+   "now": "2026-12-19T03:54:00Z"
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": false,
+   "now": "2026-12-17T04:00:00Z"
+  },
+  {
+   "exam": null,
+   "expected": false,
+   "now": "2026-12-20T04:00:00Z"
+  }
+ ],
+ "fold_boost": [
+  {
+   "card_id": "43f78977-283f-48d3-8000-905665aac9c2",
+   "events": [
+    {
+     "at": "2026-10-16T19:12:42.174397Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-22T23:04:19.666787Z",
+     "id": "e1",
+     "rating": 4
+    },
+    {
+     "at": "2026-10-24T11:00:38.182922Z",
+     "id": "e2",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-31T18:19:42.401927Z",
+     "id": "e3",
+     "rating": 3
+    },
+    {
+     "at": "2026-11-12T09:18:40.010455Z",
+     "id": "e4",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 1.0,
+    "due_scheduled_at": "2027-02-27T09:18:40.010455Z",
+    "effective_due": "2027-02-27T09:18:40.010455Z",
+    "lapses": 0,
+    "phase": 2,
+    "reps": 5,
+    "stability": 106.33221846421516
+   },
+   "importance": 2,
+   "name": "fold_boost:0"
+  },
+  {
+   "card_id": "e75fa8ce-7ba2-4c8b-8000-4402ca5fb9b4",
+   "events": [
+    {
+     "at": "2026-10-15T06:19:23.932811Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-17T16:54:58.496876Z",
+     "id": "e1",
+     "rating": 4
+    },
+    {
+     "at": "2026-10-23T03:11:53.927492Z",
+     "id": "e2",
+     "rating": 3
+    },
+    {
+     "at": "2026-11-02T07:58:54.907067Z",
+     "id": "e3",
+     "rating": 3
+    },
+    {
+     "at": "2026-11-05T09:33:25.427865Z",
+     "id": "e4",
+     "rating": 3
+    },
+    {
+     "at": "2026-11-14T21:20:01.448428Z",
+     "id": "e5",
+     "rating": 1
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 7.0269895692968385,
+    "due_scheduled_at": "2026-11-14T21:30:01.448428Z",
+    "effective_due": "2026-11-14T21:30:01.448428Z",
+    "lapses": 1,
+    "phase": 3,
+    "reps": 6,
+    "stability": 3.4353885582519252
+   },
+   "importance": 2,
+   "name": "fold_boost:1"
+  },
+  {
+   "card_id": "c1a3f05b-a330-49da-8000-6bc230ba53df",
+   "events": [
+    {
+     "at": "2026-10-16T11:01:16.760053Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-23T01:52:00.708683Z",
+     "id": "e1",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-25T04:21:01.240852Z",
+     "id": "e2",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-28T14:48:09.165039Z",
+     "id": "e3",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 2.0974554287524394,
+    "due_scheduled_at": "2026-12-10T14:48:09.165039Z",
+    "effective_due": "2026-12-10T14:48:09.165039Z",
+    "lapses": 0,
+    "phase": 2,
+    "reps": 4,
+    "stability": 39.32295214427812
+   },
+   "importance": 2,
+   "name": "fold_boost:2"
+  },
+  {
+   "card_id": "07b6da91-0b6a-4e68-8000-c4a4149723bf",
+   "events": [
+    {
+     "at": "2026-09-21T18:57:08.447267Z",
+     "id": "e0",
+     "rating": 1
+    },
+    {
+     "at": "2026-09-29T11:52:14.865339Z",
+     "id": "e1",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-08T23:00:51.710118Z",
+     "id": "e2",
+     "rating": 4
+    },
+    {
+     "at": "2026-10-16T03:02:17.555852Z",
+     "id": "e3",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-24T09:30:36.953806Z",
+     "id": "e4",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-28T18:07:21.876569Z",
+     "id": "e5",
+     "rating": 4
+    },
+    {
+     "at": "2026-11-05T18:51:42.211643Z",
+     "id": "e6",
+     "rating": 4
+    },
+    {
+     "at": "2026-11-08T13:42:52.529122Z",
+     "id": "e7",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 1.3536033067883395,
+    "due_scheduled_at": "2027-03-12T13:42:52.529122Z",
+    "effective_due": "2027-03-12T13:42:52.529122Z",
+    "lapses": 0,
+    "phase": 2,
+    "reps": 8,
+    "stability": 125.17334645987944
+   },
+   "importance": 2,
+   "name": "fold_boost:3"
+  },
+  {
+   "card_id": "579266b4-264c-4172-8000-d3c6399aa6a8",
+   "events": [
+    {
+     "at": "2026-10-07T04:19:32.241409Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-15T20:14:59.311978Z",
+     "id": "e1",
+     "rating": 1
+    },
+    {
+     "at": "2026-10-20T13:21:08.701465Z",
+     "id": "e2",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 7.382336607835277,
+    "due_scheduled_at": "2026-10-20T13:31:08.701465Z",
+    "effective_due": "2026-10-20T13:31:08.701465Z",
+    "lapses": 0,
+    "phase": 1,
+    "reps": 3,
+    "stability": 4.682404962583596
+   },
+   "importance": 1,
+   "name": "fold_boost:4"
+  },
+  {
+   "card_id": "29b077f4-c896-4047-8000-0656c7adbf8f",
+   "events": [
+    {
+     "at": "2026-10-12T23:41:18.780108Z",
+     "id": "e0",
+     "rating": 1
+    },
+    {
+     "at": "2026-10-17T08:23:34.027051Z",
+     "id": "e1",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-29T05:20:47.757136Z",
+     "id": "e2",
+     "rating": 3
+    },
+    {
+     "at": "2026-11-09T06:47:46.862501Z",
+     "id": "e3",
+     "rating": 4
+    },
+    {
+     "at": "2026-11-16T18:46:39.044044Z",
+     "id": "e4",
+     "rating": 1
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 8.39770281793835,
+    "due_scheduled_at": "2026-11-16T18:56:39.044044Z",
+    "effective_due": "2026-11-16T18:56:39.044044Z",
+    "lapses": 1,
+    "phase": 3,
+    "reps": 5,
+    "stability": 2.547287341180561
+   },
+   "importance": 1,
+   "name": "fold_boost:5"
+  },
+  {
+   "card_id": "c7ef3d42-b6f7-4a16-8000-d388c73a0c9f",
+   "events": [
+    {
+     "at": "2026-09-28T08:46:40.811871Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-07T05:14:42.957759Z",
+     "id": "e1",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-10T16:52:00.448979Z",
+     "id": "e2",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 2.1043313908464474,
+    "due_scheduled_at": "2026-11-12T16:52:00.448979Z",
+    "effective_due": "2026-11-12T16:52:00.448979Z",
+    "lapses": 0,
+    "phase": 2,
+    "reps": 3,
+    "stability": 34.404052957160964
+   },
+   "importance": 2,
+   "name": "fold_boost:6"
+  },
+  {
+   "card_id": "a5329023-4d7a-4cee-8000-227c27d46c5d",
+   "events": [
+    {
+     "at": "2026-09-25T04:49:43.533466Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-09-27T05:30:37.399257Z",
+     "id": "e1",
+     "rating": 1
+    },
+    {
+     "at": "2026-10-01T15:34:58.374976Z",
+     "id": "e2",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-07T12:01:33.387642Z",
+     "id": "e3",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-15T17:06:29.862455Z",
+     "id": "e4",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-21T11:31:59.365926Z",
+     "id": "e5",
+     "rating": 4
+    },
+    {
+     "at": "2026-10-25T04:47:58.852546Z",
+     "id": "e6",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 6.44921747595926,
+    "due_scheduled_at": "2026-12-07T04:47:58.852546Z",
+    "effective_due": "2026-12-07T04:47:58.852546Z",
+    "lapses": 0,
+    "phase": 2,
+    "reps": 7,
+    "stability": 42.90342992353753
+   },
+   "importance": 2,
+   "name": "fold_boost:7"
+  },
+  {
+   "card_id": "957432a5-3848-4cf5-8000-ddb6e9a24e88",
+   "events": [
+    {
+     "at": "2026-09-23T00:26:12.102112Z",
+     "id": "e0",
+     "rating": 3
+    },
+    {
+     "at": "2026-09-26T20:45:18.894290Z",
+     "id": "e1",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-03T23:23:34.963800Z",
+     "id": "e2",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-05T10:36:08.879249Z",
+     "id": "e3",
+     "rating": 1
+    },
+    {
+     "at": "2026-10-09T23:56:23.730294Z",
+     "id": "e4",
+     "rating": 3
+    },
+    {
+     "at": "2026-10-12T19:47:09.488149Z",
+     "id": "e5",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 7.365664736638748,
+    "due_scheduled_at": "2026-10-24T19:47:09.488149Z",
+    "effective_due": "2026-10-24T19:47:09.488149Z",
+    "lapses": 1,
+    "phase": 2,
+    "reps": 6,
+    "stability": 11.567050236444192
+   },
+   "importance": 2,
+   "name": "fold_boost:8"
+  },
+  {
+   "card_id": "03d954ab-de26-418c-8000-83c98e76b992",
+   "events": [
+    {
+     "at": "2026-10-06T03:09:46.568252Z",
+     "id": "e0",
+     "rating": 1
+    },
+    {
+     "at": "2026-10-17T16:20:42.016698Z",
+     "id": "e1",
+     "rating": 4
+    },
+    {
+     "at": "2026-10-19T02:15:06.089427Z",
+     "id": "e2",
+     "rating": 4
+    },
+    {
+     "at": "2026-10-26T15:20:30.838664Z",
+     "id": "e3",
+     "rating": 3
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "difficulty": 3.572966275428466,
+    "due_scheduled_at": "2026-11-30T15:20:30.838664Z",
+    "effective_due": "2026-11-30T15:20:30.838664Z",
+    "lapses": 0,
+    "phase": 2,
+    "reps": 4,
+    "stability": 33.78443400750515
+   },
+   "importance": 2,
+   "name": "fold_boost:9"
+  }
+ ],
+ "horizon": [
+  {
+   "card_id": "5baf92bc-7add-4098-8000-03bfb07e1af4",
+   "due": "2026-12-03T09:41:11.204612Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-03T09:41:11.204612Z",
+   "last_review": null,
+   "name": "horizon:0",
+   "now": "2026-09-22T00:40:21.055971Z"
+  },
+  {
+   "card_id": "e9d4d950-06bc-400e-8000-f9723aee7a49",
+   "due": "2027-04-22T23:47:26.830970Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T04:00:00Z",
+   "last_review": "2026-11-17T06:14:21.526317Z",
+   "name": "horizon:1",
+   "now": "2026-11-30T01:54:54.510826Z"
+  },
+  {
+   "card_id": "4aeb15a3-0423-423f-8000-fcb541e9da34",
+   "due": "2027-03-06T18:54:29.566654Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-18T02:33:21.276862Z",
+   "last_review": "2026-11-01T15:21:43.639234Z",
+   "name": "horizon:2",
+   "now": "2026-12-17T02:33:21.276862Z"
+  },
+  {
+   "card_id": "1b8434d0-b02a-4299-8000-7363b0713ec1",
+   "due": "2027-01-10T20:35:33.465739Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-01-10T20:35:33.465739Z",
+   "last_review": "2026-10-25T05:29:43.124746Z",
+   "name": "horizon:3",
+   "now": "2026-11-29T20:35:15.605518Z"
+  },
+  {
+   "card_id": "cee05e53-b8f1-4380-8000-1e0f0c33da48",
+   "due": "2026-12-09T10:52:47.396119Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-09T10:52:47.396119Z",
+   "last_review": "2026-06-26T13:48:59.054447Z",
+   "name": "horizon:4",
+   "now": "2026-09-22T00:43:00.128172Z"
+  },
+  {
+   "card_id": "dbec00a6-f16b-44d4-8000-48bbfa705ffa",
+   "due": "2027-02-09T04:11:32.110564Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-02-09T04:11:32.110564Z",
+   "last_review": "2026-12-01T16:37:29.111624Z",
+   "name": "horizon:5",
+   "now": "2026-12-19T14:50:23.417287Z"
+  },
+  {
+   "card_id": "97592ef3-ba30-4e7b-8000-19fa431f8ca2",
+   "due": "2027-01-14T02:09:06.769694Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-01-14T02:09:06.769694Z",
+   "last_review": "2026-10-24T04:01:55.140419Z",
+   "name": "horizon:6",
+   "now": "2026-11-29T20:18:18.469566Z"
+  },
+  {
+   "card_id": "857da3bf-83d4-4ee0-8000-bcfea2373dc7",
+   "due": "2027-01-12T14:02:02.562105Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T04:00:00Z",
+   "last_review": "2026-09-29T13:12:52.927932Z",
+   "name": "horizon:7",
+   "now": "2026-11-29T23:24:44.166136Z"
+  },
+  {
+   "card_id": "bd934804-d667-49b4-8000-9ddf684d6099",
+   "due": "2027-04-22T14:45:13.803193Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-04-22T14:45:13.803193Z",
+   "last_review": "2026-09-10T13:50:26.155520Z",
+   "name": "horizon:8",
+   "now": "2026-09-20T01:24:09.708990Z"
+  },
+  {
+   "card_id": "dabae87f-7dd0-41e8-8000-dbaa55e5cd7b",
+   "due": "2026-12-15T17:28:27.577275Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T17:28:27.577275Z",
+   "last_review": "2026-08-21T02:19:08.078944Z",
+   "name": "horizon:9",
+   "now": "2026-08-21T20:38:29.652965Z"
+  },
+  {
+   "card_id": "7148abb9-4cc7-44f9-8000-83a8c03584a9",
+   "due": "2027-02-17T15:34:12.502401Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-02-17T15:34:12.502401Z",
+   "last_review": "2026-09-16T17:49:43.010127Z",
+   "name": "horizon:10",
+   "now": "2026-11-29T23:40:06.044716Z"
+  },
+  {
+   "card_id": "c325b433-81bf-45be-8000-fba5ced232ac",
+   "due": "2026-11-28T06:35:20.912340Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-11-28T06:35:20.912340Z",
+   "last_review": "2026-06-24T11:27:03.095813Z",
+   "name": "horizon:11",
+   "now": "2026-08-21T20:25:39.847261Z"
+  },
+  {
+   "card_id": "992efb54-9d61-4ba6-8000-35d5f0aad3b0",
+   "due": "2027-02-25T21:28:53.242533Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-02-25T21:28:53.242533Z",
+   "last_review": "2026-09-15T04:56:58.583219Z",
+   "name": "horizon:12",
+   "now": "2026-09-19T23:06:11.391422Z"
+  },
+  {
+   "card_id": "7e37c7df-e06a-45e5-8000-fa8c07ada85e",
+   "due": "2027-02-03T17:25:04.860793Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-16T04:00:00Z",
+   "last_review": "2026-10-06T22:08:12.008548Z",
+   "name": "horizon:13",
+   "now": "2026-12-11T18:30:59.210565Z"
+  },
+  {
+   "card_id": "909b1c7a-7a08-46bc-8000-b4a3e0023de2",
+   "due": "2027-06-27T06:18:37.434396Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-09-04T21:19:02.326868Z",
+   "name": "horizon:14",
+   "now": "2026-11-29T20:05:24.889668Z"
+  },
+  {
+   "card_id": "cfec7f88-5c9b-426a-8000-72e4a80bdd5a",
+   "due": "2027-07-12T08:37:51.407278Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T10:26:56.874106Z",
+   "last_review": "2026-09-29T02:33:59.302837Z",
+   "name": "horizon:15",
+   "now": "2026-12-18T10:26:56.874106Z"
+  },
+  {
+   "card_id": "133cdd5f-7b4d-4f90-8000-a48081030ac9",
+   "due": "2027-02-21T17:30:01.695522Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-02-21T17:30:01.695522Z",
+   "last_review": "2026-07-05T04:35:41.297312Z",
+   "name": "horizon:16",
+   "now": "2026-09-20T02:31:10.936598Z"
+  },
+  {
+   "card_id": "159ed88e-73d3-4689-8000-b9b02257be71",
+   "due": "2027-03-25T14:52:01.167728Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T04:00:00Z",
+   "last_review": "2026-10-04T16:50:47.009002Z",
+   "name": "horizon:17",
+   "now": "2026-11-05T00:28:33.589825Z"
+  },
+  {
+   "card_id": "bf2c84b1-874f-4de3-8000-d1729c3626cd",
+   "due": "2027-01-10T05:20:39.334148Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-01-10T05:20:39.334148Z",
+   "last_review": "2026-08-27T00:27:20.889348Z",
+   "name": "horizon:18",
+   "now": "2026-09-19T18:45:41.634605Z"
+  },
+  {
+   "card_id": "d630ba43-8e4f-48a9-8000-4c5e154d6bcc",
+   "due": "2027-05-04T10:51:49.525969Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-05-04T10:51:49.525969Z",
+   "last_review": "2026-11-23T21:18:20.784258Z",
+   "name": "horizon:19",
+   "now": "2026-12-19T19:09:42.365661Z"
+  },
+  {
+   "card_id": "99089c86-1ac8-4dae-8000-8b11909e6697",
+   "due": "2027-01-24T15:17:54.687251Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T13:25:00.507214Z",
+   "last_review": "2026-10-29T11:22:06.604135Z",
+   "name": "horizon:20",
+   "now": "2026-12-18T13:25:00.507214Z"
+  },
+  {
+   "card_id": "da5aefb8-7bcf-4c5a-8000-041e3b1a2372",
+   "due": "2026-12-22T07:26:31.651589Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-18T03:12:12.448381Z",
+   "last_review": "2026-09-30T21:03:56.232240Z",
+   "name": "horizon:21",
+   "now": "2026-12-17T03:12:12.448381Z"
+  },
+  {
+   "card_id": "88fdfd87-b57d-4fdb-8000-65c2a8ac566a",
+   "due": "2027-04-29T12:22:59.660888Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T04:00:00Z",
+   "last_review": "2026-09-17T23:51:13.659850Z",
+   "name": "horizon:22",
+   "now": "2026-12-12T00:49:00.198354Z"
+  },
+  {
+   "card_id": "ab1c2d29-f58b-4a15-8000-469088ba845a",
+   "due": "2026-12-05T09:52:55.035622Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-05T09:52:55.035622Z",
+   "last_review": "2026-07-04T03:05:07.726935Z",
+   "name": "horizon:23",
+   "now": "2026-09-19T22:16:52.472808Z"
+  },
+  {
+   "card_id": "42a98c33-a68b-4684-8000-32060aa8ae30",
+   "due": "2027-02-21T17:18:23.161703Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-14T04:00:00Z",
+   "last_review": "2026-08-25T19:25:55.666517Z",
+   "name": "horizon:24",
+   "now": "2026-11-04T21:23:12.431218Z"
+  },
+  {
+   "card_id": "ed57b33a-4f78-48b7-8000-6cbf43d49c00",
+   "due": "2026-10-22T19:57:48.699343Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-10-22T19:57:48.699343Z",
+   "last_review": "2026-09-16T15:54:58.826501Z",
+   "name": "horizon:25",
+   "now": "2026-09-21T20:00:58.373006Z"
+  },
+  {
+   "card_id": "6cbe910d-5810-4f63-8000-9992d3231cf0",
+   "due": "2027-03-09T08:36:36.468447Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-03-09T08:36:36.468447Z",
+   "last_review": "2026-07-07T22:37:51.051475Z",
+   "name": "horizon:26",
+   "now": "2026-08-22T01:10:57.301981Z"
+  },
+  {
+   "card_id": "27d897a4-5000-4825-8000-ff7d9b3df23b",
+   "due": "2027-04-16T02:53:56.270391Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-04-16T02:53:56.270391Z",
+   "last_review": null,
+   "name": "horizon:27",
+   "now": "2026-09-21T22:23:36.820622Z"
+  },
+  {
+   "card_id": "7c0163f9-039a-4d45-8000-d9ecf125c50c",
+   "due": "2027-05-06T06:24:36.542319Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T11:22:18.294575Z",
+   "last_review": "2026-11-23T20:31:48.386218Z",
+   "name": "horizon:28",
+   "now": "2026-12-18T11:22:18.294575Z"
+  },
+  {
+   "card_id": "c3062e58-0c66-4418-8000-0c6361df28d3",
+   "due": "2027-05-06T18:11:03.836585Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": "2026-09-08T03:27:27.349026Z",
+   "name": "horizon:29",
+   "now": "2026-11-30T03:11:04.822659Z"
+  },
+  {
+   "card_id": "619781c6-9a7a-48f4-8000-4ad5fdaf030f",
+   "due": "2026-12-22T06:43:19.903190Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T12:32:06.970842Z",
+   "last_review": "2026-10-10T00:15:24.027686Z",
+   "name": "horizon:30",
+   "now": "2026-12-18T12:32:06.970842Z"
+  },
+  {
+   "card_id": "5e4e0db7-7d19-408e-8000-de52911d3eab",
+   "due": "2027-04-23T06:31:40.633365Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T11:13:27.830368Z",
+   "last_review": "2026-10-09T23:37:03.684796Z",
+   "name": "horizon:31",
+   "now": "2026-12-18T11:13:27.830368Z"
+  },
+  {
+   "card_id": "ae892dce-5353-4fa0-8000-6b509161e330",
+   "due": "2027-05-08T06:26:09.028773Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T04:00:00Z",
+   "last_review": null,
+   "name": "horizon:32",
+   "now": "2026-11-29T20:47:02.890865Z"
+  },
+  {
+   "card_id": "4c567592-f011-4c2e-8000-e2f43a202fab",
+   "due": "2027-01-25T11:31:56.958766Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-01-25T11:31:56.958766Z",
+   "last_review": "2026-12-02T04:16:44.791959Z",
+   "name": "horizon:33",
+   "now": "2026-12-18T12:56:47.903205Z"
+  },
+  {
+   "card_id": "a7745acd-ec78-4304-8000-882f12a1899e",
+   "due": "2027-05-31T21:16:34.238334Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T07:46:31.633197Z",
+   "last_review": null,
+   "name": "horizon:34",
+   "now": "2026-12-18T07:46:31.633197Z"
+  },
+  {
+   "card_id": "803f99b4-2396-4d15-8000-fcef6621713d",
+   "due": "2027-01-11T21:30:00.457217Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-01-11T21:30:00.457217Z",
+   "last_review": "2026-08-15T06:20:46.973372Z",
+   "name": "horizon:35",
+   "now": "2026-09-19T22:54:08.789134Z"
+  },
+  {
+   "card_id": "16414ca0-44fb-454a-8000-681758e64834",
+   "due": "2027-02-09T02:51:46.549767Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-16T04:00:00Z",
+   "last_review": "2026-11-01T14:34:00.630532Z",
+   "name": "horizon:36",
+   "now": "2026-11-05T02:43:16.891831Z"
+  },
+  {
+   "card_id": "2e26c9a3-d07a-4fc0-8000-465c3469bfe1",
+   "due": "2026-10-13T06:36:57.255927Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-10-13T06:36:57.255927Z",
+   "last_review": "2026-08-16T23:12:29.302195Z",
+   "name": "horizon:37",
+   "now": "2026-09-22T00:58:06.087157Z"
+  },
+  {
+   "card_id": "72e54fca-9804-4256-8000-60a69c14993e",
+   "due": "2027-01-24T04:10:10.568457Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": null,
+   "name": "horizon:38",
+   "now": "2026-12-12T00:15:44.258244Z"
+  },
+  {
+   "card_id": "42b434d7-80cc-4847-8000-d4bb67331263",
+   "due": "2027-01-29T09:20:01.901751Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-16T04:00:00Z",
+   "last_review": "2026-08-30T05:35:32.658062Z",
+   "name": "horizon:39",
+   "now": "2026-09-21T21:31:17.058287Z"
+  },
+  {
+   "card_id": "66482e6d-8913-434f-8000-bf5b125a8bfb",
+   "due": "2027-05-30T14:15:56.886639Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-05-30T14:15:56.886639Z",
+   "last_review": "2026-09-18T09:39:27.143006Z",
+   "name": "horizon:40",
+   "now": "2026-12-19T14:51:29.158110Z"
+  },
+  {
+   "card_id": "d7c03711-f098-479e-8000-8678d52ee319",
+   "due": "2027-02-12T16:40:42.654292Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-07-23T20:13:33.784337Z",
+   "name": "horizon:41",
+   "now": "2026-09-21T22:10:07.021522Z"
+  },
+  {
+   "card_id": "e8c4fbb0-e624-4e2b-8000-561e5a0b204f",
+   "due": "2027-05-11T22:24:40.360531Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": null,
+   "name": "horizon:42",
+   "now": "2026-11-05T01:55:56.407296Z"
+  },
+  {
+   "card_id": "897adc0b-7e03-4478-8000-02d380a01624",
+   "due": "2027-04-04T03:27:18.360342Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-20T02:42:07.562161Z",
+   "last_review": null,
+   "name": "horizon:43",
+   "now": "2026-12-19T02:42:07.562161Z"
+  },
+  {
+   "card_id": "d3ae503e-49c6-4d8a-8000-cb3d0a47d180",
+   "due": "2027-02-25T21:47:36.998013Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-15T04:00:00Z",
+   "last_review": "2026-12-01T10:31:51.279491Z",
+   "name": "horizon:44",
+   "now": "2026-12-12T00:36:16.997684Z"
+  },
+  {
+   "card_id": "e89a1c0f-87e0-494d-8000-34c127085db5",
+   "due": "2026-08-31T06:33:58.870178Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-08-31T06:33:58.870178Z",
+   "last_review": null,
+   "name": "horizon:45",
+   "now": "2026-08-21T21:54:47.886947Z"
+  },
+  {
+   "card_id": "56d8b15b-3711-44e8-8000-d2e348245c62",
+   "due": "2027-04-09T10:45:25.935527Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": "2026-12-11T17:27:57.703019Z",
+   "name": "horizon:46",
+   "now": "2026-12-11T20:32:47.639154Z"
+  },
+  {
+   "card_id": "66817517-c476-413b-8000-13eb9564aa43",
+   "due": "2027-02-20T16:00:51.771633Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-14T04:00:00Z",
+   "last_review": "2026-11-20T23:31:13.737359Z",
+   "name": "horizon:47",
+   "now": "2026-11-30T03:53:51.618899Z"
+  },
+  {
+   "card_id": "cd966743-2b93-4f15-8000-562fea35b8b4",
+   "due": "2027-05-19T08:15:02.462121Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": "2026-10-09T14:45:44.214091Z",
+   "name": "horizon:48",
+   "now": "2026-11-29T21:36:38.106584Z"
+  },
+  {
+   "card_id": "a4330a18-7827-4c47-8000-a4cfa15b26af",
+   "due": "2027-02-14T18:56:35.954648Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-02-14T18:56:35.954648Z",
+   "last_review": "2026-09-28T14:35:01.354391Z",
+   "name": "horizon:49",
+   "now": "2026-12-12T03:57:21.548738Z"
+  },
+  {
+   "card_id": "287b1c20-990d-4c75-8000-fb8b05bb8048",
+   "due": "2027-04-11T00:05:28.711147Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-20T01:11:45.811746Z",
+   "last_review": "2026-09-21T22:58:10.864702Z",
+   "name": "horizon:50",
+   "now": "2026-12-19T01:11:45.811746Z"
+  },
+  {
+   "card_id": "c8412252-6a4e-4103-8000-4fea42ff941a",
+   "due": "2027-03-23T06:28:30.442529Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T18:30:37.220750Z",
+   "last_review": "2026-09-18T04:00:24.408944Z",
+   "name": "horizon:51",
+   "now": "2026-12-16T18:30:37.220750Z"
+  },
+  {
+   "card_id": "2ca0b82a-5c5a-4b1c-8000-fbdac0eba399",
+   "due": "2027-04-24T15:35:55.542830Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": "2026-10-17T16:10:55.319723Z",
+   "name": "horizon:52",
+   "now": "2026-11-05T02:51:03.034489Z"
+  },
+  {
+   "card_id": "187eb4b6-372c-4936-8000-0d50b3e84d25",
+   "due": "2027-04-08T03:44:07.628214Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-04-08T03:44:07.628214Z",
+   "last_review": "2026-12-04T04:50:43.399304Z",
+   "name": "horizon:53",
+   "now": "2026-12-19T00:02:40.961699Z"
+  },
+  {
+   "card_id": "b77bbd98-d696-442f-8000-00518ad4e8ef",
+   "due": "2026-10-29T17:30:47.562575Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-10-29T17:30:47.562575Z",
+   "last_review": "2026-08-07T04:20:54.529604Z",
+   "name": "horizon:54",
+   "now": "2026-08-22T02:46:45.591404Z"
+  },
+  {
+   "card_id": "e86f07be-71f6-4fbd-8000-d26323b6270e",
+   "due": "2027-06-10T10:08:12.890934Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": "2026-08-26T16:32:48.554842Z",
+   "name": "horizon:55",
+   "now": "2026-11-04T19:53:56.661602Z"
+  },
+  {
+   "card_id": "d56331dd-e988-4cc8-8000-60e189a3437c",
+   "due": "2026-12-27T17:53:21.451943Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T19:38:16.502718Z",
+   "last_review": "2026-09-10T08:32:38.704627Z",
+   "name": "horizon:56",
+   "now": "2026-12-16T19:38:16.502718Z"
+  },
+  {
+   "card_id": "89710c6c-fe6b-493e-8000-1d9b6a5d7c79",
+   "due": "2027-07-04T09:07:17.946112Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-13T04:00:00Z",
+   "last_review": "2026-09-29T07:39:06.215742Z",
+   "name": "horizon:57",
+   "now": "2026-12-12T00:48:42.900542Z"
+  },
+  {
+   "card_id": "283bd2b5-dc4f-4a22-8000-6b80c00d99ff",
+   "due": "2026-09-08T04:08:37.027327Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-09-08T04:08:37.027327Z",
+   "last_review": null,
+   "name": "horizon:58",
+   "now": "2026-08-21T22:50:06.687614Z"
+  },
+  {
+   "card_id": "8df9c90c-1ba6-41bd-8000-95e022aaa146",
+   "due": "2026-11-08T10:45:48.918530Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-11-08T10:45:48.918530Z",
+   "last_review": "2026-08-24T14:40:00.577818Z",
+   "name": "horizon:59",
+   "now": "2026-09-21T23:54:49.283571Z"
+  },
+  {
+   "card_id": "41cd6342-dc19-4d57-8000-dd963a0b96e2",
+   "due": "2027-05-30T23:35:26.589349Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-05-30T23:35:26.589349Z",
+   "last_review": "2026-11-17T12:27:50.562228Z",
+   "name": "horizon:60",
+   "now": "2026-12-19T20:28:36.578960Z"
+  },
+  {
+   "card_id": "7da98e57-0a2f-4923-8000-8c6c2877d215",
+   "due": "2027-05-17T10:28:49.977675Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-05-17T10:28:49.977675Z",
+   "last_review": "2026-11-25T20:50:34.310056Z",
+   "name": "horizon:61",
+   "now": "2026-12-19T05:49:29.336535Z"
+  },
+  {
+   "card_id": "7082845d-99d5-426d-8000-d613274de961",
+   "due": "2027-01-22T16:16:45.227154Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-01-22T16:16:45.227154Z",
+   "last_review": "2026-11-06T08:32:11.789265Z",
+   "name": "horizon:62",
+   "now": "2026-12-19T01:26:23.366797Z"
+  },
+  {
+   "card_id": "fca36707-d8d3-45ca-8000-9547a988ade1",
+   "due": "2026-11-12T15:59:15.194832Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-11-12T15:59:15.194832Z",
+   "last_review": "2026-07-18T11:47:25.970776Z",
+   "name": "horizon:63",
+   "now": "2026-09-22T02:14:52.511564Z"
+  },
+  {
+   "card_id": "4c6909db-cc85-481c-8000-3b27558049ad",
+   "due": "2027-07-13T12:38:36.897128Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-07-13T12:38:36.897128Z",
+   "last_review": "2026-11-30T02:37:53.833562Z",
+   "name": "horizon:64",
+   "now": "2026-12-19T11:33:49.778304Z"
+  },
+  {
+   "card_id": "e1fbb5b2-bfe0-435d-8000-8bba235655d5",
+   "due": "2027-03-21T08:00:44.683288Z",
+   "enabled": false,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-03-21T08:00:44.683288Z",
+   "last_review": "2026-11-20T02:46:22.711465Z",
+   "name": "horizon:65",
+   "now": "2026-12-19T04:58:56.799849Z"
+  },
+  {
+   "card_id": "4b9d66eb-fc4c-412a-8000-c3ca85df59cd",
+   "due": "2027-04-18T21:32:31.707355Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-10-28T13:06:08.210687Z",
+   "name": "horizon:66",
+   "now": "2026-12-11T21:05:59.139438Z"
+  },
+  {
+   "card_id": "1e23fba0-d5d5-496c-8000-b04207eab851",
+   "due": "2027-02-07T04:02:23.706310Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-02-07T04:02:23.706310Z",
+   "last_review": "2026-07-01T17:19:21.241117Z",
+   "name": "horizon:67",
+   "now": "2026-08-22T01:28:29.762900Z"
+  },
+  {
+   "card_id": "605174af-80bc-4261-8000-bcf1984b6476",
+   "due": "2027-07-20T18:19:34.514599Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-07-20T18:19:34.514599Z",
+   "last_review": "2026-09-27T02:29:12.061385Z",
+   "name": "horizon:68",
+   "now": "2026-12-19T18:23:41.902454Z"
+  },
+  {
+   "card_id": "5a2b47c8-cf64-4c56-8000-364faf8359b2",
+   "due": "2027-05-22T18:47:27.220618Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-09-02T16:54:10.083666Z",
+   "name": "horizon:69",
+   "now": "2026-11-29T23:36:23.898468Z"
+  },
+  {
+   "card_id": "085d688b-42de-4cd9-8000-ab4492d6cc66",
+   "due": "2027-04-02T10:53:08.780988Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-08-22T13:48:06.826469Z",
+   "name": "horizon:70",
+   "now": "2026-11-04T20:33:06.996729Z"
+  },
+  {
+   "card_id": "c9f60165-11d0-45cc-8000-3323da8ce5fa",
+   "due": "2027-01-23T10:20:50.482512Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-10-05T08:05:10.530021Z",
+   "name": "horizon:71",
+   "now": "2026-11-29T20:39:01.151524Z"
+  },
+  {
+   "card_id": "d5984a5a-1e19-4cb1-8000-0f7e59d68850",
+   "due": "2027-02-25T16:05:29.670211Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T04:00:00Z",
+   "last_review": "2026-12-11T20:08:20.268829Z",
+   "name": "horizon:72",
+   "now": "2026-12-12T00:33:19.546809Z"
+  },
+  {
+   "card_id": "daf24e98-48ff-4648-8000-aa8afe577888",
+   "due": "2027-03-22T18:04:24.643924Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-03-22T18:04:24.643924Z",
+   "last_review": "2026-06-29T10:05:49.091870Z",
+   "name": "horizon:73",
+   "now": "2026-08-21T22:17:11.190204Z"
+  },
+  {
+   "card_id": "9a41caca-1d69-46d3-8000-c6648cf45f7e",
+   "due": "2027-04-03T12:28:10.885026Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-16T04:00:00Z",
+   "last_review": "2026-10-03T20:08:32.526128Z",
+   "name": "horizon:74",
+   "now": "2026-12-11T23:14:16.551790Z"
+  },
+  {
+   "card_id": "ab9755b7-aee3-41b3-8000-da428ced3c93",
+   "due": "2027-07-25T18:24:05.576016Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-20T01:27:07.408325Z",
+   "last_review": "2026-09-25T21:32:39.333755Z",
+   "name": "horizon:75",
+   "now": "2026-12-19T01:27:07.408325Z"
+  },
+  {
+   "card_id": "d918ee1a-e7cf-4f13-8000-9422107329a4",
+   "due": "2027-07-01T02:14:59.485268Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-17T19:59:20.698256Z",
+   "last_review": "2026-11-26T05:49:30.940670Z",
+   "name": "horizon:76",
+   "now": "2026-12-16T19:59:20.698256Z"
+  },
+  {
+   "card_id": "8b08cc02-2e0c-4306-8000-b7df0b057d9f",
+   "due": "2027-06-11T00:47:01.132340Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-06-11T00:47:01.132340Z",
+   "last_review": "2026-12-18T13:42:34.125075Z",
+   "name": "horizon:77",
+   "now": "2026-12-19T15:14:35.134455Z"
+  },
+  {
+   "card_id": "387066e4-ac1e-4670-8000-19ed48f0327b",
+   "due": "2027-03-10T21:12:48.101860Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2026-12-19T14:56:57.105584Z",
+   "last_review": "2026-10-30T17:56:50.210727Z",
+   "name": "horizon:78",
+   "now": "2026-12-18T14:56:57.105584Z"
+  },
+  {
+   "card_id": "93423430-4e58-4775-8000-aea01fae06d6",
+   "due": "2027-03-16T17:39:55.790373Z",
+   "enabled": true,
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": "2027-03-16T17:39:55.790373Z",
+   "last_review": "2026-08-07T06:44:46.446502Z",
+   "name": "horizon:79",
+   "now": "2026-09-20T02:51:03.602928Z"
+  }
+ ],
+ "pacing": [
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 0,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 0
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 5,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 0
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 10,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 0
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 25,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 0
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 0,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 0
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 5,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 0
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 10,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 0
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 25,
+    "unseen": 0,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 0
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 0,
+    "unseen": 0,
+    "window_days": 1
+   },
+   "new_per_day": 0,
+   "unseen": 0
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 5,
+    "unseen": 0,
+    "window_days": 1
+   },
+   "new_per_day": 5,
+   "unseen": 0
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 10,
+    "unseen": 0,
+    "window_days": 1
+   },
+   "new_per_day": 10,
+   "unseen": 0
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 25,
+    "unseen": 0,
+    "window_days": 1
+   },
+   "new_per_day": 25,
+   "unseen": 0
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 0,
+    "unseen": 0,
+    "window_days": 46
+   },
+   "new_per_day": 0,
+   "unseen": 0
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 5,
+    "unseen": 0,
+    "window_days": 46
+   },
+   "new_per_day": 5,
+   "unseen": 0
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 10,
+    "unseen": 0,
+    "window_days": 46
+   },
+   "new_per_day": 10,
+   "unseen": 0
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 25,
+    "unseen": 0,
+    "window_days": 46
+   },
+   "new_per_day": 25,
+   "unseen": 0
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 0,
+    "unseen": 0,
+    "window_days": 186
+   },
+   "new_per_day": 0,
+   "unseen": 0
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 5,
+    "unseen": 0,
+    "window_days": 186
+   },
+   "new_per_day": 5,
+   "unseen": 0
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 10,
+    "unseen": 0,
+    "window_days": 186
+   },
+   "new_per_day": 10,
+   "unseen": 0
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 0,
+    "needed_per_day": 0,
+    "new_per_day": 25,
+    "unseen": 0,
+    "window_days": 186
+   },
+   "new_per_day": 25,
+   "unseen": 0
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 0,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 40
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 5,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 40
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 10,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 40
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 25,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 40
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 0,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 40
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 5,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 40
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 10,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 40
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 25,
+    "unseen": 40,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 40
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 40,
+    "new_per_day": 0,
+    "unseen": 40,
+    "window_days": 1
+   },
+   "new_per_day": 0,
+   "unseen": 40
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 5,
+    "needed_per_day": 40,
+    "new_per_day": 5,
+    "unseen": 40,
+    "window_days": 1
+   },
+   "new_per_day": 5,
+   "unseen": 40
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 10,
+    "needed_per_day": 40,
+    "new_per_day": 10,
+    "unseen": 40,
+    "window_days": 1
+   },
+   "new_per_day": 10,
+   "unseen": 40
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 25,
+    "needed_per_day": 40,
+    "new_per_day": 25,
+    "unseen": 40,
+    "window_days": 1
+   },
+   "new_per_day": 25,
+   "unseen": 40
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 1,
+    "new_per_day": 0,
+    "unseen": 40,
+    "window_days": 46
+   },
+   "new_per_day": 0,
+   "unseen": 40
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 40,
+    "needed_per_day": 1,
+    "new_per_day": 5,
+    "unseen": 40,
+    "window_days": 46
+   },
+   "new_per_day": 5,
+   "unseen": 40
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 40,
+    "needed_per_day": 1,
+    "new_per_day": 10,
+    "unseen": 40,
+    "window_days": 46
+   },
+   "new_per_day": 10,
+   "unseen": 40
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 40,
+    "needed_per_day": 1,
+    "new_per_day": 25,
+    "unseen": 40,
+    "window_days": 46
+   },
+   "new_per_day": 25,
+   "unseen": 40
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 1,
+    "new_per_day": 0,
+    "unseen": 40,
+    "window_days": 186
+   },
+   "new_per_day": 0,
+   "unseen": 40
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 40,
+    "needed_per_day": 1,
+    "new_per_day": 5,
+    "unseen": 40,
+    "window_days": 186
+   },
+   "new_per_day": 5,
+   "unseen": 40
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 40,
+    "needed_per_day": 1,
+    "new_per_day": 10,
+    "unseen": 40,
+    "window_days": 186
+   },
+   "new_per_day": 10,
+   "unseen": 40
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 40,
+    "needed_per_day": 1,
+    "new_per_day": 25,
+    "unseen": 40,
+    "window_days": 186
+   },
+   "new_per_day": 25,
+   "unseen": 40
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 0,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 300
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 5,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 300
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 10,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 300
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 25,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 300
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 0,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 300
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 5,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 300
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 10,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 300
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 25,
+    "unseen": 300,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 300
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 300,
+    "new_per_day": 0,
+    "unseen": 300,
+    "window_days": 1
+   },
+   "new_per_day": 0,
+   "unseen": 300
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 5,
+    "needed_per_day": 300,
+    "new_per_day": 5,
+    "unseen": 300,
+    "window_days": 1
+   },
+   "new_per_day": 5,
+   "unseen": 300
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 10,
+    "needed_per_day": 300,
+    "new_per_day": 10,
+    "unseen": 300,
+    "window_days": 1
+   },
+   "new_per_day": 10,
+   "unseen": 300
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 25,
+    "needed_per_day": 300,
+    "new_per_day": 25,
+    "unseen": 300,
+    "window_days": 1
+   },
+   "new_per_day": 25,
+   "unseen": 300
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 7,
+    "new_per_day": 0,
+    "unseen": 300,
+    "window_days": 46
+   },
+   "new_per_day": 0,
+   "unseen": 300
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 230,
+    "needed_per_day": 7,
+    "new_per_day": 5,
+    "unseen": 300,
+    "window_days": 46
+   },
+   "new_per_day": 5,
+   "unseen": 300
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 300,
+    "needed_per_day": 7,
+    "new_per_day": 10,
+    "unseen": 300,
+    "window_days": 46
+   },
+   "new_per_day": 10,
+   "unseen": 300
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 300,
+    "needed_per_day": 7,
+    "new_per_day": 25,
+    "unseen": 300,
+    "window_days": 46
+   },
+   "new_per_day": 25,
+   "unseen": 300
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 2,
+    "new_per_day": 0,
+    "unseen": 300,
+    "window_days": 186
+   },
+   "new_per_day": 0,
+   "unseen": 300
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 300,
+    "needed_per_day": 2,
+    "new_per_day": 5,
+    "unseen": 300,
+    "window_days": 186
+   },
+   "new_per_day": 5,
+   "unseen": 300
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 300,
+    "needed_per_day": 2,
+    "new_per_day": 10,
+    "unseen": 300,
+    "window_days": 186
+   },
+   "new_per_day": 10,
+   "unseen": 300
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 300,
+    "needed_per_day": 2,
+    "new_per_day": 25,
+    "unseen": 300,
+    "window_days": 186
+   },
+   "new_per_day": 25,
+   "unseen": 300
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 0,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 600
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 5,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 600
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 10,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 600
+  },
+  {
+   "days_left": 3.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 25,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 600
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 0,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 0,
+   "unseen": 600
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 5,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 5,
+   "unseen": 600
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 10,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 10,
+   "unseen": 600
+  },
+  {
+   "days_left": 14.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 25,
+    "unseen": 600,
+    "window_days": 0
+   },
+   "new_per_day": 25,
+   "unseen": 600
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 600,
+    "new_per_day": 0,
+    "unseen": 600,
+    "window_days": 1
+   },
+   "new_per_day": 0,
+   "unseen": 600
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 5,
+    "needed_per_day": 600,
+    "new_per_day": 5,
+    "unseen": 600,
+    "window_days": 1
+   },
+   "new_per_day": 5,
+   "unseen": 600
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 10,
+    "needed_per_day": 600,
+    "new_per_day": 10,
+    "unseen": 600,
+    "window_days": 1
+   },
+   "new_per_day": 10,
+   "unseen": 600
+  },
+  {
+   "days_left": 15.2,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 25,
+    "needed_per_day": 600,
+    "new_per_day": 25,
+    "unseen": 600,
+    "window_days": 1
+   },
+   "new_per_day": 25,
+   "unseen": 600
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 14,
+    "new_per_day": 0,
+    "unseen": 600,
+    "window_days": 46
+   },
+   "new_per_day": 0,
+   "unseen": 600
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 230,
+    "needed_per_day": 14,
+    "new_per_day": 5,
+    "unseen": 600,
+    "window_days": 46
+   },
+   "new_per_day": 5,
+   "unseen": 600
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 460,
+    "needed_per_day": 14,
+    "new_per_day": 10,
+    "unseen": 600,
+    "window_days": 46
+   },
+   "new_per_day": 10,
+   "unseen": 600
+  },
+  {
+   "days_left": 60.4,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 600,
+    "needed_per_day": 14,
+    "new_per_day": 25,
+    "unseen": 600,
+    "window_days": 46
+   },
+   "new_per_day": 25,
+   "unseen": 600
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": false,
+    "introduced_at_limit": 0,
+    "needed_per_day": 4,
+    "new_per_day": 0,
+    "unseen": 600,
+    "window_days": 186
+   },
+   "new_per_day": 0,
+   "unseen": 600
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 600,
+    "needed_per_day": 4,
+    "new_per_day": 5,
+    "unseen": 600,
+    "window_days": 186
+   },
+   "new_per_day": 5,
+   "unseen": 600
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 600,
+    "needed_per_day": 4,
+    "new_per_day": 10,
+    "unseen": 600,
+    "window_days": 186
+   },
+   "new_per_day": 10,
+   "unseen": 600
+  },
+  {
+   "days_left": 200.0,
+   "expected": {
+    "feasible": true,
+    "introduced_at_limit": 600,
+    "needed_per_day": 4,
+    "new_per_day": 25,
+    "unseen": 600,
+    "window_days": 186
+   },
+   "new_per_day": 25,
+   "unseen": 600
+  }
+ ],
+ "quick": [
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 0,
+     "last_review": "2026-12-12T22:17:08.990418Z",
+     "phase": 3,
+     "stability": 57.47446173756771
+    },
+    {
+     "id": "c001",
+     "importance": 2,
+     "last_review": "2026-11-05T05:26:23.479513Z",
+     "phase": 2,
+     "stability": 78.15274429224242
+    },
+    {
+     "id": "c002",
+     "importance": 1,
+     "last_review": "2026-12-13T23:05:51.832970Z",
+     "phase": 3,
+     "stability": 52.47582414052399
+    },
+    {
+     "id": "c003",
+     "importance": 0,
+     "last_review": "2026-12-07T14:36:31.467395Z",
+     "phase": 2,
+     "stability": 7.619362425818624
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c005",
+     "importance": 2,
+     "last_review": "2026-11-21T02:59:26.849878Z",
+     "phase": 3,
+     "stability": 26.055679367535237
+    },
+    {
+     "id": "c006",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c007",
+     "importance": 0,
+     "last_review": "2026-11-25T05:49:25.419926Z",
+     "phase": 2,
+     "stability": 7.354216142694795
+    },
+    {
+     "id": "c008",
+     "importance": 1,
+     "last_review": "2026-11-07T09:30:01.963353Z",
+     "phase": 2,
+     "stability": 5.051179463052228
+    },
+    {
+     "id": "c009",
+     "importance": 0,
+     "last_review": "2026-11-21T09:21:12.250900Z",
+     "phase": 2,
+     "stability": 25.67420014449641
+    },
+    {
+     "id": "c010",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c011",
+     "importance": 1,
+     "last_review": "2026-11-07T06:46:21.367710Z",
+     "phase": 3,
+     "stability": 30.85828326832879
+    },
+    {
+     "id": "c012",
+     "importance": 2,
+     "last_review": "2026-10-30T21:09:34.681304Z",
+     "phase": 1,
+     "stability": 54.77777526787641
+    },
+    {
+     "id": "c013",
+     "importance": 1,
+     "last_review": "2026-10-03T16:17:35.129739Z",
+     "phase": 2,
+     "stability": 6.5407476362748085
+    },
+    {
+     "id": "c014",
+     "importance": 0,
+     "last_review": "2026-11-02T00:09:23.327674Z",
+     "phase": 3,
+     "stability": 34.870168284651044
+    },
+    {
+     "id": "c015",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c016",
+     "importance": 1,
+     "last_review": "2026-10-15T12:22:17.504859Z",
+     "phase": 2,
+     "stability": 75.34277419251858
+    },
+    {
+     "id": "c017",
+     "importance": 0,
+     "last_review": "2026-10-23T13:11:43.706144Z",
+     "phase": 3,
+     "stability": 41.50674020769451
+    },
+    {
+     "id": "c018",
+     "importance": 1,
+     "last_review": "2026-12-05T15:19:47.785231Z",
+     "phase": 2,
+     "stability": 83.31653696191714
+    },
+    {
+     "id": "c019",
+     "importance": 1,
+     "last_review": "2026-11-15T11:33:52.330889Z",
+     "phase": 3,
+     "stability": 75.26096737346118
+    },
+    {
+     "id": "c020",
+     "importance": 2,
+     "last_review": "2026-10-04T10:20:22.601937Z",
+     "phase": 2,
+     "stability": 88.5579251131589
+    },
+    {
+     "id": "c021",
+     "importance": 0,
+     "last_review": "2026-12-11T01:03:18.133586Z",
+     "phase": 2,
+     "stability": 21.655871824516545
+    },
+    {
+     "id": "c022",
+     "importance": 0,
+     "last_review": "2026-11-05T11:41:48.291741Z",
+     "phase": 1,
+     "stability": 17.171625703863036
+    },
+    {
+     "id": "c023",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c024",
+     "importance": 0,
+     "last_review": "2026-12-03T18:22:41.391193Z",
+     "phase": 2,
+     "stability": 26.618311269330984
+    },
+    {
+     "id": "c025",
+     "importance": 1,
+     "last_review": "2026-09-29T05:14:11.455572Z",
+     "phase": 2,
+     "stability": 6.784472473653311
+    },
+    {
+     "id": "c026",
+     "importance": 2,
+     "last_review": "2026-11-10T14:41:05.748899Z",
+     "phase": 3,
+     "stability": 41.09912008331704
+    },
+    {
+     "id": "c027",
+     "importance": 2,
+     "last_review": "2026-12-07T06:30:55.445578Z",
+     "phase": 3,
+     "stability": 68.25780495834675
+    },
+    {
+     "id": "c028",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c029",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c030",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c031",
+     "importance": 0,
+     "last_review": "2026-10-19T01:10:11.670584Z",
+     "phase": 3,
+     "stability": 54.99556841891035
+    },
+    {
+     "id": "c032",
+     "importance": 0,
+     "last_review": "2026-12-07T09:45:46.266899Z",
+     "phase": 2,
+     "stability": 34.048812773732365
+    },
+    {
+     "id": "c033",
+     "importance": 1,
+     "last_review": "2026-12-15T12:25:10.037969Z",
+     "phase": 3,
+     "stability": 85.36743464291764
+    },
+    {
+     "id": "c034",
+     "importance": 0,
+     "last_review": "2026-11-09T00:11:57.409023Z",
+     "phase": 1,
+     "stability": 5.157584540493036
+    },
+    {
+     "id": "c035",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c036",
+     "importance": 2,
+     "last_review": "2026-11-15T13:55:28.353832Z",
+     "phase": 1,
+     "stability": 66.00355211858862
+    },
+    {
+     "id": "c037",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c038",
+     "importance": 0,
+     "last_review": "2026-10-15T07:44:31.755739Z",
+     "phase": 2,
+     "stability": 39.53060990357087
+    },
+    {
+     "id": "c039",
+     "importance": 0,
+     "last_review": "2026-11-26T18:59:18.569841Z",
+     "phase": 3,
+     "stability": 58.07879454350672
+    },
+    {
+     "id": "c040",
+     "importance": 0,
+     "last_review": "2026-10-11T05:39:39.403281Z",
+     "phase": 2,
+     "stability": 83.53350866256005
+    },
+    {
+     "id": "c041",
+     "importance": 0,
+     "last_review": "2026-11-25T10:27:22.478497Z",
+     "phase": 1,
+     "stability": 17.041900386865695
+    },
+    {
+     "id": "c042",
+     "importance": 0,
+     "last_review": "2026-10-31T12:46:49.712617Z",
+     "phase": 2,
+     "stability": 59.23344180267869
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 11,
+    "cut_off": 11,
+    "days_to_exam": 2,
+    "ids": [],
+    "minutes_per_day": 0,
+    "per_day": 0,
+    "selected": 0,
+    "too_few": true,
+    "window_days": 0
+   },
+   "median": 12.0,
+   "minutes": 15,
+   "name": "quick:0",
+   "now": "2026-12-17T16:00:00.281929Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 0,
+     "last_review": "2026-10-27T05:06:52.586113Z",
+     "phase": 2,
+     "stability": 10.234676769564727
+    },
+    {
+     "id": "c001",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c002",
+     "importance": 1,
+     "last_review": "2026-10-16T22:07:59.005213Z",
+     "phase": 2,
+     "stability": 51.21781544567135
+    },
+    {
+     "id": "c003",
+     "importance": 2,
+     "last_review": "2026-11-19T09:23:28.491424Z",
+     "phase": 1,
+     "stability": 88.65724630845213
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": "2026-10-08T18:00:24.440927Z",
+     "phase": 2,
+     "stability": 62.24166354843042
+    },
+    {
+     "id": "c005",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c006",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c007",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c008",
+     "importance": 1,
+     "last_review": "2026-12-01T11:46:48.368986Z",
+     "phase": 2,
+     "stability": 79.24306890875255
+    },
+    {
+     "id": "c009",
+     "importance": 1,
+     "last_review": "2026-10-06T14:52:29.922126Z",
+     "phase": 2,
+     "stability": 73.36674129903206
+    },
+    {
+     "id": "c010",
+     "importance": 0,
+     "last_review": "2026-10-23T19:34:54.147297Z",
+     "phase": 3,
+     "stability": 81.52587751529451
+    },
+    {
+     "id": "c011",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c012",
+     "importance": 1,
+     "last_review": "2026-11-21T00:13:40.499928Z",
+     "phase": 1,
+     "stability": 7.104959750996699
+    },
+    {
+     "id": "c013",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c014",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c015",
+     "importance": 2,
+     "last_review": "2026-10-17T12:38:15.795599Z",
+     "phase": 2,
+     "stability": 55.433229453541685
+    },
+    {
+     "id": "c016",
+     "importance": 2,
+     "last_review": "2026-10-28T15:08:27.959514Z",
+     "phase": 2,
+     "stability": 29.475474831744542
+    },
+    {
+     "id": "c017",
+     "importance": 2,
+     "last_review": "2026-10-31T08:53:07.918434Z",
+     "phase": 3,
+     "stability": 35.540825567630314
+    },
+    {
+     "id": "c018",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c019",
+     "importance": 1,
+     "last_review": "2026-11-01T22:35:22.948571Z",
+     "phase": 3,
+     "stability": 24.303500381848668
+    },
+    {
+     "id": "c020",
+     "importance": 1,
+     "last_review": "2026-11-23T18:12:31.403004Z",
+     "phase": 3,
+     "stability": 55.69798509511916
+    },
+    {
+     "id": "c021",
+     "importance": 1,
+     "last_review": "2026-11-21T13:38:35.326356Z",
+     "phase": 2,
+     "stability": 32.560655263526556
+    },
+    {
+     "id": "c022",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c023",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c024",
+     "importance": 0,
+     "last_review": "2026-09-26T06:43:35.850150Z",
+     "phase": 3,
+     "stability": 1.5324871205239208
+    },
+    {
+     "id": "c025",
+     "importance": 0,
+     "last_review": "2026-11-12T15:16:18.381523Z",
+     "phase": 1,
+     "stability": 24.55651188285004
+    },
+    {
+     "id": "c026",
+     "importance": 2,
+     "last_review": "2026-10-08T08:26:06.507472Z",
+     "phase": 2,
+     "stability": 55.777176460603066
+    },
+    {
+     "id": "c027",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c028",
+     "importance": 1,
+     "last_review": "2026-09-26T19:55:31.603009Z",
+     "phase": 2,
+     "stability": 2.397734876391289
+    },
+    {
+     "id": "c029",
+     "importance": 1,
+     "last_review": "2026-11-11T14:52:45.839586Z",
+     "phase": 2,
+     "stability": 70.05989211309486
+    },
+    {
+     "id": "c030",
+     "importance": 2,
+     "last_review": "2026-10-30T01:36:13.106158Z",
+     "phase": 3,
+     "stability": 14.924671521997439
+    },
+    {
+     "id": "c031",
+     "importance": 1,
+     "last_review": "2026-09-25T01:40:42.429314Z",
+     "phase": 2,
+     "stability": 34.46276370794351
+    },
+    {
+     "id": "c032",
+     "importance": 0,
+     "last_review": "2026-10-16T19:39:40.304252Z",
+     "phase": 2,
+     "stability": 39.76725916012122
+    },
+    {
+     "id": "c033",
+     "importance": 2,
+     "last_review": "2026-10-04T08:04:05.266935Z",
+     "phase": 2,
+     "stability": 53.85349357794782
+    },
+    {
+     "id": "c034",
+     "importance": 1,
+     "last_review": "2026-10-25T13:37:52.454879Z",
+     "phase": 1,
+     "stability": 54.9445373619939
+    },
+    {
+     "id": "c035",
+     "importance": 1,
+     "last_review": "2026-09-28T10:16:32.257872Z",
+     "phase": 1,
+     "stability": 29.695213171804266
+    },
+    {
+     "id": "c036",
+     "importance": 1,
+     "last_review": "2026-09-27T09:25:46.842948Z",
+     "phase": 1,
+     "stability": 22.78892162120446
+    },
+    {
+     "id": "c037",
+     "importance": 1,
+     "last_review": "2026-09-21T09:03:31.402477Z",
+     "phase": 2,
+     "stability": 39.663066904899125
+    },
+    {
+     "id": "c038",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c039",
+     "importance": 1,
+     "last_review": "2026-11-09T21:37:22.368498Z",
+     "phase": 3,
+     "stability": 28.27746189880536
+    },
+    {
+     "id": "c040",
+     "importance": 0,
+     "last_review": "2026-12-03T09:03:00.102984Z",
+     "phase": 3,
+     "stability": 82.93966173987863
+    },
+    {
+     "id": "c041",
+     "importance": 1,
+     "last_review": "2026-10-09T01:36:48.973319Z",
+     "phase": 3,
+     "stability": 47.1839941385518
+    },
+    {
+     "id": "c042",
+     "importance": 1,
+     "last_review": "2026-10-06T16:52:42.936203Z",
+     "phase": 3,
+     "stability": 49.505015901521176
+    },
+    {
+     "id": "c043",
+     "importance": 0,
+     "last_review": "2026-10-02T09:02:43.353336Z",
+     "phase": 1,
+     "stability": 57.603712500106845
+    },
+    {
+     "id": "c044",
+     "importance": 2,
+     "last_review": "2026-12-03T20:00:27.203102Z",
+     "phase": 1,
+     "stability": 78.76272061520244
+    },
+    {
+     "id": "c045",
+     "importance": 0,
+     "last_review": "2026-11-17T07:00:56.497133Z",
+     "phase": 2,
+     "stability": 89.3884715132254
+    },
+    {
+     "id": "c046",
+     "importance": 1,
+     "last_review": "2026-10-16T05:16:23.857535Z",
+     "phase": 2,
+     "stability": 71.218155533842
+    },
+    {
+     "id": "c047",
+     "importance": 2,
+     "last_review": "2026-09-21T23:36:20.935363Z",
+     "phase": 2,
+     "stability": 48.7709125943182
+    },
+    {
+     "id": "c048",
+     "importance": 1,
+     "last_review": "2026-09-29T04:52:41.144455Z",
+     "phase": 1,
+     "stability": 16.97139484300594
+    },
+    {
+     "id": "c049",
+     "importance": 2,
+     "last_review": "2026-10-01T11:05:59.732292Z",
+     "phase": 3,
+     "stability": 4.157331347153168
+    },
+    {
+     "id": "c050",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c051",
+     "importance": 0,
+     "last_review": "2026-10-12T03:52:25.855065Z",
+     "phase": 2,
+     "stability": 39.2436354488536
+    },
+    {
+     "id": "c052",
+     "importance": 1,
+     "last_review": "2026-10-27T16:09:20.334859Z",
+     "phase": 3,
+     "stability": 28.40417666760669
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 29,
+    "cut_off": 0,
+    "days_to_exam": 12,
+    "ids": [
+     "c001",
+     "c011",
+     "c013",
+     "c018",
+     "c023",
+     "c049",
+     "c028",
+     "c030",
+     "c048",
+     "c012",
+     "c036",
+     "c047",
+     "c016",
+     "c035",
+     "c031",
+     "c033",
+     "c017",
+     "c037",
+     "c026",
+     "c019",
+     "c052",
+     "c015",
+     "c041",
+     "c042",
+     "c039",
+     "c002",
+     "c004",
+     "c009",
+     "c034"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 3,
+    "selected": 29,
+    "too_few": false,
+    "window_days": 10
+   },
+   "median": 12.0,
+   "minutes": 15,
+   "name": "quick:1",
+   "now": "2026-12-07T19:36:57.347636Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 0,
+     "last_review": "2026-10-02T16:11:37.760547Z",
+     "phase": 1,
+     "stability": 22.589384861388393
+    },
+    {
+     "id": "c001",
+     "importance": 2,
+     "last_review": "2026-09-11T00:13:20.271761Z",
+     "phase": 2,
+     "stability": 5.8260377005794215
+    },
+    {
+     "id": "c002",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c003",
+     "importance": 2,
+     "last_review": "2026-10-31T19:21:50.642909Z",
+     "phase": 2,
+     "stability": 42.201830863116996
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c005",
+     "importance": 0,
+     "last_review": "2026-09-21T07:34:59.688858Z",
+     "phase": 3,
+     "stability": 11.33333490503609
+    },
+    {
+     "id": "c006",
+     "importance": 1,
+     "last_review": "2026-11-05T02:47:53.194080Z",
+     "phase": 2,
+     "stability": 20.921020484656594
+    },
+    {
+     "id": "c007",
+     "importance": 2,
+     "last_review": "2026-10-06T04:50:42.519962Z",
+     "phase": 3,
+     "stability": 23.278290462192068
+    },
+    {
+     "id": "c008",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c009",
+     "importance": 2,
+     "last_review": "2026-09-21T20:08:25.776715Z",
+     "phase": 3,
+     "stability": 17.13597453738156
+    },
+    {
+     "id": "c010",
+     "importance": 0,
+     "last_review": "2026-10-11T19:32:47.277479Z",
+     "phase": 3,
+     "stability": 87.52354545847352
+    },
+    {
+     "id": "c011",
+     "importance": 1,
+     "last_review": "2026-09-29T14:45:48.620406Z",
+     "phase": 2,
+     "stability": 1.9332733180636261
+    },
+    {
+     "id": "c012",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c013",
+     "importance": 2,
+     "last_review": "2026-09-06T08:38:15.741258Z",
+     "phase": 1,
+     "stability": 71.33986813861289
+    },
+    {
+     "id": "c014",
+     "importance": 0,
+     "last_review": "2026-11-09T01:20:13.449371Z",
+     "phase": 3,
+     "stability": 41.592273100866905
+    },
+    {
+     "id": "c015",
+     "importance": 1,
+     "last_review": "2026-10-02T17:11:20.110380Z",
+     "phase": 2,
+     "stability": 82.39512466942232
+    },
+    {
+     "id": "c016",
+     "importance": 2,
+     "last_review": "2026-10-05T09:29:42.343369Z",
+     "phase": 2,
+     "stability": 12.148751597339636
+    },
+    {
+     "id": "c017",
+     "importance": 2,
+     "last_review": "2026-09-17T12:26:15.457833Z",
+     "phase": 1,
+     "stability": 18.25434671248635
+    },
+    {
+     "id": "c018",
+     "importance": 2,
+     "last_review": "2026-11-17T09:37:21.581333Z",
+     "phase": 1,
+     "stability": 23.461072782929154
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 10,
+    "cut_off": 0,
+    "days_to_exam": 30,
+    "ids": [
+     "c001",
+     "c011",
+     "c016",
+     "c009",
+     "c017",
+     "c007",
+     "c013",
+     "c018",
+     "c006",
+     "c003"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 1,
+    "selected": 10,
+    "too_few": true,
+    "window_days": 28
+   },
+   "median": 12.0,
+   "minutes": 30,
+   "name": "quick:2",
+   "now": "2026-11-19T21:33:27.585642Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 2,
+     "last_review": "2026-09-07T03:55:55.707325Z",
+     "phase": 2,
+     "stability": 50.09132327276786
+    },
+    {
+     "id": "c001",
+     "importance": 2,
+     "last_review": "2026-08-26T22:41:18.035624Z",
+     "phase": 2,
+     "stability": 9.136666354340479
+    },
+    {
+     "id": "c002",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c003",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c004",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c005",
+     "importance": 1,
+     "last_review": "2026-11-05T12:28:34.203580Z",
+     "phase": 2,
+     "stability": 82.44039652937366
+    },
+    {
+     "id": "c006",
+     "importance": 1,
+     "last_review": "2026-10-27T17:48:27.775803Z",
+     "phase": 2,
+     "stability": 76.68379566861803
+    },
+    {
+     "id": "c007",
+     "importance": 1,
+     "last_review": "2026-09-05T01:47:52.034620Z",
+     "phase": 3,
+     "stability": 19.854795113176092
+    },
+    {
+     "id": "c008",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c009",
+     "importance": 2,
+     "last_review": "2026-09-14T01:42:00.655976Z",
+     "phase": 3,
+     "stability": 75.95671634238651
+    },
+    {
+     "id": "c010",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c011",
+     "importance": 2,
+     "last_review": "2026-08-26T13:31:55.348815Z",
+     "phase": 1,
+     "stability": 2.0078708319882717
+    },
+    {
+     "id": "c012",
+     "importance": 2,
+     "last_review": "2026-10-20T02:30:56.436253Z",
+     "phase": 2,
+     "stability": 13.356617598222215
+    },
+    {
+     "id": "c013",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c014",
+     "importance": 0,
+     "last_review": "2026-09-28T17:53:07.208991Z",
+     "phase": 2,
+     "stability": 84.37433823017986
+    },
+    {
+     "id": "c015",
+     "importance": 2,
+     "last_review": "2026-10-10T22:14:13.847017Z",
+     "phase": 2,
+     "stability": 48.13496986604514
+    },
+    {
+     "id": "c016",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c017",
+     "importance": 1,
+     "last_review": "2026-11-03T17:03:05.147550Z",
+     "phase": 1,
+     "stability": 1.7524511696364011
+    },
+    {
+     "id": "c018",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c019",
+     "importance": 2,
+     "last_review": "2026-10-24T00:51:59.495678Z",
+     "phase": 2,
+     "stability": 21.715852234022464
+    },
+    {
+     "id": "c020",
+     "importance": 1,
+     "last_review": "2026-08-23T00:12:18.877200Z",
+     "phase": 2,
+     "stability": 22.24436553261315
+    },
+    {
+     "id": "c021",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c022",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c023",
+     "importance": 0,
+     "last_review": "2026-10-06T04:08:46.437341Z",
+     "phase": 2,
+     "stability": 46.08949494621014
+    },
+    {
+     "id": "c024",
+     "importance": 2,
+     "last_review": "2026-11-01T12:29:29.632219Z",
+     "phase": 2,
+     "stability": 50.44768094395875
+    },
+    {
+     "id": "c025",
+     "importance": 0,
+     "last_review": "2026-09-21T16:30:19.825090Z",
+     "phase": 2,
+     "stability": 7.195175556172019
+    },
+    {
+     "id": "c026",
+     "importance": 2,
+     "last_review": "2026-09-30T14:17:14.469673Z",
+     "phase": 3,
+     "stability": 88.61369392298361
+    },
+    {
+     "id": "c027",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c028",
+     "importance": 0,
+     "last_review": "2026-09-04T23:43:30.038576Z",
+     "phase": 2,
+     "stability": 41.112768148035826
+    },
+    {
+     "id": "c029",
+     "importance": 2,
+     "last_review": "2026-08-25T00:09:14.622622Z",
+     "phase": 2,
+     "stability": 44.2361583492328
+    },
+    {
+     "id": "c030",
+     "importance": 0,
+     "last_review": "2026-09-07T07:27:34.741019Z",
+     "phase": 2,
+     "stability": 21.045422608569456
+    },
+    {
+     "id": "c031",
+     "importance": 2,
+     "last_review": "2026-10-13T20:28:29.457260Z",
+     "phase": 3,
+     "stability": 63.43239694987192
+    },
+    {
+     "id": "c032",
+     "importance": 0,
+     "last_review": "2026-08-29T19:37:01.769469Z",
+     "phase": 1,
+     "stability": 25.17524020476849
+    },
+    {
+     "id": "c033",
+     "importance": 1,
+     "last_review": "2026-08-21T18:48:14.793980Z",
+     "phase": 2,
+     "stability": 37.38102838525928
+    },
+    {
+     "id": "c034",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c035",
+     "importance": 0,
+     "last_review": "2026-10-21T18:12:00.221142Z",
+     "phase": 2,
+     "stability": 73.59603835445353
+    },
+    {
+     "id": "c036",
+     "importance": 1,
+     "last_review": "2026-09-25T19:20:48.307730Z",
+     "phase": 3,
+     "stability": 53.82608722486903
+    },
+    {
+     "id": "c037",
+     "importance": 0,
+     "last_review": "2026-09-27T10:15:53.993092Z",
+     "phase": 2,
+     "stability": 23.48692832861908
+    },
+    {
+     "id": "c038",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c039",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c040",
+     "importance": 2,
+     "last_review": "2026-09-22T18:46:31.949309Z",
+     "phase": 2,
+     "stability": 57.22159346266614
+    },
+    {
+     "id": "c041",
+     "importance": 0,
+     "last_review": "2026-10-10T01:32:28.670041Z",
+     "phase": 1,
+     "stability": 30.817117205624985
+    },
+    {
+     "id": "c042",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c043",
+     "importance": 2,
+     "last_review": "2026-11-02T00:59:27.111093Z",
+     "phase": 2,
+     "stability": 35.146655561986265
+    },
+    {
+     "id": "c044",
+     "importance": 0,
+     "last_review": "2026-10-21T04:53:11.108133Z",
+     "phase": 2,
+     "stability": 50.904103042917875
+    },
+    {
+     "id": "c045",
+     "importance": 2,
+     "last_review": "2026-09-28T21:26:34.108016Z",
+     "phase": 2,
+     "stability": 88.77353086827166
+    },
+    {
+     "id": "c046",
+     "importance": 1,
+     "last_review": "2026-09-24T01:13:18.577098Z",
+     "phase": 3,
+     "stability": 6.33934895413028
+    },
+    {
+     "id": "c047",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c048",
+     "importance": 1,
+     "last_review": "2026-09-15T04:40:18.654582Z",
+     "phase": 1,
+     "stability": 84.42384803365128
+    },
+    {
+     "id": "c049",
+     "importance": 0,
+     "last_review": "2026-10-01T13:56:44.797399Z",
+     "phase": 1,
+     "stability": 57.363669722614006
+    },
+    {
+     "id": "c050",
+     "importance": 0,
+     "last_review": "2026-09-25T03:51:19.692483Z",
+     "phase": 2,
+     "stability": 50.92997337094309
+    },
+    {
+     "id": "c051",
+     "importance": 1,
+     "last_review": "2026-10-22T15:30:07.186346Z",
+     "phase": 3,
+     "stability": 44.7475860532719
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 25,
+    "cut_off": 0,
+    "days_to_exam": 44,
+    "ids": [
+     "c010",
+     "c013",
+     "c016",
+     "c018",
+     "c021",
+     "c022",
+     "c011",
+     "c001",
+     "c017",
+     "c046",
+     "c012",
+     "c020",
+     "c007",
+     "c029",
+     "c019",
+     "c000",
+     "c033",
+     "c040",
+     "c015",
+     "c043",
+     "c009",
+     "c031",
+     "c036",
+     "c051",
+     "c048"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 1,
+    "selected": 25,
+    "too_few": false,
+    "window_days": 42
+   },
+   "median": 25.0,
+   "minutes": 120,
+   "name": "quick:3",
+   "now": "2026-11-05T21:02:47.295355Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 2,
+     "last_review": "2026-10-31T09:47:40.048287Z",
+     "phase": 1,
+     "stability": 21.943167604102033
+    },
+    {
+     "id": "c001",
+     "importance": 2,
+     "last_review": "2026-09-23T13:27:23.712252Z",
+     "phase": 3,
+     "stability": 25.82996054267714
+    },
+    {
+     "id": "c002",
+     "importance": 2,
+     "last_review": "2026-11-09T10:32:39.178630Z",
+     "phase": 1,
+     "stability": 80.50025128200122
+    },
+    {
+     "id": "c003",
+     "importance": 2,
+     "last_review": "2026-10-16T09:30:30.696560Z",
+     "phase": 3,
+     "stability": 4.7522764483799165
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": "2026-09-22T23:50:04.122521Z",
+     "phase": 2,
+     "stability": 11.258522055953907
+    },
+    {
+     "id": "c005",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c006",
+     "importance": 2,
+     "last_review": "2026-10-31T14:51:00.366113Z",
+     "phase": 3,
+     "stability": 67.73641067006447
+    },
+    {
+     "id": "c007",
+     "importance": 1,
+     "last_review": "2026-10-27T23:12:42.291321Z",
+     "phase": 2,
+     "stability": 28.39668112322335
+    },
+    {
+     "id": "c008",
+     "importance": 1,
+     "last_review": "2026-09-12T18:11:21.107204Z",
+     "phase": 1,
+     "stability": 55.74446145207078
+    },
+    {
+     "id": "c009",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c010",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c011",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c012",
+     "importance": 2,
+     "last_review": "2026-09-10T19:58:14.206405Z",
+     "phase": 2,
+     "stability": 32.1489034758297
+    },
+    {
+     "id": "c013",
+     "importance": 0,
+     "last_review": "2026-11-08T14:53:38.000108Z",
+     "phase": 3,
+     "stability": 61.228178134703704
+    },
+    {
+     "id": "c014",
+     "importance": 0,
+     "last_review": "2026-11-11T11:46:16.232989Z",
+     "phase": 2,
+     "stability": 59.451085343570924
+    },
+    {
+     "id": "c015",
+     "importance": 2,
+     "last_review": "2026-09-21T15:53:06.628726Z",
+     "phase": 2,
+     "stability": 67.29936821706289
+    },
+    {
+     "id": "c016",
+     "importance": 1,
+     "last_review": "2026-09-15T11:47:08.470985Z",
+     "phase": 2,
+     "stability": 66.78439634494629
+    },
+    {
+     "id": "c017",
+     "importance": 2,
+     "last_review": "2026-09-03T03:43:30.865257Z",
+     "phase": 3,
+     "stability": 24.14153423120071
+    },
+    {
+     "id": "c018",
+     "importance": 0,
+     "last_review": "2026-11-06T12:12:33.108173Z",
+     "phase": 1,
+     "stability": 3.8922688021474334
+    },
+    {
+     "id": "c019",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c020",
+     "importance": 0,
+     "last_review": "2026-10-31T23:29:27.794526Z",
+     "phase": 3,
+     "stability": 18.34334719303907
+    },
+    {
+     "id": "c021",
+     "importance": 2,
+     "last_review": "2026-10-27T19:07:28.438461Z",
+     "phase": 3,
+     "stability": 4.61789335161366
+    },
+    {
+     "id": "c022",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c023",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c024",
+     "importance": 1,
+     "last_review": "2026-09-01T17:27:42.713633Z",
+     "phase": 2,
+     "stability": 68.4605165975086
+    },
+    {
+     "id": "c025",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c026",
+     "importance": 1,
+     "last_review": "2026-10-30T16:16:49.409054Z",
+     "phase": 2,
+     "stability": 23.809758997121207
+    },
+    {
+     "id": "c027",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c028",
+     "importance": 1,
+     "last_review": "2026-11-17T07:03:16.418272Z",
+     "phase": 2,
+     "stability": 16.803847419756423
+    },
+    {
+     "id": "c029",
+     "importance": 1,
+     "last_review": "2026-09-30T08:34:07.828503Z",
+     "phase": 3,
+     "stability": 80.1268082171222
+    },
+    {
+     "id": "c030",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c031",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c032",
+     "importance": 1,
+     "last_review": "2026-10-01T10:30:32.115311Z",
+     "phase": 3,
+     "stability": 46.37918897953397
+    },
+    {
+     "id": "c033",
+     "importance": 1,
+     "last_review": "2026-11-09T03:29:29.380991Z",
+     "phase": 2,
+     "stability": 84.81682385674812
+    },
+    {
+     "id": "c034",
+     "importance": 1,
+     "last_review": "2026-09-17T07:26:45.362928Z",
+     "phase": 2,
+     "stability": 35.519604873425116
+    },
+    {
+     "id": "c035",
+     "importance": 2,
+     "last_review": "2026-09-20T21:22:36.358966Z",
+     "phase": 3,
+     "stability": 63.43071729930095
+    },
+    {
+     "id": "c036",
+     "importance": 0,
+     "last_review": "2026-11-08T17:51:35.464679Z",
+     "phase": 3,
+     "stability": 3.8812553258881097
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 22,
+    "cut_off": 0,
+    "days_to_exam": 30,
+    "ids": [
+     "c005",
+     "c009",
+     "c019",
+     "c027",
+     "c003",
+     "c021",
+     "c017",
+     "c004",
+     "c001",
+     "c012",
+     "c000",
+     "c034",
+     "c035",
+     "c015",
+     "c026",
+     "c028",
+     "c007",
+     "c008",
+     "c032",
+     "c024",
+     "c016",
+     "c029"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 1,
+    "selected": 22,
+    "too_few": false,
+    "window_days": 28
+   },
+   "median": 8.0,
+   "minutes": 120,
+   "name": "quick:4",
+   "now": "2026-11-19T19:13:21.529204Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 0,
+     "last_review": "2026-10-02T03:31:39.652929Z",
+     "phase": 2,
+     "stability": 72.6962846545155
+    },
+    {
+     "id": "c001",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c002",
+     "importance": 0,
+     "last_review": "2026-08-23T13:00:15.386006Z",
+     "phase": 2,
+     "stability": 19.85346203158421
+    },
+    {
+     "id": "c003",
+     "importance": 2,
+     "last_review": "2026-09-06T03:36:30.470468Z",
+     "phase": 1,
+     "stability": 6.812364067975331
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c005",
+     "importance": 1,
+     "last_review": "2026-09-13T15:15:40.409445Z",
+     "phase": 1,
+     "stability": 89.25739797018879
+    },
+    {
+     "id": "c006",
+     "importance": 0,
+     "last_review": "2026-09-17T07:02:07.858985Z",
+     "phase": 2,
+     "stability": 85.11173531612336
+    },
+    {
+     "id": "c007",
+     "importance": 0,
+     "last_review": "2026-09-08T08:15:02.199955Z",
+     "phase": 2,
+     "stability": 26.77061533931352
+    },
+    {
+     "id": "c008",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c009",
+     "importance": 2,
+     "last_review": "2026-08-23T14:54:24.324958Z",
+     "phase": 2,
+     "stability": 30.773909537255307
+    },
+    {
+     "id": "c010",
+     "importance": 2,
+     "last_review": "2026-08-19T14:34:54.933628Z",
+     "phase": 2,
+     "stability": 77.07582124158775
+    },
+    {
+     "id": "c011",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c012",
+     "importance": 0,
+     "last_review": "2026-08-19T00:05:20.148210Z",
+     "phase": 2,
+     "stability": 8.729687827193894
+    },
+    {
+     "id": "c013",
+     "importance": 0,
+     "last_review": "2026-10-22T06:01:16.256006Z",
+     "phase": 1,
+     "stability": 85.38157517450978
+    },
+    {
+     "id": "c014",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c015",
+     "importance": 1,
+     "last_review": "2026-09-10T12:02:47.647668Z",
+     "phase": 1,
+     "stability": 15.448655491723912
+    },
+    {
+     "id": "c016",
+     "importance": 1,
+     "last_review": "2026-10-19T20:50:22.714844Z",
+     "phase": 1,
+     "stability": 62.35008638081698
+    },
+    {
+     "id": "c017",
+     "importance": 1,
+     "last_review": "2026-10-07T07:15:29.251232Z",
+     "phase": 2,
+     "stability": 31.398894243417676
+    },
+    {
+     "id": "c018",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c019",
+     "importance": 0,
+     "last_review": "2026-08-24T03:04:31.285125Z",
+     "phase": 2,
+     "stability": 61.37114259538585
+    },
+    {
+     "id": "c020",
+     "importance": 1,
+     "last_review": "2026-08-22T23:02:12.178511Z",
+     "phase": 3,
+     "stability": 71.41990752735244
+    },
+    {
+     "id": "c021",
+     "importance": 1,
+     "last_review": "2026-09-08T13:02:41.807442Z",
+     "phase": 2,
+     "stability": 50.21596864015613
+    },
+    {
+     "id": "c022",
+     "importance": 1,
+     "last_review": "2026-10-04T16:52:56.039081Z",
+     "phase": 3,
+     "stability": 83.56069793987162
+    },
+    {
+     "id": "c023",
+     "importance": 1,
+     "last_review": "2026-10-29T15:40:57.647220Z",
+     "phase": 2,
+     "stability": 34.23766956002267
+    },
+    {
+     "id": "c024",
+     "importance": 1,
+     "last_review": "2026-09-29T21:10:26.223321Z",
+     "phase": 2,
+     "stability": 15.214729527554706
+    },
+    {
+     "id": "c025",
+     "importance": 2,
+     "last_review": "2026-10-22T14:26:28.708830Z",
+     "phase": 3,
+     "stability": 88.36748463715071
+    },
+    {
+     "id": "c026",
+     "importance": 0,
+     "last_review": "2026-10-10T00:41:49.041001Z",
+     "phase": 1,
+     "stability": 50.71365643733108
+    },
+    {
+     "id": "c027",
+     "importance": 1,
+     "last_review": "2026-08-18T05:20:36.756098Z",
+     "phase": 2,
+     "stability": 55.690462491537644
+    },
+    {
+     "id": "c028",
+     "importance": 0,
+     "last_review": "2026-10-10T04:25:27.446000Z",
+     "phase": 1,
+     "stability": 41.443709294352374
+    },
+    {
+     "id": "c029",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c030",
+     "importance": 0,
+     "last_review": "2026-10-05T05:01:23.497235Z",
+     "phase": 3,
+     "stability": 9.269748534237424
+    },
+    {
+     "id": "c031",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c032",
+     "importance": 0,
+     "last_review": "2026-09-18T14:36:03.270179Z",
+     "phase": 3,
+     "stability": 80.17596858305569
+    },
+    {
+     "id": "c033",
+     "importance": 0,
+     "last_review": "2026-11-02T01:27:32.314897Z",
+     "phase": 1,
+     "stability": 9.18202043244263
+    },
+    {
+     "id": "c034",
+     "importance": 1,
+     "last_review": "2026-09-28T01:47:41.220412Z",
+     "phase": 3,
+     "stability": 22.674612089035413
+    },
+    {
+     "id": "c035",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c036",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c037",
+     "importance": 2,
+     "last_review": "2026-10-26T08:33:34.715683Z",
+     "phase": 2,
+     "stability": 65.15293013983776
+    },
+    {
+     "id": "c038",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c039",
+     "importance": 2,
+     "last_review": "2026-11-05T07:19:16.313025Z",
+     "phase": 1,
+     "stability": 52.60613426815468
+    },
+    {
+     "id": "c040",
+     "importance": 1,
+     "last_review": "2026-09-06T15:30:19.187364Z",
+     "phase": 2,
+     "stability": 74.36077385957742
+    },
+    {
+     "id": "c041",
+     "importance": 0,
+     "last_review": "2026-08-27T16:00:20.286857Z",
+     "phase": 1,
+     "stability": 6.0459603474053125
+    },
+    {
+     "id": "c042",
+     "importance": 2,
+     "last_review": "2026-09-10T01:44:22.917154Z",
+     "phase": 2,
+     "stability": 80.85223141502144
+    },
+    {
+     "id": "c043",
+     "importance": 0,
+     "last_review": "2026-08-21T15:21:22.469328Z",
+     "phase": 2,
+     "stability": 32.494322709819116
+    },
+    {
+     "id": "c044",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c045",
+     "importance": 0,
+     "last_review": "2026-09-14T17:16:30.723359Z",
+     "phase": 1,
+     "stability": 56.95601023567496
+    },
+    {
+     "id": "c046",
+     "importance": 2,
+     "last_review": "2026-09-14T21:35:31.846142Z",
+     "phase": 2,
+     "stability": 82.68874799307157
+    },
+    {
+     "id": "c047",
+     "importance": 0,
+     "last_review": "2026-09-14T07:47:17.548360Z",
+     "phase": 1,
+     "stability": 56.0617261812169
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 20,
+    "cut_off": 0,
+    "days_to_exam": 44,
+    "ids": [
+     "c014",
+     "c018",
+     "c031",
+     "c036",
+     "c044",
+     "c003",
+     "c009",
+     "c015",
+     "c024",
+     "c034",
+     "c010",
+     "c017",
+     "c027",
+     "c021",
+     "c042",
+     "c046",
+     "c020",
+     "c023",
+     "c040",
+     "c005"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 1,
+    "selected": 20,
+    "too_few": false,
+    "window_days": 42
+   },
+   "median": 12.0,
+   "minutes": 5,
+   "name": "quick:5",
+   "now": "2026-11-06T03:17:54.317953Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 2,
+     "last_review": "2026-11-20T18:25:52.293553Z",
+     "phase": 2,
+     "stability": 17.40319490173661
+    },
+    {
+     "id": "c001",
+     "importance": 0,
+     "last_review": "2026-10-13T12:44:05.244901Z",
+     "phase": 2,
+     "stability": 63.85993740828636
+    },
+    {
+     "id": "c002",
+     "importance": 2,
+     "last_review": "2026-12-15T12:00:43.225097Z",
+     "phase": 3,
+     "stability": 82.98441794556287
+    },
+    {
+     "id": "c003",
+     "importance": 2,
+     "last_review": "2026-12-05T05:13:59.806321Z",
+     "phase": 1,
+     "stability": 42.27950874106969
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": "2026-12-02T18:06:44.337897Z",
+     "phase": 2,
+     "stability": 8.485798883543852
+    },
+    {
+     "id": "c005",
+     "importance": 2,
+     "last_review": "2026-11-24T14:01:38.751652Z",
+     "phase": 2,
+     "stability": 28.91089300658693
+    },
+    {
+     "id": "c006",
+     "importance": 2,
+     "last_review": "2026-10-01T03:20:36.452201Z",
+     "phase": 2,
+     "stability": 58.4106189146817
+    },
+    {
+     "id": "c007",
+     "importance": 0,
+     "last_review": "2026-12-01T13:27:37.046248Z",
+     "phase": 2,
+     "stability": 35.46731102851007
+    },
+    {
+     "id": "c008",
+     "importance": 0,
+     "last_review": "2026-10-23T04:17:05.025189Z",
+     "phase": 2,
+     "stability": 83.56615117365263
+    },
+    {
+     "id": "c009",
+     "importance": 2,
+     "last_review": "2026-12-12T04:10:30.212465Z",
+     "phase": 2,
+     "stability": 48.814900943589265
+    },
+    {
+     "id": "c010",
+     "importance": 0,
+     "last_review": "2026-12-08T09:02:00.093870Z",
+     "phase": 3,
+     "stability": 67.91451702837684
+    },
+    {
+     "id": "c011",
+     "importance": 1,
+     "last_review": "2026-12-14T22:25:00.738256Z",
+     "phase": 3,
+     "stability": 15.182722689867902
+    },
+    {
+     "id": "c012",
+     "importance": 1,
+     "last_review": "2026-11-28T03:18:42.083162Z",
+     "phase": 2,
+     "stability": 8.781789229158456
+    },
+    {
+     "id": "c013",
+     "importance": 0,
+     "last_review": "2026-11-23T23:22:11.718911Z",
+     "phase": 2,
+     "stability": 59.32826924904844
+    },
+    {
+     "id": "c014",
+     "importance": 0,
+     "last_review": "2026-10-06T12:36:52.418510Z",
+     "phase": 1,
+     "stability": 17.363631982558946
+    },
+    {
+     "id": "c015",
+     "importance": 0,
+     "last_review": "2026-09-29T12:23:07.113394Z",
+     "phase": 2,
+     "stability": 79.46354094330164
+    },
+    {
+     "id": "c016",
+     "importance": 1,
+     "last_review": "2026-10-19T07:29:03.193572Z",
+     "phase": 2,
+     "stability": 30.999027153127113
+    },
+    {
+     "id": "c017",
+     "importance": 2,
+     "last_review": "2026-09-29T04:31:01.028419Z",
+     "phase": 2,
+     "stability": 31.424239178412982
+    },
+    {
+     "id": "c018",
+     "importance": 2,
+     "last_review": "2026-10-29T14:01:19.595422Z",
+     "phase": 2,
+     "stability": 18.629463331069672
+    },
+    {
+     "id": "c019",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c020",
+     "importance": 0,
+     "last_review": "2026-12-16T01:14:58.917793Z",
+     "phase": 2,
+     "stability": 3.37849797699892
+    },
+    {
+     "id": "c021",
+     "importance": 0,
+     "last_review": "2026-11-28T02:17:03.553231Z",
+     "phase": 2,
+     "stability": 12.480265461413373
+    },
+    {
+     "id": "c022",
+     "importance": 1,
+     "last_review": "2026-11-19T15:14:23.124421Z",
+     "phase": 1,
+     "stability": 66.69826812953345
+    },
+    {
+     "id": "c023",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c024",
+     "importance": 2,
+     "last_review": "2026-11-28T16:17:30.055776Z",
+     "phase": 3,
+     "stability": 56.117998310966534
+    },
+    {
+     "id": "c025",
+     "importance": 1,
+     "last_review": "2026-11-13T00:14:07.842456Z",
+     "phase": 2,
+     "stability": 34.26736086002119
+    },
+    {
+     "id": "c026",
+     "importance": 0,
+     "last_review": "2026-11-13T07:31:49.748630Z",
+     "phase": 2,
+     "stability": 83.3036979978287
+    },
+    {
+     "id": "c027",
+     "importance": 1,
+     "last_review": "2026-11-15T05:56:24.909007Z",
+     "phase": 2,
+     "stability": 44.32203854046964
+    },
+    {
+     "id": "c028",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c029",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c030",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c031",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c032",
+     "importance": 2,
+     "last_review": "2026-12-16T20:15:53.272957Z",
+     "phase": 1,
+     "stability": 12.326221255195344
+    },
+    {
+     "id": "c033",
+     "importance": 0,
+     "last_review": "2026-10-28T21:44:41.997037Z",
+     "phase": 2,
+     "stability": 71.20739185336978
+    },
+    {
+     "id": "c034",
+     "importance": 1,
+     "last_review": "2026-11-23T13:24:13.572823Z",
+     "phase": 3,
+     "stability": 88.67230201600407
+    },
+    {
+     "id": "c035",
+     "importance": 0,
+     "last_review": "2026-10-31T09:07:12.223257Z",
+     "phase": 2,
+     "stability": 69.08052580074423
+    },
+    {
+     "id": "c036",
+     "importance": 1,
+     "last_review": "2026-10-12T00:31:03.343584Z",
+     "phase": 3,
+     "stability": 25.70974950354303
+    },
+    {
+     "id": "c037",
+     "importance": 0,
+     "last_review": "2026-11-30T13:56:48.910793Z",
+     "phase": 1,
+     "stability": 16.86342622124353
+    },
+    {
+     "id": "c038",
+     "importance": 0,
+     "last_review": "2026-10-04T14:19:23.117245Z",
+     "phase": 2,
+     "stability": 64.9495839585649
+    },
+    {
+     "id": "c039",
+     "importance": 0,
+     "last_review": "2026-11-24T16:34:03.019550Z",
+     "phase": 2,
+     "stability": 11.990016853864883
+    },
+    {
+     "id": "c040",
+     "importance": 2,
+     "last_review": "2026-11-08T01:18:20.179432Z",
+     "phase": 3,
+     "stability": 15.341510866604553
+    },
+    {
+     "id": "c041",
+     "importance": 2,
+     "last_review": "2026-12-11T23:45:05.364575Z",
+     "phase": 2,
+     "stability": 10.539202082939491
+    },
+    {
+     "id": "c042",
+     "importance": 0,
+     "last_review": "2026-11-19T04:57:38.830161Z",
+     "phase": 2,
+     "stability": 60.048152908845466
+    },
+    {
+     "id": "c043",
+     "importance": 0,
+     "last_review": "2026-10-07T18:08:22.799064Z",
+     "phase": 2,
+     "stability": 6.96752840132955
+    },
+    {
+     "id": "c044",
+     "importance": 1,
+     "last_review": "2026-10-13T05:13:37.205236Z",
+     "phase": 1,
+     "stability": 33.56673534677021
+    },
+    {
+     "id": "c045",
+     "importance": 1,
+     "last_review": "2026-11-02T14:34:34.782058Z",
+     "phase": 3,
+     "stability": 75.43592500214781
+    },
+    {
+     "id": "c046",
+     "importance": 0,
+     "last_review": "2026-09-30T13:33:56.267889Z",
+     "phase": 2,
+     "stability": 84.2851056954304
+    },
+    {
+     "id": "c047",
+     "importance": 0,
+     "last_review": "2026-12-10T21:33:22.012121Z",
+     "phase": 2,
+     "stability": 36.741723744001895
+    },
+    {
+     "id": "c048",
+     "importance": 0,
+     "last_review": "2026-11-24T15:46:01.750875Z",
+     "phase": 3,
+     "stability": 10.757867073245354
+    },
+    {
+     "id": "c049",
+     "importance": 2,
+     "last_review": "2026-11-22T05:57:17.904524Z",
+     "phase": 2,
+     "stability": 88.35986121748216
+    },
+    {
+     "id": "c050",
+     "importance": 0,
+     "last_review": "2026-11-18T05:54:37.051751Z",
+     "phase": 2,
+     "stability": 77.68409057220084
+    },
+    {
+     "id": "c051",
+     "importance": 0,
+     "last_review": "2026-12-10T06:00:00.137294Z",
+     "phase": 2,
+     "stability": 20.322309553329948
+    },
+    {
+     "id": "c052",
+     "importance": 1,
+     "last_review": "2026-10-26T04:03:30.925083Z",
+     "phase": 1,
+     "stability": 87.44295637071141
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 13,
+    "cut_off": 13,
+    "days_to_exam": 2,
+    "ids": [],
+    "minutes_per_day": 0,
+    "per_day": 0,
+    "selected": 0,
+    "too_few": true,
+    "window_days": 0
+   },
+   "median": 12.0,
+   "minutes": 120,
+   "name": "quick:6",
+   "now": "2026-12-17T20:10:22.383159Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 0,
+    "cut_off": 0,
+    "days_to_exam": 12,
+    "ids": [],
+    "minutes_per_day": 0,
+    "per_day": 0,
+    "selected": 0,
+    "too_few": true,
+    "window_days": 10
+   },
+   "median": 25.0,
+   "minutes": 30,
+   "name": "quick:7",
+   "now": "2026-12-07T18:23:32.253204Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 2,
+     "last_review": "2026-11-26T09:16:02.080053Z",
+     "phase": 2,
+     "stability": 74.02464691082471
+    },
+    {
+     "id": "c001",
+     "importance": 1,
+     "last_review": "2026-10-31T19:00:26.167645Z",
+     "phase": 3,
+     "stability": 46.62685313623688
+    },
+    {
+     "id": "c002",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c003",
+     "importance": 1,
+     "last_review": "2026-10-18T10:21:05.796506Z",
+     "phase": 2,
+     "stability": 8.095498887147691
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": "2026-11-13T06:31:10.509350Z",
+     "phase": 3,
+     "stability": 62.4838827596418
+    },
+    {
+     "id": "c005",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c006",
+     "importance": 1,
+     "last_review": "2026-11-19T23:48:37.852032Z",
+     "phase": 2,
+     "stability": 48.62060721331811
+    },
+    {
+     "id": "c007",
+     "importance": 1,
+     "last_review": "2026-10-01T23:43:04.925749Z",
+     "phase": 2,
+     "stability": 77.52906473625094
+    },
+    {
+     "id": "c008",
+     "importance": 2,
+     "last_review": "2026-10-31T02:09:11.517714Z",
+     "phase": 3,
+     "stability": 57.40820942995048
+    },
+    {
+     "id": "c009",
+     "importance": 1,
+     "last_review": "2026-10-30T14:11:41.347165Z",
+     "phase": 2,
+     "stability": 77.61377892936416
+    },
+    {
+     "id": "c010",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c011",
+     "importance": 2,
+     "last_review": "2026-11-29T21:46:44.620322Z",
+     "phase": 2,
+     "stability": 62.412969718290846
+    },
+    {
+     "id": "c012",
+     "importance": 1,
+     "last_review": "2026-11-12T08:03:36.498544Z",
+     "phase": 2,
+     "stability": 80.5726554239355
+    },
+    {
+     "id": "c013",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c014",
+     "importance": 2,
+     "last_review": "2026-10-28T17:19:40.638958Z",
+     "phase": 2,
+     "stability": 26.091873908578822
+    },
+    {
+     "id": "c015",
+     "importance": 0,
+     "last_review": "2026-11-03T14:30:06.528903Z",
+     "phase": 3,
+     "stability": 21.74613944297902
+    },
+    {
+     "id": "c016",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c017",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c018",
+     "importance": 1,
+     "last_review": "2026-10-09T12:03:14.875585Z",
+     "phase": 1,
+     "stability": 52.6109545939249
+    },
+    {
+     "id": "c019",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c020",
+     "importance": 0,
+     "last_review": "2026-12-03T22:01:27.780889Z",
+     "phase": 3,
+     "stability": 15.450150848155223
+    },
+    {
+     "id": "c021",
+     "importance": 0,
+     "last_review": "2026-10-06T16:03:35.566823Z",
+     "phase": 3,
+     "stability": 31.235881914528733
+    },
+    {
+     "id": "c022",
+     "importance": 2,
+     "last_review": "2026-11-18T08:09:10.894138Z",
+     "phase": 2,
+     "stability": 61.76198829881825
+    },
+    {
+     "id": "c023",
+     "importance": 1,
+     "last_review": "2026-12-16T19:54:45.558468Z",
+     "phase": 3,
+     "stability": 87.97127923809562
+    },
+    {
+     "id": "c024",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c025",
+     "importance": 2,
+     "last_review": "2026-11-30T05:00:53.625585Z",
+     "phase": 2,
+     "stability": 50.870451213483825
+    },
+    {
+     "id": "c026",
+     "importance": 2,
+     "last_review": "2026-10-29T13:03:12.206884Z",
+     "phase": 2,
+     "stability": 1.184785863726924
+    },
+    {
+     "id": "c027",
+     "importance": 0,
+     "last_review": "2026-11-23T02:26:30.447415Z",
+     "phase": 3,
+     "stability": 2.6328038114546155
+    },
+    {
+     "id": "c028",
+     "importance": 1,
+     "last_review": "2026-11-13T06:22:29.205783Z",
+     "phase": 2,
+     "stability": 45.233061811757665
+    },
+    {
+     "id": "c029",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c030",
+     "importance": 1,
+     "last_review": "2026-11-24T01:31:37.563928Z",
+     "phase": 1,
+     "stability": 80.762122294611
+    },
+    {
+     "id": "c031",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c032",
+     "importance": 0,
+     "last_review": "2026-10-03T02:02:48.537161Z",
+     "phase": 2,
+     "stability": 68.85047845377736
+    },
+    {
+     "id": "c033",
+     "importance": 1,
+     "last_review": "2026-11-13T22:46:19.375961Z",
+     "phase": 2,
+     "stability": 78.50021273146211
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 8,
+    "cut_off": 8,
+    "days_to_exam": 1,
+    "ids": [],
+    "minutes_per_day": 0,
+    "per_day": 0,
+    "selected": 0,
+    "too_few": true,
+    "window_days": 0
+   },
+   "median": 12.0,
+   "minutes": 120,
+   "name": "quick:8",
+   "now": "2026-12-18T11:27:06.780214Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 0,
+     "last_review": "2026-11-04T15:08:50.523960Z",
+     "phase": 2,
+     "stability": 3.6623513961557985
+    },
+    {
+     "id": "c001",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c002",
+     "importance": 0,
+     "last_review": "2026-10-10T14:41:31.916111Z",
+     "phase": 2,
+     "stability": 32.98511759237368
+    },
+    {
+     "id": "c003",
+     "importance": 0,
+     "last_review": "2026-10-19T21:14:01.012147Z",
+     "phase": 1,
+     "stability": 48.3390128673174
+    },
+    {
+     "id": "c004",
+     "importance": 2,
+     "last_review": "2026-11-02T21:17:11.804097Z",
+     "phase": 2,
+     "stability": 70.70290637412992
+    },
+    {
+     "id": "c005",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c006",
+     "importance": 0,
+     "last_review": "2026-11-12T23:11:18.269907Z",
+     "phase": 2,
+     "stability": 28.04802391261892
+    },
+    {
+     "id": "c007",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c008",
+     "importance": 1,
+     "last_review": "2026-10-05T19:46:46.491273Z",
+     "phase": 3,
+     "stability": 2.7746866947938833
+    },
+    {
+     "id": "c009",
+     "importance": 1,
+     "last_review": "2026-11-08T19:22:42.552592Z",
+     "phase": 3,
+     "stability": 2.291561788986621
+    },
+    {
+     "id": "c010",
+     "importance": 2,
+     "last_review": "2026-11-28T07:37:27.515907Z",
+     "phase": 1,
+     "stability": 1.173927923360184
+    },
+    {
+     "id": "c011",
+     "importance": 2,
+     "last_review": "2026-12-11T07:15:13.933000Z",
+     "phase": 3,
+     "stability": 1.7769538235381113
+    },
+    {
+     "id": "c012",
+     "importance": 2,
+     "last_review": "2026-11-26T04:48:14.140390Z",
+     "phase": 3,
+     "stability": 29.97569356763056
+    },
+    {
+     "id": "c013",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c014",
+     "importance": 1,
+     "last_review": "2026-12-07T03:43:24.064078Z",
+     "phase": 2,
+     "stability": 77.07444586481854
+    },
+    {
+     "id": "c015",
+     "importance": 0,
+     "last_review": "2026-12-07T05:10:04.366565Z",
+     "phase": 2,
+     "stability": 23.448793767310754
+    },
+    {
+     "id": "c016",
+     "importance": 0,
+     "last_review": "2026-12-16T09:59:52.958826Z",
+     "phase": 2,
+     "stability": 2.5809303954683
+    },
+    {
+     "id": "c017",
+     "importance": 0,
+     "last_review": "2026-11-01T02:55:45.653072Z",
+     "phase": 2,
+     "stability": 8.095163176618232
+    },
+    {
+     "id": "c018",
+     "importance": 1,
+     "last_review": "2026-11-19T19:10:51.259567Z",
+     "phase": 1,
+     "stability": 66.24857458107016
+    },
+    {
+     "id": "c019",
+     "importance": 0,
+     "last_review": "2026-10-18T02:52:46.452200Z",
+     "phase": 3,
+     "stability": 30.511024363999006
+    },
+    {
+     "id": "c020",
+     "importance": 1,
+     "last_review": "2026-12-06T22:12:06.734929Z",
+     "phase": 2,
+     "stability": 89.30921665860043
+    },
+    {
+     "id": "c021",
+     "importance": 2,
+     "last_review": "2026-11-25T02:26:25.085378Z",
+     "phase": 1,
+     "stability": 17.737071183965906
+    },
+    {
+     "id": "c022",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c023",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c024",
+     "importance": 1,
+     "last_review": "2026-10-11T17:48:48.096617Z",
+     "phase": 1,
+     "stability": 69.14594781778193
+    },
+    {
+     "id": "c025",
+     "importance": 1,
+     "last_review": "2026-10-31T04:29:10.345375Z",
+     "phase": 2,
+     "stability": 38.43451726684215
+    },
+    {
+     "id": "c026",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c027",
+     "importance": 2,
+     "last_review": "2026-10-18T09:22:45.407619Z",
+     "phase": 2,
+     "stability": 54.35426625690235
+    },
+    {
+     "id": "c028",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c029",
+     "importance": 1,
+     "last_review": "2026-11-18T20:16:47.950544Z",
+     "phase": 2,
+     "stability": 83.0758649656786
+    },
+    {
+     "id": "c030",
+     "importance": 2,
+     "last_review": "2026-11-09T23:23:38.969910Z",
+     "phase": 1,
+     "stability": 65.7441039509249
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 10,
+    "cut_off": 0,
+    "days_to_exam": 3,
+    "ids": [
+     "c005",
+     "c028",
+     "c010",
+     "c008",
+     "c009",
+     "c011",
+     "c021",
+     "c027",
+     "c025",
+     "c024"
+    ],
+    "minutes_per_day": 5,
+    "per_day": 10,
+    "selected": 10,
+    "too_few": true,
+    "window_days": 1
+   },
+   "median": 25.0,
+   "minutes": 120,
+   "name": "quick:9",
+   "now": "2026-12-16T19:58:13.739584Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 0,
+     "last_review": "2026-11-06T06:42:18.942300Z",
+     "phase": 3,
+     "stability": 79.01824751048153
+    },
+    {
+     "id": "c001",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c002",
+     "importance": 2,
+     "last_review": "2026-11-06T07:23:40.072907Z",
+     "phase": 2,
+     "stability": 40.03910795590179
+    },
+    {
+     "id": "c003",
+     "importance": 0,
+     "last_review": "2026-10-30T11:01:29.572587Z",
+     "phase": 1,
+     "stability": 73.84066441691235
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": "2026-10-03T03:25:20.514603Z",
+     "phase": 2,
+     "stability": 16.12488076658073
+    },
+    {
+     "id": "c005",
+     "importance": 0,
+     "last_review": "2026-11-18T17:09:04.108949Z",
+     "phase": 1,
+     "stability": 61.78500142314102
+    },
+    {
+     "id": "c006",
+     "importance": 1,
+     "last_review": "2026-12-01T16:26:55.789478Z",
+     "phase": 1,
+     "stability": 12.39050875094447
+    },
+    {
+     "id": "c007",
+     "importance": 2,
+     "last_review": "2026-10-27T04:03:17.445378Z",
+     "phase": 1,
+     "stability": 1.4193936143806212
+    },
+    {
+     "id": "c008",
+     "importance": 1,
+     "last_review": "2026-10-14T06:39:13.417294Z",
+     "phase": 3,
+     "stability": 64.58396472010729
+    },
+    {
+     "id": "c009",
+     "importance": 2,
+     "last_review": "2026-11-10T04:52:18.168064Z",
+     "phase": 2,
+     "stability": 49.92095240838894
+    },
+    {
+     "id": "c010",
+     "importance": 1,
+     "last_review": "2026-11-14T03:35:02.074592Z",
+     "phase": 1,
+     "stability": 9.51088831269384
+    },
+    {
+     "id": "c011",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c012",
+     "importance": 1,
+     "last_review": "2026-12-10T08:05:50.809412Z",
+     "phase": 2,
+     "stability": 44.242450307756926
+    },
+    {
+     "id": "c013",
+     "importance": 2,
+     "last_review": "2026-10-07T07:35:03.737071Z",
+     "phase": 2,
+     "stability": 84.7401477449218
+    },
+    {
+     "id": "c014",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c015",
+     "importance": 1,
+     "last_review": "2026-10-14T02:29:49.299289Z",
+     "phase": 2,
+     "stability": 64.56512865766253
+    },
+    {
+     "id": "c016",
+     "importance": 0,
+     "last_review": "2026-11-09T13:56:56.242945Z",
+     "phase": 3,
+     "stability": 47.23805144906163
+    },
+    {
+     "id": "c017",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c018",
+     "importance": 2,
+     "last_review": "2026-10-13T15:47:37.566344Z",
+     "phase": 2,
+     "stability": 31.86738141141001
+    },
+    {
+     "id": "c019",
+     "importance": 0,
+     "last_review": "2026-11-27T10:27:08.821193Z",
+     "phase": 3,
+     "stability": 25.366929925183285
+    },
+    {
+     "id": "c020",
+     "importance": 2,
+     "last_review": "2026-10-17T16:39:45.273244Z",
+     "phase": 1,
+     "stability": 63.68081540501456
+    },
+    {
+     "id": "c021",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c022",
+     "importance": 2,
+     "last_review": "2026-11-28T03:14:48.386839Z",
+     "phase": 2,
+     "stability": 2.165544345512754
+    },
+    {
+     "id": "c023",
+     "importance": 0,
+     "last_review": "2026-11-26T04:25:00.930654Z",
+     "phase": 2,
+     "stability": 62.26030530284308
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 10,
+    "cut_off": 0,
+    "days_to_exam": 5,
+    "ids": [
+     "c014",
+     "c007",
+     "c022",
+     "c004",
+     "c010",
+     "c018",
+     "c002",
+     "c006",
+     "c015",
+     "c008"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 4,
+    "selected": 10,
+    "too_few": true,
+    "window_days": 3
+   },
+   "median": 8.0,
+   "minutes": 15,
+   "name": "quick:10",
+   "now": "2026-12-14T10:05:53.931728Z",
+   "w20": 0.1542
+  },
+  {
+   "cards": [
+    {
+     "id": "c000",
+     "importance": 1,
+     "last_review": "2026-11-26T03:48:15.185252Z",
+     "phase": 3,
+     "stability": 51.52079564049502
+    },
+    {
+     "id": "c001",
+     "importance": 1,
+     "last_review": "2026-10-09T05:14:16.894227Z",
+     "phase": 1,
+     "stability": 22.791222008920602
+    },
+    {
+     "id": "c002",
+     "importance": 2,
+     "last_review": "2026-09-27T15:56:03.145511Z",
+     "phase": 3,
+     "stability": 81.76953812125657
+    },
+    {
+     "id": "c003",
+     "importance": 1,
+     "last_review": "2026-11-28T02:07:17.196958Z",
+     "phase": 3,
+     "stability": 35.30263334693728
+    },
+    {
+     "id": "c004",
+     "importance": 1,
+     "last_review": "2026-10-05T12:38:06.132753Z",
+     "phase": 1,
+     "stability": 23.003498256896435
+    },
+    {
+     "id": "c005",
+     "importance": 0,
+     "last_review": "2026-10-05T06:40:17.135170Z",
+     "phase": 2,
+     "stability": 45.13367241872658
+    },
+    {
+     "id": "c006",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c007",
+     "importance": 0,
+     "last_review": "2026-11-17T06:34:44.092910Z",
+     "phase": 1,
+     "stability": 82.3268087386028
+    },
+    {
+     "id": "c008",
+     "importance": 2,
+     "last_review": "2026-10-05T16:31:56.740201Z",
+     "phase": 2,
+     "stability": 88.20971884484139
+    },
+    {
+     "id": "c009",
+     "importance": 0,
+     "last_review": "2026-11-30T16:43:07.424029Z",
+     "phase": 2,
+     "stability": 75.29446787819374
+    },
+    {
+     "id": "c010",
+     "importance": 1,
+     "last_review": "2026-11-30T11:05:33.826406Z",
+     "phase": 1,
+     "stability": 16.841321384102134
+    },
+    {
+     "id": "c011",
+     "importance": 1,
+     "last_review": "2026-11-08T03:14:04.542264Z",
+     "phase": 1,
+     "stability": 79.0316142886612
+    },
+    {
+     "id": "c012",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c013",
+     "importance": 0,
+     "last_review": "2026-10-29T18:25:45.129324Z",
+     "phase": 3,
+     "stability": 83.93054843106711
+    },
+    {
+     "id": "c014",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c015",
+     "importance": 2,
+     "last_review": "2026-11-07T11:57:32.250301Z",
+     "phase": 1,
+     "stability": 71.94897125995824
+    },
+    {
+     "id": "c016",
+     "importance": 2,
+     "last_review": "2026-11-11T10:48:53.541787Z",
+     "phase": 3,
+     "stability": 79.1852515011313
+    },
+    {
+     "id": "c017",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c018",
+     "importance": 1,
+     "last_review": "2026-11-15T08:58:56.058226Z",
+     "phase": 3,
+     "stability": 20.41342023629567
+    },
+    {
+     "id": "c019",
+     "importance": 2,
+     "last_review": "2026-09-30T16:20:06.517080Z",
+     "phase": 2,
+     "stability": 47.92496321565075
+    },
+    {
+     "id": "c020",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c021",
+     "importance": 0,
+     "last_review": "2026-11-18T17:42:57.520651Z",
+     "phase": 1,
+     "stability": 54.234704413256274
+    },
+    {
+     "id": "c022",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c023",
+     "importance": 0,
+     "last_review": "2026-09-22T23:30:35.816670Z",
+     "phase": 3,
+     "stability": 58.26825309502787
+    },
+    {
+     "id": "c024",
+     "importance": 1,
+     "last_review": "2026-10-21T03:47:05.516825Z",
+     "phase": 1,
+     "stability": 83.96418061113808
+    },
+    {
+     "id": "c025",
+     "importance": 1,
+     "last_review": "2026-11-13T20:06:28.397560Z",
+     "phase": 2,
+     "stability": 75.72935134850448
+    },
+    {
+     "id": "c026",
+     "importance": 1,
+     "last_review": "2026-10-06T19:38:51.151858Z",
+     "phase": 1,
+     "stability": 69.99222192436697
+    },
+    {
+     "id": "c027",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c028",
+     "importance": 0,
+     "last_review": "2026-10-30T15:30:37.749561Z",
+     "phase": 2,
+     "stability": 82.70013253490221
+    },
+    {
+     "id": "c029",
+     "importance": 1,
+     "last_review": "2026-10-06T01:26:32.156042Z",
+     "phase": 1,
+     "stability": 25.813173035026633
+    },
+    {
+     "id": "c030",
+     "importance": 0,
+     "last_review": "2026-10-18T09:57:05.382650Z",
+     "phase": 2,
+     "stability": 7.18991620921514
+    },
+    {
+     "id": "c031",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c032",
+     "importance": 1,
+     "last_review": "2026-12-03T15:39:17.433930Z",
+     "phase": 2,
+     "stability": 53.71701013307846
+    },
+    {
+     "id": "c033",
+     "importance": 1,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c034",
+     "importance": 0,
+     "last_review": "2026-10-29T15:44:48.119517Z",
+     "phase": 1,
+     "stability": 49.788533744633284
+    },
+    {
+     "id": "c035",
+     "importance": 0,
+     "last_review": "2026-09-26T10:47:34.538065Z",
+     "phase": 2,
+     "stability": 15.546281802519644
+    },
+    {
+     "id": "c036",
+     "importance": 1,
+     "last_review": "2026-10-20T07:58:55.668421Z",
+     "phase": 3,
+     "stability": 89.91182714340685
+    },
+    {
+     "id": "c037",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c038",
+     "importance": 2,
+     "last_review": "2026-09-23T22:11:28.547186Z",
+     "phase": 3,
+     "stability": 2.9397722975128513
+    },
+    {
+     "id": "c039",
+     "importance": 0,
+     "last_review": "2026-10-30T19:47:26.517809Z",
+     "phase": 3,
+     "stability": 65.16262544937938
+    },
+    {
+     "id": "c040",
+     "importance": 2,
+     "last_review": "2026-11-17T10:54:34.276617Z",
+     "phase": 3,
+     "stability": 35.086831655210155
+    },
+    {
+     "id": "c041",
+     "importance": 2,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c042",
+     "importance": 1,
+     "last_review": "2026-10-19T23:31:33.940118Z",
+     "phase": 2,
+     "stability": 75.16027794357362
+    },
+    {
+     "id": "c043",
+     "importance": 0,
+     "last_review": null,
+     "phase": 0,
+     "stability": null
+    },
+    {
+     "id": "c044",
+     "importance": 2,
+     "last_review": "2026-09-27T19:41:50.352775Z",
+     "phase": 3,
+     "stability": 68.64281367201541
+    },
+    {
+     "id": "c045",
+     "importance": 2,
+     "last_review": "2026-11-21T21:17:39.387712Z",
+     "phase": 2,
+     "stability": 75.67974868720582
+    },
+    {
+     "id": "c046",
+     "importance": 0,
+     "last_review": "2026-11-29T16:52:08.555147Z",
+     "phase": 3,
+     "stability": 71.12919942777121
+    },
+    {
+     "id": "c047",
+     "importance": 0,
+     "last_review": "2026-11-05T14:27:29.336066Z",
+     "phase": 3,
+     "stability": 52.99459355837644
+    },
+    {
+     "id": "c048",
+     "importance": 2,
+     "last_review": "2026-10-24T18:57:38.725492Z",
+     "phase": 3,
+     "stability": 83.4937491258776
+    },
+    {
+     "id": "c049",
+     "importance": 2,
+     "last_review": "2026-09-28T18:01:31.104549Z",
+     "phase": 1,
+     "stability": 9.090882704754307
+    },
+    {
+     "id": "c050",
+     "importance": 2,
+     "last_review": "2026-10-23T07:24:15.166950Z",
+     "phase": 1,
+     "stability": 60.81968065690583
+    },
+    {
+     "id": "c051",
+     "importance": 0,
+     "last_review": "2026-12-01T09:40:41.338776Z",
+     "phase": 2,
+     "stability": 27.383284523608232
+    },
+    {
+     "id": "c052",
+     "importance": 0,
+     "last_review": "2026-10-08T20:10:25.879262Z",
+     "phase": 3,
+     "stability": 42.630588803038634
+    },
+    {
+     "id": "c053",
+     "importance": 0,
+     "last_review": "2026-10-15T06:32:02.411235Z",
+     "phase": 1,
+     "stability": 83.39404407692665
+    },
+    {
+     "id": "c054",
+     "importance": 0,
+     "last_review": "2026-11-04T04:25:26.576148Z",
+     "phase": 2,
+     "stability": 48.87768090585163
+    },
+    {
+     "id": "c055",
+     "importance": 0,
+     "last_review": "2026-10-03T08:59:41.228245Z",
+     "phase": 2,
+     "stability": 35.91024365272443
+    }
+   ],
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": {
+    "candidates": 15,
+    "cut_off": 0,
+    "days_to_exam": 12,
+    "ids": [
+     "c006",
+     "c012",
+     "c020",
+     "c041",
+     "c038",
+     "c049",
+     "c004",
+     "c001",
+     "c029",
+     "c019",
+     "c044",
+     "c018",
+     "c002",
+     "c010",
+     "c026"
+    ],
+    "minutes_per_day": 1,
+    "per_day": 2,
+    "selected": 15,
+    "too_few": true,
+    "window_days": 10
+   },
+   "median": 12.0,
+   "minutes": 5,
+   "name": "quick:11",
+   "now": "2026-12-07T09:28:13.456817Z",
+   "w20": 0.1542
+  }
+ ],
+ "r_exam": [
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9539784997699505,
+   "last_review": "2026-09-13T22:38:00.035008Z",
+   "stability": 266.71621873249194,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9570911200560941,
+   "last_review": "2026-10-15T10:06:24.061670Z",
+   "stability": 195.91697829028587,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.8887573798099747,
+   "last_review": "2026-09-19T15:49:35.111249Z",
+   "stability": 78.10623951957137,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9806940187472613,
+   "last_review": "2026-12-15T06:33:38.274620Z",
+   "stability": 35.59640273082548,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.944806146771571,
+   "last_review": "2026-12-04T20:32:13.220430Z",
+   "stability": 33.7211682394912,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9498388504009377,
+   "last_review": "2026-08-25T14:24:34.744889Z",
+   "stability": 288.4413580569968,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.969065816350844,
+   "last_review": "2026-11-03T09:00:52.296694Z",
+   "stability": 202.94644786091897,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.8092853554354993,
+   "last_review": "2026-09-10T22:42:57.809468Z",
+   "stability": 33.36989123350445,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9788382293451512,
+   "last_review": "2026-11-18T14:05:18.376008Z",
+   "stability": 208.0724930591749,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.843138820678453,
+   "last_review": "2026-10-28T16:07:31.586731Z",
+   "stability": 25.42913816916099,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9924508838122574,
+   "last_review": "2026-12-09T21:51:14.515475Z",
+   "stability": 199.6135725436481,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9989441693237964,
+   "last_review": "2026-12-18T19:49:20.625125Z",
+   "stability": 191.202829301439,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9129504926457597,
+   "last_review": "2026-10-16T08:05:22.483716Z",
+   "stability": 78.940357250761,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.8947067569555249,
+   "last_review": "2026-08-22T05:10:04.531775Z",
+   "stability": 111.19251719498338,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9518206010955628,
+   "last_review": "2026-09-09T04:10:10.774586Z",
+   "stability": 264.9136486158505,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": null,
+   "last_review": "2026-11-09T19:34:45.838291Z",
+   "stability": null,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.8351431891674911,
+   "last_review": "2026-10-20T07:39:06.229801Z",
+   "stability": 26.912388559780524,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9885519950461035,
+   "last_review": "2026-11-27T06:19:06.087101Z",
+   "stability": 289.6150650433443,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9636065174577093,
+   "last_review": "2026-11-04T09:30:24.049503Z",
+   "stability": 165.1011265671453,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9059773680966346,
+   "last_review": "2026-11-22T23:26:46.030053Z",
+   "stability": 29.711752163793278,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9767189555111322,
+   "last_review": "2026-10-30T15:59:50.868311Z",
+   "stability": 299.9535337816701,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.837995366176369,
+   "last_review": "2026-09-15T07:44:01.793310Z",
+   "stability": 43.7803082094749,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9522268841106368,
+   "last_review": "2026-09-26T09:30:35.756657Z",
+   "stability": 222.42375208766586,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9552463412279419,
+   "last_review": "2026-10-19T10:34:28.811505Z",
+   "stability": 175.0365066664259,
+   "w20": 0.1542
+  },
+  {
+   "exam": "2026-12-20T04:00:00Z",
+   "expected": 0.9548491221401186,
+   "last_review": "2026-11-21T01:05:35.167252Z",
+   "stability": 81.71958448344196,
+   "w20": 0.1542
+  }
+ ],
+ "retention": [
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": null
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": -1.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 0.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 0.5
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 29.9
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 30.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 30.1
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 0,
+   "left": 90.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": null
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": -1.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 0.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 0.5
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 29.9
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 30.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 30.1
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 1,
+   "left": 90.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.85,
+   "enabled": true,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.85,
+   "enabled": false,
+   "expected": 0.85,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.9,
+   "enabled": true,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.9,
+   "enabled": false,
+   "expected": 0.9,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.95,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.93,
+   "enabled": true,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.93,
+   "enabled": false,
+   "expected": 0.93,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": null
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": -1.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 0.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 0.5
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 29.9
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 30.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 30.1
+  },
+  {
+   "desired": 0.97,
+   "enabled": true,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 90.0
+  },
+  {
+   "desired": 0.97,
+   "enabled": false,
+   "expected": 0.97,
+   "importance": 2,
+   "left": 90.0
+  }
+ ]
+}

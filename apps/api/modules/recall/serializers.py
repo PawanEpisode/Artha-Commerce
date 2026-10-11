@@ -296,6 +296,31 @@ class QueueQuery(serializers.Serializer):
             raise serializers.ValidationError("Send card ids separated by commas.") from exc
 
 
+class QuickPlanQuery(serializers.Serializer):
+    minutes = serializers.IntegerField(required=False, min_value=5, max_value=240)
+    subject_key = serializers.SlugField(required=False, max_length=80)
+    exam_date = serializers.DateField(required=False)
+    tz = serializers.CharField(required=False, max_length=64)
+
+
+def quick_plan_dict(result, sample: list) -> dict:
+    p = result.plan
+    return {
+        "exam_date": result.exam_date.isoformat(),
+        "days_to_exam": p.days_to_exam,
+        "window_days": p.window_days,
+        "budget_minutes_per_day": result.minutes_per_day,
+        "median_seconds": round(result.median_seconds, 1),
+        "candidates": p.candidates,
+        "selected": p.selected,
+        "cut_off": p.cut_off,
+        "per_day": p.per_day,
+        "minutes_per_day": p.minutes_per_day,
+        "too_few": p.too_few,
+        "sample": sample,
+    }
+
+
 class PackQuery(serializers.Serializer):
     limit = serializers.IntegerField(required=False, min_value=1, max_value=1000)
 
@@ -451,7 +476,7 @@ def today_dict(p, now) -> dict:
         "streak": p.streak,
         "tiles": [{"subject_key": t.subject_key, "total": t.total, "kinds": t.kinds} for t in p.tiles],
         "forgotten": [forgotten_dict(r) for r in p.forgotten],
-        "exam": None,
+        "exam": p.exam,
     }
 
 

@@ -221,7 +221,7 @@ describe('queue vectors', () => {
 })
 
 describe('vector files', () => {
-  it.each(['fsrs6_cases.json', 'folding_cases.json', 'queue_cases.json'])(
+  it.each(['fsrs6_cases.json', 'folding_cases.json', 'queue_cases.json', 'exam_cases.json'])(
     '%s is byte for byte the API copy',
     (name) => {
       const web = readFileSync(fileURLToPath(new URL(`./vectors/${name}`, import.meta.url)))

@@ -17,7 +17,7 @@ from rest_framework.throttling import ScopedRateThrottle
 from core.http import request_has_secret
 from core.permissions import ParsedAPIView
 
-from . import selectors, serializers, services
+from . import jobs, selectors, serializers, services
 from .errors import BatchTooLarge, CardDeleted
 from .permissions import RecallFlagEnabled
 from .selectors import CardFilter, QueueFilters
@@ -309,7 +309,7 @@ class VacationView(WriteView):
 
 class TickView(ParsedAPIView):
     """
-    Cron entry (Vercel Cron GET or a POST from any scheduler): closes sessions idle for 60 minutes. Authenticated by a shared
+    Cron entry (Vercel Cron GET or a POST from any scheduler): closes sessions idle for 60 minutes, starts the day's exam-horizon walk and runs the light jobs that are due. Authenticated by a shared
     secret, not a student token, open whatever the flag says, bounded and safe to repeat.
     """
 
@@ -320,7 +320,8 @@ class TickView(ParsedAPIView):
     def _tick(self, request):
         if not request_has_secret(request, settings.RECALL_TICK_SECRET, TICK_HEADER):
             return Response({"error": {"code": "forbidden", "message": "Not allowed.", "details": None}}, status=403)
-        return Response({"sessions_closed": services.sessions.close_idle()})
+        closed = services.sessions.close_idle()
+        return Response({"sessions_closed": closed, **jobs.tick()})
 
     get = post = _tick
 
@@ -364,6 +365,21 @@ class QueueView(RecallView):
         )
 
 
+class QuickPlanView(RecallView):
+    """`GET quick-revision/plan/`: the at-risk set for the exam, sized to the minute budget. 422 `no_exam_date` / `exam_passed`."""
+
+    def get(self, request):
+        d = self.parse(serializers.QuickPlanQuery, request.query_params).validated_data
+        now = timezone.now()
+        study = selectors.load_study(request.user.id, now, d.get("tz"))
+        result = selectors.quick_plan(
+            study, minutes=d.get("minutes"), subject_key=d.get("subject_key"), exam_override=d.get("exam_date")
+        )
+        cards = selectors.render_cards(study, list(result.plan.ids[: selectors.exam.SAMPLE]))
+        sample = [{**serializers.queue_card_dict(c), **serializers.memory_dict(c.card)} for c in cards]
+        return Response(serializers.quick_plan_dict(result, sample))
+
+
 class PackView(RecallView):
     def get(self, request):
         d = self.parse(serializers.PackQuery, request.query_params).validated_data
@@ -382,6 +398,7 @@ class PackView(RecallView):
                 "settings": serializers.settings_dict(s.settings, s.scheduler_version),
                 "weights": list(s.weights),
                 "scheduler_version": s.scheduler_version,
+                "exam_at": serializers.iso(s.exam_at),
                 "cards": cards,
                 "counters": {
                     "new_done_today": s.new_done,

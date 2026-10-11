@@ -1,5 +1,6 @@
 """Reads of the recall module. Selectors never write, and a student only ever reads her own rows."""
 
+from . import exam
 from .cards import (
     CardFilter,
     CardView,
@@ -12,9 +13,10 @@ from .cards import (
     render_card,
 )
 from .decks import DeckDetail, DeckItemView, DeckView, SubscriptionView, deck_detail, library, my_subscriptions
+from .exam import QuickResult, cram_ids, exam_context, pacing_for, quick_plan
 from .forgotten import ForgottenRow, forgotten
 from .pack import Pack, pack_for_device
-from .queue import QueueCard, QueueFilters, build_queue
+from .queue import QueueCard, QueueFilters, build_queue, render_cards
 from .stats import (
     DueCounts,
     Report,
@@ -30,6 +32,7 @@ from .study import Study, active_params, get_settings, load_study
 from .today import ProviderResult, RecallTask, TodayPlan, provide_today, today_plan
 
 __all__ = [
+    "exam",
     "CardFilter",
     "DeckDetail",
     "DeckItemView",
@@ -45,6 +48,7 @@ __all__ = [
     "Page",
     "ProviderResult",
     "QueueCard",
+    "QuickResult",
     "QueueFilters",
     "RecallTask",
     "Report",
@@ -55,6 +59,8 @@ __all__ = [
     "build_queue",
     "card_for_source",
     "card_history",
+    "cram_ids",
+    "exam_context",
     "cards_for_source",
     "due_counts",
     "forgotten",
@@ -63,9 +69,12 @@ __all__ = [
     "list_cards",
     "load_study",
     "pack_for_device",
+    "pacing_for",
     "provide_today",
+    "quick_plan",
     "recall_strength",
     "render_card",
+    "render_cards",
     "stats_chapters",
     "stats_forecast",
     "stats_retention",

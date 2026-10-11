@@ -21,3 +21,10 @@ export const statsSearchSchema = z.object({
   range: z.enum(['7d', '30d', '90d']).default('30d').catch('30d'),
 })
 export type StatsSearch = z.infer<typeof statsSearchSchema>
+
+/** URL of the quick revision screen: the daily minutes the student can give. Anything invalid means "your usual". */
+export const QUICK_MINUTE_CHOICES = [10, 20, 30, 45, 60] as const
+export const quickSearchSchema = z.object({
+  minutes: z.coerce.number().int().min(5).max(240).optional().catch(undefined),
+})
+export type QuickSearch = z.infer<typeof quickSearchSchema>

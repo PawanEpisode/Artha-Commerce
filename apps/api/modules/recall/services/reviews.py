@@ -130,13 +130,13 @@ def _needs_replay(user_id, card_id, at: datetime) -> bool:
     ).exists()
 
 
-def _apply_fast(card: RecallCard, out, eng: Engine) -> None:
+def _apply_fast(card: RecallCard, out, eng: Engine, now: datetime) -> None:
     st = out.state
     card.state, card.step = st.phase, st.step
     card.stability, card.difficulty = st.stability, st.difficulty
     card.due_scheduled_at = out.due_at
     card.postponed_until = None
-    card.due_at = out.due_at
+    card.due_at = eng.horizon(card.id, out.due_at, st.last_review_at, now)
     card.last_review_at, card.reps = st.last_review_at, st.reps
     card.lapses, card.last_lapse_at = st.lapses, st.last_lapse_at
     card.scheduler_version = lim.SCHEDULER_VERSION
@@ -250,7 +250,9 @@ def _insert(user_id, ev: ReviewIn, card: RecallCard, eng: Engine, now: datetime)
     if replay:
         fields["phase_before"] = None  # written by the replay; until then no rollup has counted this row
     if counts and not replay:
-        out = fsrs_review(memory, ev.rating, reviewed_at, eng.weights, eng.cfg, card_id=card.id)
+        out = fsrs_review(
+            memory, ev.rating, reviewed_at, eng.weights, eng.cfg_at(card.importance, reviewed_at), card_id=card.id
+        )
         fields.update(
             stability_before=memory.stability,
             difficulty_before=memory.difficulty,
@@ -266,10 +268,10 @@ def _insert(user_id, ev: ReviewIn, card: RecallCard, eng: Engine, now: datetime)
         return ReviewResult(ev.id, DUPLICATE, "", False, card)
 
     if out is not None:
-        _apply_fast(card, out, eng)
+        _apply_fast(card, out, eng, now)
         card.save()
     elif replay:
-        replay_card(user_id, card.id, eng=eng, locked=card)
+        replay_card(user_id, card.id, eng=eng, locked=card, now=now)
         card.refresh_from_db()
         row = RecallReviewLog.objects.get(user_id=user_id, id=ev.id)
         fields["phase_before"] = row.phase_before
@@ -333,7 +335,9 @@ def _apply_all(user_id, evs: Sequence[ReviewIn], order, eng: Engine, now: dateti
 
 
 # ------------------------------------------------------------------------------------------------------ replay
-def replay_card(user_id, card_id, *, eng: Engine | None = None, locked: RecallCard | None = None) -> bool:
+def replay_card(
+    user_id, card_id, *, eng: Engine | None = None, locked: RecallCard | None = None, now: datetime | None = None
+) -> bool:
     """Fold the card's facts again and write the result back (derived log columns, rollup phase moves, the card row)."""
     with transaction.atomic():
         eng = eng or load(user_id)
@@ -358,7 +362,9 @@ def replay_card(user_id, card_id, *, eng: Engine | None = None, locked: RecallCa
             ScheduleEvent(str(e.id), e.at, e.kind, e.to_due, e.stability_after if e.kind == "content_reset" else None)
             for e in sched
         ]
-        state, traces = fold_trace(facts, eng.weights, eng.cfg, card_id=card.id)
+        state, traces = fold_trace(
+            facts, eng.weights, eng.cfg, card_id=card.id, cfg_for=lambda at: eng.cfg_at(card.importance, at)
+        )
         with log_guard.replaying():
             for r in rows:
                 t = traces[str(r.id)]
@@ -388,10 +394,10 @@ def replay_card(user_id, card_id, *, eng: Engine | None = None, locked: RecallCa
                     )
                     old.pop("seconds", None), new.pop("seconds", None)
                     rollups.bump_daily(user_id, r.local_date, {**old, **new})
-        return _write_card(card, state)
+        return _write_card(card, state, eng, now or timezone.now())
 
 
-def _write_card(card: RecallCard, state) -> bool:
+def _write_card(card: RecallCard, state, eng: Engine, now: datetime) -> bool:
     m = state.memory
     new_values = {
         "state": m.phase,
@@ -400,7 +406,7 @@ def _write_card(card: RecallCard, state) -> bool:
         "difficulty": m.difficulty,
         "due_scheduled_at": state.due_scheduled_at,
         "postponed_until": state.postponed_until,
-        "due_at": effective_due(state),
+        "due_at": eng.horizon(card.id, effective_due(state), m.last_review_at, now),
         "last_review_at": m.last_review_at,
         "reps": m.reps,
         "lapses": m.lapses,
@@ -481,6 +487,6 @@ def undo_review(user_id, undo_id, voids_id, *, now: datetime | None = None) -> U
             )
         with log_guard.replaying():
             RecallReviewLog.objects.filter(user_id=user_id, id=target.id).update(counts_for_scheduling=False)
-        replay_card(user_id, card.id, eng=eng, locked=card)
+        replay_card(user_id, card.id, eng=eng, locked=card, now=now)
         card.refresh_from_db()
         return UndoResult(undo_id, target.id, card)

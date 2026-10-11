@@ -6,7 +6,8 @@ from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
 
-from django.db.models import QuerySet
+from django.db.models import Q, QuerySet
+from django.db.models.functions import Coalesce
 
 from modules.syllabus.models import Chapter, Scheme, Subject, SyllabusGroup, Topic
 
@@ -272,6 +273,20 @@ def audience_user_ids(*, level_id=None, course_id=None, after=None, limit: int =
     return list(rows.order_by("user_id").values_list("user_id", flat=True).distinct()[:limit])
 
 
+def exam_audience(*, first: date, last: date, after=None, limit: int = 200) -> list:
+    """
+    Students whose active enrolment has an exam date (their own, else the start of the term they chose) from `first` to
+    `last`, in `user_id` order, one page at a time (pass the last id as `after`). For nightly jobs of other modules.
+    """
+    rows = Enrollment.objects.filter(status=Enrollment.Status.ACTIVE).annotate(
+        exam=Coalesce("exam_date", "target_term__exam_start")
+    )
+    rows = rows.filter(exam__gte=first, exam__lte=last)
+    if after is not None:
+        rows = rows.filter(user_id__gt=after)
+    return list(rows.order_by("user_id").values_list("user_id", flat=True).distinct()[:limit])
+
+
 def last_studied(enrollment: Enrollment) -> ChapterProgress | None:
     """The chapter the student touched most recently (any activity), for "Continue where you left off"."""
     return (
@@ -364,6 +379,17 @@ def coverage_pct_by_chapter(user_id, chapter_ids) -> dict:
             "chapter_id", "coverage_pct"
         )
     )
+
+
+def started_chapter_ids(user_id, chapter_ids) -> set:
+    """Of these chapters, the ones the student has started: a status other than `not_started` or any coverage."""
+    ids = list(chapter_ids)
+    if not ids:
+        return set()
+    started = ChapterProgress.objects.filter(user_id=user_id, chapter_id__in=ids, is_excluded=False).filter(
+        ~Q(status=ChapterProgress.Status.NOT_STARTED) | Q(coverage_pct__gt=0)
+    )
+    return set(started.values_list("chapter_id", flat=True))
 
 
 def progress_stamp(user_id) -> tuple:

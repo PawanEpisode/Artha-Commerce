@@ -34,6 +34,7 @@ urlpatterns += [
     path("recall/vacation/", views.VacationView.as_view(), name="recall-vacation"),
     path("recall/today/", views.TodayView.as_view(), name="recall-today"),
     path("recall/queue/", views.QueueView.as_view(), name="recall-queue"),
+    path("recall/quick-revision/plan/", views.QuickPlanView.as_view(), name="recall-quick-plan"),
     path("recall/pack/", views.PackView.as_view(), name="recall-pack"),
     path("recall/forgotten/", views.ForgottenView.as_view(), name="recall-forgotten"),
     *(

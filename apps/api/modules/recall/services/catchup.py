@@ -1,7 +1,7 @@
 """
 Catch-up rebalance (ERD 3.5). Overdue and due-today reviews are ranked by risk; the most at-risk `reviews_per_day` stay today
 and the rest are spread over the next days at that many per day with a `postpone` event (reason `rebalance`). Mandatory cards
-whose retrievability fell below 0.7 are never moved. Cards past the end of the window stay where they are.
+whose retrievability fell below 0.7 are never moved. Cards past the end of the window, or past the exam cut-off, stay where they are.
 """
 
 from __future__ import annotations
@@ -29,6 +29,9 @@ def rebalance(user_id, days: int = lim.REBALANCE_DEFAULT_DAYS, *, now: datetime 
     today = local_date_of(now, s.tz, s.day_start_hour)
     horizon = end_of_study_day(now, s.tz, s.day_start_hour)
     w20 = eng.weights[20]
+    # With an exam ahead a card is never pushed past `exam - 2d`: the horizon wants it seen before then (the student's own
+    # vacation is her choice and is left alone)
+    last_slot = eng.exam_at - timedelta(days=lim.EXAM_WINDOW_END_DAYS) if s.exam_horizon and eng.exam_at else None
     with transaction.atomic():
         cards = list(
             RecallCard.objects.select_for_update(of=("self",))
@@ -60,6 +63,9 @@ def rebalance(user_id, days: int = lim.REBALANCE_DEFAULT_DAYS, *, now: datetime 
                 stay.append(card)
                 continue
             target = study_day_start(today + timedelta(days=slot + 1), s.tz, s.day_start_hour)
+            if last_slot is not None and target > last_slot:
+                stay.append(card)
+                continue
             RecallScheduleEvent.objects.create(
                 user_id=user_id,
                 card=card,

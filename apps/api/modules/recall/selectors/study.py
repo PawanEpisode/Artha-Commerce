@@ -10,6 +10,8 @@ from datetime import date, datetime, timedelta
 from decimal import Decimal
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
+from ..adapters import coverage as coverage_adapter
+from ..domain import exam
 from ..domain.fsrs6 import DEFAULT_WEIGHTS, Cfg
 from ..domain.scheduling import end_of_study_day, local_date_of
 from ..errors import InvalidSetting
@@ -53,6 +55,14 @@ class Study:
     day_end: datetime  # the first instant of the next study day
     new_done: int
     reviews_done: int  # reviews of graduated cards (review and relearning phases); the daily maximum counts these
+    exam_at: datetime | None = None
+
+    def cfg_at(self, importance: int, at: datetime) -> Cfg:
+        return exam.cfg_at(self.cfg, importance, at, self.exam_at, enabled=self.settings.exam_horizon)
+
+    @property
+    def days_to_exam(self) -> float | None:
+        return exam.days_to_exam(self.now, self.exam_at)
 
     @property
     def vacation(self) -> bool:
@@ -90,6 +100,7 @@ def load_study(user_id, now: datetime, tz: str | None = None) -> Study:
         end_of_study_day(now, tz, s.day_start_hour),
         row.new_cards if row else 0,
         (row.review_reviews + row.relearn_reviews) if row else 0,
+        coverage_adapter.exam_at(user_id, tz, s.day_start_hour),
     )
 
 

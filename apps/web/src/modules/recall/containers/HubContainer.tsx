@@ -1,8 +1,9 @@
 import { Alert, Button, ButtonLink, CircleCheck, EmptyState, Layers, Skeleton, WifiOff } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 
 import { CatchUpNotice } from '../components/CatchUpNotice'
+import { ExamStrip } from '../components/ExamStrip'
 import { ForgottenRow } from '../components/ForgottenRow'
 import { QueueSummary } from '../components/QueueSummary'
 import { LoadError, RecallShell } from '../components/RecallShell'
@@ -12,6 +13,7 @@ import { useOnlineStatus } from '../hooks/useRecallBasics'
 import { useRebalance, useSetVacation } from '../hooks/useSettings'
 import { useSync } from '../hooks/useSync'
 import { useTodayPlan } from '../hooks/useTodayPlan'
+import { trackRecall } from '../lib/analytics'
 import { nowDate } from '../lib/clock'
 import { plural, shortDate } from '../lib/format'
 import { hubStateOf } from '../lib/hub'
@@ -32,6 +34,17 @@ function HubBody({ plan }: { plan: TodayPlan }) {
   const state = hubStateOf(plan)
   const rebalance = useRebalance()
   const vacation = useSetVacation()
+  const pacing = plan.exam?.pacing ?? null
+  const daysLeft = plan.exam?.days_to_exam
+  useEffect(() => {
+    if (pacing && pacing.unseen > 0 && daysLeft !== undefined) {
+      trackRecall('recall_pacing_viewed', {
+        feasible: pacing.feasible,
+        needed_per_day: pacing.needed_per_day,
+        days_to_exam: Math.floor(daysLeft),
+      })
+    }
+  }, [pacing, daysLeft])
   const next = plan.next_due_at ? new Date(plan.next_due_at) : null
 
   const hero =
@@ -88,6 +101,7 @@ function HubBody({ plan }: { plan: TodayPlan }) {
   return (
     <>
       {hero}
+      {plan.exam ? <ExamStrip exam={plan.exam} /> : null}
       {rebalance.isSuccess ? (
         <Alert variant="success">
           <span role="status">Done. Your backlog is spread over the coming days.</span>

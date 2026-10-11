@@ -17,6 +17,11 @@ export const ALLOWED = {
   recall_sync_completed: ['events', 'merged', 'dropped_deleted', 'dropped_stale', 'duration_ms'],
   recall_settings_changed: ['changed_keys', 'retention'],
   recall_pack_downloaded: ['cards', 'bytes_bucket'],
+  recall_quick_planned: ['days_to_exam', 'set_size', 'cut_off', 'minutes_per_day'],
+  recall_quick_started: ['set_size'],
+  recall_quick_completed: ['set_size', 'reviewed'],
+  recall_cram_started: ['set_size'],
+  recall_pacing_viewed: ['feasible', 'needed_per_day', 'days_to_exam'],
 } as const satisfies Record<string, readonly string[]>
 
 export type RecallEvent = keyof typeof ALLOWED

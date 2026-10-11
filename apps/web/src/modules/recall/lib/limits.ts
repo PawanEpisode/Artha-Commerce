@@ -78,3 +78,19 @@ export const DEFAULT_MAX_INTERVAL_DAYS = 365
 export const MAX_INTERVAL_RANGE = [30, 3650] as const
 export const DEFAULT_DAY_START_HOUR = 4
 export const DAY_START_HOUR_RANGE = [0, 6] as const
+
+// Exam (R2-W1)
+export const UNLOCK_OPEN_DAYS = 60
+export const EXAM_HORIZON_DAYS = 90
+export const EXAM_WINDOW_END_DAYS = 2
+export const EXAM_WINDOW_START_DAYS = 7
+export const EXAM_WINDOW_SLOTS = 5
+export const EXAM_LAST_REVIEW_DAYS = 6
+export const EXAM_BOOST_DAYS = 30
+export const EXAM_BOOST_RETENTION = 0.95
+export const QUICK_R_TARGET = 0.9
+export const QUICK_MIN_CARDS = 20
+export const QUICK_MIN_IMPORTANCE = 1
+export const CRAM_HOURS = 24
+export const PACING_LEAD_DAYS = 14
+export const DEFAULT_SECONDS_PER_CARD = 12.0

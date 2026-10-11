@@ -11,6 +11,7 @@ from django.db.models import Min
 
 from ..domain.scheduling import streak
 from ..models import RecallCard, RecallDailyRollup
+from .exam import exam_context
 from .forgotten import ForgottenRow, forgotten
 from .queue import plan_today
 from .study import Study, load_study, recent_seconds_per_review
@@ -41,7 +42,7 @@ class TodayPlan:
     new_available: int
     catchup_due: int = 0
     oldest_overdue_days: float = 0.0
-    exam: None = None  # R2
+    exam: dict | None = None
 
 
 def _next_due(study: Study) -> datetime | None:
@@ -90,6 +91,7 @@ def today_plan(user_id, *, now: datetime, tz: str | None = None) -> TodayPlan:
         new_available=unseen,
         catchup_due=queue.catchup.due_count,
         oldest_overdue_days=round(queue.catchup.oldest_overdue_days, 1),
+        exam=exam_context(study),
     )
 
 

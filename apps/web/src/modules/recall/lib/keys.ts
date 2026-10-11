@@ -6,6 +6,7 @@ export const recallKeys = {
   queue: (source: QueueSource, params: object = {}) => ['recall', 'queue', source, params] as const,
   pack: ['recall', 'pack'] as const,
   settings: ['recall', 'settings'] as const,
+  quickPlan: (params: object = {}) => ['recall', 'quick-plan', params] as const,
   forgotten: (params: object = {}) => ['recall', 'forgotten', params] as const,
   stats: (report: string, params: object = {}) => ['recall', 'stats', report, params] as const,
   cards: (params: object = {}) => ['recall', 'cards', params] as const,

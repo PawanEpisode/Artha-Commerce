@@ -20,6 +20,7 @@ import {
   forgottenListSchema,
   packSchema,
   queueSchema,
+  quickPlanSchema,
   rebalanceSchema,
   type RecallSettings,
   reportResultSchema,
@@ -89,6 +90,9 @@ export const recallApi = {
 
   setVacation: async (until: string | null) =>
     parse(vacationSchema, await api<unknown>('/recall/vacation/', { method: 'PUT', body: JSON.stringify({ until }) })),
+
+  quickPlan: async (p: { minutes?: number; subject_key?: string; exam_date?: string } = {}) =>
+    parse(quickPlanSchema, await api<unknown>(`/recall/quick-revision/plan/${qs(p)}`)),
 
   forgotten: async (p: { subject_key?: string; limit?: number; window_days?: number } = {}) =>
     parse(forgottenListSchema, await api<unknown>(`/recall/forgotten/${qs(p)}`)).items,

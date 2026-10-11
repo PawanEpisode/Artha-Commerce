@@ -255,22 +255,3 @@ def forecast(due_dates: Iterable[date | None], today: date, days: int = 14) -> l
         if offset < days:
             out[offset] += 1
     return out
-
-
-# ---------------------------------------------------------------- R2 (exam horizon): not part of R1
-
-
-def horizon(*_args: object, **_kwargs: object) -> None:
-    raise NotImplementedError("Exam horizon arrives in R2.")
-
-
-def r_exam(*_args: object, **_kwargs: object) -> None:
-    raise NotImplementedError("Exam retrievability arrives in R2.")
-
-
-def quick_set(*_args: object, **_kwargs: object) -> None:
-    raise NotImplementedError("Quick sets arrive in R2.")
-
-
-def pacing(*_args: object, **_kwargs: object) -> None:
-    raise NotImplementedError("Pacing arrives in R2.")

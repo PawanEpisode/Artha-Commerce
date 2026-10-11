@@ -6,6 +6,7 @@ export { DecksContainer } from './containers/DecksContainer'
 export { ForgottenContainer } from './containers/ForgottenContainer'
 export { HubContainer } from './containers/HubContainer'
 export { NewCardContainer } from './containers/NewCardContainer'
+export { QuickContainer } from './containers/QuickContainer'
 export { ReviewContainer } from './containers/ReviewContainer'
 export { SettingsContainer } from './containers/SettingsContainer'
 export { StatsContainer } from './containers/StatsContainer'
@@ -13,4 +14,11 @@ export { SummaryContainer } from './containers/SummaryContainer'
 export { useRecallEnabled } from './hooks/useRecallBasics'
 export { type CardsSearch, cardsSearchSchema, type NewCardSearch, newCardSearchSchema } from './lib/cardSearch'
 export { clearRecallLocalData } from './lib/localData'
-export { type ReviewSearch, reviewSearchSchema, type StatsSearch, statsSearchSchema } from './lib/search'
+export {
+  type QuickSearch,
+  quickSearchSchema,
+  type ReviewSearch,
+  reviewSearchSchema,
+  type StatsSearch,
+  statsSearchSchema,
+} from './lib/search'
