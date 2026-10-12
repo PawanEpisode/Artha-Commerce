@@ -1,0 +1,2268 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-efficient-market-hypothesis",
+      "title": "SFM: Efficient Market Hypothesis",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 11: Efficient Market Hypothesis.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "efficient-market-hypothesis"
+      },
+      "items": [
+        {
+          "ref": "sfm11-basics-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Efficient market",
+            "definition_md": "A market in which security prices quickly and fully reflect all available information about the assets. Because new information is absorbed at once, the market price is a reliable estimate of the security's intrinsic (fair) value."
+          },
+          "tags": [
+            "emh",
+            "efficient-market",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Efficient market hypothesis (EMH)",
+            "definition_md": "The theory that capital markets work with a very high degree of perfection: prices adjust to information so fast that analysis cannot give consistent excess returns. It grew out of the random walk idea and was developed by Eugene Fama."
+          },
+          "tags": [
+            "emh",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who first described efficient capital markets, and who earlier noticed that price changes are independent?",
+            "answer_md": "Eugene Fama (Nobel laureate, 2013) introduced the idea of an efficient capital market, arguing that heavy competition leads to fair pricing of debt and equity. Before him the statistician Maurice Kendall observed that price changes of shares and commodities do not depend on earlier price changes."
+          },
+          "tags": [
+            "emh",
+            "random-walk",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Random walk theory",
+            "definition_md": "Successive price changes are independent of one another: today's change tells nothing about tomorrow's. Price changes are therefore random, with no pattern that can be used to forecast them."
+          },
+          "tags": [
+            "random-walk",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why do prices follow a random walk in an efficient market?",
+            "answer_md": "Prices move only when new information arrives. News is unpredictable by nature, so the price changes it causes are unpredictable too. Tomorrow's change depends on tomorrow's news, not on today's change, so the price series has no memory."
+          },
+          "tags": [
+            "random-walk",
+            "emh",
+            "logic"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are the random walk theory and the efficient market hypothesis related?",
+            "answer_md": "Random walk is the observed behaviour (price changes are random); efficiency is the explanation for it. Researchers concluded that randomness of prices is the outcome of an efficient market. EMH is the wider model: it covers all information about a share, while the random walk speaks only about past price movements."
+          },
+          "tags": [
+            "random-walk",
+            "emh"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the study text say about the role of information in an efficient market?",
+            "answer_md": "Information decides prices. It covers all known facts (old results as well as announced but pending events such as a split). Fierce competition among investors, especially institutions, makes all available information flow into the price immediately, so the price stays close to intrinsic value."
+          },
+          "tags": [
+            "emh",
+            "information",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Most investors are not fully informed. How can prices still reflect all information?",
+            "answer_md": "Prices are not fixed by the agreement of all investors. They are set by the marginal investors, the active traders whose buying and selling moves the price. Their trades are enough to carry the information into the price."
+          },
+          "tags": [
+            "emh",
+            "marginal-investors"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Does an efficient market need prices to adjust perfectly to news? Explain.",
+            "answer_md": "No. The adjustment may overshoot or undershoot a particular time, provided the errors are unbiased, i.e. their expected value is zero. The new price need not equal the final equilibrium price; it only has to be an unbiased estimate of it."
+          },
+          "tags": [
+            "emh",
+            "unbiased-adjustment"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A share trades at Rs 150 and news raises its fair value to Rs 156. How does the price path differ in an efficient and an inefficient market?",
+            "answer_md": "Efficient: the price jumps to Rs 156 on the announcement day (day 0) and stays there until new news comes, so nobody can profit from the Rs 6 (4%) rise. Inefficient: the price creeps up to Rs 156 over days or weeks as the news spreads, so quick traders can buy below Rs 156 and earn an abnormal gain."
+          },
+          "tags": [
+            "emh",
+            "price-adjustment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does EMH imply about chartists and analysts looking for excess returns?",
+            "answer_md": "The market has no memory and prices already reflect available information, so chart patterns cannot predict prices. With many rational profit-seeking investors competing, any chance of excess return from analysis is removed almost at once."
+          },
+          "tags": [
+            "emh",
+            "chartists",
+            "technical-analysis"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the characteristics of an efficient market.",
+            "answer_md": "(1) Timely, accurate information on past prices, volumes and current supply and demand. (2) Liquidity: an asset can be bought or sold quickly near the last price when no new news has come. (3) Low transaction costs, covering access, brokerage and transfer of the security. (4) Quick adjustment of prices to new information."
+          },
+          "tags": [
+            "emh",
+            "characteristics"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Four features of an efficient market: {{c1::timely and accurate information}}, {{c2::liquidity}}, {{c3::low transaction costs}} and {{c4::quick price adjustment to new information}}."
+          },
+          "tags": [
+            "emh",
+            "characteristics"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the three conditions for market efficiency.",
+            "answer_md": "(1) All available information is costless to every participant. (2) There are no transaction costs. (3) All investors interpret the information in the same way, i.e. they agree on what it means for today's price and future price distribution of each security."
+          },
+          "tags": [
+            "emh",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-015",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "EMH conditions: information is {{c1::costless}}, transaction costs are {{c2::nil}}, and all investors {{c3::interpret the information the same way}}."
+          },
+          "tags": [
+            "emh",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the basic assumption of EMH about what prices reflect?",
+            "answer_md": "That the prices of traded securities always fully reflect all publicly available information about them, and that information reaches all investors freely and spontaneously, so the price formed tends to be the fair price."
+          },
+          "tags": [
+            "emh",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-017",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Fair game",
+            "definition_md": "A market is a fair game for a given information set if investors using that information receive, on average, only the return expected for the risk taken and cannot make consistent abnormal returns. Efficiency makes investing a fair game."
+          },
+          "tags": [
+            "emh",
+            "fair-game"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the fair game idea useful in studying EMH?",
+            "answer_md": "It turns efficiency into something testable: for each level of information (past prices, public, private) one checks whether investors using that information earn more than the risk-adjusted normal return. If they do not, the market is efficient at that level."
+          },
+          "tags": [
+            "emh",
+            "fair-game",
+            "testing"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does EMH compare with the random walk model in scope?",
+            "answer_md": "Random walk deals only with past share price movements. EMH is wider, covering all information relevant to a share, and shows how closely real markets approach a theoretically perfect market."
+          },
+          "tags": [
+            "emh",
+            "random-walk",
+            "scope"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In an efficient market is the price an average of all investors' opinions?",
+            "answer_md": "No. Prices are fixed by marginal investors and not by consensus; investors on average need not be fully informed for the market to be efficient."
+          },
+          "tags": [
+            "emh",
+            "marginal-investors"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does the EMH say about the price on a given day if no news arrives?",
+            "answer_md": "Nothing changes: the price stays at the level reflecting existing information. Price changes occur only on news, and as news is unpredictable, the movement is up or down at random."
+          },
+          "tags": [
+            "emh",
+            "random-walk"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-basics-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Under EMH, what return does an investor get from a security and how does that compare with experts?",
+            "answer_md": "A normal return for the risk assumed. Even an uninformed investor with a diversified portfolio at market prices gets a return as good as experts do, so beating the market consistently is virtually impossible except by taking more risk."
+          },
+          "tags": [
+            "emh",
+            "implications"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three forms of market efficiency and the information each one reflects in prices.",
+            "answer_md": "Fama (1970) defined three levels. Weak form: all past prices (and trading data). Semi-strong form: all publicly available information. Strong form: all information, public or private, including insider information."
+          },
+          "tags": [
+            "emh",
+            "forms"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-002",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "{{c1::Weak}} form: prices reflect past prices; {{c2::semi-strong}} form: prices reflect all public information; {{c3::strong}} form: prices reflect all information including insider information."
+          },
+          "tags": [
+            "emh",
+            "forms"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Weak form of EMH",
+            "definition_md": "Each share price already reflects all information in past share prices, and also trading data such as volume and short interest. Studying trends and patterns in historical prices therefore cannot yield consistent excess returns."
+          },
+          "tags": [
+            "emh",
+            "weak-form"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Semi-strong form of EMH",
+            "definition_md": "Prices reflect past prices and also all publicly available information relevant to the share, such as company announcements, annual accounts, broker reports and industry forecasts. Fundamental analysis of public data cannot give consistent excess returns."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Strong form of EMH",
+            "definition_md": "Prices reflect all information, even what is known only to a few, such as details of a pending takeover bid known to senior management. Under this form no group, not even insiders, can earn consistent abnormal profit."
+          },
+          "tags": [
+            "emh",
+            "strong-form"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are the three forms of EMH related to each other?",
+            "answer_md": "They are nested. The strong form includes the semi-strong form, which includes the weak form, because each level adds a wider information set. A market that is strong-form efficient is also semi-strong and weak-form efficient, but not the other way round."
+          },
+          "tags": [
+            "emh",
+            "forms",
+            "nesting"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which investment approach does each form of EMH rule out?",
+            "answer_md": "Weak form: technical analysis (trend and chart reading). Semi-strong form: fundamental analysis on public information, such as financial statements and announcements. Strong form: even trading on inside information."
+          },
+          "tags": [
+            "emh",
+            "forms",
+            "strategies"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is trend analysis fruitless if the weak form holds?",
+            "answer_md": "Past prices are public and almost free to obtain. If such data had ever signalled future performance, everyone would have used the signal; a buy signal would raise the price at once and the signal would lose its value as it became widely known."
+          },
+          "tags": [
+            "emh",
+            "weak-form",
+            "technical-analysis"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the two types of tests used for the weak form and give one example of each.",
+            "answer_md": "Statistical tests of independence of price changes, for example serial correlation or the runs test. Trading rule tests, which compare returns from a mechanical rule (such as filter or moving average rules) with a buy-and-hold policy. Results for the weak form are numerous and almost unanimous in supporting it."
+          },
+          "tags": [
+            "emh",
+            "weak-form",
+            "tests"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "If successive price changes are unrelated, what is the serial (auto) correlation, and what does a small positive one mean?",
+            "answer_md": "If price changes are not affected by earlier changes, autocorrelation is zero. A small positive serial correlation means a positive return tends to be followed by another positive return, a weak trend that goes against a pure random walk."
+          },
+          "tags": [
+            "emh",
+            "weak-form",
+            "autocorrelation"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a 'run' in a stock price series, and how is it used?",
+            "answer_md": "A run is an uninterrupted sequence of rises or of falls in price. In the runs test the actual number of runs is compared with the number expected from a random series; a large difference suggests that prices have a pattern."
+          },
+          "tags": [
+            "emh",
+            "weak-form",
+            "runs-test"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What do semi-strong form tests examine, and what do they usually conclude?",
+            "answer_md": "They test the speed at which prices adjust to public information, i.e. whether investors can earn excess returns after proper risk adjustment by using public data. The studies are many but less uniform than weak-form tests; most conclude the market adjusts very fast, but some anomalies exist."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form",
+            "tests"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the strong form of EMH tested?",
+            "answer_md": "(1) By checking whether groups with likely non-public information, mainly corporate insiders, consistently earn above-average risk-adjusted returns. (2) By checking whether investors can use information better than others, by studying professional managers (mutual funds, pension funds) and the value added by security analysts."
+          },
+          "tags": [
+            "emh",
+            "strong-form",
+            "tests"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A director of a company has inside information but cannot use it to earn supernormal profits. Which form of EMH does this indicate?",
+            "answer_md": "The strong form. If prices already reflect even non-public information, those holding it cannot beat the market. (If insiders do earn abnormal profits, the strong form fails, though the semi-strong form can still hold.)"
+          },
+          "tags": [
+            "emh",
+            "strong-form",
+            "insider"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Analysts' conclusions based on public information are reflected in share prices. What level of efficiency is this?",
+            "answer_md": "Semi-strong form efficiency. Since the semi-strong form also contains past prices, such a market is weak-form efficient as well, so a question offering 'both weak and semi-strong' needs care."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What can be said about returns and price when all three forms of EMH are assumed to hold?",
+            "answer_md": "Prices equal fair value, so securities earn the equilibrium (normal) return for their risk, and no investor earns consistent abnormal returns. Investors still earn a normal positive return; efficiency does not say that returns are zero."
+          },
+          "tags": [
+            "emh",
+            "forms",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A market where the price of a share rises in the weeks before good news is announced. Which form of EMH is questioned?",
+            "answer_md": "The strong form (and possibly the semi-strong form if the news was public). Price movement before public release signals that someone used non-public information, which the strong form says cannot give consistent gains."
+          },
+          "tags": [
+            "emh",
+            "strong-form",
+            "leakage"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does EMH say about an unexpectedly large cash dividend announcement in a market with no leakage?",
+            "answer_md": "The price should adjust on the announcement itself, in one step. There is no abnormal change before it (no leakage) and none after it (no drift)."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form",
+            "announcements",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-forms-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give the main test method for each form of EMH in one line each.",
+            "answer_md": "Weak form: autocorrelation and trading rule tests; semi-strong form: event studies on announcements; strong form: insider and professional manager performance."
+          },
+          "tags": [
+            "emh",
+            "forms",
+            "tests"
+          ],
+          "reference_keys": [
+            "sfm:forms"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is an event study and how does it use an index (market) model?",
+            "answer_md": "An event study examines a firm's share returns around an event (split, dividend, merger news) to see the event's price impact. The index model says a security's return is explained by a market factor and a company-specific factor; after removing the part explained by the market, the remainder is the abnormal return caused by the event."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "semi-strong-form"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Abnormal return",
+            "expression_md": "$AR_{it} = R_{it} - E(R_{it})$",
+            "variables_md": "$R_{it}$ = actual return of security $i$ in period $t$; $E(R_{it})$ = expected return in the period from the market model relationship.",
+            "when_md": "Use in event studies. A value of zero means the event brought no surprise; the difference is the company-unique residual."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "abnormal-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Cumulative abnormal return (CAR)",
+            "expression_md": "$CAR_i = \\sum_{t=1}^{n} AR_{it}$",
+            "variables_md": "$AR_{it}$ = abnormal return of stock $i$ in period $t$; $n$ = number of periods in the event window.",
+            "when_md": "Add the abnormal returns over the window under study to measure the total effect of an event."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "abnormal-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A stock returned 2.0%, 1.5% and -0.5% on three days. The market model (alpha 0.1%, beta 1.2) with market returns of 1.0%, 0.5% and -1.0% gives expected returns. Find the abnormal returns and CAR.",
+            "answer_md": "Expected = 0.1 + 1.2 x market: 1.3%, 0.7%, -1.1%. AR = actual minus expected: 0.7%, 0.8%, 0.6%. CAR = 0.7 + 0.8 + 0.6 = 2.1%. A positive CAR shows the event raised the price beyond what the market explains."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "abnormal-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Describe the stock split study of Fama, Fisher, Jensen and Roll (1969).",
+            "answer_md": "They were the first to use the event-study method. With monthly data they studied the price reaction to stock splits on the New York Stock Exchange for the period 1929 to 1959. It is the standard example of a test of the semi-strong form."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "stock-split"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What puzzle do stock splits pose for efficient markets?",
+            "answer_md": "A split only divides the same firm into more shares, so each share should fall in proportion and returns adjusted for the split should show no effect. Yet the book reports a rally before the split, said to be a 25-30% run-up in the two months before the split and treated as a leading indicator; the figure is dated and not verified."
+          },
+          "tags": [
+            "emh",
+            "stock-split",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do studies show about returns on new issues (IPOs)?",
+            "answer_md": "Investors allotted shares at the offer price earn abnormal returns, which is attributed to underpricing by underwriters. Investors who buy shortly after listing earn no abnormal profit because the price adjusts quickly to its true value, consistent with the semi-strong form."
+          },
+          "tags": [
+            "emh",
+            "ipo",
+            "underpricing"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How fast do prices react to economic news such as money supply, inflation or RBI policy?",
+            "answer_md": "Studies find no price impact lasting beyond the announcement day; hourly studies of surprises in money supply and industrial production show the effect is absorbed within an hour. This supports the semi-strong form."
+          },
+          "tags": [
+            "emh",
+            "economic-news",
+            "semi-strong-form"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does the study text report on takeover rumours?",
+            "answer_md": "Buying or selling rumoured takeover targets when the rumour appears does not give excess returns on average, nor does the day a financial magazine publishes it. A cumulative excess return of around 7% appears in the month before the rumour, which suggests earlier leakage."
+          },
+          "tags": [
+            "emh",
+            "takeover-rumours",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What should an efficient market do when a firm changes its depreciation method from written down value to straight line?",
+            "answer_md": "Nothing: the change raises reported earnings but has no economic effect (no change in cash flows), so the price should not rise. Studies found no positive price change, supporting EMH; some prices even fell because poorly performing firms tend to make such changes."
+          },
+          "tags": [
+            "emh",
+            "accounting-changes",
+            "semi-strong-form"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which accounting changes should move prices in an efficient market?",
+            "answer_md": "Those that change the firm's economic value. A change that only alters reported earnings with no economic significance should not affect the price."
+          },
+          "tags": [
+            "emh",
+            "accounting-changes"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What did studies on the listing of shares on NSE or BSE find, and what do they imply for the semi-strong form?",
+            "answer_md": "Prices rose before the announcement of listing and consistently fell after the actual listing; one study (McConnell and Sanger) pointed to profit opportunities after the application announcement and after listing. There was no significant change in systematic risk or cost of equity. Short-run profits from public information do not support the semi-strong form."
+          },
+          "tags": [
+            "emh",
+            "listing",
+            "semi-strong-form",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-013",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Market anomaly",
+            "definition_md": "A pattern of returns that the efficient market hypothesis cannot readily explain, because investors seem to earn risk-adjusted abnormal returns from public information. Examples: the P/E effect, the size effect, the book-to-market effect and the January effect."
+          },
+          "tags": [
+            "emh",
+            "anomalies"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the P/E ratio anomaly?",
+            "answer_md": "Low P/E shares earn higher risk-adjusted returns than the market, and high P/E shares earn lower (Basu, 1977). Growth firms carry high P/Es because the market overrates their growth, while low-growth firms are undervalued. Since P/E is public, it should not help predict returns, so this goes against the semi-strong form."
+          },
+          "tags": [
+            "emh",
+            "anomalies",
+            "pe-ratio"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the size effect and what are its explanations?",
+            "answer_md": "Small firms (by market value) have earned significantly higher risk-adjusted returns than large firms over long periods (Banz, 1981). The strongest explanations are higher measured risk due to infrequent trading and higher transaction costs. It is a major anomaly against semi-strong efficiency."
+          },
+          "tags": [
+            "emh",
+            "anomalies",
+            "size-effect"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What was the dispute between the P/E effect and the size effect?",
+            "answer_md": "Reinganum (1981) argued that size, and not the P/E ratio, caused the P/E results; Basu (1983) disputed this. Keim (1983) linked the size effect to seasonality. Event studies using long periods or firms of very different size must therefore allow for the size effect."
+          },
+          "tags": [
+            "emh",
+            "anomalies",
+            "size-effect",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the book value to market value (BV/MV) anomaly?",
+            "answer_md": "Firms with a high ratio of book value to market value tend to give higher future returns than those with a low ratio (Rosenberg, Reid and Lanstein, 1985). Because this ratio is public information, it is evidence against the EMH."
+          },
+          "tags": [
+            "emh",
+            "anomalies",
+            "book-to-market"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the small-firm-in-January effect?",
+            "answer_md": "Small-company shares earn abnormal positive returns mainly in January, compared with large-company shares. It is a seasonal anomaly and contradicts weak-form efficiency, as the pattern can be traded on."
+          },
+          "tags": [
+            "emh",
+            "anomalies",
+            "january-effect"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which of these would be evidence against semi-strong efficiency: size effect, low P/E outperformance, insider profits?",
+            "answer_md": "Size effect and low P/E outperformance are evidence against the semi-strong form since both are based on public data. Insider profits are evidence against the strong form only, since insiders use non-public information."
+          },
+          "tags": [
+            "emh",
+            "anomalies",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What conclusions does the study text draw about market efficiency?",
+            "answer_md": "No definitive conclusion is possible. Much evidence supports efficiency, and internet access to data has probably made markets more efficient. But anomalies exist and their causes are unsettled; they undermine the view of perfect efficiency without proving inefficiency."
+          },
+          "tags": [
+            "emh",
+            "conclusions"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does Fama respond to evidence of anomalies?",
+            "answer_md": "He argues anomalies do not disprove efficiency: many studies have statistical problems, and over-reaction and under-reaction are about equally common, which is consistent with chance and hence with efficient markets."
+          },
+          "tags": [
+            "emh",
+            "conclusions",
+            "fama"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the joint hypothesis problem in testing EMH?",
+            "answer_md": "Every test of efficiency also needs a model of expected (normal) returns, such as the market model or CAPM. So the test checks efficiency and the model together; if abnormal returns appear, either the market is inefficient or the model of normal return is wrong."
+          },
+          "tags": [
+            "emh",
+            "joint-hypothesis",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-evidence-023",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Anomalies against the semi-strong form: {{c1::low P/E}} shares outperform, {{c2::small}} firms outperform, and shares with a high {{c3::book-to-market}} ratio outperform."
+          },
+          "tags": [
+            "emh",
+            "anomalies"
+          ],
+          "reference_keys": [
+            "sfm:evidence"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Insider trading",
+            "definition_md": "Trading in the shares or other securities (bonds, stock options) of a public company by persons who have non-public information about it. Insiders include officers, directors and major shareholders who are expected to have valuable inside information."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "strong-form"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why are corporate insiders studied in tests of the strong form?",
+            "answer_md": "They presumably have monopolistic access to non-public information. If they consistently earn above-average risk-adjusted returns, at least the extreme version of the strong form is rejected. Studies of insider trades are therefore the main strong-form test."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "strong-form",
+            "tests"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What do US rules require of insiders, according to the study text?",
+            "answer_md": "Under the US system, an officer, a director or a holder of over 10% of a company's equity files a monthly report of his dealings with the SEC, due by the 10th of the following month, and the SEC publishes a summary."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "sec",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who is an insider under the SEBI rules summarised in the study text?",
+            "answer_md": "A person who is a connected person, or a person who has access to, or possesses, unpublished price sensitive information."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "sebi"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What may an insider not do with price sensitive information?",
+            "answer_md": "An insider must not communicate, provide or allow access to price sensitive information about the company or its listed (or proposed to be listed) securities to any person, except as the regulations permit."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "sebi"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What initial disclosure must promoters, key managerial personnel and directors of a listed company make under the SEBI rules?",
+            "answer_md": "Each must disclose his holdings of the company's securities. A new KMP or director, or a new promoter, must disclose holdings as on the date of appointment (or becoming a promoter) to the company within seven days."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "sebi",
+            "disclosure",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What continual disclosure applies on trading by promoters, employees and directors, and who must tell the stock exchange?",
+            "answer_md": "If securities traded in a calendar quarter exceed Rs 10 lakh in value (or another value SEBI specifies), the person must report the securities acquired or disposed of to the company within two trading days. The company must pass the details to the concerned stock exchange within two trading days of getting the disclosure."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "sebi",
+            "disclosure",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Under the summarised SEBI rules, initial disclosure is due within {{c1::seven days}}; continual disclosure of trades is due within {{c2::two trading days}} when the quarterly traded value exceeds {{c3::Rs 10 lakh}}."
+          },
+          "tags": [
+            "emh",
+            "insider-trading",
+            "sebi",
+            "disclosure",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What empirical result is cited for the strong form in the book's fill-in-blank exercise?",
+            "answer_md": "That company insiders are generally able to achieve superior returns, which contradicts the strong form, while a typical equity mutual fund shows zero alpha, which supports efficiency."
+          },
+          "tags": [
+            "emh",
+            "strong-form",
+            "evidence"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-insider-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the evidence on professional managers (mutual funds) suggest about efficiency?",
+            "answer_md": "A typical common-stock mutual fund earns about zero alpha, i.e. no consistent superior risk-adjusted return after costs. This supports the idea that skill in using public information cannot beat the market."
+          },
+          "tags": [
+            "emh",
+            "strong-form",
+            "mutual-funds",
+            "alpha"
+          ],
+          "reference_keys": [
+            "sfm:insider"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What portfolio management approach does the EMH suggest?",
+            "answer_md": "A passive approach. If prices already reflect information and superior analysts are not available, a portfolio should simply match the market and keep research and trading costs low, instead of trying to beat the market actively."
+          },
+          "tags": [
+            "emh",
+            "passive",
+            "implications"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "If markets are efficient, does portfolio management lose importance?",
+            "answer_md": "No. It still matters for deciding risk level, diversification and risk management; what is unnecessary is stock picking and market timing to earn excess returns."
+          },
+          "tags": [
+            "emh",
+            "portfolio-management",
+            "implications"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What should a manager with access to superior analysts do?",
+            "answer_md": "Follow their recommendations. Concentrate the analysts on mid-cap and small-cap stocks, which have enough liquidity for institutions but get less attention than large stocks, so their prices may be temporarily out of line with value."
+          },
+          "tags": [
+            "emh",
+            "superior-analysts",
+            "mid-cap"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why may mid-cap and small-cap shares be less efficiently priced than top-tier stocks?",
+            "answer_md": "Because fewer analysts follow them and they get less publicity. There is less information available and the adjustment to new information is slower, so the chance of finding undervalued shares is higher."
+          },
+          "tags": [
+            "emh",
+            "superior-analysts",
+            "neglected-stocks"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which variables should superior analysts watch, per the study text?",
+            "answer_md": "The ratio of book value to market value, the size of firms analysed, and the monetary policy environment, in line with the cross-section studies of returns."
+          },
+          "tags": [
+            "emh",
+            "superior-analysts",
+            "variables"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps for a manager without superior analysts.",
+            "answer_md": "(a) Determine and quantify risk preferences. (b) Divide the portfolio between a risk-free asset and a risky portfolio to suit that risk level. (c) Diversify globally to remove unsystematic risk. (d) Rebalance to maintain the risk level. (e) Minimise total transaction costs."
+          },
+          "tags": [
+            "emh",
+            "passive",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Without superior analysts: set {{c1::risk preference}}, split between {{c2::risk-free and risky}} assets, {{c3::diversify}} globally, {{c4::rebalance}} as needed and keep {{c5::transaction costs}} low."
+          },
+          "tags": [
+            "emh",
+            "passive",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-008",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Q-S-D-R-M",
+            "expands_md": "Quantify risk preference, Split between risk-free and risky, Diversify, Rebalance, Minimise costs",
+            "topic": "Passive portfolio steps"
+          },
+          "tags": [
+            "emh",
+            "passive",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Index fund",
+            "definition_md": "A security portfolio built to copy the composition and performance of a chosen market index. It follows from efficient markets and a lack of superior analysts, and it keeps research and trading costs low."
+          },
+          "tags": [
+            "emh",
+            "index-funds",
+            "passive"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are index funds and ETFs preferred in efficient markets?",
+            "answer_md": "They cost less in research and commissions and generally match or beat most active managers. Planners use them to get exposure to an asset class cheaply."
+          },
+          "tags": [
+            "emh",
+            "index-funds",
+            "etf"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What innovation in index construction does the book mention?",
+            "answer_md": "Weighting index stocks by fundamentals such as earnings, cash flow or dividends instead of market values."
+          },
+          "tags": [
+            "emh",
+            "index-funds",
+            "fundamental-indexing",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the major conclusion of EMH for stock analysis and market timing?",
+            "answer_md": "Since shares trade at fair value, it is virtually impossible to buy undervalued shares at a bargain or sell overvalued shares at a premium. Neither expert analysis nor timing can be expected to do better than the market on average, except by accepting greater risk."
+          },
+          "tags": [
+            "emh",
+            "implications"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What basic assumption does the validity of EMH rest on?",
+            "answer_md": "That all information relevant to prices is freely and widely available and shared by all investors. With many buyers and sellers, price movements occur in a timely way, so shares always trade near fair market value."
+          },
+          "tags": [
+            "emh",
+            "implications",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which of these may be exploited in an inefficient market: a sudden fall due to one big institutional sale, or short-sale restrictions?",
+            "answer_md": "The sudden fall due to a large sale is the easiest to exploit: it is temporary and has no information content, so buying the dip gains when the price recovers. Short-sale limits are harder to trade against."
+          },
+          "tags": [
+            "emh",
+            "inefficiency",
+            "mcq",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-portfolio-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Under the semi-strong form which approach could still earn abnormal profits?",
+            "answer_md": "Trading on non-public information, such as advance knowledge of a management change. Strategies using public data (low P/E, past price changes) should not earn abnormal profits, though trading on inside information is illegal."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:portfolio"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Abnormal return",
+            "definition_md": "The part of a security's actual return that exceeds (or falls short of) the return expected for its risk from the market model. In event studies it is attributed to the event; in efficient markets it cannot be earned consistently from available information."
+          },
+          "tags": [
+            "emh",
+            "abnormal-return"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Technical analysis and fundamental analysis",
+            "definition_md": "Technical analysis forecasts prices from past price and volume patterns (charts, trends). Fundamental analysis estimates intrinsic value from financial statements, industry and economy data. The weak form rules out the first, the semi-strong form the second."
+          },
+          "tags": [
+            "emh",
+            "technical-analysis",
+            "fundamental-analysis"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Information leakage",
+            "definition_md": "News reaching some traders before official release. If prices move before the announcement date, the market is not fully efficient with respect to that information; with no leakage in an efficient market, the price changes only on the announcement."
+          },
+          "tags": [
+            "emh",
+            "leakage"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the steps of an event study.",
+            "answer_md": "(1) Identify the event and its date. (2) Fix the event window (days or months around it). (3) Estimate the expected return from the market model. (4) Compute abnormal return for each period as actual minus expected. (5) Add them to get CAR. (6) Check whether the CAR differs significantly from zero and when it arises (before, on or after the date)."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the timing of CAR show efficiency in an event study?",
+            "answer_md": "In an efficient market the CAR jumps on the announcement and is flat afterwards (and flat before, if no leakage). A CAR that keeps drifting after the date means a slow adjustment; a rise before the date means leakage."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "car"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the company-unique return in the index model?",
+            "answer_md": "The residual error term: the difference between the security's actual return and the return given by the index model. After adjusting for the market factor, this remainder is the abnormal return linked to the firm-specific event."
+          },
+          "tags": [
+            "emh",
+            "event-study",
+            "index-model"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What kind of event does Fama emphasise in semi-strong tests?",
+            "answer_md": "Studies of announcements of various types (splits, earnings, accounting changes, listings), carried out as event studies, in place of the older notion of testing whether public information gives excess returns."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form",
+            "event-study"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A market is strong-form efficient. Can mutual funds with expert analysts earn consistent abnormal returns?",
+            "answer_md": "No. All information, public and private, is in prices, so analyst skill adds nothing and the typical fund earns zero alpha (a return equal to the risk-adjusted market return, before costs)."
+          },
+          "tags": [
+            "emh",
+            "strong-form",
+            "alpha"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "True or false: according to EMH, share prices move in trends.",
+            "answer_md": "False. Price changes are independent of past changes, so there is no trend to follow; trend following is what the weak form says is useless."
+          },
+          "tags": [
+            "emh",
+            "random-walk",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "True or false: the semi-strong form says prices reflect all publicly available information.",
+            "answer_md": "True. It covers past prices and all public data such as accounts, announcements and broker reports."
+          },
+          "tags": [
+            "emh",
+            "semi-strong-form",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "True or false: persistent abnormal returns for low P/E shares support the semi-strong form.",
+            "answer_md": "False. They are evidence against it, because P/E is public information, so using it should not give abnormal returns."
+          },
+          "tags": [
+            "emh",
+            "pe-ratio",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "True or false: under EMH high-beta shares are consistently overpriced.",
+            "answer_md": "False. Under EMH every share is fairly priced for its risk; a high beta means a higher expected return, not a systematic overpricing."
+          },
+          "tags": [
+            "emh",
+            "beta",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "True or false: a random walk means future price changes are uncorrelated with past price changes.",
+            "answer_md": "True. Correlation between successive changes is zero."
+          },
+          "tags": [
+            "emh",
+            "random-walk",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Fill in: firms with a high ratio of book value to market value tend to have annual returns ___ those of firms with a low ratio.",
+            "answer_md": "Greater than. This is the book-to-market anomaly."
+          },
+          "tags": [
+            "emh",
+            "book-to-market",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In an efficient market what does a security price offer investors?",
+            "answer_md": "A normal return for the level of risk taken: neither inadequate nor extra."
+          },
+          "tags": [
+            "emh",
+            "fair-game",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which statement is correct about a weakly efficient market: price reflects financial performance, past price, demand, or past price and traded volume?",
+            "answer_md": "Past price and traded volume. Company performance is public non-price data and belongs to the semi-strong form."
+          },
+          "tags": [
+            "emh",
+            "weak-form",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which strategy does the efficient market hypothesis suggest: active or passive?",
+            "answer_md": "Passive, because beating the market after costs is unlikely."
+          },
+          "tags": [
+            "emh",
+            "passive",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are weak-form tests said to be more conclusive than semi-strong tests?",
+            "answer_md": "Weak-form tests are numerous and almost unanimous in findings after proper adjustment; semi-strong tests are also numerous but diverse, and some show slow adjustment or anomalies."
+          },
+          "tags": [
+            "emh",
+            "weak-form",
+            "semi-strong-form",
+            "tests"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do overreaction and underreaction relate to market efficiency?",
+            "answer_md": "If investors overreact the adjustment becomes random in character, and Fama argues overreaction and underreaction are about equally likely, which suggests that they are chance events and the market is efficient."
+          },
+          "tags": [
+            "emh",
+            "overreaction"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do real markets fall short of the efficiency conditions?",
+            "answer_md": "Information is not free, transactions cost money, and investors do not all interpret news alike. EMH is a benchmark showing how closely a market approaches a perfect one, not a full description."
+          },
+          "tags": [
+            "emh",
+            "assumptions",
+            "reality"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why would an efficient market make an investor's choice of timing a fair game?",
+            "answer_md": "Because any pattern is competed away: at each moment the price is the best estimate of value, so buy and sell decisions based on available information earn only the normal return for the risk."
+          },
+          "tags": [
+            "emh",
+            "fair-game"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-022",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where does the study text suggest superior analysts add value?",
+            "answer_md": "In neglected mid-cap and small-cap stocks where fewer analysts compete, rather than in widely followed large stocks."
+          },
+          "tags": [
+            "emh",
+            "superior-analysts"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish normal return from abnormal return.",
+            "answer_md": "Normal (expected) return is what the market model or CAPM gives for the risk of the security. Abnormal return is actual minus normal. EMH says abnormal returns from available information are zero on average."
+          },
+          "tags": [
+            "emh",
+            "abnormal-return",
+            "fair-game"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm11-extra-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does listing on an exchange not change a firm's systematic risk or cost of equity, according to the study text?",
+            "answer_md": "Studies found no significant change in beta or cost of equity after listing; listing mainly adds liquidity and prestige."
+          },
+          "tags": [
+            "emh",
+            "listing"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

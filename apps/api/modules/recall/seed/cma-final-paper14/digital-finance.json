@@ -1,0 +1,2910 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-digital-finance",
+      "title": "SFM: Digital Finance",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 17: Digital Finance.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "digital-finance"
+      },
+      "items": [
+        {
+          "ref": "sfm17-basics-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Digital finance",
+            "definition_md": "Delivery of financial services through digital devices such as computers, tablets and smartphones; more broadly, the effect of new technology on the financial industry. It covers products, services, technology and infrastructure that give people and firms access to payments, savings and credit online, without visiting a branch or dealing face to face with the provider."
+          },
+          "tags": [
+            "digital-finance",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is there a single agreed definition of digital finance? What consensus exists?",
+            "answer_md": "No standard definition exists. The consensus is that it covers all products, services, technology and infrastructure that let individuals and companies reach payments, savings and credit through the internet, with no branch visit and no direct dealing with the provider."
+          },
+          "tags": [
+            "digital-finance",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do Gomber, Koch and Siering (2017) describe digital finance?",
+            "answer_md": "As a wide range of new financial products, businesses, finance software and new forms of customer communication, delivered by FinTech firms and other innovative providers."
+          },
+          "tags": [
+            "digital-finance",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which technologies have driven the growth of digital finance?",
+            "answer_md": "Artificial intelligence, machine learning, social networks, mobile applications, distributed ledger technology, cloud computing and big data analytics. They have created new services and business models for both established institutions and new entrants."
+          },
+          "tags": [
+            "digital-finance",
+            "technologies"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What problem of emerging economies is digital finance meant to solve?",
+            "answer_md": "Financial exclusion: a large share of people lack access to a bank and many small businesses cannot get the credit they need to grow. Digital delivery reaches them cheaply."
+          },
+          "tags": [
+            "digital-finance",
+            "financial-inclusion"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compare traditional finance with digital finance on banking, payments, investment and insurance.",
+            "answer_md": "Banking: branch visits versus online banking, mobile apps and tele-banking. Payments: physical cash versus netbanking, cards, wallets and UPI. Investment: real or financial assets versus also digital assets such as cryptocurrencies. Insurance: through branches or agents versus through apps."
+          },
+          "tags": [
+            "digital-finance",
+            "traditional-vs-digital"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "On which three counts does digital finance beat the traditional brick-and-mortar model?",
+            "answer_md": "Reach, ease of access and affordability. It serves remote areas where a physical outlet would not pay, offers a simple interface needing only a smartphone and a basic internet link, and lowers operating cost, which is passed on to customers."
+          },
+          "tags": [
+            "digital-finance",
+            "traditional-vs-digital"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What two new developments does digital finance add beyond digitising old services?",
+            "answer_md": "New digital assets such as NFTs and cryptocurrencies (a possible source of diversification) and central bank digital currency, which may in time replace physical currency."
+          },
+          "tags": [
+            "digital-finance",
+            "traditional-vs-digital",
+            "digital-assets"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How could a CBDC remove limitations of physical currency?",
+            "answer_md": "By doing away with counterfeit notes and helping check black money and terror financing, and by pushing the economy towards digital transactions at large."
+          },
+          "tags": [
+            "digital-finance",
+            "cbdc"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the customer journey for availing credit differ between traditional and digital finance?",
+            "answer_md": "Traditional: travel to the branch, meet a representative, wait for a decision, return to the branch, then receive funds. Digital: apply on a mobile phone and get approval and funds within minutes."
+          },
+          "tags": [
+            "digital-finance",
+            "traditional-vs-digital",
+            "customer-journey"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Discuss the benefits of digital finance (economy, banks, government, regulators, users).",
+            "answer_md": "Economy: wider credit and services lift aggregate spending, GDP, stability and intermediation. Banks: innovation improves long-run profit. Government: more transactions mean more tax revenue. Regulators: less counterfeit money and laundering. Users: control over finances, fast decisions, payments within seconds. The poor and unbanked gain inclusion."
+          },
+          "tags": [
+            "digital-finance",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does digital finance lift GDP, according to the chapter?",
+            "answer_md": "By giving easy access to varied financial products and credit for households and businesses, it raises aggregate expenditure, which improves GDP figures. It can also add stability and deepen financial intermediation."
+          },
+          "tags": [
+            "digital-finance",
+            "benefits",
+            "gdp"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What did Scott et al. (2017) find about SWIFT adoption?",
+            "answer_md": "Adopting SWIFT, the network infrastructure and standard set for global interbank messaging, raised bank profitability in the long run across 29 countries in the USA and Europe, and the gain was larger for small banks than for large ones."
+          },
+          "tags": [
+            "digital-finance",
+            "benefits",
+            "swift"
+          ],
+          "reference_keys": [
+            "sfm:digital-finance-benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does digital finance benefit governments and money market regulators?",
+            "answer_md": "Governments: more financial transactions generate higher tax revenue. Regulators: wide adoption cuts the circulation of counterfeit currency and money laundering."
+          },
+          "tags": [
+            "digital-finance",
+            "benefits",
+            "government",
+            "regulators"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does digital finance help financial inclusion?",
+            "answer_md": "Most people in developing countries already own a mobile phone, so digital services can reach poor customers affordably and securely, moving them from cash to formal digital transactions and extending basic services to non-financial sectors."
+          },
+          "tags": [
+            "digital-finance",
+            "benefits",
+            "financial-inclusion"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-basics-016",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "RAA",
+            "expands_md": "Reach, Access, Affordability: where digital finance beats branch banking.",
+            "topic": "Edge of digital over traditional finance"
+          },
+          "tags": [
+            "digital-finance",
+            "traditional-vs-digital"
+          ],
+          "reference_keys": [
+            "sfm:basics"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-eco-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Digital finance ecosystem",
+            "definition_md": "All the users or participants in a digital environment together with their web of transactional relationships. Users are buyers and sellers of digital services and assets; the environment covers infrastructure, assets, services and money as the medium of exchange."
+          },
+          "tags": [
+            "ecosystem",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:eco"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-eco-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the five components of the digital finance ecosystem.",
+            "answer_md": "Digital infrastructure, digital money, digital assets, digital financial services and users."
+          },
+          "tags": [
+            "ecosystem",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:eco"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-eco-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Ecosystem components: digital {{c1::infrastructure}}, digital {{c2::money}}, digital {{c3::assets}}, digital financial {{c4::services}} and {{c5::users}}."
+          },
+          "tags": [
+            "ecosystem",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:eco"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-eco-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who are the 'users' in the digital finance ecosystem?",
+            "answer_md": "Every participant: consumers of products and services, buyers of digital assets, and also the suppliers and sellers of them."
+          },
+          "tags": [
+            "ecosystem",
+            "users"
+          ],
+          "reference_keys": [
+            "sfm:eco"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-eco-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the word 'ecosystem' used in digital finance?",
+            "answer_md": "It is borrowed from biology, where it means living things in an area and their relationships with the environment; here it describes participants and their transactional relationships in a digital setting."
+          },
+          "tags": [
+            "ecosystem",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:eco"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Digital infrastructure",
+            "definition_md": "The digital technologies that connect physical and virtual elements such as computers, storage, networks and applications, forming the base for an organisation's digital operations. Firms use it to redesign services for global digital delivery and to build and scale products quickly."
+          },
+          "tags": [
+            "infrastructure",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the components of digital infrastructure.",
+            "answer_md": "Internet; mobile telecom and digital communication suites including applications; data centres and networks; enterprise portals, platforms, systems and software; cloud services; operational security, user identity and data encryption; APIs and integrations."
+          },
+          "tags": [
+            "infrastructure",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Digital infrastructure includes the {{c1::internet}}, mobile telecom suites, {{c2::data centres}}, enterprise portals, {{c3::cloud services}}, operational {{c4::security}} and {{c5::APIs}}."
+          },
+          "tags": [
+            "infrastructure",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the Internet and why is it the prime enabler of digital finance?",
+            "answer_md": "A global network of networks (private, public, academic, business, government) that communicate using the TCP/IP suite. It carries the web, email, telephony and file sharing, and connects the whole digital world, including digital finance."
+          },
+          "tags": [
+            "infrastructure",
+            "internet"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What role do mobile telecom and digital communication suites play?",
+            "answer_md": "They link various organisations to a common network and make communication for digital transactions possible."
+          },
+          "tags": [
+            "infrastructure",
+            "mobile-telecom"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-006",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Data centre",
+            "definition_md": "A physical facility where an organisation houses its critical applications and data. It is designed around a network of computing and storage resources that deliver shared applications and data. Key parts: routers, switches, firewalls, storage systems, servers and application-delivery controllers."
+          },
+          "tags": [
+            "infrastructure",
+            "data-centre"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-007",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Enterprise portal (EIP)",
+            "definition_md": "A framework that integrates information, people and processes across organisational boundaries. It gives one secure, usually web-based access point and aggregates and personalises information through application-specific portlets; once linked to the needed systems it delivers the service."
+          },
+          "tags": [
+            "infrastructure",
+            "enterprise-portal"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Cloud services",
+            "definition_md": "Services delivered on demand over the internet to firms and customers, giving easy and affordable access to applications and resources without in-house infrastructure or hardware. They are hosted by third-party providers."
+          },
+          "tags": [
+            "infrastructure",
+            "cloud"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three types of cloud service.",
+            "answer_md": "Infrastructure as a Service (IaaS), Platform as a Service (PaaS) and Software as a Service (SaaS)."
+          },
+          "tags": [
+            "infrastructure",
+            "cloud",
+            "iaas",
+            "paas",
+            "saas"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Distinguish IaaS, PaaS and SaaS.",
+            "answer_md": "IaaS: the provider manages the infrastructure, which the firm uses via the internet. PaaS: the provider supplies and manages hardware plus a software platform; the user handles the applications and their data. SaaS: the provider delivers and manages a finished software application to its users."
+          },
+          "tags": [
+            "infrastructure",
+            "cloud",
+            "iaas",
+            "paas",
+            "saas"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "The book expands SaaS as 'Software-as-a-Solution'. Is that right?",
+            "answer_md": "No. The standard expansion is Software as a Service, which is what to write in the exam."
+          },
+          "tags": [
+            "infrastructure",
+            "cloud",
+            "saas",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does operational security cover in digital infrastructure?",
+            "answer_md": "A risk-management process that keeps sensitive information from the wrong hands. It uses authentication to verify user identity, systems for data encryption, and antivirus and antimalware for further protection."
+          },
+          "tags": [
+            "infrastructure",
+            "security"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-infra-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is an API and what does API integration achieve?",
+            "answer_md": "An application programming interface acts as a messenger that carries requests and keeps enterprise systems working together. API integration links two or more applications through their APIs so they exchange data, keeping data in sync and improving productivity."
+          },
+          "tags": [
+            "infrastructure",
+            "api"
+          ],
+          "reference_keys": [
+            "sfm:infra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Digital money (e-money)",
+            "definition_md": "A digital or electronic representation of value. Broadly it includes plastic money (debit, credit and stored value cards, which represent balances or bank credit); in the narrow sense it means digital currency issued by a central bank, a digital form of cash held and moved through an internet or mobile app."
+          },
+          "tags": [
+            "digital-money",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When can cryptocurrencies and stablecoins count as digital money?",
+            "answer_md": "Only if they are accepted as a medium of exchange. Because they are not accepted everywhere, they are mostly treated as digital assets instead."
+          },
+          "tags": [
+            "digital-money",
+            "crypto",
+            "stablecoin"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Central Bank Digital Currency (CBDC)",
+            "definition_md": "Digital tokens, similar to a cryptocurrency, issued and backed by a country's central bank and pegged to the value of its fiat currency. Like notes, it is a means of payment, unit of account and store of value, and each unit is uniquely identifiable to prevent counterfeiting."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give the potential advantages of a CBDC.",
+            "answer_md": "Efficient, cheaper storing and transacting; ability to track transactions and the exact location of money; curbing money laundering, tax evasion and terror financing; a digital record of every transaction; a more secure payment system; more competition and resilience in domestic payments; and promotion of financial inclusion."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "CBDC benefits: lower {{c1::cost}} of transacting, {{c2::tracking}} of money, curbing {{c3::laundering and tax evasion}}, a digital {{c4::record}}, a more {{c5::secure}} payment system, payments {{c6::competition}} and financial {{c7::inclusion}}."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does a CBDC differ from a cryptocurrency in control and technology?",
+            "answer_md": "A CBDC is centrally controlled by the central bank, government or approved entities, and is likely kept in a database that records each holder's balance, so a blockchain is not necessarily needed. A cryptocurrency runs on a decentralised blockchain with no central issuer."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc",
+            "crypto"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is a CBDC seen as more secure than a cryptocurrency?",
+            "answer_md": "It is centrally controlled and need not rely on a public distributed ledger, and it is a high-security instrument backed and issued by the central bank, with records kept under privacy and cryptographic protection."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc",
+            "security"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What inspired the idea of a CBDC, and what would it remove from the payment chain?",
+            "answer_md": "It may partly be inspired by Bitcoin and other blockchain-based coins. Because the central bank holds the record directly, it removes the need for a separate settlement institution."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-money-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "True or false: cryptocurrencies are equivalent to CBDCs. Why?",
+            "answer_md": "False. A CBDC is issued, backed and controlled by the central bank and pegged to fiat; a private cryptocurrency is decentralised and not backed by any authority."
+          },
+          "tags": [
+            "digital-money",
+            "cbdc",
+            "crypto"
+          ],
+          "reference_keys": [
+            "sfm:money"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Digital asset",
+            "definition_md": "Anything that exists only in digital form, is uniquely identifiable and carries a distinct right of use, so that the owner can realise value from it. Data without such a usage right is not a digital asset."
+          },
+          "tags": [
+            "digital-assets",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give examples of digital assets.",
+            "answer_md": "Photographs, logos, illustrations, animations, audio-visual media, presentations, spreadsheets, digital paintings, documents, emails and websites with their metadata; also NFTs, private cryptocurrencies and stablecoins."
+          },
+          "tags": [
+            "digital-assets",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the three kinds of digital asset highlighted in the chapter.",
+            "answer_md": "Non-fungible tokens, private cryptocurrencies and stablecoins."
+          },
+          "tags": [
+            "digital-assets",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Non-fungible token (NFT)",
+            "definition_md": "A cryptographic asset on a blockchain with a unique identification code and metadata that set it apart from every other token. Each NFT is unique, so it is not interchangeable like a cryptocurrency unit. It can represent digital items such as artwork or real assets such as property."
+          },
+          "tags": [
+            "nft",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is an NFT non-fungible while a cryptocurrency is fungible?",
+            "answer_md": "Every unit of a cryptocurrency has the same value and characteristics and can be swapped one for one. Each NFT has its own identity and metadata, so no two are interchangeable."
+          },
+          "tags": [
+            "nft",
+            "fungible"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is asset tokenization and how are NFTs created?",
+            "answer_md": "An issuer creates digital tokens on a blockchain or distributed ledger (Ethereum is the most used) that stand for digital or physical assets. NFTs come from this process."
+          },
+          "tags": [
+            "nft",
+            "tokenization"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is ownership recorded through NFTs considered secure?",
+            "answer_md": "The blockchain ensures that, once a token is bought, no single authority can erase or alter the owner's title; the record stays immutable."
+          },
+          "tags": [
+            "nft",
+            "blockchain"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is needed to buy an NFT, and where are NFTs traded?",
+            "answer_md": "A funded digital wallet, usually funded in cryptocurrency (Ethereum is the common choice). Marketplaces include Rarible, OpenSea and Foundation; wallet services such as MetaMask help in transactions."
+          },
+          "tags": [
+            "nft",
+            "marketplace",
+            "wallet"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where is most of the current NFT market centred?",
+            "answer_md": "On collectibles such as digital artwork, sports cards and other rarities; some tokenised cards have sold for millions of dollars."
+          },
+          "tags": [
+            "nft",
+            "market"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-assets-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Write a short note on NFTs: meaning, creation and sale.",
+            "answer_md": "NFTs are unique blockchain tokens with identifiers and metadata. Created by asset tokenization on a ledger such as Ethereum. Sold on marketplaces; the buyer needs a funded wallet, usually holding Ethereum. Ownership is immutable once recorded."
+          },
+          "tags": [
+            "nft",
+            "meaning",
+            "marketplace"
+          ],
+          "reference_keys": [
+            "sfm:assets"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Cryptocurrency",
+            "definition_md": "Any currency that exists only digitally and uses cryptography to secure transactions. It is a peer-to-peer system in which payments are entries in an online database, recorded on a public ledger, with no physical form."
+          },
+          "tags": [
+            "cryptocurrency",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do cryptocurrencies work?",
+            "answer_md": "They run on a distributed public ledger called blockchain, which records all transactions and is updated and held by the holders. New units are created by mining, using computer power to solve complex mathematical problems. Users can also buy them from brokers and keep them in cryptographic wallets."
+          },
+          "tags": [
+            "cryptocurrency",
+            "working",
+            "blockchain",
+            "mining"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name four well-known cryptocurrencies and one fact on each.",
+            "answer_md": "Bitcoin: first, started 2009, created by pseudonymous Satoshi Nakamoto. Ethereum: 2015 blockchain platform whose coin is Ether, second most popular. Litecoin: close to Bitcoin but quicker to add faster payments. Dogecoin: began as a joke from an internet meme; unlimited issuance."
+          },
+          "tags": [
+            "cryptocurrency",
+            "examples",
+            "bitcoin",
+            "ethereum",
+            "litecoin",
+            "dogecoin"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which cryptocurrency has unlimited issuance, unlike many others?",
+            "answer_md": "Dogecoin, whose name comes from a dog meme."
+          },
+          "tags": [
+            "cryptocurrency",
+            "dogecoin"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why do people favour cryptocurrency? Give its merits.",
+            "answer_md": "A decentralised form of money needing no bank or central institution to enforce trust; quick, direct transfers between two parties without a trusted third party; and investment potential, with high liquidity and diversification as coins trade easily on exchanges."
+          },
+          "tags": [
+            "cryptocurrency",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is cryptocurrency criticised? List its drawbacks.",
+            "answer_md": "Pseudonymous rather than anonymous, so a digital trail exists; may enable money laundering and attract criminals; ownership is concentrated in a few holders; mining uses huge energy; extreme price volatility; and exchanges and wallets can be hacked even though blockchains are secure."
+          },
+          "tags": [
+            "cryptocurrency",
+            "disadvantages"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is cryptocurrency really anonymous?",
+            "answer_md": "No. It is pseudonymous: transactions are linked to addresses on a public ledger, which leaves a digital trail."
+          },
+          "tags": [
+            "cryptocurrency",
+            "disadvantages",
+            "anonymity"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Where does the security weakness of crypto lie if blockchains themselves are secure?",
+            "answer_md": "In the storage points around them: exchanges and wallets can be hacked, and coins worth millions have been stolen this way."
+          },
+          "tags": [
+            "cryptocurrency",
+            "disadvantages",
+            "hacking"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is cryptocurrency considered environment unfriendly?",
+            "answer_md": "Mining popular coins needs considerable computing power and electricity, at times comparable to the use of whole countries."
+          },
+          "tags": [
+            "cryptocurrency",
+            "disadvantages",
+            "mining"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-crypto-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "The book cites an MIT study on ownership concentration of Bitcoin. What point is it making?",
+            "answer_md": "That a small number of investors (about 11,000) held a large part (roughly 45%) of Bitcoin's value, showing concentration. Quote the idea, not the figures, unless the question asks."
+          },
+          "tags": [
+            "cryptocurrency",
+            "disadvantages",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:crypto"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Stablecoin",
+            "definition_md": "A cryptocurrency pegged to a reserve asset such as a fiat currency, a commodity or another cryptocurrency. It is a tokenised version of that asset and can ease transactions, arbitrage and value exchange on a blockchain."
+          },
+          "tags": [
+            "stablecoin",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the uses of a stablecoin?",
+            "answer_md": "Everyday currency, since backing by national currencies or commodities keeps price swings small; and stable settlement for smart contracts, where a volatile coin like Ether would make contract terms unpredictable (for example Tether). It also allows quick buying and selling on decentralised exchanges that do not take fiat, and can cut processing time on centralised ones."
+          },
+          "tags": [
+            "stablecoin",
+            "uses",
+            "smart-contracts"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do stablecoins suit smart contracts better than ordinary crypto coins?",
+            "answer_md": "Ordinary coins change in price often, which can alter the real value of contract terms. A pegged coin reduces volatility and gives both parties more secure, blockchain-enforced contracts."
+          },
+          "tags": [
+            "stablecoin",
+            "uses",
+            "smart-contracts"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the four variants of stablecoin.",
+            "answer_md": "Fiat-collateralised, commodity-backed, crypto-backed and algorithmic stablecoins."
+          },
+          "tags": [
+            "stablecoin",
+            "variants"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Stablecoin variants: {{c1::fiat}}-collateralised, {{c2::commodity}}-backed, {{c3::crypto}}-backed and {{c4::algorithmic}}."
+          },
+          "tags": [
+            "stablecoin",
+            "variants"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain fiat-collateralised stablecoins with examples.",
+            "answer_md": "Linked to a sovereign currency. The issuer creates tokens by depositing an equal amount of fiat in its reserves; the central authority does not issue them. Examples: Tether and TUSD (True USD)."
+          },
+          "tags": [
+            "stablecoin",
+            "variants",
+            "fiat-collateralised"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain commodity-backed stablecoins with an example.",
+            "answer_md": "Backed by reserve assets other than fiat, such as gold, silver or other precious metals. Kitco Gold, backed by the issuer's gold reserves and built on Ethereum, is the book's example."
+          },
+          "tags": [
+            "stablecoin",
+            "variants",
+            "commodity-backed"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain crypto-backed stablecoins and why they are over-collateralised.",
+            "answer_md": "They are backed by another cryptocurrency. Because the backing coin is volatile, more value must be locked than the stablecoin issued, giving a cushion against price falls. Example: Maker DAO's Dai, backed by ETH."
+          },
+          "tags": [
+            "stablecoin",
+            "variants",
+            "crypto-backed",
+            "over-collateralisation"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A crypto-backed stablecoin needs collateral of 150% of the coin value (illustrative ratio). How much must be locked to obtain 300 of coin, and what is the buffer?",
+            "answer_md": "Collateral = 300 x 150% = 450. Buffer over coin value = 450 - 300 = 150, so the collateral can fall by one third before it fails to cover the coin (150 / 450)."
+          },
+          "tags": [
+            "stablecoin",
+            "variants",
+            "crypto-backed",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain algorithmic stablecoins.",
+            "answer_md": "Mostly not backed by reserves. Algorithms, software and code adjust prices, token supply and other variables to manage supply and demand and hold the peg despite price changes."
+          },
+          "tags": [
+            "stablecoin",
+            "variants",
+            "algorithmic"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the limitations of stablecoins.",
+            "answer_md": "Value rests on trust in the entity holding the reserve, which may waver; they can lose value if that company goes bankrupt; holders need proof of solvency to maintain trust; and they are not meant for trading gains unless fiat or commodity markets are unsettled."
+          },
+          "tags": [
+            "stablecoin",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a stablecoin differ from a cryptocurrency such as Bitcoin?",
+            "answer_md": "A stablecoin is pegged to a reserve asset and so keeps a steady value; Bitcoin is not pegged and swings sharply. Stablecoins suit payments and contracts; volatile coins suit speculation."
+          },
+          "tags": [
+            "stablecoin",
+            "crypto",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-stable-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "The book calls a stablecoin a 'utility token'. Is that safe for exams?",
+            "answer_md": "The label is loose. Prefer the accurate description: a cryptocurrency pegged to a reserve asset, used as a stable medium of exchange."
+          },
+          "tags": [
+            "stablecoin",
+            "meaning",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:stable"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-dfs-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Digital financial services (DFS)",
+            "definition_md": "Financial services such as payments, remittances and credit that are accessed and delivered through digital channels, including mobile devices. They cover established instruments like debit and credit cards offered by banks, and newer solutions built on cloud computing, digital platforms and distributed ledger technology, including mobile and peer-to-peer payments."
+          },
+          "tags": [
+            "dfs",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:dfs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-dfs-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the advantages of digital financial services.",
+            "answer_md": "Better customer experience through plentiful information; ease of access without visiting branches; streamlined operations, with online onboarding, claims and electronic KYC; and lower delivery cost because of fewer physical facilities and staff, with savings shared as lower fees."
+          },
+          "tags": [
+            "dfs",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:dfs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-dfs-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do digital services streamline an insurance process?",
+            "answer_md": "From enquiry and onboarding to claim management and settlement, everything is done online with minimal physical documents, and KYC is carried out electronically."
+          },
+          "tags": [
+            "dfs",
+            "advantages",
+            "insurance",
+            "kyc"
+          ],
+          "reference_keys": [
+            "sfm:dfs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-dfs-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does digital delivery lower costs for providers and customers?",
+            "answer_md": "Providers run with little physical infrastructure and manpower, which improves profitability; part of the saving is passed to customers through lower fees."
+          },
+          "tags": [
+            "dfs",
+            "advantages",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:dfs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-dfs-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which area of DFS has seen the most noteworthy development, and what new modes have appeared?",
+            "answer_md": "Payment systems. Cards and NEFT/RTGS netbanking improved with technology, and new modes appeared, such as digital wallets and UPI."
+          },
+          "tags": [
+            "dfs",
+            "payments"
+          ],
+          "reference_keys": [
+            "sfm:dfs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-wallet-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Digital wallet",
+            "definition_md": "A prepaid payment instrument: it lets the holder buy goods and services against value stored in it. Wallets are closed or semi-open systems that can be reloaded and are accepted by the providers or merchants the wallet issuer has contracts with."
+          },
+          "tags": [
+            "wallet",
+            "meaning",
+            "ppi"
+          ],
+          "reference_keys": [
+            "sfm:wallet"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-wallet-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is a digital wallet opened and loaded, and when is KYC needed?",
+            "answer_md": "It is opened with valid credentials such as email and password and loaded by moving money from a bank account. A basic wallet may not ask for KYC, but KYC must be complied with to raise the wallet limit. Providers often give cashback."
+          },
+          "tags": [
+            "wallet",
+            "kyc",
+            "ppi"
+          ],
+          "reference_keys": [
+            "sfm:wallet"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-wallet-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give examples of digital wallets in India.",
+            "answer_md": "Amazon Pay, Paytm, Mobikwik and Freecharge."
+          },
+          "tags": [
+            "wallet",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:wallet"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Unified Payments Interface (UPI)",
+            "definition_md": "A payment system that brings several bank accounts into one mobile application of any participating bank, combining banking features, seamless fund routing and merchant payments. (The book's heading writes 'Instrument' but the expansion is Interface.)"
+          },
+          "tags": [
+            "upi",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is UPI 'Unified Payment Instrument' or 'Unified Payments Interface'?",
+            "answer_md": "Interface. The book once writes Instrument by mistake; the exam MCQ option is Unified Payment Interface."
+          },
+          "tags": [
+            "upi",
+            "meaning",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the unique features of UPI.",
+            "answer_md": "Instant, round-the-clock money transfer on mobile; one app for many bank accounts; single-click two-factor authentication within regulatory guidelines; virtual address for push and pull, so no card or account details or IFSC are shared; QR code support; solution to cash-on-delivery hassle; in-app merchant payments; utility bill, over-the-counter and scan-and-pay payments; complaints raised from the app."
+          },
+          "tags": [
+            "upi",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain how a virtual address makes UPI more secure.",
+            "answer_md": "The payer or payee uses a virtual ID for pull and push requests, so card numbers, account numbers and IFSC need not be entered or shared. Merchants also need not store such credentials."
+          },
+          "tags": [
+            "upi",
+            "features",
+            "security",
+            "virtual-address"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the benefits of UPI to banks.",
+            "answer_md": "Single-click two-factor authentication; a universal application for transactions; use of existing infrastructure; safer, secured and innovative; a single unique identifier as payment basis; seamless merchant transactions."
+          },
+          "tags": [
+            "upi",
+            "benefits",
+            "banks"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the benefits of UPI to customers.",
+            "answer_md": "Available round the clock; one application for different bank accounts; virtual ID is safer with no sharing of credentials; single-click authentication; complaints can be raised from the app."
+          },
+          "tags": [
+            "upi",
+            "benefits",
+            "customers"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the benefits of UPI to merchants.",
+            "answer_md": "Seamless collection through single identifiers; no risk of storing customer virtual addresses as with cards; reaches customers without credit or debit cards; suits e-commerce and m-commerce; solves cash-on-delivery collection; single-click 2FA for the customer with seamless pull; in-app payments."
+          },
+          "tags": [
+            "upi",
+            "benefits",
+            "merchants"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "UPI benefits are grouped for {{c1::banks}}, {{c2::customers}} and {{c3::merchants}}; only merchants gain from solving {{c4::cash on delivery}} collection and from not storing the customer's {{c5::virtual address}}."
+          },
+          "tags": [
+            "upi",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-upi-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name some UPI service providers in India.",
+            "answer_md": "BHIM UPI, Axis Bank UPI, PhonePe, Paytm and Google Pay."
+          },
+          "tags": [
+            "upi",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:upi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-neo-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Neobank",
+            "definition_md": "A direct bank, also called an online, internet-only, virtual or digital bank, that operates only online without a physical branch network. It uses AI and machine learning to give personalised services to users and to keep operating cost low."
+          },
+          "tags": [
+            "neobank",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:neo"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-neo-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the benefits of neobanks.",
+            "answer_md": "Convenient, user-friendly banking; built for a niche audience; cheaper than challenger and traditional banks; services like savings accounts, prepaid cards, bill payments and transfers; financial management tools; 24x7 support; strong security; simple app; transparent structure with real-time notifications."
+          },
+          "tags": [
+            "neobank",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:neo"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-neo-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A neobank is also called an {{c1::online}}, {{c2::internet-only}}, {{c3::virtual}} or {{c4::digital}} bank."
+          },
+          "tags": [
+            "neobank",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:neo"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-neo-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do neobanks keep costs low while personalising service?",
+            "answer_md": "They have no branch network and rely on AI and machine learning to tailor services to each customer."
+          },
+          "tags": [
+            "neobank",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:neo"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-neo-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name a few neobanks in India.",
+            "answer_md": "Jupiter, Fi Money, Niyo, Freo, FamPay and Fold, among others."
+          },
+          "tags": [
+            "neobank",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:neo"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-fintech-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Fintech (FSB definition)",
+            "definition_md": "Technology-enabled innovation in financial services that could give rise to new business models, applications, processes or products with a material effect on financial markets, institutions and the provision of financial services. Practically it refers to tech-enabled start-ups."
+          },
+          "tags": [
+            "fintech",
+            "meaning"
+          ],
+          "reference_keys": [
+            "sfm:fintech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-fintech-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the types of fintech services.",
+            "answer_md": "Alternative lending, insurtech, payments, wealthtech and regtech."
+          },
+          "tags": [
+            "fintech",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:fintech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-fintech-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give an example for each type of fintech service.",
+            "answer_md": "Alternative lending: retail lending and aggregators. Insurtech: digital insurers and insurance aggregators. Payments: prepaid payment instruments. Wealthtech: portfolio management. Regtech: accounting, taxation and similar compliance work."
+          },
+          "tags": [
+            "fintech",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:fintech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-fintech-004",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Fintech types: alternative {{c1::lending}}, {{c2::insurtech}}, {{c3::payments}}, {{c4::wealthtech}} and {{c5::regtech}}."
+          },
+          "tags": [
+            "fintech",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:fintech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-fintech-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Sketch the history of fintech in India as given in the chapter.",
+            "answer_md": "Began in the second half of the 1990s: Pine Labs 1998, BillDesk 2000, Policybazaar 2008, followed by rapid growth. Bengaluru and Mumbai host most firms. The counts (2,174 start-ups, 21 unicorns, 2020) are dated."
+          },
+          "tags": [
+            "fintech",
+            "india",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:fintech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the Digital Finance Cube and what are its three dimensions?",
+            "answer_md": "A model of the digital finance landscape (concept from the CPA Digital Finance Program, Australia). Dimensions: digital finance business functions; digital finance technologies and technological concepts; digital finance institutions. Each is divided into constituents."
+          },
+          "tags": [
+            "cube",
+            "dimensions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-002",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Digital Finance Cube dimensions: business {{c1::functions}}, {{c2::technologies}} and technological concepts, and {{c3::institutions}}."
+          },
+          "tags": [
+            "cube",
+            "dimensions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the six digital finance business functions.",
+            "answer_md": "Digital financing, digital investments, digital money, digital payments, digital insurance and digital finance advice."
+          },
+          "tags": [
+            "cube",
+            "business-functions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does digital financing include?",
+            "answer_md": "Invoice financing and factoring (borrowing against, or selling, receivables to a third party); electronic invoicing; lease financing; and crowdfunding."
+          },
+          "tags": [
+            "cube",
+            "business-functions",
+            "digital-financing"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-005",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Crowdfunding",
+            "definition_md": "Raising money through small contributions from a large number of people, typically over an online platform."
+          },
+          "tags": [
+            "cube",
+            "digital-financing",
+            "crowdfunding"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-006",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Invoice financing and factoring",
+            "definition_md": "Borrowing against accounts receivable, or selling them to a third party, to get cash early."
+          },
+          "tags": [
+            "cube",
+            "digital-financing",
+            "invoice-financing"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-007",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Electronic invoicing",
+            "definition_md": "Generating and processing invoices automatically."
+          },
+          "tags": [
+            "cube",
+            "digital-financing",
+            "e-invoicing"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does lease financing mean in the digital financing list?",
+            "answer_md": "Use of an asset owned by the finance provider, for which the user pays."
+          },
+          "tags": [
+            "cube",
+            "digital-financing",
+            "lease"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do digital investments cover?",
+            "answer_md": "Investment advisory services including arranging transactions: online brokerage, mobile and social trading for consumers (B2C), and high-frequency and algorithmic trading between businesses (B2B)."
+          },
+          "tags": [
+            "cube",
+            "business-functions",
+            "digital-investments"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish digital money, digital payments, digital insurance and digital finance advice in the cube.",
+            "answer_md": "Digital money: innovations in how money is created, stored, valued, regulated or exchanged. Digital payments: electronic payments via wallets or UPI. Digital insurance: B2B platforms with value-added services such as data analytics, and innovative B2C services. Advice: aggregators giving comparative quotes of financial services."
+          },
+          "tags": [
+            "cube",
+            "business-functions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the technologies and technological concepts in the Digital Finance Cube.",
+            "answer_md": "Blockchain, social networks, near field communication, peer-to-peer technology, big data analytics and enablers."
+          },
+          "tags": [
+            "cube",
+            "technologies"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-012",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Blockchain",
+            "definition_md": "A type of distributed ledger that gives an ordered, time-stamped and highly secure record of transactions; the whole history of verified, valid transactions between network users sits in the ledger."
+          },
+          "tags": [
+            "cube",
+            "technologies",
+            "blockchain"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-013",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Near field communication (NFC)",
+            "definition_md": "A standard protocol that lets two devices communicate when brought close together, as in tap-and-pay."
+          },
+          "tags": [
+            "cube",
+            "technologies",
+            "nfc"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-014",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Peer-to-peer (P2P) technology",
+            "definition_md": "An architecture in which participants share resources and data directly, without relying on a central intermediary; peers let others use their infrastructure and processing power."
+          },
+          "tags": [
+            "cube",
+            "technologies",
+            "p2p"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-015",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Big data analytics",
+            "definition_md": "Use of the huge volume and variety of data produced by pervasive connectivity to gain insights with business value; it needs advanced analytical skills."
+          },
+          "tags": [
+            "cube",
+            "technologies",
+            "big-data"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-016",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Social networks (in the cube)",
+            "definition_md": "Technology that enables interaction and network building through social media platforms."
+          },
+          "tags": [
+            "cube",
+            "technologies",
+            "social-networks"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the enablers in the Digital Finance Cube?",
+            "answer_md": "Mobile devices, cloud technologies, information security technologies, automation and AI; helped by fast mobile internet, worldwide connectivity, simple user interfaces and security and automation technologies."
+          },
+          "tags": [
+            "cube",
+            "technologies",
+            "enablers"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What do digital finance institutions comprise?",
+            "answer_md": "FinTech companies (start-ups, or technology firms with no financial history that offer FinTech products) and traditional providers such as AMCs, banks, insurers and brokerages."
+          },
+          "tags": [
+            "cube",
+            "institutions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What services do traditional providers offer in the cube?",
+            "answer_md": "A wide range: cash accounts, savings, money and investment management, payments, advice, lending, foreign exchange, equity trading, brokerage and pension planning."
+          },
+          "tags": [
+            "cube",
+            "institutions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-cube-020",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Digital finance institutions: {{c1::FinTech}} companies and {{c2::traditional}} providers such as AMCs, banks, insurers and brokerages."
+          },
+          "tags": [
+            "cube",
+            "institutions"
+          ],
+          "reference_keys": [
+            "sfm:cube"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is enabling regulation critical for digital finance?",
+            "answer_md": "New entrants, technologies and business models create risks to stability and integrity; regulators must manage these without stifling innovation. Without consumer trust the ecosystem will not thrive."
+          },
+          "tags": [
+            "regulation",
+            "role"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which two aspects chiefly define the regulator's role in digital finance?",
+            "answer_md": "Consumer protection, and the relationship between competition and innovation."
+          },
+          "tags": [
+            "regulation",
+            "role"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the three goals of consumer protection regulation in digital finance.",
+            "answer_md": "Keep consumers informed; prevent unfair practices by providers; ensure access to dispute and complaint mechanisms, without imposing onerous restrictions on providers."
+          },
+          "tags": [
+            "regulation",
+            "consumer-protection"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What dilemma do regulators face as offerings grow complex?",
+            "answer_md": "They must weigh social inclusion and commercial benefit against protecting citizens' privacy, choice and control, and complexity makes protection harder to enforce."
+          },
+          "tags": [
+            "regulation",
+            "consumer-protection"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the competition bottlenecks regulators should address in digital finance.",
+            "answer_md": "Connectivity and channel issues (especially USSD); agent network issues such as exclusivity; account-level barriers such as lack of interoperability; application-level issues such as APIs; and data sharing (identified by CGAP)."
+          },
+          "tags": [
+            "regulation",
+            "competition"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Regulatory sandbox",
+            "definition_md": "A regulator's approach in which firms test new services, business models and delivery channels in a live environment with consumers protected. It lets regulators encourage safe innovation without stifling it, and was first launched by the UK's FCA in 2014."
+          },
+          "tags": [
+            "regulation",
+            "sandbox"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-007",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "RegTech",
+            "definition_md": "Regulatory technology: technology that helps financial providers meet regulatory requirements more effectively and efficiently, including risk identification and management tools and quantitative and information-based obligations. Set up as a FinTech subset by the UK's FCA in 2015."
+          },
+          "tags": [
+            "regulation",
+            "regtech"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the four key characteristics of RegTech.",
+            "answer_md": "It is agile, fast, integrative and relies on analytics."
+          },
+          "tags": [
+            "regulation",
+            "regtech"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is fintech regulated in India?",
+            "answer_md": "The landscape is fragmented; no single set of rules governs all products. Sources include the PSS Act 2007, the PPI Master Direction, NPCI guidelines on UPI, RBI Act 1934 and NBFC directions, P2P lending directions, payment aggregator and gateway guidelines, anti-money laundering laws and data protection rules."
+          },
+          "tags": [
+            "regulation",
+            "india"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Indian fintech sources: {{c1::PSS Act 2007}}, PPI Master Direction, {{c2::NPCI}} guidelines on UPI, {{c3::NBFC}} directions, {{c4::P2P}} lending directions, payment {{c5::aggregator}} guidelines, {{c6::anti-money laundering}} laws and {{c7::data protection}} rules."
+          },
+          "tags": [
+            "regulation",
+            "india"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does the Payment and Settlement Systems Act, 2007 do?",
+            "answer_md": "It is the principal law for payments in India. No payment system may start or operate without prior RBI authorisation. A payment system enables payment between payer and beneficiary through clearing, payment or settlement service; stock exchanges are excluded."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "pss-act"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which systems fall under a 'payment system' of the PSS Act?",
+            "answer_md": "Credit card, debit card and smart card operations, money transfer operations and prepaid payment instruments."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "pss-act"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the RBI PPI Master Direction prescribe?",
+            "answer_md": "Eligibility criteria for PPI issuers, permissible debits and credits, and other operational guidelines. PPIs are payment systems, so they must also follow the PSS Act. The book dates the direction to 11 October 2017."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "ppi",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who can integrate directly with UPI under the NPCI framework?",
+            "answer_md": "Only banks. They may appoint technology providers to design and run the mobile apps, subject to NPCI eligibility and prudential norms."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "upi",
+            "npci",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under which framework do digital lenders operate in India?",
+            "answer_md": "Most are licensed as NBFCs and governed by the RBI Act 1934 and RBI master directions on NBFCs (systemically important and non-systemically important non-deposit taking, and deposit taking)."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "nbfc",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What do the P2P lending platform directions prescribe?",
+            "answer_md": "Rules for the operation of P2P platforms, mainly lender exposure norms and aggregate borrowing limits. The book cites the 2017 directions."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "p2p-lending",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do RBI guidelines treat payment aggregators versus payment gateways?",
+            "answer_md": "Payment aggregators are directly regulated because they handle funds. Gateways do not handle funds, so only baseline technology recommendations apply. The book cites the March 2020 guidelines, updated March 2021."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "payment-aggregator",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which laws and directions cover anti-money laundering for financial products in India?",
+            "answer_md": "The Prevention of Money Laundering Act 2002, the Maintenance of Records Rules 2005 and the RBI Master Directions on KYC, with the RBI as the main overseer."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "aml",
+            "kyc"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-reg-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which laws protect data privacy in fintech, as per the chapter?",
+            "answer_md": "Two instruments: the IT Act 2000, plus the 2011 IT Rules on reasonable security practices and sensitive personal data. The book says India has no comprehensive privacy framework; newer privacy legislation may have changed this."
+          },
+          "tags": [
+            "regulation",
+            "india",
+            "data-privacy",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-gov-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What governance issues challenge regulators in digital finance?",
+            "answer_md": "Governance of the internet economy and global internet; managing intellectual property rights while innovation drives competition; taxation; customer privacy; and owning and sharing data."
+          },
+          "tags": [
+            "governance",
+            "issues"
+          ],
+          "reference_keys": [
+            "sfm:gov"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-gov-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are static rule books no longer enough for digital finance?",
+            "answer_md": "Digital innovation moves faster than regulators, so fixed rules fall behind. A broader governance view beyond governments is needed, using collaborative, principle-based ways to secure good outcomes for consumers and society."
+          },
+          "tags": [
+            "governance",
+            "principle-based"
+          ],
+          "reference_keys": [
+            "sfm:gov"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-gov-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the Dialogue on Global Digital Finance Governance?",
+            "answer_md": "A UN initiative, run under the Secretary General's task force on digitally financing the SDGs, to study how dominant Fintechs affect sustainable development; hosted by Switzerland and Kenya and stewarded by UNDP and UNCDF. It raises awareness of Big Fintechs' SDG impact and provides principles and recommendations."
+          },
+          "tags": [
+            "governance",
+            "un",
+            "dftf"
+          ],
+          "reference_keys": [
+            "sfm:gov"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-gov-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the five principles of the Dialogue for Big Fintech governance.",
+            "answer_md": "Ensure foundational financial regulatory objectives; develop reflexive and iterative regulation; foster responsible actors; ensure oversight and enforcement; instil a commitment to sustainable development."
+          },
+          "tags": [
+            "governance",
+            "un",
+            "principles"
+          ],
+          "reference_keys": [
+            "sfm:gov"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-gov-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Big Fintech governance principles: foundational regulatory {{c1::objectives}}, {{c2::reflexive and iterative}} regulation, responsible {{c3::actors}}, {{c4::oversight and enforcement}}, and {{c5::sustainable development}}."
+          },
+          "tags": [
+            "governance",
+            "un",
+            "principles"
+          ],
+          "reference_keys": [
+            "sfm:gov"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm17-gov-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the state of digital finance governance in India as per the chapter?",
+            "answer_md": "No governance norms specific to digital finance exist; issues are handled under various Acts and regulations, and a comprehensive framework may soon be needed."
+          },
+          "tags": [
+            "governance",
+            "india"
+          ],
+          "reference_keys": [
+            "sfm:gov"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

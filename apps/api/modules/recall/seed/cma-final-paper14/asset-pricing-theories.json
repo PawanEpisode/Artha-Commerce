@@ -1,0 +1,2756 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-asset-pricing-theories",
+      "title": "SFM: Asset Pricing Theories",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 9: Asset Pricing Theories.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "asset-pricing-theories"
+      },
+      "items": [
+        {
+          "ref": "sfm09-capm-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Capital Asset Pricing Model (CAPM)",
+            "definition_md": "A single-factor model which says the return an investor should require from a security rises in a straight line with its systematic (market) risk, measured by beta. Only risk that cannot be diversified away earns a reward."
+          },
+          "tags": [
+            "capm",
+            "single-factor"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who developed the CAPM and which earlier theory is it built on?",
+            "answer_md": "William Sharpe and John Lintner developed it. It extends Harry Markowitz's portfolio theory by focusing on how a security's risk is rewarded."
+          },
+          "tags": [
+            "capm",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Split the total risk of a security. Which part does CAPM reward?",
+            "answer_md": "Total risk = systematic (market-related, non-diversifiable) risk + unsystematic (company-specific, diversifiable) risk. In terms of variance: total variance = market-related variance + company-specific variance. CAPM rewards only the systematic part."
+          },
+          "tags": [
+            "capm",
+            "risk",
+            "systematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why does CAPM give no extra return for unsystematic risk?",
+            "answer_md": "Adding more securities to a portfolio diversifies the company-specific risk away, so the market does not pay a premium for bearing it. Only the risk that remains after diversification (market risk) is priced."
+          },
+          "tags": [
+            "capm",
+            "risk",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three inputs that determine a security's beta.",
+            "answer_md": "The standard deviation of the security's returns, the standard deviation of the market's returns, and the correlation between the two. Beta = correlation x (security SD / market SD)."
+          },
+          "tags": [
+            "capm",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Beta of a security",
+            "expression_md": "$\\beta_i = \\dfrac{\\mathrm{Cov}(R_i,R_m)}{\\sigma_m^{2}} = \\rho_{im}\\,\\dfrac{\\sigma_i}{\\sigma_m}$",
+            "variables_md": "$\\mathrm{Cov}(R_i,R_m)$ = covariance of security and market returns, $\\sigma_m^2$ = market variance, $\\rho_{im}$ = correlation, $\\sigma_i,\\sigma_m$ = standard deviations.",
+            "when_md": "When returns under scenarios or covariance and market variance are given and beta is to be found."
+          },
+          "tags": [
+            "capm",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you find beta when scenario returns and probabilities are given for a stock and the market?",
+            "answer_md": "Step 1: expected return of stock and market (probability-weighted). Step 2: market variance = sum of p x (market deviation)^2. Step 3: covariance = sum of p x (stock deviation) x (market deviation). Step 4: beta = covariance / market variance. Example: p = 0.5, 0.3, 0.2; market = 20, 10, -5; stock = 26, 12, -10. Means 12 and 14.6; market variance 91; covariance 130.8; beta = 130.8/91 = about 1.44."
+          },
+          "tags": [
+            "capm",
+            "beta",
+            "scenario",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Interpret a beta of 1, above 1, below 1 and zero.",
+            "answer_md": "Beta 1: moves with the market, same systematic risk. Above 1: more volatile than the market (aggressive). Below 1: less volatile than the market (defensive). Zero: no market risk, like a risk-free asset. A negative beta moves opposite to the market."
+          },
+          "tags": [
+            "capm",
+            "beta",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the beta of the market portfolio and of a risk-free asset? What is the average beta of all assets?",
+            "answer_md": "Market portfolio: 1. Risk-free asset: 0. The average beta of all assets in the market (value-weighted) is 1."
+          },
+          "tags": [
+            "capm",
+            "beta",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When can the CAPM expected return of a security fall below the risk-free rate?",
+            "answer_md": "Only when its beta is negative, because the risk premium (beta x market premium) then turns negative. For beta of zero the return equals the risk-free rate; for any positive beta it exceeds it."
+          },
+          "tags": [
+            "capm",
+            "beta",
+            "negative-beta"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the investor-related assumptions of CAPM.",
+            "answer_md": "Investors are rational: they want more return for a given risk and less risk for a given return. They aim to maximise the utility of terminal wealth, judge securities only on risk and return, and hold identical (homogeneous) expectations about risk and return over the same horizon."
+          },
+          "tags": [
+            "capm",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the market-related assumptions of CAPM.",
+            "answer_md": "Information is free and reaches everyone at the same time; no single investor dominates the market; unlimited borrowing and lending at the risk-free rate; no taxes, transaction costs, short-selling limits or other imperfections; the stock of assets is fixed and all assets are marketable and divisible."
+          },
+          "tags": [
+            "capm",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-013",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "CAPM expected return",
+            "expression_md": "$E(R_i) = R_f + \\beta_i\\,(R_m - R_f)$",
+            "variables_md": "$R_f$ = risk-free rate, $\\beta_i$ = beta of the security or portfolio, $R_m$ = expected return on the market, $(R_m-R_f)$ = market risk premium.",
+            "when_md": "To find the required (equilibrium) return of a security or portfolio, e.g. the cost of equity."
+          },
+          "tags": [
+            "capm",
+            "expected-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compute CAPM return with Rf = 7%, Rm = 13% and beta = 1.25.",
+            "answer_md": "Market premium = 13 - 7 = 6%. Expected return = 7 + 1.25 x 6 = 14.5%."
+          },
+          "tags": [
+            "capm",
+            "expected-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the risk-free rate taken from a Treasury bill quoted below face value?",
+            "answer_md": "Divide the coupon cash by the current market price, not by face value, because that is what the investor earns on money actually invested. Example: a Rs 100 bill paying 8% interest trading at Rs 104 gives 8/104 = 7.69% as the risk-free return."
+          },
+          "tags": [
+            "capm",
+            "risk-free-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If a question gives a Treasury bond's cash return on its face value (e.g. Rs 35 on a Rs 500 bond), what is Rf?",
+            "answer_md": "Rf = cash return / face value (when it is priced at face) = 35/500 = 7%. If the bond trades at a different price, divide by that price."
+          },
+          "tags": [
+            "capm",
+            "risk-free-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the CAPM, how can the market risk premium be written when you know real return and inflation?",
+            "answer_md": "Add inflation to the real return to get the approximate risk-free rate, then subtract it from the market return. Example: real 3%, inflation 6%, so Rf is about 9%; market return 13% gives a premium of 4%. With beta 0.9 the security's risk premium = 0.9 x 4 = 3.6%."
+          },
+          "tags": [
+            "capm",
+            "risk-premium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capm-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give two uses of CAPM in financial decisions.",
+            "answer_md": "(1) It gives the required rate of return (cost of equity) for a security or project given its beta. (2) It supplies an equilibrium price: discount the future cash flows at the CAPM return, or compare that return with the estimated return to spot mispriced securities. It also benchmarks portfolio performance."
+          },
+          "tags": [
+            "capm",
+            "uses"
+          ],
+          "reference_keys": [
+            "sfm:capm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-sml-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Security Market Line (SML)",
+            "definition_md": "The straight line that plots expected return against beta. It shows the return required for each level of systematic risk, and both individual securities and portfolios are expected to lie on it in equilibrium."
+          },
+          "tags": [
+            "sml",
+            "capm"
+          ],
+          "reference_keys": [
+            "sfm:sml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-sml-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the use of the SML and what are its axes?",
+            "answer_md": "It tests whether a security's return suits its risk. X-axis: beta (systematic risk); Y-axis: expected return. Intercept = risk-free rate, slope = market risk premium (Rm - Rf)."
+          },
+          "tags": [
+            "sml",
+            "axes"
+          ],
+          "reference_keys": [
+            "sfm:sml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-sml-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you judge a security from its position relative to the SML?",
+            "answer_md": "Above the SML: return is more than needed for its risk, so the security is underpriced (buy). On the SML: fairly priced (hold). Below the SML: return is lower than needed, so it is overpriced (sell)."
+          },
+          "tags": [
+            "sml",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:sml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-sml-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do both single securities and portfolios lie on the SML?",
+            "answer_md": "Because in an efficient market every asset is expected to give a return in proportion to its beta. Beta measures only systematic risk, which is the only risk priced, so the SML applies to any asset or portfolio."
+          },
+          "tags": [
+            "sml",
+            "capm"
+          ],
+          "reference_keys": [
+            "sfm:sml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-sml-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How can the SML be derived from two correctly priced assets?",
+            "answer_md": "Slope = (R2 - R1) / (beta2 - beta1) is the market premium; intercept = R1 - beta1 x slope is Rf. Example: 8% at beta 0.5 and 14% at beta 1.5 give slope 6 and Rf = 8 - 0.5 x 6 = 5%, so SML: R = 5 + 6 x beta, Rm = 11%, and a beta of 1.2 needs 12.2%."
+          },
+          "tags": [
+            "sml",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-sml-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Is the SML a cross-sectional or a time-series graph? What does it plot?",
+            "answer_md": "Cross-sectional: it plots expected return versus beta for many securities at one point in time, and is used to estimate a security's required return from its beta."
+          },
+          "tags": [
+            "sml",
+            "characteristic-line",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:sml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Capital Market Line (CML)",
+            "definition_md": "The line from the risk-free rate drawn tangent to the efficient frontier of risky portfolios. It plots expected return against total risk (standard deviation) for efficient portfolios that combine the risk-free asset and the market portfolio."
+          },
+          "tags": [
+            "cml",
+            "capital-market-line"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does adding a risk-free asset change the Markowitz efficient frontier?",
+            "answer_md": "When investors can lend and borrow at the same risk-free rate, the efficient boundary becomes a straight line from the risk-free rate tangent to the old risky frontier. Points between the risk-free point and the tangent point (all-equity market portfolio) are lending portfolios."
+          },
+          "tags": [
+            "cml",
+            "efficient-frontier"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Features of the CML.",
+            "answer_md": "It applies to efficient portfolios that replicate the market portfolio's risk and reward; it assumes no unsystematic risk (fully diversified); it prices return on total risk (standard deviation), implying perfect correlation with the market; individual securities do not lie on it because they carry unsystematic risk."
+          },
+          "tags": [
+            "cml",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-004",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "CML expected return",
+            "expression_md": "$E(R_p) = R_f + \\lambda\\,\\sigma_p, \\qquad \\lambda = \\dfrac{R_m - R_f}{\\sigma_m}$",
+            "variables_md": "$\\sigma_p$ = standard deviation of the efficient portfolio, $\\lambda$ = market price of risk (reward per unit of total risk), $\\sigma_m$ = standard deviation of the market.",
+            "when_md": "Return on an efficient portfolio mixing the risk-free asset and the market portfolio, when risk is given as standard deviation."
+          },
+          "tags": [
+            "cml",
+            "expected-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Market price of risk",
+            "definition_md": "The extra return the market pays per unit of total risk: (Rm - Rf) divided by the market's standard deviation. It is the slope of the CML."
+          },
+          "tags": [
+            "cml",
+            "market-price-of-risk"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Apply CML: Rf 5%, risky portfolio P returns 14% with SD 20%. Put 30% in Rf and 70% in P. Find return, risk and the CML slope.",
+            "answer_md": "Slope = (14 - 5)/20 = 0.45. Return = 0.3 x 5 + 0.7 x 14 = 11.3% (same as 5 + 0.45 x 14). Risk = 0.7 x 20 = 14%, because the risk-free asset has zero SD and zero correlation."
+          },
+          "tags": [
+            "cml",
+            "numerical",
+            "lending-portfolio"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the risk of a mix of the risk-free asset and a risky portfolio?",
+            "answer_md": "Weight in the risky portfolio x its standard deviation. The risk-free part adds no risk, so risk falls in proportion to the amount lent."
+          },
+          "tags": [
+            "cml",
+            "lending-portfolio"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Differences between CML and SML: the risk measure used.",
+            "answer_md": "CML: standard deviation (total risk) on the x-axis. SML: beta (systematic risk, the part common to the whole market) on the x-axis."
+          },
+          "tags": [
+            "cml",
+            "sml",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Differences between CML and SML: which assets are plotted?",
+            "answer_md": "CML: only efficient portfolios, those that replicate the market portfolio combined with the risk-free asset. SML: all securities and portfolios, efficient or not, including those that lie off the CML."
+          },
+          "tags": [
+            "cml",
+            "sml",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-cml-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does each point on the CML represent?",
+            "answer_md": "A proportional mix of the risk-free asset and the market portfolio, from all lending (risk-free point) to the all-equity market portfolio, and beyond it by borrowing at the risk-free rate."
+          },
+          "tags": [
+            "cml",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:cml"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-charline-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Security characteristic line",
+            "definition_md": "A time-series plot of a security's excess return (return above the risk-free rate) against the market's excess return. Its slope is the security's beta."
+          },
+          "tags": [
+            "characteristic-line",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:charline"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-charline-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the purpose of the characteristic line?",
+            "answer_md": "To estimate beta (the slope of the fitted line) and to show how closely the security's returns move with the market index."
+          },
+          "tags": [
+            "characteristic-line",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:charline"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-charline-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish the SML from the characteristic line (nature, what is plotted, use).",
+            "answer_md": "SML: cross-sectional, plots expected return against beta, used to find the return required for a given beta. Characteristic line: time-series, plots the security's returns against index returns over time, used to estimate beta and the correlation with the market."
+          },
+          "tags": [
+            "characteristic-line",
+            "sml",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:charline"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-charline-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the regression of a manager's portfolio excess return on market excess return, what do slope and intercept represent?",
+            "answer_md": "Slope = beta (systematic risk). Intercept = Jensen's alpha, the average return over or under what CAPM predicts."
+          },
+          "tags": [
+            "characteristic-line",
+            "alpha",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:charline"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does CAPM help in valuing a share?",
+            "answer_md": "The CAPM return is the minimum return investors require for the share's systematic risk. Use it as the discount rate: price = present value of future cash flows (dividends and sale price) discounted at that rate."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "equilibrium-price"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Decision rule: compare estimated return with CAPM return.",
+            "answer_md": "Estimated return above CAPM return: share undervalued, buy. Equal: correctly valued, hold. Estimated return below CAPM return: overvalued, sell."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Find the equilibrium price of a share using CAPM and a constant-growth dividend model. Show the steps with Rf 6%, Rm 12%, beta 0.9, last dividend Rs 3, growth 6%.",
+            "answer_md": "Step 1: ke = 6 + 0.9 x (12 - 6) = 11.4%. Step 2: D1 = 3 x 1.06 = Rs 3.18. Step 3: P = D1/(ke - g) = 3.18/(0.114 - 0.06) = about Rs 58.89. If the market price is higher the share is overpriced (sell); lower, underpriced."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "dividend-growth",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you compute the estimated return of a share with no stated return, given its price, expected dividend and expected price gain?",
+            "answer_md": "Estimated return = (expected dividend + expected capital gain) / current price. Example: price Rs 200, expected gain 8% = Rs 16, dividend Rs 10 gives 26/200 = 13%. Compare that with the CAPM return to decide buy, hold or sell."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If Rf, premium or beta change, how do you decide whether to sell, hold or buy using CAPM and the dividend growth model?",
+            "answer_md": "Recompute ke with the new Rf, premium and beta, recompute the price D0(1+g)/(ke - g) with the new growth, and compare with the market price. A higher intrinsic price than market means underpriced (buy or hold); a lower one means overpriced (sell)."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "dividend-growth"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do portfolios with several mispriced shares need a share-by-share check?",
+            "answer_md": "A portfolio's CAPM return may look fine overall, yet some shares sit above or below the SML. Compare each share's estimated return with its own CAPM return, then sell the overpriced ones and buy the underpriced ones."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Portfolio with four shares: how do you get portfolio beta and judge each share?",
+            "answer_md": "Portfolio beta = sum of (market value weight x beta); price x number of shares gives value. Then compute CAPM return for each share and compare with its expected return: below CAPM means overpriced, above means underpriced. Example: weights 0.4 and 0.6 with betas 0.8 and 1.3 give 0.32 + 0.78 = 1.10."
+          },
+          "tags": [
+            "valuation",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Portfolio beta",
+            "expression_md": "$\\beta_p = \\sum_{i} w_i\\,\\beta_i, \\qquad w_i = \\dfrac{\\text{value of } i}{\\text{portfolio value}}$",
+            "variables_md": "$w_i$ = weight of security $i$ by value, $\\beta_i$ = its beta. A risk-free asset has $\\beta = 0$.",
+            "when_md": "Beta of a portfolio of shares, or of a portfolio that includes bonds or risk-free assets."
+          },
+          "tags": [
+            "valuation",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What happens to portfolio beta and expected return when a risky share is replaced by a risk-free investment?",
+            "answer_md": "Portfolio beta falls by the weight of the share times its beta (the risk-free asset brings zero), so the CAPM return falls too. Example: replacing a 20% holding of beta 1.5 lowers portfolio beta by 0.3; with premium 6% the expected return falls by 1.8 percentage points."
+          },
+          "tags": [
+            "valuation",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-valuation-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why must an investor not rely only on CAPM return when the question gives expected return and price?",
+            "answer_md": "CAPM tells the return that is fair; whether the share is attractive depends on comparing it with the return the investor actually expects from the price. Buying is justified only when the expected return beats the CAPM return."
+          },
+          "tags": [
+            "valuation",
+            "capm",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:valuation"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-rrr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk-return ratio",
+            "definition_md": "Average return in excess of the risk-free rate earned per unit of risk taken. It shows the reward the investor got for accepting risk above the risk-free level."
+          },
+          "tags": [
+            "risk-return-ratio",
+            "performance"
+          ],
+          "reference_keys": [
+            "sfm:rrr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-rrr-002",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Risk-return ratio",
+            "expression_md": "$\\dfrac{R_s - R_f}{\\beta_s} \\quad\\text{or}\\quad \\dfrac{R_s - R_f}{\\sigma_s}$",
+            "variables_md": "$R_s$ = return on the security, $R_f$ = risk-free return, $\\beta_s$ = its beta, $\\sigma_s$ = its standard deviation.",
+            "when_md": "Use beta when risk is systematic risk; use standard deviation when risk is total risk."
+          },
+          "tags": [
+            "risk-return-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:rrr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-rrr-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compute the risk-return ratio: Rs 14%, Rf 6%, beta 1.6, SD 16%.",
+            "answer_md": "Per unit of beta: (14 - 6)/1.6 = 5.0. Per unit of total risk: (14 - 6)/16 = 0.5. A higher ratio means better reward per unit of risk."
+          },
+          "tags": [
+            "risk-return-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:rrr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-alpha-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Alpha (abnormal return)",
+            "definition_md": "The average difference between actual return and the return CAPM says the security should have earned for its beta. Positive alpha means it beat the benchmark risk-adjusted; negative alpha means it fell short."
+          },
+          "tags": [
+            "alpha",
+            "performance"
+          ],
+          "reference_keys": [
+            "sfm:alpha"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-alpha-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Steps to find the alpha of a share from past returns.",
+            "answer_md": "Step 1: compute the CAPM expected return. Step 2: abnormal return for each year = actual return - CAPM return. Step 3: alpha = sum of abnormal returns / number of years. Example: CAPM return 12%; actual 14, 11, 15; abnormal +2, -1, +3; alpha = 4/3 = 1.33%."
+          },
+          "tags": [
+            "alpha",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:alpha"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-alpha-003",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Alpha",
+            "expression_md": "$\\alpha = \\dfrac{\\sum_{t}\\left(R_t - E(R)\\right)}{n}$",
+            "variables_md": "$R_t$ = actual return in year $t$, $E(R)$ = CAPM return, $n$ = number of years.",
+            "when_md": "Average abnormal return of a security or portfolio against its CAPM benchmark."
+          },
+          "tags": [
+            "alpha",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:alpha"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-alpha-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does a negative alpha tell you?",
+            "answer_md": "The security or portfolio earned less on average than CAPM required for its risk, so it under-performed; a positive alpha signals out-performance."
+          },
+          "tags": [
+            "alpha",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:alpha"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-alpha-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can two portfolios be compared using alpha?",
+            "answer_md": "Work out each one's CAPM return from its beta and its alpha from past returns. The portfolio with the higher alpha did better for its risk. The book also adds alpha to the CAPM return (alpha-adjusted return), but that can rank the pair differently when CAPM returns differ, so state which measure you use."
+          },
+          "tags": [
+            "alpha",
+            "comparison",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:alpha"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Arbitrage Pricing Theory (APT)",
+            "definition_md": "A multi-factor model, developed by Stephen Ross in 1976, which says a security's expected return depends on how sensitive it is to several macro-economic factors and on the risk premium the market pays for each factor."
+          },
+          "tags": [
+            "apt",
+            "multi-factor"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Difference between CAPM and APT in one line each.",
+            "answer_md": "CAPM is a single-factor model: one beta against the market portfolio. APT is a multi-factor model: one beta (sensitivity) and one risk premium for each macro-economic factor."
+          },
+          "tags": [
+            "apt",
+            "capm",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "APT expected return",
+            "expression_md": "$E(R_i) = R_f + \\beta_{1}R_{1} + \\beta_{2}R_{2} + \\dots + \\beta_{n}R_{n}$",
+            "variables_md": "$R_f$ = risk-free rate, $\\beta_k$ = sensitivity of the security to factor $k$, $R_k$ = risk premium for factor $k$.",
+            "when_md": "Required return when factor sensitivities and factor risk premiums are given."
+          },
+          "tags": [
+            "apt",
+            "expected-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compute the APT return: Rf 6%; inflation premium 3% with sensitivity 1.5; GDP premium 4% with sensitivity 0.8; interest-rate premium 2% with sensitivity -0.5.",
+            "answer_md": "Sum of sensitivity x premium = 1.5 x 3 + 0.8 x 4 + (-0.5) x 2 = 4.5 + 3.2 - 1.0 = 6.7. Expected return = 6 + 6.7 = 12.7%. A negative sensitivity subtracts from the return."
+          },
+          "tags": [
+            "apt",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which macro-economic factors does the book mention for APT?",
+            "answer_md": "Inflation, money supply, interest rates, industrial production and personal consumption; examples in problems include default risk, business cycle risk, time horizon risk and market-timing risk. The factors tend to be inter-related."
+          },
+          "tags": [
+            "apt",
+            "factors"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the APT return differ from CAPM when factor premiums are given separately for a stock? Why can the two estimates differ?",
+            "answer_md": "CAPM uses one factor (market premium x beta); APT adds up several factor premiums times sensitivities. Estimates differ because they use different variables; a negative sensitivity (for example to the interest-rate factor) can pull the APT return below the CAPM return."
+          },
+          "tags": [
+            "apt",
+            "capm",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is APT considered less restrictive than CAPM?",
+            "answer_md": "It reaches an expected return-risk relationship without the strict CAPM assumptions, such as a single identifiable market portfolio and equilibrium conditions. It only needs that arbitrage opportunities are removed."
+          },
+          "tags": [
+            "apt",
+            "capm",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the main advantage and disadvantage of APT over CAPM.",
+            "answer_md": "Advantage: several factors can explain return, and it needs fewer unrealistic assumptions. Disadvantage: the theory does not name the factors or how many there are, so each analyst must choose and estimate them, which is harder and less uniform than using one market beta."
+          },
+          "tags": [
+            "apt",
+            "advantages",
+            "disadvantages"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can APT be used in practical investment management?",
+            "answer_md": "To spot mispriced securities (actual return differs from the APT return), to control exposure to chosen macro factors in active management, and to build portfolios with a desired factor profile in passive or active strategies."
+          },
+          "tags": [
+            "apt",
+            "uses"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is an arbitrage portfolio and what two conditions must it meet?",
+            "answer_md": "A portfolio built to earn a profit with no net investment and no risk. Conditions: (1) net investment is zero (long positions funded by short sales); (2) the payoff is positive in every scenario."
+          },
+          "tags": [
+            "apt",
+            "arbitrage"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you build and verify an arbitrage portfolio from scenario payoffs?",
+            "answer_md": "Step 1: convert returns to rupee payoffs per share for each scenario. Step 2: choose long and short quantities so the cash flows sum to zero. Step 3: add payoffs by scenario; arbitrage exists if all are positive. Example: prices A 20, B 50, C 70; payoffs A 22, 24, 26; B 55, 52, 50; C 84, 82, 80. Short 1 A, short 1 B, long 1 C: cost 70 - 20 - 50 = 0; payoffs 84 - 22 - 55 = 7, 82 - 24 - 52 = 6, 80 - 26 - 50 = 4, all positive."
+          },
+          "tags": [
+            "apt",
+            "arbitrage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can an arbitrage opportunity exist forever?",
+            "answer_md": "No. Investors rush to exploit it by buying the underpriced and short selling the overpriced assets, which moves prices until the gain disappears. So prices in an efficient market reflect no lasting risk-free profit."
+          },
+          "tags": [
+            "apt",
+            "arbitrage"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does the APT fit multi-factor thinking that markets respond to inflation, GDP growth and interest rates?",
+            "answer_md": "Because it prices each of these macro factors separately through its own sensitivity and premium, instead of folding all risk into one market beta as CAPM does."
+          },
+          "tags": [
+            "apt",
+            "multi-factor"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-apt-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A view that returns respond to inflation, GDP growth and interest rates rather than to one market factor fits which model?",
+            "answer_md": "Arbitrage Pricing Theory. CAPM relies on one market factor; the dividend discount model and the efficient market hypothesis are not factor models of expected return."
+          },
+          "tags": [
+            "apt",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:apt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "To push portfolio beta up, which way do funds move between risk-free assets and stock, and why?",
+            "answer_md": "Sell risk-free investments and put the money into shares (market-like stocks). Because the risk-free part has zero beta, shifting money into risky stocks raises both beta and expected return (and risk)."
+          },
+          "tags": [
+            "beta-adjustment",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Risk-free investment to sell to raise beta",
+            "expression_md": "$\\text{Amount} = V \\times (\\beta_{\\text{desired}} - \\beta_{\\text{present}})$",
+            "variables_md": "$V$ = portfolio value, $\\beta_{\\text{desired}}$ = target beta, $\\beta_{\\text{present}}$ = current beta.",
+            "when_md": "Raising beta. Works when the money moved into stock has a beta of about 1 (a market-like stock or index)."
+          },
+          "tags": [
+            "beta-adjustment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Raise beta from 1.1 to 1.6 on a Rs 50 lakh portfolio by moving funds out of risk-free investments.",
+            "answer_md": "Amount to switch = 50 lakh x (1.6 - 1.1) = Rs 25 lakh, moved from risk-free assets into stock (beta 1). Check: new beta = (50 x 1.1 + 25) / 50 = 1.6."
+          },
+          "tags": [
+            "beta-adjustment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "To bring portfolio beta down using risk-free assets, what trade is made and what is the effect?",
+            "answer_md": "Sell stock and buy risk-free investments. The money moved earns the risk-free return with no beta, so portfolio risk, and expected return, fall. This reduces the erosion of value if the market falls."
+          },
+          "tags": [
+            "beta-adjustment",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-005",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Risk-free investment to buy to cut beta",
+            "expression_md": "$\\text{Amount} = V \\times (\\beta_{\\text{present}} - \\beta_{\\text{desired}})$",
+            "variables_md": "$V$ = portfolio value, $\\beta_{\\text{present}}$ = current beta, $\\beta_{\\text{desired}}$ = target beta.",
+            "when_md": "Reducing beta. Same assumption: the stock sold has a beta of about 1."
+          },
+          "tags": [
+            "beta-adjustment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Cut beta from 1.6 to 0.9 on a Rs 40 lakh portfolio using risk-free investments.",
+            "answer_md": "Amount to move into risk-free assets = 40 lakh x (1.6 - 0.9) = Rs 28 lakh, by selling stock of beta 1. Check: new beta = (40 x 1.6 - 28) / 40 = 0.9."
+          },
+          "tags": [
+            "beta-adjustment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaadj-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does shifting money between risk-free assets and stock change portfolio beta?",
+            "answer_md": "Portfolio beta is the weighted average of the betas of its parts. The risk-free asset has beta zero, so the greater its weight the lower the portfolio beta."
+          },
+          "tags": [
+            "beta-adjustment",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:betaadj"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the beta of a project (asset beta) related to the betas of its financing?",
+            "answer_md": "Beta of assets equals the weighted average beta of the sources of capital. With no tax: asset beta = WE x equity beta + WD x debt beta. The asset side and the liability side of the beta balance sheet must be equal."
+          },
+          "tags": [
+            "project-beta",
+            "beta-balance-sheet"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Project (asset) beta, no tax",
+            "expression_md": "$\\beta_A = w_E\\,\\beta_E + w_D\\,\\beta_D$",
+            "variables_md": "$w_E, w_D$ = equity and debt weights in capital employed, $\\beta_E$ = equity beta, $\\beta_D$ = debt beta (often taken as zero).",
+            "when_md": "Asset beta of a single project, or of a firm, when taxes are ignored."
+          },
+          "tags": [
+            "project-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Project beta with tax",
+            "expression_md": "$\\beta_P = \\dfrac{\\beta_E\\,E}{E + D(1-t)} + \\dfrac{\\beta_D\\,D(1-t)}{E + D(1-t)}$",
+            "variables_md": "$E$ = equity, $D$ = debt, $t$ = tax rate. Debt is counted after tax: $D(1-t)$.",
+            "when_md": "When the beta balance sheet has to allow for the tax shield on debt."
+          },
+          "tags": [
+            "project-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compute project beta without tax: 60% equity with beta 1.2, 40% debt with beta 0.2.",
+            "answer_md": "Beta = 0.6 x 1.2 + 0.4 x 0.2 = 0.72 + 0.08 = 0.80."
+          },
+          "tags": [
+            "project-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compute project beta with 30% tax: equity 60 (beta 1.2), debt 40 (beta 0.2).",
+            "answer_md": "After-tax debt = 40 x 0.7 = 28. Beta = (1.2 x 60 + 0.2 x 28) / (60 + 28) = 77.6/88 = about 0.88."
+          },
+          "tags": [
+            "project-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If a firm runs two projects, how is the balance sheet of betas used?",
+            "answer_md": "Weighted average of the assets' betas equals the weighted average of the betas of equity and debt: WA x betaA + WB x betaB = WE x betaE + WD x betaD. Solve for the unknown beta (for example of one project, or of equity)."
+          },
+          "tags": [
+            "project-beta",
+            "beta-balance-sheet"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "An all-equity firm has beta 0.8. It borrows to buy back 25% of its capital (debt beta 0). Find the new equity beta and required return if Rf is 8% and Rm - Rf is 5%.",
+            "answer_md": "Asset beta stays 0.8. Equity weight is now 0.75, so 0.8 = 0.75 x betaE + 0.25 x 0, betaE = 1.0667. Required return: 8 + 1.0667 x 5 = 13.33% (before: 8 + 0.8 x 5 = 12%). Check: 0.75 x 13.33 + 0.25 x 8 = 12%."
+          },
+          "tags": [
+            "project-beta",
+            "recapitalisation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What happens to the required return on equity when debt replaces equity and the market premium is unchanged?",
+            "answer_md": "Equity beta rises with leverage, so the required return of equity rises; the market premium (Rm - Rf) itself does not change. Expected earnings per share rise when the after-interest return on assets beats the cost of debt, but the P/E multiple falls."
+          },
+          "tags": [
+            "project-beta",
+            "recapitalisation"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-projbeta-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Check the recapitalisation EPS effect: EBIT 20 on capital 100, no tax, 100 shares; half the shares are bought back with 10% debt. Find the change in EPS and P/E.",
+            "answer_md": "Before: EPS = 20/100 = 0.20; with price Rs 1, P/E = 5. After: interest 5, earnings 15, shares 50, EPS 0.30, price stays Rs 1, so P/E = 3.33. EPS rises 50%."
+          },
+          "tags": [
+            "project-beta",
+            "recapitalisation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:projbeta"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Levered beta (equity beta)",
+            "definition_md": "The beta of a firm's shares, reflecting both its business risk and the extra risk from debt in its capital structure. It is the usual beta used in CAPM to find the cost of equity."
+          },
+          "tags": [
+            "levered-beta",
+            "equity-beta"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Unlevered beta (asset beta)",
+            "definition_md": "The beta the firm would have with no debt: it reflects only the risk of its business assets. It allows comparison of firms with different capital structures."
+          },
+          "tags": [
+            "unlevered-beta",
+            "asset-beta"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Levered beta from unlevered beta",
+            "expression_md": "$\\beta_L = \\beta_U\\,\\bigl[\\,1 + (1-t)\\,\\dfrac{D}{E}\\bigr]$",
+            "variables_md": "$\\beta_U$ = unlevered (asset) beta, $t$ = tax rate, $D/E$ = debt-equity ratio at market values.",
+            "when_md": "To find the equity beta at a given debt-equity ratio, assuming debt beta is zero."
+          },
+          "tags": [
+            "levered-beta",
+            "unlevered-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Unlevered beta from levered beta",
+            "expression_md": "$\\beta_U = \\dfrac{\\beta_L}{1 + (1-t)\\,D/E}$",
+            "variables_md": "$\\beta_L$ = levered (equity) beta, $t$ = tax rate, $D/E$ = debt-equity ratio.",
+            "when_md": "Divide the whole levered beta by the bracket. Removes the effect of debt before comparing firms."
+          },
+          "tags": [
+            "levered-beta",
+            "unlevered-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Unlever then relever: a comparable company has equity beta 1.4, tax 25%, D/E 0.6. Find the beta at D/E 0.2.",
+            "answer_md": "Unlevered = 1.4 / (1 + 0.75 x 0.6) = 1.4/1.45 = 0.9655. Relevered = 0.9655 x (1 + 0.75 x 0.2) = 0.9655 x 1.15 = 1.11."
+          },
+          "tags": [
+            "levered-beta",
+            "unlevered-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compute equity beta from asset beta: asset beta 0.8, tax 25%, D/E 0.5.",
+            "answer_md": "Equity beta = 0.8 x (1 + 0.75 x 0.5) = 0.8 x 1.375 = 1.10."
+          },
+          "tags": [
+            "levered-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Equity beta is 1.2 and D/E is 0.8; tax is nil. What is the asset beta? Show the step.",
+            "answer_md": "Asset beta = 1.2 / (1 + 0.8) = 0.667 (equity weight 1/1.8 = 0.556, so 1.2 x 0.556 = 0.667), assuming debt beta is zero."
+          },
+          "tags": [
+            "unlevered-beta",
+            "numerical",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is unlevered beta generally lower or higher than levered beta? Any exception?",
+            "answer_md": "Generally lower, since debt adds financial risk to equity. It can be higher when net debt is negative, that is the firm holds more cash than debt."
+          },
+          "tags": [
+            "levered-beta",
+            "unlevered-beta",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is unlevered beta preferred for comparing companies?",
+            "answer_md": "Debt levels differ among firms and magnify the volatility of equity. Removing the debt effect leaves only business (asset) risk, so firms with different capital structures can be compared on equal terms."
+          },
+          "tags": [
+            "unlevered-beta",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does a high level of debt do to a firm's levered beta and why?",
+            "answer_md": "It raises it. Fixed interest payments make earnings, and so returns to shareholders, more volatile, increasing the systematic risk of the equity."
+          },
+          "tags": [
+            "levered-beta",
+            "leverage"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-011",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Proxy beta",
+            "definition_md": "In the book, the beta of a levered firm worked out from the beta of an unlevered firm. In practice it is used when the project or firm has no traded shares: take a similar listed firm's beta, unlever it, then relever at the target capital structure."
+          },
+          "tags": [
+            "proxy-beta",
+            "levered-beta",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-012",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Unlevered firm and levered firm",
+            "definition_md": "Unlevered firm: financed entirely by equity. Levered (geared) firm: capital structure includes both debt and equity."
+          },
+          "tags": [
+            "levered-beta",
+            "capital-structure"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which names are used for levered and unlevered beta?",
+            "answer_md": "Levered beta = equity beta = geared beta. Unlevered beta = asset beta = ungeared beta."
+          },
+          "tags": [
+            "levered-beta",
+            "unlevered-beta"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-lever-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is negative levered beta unusual and what does it imply?",
+            "answer_md": "A negative beta means the security tends to move opposite to the market; most shares have positive beta. A beta above +1 or below -1 means moves larger than the market's in size."
+          },
+          "tags": [
+            "levered-beta",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:lever"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the standard approach to estimating a company's beta?",
+            "answer_md": "Regress the company's share returns (from market prices) on returns of a market index over a past period; the slope is beta. It needs traded market prices."
+          },
+          "tags": [
+            "beta-estimation",
+            "characteristic-line"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can beta be estimated from accounting earnings? Any bias?",
+            "answer_md": "It can be estimated for a division or project that has no traded price, but accounting earnings are smoothed relative to market value. This biases estimated betas down for risky firms and up for safer firms."
+          },
+          "tags": [
+            "beta-estimation",
+            "bias"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What factors make a company's beta higher or lower?",
+            "answer_md": "Greater financial leverage raises beta. Higher growth tends to raise it. Bigger company size tends to lower it. Betas differ widely across industries, mainly because business risk differs. A company's beta can change over time."
+          },
+          "tags": [
+            "beta-estimation",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a zero-beta portfolio and what is its return in theory?",
+            "answer_md": "A portfolio with no systematic risk. In theory its return is the best estimate of the risk-free rate."
+          },
+          "tags": [
+            "beta-estimation",
+            "zero-beta"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Describe the common two-step procedure for testing the CAPM.",
+            "answer_md": "Step 1: estimate security betas from past returns. Step 2: check how realised returns relate to those betas (a relationship that should be linear and positive, with slope equal to the market premium)."
+          },
+          "tags": [
+            "beta-estimation",
+            "testing"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which risk is priced under capital market theory: total, systematic or unsystematic?",
+            "answer_md": "Only systematic risk. Unsystematic risk can be diversified away, so no premium is paid for it."
+          },
+          "tags": [
+            "capm",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which risk is reduced by forming a well-diversified portfolio?",
+            "answer_md": "Non-systematic (company-specific) risk. Systematic risk stays."
+          },
+          "tags": [
+            "capm",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the CML plot, in terms of portfolios combined?",
+            "answer_md": "It plots risk and return of portfolios made up of the risk-free asset and the market portfolio (not any risky portfolio)."
+          },
+          "tags": [
+            "cml",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the market model (return-generating model), what is the slope term an estimate of?",
+            "answer_md": "The asset's systematic risk, that is its beta."
+          },
+          "tags": [
+            "characteristic-line",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Primary determinant of expected return of an individual asset in CAPM?",
+            "answer_md": "The asset's beta, applied to the market risk premium."
+          },
+          "tags": [
+            "capm",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Arbitrage portfolio versus a normal portfolio: what does it offer?",
+            "answer_md": "Profit potential without any extra investment and without risk."
+          },
+          "tags": [
+            "apt",
+            "arbitrage",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Two well-diversified portfolios: Rf is 6%, A has beta 1 and return 14%, B has beta 0.5 and return 12%. Are both fairly priced?",
+            "answer_md": "From A the market premium is 14 - 6 = 8%. B's CAPM return = 6 + 0.5 x 8 = 10%, but B offers 12%. They cannot both lie on the SML, so an arbitrage opportunity exists: buy B (above the line) and fund it by selling A."
+          },
+          "tags": [
+            "capm",
+            "arbitrage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-betaest-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do you find the beta of a portfolio holding shares, a treasury bill and an index fund?",
+            "answer_md": "Treasury bill beta = 0 and index fund beta = 1; weight each beta by its share of value. Example: 30% share beta 1.5, 20% share beta 0.8, 20% bill, 30% index gives 0.45 + 0.16 + 0 + 0.30 = 0.91."
+          },
+          "tags": [
+            "capm",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:betaest"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "CAPM: E(R) = {{c1::Rf}} + {{c2::beta}} x ({{c3::Rm - Rf}}); the beta of the market is {{c4::1}} and of a risk-free asset is {{c5::0}}."
+          },
+          "tags": [
+            "capm",
+            "expected-return"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Total risk = {{c1::systematic}} risk + {{c2::unsystematic}} risk; diversification removes the {{c3::unsystematic}} part."
+          },
+          "tags": [
+            "capm",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-003",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Above the SML a security is {{c1::underpriced}}; on the SML it is {{c2::correctly priced}}; below the SML it is {{c3::overpriced}}."
+          },
+          "tags": [
+            "sml",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "SML plots return against {{c1::beta}}; CML plots return against {{c2::standard deviation}}; the slope of the CML is the {{c3::market price of risk}}."
+          },
+          "tags": [
+            "sml",
+            "cml"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Estimated return > CAPM return: {{c1::undervalued, buy}}; equal: {{c2::correctly valued, hold}}; lower: {{c3::overvalued, sell}}."
+          },
+          "tags": [
+            "valuation",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-006",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Alpha = sum of {{c1::abnormal returns}} divided by {{c2::number of years}}; abnormal return = {{c3::actual return minus CAPM return}}."
+          },
+          "tags": [
+            "alpha"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "CAPM is a {{c1::single}}-factor model; APT is a {{c2::multi}}-factor model developed by {{c3::Ross}}."
+          },
+          "tags": [
+            "apt",
+            "capm"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "To raise portfolio beta, {{c1::sell}} risk-free investments and buy stock; to cut beta, {{c2::buy}} risk-free investments and sell stock; amount = {{c3::value x change in beta}}."
+          },
+          "tags": [
+            "beta-adjustment"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Levered beta = unlevered beta x [1 + (1 - {{c1::tax rate}}) x {{c2::D/E}}]; levered beta is also called {{c3::equity}} beta and unlevered beta {{c4::asset}} beta."
+          },
+          "tags": [
+            "levered-beta",
+            "unlevered-beta"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "An arbitrage portfolio needs {{c1::zero}} net investment and a {{c2::positive}} payoff in every scenario."
+          },
+          "tags": [
+            "apt",
+            "arbitrage"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-011",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Characteristic line: the slope is {{c1::beta}} and the intercept is {{c2::alpha}}; it is a {{c3::time-series}} graph, while the SML is {{c4::cross-sectional}}."
+          },
+          "tags": [
+            "characteristic-line",
+            "sml"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-012",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "CAPM investor assumptions: {{c1::rational}} investors, {{c2::homogeneous}} expectations, same {{c3::horizon}}, and borrowing and lending at the {{c4::risk-free}} rate."
+          },
+          "tags": [
+            "capm",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-013",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Above, On, Below = Buy, Hold, Sell",
+            "expands_md": "SML: above the line means underpriced, buy; on the line means fairly priced, hold; below the line means overpriced, sell.",
+            "topic": "SML decision rule"
+          },
+          "tags": [
+            "sml",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-clz-014",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "S-C-B: SML uses beta, CML uses standard deviation",
+            "expands_md": "SML pairs with beta (systematic risk); CML pairs with standard deviation (total risk).",
+            "topic": "SML versus CML"
+          },
+          "tags": [
+            "sml",
+            "cml"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the main features of CAPM.",
+            "answer_md": "(a) It links expected return, non-diversifiable risk and the value of securities. (b) Diversifiable risk disappears as more securities are added. (c) Securities differ in systematic risk, so required returns differ. (d) Systematic risk is measured by beta, which depends on the market's risk, the security's own risk and the correlation between the two."
+          },
+          "tags": [
+            "capm",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which graph uses beta on the x-axis and which uses standard deviation?",
+            "answer_md": "SML uses beta (systematic risk). CML uses standard deviation (total risk). Both plot expected return on the y-axis."
+          },
+          "tags": [
+            "sml",
+            "cml",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Trap: which line has beta as its slope, the SML or the characteristic line?",
+            "answer_md": "The characteristic line: its slope is beta. The SML plots return against beta; its slope is the market risk premium (Rm - Rf), and its intercept is Rf. Do not say the SML slope is beta."
+          },
+          "tags": [
+            "sml",
+            "characteristic-line",
+            "beta",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can an individual security not lie on the CML?",
+            "answer_md": "It carries unsystematic risk, because it is not fully diversified. The CML is meant only for efficient, fully diversified portfolios, so its total risk is not matched by the premium paid, and it does not fit the line."
+          },
+          "tags": [
+            "cml",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does the CML assume perfect correlation between portfolio and market returns?",
+            "answer_md": "It prices return on total risk (standard deviation). A portfolio that replicates the market has no specific risk, so all of its variation is market-driven; its beta times market SD equals its own SD."
+          },
+          "tags": [
+            "cml",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: decide buy or sell from scenario data (probabilities, stock returns, market returns, Rf).",
+            "answer_md": "1) Expected returns of stock and market. 2) Market variance, then covariance of stock with market. 3) Beta = covariance / market variance. 4) CAPM return = Rf + beta x (Rm - Rf), using the expected market return. 5) Compare the stock's expected return with the CAPM return: higher means underpriced (buy), lower means overpriced (sell)."
+          },
+          "tags": [
+            "valuation",
+            "scenario",
+            "decision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: find the CAPM return of a stock whose market price, annual cash return and beta are given.",
+            "answer_md": "Convert cash return to a percentage of price (cash / market price) as the estimated return. Find Rf from the Treasury bill (coupon / market price), take Rm from the index, compute Rf + beta x (Rm - Rf), then compare the two returns and recommend buy, hold or sell."
+          },
+          "tags": [
+            "valuation",
+            "decision",
+            "numerical",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: with unlevered betas and D/E ratios given, find each company's expected return under CAPM.",
+            "answer_md": "1) Relever: equity beta = unlevered beta x [1 + (1 - t) x D/E]. 2) CAPM return = Rf + equity beta x (Rm - Rf). 3) Compare with the actual equity return. Example: unlevered 0.85, D/E 0.5, tax 30%: beta = 0.85 x 1.35 = 1.1475; with Rf 7% and premium 6% the return is 13.885%."
+          },
+          "tags": [
+            "levered-beta",
+            "valuation",
+            "numerical",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Given a risk-return (Treynor-type) ratio, return and Rf for a fund, how do you get its beta and then its alpha?",
+            "answer_md": "Beta = (fund return - Rf) / ratio. Alpha = actual return - [Rf + beta x market premium]. Example: return 12%, Rf 6%, ratio 4: beta = 1.5; with market premium 5%, CAPM return = 13.5%, alpha = -1.5%."
+          },
+          "tags": [
+            "risk-return-ratio",
+            "alpha",
+            "numerical",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you get portfolio beta when only rupee amounts and individual betas are given?",
+            "answer_md": "Divide each rupee amount by the total to get weights, multiply by each beta and add. A risk-free holding contributes zero."
+          },
+          "tags": [
+            "portfolio-beta",
+            "method",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In scenario problems, which market return is used in the CAPM formula: the expected (probability-weighted) market return or one scenario's return?",
+            "answer_md": "The expected (probability-weighted) return of the market, because CAPM is an ex-ante model using expected returns."
+          },
+          "tags": [
+            "capm",
+            "scenario"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What reduces risk in the CML approach when a part of the money is lent at the risk-free rate?",
+            "answer_md": "Standard deviation of the mix falls in proportion to the weight in the risk-free asset, and expected return falls along the line, which is why the CML is called the best risk-return trade-off available."
+          },
+          "tags": [
+            "cml",
+            "lending-portfolio"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm09-capmfeat-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When a security's CAPM return and estimated return differ, is the security necessarily a bad investment?",
+            "answer_md": "No. It only says it is mispriced relative to the SML for its beta. Overpriced shares are sold or avoided, underpriced ones bought; the gap should close as the market adjusts."
+          },
+          "tags": [
+            "valuation",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:capmfeat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

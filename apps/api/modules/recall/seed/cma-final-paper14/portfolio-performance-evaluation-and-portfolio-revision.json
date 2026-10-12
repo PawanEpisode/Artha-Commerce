@@ -1,0 +1,2242 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-portfolio-performance-evaluation-and-portfolio-revision",
+      "title": "SFM: Portfolio Performance Evaluation and Portfolio Revision",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 10: Portfolio Performance Evaluation and Portfolio Revision.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "portfolio-performance-evaluation-and-portfolio-revision"
+      },
+      "items": [
+        {
+          "ref": "sfm10-ret-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Portfolio performance evaluation",
+            "definition_md": "Checking how a fund or portfolio manager has done against other funds and against the market over a period. The investor wants to know whether superior returns really come from the manager's skill, and whether the strategy followed still suits the investor's objectives."
+          },
+          "tags": [
+            "performance-evaluation",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why does an investor need to evaluate a portfolio manager's performance?",
+            "answer_md": "Two reasons: (1) to verify whether superior returns are truly due to the manager's skill and not luck or market movement; (2) to monitor whether the investment strategy adopted is compatible with the investor's objectives."
+          },
+          "tags": [
+            "performance-evaluation",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the two methods of measuring realised return without allowing for risk.",
+            "answer_md": "The money-weighted (rupee-weighted) rate of return, MWROR, and the time-weighted rate of return, TWROR."
+          },
+          "tags": [
+            "performance-evaluation",
+            "mwror",
+            "twror"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are return measures alone not enough to judge a fund manager?",
+            "answer_md": "They ignore the risk taken to earn the return. A fund can show a high return simply by taking more risk, so the evaluation must be risk-adjusted: Sharpe, Treynor and Jensen measures do this."
+          },
+          "tags": [
+            "performance-evaluation",
+            "risk-adjusted"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Money-weighted rate of return (MWROR)",
+            "definition_md": "The single rate that makes the present value of all cash flows of an investment equal to its initial value. It is simply the internal rate of return over the period and shows what the investor actually earned on the rupees invested, given when they went in and came out."
+          },
+          "tags": [
+            "mwror",
+            "return-measures"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which two factors decide the money-weighted rate of return?",
+            "answer_md": "(1) The beginning and ending market values of the fund; (2) the timing and size of the net contributions or withdrawals (cash flows) during the period."
+          },
+          "tags": [
+            "mwror",
+            "return-measures"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "MWROR cash-flow equation",
+            "expression_md": "$F_T = F_0(1+i)^T + \\sum_{t} C_t\\,(1+i)^{T-t}$",
+            "variables_md": "$F_0$ = opening value, $F_T$ = closing value, $C_t$ = net cash added (positive) or withdrawn (negative) at time $t$, $T$ = total periods, $i$ = money-weighted return per period.",
+            "when_md": "Solve for $i$ by trial and error and interpolation. Equivalent to setting the IRR of all cash flows (investments negative, withdrawals and closing value positive) to zero."
+          },
+          "tags": [
+            "mwror",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the MWROR found when there is no direct formula for $i$?",
+            "answer_md": "By iteration: try two rates that give a closing value just below and just above the actual one (or an NPV just positive and just negative), then interpolate. Example: NPV is +8 at 10% and -4 at 12%, so rate = 10% + 2% x 8/(8+4) = 11.33%."
+          },
+          "tags": [
+            "mwror",
+            "interpolation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is MWROR unsuitable as a test of a manager's skill?",
+            "answer_md": "It is strongly affected by the timing and size of cash flows, and these are usually decided by investors, not by the manager. It is fine for judging one fund's outcome in isolation, but it mixes the investors' timing with the manager's skill."
+          },
+          "tags": [
+            "mwror",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund starts with 100, is worth 120 after year 1, the investor then adds 80 and the fund ends year 2 at 210. What are the MWROR and TWROR?",
+            "answer_md": "MWROR: solve -100 - 80/(1+r) + 210/(1+r)^2 = 0, giving about 10.33%. TWROR: year-1 return 20%, year-2 return 210/200 - 1 = 5%, so sqrt(1.20 x 1.05) - 1 = 12.25%. Money was added before the weak year, so MWROR is below TWROR."
+          },
+          "tags": [
+            "mwror",
+            "twror",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund starts with 100, is worth 105 after year 1, the investor then adds 100 and the fund ends year 2 at 246. Compare MWROR with TWROR.",
+            "answer_md": "TWROR = sqrt(1.05 x 246/205) - 1 = 12.25% (year returns 5% and 20%). MWROR from -100 - 100/(1+r) + 246/(1+r)^2 = 0 is about 14.62%. Money was added before the strong year, so MWROR is above TWROR."
+          },
+          "tags": [
+            "mwror",
+            "twror",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When will MWROR be higher than TWROR, and when lower?",
+            "answer_md": "If large amounts are added just before a high-return period (or withdrawn before a poor one), MWROR exceeds TWROR. If money is added before a poor period or withdrawn before a good one, MWROR falls below TWROR. With no interim cash flows the two are equal."
+          },
+          "tags": [
+            "mwror",
+            "twror",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-013",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Time-weighted rate of return (TWROR)",
+            "definition_md": "The compound growth rate of a portfolio, found by geometrically linking the holding-period returns of sub-periods. It removes the distortion from the timing and size of cash flows, so it is the fairer yardstick of the manager's investment skill."
+          },
+          "tags": [
+            "twror",
+            "return-measures"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-014",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Time-weighted rate of return",
+            "expression_md": "$\\text{TWROR} = \\left[(1+R_1)(1+R_2)\\cdots(1+R_n)\\right]^{1/T} - 1$",
+            "variables_md": "$R_k$ = holding-period return of sub-period $k$, $T$ = total number of years (or periods being annualised).",
+            "when_md": "Use to compare managers. The fund must be valued every time a cash flow occurs."
+          },
+          "tags": [
+            "twror",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-015",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Sub-period return for TWROR",
+            "expression_md": "$R_k = \\dfrac{V_k}{V_{k-1} + C_{k-1}} - 1$",
+            "variables_md": "$V_k$ = fund value at end of the sub-period (before the new cash flow), $V_{k-1}$ = value at start, $C_{k-1}$ = cash added at the start of the sub-period.",
+            "when_md": "Each sub-period begins at a cash flow, so the opening base is value plus the cash just added (minus any amount withdrawn)."
+          },
+          "tags": [
+            "twror",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the steps for calculating TWROR.",
+            "answer_md": "1) Split the period at every cash flow date. 2) Value the fund just before each cash flow. 3) Compute the return of each sub-period as end value over (opening value plus cash added), minus 1. 4) Link the sub-period returns by multiplying (1+R). 5) Take the T-th root to annualise and subtract 1."
+          },
+          "tags": [
+            "twror",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What data requirement makes TWROR harder to compute than MWROR?",
+            "answer_md": "The market value of the fund must be known on every date on which a cash flow occurs. MWROR needs only the opening value, closing value and the cash flows."
+          },
+          "tags": [
+            "twror",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Fund value is 100 at start, 112 before an addition of 38 at the end of year 1, and 171 at the end of year 2. Find the TWROR.",
+            "answer_md": "Year 1 return = 112/100 - 1 = 12%. Opening base for year 2 = 112 + 38 = 150, so year 2 return = 171/150 - 1 = 14%. TWROR = sqrt(1.12 x 1.14) - 1 = about 13.0%."
+          },
+          "tags": [
+            "twror",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund returns +20% in year 1 and -10% in year 2. What is the annualised TWROR, and why is it not the simple average of 5%?",
+            "answer_md": "TWROR = sqrt(1.20 x 0.90) - 1 = 3.92%. Returns compound geometrically; the arithmetic average of 5% overstates growth because the loss in year 2 falls on a bigger base."
+          },
+          "tags": [
+            "twror",
+            "numerical",
+            "geometric"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "An investor buys a share at 50, collects a dividend of 3 and sells at 56 after one year. State the holding-period return.",
+            "answer_md": "Holding-period return = (dividend + sale price - purchase price) / purchase price = (3 + 56 - 50)/50 = 18%."
+          },
+          "tags": [
+            "twror",
+            "numerical",
+            "hpr"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which return measure should be used (a) to judge the manager's skill and (b) to report what the investor personally earned?",
+            "answer_md": "(a) TWROR, since it neutralises cash flows the manager does not control. (b) MWROR, since it reflects the investor's own timing of deposits and withdrawals."
+          },
+          "tags": [
+            "twror",
+            "mwror",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-022",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the difference between holding-period return and annualised TWROR?",
+            "answer_md": "Holding-period return is the return of one sub-period. Annualised TWROR links all holding-period returns and converts the total growth to a per-year compound rate."
+          },
+          "tags": [
+            "twror",
+            "hpr"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-ret-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "An investor buys 2 shares at 50 each, receiving a dividend of 2 per share each year. After year 1 she sells one share at 55; after year 2 she sells the other at 48. Find the MWROR and TWROR.",
+            "answer_md": "Cash flows: -100 at start; +59 at year 1 (dividends 4 plus 55); +50 at year 2 (dividend 2 plus 48). MWROR = IRR = about 6.12%. Per-share returns: year 1 = (2 + 55 - 50)/50 = 14%; year 2 = (2 + 48 - 55)/55 = -9.09%. TWROR = sqrt(1.14 x 0.9091) - 1 = about 1.80%. The investor held more money in the weak year, so TWROR is lower here."
+          },
+          "tags": [
+            "mwror",
+            "twror",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk-adjusted performance measures",
+            "definition_md": "Tools that judge a fund by return earned per unit of risk taken. The three standard ones are Sharpe's measure (total risk), Treynor's measure (systematic risk) and Jensen's alpha (excess return over the CAPM-required return). They arose after the capital asset pricing model was developed and use mean-variance logic."
+          },
+          "tags": [
+            "risk-adjusted",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three commonly used risk-adjusted performance measures and the risk each uses.",
+            "answer_md": "Sharpe's measure: total risk (standard deviation). Treynor's measure: systematic risk (beta). Jensen's alpha: return above the CAPM-required return for the portfolio's beta."
+          },
+          "tags": [
+            "risk-adjusted",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Sharpe's measure (reward-to-variability ratio)",
+            "definition_md": "Excess return of the portfolio over the risk-free rate divided by the portfolio's standard deviation. It says how much extra return the manager delivered for every unit of total risk, so it is the reward-to-total-volatility trade-off."
+          },
+          "tags": [
+            "sharpe",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Sharpe ratio",
+            "expression_md": "$S_p = \\dfrac{\\bar R_p - \\bar R_f}{\\sigma_p}$",
+            "variables_md": "$\\bar R_p$ = average portfolio return, $\\bar R_f$ = average risk-free return, $\\sigma_p$ = standard deviation of the portfolio's returns.",
+            "when_md": "Higher is better. Use when the fund is the investor's whole portfolio or total risk matters. Bars show sample averages, since the risk-free rate may change over time."
+          },
+          "tags": [
+            "sharpe",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A fund returns 18%, the risk-free rate is 6% and the variance of the fund's returns is 49 (%^2). Find the Sharpe ratio.",
+            "answer_md": "Standard deviation = square root of 49 = 7%. Sharpe = (18 - 6)/7 = 1.71. Always take the square root of a variance before dividing."
+          },
+          "tags": [
+            "sharpe",
+            "numerical",
+            "exam-trap"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the Sharpe ratio computed when only a series of periodic returns is given?",
+            "answer_md": "Take the average of the periodic returns (and of the risk-free rate), subtract to get the average excess return, compute the standard deviation of the fund's returns, and divide the average excess return by that standard deviation."
+          },
+          "tags": [
+            "sharpe",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Where is Sharpe's measure benchmarked, and what is the market's own Sharpe ratio?",
+            "answer_md": "It is benchmarked on the capital market line (CML). The market portfolio's ratio is (Rm - Rf) / sigma_m, the slope of the CML. A fund with a higher ratio than this lies above the CML and has beaten the market per unit of total risk."
+          },
+          "tags": [
+            "sharpe",
+            "cml"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Return required by the capital market line",
+            "expression_md": "$R_{CML} = R_f + \\dfrac{R_m - R_f}{\\sigma_m}\\,\\sigma_p$",
+            "variables_md": "$R_m,\\ \\sigma_m$ = market return and standard deviation, $\\sigma_p$ = fund's standard deviation.",
+            "when_md": "Compare with the fund's actual return: actual above this means better than the market for its total risk."
+          },
+          "tags": [
+            "sharpe",
+            "cml",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund earns 14% with sigma 16%. Rf = 6%, market return 12%, sigma_m 10%. Compare with the market using Sharpe and the CML.",
+            "answer_md": "Fund Sharpe = 8/16 = 0.50; market Sharpe = 6/10 = 0.60. CML return for 16% risk = 6 + 0.60 x 16 = 15.6%. The fund earned only 14%, so it lies below the CML and underperformed the market on total risk."
+          },
+          "tags": [
+            "sharpe",
+            "cml",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "On the return-total risk graph, what does a portfolio plotted above the capital market line show?",
+            "answer_md": "It earned more than the return required for its level of total risk, so its Sharpe ratio exceeds the market's. A portfolio below the line earned less than required."
+          },
+          "tags": [
+            "sharpe",
+            "cml",
+            "graph"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is Sharpe's measure the more suitable measure?",
+            "answer_md": "When the fund is the investor's only or main holding (so unsystematic risk also matters) or when funds are competing as the single risky investment. It penalises total risk, including diversifiable risk."
+          },
+          "tags": [
+            "sharpe",
+            "suitability"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does a negative Sharpe ratio indicate?",
+            "answer_md": "The portfolio earned less than the risk-free rate on average; the manager added no reward for the risk taken."
+          },
+          "tags": [
+            "sharpe",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Treynor's measure (reward-to-volatility ratio)",
+            "definition_md": "Excess return of the portfolio over the risk-free rate per unit of beta. It judges reward against systematic (market) risk only and so assumes the portfolio is fully diversified."
+          },
+          "tags": [
+            "treynor",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Treynor ratio",
+            "expression_md": "$T_p = \\dfrac{\\bar R_p - \\bar R_f}{\\beta_p}$",
+            "variables_md": "$\\bar R_p$ = average portfolio return, $\\bar R_f$ = risk-free rate, $\\beta_p$ = portfolio beta.",
+            "when_md": "Higher is better. Use when the fund is one component of a larger diversified portfolio, since only market risk is rewarded."
+          },
+          "tags": [
+            "treynor",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A fund returns 14%, Rf = 6%, beta = 1.1. What is its Treynor ratio, and how does it compare with a market return of 12%?",
+            "answer_md": "Treynor = (14 - 6)/1.1 = 7.27%. The market has beta 1, so its ratio equals its risk premium, 12 - 6 = 6%. The fund's 7.27% is higher, so it outperformed on systematic risk."
+          },
+          "tags": [
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the return required by the security market line (SML) found for a fund, and what does it show?",
+            "answer_md": "Required return = Rf + beta x (Rm - Rf). Example: 6 + 1.1 x (12 - 6) = 12.6%. A fund earning more than this lies above the SML and has done better than its systematic risk demanded (here 14% - 12.6% = 1.4%)."
+          },
+          "tags": [
+            "treynor",
+            "sml",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the Treynor measure differ from the Sharpe measure in the risk used?",
+            "answer_md": "Sharpe divides excess return by standard deviation (total risk). Treynor divides it by beta (systematic risk only). Treynor ignores unsystematic risk because it assumes diversification has already removed it."
+          },
+          "tags": [
+            "treynor",
+            "sharpe",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can Sharpe and Treynor rankings of the same funds differ, and when will they agree?",
+            "answer_md": "They differ when funds carry different amounts of unsystematic risk, because Sharpe penalises it and Treynor does not. For fully diversified portfolios total risk is proportional to beta, so both give the same ranking."
+          },
+          "tags": [
+            "treynor",
+            "sharpe",
+            "ranking"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rank three funds by Sharpe and Treynor. Rf = 5%. A: return 13, sigma 12, beta 1.1; B: 12, 9, 0.8; C: 15, 20, 1.4.",
+            "answer_md": "Sharpe: A 8/12 = 0.667, B 7/9 = 0.778, C 10/20 = 0.500, so B, A, C. Treynor: A 8/1.1 = 7.27, B 7/0.8 = 8.75, C 10/1.4 = 7.14, so B, A, C. Fund B is best on both."
+          },
+          "tags": [
+            "treynor",
+            "sharpe",
+            "ranking",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give the formula linking beta to correlation and standard deviations, and use it: r = 0.75, fund sigma = 8%, market sigma = 5%.",
+            "answer_md": "Beta = r x sigma_fund / sigma_market = 0.75 x 8/5 = 1.20. Beta can also be written as Cov(fund, market) / variance of market."
+          },
+          "tags": [
+            "beta",
+            "numerical",
+            "formula"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Beta from covariance",
+            "expression_md": "$\\beta_p = \\dfrac{\\text{Cov}(R_p, R_m)}{\\sigma_m^2} = \\rho_{pm}\\dfrac{\\sigma_p}{\\sigma_m}$",
+            "variables_md": "$\\rho_{pm}$ = correlation of fund with market, $\\sigma_p,\\ \\sigma_m$ = standard deviations.",
+            "when_md": "Past papers give covariance or correlation with the market variance and ask for beta before the Treynor ratio."
+          },
+          "tags": [
+            "beta",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund has covariance 60 with the market, whose variance is 40. Rf = 6, fund return 14. Find beta and the Treynor ratio.",
+            "answer_md": "Beta = 60/40 = 1.5. Treynor = (14 - 6)/1.5 = 5.33%."
+          },
+          "tags": [
+            "beta",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Split of total variance: systematic risk = beta^2 x market variance; total = systematic + unsystematic. Apply with beta 1.2, market sigma 15%, unsystematic variance 76.",
+            "answer_md": "Systematic variance = 1.44 x 225 = 324. Total = 324 + 76 = 400, so sigma = 20%. The share of risk that is systematic = 324/400 = 81%, which equals the square of the correlation (r = 0.9)."
+          },
+          "tags": [
+            "beta",
+            "systematic-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is the beta of a portfolio found from the betas of its holdings?",
+            "answer_md": "It is the weighted average of the holding betas, weights being value proportions. Example: weights 50%, 30%, 20% with betas 1.2, 0.9, 1.5 give 0.60 + 0.27 + 0.30 = 1.17."
+          },
+          "tags": [
+            "beta",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Sharpe 0.6, Treynor 9 and variance 225 are given for a fund. Find its beta.",
+            "answer_md": "Risk premium = S x sigma = Treynor x beta, so beta = (S x sigma)/T. Sigma = 15, so beta = 0.6 x 15/9 = 1.0. This is how past papers ask for beta from given ratios."
+          },
+          "tags": [
+            "treynor",
+            "sharpe",
+            "beta",
+            "numerical",
+            "exam-trap"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Sharpe 0.40, Treynor 8 and correlation with the market 0.5 are given. Find the market's standard deviation.",
+            "answer_md": "Treynor/Sharpe = sigma_p/beta = sigma_m/r. So sigma_m = r x Treynor/Sharpe = 0.5 x 8/0.4 = 10%."
+          },
+          "tags": [
+            "treynor",
+            "sharpe",
+            "numerical",
+            "exam-trap"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-015",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Treynor to Sharpe ratio link",
+            "expression_md": "$\\dfrac{T_p}{S_p} = \\dfrac{\\sigma_p}{\\beta_p} = \\dfrac{\\sigma_m}{\\rho_{pm}}$",
+            "variables_md": "$T_p,\\ S_p$ = Treynor and Sharpe ratios of the same fund, $\\rho_{pm}$ = correlation with the market.",
+            "when_md": "Both ratios share the same numerator (risk premium), so the ratio of the two depends only on the risks. Handy when some data are missing."
+          },
+          "tags": [
+            "treynor",
+            "sharpe",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-treynor-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Find a fund's return from its alpha: Rf = 6%, Rm = 12%, beta = 0.9, alpha = 2%.",
+            "answer_md": "Fund return = Rf + beta x (Rm - Rf) + alpha = 6 + 0.9 x 6 + 2 = 13.4%. Alpha is the part earned above the CAPM requirement."
+          },
+          "tags": [
+            "jensen",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:treynor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Jensen's alpha (differential return)",
+            "definition_md": "The difference between a portfolio's actual average return and the return the CAPM predicts for its beta and the market return. It is an absolute measure of how much the manager added over what the risk deserved."
+          },
+          "tags": [
+            "jensen",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Jensen's alpha",
+            "expression_md": "$\\alpha_p = R_p - \\left[R_f + \\beta_p (R_m - R_f)\\right]$",
+            "variables_md": "$R_p$ = realised average return, $R_f$ = risk-free rate, $\\beta_p$ = portfolio beta, $R_m$ = market return.",
+            "when_md": "Based on CAPM, so it assumes a well-diversified portfolio. Alpha = actual return minus CAPM return. Rank by the highest alpha."
+          },
+          "tags": [
+            "jensen",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Interpret positive, zero and negative Jensen's alpha.",
+            "answer_md": "Positive: the manager beat the CAPM-required return, showing superior stock selection. Zero: return exactly in line with risk (the fund is on the SML). Negative: underperformance for the risk taken."
+          },
+          "tags": [
+            "jensen",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A fund returns 16%, beta 1.3, Rf = 5%, Rm = 11%. Find Jensen's alpha.",
+            "answer_md": "Required return = 5 + 1.3 x 6 = 12.8%. Alpha = 16 - 12.8 = +3.2%, so the manager outperformed."
+          },
+          "tags": [
+            "jensen",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rf = 5%, Rm = 11%. Find alpha for A (return 13, beta 1.1), B (12, 0.8) and C (15, 1.4) and rank them.",
+            "answer_md": "Alpha A = 13 - (5 + 6.6) = 1.4; B = 12 - (5 + 4.8) = 2.2; C = 15 - (5 + 8.4) = 1.6. Ranking by Jensen: B, C, A. Note it differs from the Treynor ranking (B, A, C) because alpha is not scaled by beta."
+          },
+          "tags": [
+            "jensen",
+            "ranking",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-006",
+          "kind": "formula",
+          "importance": "bullet",
+          "fields": {
+            "name": "Jensen alpha as Treynor gap",
+            "expression_md": "$\\alpha_p = \\beta_p\\,(T_p - T_m)$",
+            "variables_md": "$T_p$ = fund's Treynor ratio, $T_m = R_m - R_f$ = market's Treynor ratio, $\\beta_p$ = fund beta.",
+            "when_md": "Shows alpha is positive exactly when the fund's Treynor ratio beats the market's. Check: Treynor 7.27, market 6, beta 1.1 gives alpha 1.4."
+          },
+          "tags": [
+            "jensen",
+            "treynor",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which measures are relative and which is absolute?",
+            "answer_md": "Sharpe and Treynor are relative measures: they rank funds against one another on a risk-adjusted basis. Jensen's alpha is an absolute measure against a definite standard, the CAPM line."
+          },
+          "tags": [
+            "jensen",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "On the SML picture, what does the intercept of the fund's line say about the manager?",
+            "answer_md": "An intercept above the origin signals superior stock selection (positive alpha); below the origin signals underperformance (negative alpha). Zero alpha means the fund sits on the market line."
+          },
+          "tags": [
+            "jensen",
+            "graph",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "If short sales are allowed and a fund's alpha is negative, what can an investor do?",
+            "answer_md": "Sell that fund short; the position then earns the reverse of the shortfall, so the negative alpha is turned into a positive one (before costs)."
+          },
+          "tags": [
+            "jensen",
+            "short-sale"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which assumption do Treynor and Jensen share, and which measure suits a single-fund investor?",
+            "answer_md": "Both assume a fully diversified portfolio (only systematic risk matters). Sharpe, which uses total risk, is the appropriate measure when the investor holds a single fund."
+          },
+          "tags": [
+            "jensen",
+            "treynor",
+            "sharpe",
+            "suitability"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Summarise how to choose among Sharpe, Treynor and Jensen.",
+            "answer_md": "Sharpe: whole portfolio or single fund, total risk. Treynor: fund as part of a diversified portfolio, systematic risk, ranks per unit of beta. Jensen: absolute excess return over CAPM, ranked by alpha. All need Rf and are only as good as the return period used."
+          },
+          "tags": [
+            "risk-adjusted",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund has Sharpe 0.50 vs market 0.60 but Treynor 7.27 vs market 6.00. How can both be true?",
+            "answer_md": "Sharpe uses total risk and penalises the fund's diversifiable (unsystematic) risk; Treynor looks only at beta. The fund is rewarding for market risk but is not well diversified, so it fails the total-risk test."
+          },
+          "tags": [
+            "risk-adjusted",
+            "comparison",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the benchmark line used by each: Sharpe, Treynor, Jensen.",
+            "answer_md": "Sharpe: the capital market line (CML), on total risk. Treynor and Jensen: the security market line (SML), on beta. Jensen's alpha is the vertical gap from the SML."
+          },
+          "tags": [
+            "risk-adjusted",
+            "cml",
+            "sml"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-jensen-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A fund has alpha 1.5%, beta 0.8, Rf = 6%, Rm = 12%. Find its return and its Treynor ratio.",
+            "answer_md": "Return = 6 + 0.8 x 6 + 1.5 = 12.3%. Treynor = (12.3 - 6)/0.8 = 7.875%, which beats the market's 6%, consistent with positive alpha."
+          },
+          "tags": [
+            "jensen",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:jensen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which ratio is called reward to variability and which reward to volatility?",
+            "answer_md": "Sharpe's measure is reward to variability (risk premium over standard deviation). Treynor's measure is reward to volatility (risk premium over beta). Past-paper answer tables use these headings."
+          },
+          "tags": [
+            "sharpe",
+            "treynor",
+            "terminology"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-sharpe-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "An investor wants the best two of four funds using Sharpe's measure. How should she proceed?",
+            "answer_md": "Compute (return - Rf) / standard deviation for each fund, rank in descending order and pick the top two. Example with Rf 6%: returns 15, 17, 12, 14 with sigma 10, 20, 8, 7 give 0.90, 0.55, 0.75, 1.14, so choose the fourth and first funds."
+          },
+          "tags": [
+            "sharpe",
+            "ranking",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sharpe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Performance attribution",
+            "definition_md": "Splitting a portfolio's total performance into parts that trace back to specific decisions of the manager, such as the asset allocation and the security selection. It explains, after the event, why the portfolio earned what it did and why success or failure occurred."
+          },
+          "tags": [
+            "attribution",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the four stages of performance attribution analysis.",
+            "answer_md": "1) Set a benchmark of performance, the bogey. 2) Asset allocation across stocks, bonds and cash. 3) Sector choice within each asset class. 4) Security selection within each sector."
+          },
+          "tags": [
+            "attribution",
+            "stages"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Bogey (benchmark portfolio)",
+            "definition_md": "The passive reference portfolio against which the manager is compared. It is built to capture passive results, ruling out both asset allocation and security selection decisions, so any gap from it must come from the manager's decisions."
+          },
+          "tags": [
+            "attribution",
+            "bogey"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is performance attribution called a top-down approach?",
+            "answer_md": "It starts from the broad policy (target weights in the policy statement), checks the asset allocation first, then narrows to sector choice and finally to individual security selection."
+          },
+          "tags": [
+            "attribution",
+            "top-down"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "From what two sources can performance different from a proper benchmark arise?",
+            "answer_md": "Market timing (shifting weights between asset classes or in and out of the market) and security selection (choosing individual securities). Attribution techniques split the excess return between these."
+          },
+          "tags": [
+            "attribution",
+            "timing",
+            "selection"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the excess return of a managed portfolio over its benchmark found?",
+            "answer_md": "Compute the benchmark return as the sum of weight x return for each asset class, do the same for the managed portfolio, and subtract: excess return = managed return - benchmark return."
+          },
+          "tags": [
+            "attribution",
+            "excess-return"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Portfolio return from asset-class weights",
+            "expression_md": "$R = \\sum_{j} w_j\\, r_j$",
+            "variables_md": "$w_j$ = weight of asset class $j$ (benchmark or managed), $r_j$ = return of that class.",
+            "when_md": "Apply once with benchmark weights and index returns, and once with the managed weights and the managed portfolio's returns."
+          },
+          "tags": [
+            "attribution",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Contribution of asset allocation",
+            "expression_md": "$\\text{Allocation}_j = (w^{P}_j - w^{B}_j)\\times r^{B}_j$",
+            "variables_md": "$w^P_j$ = actual weight in managed portfolio, $w^B_j$ = benchmark weight, $r^B_j$ = benchmark (index) return of class $j$.",
+            "when_md": "Excess weight times the index return. Overweighting a class that did well adds; overweighting one that lagged subtracts."
+          },
+          "tags": [
+            "attribution",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Contribution of security selection",
+            "expression_md": "$\\text{Selection}_j = (r^{P}_j - r^{B}_j)\\times w^{P}_j$",
+            "variables_md": "$r^P_j$ = managed return in class $j$, $r^B_j$ = index return, $w^P_j$ = actual weight of class $j$.",
+            "when_md": "Excess performance within each class times the actual weight. Allocation plus selection adds up to the total excess return."
+          },
+          "tags": [
+            "attribution",
+            "formula",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Benchmark weights stocks 60%, bonds 30%, cash 10%, with returns 2.0%, 1.0%, 0.4%. Managed weights 70%, 20%, 10% with returns 2.5%, 1.2%, 0.4%. Find the benchmark, managed and excess returns.",
+            "answer_md": "Benchmark = 0.60 x 2.0 + 0.30 x 1.0 + 0.10 x 0.4 = 1.54%. Managed = 0.70 x 2.5 + 0.20 x 1.2 + 0.10 x 0.4 = 2.03%. Excess = 0.49% (49 basis points)."
+          },
+          "tags": [
+            "attribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Using the same data, split the 0.49% excess return into asset allocation and security selection.",
+            "answer_md": "Allocation: stocks (0.70 - 0.60) x 2.0 = +0.20; bonds (0.20 - 0.30) x 1.0 = -0.10; cash 0, total +0.10%. Selection: stocks (2.5 - 2.0) x 0.70 = 0.35; bonds (1.2 - 1.0) x 0.20 = 0.04; cash 0, total 0.39%. 0.10 + 0.39 = 0.49%, so most of the gain came from selection."
+          },
+          "tags": [
+            "attribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Benchmark 50% stocks (8%) and 50% bonds (4%); managed 70% stocks (9%) and 30% bonds (5%). Split the excess return.",
+            "answer_md": "Benchmark = 6%, managed = 7.8%, excess = 1.8%. Allocation = (0.2 x 8) + (-0.2 x 4) = 0.8%. Selection = (1 x 0.7) + (1 x 0.3) = 1.0%. Total 1.8%."
+          },
+          "tags": [
+            "attribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Check on the attribution: what must allocation and selection contributions add up to?",
+            "answer_md": "The total excess return of the managed portfolio over the benchmark. If they do not sum to it, an error has been made in weights or returns."
+          },
+          "tags": [
+            "attribution",
+            "check"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A manager's total excess return is 0.5% with selection contributing 1.0%. What was the effect of asset allocation?",
+            "answer_md": "Allocation = 0.5 - 1.0 = -0.5%. Good security picks more than made up for the poor asset-mix decision."
+          },
+          "tags": [
+            "attribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does a typical attribution system break performance into components?",
+            "answer_md": "Into broad asset allocation, industry (sector) choice and security choice."
+          },
+          "tags": [
+            "attribution",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-attr-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does a style benchmark add to attribution?",
+            "answer_md": "It is a customised benchmark built from weighted indexes that match the manager's own style, so the comparison is fairer than using one broad index."
+          },
+          "tags": [
+            "attribution",
+            "style"
+          ],
+          "reference_keys": [
+            "sfm:attr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Style analysis",
+            "definition_md": "A method that finds the investment style a manager actually follows, in terms of asset classes, equity styles or index returns. It helps explain why funds in the same category behave differently."
+          },
+          "tags": [
+            "style-analysis",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a style box?",
+            "answer_md": "A nine-cell grid that classifies a fund by the market capitalisation of its stocks (large, mid, small) and by whether they are value, blend or growth. A manager of small growth stocks sits where small cap and growth meet."
+          },
+          "tags": [
+            "style-analysis",
+            "style-box"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does the style box not settle every question?",
+            "answer_md": "Portfolios in the same cell still differ in the securities held and their proportions, so two funds can both call themselves large growth and still show different results. Style analysis explains the differences."
+          },
+          "tags": [
+            "style-analysis",
+            "style-box"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the two approaches to style analysis and say how they differ.",
+            "answer_md": "Returns-based: compares the fund's return series with the returns of indexes that each track a style, such as large growth or small value. Holdings-based: looks at the actual stocks held to describe the allocation among asset classes or equity styles. Morningstar uses the holdings-based approach."
+          },
+          "tags": [
+            "style-analysis",
+            "approaches"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who developed returns-based style analysis and how does it work?",
+            "answer_md": "William Sharpe. It uses an asset-class factor model (similar to a regression) of fund returns on indexes such as treasury bills, bond indexes and equity-style indexes, and gives a style benchmark of weights on those indexes."
+          },
+          "tags": [
+            "style-analysis",
+            "sharpe-model"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How many months of return data does returns-based style analysis typically need?",
+            "answer_md": "Usually at least 30 to 40 months of returns."
+          },
+          "tags": [
+            "style-analysis",
+            "data",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "List the equity groups used in Sharpe's returns-based style analysis.",
+            "answer_md": "Four mutually exclusive groups: large-cap value, large-cap growth, mid-cap and small-cap stocks."
+          },
+          "tags": [
+            "style-analysis",
+            "sharpe-model"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do many managers prefer style benchmarks to a single-index benchmark?",
+            "answer_md": "A style benchmark is customised: it gives an individual weighting to a set of indexes that document the manager's style, and it is objective because it is based only on the portfolio's actual return behaviour."
+          },
+          "tags": [
+            "style-analysis",
+            "style-benchmark"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the problem of style consistency?",
+            "answer_md": "Managers often drift from their declared style over time, so a style label from one period may not describe later results. Less than half of domestic mutual funds are said to keep their style over five years, so style should be re-checked."
+          },
+          "tags": [
+            "style-analysis",
+            "consistency",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A mid-cap fund manager buys out-of-favour stocks with low price-to-book and low P/E. What is this style?",
+            "answer_md": "Value style. The screen picks stocks priced below intrinsic value, so the fund's return pattern will differ from a mid-cap growth manager's."
+          },
+          "tags": [
+            "style-analysis",
+            "value-growth"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is style analysis different from performance attribution?",
+            "answer_md": "Style analysis identifies how the manager invests (style, asset-class exposure). Attribution decomposes the portfolio's return into the effects of allocation, sector and security decisions after the event."
+          },
+          "tags": [
+            "style-analysis",
+            "attribution",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-style-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does a complete evaluation of a manager involve besides return and risk?",
+            "answer_md": "Style analysis (what style the manager really follows) and performance attribution (which decisions created the result)."
+          },
+          "tags": [
+            "style-analysis",
+            "attribution"
+          ],
+          "reference_keys": [
+            "sfm:style"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Stock selection (selectivity)",
+            "definition_md": "The skill of picking individual securities that are under- or over-valued, rather than holding a whole set of stocks. It rests on company-specific events and aims at higher risk-adjusted returns from the chosen stocks."
+          },
+          "tags": [
+            "selectivity",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Market timing",
+            "definition_md": "Moving funds in and out of the market, or switching among asset classes, based on predictions of coming bull and bear phases, to earn more than a portfolio that stays invested. Forecasts use technical indicators or economic data."
+          },
+          "tags": [
+            "market-timing",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Distinguish stock selection from market timing in terms of the forecasting required.",
+            "answer_md": "Stock selection needs micro forecasting (company-specific). Market timing needs macro forecasting (the economy and the market as a whole). Both skills matter for positive risk-adjusted excess returns."
+          },
+          "tags": [
+            "market-timing",
+            "selectivity",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the opposite of a market-timing approach?",
+            "answer_md": "A long-term buy-and-hold strategy, favoured by those who do not believe in timing the market."
+          },
+          "tags": [
+            "market-timing",
+            "buy-and-hold"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "On what kinds of analysis can market timing be based?",
+            "answer_md": "Fundamental analysis (economic data and valuations) or technical analysis (price and volume patterns)."
+          },
+          "tags": [
+            "market-timing",
+            "analysis"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the main drawbacks of market timing?",
+            "answer_md": "It is difficult to predict turns consistently, it is hard for ordinary investors who lack time and information, emotions can drive decisions, and successful trading triggers tax on the gains. Many academics and practitioners think it cannot be done reliably."
+          },
+          "tags": [
+            "market-timing",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is market timing described as a risk-return trade-off?",
+            "answer_md": "It aims to maximise profit while offsetting the risks tied to large gains: the higher the risk taken in timing calls, the higher the potential return."
+          },
+          "tags": [
+            "market-timing",
+            "risk-return"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-timing-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A fund that is listed on the stock exchange is called what?",
+            "answer_md": "A closed-end fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-end"
+          ],
+          "reference_keys": [
+            "sfm:timing"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Sharpe uses {{c1::total risk (standard deviation)}}, Treynor uses {{c2::systematic risk (beta)}}, and Jensen's alpha measures the return over the {{c3::CAPM-required return}}."
+          },
+          "tags": [
+            "sharpe",
+            "treynor",
+            "jensen"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Jensen's alpha is positive when the fund's return is {{c1::above}} the SML return, zero when it is {{c2::on}} the line, and negative when {{c3::below}} it."
+          },
+          "tags": [
+            "jensen",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The two measures of realised return are the {{c1::money-weighted}} rate of return, which equals the {{c2::IRR}}, and the {{c3::time-weighted}} rate of return, which links {{c4::holding-period returns}}."
+          },
+          "tags": [
+            "mwror",
+            "twror"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-004",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The four stages of attribution: set the {{c1::bogey}}, decide {{c2::asset allocation}}, choose {{c3::sectors}} within classes, and then {{c4::security selection}}."
+          },
+          "tags": [
+            "attribution",
+            "stages"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Allocation contribution = {{c1::excess weight x index return}}; selection contribution = {{c2::excess performance x actual weight}}."
+          },
+          "tags": [
+            "attribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-006",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "The two approaches to style analysis are {{c1::returns-based}} and {{c2::holdings-based}}; the style box has {{c3::nine}} cells."
+          },
+          "tags": [
+            "style-analysis"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Treynor is best when the fund is {{c1::one part of a diversified portfolio}}; Sharpe suits {{c2::a single-fund investor}}; MWROR depends on {{c3::cash-flow timing}}."
+          },
+          "tags": [
+            "suitability"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Performance not explained by the benchmark comes from {{c1::market timing}} (macro forecasting) or {{c2::security selection}} (micro forecasting)."
+          },
+          "tags": [
+            "market-timing",
+            "selectivity"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-009",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "STJ: Sharpe-Total, Treynor-beta, Jensen-alpha",
+            "expands_md": "S = Sharpe uses Total risk (sigma); T = Treynor uses beta (market risk); J = Jensen gives alpha (excess over CAPM).",
+            "topic": "Risk-adjusted measures"
+          },
+          "tags": [
+            "risk-adjusted",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm10-clz-010",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "BASS: Bogey, Allocation, Sector, Selection",
+            "expands_md": "B = benchmark (bogey); A = asset allocation; S = sector choice; S = security selection. The four attribution stages in order.",
+            "topic": "Attribution stages"
+          },
+          "tags": [
+            "attribution",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

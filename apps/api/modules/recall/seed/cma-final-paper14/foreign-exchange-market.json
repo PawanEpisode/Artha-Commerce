@@ -1,0 +1,4165 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-foreign-exchange-market",
+      "title": "SFM: Foreign Exchange Market",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 15: Foreign Exchange Market.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "foreign-exchange-market"
+      },
+      "items": [
+        {
+          "ref": "sfm15-mkt-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Foreign exchange market",
+            "definition_md": "The worldwide, decentralised market in which one national currency is traded for another. It has no single location: banks, brokers and dealers linked electronically bring buyers and sellers together, and its purpose is to move purchasing power from one currency to another so that trade and investment can happen."
+          },
+          "tags": [
+            "forex-market",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the main characteristics of the foreign exchange market.",
+            "answer_md": "No physical venue (an electronic network of banks, brokers and dealers); spread across many financial centres; trades round the clock on business days; mostly an interbank wholesale market; brokers match banks for a commission; dominated by capital flows rather than trade; the largest financial market; and split into spot and forward segments."
+          },
+          "tags": [
+            "forex-market",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the foreign exchange market called 'not a physical place'?",
+            "answer_md": "Trading is done by telephone and screens between banks, brokers and dealers in different cities. There is no building or floor where all deals meet, so the market is the network itself."
+          },
+          "tags": [
+            "forex-market",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which centres anchor the round-the-clock operation of the forex market, and how does volume vary?",
+            "answer_md": "Major financial centres such as London, New York, Tokyo, Hong Kong, Frankfurt and Zurich pass trading along as time zones change. Trading never stops on business days, but volume is higher when more counterparties are open."
+          },
+          "tags": [
+            "forex-market",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Roughly how much of forex trading is interbank, and how much relates to trade in goods and services?",
+            "answer_md": "About 95% of transactions go through the wholesale interbank market. Trade in goods and services explains less than 5% of turnover; over 95% reflects cross-border purchases and sales of financial assets, i.e. capital flows."
+          },
+          "tags": [
+            "forex-market",
+            "features",
+            "interbank"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What role do brokers play in the interbank forex market?",
+            "answer_md": "They are specialists who match banks that want to buy with banks that want to sell. They take a small commission, do not risk their own money, and keep the identity of both parties hidden until the deal is agreed."
+          },
+          "tags": [
+            "forex-market",
+            "brokers"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the forex market regarded as the largest financial market?",
+            "answer_md": "Its daily turnover, as measured in central bank surveys, is many times the daily turnover of stock exchanges and global equity markets combined, so it is the largest asset class by volume and the most liquid."
+          },
+          "tags": [
+            "forex-market",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the two segments of the foreign exchange market and say how each settles.",
+            "answer_md": "The spot market trades currencies for immediate delivery, which by convention is actually paid and received on the second working day after the deal. The forward market fixes a rate today for delivery on a later date beyond the spot settlement date."
+          },
+          "tags": [
+            "forex-market",
+            "spot",
+            "forward"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Besides spot and forward, which sectors does the forex market include?",
+            "answer_md": "The study text lists three sectors: the spot market, the forward and futures market, and the currency options market."
+          },
+          "tags": [
+            "forex-market",
+            "sectors"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the three primary functions of the foreign exchange market.",
+            "answer_md": "Transfer function (moving purchasing power between countries), credit function (providing short-term credit for foreign trade) and hedging function (offering facilities to cover exchange rate risk). The market also supports arbitrage and speculation."
+          },
+          "tags": [
+            "forex-market",
+            "functions"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain the transfer function of the forex market.",
+            "answer_md": "It converts one currency into another and so moves purchasing power between countries. This is done through credit instruments such as telegraphic transfers, bank drafts and foreign bills, and international debts are cleared in both directions at once, much like domestic clearing."
+          },
+          "tags": [
+            "forex-market",
+            "functions",
+            "transfer"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain the credit function of the forex market with an example.",
+            "answer_md": "The market supplies short-term finance to promote foreign trade. For example, an Indian importer of machinery can pay by a foreign bill of exchange of about three months, so the importer gets the credit period until the bill matures."
+          },
+          "tags": [
+            "forex-market",
+            "functions",
+            "credit"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain the hedging function of the forex market.",
+            "answer_md": "Exchange rates move, so firms with net foreign claims or liabilities can gain or lose. The market offers forward and other contracts that lock in a rate on expected receipts or payments and so remove the uncertainty."
+          },
+          "tags": [
+            "forex-market",
+            "functions",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What are the unique features of the forex market compared with other markets?",
+            "answer_md": "Huge volume and liquidity; geographic dispersion; continuous trading from Sunday evening to Friday night GMT; many factors influencing rates; thin profit margins relative to fixed-income markets; and heavy use of leverage."
+          },
+          "tags": [
+            "forex-market",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mkt-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the carry trade?",
+            "answer_md": "A speculative position that borrows in a currency with a low interest rate and invests in one with a higher rate, aiming to earn the interest rate gap. The forex market allows it along with other direct currency speculation."
+          },
+          "tags": [
+            "forex-market",
+            "carry-trade"
+          ],
+          "reference_keys": [
+            "sfm:mkt"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who are the major participants in the foreign exchange market?",
+            "answer_md": "Central banks, commercial banks (the market makers), foreign exchange brokers, and general buyers and sellers such as multinational companies, individuals and small businesses. The wider list also has hedge funds, investment managers, retail traders, non-bank forex firms and money transfer firms."
+          },
+          "tags": [
+            "forex-market",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the role of the central bank in the forex market?",
+            "answer_md": "It is the apex authority that regulates currency trading and steps in to stop violent swings, selling its currency when it looks overvalued and buying it when undervalued. How much it intervenes depends on the exchange rate regime it follows."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "central-bank"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the effectiveness of central bank stabilising intervention doubted?",
+            "answer_md": "A central bank is not forced out of business by large trading losses, as an ordinary trader would be, and there is no convincing evidence that it earns profits from currency trading, so its capacity to hold a rate against the market is questioned."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "central-bank"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Describe the two levels at which commercial banks operate in the forex market.",
+            "answer_md": "At the retail level they deal with customers such as corporates and exporters. At the wholesale level they trade with other banks, directly or through brokers, in the interbank market. They are the market makers and give two-way quotes."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "commercial-banks"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do foreign exchange brokers differ from banks?",
+            "answer_md": "Brokers only act as matchmakers: they do not take positions or put their own money at risk and earn a commission. Banks quote prices, trade as principals and hold positions."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "brokers"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do multinational companies use the forward market?",
+            "answer_md": "They contract to pay or receive fixed foreign currency amounts on future dates, so they face exchange risk. They usually hedge these cash flows through the interbank forward market."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "mncs"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why are individuals and small businesses still important forex participants despite small deals?",
+            "answer_md": "Their needs (for instance tourists exchanging currency, or small importers) are small individually but are real purchases and sales of currency; some of them also hedge. They approach banks, not the interbank market."
+          },
+          "tags": [
+            "forex-market",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What role do hedge funds play as forex participants?",
+            "answer_md": "They are speculators. Since 70% to 90% of forex trades are speculative, with no plan to take delivery, large hedge funds with borrowed money can overwhelm central bank attempts to support a currency when fundamentals favour them."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "speculators"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do commercial companies matter to exchange rates even though their deals are small?",
+            "answer_md": "Their trade flows have little short-term impact but are important in the long-term direction of a currency. Occasionally a large, little-known exposure being covered can move rates unexpectedly."
+          },
+          "tags": [
+            "forex-market",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Distinguish a retail forex broker from a dealer or market maker.",
+            "answer_md": "A broker acts as agent for the customer, finds the best market price and charges a commission or mark-up. A dealer or market maker acts as principal against the customer and quotes the price at which it will deal."
+          },
+          "tags": [
+            "forex-market",
+            "participants",
+            "retail"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do investment management firms and currency overlay managers use the forex market?",
+            "answer_md": "Fund managers buy and sell currency pairs to pay for foreign securities. Currency overlay specialists manage clients' currency exposure aiming both to limit risk and to earn profit, and can place large trades."
+          },
+          "tags": [
+            "forex-market",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-part-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Distinguish non-bank forex companies, money transfer firms and bureaux de change.",
+            "answer_md": "Non-bank forex firms offer currency exchange and larger international payments, often at better rates than banks, with no speculative trading. Money transfer firms handle high-volume, low-value remittances by migrants. Bureaux de change exchange notes for travellers at airports and tourist spots."
+          },
+          "tags": [
+            "forex-market",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:part"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Exchange rate",
+            "definition_md": "The price of one currency expressed in another currency. In a currency pair, the first (base or reference) currency is the unit and the second (quote or term) currency is the number of units paid for one unit of the base."
+          },
+          "tags": [
+            "exchange-rate",
+            "terminology"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Spot rate and forward rate",
+            "definition_md": "The spot rate applies to a deal settled now, which by convention means the second working day. The forward rate is agreed today for exchange of currencies on a stated future date, and both sides must perform at that rate whatever the market rate then is."
+          },
+          "tags": [
+            "exchange-rate",
+            "spot",
+            "forward"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Define direct quote and indirect quote from an Indian viewpoint, with one example each.",
+            "answer_md": "Direct quote: units of home currency per one unit of foreign currency (USD 1 = Rs 83). Indirect quote: units of foreign currency per one unit of home currency (Rs 1 = USD 0.012). One is the reciprocal of the other."
+          },
+          "tags": [
+            "exchange-rate",
+            "direct-quote",
+            "indirect-quote"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a two-way quote?",
+            "answer_md": "A dealer's quote in two prices: the bid (buy) rate at which the dealer buys the currency and the offer or ask (sell) rate at which it sells. For example, Rs 83.00 / 83.20 per USD."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "From the customer's side, which rate applies when she sells foreign currency and which when she buys it?",
+            "answer_md": "The bid rate (the dealer's buying rate) applies when the customer sells foreign currency to the bank; the ask or offer rate (the dealer's selling rate) applies when she buys it. The ask is always higher than the bid."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish American quote from European quote.",
+            "answer_md": "American quote: the price of any currency expressed in US dollars per unit of that currency. European quote: the price of the US dollar expressed in units of other currencies, i.e. an indirect quote of the foreign currency stated per unit of the US dollar."
+          },
+          "tags": [
+            "exchange-rate",
+            "american-quote",
+            "european-quote"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Define the spread in a two-way quote and say what makes it wide or narrow.",
+            "answer_md": "Spread = ask rate minus bid rate, the dealer's margin. It is narrow when the rate is stable and trading volume is high; it is wide for a volatile or thinly traded currency."
+          },
+          "tags": [
+            "exchange-rate",
+            "spread"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Spread and percentage spread",
+            "expression_md": "$\\text{Spread} = \\text{Ask} - \\text{Bid} \\qquad \\%\\text{Spread} = \\dfrac{\\text{Ask} - \\text{Bid}}{\\text{Bid}} \\times 100$",
+            "variables_md": "Bid = dealer's buying rate; Ask = dealer's selling rate.",
+            "when_md": "The percentage is usually taken on the bid, as in the MCQ practice of the study text. Example: Rs 82.00 / 82.40 gives a spread of Rs 0.40, or about 0.49% of the bid."
+          },
+          "tags": [
+            "exchange-rate",
+            "spread",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under an indirect quote, how do you get the bid and the ask of the opposite quote from a given two-way quote?",
+            "answer_md": "Invert and swap: the new bid is 1 divided by the old ask, and the new ask is 1 divided by the old bid. Example: Rs 83.00 / 83.20 per USD gives USD 0.012019 / 0.012048 per rupee."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask",
+            "indirect-quote",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-010",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Reciprocal of a two-way quote",
+            "expression_md": "$\\text{Bid}(A/B) = \\dfrac{1}{\\text{Ask}(B/A)} \\qquad \\text{Ask}(A/B) = \\dfrac{1}{\\text{Bid}(B/A)}$",
+            "variables_md": "A/B = units of A per unit of B; B/A = units of B per unit of A.",
+            "when_md": "Use it when the quote you hold is in the opposite direction to the one you need. Bid and ask swap places because the dealer who buys one currency sells the other."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does a limit order mean in the bid-ask board of the forex market?",
+            "answer_md": "A buyer's limit order sets the highest price he will pay and, if above the current bid, becomes the new best bid; a seller's limit order sets the lowest price he will accept and, if below the current ask, becomes the new best ask. Orders match when the bid meets the ask."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who determines the exchange rate and which factors influence it? List the determinants.",
+            "answer_md": "Demand and supply in the forex market. Key determinants: interest rate differentials, inflation rate differentials, government policies (including RBI action), market expectations, investment opportunities and speculation."
+          },
+          "tags": [
+            "exchange-rate",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do interest rate differentials affect the exchange rate?",
+            "answer_md": "A higher interest rate on investments in a currency raises demand for that currency, which pushes its value up against the others."
+          },
+          "tags": [
+            "exchange-rate",
+            "determinants",
+            "interest-rate"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a higher inflation rate in a country affect its exchange rate?",
+            "answer_md": "The purchasing power of its currency falls faster than that of lower-inflation currencies, so the currency tends to depreciate; this is the idea behind purchasing power parity."
+          },
+          "tags": [
+            "exchange-rate",
+            "determinants",
+            "inflation"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How can government policy move the exchange rate?",
+            "answer_md": "The government may restrict currency transactions, and through the RBI it can buy or sell large amounts of foreign currency to adjust the prevailing rate."
+          },
+          "tags": [
+            "exchange-rate",
+            "determinants",
+            "government"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do market expectations and investment opportunities influence the exchange rate?",
+            "answer_md": "Expected changes in government, tax policy, foreign trade or inflation alter demand for currencies. More investment opportunities in a country bring foreign funds in; the study text states that such a large inflow adds to the supply of the foreign currency and brings its rate down."
+          },
+          "tags": [
+            "exchange-rate",
+            "determinants",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do speculators and treasury managers influence exchange rates?",
+            "answer_md": "They buy and sell currencies expecting gains from market inefficiencies; the size of their operations can move rates."
+          },
+          "tags": [
+            "exchange-rate",
+            "determinants",
+            "speculation"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the equilibrium exchange rate under the elasticity (trade) approach?",
+            "answer_md": "The rate that balances the value of a nation's imports and exports. If imports exceed exports, importers sell home currency for foreign currency, the home currency depreciates, exports become cheaper and imports dearer, until trade balances. It needs a market-determined rate, and the speed depends on how elastic imports and exports are."
+          },
+          "tags": [
+            "exchange-rate",
+            "equilibrium",
+            "elasticity"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-term-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "On what time horizon does the elasticities approach explain exchange rate determination, and what does it stress?",
+            "answer_md": "It stresses trade and the flow of goods and services, and explains determination of the exchange rate in the long run. Near full employment a larger depreciation is needed to shift resources to exports."
+          },
+          "tags": [
+            "exchange-rate",
+            "equilibrium",
+            "elasticity"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When is a currency said to be at a premium or a discount in the forward market?",
+            "answer_md": "A currency is at a premium when it is appreciating against another and is dearer in the forward market, and at a discount when it is depreciating. Appreciation means one has to pay more of the other currency to buy it."
+          },
+          "tags": [
+            "exchange-rate",
+            "premium",
+            "discount"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you tell from forward and spot rates whether the foreign currency is at premium or discount?",
+            "answer_md": "Direct quote: premium if forward rate is above spot, discount if below. Indirect quote: premium if forward is below spot, discount if forward is above spot (the pattern reverses because the quote is inverted)."
+          },
+          "tags": [
+            "exchange-rate",
+            "premium",
+            "discount"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If forward rates are given as swap points, how do you decide between premium and discount?",
+            "answer_md": "Direct quote: rising swap points (low to high) mean premium, falling points mean discount. Indirect quote: falling swap points mean premium and rising points mean discount."
+          },
+          "tags": [
+            "exchange-rate",
+            "swap-points",
+            "premium",
+            "discount"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are outright forward rates computed from swap points in a two-way quote?",
+            "answer_md": "If the points ascend (bid points lower than ask points), add them to the spot bid and ask. If they descend, subtract. Example: spot Rs 82.00/82.40 with points 0.30-0.45 gives forward 82.30/82.85."
+          },
+          "tags": [
+            "exchange-rate",
+            "swap-points",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot USD is Rs 82.00 / 82.40 and swap points are 0.45 - 0.30. Find the outright forward bid and ask.",
+            "answer_md": "Points are descending, so subtract: bid = 82.00 - 0.45 = Rs 81.55; ask = 82.40 - 0.30 = Rs 82.10. The dollar is at a forward discount and the forward spread (0.55) is wider than the spot spread (0.40)."
+          },
+          "tags": [
+            "exchange-rate",
+            "swap-points",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Swap points",
+            "definition_md": "The movement in the exchange rate between spot and forward expressed in absolute value terms (in paise or cents) rather than as a percentage. They are added to or subtracted from the spot rate to get the outright forward rate."
+          },
+          "tags": [
+            "exchange-rate",
+            "swap-points"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A spot rate is Rs 80 per USD. Find the one-year forward rate if (a) USD appreciates 5%, (b) USD depreciates 5%, (c) rupee appreciates 5%, (d) rupee depreciates 5%.",
+            "answer_md": "Foreign currency moves: multiply spot by (1 + or - rate): (a) 84.00, (b) 76.00. Home currency moves: divide by (1 + or - rate): (c) 80/1.05 = 76.19, (d) 80/0.95 = 84.21. Home currency change is not the mirror of foreign currency change."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give the rule for computing a forward rate (direct quote) from an appreciation or depreciation percentage of either currency.",
+            "answer_md": "Foreign currency appreciating: spot x (1 + p). Foreign currency depreciating: spot x (1 - p). Home currency appreciating: spot / (1 + p). Home currency depreciating: spot / (1 - p). Note that a home currency depreciation of p is not a foreign currency appreciation of p."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Annualised forward premium or discount (direct quote)",
+            "expression_md": "$\\dfrac{F - S}{S} \\times 100 \\times \\dfrac{12}{n}$",
+            "variables_md": "$F$ = forward rate; $S$ = spot rate (both direct quotes); $n$ = forward period in months (or use 365 divided by days).",
+            "when_md": "Positive result means the foreign currency is at a premium (appreciating); negative means a discount. For a two-way quote, use the bid for the bid result and the ask for the ask result."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-010",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Annualised forward premium or discount (indirect quote)",
+            "expression_md": "$\\dfrac{S - F}{F} \\times 100 \\times \\dfrac{12}{n}$",
+            "variables_md": "$S$ = spot; $F$ = forward (units of foreign currency per unit of home currency); $n$ = months.",
+            "when_md": "Positive result means appreciation of the quoted foreign currency, negative means depreciation. Denominator is the forward rate, unlike the direct quote."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot is Rs 82 per USD and the 6-month forward is Rs 83.23. Find the annualised forward premium.",
+            "answer_md": "Premium = (83.23 - 82) / 82 x 100 x 12/6 = 1.5% x 2 = 3.00% per annum. The dollar is at a premium because the forward rate is above spot under a direct quote."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Indirect quote: spot is USD 0.0120 per rupee and 3-month forward USD 0.0118. Compute the annualised change.",
+            "answer_md": "(Spot - Forward) / Forward x 100 x 12/3 = (0.0002 / 0.0118) x 100 x 4 = 6.78%. Positive, so the quoted currency is appreciating at that annual rate."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A customer must sell USD to get Rs 4 crore after 3 months. Spot is Rs 82.00 / 82.40 and the 3-month forward is Rs 83.40 / 83.80. How many USD must she sell?",
+            "answer_md": "The bank buys USD from her at the forward bid, 83.40. USD needed = 4,00,00,000 / 83.40 = about USD 479,616. Use the bid because the customer is selling dollars."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "bid-ask",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Spot bid is Rs 82.00 and the 3-month forward bid Rs 82.82. By what percentage has the rupee changed against the dollar (bid basis)?",
+            "answer_md": "The dollar costs more rupees, so the rupee has depreciated. Rupee change = (82.00 - 82.82) / 82.82 = about -0.99% (equivalently the dollar has appreciated 1.00%). Use the bid for both when the question says bid."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pd-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Interbank USD rate is Rs 83.00 / 83.10 and a bank wants a 0.10% margin. What rate does it quote to an exporter buying a bill and to an importer?",
+            "answer_md": "Exporter (bank buys USD): 83.00 x (1 - 0.001) = Rs 82.917. Importer (bank sells USD): 83.10 x (1 + 0.001) = Rs 83.183. The margin always works in the bank's favour: lower than bid when buying, higher than ask when selling."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Cross rate",
+            "definition_md": "An exchange rate between two currencies that is derived from the rates of each against a common third currency, usually the US dollar, because the two are not quoted directly against each other. From an Indian view, USD per GBP or EUR per GBP are cross rates."
+          },
+          "tags": [
+            "cross-rates",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is a cross rate useful?",
+            "answer_md": "When a currency is not traded locally or has no direct quote in rupees, but is quoted against another currency that is. Its rupee value can then be found through the common currency."
+          },
+          "tags": [
+            "cross-rates",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Cross rate when the common currency is on opposite sides (multiply)",
+            "expression_md": "$A/B = A/C \\times C/B$",
+            "variables_md": "A/C = units of A per unit of C; C/B = units of C per unit of B.",
+            "when_md": "Two-way quotes: cross bid = bid(A/C) x bid(C/B); cross ask = ask(A/C) x ask(C/B). For example Rs 83.00/83.20 per USD and USD 1.0800/1.0820 per EUR give Rs 89.64 / 90.02 per EUR."
+          },
+          "tags": [
+            "cross-rates",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Cross rate when both currencies are quoted against the same base (divide)",
+            "expression_md": "$\\dfrac{A}{B} = \\dfrac{A/C}{B/C}$",
+            "variables_md": "A/C and B/C = units of A and of B per unit of C.",
+            "when_md": "For two-way quotes the bid of A/B is bid(A/C) divided by ask(B/C), and the ask is ask(A/C) divided by bid(B/C): divide the dealer's buying side by the selling side to get the lowest, and the reverse for the highest."
+          },
+          "tags": [
+            "cross-rates",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rs 83 per USD and 3.60 units of currency Z per USD. Find the rupee value of one unit of Z.",
+            "answer_md": "Both are quoted against the dollar, so divide: Rs/Z = (Rs/USD) / (Z/USD) = 83 / 3.60 = Rs 23.06 per Z."
+          },
+          "tags": [
+            "cross-rates",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "EUR/USD is 0.9200 / 0.9210 and GBP/USD is 0.7900 / 0.7910 (units per USD). Find the two-way EUR per GBP cross rate.",
+            "answer_md": "Bid = 0.9200 / 0.7910 = 1.1631; ask = 0.9210 / 0.7900 = 1.1658. For the bid, divide the lowest EUR number by the highest GBP number; for the ask, the highest EUR by the lowest GBP."
+          },
+          "tags": [
+            "cross-rates",
+            "bid-ask",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the study text, the cross rate working Rs/Peso = Rs/Euro x Euro/Peso uses a rounded reciprocal. What is the lesson for exam answers?",
+            "answer_md": "Keep reciprocals unrounded until the end: with Rs 57.50 per euro and 17.50 pesos per euro the exact answer is 57.50 / 17.50 = Rs 3.2857, whereas using 0.0571 gives 3.2833."
+          },
+          "tags": [
+            "cross-rates",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cross-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the exam mean by checking whether quotes are 'internally consistent' for cross rates?",
+            "answer_md": "The cross rate implied by two quotes against a common currency must equal the cross rate quoted directly in the market. If it does not, a triangular arbitrage profit exists."
+          },
+          "tags": [
+            "cross-rates",
+            "arbitrage"
+          ],
+          "reference_keys": [
+            "sfm:cross"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Currency arbitrage",
+            "definition_md": "Simultaneously buying and selling currencies in different markets to profit from inconsistent quotes, not from movements in exchange rates. The arbitrageur aims to hold a closed position at all times and so takes no risk; the activity pushes prices in different markets into line."
+          },
+          "tags": [
+            "arbitrage",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the two kinds of arbitrage relevant to forex markets.",
+            "answer_md": "Exchange rate arbitrage (using differences in the price of a currency in different markets, either two-point or three-point) and interest rate arbitrage (covered interest arbitrage, using differences between interest rates and forward premium)."
+          },
+          "tags": [
+            "arbitrage",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Differentiate two-point arbitrage from three-point arbitrage.",
+            "answer_md": "Two-point (two-centre) arbitrage uses the same currency pair quoted differently in two geographically separate markets. Three-point or triangular arbitrage uses three currencies and arises when the quoted cross rate is inconsistent with the rates against a third currency."
+          },
+          "tags": [
+            "arbitrage",
+            "two-point",
+            "three-point"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do arbitrage profits disappear in competitive markets?",
+            "answer_md": "Buying where the price is low lifts it there and selling where it is high pushes the price down, so quotes converge. Rates stay apart only by transaction costs, and with high-speed trading gaps are closed quickly."
+          },
+          "tags": [
+            "arbitrage",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outline the method to test for two-point arbitrage with two-way quotes.",
+            "answer_md": "Buy the currency in the market with the lower ask and sell it in the market with the higher bid. If the highest bid in one centre exceeds the lowest ask in the other, an arbitrage gain exists; profit = (higher bid - lower ask) x amount. Use the correct side of each quote because bid-ask spreads can wipe out the gain."
+          },
+          "tags": [
+            "arbitrage",
+            "two-point",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "EUR/USD is quoted USD 1.0800 / 1.0810 in Frankfurt and USD 1.0900 / 1.0910 in New York. Is there arbitrage on EUR 1 million, and how much?",
+            "answer_md": "Yes. Buy EUR in Frankfurt at the ask 1.0810 (pay USD 1,081,000), sell in New York at the bid 1.0900 (receive USD 1,090,000). Profit = USD 9,000, before costs. Frankfurt EUR rises and New York EUR falls until the gap closes."
+          },
+          "tags": [
+            "arbitrage",
+            "two-point",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In the two-point example, what would be wrong in using a single mid-rate instead of bid and ask?",
+            "answer_md": "A single rate ignores the dealer's spread. The arbitrageur buys at the ask and sells at the bid, so the real profit is smaller than the headline gap and can vanish if the spread is wider than the price difference."
+          },
+          "tags": [
+            "arbitrage",
+            "two-point",
+            "bid-ask"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you detect triangular arbitrage?",
+            "answer_md": "Compute the implied cross rate from the two rates against the common currency, using the correct bid and ask sides, and compare with the cross rate quoted in the market. If the market's bid is above the implied ask, sell that currency in the market and buy it through the third currency; if the market's ask is below the implied bid, do the reverse."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "triangular"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give the steps for a triangular arbitrage when the market overprices a currency.",
+            "answer_md": "Start with home currency and go round the triangle: (1) buy the dollar with home currency at the dealer's ask; (2) use dollars to buy the third currency at the ask; (3) sell the third currency for home currency at the market bid. If the end amount exceeds the start, the difference is the riskless profit."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "triangular",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Markets: Rs/USD 83.00 / 83.10, USD per EUR 1.0800 / 1.0810, Rs/EUR 90.00 / 90.10. Is there triangular arbitrage? Show it on Rs 1 crore.",
+            "answer_md": "Implied Rs/EUR bid = 83.00 x 1.0800 = 89.64; implied ask = 83.10 x 1.0810 = 89.83. Market bid 90.00 is above implied ask 89.83, so yes. Rs 1 crore buys USD 120,337 (at 83.10), then EUR 111,320 (at 1.0810), then sells for Rs 1,00,18,802 (at 90.00). Gain about Rs 18,800."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "triangular",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In triangular arbitrage, how do you decide the direction (which way round the triangle)?",
+            "answer_md": "Compare the direct quote with the implied cross. Where the direct quote of a currency is too high, sell that currency directly and buy it via the third currency. Where it is too low, buy it directly and sell via the third currency."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "triangular"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can the implied cross rate be below the actual market rate and yet no arbitrage exist?",
+            "answer_md": "Because of the bid-ask spread: the implied bid and ask form a range. If the market's two-way cross quote lies inside or overlaps that range, buying at the ask and selling at the bid leaves no gain."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "bid-ask"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the study text's triangular arbitrage example the implied yen cross is given as 176.720-831 although 1.5715 x 106.090 is about 166.72. What should you do in your own working?",
+            "answer_md": "Always recompute the implied cross rate yourself from the two rates (multiply the matching bid and ask sides) before deciding the direction. The book's printed implied figure looks like a typographical slip, although its conclusion that sterling is overpriced against the yen holds."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Cross-check: if Rs 1 million was converted to USD at 83.10, why must you divide, not multiply, by the rate?",
+            "answer_md": "A direct quote is rupees per dollar. To turn rupees into dollars you divide by the rate; to turn dollars into rupees you multiply. Mixing these up is the commonest error in arbitrage working."
+          },
+          "tags": [
+            "arbitrage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-arb-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Compare the example of converting GBP 1,000 to USD directly or through yen: what does it show?",
+            "answer_md": "If the direct rate and the rates through a third currency differ, the indirect route can give more. Here GBP 1 = USD 1.60 yields USD 1,600 directly, but GBP 1 = JPY 175 and USD 1 = JPY 105 yields USD 1,666.67, showing the quotes are inconsistent."
+          },
+          "tags": [
+            "arbitrage",
+            "three-point",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:arb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-spotfwd-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does 'spot' mean in practice for settlement, and what if it falls near a weekend?",
+            "answer_md": "A spot deal settles on the second working day after the deal date. A Friday deal settles on the following Tuesday as Saturday and Sunday are holidays. The two-day gap allows funds to move through banking channels across time zones."
+          },
+          "tags": [
+            "spot",
+            "settlement"
+          ],
+          "reference_keys": [
+            "sfm:spotfwd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-spotfwd-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Once a forward contract is made, what are the obligations of the parties?",
+            "answer_md": "Both the customer and the bank must perform on the agreed date at the agreed rate, no matter what the spot rate is on that day. The bank has a forward bid (it buys forward) and a forward ask (it sells forward)."
+          },
+          "tags": [
+            "forward",
+            "settlement"
+          ],
+          "reference_keys": [
+            "sfm:spotfwd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cd-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Foreign currency derivative",
+            "definition_md": "A contract whose value comes from a foreign currency or exchange rate as the underlying. It is used to buy or sell currency at a future date or to exchange streams of payments. The main types are currency forwards, futures, options and swaps; exotics are more complex versions."
+          },
+          "tags": [
+            "currency-derivatives",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cd-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the common foreign currency derivatives and their main use.",
+            "answer_md": "Currency forwards, currency futures, currency options and currency swaps (plus exotics). They are chiefly risk-management tools for hedging exchange risk but are also widely used to speculate."
+          },
+          "tags": [
+            "currency-derivatives",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cf-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Currency forward",
+            "definition_md": "A customised written contract between two parties to buy or sell a stated amount of foreign currency at a fixed rate on a specified future date, usually the date a trade payment or receipt is due. Traded over the counter, not on an exchange."
+          },
+          "tags": [
+            "currency-forward",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cf-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Describe the features of a currency forward contract.",
+            "answer_md": "Private OTC agreement; terms (amount, rate, date) tailored to the parties; creates an obligation for both; rate is set in relation to interest rates of the two currencies; used by importers and exporters to hedge payables and receivables; high counterparty or default risk; not exchange traded."
+          },
+          "tags": [
+            "currency-forward",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:cf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cf-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does an importer gain by entering a currency forward, with an example?",
+            "answer_md": "A fixed rupee cost. If A must pay EUR 1,000 soon and contracts at Rs 86 per EUR, A pays exactly Rs 86 per EUR whatever the spot rate on delivery, instead of buying early and leaving funds idle."
+          },
+          "tags": [
+            "currency-forward",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:cf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cf-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "On what is the forward rate in a currency forward usually based?",
+            "answer_md": "On the prevailing interest rates in the two countries whose currencies are involved, i.e. interest rate parity."
+          },
+          "tags": [
+            "currency-forward",
+            "interest-rate-parity"
+          ],
+          "reference_keys": [
+            "sfm:cf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Currency futures",
+            "definition_md": "A standardised, exchange-traded commitment under which a fixed quantity of a foreign currency is bought or sold on a later date at a rate stated now. Conceptually like a currency forward, but with fixed currencies, delivery dates and contract size, margins, daily settlement and negligible counterparty risk."
+          },
+          "tags": [
+            "currency-futures",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who can trade currency futures and who are hedgers and speculators there?",
+            "answer_md": "Only exchange members (brokers) transact; others use them for a commission. Businesses covering exposures are hedgers; those taking positions to profit from rate moves are speculators."
+          },
+          "tags": [
+            "currency-futures",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the features that distinguish currency futures from currency forwards.",
+            "answer_md": "Exchange traded; selective currencies; standardised size, maturity and minimum price change (tick); clearing house as counterparty; daily marking to market; initial and maintenance margins; mostly cash settlement."
+          },
+          "tags": [
+            "currency-futures",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain the standardisation of currency futures.",
+            "answer_md": "Standard contract size (one can trade only in multiples of the lot), standard maturity dates (for instance fixed months and days), and a standard minimum price variation called the tick. Terms cannot be negotiated."
+          },
+          "tags": [
+            "currency-futures",
+            "standardisation"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Currency futures are available on only a few currencies. Why does that matter and what does the text say about India?",
+            "answer_md": "Futures exist only for widely traded currencies. In India the study text says they trade at BSE and NSE on USD, EUR, GBP and JPY pairs. These listings and lot sizes change, so check the exchange before quoting any lot."
+          },
+          "tags": [
+            "currency-futures",
+            "india",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a tick in currency futures and how is its value found?",
+            "answer_md": "The tick is the minimum price movement. Tick value = contract size x tick size. Price changes are always whole multiples of the tick."
+          },
+          "tags": [
+            "currency-futures",
+            "tick",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-007",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Number of ticks and value of price change",
+            "expression_md": "$\\text{Ticks} = \\dfrac{\\Delta P}{\\text{tick size}} \\qquad \\text{Gain or loss} = \\text{ticks} \\times \\text{tick value}$",
+            "variables_md": "$\\Delta P$ = change in futures price; tick value = contract size x tick size.",
+            "when_md": "Equivalent shortcut: contract size x price change. Check that both methods agree."
+          },
+          "tags": [
+            "currency-futures",
+            "tick",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A currency future has size 50,000 units and tick 0.0001. The price moves from 1.2500 to 1.2431. Find the ticks and the change in value.",
+            "answer_md": "Change = 0.0069, so ticks = 0.0069 / 0.0001 = 69. Tick value = 50,000 x 0.0001 = 5. Value change = 69 x 5 = 345, the same as 50,000 x 0.0069 = 345. A long position loses this amount on a fall."
+          },
+          "tags": [
+            "currency-futures",
+            "tick",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the role of the clearing house in currency futures?",
+            "answer_md": "It is counterparty to every trade (buyer buys from it, seller sells to it), keeps accounts, collects margins and settles deliveries. This cuts counterparty risk and lets an active secondary market develop. Its own risk is limited by daily marking to market and margins."
+          },
+          "tags": [
+            "currency-futures",
+            "clearing-house"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain marking to market in currency futures.",
+            "answer_md": "At the end of each trading day all open positions are repriced at the day's settlement price; losers' margin accounts are debited and gainers' are credited, and the old contract is replaced by a new one at the settlement price. This reduces default risk compared with forwards."
+          },
+          "tags": [
+            "currency-futures",
+            "marking-to-market"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A trader is long 100,000 units at 0.7500. The day's settlement price is 0.7540, and the next day it is 0.7510. Show the daily settlements.",
+            "answer_md": "Day 1 gain = (0.7540 - 0.7500) x 100,000 = 400 credited; the contract resets at 0.7540. Day 2 loss = (0.7540 - 0.7510) x 100,000 = 300 debited. Net after two days = 100, equal to (0.7510 - 0.7500) x 100,000."
+          },
+          "tags": [
+            "currency-futures",
+            "marking-to-market",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish initial margin from maintenance margin in currency futures.",
+            "answer_md": "Initial margin is the deposit a trader places when opening the position. Maintenance margin is the lower minimum balance that must be kept. If losses drag the balance below the maintenance level, a margin call requires the trader to top up to the initial margin level."
+          },
+          "tags": [
+            "currency-futures",
+            "margin"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Initial margin 2,000, maintenance margin 1,500. After daily losses the balance is 1,400. How much must the trader deposit?",
+            "answer_md": "The balance is below maintenance, so the trader must restore the initial level: 2,000 - 1,400 = 600. Note that it is the full shortfall to the initial margin, not just to the maintenance margin."
+          },
+          "tags": [
+            "currency-futures",
+            "margin",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare currency forward and currency futures contracts.",
+            "answer_md": "Size and maturity: negotiated vs standardised. Currencies: most vs selected. Trading place: OTC vs exchange. Rates: bid-ask by bank vs unified exchange rate. Settlement: usually delivery vs mainly cash. Counterparty: known vs clearing house. Hours: round the clock vs market sessions. Margin: none vs initial and maintenance. Marking to market: none vs daily."
+          },
+          "tags": [
+            "currency-futures",
+            "currency-forward",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-cu-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why are currency futures liquid and low in counterparty risk but forwards are better for tailored hedges?",
+            "answer_md": "Futures are standardised and exchange-guaranteed, so they trade easily and the clearing house takes the default risk. Forwards can match the exact amount and date of the exposure, but each depends on the other party paying."
+          },
+          "tags": [
+            "currency-futures",
+            "currency-forward",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:cu"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Currency option",
+            "definition_md": "A contract under which the holder pays the writer a premium and gets a choice, with no duty, to buy or sell a currency at a rate fixed in advance, on or before the maturity date. Traded OTC and on exchanges."
+          },
+          "tags": [
+            "currency-options",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Distinguish call option from put option in currency options.",
+            "answer_md": "A call gives the holder the right to buy the currency at the strike rate; a put gives the right to sell it at the strike rate. The writer is obliged to deliver or take delivery if the holder exercises."
+          },
+          "tags": [
+            "currency-options",
+            "call",
+            "put"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish European option from American option.",
+            "answer_md": "A European option can be exercised only on the maturity date. An American option can be exercised at any time up to maturity. (The study text's definition of American option mistakenly calls it European.)"
+          },
+          "tags": [
+            "currency-options",
+            "european",
+            "american",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who are the two parties to an option and what does each pay or receive?",
+            "answer_md": "The buyer or holder pays the premium up front and has the right. The seller or writer receives the premium and carries the obligation to perform if the holder exercises. Premium is the price of the option."
+          },
+          "tags": [
+            "currency-options",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Strike price and spot price in options",
+            "definition_md": "The strike (exercise) price, usually written X, is the exchange rate at which the holder may buy under a call or sell under a put, regardless of the market. The spot price at expiry, written S, is the rate in the spot market then."
+          },
+          "tags": [
+            "currency-options",
+            "terminology"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When is a currency option in-the-money, at-the-money or out-of-the-money?",
+            "answer_md": "Call: in-the-money if S exceeds X, at-the-money if S equals X, out-of-the-money if S is below X. Put: in-the-money if S is below X, at-the-money if S equals X, out-of-the-money if S exceeds X. An out-of-the-money option is not exercised and the premium is lost."
+          },
+          "tags": [
+            "currency-options",
+            "moneyness"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Net profit or loss at expiry per unit of currency",
+            "expression_md": "$\\text{Call} = \\max(S_T - X,\\,0) - C \\qquad \\text{Put} = \\max(X - S_T,\\,0) - P$",
+            "variables_md": "$S_T$ = spot rate at expiry; $X$ = strike; $C$, $P$ = call and put premium per unit.",
+            "when_md": "Buyer's maximum loss is the premium. Multiply by the contract size for total profit or loss. For the writer, reverse the sign."
+          },
+          "tags": [
+            "currency-options",
+            "payoff",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Break-even rate of an option",
+            "expression_md": "$\\text{Call: } S_T = X + C \\qquad \\text{Put: } S_T = X - P$",
+            "variables_md": "$X$ = strike; $C$, $P$ = premium per unit.",
+            "when_md": "At break-even the in-the-money gain exactly recovers the premium. Between strike and break-even the holder exercises and recovers part of the premium."
+          },
+          "tags": [
+            "currency-options",
+            "break-even",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A call option has strike Rs 83 and premium Rs 1.50 per USD, contract USD 10,000. Find the profit or loss at expiry spot of 85.00, 83.50 and 82.00, and the break-even.",
+            "answer_md": "At 85.00: (85 - 83 - 1.50) x 10,000 = Rs 5,000 profit. At 83.50: (0.50 - 1.50) x 10,000 = Rs 10,000 loss (exercised, part of the premium recovered). At 82.00: out-of-the-money, loss = premium = Rs 15,000. Break-even = 83 + 1.50 = Rs 84.50."
+          },
+          "tags": [
+            "currency-options",
+            "call",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A put option has strike Rs 83 and premium Rs 1.20 per USD, contract USD 10,000. Find the result if spot at expiry is 80, and the break-even.",
+            "answer_md": "Put is in-the-money: (83 - 80 - 1.20) x 10,000 = Rs 18,000 profit. Break-even = 83 - 1.20 = Rs 81.80. Above 83 the put is abandoned and the loss is the premium, Rs 12,000."
+          },
+          "tags": [
+            "currency-options",
+            "put",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the loss of an option buyer capped but the writer's potential loss is not?",
+            "answer_md": "The buyer can only lose the premium since he can walk away. The writer has received just the premium but must perform if the holder exercises, so for a call his loss grows as the spot rate rises."
+          },
+          "tags": [
+            "currency-options",
+            "payoff"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-012",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Intrinsic value and time value of an option",
+            "definition_md": "Intrinsic value is the gain from immediate exercise: for a call, S minus X when positive else zero; for a put, X minus S when positive else zero. Time value is the rest of the premium, which reflects the chance that the option gains more before expiry."
+          },
+          "tags": [
+            "currency-options",
+            "intrinsic-value",
+            "time-value"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A call with strike Rs 83 has premium Rs 3.10 while spot is Rs 85. Find its intrinsic and time value.",
+            "answer_md": "Intrinsic value = 85 - 83 = Rs 2.00. Time value = premium - intrinsic = 3.10 - 2.00 = Rs 1.10. An out-of-the-money option has zero intrinsic value, so all its premium is time value."
+          },
+          "tags": [
+            "currency-options",
+            "intrinsic-value",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State how each factor affects call and put premiums of a currency option: time to maturity, volatility, spot rate, exercise price.",
+            "answer_md": "Longer time and higher volatility raise both call and put premiums. Higher spot raises the call and lowers the put. A higher exercise price lowers the call and raises the put."
+          },
+          "tags": [
+            "currency-options",
+            "premium",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do forward premium and the two interest rates affect currency option premiums, according to the study text?",
+            "answer_md": "A larger forward premium on the foreign currency raises the call and lowers the put; a forward discount does the opposite. A higher domestic interest rate raises the call and lowers the put; a higher foreign interest rate lowers the call and raises the put."
+          },
+          "tags": [
+            "currency-options",
+            "premium",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "An importer is worried that the foreign currency may rise. Which hedges are suitable and which option is not?",
+            "answer_md": "Buying the currency forward, buying currency futures or buying a call option on the foreign currency fix the cost of the payment. Buying a put option does not hedge a payable; it gains when the foreign currency falls."
+          },
+          "tags": [
+            "currency-options",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-co-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When did standardised currency options first trade, and where?",
+            "answer_md": "Exchange-traded currency options began in 1982 on the Philadelphia Stock Exchange. Their contract sizes at that exchange differ by currency; sizes vary over time, so do not memorise them."
+          },
+          "tags": [
+            "currency-options",
+            "history",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:co"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pcp-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State put-call parity for European currency options.",
+            "answer_md": "C + PV(X) = P + S, where C and P are the call and put premiums, S is the spot price and PV(X) is the present value of the strike discounted at the risk-free rate over the life of the option. It holds only for European options with the same strike and expiry."
+          },
+          "tags": [
+            "put-call-parity",
+            "options"
+          ],
+          "reference_keys": [
+            "sfm:pcp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pcp-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Put-call parity",
+            "expression_md": "$C + X e^{-rT} = P + S_0$",
+            "variables_md": "$C$, $P$ = call and put premium; $X$ = strike; $r$ = risk-free rate (continuous); $T$ = time in years; $S_0$ = spot price.",
+            "when_md": "Rearrange to find the unknown premium: $P = C + Xe^{-rT} - S_0$ or $C = P + S_0 - Xe^{-rT}$. With simple interest use $X/(1+rT)$ for the present value if the question says so."
+          },
+          "tags": [
+            "put-call-parity",
+            "options",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pcp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pcp-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot Rs 82, strike Rs 84, call premium Rs 2.50, risk-free rate 6% continuous, 6 months. Find the put premium by put-call parity.",
+            "answer_md": "PV(X) = 84 x e^(-0.06 x 0.5) = 84 x 0.970446 = 81.5174. P = C + PV(X) - S = 2.50 + 81.5174 - 82 = Rs 2.0174, about Rs 2.02."
+          },
+          "tags": [
+            "put-call-parity",
+            "options",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pcp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-pcp-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does put-call parity not apply to American options?",
+            "answer_md": "Early exercise is possible, so the neat relationship between the payoffs at one date, which the parity is built on, no longer holds exactly."
+          },
+          "tags": [
+            "put-call-parity",
+            "options"
+          ],
+          "reference_keys": [
+            "sfm:pcp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Currency swap",
+            "definition_md": "An arrangement to exchange principal and interest payments in one currency for principal and interest payments in another currency. It replaces the cash flows of a debt in one currency with those of a more desired currency, and is also called a cross-currency swap."
+          },
+          "tags": [
+            "currency-swaps",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a currency swap differ from a plain interest rate swap in the treatment of principal?",
+            "answer_md": "In a currency swap the principal amounts, in the two currencies, are normally exchanged at the start at the spot rate, interest is exchanged during the life, and the principal is re-exchanged at maturity at the same rate. In a plain interest rate swap the notional principal is never exchanged."
+          },
+          "tags": [
+            "currency-swaps",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the two types of currency swap discussed in the study text.",
+            "answer_md": "Fixed-to-fixed currency swap (both parties borrow at fixed rates in different currencies) and fixed-to-floating currency swap (one currency at a fixed rate and the other at a floating rate)."
+          },
+          "tags": [
+            "currency-swaps",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outline the steps of a fixed-to-fixed currency swap.",
+            "answer_md": "(1) Each firm borrows in the currency in which it has the better relative rate. (2) They swap the proceeds at the spot rate at time 0. (3) During the life each pays the other's interest in the other's currency, so each services the debt it actually wants. (4) At maturity they re-exchange principal at the original rate and repay their own lenders."
+          },
+          "tags": [
+            "currency-swaps",
+            "fixed-to-fixed",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a fixed-to-floating currency swap differ in working from a fixed-to-fixed swap?",
+            "answer_md": "The steps are the same; the only difference is that one leg is fixed rate and the other floating (for example floating euro against fixed dollar), so one party passes on a floating interest cost."
+          },
+          "tags": [
+            "currency-swaps",
+            "fixed-to-floating"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Firm X: USD 6.0%, EUR 5.5%. Firm Y: USD 6.4%, EUR 5.2%. X wants EUR funding and Y wants USD funding. Show the swap and savings.",
+            "answer_md": "X borrows USD at 6.0% and Y borrows EUR at 5.2% (each in the currency where it has an edge), then they swap. X effectively pays 5.2% in EUR, saving 0.30% against 5.5%; Y pays 6.0% in USD, saving 0.40% against 6.4%. Total saving 0.70% (= 0.40 + 0.30)."
+          },
+          "tags": [
+            "currency-swaps",
+            "fixed-to-fixed",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In the swap above, a bank intermediary keeps 0.10% for arranging it. How can the remaining saving be shared?",
+            "answer_md": "Total saving 0.70% less 0.10% bank fee leaves 0.60%. Shared equally, each firm saves 0.30%: X then pays 5.5% - 0.30% = 5.20% in EUR terms and Y pays 6.4% - 0.30% = 6.10% in USD terms. The bank earns the 0.10% through the spread in the rates it pays and receives."
+          },
+          "tags": [
+            "currency-swaps",
+            "intermediary",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the principle for working out the gain from a swap between two firms and a bank?",
+            "answer_md": "Total gain = the sum of each firm's cost advantage in the market where it is relatively better (comparative advantage). Each firm borrows where it is relatively cheaper, swaps, and the gain is shared between the firms and the intermediary."
+          },
+          "tags": [
+            "currency-swaps",
+            "comparative-advantage"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the difference between an intermediary acting as broker and as dealer in a swap?",
+            "answer_md": "A broker only brings the parties together for a fee. A dealer arranges the swap and also guarantees each party's payments, so both counterparties rely on the dealer's credit rating and dealers must be highly rated. Most intermediaries now act as dealers."
+          },
+          "tags": [
+            "currency-swaps",
+            "intermediary"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do currency swaps give a real benefit only if some barrier to arbitrage exists?",
+            "answer_md": "If arbitrage worked fully, interest and exchange rates would adjust so that borrowing directly in any currency cost the same and swaps would add nothing. Benefits come from barriers such as legal limits on spot or forward deals, differing views of credit risk, appeal of a borrower to some investors and tax differences."
+          },
+          "tags": [
+            "currency-swaps",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "List the benefits of currency swaps.",
+            "answer_md": "Cheaper foreign currency borrowing by using relative market access; lower cost of managing exchange risk; long-term foreign currency financing where long-term capital and forward markets are weak (swaps give liquidity to those markets); and transforming a debt in one currency into a hedged liability in another."
+          },
+          "tags": [
+            "currency-swaps",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-sw-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Example: Company A has borrowed yen at a fixed rate. How can a currency swap hedge it into dollars?",
+            "answer_md": "A swaps with a counterparty B who wants yen. A pays B's dollar interest and receives yen to pay its lender, so its yen debt becomes a dollar liability and exchange risk disappears."
+          },
+          "tags": [
+            "currency-swaps",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:sw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-par-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the five international parity conditions?",
+            "answer_md": "Purchasing power parity (PPP), the Fisher effect (FE), the international Fisher effect (IFE), interest rate parity (IRP) and the unbiased forward rate theory (UFR). Together they link inflation, interest rates, spot rates and forward rates."
+          },
+          "tags": [
+            "parity",
+            "overview"
+          ],
+          "reference_keys": [
+            "sfm:par"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-par-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What assumptions underlie the parity conditions?",
+            "answer_md": "Perfect capital markets: no transaction costs, no taxes and complete certainty. Over the long run they are expected to hold; in the short run they often fail."
+          },
+          "tags": [
+            "parity",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:par"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-par-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the law of one price and how does arbitrage enforce it?",
+            "answer_md": "In competitive markets, identical tradable goods and assets must be priced the same worldwide once adjusted for exchange rates, within transaction costs. Arbitrageurs buy where cheap and sell where dear until deviations vanish."
+          },
+          "tags": [
+            "parity",
+            "law-of-one-price"
+          ],
+          "reference_keys": [
+            "sfm:par"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-par-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which pair of variables does each parity condition link?",
+            "answer_md": "PPP: inflation differential and expected change in spot. Fisher effect: inflation differential and interest differential. IFE: interest differential and expected change in spot. IRP: interest differential and forward premium or discount. UFR: forward premium or discount and expected change in spot."
+          },
+          "tags": [
+            "parity",
+            "overview"
+          ],
+          "reference_keys": [
+            "sfm:par"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Purchasing power parity",
+            "definition_md": "The theory that exchange rates adjust to offset differences in price levels between countries, so a unit of currency buys the same everywhere. It is an application of the law of one price to national price levels; the absolute version says price levels are equal in a common currency, the relative version links changes in rates to inflation differences."
+          },
+          "tags": [
+            "ppp",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish absolute PPP from relative PPP and say which is used more.",
+            "answer_md": "Absolute PPP: price levels are equal worldwide when expressed in one currency. It ignores transport costs, tariffs, quotas and product differences. Relative PPP: the exchange rate changes to reflect changes in the two countries' price levels; this version is used in practice."
+          },
+          "tags": [
+            "ppp",
+            "absolute",
+            "relative"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who first stated PPP rigorously and for what purpose?",
+            "answer_md": "Gustav Cassel in 1918 used it to recommend a new set of official exchange rates after the First World War. It is used in management for forecasting expected spot rates, evaluating long-term foreign debt and choosing project locations."
+          },
+          "tags": [
+            "ppp",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Relative PPP: expected spot rate",
+            "expression_md": "$e_t = e_0 \\times \\dfrac{(1 + i_h)^t}{(1 + i_f)^t}$",
+            "variables_md": "$e_0$ = spot (home currency per unit of foreign currency); $i_h$, $i_f$ = home and foreign inflation; $t$ = years.",
+            "when_md": "Direct quote must be used: the country whose currency is the 'price' in the quote is home. A higher home inflation raises the number of home units per foreign unit (home currency depreciates)."
+          },
+          "tags": [
+            "ppp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-005",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Relative PPP: percentage change in spot (approximation)",
+            "expression_md": "$\\dfrac{e_1 - e_0}{e_0} = \\dfrac{i_h - i_f}{1 + i_f} \\approx i_h - i_f$",
+            "variables_md": "$e_1$ = expected spot after one period.",
+            "when_md": "The exact form is the first one; the second is a shortcut when inflation rates are small. For periods under a year, use inflation for the period (annual rate x months / 12)."
+          },
+          "tags": [
+            "ppp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot Rs 83 per USD. Inflation expected: India 5%, US 3%. Find the PPP rate after 1 year and the expected change.",
+            "answer_md": "e1 = 83 x 1.05 / 1.03 = Rs 84.61. Change = (84.61 - 83) / 83 = 1.94%, which equals (0.05 - 0.03) / 1.03. The rupee depreciates because inflation is higher in India."
+          },
+          "tags": [
+            "ppp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Same data (Rs 83, India 5%, US 3%): find the PPP rate after 3 years.",
+            "answer_md": "e3 = 83 x (1.05 / 1.03)^3 = 83 x 1.05932 = Rs 87.93. Compound the ratio over the years; do not multiply the one-year change by 3."
+          },
+          "tags": [
+            "ppp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If the inflation rates differ from year to year, how is the PPP rate found after n years?",
+            "answer_md": "Multiply the spot by the product of the yearly ratios: e_n = e_0 x [(1 + ih1)/(1 + if1)] x [(1 + ih2)/(1 + if2)] x ... for each year."
+          },
+          "tags": [
+            "ppp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Find the expected spot after 6 months if Rs 83 per USD, India inflation 5% p.a. and US 3% p.a.",
+            "answer_md": "Use inflation for the period: 83 x (1 + 0.05 x 6/12) / (1 + 0.03 x 6/12) = 83 x 1.025 / 1.015 = Rs 83.82. The annual rate is scaled to six months before applying the formula."
+          },
+          "tags": [
+            "ppp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which way does a currency move under PPP if its country has higher inflation than its trading partners?",
+            "answer_md": "It depreciates against the lower-inflation currencies by about the inflation differential. In a basket example, the currency of the country with higher inflation is likely to fall."
+          },
+          "tags": [
+            "ppp",
+            "direction"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ppp-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the study text's practice illustration on PPP, the data says inflation in India is 2.5% and in the UK 5.5%, but the working uses India 5.5% and UK 2.5%. What does this teach?",
+            "answer_md": "The data statement and the working are reversed; always assign home (the country in whose currency the rate is quoted) and foreign inflation carefully before substituting. The solution numbers are internally consistent with home 5.5% and foreign 2.5%."
+          },
+          "tags": [
+            "ppp",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ppp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Interest rate parity (covered interest parity)",
+            "definition_md": "The condition that the forward premium or discount on a currency equals the interest rate differential between the two countries, so a hedged foreign investment earns the same as a domestic one and no riskless covered arbitrage profit exists. The currency with the lower interest rate is at a forward premium."
+          },
+          "tags": [
+            "irp",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Interest rate parity: forward rate",
+            "expression_md": "$\\dfrac{f_1}{e_0} = \\dfrac{1 + r_h}{1 + r_f} \\qquad f_1 = e_0 \\times \\dfrac{1 + r_h}{1 + r_f}$",
+            "variables_md": "$f_1$ = forward rate; $e_0$ = spot (home per foreign); $r_h$, $r_f$ = home and foreign interest rates for the period.",
+            "when_md": "For periods under a year, use rate x months/12 (simple interest) unless told otherwise. Premium or discount: $(f_1 - e_0)/e_0 = (r_h - r_f)/(1 + r_f)$."
+          },
+          "tags": [
+            "irp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot Rs 82 per USD. One-year rupee rate 7%, dollar rate 4%. What is the IRP forward rate and the premium?",
+            "answer_md": "f = 82 x 1.07 / 1.04 = Rs 84.37. Premium = (84.37 - 82) / 82 = 2.88%, equal to (0.07 - 0.04) / 1.04. The dollar is at a forward premium because the rupee rate is higher."
+          },
+          "tags": [
+            "irp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Same rates (7% rupee, 4% dollar p.a., spot Rs 82). Find the 6-month forward rate.",
+            "answer_md": "Use half-year rates: 82 x (1 + 0.07 x 6/12) / (1 + 0.04 x 6/12) = 82 x 1.035 / 1.02 = Rs 83.21."
+          },
+          "tags": [
+            "irp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Given spot Rs 33, 9-month forward Rs 33.40 and rupee 9-month rate 8% p.a., how do you find the foreign interest rate under IRP?",
+            "answer_md": "Set 33.40 = 33 x (1 + 0.08 x 9/12) / (1 + x x 9/12) and solve for x. Here x is about 6.3% p.a.; the interest differential then equals the forward premium of about 1.21%. Rearranged: 1 + x(9/12) = 33 x 1.06 / 33.40."
+          },
+          "tags": [
+            "irp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which currency trades at a forward premium under IRP?",
+            "answer_md": "The currency with the lower interest rate. The higher-rate currency is at a forward discount, so the extra interest is cancelled by the forward loss."
+          },
+          "tags": [
+            "irp",
+            "direction"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does it mean that IRP says the forward premium is 'about' the interest rate differential?",
+            "answer_md": "Exactly, the premium equals the differential divided by (1 + foreign rate). The simple difference of rates is only an approximation that works when rates are low."
+          },
+          "tags": [
+            "irp",
+            "approximation"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is covered interest arbitrage?",
+            "answer_md": "Borrowing in one currency, converting at spot, investing in the other currency and simultaneously selling the proceeds forward, to lock in a riskless profit when forward rates are not at interest rate parity. It continues until forward and spot rates adjust to parity."
+          },
+          "tags": [
+            "irp",
+            "arbitrage",
+            "covered-interest-arbitrage"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you test whether covered interest arbitrage exists?",
+            "answer_md": "Compare the home interest factor (1 + rh) with the covered foreign return, (f/e) x (1 + rf). If they differ there is arbitrage. If (1 + rh) is larger, borrow foreign currency and invest at home; if smaller, borrow at home and invest abroad."
+          },
+          "tags": [
+            "irp",
+            "arbitrage",
+            "covered-interest-arbitrage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot Rs 82/USD, 1-year forward Rs 83, rupee 8%, dollar 3%. Show the arbitrage on USD 100,000.",
+            "answer_md": "Parity forward = 82 x 1.08/1.03 = Rs 85.98, above the market 83, so rupee investment is better. Borrow USD 100,000 (owe USD 103,000), convert to Rs 82,00,000, invest at 8% to Rs 88,56,000, buy USD 103,000 forward at 83 for Rs 85,49,000. Profit Rs 3,07,000."
+          },
+          "tags": [
+            "irp",
+            "arbitrage",
+            "covered-interest-arbitrage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of covered interest arbitrage when foreign rates look better than the forward premium justifies.",
+            "answer_md": "(1) Borrow home currency; (2) convert to foreign currency at spot; (3) invest at the foreign interest rate; (4) at the same time sell the maturity amount forward; (5) at maturity deliver the foreign currency, collect home currency, repay the loan; the leftover is riskless profit."
+          },
+          "tags": [
+            "irp",
+            "arbitrage",
+            "covered-interest-arbitrage",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the implications of IRP when domestic interest rates are below foreign rates.",
+            "answer_md": "The foreign currency must trade at a forward discount to cancel its higher interest. If the discount is too small, domestic investors gain by investing abroad on a covered basis. The opposite holds when domestic rates are higher: foreign currency must be at a forward premium."
+          },
+          "tags": [
+            "irp",
+            "implications"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When does IRP hold, in terms of market conditions?",
+            "answer_md": "Only with no restrictions on capital movement, no taxes and no government limits on foreign currency borrowing. With transaction costs, small deviations remain within a band."
+          },
+          "tags": [
+            "irp",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-irp-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the study text's interest rate parity illustration, USD 1,000,000 at 8% for 90 days gives USD 1,020,000 and the euro route is also said to give USD 1,020,000. Is that exact?",
+            "answer_md": "Not exactly. EUR 761,250 sold at 0.74632 gives about USD 1,020,005, because the forward rate is rounded to five digits. The idea of parity is sound; expect rounding differences in exam answers."
+          },
+          "tags": [
+            "irp",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:irp"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-fe-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Fisher effect",
+            "definition_md": "The relationship between interest and inflation: the nominal interest rate equals the real rate adjusted for expected inflation, so when expected inflation rises, nominal interest rates rise by about the same amount with the real rate unchanged."
+          },
+          "tags": [
+            "fisher-effect",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:fe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-fe-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Fisher equation",
+            "expression_md": "$1 + r = (1 + a)(1 + i) \\qquad r \\approx a + i$",
+            "variables_md": "$r$ = nominal rate; $a$ = real rate; $i$ = expected inflation.",
+            "when_md": "Exact form includes the cross-product $a \times i$. Real rate = nominal rate minus inflation in approximate form."
+          },
+          "tags": [
+            "fisher-effect",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-fe-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Real rate 4%, expected inflation 6%. What is the nominal rate?",
+            "answer_md": "Exact: 1.04 x 1.06 - 1 = 10.24%. The approximation r = a + i gives 10%. Use the exact form in exams unless told to approximate."
+          },
+          "tags": [
+            "fisher-effect",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-fe-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If the real rate is 5% and inflation rises from 2% to 4%, what happens to the nominal rate?",
+            "answer_md": "It rises from 1.05 x 1.02 - 1 = 7.10% to 1.05 x 1.04 - 1 = 9.20%. The real rate is unchanged; the nominal rate goes up in line with inflation."
+          },
+          "tags": [
+            "fisher-effect",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-fe-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the generalised (cross-country) Fisher effect.",
+            "answer_md": "The ratio of (1 + nominal rate) between two countries equals the ratio of (1 + expected inflation) between them: (1 + rh)/(1 + rf) = (1 + ih)/(1 + if). Currencies with higher inflation carry higher interest rates."
+          },
+          "tags": [
+            "fisher-effect",
+            "generalised"
+          ],
+          "reference_keys": [
+            "sfm:fe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-fe-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "US nominal rate is 5% and expected inflation is 3% in the US and 6% in India. What nominal rate does the generalised Fisher effect imply for India?",
+            "answer_md": "1 + rIndia = 1.05 x 1.06 / 1.03 = 1.0806, so about 8.06%."
+          },
+          "tags": [
+            "fisher-effect",
+            "generalised",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ife-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "International Fisher effect",
+            "definition_md": "The proposition that the expected percentage change in the spot rate equals the interest rate differential between two countries, so the currency with the higher interest rate is expected to depreciate. It extends the Fisher effect to exchange rates."
+          },
+          "tags": [
+            "ife",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ife"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ife-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "International Fisher effect",
+            "expression_md": "$\\dfrac{e_1 - e_0}{e_0} = \\dfrac{r_h - r_f}{1 + r_f} \\qquad e_1 = e_0 \\times \\dfrac{1 + r_h}{1 + r_f}$",
+            "variables_md": "$e_1$ = expected spot; $r_h$, $r_f$ = nominal home and foreign rates (risk-free).",
+            "when_md": "Same algebra as IRP, but it predicts the future spot rate; IRP gives the forward rate. It is seen as unreliable in the short run and more reliable in the long run."
+          },
+          "tags": [
+            "ife",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ife"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ife-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot Rs 82 per USD, India rate 9%, US rate 4%. Find the expected spot after one year under IFE.",
+            "answer_md": "e1 = 82 x 1.09 / 1.04 = Rs 85.94. The expected rupee depreciation is (0.09 - 0.04) / 1.04 = 4.81%."
+          },
+          "tags": [
+            "ife",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ife"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ife-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Distinguish the Fisher effect from the international Fisher effect.",
+            "answer_md": "The Fisher effect links nominal interest rates to expected inflation within a country (real rate constant). The IFE links the interest rate differential between two countries to the expected change in their exchange rate, so the higher-interest currency depreciates."
+          },
+          "tags": [
+            "ife",
+            "fisher-effect",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ife"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ife-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does IFE differ from IRP?",
+            "answer_md": "IRP is a covered, riskless relationship between interest rates and the forward rate; arbitrage enforces it. IFE is an uncovered, expectational relationship between interest rates and the expected future spot rate; there is no arbitrage that guarantees it."
+          },
+          "tags": [
+            "ife",
+            "irp",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ife"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ife-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the study text's USD/CAD illustration of IFE the rate is multiplied by the foreign over domestic interest ratio. What caution does this need?",
+            "answer_md": "The direction of the ratio depends on how the rate is quoted. With home currency units per foreign unit, use (1 + home rate) over (1 + foreign rate). Check the result against the logic that the higher-interest currency depreciates."
+          },
+          "tags": [
+            "ife",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ife"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Unbiased forward rate theory",
+            "definition_md": "The statement that the forward rate for a given date equals the market's expected future spot rate for that date, i.e. forward premium or discount equals the expected change in the exchange rate. If so, there is no incentive to buy or sell forward."
+          },
+          "tags": [
+            "ufr",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Unbiased forward rate condition",
+            "expression_md": "$f_t = \\bar{e}_t \\qquad \\dfrac{f_1 - e_0}{e_0} = \\dfrac{\\bar{e}_1 - e_0}{e_0}$",
+            "variables_md": "$f_t$ = forward rate for date t; $\\bar{e}_t$ = expected spot rate at date t.",
+            "when_md": "Holds when risk is ignored. Risk-averse traders may demand a risk premium, so the forward rate may not be purely the expected spot."
+          },
+          "tags": [
+            "ufr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why would a forward rate not equal the expected spot rate exactly?",
+            "answer_md": "Because risk-averse investors can require a risk premium for bearing exchange risk, much like a premium for holding equities, so the forward rate includes compensation for risk beyond the pure expectation."
+          },
+          "tags": [
+            "ufr",
+            "risk-premium"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the forward market transmit news of an expected depreciation to the spot market?",
+            "answer_md": "If a fall in a currency is expected, its recipients sell it forward and buyers delay forward purchases, pushing the forward rate down; banks then close long forward positions by selling spot, and others delay or hasten conversions, so spot falls too. Both rates move together."
+          },
+          "tags": [
+            "ufr",
+            "mechanism"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Forward rate is Rs 84 and the market's expected spot is Rs 85. What does this imply under UFR, and what would speculators do?",
+            "answer_md": "The forward is below the expected spot, so the theory is violated. Speculators would buy USD forward at 84 expecting to sell at 85, pushing the forward up until it equals the expectation."
+          },
+          "tags": [
+            "ufr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do IRP, UFR and IFE link together?",
+            "answer_md": "IRP: forward premium equals interest differential. UFR: forward premium equals expected change in spot. Together they imply IFE: the expected change in spot equals the interest differential."
+          },
+          "tags": [
+            "parity",
+            "irp",
+            "ufr",
+            "ife"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-ufr-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A pound is expected to lose about 3% because UK inflation is 3 points above US inflation. What does this mean for the forward rate and interest rates?",
+            "answer_md": "Under PPP the pound falls about 3%; under UFR the one-year forward pound sells at about a 3% discount; under the Fisher effect UK interest rates are about 3 points higher than US rates."
+          },
+          "tags": [
+            "parity",
+            "overview"
+          ],
+          "reference_keys": [
+            "sfm:ufr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-001",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The three functions of the forex market are the {{c1::transfer}} function, the {{c2::credit}} function and the {{c3::hedging}} function."
+          },
+          "tags": [
+            "forex-market",
+            "functions"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "A dealer's {{c1::bid}} rate is the rate at which it buys currency and the {{c2::ask}} rate is the rate at which it sells; the spread equals {{c3::ask minus bid}}."
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-003",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Direct quote: home currency per {{c1::one unit of foreign currency}}; indirect quote: foreign currency per {{c2::one unit of home currency}}."
+          },
+          "tags": [
+            "exchange-rate",
+            "direct-quote",
+            "indirect-quote"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Under a direct quote the foreign currency is at a premium when the forward rate is {{c1::above}} spot and at a discount when it is {{c2::below}} spot."
+          },
+          "tags": [
+            "exchange-rate",
+            "premium",
+            "discount"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "With ascending swap points {{c1::add}} them to the spot bid and ask; with descending swap points {{c2::subtract}} them."
+          },
+          "tags": [
+            "exchange-rate",
+            "swap-points"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-006",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Cross rate for A per B through C: bid = {{c1::bid A/C times bid C/B}}; ask = {{c2::ask A/C times ask C/B}}."
+          },
+          "tags": [
+            "cross-rates"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-007",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Two-point arbitrage uses {{c1::two}} centres and one currency pair; triangular arbitrage uses {{c2::three}} currencies and inconsistent {{c3::cross rates}}."
+          },
+          "tags": [
+            "arbitrage",
+            "two-point",
+            "three-point"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Futures margins: the opening deposit is the {{c1::initial margin}}; the lower floor is the {{c2::maintenance margin}}; losses are settled daily by {{c3::marking to market}}."
+          },
+          "tags": [
+            "currency-futures",
+            "margin"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-009",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Call option break-even = {{c1::strike plus premium}}; put option break-even = {{c2::strike minus premium}}; maximum loss of the buyer = {{c3::the premium}}."
+          },
+          "tags": [
+            "currency-options",
+            "break-even"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Intrinsic value of a call = {{c1::spot minus strike}} if positive; of a put = {{c2::strike minus spot}} if positive; premium minus intrinsic value is {{c3::time value}}."
+          },
+          "tags": [
+            "currency-options",
+            "intrinsic-value"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-011",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Put-call parity: C + {{c1::PV of strike}} = P + {{c2::spot price}}, valid only for {{c3::European}} options."
+          },
+          "tags": [
+            "put-call-parity"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-012",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "PPP links the {{c1::inflation}} differential to the expected change in the {{c2::spot}} rate; IRP links the {{c3::interest}} differential to the {{c4::forward}} premium."
+          },
+          "tags": [
+            "parity",
+            "ppp",
+            "irp"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The currency with the {{c1::lower}} interest rate trades at a forward {{c2::premium}} under interest rate parity; the higher-rate currency is at a forward {{c3::discount}}."
+          },
+          "tags": [
+            "irp",
+            "direction"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-014",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Fisher effect: 1 + nominal rate = (1 + {{c1::real rate}}) x (1 + {{c2::expected inflation}}); international Fisher effect links the {{c3::interest rate}} differential to the expected change in {{c4::spot rate}}."
+          },
+          "tags": [
+            "fisher-effect",
+            "ife"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-015",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Perfect capital market assumptions for parity conditions: no {{c1::transaction costs}}, no {{c2::taxes}} and complete {{c3::certainty}}."
+          },
+          "tags": [
+            "parity",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-016",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Forward rate if the foreign currency appreciates p: spot x {{c1::(1 + p)}}; if the home currency appreciates p: spot {{c2::divided by}} (1 + p)."
+          },
+          "tags": [
+            "exchange-rate",
+            "forward"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-017",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Participants of the forex market include {{c1::central banks}}, {{c2::commercial banks}}, {{c3::brokers}} and general buyers and sellers such as MNCs."
+          },
+          "tags": [
+            "forex-market",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-018",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A currency swap exchanges {{c1::principal and interest}} in one currency for those in another; a plain interest rate swap never exchanges {{c2::the notional principal}}."
+          },
+          "tags": [
+            "currency-swaps"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-019",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A spot deal settles on the {{c1::second}} working day; a forward deal fixes a rate today for a date {{c2::beyond spot settlement}}."
+          },
+          "tags": [
+            "spot",
+            "forward"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-clz-020",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Currency futures differ from forwards: exchange traded, {{c1::standardised}} terms, a {{c2::clearing house}} as counterparty and daily {{c3::marking to market}}."
+          },
+          "tags": [
+            "currency-futures",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mnm-001",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "Low-rate Premium",
+            "expands_md": "The currency with the Low interest rate trades at a forward Premium; the high-rate currency trades at a forward discount (interest rate parity).",
+            "topic": "Direction of forward premium"
+          },
+          "tags": [
+            "irp",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mnm-002",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "PFI-IU",
+            "expands_md": "Parity conditions: PPP, Fisher, International Fisher, Interest rate parity, Unbiased forward rate theory.",
+            "topic": "Five parity conditions"
+          },
+          "tags": [
+            "parity",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mnm-003",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "TCH",
+            "expands_md": "Transfer, Credit, Hedging: the three functions of the forex market.",
+            "topic": "Functions of the forex market"
+          },
+          "tags": [
+            "forex-market",
+            "functions",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm15-mnm-004",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Bank Buys Low",
+            "expands_md": "Bid is where the Bank Buys (low); Ask is where the bank sells (high). The customer sells at bid and buys at ask.",
+            "topic": "Bid and ask"
+          },
+          "tags": [
+            "exchange-rate",
+            "bid-ask",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2714 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-the-international-financial-environment",
+      "title": "SFM: The International Financial Environment",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 14: The International Financial Environment.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "the-international-financial-environment"
+      },
+      "items": [
+        {
+          "ref": "sfm14-ifi-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "International monetary system",
+            "definition_md": "The set of rules, institutions and mechanisms that decide how one currency is converted into another (the exchange rate) and how that rate moves over time. Together with the institutions and markets that support cross-border trade and finance, it forms the international financial environment."
+          },
+          "tags": [
+            "international-finance",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does cross-border finance need an agreed system for payments and conversion?",
+            "answer_md": "Every country has its own currency, so flows must be settled in a currency both sides accept and then converted into home currency. Clear rules, institutions and procedures are needed so the conversion rate and its movement are determined in an orderly way."
+          },
+          "tags": [
+            "international-finance",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "International financial institution (IFI)",
+            "definition_md": "A financial institution set up by more than one country and therefore governed by international law. Its owners are usually national governments (sometimes other institutions). A few bilateral institutions, created by just two countries, are also technically IFIs."
+          },
+          "tags": [
+            "ifi",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What role do IFIs play, and where did the idea come from?",
+            "answer_md": "They act as facilitators and intermediaries in international finance. The idea took shape in the Bretton Woods System after the Second World War."
+          },
+          "tags": [
+            "ifi",
+            "bretton-woods"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why was a new monetary order needed after the Second World War?",
+            "answer_md": "The war had stopped international economic activity, caused heavy damage and hyper-inflation, and made economic co-operation impossible. A system with stable exchange rates was needed to restore trade and investment, remove any gain from inflationary policies, and help countries bridge short-term balance of payments problems without turmoil."
+          },
+          "tags": [
+            "ifi",
+            "bretton-woods"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What was agreed at Bretton Woods and which two institutions came out of it?",
+            "answer_md": "In 1944 representatives of 44 countries met at Bretton Woods, New Hampshire (USA) and agreed a new monetary system, called the Bretton Woods System. It created the International Monetary Fund (IMF) and the World Bank."
+          },
+          "tags": [
+            "ifi",
+            "bretton-woods"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the objectives for which the IMF was created.",
+            "answer_md": "Orderly exchange arrangements, stable exchange rates and monetary cooperation among nations; faster growth with high employment; and short-term financial help to members adjusting their balance of payments."
+          },
+          "tags": [
+            "imf",
+            "objectives"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why was the World Bank created, and did the Bretton Woods exchange-rate system survive?",
+            "answer_md": "The World Bank was meant to help rebuild economies after the war and later to raise growth in developing countries. The Bretton Woods exchange-rate system itself failed later, but the IMF and the World Bank continue to play a major role in the international monetary system."
+          },
+          "tags": [
+            "world-bank",
+            "bretton-woods"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the IMF's primary mission?",
+            "answer_md": "To keep the international monetary system stable: the system of exchange rates and international payments that lets countries and their residents transact with one another. It also promotes monetary cooperation, trade, employment, sustainable growth and poverty reduction."
+          },
+          "tags": [
+            "imf",
+            "objectives"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why was the IMF conceived in 1944?",
+            "answer_md": "The 44 countries at Bretton Woods wanted a framework for economic cooperation so that the 1930s pattern, where nations competitively devalued their currencies and deepened the Great Depression, would not return."
+          },
+          "tags": [
+            "imf",
+            "bretton-woods"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Describe the governance of the IMF.",
+            "answer_md": "Member countries own and govern it. The Board of Governors is at the top; day-to-day work is overseen by the Executive Board (24 members at the time of the study text), supported by staff. The Managing Director heads the staff and chairs the Executive Board, helped by Deputy Managing Directors."
+          },
+          "tags": [
+            "imf",
+            "governance",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the IMF get the money it lends on non-concessional terms?",
+            "answer_md": "Mainly from member countries' quota payments. Each member has a quota that broadly reflects its place in the world economy, and quotas are reviewed regularly. Multilateral borrowing (New Arrangement to Borrow, NAB) and bilateral borrowing agreements (BBA) act as second and third lines of defence, adding temporary resources to quotas."
+          },
+          "tags": [
+            "imf",
+            "quota",
+            "resources"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the IMF's three main functions.",
+            "answer_md": "Overseeing (surveillance of) economic developments, lending, and capacity development."
+          },
+          "tags": [
+            "imf",
+            "functions"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the IMF carry out its oversight function?",
+            "answer_md": "It encourages trade between nations, builds monetary cooperation worldwide and works to keep the financial system stable."
+          },
+          "tags": [
+            "imf",
+            "functions"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the General Resources Account (GRA) and what is concessional support?",
+            "answer_md": "All IMF members can draw on the Fund's resources held in the General Resources Account on non-concessional terms. Low-income countries can also get concessional support, at very low or zero interest, through the Poverty Reduction and Growth Trust."
+          },
+          "tags": [
+            "imf",
+            "gra",
+            "lending"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the main lending facilities of the IMF.",
+            "answer_md": "Commonly cited facilities include the Stand-By Arrangement, Extended Fund Facility, Flexible Credit Line, Precautionary and Liquidity Line, Rapid Financing Instrument (all on the General Resources Account), and for low-income countries the Extended Credit Facility, Standby Credit Facility and Rapid Credit Facility."
+          },
+          "tags": [
+            "imf",
+            "lending",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the five institutions of the World Bank Group.",
+            "answer_md": "IBRD (International Bank for Reconstruction and Development), IDA (International Development Association), IFC (International Finance Corporation), MIGA (Multilateral Investment Guarantee Agency) and ICSID (International Centre for Settlement of Investment Disputes)."
+          },
+          "tags": [
+            "world-bank",
+            "ibrd",
+            "ida",
+            "ifc",
+            "miga",
+            "icsid"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Difference between IBRD and IDA in whom they lend to and on what terms.",
+            "answer_md": "IBRD lends to governments of middle-income and creditworthy low-income countries. IDA gives interest-free loans (credits) and grants to governments of the poorest countries."
+          },
+          "tags": [
+            "world-bank",
+            "ibrd",
+            "ida"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does the IFC do?",
+            "answer_md": "It is the World Bank Group's institution focused on the private sector in developing countries: it finances investment, mobilises capital in international markets and gives advisory services to businesses and governments."
+          },
+          "tags": [
+            "world-bank",
+            "ifc"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is MIGA and what does it offer?",
+            "answer_md": "The Multilateral Investment Guarantee Agency, created in 1988 to promote foreign direct investment into developing countries. It offers political risk insurance (guarantees) to investors and lenders."
+          },
+          "tags": [
+            "world-bank",
+            "miga"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the function of ICSID?",
+            "answer_md": "It provides international facilities for conciliation and arbitration of investment disputes."
+          },
+          "tags": [
+            "world-bank",
+            "icsid"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-022",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What kind of loans does the World Bank make, on what conditions, and how does it raise funds?",
+            "answer_md": "Mostly medium- and long-term loans for infrastructure projects, and loans to countries with balance of payments problems that adopt growth-oriented policies. A government guarantee is required. Funds come from member subscriptions and from bonds, usually privately subscribed."
+          },
+          "tags": [
+            "world-bank",
+            "lending"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-023",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the World Bank's ownership structure?",
+            "answer_md": "It is structured like a cooperative, owned and operated for the benefit of its member countries."
+          },
+          "tags": [
+            "world-bank",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-024",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are regional development banks (RDBs) and what do they finance?",
+            "answer_md": "Banks that fund manufacturing, mining, agriculture and infrastructure projects needed for development, tending to back projects that promote regional cooperation and integration. Loan repayment is mostly over 5 to 15 years at favourable interest rates."
+          },
+          "tags": [
+            "rdb",
+            "development-banks"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-025",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Match each regional development bank to its focus: EIB, IADB, ADB, AFDB, AFESD, EBRD.",
+            "answer_md": "EIB: public and private projects in Europe and associated nations, favouring lesser-developed regions. IADB: long-term capital for Latin America, including guarantees and small equity. ADB: loans and guarantees in Asia-Pacific, also develops local capital markets. AFDB: loans, guarantees and technical aid to African states. AFESD: Arab fund that finds and implements projects in Arab League countries. EBRD: set up in 1990 to finance privatisation in Eastern Europe."
+          },
+          "tags": [
+            "rdb",
+            "development-banks"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-026",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is ADELA?",
+            "answer_md": "The Atlantic Development Group for Latin America, an international private investment company that supports Latin American socio-economic development by giving capital and entrepreneurial and technical support to private enterprises."
+          },
+          "tags": [
+            "rdb",
+            "development-banks"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-027",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Bilateral development bank",
+            "definition_md": "A financial institution set up by one country to finance development projects in a developing country or emerging market. Examples in the study text: FMO (Netherlands), DEG (Germany), the French Development Agency and the CDC Group (UK)."
+          },
+          "tags": [
+            "development-banks",
+            "bilateral"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-028",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are national development banks (NDBs) and what do they need to succeed?",
+            "answer_md": "Mostly public institutions (some are privately controlled) that may serve one industry or region or be multipurpose. To succeed they need capable, investment-oriented management and a large enough supply of viable projects from which to choose a sound portfolio."
+          },
+          "tags": [
+            "development-banks",
+            "ndb"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-029",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which are the other regional financial institutions named in the chapter?",
+            "answer_md": "Bank for International Settlements (BIS), European Investment Bank (EIB), International Investment Bank (IIB) and the European Central Bank (ECB). Most such bodies are central banks of neighbouring countries working on shared interests."
+          },
+          "tags": [
+            "regional-institutions",
+            "bis",
+            "eib",
+            "iib",
+            "ecb"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-030",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Key facts on the BIS.",
+            "answer_md": "Established in 1930, owned by central banks (63 at the time of the text, together about 95% of world GDP), head office in Basel, Switzerland, serving the central banking community."
+          },
+          "tags": [
+            "regional-institutions",
+            "bis",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-031",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Key facts on the International Investment Bank (IIB).",
+            "answer_md": "A multilateral development institution founded in 1970 and based in Budapest, Hungary. It gives medium- and long-term finance directly or with partner banks for projects with a positive social, economic and environmental impact on member economies."
+          },
+          "tags": [
+            "regional-institutions",
+            "iib"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-032",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the European Investment Bank (EIB) as an 'other regional institution'?",
+            "answer_md": "The investment bank of the European Union, owned by its member states and a not-for-profit lender. It funds projects that serve EU policy aims through loans, guarantees and technical assistance."
+          },
+          "tags": [
+            "regional-institutions",
+            "eib"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ifi-033",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "I Do Fund Many Investments",
+            "expands_md": "The five World Bank Group bodies in order: IBRD, IDA, IFC, MIGA, ICSID.",
+            "topic": "World Bank Group"
+          },
+          "tags": [
+            "world-bank",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:ifi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mkts-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "International financial markets",
+            "definition_md": "Markets that operate worldwide and facilitate international trade and finance. Growth in cross-border business over the last several decades created different markets for different participant needs."
+          },
+          "tags": [
+            "markets",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:mkts"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mkts-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the five broad international financial markets.",
+            "answer_md": "Foreign exchange, money, credit, bond and stock markets, each at the international level."
+          },
+          "tags": [
+            "markets",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:mkts"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mkts-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "International financial markets: {{c1::foreign exchange}}, {{c2::money}}, {{c3::credit}}, {{c4::bond}} and {{c5::stock}} markets."
+          },
+          "tags": [
+            "markets",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:mkts"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mkts-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the two routes through which a firm raises foreign currency finance.",
+            "answer_md": "The debt route and the equity route."
+          },
+          "tags": [
+            "foreign-currency",
+            "sources"
+          ],
+          "reference_keys": [
+            "sfm:mkts"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mkts-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the debt-route instruments for raising foreign currency (eight kinds).",
+            "answer_md": "Eurobonds, foreign bonds, foreign currency convertible bonds (FCCBs), syndicated credits, Euro notes, Euro bonds with equity warrants, Euro convertible bonds (including ECB-related features) and Euro convertible zero bonds."
+          },
+          "tags": [
+            "foreign-currency",
+            "sources",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:mkts"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mkts-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Equity route: what two avenues exist?",
+            "answer_md": "Depository receipts (ADRs and GDRs) and warrants."
+          },
+          "tags": [
+            "foreign-currency",
+            "sources",
+            "equity-route"
+          ],
+          "reference_keys": [
+            "sfm:mkts"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Eurobond",
+            "definition_md": "A bond denominated in a currency other than that of the country where it is issued, for example a US dollar bond issued in London or France, or a yen bond issued in the UK. London is the main market."
+          },
+          "tags": [
+            "eurobonds",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Eurobond versus foreign bond: what decides which one it is?",
+            "answer_md": "A Eurobond is issued outside the country of its currency (currency differs from the country of issue). A foreign bond is issued by a foreign borrower in the domestic market of the country, in that country's own currency, for example a yen bond sold in Japan by a French company."
+          },
+          "tags": [
+            "eurobonds",
+            "foreign-bonds"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who issues Eurobonds and why do investors buy them?",
+            "answer_md": "Large multinationals, supranational bodies and governments, usually choosing the currency that gives the cheapest interest rate. Investors buy them from foreign issuers for exposure to international markets alongside domestic bonds."
+          },
+          "tags": [
+            "eurobonds",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the two broad structures of Eurobond issues.",
+            "answer_md": "Fixed rate bonds (straights) and floating rate notes (FRNs)."
+          },
+          "tags": [
+            "eurobonds",
+            "straight-bonds",
+            "frn"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are straight Eurobonds?",
+            "answer_md": "Unsecured fixed-interest bonds redeemed at face value, in the currency of issue, with interest fixed by a formula for that market and linked to the issuer's creditworthiness. Dollar bonds are priced at a margin over US treasury yields."
+          },
+          "tags": [
+            "eurobonds",
+            "straight-bonds"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a floating rate note (FRN) and how is its coupon fixed?",
+            "answer_md": "A note (not called a bond by convention) with a maturity of about 5 to 7 years whose coupon is either pegged to another security or re-fixed at set intervals. The margin is above 6-month LIBOR for Eurodollar deposits."
+          },
+          "tags": [
+            "eurobonds",
+            "frn",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Define flip-flop, mismatch and mini-max FRNs.",
+            "answer_md": "Flip-flop: the investor can convert it into a flat (fixed) interest instrument after a given period. Mismatch: interest is paid half-yearly although the rate is re-set every month. Mini-max: carries both a minimum and a maximum coupon."
+          },
+          "tags": [
+            "eurobonds",
+            "frn"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "FRN variants: {{c1::flip-flop}} lets the investor switch to fixed interest, {{c2::mismatch}} pays semi-annually on a monthly-reset rate, and {{c3::mini-max}} has a floor and a cap on the coupon."
+          },
+          "tags": [
+            "eurobonds",
+            "frn"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give the advantages of Eurobonds.",
+            "answer_md": "They are easy to sell, relatively low risk and fairly safe as an investment. They also stay outside the official regulation of the country whose currency they are denominated in."
+          },
+          "tags": [
+            "eurobonds",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-eurobond-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the LIBOR reference in this chapter dated?",
+            "answer_md": "LIBOR has been discontinued as a benchmark and replaced by risk-free rates such as SOFR, so exam answers should still use the book term but mention that the floating benchmark is a reference rate such as LIBOR."
+          },
+          "tags": [
+            "eurobonds",
+            "frn",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:eurobond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Foreign bond",
+            "definition_md": "A bond issued by a foreign borrower in a domestic market, in that market's own currency, to raise medium- or long-term finance. Each national market has its own name for it."
+          },
+          "tags": [
+            "foreign-bonds",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a Yankee bond?",
+            "answer_md": "A US dollar bond issued in the US bond market by a foreign borrower (foreign governments, supranationals or highly rated companies)."
+          },
+          "tags": [
+            "foreign-bonds",
+            "yankee"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a Samurai bond and what conditions apply?",
+            "answer_md": "A bond issued in the domestic Japanese market by a non-Japanese borrower, in yen. Borrowers are supranational or need at least an investment-grade (A) rating; maturities run 3 to 20 years."
+          },
+          "tags": [
+            "foreign-bonds",
+            "samurai"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a Bulldog bond and who buys it?",
+            "answer_md": "A sterling bond raised in the UK domestic market by a foreign borrower. Maturities are either short (about 5 years) or very long (25 years and more); intermediate maturities are rare. Buyers are long-term institutions such as pension funds and life insurers."
+          },
+          "tags": [
+            "foreign-bonds",
+            "bulldog"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a Shibosai bond and how does it differ from a Samurai bond?",
+            "answer_md": "A privately placed yen bond issued in the Japanese market. The eligibility criteria are less strict than for Samurai or Euro-yen bonds, and it targets institutional investors including banks."
+          },
+          "tags": [
+            "foreign-bonds",
+            "shibosai"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-006",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Foreign bonds by market: {{c1::Yankee}} is dollar in the US, {{c2::Samurai}} is yen in Japan (public), {{c3::Bulldog}} is sterling in the UK, {{c4::Shibosai}} is private placement in Japan."
+          },
+          "tags": [
+            "foreign-bonds"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which foreign bonds are denominated in yen and which in sterling or dollars?",
+            "answer_md": "Samurai and Shibosai bonds are yen; Bulldog bonds are sterling; Yankee bonds are US dollar."
+          },
+          "tags": [
+            "foreign-bonds"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fbond-008",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "Y-S-B-S",
+            "expands_md": "Yankee (US), Samurai (Japan, public), Bulldog (UK), Shibosai (Japan, private): the four foreign bonds.",
+            "topic": "Foreign bonds"
+          },
+          "tags": [
+            "foreign-bonds",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:fbond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Foreign currency convertible bond (FCCB)",
+            "definition_md": "A bond issued in a currency foreign to the investor that pays coupon and principal and also gives the investor the option to convert it into shares. It is a quasi-debt instrument and is tradable on a stock exchange."
+          },
+          "tags": [
+            "fccb",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why would a company prefer an FCCB to a plain loan?",
+            "answer_md": "Coupon is generally lower than ordinary bank interest, so debt cost falls. On conversion the issuer reduces debt and gains much-needed equity capital. A favourable exchange rate move can reduce the cost of the debt."
+          },
+          "tags": [
+            "fccb",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does an investor gain by holding an FCCB?",
+            "answer_md": "An assured minimum fixed return, participation in price appreciation of the issuer's shares after conversion, and flexibility to choose between entering the equity market and keeping a stable coupon income."
+          },
+          "tags": [
+            "fccb",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the limitations of FCCBs.",
+            "answer_md": "Demand falls when the stock market is down. Conversion dilutes ownership and lowers EPS of existing shareholders. An adverse exchange rate move makes principal and coupon dearer. They carry credit risk, and bondholders cannot influence the conversion ratio or price."
+          },
+          "tags": [
+            "fccb",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why are FCCBs called quasi-debt?",
+            "answer_md": "Until converted they behave like debt (coupon and redemption), but the conversion option can turn them into equity, so they sit between debt and equity."
+          },
+          "tags": [
+            "fccb",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does an FCCB differ from an ordinary foreign currency bond?",
+            "answer_md": "An ordinary bond only pays interest and principal. An FCCB also carries the right to convert into the issuer's shares, which is why the coupon is lower."
+          },
+          "tags": [
+            "fccb",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Describe the Euro convertible bond.",
+            "answer_md": "A quasi-debt, unsecured security convertible into depository receipts or local shares at a fixed price after a minimum lock-in period. The share price at conversion includes a premium. It bears a fixed rate of interest paid in US dollars."
+          },
+          "tags": [
+            "euro-convertible",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What call and put options do Euro convertible bonds carry?",
+            "answer_md": "The issuing company holds a call option to force conversion into equity before maturity; this is usually exercised when the share price exceeds a set percentage of the conversion price. Investors hold a put option to get their money back before maturity."
+          },
+          "tags": [
+            "euro-convertible",
+            "options"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a zero-coupon Euro convertible differ from the usual convertible?",
+            "answer_md": "A convertible bond with no interest. It converts at maturity at a pre-fixed price, usually after a maturity of about 5 years, and is treated as a deferred equity issue."
+          },
+          "tags": [
+            "euro-convertible",
+            "zero-bond"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-fccb-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is a Euro bond with equity warrants?",
+            "answer_md": "A bond with a market-linked coupon whose warrants are detachable. The bond part (pure bond) trades at a discount once separated, and fixed-income fund managers may hold it for regular income."
+          },
+          "tags": [
+            "eurobonds",
+            "warrants",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:fccb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-syndloan-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Syndicated credit (Eurocredit)",
+            "definition_md": "A bank loan, usually floating-rate with a fixed maturity, arranged by one or more lead managers who share it with other participating banks. Typical Eurocredit: 5 to 10 years, repaid in half-yearly instalments, interest reset every 3 or 6 months by reference to LIBOR."
+          },
+          "tags": [
+            "syndicated-credit",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:syndloan"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-syndloan-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the two types of syndicate and how they differ.",
+            "answer_md": "A club loan is a private deal among a few banks and a borrower, used when the amount is small and the parties know each other; no information memorandum is prepared and the deal is not publicised. A syndicated loan is a publicised deal run by lead managers."
+          },
+          "tags": [
+            "syndicated-credit",
+            "club-loan"
+          ],
+          "reference_keys": [
+            "sfm:syndloan"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-syndloan-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How many lead managers can a syndicated credit have?",
+            "answer_md": "One, two or even three banks may act as lead managers, share out the loan among themselves and place the rest with participating banks."
+          },
+          "tags": [
+            "syndicated-credit"
+          ],
+          "reference_keys": [
+            "sfm:syndloan"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-syndloan-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are drop-lock and multicurrency options in a syndicated credit?",
+            "answer_md": "A drop-lock turns the floating rate into a fixed one once the reference rate falls to a stated floor. A multicurrency option lets the borrower switch the currency of the loan on a rollover date."
+          },
+          "tags": [
+            "syndicated-credit",
+            "options"
+          ],
+          "reference_keys": [
+            "sfm:syndloan"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Euro notes",
+            "definition_md": "Short-term instruments, priced a few basis points over LIBOR or often below it, with minimal documentation. They differ from syndicated credit and from Eurobonds in structure and maturity. Forms: Euro commercial paper, note issuance facilities and medium term notes."
+          },
+          "tags": [
+            "euro-notes",
+            "debt-route"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is Euro commercial paper?",
+            "answer_md": "Short-term unsecured promissory notes repaying a fixed amount on a future date, resting on the issuer's general creditworthiness. They are not underwritten and run up to one year, mostly 3 or 6 months."
+          },
+          "tags": [
+            "euro-notes",
+            "commercial-paper"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a note issuance facility (NIF)?",
+            "answer_md": "A binding medium-term commitment by banks, within which the borrower repeatedly issues short notes (up to a year), mostly in US dollars. The issuer tells the lead manager when to issue, and minimum and maximum amounts of each issue are fixed."
+          },
+          "tags": [
+            "euro-notes",
+            "nif"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a medium term note (MTN) programme?",
+            "answer_md": "A programme of sequentially issued fixed-interest notes with maturities over one year, allowing the issuer to issue for different maturities. It is essentially fixed-rate funding."
+          },
+          "tags": [
+            "euro-notes",
+            "mtn"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare Euro commercial paper, NIF and MTN by maturity and underwriting.",
+            "answer_md": "Euro commercial paper: up to one year, not underwritten. NIF: a medium-term commitment with short-term notes up to one year, backed by the facility. MTN: fixed-interest notes with maturity beyond one year."
+          },
+          "tags": [
+            "euro-notes",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do borrowers like Euro notes?",
+            "answer_md": "They are cheap (a few basis points over LIBOR or even below it) and need very little documentation, which saves cost compared with syndicated credits or bond issues."
+          },
+          "tags": [
+            "euro-notes",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-euronote-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A multinational raises short to medium-term foreign currency funds by issuing unsecured foreign currency debt. Which instrument is it?",
+            "answer_md": "Euro notes. (The other options usually listed are foreign bonds, FCCBs and ADRs, which do not fit.)"
+          },
+          "tags": [
+            "euro-notes",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:euronote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ecb-001",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What are the approval and eligibility conditions for issuing external commercial borrowings (ECB) as described in the text?",
+            "answer_md": "The company needs prior permission from the government authority and must meet eligibility norms such as a good financial track record and suitable nature of industry. The approving body named in the text is outdated; the current framework is governed by FEMA and RBI directions."
+          },
+          "tags": [
+            "ecb",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ecb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-ecb-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "For what purposes could ECB proceeds be used according to the text?",
+            "answer_md": "Import of capital goods, retiring foreign currency debt, capitalising an Indian joint venture abroad; working capital and other uses were limited to 25% of total proceeds."
+          },
+          "tags": [
+            "ecb",
+            "uses",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ecb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Depository receipt (DR)",
+            "definition_md": "A negotiable certificate traded on a local stock exchange that stands for shares (usually equity) of a foreign listed company. It lets investors hold foreign equity without trading directly in the foreign market. Main types are ADRs and GDRs."
+          },
+          "tags": [
+            "depository-receipts",
+            "equity-route"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Process of creating a DR in general.",
+            "answer_md": "When a foreign company wants its already traded shares (or debt) available on a foreign exchange, it must first meet that exchange's requirements. Shares are then held with a custodian in the home market and the depository bank issues receipts against them. An IPO can also be made through DRs."
+          },
+          "tags": [
+            "depository-receipts",
+            "creation"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Where are ADRs and GDRs usually listed and in what currency?",
+            "answer_md": "ADRs mostly on US exchanges (NYSE, Nasdaq); GDRs commonly on European exchanges such as London. Both are usually denominated in US dollars, but euro denomination is also possible."
+          },
+          "tags": [
+            "depository-receipts",
+            "adr",
+            "gdr"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain DR pricing and arbitrage with a numerical method.",
+            "answer_md": "Brokers compare the ADR price with the dollar-converted price of the home share (allowing for the ADR ratio). Example: 1 ADR = 1 share, ADR at $15, local share Rs 1,100 at Rs 80/$ = $13.75. ADR is dearer by $1.25, so buy local shares and issue ADRs; this pushes the prices together."
+          },
+          "tags": [
+            "depository-receipts",
+            "pricing",
+            "arbitrage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If an ADR trades at a premium to the converted home-market price, which way does the arbitrage flow and what is the result?",
+            "answer_md": "Brokers buy the cheaper home shares, deposit them and issue more ADRs for sale in the US. The extra supply of ADRs and demand for local shares move the two prices back into line."
+          },
+          "tags": [
+            "depository-receipts",
+            "pricing",
+            "arbitrage"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is cross-border trading in ADRs?",
+            "answer_md": "A US broker sells ADRs back into the home market: the depository cancels the ADRs, the custodian releases the underlying shares to the home broker, who pays in local currency, converted into dollars by the US broker."
+          },
+          "tags": [
+            "depository-receipts",
+            "pricing",
+            "cross-border"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why are most ADRs traded intra-market?",
+            "answer_md": "Continuous buying and selling in both markets keeps ADR and home prices very close, so the price gap seldom justifies cross-border movement."
+          },
+          "tags": [
+            "depository-receipts",
+            "pricing"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give the benefits of issuing a DR to the company.",
+            "answer_md": "Wider exposure and capital raising in the world market, greater liquidity of the share, more prestige at home, an international shareholder base, an easy route for expatriates to invest at home, and access to foreign investors without facing entry barriers of the local market."
+          },
+          "tags": [
+            "depository-receipts",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What do investors gain from holding DRs?",
+            "answer_md": "Instant global diversification while trading in the home market under familiar settlement; exposure to higher-risk, higher-return foreign equities without direct market risks such as lack of transparency and regulatory instability. Some foreign exchange risk remains."
+          },
+          "tags": [
+            "depository-receipts",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a DR help the wider market?",
+            "answer_md": "It increases global trade and raises volumes in local and foreign markets, and promotes exchange of information, technology, regulatory practice and market transparency."
+          },
+          "tags": [
+            "depository-receipts",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Sponsored versus unsponsored DRs.",
+            "answer_md": "Unsponsored DRs are created by one or more depositories because of market demand, without a formal agreement with the company, and are now considered obsolete (no control, hidden costs). Sponsored DRs come from a single depository appointed by the company under a deposit agreement, giving control, listing flexibility and ability to raise capital."
+          },
+          "tags": [
+            "depository-receipts",
+            "sponsored"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Describe a sponsored Level I DR programme.",
+            "answer_md": "The simplest way to reach capital markets. It trades over-the-counter (OTC) in the US and on some exchanges outside it. The company need not comply with US GAAP or full SEC disclosure, so its reporting process stays unchanged. It is the fastest growing and most common sponsored type."
+          },
+          "tags": [
+            "depository-receipts",
+            "level-1"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What do Level II and Level III sponsored DRs allow?",
+            "answer_md": "Level II: listing the securities on a US national exchange or Nasdaq. Level III: raising capital through a public offering. Each needs SEC registration and reporting, compliance with US GAAP and the listing rules of the chosen exchange."
+          },
+          "tags": [
+            "depository-receipts",
+            "level-2",
+            "level-3"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a 144A private placement DR?",
+            "answer_md": "Sponsored DRs placed privately with large institutional investors in the US (and with non-US investors under regulations), avoiding SEC registration. A Level I programme can run alongside it."
+          },
+          "tags": [
+            "depository-receipts",
+            "rule-144a"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-015",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Sponsored DR levels: Level {{c1::I}} trades OTC without US GAAP, Level {{c2::II}} gives an exchange listing, Level {{c3::III}} raises capital through a public offering, and {{c4::144A}} is a private placement."
+          },
+          "tags": [
+            "depository-receipts",
+            "levels"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-dr-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do companies move up from Level I to a higher level?",
+            "answer_md": "Each higher level generally increases the visibility and attractiveness of the DR, although it also brings heavier registration and reporting duties."
+          },
+          "tags": [
+            "depository-receipts",
+            "levels"
+          ],
+          "reference_keys": [
+            "sfm:dr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "American Depositary Receipt (ADR)",
+            "definition_md": "A certificate, issued by a US bank, that represents shares of a foreign company held in custody overseas, while the certificate itself trades in the US (NYSE, Nasdaq and similar markets)."
+          },
+          "tags": [
+            "adr",
+            "depository-receipts"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Steps in creating an ADR through a broker.",
+            "answer_md": "A US broker or dealer buys the foreign issuer's shares in its home market and deposits them with a bank there. That bank issues ADRs against them to the broker's custodian or the broker, who credits the client. Alternatively the broker buys already issued ADRs on a US exchange."
+          },
+          "tags": [
+            "adr",
+            "creation"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When does a broker create new ADRs?",
+            "answer_md": "It depends on the broker's view of share availability, ADR pricing and market, and general market conditions."
+          },
+          "tags": [
+            "adr",
+            "creation"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Sponsored and unsponsored ADR programmes: who initiates?",
+            "answer_md": "Unsponsored: the broker or dealer starts it; the foreign company plays no active role. Sponsored: the foreign company starts it to make its shares available to US investors. Most programmes are sponsored."
+          },
+          "tags": [
+            "adr",
+            "sponsored"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In which currency do ADRs pay dividends, and does the investor still bear currency risk?",
+            "answer_md": "Dividends are paid in US dollars, but the company pays in its home currency and the issuing bank converts it, net of conversion costs and foreign taxes. If the exchange rate changes, the dollar value of the dividend changes, so currency risk remains."
+          },
+          "tags": [
+            "adr",
+            "dividends",
+            "currency-risk"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the advantages of ADRs to the issuing company.",
+            "answer_md": "Access to large capital and to foreign exchange; no change in shareholding or voting pattern; greater international recognition among bankers and customers."
+          },
+          "tags": [
+            "adr",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "The text claims an ADR issue brings 'no exchange rate risk' to an Indian company because it pays interest and dividends in rupees. How should this be read?",
+            "answer_md": "From the company's side, payment is in rupees and the depository converts it, so the company is not directly paying in dollars. The investor still carries currency risk, as the text itself says earlier. Treat this as a company-side point, not as a risk-free claim."
+          },
+          "tags": [
+            "adr",
+            "advantages",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the limitations of ADRs.",
+            "answer_md": "High cost of issue, a requirement of large issue size and stringent compliance requirements."
+          },
+          "tags": [
+            "adr",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "ADRs 'act as a bridge between foreign companies and US investors.' Explain briefly.",
+            "answer_md": "ADRs let US investors buy foreign shares in dollars, on a US exchange, with US settlement, without dealing with foreign currency or foreign markets. They let the foreign company reach US capital and investors."
+          },
+          "tags": [
+            "adr",
+            "benefits"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-adr-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Since when have ADRs been in use?",
+            "answer_md": "Since the 1920s; they were the first type of depositary receipt and later led to GDRs and other forms."
+          },
+          "tags": [
+            "adr",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:adr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Global Depository Receipt (GDR)",
+            "definition_md": "A negotiable certificate issued by a depository bank that represents a given number of a company's shares and can be listed and traded separately from the underlying shares. Typically used by emerging-market companies and marketed to professional investors."
+          },
+          "tags": [
+            "gdr",
+            "depository-receipts"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give the features of a GDR.",
+            "answer_md": "Each GDR represents one or more underlying shares held by a custodian; the depository bank's name is entered in the company's books; dividends are received in local currency and paid out in dollars at the going rate; GDRs are exchangeable with underlying shares; they are marketed globally in more than one country; and they settle through Euroclear and Clearstream-type book entry systems."
+          },
+          "tags": [
+            "gdr",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who holds the underlying shares of a GDR and whose name appears in the company's books?",
+            "answer_md": "A custodian appointed by the depository bank holds the shares physically; the depository bank appears in the company's books as the shareholder."
+          },
+          "tags": [
+            "gdr",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do GDR holders receive dividends?",
+            "answer_md": "The depository collects the dividend in local currency from the company and, after converting it at the prevailing exchange rate, distributes it to GDR holders in dollars."
+          },
+          "tags": [
+            "gdr",
+            "features",
+            "dividends"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can a GDR be converted into the underlying share?",
+            "answer_md": "Yes, GDRs are negotiable and exchangeable with the underlying share, either at any time or after a stated period. The text gives about 45 days; this period depends on current rules, so check before quoting it."
+          },
+          "tags": [
+            "gdr",
+            "features",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are GDRs settled and traded?",
+            "answer_md": "Settlement is through international book entry systems (Euroclear and CEDEL, now Clearstream, in the text; DTC also applies in the US). They trade mostly in US dollars on London's International Order Book, with dividends in dollars."
+          },
+          "tags": [
+            "gdr",
+            "features",
+            "settlement",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a GDR give access to more than one market?",
+            "answer_md": "One GDR programme is used to reach two or more markets, usually London and the US. The US part is a Rule 144A or Level III ADR depending on whether the issuer wants the private placement or the public US market. They are often launched to raise capital."
+          },
+          "tags": [
+            "gdr",
+            "market-access"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the main risk introduced by holding a DR instead of the foreign share?",
+            "answer_md": "Third-party default risk: the bank holds the underlying assets and may fail to pass benefits on if it faces financial trouble, even though foreign market and tax complications are removed."
+          },
+          "tags": [
+            "depository-receipts",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the impact of GDRs on the Indian capital market?",
+            "answer_md": "Investors must track world economic events and the GDR's trading because arbitrage between markets is possible; GDRs can be issued at any price (free pricing), so retail investors cannot expect discounted rights or public issues; and GDRs sold to institutions abroad bring large foreign funds into India."
+          },
+          "tags": [
+            "gdr",
+            "indian-market"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdr-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "GDR versus ADR: main difference in coverage and market.",
+            "answer_md": "An ADR is issued by a US bank against foreign shares and trades in the US. A GDR is issued by international banks, can be listed in more than one country (typically London, with a US element) and is marketed globally, mainly to institutions."
+          },
+          "tags": [
+            "gdr",
+            "adr",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:gdr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Gross GDR issue size",
+            "expression_md": "$\\text{Gross issue} = \\dfrac{\\text{Net amount needed}}{1-\\text{flotation cost rate}}$",
+            "variables_md": "Net amount = money the project needs after expenses; flotation cost rate = issue expenses as a fraction of gross issue.",
+            "when_md": "First step: find the gross amount to raise so the net equals the requirement."
+          },
+          "tags": [
+            "gdr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Issue price per GDR",
+            "expression_md": "$\\text{Price per GDR (Rs)} = \\text{Market price} \\times \\text{shares per GDR} \\times (1-\\text{discount})$",
+            "variables_md": "Market price = expected share price; shares per GDR = number of underlying shares; discount = issue discount to market price.",
+            "when_md": "Divide by the exchange rate (Rs per $) to get the dollar price per GDR."
+          },
+          "tags": [
+            "gdr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Number of GDRs to issue",
+            "expression_md": "$\\text{No. of GDRs} = \\dfrac{\\text{Gross issue in } \\$}{\\text{Price per GDR in } \\$}$",
+            "variables_md": "Gross issue in dollars from the flotation step; dollar price = rupee GDR price / exchange rate.",
+            "when_md": "Use the gross figure (before flotation cost), not the net requirement."
+          },
+          "tags": [
+            "gdr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Cost of a GDR",
+            "expression_md": "$K_e = \\dfrac{D_1}{P_0} + g$",
+            "variables_md": "$D_1$ = dividend per GDR next year (dividend per share x shares per GDR); $P_0$ = net proceeds per GDR (issue price x (1 - flotation rate)); $g$ = dividend growth rate.",
+            "when_md": "Cost of equity through GDR; it is net of issue expenses."
+          },
+          "tags": [
+            "gdr",
+            "cost-of-capital",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method for a GDR numerical: list the steps in order.",
+            "answer_md": "1) Gross issue = net requirement / (1 - flotation rate). 2) Rupee price per GDR = share price x shares per GDR x (1 - discount). 3) Dollar price = rupee price / exchange rate. 4) Number of GDRs = gross issue / dollar price. 5) D1 per GDR = dividend per share x shares per GDR. 6) Net proceeds per GDR = rupee price x (1 - flotation rate). 7) Cost = D1 / net proceeds + g."
+          },
+          "tags": [
+            "gdr",
+            "numerical",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example: net need $10 million, flotation cost 4%, share price Rs 400, 3 shares per GDR at 5% discount, Rs 80/$. Find the gross issue, dollar price and number of GDRs.",
+            "answer_md": "Gross issue = 10 / 0.96 = $10.4167 million. Rupee price = 400 x 3 x 0.95 = Rs 1,140. Dollar price = 1,140 / 80 = $14.25. Number of GDRs = 10.4167 million / 14.25 = about 730,994 GDRs."
+          },
+          "tags": [
+            "gdr",
+            "numerical",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Continuing: dividend Rs 16 per share, growth 8%. Find the cost of the GDR.",
+            "answer_md": "D1 per GDR = 16 x 3 = Rs 48. Net proceeds = 1,140 x 0.96 = Rs 1,094.40. Cost = 48 / 1,094.40 + 0.08 = 4.386% + 8% = about 12.39%."
+          },
+          "tags": [
+            "gdr",
+            "cost-of-capital",
+            "numerical",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a GDR cost question, which figure goes in the denominator of the dividend yield: issue price or net proceeds?",
+            "answer_md": "Net proceeds per GDR (issue price after deducting the flotation cost). The dividend is per GDR, so multiply the per-share dividend by the shares per GDR."
+          },
+          "tags": [
+            "gdr",
+            "cost-of-capital",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-gdrnum-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a GDR question, a dividend is quoted as a percentage of face value. How is D1 per share found?",
+            "answer_md": "Apply the percentage to face value (not market price). Then multiply by the number of shares underlying each GDR to get D1 per GDR."
+          },
+          "tags": [
+            "gdr",
+            "cost-of-capital",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:gdrnum"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Warrant",
+            "definition_md": "A security that gives the holder the right to buy the issuer's shares at a fixed exercise price up to an expiry date. It is exercised when the holder informs the issuer of the intention to buy the underlying shares."
+          },
+          "tags": [
+            "warrants",
+            "equity-route"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the premium of a warrant?",
+            "answer_md": "How much extra you pay for the share by buying through the warrant, compared with buying it directly in the market."
+          },
+          "tags": [
+            "warrants",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-003",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Warrant premium (percentage)",
+            "expression_md": "$\\text{Premium \\%} = \\dfrac{(\\text{Warrant price}+\\text{Exercise price})-\\text{Share price}}{\\text{Share price}}\\times 100$",
+            "variables_md": "Warrant price = cost per warrant; exercise price = price paid on exercise; share price = current market price.",
+            "when_md": "Standard market definition of premium; the study text describes it only in words."
+          },
+          "tags": [
+            "warrants",
+            "premium",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Numerical on warrant premium and gearing.",
+            "answer_md": "Share Rs 200, warrant Rs 40, exercise price Rs 180. Premium = (40 + 180 - 200)/200 = 10%. Gearing = 200/40 = 5 times."
+          },
+          "tags": [
+            "warrants",
+            "premium",
+            "gearing",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the gearing of a warrant?",
+            "answer_md": "A measure of how much more exposure you get to the underlying shares through the warrant than by buying the shares directly; the same money buys exposure to more shares. Standard measure: share price divided by warrant price."
+          },
+          "tags": [
+            "warrants",
+            "gearing",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does time to expiry affect a warrant's price?",
+            "answer_md": "More time left gives the underlying share more time to rise, which tends to raise the warrant price. The right ceases to exist on the expiry date."
+          },
+          "tags": [
+            "warrants",
+            "expiry"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "American versus European exercise styles for warrants.",
+            "answer_md": "American style: exercisable any time up to expiry. European style: exercisable only on the expiry date."
+          },
+          "tags": [
+            "warrants",
+            "exercise-style"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is it hard to find the price of some warrants?",
+            "answer_md": "If the issuer registers the warrant on a listed exchange, the price can be obtained from a stockbroker. Often warrants are held privately or unregistered, so their prices are less visible."
+          },
+          "tags": [
+            "warrants",
+            "pricing"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-warrant-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which complex derivative is an option on a portfolio of underlying assets: warrants, swaptions, baskets or LEAPS?",
+            "answer_md": "Baskets are options on a portfolio of assets; warrants are issuer-written long-dated options on the issuer's own shares."
+          },
+          "tags": [
+            "warrants",
+            "mcq",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:warrant"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mcq-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which bonds are denominated in yen: Yankee, Samurai or Shibosai?",
+            "answer_md": "Samurai and Shibosai are yen bonds; Yankee is dollar. The book's printed answer key marks only Samurai, which looks inconsistent."
+          },
+          "tags": [
+            "foreign-bonds",
+            "mcq",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mcq"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mcq-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Euro notes: which is underwritten and has a maturity of up to one year?",
+            "answer_md": "The note issuance facility is the underwritten arrangement of up to one year; Euro commercial paper is not underwritten."
+          },
+          "tags": [
+            "euro-notes",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:mcq"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mcq-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "True or false: Eurobonds are denominated in the currency of the country where they are issued.",
+            "answer_md": "False. They are denominated in a currency other than that of the country of issue."
+          },
+          "tags": [
+            "eurobonds",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:mcq"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mcq-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which is a private arrangement between lending banks and a borrower?",
+            "answer_md": "A club loan."
+          },
+          "tags": [
+            "syndicated-credit",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:mcq"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm14-mcq-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Define a Shibosai bond in one line.",
+            "answer_md": "A yen bond privately placed in Japan."
+          },
+          "tags": [
+            "foreign-bonds",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:mcq"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

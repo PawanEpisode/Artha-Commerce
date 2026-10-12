@@ -1,0 +1,3939 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-equity-and-bond-valuation-and-evaluation-of-performance",
+      "title": "SFM: Equity and Bond Valuation and Evaluation of Performance",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 6: Equity and Bond Valuation and Evaluation of Performance.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "equity-and-bond-valuation-and-evaluation-of-performance"
+      },
+      "items": [
+        {
+          "ref": "sfm06-dcf-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the two basic approaches to valuing a common stock by fundamental analysis?",
+            "answer_md": "Discounted cash flow (DCF) techniques, which value the share as the present value of the cash flows the owner expects to receive, and relative valuation techniques, which value it by comparison with multiples such as the P/E ratio."
+          },
+          "tags": [
+            "valuation",
+            "dcf",
+            "relative-valuation"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Discounted cash flow (capitalisation of income) valuation",
+            "definition_md": "A present value method. The estimated value of a security equals its expected future cash flows discounted at the investor's required rate of return. Another name for it is the capitalisation of income method."
+          },
+          "tags": [
+            "valuation",
+            "dcf"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "General present value valuation of a security",
+            "expression_md": "$V_0 = \\sum_{t=1}^{n} \\dfrac{C_t}{(1+k)^t}$",
+            "variables_md": "$V_0$ = value today, $C_t$ = cash flow expected at time $t$, $k$ = required rate of return (discount or capitalisation rate), $n$ = number of periods.",
+            "when_md": "Applies to any security. For a bond the cash flows are coupons and redemption; for a share they are dividends and the final sale price."
+          },
+          "tags": [
+            "valuation",
+            "dcf",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the required rate of return in share valuation and how is it linked to CAPM?",
+            "answer_md": "It is the minimum expected return needed to persuade an investor to buy the share given its risk. CAPM supplies it: the riskier the share, the higher the required return, and so the lower the value that comes out of the discounting."
+          },
+          "tags": [
+            "valuation",
+            "required-return",
+            "capm"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are dividends, and not earnings, used as the cash flow in the basic valuation model for a share?",
+            "answer_md": "Dividends are the only cash a company actually distributes to its shareholders, and so the only cash flow an investor normally receives directly. That makes a dividend based model the natural starting point; this model is called the dividend discount model (DDM)."
+          },
+          "tags": [
+            "valuation",
+            "ddm",
+            "dividends"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Dividend discount model (general form)",
+            "expression_md": "$V_0 = \\sum_{t=1}^{\\infty} \\dfrac{D_t}{(1+k)^t}$",
+            "variables_md": "$D_t$ = dividend expected in year $t$, $k$ = required rate of return on the share.",
+            "when_md": "This is the base model. It cannot be used as it stands because the dividend stream must be forecast, so growth assumptions are added to turn it into the zero growth, constant growth and multi-stage versions."
+          },
+          "tags": [
+            "valuation",
+            "ddm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the general dividend discount model made workable?",
+            "answer_md": "By assuming a pattern for dividend growth: no growth (a perpetuity), a constant growth rate, or two or more growth rates in stages. Each pattern reduces the infinite sum to a usable formula."
+          },
+          "tags": [
+            "valuation",
+            "ddm",
+            "growth"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the intrinsic value of a share compare with its market price, and what should the investor do in each case?",
+            "answer_md": "If intrinsic value V0 is above market price P0 the share is undervalued, so buy or continue to hold. If V0 is below P0 it is overvalued, so avoid it, sell it if held, or possibly sell short. If they are equal the share is correctly priced and the market is in equilibrium."
+          },
+          "tags": [
+            "valuation",
+            "intrinsic-value",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Intrinsic value",
+            "definition_md": "The value of a share that an analyst works out from forecast dividends and the required return, for example by the DDM. It is an estimated or formula value, and is compared with the market price to judge whether the share is cheap or dear."
+          },
+          "tags": [
+            "valuation",
+            "intrinsic-value"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does the book say stock prices keep moving even if every investor uses the DDM?",
+            "answer_md": "Each investor holds a different required return k and a different view of the dividend growth rate g. Small differences in these inputs give different intrinsic values, so some investors want to buy while others want to sell, which keeps the market active and liquid."
+          },
+          "tags": [
+            "valuation",
+            "ddm",
+            "market-price"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the main limitation of the DDM.",
+            "answer_md": "It is very sensitive to its inputs. A small change in the required return or in the growth rate can change the estimated value by a large percentage. Forecasting dividends many years ahead is also unreliable."
+          },
+          "tags": [
+            "valuation",
+            "ddm",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do analysts also use relative valuation although DCF is the theoretically sound method?",
+            "answer_md": "Because small input differences in DCF models create large differences in value, which can lead to wrong calls on mispricing. Relative valuation works by comparison, for example with the P/E ratio, so the analyst avoids estimating g and k directly."
+          },
+          "tags": [
+            "valuation",
+            "relative-valuation",
+            "dcf"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-dcf-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Compare DCF valuation and relative valuation in one line each.",
+            "answer_md": "DCF: a share is worth the present value of its expected cash flows, but results depend heavily on estimates of k and g. Relative: a share is judged by a multiple such as P/E against comparable shares, which is easy to apply but only as good as the benchmark chosen."
+          },
+          "tags": [
+            "valuation",
+            "relative-valuation",
+            "dcf"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Zero growth dividend model",
+            "expression_md": "$V_0 = \\dfrac{D}{k}$",
+            "variables_md": "$D$ = the fixed annual dividend, $k$ = required rate of return.",
+            "when_md": "Use when the dividend is a fixed rupee amount for ever, so the share is a perpetuity. The same idea values a preference share with a fixed dividend."
+          },
+          "tags": [
+            "ddm",
+            "zero-growth",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A share pays a fixed dividend of Rs 12 a year for ever. Required return is 15%. What is its value and why?",
+            "answer_md": "Value = 12 / 0.15 = Rs 80. A fixed dividend that never changes is a perpetuity, so the zero growth model divides the dividend by the required return."
+          },
+          "tags": [
+            "ddm",
+            "zero-growth",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Constant growth model (Gordon model)",
+            "expression_md": "$V_0 = \\dfrac{D_0(1+g)}{k-g} = \\dfrac{D_1}{k-g}$",
+            "variables_md": "$D_0$ = dividend just paid, $D_1$ = dividend due at the end of year 1, $g$ = constant growth rate of dividends, $k$ = required return.",
+            "when_md": "Use when dividends will grow at a steady rate for ever. The model needs $k > g$; otherwise the value is infinite or negative and meaningless."
+          },
+          "tags": [
+            "ddm",
+            "constant-growth",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why must the required return exceed the growth rate in the constant growth model?",
+            "answer_md": "The denominator is k minus g. If g is equal to or above k, the formula gives an infinite or negative price, which has no meaning. In that case the constant growth assumption is unrealistic for the long run and a multi-stage model should be used."
+          },
+          "tags": [
+            "ddm",
+            "constant-growth",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: find the value of a share by the constant growth model when the last dividend paid is given. Show with D0 = Rs 5, g = 6%, k = 14%.",
+            "answer_md": "Step 1: compute next year's dividend D1 = D0 x (1 + g) = 5 x 1.06 = Rs 5.30. Step 2: divide by (k - g) = 0.08. Value = 5.30 / 0.08 = Rs 66.25. A common mistake is to divide D0 itself, instead of D1, by (k - g)."
+          },
+          "tags": [
+            "ddm",
+            "constant-growth",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Under the constant growth model, how does the price move from year to year, and what is the price at the end of year 3 for a share now worth Rs 66.25 with g = 6%?",
+            "answer_md": "The price grows at the same rate g as the dividend, since k and g are unchanged. P3 = 66.25 x (1.06)^3 = Rs 78.90. Equivalently P3 = D4 / (k - g)."
+          },
+          "tags": [
+            "ddm",
+            "constant-growth",
+            "future-price",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Future price under constant growth",
+            "expression_md": "$P_n = P_0(1+g)^n = \\dfrac{D_{n+1}}{k-g}$",
+            "variables_md": "$P_n$ = price at end of year $n$, $D_{n+1}$ = dividend of the year after that.",
+            "when_md": "Asked as 'what price do you expect in 3 years'. The exam question usually gives EPS, ROE and plough-back, so first get g and D1, then grow the price."
+          },
+          "tags": [
+            "ddm",
+            "constant-growth",
+            "future-price",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What happens to the value of a share when k rises, when g rises, when k falls, when g falls?",
+            "answer_md": "Value falls when k rises or g falls. Value rises when k falls or g rises. Both effects follow from V0 = D1 / (k - g), other things being equal."
+          },
+          "tags": [
+            "ddm",
+            "sensitivity"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Show how sensitive the constant growth value is: base D1 = Rs 5.30, k = 14%, g = 6%.",
+            "answer_md": "Base value = 5.30 / 0.08 = Rs 66.25. If k rises to 15%, value = 5.30 / 0.09 = 58.89, a fall of 11.1%. If instead g rises to 7% (D1 = 5.35), value = 5.35 / 0.07 = 76.43, a rise of 15.4%. One percentage point moves the value by more than a tenth."
+          },
+          "tags": [
+            "ddm",
+            "sensitivity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-010",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Required return from the constant growth model",
+            "expression_md": "$k = \\dfrac{D_1}{P_0} + g$",
+            "variables_md": "$D_1/P_0$ = expected dividend yield, $g$ = expected growth of dividends (and of price, the capital gain yield).",
+            "when_md": "Rearranging the constant growth model. Use it to find the expected return, or the market's capitalisation rate, when the price is known. If the price is unknown and the value is given, the same relation gives g."
+          },
+          "tags": [
+            "ddm",
+            "capitalisation-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Split the expected return on a constant growth share into its two parts.",
+            "answer_md": "Expected return k = dividend yield (D1 / P0, the income component) plus g (the growth in dividends and price, the capital gain component). Together they form the total return from the share."
+          },
+          "tags": [
+            "ddm",
+            "capitalisation-rate",
+            "total-return"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Find the expected return: price Rs 125, dividend Rs 6 due next year, growth 7% for ever.",
+            "answer_md": "k = D1/P0 + g = 6/125 + 0.07 = 0.048 + 0.07 = 11.8%."
+          },
+          "tags": [
+            "ddm",
+            "capitalisation-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: find the growth rate the market is expecting. Share price Rs 90, D1 = Rs 3.60, required return 12%.",
+            "answer_md": "Rearrange k = D1/P0 + g to g = k - D1/P0 = 0.12 - 3.60/90 = 0.12 - 0.04 = 8%. The market is pricing in 8% dividend growth."
+          },
+          "tags": [
+            "ddm",
+            "growth-implied",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If D1 is not given but the last dividend D0 is, and the question asks for k, what do you do?",
+            "answer_md": "Grow the dividend first: D1 = D0 x (1 + g). Then k = D1 / P0 + g. Using D0 directly gives a wrong answer."
+          },
+          "tags": [
+            "ddm",
+            "capitalisation-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "If forecasts of growth for a company are cut, what happens to its price and its P/E ratio, other things equal?",
+            "answer_md": "The price falls because g falls in V0 = D1/(k - g). Current earnings are unchanged, so the P/E ratio also falls; a lower P/E shows less optimism about growth."
+          },
+          "tags": [
+            "ddm",
+            "pe-ratio",
+            "growth"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-016",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Constant growth model in terms of earnings and retention",
+            "expression_md": "$V_0 = \\dfrac{(1-b)\\,E_1}{k-g}$",
+            "variables_md": "$b$ = retention (plough-back) ratio, $E_1$ = expected EPS of next year, $(1-b)$ = payout ratio, $g$ = growth rate.",
+            "when_md": "Use when the question gives EPS and a payout or retention ratio instead of the dividend. D1 = payout ratio x E1."
+          },
+          "tags": [
+            "ddm",
+            "retention",
+            "earnings",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-017",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Sustainable growth rate of dividends",
+            "expression_md": "$g = b \\times \\text{ROE}$",
+            "variables_md": "$b$ = proportion of earnings retained, ROE = return on equity earned on the retained money.",
+            "when_md": "Use when growth is not stated. Retained earnings finance growth, so the more is retained and the higher the return on it, the faster the dividends can grow."
+          },
+          "tags": [
+            "ddm",
+            "growth",
+            "roe",
+            "retention",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price a share from ROE and plough-back. Coming year EPS Rs 8, ROE 20%, plough-back 40%, k = 13%.",
+            "answer_md": "g = b x ROE = 0.40 x 0.20 = 8%. Payout = 60%, so D1 = 0.60 x 8 = Rs 4.80. V0 = D1/(k - g) = 4.80 / 0.05 = Rs 96. Implied P/E on next year's earnings = 96 / 8 = 12 times."
+          },
+          "tags": [
+            "ddm",
+            "roe",
+            "retention",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price in 3 years when EPS, ROE and plough-back are given. Coming EPS Rs 4, ROE 18%, plough-back 50%, k = 13%.",
+            "answer_md": "g = 0.18 x 0.50 = 9%. D1 = 0.50 x 4 = Rs 2. P0 = 2 / (0.13 - 0.09) = Rs 50. Price after 3 years = P0 x (1.09)^3 = 50 x 1.2950 = Rs 64.75. This pattern has appeared in past papers."
+          },
+          "tags": [
+            "ddm",
+            "roe",
+            "retention",
+            "future-price",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When earnings grow at g and the payout ratio is constant, how do you get the share price after n years straight from EPS?",
+            "answer_md": "P_n = E_(n+1) x payout / (k - g), where E_(n+1) = E0 x (1+g)^(n+1). So the price after 3 years uses E4 = E0 x (1+g)^4 times the payout ratio."
+          },
+          "tags": [
+            "ddm",
+            "future-price",
+            "earnings",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ddm-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A company pays a dividend which is expected to be Rs 3 in year 1 and Rs 6 in year 2, then grow at 5% for ever from year 3. How do you value it?",
+            "answer_md": "Discount the explicit dividends of years 1 and 2 at k. Then take the dividend of year 3 as D2 x 1.05, value the growing stream as of end of year 2 with D3/(k - g), and discount that terminal value back two years. Add the three present values."
+          },
+          "tags": [
+            "ddm",
+            "irregular-dividends",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:ddm"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is a multi-stage (multiple growth rate) dividend model needed, and what defines it?",
+            "answer_md": "When a firm grows fast for some years and then slows to a normal rate, or pays no dividend in its early years. The constant growth model cannot handle this. A multi-stage situation always involves at least two different growth rates, one of which can be zero."
+          },
+          "tags": [
+            "multi-stage",
+            "ddm",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outline the three steps of the two-stage (super-normal then normal growth) dividend model.",
+            "answer_md": "Step 1: find the present value of the dividends in the super-normal growth years, year by year. Step 2: at the end of the super-normal period, value the share by the constant growth model, P_n = D_(n+1)/(k - g_n), and discount it back n years. Step 3: add the two present values."
+          },
+          "tags": [
+            "multi-stage",
+            "two-stage",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Two-stage dividend discount model",
+            "expression_md": "$P_0 = \\sum_{t=1}^{n}\\dfrac{D_t}{(1+k)^t} + \\dfrac{D_{n+1}}{k-g_n}\\cdot\\dfrac{1}{(1+k)^n}$",
+            "variables_md": "$D_t = D_0(1+g_a)^t$ in the fast stage, $g_a$ = super-normal growth rate, $g_n$ = normal (long run) growth rate, $D_{n+1} = D_n(1+g_n)$, $n$ = length of fast stage.",
+            "when_md": "Use for a firm with a limited period of abnormal growth followed by stable growth in perpetuity."
+          },
+          "tags": [
+            "multi-stage",
+            "two-stage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In the two-stage model, how do you get the dividend D(n+1) used for the terminal value?",
+            "answer_md": "Take the last super-normal dividend D_n and grow it once at the normal rate: D_(n+1) = D_n x (1 + g_n). Using D_n without growing it, or growing it at the super-normal rate, is a common mistake."
+          },
+          "tags": [
+            "multi-stage",
+            "two-stage",
+            "terminal-value"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: value a share with D0 = Rs 2, growth 20% for 3 years, then 5% for ever, k = 13%.",
+            "answer_md": "Dividends: 2.40, 2.88, 3.456. Their present values total about Rs 6.77. D4 = 3.456 x 1.05 = 3.629; P3 = 3.629 / (0.13 - 0.05) = Rs 45.36. Discounted over 3 years at 13% that is Rs 31.44. Value today = 6.77 + 31.44 = about Rs 38.21."
+          },
+          "tags": [
+            "multi-stage",
+            "two-stage",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In the two-stage model, what is the 'terminal value' and when is it measured?",
+            "answer_md": "It is the price of the share at the end of the fast growth stage, found from the constant growth model using the next dividend and the normal growth rate. It is a value at year n, so it must be discounted for n years to bring it to today."
+          },
+          "tags": [
+            "multi-stage",
+            "terminal-value"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When earnings grow at 10% for 3 years and then at 3%, and the payout changes after year 3, how do you find the price at the end of year 3?",
+            "answer_md": "Work out EPS of year 4 by growing EPS at 10% for three years and at 3% once more. Multiply by the new payout ratio to get D4. Then P3 = D4 / (k - 3%). Dividends for years 1 to 3 use the old payout and the 10% growth."
+          },
+          "tags": [
+            "multi-stage",
+            "payout-change",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Describe the three-phase dividend growth model.",
+            "answer_md": "Phase 1: dividends grow at a constant high rate g_a for A years. Phase 2: the growth rate falls in a straight line, step by step, to the long run rate over the next years. Phase 3: dividends grow at the normal rate g_n for ever, valued at the start of this phase by the constant growth formula and discounted back."
+          },
+          "tags": [
+            "multi-stage",
+            "three-phase"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Method: how do you find the dividends in the declining (middle) phase of the three-phase model?",
+            "answer_md": "List the growth rate for each year of the decline in equal steps from the high rate to the normal rate. Multiply the previous year's dividend by (1 + that year's rate), discount each dividend at k, and keep going until the year before the perpetual growth starts."
+          },
+          "tags": [
+            "multi-stage",
+            "three-phase",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-010",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Three-phase model: value of the share",
+            "expression_md": "$P_0 = \\sum_{t=1}^{A}\\dfrac{D_0(1+g_a)^t}{(1+k)^t} + \\sum_{t=A+1}^{B}\\dfrac{D_{t-1}(1+g_b)}{(1+k)^t} + \\dfrac{D_B(1+g_n)}{(k-g_n)(1+k)^B}$",
+            "variables_md": "$g_a$ = fast growth for years $1..A$, $g_b$ = declining growth in years $A+1..B$, $g_n$ = long run growth, $D_B$ = dividend at the start of phase 3.",
+            "when_md": "Phase 1 uses a constant growth, phase 2 uses a different rate each year, phase 3 is a perpetuity. Add all three present values."
+          },
+          "tags": [
+            "multi-stage",
+            "three-phase",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-multi-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the P/E ratio unreliable for companies with multiple growth rates?",
+            "answer_md": "The P/E formula (payout / (k - g)) derives from the constant growth model. When growth changes over time, a single g does not describe the firm, so using the simple P/E relation can mislead and needs care."
+          },
+          "tags": [
+            "multi-stage",
+            "pe-ratio",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:multi"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Price-earnings (P/E) ratio",
+            "definition_md": "The number of times the market price of a share covers its earnings per share, that is price divided by EPS. A share at Rs 200 with EPS Rs 10 sells at a multiple of 20. It is the best known and most widely used relative valuation tool."
+          },
+          "tags": [
+            "pe-ratio",
+            "relative-valuation"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-002",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Price from the P/E ratio",
+            "expression_md": "$P_0 = E \\times \\dfrac{P_0}{E}$",
+            "variables_md": "$E$ = earnings per share (latest 12 months, or expected), $P_0/E$ = the P/E multiple.",
+            "when_md": "Price is the product of two things: EPS and the multiple. Use expected EPS with a forward P/E, or last year's EPS with a trailing P/E."
+          },
+          "tags": [
+            "pe-ratio",
+            "relative-valuation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Two shares both sell at Rs 200. One has EPS of Rs 10, the other Rs 5. What are their P/E multiples and what do they mean?",
+            "answer_md": "Rs 200 / 10 = 20 times, and Rs 200 / 5 = 40 times. The second share is priced at 40 times its earnings, so investors pay more for each rupee of earnings, usually because they expect faster growth."
+          },
+          "tags": [
+            "pe-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "P/E ratio from the constant growth model",
+            "expression_md": "$\\dfrac{P_0}{E_1} = \\dfrac{D_1/E_1}{k-g} = \\dfrac{1-b}{k-g}$",
+            "variables_md": "$D_1/E_1$ = expected payout ratio, $b$ = retention ratio, $k$ = required return, $g$ = growth rate.",
+            "when_md": "Obtained by dividing the constant growth value by next year's EPS. It holds directly only for constant growth, and gives P/E on next year's earnings."
+          },
+          "tags": [
+            "pe-ratio",
+            "constant-growth",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three variables that determine a share's P/E ratio.",
+            "answer_md": "The expected dividend payout ratio (D1/E1), the required rate of return (k) and the expected growth rate of dividends (g)."
+          },
+          "tags": [
+            "pe-ratio",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State how the P/E ratio responds to payout ratio, growth rate and required return, other things equal.",
+            "answer_md": "Higher payout ratio gives a higher P/E. Higher expected growth gives a higher P/E. Higher required return gives a lower P/E. (The payout effect assumes the growth rate is held fixed.)"
+          },
+          "tags": [
+            "pe-ratio",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does the P/E ratio move inversely with interest rates?",
+            "answer_md": "When interest rates rise, investors' required return on all securities, shares included, rises, and bonds look more attractive than shares on current return. A higher k lowers the P/E; when rates fall, P/E ratios should rise."
+          },
+          "tags": [
+            "pe-ratio",
+            "interest-rates",
+            "required-return"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do the P/E ratio and the dividend yield say together about growth prospects?",
+            "answer_md": "A high dividend yield with a low P/E implies limited growth prospects. A low dividend yield with a high P/E implies considerable growth prospects."
+          },
+          "tags": [
+            "pe-ratio",
+            "dividend-yield",
+            "growth"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "As expected growth rises, how does the total return divide between dividend yield and capital gain?",
+            "answer_md": "Total return is dividend yield plus capital gain. When expected growth is higher, a larger part of the return comes from the capital gain and a smaller part from the dividend yield, and the P/E ratio rises."
+          },
+          "tags": [
+            "pe-ratio",
+            "total-return",
+            "growth"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do risk and growth interact in setting the P/E ratio?",
+            "answer_md": "The P/E reflects what investors expect about growth and how risky that growth is. Greater risk lowers the P/E, but growth prospects can offset this and push it up. High-growth but risky firms can still carry very high multiples if investors rate their potential highly."
+          },
+          "tags": [
+            "pe-ratio",
+            "risk",
+            "growth"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Does a higher growth rate always justify a higher P/E ratio?",
+            "answer_md": "Not automatically. The market also weighs how risky that growth is, and growth can come from several sources, some more desirable than others. How much higher the P/E should be is not easy to say."
+          },
+          "tags": [
+            "pe-ratio",
+            "growth",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: P/E from payout, k and g. Payout 50%, required return 14%, growth 6%. Then price if next year's EPS is Rs 8.",
+            "answer_md": "P/E = payout / (k - g) = 0.50 / 0.08 = 6.25 times. Price = 6.25 x 8 = Rs 50. Cross-check with the DDM: D1 = 4, P0 = 4 / 0.08 = Rs 50."
+          },
+          "tags": [
+            "pe-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: P/E when growth comes from ROE and retention. Retention 60%, ROE 19%, k = 14%.",
+            "answer_md": "g = b x ROE = 0.60 x 0.19 = 11.4%. Payout = 40%. P/E = 0.40 / (0.14 - 0.114) = 15.4 times. Multiply by next year's EPS to get the price."
+          },
+          "tags": [
+            "pe-ratio",
+            "roe",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do you conclude if growth g computed from ROE x retention exceeds the required return k?",
+            "answer_md": "The constant growth P/E formula breaks down because k - g is negative, so the result is meaningless. Such growth cannot continue for ever; use a multi-stage model instead of the earnings multiplier."
+          },
+          "tags": [
+            "pe-ratio",
+            "roe",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: find the long term growth rate implied by a P/E ratio. P/E is 8, DPS Rs 2 and EPS Rs 5 on the base year, k = 12%. Use the constant growth form.",
+            "answer_md": "Use P0/E0 = (D0/E0) x (1+g)/(k-g). So 8 = 0.4 x (1+g)/(0.12 - g). Cross-multiply: 0.96 - 8g = 0.4 + 0.4g, so 0.56 = 8.4g and g = 6.67%."
+          },
+          "tags": [
+            "pe-ratio",
+            "growth-implied",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the estimated P/E when the base year dividend is used instead of next year's?",
+            "answer_md": "Divide the constant growth value D0(1+g)/(k-g) by the base year EPS: P0/E0 = (D0/E0)(1+g)/(k-g). Be consistent: P/E on current EPS needs D0 and (1+g); P/E on next year's EPS needs D1/E1."
+          },
+          "tags": [
+            "pe-ratio",
+            "consistency"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-pe-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where is the P/E ratio published and what does a 12-month EPS mean?",
+            "answer_md": "The financial press publishes P/E ratios regularly. A trailing P/E uses the most recent 12 months' earnings per share."
+          },
+          "tags": [
+            "pe-ratio",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:pe"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Bond (fixed income security)",
+            "definition_md": "A debt security whose interest payments (for a coupon bond) and principal repayment are fixed when it is issued. Unless the issuer defaults, the buyer knows the cash flows to maturity. If the bond is sold earlier, the price received depends on interest rates at that time."
+          },
+          "tags": [
+            "bonds",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Face value (par value)",
+            "definition_md": "The amount printed on the bond, on which the coupon is calculated and which is normally repaid at maturity. Bonds are commonly issued at a par value of Rs 1,000 in the book's examples."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "face-value"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Coupon rate",
+            "definition_md": "The fixed rate of interest the issuer pays the holder each period, quoted on the face value. Annual coupon = coupon rate x face value; for semi-annual payment, half of that every six months."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "coupon"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-004",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Maturity (term) of a bond",
+            "definition_md": "The fixed period after which the bond is repaid. The last coupon is paid on the maturity date. The book says corporate bonds typically run 7 to 10 years and government bonds up to 30 years."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "maturity"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Redemption value",
+            "definition_md": "What the holder receives at maturity. It may be at par, at a premium (above par) or at a discount (below par)."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "redemption"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-006",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Market value of a bond",
+            "definition_md": "The price at which the bond usually trades on an exchange. It can differ from the redemption value and moves with market interest rates."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "market-value"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-007",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Call date and call price",
+            "definition_md": "For a callable bond the call date is the date on which the issuer may redeem it early and the call price is the amount the issuer must pay to do so."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "callable"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Required return (required yield) on a bond",
+            "definition_md": "The rate of return an investor currently demands on a bond of that risk and maturity. It is the market rate on comparable bonds, an opportunity cost, and is the discount rate used to value the bond."
+          },
+          "tags": [
+            "bonds",
+            "characteristics",
+            "required-yield"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the main characteristics of a bond.",
+            "answer_md": "Face (par) value, coupon rate, maturity, redemption value, market value, call date and call price (for callable bonds), required return, yield to call and yield to maturity."
+          },
+          "tags": [
+            "bonds",
+            "characteristics"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the opportunity cost basis of market interest rates, and what do interest rates measure?",
+            "answer_md": "The foundation of a market interest rate is the reward needed to persuade people to save instead of consuming. Interest is the price a borrower pays a lender for using funds for a period, so it is the price of loanable funds, set by demand and supply; this gives a variety of rates."
+          },
+          "tags": [
+            "bonds",
+            "interest-rates"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why are bond yields and interest rates treated as the same idea in the chapter?",
+            "answer_md": "A bond's yield is the rate of return its buyer earns, which is the market interest rate on that kind of borrowing. So the yield is the price of loanable funds for that issuer and maturity."
+          },
+          "tags": [
+            "bonds",
+            "interest-rates",
+            "yield"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-bond-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is a bond's price related to interest rates if the buyer sells before maturity?",
+            "answer_md": "Selling price depends on the interest rates ruling on the date of sale. Only if the bond is held to maturity (and no default occurs) does the holder know the total return in advance."
+          },
+          "tags": [
+            "bonds",
+            "interest-rate-risk"
+          ],
+          "reference_keys": [
+            "sfm:bond"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Zero coupon bond",
+            "definition_md": "A bond issued at a discount and repaid at face value, with no periodic interest. The gap between issue price and redemption value is the holder's return."
+          },
+          "tags": [
+            "bond-types",
+            "zero-coupon"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Convertible bond",
+            "definition_md": "A bond that gives the holder the option to convert it into equity shares at a fixed conversion price."
+          },
+          "tags": [
+            "bond-types",
+            "convertible"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Callable bond",
+            "definition_md": "A bond which the issuer may pay off before maturity, at the issuer's option. The investor faces the risk of early redemption, so a lower call price makes the call right more valuable to the issuer."
+          },
+          "tags": [
+            "bond-types",
+            "callable"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Puttable bond",
+            "definition_md": "A bond that gives the holder the right to sell it back to the issuer at par on designated dates."
+          },
+          "tags": [
+            "bond-types",
+            "puttable"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-005",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Exchangeable bond",
+            "definition_md": "A bond that lets the holder exchange it for shares of a company other than the issuer."
+          },
+          "tags": [
+            "bond-types",
+            "exchangeable"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-006",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Bearer bond versus registered bond",
+            "definition_md": "A bearer bond is issued without recording the holder's name, so whoever holds it is paid; it is risky because it can be lost or stolen. A registered bond has the owner's name recorded by the issuer or a transfer agent."
+          },
+          "tags": [
+            "bond-types",
+            "bearer",
+            "registered"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Term bond versus serial bond",
+            "definition_md": "A term bond runs for a fixed term and the whole principal falls due together at the end; most corporate bonds are term bonds. A serial bond is arranged so that specified amounts of principal fall due on set dates before final maturity."
+          },
+          "tags": [
+            "bond-types",
+            "term",
+            "serial"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Fixed rate bond and floating rate bond",
+            "definition_md": "A fixed rate bond keeps the same coupon for its whole life. A floating rate bond has an interest rate that moves with market conditions; issuers use it to hedge against interest rate volatility."
+          },
+          "tags": [
+            "bond-types",
+            "fixed-rate",
+            "floating-rate"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-009",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "High yield (junk) bond",
+            "definition_md": "A bond rated below investment grade by the rating agencies, so it carries higher default risk and offers a higher yield."
+          },
+          "tags": [
+            "bond-types",
+            "high-yield"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-010",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Mortgage bond and subordinated bond",
+            "definition_md": "A mortgage bond is secured by a lien on the firm's property. A subordinated bond ranks below secured debt, debentures and general creditors if the issuer is wound up."
+          },
+          "tags": [
+            "bond-types",
+            "mortgage",
+            "subordinated"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-011",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Guaranteed bond",
+            "definition_md": "A bond whose payment obligation is guaranteed by another entity."
+          },
+          "tags": [
+            "bond-types",
+            "guaranteed"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-012",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Perpetual bond",
+            "definition_md": "A bond with no maturity date, also called a perpetuity. Its value is the coupon divided by the required yield."
+          },
+          "tags": [
+            "bond-types",
+            "perpetual"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-013",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Global bond",
+            "definition_md": "A bond structured so that it can be traded straight away both in any country's domestic capital market and in the Euro market."
+          },
+          "tags": [
+            "bond-types",
+            "global"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-014",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Easy exit bond",
+            "definition_md": "A bond that offers liquidity through a redemption or buy-back facility so that the investor can encash before maturity if needed."
+          },
+          "tags": [
+            "bond-types",
+            "easy-exit"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-015",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Option bond (cumulative and non-cumulative)",
+            "definition_md": "A bond where interest is either paid periodically (non-cumulative) or accumulated and paid at maturity (cumulative), often with a redemption premium to attract investors. Issued by institutions such as IDBI and ICICI."
+          },
+          "tags": [
+            "bond-types",
+            "option-bond"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-016",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Double option bond",
+            "definition_md": "A bond with two certificates, one for principal and one for interest including redemption premium, each listed separately so the investor may sell either or both at any time."
+          },
+          "tags": [
+            "bond-types",
+            "double-option",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-017",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Inflation bond (inflation-indexed bond)",
+            "definition_md": "A bond whose interest rate is adjusted for inflation, so the investor's return is protected from the effect of inflation. The rate of return varies over time, as with floating rate bonds."
+          },
+          "tags": [
+            "bond-types",
+            "inflation"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-018",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Effective return on an inflation bond",
+            "expression_md": "$\\text{Effective rate} = (1+i)(1+\\pi) - 1$",
+            "variables_md": "$i$ = stated interest rate, $\\pi$ = inflation rate.",
+            "when_md": "With interest of 6% and inflation of 4%: 1.06 x 1.04 - 1 = 10.24%. The book's own example uses the same compounding of the two rates, so use it unless the question defines the rate differently."
+          },
+          "tags": [
+            "bond-types",
+            "inflation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the zero coupon, convertible, callable and puttable features in one line each.",
+            "answer_md": "Zero coupon: no interest, issued at a discount, redeemed at face value. Convertible: can be turned into equity at a set price. Callable: issuer may redeem early. Puttable: holder may sell it back to the issuer at par on set dates."
+          },
+          "tags": [
+            "bond-types",
+            "summary"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-btype-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why should a bond callable at a lower price have a higher yield than one callable at a higher price, other features equal?",
+            "answer_md": "A low call price makes the issuer's right to call more valuable, so the bond sells at a lower price. A lower price for the same cash flows means a higher yield to maturity."
+          },
+          "tags": [
+            "bond-types",
+            "callable",
+            "yield"
+          ],
+          "reference_keys": [
+            "sfm:btype"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the valuation principle for a bond?",
+            "answer_md": "Its price should equal the present value of its expected cash flows (coupons plus the redemption amount), discounted at the investor's required yield. The cash flows are fixed at issue, so the only thing to determine is the discount rate."
+          },
+          "tags": [
+            "bond-valuation",
+            "principle"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-002",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Value of an annuity-type cash flow (generic asset)",
+            "expression_md": "$P_0 = C \\times \\text{PVIFA}_{R,n}$",
+            "variables_md": "$C$ = equal cash flow each year, $R$ = discount rate, $n$ = number of years, PVIFA = present value interest factor of an annuity.",
+            "when_md": "Use for an asset that gives a level cash flow for a fixed number of years, with no terminal value."
+          },
+          "tags": [
+            "bond-valuation",
+            "annuity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Bond price (annual coupons)",
+            "expression_md": "$P_0 = C \\times \\text{PVIFA}_{r,n} + FV \\times \\text{PVIF}_{r,n}$",
+            "variables_md": "$C$ = annual coupon, $FV$ = redemption value, $r$ = required yield, $n$ = years to maturity, PVIF = present value factor of a single sum.",
+            "when_md": "Coupons are an annuity and the redemption is a single sum at the end. Factors come from the tables given in the question; use the redemption value, not the face value, if they differ."
+          },
+          "tags": [
+            "bond-valuation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price an annual coupon bond. Face Rs 1,000, 9% coupon, 5 years, required yield 11%.",
+            "answer_md": "Coupon = Rs 90 a year. Price = 90 x PVIFA(11%, 5) + 1,000 x PVIF(11%, 5) = 90 x 3.696 + 1,000 x 0.593 = 332.6 + 593.0, about Rs 926. The price is below par because the coupon is below the yield."
+          },
+          "tags": [
+            "bond-valuation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A bond pays a redemption value higher than its face value. Which amount goes into the price formula?",
+            "answer_md": "The actual amount to be received on redemption. For example, face Rs 1,000 redeemed at Rs 1,050 means the principal term is 1,050 x PVIF, while the coupon stays based on the face value of 1,000."
+          },
+          "tags": [
+            "bond-valuation",
+            "redemption-premium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Bond price with semi-annual coupons",
+            "expression_md": "$P_0 = \\sum_{t=1}^{2n}\\dfrac{C/2}{(1+r/2)^t} + \\dfrac{FV}{(1+r/2)^{2n}}$",
+            "variables_md": "$C/2$ = half-yearly coupon, $r/2$ = half-yearly yield, $2n$ = number of half-years.",
+            "when_md": "Halve the annual coupon and the annual yield, double the years. Take PVIFA and PVIF at $r/2$ for $2n$ periods."
+          },
+          "tags": [
+            "bond-valuation",
+            "semi-annual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price a semi-annual coupon bond. Face Rs 1,000, coupon 10% paid half-yearly, 4 years, required yield 12% a year.",
+            "answer_md": "Half-yearly coupon = Rs 50; yield per half-year = 6%; periods = 8. Price = 50 x PVIFA(6%, 8) + 1,000 x PVIF(6%, 8) = 50 x 6.210 + 1,000 x 0.627 = 310.5 + 627 = about Rs 938 (exact value 937.90)."
+          },
+          "tags": [
+            "bond-valuation",
+            "semi-annual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What three adjustments are made when valuing a semi-annual coupon bond?",
+            "answer_md": "Coupon is halved, the required yield is halved (not compounded), and the number of years is doubled to give half-yearly periods."
+          },
+          "tags": [
+            "bond-valuation",
+            "semi-annual"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What should you do when a bond has years left to maturity less than its original life, for example a bond issued 3 years ago with 10 years' original life?",
+            "answer_md": "Use the remaining life only, and the current market yield, not the yield at issue. A 14% coupon bond with 7 years left, valued at a 10% yield, is worth 140 x PVIFA(10%, 7) + 1,000 x PVIF(10%, 7), about Rs 1,194.7, a premium because the coupon exceeds the yield."
+          },
+          "tags": [
+            "bond-valuation",
+            "remaining-maturity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which discount rate is customarily used when pricing a bond, and why?",
+            "answer_md": "The yield to maturity, which is the rate currently earned on comparable bonds with the same maturity and credit quality. It is an opportunity cost, so market interest rates enter the price through the discount rate."
+          },
+          "tags": [
+            "bond-valuation",
+            "required-yield",
+            "ytm"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Relate coupon rate, required yield and price of a bond.",
+            "answer_md": "Coupon rate above required yield: price above par (premium bond). Coupon equal to yield: price equals par. Coupon below yield: price below par (discount bond)."
+          },
+          "tags": [
+            "bond-valuation",
+            "premium",
+            "discount"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Check the three cases: 5-year Rs 1,000 bond with 9% coupon, priced at yields of 8%, 9% and 10% a year.",
+            "answer_md": "At 8% the price is about Rs 1,040 (premium); at 9% it is Rs 1,000 (par); at 10% it is about Rs 962 (discount). The price falls as the required yield rises."
+          },
+          "tags": [
+            "bond-valuation",
+            "premium",
+            "discount",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the basic price-yield relationship of a bond and the shape of its graph.",
+            "answer_md": "Price and yield move in opposite directions. A fall in the required yield raises the present value of the cash flows and so the price; a rise in yield lowers it. The price-yield curve is convex, not a straight line."
+          },
+          "tags": [
+            "bond-valuation",
+            "price-yield",
+            "convexity"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why do bond prices fall when interest rates rise?",
+            "answer_md": "The coupons and redemption are fixed. When market yields rise, new bonds pay more, so investors will only buy the old bond at a lower price that lifts its yield to the market level. Mathematically, a higher discount rate lowers the present value of the fixed cash flows."
+          },
+          "tags": [
+            "bond-valuation",
+            "price-yield",
+            "interest-rate-risk"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What determines the percentage price change of a bond for a given change in yield?",
+            "answer_md": "The coupon rate and the maturity. A higher coupon gives a smaller percentage price change; a longer maturity gives a larger one. So bond volatility is inversely related to coupon rate and to the level of yield, and rises with maturity."
+          },
+          "tags": [
+            "bond-valuation",
+            "volatility"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compare the price sensitivity of two 10-year Rs 1,000 bonds, one with a 10% coupon and one with a 6% coupon, when yield rises from 10% to 11%.",
+            "answer_md": "The 10% bond falls from Rs 1,000 to about Rs 941, a fall of 5.9%. The 6% bond falls from about Rs 754 to about Rs 706, a fall of 6.5%. The low coupon bond is more volatile."
+          },
+          "tags": [
+            "bond-valuation",
+            "volatility",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare the price sensitivity of a 3-year and a 15-year bond, both 10% coupon at par, when yield rises by 1 percentage point.",
+            "answer_md": "The 3-year bond falls about 2.4% (to about Rs 976), the 15-year bond about 7.2% (to about Rs 928). Longer maturity means more volatility."
+          },
+          "tags": [
+            "bond-valuation",
+            "volatility",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which of these has the largest volatility: 15-year 15% coupon, 5-year 10% coupon, 15-year 10% coupon, or 5-year 15% coupon bond?",
+            "answer_md": "The 15-year 10% coupon bond: it has the longest maturity and the lowest coupon, and both raise price sensitivity to yield changes."
+          },
+          "tags": [
+            "bond-valuation",
+            "volatility"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If a 10% coupon bond is bought at a yield of 8% and the yield stays at 8%, what happens to its price as time passes?",
+            "answer_md": "It falls gradually towards par. A premium bond's price converges to its redemption value as maturity nears. Example: 5-year 10% bond at 8% costs about Rs 1,080; after one year it is about Rs 1,066, and with one year left about Rs 1,019."
+          },
+          "tags": [
+            "bond-valuation",
+            "pull-to-par",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What happens, as time passes, to a discount bond whose yield stays constant?",
+            "answer_md": "Its price rises gradually towards par and reaches the redemption value at maturity."
+          },
+          "tags": [
+            "bond-valuation",
+            "pull-to-par"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: price a serial bond, where principal is repaid in instalments. How do you do it?",
+            "answer_md": "Write each date's cash flow: interest on the outstanding principal plus any instalment repaid on that date. Discount each flow at the periodic required yield, using separate factors, and add. Interest falls after each instalment because the outstanding principal is smaller."
+          },
+          "tags": [
+            "bond-valuation",
+            "serial-bond",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Example of the serial bond method: Rs 1,000 bond, 10% paid half-yearly, 3 years, Rs 500 repaid at end of year 2 and Rs 500 at end of year 3, required yield 12% a year. Value it.",
+            "answer_md": "Half-yearly cash flows at periods 1 to 6: 50, 50, 50, 550 (50 + 500), 25, 525 (25 + 500). Discount at 6% a period: the sum is about Rs 958."
+          },
+          "tags": [
+            "bond-valuation",
+            "serial-bond",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-023",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Zero coupon bond price",
+            "expression_md": "$P_0 = \\dfrac{FV}{(1+r)^n}$",
+            "variables_md": "$FV$ = maturity value, $r$ = required yield, $n$ = years to maturity.",
+            "when_md": "The only cash flow is the maturity value. If the yield changes in tiers over the years, discount stage by stage at each tier's rate."
+          },
+          "tags": [
+            "bond-valuation",
+            "zero-coupon",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price a zero coupon bond when the required yield differs by period (for example 8% for years 1-5 and 9% for years 6-10).",
+            "answer_md": "Discount in stages: bring the maturity value back through the last years at the last tier's rate, then through the earlier years at the earlier rate. Equivalent form: FV / [(1.08)^5 x (1.09)^5]. A call or put on a stated date is valued the same way, using that date's price instead of FV and fewer years."
+          },
+          "tags": [
+            "bond-valuation",
+            "zero-coupon",
+            "tiered-yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: what is the value of a callable or puttable bond if the option is exercised? Outline.",
+            "answer_md": "Treat it as a bond whose maturity is the exercise date and whose redemption is the call or put price. Discount the coupons up to that date plus the exercise price at the relevant yield. Compare the values to see which outcome is best for the investor."
+          },
+          "tags": [
+            "bond-valuation",
+            "callable",
+            "puttable",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-price-026",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Value of a perpetual bond (no maturity).",
+            "answer_md": "Price = annual coupon / required yield, since it is a perpetuity. A Rs 1,000 perpetual bond with 9% coupon and a 12% required yield is worth 90 / 0.12 = Rs 750."
+          },
+          "tags": [
+            "bond-valuation",
+            "perpetual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:price"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the commonly used bond yield measures.",
+            "answer_md": "Current yield, yield to maturity (YTM), yield to call (YTC) and realised compound yield (RCY). Holding period return is the one-period total return measure."
+          },
+          "tags": [
+            "bond-yields",
+            "summary"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Current yield",
+            "expression_md": "$\\text{Current yield} = \\dfrac{\\text{Annual coupon}}{\\text{Current market price}}$",
+            "variables_md": "Annual coupon is based on face value; the denominator is today's market price, not face value.",
+            "when_md": "A quick income measure. It ignores the gain or loss between the purchase price and redemption, so it is not a true measure of total return."
+          },
+          "tags": [
+            "bond-yields",
+            "current-yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Find the current yield: face Rs 1,000, coupon 9%, market price Rs 960.",
+            "answer_md": "Annual coupon = Rs 90. Current yield = 90 / 960 = 9.375%. It is above the coupon rate because the bond is priced below par."
+          },
+          "tags": [
+            "bond-yields",
+            "current-yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is current yield an incomplete measure of a bond's return?",
+            "answer_md": "It looks only at coupon income against price. It leaves out the difference between the price paid and the amount received on redemption, and ignores the time value of money."
+          },
+          "tags": [
+            "bond-yields",
+            "current-yield",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Yield to maturity (YTM)",
+            "definition_md": "The discount rate that equates the present value of all the bond's remaining cash flows (coupons and redemption) with its current market price. It is the internal rate of return on the bond, and is the rate usually quoted."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "On what two conditions is the promised YTM actually earned?",
+            "answer_md": "The bond must be held to maturity, and every coupon received must be reinvested at the YTM itself. The second condition is hard to meet in practice, which is why YTM is only a promised yield."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is YTM related to IRR, and what limitations does it share with IRR?",
+            "answer_md": "YTM is the internal rate of return of the bond's cash flows (price paid as outflow, coupons and redemption as inflows). It shares IRR's limitations, notably the reinvestment-at-IRR assumption."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "irr"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is YTM calculated exactly?",
+            "answer_md": "By trial and error (or a calculator or spreadsheet): find the rate r for which price = sum of coupons discounted at r + redemption discounted at r. The usual manual method is to take two rates that give prices above and below the market price and interpolate."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Approximate YTM",
+            "expression_md": "$\\text{YTM} \\approx \\dfrac{C + (M-P)/n}{0.4M + 0.6P}$",
+            "variables_md": "$C$ = annual coupon, $M$ = maturity (redemption) value, $P$ = current price, $n$ = years to maturity.",
+            "when_md": "Used to avoid trial and error. The numerator is the average yearly return, coupon plus an even share of the gain or loss; the denominator weights the redemption value 40% and price 60%."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "approximation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: approximate YTM. Face Rs 1,000, coupon 8%, price Rs 920, 6 years to maturity.",
+            "answer_md": "Numerator = 80 + (1,000 - 920)/6 = 80 + 13.33 = 93.33. Denominator = 0.4 x 1,000 + 0.6 x 920 = 400 + 552 = 952. YTM is about 9.80%. The exact YTM is about 9.83%."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "approximation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-011",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Alternative approximate YTM (simple average)",
+            "expression_md": "$\\text{YTM} \\approx \\dfrac{C + (F-P)/n}{(F+P)/2}$",
+            "variables_md": "$F$ = redemption value (face value plus any premium), $P$ = price, $C$ = annual coupon, $n$ = years.",
+            "when_md": "The denominator is the average of price and redemption value. Can be solved for n if YTM is known."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "approximation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Method: find the approximate years to maturity from a given YTM. Face Rs 1,000, redeemed at 10% premium (Rs 1,100), coupon 9%, price Rs 1,000, approximate YTM 12%.",
+            "answer_md": "Use YTM = [C + (F - P)/n] / [(F + P)/2]. So 0.12 = [90 + 100/n] / 1,050. Then 90 + 100/n = 126, so 100/n = 36 and n = 2.78 years."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "approximation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-013",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "YTM of a zero coupon bond",
+            "expression_md": "$\\text{YTM} = \\left(\\dfrac{FV}{P}\\right)^{1/n} - 1$",
+            "variables_md": "$FV$ = maturity value, $P$ = issue price, $n$ = number of years (use half-years for a semi-annual yield, then double it).",
+            "when_md": "There are no coupons, so the one cash flow is compared with the price. Interpolation between table rates gives nearly the same answer."
+          },
+          "tags": [
+            "bond-yields",
+            "zero-coupon",
+            "ytm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: YTM of a zero coupon bond. Price Rs 450, maturity value Rs 1,000, 8 years.",
+            "answer_md": "YTM = (1,000 / 450)^(1/8) - 1 = (2.2222)^0.125 - 1 = 10.50%. Table method: PV factor = 0.450; look up the 8-year row, bracket between two rates, and interpolate."
+          },
+          "tags": [
+            "bond-yields",
+            "zero-coupon",
+            "ytm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: interpolation to find a YTM from tables.",
+            "answer_md": "Choose two rates, one giving NPV (or price minus market price) positive and one negative. YTM = lower rate + [NPV at lower rate / (NPV at lower - NPV at higher)] x difference between the rates."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "interpolation",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do you find the annual YTM from a semi-annual calculation?",
+            "answer_md": "Find the half-yearly rate and double it to get the annual yield, as the chapter does for the bond-equivalent figure. Compounding it instead, (1 + half-yearly rate)^2 - 1, gives the effective annual yield, which is slightly higher."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "semi-annual"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-017",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Yield to call (YTC)",
+            "definition_md": "The return an investor earns if a callable bond is bought at its current price and held until the issuer calls it on the call date. It uses the call price as the final payment and the time to call as the life."
+          },
+          "tags": [
+            "bond-yields",
+            "ytc"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is YTC used instead of YTM for bonds likely to be called?",
+            "answer_md": "If the issuer is expected to redeem early, the cash flows that really occur stop at the call date and end with the call price. YTM, which assumes the bond lives to maturity, is then unrealistic."
+          },
+          "tags": [
+            "bond-yields",
+            "ytc"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: the inputs for YTC versus YTM, semi-annual bond.",
+            "answer_md": "Coupon is the same half-yearly amount in both. For YTC use the number of half-years to the call date and the call price as the final payment. For YTM use the number of half-years to maturity and the face value. Price is the current market price. Solve for the half-yearly rate and double."
+          },
+          "tags": [
+            "bond-yields",
+            "ytc",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Example: bond price Rs 1,150, 10% coupon paid half-yearly, 10 years to maturity, callable in 5 years at Rs 1,050. Compare YTC and YTM.",
+            "answer_md": "Half-yearly coupon 50. YTC uses 10 periods and a final amount of 1,050: about 7.22% a year (twice the half-yearly rate). YTM uses 20 periods and a final amount of 1,000: about 7.81%. YTC is lower, so the investor should look at the lower figure on a premium bond."
+          },
+          "tags": [
+            "bond-yields",
+            "ytc",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is YTC the safer return estimate for a premium bond that may be called?",
+            "answer_md": "A bond priced above its call price is likely to be called when rates fall, because the issuer can refinance more cheaply. The investor then gets the call price, which is less than the price paid, so YTC is the safer estimate of return."
+          },
+          "tags": [
+            "bond-yields",
+            "ytc",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-022",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Realised compound yield (RCY)",
+            "definition_md": "The compound yield actually earned over the holding period, taking account of all cash flows and the rates at which they were reinvested. It equals YTM only if all coupons are reinvested at the YTM."
+          },
+          "tags": [
+            "bond-yields",
+            "rcy"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-023",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Realised compound yield",
+            "expression_md": "$\\text{RCY} = \\left(\\dfrac{\\text{Total ending wealth}}{\\text{Purchase price}}\\right)^{1/n} - 1$",
+            "variables_md": "Total ending wealth = coupons compounded at the reinvestment rates plus the redemption (or sale) proceeds; $n$ = number of years (or periods).",
+            "when_md": "Used after the holding period, or with assumed reinvestment rates in advance. For half-yearly periods the result is a half-yearly rate; double it for annual."
+          },
+          "tags": [
+            "bond-yields",
+            "rcy",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: realised compound yield. Buy at par Rs 1,000 an 8% coupon bond, 2 years to maturity; coupons reinvested at 6%.",
+            "answer_md": "Ending wealth = coupon of year 1 reinvested for one year (80 x 1.06 = 84.8) + coupon of year 2 (80) + redemption 1,000 = Rs 1,164.8. RCY = (1,164.8/1,000)^(1/2) - 1 = 7.93%, below the 8% YTM because reinvestment is at only 6%."
+          },
+          "tags": [
+            "bond-yields",
+            "rcy",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When does RCY equal the YTM, and when is it above or below?",
+            "answer_md": "Equal when coupons are reinvested at the YTM. Below YTM when the reinvestment rate is lower than the YTM; above YTM when it is higher."
+          },
+          "tags": [
+            "bond-yields",
+            "rcy",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-026",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the term of a bond affect the gap between realised yield and YTM?",
+            "answer_md": "The longer the maturity, the more of the final wealth comes from reinvested coupons, so the realised yield moves closer to the reinvestment rate."
+          },
+          "tags": [
+            "bond-yields",
+            "rcy",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-027",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Method: realised yield with different reinvestment rates in different years. Which compounding steps do you follow?",
+            "answer_md": "Compound each coupon from its receipt date to maturity using the rate that applies in each later year, add the redemption amount, then take the nth root of (ending wealth / purchase price) and subtract 1."
+          },
+          "tags": [
+            "bond-yields",
+            "rcy",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-028",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Holding period return on a bond",
+            "expression_md": "$\\text{HPR} = \\dfrac{C + (P_1 - P_0)}{P_0}$",
+            "variables_md": "$C$ = coupon received during the holding period, $P_0$ = purchase price, $P_1$ = price at sale.",
+            "when_md": "One-period total return from coupon and price change. Put the whole bracket in the numerator and divide by the purchase price."
+          },
+          "tags": [
+            "bond-yields",
+            "hpr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-029",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: holding period return. Buy at Rs 980, receive Rs 85 coupon, sell after one year at Rs 1,010.",
+            "answer_md": "HPR = (85 + (1,010 - 980)) / 980 = 115 / 980 = 11.73%."
+          },
+          "tags": [
+            "bond-yields",
+            "hpr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-030",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If yield to maturity of a bond is unchanged for a year, what is its expected total return for that year?",
+            "answer_md": "Equal to the YTM. The coupon and the price drift towards par together make up the return, so the total return of any bond over a year equals its YTM if the yield does not change."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm",
+            "total-return"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-031",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Effective annual yield",
+            "expression_md": "$\\text{EAR} = \\left(1+\\dfrac{r}{m}\\right)^m - 1$",
+            "variables_md": "$r$ = nominal annual rate, $m$ = number of compounding periods a year. For a discount security, $(\\text{Par}/\\text{Price})^{m}-1$ with $m$ = periods in a year.",
+            "when_md": "Use to compare securities with different payment frequencies, such as a T-bill and a semi-annual coupon bond."
+          },
+          "tags": [
+            "bond-yields",
+            "ear",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-032",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: compare effective annual rates of a 91-day-type T-bill and a coupon bond. T-bill: Rs 98.50 for Rs 100 in three months. Bond: priced at par with 8% paid half-yearly.",
+            "answer_md": "T-bill: (100/98.5)^4 - 1 = 6.23%. Bond: 4% per half-year, (1.04)^2 - 1 = 8.16%. The coupon bond has the higher effective annual rate."
+          },
+          "tags": [
+            "bond-yields",
+            "ear",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-033",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: YTM after tax. Coupon is taxed at 30% and the bond is redeemed at par. How is the after-tax YTM found?",
+            "answer_md": "Reduce each coupon by tax: after-tax coupon = coupon x (1 - 0.30). Then find the rate that equates the price with the PV of after-tax coupons plus redemption. Example: price Rs 95 for a Rs 100 face, 10% coupon, 4 years, par redemption: coupon after tax 7, solve 95 = 7 x PVIFA + 100 x PVIF to get about 8.5%."
+          },
+          "tags": [
+            "bond-yields",
+            "tax",
+            "ytm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-yield-034",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the after-tax YTM of a bond issued at par and redeemed at par when the coupon is taxed?",
+            "answer_md": "After-tax YTM equals the after-tax coupon rate: with coupon 12%, tax 30%, par issue and par redemption, the after-tax yield is 12 x 0.70 = 8.4%."
+          },
+          "tags": [
+            "bond-yields",
+            "tax",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Term structure of interest rates (yield curve)",
+            "definition_md": "The relationship between the yield on bonds and the time left to maturity. For default-free zero coupon bonds it is the pure yield curve: YTM plotted against maturity."
+          },
+          "tags": [
+            "term-structure",
+            "yield-curve"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Implied one-year forward rate",
+            "expression_md": "$(1+f_n) = \\dfrac{(1+y_n)^n}{(1+y_{n-1})^{n-1}}$",
+            "variables_md": "$y_n$ = YTM of an $n$-year zero coupon bond, $f_n$ = one-year rate implied for the year $n$ (from end of year $n-1$ to end of year $n$).",
+            "when_md": "Gives the interest rate for a future single year that the current yield curve implies. Subtract 1 after dividing."
+          },
+          "tags": [
+            "term-structure",
+            "forward-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: implied forward rates. Zero coupon yields: 1 year 8%, 2 years 9%, 3 years 9.5%.",
+            "answer_md": "f2 = (1.09)^2 / 1.08 - 1 = 10.01%. f3 = (1.095)^3 / (1.09)^2 - 1 = 10.51%. The upward sloping curve implies rising one-year rates."
+          },
+          "tags": [
+            "term-structure",
+            "forward-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the pure expectations hypothesis and what it says about next year's yield curve.",
+            "answer_md": "Forward rates are the market's unbiased forecast of future spot rates. So next year's 1-year rate equals today's implied f2, and next year's 2-year yield is obtained by compounding the forward rates for the two years that follow."
+          },
+          "tags": [
+            "term-structure",
+            "expectations",
+            "forecast"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: next year's price of a zero coupon bond under the pure expectations hypothesis.",
+            "answer_md": "Discount its face value at the forward rates for each remaining year. For a zero that has 1 year left next year, price = Face / (1 + f2). For one that has 2 years left, price = Face / [(1 + f2)(1 + f3)]."
+          },
+          "tags": [
+            "term-structure",
+            "expectations",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under the pure expectations hypothesis, what is the expected one-year holding return on a zero coupon bond of any maturity?",
+            "answer_md": "The same for all: it equals the current 1-year rate. Longer bonds have higher yields to maturity, but their price will fall as the forward rates rise, so the expected one-year return is the same. In the chapter's case study it is 10% for the 2-year and 3-year zeros."
+          },
+          "tags": [
+            "term-structure",
+            "expectations",
+            "total-return"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: price a coupon bond from the zero coupon curve.",
+            "answer_md": "Treat each coupon and the redemption as its own zero coupon payment. Multiply each cash flow by the price of Re 1 due at its date (1/(1 + y_t)^t for the t-year zero yield) and add. The expected next-year price uses the next-year zero prices."
+          },
+          "tags": [
+            "term-structure",
+            "coupon-bond",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: total expected one-year return on a coupon bond, given today's price and the price expected in a year.",
+            "answer_md": "Return = [coupon + (expected price in 1 year - price today)] / price today. Put the coupon and price change inside one bracket before dividing; under pure expectations this equals the 1-year spot rate."
+          },
+          "tags": [
+            "term-structure",
+            "total-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does an upward sloping yield curve imply under the expectations hypothesis?",
+            "answer_md": "Higher one-year rates in the future: the market expects the short-term rate to rise, so the curve is expected to shift up as time passes."
+          },
+          "tags": [
+            "term-structure",
+            "yield-curve"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What risks does an investor in bonds face?",
+            "answer_md": "Interest rate risk (prices fall when yields rise), default risk (the issuer may fail to pay interest or principal), and reinvestment risk (coupons may have to be reinvested at lower rates). Government treasury bills carry no default risk."
+          },
+          "tags": [
+            "bonds",
+            "risk",
+            "interest-rate-risk",
+            "default-risk",
+            "reinvestment-risk"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "On what does the value of a bond depend?",
+            "answer_md": "On its coupon rate, its expected yield to maturity (the required return), and the number of years to maturity."
+          },
+          "tags": [
+            "bonds",
+            "valuation"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "At what rate must interim cash flows be reinvested if the bondholder is to receive exactly the stated YTM?",
+            "answer_md": "At the YTM itself."
+          },
+          "tags": [
+            "bonds",
+            "ytm",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is a basis point and what does a 30 basis point cut mean?",
+            "answer_md": "A basis point is one hundredth of a percentage point (0.01%). A 30 basis point cut lowers a rate by 0.30 of a percentage point."
+          },
+          "tags": [
+            "bonds",
+            "basis-point",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-term-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Is realised yield always lower than current yield?",
+            "answer_md": "No. Realised yield depends on reinvestment rates and on capital gain or loss at redemption or sale, so it can be higher or lower than current yield."
+          },
+          "tags": [
+            "bonds",
+            "rcy",
+            "current-yield"
+          ],
+          "reference_keys": [
+            "sfm:term"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: DDM question with a verdict. Last dividend Rs 4, growth 5%, required return 12%, market price Rs 64. Is the share over or undervalued?",
+            "answer_md": "D1 = 4 x 1.05 = 4.20. V0 = 4.20 / (0.12 - 0.05) = Rs 60. Intrinsic value 60 is below market price 64, so the share is overvalued: avoid it, or sell if held."
+          },
+          "tags": [
+            "ddm",
+            "intrinsic-value",
+            "decision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price a semi-annual coupon bond of face Rs 100. Coupon 12% a year paid half-yearly, 4 years, required return 14% a year.",
+            "answer_md": "Half-yearly coupon 6, half-yearly yield 7%, 8 periods. Price = 6 x PVIFA(7%, 8) + 100 x PVIF(7%, 8) = 6 x 5.971 + 100 x 0.582 = 35.83 + 58.2 = about Rs 94.03."
+          },
+          "tags": [
+            "bond-valuation",
+            "semi-annual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: price an annual bond with Rs 100 face, 10% coupon, 5 years, required yield 12%.",
+            "answer_md": "Price = 10 x PVIFA(12%, 5) + 100 x PVIF(12%, 5) = 10 x 3.605 + 100 x 0.567 = 36.05 + 56.7 = about Rs 92.75 (exact 92.79). It is below par because 12% is above the 10% coupon."
+          },
+          "tags": [
+            "bond-valuation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which dividend do you use in the constant growth formula: D0 or D1?",
+            "answer_md": "D1, the dividend of the coming year. If the question gives the dividend just paid (D0), multiply it by (1 + g) first. If it says 'expected dividend at the end of year 1', use it as given."
+          },
+          "tags": [
+            "ddm",
+            "constant-growth",
+            "exam-tip"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A share pays Rs 2 dividend next year and sells at Rs 50. If required return is 16%, what growth rate is the market expecting, and what happens to the price if forecast growth is cut by 7 points (to 5%)?",
+            "answer_md": "g = k - D1/P0 = 0.16 - 2/50 = 12%. At 5% growth the price is 2 / (0.16 - 0.05) = Rs 18.18, a large fall. This shows how sensitive value is to g."
+          },
+          "tags": [
+            "ddm",
+            "growth-implied",
+            "sensitivity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A stock has expected return 20%, a dividend of Rs 2 and a price of Rs 50 now. What is the price after one year?",
+            "answer_md": "Expected return = (D1 + P1 - P0) / P0, so P1 = P0(1 + k) - D1 = 50 x 1.20 - 2 = Rs 58."
+          },
+          "tags": [
+            "ddm",
+            "future-price",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Dividend declared as a percentage of face value: face value Rs 10, 35% dividend, price Rs 40. Find the dividend yield.",
+            "answer_md": "Dividend per share = 35% of Rs 10 = Rs 3.50. Dividend yield = 3.50 / 40 = 8.75%. The rate is on face value, the yield is on price."
+          },
+          "tags": [
+            "dividend-yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Find the P/E ratio from payout 45%, required return 15% and growth 10%.",
+            "answer_md": "P/E = payout / (k - g) = 0.45 / (0.15 - 0.10) = 9 times."
+          },
+          "tags": [
+            "pe-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Given PAT, tax rate, RONW, reserves and the face value, how do you find pre-tax EPS?",
+            "answer_md": "Pre-tax profit = PAT / (1 - tax rate). Net worth = PAT / RONW. Equity capital = net worth - reserves. Number of shares = capital / face value. Pre-tax EPS = pre-tax profit / number of shares. Example: PAT 40 lakh, tax 50%, RONW 100%, reserves 30 lakh, face Rs 5: pre-tax profit 80 lakh; net worth 40 lakh; capital 10 lakh; 2 lakh shares; pre-tax EPS Rs 40."
+          },
+          "tags": [
+            "pe-ratio",
+            "eps",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-ex-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the difference between a bond's coupon yield (coupon rate) and its current yield?",
+            "answer_md": "The coupon rate is the stated rate on face value and never changes. Current yield is the annual coupon divided by today's market price, so it changes when the price changes. The chapter's exercise key labels current yield as the coupon yield; read the question carefully."
+          },
+          "tags": [
+            "bonds",
+            "coupon",
+            "current-yield",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ex"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Zero growth value = {{c1::dividend divided by required return}}; constant growth value = {{c2::D1 divided by (k minus g)}}; expected return = {{c3::D1/P0 plus g}}."
+          },
+          "tags": [
+            "ddm",
+            "formulas"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Growth rate g = {{c1::retention ratio}} x {{c2::ROE}}; payout ratio = {{c3::1 minus retention}}."
+          },
+          "tags": [
+            "ddm",
+            "growth",
+            "roe"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-003",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "If V0 > P0 the share is {{c1::undervalued}} (buy/hold); if V0 < P0 it is {{c2::overvalued}} (sell/avoid); if equal it is {{c3::correctly priced}}."
+          },
+          "tags": [
+            "intrinsic-value",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-004",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "P/E rises with a higher {{c1::payout ratio}}, a higher {{c2::growth rate}} and falls with a higher {{c3::required return}}."
+          },
+          "tags": [
+            "pe-ratio",
+            "determinants"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "A bond sells at a {{c1::premium}} when coupon > yield, at {{c2::par}} when coupon = yield, and at a {{c3::discount}} when coupon < yield."
+          },
+          "tags": [
+            "bond-valuation",
+            "premium",
+            "discount"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-006",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Bond price and yield move in {{c1::opposite}} directions; the price-yield curve is {{c2::convex}}."
+          },
+          "tags": [
+            "bond-valuation",
+            "price-yield"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-007",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Semi-annual bond valuation: coupon is {{c1::halved}}, yield is {{c2::halved}}, number of periods is {{c3::doubled}}."
+          },
+          "tags": [
+            "bond-valuation",
+            "semi-annual"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-008",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "YTM is the {{c1::IRR}} of the bond; it is earned only if the bond is {{c2::held to maturity}} and coupons are reinvested at the {{c3::YTM}}."
+          },
+          "tags": [
+            "bond-yields",
+            "ytm"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Current yield = {{c1::annual coupon}} / {{c2::current market price}}; HPR = ({{c3::coupon plus price change}}) / {{c4::purchase price}}."
+          },
+          "tags": [
+            "bond-yields",
+            "current-yield",
+            "hpr"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-010",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "The weights in the approximate YTM formula are {{c1::0.4}} on the redemption value and {{c2::0.6}} on the price."
+          },
+          "tags": [
+            "bond-yields",
+            "approximation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-011",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Bond volatility is {{c1::higher}} for longer maturity and {{c2::lower}} for a higher coupon rate."
+          },
+          "tags": [
+            "bond-valuation",
+            "volatility"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-012",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Risks in bond investing are {{c1::interest rate}} risk, {{c2::default}} risk and {{c3::reinvestment}} risk."
+          },
+          "tags": [
+            "bonds",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The two stages of the two-stage DDM are the {{c1::super-normal}} growth period and the {{c2::normal}} growth period, which gives a {{c3::terminal value}} at the end of the first."
+          },
+          "tags": [
+            "multi-stage",
+            "two-stage"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-014",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A callable bond lets the {{c1::issuer}} redeem early; a puttable bond lets the {{c2::holder}} sell it back at par; a convertible bond is exchanged into {{c3::the issuer's equity shares}}."
+          },
+          "tags": [
+            "bond-types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-015",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Forward rate for year 2 = {{c1::(1 + y2)^2 / (1 + y1) - 1}}; under pure expectations it is the forecast of the next year's {{c2::1-year spot rate}}."
+          },
+          "tags": [
+            "term-structure",
+            "forward-rate"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-016",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A bearer bond records {{c1::no holder name}}, a registered bond records {{c2::the owner's name}}, a term bond repays {{c3::all principal at the end}}, a serial bond repays {{c4::in instalments}}."
+          },
+          "tags": [
+            "bond-types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-017",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "PRC (price rises with Payout, growth; falls with Required return)",
+            "expands_md": "P/E rises with Payout ratio and growth (g); falls with Required return (k).",
+            "topic": "P/E determinants"
+          },
+          "tags": [
+            "pe-ratio",
+            "determinants",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm06-clz-018",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Yield up, Price down: the bond see-saw",
+            "expands_md": "Bond price and yield are like a see-saw: when one rises the other falls.",
+            "topic": "Price-yield relation"
+          },
+          "tags": [
+            "bond-valuation",
+            "price-yield",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

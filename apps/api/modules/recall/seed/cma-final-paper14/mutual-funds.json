@@ -1,0 +1,4742 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-mutual-funds",
+      "title": "SFM: Mutual Funds",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 7: Mutual Funds.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "mutual-funds"
+      },
+      "items": [
+        {
+          "ref": "sfm07-intro-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Mutual fund",
+            "definition_md": "A trust that pools the savings of many investors with a common goal and invests the pool in shares, debentures and other securities. Income and capital gains are shared by unit holders in proportion to the units each holds. It gives a small investor a diversified, professionally managed portfolio at low cost."
+          },
+          "tags": [
+            "mutual-funds",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Who are the entities in the structure of a mutual fund in India?",
+            "answer_md": "Unit holders (investors), the sponsor, the trustees (trust), the asset management company (AMC), the custodian, the registrar and transfer agent, with SEBI as regulator. Distributors bring investors in and earn a commission."
+          },
+          "tags": [
+            "mutual-funds",
+            "structure",
+            "entities"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does the sponsor of a mutual fund do?",
+            "answer_md": "The sponsor is a body corporate that sets up the fund and gets it registered with SEBI, after completing SEBI's formalities. A mutual fund can be established only through a sponsor, who signs a trust deed in favour of the trustees."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "State the main conditions a sponsor must meet.",
+            "answer_md": "A sound track record and a reputation for fairness and integrity, at least five years in financial services, a contribution of at least 40% to the net worth of the AMC, and a deed executed in favour of the trustees."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the role of the trustees, and who may not be a trustee?",
+            "answer_md": "Trustees (a board or a trustee company) hold the fund's property in trust for the unit holders. The AMC and its officers or employees cannot act as trustees. At least two-thirds of the trustees must be independent of the sponsor."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "trustees"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can one person be a trustee of two mutual funds?",
+            "answer_md": "Not as a rule. A trustee of one fund can be appointed to another only if he is an independent trustee (and, as per the regulations section of the text, the fund where he already serves has given prior approval)."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "trustees"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does the AMC do, and how does it earn?",
+            "answer_md": "The AMC manages the schemes under the trustees' supervision, with staff for investment, research and investor servicing, and launches new schemes. Its income is the management fee, charged as a percentage of net assets managed."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name SEBI's guidelines on the formation and functioning of AMCs listed in the structure section.",
+            "answer_md": "An independent, non-executive chairman; managing director and executive staff must be full-time employees of the AMC; half the board should be outside directors unconnected with the AMC; and the AMC may not run other activities such as merchant banking or issue management."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the role of the custodian, and who cannot be one?",
+            "answer_md": "The custodian handles the back-office of investments: keeps the securities, receives and delivers them on trades, collects income, distributes dividends and keeps assets of different schemes apart. The sponsor cannot be the custodian, so that fund assets are not in the sponsor's hands."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "custodian"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Within how many days must the fund inform SEBI of the custodian's appointment?",
+            "answer_md": "Within fifteen days of the appointment."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "custodian"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do registrars and transfer agents do?",
+            "answer_md": "They track each investor's holding in a scheme: issue and redeem units, send fact sheets and annual reports and so on. A fund may do this in-house or outsource it to a SEBI-approved agency (the text names CAMs); the AMC must appoint SEBI-registered agents."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "registrar"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who are distributors and how are they paid? What are the three tiers?",
+            "answer_md": "Distributors bring investors into schemes and earn a commission, which is an expense of the scheme. Tier 1 has a national own or franchised network, Tier 2 are regional players with some reach elsewhere, Tier 3 are small players with limited reach."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "distributors"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When and how did the mutual fund industry in India begin?",
+            "answer_md": "In 1963 with the Unit Trust of India (UTI), set up by an Act of Parliament at the initiative of the Government and RBI to mobilise small savings. Its first big scheme was Unit Scheme 1964 (US-64)."
+          },
+          "tags": [
+            "mutual-funds",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give the five phases of the Indian mutual fund industry with years.",
+            "answer_md": "I: UTI monopoly 1964-87. II: public sector banks and insurers (LIC, GIC) enter, 1987-93. III: private and foreign funds allowed from 1993 (first SEBI fund regulation, Kothari Pioneer first private fund). IV: SEBI (Mutual Funds) Regulations 1996, growth 1996-2004. V: mergers and consolidation from 2004."
+          },
+          "tags": [
+            "mutual-funds",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which year saw SEBI (Mutual Funds) Regulations issued, and what did they do?",
+            "answer_md": "1996. They gave the industry a regulatory framework to safeguard investors; mutual funds registered with SEBI and are monitored and inspected by it."
+          },
+          "tags": [
+            "mutual-funds",
+            "history",
+            "sebi"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-intro-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which year did public sector banks gain permission to set up mutual funds?",
+            "answer_md": "1986 amendment of banking law (SBI, PNB, Canara Bank, Bank of India, Bank of Baroda and others followed); in 1987 LIC and GIC were also allowed."
+          },
+          "tags": [
+            "mutual-funds",
+            "history",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the advantages of investing through mutual funds.",
+            "answer_md": "Professional management, diversification even with small money, convenient administration, return potential, low cost, liquidity, transparency, flexibility (SIP, SWP, reinvestment), choice of schemes and switching, access to blue-chip strategies for small investors, and strict SEBI regulation."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a mutual fund deliver diversification to a small investor?",
+            "answer_md": "It spreads money over many industries and sectors, so even a small ticket owns a diversified portfolio that would otherwise need a large capital."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do open-ended and closed-ended schemes each give liquidity?",
+            "answer_md": "Open-ended: units are redeemed promptly at NAV-related prices by the fund. Closed-ended: units are sold on the stock exchange at the market price, or sold back to the fund through periodic repurchase at NAV-related prices (some closed-ended and interval schemes)."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages",
+            "liquidity"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What transparency does a mutual fund offer?",
+            "answer_md": "It regularly discloses the value of the investor's holding, the companies it has invested in, the share of each asset class, and the fund manager's strategy and outlook."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages",
+            "transparency"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can an investor switch between schemes, and what example is given?",
+            "answer_md": "Fund houses let investors move from one scheme to another as objectives change, e.g. from a growth fund to an income fund and back when the goal shifts from capital gain to regular income."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages",
+            "switching"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the limitations of mutual funds.",
+            "answer_md": "Diversification does not rule out losses in a crisis; many funds trail their benchmark; no say in security selection; past performance does not guarantee future return; open-ended units trade only at the end-of-day NAV; diversification dilutes big winners; manager may chase short-term returns; fees (1 to 3% a year) are charged whatever the performance; large cash reserves drag returns."
+          },
+          "tags": [
+            "mutual-funds",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is meant by the 'dilution' disadvantage of diversification?",
+            "answer_md": "A single stock may double or triple, but inside a diversified fund it is only a small part of the portfolio, so the investor gains little from it."
+          },
+          "tags": [
+            "mutual-funds",
+            "limitations",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do open-ended funds hold cash, and what is the cost to the investor?",
+            "answer_md": "To meet sudden heavy redemptions. The cash gives liquidity but earns little, so it pulls down the investor's potential return."
+          },
+          "tags": [
+            "mutual-funds",
+            "limitations",
+            "cash"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How can performance-linked pay of a fund manager hurt investors?",
+            "answer_md": "The manager may be tempted to chase short-term results and neglect the fund's long-run performance."
+          },
+          "tags": [
+            "mutual-funds",
+            "limitations",
+            "manager"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-adv-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare open-end mutual funds with picking your own stocks and bonds.",
+            "answer_md": "Funds give diversification from large-scale investing, lower transaction cost, professional management and record keeping. Direct holdings have no management fee, let you time capital gains and losses with your own tax position, and let you build a portfolio to your own risk-return profile."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:adv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "On what three bases are mutual fund schemes classified in the study text?",
+            "answer_md": "By operations (open-ended, closed-ended), by investment objective (growth, income, balanced, money market, gilt, floating rate, high yield debt, MIP, sector) and 'others' (index, tax saving, ETF, gold ETF, fund of funds, assured return, arbitrage, load, life style)."
+          },
+          "tags": [
+            "mutual-funds",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Open-ended fund",
+            "definition_md": "A scheme whose units are sold and bought back continuously at prices linked to NAV. There is no cap on investment, the fund is bound to repurchase, the corpus changes daily, units have no maturity or lock-in and need not be listed. It must hold a good part of its assets in liquid form to meet redemptions."
+          },
+          "tags": [
+            "mutual-funds",
+            "open-ended"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Closed-ended fund",
+            "definition_md": "A scheme with a fixed maturity (generally 3 to 15 years) open for subscription only during the new fund offer. Afterwards units are bought and sold on the exchange where they are listed, so the corpus is fixed until redemption. Units can trade at a premium, at NAV or at a discount (mostly at a discount)."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compare open-ended and closed-ended funds on subscription, maturity, trading and repurchase.",
+            "answer_md": "Subscription: open-ended all year, closed-ended only during the offer. Maturity: none vs a stipulated 3 to 15 years. Trading: direct with the fund at NAV-related price vs on the stock exchange. Repurchase: any time vs periodic, at NAV-related price, as the fund's terms say."
+          },
+          "tags": [
+            "mutual-funds",
+            "open-ended",
+            "closed-ended"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why do closed-ended funds often trade at a discount to NAV, and what can an investor do about it?",
+            "answer_md": "Their units trade like securities, so the price depends on demand and supply and can differ from NAV; in practice they mostly sell at a discount. An investor can try to arbitrage the gap, especially when the redemption date is near."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "premium-discount"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What exit routes must SEBI rules provide in a closed-ended scheme?",
+            "answer_md": "At least one of two: listing on a stock exchange, or periodic repurchase by the fund at NAV-related prices."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "exit"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why do open-ended funds keep a cash cushion but closed-ended funds need not?",
+            "answer_md": "An open-ended fund must redeem units at NAV whenever asked, so it needs cash or near-cash. In a closed-ended fund there are no redemptions during the term; investors who want cash sell on the exchange."
+          },
+          "tags": [
+            "mutual-funds",
+            "open-ended",
+            "closed-ended",
+            "liquidity"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why can a closed-ended fund's market price differ from NAV while an open-ended fund's price cannot?",
+            "answer_md": "A closed-ended fund is itself a traded security whose price reflects market demand. An open-ended fund redeems units against the underlying portfolio at NAV, so its price cannot stray from NAV."
+          },
+          "tags": [
+            "mutual-funds",
+            "open-ended",
+            "closed-ended",
+            "premium-discount"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Growth fund",
+            "definition_md": "A fund aiming at capital appreciation over the medium to long term. It puts most of its money in equity and equity-linked instruments, the rest in debt and money market. Suited to investors who accept medium to high risk; also called a 'nest egg' or 'long haul' investment."
+          },
+          "tags": [
+            "mutual-funds",
+            "growth-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-010",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Income fund",
+            "definition_md": "A scheme giving regular, steady income by investing in fixed-income securities such as bonds, corporate debentures and government securities. It is less risky than equity schemes because it is not driven by equity market swings."
+          },
+          "tags": [
+            "mutual-funds",
+            "income-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-011",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Balanced fund",
+            "definition_md": "A scheme that seeks both capital appreciation and periodic income, holding a mix of equity and debt as stated in its offer document. A typical split in the text is 60% equity and 40% debt, money market and cash. Risk is moderate."
+          },
+          "tags": [
+            "mutual-funds",
+            "balanced-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-012",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Money market mutual fund",
+            "definition_md": "A fund meant to give easy liquidity, preservation of capital and moderate income by investing in safe short-term paper such as T-bills, CDs, commercial paper and call money lent between banks. Returns move with market interest rates."
+          },
+          "tags": [
+            "mutual-funds",
+            "money-market-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-013",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Gilt fund",
+            "definition_md": "A fund investing only in government securities (Central and State) and treasury bills. It gives the highest safety with comparatively low return, and can be short-term or long-term."
+          },
+          "tags": [
+            "mutual-funds",
+            "gilt-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-014",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Floating rate fund",
+            "definition_md": "A fund investing in securities that pay floating interest, such as bank loans, bonds and other debt. The short-term plan holds shorter maturities with higher liquidity; the long-term plan is tilted to longer maturities."
+          },
+          "tags": [
+            "mutual-funds",
+            "floating-rate-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-015",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "High yield debt fund",
+            "definition_md": "A fund that earns higher interest by parking money in instruments with lower credit ratings. Also called a junk bond fund; popular abroad but not common in India."
+          },
+          "tags": [
+            "mutual-funds",
+            "high-yield-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-016",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Monthly Income Plan (MIP)",
+            "definition_md": "A scheme that puts only a small part of its money in equity and the rest in debt, for conservative investors; risk is low to medium. The 'marginal equity' product pays out regular income."
+          },
+          "tags": [
+            "mutual-funds",
+            "mip"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-017",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Sector fund",
+            "definition_md": "A fund that invests only in one economic sector or industry (banking, pharma, media, auto and so on). With no diversification across sectors, its risk is higher than that of a well-diversified fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "sector-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-018",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Index fund",
+            "definition_md": "A fund designed to copy a market index, such as Nifty or Sensex, by holding all its stocks in the same proportions as their weights in the index, so that its return mirrors the index as closely as possible."
+          },
+          "tags": [
+            "mutual-funds",
+            "index-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-019",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Tax-saving fund (ELSS)",
+            "definition_md": "An equity linked savings scheme. In the study text it gives a tax rebate under Section 80C and carries a lock-in period of 3 years."
+          },
+          "tags": [
+            "mutual-funds",
+            "elss",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-020",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Gold ETF",
+            "definition_md": "An exchange traded fund that tracks the price of physical gold; the study text says each unit stands for 1 gram. Holders enjoy liquidity and marketability without handling physical gold and bear no carrying cost."
+          },
+          "tags": [
+            "mutual-funds",
+            "gold-etf",
+            "etf",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-021",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Fund of funds (FoF)",
+            "definition_md": "A mutual fund that invests in units of other mutual funds instead of directly in securities, aiming at even greater diversification than an ordinary fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "fund-of-funds"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-022",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Assured return scheme",
+            "definition_md": "A scheme that promises a specific return irrespective of how it performs, with the return and other benefits stated in the offer document."
+          },
+          "tags": [
+            "mutual-funds",
+            "assured-return"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-023",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Arbitrage fund",
+            "definition_md": "A fund that earns from price differences between the cash and the futures markets, for example buying shares in cash and selling the same in futures. Return is the gap between the two prices; risk-return trade-off is low and returns moderate."
+          },
+          "tags": [
+            "mutual-funds",
+            "arbitrage-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-024",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Load fund",
+            "definition_md": "A fund that charges a percentage of NAV when investors enter or exit, i.e. every time units are bought or sold. The charge pays for marketing and distribution expenses."
+          },
+          "tags": [
+            "mutual-funds",
+            "load-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-025",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Life style fund",
+            "definition_md": "A fund whose asset mix is tailored to the individual investor's risk and return needs, depending on age, risk appetite, purpose and time horizon."
+          },
+          "tags": [
+            "mutual-funds",
+            "lifestyle-fund"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-026",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish balanced funds, life-cycle funds and asset allocation funds.",
+            "answer_md": "Balanced funds keep fairly stable proportions in each asset class. Life-cycle funds are balanced funds whose mix follows the investor's age (more equity for the young, more debt for the old). Asset allocation funds change the mix widely as forecasts change, so they engage in aggressive market timing."
+          },
+          "tags": [
+            "mutual-funds",
+            "balanced-fund",
+            "asset-allocation"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-027",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the three options a mutual fund investor can choose from?",
+            "answer_md": "Growth option (profits reinvested, suited for long-term goals), dividend payout option (realised profits paid out for regular income), and dividend reinvestment option (dividend declared but used to issue additional units)."
+          },
+          "tags": [
+            "mutual-funds",
+            "options"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-028",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are units created under the dividend reinvestment option treated?",
+            "answer_md": "The dividend is not paid in cash; additional units are issued at the prevailing NAV. These extra units are treated as a fresh purchase."
+          },
+          "tags": [
+            "mutual-funds",
+            "options",
+            "dividend-reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-029",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a systematic investment plan (SIP) and what does it give?",
+            "answer_md": "An arrangement to invest a fixed amount every month or quarter (by post-dated cheques or ECS) in a scheme. Benefits: compounding, rupee cost averaging, convenience, discipline and no need to time the market."
+          },
+          "tags": [
+            "mutual-funds",
+            "sip"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-types-030",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a systematic withdrawal plan (SWP)?",
+            "answer_md": "A facility that gives the investor regular income from the investment while the rest stays invested. The investor can withdraw only the appreciation in NAV without touching principal, or a fixed amount every month or quarter."
+          },
+          "tags": [
+            "mutual-funds",
+            "swp"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under what law and regulator must a mutual fund be set up in India, and in what form?",
+            "answer_md": "It must be registered with SEBI and is governed by the SEBI (Mutual Funds) Regulations, 1996. It is established as a trustee company or a trust, with the instrument of trust in the form of a deed."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "establishment"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How must the trust deed of a mutual fund be registered, and what must it contain?",
+            "answer_md": "It must be registered under the Registration Act, 1908, and must contain the clauses given in the Third Schedule of the SEBI regulations."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "trust-deed"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a 'sound track record' of a sponsor for registration?",
+            "answer_md": "At least five years in financial services; positive net worth in each of the preceding five years; net worth in the latest year above its capital contribution to the AMC; and profit after depreciation, interest and tax in three of the preceding five years, including the fifth year."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is a person treated as a sponsor even if not named so?",
+            "answer_md": "Anyone who holds 40% or more of the net worth of an AMC is deemed a sponsor and must meet the sponsor eligibility rules."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What background conditions are placed on the sponsor and its directors?",
+            "answer_md": "The applicant must be a fit and proper person, and neither the sponsor, its directors nor the principal officer should have been guilty of fraud, convicted of an offence involving moral turpitude or found guilty of an economic offence."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What may SEBI examine in an on-site due diligence of the sponsor's existing business?",
+            "answer_md": "Infrastructure for client servicing and complaints, the track record of handling complaints, and the compliance philosophy and practice."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Under what conditions can securities be moved between two schemes of the same fund (inter-scheme transfer)?",
+            "answer_md": "At the prevailing market price for quoted instruments on a spot basis, and the securities must fit the investment objective of the receiving scheme."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "inter-scheme"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Can a scheme invest in another scheme, and are fees charged?",
+            "answer_md": "Yes, in a scheme of the same AMC or of another mutual fund, without charging any fees."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "inter-scheme"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What cap does the text give on initial issue expenses of a scheme?",
+            "answer_md": "They should not exceed 6% of the funds raised under the scheme."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "issue-expenses",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Must a mutual fund deal on delivery basis? What about short sales and derivatives?",
+            "answer_md": "Yes. It buys and sells only on delivery, taking delivery on purchases and delivering on sales, so it cannot create a short sale or carry-forward position. It may use derivatives on a recognised exchange only for hedging and portfolio balancing under SEBI guidelines."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "delivery",
+            "derivatives"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In whose name must securities be held, and where may idle funds be parked?",
+            "answer_md": "Securities (for long-term holding) must be registered in the name of the mutual fund for the concerned scheme. Money pending deployment can go into short-term deposits of scheduled commercial banks."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "title",
+            "bank-deposits"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give the investment limit for unrated debt instruments of a mutual fund.",
+            "answer_md": "Each issuer: 10% of the scheme's NAV; aggregate in unrated debt: 25% of NAV; approval of the board of trustees and AMC is required."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investment-limits"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the equity-related limits on a mutual fund's investments in one company?",
+            "answer_md": "Not more than 10% of the company's paid-up capital, and not more than 10% of the scheme's NAV in its equity or equity-related instruments (the NAV limit does not apply to index funds and sector or industry specific schemes)."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investment-limits"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What limits apply to unlisted equity and to investing in other schemes?",
+            "answer_md": "Unlisted equity or equity-related instruments: 5% of the scheme's NAV for an open-ended scheme and 10% for a closed-ended scheme as the layout of the text reads. Investment in schemes of the same AMC, same management or other AMCs: 5% of the NAV of the mutual fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investment-limits",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What limit does the text give for a single issuer's debt, securitised debt and government securities?",
+            "answer_md": "A scheme may hold debt of a single issuer up to 15% of NAV, extendable to 20% with approval of the trustees and AMC. The table lists government securities and money market instruments beside this row, and its layout is unclear."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investment-limits",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What may a mutual fund NOT invest in (prohibited investments)?",
+            "answer_md": "Unlisted securities of an associate or group company of the sponsor; securities of such companies issued by private placement; listed securities of the sponsor's group companies above 25% of net assets; and (as the text says) any fund of funds scheme."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "prohibited",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What rights does a unit holder have under the regulations?",
+            "answer_md": "Proportionate beneficial ownership of scheme assets and of any dividend or income declared; a dividend warrant within 42 days; right to inspect the major documents (material contracts, AMC's Memorandum and Articles, offer document); a copy of the annual statement; 75% of unit holders can remove the AMC and approve changes in a close-ended scheme."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investor-rights",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What limits the legal remedies of a unit holder?",
+            "answer_md": "Unit holders cannot sue the trust itself but can proceed against the trustees if cheated; and the AMC cannot be sued to make good a shortfall in return, since it cannot assure a specific return except in permitted schemes."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investor-rights"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the obligations of a mutual fund investor?",
+            "answer_md": "Study the risk factors and other information in the offer document (failure takes away later rights) and monitor the scheme by reading its reports and financial statements."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investor-obligations"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When is a person eligible to be a trustee?",
+            "answer_md": "A person of ability, integrity and standing, who has not been found guilty of moral turpitude, has not been convicted of an economic offence or securities law violation, and has furnished the required particulars."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "trustees"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can the director of a trustee company act as trustee elsewhere?",
+            "answer_md": "If a company is the trustee, its directors may act as trustees of another trust provided the object of that trust does not conflict with the object of the mutual fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "trustees"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-022",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "State the eligibility conditions for an AMC.",
+            "answer_md": "A sound record of net worth and profitability, good reputation, and a minimum net worth of Rs 10 crore (text figure); directors with finance experience and clean records; at least 50% independent directors; and a chairman who is not a trustee of any mutual fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which conditions apply to the directors of an AMC?",
+            "answer_md": "A director may not serve on another AMC (independent directors excepted); appointment needs prior approval of the trustees; they must not have worked for an AMC, fund or intermediary during its suspension by SEBI; bio-data must go to the trustees within 15 days of appointment."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Whose approval is needed for a change in the controlling interest of an AMC?",
+            "answer_md": "The prior approval of the trustees, SEBI and the unit holders."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-025",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What activities can an AMC undertake besides managing the fund, and what can it not do?",
+            "answer_md": "Without SEBI approval it can run only portfolio management services and give management and advisory services to offshore, pension, provident and venture capital funds. It cannot act as a trustee, and it cannot invest in its own schemes unless that is fully disclosed in the offer document."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-026",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the duties and obligations of an AMC in managing a scheme.",
+            "answer_md": "Invest only as the SEBI regulations and trust deed allow; take decisions with due care and diligence; be responsible for acts of its employees and agents; not escape liability to the fund; report on activities and compliance to the trustees every quarter; disclose dealings with sponsor and associates; hire only SEBI-registered registrars."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-027",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What disclosure arises when a scheme invests more than 5% of its NAV in one company?",
+            "answer_md": "The AMC must report the investment in that company and its subsidiaries to the trustees and show it in the half-yearly and annual accounts of the scheme."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc",
+            "disclosure"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reg-028",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What must an AMC do about dealings with sponsors, associates and its own key staff?",
+            "answer_md": "It must not use the services of the sponsor, associates or employees (or their relatives) for securities transactions or distribution without proper disclosure, must report associate transactions to SEBI and the trustees, and must give details of securities dealings of key personnel to SEBI when asked."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "amc",
+            "related-party"
+          ],
+          "reference_keys": [
+            "sfm:reg"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-mmmf-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the Task Force (D. Basu) based rules for money market mutual funds given in the text.",
+            "answer_md": "No minimum investment; a minimum lock-in of 46 days; at least 25% in treasury bills and dated government securities of up to one year; at most 30% in call money; commercial paper capped at 15%; at most 20% in bank-accepted commercial transactions; capital market instruments barred."
+          },
+          "tags": [
+            "mutual-funds",
+            "money-market-fund",
+            "regulation",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mmmf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-mmmf-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What inter-scheme and bank dealings are banned for money market funds?",
+            "answer_md": "Borrowing and lending between schemes, and between the sponsoring bank and the fund, are prohibited. Switching of assets between schemes must be at market rates and based on conscious investment decisions."
+          },
+          "tags": [
+            "mutual-funds",
+            "money-market-fund",
+            "regulation",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mmmf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-mmmf-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What hurdles hold back the success of money market mutual funds?",
+            "answer_md": "The lock-in hampers liquidity (they should work like a savings account); investors want more than bank fixed deposits; retail investors must be educated through a large network; a large corpus is needed to deal consistently in the money market; and no single regulator was settled."
+          },
+          "tags": [
+            "mutual-funds",
+            "money-market-fund",
+            "hurdles",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mmmf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Net Asset Value (NAV) of a mutual fund",
+            "definition_md": "The value per unit of a scheme's net assets: the market value of everything the scheme holds, net of its liabilities, divided by the units outstanding. It is what a holder would get per unit if the scheme were wound up at that date (no distress sale, no winding-up cost). It changes daily with security prices."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "NAV per unit",
+            "expression_md": "$\\text{NAV} = \\dfrac{\\text{Market value of investments} + \\text{Receivables} + \\text{Accrued income} + \\text{Other assets} - \\text{Accrued expenses} - \\text{Payables} - \\text{Other liabilities}}{\\text{Units outstanding}}$",
+            "variables_md": "Numerator is the net assets of the scheme. Units outstanding = size of the scheme (capital) divided by face value per unit.",
+            "when_md": "Use for any NAV question. Add what the scheme is owed and has earned; subtract what it owes. Cash and liquid assets count as assets."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Scheme size Rs 150 crore, face value Rs 10, investments Rs 180 crore, receivables 4, accrued income 2, liabilities 3, accrued expenses 1 (Rs crore). Find NAV.",
+            "answer_md": "Units = 150 / 10 = 15 crore. Net assets = 180 + 4 + 2 - 3 - 1 = Rs 182 crore. NAV = 182 / 15 = Rs 12.13 per unit. Trap: size of scheme gives units (capital / face value), it is not the asset base."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A fund's securities are worth Rs 450 crore, receivables 5, accrued income 3, liabilities 4, accrued expenses 2, with 40 crore units. What is NAV?",
+            "answer_md": "Net assets = 450 + 5 + 3 - 4 - 2 = Rs 452 crore. NAV = 452 / 40 = Rs 11.30 per unit."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the NAV of a scheme built up from the different asset classes?",
+            "answer_md": "Market value of traded listed securities + estimated value of non-traded listed and unlisted securities + liquid assets and cash + accrued dividend and interest - accrued expenses - other liabilities, all divided by units outstanding."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is NAV declared, and at what NAV are units allotted?",
+            "answer_md": "NAV is declared daily after the market closes, unlike a stock price which moves minute to minute. Fresh units are allotted at the prospective NAV, i.e. the one that will be declared at the end of that day on closing market values."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "disclosure"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is NAV important to an investor and to an analyst?",
+            "answer_md": "It shows how a scheme is performing; it guides the decision to enter or exit a scheme; and analysts use it to compute the yield of schemes."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "utility"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the fund's balance sheet treat investor subscription and the investments made?",
+            "answer_md": "Subscriptions are capital of the fund; investments made on investors' behalf are its assets."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is a traded security of a mutual fund valued?",
+            "answer_md": "At the last quoted closing price on the stock exchange. If listed on several exchanges, use the one where it is principally traded; if it did not trade there on the valuation day, the price at which it traded on another exchange may be used."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "valuation"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is a security treated as non-traded, and who values it?",
+            "answer_md": "If it has not traded on any exchange for 60 days before the valuation date. The AMC values it in good faith on valuation methods approved by it."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "valuation"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are non-traded equity and debt instruments valued?",
+            "answer_md": "Equity: by capitalising earnings, alone or together with net asset value, using price-earning ratios of comparable traded shares with a discount for lower liquidity. Debt: on a yield-to-maturity basis using a rate from comparable traded securities, with a liquidity discount."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "valuation"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are government securities, money market instruments and convertibles valued when non-traded?",
+            "answer_md": "Government securities: at YTM based on the prevailing market rate. Money market instruments: at cost plus accruals. Convertible debentures or bonds: the non-convertible part as a debt instrument and the convertible part like an equity instrument."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "valuation"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is the initial issue expense of a scheme treated for NAV?",
+            "answer_md": "It benefits many years, so it is not charged to one year but amortised. Closed-end load schemes amortise it weekly over the scheme's life; open-ended schemes may amortise it over a period not exceeding 5 years, and issue expenses incurred during the life of an open-ended scheme cannot be amortised."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "expenses",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the recurring expenses of a mutual fund scheme.",
+            "answer_md": "Marketing and selling expenses (including agent commission), brokerage and transaction costs, registrar services, audit fees, custodian charges, investor communication, fund transfer cost, account statements and cheques, insurance, winding-up costs, statutory advertisements and other SEBI-approved costs."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "expenses"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-nav-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the slab structure for total scheme expenses in the text?",
+            "answer_md": "Total expenses (excluding issue and redemption costs, including management and advisory fees) are limited as a percentage of average weekly net assets, with a lower percentage for higher asset slabs: 2.25% on the next Rs 300 crore, 2.0% on the next Rs 300 crore and 1.75% on the balance after the first slab."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "expenses",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:nav"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Total return of a mutual fund unit (holding period return)",
+            "expression_md": "$R = \\dfrac{(NAV_1 - NAV_0) + D + CG}{NAV_0}$",
+            "variables_md": "$NAV_0$, $NAV_1$ = opening and closing NAV per unit; $D$ = dividend per unit; $CG$ = capital gain distribution per unit.",
+            "when_md": "Pre-tax return for a period when distributions are paid out in cash. Divide by the opening NAV of that period."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "NAV moved from Rs 40 to Rs 46; Rs 2 dividend and Rs 1 capital gain distribution paid. Total return?",
+            "answer_md": "(46 - 40 + 2 + 1) / 40 = 9 / 40 = 22.5%."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Same fund: 100 units, distributions of Rs 3 per unit are reinvested at Rs 44, closing NAV Rs 46. What return and why is it higher than cash payout?",
+            "answer_md": "Reinvested units = 300 / 44 = 6.818; total units 106.818 worth 106.818 x 46 = Rs 4,913.64; opening cost 100 x 40 = Rs 4,000. Return = 913.64 / 4,000 = 22.84%, versus 22.5% for payout, as the reinvested cash earned the NAV rise."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "reinvestment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the method for return with reinvestment of distributions?",
+            "answer_md": "Distribution per unit x units = cash; divide by the reinvestment NAV to get extra units; total units x closing NAV = closing value; return = (closing value - opening cost) / opening cost."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-005",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Annualised return from a short period",
+            "expression_md": "$R_{ann} = R_{period} \\times \\dfrac{365}{\\text{days held}}$",
+            "variables_md": "$R_{period}$ = return for the holding period; days held may be 360 if the question says so.",
+            "when_md": "Simple (non-compounded) annualisation. Divide further by 12 for a monthly figure."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Return of 3% in 90 days. Annualise it on 365 days. If the year is taken as 360 days, what changes?",
+            "answer_md": "3 x 365 / 90 = 12.17% a year. On 360 days: 3 x 360 / 90 = 12%. Always use the day count that the question states."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Investor bought at Rs 20; 60 days later NAV is Rs 19.40 after a Rs 0.50 dividend and Rs 0.30 capital gain distribution. What is the return, annualised return and monthly return?",
+            "answer_md": "Return = (19.40 - 20 + 0.50 + 0.30) / 20 = 1.0%. Annualised = 1.0 x 365 / 60 = 6.08%. Monthly = 6.08 / 12 = 0.51%."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "NAV rises from Rs 12 to Rs 12.9 over the year and Rs 0.6 dividend is paid. In the second year NAV falls to Rs 12.0 and Rs 1.0 is paid out. Year-2 return?",
+            "answer_md": "Year 1: (0.9 + 0.6) / 12 = 12.5%. Year 2: (12.0 - 12.9 + 1.0) / 12.9 = 0.78%. Use each year's own opening NAV as the denominator (the second year starts at 12.9, not at the first year's opening NAV)."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-ret-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Reinvestment (Rs 8.65 reinvest NAV) versus payout: 300 units, NAV 8.75 to 9.45, distributions Rs 1.35 a unit. Which is better and how do you compare?",
+            "answer_md": "Payout return = (0.70 + 1.35) / 8.75 = 23.43%. Reinvest: 405 / 8.65 = 46.82 extra units; 346.82 x 9.45 = Rs 3,277.45 against cost 2,625 = 24.86%. Reinvestment wins because extra units were bought below the closing NAV."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns",
+            "reinvestment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Effective yield per annum on a mutual fund investment",
+            "expression_md": "$\\text{Yield p.a.} = \\dfrac{(\\text{Units}\\times NAV_1 - \\text{Investment}) + \\text{Dividend}}{\\text{Investment}} \\times \\dfrac{365}{\\text{days}}$",
+            "variables_md": "Units = investment / NAV at purchase; $NAV_1$ = NAV at the valuation date; days = holding period.",
+            "when_md": "For schemes bought on different dates and valued on one date. Total yield = change in value + dividend; scale by 365 over days held."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Invest Rs 5,00,000 at NAV 12.50; after 73 days NAV is 12.80 and Rs 8,000 dividend was received. Effective yield p.a.?",
+            "answer_md": "Units = 40,000. Value = 40,000 x 12.80 = 5,12,000. Total yield = 12,000 + 8,000 = Rs 20,000 = 4% of investment. Annualised = 4% x 365 / 73 = 20% p.a."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Four-step method of a 'lost documents' question (units, total NAV, total yield, days held).",
+            "answer_md": "(i) Units = amount / purchase NAV for each scheme. (ii) Total NAV = units x NAV at the valuation date. (iii) Total yield = (value - investment) + dividend, then yield % of total investment. (iv) Days = (total yield % / effective yield p.a.) x 365, then step back from the valuation date to find the purchase date."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rs 3,00,000 bought at NAV 10.00, now 10.30, no dividend, effective yield p.a. is 10.95%. How long was it held and when was it bought if valued on 31 March 2026?",
+            "answer_md": "Units 30,000; value 3,09,000; yield Rs 9,000 = 3%. Days = 3 / 10.95 x 365 = 100. Counting back 100 days from 31 March 2026 gives 21 December 2025."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What to watch for in day counts in effective yield problems?",
+            "answer_md": "Use the day count and year basis (365 or 360) the question gives. A purchase on the first of a month and valuation at month-end can be counted with or without both end dates; the study text's solutions are not always consistent, so state your count."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A bonus issue of 1:10 on 20,000 units bought at Rs 10 (Rs 2,00,000). NAV later Rs 9.60. How do you treat the bonus units in yield?",
+            "answer_md": "Bonus units add to the count: 20,000 x 1.1 = 22,000 units; value = 22,000 x 9.60 = Rs 2,11,200. Yield uses the original investment of Rs 2,00,000 (bonus units cost nothing), so capital yield is Rs 11,200 plus any dividend."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "bonus",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method to find the NAV from an annualised yield when dividends are reinvested (one dividend).",
+            "answer_md": "Holding-period return = annualised yield x years held; value = investment x (1 + that return). Units after reinvestment = original units + dividend amount / NAV, and value = units x NAV. Solve for NAV."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "dividend-reinvestment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Invest Rs 1,00,000 at face value Rs 10 (10,000 units). After 9 months a 20% dividend is reinvested and the annualised yield is 100%. Find NAV.",
+            "answer_md": "Holding return = 100% x 9/12 = 75%, so value = Rs 1,75,000. Dividend = 20% x 10 = Rs 2 per unit = Rs 20,000. (10,000 + 20,000 / NAV) x NAV = 1,75,000 gives 10,000 NAV + 20,000 = 1,75,000, so NAV = Rs 15.50. Units = 10,000 + 20,000/15.50 = 11,290.32."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "dividend-reinvestment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Continuing: after a later 10% dividend (reinvested) the investor redeems 12,000 units. Find the reinvestment NAV, and the NAV at redemption if the annualised yield over 2.25 years is 60%.",
+            "answer_md": "Dividend = 10% x 10 = Rs 1 x 11,290.32 units = Rs 11,290.32. New units = 12,000 - 11,290.32 = 709.68, so NAV at that date = 11,290.32 / 709.68 = Rs 15.91. Total return = 60% x 2.25 = 135%, value = Rs 2,35,000, NAV at redemption = 2,35,000 / 12,000 = Rs 19.58."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "dividend-reinvestment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the 'dividend / NAV' term used when finding the NAV on a reinvestment date?",
+            "answer_md": "Because the dividend declared is turned into new units at that date's NAV; the number of units bought equals the dividend amount divided by the NAV, and the unknown NAV is solved from the total value or total units."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield",
+            "dividend-reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compare growth, dividend reinvestment and bonus plans in terms of units and NAV.",
+            "answer_md": "Growth plan: units unchanged, NAV keeps all the gains. Dividend reinvestment: units increase by dividend / NAV. Bonus plan: units increase in the declared ratio (e.g. 1:4 gives 25% more units) and NAV falls accordingly. Dividend payout plan: units unchanged, cash paid out."
+          },
+          "tags": [
+            "mutual-funds",
+            "plans",
+            "bonus",
+            "dividend-reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Investor holds 10,000 units; a bonus of 1:4 is declared at NAV Rs 30. Units and value after the bonus?",
+            "answer_md": "Bonus units = 10,000 / 4 = 2,500, total 12,500. Value before = Rs 3,00,000; after the bonus the NAV falls to 3,00,000 / 12,500 = Rs 24 if nothing else changes. Total wealth is unchanged."
+          },
+          "tags": [
+            "mutual-funds",
+            "plans",
+            "bonus",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a multi-plan question (dividend reinvestment, bonus, growth), how are redemption proceeds and tax handled?",
+            "answer_md": "Final units x redemption NAV = proceeds. Short-term gain applies only to units held for less than the specified period (for example units added in the last year via reinvestment or bonus; bonus units have nil cost). Securities transaction tax is charged on redemption value; return = net gain x 12 / (investment x months held)."
+          },
+          "tags": [
+            "mutual-funds",
+            "plans",
+            "tax",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method to find NAV of a scheme using sector indices (cost and index at purchase versus valuation).",
+            "answer_md": "Value of each equity holding = cost x closing index / opening index. Add listed bonds at market (annual interest / market yield expected), unlisted bonds at cost, and cash. Deduct payables and expenses to get net assets; divide by units outstanding."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "sector-index",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Fund: IT shares cost 20 (index 1,000 to 1,500), banking cost 10 (2,000 to 2,400), listed bonds face 5 at 9% coupon with market yield 7.5%, unlisted bonds 4, cash 1, expenses payable 2 (Rs crore); 3 crore units. NAV?",
+            "answer_md": "IT = 20 x 1.5 = 30; banking = 10 x 1.2 = 12; bonds = 5 x 9% / 7.5% = 6; unlisted 4; cash 1. Total assets 53, net assets 51, NAV = 51 / 3 = Rs 17.00."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "sector-index",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "For that fund, with Rs 1.50 dividend a year for 2 years, find the net return and the annualised return. Opening NAV excludes cash.",
+            "answer_md": "Opening net assets = shares at cost 30 + bonds at cost 5 + 4 = 39; per unit 13.00. Capital gain = 17 - 13 = 4; dividends 3.00. Return = 7 / 13 = 53.85% over 2 years, annualised 26.92%."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "sector-index",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is cash left out of the opening NAV in such questions?",
+            "answer_md": "The text assumes cash and other assets arise from the investments made at the start, so the opening NAV is built from cost of investments only; the cash then shows up in the closing NAV."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "sector-index"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you find a fund's beta when its Sharpe ratio, standard deviation and Treynor ratio are given?",
+            "answer_md": "Sharpe ratio x standard deviation = excess return (Rp - Rf). Treynor ratio = (Rp - Rf) / beta, so beta = excess return / Treynor ratio. If variance is given, standard deviation is its square root."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "NAV 80 (97% equity), Sharpe 2.5, standard deviation 8, Treynor 16, annual cost Rs 3.60 per unit, market falls 8%. NAV after one month, portfolio unchanged?",
+            "answer_md": "Excess return = 2.5 x 8 = 20; beta = 20 / 16 = 1.25. Equity = 77.60 falls 1.25 x 8 = 10% to 69.84. Cash = 2.40 less monthly cost 0.30 = 2.10. NAV = 71.94."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-yield-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Steps to estimate NAV after a market move for an equity fund that holds some cash.",
+            "answer_md": "Split NAV into equity and cash by the equity percentage; get beta; equity changes by beta x market change; cash is reduced by expenses for the period (annual cost / 12 per month); add the two parts."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:yield"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Offering price with front-end load",
+            "expression_md": "$\\text{Offer price} = \\dfrac{NAV}{1 - \\text{Load}}$",
+            "variables_md": "Load = front-end load as a proportion of the offer (public) price. Then $NAV = \\text{Offer price} \\times (1 - \\text{Load})$.",
+            "when_md": "Study text convention. Some exam questions instead add the load to NAV (NAV x (1 + load)); read the wording."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "NAV Rs 25 with a 4% front load: offer price? And the NAV if the offer price is Rs 40 with a 2.5% load?",
+            "answer_md": "Offer price = 25 / 0.96 = Rs 26.04. NAV = 40 x (1 - 0.025) = Rs 39.00."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rs 10,000 invested with a 5% front-end load; securities gain 12% in the year; expense ratio 1%. Return to the investor?",
+            "answer_md": "Net invested = 10,000 x 0.95 = Rs 9,500. Net growth = 12% - 1% = 11%, ending value = 9,500 x 1.11 = Rs 10,545. Return = 545 / 10,000 = 5.45%."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rs 10,000, 5% load, expense ratio 1%, portfolio earns 12% a year gross. Value after 3 years?",
+            "answer_md": "Net amount 9,500; net rate 11%; 9,500 x 1.11^3 = Rs 12,992.49."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How much must a fund earn to give you the same 15% you earn directly, if initial expenses are 4% and recurring expenses are 1.5%?",
+            "answer_md": "Required return = 15 / (1 - 0.04) + 1.5 = 15.625 + 1.5 = 17.125%."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "expenses",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-006",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Required fund return to match own return",
+            "expression_md": "$X = \\dfrac{r}{1 - i} + e$",
+            "variables_md": "$r$ = return investor can earn directly, $i$ = initial (issue) expense as a proportion, $e$ = annual recurring expense proportion.",
+            "when_md": "Compare a mutual fund scheme with direct investment, in the style of the study text."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "expenses",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Premium or discount of a closed-end fund",
+            "expression_md": "$\\dfrac{P - NAV}{NAV}$",
+            "variables_md": "$P$ = market price per unit; NAV per unit = (portfolio value - liabilities) / units outstanding.",
+            "when_md": "Positive = premium, negative = discount to NAV."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "premium-discount",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Closed-end fund: portfolio Rs 120 crore, liabilities Rs 2 crore, 4 crore units, market price Rs 27. NAV and premium or discount?",
+            "answer_md": "NAV = (120 - 2) / 4 = Rs 29.50. Discount = (27 - 29.50) / 29.50 = -8.47%, a discount to NAV."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "premium-discount",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does an investor's return in a closed-end fund differ from the manager's portfolio return?",
+            "answer_md": "The investor's return uses market price (which includes premium or discount at purchase and sale) plus distributions. A holder of the same securities as the manager would earn the NAV-based return. A change in the discount makes the two differ."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "premium-discount",
+            "returns"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Closed-end fund: NAV 20 to 21, bought at 5% discount, sold at 2% discount, Re 1 distributed. Investor's return versus NAV return?",
+            "answer_md": "Buy price 19.00, sell price 21 x 0.98 = 20.58. Investor return = (20.58 - 19 + 1) / 19 = 13.58%. NAV-based return = (21 - 20 + 1) / 20 = 10%. The narrowing discount adds to the investor's return."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "premium-discount",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Closed fund over 4 periods: how to compute average periodic return of an investor versus NAV growth?",
+            "answer_md": "Investor's return each period = price change / previous price, where price = NAV x (1 + premium) or (1 - discount). Arithmetic average is the plain mean of period returns; geometric (compound) is (end price / start price)^(1/n) - 1. NAV growth uses NAV only: (end NAV / start NAV)^(1/n) - 1."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-012",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expense ratio",
+            "expression_md": "$\\text{Expense ratio} = \\dfrac{\\text{Total expenses}}{\\text{Average net assets}}$",
+            "variables_md": "Average net assets (average weekly in the regulations) or the mean of opening and closing NAV in a case problem.",
+            "when_md": "Per-unit expense = total expenses / units. A scheme with Rs 250 crore average assets and Rs 4 crore expenses has a 1.6% ratio."
+          },
+          "tags": [
+            "mutual-funds",
+            "expense-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Expenses Rs 2.25 crore, opening net assets 39 crore, closing 51 crore. Expense ratio?",
+            "answer_md": "Average = (39 + 51) / 2 = 45. Ratio = 2.25 / 45 = 5%."
+          },
+          "tags": [
+            "mutual-funds",
+            "expense-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-014",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Portfolio turnover ratio",
+            "expression_md": "$\\text{Turnover} = \\dfrac{\\min(\\text{Purchases}, \\text{Sales})}{\\text{Average portfolio value}}$",
+            "variables_md": "Purchases and sales of securities during the year; denominator is the average assets (or total portfolio value as in the text's case).",
+            "when_md": "Measures trading activity. The text's case uses the value of holdings replaced divided by the total portfolio value."
+          },
+          "tags": [
+            "mutual-funds",
+            "turnover",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Fund with average assets Rs 400 crore bought Rs 80 crore and sold Rs 60 crore of securities. Turnover?",
+            "answer_md": "The lower of purchases and sales is 60. Turnover = 60 / 400 = 15%."
+          },
+          "tags": [
+            "mutual-funds",
+            "turnover",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you value a portfolio in a NAV and turnover problem? Example: 3 lakh shares at Rs 40, 2 lakh at Rs 25, fee payable Rs 20,000, 25 lakh units.",
+            "answer_md": "Holdings = 120 lakh + 50 lakh = 170 lakh. Net = 170 lakh - 0.20 lakh = 169.80 lakh. NAV = 169.80 / 25 = Rs 6.79. Replacing shares worth 50 lakh with others of equal value gives turnover 50 / 170 = 29.41% on the text's method."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "turnover",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do you get closing units and unit capital?",
+            "answer_md": "Closing units = opening units + units subscribed - units redeemed. Unit capital = units outstanding x face value."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "units",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-load-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A fund has a 1.5% expense ratio and NAV of Rs 80. What is the annual expense per unit?",
+            "answer_md": "80 x 1.5% = Rs 1.20 per unit."
+          },
+          "tags": [
+            "mutual-funds",
+            "expense-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:load"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three risk-adjusted measures used to judge a mutual fund and the risk each uses.",
+            "answer_md": "Sharpe ratio uses total risk (standard deviation); Treynor ratio uses systematic risk (beta); Jensen's alpha uses systematic risk through CAPM and gives an absolute (percentage) measure."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "treynor",
+            "jensen"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Sharpe ratio",
+            "expression_md": "$S = \\dfrac{R_p - R_f}{\\sigma_p}$",
+            "variables_md": "$R_p$ = portfolio return, $R_f$ = risk-free return, $\\sigma_p$ = standard deviation of portfolio return.",
+            "when_md": "Reward per unit of total risk (systematic plus unsystematic). Higher is better. Suited to judging a whole portfolio against another portfolio; a single value alone says little."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Treynor ratio",
+            "expression_md": "$T = \\dfrac{R_p - R_f}{\\beta_p}$",
+            "variables_md": "$\\beta_p$ = beta of the portfolio against the market.",
+            "when_md": "Reward per unit of systematic risk. Assumes the portfolio is fully diversified, so unsystematic risk is ignored. Compare with other portfolios or the market (beta 1)."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Jensen's alpha",
+            "expression_md": "$\\alpha = R_p - \\left[R_f + \\beta_p (R_m - R_f)\\right]$",
+            "variables_md": "$R_p$ = actual return, bracket = return required under CAPM, $R_m$ = market return.",
+            "when_md": "Positive alpha: fund beat what its beta justified; negative: it lagged. Compare funds of similar beta; it measures only systematic risk."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "jensen",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Differences between Sharpe and Treynor in one line each.",
+            "answer_md": "Sharpe: denominator is standard deviation (total risk), so it penalises unsystematic risk too. Treynor: denominator is beta, so it assumes diversification and rewards only per unit of market risk."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "treynor"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Fund A: return 14%, standard deviation 10%, beta 0.8; risk-free 6%. Compute Sharpe and Treynor.",
+            "answer_md": "Excess return = 14 - 6 = 8. Sharpe = 8 / 10 = 0.80. Treynor = 8 / 0.8 = 10.0 (per cent per unit of beta)."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Fund X (return 15%, sd 9, beta 0.9) and Fund Y (17%, sd 10, beta 1.5), Rf 6%. Rank by each measure and say what it implies.",
+            "answer_md": "Sharpe: X = 9 / 9 = 1.00, Y = 11 / 10 = 1.10, so Y first. Treynor: X = 9 / 0.9 = 10.0, Y = 11 / 1.5 = 7.33, so X first. Different rankings suggest at least one fund is not fully diversified, as unsystematic risk matters in one measure only."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does it mean when Sharpe and Treynor rank the funds identically?",
+            "answer_md": "The funds are reasonably well diversified: their unsystematic risk is small, so total risk and systematic risk give the same order."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "treynor"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Jensen's alpha: Rp 15%, Rf 6%, Rm 12%, beta 1.2. Compute and interpret.",
+            "answer_md": "CAPM return = 6 + 1.2 x 6 = 13.2%. Alpha = 15 - 13.2 = +1.8%, so the fund outperformed what its risk required."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "jensen",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the fund's return found from NAV data in performance questions?",
+            "answer_md": "Return = (closing NAV - opening NAV + dividend and capital gain distributions per unit) / opening NAV. Then use it as Rp in Sharpe, Treynor or alpha."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "returns",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Funds: G NAV 60 to 68, dividend 2, sd 9, beta 0.9; D NAV 45 to 57, dividend 3, sd 15, beta 1.5; Rf 6%, Rm 14%. Compute return, Sharpe, Treynor and alpha for each.",
+            "answer_md": "G: return 10/60 = 16.67%; Sharpe 10.67/9 = 1.19; Treynor 10.67/0.9 = 11.85; alpha 16.67 - (6 + 0.9 x 8) = +3.47%. D: return 15/45 = 33.33%; Sharpe 27.33/15 = 1.82; Treynor 27.33/1.5 = 18.22; alpha 33.33 - 18 = +15.33%. D is preferred on all three here."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the return for Jensen's alpha computed when annual returns for several years are given?",
+            "answer_md": "Take the average of the yearly returns as Rp, compute CAPM return from beta, Rf and Rm, then alpha = average return - CAPM return. Example: returns 12, 14, 10, 16 average 13%; beta 1.4, Rm 11, Rf 5 give CAPM 13.4%, alpha -0.4%."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "jensen",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you find a fund's beta if correlation with the market and the two standard deviations are given?",
+            "answer_md": "Beta = correlation x (fund standard deviation / market standard deviation). Example: correlation 0.9, fund sd 18, market sd 12 gives beta = 0.9 x 18 / 12 = 1.35."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-014",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Beta from correlation",
+            "expression_md": "$\\beta_p = \\rho_{pm}\\,\\dfrac{\\sigma_p}{\\sigma_m}$",
+            "variables_md": "$\\rho_{pm}$ = correlation of fund and market returns; $\\sigma_p, \\sigma_m$ = standard deviations of fund and market.",
+            "when_md": "When only standard deviations and correlation are available but Treynor or alpha needs beta."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Given Jensen's alpha, Treynor ratio and the market risk premium, how do you find the fund's beta and the risk-free rate?",
+            "answer_md": "Alpha = (Rp - Rf) - beta x MRP and Treynor = (Rp - Rf) / beta, so alpha = beta x (T - MRP), giving beta = alpha / (T - MRP). Then Rf = Rp - T x beta. Example: alpha 3%, T 11%, MRP 5% give beta 0.5; with Rp = 10%, Rf = 10 - 5.5 = 4.5%."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "jensen",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Given Sharpe ratio, Treynor ratio and the correlation of a fund with the market, how do you find the market's standard deviation?",
+            "answer_md": "Treynor / Sharpe = sigma_p / beta = sigma_m / correlation. So sigma_m = correlation x (Treynor / Sharpe). Example: Sharpe 0.40, Treynor 5.0, correlation 0.8 give sigma_m = 0.8 x 5 / 0.4 = 10."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A portfolio manager earned 15% with a standard deviation of 25%, risk-free rate 4%. Sharpe ratio?",
+            "answer_md": "(15 - 4) / 25 = 0.44. Beta and market data are not needed for Sharpe."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "If the question gives Sharpe ratio 1.6, standard deviation 9 and Treynor 12, how do you get beta?",
+            "answer_md": "Excess return = 1.6 x 9 = 14.4. Beta = 14.4 / 12 = 1.2."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where is Jensen's alpha used and what is its limit?",
+            "answer_md": "To measure portfolio performance and isolate the part due to the manager's skill. It considers only systematic risk and gives sensible comparisons only for portfolios of similar beta."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "jensen"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you rank a set of funds on alpha, and what does a negative alpha tell you?",
+            "answer_md": "Compute each alpha and rank from highest to lowest. A negative alpha means the fund earned less than CAPM required for its beta, i.e. under-performed."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "jensen"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-021",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Do Sharpe and Treynor give meaningful results alone?",
+            "answer_md": "No. Each must be compared with other portfolios or with the market's own ratio; one value does not allow any conclusion."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "treynor"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A fund has beta 1.6 and return 21%, Rf 6%, market return 13%. Is its reward per unit of risk better than the market's?",
+            "answer_md": "Treynor = (21 - 6) / 1.6 = 9.375. Market Treynor = (13 - 6) / 1 = 7.0. So the fund earned more per unit of beta than the market."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "treynor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-perf-023",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Fund return 16% with standard deviation 4%; market return 14% with sd 3%; Rf 5%. Who has the better Sharpe?",
+            "answer_md": "Fund: (16 - 5) / 4 = 2.75. Market: (14 - 5) / 3 = 3.00. The market is ahead, so the fund did not beat it on a risk-adjusted basis despite its higher return."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "sharpe",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:perf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-weighted-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Time-weighted rate of return (TWROR)",
+            "definition_md": "Return earned on each rupee kept in the fund through a period, as if nothing had been withdrawn or added meanwhile. It removes the effect of the size and timing of additional cash flows, so it judges the manager, not the investor's timing."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "twror"
+          ],
+          "reference_keys": [
+            "sfm:weighted"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-weighted-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Rupee-weighted rate of return (RWROR)",
+            "definition_md": "The internal rate of return on the actual cash flows to and from the fund: opening value treated as outlay, and distributions plus closing value as receipts. It depends on beginning and ending market values and the timing of net contributions, so it reflects the investor's experience."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "rwror"
+          ],
+          "reference_keys": [
+            "sfm:weighted"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-weighted-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why do TWROR and RWROR differ?",
+            "answer_md": "TWROR ignores timing and amount of cash flows (manager performance). RWROR is an IRR which is affected by when money is added or withdrawn (investor performance)."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "twror",
+            "rwror"
+          ],
+          "reference_keys": [
+            "sfm:weighted"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-weighted-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Year 1 return 10%, year 2 return -5%. Find TWROR over the two years as an annual compounded rate.",
+            "answer_md": "Geometric mean: (1.10 x 0.95)^(1/2) - 1 = 2.23% per year."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "twror",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:weighted"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Exchange traded fund (ETF)",
+            "definition_md": "A mutual fund unit that is bought and sold on a stock exchange rather than from the AMC. Units are issued only to a few large Authorised Participants who quote buy and sell prices on the exchange, so investors can trade at any time the market is open, through demat and trading accounts. It tracks an index, sector, asset or the market as a whole."
+          },
+          "tags": [
+            "etf",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is an ETF different from a normal mutual fund unit in how it is bought?",
+            "answer_md": "A normal unit is bought from the AMC (directly or via a distributor) at NAV. An ETF unit is bought on the exchange from other market participants; the AMC deals only with Authorised Participants, and price changes through the day."
+          },
+          "tags": [
+            "etf",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the features of ETFs given in the text.",
+            "answer_md": "Dynamic (intra-day) pricing; tracks an underlying like a derivative does; high transparency through frequent disclosure; tax efficiency from low turnover; low cost from passive management; high liquidity; diversification and precision."
+          },
+          "tags": [
+            "etf",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are ETFs tax efficient and low cost?",
+            "answer_md": "They are mostly passively managed, so turnover and realised capital gains are low (and gains shared with holders are small), and management and administrative fees are lower than those of active funds."
+          },
+          "tags": [
+            "etf",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why might an investor prefer an ETF to an ordinary mutual fund?",
+            "answer_md": "Continuous trading, including buying on margin; no capital gains tax trigger when units are sold investor to investor; and since buyers deal through brokers the fund saves marketing cost, which means lower management fees."
+          },
+          "tags": [
+            "etf",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the drawbacks of holding an ETF instead of an ordinary mutual fund?",
+            "answer_md": "The price can depart from NAV (unlike an open-ended fund), and brokerage is paid on buying and selling (unlike a no-load fund)."
+          },
+          "tags": [
+            "etf",
+            "disadvantages"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-etf-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can ETF prices deviate from NAV, and why is a mutual fund redeemed at NAV?",
+            "answer_md": "An ETF is traded on the exchange, so its price follows supply and demand and can sit above or below NAV. A traditional fund processes redemptions only at the closing NAV."
+          },
+          "tags": [
+            "etf",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:etf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reit-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Real Estate Investment Trust (REIT)",
+            "definition_md": "A corporation or business trust that pools money of many investors to buy, or finance, real estate assets and gives investors a stake in a professionally managed property portfolio. It is a pass-through, distributing most of its earnings, is traded on exchanges like a share and is regulated by SEBI."
+          },
+          "tags": [
+            "reit",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:reit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reit-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the advantages of investing in a REIT?",
+            "answer_md": "Liquidity because units trade on exchanges (better than direct property or private equity); portfolio diversification; long-term capital appreciation; steady dividend income largely from rents; small ticket compared with direct property investment."
+          },
+          "tags": [
+            "reit",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:reit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reit-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Distinguish equity, mortgage and hybrid REITs.",
+            "answer_md": "Equity REITs own properties (offices, hotels, malls) and earn rent. Mortgage REITs finance property, earning net interest margin (interest on mortgages less cost of funds). Hybrid REITs invest in both."
+          },
+          "tags": [
+            "reit",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:reit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reit-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What structural conditions for a REIT are listed in the text?",
+            "answer_md": "A corporation, business trust or similar body managed by a board of directors or trustees; fully transferable units; at least 100 holders with five or fewer holding not more than 50%; 90% of income distributed; 80% in revenue-generating property; asset base Rs 500 crore; NAV updated twice a year."
+          },
+          "tags": [
+            "reit",
+            "conditions",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reit-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What limits on construction and income does the text give for a REIT?",
+            "answer_md": "Only 10% of total investment in real estate under construction; at least 75% of gross income from rent or mortgage interest; not more than 20% of assets in stock of taxable REIT subsidiaries."
+          },
+          "tags": [
+            "reit",
+            "conditions",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:reit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-reit-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do a REIT and a real estate mutual fund differ?",
+            "answer_md": "A real estate mutual fund offers wider diversification and professional management; a REIT pays higher dividends. In continuing inflation, REIT investors do better than real estate mutual fund investors. A real estate fund may itself invest in a REIT. Exposure to either should be spread and kept under about 10% of the portfolio."
+          },
+          "tags": [
+            "reit",
+            "real-estate-fund"
+          ],
+          "reference_keys": [
+            "sfm:reit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Infrastructure Investment Trust (InvIT)",
+            "definition_md": "A pooled investment trust registered with SEBI that, like a mutual fund, collects money from investors but invests it in real infrastructure assets (roads, power plants, transmission lines, pipelines) and passes the cash flows to unit holders. Units are listed."
+          },
+          "tags": [
+            "invit",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is an InvIT called a hybrid of debt and equity?",
+            "answer_md": "Stable, predictable cash flows from operating assets resemble debt, while returns are not fixed and the unit price can rise, giving growth like equity."
+          },
+          "tags": [
+            "invit",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the four elements of an InvIT structure?",
+            "answer_md": "Trustee, sponsor, investment manager and project manager. The trust must invest at least 80% in infrastructure assets with steady revenue; the sponsor holds a stake; the investment manager runs investments and operations; the project manager executes projects."
+          },
+          "tags": [
+            "invit",
+            "structure"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What sponsor conditions does the text give for an InvIT?",
+            "answer_md": "A body corporate, LLP or company with net worth of at least Rs 100 crore, holding at least 15% of the units with a lock-in of 3 years (or as notified)."
+          },
+          "tags": [
+            "invit",
+            "structure",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the purpose of InvITs?",
+            "answer_md": "To help infrastructure companies repay debt faster by monetising assets, since such projects take time to generate cash and the trust can cover loan interest and other expenses."
+          },
+          "tags": [
+            "invit",
+            "purpose"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the advantages of InvITs to investors and promoters.",
+            "answer_md": "Investors: diversification across assets, steady income (the text says 90% of net cash flow is distributed), liquidity on exit and professional management. Promoters: they lower debt by selling assets and can reinvest the money."
+          },
+          "tags": [
+            "invit",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "State the disadvantages of InvITs.",
+            "answer_md": "Regulatory risk (tax or sector policy changes), inflation risk (higher operating costs, toll revisions) and asset risk (long gestation delays cash flow and profit)."
+          },
+          "tags": [
+            "invit",
+            "disadvantages"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-invit-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare InvIT with a mutual fund and with a REIT.",
+            "answer_md": "A mutual fund invests in financial securities, an InvIT in physical infrastructure assets. REIT and InvIT are both trusts regulated by SEBI with listed units and similar structure; a REIT holds real estate, an InvIT holds infrastructure."
+          },
+          "tags": [
+            "invit",
+            "reit",
+            "mutual-funds"
+          ],
+          "reference_keys": [
+            "sfm:invit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-misc-001",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the Statement of Additional Information (SAI)?",
+            "answer_md": "A supplementary document to the offer document with additional information about the fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "documents"
+          ],
+          "reference_keys": [
+            "sfm:misc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-misc-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who approves the contents of the offer document of a scheme?",
+            "answer_md": "The trustees."
+          },
+          "tags": [
+            "mutual-funds",
+            "documents",
+            "trustees"
+          ],
+          "reference_keys": [
+            "sfm:misc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-misc-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who holds the assets of the scheme while the AMC manages the investments?",
+            "answer_md": "The custodian."
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "custodian"
+          ],
+          "reference_keys": [
+            "sfm:misc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-misc-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the AMC's seed investment requirement mentioned in the exercise?",
+            "answer_md": "The exercise marks as true that AMCs must invest seed capital of 1% of the amount raised, up to a maximum of Rs 50 lakh, in the growth option of schemes (close-ended excluded)."
+          },
+          "tags": [
+            "mutual-funds",
+            "amc",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:misc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-misc-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which fund type is not exposed to sudden large movements of funds?",
+            "answer_md": "Closed-ended schemes, because investors cannot redeem during the term."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended"
+          ],
+          "reference_keys": [
+            "sfm:misc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-misc-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which benefit is NOT conferred by a mutual fund?",
+            "answer_md": "Assured returns. Mutual funds give diversification, professional management and (in some schemes) tax benefits, but they cannot promise returns, and units carry the risk of losing principal."
+          },
+          "tags": [
+            "mutual-funds",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:misc"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method to rebuild the investment and entry load when units, reinvested distribution and appreciation are given.",
+            "answer_md": "Opening NAV = closing NAV / (1 + appreciation). Let x be units bought: x + x * distribution / reinvestment NAV = final units, solve for x. Investment = x * (opening NAV + load per unit); entry load = x * load per unit."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Closing NAV Rs 27.60 after 15% appreciation; Rs 2.40 per unit distribution reinvested at 27.60; final holding 25,000 units; entry load Rs 0.06. Find investment and load.",
+            "answer_md": "Opening NAV = 27.60 / 1.15 = Rs 24.00. Reinvest factor = 1 + 2.40/27.60 = 1.08696, so x = 25,000 / 1.08696 = 23,000 units. Investment = 23,000 x 24.06 = Rs 5,53,380; entry load = 23,000 x 0.06 = Rs 1,380."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Two conventions for load: NAV Rs 40 and 2% load. What is the price per unit under each?",
+            "answer_md": "Load on NAV: 40 x 1.02 = Rs 40.80. Load as a percentage of the offer price: 40 / 0.98 = Rs 40.82. Read the question to see which is meant."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rs 5,000 invested at NAV Rs 25 with a 3% load taken out of the amount. Sold at the same NAV. Return?",
+            "answer_md": "Units = 5,000 x 0.97 / 25 = 194. Sale = 194 x 25 = Rs 4,850. Return = -3%. A front-end load makes the investor start with a loss."
+          },
+          "tags": [
+            "mutual-funds",
+            "load",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rupee cost averaging: SIP of Rs 5,000 a month at NAVs 20, 25 and 16. Units and average cost?",
+            "answer_md": "Units = 250 + 200 + 312.5 = 762.5 for Rs 15,000, so average cost = Rs 19.67 per unit, which is below the simple average NAV of Rs 20.33. More units are bought when the price is low."
+          },
+          "tags": [
+            "mutual-funds",
+            "sip",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which items add to NAV and which reduce it?",
+            "answer_md": "Market value of investments, receivables, accrued income and other assets raise net assets; liabilities, payables and accrued expenses reduce them."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does NAV not move like a share price?",
+            "answer_md": "It is computed once a day from closing prices of the underlying securities, so it changes day to day, not minute to minute."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you check the cash and equity split of a fund's NAV?",
+            "answer_md": "Equity part = NAV x equity %; cash part = remaining NAV. In a market-fall question the equity moves by beta x market change while cash stays except for expenses."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which risk does a fund of funds reduce further?",
+            "answer_md": "Concentration risk: because it holds many mutual funds, it spreads even more widely than a normal fund."
+          },
+          "tags": [
+            "mutual-funds",
+            "fund-of-funds"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do index funds not need the 10%-of-NAV single company limit?",
+            "answer_md": "They must copy the index weights, so a stock with a heavy weight in the index must be held in the same proportion; the rule does not apply to index and sector or industry specific schemes."
+          },
+          "tags": [
+            "mutual-funds",
+            "index-fund",
+            "regulation"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the rate of return of a mutual fund according to the text, in words?",
+            "answer_md": "The change in NAV between the end and the start plus any dividend declared, expressed against opening NAV; it can be measured monthly, quarterly, yearly or over the long term."
+          },
+          "tags": [
+            "mutual-funds",
+            "returns"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-more-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What happens to the NAV per unit if a fund is dissolved?",
+            "answer_md": "NAV per unit is what the holder would receive on dissolution, ignoring forced-sale discounts and winding-up costs."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:more"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-mnem-001",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "STAC-R",
+            "expands_md": "Sponsor, Trustees, AMC, Custodian, Registrar: the core entities in a mutual fund's structure (with SEBI as regulator).",
+            "topic": "Mutual fund entities"
+          },
+          "tags": [
+            "mutual-funds",
+            "entities",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnem"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-mnem-002",
+          "kind": "mnemonic",
+          "importance": "mandatory",
+          "fields": {
+            "mnemonic": "Sharpe = Sigma, Treynor = Beta",
+            "expands_md": "Sharpe divides excess return by standard deviation (total risk); Treynor divides it by beta (systematic risk). Jensen's alpha is the excess over CAPM.",
+            "topic": "Performance measures"
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnem"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-mnem-003",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "G-D-R",
+            "expands_md": "Growth (gains stay in NAV), Dividend payout (cash comes out), Reinvestment (extra units); bonus adds units and cuts NAV.",
+            "topic": "Options of a scheme"
+          },
+          "tags": [
+            "mutual-funds",
+            "options",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnem"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "NAV per unit = {{c1::net assets}} divided by {{c2::units outstanding}}; units outstanding = scheme size divided by {{c3::face value}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-002",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A sponsor must contribute at least {{c1::40%}} of the AMC's net worth and have been in financial services for at least {{c2::five}} years."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "sponsor"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-003",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "At least {{c1::two-thirds}} of the trustees must be independent of the sponsor, and at least {{c2::50%}} of the AMC's directors must be independent."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "trustees",
+            "amc"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "A closed-ended fund has a fixed maturity of {{c1::3 to 15 years}}; SEBI requires at least one exit route: {{c2::listing}} or {{c3::periodic repurchase}} at NAV-related prices."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Sharpe ratio uses {{c1::standard deviation}}, Treynor uses {{c2::beta}}, and Jensen's alpha is actual return minus the {{c3::CAPM}} return."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-006",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Mutual funds buy and sell on {{c1::delivery}} basis and use derivatives only for {{c2::hedging}} and {{c3::portfolio balancing}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "derivatives"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "REITs are of three kinds: {{c1::equity}} (own property, earn rent), {{c2::mortgage}} (finance property, earn interest) and {{c3::hybrid}} (both)."
+          },
+          "tags": [
+            "reit",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "An InvIT has four elements: {{c1::trustee}}, {{c2::sponsor}}, {{c3::investment manager}} and {{c4::project manager}}."
+          },
+          "tags": [
+            "invit",
+            "structure"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-009",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Traded securities are valued at the {{c1::last quoted closing price}}; a security is non-traded if it has not traded for {{c2::60 days}}; money market instruments are valued at {{c3::cost plus accruals}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "valuation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Unrated debt: each issuer up to {{c1::10%}} of scheme NAV and aggregate up to {{c2::25%}}, with approval of {{c3::trustees and AMC}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "regulation",
+            "investment-limits"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-011",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Closed-end fund premium or discount = (market price minus {{c1::NAV}}) divided by {{c2::NAV}}; such funds mostly trade at a {{c3::discount}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "closed-ended",
+            "premium-discount"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-012",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Effective yield p.a. = total yield divided by {{c1::investment}} times {{c2::365}} over {{c3::days held}}; total yield = change in value plus {{c4::dividend}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "yield"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-013",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Offering price = NAV divided by {{c1::(1 minus load)}}; NAV = offer price times {{c2::(1 minus load)}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "load"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-014",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "In a bonus plan units {{c1::increase}} and NAV {{c2::falls}}; in a growth plan units stay {{c3::unchanged}}; in dividend reinvestment units increase by dividend divided by {{c4::NAV}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "plans"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-015",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "TWROR removes the effect of {{c1::timing and size of cash flows}}; RWROR is the {{c2::internal rate of return}} on actual cash flows."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "twror",
+            "rwror"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-016",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "To get beta from Sharpe, Treynor and standard deviation: excess return = {{c1::Sharpe times standard deviation}}, beta = excess return divided by {{c2::Treynor}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "performance",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm07-clz-017",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "After a market fall, a fund's equity part changes by {{c1::beta times the market change}} and its cash part falls by {{c2::the month's expenses}}."
+          },
+          "tags": [
+            "mutual-funds",
+            "nav",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

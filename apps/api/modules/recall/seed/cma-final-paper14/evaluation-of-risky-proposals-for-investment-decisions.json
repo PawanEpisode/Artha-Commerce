@@ -1,0 +1,3609 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-evaluation-of-risky-proposals-for-investment-decisions",
+      "title": "SFM: Evaluation of Risky Proposals for Investment Decisions",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 2: Evaluation of Risky Proposals for Investment Decisions.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "evaluation-of-risky-proposals-for-investment-decisions"
+      },
+      "items": [
+        {
+          "ref": "sfm02-intro-001",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Decision making under certainty",
+            "definition_md": "The manager knows every state of nature that can occur and the pay-off of each strategy under each state. A pay-off matrix can then be drawn up and the strategy with the highest pay-off picked, because nothing about the outcome is left open."
+          },
+          "tags": [
+            "risk-analysis",
+            "certainty"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-intro-002",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "State of nature",
+            "definition_md": "A possible event that the firm cannot control, such as strong or weak demand. Each strategy gives a different pay-off under each state of nature."
+          },
+          "tags": [
+            "risk-analysis",
+            "state-of-nature"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-intro-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three situations a financial manager can face when taking an investment decision.",
+            "answer_md": "Complete certainty, complete uncertainty, and risk. Risk lies between the other two: the outcomes are not known for sure, but a probability can be attached to each."
+          },
+          "tags": [
+            "risk-analysis",
+            "certainty",
+            "uncertainty"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-intro-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do risk and uncertainty differ in project appraisal?",
+            "answer_md": "Under risk the possible outcomes can be listed and given probabilities, so expected values and standard deviations can be worked out. Under complete uncertainty no such probabilities can be assigned, so only criteria such as maximin or minimax regret can guide the choice."
+          },
+          "tags": [
+            "risk-analysis",
+            "risk",
+            "uncertainty"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-intro-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the techniques the chapter uses to handle risk in capital budgeting.",
+            "answer_md": "Basic techniques: certainty equivalent approach, risk adjusted discount rate, expected NPV with standard deviation, and decision tree analysis. Advanced techniques: sensitivity analysis, scenario analysis and simulation (Monte Carlo)."
+          },
+          "tags": [
+            "risk-analysis",
+            "techniques"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-intro-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does a plain NPV calculation on single-point estimates need supplementing when future cash flows are uncertain?",
+            "answer_md": "A single estimate hides the spread of possible outcomes. The risk techniques either make the estimates more cautious (higher discount rate, lower certain cash flows) or show the range and probability of outcomes (standard deviation, tree, scenarios, simulation)."
+          },
+          "tags": [
+            "risk-analysis",
+            "techniques"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-intro-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which two risk techniques adjust for risk inside the NPV formula itself, and how do they differ?",
+            "answer_md": "The risk adjusted discount rate adjusts the discount rate and keeps the cash flows as estimated. The certainty equivalent approach adjusts the cash flows and then discounts them at the risk-free rate."
+          },
+          "tags": [
+            "risk-analysis",
+            "radr",
+            "certainty-equivalent",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Certainty equivalent approach",
+            "definition_md": "A risk technique that converts each risky estimated cash flow into the smaller cash flow the manager would accept with near certainty in its place. The converted flows are discounted at the risk-free rate."
+          },
+          "tags": [
+            "certainty-equivalent"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Certainty equivalent coefficient",
+            "expression_md": "$\\alpha_t = \\dfrac{\\text{certain (riskless) cash flow}_t}{\\text{risky (estimated) cash flow}_t}$",
+            "variables_md": "$\\alpha_t$ = coefficient for period $t$.",
+            "when_md": "Read backwards, the ratio gives the certain cash flow: $\\alpha_t \\times CF_t$. Use it to turn a stated 'certain amount I would accept' into a coefficient."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What range can the certainty equivalent coefficient take, and how does it relate to risk?",
+            "answer_md": "It lies between 0 and 1. The riskier the cash flow, the lower the coefficient, so the relationship with risk is inverse. A coefficient of 1 means the flow is taken as riskless."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "coefficient"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "NPV under the certainty equivalent approach",
+            "expression_md": "$NPV = -CF_0 + \\sum_{t=1}^{n} \\dfrac{\\alpha_t \\, CF_t}{(1+i)^t}$",
+            "variables_md": "$CF_0$ = initial outlay, $CF_t$ = risky cash inflow of year $t$, $\\alpha_t$ = coefficient of year $t$, $i$ = risk-free rate, $n$ = life.",
+            "when_md": "Accept the project if this NPV is positive. The initial outlay is normally certain and is not multiplied by a coefficient."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which discount rate is used with the certainty equivalent method, and why?",
+            "answer_md": "The risk-free rate. The risk has already been removed by scaling the cash flows down, so adding a risk premium to the rate as well would count the risk twice."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "discount-rate"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: how do you work out the certainty equivalent coefficient when a manager says what certain amount he would accept instead of a gamble?",
+            "answer_md": "Step 1: find the expected value of the risky flow. Step 2: divide the certain amount accepted by that expected value. Example: a certain Rs 36,000 is as good as Rs 40,000 with probability 0.5 or Rs 50,000 with probability 0.5. Expected value = 45,000, so the coefficient is 36,000 / 45,000 = 0.80."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "coefficient",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: compute NPV by the certainty equivalent approach (own example).",
+            "answer_md": "Outlay Rs 1,00,000; risky inflows 50,000, 60,000 and 70,000 in years 1 to 3 with coefficients 0.9, 0.8 and 0.7; risk-free rate 6%. Certain flows = 45,000, 48,000, 49,000. Discount at 6%: 42,453 + 42,720 + 41,141 = 1,26,314. NPV = 26,314, positive, so accept."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Two projects have the same estimated cash flows. Project X has lower certainty equivalent coefficients than Y. Which is riskier and which gets the higher discount rate under the RADR method?",
+            "answer_md": "X is riskier, because a lower coefficient means the manager discounts more of the estimate away for risk. If the RADR method were used instead, X would be discounted at the higher rate."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "radr",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Decide between two projects by the certainty equivalent approach.",
+            "answer_md": "Compute each project's NPV on the certain cash flows at the risk-free rate. Reject any with negative NPV and take the one with the higher positive NPV. A project can look good on raw cash flows and fail once the coefficients are applied."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ce-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compare the certainty equivalent method with the risk adjusted discount rate method.",
+            "answer_md": "CE adjusts the cash flows for risk and discounts at the risk-free rate. RADR leaves the cash flows as estimated and adjusts the discount rate. In both, a higher perceived risk lowers the NPV."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "radr",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ce"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk adjusted discount rate (RADR)",
+            "definition_md": "A discount rate chosen to match the risk of the particular project. A project with higher risk than the firm's usual risk is discounted at a higher rate, and one with lower risk at a lower rate."
+          },
+          "tags": [
+            "radr"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the reasoning behind the risk adjusted discount rate method?",
+            "answer_md": "Projects with different risk should not all be discounted at one rate. If the project is as risky as the firm's existing business, the weighted average cost of capital is used; if it is riskier or safer, a higher or lower rate is used."
+          },
+          "tags": [
+            "radr",
+            "rationale"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Risk adjusted discount rate",
+            "expression_md": "$i = r + u + a$",
+            "variables_md": "$r$ = risk-free rate, $u$ = premium for the normal risk of the firm, $a$ = premium (positive or negative) for the extra or lower-than-normal risk of the project.",
+            "when_md": "$r + u$ together equal the firm's weighted average cost of capital, so RADR = WACC + project-specific premium."
+          },
+          "tags": [
+            "radr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the three components of the risk adjusted discount rate?",
+            "answer_md": "The risk-free rate, the premium for the firm's normal risk, and a premium (plus or minus) for the project's risk above or below the firm's normal level. The first two together make up the WACC."
+          },
+          "tags": [
+            "radr",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does the RADR method give a conservative estimate for a risky project?",
+            "answer_md": "A higher discount rate lowers the present value of the cash flows, which reduces NPV. A project must therefore earn more to be accepted, which allows for risk and uncertainty."
+          },
+          "tags": [
+            "radr",
+            "conservative"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How can a firm fix the extra risk premium for projects?",
+            "answer_md": "Either case by case for each project, or by a blanket premium for each class of investment. For example, replacement investments may carry a small addition to the cost of capital, new projects a larger one and research and development projects the largest."
+          },
+          "tags": [
+            "radr",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Rank investment classes by the premium a firm typically adds to its cost of capital.",
+            "answer_md": "Replacement investments carry the lowest add-on (the book's example uses 2%), new projects more (4%) and research and development the most (5%). The more uncertain the class, the higher the premium."
+          },
+          "tags": [
+            "radr",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: NPV with a risk adjusted discount rate (own example).",
+            "answer_md": "Risk-free rate 7%, normal risk premium 6% (WACC 13%), project premium 3%, so RADR = 16%. Outlay Rs 2,00,000, inflow Rs 70,000 for 4 years. PVIFA(16%, 4) = 2.7982, so PV = 1,95,874 and NPV = -4,126. Negative, so reject."
+          },
+          "tags": [
+            "radr",
+            "numerical",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: how is the present value of a later block of equal inflows (say years 6 to 10) found with tables?",
+            "answer_md": "Annual amount x PVIFA(r, 5) x PVIF(r, 5): the annuity factor for the length of the block, then the single-sum factor to bring it back from the point where the block begins. At 15% that is 3.352 x 0.497 = 1.666 per rupee of annual inflow in years 6 to 10."
+          },
+          "tags": [
+            "radr",
+            "numerical",
+            "annuity"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: pick the discount rate from a coefficient of variation scale and compute NPV.",
+            "answer_md": "Step 1: compute the project's CV. Step 2: read the firm's rate for that CV band. Step 3: discount the inflows at that rate and deduct the outlay. Example: CV 0.6 maps to 15%; outlay Rs 1,50,000, inflow 50,000 for 5 years; PVIFA(15%, 5) = 3.3522; NPV = 1,67,610 - 1,50,000 = 17,610, accept."
+          },
+          "tags": [
+            "radr",
+            "coefficient-of-variation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-radr-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When risks of projects are ranked by coefficient of variation, how are the discount rates ordered?",
+            "answer_md": "A higher coefficient of variation gets a higher risk adjusted rate and so a smaller annuity factor. The same cash flows are therefore worth less in the riskier project."
+          },
+          "tags": [
+            "radr",
+            "coefficient-of-variation"
+          ],
+          "reference_keys": [
+            "sfm:radr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Hillier model",
+            "definition_md": "An approach that measures the risk of a capital proposal by the standard deviation of its expected cash flows. It values the project by the expected NPV and judges its risk by the standard deviation of NPV, built up from the cash flow estimates of each year."
+          },
+          "tags": [
+            "hillier",
+            "expected-npv",
+            "standard-deviation"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does a smaller standard deviation of cash flows mean a safer project in Hillier's view?",
+            "answer_md": "The more certain a project is, the less its possible cash flows stray from the mean. Standard deviation measures that straying, so a lower value means lower risk."
+          },
+          "tags": [
+            "hillier",
+            "standard-deviation"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the steps of the expected NPV and standard deviation approach.",
+            "answer_md": "Step 1: for each year find the expected cash flow and its standard deviation from that year's probability distribution. Step 2: find the expected NPV and the standard deviation of NPV, using the correlation assumption between years. Step 3: compare projects using the coefficient of variation."
+          },
+          "tags": [
+            "hillier",
+            "expected-npv",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expected cash flow of a year",
+            "expression_md": "$A_t = \\sum_{i} P_i \\, CF_i$",
+            "variables_md": "$P_i$ = probability of state $i$, $CF_i$ = cash flow in that state.",
+            "when_md": "Probabilities of a year's states add up to 1. Repeat for every year of the project."
+          },
+          "tags": [
+            "expected-npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-005",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Standard deviation of a year's cash flow",
+            "expression_md": "$\\sigma = \\sqrt{\\sum P_i \\,(CF_i - \\overline{CF})^2}$",
+            "variables_md": "$\\overline{CF}$ = expected cash flow of that year, $P_i$ = probability.",
+            "when_md": "Variance is the probability-weighted sum of squared deviations; the standard deviation is its square root."
+          },
+          "tags": [
+            "standard-deviation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: expected cash flow and standard deviation for one year (own example).",
+            "answer_md": "Cash flows 10,000, 20,000 and 30,000 with probabilities 0.3, 0.5, 0.2. Mean = 3,000 + 10,000 + 6,000 = 19,000. Deviations: -9,000, +1,000, +11,000. Variance = 0.3 x 81,000,000 + 0.5 x 1,000,000 + 0.2 x 121,000,000 = 49,000,000. Standard deviation = 7,000."
+          },
+          "tags": [
+            "standard-deviation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expected NPV",
+            "expression_md": "$\\overline{NPV} = \\sum_{t=1}^{n} \\dfrac{A_t}{(1+i)^t} - I$",
+            "variables_md": "$A_t$ = expected cash flow of year $t$, $I$ = initial investment, $i$ = risk-free rate, $n$ = life.",
+            "when_md": "Expected NPV is the excess of the present value of expected cash flows over the initial outlay, discounted at the risk-free rate."
+          },
+          "tags": [
+            "expected-npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which discount rate does the Hillier approach use?",
+            "answer_md": "The risk-free rate. Risk is shown separately through the standard deviation of NPV, so it should not also be built into the rate."
+          },
+          "tags": [
+            "hillier",
+            "discount-rate"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the standard deviation of NPV depend on the relation between yearly cash flows?",
+            "answer_md": "There are three cases: perfectly correlated, uncorrelated (independent), and moderately correlated (positive or negative). The first two have direct formulas; the third needs conditional and joint probabilities."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-010",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Standard deviation of NPV, perfectly correlated cash flows",
+            "expression_md": "$\\sigma(NPV) = \\sum_{t=1}^{n} \\dfrac{\\sigma_t}{(1+i)^t}$",
+            "variables_md": "$\\sigma_t$ = standard deviation of year $t$ cash flow.",
+            "when_md": "Present values of the yearly standard deviations are simply added. Do not square them. This gives the largest value of the three cases."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-011",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Standard deviation of NPV, uncorrelated cash flows",
+            "expression_md": "$\\sigma(NPV) = \\sqrt{\\sum_{t=1}^{n} \\dfrac{\\sigma_t^2}{(1+i)^{2t}}}$",
+            "variables_md": "$\\sigma_t$ = standard deviation of year $t$ cash flow, $i$ = risk-free rate.",
+            "when_md": "Square each year's deviation, divide by $(1+i)^{2t}$, add up and take the root. Equivalent to squaring each year's discounted deviation."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: expected NPV and standard deviation of NPV under perfect correlation and under independence (own example).",
+            "answer_md": "Outlay Rs 50,000, risk-free 10%. Year 1: mean 30,000, SD 6,000. Year 2: mean 40,000, SD 8,000. Expected NPV = 27,273 + 33,058 - 50,000 = 10,331. Perfect correlation: 6,000/1.1 + 8,000/1.21 = 5,455 + 6,612 = 12,066. Independent: root of (5,455 squared + 6,612 squared) = 8,571."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which is larger for the same data, standard deviation of NPV with perfect correlation or with independent cash flows, and why?",
+            "answer_md": "Perfect correlation gives the larger figure. When flows move together the deviations add in full; when they are independent the high and low outcomes partly cancel, so the root-of-squares total is smaller."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the position when cash flows are moderately correlated?",
+            "answer_md": "Neither direct formula applies. The cash flow of a later year depends on what happened earlier, so conditional probabilities are given and joint probabilities are worked out for each possible stream of cash flows. NPV is then found for every stream."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation",
+            "joint-probability"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-015",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Conditional probability",
+            "definition_md": "The probability of an event given that an earlier event has already occurred. P(B/A) means the probability of B once A has occurred. In project appraisal it is the chance of a later cash flow given the earlier year's outcome."
+          },
+          "tags": [
+            "joint-probability",
+            "conditional-probability"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-016",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Joint probability",
+            "definition_md": "The probability that all events in a sequence occur together. For three events it is P(A) x P(B/A) x P(C/B, A): the probability of the first, times the conditional probability of the second, times that of the third."
+          },
+          "tags": [
+            "joint-probability"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: expected NPV and standard deviation of NPV for moderately correlated cash flows.",
+            "answer_md": "1. List every cash flow stream (path). 2. Joint probability of a path = probability of year 1 x conditional probability of year 2 given year 1 (and so on). 3. NPV of each path at the risk-free rate. 4. Expected NPV = sum of NPV x joint probability. 5. Variance = sum of joint probability x (NPV - expected NPV) squared; take its root."
+          },
+          "tags": [
+            "joint-probability",
+            "steps",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example of the joint probability method (own numbers).",
+            "answer_md": "Outlay Rs 1,00,000, risk-free 8%. Year 1: 40,000 (p 0.6) or 60,000 (p 0.4). If 40,000: year 2 is 50,000 or 70,000, each 0.5. If 60,000: year 2 is 80,000 (0.7) or 90,000 (0.3). Joint probabilities 0.30, 0.30, 0.28, 0.12. Path NPVs: -20,096, -2,949, 24,143, 32,716. Expected NPV = 3,772; standard deviation = 20,029."
+          },
+          "tags": [
+            "joint-probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Check on joint probability work: what must the joint probabilities of all paths add to?",
+            "answer_md": "Exactly 1. If they do not, a branch probability or an arithmetic step has gone wrong. Also, each set of conditional probabilities attached to the same earlier outcome must itself add to 1."
+          },
+          "tags": [
+            "joint-probability",
+            "check"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-020",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Coefficient of variation of NPV",
+            "expression_md": "$CV = \\dfrac{\\sigma(NPV)}{\\overline{NPV}}$",
+            "variables_md": "$\\sigma(NPV)$ = standard deviation of NPV, $\\overline{NPV}$ = expected NPV.",
+            "when_md": "Risk per rupee of expected return. The lower the CV, the lower the relative risk. It is a relative measure; standard deviation is an absolute measure."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-021",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Is standard deviation an absolute or a relative measure of risk? What about the coefficient of variation?",
+            "answer_md": "Standard deviation is absolute, in rupees. Coefficient of variation is relative: standard deviation divided by the expected value, so projects of different size can be compared. Expect an exam statement that CV is the product of mean and SD to be false."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "standard-deviation",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When are standard deviations compared directly and when is the coefficient of variation used?",
+            "answer_md": "If projects have the same (or nearly the same) expected NPV, compare standard deviations: lower is safer. If expected NPVs differ, use CV, because a larger project naturally has a larger absolute spread."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-023",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: choose between two projects using expected NPV and CV (own example).",
+            "answer_md": "Project P: expected NPV 40,000, SD 10,000, CV = 0.25. Project Q: expected NPV 90,000, SD 27,000, CV = 0.30. Q has the higher return but also the higher risk per rupee. The lower CV (P) is less risky; a risk-averse manager picks P, while a manager valuing size picks Q."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "numerical",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-024",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What if the coefficient of variation and the expected NPV point to different projects?",
+            "answer_md": "The book notes the NPV approach is best in such a conflict, because it fits the objective of wealth maximisation with the time value of money. CV is an additional risk indicator, not a replacement for the NPV rule."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "conflict"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: compare projects with the industry benchmark CV.",
+            "answer_md": "Compute each project's CV (SD divided by expected value). Compute the benchmark as the simple average of the comparable projects' CVs, if that is how it is defined. Prefer the project whose CV is below the benchmark; if both are, pick the lower."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "benchmark",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-026",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Profitability index",
+            "expression_md": "$PI = \\dfrac{\\text{PV of cash inflows}}{\\text{PV of cash outflows}} = \\dfrac{\\overline{NPV} + I}{I}$",
+            "variables_md": "$I$ = outlay (present value of outflows).",
+            "when_md": "Accept if above 1. Used in the chapter to compare mutually exclusive projects of different cost after finding expected NPV."
+          },
+          "tags": [
+            "profitability-index",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-027",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Method: profitability index from expected NPV (own example).",
+            "answer_md": "Expected NPV Rs 90,000 on an outlay of Rs 3,00,000 gives PV of inflows = 3,90,000, so PI = 1.30. On an outlay of Rs 4,00,000 the same NPV gives PI = 1.225. The cheaper project gives more NPV per rupee invested."
+          },
+          "tags": [
+            "profitability-index",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-028",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Two mutually exclusive projects have equal expected NPV but different outlays and SD. How are they compared?",
+            "answer_md": "Compare risk through standard deviation (and CV), and return per rupee through the profitability index. With equal expected NPV the project with the lower SD and lower outlay will look better on both."
+          },
+          "tags": [
+            "profitability-index",
+            "coefficient-of-variation",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-enpv-029",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Two projects: expected NPV 1,00,000 with SD 75,000 and expected NPV 2,00,000 with SD 1,35,000. Which looks riskier by SD and by CV (own numbers)?",
+            "answer_md": "By SD the second is riskier (1,35,000 against 75,000). By CV the first is riskier (0.75 against 0.675). The two measures give opposite answers here, which is why you must say which measure you are using and prefer CV for unequal sizes."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "standard-deviation",
+            "numerical",
+            "conflict"
+          ],
+          "reference_keys": [
+            "sfm:enpv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Normal probability distribution",
+            "definition_md": "A smooth, symmetric, continuous bell-shaped curve. If the NPV of a project is assumed to follow it, the mean (expected NPV) and standard deviation fix the probability of any NPV range."
+          },
+          "tags": [
+            "normal-distribution"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the normal distribution help in capital budgeting?",
+            "answer_md": "Once the expected NPV and standard deviation of NPV are known, it gives the probability that NPV is above, below or between chosen values: for example the chance of a loss (NPV below zero) or the chance of reaching a target NPV."
+          },
+          "tags": [
+            "normal-distribution",
+            "use"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-003",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Standardised normal variable (Z)",
+            "expression_md": "$Z = \\dfrac{X - \\overline{NPV}}{\\sigma(NPV)}$",
+            "variables_md": "$X$ = the NPV value of interest, $\\overline{NPV}$ = expected NPV, $\\sigma(NPV)$ = standard deviation of NPV.",
+            "when_md": "Z tells how many standard deviations X lies from the mean. Look up Z in the standard normal table."
+          },
+          "tags": [
+            "normal-distribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are probabilities read from the normal table when the table gives the area from the mean to Z?",
+            "answer_md": "For a positive Z, the probability of being below Z is 0.5 plus the table value. For a negative Z, use symmetry: P(below -Z) = 1 minus P(below Z), which is 0.5 minus the table value. The probability above a value is 1 minus the probability below it."
+          },
+          "tags": [
+            "normal-distribution",
+            "table"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: probability that NPV is zero or less (own example).",
+            "answer_md": "Expected NPV 12,000, SD 5,000. Z = (0 - 12,000)/5,000 = -2.4. P(NPV at most 0) = 1 - P(Z below 2.4) = about 0.0082, i.e. roughly 0.8%. So the chance of a loss is under 1%."
+          },
+          "tags": [
+            "normal-distribution",
+            "numerical",
+            "probability-of-loss"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: probability that NPV exceeds a target (own example).",
+            "answer_md": "Expected NPV 12,000, SD 5,000, target 8,000. Z = (8,000 - 12,000)/5,000 = -0.8. P(NPV above 8,000) = P(Z above -0.8) = P(Z below 0.8) = about 0.788, or 78.8%."
+          },
+          "tags": [
+            "normal-distribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: probability that NPV lies between two values (own example).",
+            "answer_md": "Expected NPV 12,000, SD 5,000, range 10,000 to 20,000. Z values: (10,000 - 12,000)/5,000 = -0.4 and (20,000 - 12,000)/5,000 = 1.6. Probability = P(Z below 1.6) - P(Z below -0.4) = 0.9452 - 0.3446 = 0.6006, about 60%."
+          },
+          "tags": [
+            "normal-distribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Perfectly correlated versus independent cash flows: effect on the probability of a loss.",
+            "answer_md": "A larger standard deviation of NPV (perfect correlation) shrinks the distance from the mean to zero measured in standard deviations, so a loss is more likely. For the same data with expected NPV 10,331: SD 12,066 gives a loss probability near 19.6%, SD 8,571 gives near 11.4%."
+          },
+          "tags": [
+            "normal-distribution",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What assumption must hold before the normal distribution is used on project NPV?",
+            "answer_md": "That the NPV is (approximately) normally distributed. The expected NPV and standard deviation are first calculated from the cash flow estimates and the probability is read off the normal curve on that assumption."
+          },
+          "tags": [
+            "normal-distribution",
+            "assumption"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-npd-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When the standard deviation is the same, what happens to the probability of loss as expected NPV rises?",
+            "answer_md": "The distance from the mean to zero in standard deviations (Z) grows, so the probability of NPV being negative falls. Higher expected NPV, or a lower SD, both make a loss less likely."
+          },
+          "tags": [
+            "normal-distribution",
+            "probability-of-loss"
+          ],
+          "reference_keys": [
+            "sfm:npd"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Decision tree analysis",
+            "definition_md": "A tool for investment proposals that involve a sequence of decisions over time. Decision points and chance events are laid out as branches, and expected NPV is computed for each decision point to choose the best path."
+          },
+          "tags": [
+            "decision-tree"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is decision tree analysis useful for projects with flexibility?",
+            "answer_md": "Later decisions depend on what happens to earlier uncertain events. A tree shows every sequence of decisions and chance outcomes, so each choice is evaluated knowing what may follow."
+          },
+          "tags": [
+            "decision-tree",
+            "flexibility"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of decision tree analysis.",
+            "answer_md": "1. Define the decisions and chance events and draw the tree. 2. Put the probability on each chance branch. 3. Find the cash flows along every path. 4. Compute each path's NPV and its joint probability. 5. Work backwards from the end, taking expected values at chance points. 6. Choose the path with the highest expected NPV."
+          },
+          "tags": [
+            "decision-tree",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a path in a decision tree, and how is its probability found?",
+            "answer_md": "A path is one complete sequence of branches from the start to a final outcome. Its (joint) probability is the product of the branch probabilities along it, with later branches using their conditional probabilities."
+          },
+          "tags": [
+            "decision-tree",
+            "joint-probability"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the expected NPV of a decision tree project computed?",
+            "answer_md": "Discount each path's cash flows to get the path NPV, multiply it by the path's joint probability, and add up across all paths. The sum is the expected NPV."
+          },
+          "tags": [
+            "decision-tree",
+            "expected-npv"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the decision rule after the tree is solved?",
+            "answer_md": "Accept the project if the expected NPV is positive. Between alternatives choose the highest expected NPV. Also state the worst and best paths and their probabilities so the risk is visible."
+          },
+          "tags": [
+            "decision-tree",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: draw the paths and find expected NPV (own example with four paths).",
+            "answer_md": "Outlay Rs 50,000, two years, 10%. Year 1: 30,000 or 40,000, each 0.5. If 30,000: year 2 is 20,000 (0.6) or 30,000 (0.4). If 40,000: year 2 is 30,000 or 50,000, each 0.5. Joint probabilities 0.30, 0.20, 0.25, 0.25. Path NPVs (factors 0.9091 and 0.8264): -6,199, 2,065, 11,156, 27,684. Expected NPV = 8,263."
+          },
+          "tags": [
+            "decision-tree",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In the tree example above, what are the worst and best outcomes and the chance of a loss?",
+            "answer_md": "Worst: NPV -6,199 with probability 0.30. Best: NPV 27,684 with probability 0.25. Only the first path loses, so the probability of a loss is 30%. Expected NPV is positive, so the project is accepted."
+          },
+          "tags": [
+            "decision-tree",
+            "numerical",
+            "probability-of-loss"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you identify the worst and best outcome from a tree table?",
+            "answer_md": "Compare path NPVs, not path probabilities or expected values. The worst is the lowest (most negative) path NPV and the best the highest. Then quote that path's own joint probability."
+          },
+          "tags": [
+            "decision-tree",
+            "worst-best"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the tree solved backwards (fold back)?",
+            "answer_md": "A decision made early depends on the value of what follows. Starting at the final outcomes, you replace each chance point with its expected value, then pick the best option at each decision point, and move step by step to the start."
+          },
+          "tags": [
+            "decision-tree",
+            "fold-back"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: choose between two options at a decision point (own example).",
+            "answer_md": "Option A leads to a chance point: 60% chance of an NPV of 90 and 40% of 20 (in thousands). Expected value = 54 + 8 = 62. Option B gives a certain 55. Pick A, since 62 is greater than 55."
+          },
+          "tags": [
+            "decision-tree",
+            "fold-back",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-tree-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which discount rate does the decision tree example use?",
+            "answer_md": "A rate stated for this type of investment (12% in the first illustration, 8% in the second). Discount each year's inflow by that year's factor and subtract the initial outlay."
+          },
+          "tags": [
+            "decision-tree",
+            "discount-rate"
+          ],
+          "reference_keys": [
+            "sfm:tree"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Real option",
+            "definition_md": "A future choice open to the firm, which it may take up or leave, relating to a real (physical or human) asset. It is called real because the underlying is a plant, a market or a project, not a financial security."
+          },
+          "tags": [
+            "real-options"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What weakness of the traditional NPV rule do real options correct?",
+            "answer_md": "Traditional NPV treats the investment as now-or-never and fixed, ignoring that management can change course when market or technology develops unexpectedly. Real options value that flexibility."
+          },
+          "tags": [
+            "real-options",
+            "npv",
+            "limitation"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a real option create value?",
+            "answer_md": "By giving decision rights in the future: after some uncertainty is resolved, management can act on the new information, keeping the upside while limiting the downside losses. In an uncertain environment that flexibility is worth something."
+          },
+          "tags": [
+            "real-options",
+            "value"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What do real options and financial options have in common?",
+            "answer_md": "Both are about uncertain future outcomes, so option-pricing ideas can be applied to both. The difference lies in the underlying: physical and human assets for real options, securities for financial options."
+          },
+          "tags": [
+            "real-options",
+            "financial-options"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Real option analogies: which financial option does an investment opportunity resemble, and which does the right to abandon resemble?",
+            "answer_md": "A discretionary investment opportunity is like a call option on the real assets. The right to abandon a project during its life is like a put option on its remaining cash flows."
+          },
+          "tags": [
+            "real-options",
+            "call",
+            "put"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the types of real option in capital budgeting.",
+            "answer_md": "Option to expand, option to abandon, option to wait, option to contract and option to switch."
+          },
+          "tags": [
+            "real-options",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Option to expand",
+            "definition_md": "The option to make a further investment in the future to enlarge operations, for example a restaurant chain opening more outlets once the first ones succeed."
+          },
+          "tags": [
+            "real-options",
+            "expand"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Option to abandon",
+            "definition_md": "The option to stop a project or asset and realise its salvage value, for example a manufacturer selling old equipment. It works like a put on the remaining cash flows."
+          },
+          "tags": [
+            "real-options",
+            "abandon"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-009",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Option to wait",
+            "definition_md": "The option to defer an investment decision to a later date, for example deciding between opening new outlets this year or next year."
+          },
+          "tags": [
+            "real-options",
+            "wait"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-010",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Option to contract",
+            "definition_md": "The option to cut back or shut down a project later if conditions turn unfavourable, for example a multinational stopping operations in a country with an unstable political situation."
+          },
+          "tags": [
+            "real-options",
+            "contract",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-011",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Option to switch",
+            "definition_md": "The option to stop a project if conditions are unfavourable and resume it when they improve, for example an oil company halting a plant when oil prices are low and restarting when prices rise."
+          },
+          "tags": [
+            "real-options",
+            "switch"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Match the example to the real option: (a) selling old equipment for salvage, (b) restart a plant when oil prices rise, (c) postpone opening an outlet by a year, (d) open more restaurants.",
+            "answer_md": "(a) Abandon, (b) switch, (c) wait, (d) expand."
+          },
+          "tags": [
+            "real-options",
+            "types",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Distinguish option to wait from option to expand.",
+            "answer_md": "Wait is about timing: whether to invest now or later. Expand is about size: committing more capital to enlarge an existing or successful business after it has proved itself."
+          },
+          "tags": [
+            "real-options",
+            "wait",
+            "expand",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-ro-014",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "EAWCS",
+            "expands_md": "Expand, Abandon, Wait, Contract, Switch: the five real options.",
+            "topic": "Types of real option"
+          },
+          "tags": [
+            "real-options",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:ro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Sensitivity analysis",
+            "definition_md": "Analysis of how changes in the underlying variables (outlay, cash inflow, discount rate, life) affect the decision to accept or reject the project. It shows which variables matter most so they can be watched closely."
+          },
+          "tags": [
+            "sensitivity"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the key rule of sensitivity analysis about the variables?",
+            "answer_md": "Change one variable at a time and hold all the others at their estimated values. For example, when testing cash inflow, outlay, discount rate and life stay unchanged."
+          },
+          "tags": [
+            "sensitivity",
+            "one-at-a-time"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the purpose of sensitivity analysis?",
+            "answer_md": "To measure how the decision criterion (such as NPV) responds to changes in each parameter, and to pick out the key factors whose adverse change hurts most and which therefore need the closest attention."
+          },
+          "tags": [
+            "sensitivity",
+            "purpose"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the tolerance limit in sensitivity analysis?",
+            "answer_md": "The point where the project's positive expected NPV falls to zero. If a variable moves beyond that amount the original accept advice is reversed. Zero NPV is the tolerance limit."
+          },
+          "tags": [
+            "sensitivity",
+            "tolerance"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which variables does sensitivity analysis consider when the NPV method is used?",
+            "answer_md": "Cash outlay, cash inflow, the discounting factor (rate) and the life of the project, each varied in turn."
+          },
+          "tags": [
+            "sensitivity",
+            "variables"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: steps of a sensitivity analysis.",
+            "answer_md": "1. Compute base NPV. 2. For each variable in turn, find the value that makes NPV exactly zero while others stay put. 3. Express the allowed change as a percentage of the base estimate. 4. Rank: the smallest percentage is the most sensitive variable."
+          },
+          "tags": [
+            "sensitivity",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Sensitivity to the initial outlay",
+            "expression_md": "$\\text{Tolerable rise in outlay} = \\dfrac{NPV}{I} \\times 100$",
+            "variables_md": "$NPV$ = base NPV, $I$ = initial investment.",
+            "when_md": "Outlay can rise by the NPV amount before NPV hits zero. Percentage change = NPV divided by the original outlay."
+          },
+          "tags": [
+            "sensitivity",
+            "outlay",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Sensitivity to the annual cash inflow",
+            "expression_md": "$\\text{Tolerable fall in inflow} = \\dfrac{NPV}{PV\\text{ of inflows}} \\times 100$",
+            "variables_md": "$PV$ of inflows = annual inflow x annuity factor.",
+            "when_md": "Equivalent to finding the annual flow X with X x factor = outlay and comparing X with the estimate."
+          },
+          "tags": [
+            "sensitivity",
+            "cash-flow",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: sensitivity of outlay and of annual cash flow (own example).",
+            "answer_md": "Outlay Rs 2,00,000, annual net inflow Rs 80,000 for 4 years, 12%. PVIFA(12%, 4) = 3.0373, so PV of inflows = 2,42,984 and NPV = 42,984. Outlay: 42,984 / 2,00,000 = 21.49%. Inflow: 42,984 / 2,42,984 = 17.69% (break-even inflow = 2,00,000 / 3.0373 = 65,848)."
+          },
+          "tags": [
+            "sensitivity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: sensitivity of project life (own numbers, with interpolation).",
+            "answer_md": "Find the annuity factor needed for zero NPV: outlay / annual inflow = 2,00,000 / 80,000 = 2.5. At 12% the factor is 2.4018 for 3 years and 3.0373 for 4 years. Life = 3 + (2.5 - 2.4018)/(3.0373 - 2.4018) = 3.15 years. The life can fall by 0.85 years, 21.1%."
+          },
+          "tags": [
+            "sensitivity",
+            "life",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: sensitivity of the discount rate (own numbers).",
+            "answer_md": "Find the rate at which the annuity factor equals outlay / inflow = 2.5, which is the IRR. At 20% the 4-year factor is 2.5887, at 22% it is 2.4936; interpolating gives about 21.9%. The discount rate can rise from 12% to about 21.9%, an increase of about 82% on the original rate."
+          },
+          "tags": [
+            "sensitivity",
+            "discount-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you rank variables in a sensitivity table and what does a small percentage mean?",
+            "answer_md": "Compute the percentage change each variable can bear before NPV turns zero. The variable with the smallest percentage is the most sensitive: a small adverse move reverses the decision. In the own example above, annual inflow (17.7%) is the most sensitive."
+          },
+          "tags": [
+            "sensitivity",
+            "ranking"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Warning: how must the discount rate result be quoted in a sensitivity summary?",
+            "answer_md": "Be clear whether you quote the break-even rate (about 21.9% in the own example) or the percentage increase over the present rate (about 82%). The book's summary table lists the break-even rate beside percentage changes of other variables, which mixes two bases."
+          },
+          "tags": [
+            "sensitivity",
+            "discount-rate",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Quick method: when a question gives the annuity factor, how do you get the cost sensitivity?",
+            "answer_md": "PV of inflows = annual inflow x factor. Sensitivity = (PV of inflows - cost) / cost. Own example: cost 15,000, inflow 5,000, factor 3.2: PV = 16,000, sensitivity = 1,000/15,000 = 6.67%."
+          },
+          "tags": [
+            "sensitivity",
+            "outlay",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Quick method: annual cash flow sensitivity when tables give the factor.",
+            "answer_md": "Break-even flow = cost / factor. Fall tolerated = (estimate - break-even) / estimate. Own example: cost 15,000, inflow 5,000, factor 3.2: break-even = 4,687.5, fall = 312.5/5,000 = 6.25%, the same as NPV / PV of inflows = 1,000/16,000."
+          },
+          "tags": [
+            "sensitivity",
+            "cash-flow",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Quick method: when the required annuity factor equals a tabulated factor, what is the break-even discount rate?",
+            "answer_md": "It is the rate of that table column, because NPV is zero exactly at the IRR. Own example: if outlay / annual inflow works out to 2.5887 for a 4-year life and the table shows PVIFA(20%, 4) = 2.5887, the rate can rise to 20%. Percentage change in rate = (IRR - present rate) / present rate."
+          },
+          "tags": [
+            "sensitivity",
+            "discount-rate",
+            "irr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give the percentage-tolerance statement for an NPV of Rs 2,00,000 and outlay of Rs 10,00,000.",
+            "answer_md": "The outlay can rise by Rs 2,00,000 (20%) before NPV is zero, with other variables held constant. Beyond that the project is unacceptable."
+          },
+          "tags": [
+            "sensitivity",
+            "outlay",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sens-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What distinguishes sensitivity analysis from a full probability analysis of risk?",
+            "answer_md": "Sensitivity analysis varies one input at a time and shows how far it can move before the decision flips. It does not attach probabilities to the changes."
+          },
+          "tags": [
+            "sensitivity",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:sens"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Scenario analysis",
+            "definition_md": "A what-if analysis in which a model's output (for example NPV) is calculated under several sets of inputs, usually best case, base case and worst case, to show the range of outcomes."
+          },
+          "tags": [
+            "scenario"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the three scenarios used in scenario analysis.",
+            "answer_md": "Best case, base case (most likely) and worst case."
+          },
+          "tags": [
+            "scenario",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of scenario analysis for NPV.",
+            "answer_md": "1. Base case: NPV at the most likely value of every input. 2. Best case: NPV with every input at its most favourable value. 3. Worst case: NPV with every input at its least favourable value. The three results give a range for NPV."
+          },
+          "tags": [
+            "scenario",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What input values define the best case and the worst case for an NPV calculation?",
+            "answer_md": "Best case: lowest discount rate, highest cash flow growth, lowest tax rate (and cheapest outlays). Worst case: highest discount rate, lowest cash flow growth, highest tax rate (and costliest outlays or latest inflows)."
+          },
+          "tags": [
+            "scenario",
+            "best-case",
+            "worst-case"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does scenario analysis give as its output?",
+            "answer_md": "A range of NPV, from the worst-case value to the best-case value, with the base-case figure as the most likely. For example, NPV may be expected to lie between a low of 202 and a high of 1,035, most likely near the base figure."
+          },
+          "tags": [
+            "scenario",
+            "range"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Scenario analysis versus sensitivity analysis.",
+            "answer_md": "Sensitivity analysis changes one variable at a time. Scenario analysis changes all the input variables together, each set forming a consistent scenario, and looks at the combined effect on the outcome."
+          },
+          "tags": [
+            "scenario",
+            "sensitivity",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: compute NPV for the base, best and worst case (own example, Rs crore).",
+            "answer_md": "Base: WACC 10%, inflow 500 at end of year 3, outflow 100 a year for years 1-3: NPV = 500/1.331 - 100 x 2.4869 = 375.6 - 248.7 = about 126.97. Best: WACC 8%, inflow 560 at year 3, outflow 90 a year: about 212.6. Worst: WACC 12%, inflow 400 at year 4, outflow 110 a year for 4 years: about -79.9."
+          },
+          "tags": [
+            "scenario",
+            "numerical",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In scenario problems, what must you change for each case apart from the rate?",
+            "answer_md": "Check the timing and size of every inflow and outflow in each case: a case may delay an inflow to a later year, shorten or lengthen the outflow period, or change the amounts. Discount each flow at that case's own rate and for its own year."
+          },
+          "tags": [
+            "scenario",
+            "numerical",
+            "timing"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you interpret the result when the worst-case NPV is negative?",
+            "answer_md": "The project has downside: it can lose value if the worst inputs all occur. Report the range (for the own example, about -80 to +213 with base near +127) and weigh the size of the downside against the upside before accepting."
+          },
+          "tags": [
+            "scenario",
+            "interpretation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the book's bidding-project scenario example, what is the initial investment?",
+            "answer_md": "The book treats it as zero in all scenarios, because all the outlay arrives as annual expenditures. Do not add an extra outlay at time 0 unless the question states one."
+          },
+          "tags": [
+            "scenario",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-scen-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the advantage of scenario analysis over a single base-case NPV?",
+            "answer_md": "It shows the spread of possible results instead of one figure, so a manager sees how good or bad the project could be if conditions move together."
+          },
+          "tags": [
+            "scenario",
+            "advantage"
+          ],
+          "reference_keys": [
+            "sfm:scen"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Simulation",
+            "definition_md": "An imitation of a real-world system by a mathematical model that captures its main features as it meets random events. In capital budgeting it is also called Monte Carlo simulation."
+          },
+          "tags": [
+            "simulation"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why was simulation developed as an answer to the limits of sensitivity analysis?",
+            "answer_md": "Sensitivity analysis changes one variable at a time with the rest fixed. To get the expected NPV allowing every possible value of all variables together, too many combinations would need to be worked by hand. Simulation handles them by random sampling."
+          },
+          "tags": [
+            "simulation",
+            "sensitivity",
+            "rationale"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the basic principle of simulation.",
+            "answer_md": "Risk comes from random events that follow no fixed pattern. A model is built in which everything except the random factors is fixed, and the random factors are generated artificially from their probability distributions to see their effect on the result."
+          },
+          "tags": [
+            "simulation",
+            "principle"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What must be true of a random event for it to be simulated?",
+            "answer_md": "Even if the event cannot be predicted, it must be possible to fit it to a probability distribution, so that random numbers can be mapped to outcomes."
+          },
+          "tags": [
+            "simulation",
+            "distribution"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps a decision maker follows in simulation.",
+            "answer_md": "First pick out the probabilistic variables and give each a probability distribution. Next test whether the variables are correlated. Then run the simulation and, from the results, choose the best course of action."
+          },
+          "tags": [
+            "simulation",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-006",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Please Define, Correlate, Run, Decide",
+            "expands_md": "Probabilistic variables, Distributions, Correlation, Run, Decide: the five steps of simulation.",
+            "topic": "Steps of simulation"
+          },
+          "tags": [
+            "simulation",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the advantages of simulation.",
+            "answer_md": "It handles any problem whose variables follow probability distributions, are related in a mathematical way and operate in a system that can be modelled; the same model can do what-if or sensitivity checks; it is flexible and can be modified for different conditions; and it can study problems too risky or hard to try in real life."
+          },
+          "tags": [
+            "simulation",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which kinds of problem can simulation handle?",
+            "answer_md": "Those where the behaviour of the variables can be described by a probability distribution, the relationships between the variables can be expressed mathematically, and the operation of the system can be set out in a model."
+          },
+          "tags": [
+            "simulation",
+            "scope"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can a simulation model also serve for sensitivity analysis?",
+            "answer_md": "Fix all variables except the one under study and run the model, so the effect of that variable alone shows. This is the what-if use of the same model."
+          },
+          "tags": [
+            "simulation",
+            "sensitivity"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: assign random number ranges to a probability distribution.",
+            "answer_md": "Build the cumulative probability and give each outcome a band of random numbers as wide as its probability. Own example with 0-9 digits: Rs 20,000 (p 0.2) gets 0-1; Rs 30,000 (p 0.5) gets 2-6; Rs 40,000 (p 0.3) gets 7-9. With two-digit numbers the bands are 00-19, 20-69 and 70-99."
+          },
+          "tags": [
+            "simulation",
+            "random-numbers",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: run a simulation of NPV and read the result (own example).",
+            "answer_md": "Outlay 70,000, life 3 years, 8%, annual inflow random as above, random numbers 3, 8, 1, 6, 9 give inflows 30,000, 40,000, 20,000, 30,000, 40,000. With PVIFA(8%, 3) = 2.5771 the NPVs are 7,313; 33,084; -18,458; 7,313; 33,084. Average NPV = 12,467. One run in five is negative, so the estimated chance of a loss is 0.2."
+          },
+          "tags": [
+            "simulation",
+            "numerical",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the probability of a negative NPV estimated from a simulation?",
+            "answer_md": "Count the runs with NPV below zero and divide by the total number of runs. For 5 runs with 3 negative, the estimate is 3/5 = 0.6. With so few runs the estimate is unreliable."
+          },
+          "tags": [
+            "simulation",
+            "probability-of-loss"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the number of simulation runs important?",
+            "answer_md": "More runs give more reliable estimates of expected NPV and of the probability of loss. The textbook examples use only five runs for convenience, which the book itself calls too small to be reliable."
+          },
+          "tags": [
+            "simulation",
+            "runs"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: how are random numbers used when the question gives a separate set for each variable?",
+            "answer_md": "For each run, take the next number from each variable's own set and look up its band to get the value of that variable (for example cost, life, inflow). Then compute the NPV of that run's combination."
+          },
+          "tags": [
+            "simulation",
+            "random-numbers",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: NPV of one run when life is also random (own example).",
+            "answer_md": "Run: outlay 80,000, life 4 years, annual inflow 30,000, rate 6%. PVIFA(6%, 4) = 3.465 so PV = 1,03,950 and NPV = 23,950. A run with life 3 years would use PVIFA(6%, 3) = 2.673 and give 80,190 - 80,000 = 190."
+          },
+          "tags": [
+            "simulation",
+            "numerical",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which discount rate is used in a simulation of project NPV when both a cost of capital and a risk-free rate are given?",
+            "answer_md": "The book's solved case discounts at the risk-free rate (6%), because the risk is captured by the random variables themselves and the cost of capital is treated as given but not used. Read the question; if it says the risk-free rate is preferred, use it."
+          },
+          "tags": [
+            "simulation",
+            "discount-rate",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Simulation: what is the 'average NPV' and how is it found?",
+            "answer_md": "The mean of the NPVs of all runs: add the run NPVs and divide by the number of runs. It estimates the expected NPV of the project."
+          },
+          "tags": [
+            "simulation",
+            "expected-npv"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-sim-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Does simulation produce an optimal solution by itself?",
+            "answer_md": "No. It shows the outcomes of the combinations tried, with their likelihood; the decision maker still has to judge which course of action is best."
+          },
+          "tags": [
+            "simulation",
+            "limitation"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Pay-off matrix (conditional profit table)",
+            "definition_md": "A table showing the profit of each alternative project or strategy under each possible state of nature, often with the probability of each state. It is the starting point for choosing under risk."
+          },
+          "tags": [
+            "decision-criteria",
+            "payoff-matrix"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the decision criteria used with a pay-off matrix.",
+            "answer_md": "Expected value (highest expected profit, using the probabilities), maximin (best of the worst outcomes), and minimax regret (smallest of the largest regrets). Perfect information is valued by expected value of perfect information."
+          },
+          "tags": [
+            "decision-criteria",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: choose by expected value.",
+            "answer_md": "Multiply each profit by the probability of its state, add across states for each project, and pick the project with the highest total. Own example: P pays 90 in strong demand (0.4) and -10 in weak (0.6): EV = 36 - 6 = 30. Q pays 40 and 20: EV = 16 + 12 = 28. Choose P."
+          },
+          "tags": [
+            "decision-criteria",
+            "expected-value",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-004",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Maximin criterion",
+            "definition_md": "A cautious rule: find the worst profit of each project, then choose the project whose worst outcome is best. It ignores probabilities and guarantees at least that minimum profit."
+          },
+          "tags": [
+            "decision-criteria",
+            "maximin"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: apply maximin (own example above).",
+            "answer_md": "Worst outcomes: P gives -10, Q gives 20. The better of the worst outcomes is 20, so choose Q, even though P has the higher expected value. Maximin and expected value can disagree."
+          },
+          "tags": [
+            "decision-criteria",
+            "maximin",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Regret and minimax regret rule",
+            "definition_md": "Regret is the profit lost by not having chosen the best project for the state that occurs. The minimax regret rule finds each project's maximum regret and chooses the project whose maximum regret is smallest."
+          },
+          "tags": [
+            "decision-criteria",
+            "regret",
+            "minimax-regret"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: build a regret table and apply minimax regret.",
+            "answer_md": "For each state, the regret of a project = the best profit in that state minus the project's profit. Take the largest regret of each project. Choose the project with the smallest of those. Own example: strong demand regrets P 0, Q 50; weak demand regrets P 30, Q 0. Maximum regrets: P 30, Q 50. Choose P."
+          },
+          "tags": [
+            "decision-criteria",
+            "minimax-regret",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a regret table, where do the zeros appear?",
+            "answer_md": "In each state of nature, the best project has zero regret. So every column or row for a state has at least one zero, and all other entries are positive differences from the best."
+          },
+          "tags": [
+            "decision-criteria",
+            "regret",
+            "check"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which decision criteria use probabilities and which do not?",
+            "answer_md": "Expected value uses the probabilities. Maximin and minimax regret use only the pay-offs and ignore probabilities."
+          },
+          "tags": [
+            "decision-criteria",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Three projects with outcomes in three states: how can the three rules lead to different choices?",
+            "answer_md": "Expected value may favour the project with the best average. Maximin favours the project with the best worst-case. Minimax regret favours the project that is never far from the best. The three rules reflect different attitudes to risk, so state the rule used."
+          },
+          "tags": [
+            "decision-criteria",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-011",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Expected value of perfect information (EVPI)",
+            "definition_md": "The extra expected profit available if the state of nature were known for sure before the decision. It is the most it is worth paying for perfect information."
+          },
+          "tags": [
+            "decision-criteria",
+            "evpi"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-012",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expected value of perfect information",
+            "expression_md": "$EVPI = EV_{\\text{with perfect information}} - EV_{\\text{without information}}$",
+            "variables_md": "$EV$ with perfect information = sum over states of (probability x best profit in that state); $EV$ without = highest expected value of any single project.",
+            "when_md": "Information costing less than EVPI is worth buying; if it costs more it is not."
+          },
+          "tags": [
+            "decision-criteria",
+            "evpi",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method: compute EVPI (own example).",
+            "answer_md": "Without information the best choice is P with EV 30. With perfect information choose P in strong demand (90) and Q in weak demand (20): EV = 0.4 x 90 + 0.6 x 20 = 48. EVPI = 48 - 30 = 18. Check: weak demand has probability 0.6 and the information adds 30 there, 0.6 x 30 = 18."
+          },
+          "tags": [
+            "decision-criteria",
+            "evpi",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Where does the value of perfect information come from?",
+            "answer_md": "From the states in which the information would change the decision. Only when it makes you switch to a different project, with extra profit in that state, does it add value. The gain is that extra profit times the probability of that state."
+          },
+          "tags": [
+            "decision-criteria",
+            "evpi"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How much should a firm be willing to pay for information about demand?",
+            "answer_md": "No more than the EVPI. Provided the cost of collecting it is below that figure, the information is worth having."
+          },
+          "tags": [
+            "decision-criteria",
+            "evpi",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Given EV without perfect information 2,400 and EVPI 350, what is EV with perfect information?",
+            "answer_md": "2,750: EV with perfect information = EV without + EVPI = 2,400 + 350."
+          },
+          "tags": [
+            "decision-criteria",
+            "evpi",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-dec-017",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Real discount rate from nominal rate and inflation",
+            "expression_md": "$1 + r_{\\text{real}} = \\dfrac{1 + r_{\\text{nominal}}}{1 + \\text{inflation}}$",
+            "variables_md": "$r_{\\text{nominal}}$ = money discount rate, inflation as a decimal.",
+            "when_md": "Use the real rate with real (inflation-free) cash flows and the nominal rate with money cash flows. Own example: nominal 12%, inflation 5% gives 1.12 / 1.05 - 1 = 6.67%."
+          },
+          "tags": [
+            "inflation",
+            "discount-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dec"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Certainty equivalent coefficient = {{c1::riskless cash flow}} divided by {{c2::risky cash flow}}; it lies between {{c3::0}} and {{c4::1}}, and falls as risk {{c5::rises}}."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "coefficient"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-002",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The CE method discounts {{c1::certain}} cash flows at the {{c2::risk-free}} rate; the RADR method discounts {{c3::estimated}} cash flows at a {{c4::risk adjusted}} rate."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "radr",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "RADR = {{c1::risk-free rate}} + premium for {{c2::normal risk of the firm}} + premium for {{c3::abnormal or subnormal risk of the project}}."
+          },
+          "tags": [
+            "radr",
+            "components"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-004",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Standard deviation of NPV: perfectly correlated cash flows {{c1::add the present values of the yearly standard deviations}}; uncorrelated cash flows {{c2::add the squared discounted values and take the square root}}."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Coefficient of variation = {{c1::standard deviation}} divided by {{c2::expected NPV}}; it is a {{c3::relative}} measure of risk, and the project with the {{c4::lower}} value is less risky."
+          },
+          "tags": [
+            "coefficient-of-variation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-006",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Joint probability of a path = probability of year 1 x {{c1::conditional probability of year 2}} x {{c2::conditional probability of year 3}}; all joint probabilities add to {{c3::1}}."
+          },
+          "tags": [
+            "joint-probability"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "In a decision tree, the path NPV is multiplied by the {{c1::joint probability}} and the products are added to get the {{c2::expected NPV}}; accept if it is {{c3::positive}}."
+          },
+          "tags": [
+            "decision-tree"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-008",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Sensitivity analysis changes {{c1::one}} variable at a time; the tolerance limit is the point where NPV becomes {{c2::zero}}; the variable with the {{c3::smallest}} percentage tolerance is the most sensitive."
+          },
+          "tags": [
+            "sensitivity"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-009",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Scenario analysis uses the {{c1::best}}, {{c2::base}} and {{c3::worst}} cases and changes {{c4::all}} inputs together; sensitivity analysis changes {{c5::one}} at a time."
+          },
+          "tags": [
+            "scenario",
+            "sensitivity",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-010",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Simulation: assign {{c1::random number bands}} in proportion to {{c2::probabilities}}, run the model with random numbers, and estimate the probability of loss as {{c3::negative runs divided by total runs}}."
+          },
+          "tags": [
+            "simulation",
+            "random-numbers"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-011",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Real options: abandon is like a {{c1::put}} on the remaining cash flows; expand and wait are like a {{c2::call}}; the five types are expand, abandon, wait, {{c3::contract}} and {{c4::switch}}."
+          },
+          "tags": [
+            "real-options"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-012",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Maximin picks the project with the best {{c1::worst}} outcome; minimax regret picks the project with the smallest {{c2::maximum regret}}; EVPI = EV with perfect information minus EV {{c3::without information}}."
+          },
+          "tags": [
+            "decision-criteria"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Z = (X - {{c1::expected NPV}}) / {{c2::standard deviation of NPV}}; P(NPV below zero) uses Z = {{c3::minus expected NPV divided by SD}}."
+          },
+          "tags": [
+            "normal-distribution"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-014",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "The normal curve is {{c1::symmetric}}, {{c2::bell-shaped}} and {{c3::continuous}}."
+          },
+          "tags": [
+            "normal-distribution"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-clz-015",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "The three situations of decision making are complete {{c1::certainty}}, complete {{c2::uncertainty}} and {{c3::risk}}."
+          },
+          "tags": [
+            "risk-analysis"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "True or false: the certainty equivalent coefficient ranges between 0 and 0.5.",
+            "answer_md": "False. It ranges between 0 and 1."
+          },
+          "tags": [
+            "certainty-equivalent",
+            "true-false"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "True or false: Hillier measures the risk of a proposal by the range of the expected cash flows.",
+            "answer_md": "False. Hillier uses the standard deviation of the expected cash flows, not the range."
+          },
+          "tags": [
+            "hillier",
+            "true-false"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "True or false: scenario analysis changes one input variable at a time.",
+            "answer_md": "False. That describes sensitivity analysis. Scenario analysis changes all inputs together to build best, base and worst cases."
+          },
+          "tags": [
+            "scenario",
+            "sensitivity",
+            "true-false"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "True or false: risk is the situation in between complete certainty and complete uncertainty.",
+            "answer_md": "True. Under risk outcomes are not certain but can be given probabilities."
+          },
+          "tags": [
+            "risk-analysis",
+            "true-false"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Fill in: ____ is the option to cease a project or asset to realise its salvage value. And: the three scenarios are best case, ____ and worst case.",
+            "answer_md": "Option to abandon; base case."
+          },
+          "tags": [
+            "real-options",
+            "scenario",
+            "fill-blank"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which formula is used for the standard deviation of NPV when yearly cash flows are perfectly correlated?",
+            "answer_md": "The sum of the standard deviations divided by (1 + i) to the power t, added over the years: no squaring and no square root. The others are uncorrelated (square root of squares) or joint-probability based."
+          },
+          "tags": [
+            "standard-deviation",
+            "correlation",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the coefficient of variation defined? Which statement is false: absolute measure, relative measure, SD over mean, or product of mean and SD?",
+            "answer_md": "CV = standard deviation divided by mean (expected NPV), and it is a relative measure. 'Absolute measure' and 'product of mean and SD' are wrong; SD itself is the absolute measure."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Expected NPV Rs 2,50,000 and standard deviation Rs 50,000: find the coefficient of variation.",
+            "answer_md": "50,000 / 2,50,000 = 0.20 or 20%."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "numerical",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the table value used to find P(NPV at most zero) when Z works out to -2?",
+            "answer_md": "P(Z at most -2) = 1 - P(Z below 2) = 1 - (0.5 + 0.4772) = 0.0228. The table area from the mean to 2 is 0.4772, and the lower tail is what remains."
+          },
+          "tags": [
+            "normal-distribution",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: two projects have CV 0.3 and 0.5 with costs of capital 10% and 13% given for their risk. How are they compared (own numbers)?",
+            "answer_md": "Discount each project's cash flows at its own rate using the annuity factor for its life, find each NPV, then compare. The higher-CV project is discounted at the higher rate. A risk-averse manager also weighs the CV: the project with 0.3 carries less risk per rupee of return."
+          },
+          "tags": [
+            "radr",
+            "coefficient-of-variation",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Method: standard deviation from a probability table (columns to use).",
+            "answer_md": "Columns: value X, probability P, P x X (sum is the mean), X minus mean, square of that, square times P (sum is the variance). SD is the square root of the variance. Own check: 10,000 (0.3), 20,000 (0.5), 30,000 (0.2) gives mean 19,000, variance 49,000,000, SD 7,000."
+          },
+          "tags": [
+            "standard-deviation",
+            "numerical",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A risk-averse firm compares two mutually exclusive projects with the same expected NPV. Which does it prefer?",
+            "answer_md": "The one with the lower standard deviation, because for the same return it carries less risk. Use CV only when the expected NPVs differ."
+          },
+          "tags": [
+            "standard-deviation",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm02-trap-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why are expected NPV and SD calculated year by year before NPV?",
+            "answer_md": "Each year has its own probability distribution of cash flows. The expected value and SD are found for each year, discounted, and combined according to the correlation between years."
+          },
+          "tags": [
+            "hillier",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:trap"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

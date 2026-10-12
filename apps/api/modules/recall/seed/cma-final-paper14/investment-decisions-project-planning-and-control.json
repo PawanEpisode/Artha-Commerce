@@ -1,0 +1,4273 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-investment-decisions-project-planning-and-control",
+      "title": "SFM: Investment Decisions, Project Planning and Control",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 1: Investment Decisions, Project Planning and Control.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "investment-decisions-project-planning-and-control"
+      },
+      "items": [
+        {
+          "ref": "sfm01-intro-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Capital budgeting (long-term investment decision)",
+            "definition_md": "The process of choosing which long-lived assets or projects a firm should commit funds to, by comparing the money put in now with the benefits expected over many years. Because the spending is capital expenditure, these are also called capital expenditure decisions."
+          },
+          "tags": [
+            "capital-budgeting",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are long-term investment decisions regarded as the most important decisions in financial management?",
+            "answer_md": "They tie up large sums for a long time, the returns they bring are uncertain, and reversing them later can mean heavy losses. The commitment is largely irreversible and shapes the firm's future growth and profitability, so a careful evaluation is needed at the planning stage."
+          },
+          "tags": [
+            "capital-budgeting",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the kinds of investment proposals a firm may evaluate.",
+            "answer_md": "New investment (a new firm, plant or project), replacement of old assets, modernisation, expansion, and diversification into new product lines or new markets."
+          },
+          "tags": [
+            "capital-budgeting",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Besides financial viability, which other analyses are done for a long-term investment proposal?",
+            "answer_md": "Market analysis (demand, market share), technical analysis (preliminary tests, factory layout, availability of inputs), economic analysis through social cost benefit analysis, and ecological or environmental analysis (damage the project may cause and the cost of controlling or restoring it)."
+          },
+          "tags": [
+            "capital-budgeting",
+            "appraisal",
+            "scba"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does ecological (environmental) analysis add to project appraisal, and for which projects is it especially important?",
+            "answer_md": "It judges the likely damage to the environment and the cost of controlling or repairing it, and includes that cost in the analysis. It matters most for projects with heavy environmental effects such as power, chemical and leather-processing projects."
+          },
+          "tags": [
+            "capital-budgeting",
+            "ecological"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why should a periodic performance review follow the commissioning of a project?",
+            "answer_md": "To compare actual results with the planned or projected performance and start corrective control action where they differ."
+          },
+          "tags": [
+            "capital-budgeting",
+            "control"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is the cash flow approach preferred to the accounting profit approach for measuring project benefits?",
+            "answer_md": "Cash flows are a better measure of the net economic benefit of an investment, and the cost of the investment itself is a cash outflow, so benefits should also be measured as cash. Accounting profit is distorted by non-cash items such as depreciation and varies with accounting policies, such as the depreciation or inventory valuation method chosen."
+          },
+          "tags": [
+            "cash-flow",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Into which three groups are the cash flows of a project classified?",
+            "answer_md": "Initial cash flow (the outlay at the start), subsequent cash flow (operating inflows or outflows during the life) and terminal cash flow (what is received or paid when the project ends)."
+          },
+          "tags": [
+            "cash-flow",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-intro-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is estimating the cost of a project easier than estimating its benefits?",
+            "answer_md": "The cost is normally incurred in the present, whereas benefits arise in future periods and are exposed to risk and uncertainty."
+          },
+          "tags": [
+            "capital-budgeting",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:intro"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What goes into the initial cash outflow of a project?",
+            "answer_md": "The full cost of the asset including installation, transport and other costs of bringing it to working condition; any extra working capital needed; less the sale value of an old asset being replaced; adjusted for tax on the sale of that old asset (tax on a gain added, tax saving on a loss deducted)."
+          },
+          "tags": [
+            "cash-flow",
+            "initial-outflow"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Initial cash outflow (replacement case)",
+            "expression_md": "$\\text{Initial outflow} = \\text{Cost of new asset} \\pm \\Delta\\text{WC} - \\text{Sale value of old asset} + \\text{Tax on gain (or} - \\text{tax saved on loss)}$",
+            "variables_md": "$\\Delta$WC = increase (add) or decrease (subtract) in working capital requirement.",
+            "when_md": "Tax on sale applies where the block of assets ceases to exist when the old asset is sold; in a pure new project there is no old asset to net off."
+          },
+          "tags": [
+            "cash-flow",
+            "initial-outflow"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "New machine costs Rs 8,00,000 plus installation Rs 50,000 and freight Rs 20,000. Working capital rises by Rs 1,00,000. The old machine (book value Rs 1,50,000) is sold for Rs 2,00,000; tax rate 30%, block ceases. Find the initial outflow.",
+            "answer_md": "Cost to bring the new machine into use = Rs 8,70,000. Gain on the old machine = 2,00,000 - 1,50,000 = Rs 50,000, so tax payable = Rs 15,000. Initial outflow = 8,70,000 + 1,00,000 - 2,00,000 + 15,000 = Rs 7,85,000."
+          },
+          "tags": [
+            "cash-flow",
+            "initial-outflow",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is a sunk cost treated in project evaluation? Give the land example.",
+            "answer_md": "A sunk cost (already incurred or committed) does not change with the decision, so it is ignored. A plot the firm already owns and keeps idle is a sunk cost and is left out; but if the plot has an alternative use, the opportunity cost of that use is relevant. If a new plot must be bought for the project, its price is part of the initial investment."
+          },
+          "tags": [
+            "cash-flow",
+            "sunk-cost",
+            "relevant-cost"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does a change in working capital enter the initial outflow?",
+            "answer_md": "Additional working capital required by the project increases the initial outflow. In a replacement where the working capital requirement falls, the reduction is subtracted from the outflow."
+          },
+          "tags": [
+            "cash-flow",
+            "working-capital"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When replacing an old asset, how does tax on the sale of the old asset affect the initial outflow?",
+            "answer_md": "The sale value of the old asset reduces the outflow. If it is sold above its tax book value and the block ceases, the tax on the gain is added to the outflow; if it is sold at a loss, the tax saved on the loss is deducted."
+          },
+          "tags": [
+            "cash-flow",
+            "initial-outflow",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish conventional from non-conventional cash flows.",
+            "answer_md": "Conventional: one outflow at the start followed by a series of inflows. Non-conventional: further outflows occur later in the life, for example for major repairs or additional working capital, so the sign of cash flows changes more than once."
+          },
+          "tags": [
+            "cash-flow",
+            "conventional"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What rules apply when estimating subsequent (operating) cash inflows?",
+            "answer_md": "Estimate them after tax; add back depreciation because it is a non-cash charge; and exclude interest, a financing charge (interest exclusion principle). Interest is already reflected in the discount rate through the cost of capital."
+          },
+          "tags": [
+            "cash-flow",
+            "cfat",
+            "interest-exclusion"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Interest exclusion principle",
+            "definition_md": "In project cash flows, interest on debt is not deducted, because the cost of financing is already built into the discount rate (the weighted average cost of capital). Deducting it from the cash flows as well would count the financing cost twice."
+          },
+          "tags": [
+            "cash-flow",
+            "interest-exclusion"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-010",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Cash flow after tax (CFAT) from EBIT",
+            "expression_md": "$\\text{CFAT} = \\text{EBIT}\\,(1-t) + \\text{Depreciation}$",
+            "variables_md": "EBIT = profit before interest and tax (after charging depreciation); $t$ = tax rate.",
+            "when_md": "Use when EBIT is available. Equivalent to sales less cash costs, less tax on EBIT."
+          },
+          "tags": [
+            "cash-flow",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-011",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "CFAT from PAT when PAT is after interest",
+            "expression_md": "$\\text{CFAT} = \\text{PAT} + \\text{Depreciation} + \\text{Interest}\\,(1-t)$",
+            "variables_md": "PAT = profit after interest and tax; Interest$(1-t)$ = interest net of tax.",
+            "when_md": "Use when PAT is taken from the books after charging interest; adding back interest net of tax removes the financing effect."
+          },
+          "tags": [
+            "cash-flow",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Sales Rs 15,00,000; cost of goods sold Rs 8,00,000; other expenses Rs 2,00,000; depreciation Rs 1,50,000; interest Rs 60,000; tax 25%. Find CFAT both ways.",
+            "answer_md": "EBIT = 15,00,000 - 8,00,000 - 2,00,000 - 1,50,000 = Rs 3,50,000. CFAT = 3,50,000 x 0.75 + 1,50,000 = Rs 4,12,500. Check: PAT after interest = (3,50,000 - 60,000) x 0.75 = 2,17,500; add depreciation 1,50,000 and interest net of tax 45,000 to get Rs 4,12,500."
+          },
+          "tags": [
+            "cash-flow",
+            "cfat",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What items make up the terminal cash flow of a project?",
+            "answer_md": "Salvage (scrap) value of the asset, tax effect of any gain or loss on its sale (tax saving added, tax on gain deducted), and release of the working capital that is no longer needed."
+          },
+          "tags": [
+            "cash-flow",
+            "terminal"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-014",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Terminal cash inflow",
+            "expression_md": "$\\text{Terminal CF} = \\text{Salvage value} + \\text{Tax saved on loss (or} - \\text{tax on gain)} + \\text{Working capital released}$",
+            "when_md": "Added to the operating inflow of the final year."
+          },
+          "tags": [
+            "cash-flow",
+            "terminal"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "An asset with tax book value Rs 1,20,000 is sold at project end for Rs 90,000, tax 30%, and Rs 1,00,000 of working capital is released. Find the terminal inflow.",
+            "answer_md": "Loss on sale = Rs 30,000, tax saved = 30% x 30,000 = Rs 9,000. Terminal inflow = 90,000 + 9,000 + 1,00,000 = Rs 1,99,000."
+          },
+          "tags": [
+            "cash-flow",
+            "terminal",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-016",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Relevant cost",
+            "definition_md": "A future cost or revenue that differs between the alternatives and arises as a direct result of the decision under review. In investment appraisal, incremental cash flows are the relevant ones."
+          },
+          "tags": [
+            "relevant-cost",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which costs are relevant and which are irrelevant in an investment decision?",
+            "answer_md": "Relevant: incremental cash flows plus opportunity, imputed, out-of-pocket, avoidable and differential costs. Irrelevant: sunk and committed costs, because they stay the same whatever is decided."
+          },
+          "tags": [
+            "relevant-cost",
+            "sunk-cost"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "List the managerial decisions in which relevant costing is used.",
+            "answer_md": "Make-or-buy choices, whether to take or refuse a special order, whether to keep or drop a product line, and the best use of scarce resources; in capital budgeting it guides replacement and similar choices."
+          },
+          "tags": [
+            "relevant-cost",
+            "decisions"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In a replacement decision, why is the book value of the old machine irrelevant while its current resale value is relevant?",
+            "answer_md": "Book value is a past cost that cannot be changed by the decision (sunk). Resale value is cash that can be realised only if the old machine is sold, so it is an opportunity cost or inflow of the replacement choice. Any tax effect of selling above or below book value is also relevant."
+          },
+          "tags": [
+            "relevant-cost",
+            "replacement",
+            "sunk-cost"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-020",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A company has already installed Machine R and is offered a better Machine S. How should the original cost of R be treated, and how does the analysis differ if neither machine has been bought yet?",
+            "answer_md": "If R is already installed its cost is sunk and ignored; only the incremental outflow (cost of S less net sale proceeds of R after removal costs) and the incremental annual cash flows are compared. If neither has been bought, each machine is evaluated independently on its own NPV, including its full cost, and the better NPV (or PI, when outlays differ) wins."
+          },
+          "tags": [
+            "relevant-cost",
+            "replacement",
+            "sunk-cost"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How are allocated (apportioned) overheads treated in an investment decision?",
+            "answer_md": "Only the extra overheads caused by the proposal are relevant. Apportioned general overheads that will be incurred anyway are ignored; a specific cost created by the project, such as extra insurance, is included."
+          },
+          "tags": [
+            "relevant-cost",
+            "overheads"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "An old machine fetches more as a trade-in against the new machine than in the open market. Which value is used in the replacement analysis?",
+            "answer_md": "The better available proceeds, here the trade-in price, since that is what the firm actually gives up by replacing; the lower open-market price is irrelevant. Any tax on the gain over book value is then computed on the trade-in price."
+          },
+          "tags": [
+            "relevant-cost",
+            "replacement"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are depreciation and tax on depreciation ignored for a company that pays no tax during the project life?",
+            "answer_md": "Depreciation matters in cash flow analysis only through its tax saving. If no tax is payable during the whole life, there is no tax shield, so only the pre-tax cash flows are discounted."
+          },
+          "tags": [
+            "cash-flow",
+            "tax",
+            "replacement"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the opportunity cost of space or idle labour enter a project's cash flows?",
+            "answer_md": "Rent that could have been earned from space the project will use is an opportunity cost and is charged against the project. Idle-time payments saved by shifting workers to the project are a saving and are credited to it."
+          },
+          "tags": [
+            "relevant-cost",
+            "opportunity-cost"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A firm is profit-making and the new project shows a loss in year 1. How is the tax effect shown?",
+            "answer_md": "Because the firm has other profits, the project's loss reduces the firm's total tax, so the tax saving is treated as a cash inflow in that year."
+          },
+          "tags": [
+            "cash-flow",
+            "tax",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-026",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the incremental (replacement) cash flow computed from the old and new machine?",
+            "answer_md": "Take the difference in revenues, operating costs, repairs and depreciation between the new and the old machine; tax the net saving; add back the incremental depreciation to get incremental CFAT; add the salvage value of the new machine in the final year. The net investment is cost of new machine less after-tax proceeds of the old."
+          },
+          "tags": [
+            "replacement",
+            "incremental",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-cashflow-027",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Treatment of repairs avoided and depreciation difference in a replacement NPV: how do they flow into CFAT?",
+            "answer_md": "Repairs avoided and operating-cost savings raise pre-tax savings; the difference in depreciation (new minus old) reduces taxable saving but is added back because it is non-cash. Net effect: CFAT = (savings - extra depreciation) x (1 - t) + extra depreciation."
+          },
+          "tags": [
+            "replacement",
+            "incremental",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:cashflow"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are the project appraisal techniques classified?",
+            "answer_md": "Non-discounted cash flow methods (treat cash flows of all years as directly additive): accounting or average rate of return and the payback family (traditional payback, payback profitability, payback reciprocal). Discounted cash flow methods (account for time value): discounted payback, NPV, profitability index, adjusted NPV, IRR, modified IRR and modified NPV."
+          },
+          "tags": [
+            "appraisal",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Accounting (average) rate of return, ARR",
+            "definition_md": "The average annual accounting profit after tax from a project expressed as a percentage of the average investment. It is compared with a minimum required return set by management."
+          },
+          "tags": [
+            "arr"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-003",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "ARR",
+            "expression_md": "$\\text{ARR} = \\dfrac{\\text{Average annual PAT}}{\\text{Average investment}}\\times 100$",
+            "variables_md": "Average annual PAT = total profit after depreciation and tax over the life divided by years.",
+            "when_md": "Uses accounting profit, not cash flow."
+          },
+          "tags": [
+            "arr"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-004",
+          "kind": "formula",
+          "importance": "bullet",
+          "fields": {
+            "name": "Average investment (equal depreciation)",
+            "expression_md": "$\\text{Average investment} = \\tfrac12(\\text{Cost} - \\text{Salvage}) + \\text{Salvage}$",
+            "when_md": "When depreciation is the same every year. Otherwise average the book values of each year and take their mean."
+          },
+          "tags": [
+            "arr"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Project costs Rs 12,00,000, salvage Rs 2,00,000, life 5 years, straight-line depreciation. Profit before depreciation and tax is Rs 4,00,000 every year; tax 30%. Find ARR.",
+            "answer_md": "Depreciation = (12,00,000 - 2,00,000)/5 = 2,00,000. PBT = 2,00,000; PAT = 1,40,000. Average investment = 1/2 x 10,00,000 + 2,00,000 = 7,00,000. ARR = 1,40,000/7,00,000 = 20%."
+          },
+          "tags": [
+            "arr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under the ARR method, when is a project accepted, and which of several rival projects is preferred?",
+            "answer_md": "Accept a project if its ARR exceeds the target or cut-off rate; among mutually exclusive projects choose the one with the highest ARR above the required minimum."
+          },
+          "tags": [
+            "arr",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the strengths and weaknesses of ARR?",
+            "answer_md": "Strengths: simple to understand and compute, considers income over the whole life, uses profit after depreciation. Weaknesses: uses profit instead of cash flow (CFAT), and ignores the time value of money."
+          },
+          "tags": [
+            "arr",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Payback period",
+            "definition_md": "The time a firm needs to recover the original investment from the net cash flows of the project, based on undiscounted cash. It applies the break-even idea to an investment."
+          },
+          "tags": [
+            "payback"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-009",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Payback period, uniform inflows",
+            "expression_md": "$\\text{PBP} = \\dfrac{\\text{Cost of investment}}{\\text{Annual cash inflow}}$",
+            "when_md": "Equal annual cash inflows."
+          },
+          "tags": [
+            "payback"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-010",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Payback period, uneven inflows",
+            "expression_md": "$\\text{PBP} = \\text{Base year} + \\dfrac{\\text{Investment} - \\text{Cumulative inflow to base year}}{\\text{Inflow of next year}}$",
+            "variables_md": "Base year = last year in which cumulative inflow is still below the investment.",
+            "when_md": "Used when inflows differ year to year; the fraction is on a time-proportion basis."
+          },
+          "tags": [
+            "payback"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outlay Rs 10,00,000; inflows Rs 2,00,000, 3,00,000, 3,50,000, 4,00,000, 2,50,000 in years 1 to 5. Find the payback period.",
+            "answer_md": "Cumulative inflows: 2,00,000; 5,00,000; 8,50,000; 12,50,000. Recovery completes in year 4. Balance after year 3 = 10,00,000 - 8,50,000 = 1,50,000, and year 4 brings 4,00,000, so PBP = 3 + 1,50,000/4,00,000 = 3.375 years."
+          },
+          "tags": [
+            "payback",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the decision rules for the traditional payback period.",
+            "answer_md": "Accept a project if its payback is shorter than the maximum period set by management; among mutually exclusive projects choose the one with the shortest payback."
+          },
+          "tags": [
+            "payback",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the main weaknesses of the traditional payback period?",
+            "answer_md": "It ignores the time value of money, ignores cash flows after the payback point, and can mislead when projects differ in size or in life. It measures only risk or liquidity, not profitability, so it should be supplemented by other criteria."
+          },
+          "tags": [
+            "payback",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why can payback mislead when two mutually exclusive projects differ in size or life?",
+            "answer_md": "A larger outlay usually takes longer to recover, so the bigger project looks worse even if its total return is better; and a project with a longer life may earn much more after the payback date, which the method never looks at."
+          },
+          "tags": [
+            "payback",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-015",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Payback reciprocal",
+            "definition_md": "The reciprocal of the payback period: average annual CFAT divided by the initial investment. A higher value is better."
+          },
+          "tags": [
+            "payback",
+            "reciprocal"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When is the payback reciprocal a good approximation of the IRR?",
+            "answer_md": "When the project life is at least twice the payback period and the annual cash inflows are equal."
+          },
+          "tags": [
+            "payback",
+            "reciprocal",
+            "irr"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A project costs Rs 24,00,000 and yields CFAT of Rs 6,00,000 a year for 10 years. Find the payback reciprocal and what it indicates.",
+            "answer_md": "Payback = 4 years, so reciprocal = 6,00,000/24,00,000 = 25%. Life (10 years) is more than twice the payback (4 years) and inflows are equal, so about 25% approximates the IRR."
+          },
+          "tags": [
+            "payback",
+            "reciprocal",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-018",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Post-payback profitability",
+            "definition_md": "The total cash earned after the investment has been recovered: total undiscounted inflows over the life less the initial investment. It supports payback when projects differ in life."
+          },
+          "tags": [
+            "payback",
+            "post-payback"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-019",
+          "kind": "formula",
+          "importance": "bullet",
+          "fields": {
+            "name": "Post-payback profitability, uniform inflows",
+            "expression_md": "$\\text{Payback profitability} = (\\text{Annual inflow}\\times\\text{Life}) - \\text{Initial investment}$"
+          },
+          "tags": [
+            "payback",
+            "post-payback"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Outlay Rs 5,00,000; annual inflow Rs 1,00,000 for 9 years. Find payback profitability.",
+            "answer_md": "Total inflow = 9,00,000; payback profitability = 9,00,000 - 5,00,000 = Rs 4,00,000. The project recovers its cost in 5 years and earns this surplus afterwards."
+          },
+          "tags": [
+            "payback",
+            "post-payback",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-nondcf-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does the traditional payback period only take care of risk?",
+            "answer_md": "It shows how quickly money comes back, so it is a measure of risk or liquidity exposure; a project with a higher payback may still earn much more after payback, which only post-payback profitability brings out."
+          },
+          "tags": [
+            "payback",
+            "post-payback"
+          ],
+          "reference_keys": [
+            "sfm:nondcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do DCF methods convert cash flows before comparing them?",
+            "answer_md": "Money received at different dates is worth different amounts because of uncertainty, opportunity cost and deferred consumption, so flows from different years cannot be added directly. They are first brought to the same point in time (present value or future value)."
+          },
+          "tags": [
+            "dcf",
+            "time-value"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Discounted payback period (DPBP)",
+            "definition_md": "The payback period computed on discounted cash flows: the time at which the cumulative present value of CFAT equals the initial investment. It improves traditional payback by recognising the time value of money."
+          },
+          "tags": [
+            "dpbp"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the steps to compute the discounted payback period.",
+            "answer_md": "1) Find the initial outflow. 2) Find CFAT of each year. 3) Multiply each CFAT by the PV factor of that year. 4) Accumulate the present values. 5) Find the point where the cumulative present value equals the investment, using time proportion within the year."
+          },
+          "tags": [
+            "dpbp",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Outlay Rs 50,000; CFAT Rs 15,000, 20,000, 25,000 and 20,000 in years 1 to 4; cost of capital 12%. Find the discounted payback period.",
+            "answer_md": "Present values: 13,393, 15,944, 17,795, 12,710. Cumulative: 13,393, 29,337, 47,131, 59,842. Recovery falls in year 4: DPBP = 3 + (50,000 - 47,131)/12,710 = 3.23 years."
+          },
+          "tags": [
+            "dpbp",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the decision rules for the discounted payback period.",
+            "answer_md": "Accept if DPBP is below the cut-off set by management; among competing projects that meet the cut-off, select the one with the shortest DPBP. DPBP is always longer than the ordinary payback of the same project."
+          },
+          "tags": [
+            "dpbp",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Net present value (NPV)",
+            "definition_md": "The excess of the present value of a project's cash inflows over the present value of its cash outflows, discounted at an appropriate rate (preferably the cost of capital). It states profitability in present-value rupees."
+          },
+          "tags": [
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "NPV",
+            "expression_md": "$\\text{NPV} = \\sum_{t=1}^{n}\\dfrac{CI_t}{(1+K)^t} - \\sum_{t=0}^{n}\\dfrac{CO_t}{(1+K)^t}$",
+            "variables_md": "$CI_t$ = cash inflow of period $t$; $CO_t$ = cash outflow of period $t$; $K$ = discount rate (cost of capital).",
+            "when_md": "For a conventional project with a single initial outlay, NPV = PV of inflows - $I_0$."
+          },
+          "tags": [
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "NPV rule: when is an independent project accepted and how are mutually exclusive projects ranked?",
+            "answer_md": "Accept an independent project if NPV is positive and reject if negative. Among mutually exclusive projects, rank by NPV and choose the highest."
+          },
+          "tags": [
+            "npv",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outlay Rs 1,00,000; CFAT Rs 40,000, 45,000 and 50,000 in years 1 to 3; cost of capital 12%. Find NPV.",
+            "answer_md": "PV of inflows = 40,000/1.12 + 45,000/1.12^2 + 50,000/1.12^3 = 1,07,177. NPV = 1,07,177 - 1,00,000 = Rs 7,177; accept."
+          },
+          "tags": [
+            "npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is NPV considered the soundest appraisal technique?",
+            "answer_md": "It recognises the time value of money; it considers all cash flows including those after payback; it measures the addition to shareholders' wealth, the basic goal of financial management; and since values are in current rupees, projects can be compared on NPV and each judged on its own merit."
+          },
+          "tags": [
+            "npv",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which limitations of NPV should an examination answer mention?",
+            "answer_md": "Calculations are involved; accuracy depends on forecasts of cash flows and the discount rate, which are hard to estimate; rankings may change at different discount rates; it ignores differences in outlay (size) when ranking mutually exclusive projects; and comparing projects of different lives under plain NPV may not be appropriate."
+          },
+          "tags": [
+            "npv",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What reinvestment assumption underlies NPV and how does it differ from IRR's?",
+            "answer_md": "NPV implicitly assumes intermediate cash inflows are reinvested at the cost of capital; IRR implicitly assumes reinvestment at the project's own IRR. The cost of capital is the more realistic assumption."
+          },
+          "tags": [
+            "npv",
+            "irr",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-013",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Profitability index (PI) or benefit-cost ratio",
+            "definition_md": "The present value of cash inflows divided by the present value of cash outflows (or the initial outlay). It shows the present value of benefit per rupee of cost."
+          },
+          "tags": [
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-014",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Profitability index",
+            "expression_md": "$\\text{PI} = \\dfrac{\\text{PV of cash inflows}}{\\text{PV of cash outflows (initial outlay)}} = 1 + \\dfrac{\\text{NPV}}{\\text{Outlay}}$",
+            "when_md": "PI > 1 means NPV > 0; PI = 1 means NPV = 0."
+          },
+          "tags": [
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the profitability index guide acceptance and ranking of projects?",
+            "answer_md": "Accept if PI is more than one, reject if less than one, and the decision-maker is indifferent at exactly one. Among mutually exclusive projects rank by PI and choose the highest (subject to the size caution)."
+          },
+          "tags": [
+            "pi",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Using the NPV example (outlay Rs 1,00,000, CFAT 40,000, 45,000, 50,000, cost of capital 12%), find PI.",
+            "answer_md": "PI = 1,07,177/1,00,000 = 1.072. It exceeds 1, consistent with a positive NPV."
+          },
+          "tags": [
+            "pi",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is PI used when projects differ in size? Illustrate with two projects.",
+            "answer_md": "NPV is an absolute measure and ignores the size of the outlay, so a bigger project can show a higher NPV simply because it is bigger. PI shows benefit per rupee invested. Example: X has outlay 1,50,000 and PV of inflows 1,80,000 (NPV 30,000, PI 1.20); Y has outlay 60,000 and PV 80,000 (NPV 20,000, PI 1.33). NPV prefers X, PI prefers Y."
+          },
+          "tags": [
+            "pi",
+            "npv",
+            "size-disparity"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What makes PI a better ranking tool than NPV when funds are scarce?",
+            "answer_md": "It considers the time value of money, it ranks positive-NPV projects better than NPV does when outlays differ, and it focuses on return per rupee, so it suits divisible projects when funds are limited."
+          },
+          "tags": [
+            "pi",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In which situations can PI ranking still mislead the decision-maker?",
+            "answer_md": "Choosing one large high-PI project can exclude several small projects that together give a higher NPV; a lower-PI project may have cash flows that let another project be taken later with a higher total NPV; and for mutually exclusive projects with different investment patterns, PI alone is not a safe basis."
+          },
+          "tags": [
+            "pi",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-020",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Adjusted NPV (ANPV) or adjusted present value",
+            "definition_md": "NPV computed in two parts: the base-case NPV assuming all-equity financing, plus the value of the financing side effects, mainly the present value of tax shields on interest, less any equity issue cost. It captures the benefit of debt financing for a project."
+          },
+          "tags": [
+            "anpv"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-021",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Adjusted NPV",
+            "expression_md": "$\\text{ANPV} = \\text{Base-case NPV} + \\text{PV of interest tax shields} - \\text{PV of equity flotation cost}$",
+            "variables_md": "Base-case NPV = PV of project cash flows at the cost of equity less initial investment; tax shield each year = Interest $\\times$ tax rate.",
+            "when_md": "Used when the project's debt proportion differs from the firm's usual capital structure, so WACC would be wrong for it."
+          },
+          "tags": [
+            "anpv"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is ANPV used instead of ordinary NPV at WACC for some projects?",
+            "answer_md": "WACC assumes the project carries the same debt-equity mix as the firm. If a project is financed with a markedly higher share of debt, its interest tax shield is larger, and ANPV values this separately from the base-case NPV."
+          },
+          "tags": [
+            "anpv",
+            "wacc"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-023",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Write the steps for computing ANPV.",
+            "answer_md": "Step 1: base-case NPV = PV of cash flows at the cost of equity - initial investment. Step 2: PV of tax savings on debt = debt x interest rate x tax rate x annuity factor (or year-wise if the debt is repaid in instalments, using the outstanding balance each year). Step 3: PV of equity flotation cost. Step 4: Step 1 + Step 2 - Step 3."
+          },
+          "tags": [
+            "anpv",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Project costs Rs 80 lakh, CFAT Rs 18 lakh a year for 8 years, cost of equity 14%. Debt Rs 30 lakh at 10%, outstanding all 8 years; tax 30%; equity issue cost 4% of the gross issue. Find ANPV.",
+            "answer_md": "Base NPV = 18 x 4.6389 - 80 = 3.50 lakh. Tax shield per year = 30 x 10% x 30% = 0.9 lakh; PV at 10% over 8 years = 0.9 x 5.3349 = 4.80 lakh. Equity = 50 lakh, gross issue = 50/0.96 = 52.08 lakh, flotation cost = 2.08 lakh. ANPV = 3.50 + 4.80 - 2.08 = 6.22 lakh; accept."
+          },
+          "tags": [
+            "anpv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the equity flotation cost computed when equity of Rs E must be raised net of a given issue-cost percentage?",
+            "answer_md": "Gross issue = E / (1 - issue cost rate); flotation cost = gross issue - E. For example, net Rs 19 lakh with a 5% issue cost needs a gross issue of 19/0.95 = Rs 20 lakh, so the flotation cost is Rs 1 lakh."
+          },
+          "tags": [
+            "anpv",
+            "flotation-cost"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-026",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is the acceptance criterion for adjusted NPV any different from that of plain NPV?",
+            "answer_md": "Same as for NPV: accept if ANPV is positive, reject if negative; among mutually exclusive projects pick the highest."
+          },
+          "tags": [
+            "anpv",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-dcf-027",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the difference between base-case NPV and ANPV?",
+            "answer_md": "Base-case NPV values the project as if it were fully equity financed. ANPV adds the financing effects, chiefly the tax shield from debt and subtracts issue costs, so it can turn a negative base-case NPV positive, or the reverse."
+          },
+          "tags": [
+            "anpv"
+          ],
+          "reference_keys": [
+            "sfm:dcf"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Internal rate of return (IRR)",
+            "definition_md": "The discount rate at which the present value of cash inflows equals the present value of cash outflows, i.e. the rate that makes NPV zero (and PI equal to one)."
+          },
+          "tags": [
+            "irr"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which benchmark makes a project acceptable on IRR, and which project wins among mutually exclusive ones?",
+            "answer_md": "Accept a project if its IRR is higher than the cost of capital; among mutually exclusive projects, select the one with the highest IRR (subject to the conflict with NPV discussed separately)."
+          },
+          "tags": [
+            "irr",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Describe the trial-and-error procedure for computing IRR.",
+            "answer_md": "Discount the flows at the cost of capital (or a guidance rate). If NPV is positive raise the rate, if negative lower it, until you have two rates, one giving a small positive NPV and one a small negative NPV. Compute the change in NPV between them and interpolate to find the rate at which NPV is zero."
+          },
+          "tags": [
+            "irr",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "IRR by interpolation",
+            "expression_md": "$\\text{IRR} = L + \\dfrac{NPV_L}{NPV_L - NPV_H}\\,(H - L)$",
+            "variables_md": "$L$, $H$ = lower and higher trial rates; $NPV_L$, $NPV_H$ = NPV at those rates (positive at $L$, negative at $H$).",
+            "when_md": "Gives an approximate IRR, close if the two trial rates are within one or two percentage points."
+          },
+          "tags": [
+            "irr",
+            "interpolation"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-005",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Guidance (fake payback) factor for IRR",
+            "expression_md": "$F = \\dfrac{I}{C} = \\dfrac{\\text{Original investment}}{\\text{Average annual cash inflow}}$",
+            "when_md": "Look up F in the PV annuity table along the project life to get a first trial rate when inflows are uneven."
+          },
+          "tags": [
+            "irr",
+            "guidance-rate"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outlay Rs 80,000; inflows Rs 30,000, 35,000, 40,000 in years 1 to 3. Estimate the IRR by interpolation between 14% and 16%.",
+            "answer_md": "Average inflow = 35,000, so the guidance factor = 80,000/35,000 = 2.29, close to the 3-year annuity factor near 15%. NPV at 14% = 246; NPV at 16% = -2,501. IRR = 14% + 246/(246 + 2,501) x 2% = 14.18% (exact 14.17%)."
+          },
+          "tags": [
+            "irr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If NPV at the cost of capital is negative, what does that say about IRR, and what do you do next?",
+            "answer_md": "A negative NPV at cost of capital K means IRR is below K, so the project is not acceptable and no further calculation is needed. If NPV at K is positive, raise the discount rate until NPV falls to zero."
+          },
+          "tags": [
+            "irr",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What makes IRR an attractive appraisal criterion?",
+            "answer_md": "It considers the time value of money and all cash inflows over the life, and the decision is easy: compare IRR with the cost of capital, so every project with IRR above that cost is accepted."
+          },
+          "tags": [
+            "irr",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Where does IRR fall short as an appraisal criterion?",
+            "answer_md": "It is tedious to compute; a project with non-conventional cash flows can have multiple IRRs; it can conflict with NPV on pattern of flows, size or life of mutually exclusive projects; and it assumes intermediate inflows are reinvested at the IRR itself, which may not be realistic."
+          },
+          "tags": [
+            "irr",
+            "merits-demerits"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What reinvestment assumption does IRR make and why is it a weakness?",
+            "answer_md": "That cash inflows are reinvested at the IRR itself. Different projects would then imply different reinvestment rates for the same firm, though the firm's real opportunity is roughly the same, so high-IRR projects look better than they really are."
+          },
+          "tags": [
+            "irr",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-011",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Multiple IRR",
+            "definition_md": "A situation, found with non-conventional cash flows (more than one change of sign), in which the NPV equation has more than one rate that makes NPV zero, so the IRR criterion gives no clear answer."
+          },
+          "tags": [
+            "irr",
+            "multiple-irr"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give an example of cash flows with two IRRs, and state the rule of thumb for the number of IRRs.",
+            "answer_md": "Flows of -1,000 at year 0, +5,000 at year 1 and -6,000 at year 2: solving gives IRRs of 100% and 200%. The maximum number of IRRs equals the number of sign changes in the cash flow series (here two)."
+          },
+          "tags": [
+            "irr",
+            "multiple-irr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "With two IRRs, how do you decide whether to accept if the cost of capital is below the lower IRR, above the higher IRR or between them?",
+            "answer_md": "Below the lower IRR the NPV is positive, so accept; above the higher IRR NPV is negative, so reject. The real difficulty is when the cost of capital lies between the two IRRs, where MIRR (which gives one rate) should be used."
+          },
+          "tags": [
+            "irr",
+            "multiple-irr",
+            "mirr"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-014",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Modified internal rate of return (MIRR)",
+            "definition_md": "The discount rate at which the terminal value of all inflows, each compounded at the cost of capital, has a present value equal to the initial investment (or to the present value of all outflows). It gives one answer even for non-conventional flows."
+          },
+          "tags": [
+            "mirr"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which two weaknesses of IRR does MIRR remove?",
+            "answer_md": "The unrealistic assumption that inflows are reinvested at the IRR (MIRR reinvests at the cost of capital), and the multiple IRRs of non-conventional cash flows (MIRR is a single rate)."
+          },
+          "tags": [
+            "mirr",
+            "irr"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-016",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "MIRR",
+            "expression_md": "$\\text{MIRR} = \\left(\\dfrac{\\text{Terminal value of inflows}}{\\text{PV of outflows}}\\right)^{1/n} - 1$",
+            "variables_md": "Terminal value = sum of each inflow compounded at the cost of capital to the end of year $n$; PV of outflows = initial investment (or PV of all outflows if non-conventional).",
+            "when_md": "Decision rule as for IRR: accept if MIRR exceeds the cost of capital."
+          },
+          "tags": [
+            "mirr"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the steps to compute MIRR.",
+            "answer_md": "1) Compound each inflow to the end of the project at the cost of capital. 2) Add them to get the terminal (aggregate future) value. 3) Find the initial investment, or the PV of all outflows for non-conventional flows. 4) Solve for the rate that equates the present value of the terminal value with that investment."
+          },
+          "tags": [
+            "mirr",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outlay Rs 2,00,000; inflows Rs 60,000, 70,000, 80,000, 90,000 in years 1 to 4; cost of capital 10%. Find MIRR.",
+            "answer_md": "Terminal value = 60,000 x 1.1^3 + 70,000 x 1.1^2 + 80,000 x 1.1 + 90,000 = 3,42,560. MIRR = (3,42,560/2,00,000)^(1/4) - 1 = 14.40%, above 10%, so accept."
+          },
+          "tags": [
+            "mirr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-019",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Modified NPV (MNPV) or terminal value method",
+            "definition_md": "NPV in which cash inflows are first compounded at an estimated reinvestment rate to the end of the project, and the total (terminal value) is discounted at the cost of capital and compared with the initial outlay."
+          },
+          "tags": [
+            "mnpv"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-020",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why was MNPV developed?",
+            "answer_md": "NPV assumes reinvestment at the cost of capital and IRR at the IRR, but in practice cash cannot be reinvested at an agreed rate. MNPV lets the analyst use an estimated reinvestment rate for the intermediate inflows."
+          },
+          "tags": [
+            "mnpv",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-021",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of the terminal value (MNPV) approach.",
+            "answer_md": "a) Compound each inflow at the estimated reinvestment rate to the project's end. b) Add them to get the terminal value. c) Discount the terminal value to present value at the cost of capital. d) Subtract the initial outlay to get MNPV."
+          },
+          "tags": [
+            "mnpv",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-022",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Modified NPV",
+            "expression_md": "$\\text{MNPV} = \\dfrac{\\sum CI_t\\,(1+r)^{n-t}}{(1+K)^{n}} - \\text{Initial outlay}$",
+            "variables_md": "$r$ = reinvestment rate; $K$ = cost of capital (discount rate); $n$ = project life.",
+            "when_md": "Accept if MNPV is positive (present value of terminal value exceeds the outlay); highest MNPV among mutually exclusive projects."
+          },
+          "tags": [
+            "mnpv"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-023",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outlay Rs 2,00,000; inflows Rs 60,000, 70,000, 80,000, 90,000; reinvestment rate 12%; cost of capital 10%. Find MNPV.",
+            "answer_md": "Terminal value = 60,000 x 1.12^3 + 70,000 x 1.12^2 + 80,000 x 1.12 + 90,000 = 3,51,704. PV = 3,51,704/1.1^4 = 2,40,218. MNPV = 2,40,218 - 2,00,000 = Rs 40,218; accept."
+          },
+          "tags": [
+            "mnpv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When is a project accepted under the terminal value approach, and how are rival projects ranked?",
+            "answer_md": "Accept if the present value of the terminal value exceeds the initial outlay (MNPV positive); reject otherwise. Among mutually exclusive projects, select the highest MNPV."
+          },
+          "tags": [
+            "mnpv",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "At IRR what are the values of NPV and PI?",
+            "answer_md": "NPV is zero and PI is one, because the present value of inflows equals the present value of outflows at that rate."
+          },
+          "tags": [
+            "irr",
+            "npv",
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-irr-026",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare IRR and MIRR in one line each on reinvestment rate and number of answers.",
+            "answer_md": "IRR: reinvestment at IRR itself; possibly several answers. MIRR: reinvestment at the cost of capital; always one answer."
+          },
+          "tags": [
+            "irr",
+            "mirr",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:irr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When can NPV and IRR give conflicting rankings?",
+            "answer_md": "Only for mutually exclusive projects. For a single independent project both always give the same accept or reject decision. For mutually exclusive projects the ranking may differ."
+          },
+          "tags": [
+            "conflict",
+            "npv",
+            "irr"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the three reasons for conflict between NPV and IRR?",
+            "answer_md": "Time disparity (different timing or pattern of cash flows), life disparity (different lives of the projects) and size or scale disparity (different investment outlays)."
+          },
+          "tags": [
+            "conflict",
+            "causes"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-003",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "T-L-S",
+            "expands_md": "Time disparity, Life disparity, Size disparity: the three sources of NPV-IRR conflict.",
+            "topic": "Causes of NPV-IRR conflict"
+          },
+          "tags": [
+            "conflict",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is time disparity in cash flows?",
+            "answer_md": "The projects have similar total cash flows but they come at different times: one gets most of its cash early, the other later. Such a difference can reverse the NPV and IRR ranking."
+          },
+          "tags": [
+            "conflict",
+            "time-disparity"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Cost of capital 10%. Project A: outlay 1,00,000, inflows 20,000, 50,000, 1,20,000. Project B: outlay 1,00,000, inflows 1,00,000, 40,000, 20,000. Show the conflict.",
+            "answer_md": "NPV: A = Rs 49,662, B = Rs 38,993, so NPV prefers A. IRR: A = 29.8%, B = 39.1%, so IRR prefers B. Both projects have the same size and a 3-year life, so the conflict is due to the timing of cash flows."
+          },
+          "tags": [
+            "conflict",
+            "time-disparity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the conflict arising from time disparity resolved?",
+            "answer_md": "By using the modified methods: compound each inflow at an assumed reinvestment rate to get the terminal value and then compute MNPV (discount at cost of capital) or MIRR. Both then use a common, explicit reinvestment assumption, and usually agree on the ranking."
+          },
+          "tags": [
+            "conflict",
+            "time-disparity",
+            "mirr",
+            "mnpv"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "For the time-disparity example (A and B above) with reinvestment at 12% and cost of capital 10%, what do MNPV and MIRR say?",
+            "answer_md": "Terminal values: A = Rs 2,25,219, B = Rs 2,13,069. MNPV: A = Rs 69,210, B = Rs 60,082. MIRR: A = 22.50%, B = 20.82%. Both modified measures favour A, matching the NPV ranking."
+          },
+          "tags": [
+            "conflict",
+            "time-disparity",
+            "mirr",
+            "mnpv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When NPV and IRR conflict, which should normally guide the choice and why?",
+            "answer_md": "NPV, because it measures the absolute addition to shareholders' wealth and assumes reinvestment at the cost of capital, which is more realistic than reinvestment at the IRR."
+          },
+          "tags": [
+            "conflict",
+            "npv",
+            "irr"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is life disparity?",
+            "answer_md": "The mutually exclusive projects have different lives, one long and one short. NPV (an absolute sum over the life) and IRR (a rate) can then rank them differently."
+          },
+          "tags": [
+            "conflict",
+            "life-disparity"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-010",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Equivalent annual annuity (EAA), equivalent annual benefit or cost",
+            "definition_md": "The level annual amount over the project's life that has the same present value as the project's NPV (or the present value of its costs). It makes projects with unequal lives comparable on an annual basis."
+          },
+          "tags": [
+            "eaa",
+            "eac",
+            "life-disparity"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-011",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Equivalent annual benefit (annuity)",
+            "expression_md": "$\\text{EAB} = \\dfrac{\\text{NPV}}{\\text{PVIFA}(K,n)} = \\text{NPV}\\times \\text{Capital recovery factor}$",
+            "variables_md": "Capital recovery factor = $1/\\text{PVIFA}(K,n)$; $K$ = cost of capital, $n$ = life.",
+            "when_md": "For cost-only projects use the present value of costs in place of NPV to get the equivalent annual cost (EAC); choose the lowest EAC."
+          },
+          "tags": [
+            "eaa",
+            "life-disparity"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Cost of capital 12%. P: 2-year life, outlay 1,00,000, inflow 70,000 a year. Q: 4-year life, outlay 1,00,000, inflow 40,000 a year. Compare using EAA.",
+            "answer_md": "NPV: P = Rs 18,304, Q = Rs 21,494 (NPV prefers Q); IRR: P = 25.7%, Q = 21.9% (IRR prefers P). EAA: P = 18,304/1.6901 = Rs 10,830; Q = 21,494/3.0373 = Rs 7,077. P has the higher annual benefit, so choose P if projects can be repeated."
+          },
+          "tags": [
+            "conflict",
+            "life-disparity",
+            "eaa",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain the least common multiple (LCM) of lives approach.",
+            "answer_md": "Extend the horizon to the LCM of the project lives so each project is replicated a whole number of times (for lives of 2 and 3 years, a 6-year horizon: 3 cycles and 2 cycles). Compute the NPV of each replicated chain and choose the higher."
+          },
+          "tags": [
+            "conflict",
+            "life-disparity",
+            "lcm"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Using P and Q above (lives 2 and 4, 12%), apply the LCM method.",
+            "answer_md": "LCM = 4 years, so P is repeated twice. NPV of chain = 18,304 + 18,304/1.12^2 = Rs 32,895, which exceeds Q's NPV of Rs 21,494. P is better, agreeing with EAA."
+          },
+          "tags": [
+            "conflict",
+            "lcm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What assumption lies behind the EAA and LCM approaches, and what do they have in common?",
+            "answer_md": "That the projects can be replaced or repeated again and again when they wear out (a replacement chain). They are logically equivalent ways of comparing such chains."
+          },
+          "tags": [
+            "conflict",
+            "eaa",
+            "lcm"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Decision rule for the equivalent annual annuity approach.",
+            "answer_md": "Among the competing projects with unequal lives, choose the one with the highest EAA (for cost projects, the lowest equivalent annual cost)."
+          },
+          "tags": [
+            "conflict",
+            "eaa",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is size or scale disparity and how does it cause conflict?",
+            "answer_md": "The projects need different investments. NPV is an absolute measure and favours the larger project; IRR is a percentage and may favour the smaller. Rankings can therefore differ even when lives are equal."
+          },
+          "tags": [
+            "conflict",
+            "size-disparity"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the size-disparity conflict resolved?",
+            "answer_md": "By the incremental (differential) cash flow approach: take the difference between the larger and the smaller project's cash flows, find the IRR of that increment, and if it exceeds the cost of capital choose the larger project, otherwise the smaller."
+          },
+          "tags": [
+            "conflict",
+            "size-disparity",
+            "incremental"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Cost of capital 10%. S: outlay 20,000, inflow 8,000 a year for 4 years. L: outlay 60,000, inflow 21,000 a year for 4 years. Which is better?",
+            "answer_md": "NPV: S = Rs 5,359, L = Rs 6,567 (L larger). IRR: S = 21.9%, L = 15.0% (S higher). Increment: outlay 40,000, inflow 13,000 a year; IRR of increment = 11.4%, above 10%, so the extra investment pays and L is chosen."
+          },
+          "tags": [
+            "conflict",
+            "size-disparity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-020",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Abandonment value",
+            "definition_md": "The value a project or asset would fetch if it were sold or liquidated immediately, also called liquidation value. It gives management the option to stop a project that turns out badly."
+          },
+          "tags": [
+            "abandonment"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the decision rule for abandoning a project?",
+            "answer_md": "Abandon if the abandonment (salvage) value exceeds the present value of the expected remaining cash flows. A project with the abandonment option is accepted if its NPV with abandonment is positive and higher than the NPV without it."
+          },
+          "tags": [
+            "abandonment",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-022",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is abandonment treated in real option analysis?",
+            "answer_md": "The right to abandon is a put option on the project: its value is added to the NPV without abandonment to give the total NPV, and the project may be accepted if that total is positive."
+          },
+          "tags": [
+            "abandonment",
+            "real-option"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-023",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why should future abandonment values be estimated at the planning stage?",
+            "answer_md": "Cash flows may turn out differently over the project's life, and knowing what the asset could fetch if stopped sets a floor on the loss and adds value to the project."
+          },
+          "tags": [
+            "abandonment"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Outlay 10,00,000; 3-year life; year-1 inflow 3,00,000. After year 1 it becomes known that years 2 and 3 will bring either 6,00,000 a year or 1,00,000 a year (equal chances). The project can be abandoned after year 1 for 6,00,000. Cost of capital 10%. Is the abandonment option valuable?",
+            "answer_md": "Without abandonment: high case NPV = Rs 2,19,384, low case = Rs -5,69,497, expected = Rs -1,75,056. In the low case the remaining flows are worth about 1,73,554 at year 1, below 6,00,000, so abandon: low-case NPV = Rs -1,81,818. In the high case continue. Expected NPV with the option = Rs 18,783 (positive), against Rs -1,75,056 without it, so the option adds Rs 1,93,839 and turns a reject into an accept."
+          },
+          "tags": [
+            "abandonment",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-conflict-025",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "MACRS (Modified Accelerated Cost Recovery System)",
+            "definition_md": "A system of tax depreciation used in the United States, under which an asset is written off over a fixed recovery period by prescribed, front-loaded percentages. It is named in the module heading but the study text does not explain it, and it does not apply to Indian tax law, so treat it as background only."
+          },
+          "tags": [
+            "macrs",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:conflict"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Inflation",
+            "definition_md": "A rise in the general price level of goods and services, which reduces the purchasing power of money so that more money is needed to buy the same quantity."
+          },
+          "tags": [
+            "inflation",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the two broad causes of inflation?",
+            "answer_md": "Demand-pull inflation, from higher aggregate demand due to private and government spending; and cost-push or supply-shock inflation, from falling aggregate supply (for example, natural disasters or dearer inputs)."
+          },
+          "tags": [
+            "inflation",
+            "causes"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the common measures of inflation.",
+            "answer_md": "The consumer, producer and wholesale price indices (CPI, PPI, WPI) and commodity price indices, each computed from the price movement of a specified basket of goods and services."
+          },
+          "tags": [
+            "inflation",
+            "measures"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why must inflation be reflected in capital budgeting?",
+            "answer_md": "Project cash flows arise over many years, and money cash flows do not show real purchasing power when prices rise. Ignoring inflation distorts NPV and can lead to wrong accept-or-reject decisions."
+          },
+          "tags": [
+            "inflation",
+            "impact"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Nominal (money) cash flows versus real cash flows",
+            "definition_md": "Nominal cash flows are the actual rupee amounts expected in the future. Real cash flows are the same flows expressed in constant purchasing power, i.e. deflated by the inflation rate."
+          },
+          "tags": [
+            "inflation",
+            "nominal",
+            "real"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Real cash flow",
+            "expression_md": "$\\text{Real CF}_t = \\dfrac{\\text{Nominal CF}_t}{(1+IR)^t}$",
+            "variables_md": "$IR$ = inflation rate; $t$ = year.",
+            "when_md": "Deflate nominal flows first, then discount the real flows at the real discount rate."
+          },
+          "tags": [
+            "inflation",
+            "real"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Relationship between nominal and real discount rates",
+            "expression_md": "$1 + NDR = (1 + RDR)(1 + IR) \\;\\Rightarrow\\; NDR = (1+RDR)(1+IR) - 1$",
+            "variables_md": "$NDR$ = nominal discount rate; $RDR$ = real discount rate; $IR$ = inflation rate.",
+            "when_md": "NDR therefore has two parts: the real rate that protects shareholders' wealth and compensation for lost purchasing power. Note that it is a product, not the simple sum of the two."
+          },
+          "tags": [
+            "inflation",
+            "ndr",
+            "rdr"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the two consistent ways to compute NPV under inflation?",
+            "answer_md": "Either (1) discount nominal cash flows at the nominal discount rate, or (2) deflate nominal flows by the inflation rate to real flows and discount at the real discount rate. Both give the same NPV (apart from rounding). Never mix nominal flows with a real rate."
+          },
+          "tags": [
+            "inflation",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Real discount rate 8%, inflation 6%: what is the nominal rate?",
+            "answer_md": "NDR = 1.08 x 1.06 - 1 = 14.48%, not the simple sum 14%."
+          },
+          "tags": [
+            "inflation",
+            "ndr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Nominal rate 14% and inflation 5%: find the real rate.",
+            "answer_md": "RDR = 1.14/1.05 - 1 = 8.571%."
+          },
+          "tags": [
+            "inflation",
+            "rdr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outlay Rs 10,00,000; nominal CFAT Rs 4,40,000 a year for 3 years; inflation 6%; real discount rate 8%. Find NPV by both methods.",
+            "answer_md": "Real CFAT: 4,15,094, 3,91,598, 3,69,432; discounted at 8% and less outlay: NPV = Rs 13,347. Alternatively NDR = 14.48%, and discounting 4,40,000 at 14.48% gives NPV = Rs 13,347, the same. Ignoring inflation, discounting at 8% would give Rs 1,33,923, overstating the project."
+          },
+          "tags": [
+            "inflation",
+            "npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you handle cash-flow items that inflate at different rates (for example wages 10%, materials 5%)?",
+            "answer_md": "Inflate each item at its own rate to get the money cash flow for each year, then discount the total money flows at the money (nominal) cost of capital. Do not use one general inflation rate when the specific rates are given."
+          },
+          "tags": [
+            "inflation",
+            "specific-inflation"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is it said to be prudent to analyse real cash flows rather than nominal ones?",
+            "answer_md": "Real cash flows reflect purchasing power and so give a truer picture of the value created; nominal flows overstate benefits when prices are rising."
+          },
+          "tags": [
+            "inflation",
+            "real"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-infl-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Does depreciation tax saving rise with inflation?",
+            "answer_md": "No. Depreciation is based on the historical cost of the asset, so its tax shield is a fixed rupee amount; it is not inflated when forecasting money cash flows, though it is included in nominal flows and discounted at the nominal rate."
+          },
+          "tags": [
+            "inflation",
+            "depreciation"
+          ],
+          "reference_keys": [
+            "sfm:infl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Capital rationing",
+            "definition_md": "A situation where a firm has more acceptable projects (positive NPV, IRR above cut-off, PI above 1) than funds, so it must select the set that gives the maximum total NPV within the limited funds."
+          },
+          "tags": [
+            "rationing",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish soft (internal) from hard (external) capital rationing.",
+            "answer_md": "Soft or internal: management itself sets a ceiling on capital spending for the period. Hard or external: the market restricts funds, for example the firm cannot raise more money because of external factors."
+          },
+          "tags": [
+            "rationing",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the difference between divisible and indivisible projects?",
+            "answer_md": "A divisible project can be taken in part (part acceptance with proportionate NPV). An indivisible project must be accepted in full or rejected."
+          },
+          "tags": [
+            "rationing",
+            "divisible"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Steps to pick projects within a fund limit when each project can be taken in part.",
+            "answer_md": "Rank them by profitability index in descending order and select down the list until the funds run out; the last project is taken only in part, with NPV in the same proportion. Projects with PI below 1 (negative NPV) are not considered."
+          },
+          "tags": [
+            "rationing",
+            "divisible",
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you choose among projects that must be taken whole, under a fund limit?",
+            "answer_md": "List all the feasible combinations that fit within the budget, compute total NPV for each, and choose the combination with the highest NPV. PI ranking alone may fail because of unused funds or project sizes."
+          },
+          "tags": [
+            "rationing",
+            "indivisible"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Budget Rs 100 lakh. Projects (investment, NPV in lakh): A 60, 30; B 50, 24; C 50, 24; D 40, 6; E 30, -4. Select if divisible.",
+            "answer_md": "Drop E (negative NPV). PI: A 1.50, B 1.48, C 1.48, D 1.15. Take A (60) and then 40 of B's 50, i.e. 4/5 of B (tie of B and C is broken arbitrarily). NPV = 30 + 0.8 x 24 = 49.2 lakh."
+          },
+          "tags": [
+            "rationing",
+            "divisible",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Same projects and budget (A 60/30, B 50/24, C 50/24, D 40/6, E 30/-4, Rs lakh) but indivisible. Which set?",
+            "answer_md": "Feasible sets within 100: A+D (NPV 36), B+C (NPV 48), B+D (NPV 30), and so on. Best is B+C with NPV 48 lakh, using the full budget. PI ranking would pick A first and then D, giving only 36, so combinations must be tested."
+          },
+          "tags": [
+            "rationing",
+            "indivisible",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a capital rationing table, how is the NPV of a partly accepted project computed?",
+            "answer_md": "Proportionately: NPV of the project x (funds actually invested in it / its full outlay). If only 4/5 of the outlay is invested, take 4/5 of the NPV."
+          },
+          "tags": [
+            "rationing",
+            "divisible"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under capital rationing, why is it not enough to rank by PI for indivisible projects?",
+            "answer_md": "PI ranking maximises return per rupee only if the budget can be spent exactly; with whole projects the budget may be left partly unspent, and a combination of lower-PI projects can give a higher total NPV, so the final choice must be based on total NPV of feasible sets."
+          },
+          "tags": [
+            "rationing",
+            "indivisible",
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which technique is used to handle interdependence among projects in capital rationing?",
+            "answer_md": "Integer (linear) programming, where each project is a 0-1 decision variable and the objective is to maximise total NPV subject to budget and interdependence constraints."
+          },
+          "tags": [
+            "rationing",
+            "integer-programming"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-ration-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In capital rationing, what is the objective of selection?",
+            "answer_md": "To maximise the total NPV, and hence shareholders' wealth, from the funds available."
+          },
+          "tags": [
+            "rationing",
+            "objective"
+          ],
+          "reference_keys": [
+            "sfm:ration"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Social cost benefit analysis (SCBA)",
+            "definition_md": "Evaluation of an investment from the larger social point of view, covering the social costs and benefits of a project, which differ from the monetary costs and benefits to the firm. It supplements, and does not replace, financial analysis."
+          },
+          "tags": [
+            "scba",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why do social costs and benefits differ from financial ones?",
+            "answer_md": "Because of market imperfections, externalities, taxes, concern for savings and redistribution, and merit and demerit goods."
+          },
+          "tags": [
+            "scba",
+            "need"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the need for SCBA.",
+            "answer_md": "1) Financial analysis misses external effects, positive (infrastructure) or negative (pollution). 2) Taxes and subsidies are transfer payments from society's view. 3) Market prices may not show true social values because of imperfections. 4) Redistribution: benefits to poorer sections count for more. 5) Merit wants: necessities such as medicines or infrastructure matter more than liquor or cigarettes."
+          },
+          "tags": [
+            "scba",
+            "need"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are taxes and subsidies treated in SCBA?",
+            "answer_md": "As transfer payments: they are a cost or gain for the firm but only move money within society, so they are irrelevant from the social point of view."
+          },
+          "tags": [
+            "scba",
+            "transfer-payments"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is an externality in project appraisal? Give one positive and one negative example.",
+            "answer_md": "An effect of the project on others that is not captured in its own cash flows. Positive: development of infrastructure. Negative: pollution or disturbance of the ecological balance."
+          },
+          "tags": [
+            "scba",
+            "externality"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the relevance of SCBA for private enterprises?",
+            "answer_md": "Government enterprises must consider it, as in rehabilitating hawkers displaced by road widening. Private companies also have a moral responsibility to undertake socially desirable projects, and projects that are socially beneficial and acceptable are more likely to survive in the long run, so SCBA protects their own long-term interest."
+          },
+          "tags": [
+            "scba",
+            "private-enterprise"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the two principal approaches to SCBA.",
+            "answer_md": "The UNIDO (United Nations Industrial Development Organisation) approach and the Little-Mirrlees (L-M) approach, which are similar though with some important differences."
+          },
+          "tags": [
+            "scba",
+            "unido",
+            "little-mirrlees"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do development financial institutions use SCBA alongside financial appraisal?",
+            "answer_md": "They appraise projects primarily from the financial point of view and also bring in the wider social aspects, broadly following a simplified version of the Little-Mirrlees approach with minor variations."
+          },
+          "tags": [
+            "scba",
+            "little-mirrlees",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-scba-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "On what do the perspectives and parameters of SCBA usually depend?",
+            "answer_md": "On the macro-level (national) plans, since the focus is on social costs and benefits."
+          },
+          "tags": [
+            "scba",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:scba"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A project has an IRR given, annual saving and life. How do you find its cost, payback, cost of capital and NPV from the PV annuity table?",
+            "answer_md": "Cost = annual saving x annuity factor at the IRR for the life (because at IRR inflows = cost). Payback = cost/annual saving (equals that factor). PI x cost = PV of inflows at the cost of capital; divide by the annual saving to get the annuity factor and read the cost of capital from the table. NPV = PV of inflows - cost."
+          },
+          "tags": [
+            "apps",
+            "missing-values",
+            "irr",
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Annual saving Rs 3,00,000 for 4 years, IRR 15% (annuity factor 2.855), PI 1.11. Find cost, payback, cost of capital and NPV.",
+            "answer_md": "Cost = 3,00,000 x 2.855 = Rs 8,56,500. Payback = 2.855 years. PV of inflows = 1.11 x 8,56,500 = 9,50,715; factor = 9,50,715/3,00,000 = 3.169, which is the 4-year factor at 10%. NPV = 9,50,715 - 8,56,500 = Rs 94,215."
+          },
+          "tags": [
+            "apps",
+            "missing-values",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you decide between repairing an old machine and buying a new one with unequal lives?",
+            "answer_md": "Compute the equivalent annual cost (EAC) of each option on an after-tax basis: PV of all after-tax outflows (repair or purchase less sale proceeds of the old machine, running costs net of tax, less the depreciation tax saving, less salvage) divided by the annuity factor for the option's life. Choose the lower EAC."
+          },
+          "tags": [
+            "apps",
+            "eac",
+            "replacement"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Repair costs 60,000 now with running cost 90,000 a year for 4 years. New machine costs 2,40,000 (old can be sold for 20,000) with running cost 50,000 a year for 8 years, no salvage. Ignore tax; cost of capital 10%. Which is better?",
+            "answer_md": "EAC repair = (60,000 + 90,000 x 3.1699)/3.1699 = Rs 1,08,928. EAC new = (2,20,000 + 50,000 x 5.3349)/5.3349 = Rs 91,238. The new machine has the lower annual cost, so buy it."
+          },
+          "tags": [
+            "apps",
+            "eac",
+            "replacement",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is tax handled when computing the EAC of an option involving repairs and running costs?",
+            "answer_md": "Repairs and running costs are tax-deductible, so each is taken net of tax (cost x (1 - t)); depreciation on the new machine gives a tax saving each year (depreciation x t), deducted from the outflow. All are discounted, then divided by the annuity factor for the option's life."
+          },
+          "tags": [
+            "apps",
+            "eac",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you decide when to replace an old machine whose maintenance rises and resale value falls each year?",
+            "answer_md": "Compute the equivalent annual cost of the new machine. For the old machine compute the EAC of keeping it for 1, 2, 3 ... more years: (resale value today + PV of maintenance - PV of resale at the end) / annuity factor for those years. If the new machine's EAC is lower than every such cost, replace now; otherwise keep the old for the year with the lowest EAC."
+          },
+          "tags": [
+            "apps",
+            "eac",
+            "replacement"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "New machine: cost 1,50,000, maintenance 6,000 a year for 8 years, salvage 10,000 at the end. Old machine: resale 30,000 now, maintenance 8,000 and 18,000 at the end of years 1 and 2, resale 20,000 and 12,000 at the end of years 1 and 2. Rate 10%, no tax. Replace now?",
+            "answer_md": "EAC new = Rs 33,242. EAC of keeping old: 1 year = Rs 21,000; 2 years = Rs 24,333. Both are below the new machine's EAC, so do not replace now."
+          },
+          "tags": [
+            "apps",
+            "eac",
+            "replacement",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does the equity IRR of a debt-financed project differ from the project IRR?",
+            "answer_md": "Project IRR looks at the whole project cash flow before financing; equity IRR looks at the cash left for shareholders after loan instalments. If the project earns more than the cost of debt, the surplus on the borrowed money goes to equity holders, so equity IRR is higher (leverage effect); if it earns less, equity IRR is lower."
+          },
+          "tags": [
+            "apps",
+            "equity-irr",
+            "project-irr",
+            "leverage"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-009",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Approximate leverage effect on equity IRR",
+            "expression_md": "$\\text{Equity IRR} \\approx \\text{Project IRR} + (\\text{Project IRR} - K_d)\\times\\dfrac{D}{E}$",
+            "variables_md": "$K_d$ = interest rate on the loan; $D/E$ = ratio of debt to equity in the project cost.",
+            "when_md": "A quick check on how much leverage adds; the exact equity IRR is found from equity cash flows after loan instalments."
+          },
+          "tags": [
+            "apps",
+            "equity-irr",
+            "leverage"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Project cost Rs 500 crore: equity 150, loan 350 at 12% repaid in 10 equal annual instalments (principal plus interest). Net project inflow Rs 100 crore a year for 10 years. Find project IRR, equity IRR and compare.",
+            "answer_md": "Instalment = 350/5.6502 = Rs 61.94 crore. Project IRR = 15.1%. Equity cash flow = 100 - 61.94 = 38.06 crore a year; equity IRR = 21.9%. Leverage approximation: 15.1 + (15.1 - 12) x 350/150 = 22.3%."
+          },
+          "tags": [
+            "apps",
+            "equity-irr",
+            "project-irr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a build-operate-transfer toll road case, how do you compute the net annual project cash flow and the equity cash flow?",
+            "answer_md": "Project net inflow = toll revenue - toll collection and maintenance expenses (depreciation ignored if no tax is payable). Equity cash flow = project net inflow - the equated annual loan instalment (loan / annuity factor at the loan rate). Then find IRR on each by payback-based guidance rate and interpolation."
+          },
+          "tags": [
+            "apps",
+            "bot",
+            "equity-irr"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What items must be included when evaluating a new product project that needs additional equipment later and phased capacity usage?",
+            "answer_md": "Initial equipment and working capital at time 0; year-wise sales volume from capacity utilisation; contribution (via P/V ratio); fixed cash costs and advertising; depreciation on both equipment; tax on the resulting profit (loss shows a tax saving for a profit-making firm); CFAT = PAT + depreciation; additional equipment outflow at its date; terminal salvage and working capital release."
+          },
+          "tags": [
+            "apps",
+            "new-product",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Additional equipment is bought at the beginning of year 3. Which discount factor is used?",
+            "answer_md": "The beginning of year 3 is the end of year 2, so the outflow is discounted with the year-2 factor."
+          },
+          "tags": [
+            "apps",
+            "timing",
+            "new-product"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is contribution found when a P/V ratio and a selling price are given?",
+            "answer_md": "Contribution per unit = selling price x P/V ratio; yearly contribution = units sold x contribution per unit, where units = installed capacity x capacity utilisation for that year."
+          },
+          "tags": [
+            "apps",
+            "contribution"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When depreciation is on the written-down-value basis, how are the terminal tax effects found?",
+            "answer_md": "Compute the book (WDV) value at the end of the project and compare it with the sale value of the asset: sale above WDV gives a taxable gain (tax outflow), sale below WDV a loss (tax saving). Release of working capital is added in full."
+          },
+          "tags": [
+            "apps",
+            "wdv",
+            "terminal"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the approach to decide among pipeline sizes or similar mutually exclusive size alternatives with savings data?",
+            "answer_md": "For each size compute annual CFAT = (savings - depreciation) x (1 - t) + depreciation, then the NPV using the annuity factor and the payback. Choose the alternative with the highest NPV; shortest payback is only a secondary indicator and need not coincide."
+          },
+          "tags": [
+            "apps",
+            "mutually-exclusive",
+            "npv",
+            "payback"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Two machines have different outlays and NPVs. Which method can break the tie between a higher-NPV and a higher-return option?",
+            "answer_md": "Compare NPVs first; if the outlays differ widely, also compute the profitability index, since it expresses return per rupee. Recommend the machine consistent with the stated objective, noting the size difference."
+          },
+          "tags": [
+            "apps",
+            "pi",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Method for evaluating a project to process waste that replaces a contractor's disposal service: what cash flows are relevant?",
+            "answer_md": "Contract payments saved (after tax), compensation to terminate the contract (not tax-deductible if stated), incremental revenues and costs, only the specific incremental overheads, rent forgone on space used, idle-time wages saved, working capital (stock) invested and recovered, tax on incremental profit, and the net sale value of the machine at the end."
+          },
+          "tags": [
+            "apps",
+            "relevant-cost",
+            "case-study"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-apps-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In a loan-financed project, why is mixing loan repayments and interest into the project cash flows questionable?",
+            "answer_md": "Under the interest exclusion principle, financing flows are left out and the cost of capital in the discount rate captures them. Counting them in the cash flows as well double-counts the cost of finance. Cash flows after financing are used only for equity analysis."
+          },
+          "tags": [
+            "apps",
+            "interest-exclusion",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:apps"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Old machine: tax book value Rs 2,00,000, 4 years left, straight-line to nil, resale now Rs 1,20,000. New machine: Rs 6,00,000, 4 years, salvage Rs 60,000, straight-line. New machine saves Rs 2,00,000 of operating cost a year before tax. Tax 30%, cost of capital 12%. Find the NPV of replacing.",
+            "answer_md": "Net investment = 6,00,000 - 1,20,000 - tax saved on loss (80,000 x 30% = 24,000) = Rs 4,56,000. Extra depreciation = 1,35,000 - 50,000 = Rs 85,000. Incremental CFAT = (2,00,000 - 85,000) x 0.7 + 85,000 = Rs 1,65,500 for 4 years. NPV = 1,65,500 x 3.0373 + 60,000 x 0.6355 - 4,56,000 = Rs 84,812; NPV is positive, so replace."
+          },
+          "tags": [
+            "replacement",
+            "npv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of an NPV evaluation of a replacement decision.",
+            "answer_md": "1) Net investment: cost of new asset less after-tax proceeds of old (sale value adjusted for tax on gain or loss) plus any working capital change. 2) Incremental pre-tax savings (revenue, operating costs, repairs). 3) Incremental depreciation and tax on the net saving. 4) Incremental CFAT = after-tax saving + incremental depreciation. 5) Add terminal salvage and working capital release. 6) Discount at the cost of capital and subtract the net investment."
+          },
+          "tags": [
+            "replacement",
+            "npv",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the steps to compute NPV for a conventional and a non-conventional project?",
+            "answer_md": "Find cash inflows and outflows; choose the discount rate (preferably cost of capital); compute PV of inflows. For a conventional project the outflow is only the initial outlay; for a non-conventional project take the PV of outflows at every date; NPV = PV of inflows - PV of outflows."
+          },
+          "tags": [
+            "npv",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Terminal value (in MIRR and MNPV)",
+            "definition_md": "The sum of all cash inflows after each has been compounded at the reinvestment rate (or cost of capital) up to the end of the project's life."
+          },
+          "tags": [
+            "mirr",
+            "mnpv",
+            "terminal-value"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Define mutually exclusive and independent projects.",
+            "answer_md": "Independent projects can each be accepted or rejected on their own merits. Mutually exclusive projects compete for the same purpose, so accepting one means rejecting the others, and they must be ranked."
+          },
+          "tags": [
+            "capital-budgeting",
+            "mutually-exclusive"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If PI equals one, what is NPV, and what is the decision?",
+            "answer_md": "NPV is zero, so the project just earns the required return. The decision-maker is indifferent."
+          },
+          "tags": [
+            "pi",
+            "npv"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the tax shield on interest valued when the debt is repaid in instalments?",
+            "answer_md": "Year by year: tax shield = outstanding debt at the start of the year x interest rate x tax rate, then discount each year's shield (at the cost of debt or the rate stated) and add the present values."
+          },
+          "tags": [
+            "anpv",
+            "tax-shield"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Debt Rs 12 lakh at 10% repaid in equal annual principal of Rs 4 lakh over 3 years; tax 30%. Find the PV of the interest tax shield at 10%.",
+            "answer_md": "Shields: 12 x 10% x 30% = 0.36; 8 x 10% x 30% = 0.24; 4 x 10% x 30% = 0.12 lakh. PV = 0.36/1.1 + 0.24/1.1^2 + 0.12/1.1^3 = Rs 0.6158 lakh (about Rs 61,578)."
+          },
+          "tags": [
+            "anpv",
+            "tax-shield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you find IRR when annual inflows are equal?",
+            "answer_md": "Divide the outlay by the annual CFAT to get the annuity factor; look along the row for the project life in the PV annuity table to find the two rates that bracket that factor; interpolate between them."
+          },
+          "tags": [
+            "irr",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Outlay Rs 2,50,000; CFAT Rs 80,000 a year for 4 years. Find the IRR.",
+            "answer_md": "Factor = 2,50,000/80,000 = 3.125. For 4 years, the factor is 3.1699 at 10% and 3.0373 at 12%. IRR = 10% + (3.1699 - 3.125)/(3.1699 - 3.0373) x 2% = 10.68% (exact 10.66%)."
+          },
+          "tags": [
+            "irr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can the NPV ranking of projects change with the discount rate?",
+            "answer_md": "A project with large late inflows loses more present value as the rate rises than one with early inflows, so rankings by NPV can reverse at different discount rates, which is a disadvantage of using NPV for ranking."
+          },
+          "tags": [
+            "npv",
+            "ranking"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-extra-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do ARR, payback and NPV differ in what they use as the measure of benefit?",
+            "answer_md": "ARR uses accounting profit after tax and depreciation; payback uses undiscounted cash flows; NPV uses cash flows discounted for time value, which is why it fits the wealth-maximisation objective best."
+          },
+          "tags": [
+            "appraisal",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:extra"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Capital budgeting decisions are {{c1::long-term}} investment decisions, and the three kinds of cash flow are {{c2::initial}}, {{c3::subsequent}} and {{c4::terminal}}."
+          },
+          "tags": [
+            "capital-budgeting",
+            "cash-flow"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "CFAT = {{c1::EBIT x (1 - t)}} + {{c2::depreciation}}; interest is {{c3::excluded}} from project cash flows (interest exclusion principle)."
+          },
+          "tags": [
+            "cash-flow",
+            "cfat"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-003",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Accept a project if NPV is {{c1::positive}}, IRR exceeds the {{c2::cost of capital}}, and PI is {{c3::more than one}}."
+          },
+          "tags": [
+            "npv",
+            "irr",
+            "pi",
+            "decision-rule"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "At the IRR, NPV is {{c1::zero}} and PI is {{c2::one}}."
+          },
+          "tags": [
+            "irr",
+            "pi"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "NPV assumes reinvestment at the {{c1::cost of capital}}, whereas IRR assumes reinvestment at the {{c2::IRR itself}}."
+          },
+          "tags": [
+            "npv",
+            "irr",
+            "reinvestment"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-006",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "NPV-IRR conflict arises from {{c1::time}}, {{c2::life}} and {{c3::size}} disparity; the fixes are {{c4::MNPV or MIRR}}, {{c5::equivalent annual annuity}} and {{c6::the incremental cash flow approach}} respectively."
+          },
+          "tags": [
+            "conflict"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-007",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "ANPV = {{c1::base-case NPV}} + PV of {{c2::interest tax shields}} - PV of {{c3::equity flotation cost}}."
+          },
+          "tags": [
+            "anpv"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-008",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "1 + nominal rate = (1 + {{c1::real rate}}) x (1 + {{c2::inflation rate}})."
+          },
+          "tags": [
+            "inflation",
+            "ndr"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Non-DCF techniques: {{c1::ARR}} and {{c2::payback}}; DCF techniques include {{c3::DPBP}}, NPV, PI, {{c4::ANPV}}, IRR, MIRR and MNPV."
+          },
+          "tags": [
+            "appraisal",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Under capital rationing, divisible projects are ranked by {{c1::profitability index}}; indivisible projects are chosen by the combination with the highest {{c2::total NPV}}."
+          },
+          "tags": [
+            "rationing"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-011",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Soft capital rationing is {{c1::internal}} (a management budget ceiling); hard capital rationing is {{c2::external}} (market constraint on funds)."
+          },
+          "tags": [
+            "rationing"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-012",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Payback reciprocal approximates IRR if life is at least {{c1::twice}} the payback period and inflows are {{c2::equal}}."
+          },
+          "tags": [
+            "payback",
+            "reciprocal"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Abandon a project when its {{c1::abandonment (salvage) value}} exceeds the {{c2::present value of expected remaining cash flows}}; the right to abandon is a {{c3::put}} option."
+          },
+          "tags": [
+            "abandonment"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-014",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Taxes and subsidies are {{c1::transfer payments}} in SCBA; the two approaches to SCBA are {{c2::UNIDO}} and {{c3::Little-Mirrlees}}."
+          },
+          "tags": [
+            "scba"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-015",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Sunk and committed costs are {{c1::irrelevant}}; opportunity cost and incremental cash flows are {{c2::relevant}}."
+          },
+          "tags": [
+            "relevant-cost"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-016",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "MIRR = (terminal value / {{c1::initial investment}})^(1/n) - 1, where terminal value compounds inflows at the {{c2::cost of capital}}."
+          },
+          "tags": [
+            "mirr"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-clz-017",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "ARR = average {{c1::PAT}} / average {{c2::investment}}; average investment (equal depreciation) = half of (cost - salvage) + {{c3::salvage}}."
+          },
+          "tags": [
+            "arr"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-mnem-001",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "NPV-IRR-PI accept",
+            "expands_md": "NPV above zero, IRR above cost of capital, PI above one: all three agree for an independent project.",
+            "topic": "Acceptance rules"
+          },
+          "tags": [
+            "npv",
+            "irr",
+            "pi",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnem"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-mnem-002",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "I-S-T",
+            "expands_md": "Initial, Subsequent, Terminal cash flows.",
+            "topic": "Classes of project cash flow"
+          },
+          "tags": [
+            "cash-flow",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnem"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm01-mnem-003",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "ANPV = B + T - F",
+            "expands_md": "Base-case NPV + tax shield - Flotation cost.",
+            "topic": "Adjusted NPV"
+          },
+          "tags": [
+            "anpv",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mnem"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

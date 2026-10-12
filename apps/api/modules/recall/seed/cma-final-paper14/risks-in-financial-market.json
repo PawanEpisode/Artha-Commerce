@@ -1,0 +1,2526 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-risks-in-financial-market",
+      "title": "SFM: Risks in Financial Market",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 12: Risks in Financial Market.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "risks-in-financial-market"
+      },
+      "items": [
+        {
+          "ref": "sfm12-concept-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk",
+            "definition_md": "The uncertainty attached to an event whose outcome can either help or hurt an organisation's objectives. It is not only about losses; a risk taken well can also pay off."
+          },
+          "tags": [
+            "risk",
+            "concept"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-concept-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do the Oxford dictionary, CIMA and the international accountants' federation each look at 'risk'?",
+            "answer_md": "Oxford: a chance of danger, loss, injury or other adverse result (a negative sense). CIMA: a condition where the possible outcomes of an activity show a quantifiable spread (dispersion). The accountants' federation: uncertain future events that could affect strategic, operational and financial objectives."
+          },
+          "tags": [
+            "risk",
+            "concept",
+            "definitions"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-concept-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Distinguish risk from uncertainty.",
+            "answer_md": "Risk: there are several specific possible outcomes and their probabilities can be worked out from past experience, so it is measurable. Uncertainty: even the probabilities are unknown, which reflects a complete lack of knowledge, so it cannot be measured."
+          },
+          "tags": [
+            "risk",
+            "concept",
+            "uncertainty"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-concept-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do the terms 'risk' and 'uncertainty' not mean the same thing even though people use them interchangeably?",
+            "answer_md": "Because a risky situation has known outcomes with estimable probabilities, while an uncertain one has no basis for assigning probabilities at all."
+          },
+          "tags": [
+            "risk",
+            "uncertainty"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-concept-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can taking a risk lead to a good result as well as a bad one?",
+            "answer_md": "Risk simply means variation in outcomes. If risks are handled well they can bring a larger market share, faster revenue growth and higher profit; if handled badly they bring lower profit, lost customers, a fall in shareholder wealth and damage to reputation."
+          },
+          "tags": [
+            "risk",
+            "concept",
+            "opportunity"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-concept-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does financial risk deserve more attention than other risks in an organisation?",
+            "answer_md": "It hits the bottom line almost directly, so a clear grasp of its elements, impact and mitigation strategies is essential."
+          },
+          "tags": [
+            "risk",
+            "financial-risk",
+            "concept"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-concept-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Are all risks faced by an organisation controllable?",
+            "answer_md": "No. Some risks can be controlled and some cannot. A systematic approach to risk management lets the organisation turn challenges into opportunities."
+          },
+          "tags": [
+            "risk",
+            "concept"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the six broad risk categories in the CIMA classification.",
+            "answer_md": "Operational, financial, country, environmental, reputational and strategic risk."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "cima"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-002",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "OF CERS",
+            "expands_md": "Operational, Financial, Country, Environmental, Reputational, Strategic: the six CIMA risk categories.",
+            "topic": "CIMA risk categories"
+          },
+          "tags": [
+            "risk",
+            "types",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Operational risk",
+            "definition_md": "Potential loss from the activities inside the organisation: weak systems, management failure, faulty controls, fraud or human error. It comes from structure, systems, people, products or processes."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "operational-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Financial risk (CIMA category)",
+            "definition_md": "Risk tied to the financial operations of the entity; it results from the financial transactions the organisation carries out with the outside world."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "financial-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Country risk (CIMA category)",
+            "definition_md": "Risk linked to dealing with, or holding assets in, a particular country. It may be political, economic or arise from unstable regulation."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "country-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-006",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Environmental risk",
+            "definition_md": "Risk from changes in the surroundings of the business: political, economic, socio-cultural, technological, environmental and legal changes."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "environmental-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-007",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Reputational risk",
+            "definition_md": "Damage to an entity's reputation that results from failing to manage its other risks."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "reputational-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-008",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Strategic risk",
+            "definition_md": "Risk that arises from the entity's own strategy and poses the greatest threat to achieving that strategy."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "strategic-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Apart from the CIMA list, on what basis can risks be split into systematic and non-systematic?",
+            "answer_md": "On controllability, or the ability to diversify the risk away."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "systematic"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-types-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which CIMA risk category is the type of risk the organisation brings upon itself through the dealings it has with banks, markets, customers and other outside parties?",
+            "answer_md": "Financial risk, because it is the outcome of financial transactions undertaken with the outside world."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "financial-risk"
+          ],
+          "reference_keys": [
+            "sfm:types"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-sysunsys-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Systematic risk (non-diversifiable)",
+            "definition_md": "Variation in security returns caused by macroeconomic factors (political, social or economic) that touch the whole market. It cannot be removed by diversification, so it is also called non-diversifiable risk."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:sysunsys"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-sysunsys-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Unsystematic risk (firm-specific)",
+            "definition_md": "Variation in a company's returns caused by firm-specific factors. It sits inside the company and can be avoided, for example through diversification, if the necessary action is taken."
+          },
+          "tags": [
+            "risk",
+            "unsystematic",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:sysunsys"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-sysunsys-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compare systematic and unsystematic risk on source, diversifiability and examples.",
+            "answer_md": "Systematic: market-wide macro factors, non-diversifiable; e.g. natural disaster, change in government policy, international or national economic changes. Unsystematic: firm-specific factors, avoidable; e.g. producing unwanted products, labour strikes."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "unsystematic"
+          ],
+          "reference_keys": [
+            "sfm:sysunsys"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-sysunsys-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A portfolio holds 90 percent in index stocks weighted by market value and 10 percent in treasury bills. Is it more sensitive to systematic or unsystematic risk, and why?",
+            "answer_md": "Systematic risk: an index-weighted basket is already spread across the market, so firm-specific risk is largely diversified away and what remains is market-wide risk."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "portfolio"
+          ],
+          "reference_keys": [
+            "sfm:sysunsys"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-sysunsys-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give two examples each of events that create systematic risk and unsystematic risk.",
+            "answer_md": "Systematic: a natural disaster, a change in government policy. Unsystematic: a labour strike at the firm, launching a product that customers do not want."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "unsystematic",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:sysunsys"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-sysunsys-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which of the two, systematic or unsystematic risk, is called 'diversifiable' risk?",
+            "answer_md": "Unsystematic risk. Systematic risk is the non-diversifiable one (a common true or false trap)."
+          },
+          "tags": [
+            "risk",
+            "unsystematic",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:sysunsys"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk management",
+            "definition_md": "An iterative process of finding, assessing, measuring and handling risks so that economic value is created. It cuts the chance or effect of adverse events and improves the chance of capturing opportunities and reaching objectives such as profit and value creation."
+          },
+          "tags": [
+            "risk-management",
+            "process"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is managing risk important beyond mere survival?",
+            "answer_md": "Handled well, risk management helps a firm not only survive in a fiercely competitive market but also emerge as a market leader."
+          },
+          "tags": [
+            "risk-management",
+            "importance"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of the generic risk management process in order.",
+            "answer_md": "1. Set the objectives. 2. Identify the risks. 3. Measure and prioritise them. 4. Develop a strategy. 5. Implement the strategy. 6. Monitor the risks (and then loop back to identification)."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is risk management described as a cycle and not a one-time exercise?",
+            "answer_md": "After monitoring, the process returns to risk identification, because risks keep changing form as new requirements and conditions arise."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "cycle"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is decided in the first step of risk management, and who decides it?",
+            "answer_md": "The objectives, for example protecting or enhancing profit or building a competitive advantage. Management decides them, keeping the company's risk tolerance in view."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "objectives"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Risk tolerance",
+            "definition_md": "The level of risk that a company is both able and willing to take on. The ability part depends mainly on financial health: earnings, cash flows and equity capital."
+          },
+          "tags": [
+            "risk-management",
+            "risk-tolerance"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What drives a company's ability to bear risk?",
+            "answer_md": "Mainly its financial health, which in turn rests on the level of its earnings, cash flows and equity capital."
+          },
+          "tags": [
+            "risk-management",
+            "risk-tolerance"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the risk identification step involve, and what does the set of risks depend on?",
+            "answer_md": "Spotting every risk first and then classifying it by nature and character. A firm's risks depend on its organisational structure, nature of business, economic conditions, social and political factors and its industry's status. It is based on the firm's exposures and can be done by top or middle management."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "identification"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "On which two factors does the significance of a risk depend during measurement?",
+            "answer_md": "The size of the possible loss (expected severity of consequences) and the probability of the loss occurring (expected frequency)."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "measurement"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are risks prioritised into critical, important and not-so-important risks?",
+            "answer_md": "Critical: may lead to the firm's bankruptcy. Important: may not bankrupt the firm but can cause severe financial distress if mishandled. Not-so-important: losses the firm can easily absorb in the normal course of business."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "prioritisation"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give examples of the basic measures used to gauge the severity of a risk.",
+            "answer_md": "Absolute values (number of transactions, size of debtors), ratios (one debtor as a percentage of total debtors to show concentration), trends (percentage fall in sales), financial measures (expected forex income and expenditure), market changes (GDP growth rate) and production level (actual output against break-even)."
+          },
+          "tags": [
+            "risk-management",
+            "measurement",
+            "measures"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the specific measure used for credit risk, market risk and operational risk.",
+            "answer_md": "Credit risk: credit rating and expected loss. Market risk: Value at Risk. Operational risk: labour turnover ratio."
+          },
+          "tags": [
+            "risk-management",
+            "measurement",
+            "var",
+            "credit-risk",
+            "operational-risk"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What must be done once risks have been measured?",
+            "answer_md": "The results must be reported to the appropriate authority."
+          },
+          "tags": [
+            "risk-management",
+            "measurement"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the strategy development step produce?",
+            "answer_md": "An action plan that fixes which risk is to be managed and when, which tools, techniques and instruments will be used, and also deals with tax and legal issues. It sets the direction for the business as a whole."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "strategy"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What actually takes place in the implementation step?",
+            "answer_md": "Execution: finding the best deal where risk is transferred, providing for contingencies where risk is retained, designing and running risk control programmes, and attending to operational details such as back-office work so that compliance controls hold."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "implementation"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-process-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why must risk monitoring be done periodically, and what does it demand of the process?",
+            "answer_md": "The factors behind risk decisions keep changing, so earlier decisions must be checked for effectiveness and the risk response changed when needed. The frequency depends on the costs involved, and the process itself has to be flexible."
+          },
+          "tags": [
+            "risk-management",
+            "process",
+            "monitoring"
+          ],
+          "reference_keys": [
+            "sfm:process"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the four generic responses to risk?",
+            "answer_md": "Risk avoidance, risk reduction, risk sharing or transfer, and risk acceptance."
+          },
+          "tags": [
+            "risk-response",
+            "avoidance",
+            "reduction",
+            "transfer",
+            "acceptance"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk avoidance",
+            "definition_md": "Stopping the activity that creates the risk, such as dropping a product line, leaving a geographical market or closing a whole business unit."
+          },
+          "tags": [
+            "risk-response",
+            "avoidance"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk reduction",
+            "definition_md": "Acting to lower the likelihood of the risk, its impact, or both, generally through internal controls."
+          },
+          "tags": [
+            "risk-response",
+            "reduction"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk sharing or transfer",
+            "definition_md": "Passing a part of the risk to someone else through insurance, outsourcing or hedging."
+          },
+          "tags": [
+            "risk-response",
+            "transfer"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Risk acceptance",
+            "definition_md": "Taking no action to change either the likelihood or the impact of a risk."
+          },
+          "tags": [
+            "risk-response",
+            "acceptance"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name three ways of transferring risk.",
+            "answer_md": "Insurance, outsourcing and hedging (for example with derivatives)."
+          },
+          "tags": [
+            "risk-response",
+            "transfer"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Classify each response: (a) a company buys an insurance cover against theft of raw material; (b) it stays out of a politically unstable country; (c) it adds a negatively correlated stock to its portfolio.",
+            "answer_md": "(a) Risk transfer. (b) Risk avoidance. (c) Risk reduction (diversification)."
+          },
+          "tags": [
+            "risk-response",
+            "examples",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Classify these: (a) a firm enters a forward contract to buy foreign currency in three months; (b) it makes a provision at a fixed percentage of credit sales for doubtful debts.",
+            "answer_md": "(a) Risk transfer or sharing (hedging). (b) Risk acceptance, as per the book's answer: the loss is expected and provided for rather than prevented."
+          },
+          "tags": [
+            "risk-response",
+            "examples",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which responses fall under 'risk control' through internal controls and which involve doing nothing to the risk itself?",
+            "answer_md": "Reduction works through internal controls on likelihood or impact; acceptance means no action on likelihood or impact (retention, with contingency provisions made in implementation)."
+          },
+          "tags": [
+            "risk-response",
+            "reduction",
+            "acceptance"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-response-010",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "A-R-S-A",
+            "expands_md": "Avoid, Reduce, Share or transfer, Accept: the four responses to risk.",
+            "topic": "Responses to risk"
+          },
+          "tags": [
+            "risk-response",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:response"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Financial risk",
+            "definition_md": "The variability in earnings, cash flows and market values caused by unpredictable moves in commodity prices, security prices, interest rates and exchange rates, or by counterparties not meeting their obligations in financial transactions."
+          },
+          "tags": [
+            "financial-risk",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Into which three heads is financial risk divided?",
+            "answer_md": "Market risk (price risk), credit risk and liquidity risk."
+          },
+          "tags": [
+            "financial-risk",
+            "market-risk",
+            "credit-risk",
+            "liquidity-risk"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Give a one-line distinction between market risk, credit risk and liquidity risk.",
+            "answer_md": "Market risk: loss from adverse moves in market prices. Credit risk: loss because a counterparty fails to pay what it owes. Liquidity risk: inability to trade an asset quickly at a fair price (market) or to meet obligations on time (funding)."
+          },
+          "tags": [
+            "financial-risk",
+            "market-risk",
+            "credit-risk",
+            "liquidity-risk"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which financial variables are the sources of financial risk?",
+            "answer_md": "Commodity prices, security prices, interest rates, exchange rates, and counterparties' failure to honour their obligations."
+          },
+          "tags": [
+            "financial-risk",
+            "sources"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which of these does not belong to financial risk: operational, market, credit, liquidity?",
+            "answer_md": "Operational risk. It is a separate CIMA category, not one of the three financial risk heads."
+          },
+          "tags": [
+            "financial-risk",
+            "operational-risk"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which of these does not belong to market risk: equity, inflation, downgrade, interest rate?",
+            "answer_md": "Downgrade risk, which is a form of credit risk."
+          },
+          "tags": [
+            "market-risk",
+            "downgrade-risk",
+            "credit-risk"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-financial-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which of these does not belong to credit risk: default, downgrade, concentration, liquidity?",
+            "answer_md": "Liquidity risk, which is a separate head of financial risk."
+          },
+          "tags": [
+            "credit-risk",
+            "liquidity-risk"
+          ],
+          "reference_keys": [
+            "sfm:financial"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Market risk (price risk)",
+            "definition_md": "The risk of uncertain, adverse movement in financial market variables such as security prices, commodity prices, interest rates and exchange rates; equally, the risk of losses on positions because market prices move."
+          },
+          "tags": [
+            "market-risk",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain price risk from the point of view of a buyer and of a seller.",
+            "answer_md": "A buyer wants the lowest price and fears a rise before purchase. A seller wants the highest price and fears a fall before sale. The chance of not getting the desired price is price risk."
+          },
+          "tags": [
+            "market-risk",
+            "price-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give examples of events that create market risk.",
+            "answer_md": "A major natural disaster that drags the whole market down, a recession, political turmoil, changes in interest rates, terrorist attacks and credit policy changes."
+          },
+          "tags": [
+            "market-risk",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the five types of market risk.",
+            "answer_md": "Equity risk, interest rate risk, inflation rate risk, commodities risk and currency risk."
+          },
+          "tags": [
+            "market-risk",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-005",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Equity risk",
+            "definition_md": "The risk attached to a common stock, seen as the variability of its return."
+          },
+          "tags": [
+            "market-risk",
+            "equity-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Interest rate risk",
+            "definition_md": "Variability in a security's return caused by changes in the general level of interest rates. Other things being equal, security prices move in the opposite direction to interest rates."
+          },
+          "tags": [
+            "market-risk",
+            "interest-rate-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Inflation rate risk",
+            "definition_md": "Risk that changes in inflation alter purchasing power. A change in inflation also shifts interest rates and so lowers the value of securities."
+          },
+          "tags": [
+            "market-risk",
+            "inflation-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-008",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Commodities risk",
+            "definition_md": "Price swings in a commodity that follow when its demand and supply are out of balance."
+          },
+          "tags": [
+            "market-risk",
+            "commodity-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Currency risk",
+            "definition_md": "Risk faced by an organisation with international operations that invoices goods and services in a foreign currency. A rise or fall of that currency against the home currency changes the value of foreign currency assets and liabilities."
+          },
+          "tags": [
+            "market-risk",
+            "currency-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When does currency risk arise, and in which direction does the exposure sit?",
+            "answer_md": "When dealings are invoiced in a foreign currency (not the home currency). Appreciation or depreciation of that currency against the home currency changes the home-currency value of foreign currency receivables and payables."
+          },
+          "tags": [
+            "market-risk",
+            "currency-risk"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which measure is traditionally used to quantify the potential loss from market risk, and for what horizon is it well accepted?",
+            "answer_md": "Value at Risk (VaR). It is well established and accepted for short-term risk management practice, though it carries limiting assumptions that restrict accuracy."
+          },
+          "tags": [
+            "market-risk",
+            "var"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the first limiting assumption of Value at Risk.",
+            "answer_md": "The portfolio's composition stays unchanged over the period measured. This is acceptable over short horizons, but over long horizons many positions change and the VaR of the old portfolio stops being relevant."
+          },
+          "tags": [
+            "market-risk",
+            "var",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the correlation assumption in the variance-covariance and historical simulation approaches to VaR.",
+            "answer_md": "That historical correlations stay stable in future and do not break down when markets are stressed."
+          },
+          "tags": [
+            "market-risk",
+            "var",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which portfolio features must not be ignored when computing VaR if their impact can be large?",
+            "answer_md": "Intervening cash flows, embedded options and changes in floating interest rates on positions in the portfolio."
+          },
+          "tags": [
+            "market-risk",
+            "var",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the two approaches to calculating VaR that the chapter mentions.",
+            "answer_md": "The variance-covariance approach and the historical simulation approach."
+          },
+          "tags": [
+            "market-risk",
+            "var"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Can market risk be removed by diversification? How is it dealt with?",
+            "answer_md": "Market risk is systematic, so it cannot be fully diversified away; it can be hedged. Diversification across assets, and especially across asset classes, can only narrow it partly."
+          },
+          "tags": [
+            "market-risk",
+            "diversification",
+            "hedging",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does diversification only partly moderate market risk?",
+            "answer_md": "Asset returns are seldom perfectly correlated (sometimes negatively), which helps, but share prices share common drivers such as the general health of the economy. These push correlations up and shrink the benefit."
+          },
+          "tags": [
+            "market-risk",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-market-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is an index fund alone not 'fully diversified'?",
+            "answer_md": "A wide equity portfolio behaves like the market, with the market's own risk and return, and history shows index returns can range widely even over long periods. Better diversification comes from spreading across asset classes, such as many bonds and many equities."
+          },
+          "tags": [
+            "market-risk",
+            "diversification",
+            "index-fund"
+          ],
+          "reference_keys": [
+            "sfm:market"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Credit risk",
+            "definition_md": "The risk that an obligor defaults on any type of debt, wilfully or through incapacity, by failing to make required payments. The lender mainly bears it, through lost principal and interest, disrupted cash flows and higher collection costs."
+          },
+          "tags": [
+            "credit-risk",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Can a credit loss be partial, and who mainly bears the risk?",
+            "answer_md": "The loss may be complete or partial and can arise in many circumstances. The lender is primarily at risk."
+          },
+          "tags": [
+            "credit-risk",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the three primary types of credit risk and the two additional ones.",
+            "answer_md": "Primary: default risk, credit spread risk, downgrade risk. Additional: concentration risk and country risk."
+          },
+          "tags": [
+            "credit-risk",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Default risk",
+            "definition_md": "The chance that an issuer fails to meet its obligations."
+          },
+          "tags": [
+            "credit-risk",
+            "default-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the forms in which default risk can appear.",
+            "answer_md": "Non-payment of principal or interest on a loan; counterparty default on treasury operations; default at settlement in securities trading; and default in cross-border obligations because of limits on remittances out of a country."
+          },
+          "tags": [
+            "credit-risk",
+            "default-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Credit spread risk",
+            "definition_md": "The chance that the gap (spread) between a risky bond's yield and that of risk-free securities changes after the bond has been bought."
+          },
+          "tags": [
+            "credit-risk",
+            "credit-spread-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-007",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Downgrade risk",
+            "definition_md": "The chance that a rating agency lowers the rating of an issuer, or the loss expected from a fall in rating because the issuer's financial condition has worsened."
+          },
+          "tags": [
+            "credit-risk",
+            "downgrade-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Concentration risk",
+            "definition_md": "Risk from a single exposure, or a group of exposures, that could cause losses large enough to threaten a lender's core operations. It may be single-firm or industry concentration."
+          },
+          "tags": [
+            "credit-risk",
+            "concentration-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-009",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Country risk (as a credit risk)",
+            "definition_md": "Risk of loss because a sovereign state freezes foreign currency payments (transfer or conversion risk) or defaults on its own obligations (sovereign risk)."
+          },
+          "tags": [
+            "credit-risk",
+            "country-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the two forms of country risk in credit risk.",
+            "answer_md": "Transfer or conversion risk (a government freezes foreign currency payments) and sovereign risk (the state defaults on its obligations)."
+          },
+          "tags": [
+            "credit-risk",
+            "country-risk"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Identify the credit risk type: a ratings agency cuts the rating of a company whose bonds you hold.",
+            "answer_md": "Downgrade risk."
+          },
+          "tags": [
+            "credit-risk",
+            "downgrade-risk",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Identify the credit risk type: a bond you bought is trading at a wider yield gap over government securities than when you bought it.",
+            "answer_md": "Credit spread risk."
+          },
+          "tags": [
+            "credit-risk",
+            "credit-spread-risk",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Identify the credit risk type: a bank lends a large share of its book to a single industry.",
+            "answer_md": "Concentration risk (industry concentration)."
+          },
+          "tags": [
+            "credit-risk",
+            "concentration-risk",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Identify the credit risk type: a customer abroad cannot pay because the government blocks remittances out of the country.",
+            "answer_md": "Default risk arising from remittance restrictions on cross-border obligations; it is also a country (transfer) risk."
+          },
+          "tags": [
+            "credit-risk",
+            "country-risk",
+            "default-risk",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How can a lender assess and manage credit risk?",
+            "answer_md": "Run a credit risk department to judge customers' financial health, use external ratings and information, apply credit scorecards, price higher-risk customers higher, set credit limits, and take security. In-house programmes help in avoiding, reducing and transferring risk."
+          },
+          "tags": [
+            "credit-risk",
+            "assessment",
+            "mitigation"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which agencies supply paid credit information, and what do lenders use to rank customers?",
+            "answer_md": "Standard & Poor's, Moody's, Fitch Ratings and Dun and Bradstreet supply it for a fee. Most lenders also use their own credit scorecards to rank existing and potential customers by credit risk."
+          },
+          "tags": [
+            "credit-risk",
+            "assessment",
+            "rating-agencies"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do lenders control risk in unsecured personal loans and mortgages versus credit cards and overdrafts?",
+            "answer_md": "Loans and mortgages: charge a higher price to riskier customers and a lower one to safer ones. Revolving products (credit cards, overdrafts): set credit limits. Some products also demand security, commonly property."
+          },
+          "tags": [
+            "credit-risk",
+            "mitigation",
+            "pricing",
+            "credit-limits"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-credit-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do credit scoring models for corporate borrowers cover?",
+            "answer_md": "A qualitative section (such as operating experience and management expertise) and a quantitative section (such as asset quality, leverage and liquidity ratios). Credit officers and committees review them before funds are lent on contract terms."
+          },
+          "tags": [
+            "credit-risk",
+            "assessment",
+            "credit-scoring"
+          ],
+          "reference_keys": [
+            "sfm:credit"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the two types of liquidity risk?",
+            "answer_md": "Market liquidity risk and funding liquidity risk."
+          },
+          "tags": [
+            "liquidity-risk",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Market liquidity risk",
+            "definition_md": "The risk that a security or asset cannot be traded fast enough at the desired price to avoid a loss (or earn the needed profit). It reflects inability to sell because the market lacks liquidity, and matters most to those who hold or are about to hold the asset."
+          },
+          "tags": [
+            "liquidity-risk",
+            "market-liquidity"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Funding liquidity risk",
+            "definition_md": "A firm's inability to meet its contractual liabilities when they fall due, which makes it hard to roll over funds at a reasonable cost."
+          },
+          "tags": [
+            "liquidity-risk",
+            "funding-liquidity"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What can cause an institution to lose funding liquidity?",
+            "answer_md": "A fall in its credit rating, sudden unexpected cash outflows, or any event that makes counterparties avoid trading with or lending to it. A firm is also exposed if a market it relies on loses liquidity."
+          },
+          "tags": [
+            "liquidity-risk",
+            "funding-liquidity"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do market liquidity risk and funding liquidity risk compound each other?",
+            "answer_md": "It is hard to sell assets when other investors are short of funds, and hard to raise funding when the collateral is hard to sell. Each makes the other worse."
+          },
+          "tags": [
+            "liquidity-risk",
+            "compounding"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does liquidity risk compound market risk?",
+            "answer_md": "If a trading firm holds a position in an illiquid asset, being unable to exit it at short notice magnifies the market risk on that position."
+          },
+          "tags": [
+            "liquidity-risk",
+            "compounding",
+            "market-risk"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does liquidity risk compound credit risk? Use a simple example.",
+            "answer_md": "A firm has offsetting payments with two counterparties on one day. If the one that owes it money defaults, the firm must raise cash elsewhere to pay the other. If it cannot, it too defaults, so liquidity risk has amplified credit risk."
+          },
+          "tags": [
+            "liquidity-risk",
+            "compounding",
+            "credit-risk"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why must liquidity risk be managed separately even after market risk is hedged?",
+            "answer_md": "A position can be hedged against market risk and still carry liquidity risk, as in offsetting payments that carry credit risk but no market risk. So liquidity risk is managed in addition to market, credit and other risks."
+          },
+          "tags": [
+            "liquidity-risk",
+            "assessment"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is liquidity risk hard to isolate and measure?",
+            "answer_md": "It tends to compound other risks, so it is difficult or impossible to isolate, and in all but the simplest cases comprehensive metrics for it do not exist."
+          },
+          "tags": [
+            "liquidity-risk",
+            "assessment"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the simple test for liquidity risk and how can it be supplemented?",
+            "answer_md": "Look at expected net cash flows day by day; any day with a sizeable negative net flow is a concern. Supplement the analysis with stress testing. Asset-liability management techniques can also be applied."
+          },
+          "tags": [
+            "liquidity-risk",
+            "assessment",
+            "stress-testing"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is scenario analysis used for liquidity risk, and what are its steps?",
+            "answer_md": "When cash flows are largely contingent (derivatives or mortgage-backed securities), which a plain day-by-day analysis cannot easily handle. Steps: (i) build several scenarios of market movements and defaults over a set period; (ii) assess day-to-day cash flows under each scenario."
+          },
+          "tags": [
+            "liquidity-risk",
+            "assessment",
+            "scenario-analysis"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-liquidity-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is there little standardisation in liquidity risk analysis across firms?",
+            "answer_md": "Balance sheet components differ so much from one organisation to another."
+          },
+          "tags": [
+            "liquidity-risk",
+            "assessment"
+          ],
+          "reference_keys": [
+            "sfm:liquidity"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-cases-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A US firm's Indian subsidiary imports raw material and must pay in US dollars after three months. Identify the risk.",
+            "answer_md": "Foreign currency risk, a form of market (currency) risk."
+          },
+          "tags": [
+            "case",
+            "currency-risk",
+            "market-risk"
+          ],
+          "reference_keys": [
+            "sfm:cases"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-cases-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "The central bank raises its bank rate and the firm's borrowing or investment values are affected. Identify the risk.",
+            "answer_md": "Interest rate risk, a type of market risk."
+          },
+          "tags": [
+            "case",
+            "interest-rate-risk",
+            "market-risk"
+          ],
+          "reference_keys": [
+            "sfm:cases"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-cases-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A company holds shares of another company that has just been delisted. Identify the risk.",
+            "answer_md": "Market liquidity risk, since the holding cannot easily be sold at a fair price."
+          },
+          "tags": [
+            "case",
+            "market-liquidity"
+          ],
+          "reference_keys": [
+            "sfm:cases"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-cases-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A rating agency downgrades a customer who was to pay the firm a sum in two months. Identify the risk.",
+            "answer_md": "Downgrade risk within credit risk."
+          },
+          "tags": [
+            "case",
+            "downgrade-risk",
+            "credit-risk"
+          ],
+          "reference_keys": [
+            "sfm:cases"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-cases-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A firm has a huge stock of unsold goods in its current assets. Which risk does the book name, and what should you note?",
+            "answer_md": "The book treats it as funding liquidity risk (cash is locked in stock). Many would see it as an inability to convert stock to cash, so follow the book's label in the exam but justify the cash-flow reasoning."
+          },
+          "tags": [
+            "case",
+            "funding-liquidity",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:cases"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Systematic and unsystematic variance split",
+            "expression_md": "$\\sigma_p^2=\\beta^2\\sigma_m^2+\\sigma_e^2$, so $\\sigma_e^2=\\sigma_p^2-\\beta^2\\sigma_m^2$",
+            "variables_md": "$\\sigma_p^2$: total variance of the security or portfolio; $\\beta^2\\sigma_m^2$: systematic variance (beta squared times market variance); $\\sigma_e^2$: unsystematic (firm-specific) variance.",
+            "when_md": "Use when a question gives total variance, beta and market variance and asks for the systematic or unsystematic part. Not stated on the chapter's own pages; it comes from the portfolio chapters and past papers."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "unsystematic",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A stock has beta 1.2, market variance 100 and total variance 200. Find the systematic variance, unsystematic variance and share of systematic risk.",
+            "answer_md": "Systematic = 1.2 squared x 100 = 144. Unsystematic = 200 - 144 = 56. Systematic share = 144 / 200 = 72 percent."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "unsystematic",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-003",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Expected loss on a credit exposure",
+            "expression_md": "$EL=PD\\times LGD\\times EAD$",
+            "variables_md": "PD: probability of default; LGD: loss given default (share of the exposure lost); EAD: exposure at default.",
+            "when_md": "The chapter only names Expected Loss as the credit risk measure and gives no formula; this is the standard credit-risk definition."
+          },
+          "tags": [
+            "credit-risk",
+            "expected-loss",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A lender has an exposure of Rs 50 lakh, probability of default 2 percent and loss given default 40 percent. What is the expected loss?",
+            "answer_md": "EL = 0.02 x 0.40 x 50,00,000 = Rs 40,000."
+          },
+          "tags": [
+            "credit-risk",
+            "expected-loss",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A firm has debtors of Rs 40 lakh in total and one debtor owes Rs 8 lakh. What concentration ratio does this give and what does it show?",
+            "answer_md": "8 / 40 = 20 percent of debtors sit with one customer. It is a ratio measure of concentration risk: the higher it is, the more one default can hurt."
+          },
+          "tags": [
+            "credit-risk",
+            "concentration-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Daily net cash flows (Rs lakh) over five days are -2, -9, +4, -1, +6. How do you run the day-by-day liquidity test?",
+            "answer_md": "List net flows per day and also the running total: -2, -11, -7, -8, -2. Day 2 has a sizeable negative flow (-9), which is the day of concern; stress test it by cutting inflows or delaying receipts."
+          },
+          "tags": [
+            "liquidity-risk",
+            "numerical",
+            "stress-testing"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-numeric-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A firm owes Rs 10 crore to counterparty A and is owed Rs 10 crore by counterparty B on the same day. B defaults. What happens next?",
+            "answer_md": "There is no market risk (the two flows offset) but the firm must find Rs 10 crore elsewhere to pay A. If it cannot, it defaults: credit risk has turned into liquidity risk."
+          },
+          "tags": [
+            "liquidity-risk",
+            "credit-risk",
+            "numerical",
+            "compounding"
+          ],
+          "reference_keys": [
+            "sfm:numeric"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-001",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The CIMA risk categories are {{c1::operational}}, {{c2::financial}}, {{c3::country}}, {{c4::environmental}}, {{c5::reputational}} and {{c6::strategic}} risk."
+          },
+          "tags": [
+            "risk",
+            "types",
+            "cima"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-002",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Steps in risk management: set objectives, {{c1::identify}} risks, {{c2::measure and prioritise}}, develop {{c3::strategy}}, {{c4::implement}} the strategy, and {{c5::monitor}}."
+          },
+          "tags": [
+            "risk-management",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The four responses to risk are {{c1::avoidance}}, {{c2::reduction}}, {{c3::sharing or transfer}} and {{c4::acceptance}}."
+          },
+          "tags": [
+            "risk-response"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-004",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Financial risk has three heads: {{c1::market}} risk, {{c2::credit}} risk and {{c3::liquidity}} risk."
+          },
+          "tags": [
+            "financial-risk"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Market risk types: {{c1::equity}}, {{c2::interest rate}}, {{c3::inflation rate}}, {{c4::commodities}} and {{c5::currency}} risk."
+          },
+          "tags": [
+            "market-risk",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-006",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Credit risk has {{c1::default}}, {{c2::credit spread}} and {{c3::downgrade}} risk as primary types, plus {{c4::concentration}} and {{c5::country}} risk."
+          },
+          "tags": [
+            "credit-risk",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-007",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "{{c1::Systematic}} risk is non-diversifiable and market-wide; {{c2::unsystematic}} risk is firm-specific and can be diversified."
+          },
+          "tags": [
+            "risk",
+            "systematic",
+            "unsystematic"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-008",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Risk is {{c1::measurable}} because its probabilities can be found, while {{c2::uncertainty}} has unknown probabilities."
+          },
+          "tags": [
+            "risk",
+            "uncertainty"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Critical risks may cause {{c1::bankruptcy}}; important risks may cause severe {{c2::financial distress}}; not-so-important risks are losses the firm can {{c3::easily bear}}."
+          },
+          "tags": [
+            "risk-management",
+            "prioritisation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Risk significance depends on {{c1::severity}} of loss and {{c2::frequency}} (probability) of occurrence."
+          },
+          "tags": [
+            "risk-management",
+            "measurement"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-011",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Liquidity risk is of two types: {{c1::market}} liquidity risk and {{c2::funding}} liquidity risk."
+          },
+          "tags": [
+            "liquidity-risk",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm12-clz-012",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Measures by risk: credit risk uses {{c1::credit rating and expected loss}}, market risk uses {{c2::Value at Risk}}, operational risk uses {{c3::labour turnover ratio}}."
+          },
+          "tags": [
+            "risk-management",
+            "measures"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4129 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-foreign-exchange-risk-management",
+      "title": "SFM: Foreign Exchange Risk Management",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 16: Foreign Exchange Risk Management.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "foreign-exchange-risk-management"
+      },
+      "items": [
+        {
+          "ref": "sfm16-fxr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Exchange rate exposure",
+            "definition_md": "The sensitivity of a firm's rupee value, cash flows or reported figures to changes in exchange rates. Any firm that deals with foreign parties through exports, imports, borrowing, lending or investment carries it, because currency movements change the value of the related assets, liabilities, revenues and costs."
+          },
+          "tags": [
+            "exposure",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Can a purely domestic firm with no foreign currency receivables or payables face exchange rate risk? Give a case.",
+            "answer_md": "Yes. If it competes with imports, a weaker foreign currency lowers the rupee price of the imported rival, so the domestic firm loses sales. An Indian leather goods maker competing with cheaper Chinese imports is the usual illustration. This is a competitive (operating) effect, not a contract effect."
+          },
+          "tags": [
+            "exposure",
+            "basics",
+            "domestic-firm"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the three types of foreign exchange exposure covered in this module.",
+            "answer_md": "Transaction exposure, translation exposure and operating exposure. Operating exposure is also called economic or strategic exposure."
+          },
+          "tags": [
+            "exposure",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Transaction exposure (settlement-gap risk)",
+            "definition_md": "The effect of exchange rate movement between the date a foreign currency transaction is entered into and the date its consideration is settled. It arises at the operational level from receivables and payables already contracted in foreign currency."
+          },
+          "tags": [
+            "exposure",
+            "transaction-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why does a time gap between invoicing and settlement create transaction risk?",
+            "answer_md": "The receivable or payable is booked at the rate on the transaction date, but the cash is received or paid at the rate on the settlement date. If the two rates differ, the rupee amount realised or paid differs from what was booked. The difference between the two rates is the transaction risk."
+          },
+          "tags": [
+            "exposure",
+            "transaction-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Consolidation (balance sheet) exposure",
+            "definition_md": "The risk that a foreign subsidiary's assets and liabilities, stated in its own currency, change in value when translated into the parent's currency for consolidation. It is also called consolidation exposure or balance sheet exposure."
+          },
+          "tags": [
+            "exposure",
+            "translation-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is a translation gain or loss a real cash flow? Explain.",
+            "answer_md": "No. It is a notional (accounting) gain or loss because the foreign assets and liabilities are not actually sold or settled. Cash moves only if they are liquidated, which is why translation exposure is an accounting concern rather than a cash concern."
+          },
+          "tags": [
+            "exposure",
+            "translation-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Operating exposure",
+            "definition_md": "The change in a firm's future cash flows and competitive position caused by exchange rate movements, on items whose values are not fixed by a contract. Examples are prices under negotiation, imported inputs, tenders not yet awarded and the effect of domestic inflation on costs."
+          },
+          "tags": [
+            "exposure",
+            "operating-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is operating exposure also called strategic exposure?",
+            "answer_md": "Because it affects future revenues, costs and operating profit, and therefore long-term decisions such as where to produce, which markets to sell in and which sources of supply to use. It shapes competitiveness over years, not just one settlement."
+          },
+          "tags": [
+            "exposure",
+            "operating-exposure",
+            "strategic"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-010",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Economic exposure",
+            "definition_md": "The extent to which the present value of a firm's expected cash flows changes when exchange rates change. In this module it is described as the combination of the two cash-flow exposures, transaction exposure and operating exposure."
+          },
+          "tags": [
+            "exposure",
+            "economic-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare transaction, translation and operating exposure on what is affected and how long the effect lasts.",
+            "answer_md": "Transaction: contracted cash flows already booked; short term, ends at settlement. Translation: balance sheet values of foreign subsidiaries; a notional, accounting effect arising at consolidation. Operating: future uncontracted cash flows and competitiveness; long term and strategic."
+          },
+          "tags": [
+            "exposure",
+            "types",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which exposure is treated as a cash-flow exposure and which as a non-cash accounting exposure?",
+            "answer_md": "Transaction and operating exposure are cash-flow exposures; together they make up economic exposure. Translation exposure is an accounting exposure with no direct cash flow."
+          },
+          "tags": [
+            "exposure",
+            "types",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give examples of items that create operating exposure.",
+            "answer_md": "A sale or purchase price still being negotiated; part of the raw material being imported so that a weaker home currency raises production cost; domestic inflation pushing up input cost and hurting competitiveness against foreign firms; a tender submitted but not yet awarded; higher working capital interest if money supply tightens after a home currency fall."
+          },
+          "tags": [
+            "exposure",
+            "operating-exposure",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When does a tender stop being operating exposure and become transaction exposure?",
+            "answer_md": "Until the contract is awarded, the tender is operating exposure because nothing is contractually fixed. Once the contract is awarded, the amount and currency are fixed, so it becomes transaction exposure."
+          },
+          "tags": [
+            "exposure",
+            "operating-exposure",
+            "transaction-exposure"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which of transaction, translation or operating risk can a firm that only produces and sells domestically face when the economy opens up?",
+            "answer_md": "Operating risk, because foreign competitors' prices move with exchange rates. It has no foreign currency contracts (no transaction exposure) and no foreign subsidiaries (no translation exposure)."
+          },
+          "tags": [
+            "exposure",
+            "operating-exposure",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are the techniques for managing transaction exposure classified?",
+            "answer_md": "Into internal techniques, which need no outside market or agency, and external techniques, which use contracts with banks or exchanges. Internal: invoicing currency, leading and lagging, netting, back-to-back credit swap, sharing risk. External: forward, money market, options and futures hedges."
+          },
+          "tags": [
+            "transaction-exposure",
+            "classification",
+            "internal",
+            "external"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxr-017",
+          "kind": "mnemonic",
+          "importance": "mandatory",
+          "fields": {
+            "mnemonic": "ILNBS and FMOF",
+            "expands_md": "Internal (ILNBS): Invoicing currency, Leading and lagging, Netting, Back-to-back credit swap, Sharing risk. External (FMOF): Forward, Money market, Options, Futures.",
+            "topic": "Transaction exposure techniques"
+          },
+          "tags": [
+            "transaction-exposure",
+            "classification",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:fxr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are the internal techniques called internal?",
+            "answer_md": "The firm applies them through its own arrangements, or between its group companies or a trading partner, without going to an outside market such as a bank, an exchange or an options dealer."
+          },
+          "tags": [
+            "transaction-exposure",
+            "internal"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does invoicing in the home currency affect transaction exposure?",
+            "answer_md": "If every receivable and payable is invoiced in the home currency, the firm has no foreign currency amount left to revalue, so its transaction exposure is removed. The exposure is not destroyed though; it moves to the foreign counterparty."
+          },
+          "tags": [
+            "transaction-exposure",
+            "invoicing"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the rule for choosing the invoicing currency for an export and for an import.",
+            "answer_md": "Export: pick the currency, home or foreign, that gives the higher rupee realisation. Import: pick the currency that gives the lower rupee outflow. The choice depends on the expected direction of the foreign currency."
+          },
+          "tags": [
+            "transaction-exposure",
+            "invoicing",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Complete the invoicing table: if the foreign currency is expected to appreciate, which currency should an exporter and an importer invoice in? What if it is expected to depreciate?",
+            "answer_md": "Foreign currency appreciates: exporter invoices in the foreign currency (more rupees per unit), importer invoices in the home currency (fixed rupee outflow). Foreign currency depreciates: exporter invoices in the home currency, importer invoices in the foreign currency (fewer rupees to buy it)."
+          },
+          "tags": [
+            "transaction-exposure",
+            "invoicing",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "An exporter expects the dollar to weaken against the rupee. In which currency should it invoice, and why?",
+            "answer_md": "In rupees. Invoicing in dollars would give fewer rupees at settlement, while a rupee invoice fixes the realisation. For an importer expecting the same dollar fall, the dollar invoice would be better, as it will need fewer rupees."
+          },
+          "tags": [
+            "transaction-exposure",
+            "invoicing",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-006",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Exporter: foreign currency expected to {{c1::appreciate}} means invoice in {{c2::foreign}} currency; expected to depreciate means invoice in {{c3::home}} currency. Importer: the opposite."
+          },
+          "tags": [
+            "transaction-exposure",
+            "invoicing"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Define leading and lagging as a hedge of transaction exposure.",
+            "answer_md": "Leading means paying or collecting earlier than the due date, and lagging means doing so later, chosen to gain from the expected exchange rate move. The firm adjusts the timing of foreign currency settlements to suit the expected direction of the currency."
+          },
+          "tags": [
+            "transaction-exposure",
+            "leading-lagging"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "If the home currency is expected to depreciate, what should an importer and an exporter do about timing?",
+            "answer_md": "Importer: lead, i.e. pay the foreign currency payables early before the foreign currency gets dearer. Exporter: lag, i.e. delay receipts of foreign currency, since the foreign currency will fetch more rupees later. If the home currency is expected to appreciate, the actions reverse."
+          },
+          "tags": [
+            "transaction-exposure",
+            "leading-lagging",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is leading and lagging not always a free gain?",
+            "answer_md": "It needs the agreement of the counterparty, who will often ask for compensation such as an extra amount for waiting. The expected saving is reduced by that cost, and the gain disappears if the exchange rate does not move as forecast."
+          },
+          "tags": [
+            "transaction-exposure",
+            "leading-lagging",
+            "limits"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example of lagging an import payment: a firm owes 50,000 euro due now, spot rate is 90 rupees. It expects 88 rupees in two months, and the supplier wants 50,400 euro for the delay. What is the saving?",
+            "answer_md": "Pay now: 50,000 x 90 = Rs 4,500,000. Delay: 50,400 x 88 = Rs 4,435,200. Saving = Rs 64,800. Delay is worthwhile only if the forecast holds and the saving exceeds any financing gain or loss."
+          },
+          "tags": [
+            "transaction-exposure",
+            "leading-lagging",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-011",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Netting",
+            "definition_md": "Setting off debit balances against credit balances between companies so that only the net amount is paid in actual currency flows. Its main aim is to save transaction costs on inter-company settlements; it does not by itself manage exchange rate risk, although it does lower the amount exposed."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish bilateral netting from multilateral netting.",
+            "answer_md": "Bilateral: only two entities are involved and the smaller balance is set off against the larger, with only the difference paid. Multilateral: three or more group companies are involved; the group treasury at headquarters usually coordinates the offsets. The idea is the same, the procedure is more complex."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Is exposure netting an internal or an external technique, and is its chief purpose risk management or cost saving?",
+            "answer_md": "Internal. Its chief purpose is saving transaction cost by cutting the number and size of cross-border payments between group companies. The book stresses it is not strictly a tool for managing exchange risk."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Multilateral netting example: A owes B 40, B owes C 30, C owes A 20 (all in one currency unit). Show the settlement after netting.",
+            "answer_md": "Net positions: A pays 40, receives 20, so net payer 20. B receives 40, pays 30, net receiver 10. C receives 30, pays 20, net receiver 10. A pays 10 to B and 10 to C. Total cash moved is 20 instead of 90, and there are 2 payments instead of 3."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-015",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Back-to-back credit swap",
+            "definition_md": "Two companies in different countries lend each other equal amounts, each in its own currency, for a fixed period at a pre-agreed exchange rate. At maturity the sums are exchanged back. It is usually done between multinationals that have subsidiaries in each other's country."
+          },
+          "tags": [
+            "transaction-exposure",
+            "back-to-back"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a back-to-back credit swap let two firms manage exchange risk without a bank?",
+            "answer_md": "Each parent lends its home currency to the other parent's local subsidiary, so each subsidiary gets the local currency it needs without converting or borrowing abroad. The loans are of equivalent value, and they are repaid at the same fixed rate on maturity, so no exchange gain or loss arises."
+          },
+          "tags": [
+            "transaction-exposure",
+            "back-to-back"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-017",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Sharing risk",
+            "definition_md": "An arrangement where two companies in different countries split the exchange rate loss from an adverse move, usually by denominating the contract price partly in each party's own currency."
+          },
+          "tags": [
+            "transaction-exposure",
+            "sharing-risk"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txint-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Illustrate risk sharing with a contract worth 10 million units of the seller's currency.",
+            "answer_md": "Three invoicing choices: all in the seller's currency (buyer bears the full risk), all in the buyer's currency (seller bears the full risk), or a split such as part in each currency. The split shares the exposure so that neither side is fully exposed."
+          },
+          "tags": [
+            "transaction-exposure",
+            "sharing-risk"
+          ],
+          "reference_keys": [
+            "sfm:txint"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are forwards, money market, options and futures called external techniques?",
+            "answer_md": "They use instruments or markets outside the firm, so the firm must enter a contract with an external party such as a bank, a money market lender or an exchange."
+          },
+          "tags": [
+            "transaction-exposure",
+            "external"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the forward market hedging rule for a receivable and for a payable.",
+            "answer_md": "A firm with a foreign currency receivable is long the currency, so it sells the currency forward (short forward). A firm with a foreign currency payable is short the currency, so it buys it forward (long forward). The forward rate locks the rupee amount."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which side of the bank's two-way forward quote does an importer buying forward and an exporter selling forward use?",
+            "answer_md": "The importer buys foreign currency from the bank, so the bank's ask (selling) rate applies. The exporter sells foreign currency to the bank, so the bank's bid (buying) rate applies. Always read the quote from the bank's side."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge",
+            "two-way-quote",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Does a forward hedge remove transaction exposure completely?",
+            "answer_md": "Yes for the amount covered, because the rate is fixed at the start and the final rupee value is known whatever the spot rate becomes. The cost is that the firm gives up any gain from a favourable move."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the cost of a forward hedge measured?",
+            "answer_md": "As an opportunity cost: the forward rate minus the spot rate expected on settlement (for a payable; reversed for a receivable). It is known only after the event. If the forward rate is an unbiased predictor of the future spot, the expected cost is nil."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What condition makes the forward rate an unbiased predictor of the future spot rate?",
+            "answer_md": "An efficient market with risk-neutral speculators. The book's sentence that cost is nil when speculators are risk-averse is wrong; it is the risk-neutral case that gives zero expected cost."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Importer example: payable of 200,000 dollars in three months, forward ask 84.60 rupees. What is the locked outflow, and what is the notional gain or loss if spot at settlement is 86.00?",
+            "answer_md": "Locked outflow = 200,000 x 84.60 = Rs 16,920,000. Buying at spot 86.00 would have cost Rs 17,200,000, so the forward saves Rs 280,000. If spot had been 83.50, it would have cost Rs 220,000 more than spot. These notional figures are known only after the event; the real aim of hedging was certainty."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a money market hedge, in one sentence for a payable?",
+            "answer_md": "The firm creates a foreign currency asset today (by borrowing home currency, converting at spot and depositing the foreign currency) so that the deposit with interest equals the payable, which fixes the rupee cost in advance."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Steps of the money market cover when the firm owes foreign currency.",
+            "answer_md": "1) Find the present value of the payable at the foreign deposit rate. 2) Borrow the home currency equivalent at the spot ask rate. 3) Convert it to the foreign currency and deposit it. 4) At maturity the deposit pays the creditor. 5) Repay the home currency loan with interest; this is the locked cost."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Sequence of actions for covering an export receivable through borrowing and deposit.",
+            "answer_md": "1) Borrow foreign currency now, such that loan plus interest equals the receivable (present value at the foreign borrowing rate). 2) Sell it at spot bid for home currency. 3) Deposit the home currency at the home deposit rate. 4) At maturity the customer's payment repays the foreign loan. 5) The home currency deposit with interest is the locked inflow."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which interest rate applies where in a money market hedge: borrowing or deposit, home or foreign?",
+            "answer_md": "Payable: foreign deposit rate (to find the amount to invest) and home borrowing rate (to fund it). Receivable: foreign borrowing rate (to find the loan) and home deposit rate (to invest the proceeds). Borrow at the higher side of the quote, deposit at the lower side."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-012",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Money market hedge: payable, locked home currency outflow",
+            "expression_md": "$\\text{Cost} = \\dfrac{A}{1+i_f \\cdot \\frac{n}{12}} \\times S_{ask} \\times \\left(1 + i_h \\cdot \\frac{n}{12}\\right)$",
+            "variables_md": "A is the foreign currency payable; i_f is the foreign deposit rate p.a.; i_h is the home borrowing rate p.a.; n is the months to payment; S_ask is the spot ask rate in home currency per unit.",
+            "when_md": "Foreign currency payable; compare the result with the forward ask times A and choose the lower outflow."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-013",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Money market hedge: receivable, locked home currency inflow",
+            "expression_md": "$\\text{Inflow} = \\dfrac{A}{1+i_f \\cdot \\frac{n}{12}} \\times S_{bid} \\times \\left(1 + i_h \\cdot \\frac{n}{12}\\right)$",
+            "variables_md": "A is the foreign currency receivable; i_f is the foreign borrowing rate p.a.; i_h is the home deposit rate p.a.; n is the months to receipt; S_bid is the spot bid rate in home currency per unit.",
+            "when_md": "Foreign currency receivable; compare with the forward bid times A and choose the higher inflow."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Money market hedge for a payable: owe 300,000 dollars in 6 months. Spot 83.00 / 83.20, dollar deposit rate 4% p.a., rupee borrowing rate 10% p.a., forward ask 84.90. Which is cheaper?",
+            "answer_md": "Dollars to deposit = 300,000 / 1.02 = 294,117.65. Rupees to borrow at ask = 294,117.65 x 83.20 = Rs 24,470,588. Repay after 6 months = Rs 24,470,588 x 1.05 = Rs 25,694,118. Forward cover = 300,000 x 84.90 = Rs 25,470,000. The forward cover is cheaper by Rs 224,118."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Money market hedge for a receivable: 400,000 euro due in 3 months. Spot 90.00 / 90.40, euro borrowing 6% p.a., rupee deposit 7% p.a., forward bid 90.20. Which gives more rupees?",
+            "answer_md": "Euro to borrow = 400,000 / 1.015 = 394,088.67. Sell at bid 90.00 = Rs 35,467,980. Deposit for 3 months at 1.75% = Rs 36,088,670. Forward = 400,000 x 90.20 = Rs 36,080,000. Money market hedge is better by Rs 8,670."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Express the money market hedge as an implied forward rate and state when it beats the bank's forward.",
+            "answer_md": "Implied rate = spot x (1 + home rate x n/12) / (1 + foreign rate x n/12). In the euro example above it is 90.00 x 1.0175 / 1.015 = 90.2217. For a receivable, the money market hedge wins if this implied rate exceeds the forward bid; for a payable, it wins if the implied rate (using spot ask) is below the forward ask."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do money market hedge and forward hedge normally give close results?",
+            "answer_md": "Because forward rates are set from interest rate differences (interest rate parity). A noticeable gap arises only when the quoted forward or the interest rates do not follow parity, and then the better route is chosen."
+          },
+          "tags": [
+            "transaction-exposure",
+            "money-market-hedge",
+            "parity"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which option does a firm with a foreign currency receivable buy, and which one for a payable?",
+            "answer_md": "Receivable: a put option on the foreign currency, with the same maturity as the receivable. Payable: a call option on the foreign currency. The option sets a floor on realisation (receivable) or a cap on cost (payable)."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the advantage and cost of an option hedge compared with a forward or futures hedge?",
+            "answer_md": "Advantage: it limits the downside but leaves the upside open, as the firm can let the option lapse when the spot rate moves in its favour. Cost: the premium is paid up front, so options generally cost more than other hedging tools."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-020",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Call option hedge on a payable: effective cost per unit",
+            "expression_md": "$\\text{Cost per unit} = \\min(S_T,\\ K) + p$",
+            "variables_md": "S_T is the spot rate at maturity; K is the strike; p is the premium per unit of foreign currency, all in home currency.",
+            "when_md": "Payable hedged with a call: the cost is capped at K + p. Add interest on the premium if time value is not ignored."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-021",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Put option hedge on a receivable: effective realisation per unit",
+            "expression_md": "$\\text{Realisation per unit} = \\max(S_T,\\ K) - p$",
+            "variables_md": "S_T is the spot rate at maturity; K is the strike; p is the premium per unit of foreign currency.",
+            "when_md": "Receivable hedged with a put: the realisation is at least K - p. Compare with the forward bid."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Option hedge payable: owe 100,000 dollars, call option strike 83.50, premium 1.20 per dollar. Find the total cost if spot at expiry is 82.00, 83.50 and 86.00.",
+            "answer_md": "Premium = 100,000 x 1.20 = Rs 120,000. Spot 82.00: option lapses, buy at spot: 8,200,000 + premium = Rs 8,320,000. Spot 83.50: indifferent, cost = 8,350,000 + premium = Rs 8,470,000. Spot 86.00: exercise at 83.50, cost = Rs 8,470,000. The maximum outflow is Rs 8,470,000."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Using the example above (strike 83.50, premium 1.20), when is the option hedge cheaper than a forward at 84.40?",
+            "answer_md": "Only when the spot at expiry is below 83.20, because the option then costs spot + 1.20 which is under 84.40. At every higher spot the forward is cheaper, since the option's maximum cost (84.70) is above the forward rate. The option is bought for protection and upside, not for being cheaper in all cases."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "numerical",
+            "break-even"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Option hedge receivable: export of 250,000 euro, put strike 90.00, premium 1.50. What is the minimum inflow and the inflow if spot at expiry is 93.00?",
+            "answer_md": "Minimum realisation per euro = 90.00 - 1.50 = 88.50, so minimum inflow = Rs 22,125,000. At spot 93.00 the put lapses and she sells at spot: (93.00 - 1.50) x 250,000 = Rs 22,875,000."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-025",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is an option premium quoted as a percentage of the amount covered converted into the hedged currency?",
+            "answer_md": "Premium = percentage x amount covered, paid up front. If it is paid in a currency other than the one in which it is quoted, convert at the spot rate on the premium date. Add it to (payable) or deduct it from (receivable) the effective rate per unit."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-026",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Number of option contracts: payable of 365,000 pounds hedged using contracts of 12,500 pounds. What are the two ways to handle the fractional contract?",
+            "answer_md": "Contracts = 365,000 / 12,500 = 29.2. Option 1: take the whole number below (29) and cover the leftover with a forward. Option 2: take the whole number above (30) and sell the excess forward. Compute the total outflow for both, including premium, and choose the cheaper. Exposure and contract size must be in the same currency."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "contracts",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-027",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the futures hedging rule and the assumption behind it.",
+            "answer_md": "Short futures against a long currency position (receivable) and long futures against a short position (payable). The loss or gain on the exposure is offset by the gain or loss on the futures provided the basis stays constant."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-028",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a futures hedge differ from a forward hedge in cash flows?",
+            "answer_md": "A forward settles fully at maturity. Futures need an initial margin and daily mark-to-market payments or receipts, so there is a mark-to-market (cash flow) risk and the hedge is not perfectly fixed even if basis is constant."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "forward-vs-futures"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-029",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Number of currency futures contracts",
+            "expression_md": "$N = \\dfrac{\\text{Exposure in foreign currency}}{\\text{Contract size}}$",
+            "variables_md": "Exposure in foreign currency and contract size must be in the same currency; round to the nearest whole number.",
+            "when_md": "Decide how many contracts to buy or sell; a hedge ratio of 1 means the whole exposure is covered."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-030",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A US firm expects 750,000 euro in three months. Euro futures contract size is 125,000. What should it do, and how many contracts?",
+            "answer_md": "It is long euro, so it sells (shorts) euro futures: 750,000 / 125,000 = 6 contracts. Because the result is a whole number, the hedge ratio is 1 and the full exposure is covered. It pays margin and settles daily gains or losses."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-031",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Hedge efficiency",
+            "expression_md": "$\\text{Hedge efficiency} = \\dfrac{\\text{Gain (loss) on hedge}}{\\text{Loss (gain) on exposure}} \\times 100$",
+            "variables_md": "Both gains and losses are in the same currency and for the same period.",
+            "when_md": "Measures how much of the spot loss was recovered by the futures; 100% is a perfect hedge."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-032",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Hedge efficiency example: a US firm sold futures on 4 million euro at 1.2060 dollars and closes them at 1.2000, while spot falls from 1.2150 to 1.2050. Find the efficiency.",
+            "answer_md": "Loss on spot = 4,000,000 x (1.2150 - 1.2050) = $40,000. Gain on futures = 4,000,000 x (1.2060 - 1.2000) = $24,000. Efficiency = 60%. The shortfall arises because spot and futures did not move equally (basis changed)."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-033",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does a hedge ratio mean in the context of hedging with futures?",
+            "answer_md": "The ratio of the futures position to the spot position that achieves an objective such as minimising risk. A ratio of 1 means futures equal in value to the exposure."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "hedge-ratio",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-034",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare forward, money market, options and futures hedges in one view.",
+            "answer_md": "Forward: tailor-made, no upfront cash, fixes the rate, no upside. Money market: uses borrowing and deposit, fixes the rate, needs credit lines. Options: premium up front, caps cost or sets floor, keeps the upside. Futures: standard lots, margin and daily settlement, close to forward in effect, basis risk."
+          },
+          "tags": [
+            "transaction-exposure",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-035",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which hedges can also be used for translation exposure besides transaction exposure?",
+            "answer_md": "The book says options and futures can be used for hedging both transaction and translation exposure."
+          },
+          "tags": [
+            "translation-exposure",
+            "options-hedge",
+            "futures-hedge"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-txext-036",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which hedge should an exposed firm choose when it is unsure of the direction and fears a loss but wants to keep gains?",
+            "answer_md": "An option hedge. It sets a worst case through the strike plus premium while leaving the benefit of a favourable move, at the cost of the premium."
+          },
+          "tags": [
+            "transaction-exposure",
+            "options-hedge",
+            "choice"
+          ],
+          "reference_keys": [
+            "sfm:txext"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In a two-way quote, which rate is the bank's buying rate and which is its selling rate?",
+            "answer_md": "The lower (bid) rate is where the bank buys the foreign currency, and the higher (ask or offer) rate is where it sells. A customer who buys foreign currency pays the ask; a customer who sells receives the bid."
+          },
+          "tags": [
+            "two-way-quote",
+            "bid-ask",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Direct quote (home currency per unit of foreign): which rate when the customer buys and when the customer sells foreign currency?",
+            "answer_md": "Buying foreign currency (converting home to foreign): ask rate. Selling foreign currency (converting foreign to home): bid rate."
+          },
+          "tags": [
+            "two-way-quote",
+            "bid-ask",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Indirect quote (foreign currency per unit of home currency): which rate converts to home currency per unit of foreign?",
+            "answer_md": "Customer buying foreign currency: 1 divided by the bid. Customer selling foreign currency: 1 divided by the ask. Quote reversal swaps the bid and ask."
+          },
+          "tags": [
+            "two-way-quote",
+            "bid-ask",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A quote is 1 dollar = 83.00 / 83.20 rupees. Give the corresponding dollars per 100 rupees quote.",
+            "answer_md": "Invert and swap: bid = 100 / 83.20 = 1.2019, ask = 100 / 83.00 = 1.2048. Customer sells rupees at the bid dollars and buys rupees at the ask."
+          },
+          "tags": [
+            "two-way-quote",
+            "inverse",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-005",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Forward premium or discount, annualised",
+            "expression_md": "$\\text{Premium (\\%)} = \\dfrac{F - S}{S} \\times \\dfrac{12}{n} \\times 100$",
+            "variables_md": "F is the forward rate; S is the spot rate; n is the forward period in months. Use bid with bid and ask with ask. A negative answer is a discount.",
+            "when_md": "To state the annualised cost of forward cover or to compare it with an interest rate."
+          },
+          "tags": [
+            "two-way-quote",
+            "forward-premium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Spot 83.00 / 83.20 and 3-month forward 83.90 / 84.20. Find the annualised forward premium on the bid rates and say what it means.",
+            "answer_md": "(83.90 - 83.00) / 83.00 x 12/3 x 100 = 4.34% p.a. The dollar is at a forward premium of about 4.34% p.a. on bid rates; the rupee is at a forward discount."
+          },
+          "tags": [
+            "two-way-quote",
+            "forward-premium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you decide whether to encash a foreign currency balance now or at a forward date, given a rupee investment rate?",
+            "answer_md": "Compare the annualised forward premium (on the bid rates) with the rupee return. If the premium is higher, sell the balance forward and encash later; if the rupee return is higher, encash now and invest. Confirm with rupees available at the future date under each route."
+          },
+          "tags": [
+            "two-way-quote",
+            "forward-premium",
+            "encash"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Encash now or later: a firm holds 50,000 dollars. Spot bid 83.00, 2-month forward bid 83.40, rupee investment return 10% p.a. What should it do?",
+            "answer_md": "Premium = (83.40 - 83.00)/83.00 x 6 x 100 = 2.89% p.a., below 10%. Encash now: Rs 4,150,000 grows to Rs 4,219,167 in 2 months. Wait and sell forward: Rs 4,170,000. Encashing now and investing gives more, so encash now."
+          },
+          "tags": [
+            "two-way-quote",
+            "forward-premium",
+            "encash",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How many foreign currency units must a firm sell forward to receive a given rupee amount after a period?",
+            "answer_md": "Rupee amount divided by the forward bid rate, since the firm is selling foreign currency to the bank. Example: Rs 40 lakh at a forward bid of 83.90 needs 47,675.80 dollars."
+          },
+          "tags": [
+            "two-way-quote",
+            "forward-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How many rupees are needed to buy a given amount of foreign currency in the spot market?",
+            "answer_md": "Foreign amount multiplied by the spot ask rate, as the firm buys from the bank. Example: 150,000 dollars at an ask of 83.20 costs Rs 12,480,000."
+          },
+          "tags": [
+            "two-way-quote",
+            "spot",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is a cross rate worked out through a third currency, and which sides are used?",
+            "answer_md": "Chain the quotes so that currencies cancel. For the cost of buying a currency use ask rates on the currencies being bought and bid on those being sold, as the bank would. Pound/rupee and dollar/rupee quotes give a dollar/pound cross rate, for instance. Check which currency each quote has in the denominator."
+          },
+          "tags": [
+            "cross-rate",
+            "two-way-quote",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Cross rate example: dollar/rupee 83.00 / 83.20 and euro/rupee 90.00 / 90.40. Find the two-way cross rate in dollars per euro.",
+            "answer_md": "Dollars per euro: bid = 90.00 / 83.20 = 1.0817; ask = 90.40 / 83.00 = 1.0892. Dividing the euro/rupee bid by the dollar/rupee ask gives the lowest cross rate; the euro/rupee ask over the dollar/rupee bid gives the highest."
+          },
+          "tags": [
+            "cross-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A bank sells a foreign currency to a customer and covers itself through a third currency. How do you compute its cover rate and profit?",
+            "answer_md": "Cover rate = cost per unit of the customer currency through the chain (for example rupees to pounds at the pound ask, then pounds to the customer's currency at the pound bid). Profit = amount x (rate charged to customer - cover rate). Use the side the bank trades at in each step."
+          },
+          "tags": [
+            "cross-rate",
+            "bank-cover",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-quote-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Bank cover example: bank sold 100,000 units of currency X to a customer at 210.00 rupees. It covers by buying pounds at 80.90 rupees and selling them for X at 0.4000 X per pound. Find profit.",
+            "answer_md": "Cover rate = 80.90 / 0.4000 = 202.25 rupees per X. Profit = 100,000 x (210.00 - 202.25) = Rs 775,000. Always check units: here X is quoted per pound."
+          },
+          "tags": [
+            "cross-rate",
+            "bank-cover",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:quote"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A customer has a forward contract but the underlying deal changes. What are the three things that can happen to the contract before or on maturity?",
+            "answer_md": "It can be honoured (delivered as agreed, early or on the due date), cancelled (the deal does not happen), or rolled over (the deal is postponed to a later date). Early delivery, cancellation and rollover each involve reversing the original contract at current rates and settling the difference."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "rollover",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the basic method for cancelling a forward contract before maturity?",
+            "answer_md": "Reverse the original contract at today's rate for the remaining period: a forward purchase is cancelled by a sale at the bank's bid rate for the remaining period (or spot bid on the maturity date), and a forward sale is cancelled by a purchase at the ask rate. The difference between the original rate and the reversal rate, times the amount, is paid or received."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Gain or loss on cancelling a forward purchase contract",
+            "expression_md": "$\\text{Gain (loss)} = A \\times (R_{rev} - R_{orig})$",
+            "variables_md": "A is the foreign currency amount; R_orig is the original forward ask rate paid; R_rev is the bank's bid rate for the remaining period at the date of cancellation (spot bid if cancelled on the maturity date).",
+            "when_md": "A positive result is received from the bank; a negative result is paid to it. For a forward sale contract, reverse: original bid minus the ask used for reversal."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Cancellation example: a customer booked a 2-month forward purchase of 50,000 dollars at 84.30. After one month it cancels. The 1-month forward bid is 84.05. What is the result? What if the bid had been 84.60?",
+            "answer_md": "Reversal is a sale at the 1-month bid. Result = 50,000 x (84.05 - 84.30) = Rs -12,500, so Rs 12,500 is paid to the bank. At a bid of 84.60 the result is 50,000 x (84.60 - 84.30) = Rs 15,000 received."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Cancellation example for a bank's customer who had sold forward: customer sold 10,000 francs forward at 27.25; after 2 months of a 3-month contract it cancels when the 1-month forward ask is 27.52. Who pays what?",
+            "answer_md": "The bank reverses by selling francs back at the 1-month forward ask of 27.52. Customer pays (27.52 - 27.25) = 0.27 per franc x 10,000 = Rs 2,700. A forward purchase from the customer is cancelled at the forward sale rate; compare the earlier purchase-side rule."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A forward purchase contract is cancelled on its maturity date. Which rate is used for the reversal?",
+            "answer_md": "The spot bid rate on that date (the bank buys the foreign currency back at bid; the contract is reversed by sale to the bank). Gain (loss) = amount x (spot bid - original forward rate)."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is early delivery of a forward purchase contract handled when the customer must pay before the due date?",
+            "answer_md": "Cancel the original contract by selling forward for the remaining period at the bid rate and settle the difference with the bank, then buy the currency at the spot ask rate to make the payment. Total cost = cancellation difference + spot purchase."
+          },
+          "tags": [
+            "forward-contract",
+            "early-delivery",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Early delivery example: forward purchase of 100,000 dollars at 84.30; payment must be made 1 month early. 1-month-to-go forward bid is 84.00 and spot ask is 84.20. What is the total cost?",
+            "answer_md": "Cancellation difference = 100,000 x (84.30 - 84.00) = Rs 30,000 paid to the bank. Spot purchase = 100,000 x 84.20 = Rs 8,420,000. Total = Rs 8,450,000, an effective rate of 84.50 per dollar."
+          },
+          "tags": [
+            "forward-contract",
+            "early-delivery",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a rollover of a forward contract and what are its steps?",
+            "answer_md": "Used when the deal is postponed. Step 1: cancel the original contract at today's rate for the remaining period and settle the difference. Step 2: book a new forward contract for the new, later date at the current forward rate (ask for a purchase, bid for a sale). The firm bears the cost or gains the benefit of step 1."
+          },
+          "tags": [
+            "forward-contract",
+            "rollover",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rollover example: forward purchase of 100,000 pounds at 82.30 is due next month but the import is now expected 2 months from today. Today the 1-month forward bid is 82.00 and the 2-month forward ask is 82.70. What is the cost and the new rate?",
+            "answer_md": "Cancel at the 1-month bid: 100,000 x (82.30 - 82.00) = Rs 30,000 paid. Then buy forward for the new period at 82.70 (ask). Rollover cost is Rs 30,000; the new contract is at 82.70."
+          },
+          "tags": [
+            "forward-contract",
+            "rollover",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-cncl-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which bank rate do you use for cancelling a forward purchase contract: the original contract rate, or the current rate for the remaining period? Where does the original rate enter?",
+            "answer_md": "The reversal uses the current bid (or the spot bid at maturity) because the bank buys back the currency. The original contract rate enters only when computing the difference to be settled. Ignore transaction costs unless the question gives a margin."
+          },
+          "tags": [
+            "forward-contract",
+            "cancellation",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:cncl"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do forward points quoted in paise convert into outright forward rates?",
+            "answer_md": "Divide paise by 100 and add to the matching spot rate: bid points to the spot bid, ask points to the spot ask (subtract if the points are quoted in descending order, a discount). Example: spot 74.76 / 74.80 with points 38 / 40 paise gives 75.14 / 75.20."
+          },
+          "tags": [
+            "forward-points",
+            "two-way-quote",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A firm has both a receivable and a payable, in the same foreign currency, due on the same date. What should it hedge?",
+            "answer_md": "Only the net exposure. The receivable and payable offset naturally, so hedging the difference avoids paying for cover on both sides. Example: receivable of 25 million and payable of 10 million leaves a net long of 15 million to sell forward."
+          },
+          "tags": [
+            "net-exposure",
+            "hedging",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is net exposure in each currency found and shown in rupees?",
+            "answer_md": "Net exposure = inflows minus outflows in that currency; positive is a long (receivable) position, negative a short (payable). Multiply by the spot rate to show it in rupees. For uncertainty from the forward, multiply the net amount by the forward premium or discount per unit."
+          },
+          "tags": [
+            "net-exposure",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Net exposure example: a firm expects dollar inflow of 6 million and outflow of 4 million, and euro inflow of 1 million and outflow of 3 million. Spot is 83 for the dollar and 90 for the euro. Find the net exposures.",
+            "answer_md": "Dollar: 6 - 4 = 2 million long = Rs 166 million. Euro: 1 - 3 = -2 million, i.e. a short of 2 million = Rs -180 million. Different currencies do not offset each other automatically; offset works within one currency, or only if the two currencies move together."
+          },
+          "tags": [
+            "net-exposure",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can a forward premium or discount partly offset a net exposure?",
+            "answer_md": "A net receivable in a currency at a forward premium earns more rupees when sold forward, and a net payable in a currency at a forward discount costs fewer rupees when bought forward. In either case the forward rate is better than spot for the exposed position."
+          },
+          "tags": [
+            "net-exposure",
+            "forward-premium"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Choosing a hedge: what is the decision rule between forward, money market and option cover?",
+            "answer_md": "Compute the locked rupee amount under each method. For a payable choose the lowest outflow; for a receivable choose the highest inflow. Options give a maximum outflow (payable) or minimum inflow (receivable), which can be compared with the certain amounts."
+          },
+          "tags": [
+            "hedging",
+            "decision",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Scenario analysis: payable 50,000 dollars; forward 84.50; call strike 84.00, premium 1.00. Spot after the period is 82 (probability 0.4) or 86 (probability 0.6). Compare forward and option.",
+            "answer_md": "Forward: 50,000 x 84.50 = Rs 4,225,000, certain. Option at spot 82: lapses, cost (82 + 1) x 50,000 = Rs 4,150,000. At spot 86: exercised, cost (84 + 1) x 50,000 = Rs 4,250,000. Expected = 0.4 x 4,150,000 + 0.6 x 4,250,000 = Rs 4,210,000. The option has the lower expected cost, but only the forward gives the lowest certain cost since the option's maximum is Rs 4,250,000."
+          },
+          "tags": [
+            "hedging",
+            "decision",
+            "numerical",
+            "options-hedge"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expected spot rate from a probability distribution",
+            "expression_md": "$E(S) = \\sum p_i \\, S_i$",
+            "variables_md": "p_i is the probability of scenario i and S_i the spot rate in that scenario; probabilities must sum to 1.",
+            "when_md": "To find the expected rate for a future date when scenarios are given; compare it with the forward rate to judge whether to hedge."
+          },
+          "tags": [
+            "hedging",
+            "numerical",
+            "probability"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Expected spot example: probabilities 0.2, 0.3, 0.3, 0.2 for rates 82, 83, 84, 85. What is the expected rate and should a payable be hedged at a forward of 83.80?",
+            "answer_md": "E(S) = 0.2 x 82 + 0.3 x 83 + 0.3 x 84 + 0.2 x 85 = 83.50. Since the forward (83.80) is above the expected spot (83.50), cover is dearer than the expected cost by 0.30 per unit; the firm pays that for certainty."
+          },
+          "tags": [
+            "hedging",
+            "numerical",
+            "probability"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Invoicing currency choice for a trade where several currencies can be used and their forward premiums are known: what is the method?",
+            "answer_md": "Convert the rupee value of the deal at spot into each currency, then bring it to the settlement date using the forward premium of that currency. Exports: choose the currency giving the highest rupee realisation (use bid). Imports: choose the currency with the lowest outflow (use ask). With premiums quoted annualised, a higher premium helps an exporter and hurts an importer."
+          },
+          "tags": [
+            "invoicing",
+            "forward-premium",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Invoicing example: an export due in 3 months is worth Rs 1 crore at spot in any currency. Annualised forward premiums: dollar 6%, euro 4%, pound 5%. In which currency should it invoice? What for an import due in 6 months?",
+            "answer_md": "Export: value after 3 months = 1 crore x (1 + premium x 3/12): dollar Rs 1.0150 crore, euro Rs 1.0100 crore, pound Rs 1.0125 crore. Highest is the dollar, so invoice in dollars. Import: after 6 months the outflow is dollar Rs 1.0300, euro Rs 1.0200, pound Rs 1.0250 crore. Lowest is the euro, so pay in euros."
+          },
+          "tags": [
+            "invoicing",
+            "forward-premium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Payable with a choice between paying early at a discount or later with interest: how do you compare?",
+            "answer_md": "Express both as rupee outflows at the same date. Pay-now option: discounted foreign amount x spot ask, plus the home borrowing cost to the later date. Pay-later option: amount plus the supplier's interest x forward ask. Choose the lower outflow."
+          },
+          "tags": [
+            "payables",
+            "cash-discount",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Payable of 100,000 dollars: pay now with 2% discount, or pay in 3 months with 4% p.a. interest. Spot ask 83.20, 3-month forward ask 84.10, rupee borrowing 12% p.a. Which is cheaper?",
+            "answer_md": "Pay now: 98,000 x 83.20 = Rs 8,153,600; add 3 months' borrowing cost at 3% = Rs 8,398,208. Pay later: 101,000 x 84.10 = Rs 8,494,100. Paying now is cheaper by Rs 95,892."
+          },
+          "tags": [
+            "payables",
+            "cash-discount",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-fxn-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Transaction exposure effect: cost 20 rupees per unit, export price 1 dollar, spot 40, dollar appreciates 10%. What is the effect on profit per unit?",
+            "answer_md": "New realisation = 44 rupees against 40 earlier. Profit rises from 20 to 24 per unit, a gain of 4 rupees (40 x 10%). An appreciating foreign currency helps a receivable holder."
+          },
+          "tags": [
+            "transaction-exposure",
+            "numerical",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:fxn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does translation exposure differ from transaction exposure in origin?",
+            "answer_md": "Transaction exposure arises from day-to-day contracts with a time gap to settlement. Translation exposure arises from the need to restate a foreign subsidiary's assets and liabilities in the parent's currency when consolidating the accounts."
+          },
+          "tags": [
+            "translation-exposure",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A foreign subsidiary's net assets were 640,000 pounds when the rate was 65 rupees and 650,000 pounds when it was 66. Split the change in rupee value into a rate effect and a size effect.",
+            "answer_md": "Rupee value rises from 41,600,000 to 42,900,000, a change of 1,300,000. Rate effect on the opening balance = 640,000 x 1 = 640,000; effect of the larger balance at the new rate = 10,000 x 66 = 660,000. Only the rate effect is the translation gain. (The book's illustration reports the whole change as a translation gain.)"
+          },
+          "tags": [
+            "translation-exposure",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the four methods of foreign currency translation.",
+            "answer_md": "Current/non-current method, monetary/non-monetary method, temporal method and current rate method."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Current/non-current method: which items go at the current rate and which at the historical rate?",
+            "answer_md": "Current assets and current liabilities are translated at the current rate. Non-current assets, non-current liabilities and owners' equity are translated at historical rates. Translation is by maturity."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "current-non-current"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under the current/non-current method, when does the parent report a translation gain?",
+            "answer_md": "When the foreign currency appreciates and the subsidiary has net positive working capital (current assets exceed current liabilities). A fall in the foreign currency gives a loss in that case; the signs reverse with net negative working capital."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "current-non-current"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Monetary/non-monetary method: rule for the balance sheet and the income statement.",
+            "answer_md": "Monetary items (cash, receivables, payables, debt) are translated at the current rate; non-monetary items (inventory, fixed assets, equity) at the historical rate. Income statement items are translated at the average rate for the period."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "monetary-non-monetary"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does the temporal method differ from the monetary/non-monetary method?",
+            "answer_md": "The two give about the same results. The only difference is inventory: always historical under monetary/non-monetary, but usually historical under the temporal method and at the current rate if the inventory is carried at market value or replacement cost."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "temporal"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Current rate method: which accounts use which rate?",
+            "answer_md": "Every asset and every liability goes at the rate prevailing now. Equity accounts, for example share capital and paid-in capital, stay at their historical rate. Of the four methods this is the simplest."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "current-rate"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Exposed net assets by method: subsidiary balance sheet in foreign units: cash 100, inventory 200, fixed assets 500; payables 150 (current), long-term debt 250. Find the exposed net assets under each method (inventory at cost under temporal).",
+            "answer_md": "Current rate: all assets less all liabilities = 800 - 400 = 400. Monetary/non-monetary (and temporal with inventory at cost): monetary assets 100 less monetary liabilities 400 = -300. Current/non-current: current assets 300 less current liabilities 150 = 150. Temporal with inventory at market: 300 - 400 = -100. The rupee gain or loss is exposed net assets x change in rate."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Using the exposed net assets above (400, -300, 150), what is the translation result if the foreign currency rises from 60 to 62 rupees?",
+            "answer_md": "Change = 2. Current rate: 400 x 2 = 800 gain. Monetary/non-monetary: -300 x 2 = -600 loss. Current/non-current: 150 x 2 = 300 gain. The method chosen can flip a gain into a loss."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-011",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Translation gain or loss",
+            "expression_md": "$\\text{Gain (loss)} = \\text{Exposed net assets} \\times (R_{end} - R_{begin})$",
+            "variables_md": "Exposed net assets are the assets translated at the current rate less the liabilities translated at the current rate, in foreign currency; R is the rate in home currency per unit.",
+            "when_md": "Positive exposed net assets give a gain when the foreign currency rises; negative ones give a loss."
+          },
+          "tags": [
+            "translation-exposure",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is a balance sheet hedge?",
+            "answer_md": "Arranging the currency denomination of exposed items so that a rate change hits assets and liabilities equally. The firm holds equal amounts of exposed assets and exposed liabilities in a currency, so a gain on one side offsets the loss on the other."
+          },
+          "tags": [
+            "translation-exposure",
+            "balance-sheet-hedge"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What two strategies do funds-adjustment techniques follow to reduce translation loss?",
+            "answer_md": "Reduce soft-currency assets and increase soft-currency liabilities; increase hard-currency assets and reduce hard-currency liabilities. The aim is net exposure to hard currencies and net liability in soft ones."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-014",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Hard currency and soft currency",
+            "definition_md": "A hard currency is expected to appreciate; a soft currency is expected to depreciate."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "If a subsidiary's local currency is expected to weaken, what should the parent do to cut translation loss?",
+            "answer_md": "Reduce local-currency assets and raise local-currency liabilities to generate local cash, then convert those funds into hard-currency assets."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give direct funds-adjustment techniques for reducing translation exposure.",
+            "answer_md": "Price exports in hard currencies and imports in the local currency; invest in hard-currency securities; replace hard-currency loans with local-currency loans."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment",
+            "direct"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give the indirect funds-adjustment techniques.",
+            "answer_md": "Exposure netting, leading and lagging, and transfer pricing."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment",
+            "indirect"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is transfer pricing and how does an MNC use it against translation exposure?",
+            "answer_md": "Transfer prices are prices of goods and services between related parties such as parent and subsidiary, and they can differ from arm's length prices. Higher prices on goods sold to a subsidiary in a soft-currency country move funds out of it; lower prices on goods sold to a subsidiary in a hard-currency country leave funds there."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment",
+            "transfer-pricing"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do governments review the transfer pricing of multinationals?",
+            "answer_md": "They assume the prices may be manipulated to avoid financial problems or improve financial conditions, so most governments set up mechanisms to police transfer pricing."
+          },
+          "tags": [
+            "translation-exposure",
+            "transfer-pricing",
+            "limits"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which appears in the book's answer key as the exposure managed through transfer pricing, and why is that a problem?",
+            "answer_md": "The answer key says operating exposure, but the text discusses transfer pricing under indirect funds adjustment for translation exposure. The card set follows the text; the conflict is flagged for editors."
+          },
+          "tags": [
+            "translation-exposure",
+            "transfer-pricing",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-trn-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Under the monetary/non-monetary method, is inventory translated at the current or the historical rate?",
+            "answer_md": "Always at the historical rate, as it is a non-monetary item. (Under the temporal method it may be at the current rate if carried at market value or replacement cost.)"
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:trn"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the strategies for managing operating exposure.",
+            "answer_md": "Diversifying production facilities and markets; choosing currency zones; sourcing flexibility; flexible manufacturing; diversifying financing; R&D for product differentiation; hedging through financial products as a supplement."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "list"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does diversifying production and markets reduce operating exposure, and what does it cost?",
+            "answer_md": "Spreading plants and sales over many countries means no single currency move hits the whole business. The cost is lost economies of scale from not concentrating production."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does choosing currency zones mean?",
+            "answer_md": "Avoid being tied to inflexible currency zones, and place production and sales in many currency zones with high diversification benefit, so that exchange rate effects tend to cancel."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "currency-zones"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does sourcing flexibility reduce operating exposure?",
+            "answer_md": "By holding alternative sources for key inputs, the firm can switch to a supplier in another region when exchange rate moves make one source expensive."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "sourcing"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does flexible manufacturing help?",
+            "answer_md": "Flexible systems allow rapid product differentiation, faster introduction of new products overseas and tailoring to niches. This gives more control over foreign currency prices, lowers the sensitivity of products to price changes and helps exploit exchange rate changes."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "flexible-manufacturing"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does diversifying sources of finance reduce exposure?",
+            "answer_md": "Access to capital markets in several regions lets the firm raise funds where the cost is lowest and gives flexibility when conditions in one market turn adverse."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "financing"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can R&D for product differentiation protect against economic exposure?",
+            "answer_md": "R&D can improve productivity, cut costs and above all differentiate products. Differentiated products have inelastic demand, so demand reacts less to price variations, which weakens the effect of exchange rate changes."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "rd"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the role of financial hedges in managing operating exposure?",
+            "answer_md": "A supplement to operational strategies. The firm can use forwards, futures or options, rolled over if needed, and can borrow or lend foreign currency on a long-term basis."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "financial-hedge"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are operational strategies preferred over financial hedges for operating exposure?",
+            "answer_md": "Operating exposure is long term and its size and timing are uncertain because cash flows are not contracted, so short-dated financial contracts cannot cover it well. Operational choices on location, sourcing, products and financing change the exposure itself."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which technique among a list such as flexible manufacturing, transfer pricing and leading-lagging manages operating exposure?",
+            "answer_md": "Flexible manufacturing. Transfer pricing and leading-lagging are used for translation and transaction exposure respectively (as treated in the book text)."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-opx-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which actions suit a firm expecting a currency to be devalued: cash, credit given, borrowing, payables?",
+            "answer_md": "Reduce the cash held in that currency, tighten credit terms to reduce receivables, increase borrowing in it, and delay payables. Reducing borrowing in the currency is not appropriate."
+          },
+          "tags": [
+            "exposure",
+            "devaluation",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:opx"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-case-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A firm owes a large foreign currency payable, believes the currency will fall but is unsure. List the strategies it can choose from.",
+            "answer_md": "Cover fully forward (certain cost); leave open (maximum risk, may gain); cover part forward and leave part open; buy a currency option (limit loss, keep upside, pay premium); money market cover. Choice depends on risk appetite and size of exposure."
+          },
+          "tags": [
+            "case",
+            "strategy",
+            "hedging"
+          ],
+          "reference_keys": [
+            "sfm:case"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-case-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a hedging case, what does a partial hedge give and when might the firm choose it?",
+            "answer_md": "A middle position: part of the exposure is fixed by a forward, part is left to the spot market. It limits the damage if the view is wrong while keeping some gain if the view is right; it suits a firm uncertain about direction and wary of the size of the exposure."
+          },
+          "tags": [
+            "case",
+            "strategy",
+            "partial-hedge"
+          ],
+          "reference_keys": [
+            "sfm:case"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-case-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you find the spot rate below which an option hedge beats a forward hedge on a payable of N units?",
+            "answer_md": "Set total option cost equal to the forward cost and solve for spot. For a call struck at K with premium p per unit and spot S below K: S + p < F, so the option is cheaper when S < F - p."
+          },
+          "tags": [
+            "case",
+            "options-hedge",
+            "break-even"
+          ],
+          "reference_keys": [
+            "sfm:case"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-case-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Partial cover break-even: payable of 100 units; forward 84.00; option premium 1.20 (strike 84.00, ignore the lapse range). Find the spot below which buying the option beats a 50% forward cover.",
+            "answer_md": "50% forward cover cost = 50 x 84.00 + 50 x S = 4,200 + 50 S. Option cost with spot below the strike = 100 x S + 100 x 1.20 = 100 S + 120. Option cheaper when 100 S + 120 < 4,200 + 50 S, i.e. S < 81.60. Full forward cover break-even is S below 82.80."
+          },
+          "tags": [
+            "case",
+            "options-hedge",
+            "break-even",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:case"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-case-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is hindsight criticism of a hedging decision usually unfair?",
+            "answer_md": "Because the decision is judged by what was known at the time: the size of the exposure and the high uncertainty of exchange rates. A decision that turns out poorly in the actual outcome may still have been sound."
+          },
+          "tags": [
+            "case",
+            "hedging",
+            "judgement"
+          ],
+          "reference_keys": [
+            "sfm:case"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-case-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why might a money market hedge not be available to a firm even if it is attractive?",
+            "answer_md": "It needs borrowing, and covenants in the firm's existing debt can limit the amount and the currency of extra borrowing."
+          },
+          "tags": [
+            "case",
+            "money-market-hedge",
+            "limits"
+          ],
+          "reference_keys": [
+            "sfm:case"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Importer with a foreign currency payable: forward {{c1::buy}}; exporter with a receivable: forward {{c2::sell}}. Options: payable needs a {{c3::call}}, receivable needs a {{c4::put}}."
+          },
+          "tags": [
+            "transaction-exposure",
+            "hedging",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Internal techniques of transaction exposure: invoicing currency, {{c1::leading and lagging}}, {{c2::netting}}, {{c3::back-to-back credit swap}} and {{c4::sharing risk}}."
+          },
+          "tags": [
+            "transaction-exposure",
+            "internal"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-003",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "External techniques: {{c1::forward}}, {{c2::money market}}, {{c3::options}} and {{c4::futures}} hedges."
+          },
+          "tags": [
+            "transaction-exposure",
+            "external"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Four translation methods: {{c1::current/non-current}}, {{c2::monetary/non-monetary}}, {{c3::temporal}} and {{c4::current rate}}."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-005",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Money market hedge on a payable uses the {{c1::foreign deposit}} rate and the {{c2::home borrowing}} rate; on a receivable it uses the {{c3::foreign borrowing}} rate and the {{c4::home deposit}} rate."
+          },
+          "tags": [
+            "money-market-hedge",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-006",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Operating exposure is also called {{c1::strategic}} exposure; economic exposure combines {{c2::transaction}} and {{c3::operating}} exposure."
+          },
+          "tags": [
+            "operating-exposure",
+            "economic-exposure"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-007",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A balance sheet hedge keeps exposed {{c1::assets}} equal to exposed {{c2::liabilities}} in a currency; {{c3::hard}} currencies are expected to appreciate and {{c4::soft}} currencies to depreciate."
+          },
+          "tags": [
+            "translation-exposure",
+            "balance-sheet-hedge"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-clz-008",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Multilateral netting involves {{c1::three or more}} group companies and is usually coordinated by the group {{c2::treasury}}."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-001",
+          "kind": "mnemonic",
+          "importance": "mandatory",
+          "fields": {
+            "mnemonic": "Receivable sells, payable buys",
+            "expands_md": "A receivable (long currency) is hedged by selling forward or futures and buying a put; a payable (short currency) by buying forward or futures and buying a call.",
+            "topic": "Hedge direction"
+          },
+          "tags": [
+            "transaction-exposure",
+            "hedging",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A foreign currency appreciates. Who gains and who loses among a holder of a receivable and a holder of a payable in that currency?",
+            "answer_md": "The receivable holder gains, since each unit fetches more home currency. The payable holder loses, since each unit costs more. A depreciation does the opposite."
+          },
+          "tags": [
+            "transaction-exposure",
+            "basics",
+            "direction"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is a firm's transaction exposure measured?",
+            "answer_md": "By the net position in each foreign currency at each settlement date: foreign currency receivables minus payables (and other foreign currency flows). A positive figure is a long position, a negative figure a short position. The rupee equivalent at spot shows the size; the uncertain part is the change in the rate."
+          },
+          "tags": [
+            "transaction-exposure",
+            "measurement"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is natural hedging in the context of transaction exposure?",
+            "answer_md": "Matching foreign currency receivables against foreign currency payables of the same currency and date, so that only the net amount is exposed. It is the idea behind exposure netting."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting",
+            "natural-hedge"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does a forward hedge carry an opportunity cost?",
+            "answer_md": "Because the firm gives up the benefit if the spot rate moves in its favour. For example, an importer who bought forward at 84.50 loses compared with buying spot at 83.00 if the dollar actually falls."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-hedge",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the differences between a forward hedge and a futures hedge.",
+            "answer_md": "Forward: customised amount and date, over the counter, settled once at maturity, counterparty (bank) risk, no margin. Futures: standard contract size and dates, exchange traded, margin deposit and daily marking to market, little counterparty risk, usually closed out before expiry, basis risk."
+          },
+          "tags": [
+            "transaction-exposure",
+            "forward-vs-futures",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Futures hedge for a payable: derive the effective rate per unit from the spot rate at settlement and the futures prices.",
+            "answer_md": "Effective cost = spot at settlement - (futures price at close - futures price at purchase). A rise in futures after buying gives a gain that offsets the dearer spot. The difference between the effective cost and the original futures price is the basis effect."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "basis",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Futures hedge example: an importer owes 100,000 dollars, buys futures at 84.00, closes them at 85.00 when spot is 85.20. Find the effective cost and compare with a forward at 84.30.",
+            "answer_md": "Spot purchase = 100,000 x 85.20 = Rs 8,520,000. Futures gain = 100,000 x (85.00 - 84.00) = Rs 100,000. Net cost = Rs 8,420,000, i.e. 84.20 per dollar. Forward cover would cost Rs 8,430,000, so futures are cheaper by Rs 10,000 here because the basis narrowed in the firm's favour."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "numerical",
+            "basis"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the mark-to-market risk of a futures hedge?",
+            "answer_md": "Daily gains and losses on futures are settled in cash through the margin account, so the firm has interim cash flows (margin calls) even though its underlying exposure is settled only later. It can leave a small residual exposure."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "margin"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What happens if the exposure is not a multiple of the futures contract size?",
+            "answer_md": "The hedge ratio cannot be exactly one. Round the number of contracts and treat the leftover amount as unhedged (or cover it with a forward), and compute the result for both rounding choices if the question asks."
+          },
+          "tags": [
+            "transaction-exposure",
+            "futures-hedge",
+            "contracts"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Quoted as foreign units per rupee (for example 1.75 yen per rupee), how do you convert a yen payable into rupees?",
+            "answer_md": "Divide by the quote: rupees = yen amount / yen per rupee. Example: 20,000,000 yen at 1.75 per rupee = Rs 11,428,571. Multiplying by the quote gives a wrong figure (the book's yen illustration multiplies, which is flagged)."
+          },
+          "tags": [
+            "two-way-quote",
+            "indirect-quote",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which side of an indirect quote (foreign units per rupee) is used for a rupee-based importer buying foreign currency?",
+            "answer_md": "One divided by the bid. The importer sells rupees, and the bank buys rupees at the bid number of foreign units per rupee. For an exporter selling foreign currency use one divided by the ask."
+          },
+          "tags": [
+            "two-way-quote",
+            "indirect-quote",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Money market hedge on a yen payable by a rupee firm: 20,000,000 yen due in 3 months. Spot 1.7800 / 1.8000 yen per rupee, yen deposit 0.5% p.a., rupee borrowing 9% p.a. Forward 1.7600 / 1.7800. Compare.",
+            "answer_md": "Yen to deposit = 20,000,000 / (1 + 0.005/4) = 19,975,031. Rupees to borrow at 1/bid = 19,975,031 / 1.78 = Rs 11,221,928. Repay after 3 months at 2.25% = Rs 11,474,421. Forward = 20,000,000 / 1.76 = Rs 11,363,636. Forward is cheaper by Rs 110,785."
+          },
+          "tags": [
+            "money-market-hedge",
+            "indirect-quote",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When a firm has a yen payable and a dollar receivable, how are they hedged?",
+            "answer_md": "Each exposure is analysed separately against the rupee, with forward and money market cover compared in rupees for each. The firm may choose a different method for each, because the rates and interest rates differ."
+          },
+          "tags": [
+            "hedging",
+            "multi-currency",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Percentage change in the dollar and in the rupee from a forward quote: spot 83.00, forward 83.60. Find both.",
+            "answer_md": "Dollar: (83.60 - 83.00)/83.00 = 0.72% (a premium). Rupee: (83.00 - 83.60)/83.60 = -0.72% (a discount). The rupee's percentage change uses the inverted rates, so it is not simply the negative of the dollar's. Annualise by multiplying by 12/n."
+          },
+          "tags": [
+            "two-way-quote",
+            "forward-premium",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Cross-currency settlement of a dollar payable using euro: how much euro is needed and what is the rupee cost?",
+            "answer_md": "Euro needed = dollar amount / forward dollars per euro. Example: 200,000 dollars at 1.10 dollars per euro needs 181,818.18 euro. The rupee cost equals euro needed x rupees per euro forward (= rupees per dollar x dollars per euro), here 16,900,000 at 84.50 rupees per dollar, the same as paying in dollars when rates are consistent."
+          },
+          "tags": [
+            "cross-rate",
+            "forward-hedge",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why can paying through a third currency still change the cost?",
+            "answer_md": "Only if the forward cross rates differ from those implied by the two forward rates against the rupee, or if the extra conversion adds spread. With consistent rates the rupee cost is the same."
+          },
+          "tags": [
+            "cross-rate",
+            "forward-hedge"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "True or false: leading and lagging is an external technique for managing transaction exposure.",
+            "answer_md": "False. It is internal, as is exposure netting. Forward contracts are external."
+          },
+          "tags": [
+            "transaction-exposure",
+            "internal",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "True or false: under multilateral netting more than two group members take part.",
+            "answer_md": "True. Bilateral netting has two entities, multilateral has three or more."
+          },
+          "tags": [
+            "transaction-exposure",
+            "netting",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Hedging through currency of invoicing: does it cover the exporter, the importer or either?",
+            "answer_md": "Either one can use it, depending on the direction of the currency and who bears the exposure. The book's answer key says the importer; this is flagged as doubtful."
+          },
+          "tags": [
+            "transaction-exposure",
+            "invoicing",
+            "mcq",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does operating exposure differ from transaction exposure in contract terms and time horizon?",
+            "answer_md": "Transaction exposure comes from contracts already fixed in amount and date, and is short term. Operating exposure comes from uncertain future flows (prices not yet fixed, future sales, input costs) and is long term."
+          },
+          "tags": [
+            "operating-exposure",
+            "transaction-exposure",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can domestic inflation create operating exposure even if the exchange rate does not change?",
+            "answer_md": "Higher domestic inflation raises input costs, so the firm's prices rise relative to foreign competitors' prices. Its competitiveness falls unless the currency weakens to compensate."
+          },
+          "tags": [
+            "operating-exposure",
+            "inflation"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can a firm that imports part of its raw material face operating exposure when its home currency weakens?",
+            "answer_md": "The rupee cost of the imported input rises, so its cost of production goes up and its margin falls unless it can raise prices. It does not need a contract for this to happen."
+          },
+          "tags": [
+            "operating-exposure",
+            "examples"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-024",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Into which two groups does the book divide the methods for hedging economic exposure?",
+            "answer_md": "Operational strategies (change how the business operates) and currency risk mitigation strategies (financial contracts and borrowing)."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-025",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the effect on translation exposure of a firm holding equal exposed assets and liabilities in a currency?",
+            "answer_md": "Net exposure is zero. A devaluation reduces both sides equally, so a loss on assets is offset by a gain on liabilities."
+          },
+          "tags": [
+            "translation-exposure",
+            "balance-sheet-hedge"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-026",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which is simpler to apply, the current rate method or the current/non-current method?",
+            "answer_md": "The current rate method is the simplest because all assets and liabilities go at the current rate; only equity stays at the historical rate."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "current-rate"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-mor-027",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Compare the five internal techniques by who bears the exposure after use.",
+            "answer_md": "Invoicing in home currency: the counterparty. Leading and lagging: unchanged exposure but timing gain or loss. Netting: reduced to the net amount. Back-to-back loan: neither side, as both are matched. Sharing: both sides partly."
+          },
+          "tags": [
+            "transaction-exposure",
+            "internal",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:mor"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Hedging",
+            "definition_md": "Taking a position or contract that offsets the effect of an exchange rate movement on an exposure, so that the gain on one side balances the loss on the other. In forex it fixes or limits the home currency value of a foreign currency flow."
+          },
+          "tags": [
+            "hedging",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Forward exchange contract",
+            "definition_md": "An agreement with a bank to buy or sell a stated amount of foreign currency at a fixed rate on a fixed future date. It is customised and over the counter, and the rate is locked whatever the spot rate becomes."
+          },
+          "tags": [
+            "forward-hedge",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Monetary and non-monetary items",
+            "definition_md": "Monetary items are fixed in currency terms, such as cash, receivables, payables and loans. Non-monetary items are not fixed in currency terms, such as inventory, fixed assets and equity."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-004",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Hedge ratio",
+            "definition_md": "The ratio of the hedge position (such as futures) to the underlying spot position, chosen to achieve an objective such as minimising risk. A ratio of one means the hedge matches the exposure."
+          },
+          "tags": [
+            "hedging",
+            "hedge-ratio"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Notional translation gain or loss",
+            "definition_md": "A paper gain or loss from restating foreign currency balances at a new rate; no cash moves unless the assets or liabilities are actually realised or settled."
+          },
+          "tags": [
+            "translation-exposure",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A call option on dollars against rupees is the same thing as what in the other currency?",
+            "answer_md": "A put option on rupees (the other currency). Buying a currency with one is selling the other with the other, so an importer needing dollars buys a dollar call, which equals a rupee put."
+          },
+          "tags": [
+            "options-hedge",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-007",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Option premium financing: effective premium per unit",
+            "expression_md": "$p_{eff} = p \\times \\left(1 + i \\cdot \\dfrac{n}{12}\\right)$",
+            "variables_md": "p is the premium per unit paid up front; i is the home currency borrowing rate p.a.; n is the months to maturity.",
+            "when_md": "When the question asks you to account for the time value of the premium; otherwise ignore it."
+          },
+          "tags": [
+            "options-hedge",
+            "numerical",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Effective cost with financed premium: a call hedge on a payable has strike 84.00 and premium 1.00; funds cost 12% p.a. for 3 months. What is the maximum cost per dollar?",
+            "answer_md": "Premium with interest = 1.00 x 1.03 = 1.03. Maximum cost = 84.00 + 1.03 = 85.03 per dollar. Without time value it would be 85.00."
+          },
+          "tags": [
+            "options-hedge",
+            "numerical",
+            "premium"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-009",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Cost of forward cover (annualised)",
+            "expression_md": "$\\text{Cost of cover} = \\dfrac{F - S}{S} \\times \\dfrac{12}{n} \\times 100$",
+            "variables_md": "F is the forward rate and S the spot rate on the matching side of the quote; n is the months; a positive figure for an importer buying forward at a premium is a cost.",
+            "when_md": "To state the percentage cost of a forward hedge; an exporter selling at a discount faces a cost, selling at a premium earns a gain."
+          },
+          "tags": [
+            "forward-hedge",
+            "cost",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which sign of forward premium is a cost for an importer and which for an exporter?",
+            "answer_md": "An importer who buys foreign currency forward at a premium pays more than spot, so it is a cost; at a discount it is a gain. An exporter selling forward at a discount receives less than spot, so it is a cost; at a premium it is a gain."
+          },
+          "tags": [
+            "forward-hedge",
+            "cost",
+            "forward-premium"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the two parts of the cost in an option hedge of a payable at a rate below the strike?",
+            "answer_md": "The cost of buying the currency at the spot rate, plus the premium paid upfront. Above the strike, the firm pays the strike plus the premium; the premium is a sunk cost whether or not the option is exercised."
+          },
+          "tags": [
+            "options-hedge",
+            "premium",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is a firm indifferent between exercising and abandoning a call option on a payable?",
+            "answer_md": "When the spot rate at expiry equals the strike. The cost is then strike + premium either way. Below the strike it buys in the spot market and above it exercises."
+          },
+          "tags": [
+            "options-hedge",
+            "break-even"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why must the option maturity match the receivable or payable maturity?",
+            "answer_md": "So that the right to buy or sell is available on the date the cash flow arises. A mismatch leaves the firm uncovered on the settlement date."
+          },
+          "tags": [
+            "options-hedge",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the illustration of an importer hedging 500,000 dollars, why is the 'notional gain' after the event not the aim of the hedge?",
+            "answer_md": "Hedging aims to remove uncertainty about the rupee outflow, not to beat the spot rate. Notional gains and losses are calculated only after settlement to judge the result."
+          },
+          "tags": [
+            "forward-hedge",
+            "hedging",
+            "judgement"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are the main steps in solving a hedge comparison question in the exam?",
+            "answer_md": "1) Identify receivable or payable and the quote type. 2) Choose the correct bid or ask side. 3) Compute the forward outcome. 4) Compute money market outcome using both interest rates. 5) Compute the option outcome (premium plus strike, or scenarios). 6) Compare in rupees on the same date and recommend. State assumptions."
+          },
+          "tags": [
+            "hedging",
+            "decision",
+            "steps",
+            "exam-technique"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How are translation items measured in income statements under the monetary/non-monetary method?",
+            "answer_md": "At the average exchange rate for the accounting period."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods",
+            "monetary-non-monetary"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the effect of a local currency expected to depreciate on a subsidiary's cash and receivables held in that currency?",
+            "answer_md": "They lose value when translated, so the parent wants fewer local-currency assets (cash, receivables) and more local-currency liabilities. The funds released should be moved into hard-currency assets."
+          },
+          "tags": [
+            "translation-exposure",
+            "funds-adjustment",
+            "soft-currency"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can a firm in a foreign currency zone with many markets reduce operating exposure better than a firm with one market?",
+            "answer_md": "Currency moves in different markets partly cancel, so the total effect on revenue and cost is smaller than in a single-market firm."
+          },
+          "tags": [
+            "operating-exposure",
+            "management",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-019",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Monetary/non-monetary: monetary items at the {{c1::current}} rate, non-monetary items at the {{c2::historical}} rate, income statement at the {{c3::average}} rate."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-020",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Current rate method: assets and liabilities at the {{c1::current}} rate, equity at the {{c2::historical}} rate; current/non-current method: current items at the {{c3::current}} rate, non-current items and equity at the {{c4::historical}} rate."
+          },
+          "tags": [
+            "translation-exposure",
+            "methods"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-021",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "If the foreign currency is expected to appreciate, exporters invoice in the {{c1::foreign}} currency and importers in the {{c2::home}} currency; if it is expected to depreciate, exporters invoice in {{c3::home}} and importers in {{c4::foreign}}."
+          },
+          "tags": [
+            "invoicing",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-022",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "An importer with the home currency expected to depreciate should {{c1::lead}} payments; an exporter should {{c2::lag}} receipts."
+          },
+          "tags": [
+            "leading-lagging",
+            "rule"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-023",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Futures hedge requires {{c1::initial margin}} and daily {{c2::mark-to-market}} settlement; the number of contracts is exposure divided by {{c3::contract size}}."
+          },
+          "tags": [
+            "futures-hedge",
+            "margin"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm16-xtr-024",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A hedge is perfect when hedge efficiency is {{c1::100%}}; efficiency = gain on hedge divided by {{c2::loss on exposure}}."
+          },
+          "tags": [
+            "futures-hedge",
+            "hedge-efficiency"
+          ],
+          "reference_keys": [
+            "sfm:xtr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

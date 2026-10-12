@@ -1,0 +1,1781 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-securitization",
+      "title": "SFM: Securitization",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 4: Securitization.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "securitization"
+      },
+      "items": [
+        {
+          "ref": "sfm04-concept-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Securitization",
+            "definition_md": "Pooling income-generating assets such as loans or receivables and repackaging them into interest-bearing securities. The originator sells the pool to a separate company set up for the purpose, which issues securities backed by the pool's cash flows and passes interest and principal through to the investors."
+          },
+          "tags": [
+            "securitization",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "In what sense does securitization turn a lending relationship into an investment product?",
+            "answer_md": "Illiquid loans sitting on a lender's balance sheet are sold to a separate entity, which splits the pool's cash flows into tradable securities. Lenders become originators and the funding comes from capital market investors instead of the lender's own balance sheet."
+          },
+          "tags": [
+            "securitization",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which assets are typically securitized?",
+            "answer_md": "High-volume, stable-cash-flow assets: residential mortgages, car loans, credit card receivables, trade and lease receivables, corporate and sovereign loans, student loans, project finance loans, and even receipts of health clubs or nursing homes. Any asset with a predictable cash flow can in principle be pooled."
+          },
+          "tags": [
+            "securitization",
+            "assets"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do MBS differ from ABS in terms of the underlying pool?",
+            "answer_md": "A mortgage-backed security (MBS) is backed only by a pool of mortgages (residential or commercial). An asset-backed security (ABS) is the generic name for securities backed by other assets such as credit card dues, auto loans or student loans. The asset class decides how the issue is analysed and valued."
+          },
+          "tags": [
+            "securitization",
+            "abs",
+            "mbs"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the securitized pool's cash flow used to service the new securities?",
+            "answer_md": "Interest and principal collected on the underlying loans are passed through to the holders of the securities. The notes are serviced only from these collections and not from the originator's other resources."
+          },
+          "tags": [
+            "securitization",
+            "basics",
+            "cash-flow"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Give the Sundaresan view of securitization in one line.",
+            "answer_md": "A framework in which a firm's or financial institution's illiquid assets become a bundle of securities backed by those assets, made possible by careful packaging, credit enhancement, liquidity enhancement and structuring."
+          },
+          "tags": [
+            "securitization",
+            "basics",
+            "definition"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which US agency issued the first modern residential mortgage-backed security, and when?",
+            "answer_md": "Ginnie Mae (the Government National Mortgage Association) in 1970, pooling mortgage loans to channel investor money into affordable housing. Freddie Mac followed in 1971 with the first conventional loan securitization."
+          },
+          "tags": [
+            "securitization",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What did the REMIC provisions of the US Tax Reform Act, 1986 allow?",
+            "answer_md": "They allowed bond classes with different maturities and risk profiles to be structured more flexibly, which helped the securitization market grow rapidly in the late 1980s and 1990s."
+          },
+          "tags": [
+            "securitization",
+            "history",
+            "remic"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the early non-mortgage assets securitized in the mid-1980s.",
+            "answer_md": "Automobile loans and bank credit card receivables. Banks also set up the first asset-backed commercial paper conduits in the 1980s."
+          },
+          "tags": [
+            "securitization",
+            "history"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-concept-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which market is securitization associated with: capital, money, debt or forex?",
+            "answer_md": "The debt market, because the securities issued are interest-bearing debt claims backed by loan cash flows."
+          },
+          "tags": [
+            "securitization",
+            "basics",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:concept"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-features-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the features of securitization.",
+            "answer_md": "Creation of new financial instruments backed by collateral; bundling and unbundling; a tool of risk management; structured finance; tranching; homogeneity within each tranche."
+          },
+          "tags": [
+            "securitization",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:features"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-features-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are bundling and unbundling in securitization?",
+            "answer_md": "Bundling: combining many assets into one pool. Unbundling: splitting that pool into securities of small fixed denominations that investors can buy."
+          },
+          "tags": [
+            "securitization",
+            "features",
+            "bundling"
+          ],
+          "reference_keys": [
+            "sfm:features"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-features-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is securitization a tool of risk management?",
+            "answer_md": "When assets are sold without recourse to the originator, the default risk moves from the originator to the investors who hold the securities."
+          },
+          "tags": [
+            "securitization",
+            "features",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:features"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-features-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is securitization called structured finance?",
+            "answer_md": "The instruments are tailor-made to suit the risk-return preferences of different investors, for example through senior, mezzanine and junior classes."
+          },
+          "tags": [
+            "securitization",
+            "features",
+            "structured-finance"
+          ],
+          "reference_keys": [
+            "sfm:features"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-features-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What do tranching and homogeneity mean as features of securitization?",
+            "answer_md": "Tranching: the pool of receivables is cut into parts according to risk and return, each tranche carrying its own level of risk and return. Homogeneity: the securities within one tranche are of the same nature, and small denominations let small investors participate."
+          },
+          "tags": [
+            "securitization",
+            "features",
+            "tranche"
+          ],
+          "reference_keys": [
+            "sfm:features"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the three main reasons why a bank securitizes part of its balance sheet.",
+            "answer_md": "Funding the assets it owns; balance sheet capital management; and risk management through credit risk transfer."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does securitization help a bank fund its assets?",
+            "answer_md": "It supports rapid asset growth, diversifies the funding mix and lowers funding cost, and reduces the maturity mismatch between long-term assets and short-term liabilities."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank",
+            "funding"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can securitization reduce a bank's cost of funds?",
+            "answer_md": "The rating of the issued notes is separated from the rating of the originating bank. Most notes issued by the SPV are rated better than the bank's own bonds, so they carry a lower interest cost."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank",
+            "funding"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does securitization narrow the funding gap of a bank holding long-term mortgages funded by deposits?",
+            "answer_md": "The bank gets cash by selling the assets, and the economic life of the notes issued usually matches that of the assets, so the short-term funding no longer has to finance long-term loans."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank",
+            "alm"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does securitization improve a bank's balance sheet capital management?",
+            "answer_md": "It can give regulatory capital relief (depending on the form of the transaction), economic capital relief, and diversified sources of funding."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank",
+            "capital"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain securitization as risk management and credit risk transfer for the bank.",
+            "answer_md": "Once the assets are sold to the SPV, the bank's credit exposure on them falls sharply. Non-performing assets can be removed from the balance sheet, which also frees regulatory capital and removes the negative sentiment attached to them."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "If a securitized NPA recovers, who gains the surplus?",
+            "answer_md": "The originator receives any surplus profit the SPV earns when a securitized non-performing asset starts performing again or a recovery is made on defaulted assets."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank",
+            "npa"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the advantages of securitization from the investor's viewpoint.",
+            "answer_md": "Diversification into sectors not available in regular bond markets (for example mortgages or project finance loans); access to different and sometimes superior risk-reward profiles; and access to sectors otherwise closed to them."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "investor"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-benefits-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A bank securitizes for {{c1::funding}}, {{c2::balance sheet capital management}} and {{c3::risk management and credit risk transfer}}."
+          },
+          "tags": [
+            "securitization",
+            "benefits",
+            "bank"
+          ],
+          "reference_keys": [
+            "sfm:benefits"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the participants in a securitization.",
+            "answer_md": "Originator, arranger, special purpose vehicle (issuer), investors, servicer, rating agencies, credit enhancement providers and regulators."
+          },
+          "tags": [
+            "securitization",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Originator",
+            "definition_md": "The entity that creates or owns the receivables with an identifiable cash flow, such as a bank with mortgages, auto loans, credit card dues or trade receivables, and that sells them for securitization."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "originator"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Arranger",
+            "definition_md": "The financial institution appointed by the originator to design and set up the structure. It judges the risk profile of the receivables to create tranches, sets up the SPV and designs the credit enhancement and liquidity support."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "arranger"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-004",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Special Purpose Vehicle (SPV)",
+            "definition_md": "A trust or company set up to buy the receivables from the originator, giving off-balance-sheet treatment for legal and accounting purposes. As far as the law allows it is bankruptcy remote from the originator. It is also called the issuer, because it issues the securities to investors."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "spv"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does bankruptcy remote mean for an SPV, and why does it matter?",
+            "answer_md": "The SPV's assets are legally separate from the originator, so the pool cannot be claimed by the originator's creditors if it fails. Investors therefore look at the pool's quality and not at the originator's credit standing."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "spv"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who are the investors in securitized securities?",
+            "answer_md": "Financial institutions, insurance companies, pension funds, hedge funds, companies and high net worth individuals, each choosing securities that suit its risk-return preference."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "investors"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-007",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Servicer",
+            "definition_md": "The agent of the SPV who administers the receivables and collects dues from the borrowers, for a fee fixed in the servicing agreement. It is normally the originator itself."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "servicer"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Rating agency (in securitization)",
+            "definition_md": "An agency that rates the securities to show how strong the SPV's ability to pay interest and principal is. It acts as the final appraiser of the collateral pool."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "rating"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-009",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Credit enhancement provider",
+            "definition_md": "A party that improves the safety, marketability and liquidity of the securities' interest and principal flows. It may be an underwriter or dealer who takes the whole subordinated tranche, or a bank or insurer giving an unconditional guarantee that the SPV can invoke on borrower default."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "credit-enhancement"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-010",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Regulators (in securitization)",
+            "definition_md": "Authorities that make the rules governing securitization: accounting practices, capital adequacy, SPV structuring, licensing, supervision, trading of securities and data protection."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "regulators"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-011",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Obligor",
+            "definition_md": "The original borrower whose loan or receivable forms part of the securitized pool and whose repayments fund the securities."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "obligor"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In securitization, which party is the issuer of the securities?",
+            "answer_md": "The special purpose vehicle. The originator sells assets to it, and it issues the securities to investors."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "spv",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The {{c1::originator}} owns the receivables, the {{c2::SPV}} issues the securities, the {{c3::servicer}} collects dues and the {{c4::rating agency}} appraises the pool."
+          },
+          "tags": [
+            "securitization",
+            "participants"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-014",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Credit enhancement can be provided by buying the {{c1::subordinated}} tranche or by an unconditional {{c2::guarantee}} from a bank or insurer."
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "credit-enhancement"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-parties-015",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "O A S I S R E R",
+            "expands_md": "Originator, Arranger, SPV, Investors, Servicer, Rating agency, Enhancement provider, Regulator",
+            "topic": "Participants in securitization"
+          },
+          "tags": [
+            "securitization",
+            "participants",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:parties"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Describe the basic two-step mechanism of securitization.",
+            "answer_md": "Step 1: the originator pools the assets it wants off its balance sheet and sells the pool to an SPV. Step 2: the SPV pays for the purchase by issuing tradable, interest-bearing securities to capital market investors, who are paid from the pool's cash flows through a trustee account."
+          },
+          "tags": [
+            "securitization",
+            "mechanism"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps of securitization in order (short form).",
+            "answer_md": "1 Originator selects receivables. 2 SPV formed. 3 SPV acquires receivables. 4 Securities issued, public or private. 5 Securities structured into classes and rated. 6 Servicer appointed. 7 Obligors notified as the law requires. 8 Servicer collects dues. 9 SPV pays investors per the agreed pattern. 10 Action on default. 11 Clean-up buy-back. 12 Originator's profit paid."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are the securities structured and rated in securitization?",
+            "answer_md": "They are structured usually in classes A, B and C (senior, mezzanine, junior). The rating depends on the credit support, which depends on the expected loss of the pool, which in turn depends on the pool's inherent default risk."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "rating"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does the originator usually avoid notifying the obligors of the sale?",
+            "answer_md": "To preserve its customer relationship. Notification is made only where the law of the country requires it; otherwise the borrowers keep paying the originator, who acts as servicer."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "obligor"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How are collections handled and paid out to investors?",
+            "answer_md": "The servicer collects receivables, usually into an escrow account, and hands them to the SPV. The SPV passes them to investors, or reinvests them until the stated payment dates, following the formula fixed in the transaction."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "collections"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What payout patterns can a securitization use among classes A, B and C?",
+            "answer_md": "Sequential (A is fully paid before B, then C), proportional (all classes paid pro rata), or any other pattern fixed in the deal documents."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "waterfall"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are losses allocated among tranches?",
+            "answer_md": "In reverse order of seniority: the junior tranche absorbs losses first, then mezzanine, and the senior tranche only after both are exhausted. Returns flow in the opposite order, with the senior tranche paid first."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "tranche",
+            "losses"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What happens on default of the borrowers?",
+            "answer_md": "The servicer acts against the defaulting debtors as the SPV's agent. Losses actually realised are distributed in reverse order of seniority."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "default"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a clean-up call (buy-back) in securitization?",
+            "answer_md": "When only a small portion of the receivables remains to be collected, the originator buys back the outstanding balance and closes the transaction, since servicing a tiny pool is not worth the cost."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "clean-up"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What happens to the originator's profit at the end of the transaction?",
+            "answer_md": "The originator's retained profit is paid off after the investors are cleared, to the extent agreed and subject to any losses it agreed to bear."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "profit"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-011",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Tranche",
+            "definition_md": "A slice of the reference portfolio sold separately with its own risk level. Returns and losses are allocated among tranches by seniority: the least risky has the first claim on the income, the riskiest the last."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "tranche"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What is the conventional three-tier tranche structure and which tranche takes the first loss?",
+            "answer_md": "Junior, mezzanine and senior tranches. The junior (first-loss) tranche is usually the smallest, takes most of the expected credit loss, and so earns the highest return. Senior tranches are expected to suffer little."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "tranche"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the reference portfolio treated as collateral that is immune from the originator's bankruptcy?",
+            "answer_md": "The assets are sold outright to the SPV, so the originator keeps no legal interest in them. This is why the pool is safe from the seller's creditors."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "spv"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-014",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "In the usual structure the {{c1::junior}} tranche bears the first loss and earns the {{c2::highest}} return, while the {{c3::senior}} tranche has the first claim on income."
+          },
+          "tags": [
+            "securitization",
+            "mechanism",
+            "tranche"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-mech-015",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Securitization flow: the {{c1::originator}} sells assets to the {{c2::SPV}}, which issues {{c3::asset-backed securities}} to {{c4::investors}}."
+          },
+          "tags": [
+            "securitization",
+            "mechanism"
+          ],
+          "reference_keys": [
+            "sfm:mech"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the limitations of securitization.",
+            "answer_md": "It can cost more than expected; high SPV set-up cost needs a minimum size; asset-liability mismatch moves to investors; heavy disclosure; only good-quality receivables qualify; no debt restructuring; and profits are booked upfront."
+          },
+          "tags": [
+            "securitization",
+            "problems"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is securitization sometimes a costly source of funds, especially in emerging markets?",
+            "answer_md": "Investors demand a higher premium, and rating and legal fees add to the cost, so the cost can exceed that of ordinary borrowing even though theory says it should be lower."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is there a minimum economic size for a securitization?",
+            "answer_md": "Setting up an SPV needs a large initial payment, so a small pool cannot absorb this cost and the exercise is not cost effective."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "size"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does securitization transfer the asset-liability mismatch to investors?",
+            "answer_md": "In a pass-through deal, the investors' principal repayment profile copies the repayment pattern of the underlying assets, so the investors are left to manage the timing mismatch instead of the bank."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "alm"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does securitization demand a high level of disclosure?",
+            "answer_md": "Besides regulatory disclosures, information must also go to servicers, trustees, rating agencies and, in some situations, even investors."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "disclosure"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can banks securitize only better-quality receivables?",
+            "answer_md": "Investors want asset-backed securities of high quality, so weak or doubtful receivables will not find buyers at reasonable prices."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "quality"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is debt restructuring impossible for a securitized loan?",
+            "answer_md": "Professional trustees run the transaction without discretion to grant time or skip payments, and bankruptcy-law restructuring provisions do not help because the SPV is structured to be bankruptcy remote. The bank loses its usual flexibility with troubled clients."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "restructuring"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the accounting problem of upfront profit booking in securitization?",
+            "answer_md": "Under the accounting standards described in the study text, profit is booked at the start, including not only cash profit on the sale but also estimated profit on the deal's future performance, which can overstate present earnings."
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "accounting",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Limitations of securitization include higher {{c1::cost}}, minimum {{c2::size}}, loss of {{c3::restructuring}} flexibility and heavy {{c4::disclosure}}."
+          },
+          "tags": [
+            "securitization",
+            "problems"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-problems-010",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "C-S-A-D-Q-R-P",
+            "expands_md": "Cost, Size, Asset-liability mismatch, Disclosure, Quality, Restructuring, Profit upfront",
+            "topic": "Limitations of securitization"
+          },
+          "tags": [
+            "securitization",
+            "problems",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:problems"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the securities that an SPV may issue in a securitization.",
+            "answer_md": "Pass through certificates, pay through certificates, preferred stock certificates, asset backed commercial papers, interest only certificates and principal only certificates."
+          },
+          "tags": [
+            "securitization",
+            "instruments"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-002",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Asset-backed security (ABS)",
+            "definition_md": "A security whose repayment comes from a pool of earning assets such as car loans, student loans, home equity loans or card dues. The lender sells these loans to an issuer, who bundles them and offers the securities to investors as an alternative to buying bonds."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "abs"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-003",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Mortgage-backed security (MBS)",
+            "definition_md": "A variety of ABS formed by pooling only mortgages. The pool acts as the backup for investors, and the security works like a collateralized bond."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "mbs"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Differentiate between ABS and MBS.",
+            "answer_md": "ABS: backed by a wide set of assets such as credit cards, auto loans, student and home equity loans. MBS: a subset of ABS backed exclusively by mortgage loans (residential or commercial). Both are created by pooling and selling to investors through an issuer."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "abs",
+            "mbs"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Collateralized debt obligation (CDO)",
+            "definition_md": "A security that pools fixed-income assets such as high-yield debt or ABS and divides the pool into tranches. It uses the same structuring technique as an ABS but a wider and more varied asset range."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "cdo"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the types of CDO.",
+            "answer_md": "CBO (collateralized bond obligation): backed mainly by corporate bonds. CLO (collateralized loan obligation): backed mainly by leveraged bank loans. CRE CDO: backed mainly by commercial real estate loans and bonds."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "cdo"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do pass through certificates work, and what is their maturity pattern?",
+            "answer_md": "Payments to investors depend on the cash flows from the assets backing the certificates. Principal and interest received by the SPV from borrowers are passed on to certificate holders at regular intervals. There is a single maturity, matched to the life of the securitized assets."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "pass-through"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are pay through certificates and how do they differ in maturity and structure?",
+            "answer_md": "The SPV issues debt securities such as bonds repayable on fixed dates, backed by the mortgages transferred to it, instead of passing on an undivided interest in the receivables. Maturities are multiple (short, medium and long term), and the SPV temporarily reinvests collections to bridge gaps between payment dates."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "pay-through"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Differentiate pass through from pay through certificates.",
+            "answer_md": "Pass through: investors receive collections directly, single maturity matching the assets, undivided interest in the pool. Pay through: SPV issues bonds, multiple maturities, repayment on fixed dates, collections reinvested temporarily; more flexible for investors."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "pass-through",
+            "pay-through"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain preferred stock certificates in securitization.",
+            "answer_md": "Issued by a subsidiary company against trade debts and consumer receivables of its parent, so that the parent gets liquidity. They are usually backed by guarantees from highly rated merchant banks, making them attractive to investors, and are generally short term."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "preferred-stock",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain asset backed commercial paper as an SPV instrument.",
+            "answer_md": "The SPV buys mortgage portfolios from several lenders, groups them by interest rate, maturity and collateral, and transfers them to a trust, which issues mortgage-backed certificates to investors. These are generally short term."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "abcp",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are interest only certificates?",
+            "answer_md": "Certificates under which investors are paid only from the interest income earned on the securitized assets."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "io"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What are principal only certificates, and why do they attract speculators?",
+            "answer_md": "Investors are paid only from principal repayments by the original borrowers. Their value reacts straight away to interest rate movements: it falls when rates rise and rises when rates fall, which suits speculative dealing."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "po"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which certificate carries the speculative element: interest only or principal only?",
+            "answer_md": "Principal only. The book says it enables speculative dealings because its bond value moves immediately with interest rate changes; interest only certificates are not described that way."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "po",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which securitization instrument has multiple maturity structure?",
+            "answer_md": "Pay through certificates, because the SPV can issue short-, medium- and long-term securities from the same pool."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "pay-through",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which certificate is issued by a subsidiary against receivables of its parent?",
+            "answer_md": "Preferred stock certificates."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "preferred-stock",
+            "mcq"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-017",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "{{c1::Pass through}} certificates have a single maturity; {{c2::pay through}} certificates have multiple maturities; {{c3::interest only}} pay from interest income; {{c4::principal only}} pay from principal repayments."
+          },
+          "tags": [
+            "securitization",
+            "instruments"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-018",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "{{c1::CBOs}} are backed mainly by corporate bonds, {{c2::CLOs}} by leveraged bank loans and {{c3::CRE CDOs}} by commercial real estate loans and bonds."
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "cdo"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-instr-019",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "3P-ICP",
+            "expands_md": "Pass through, Pay through, Preferred stock, ABCP, Interest only, Principal only",
+            "topic": "SPV securities"
+          },
+          "tags": [
+            "securitization",
+            "instruments",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:instr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-num-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A pool of Rs 200 crore is split into junior Rs 20 crore, mezzanine Rs 40 crore and senior Rs 140 crore. Pool losses are Rs 27 crore. Who bears what?",
+            "answer_md": "Junior takes the first Rs 20 crore (wiped out); mezzanine takes the next Rs 7 crore; senior takes nothing. Order of loss: junior, then mezzanine, then senior."
+          },
+          "tags": [
+            "securitization",
+            "numerical",
+            "tranche",
+            "losses"
+          ],
+          "reference_keys": [
+            "sfm:num"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-num-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Same pool (junior 20, mezzanine 40, senior 140 crore): at what pool loss does the senior tranche first suffer?",
+            "answer_md": "Only after losses exceed the junior and mezzanine total, that is above Rs 60 crore (20 + 40), or 30% of the Rs 200 crore pool. This subordination of 30% is the credit support for the senior tranche."
+          },
+          "tags": [
+            "securitization",
+            "numerical",
+            "tranche",
+            "credit-support"
+          ],
+          "reference_keys": [
+            "sfm:num"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-num-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Collections of Rs 30 lakh are available; classes A, B and C are Rs 60, 30 and 10 lakh. Show sequential and proportional payout.",
+            "answer_md": "Sequential: A gets all Rs 30 lakh, B and C nil. Proportional: split 60:30:10, so A Rs 18 lakh, B Rs 9 lakh, C Rs 3 lakh (total 30)."
+          },
+          "tags": [
+            "securitization",
+            "numerical",
+            "waterfall"
+          ],
+          "reference_keys": [
+            "sfm:num"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-num-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A servicer collects Rs 500 lakh from borrowers and charges 0.5% servicing fee. How much reaches the SPV?",
+            "answer_md": "Fee = 0.5% x 500 = Rs 2.5 lakh. Amount passed to the SPV = 500 - 2.5 = Rs 497.5 lakh."
+          },
+          "tags": [
+            "securitization",
+            "numerical",
+            "servicer"
+          ],
+          "reference_keys": [
+            "sfm:num"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm04-num-005",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Subordination (credit support) of the senior tranche",
+            "expression_md": "$\\text{Subordination} = \\dfrac{\\text{Junior} + \\text{Mezzanine}}{\\text{Pool value}} \\times 100$",
+            "variables_md": "Junior and mezzanine are the face values of the tranches ranking below the senior tranche; Pool value is the total size of the securitized pool.",
+            "when_md": "Use it to find the loss cushion below the senior tranche: pool losses up to this percentage do not touch the senior holders."
+          },
+          "tags": [
+            "securitization",
+            "numerical",
+            "credit-support"
+          ],
+          "reference_keys": [
+            "sfm:num"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

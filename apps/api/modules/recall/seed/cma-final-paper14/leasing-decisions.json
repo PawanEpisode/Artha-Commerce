@@ -1,0 +1,3166 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-leasing-decisions",
+      "title": "SFM: Leasing Decisions",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 3: Leasing Decisions.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "leasing-decisions"
+      },
+      "items": [
+        {
+          "ref": "sfm03-lease-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Lease",
+            "definition_md": "A contract under which the owner of an asset (lessor) lets another person (lessee) use it for an agreed period in exchange for one payment or a series of payments called lease rentals. Ownership stays with the lessor."
+          },
+          "tags": [
+            "lease",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-002",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Lessor",
+            "definition_md": "The owner of the asset who gives the right to use it to another party for the lease period and receives the lease rentals."
+          },
+          "tags": [
+            "lease",
+            "parties"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-003",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Lessee",
+            "definition_md": "The user of the asset, who pays the lease rentals (lump sum or periodic) in return for the right to use it during the lease period."
+          },
+          "tags": [
+            "lease",
+            "parties"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-004",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Lease period",
+            "definition_md": "The span of time for which the lessor gives the lessee the right to use the asset."
+          },
+          "tags": [
+            "lease",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-005",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is a sub-lease and who is the sub-lessee?",
+            "answer_md": "The original lessee may lease out all or part of the asset to a third person, who is the sub-lessee. The sub-lease is a fresh lease agreement in which the original lessee plays the role of lessor."
+          },
+          "tags": [
+            "lease",
+            "parties",
+            "sub-lease"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the two broad classes of lease.",
+            "answer_md": "Finance lease and operating lease."
+          },
+          "tags": [
+            "lease",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Finance lease",
+            "definition_md": "A lease that passes substantially all the risks and rewards of owning the asset to the lessee. The lease usually runs for most of the asset's useful life, so it is long term, and the rentals recover most or all of the lessor's cost. It is often called a disguised purchase."
+          },
+          "tags": [
+            "lease",
+            "types",
+            "finance-lease"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-008",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Operating lease",
+            "definition_md": "A lease that does not pass substantially all the risks and rewards of ownership to the lessee. It is in the nature of a plain rental, usually for a period much shorter than the asset's life."
+          },
+          "tags": [
+            "lease",
+            "types",
+            "operating-lease"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Contrast a finance lease with an operating lease on risk, period and cost recovery.",
+            "answer_md": "Finance lease: risks and rewards pass to the lessee, period covers most of the asset's life, rentals recover most or all of the lessor's cost. Operating lease: risks and rewards stay with the lessor, period is short relative to life, so the lessor must re-lease or sell the asset to recover its cost."
+          },
+          "tags": [
+            "lease",
+            "types",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is a finance lease called a disguised purchase while an operating lease is a mere rental?",
+            "answer_md": "In a finance lease the lessee enjoys the asset almost through its whole life and pays almost its full cost, so economically it is buying on credit. In an operating lease the lessee only hires the asset for a while and the owner keeps the major risks."
+          },
+          "tags": [
+            "lease",
+            "types",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-011",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Wet lease",
+            "definition_md": "A lease in which the lessor also bears the running costs of the asset, such as operating, maintenance and insurance expenses, so the rental must be priced to cover them. Not defined in the study text; it appears in a past question on pricing a vehicle lease."
+          },
+          "tags": [
+            "lease",
+            "wet-lease",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A lessor quotes a wet lease on a vehicle. How does this change the minimum rental calculation?",
+            "answer_md": "The lessor's after-tax operating, maintenance and insurance costs are added to the cost side. The rental must recover the asset cost, those costs after their tax saving, less the PV of the depreciation tax shield and the after-tax salvage value, all discounted at the lessor's after-tax required return."
+          },
+          "tags": [
+            "lease",
+            "wet-lease",
+            "belr",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which benefits does a lessor draw from a lease? List them.",
+            "answer_md": "Full security (lessor remains owner and can repossess on default); tax benefit of depreciation; high profits through faster capital recovery and a return above ordinary lending; trading on equity (high leverage and so a high return on equity)."
+          },
+          "tags": [
+            "lease",
+            "lessor-advantages"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How is the lessor's interest secured in a lease?",
+            "answer_md": "The lessor owns the asset throughout, so if the lessee defaults the lessor can take the asset back. It is stronger than the position of an ordinary lender, who only holds a charge on the asset."
+          },
+          "tags": [
+            "lease",
+            "lessor-advantages",
+            "security"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a lessor gain tax benefit from leasing?",
+            "answer_md": "The lessor claims depreciation on the asset. A lessor in a high tax bracket benefits most, and it can choose assets carrying a high depreciation rate to cut its tax. Rentals can also be structured so that part of the tax benefit is passed to the lessee."
+          },
+          "tags": [
+            "lease",
+            "lessor-advantages",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why can a lessor earn high profits and a high return on equity?",
+            "answer_md": "Heavy depreciation gives quick recovery of capital and a return above what plain lending earns. Lessors also run on thin equity and a lot of borrowed money and deposits, so financial leverage lifts the return on equity."
+          },
+          "tags": [
+            "lease",
+            "lessor-advantages",
+            "trading-on-equity"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What does a lessee gain by taking an asset on lease? Give the points.",
+            "answer_md": "Source of finance (money saved can be used elsewhere); no dilution of ownership; no loss of control; tax benefit as rentals are fully deductible; less risk of obsolescence; sale and leaseback can relieve a financial crisis."
+          },
+          "tags": [
+            "lease",
+            "lessee-advantages"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does leasing not dilute ownership or control, unlike institutional borrowing or equity?",
+            "answer_md": "Term lenders often attach conditions such as board representation, convertibility of debt into equity or dividend limits, and equity issue spreads ownership. A lease carries none of these, so promoters keep their independence."
+          },
+          "tags": [
+            "lease",
+            "lessee-advantages",
+            "control"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Explain the tax advantage of leasing to a lessee.",
+            "answer_md": "Rentals are charged to the profit and loss account in full, so the cost of using the asset is written off quickly and the tax saving is early. Under borrow-and-buy the lessee gets only interest and depreciation deductions."
+          },
+          "tags": [
+            "lease",
+            "lessee-advantages",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does leasing reduce the risk of obsolescence for the lessee?",
+            "answer_md": "The lessor carries the risk that the asset becomes outdated. The lessee can move to a newer asset by choosing another asset or another lessor when the lease ends."
+          },
+          "tags": [
+            "lease",
+            "lessee-advantages",
+            "obsolescence"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How can a lessee use leasing to overcome a cash crunch?",
+            "answer_md": "Through sale and leaseback: the lessee sells an asset it already uses to a lessor, receives cash at once and continues to use the asset against rentals."
+          },
+          "tags": [
+            "lease",
+            "lessee-advantages",
+            "sale-and-leaseback"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the limitations of leasing for a lessee.",
+            "answer_md": "Restrictions on use (additions or alterations may be barred); a possibly high pay-out burden if the lessee ends a finance lease early because the asset is no longer useful; no ownership, so no claim on the residual value."
+          },
+          "tags": [
+            "lease",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-023",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why can premature termination of a finance lease hurt the lessee?",
+            "answer_md": "The rentals are designed to recover the lessor's cost over the term, so a lessee who stops early may have to pay out a heavy sum even though the asset is no longer useful to it."
+          },
+          "tags": [
+            "lease",
+            "limitations",
+            "termination"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does lack of ownership matter less in a finance lease than in an operating lease?",
+            "answer_md": "A finance lease lets the lessee use the asset for nearly its whole life, so it still gets most of the benefits. The remaining issue is then mainly the cost of the financing."
+          },
+          "tags": [
+            "lease",
+            "limitations",
+            "finance-lease"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-025",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the lessee's key concern when comparing lease with a purchase of a long-life asset?",
+            "answer_md": "Ownership is secondary; the main question is cost. All relevant cash flows and tax effects of both routes are identified, converted into present values and compared."
+          },
+          "tags": [
+            "lease",
+            "lvb",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-026",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "True or false: a party to whom the lessee re-leases the asset is called a super lessee.",
+            "answer_md": "False. The party that takes the asset on a further lease from the lessee is the sub-lessee."
+          },
+          "tags": [
+            "lease",
+            "parties",
+            "sub-lease"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lease-027",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "True or false: a finance lease is one that does not transfer substantially all the risks and rewards of ownership.",
+            "answer_md": "False. That describes an operating lease. A finance lease does transfer substantially all of them."
+          },
+          "tags": [
+            "lease",
+            "types",
+            "finance-lease"
+          ],
+          "reference_keys": [
+            "sfm:lease"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which cash flows are compared in a lease versus buy (through loan) analysis?",
+            "answer_md": "Buy through loan: PV of loan instalments, less PV of the interest tax shield, less PV of the depreciation tax shield, less PV of the residual value. Lease: PV of after-tax lease rentals plus PV of any maintenance cost borne by the lessee."
+          },
+          "tags": [
+            "lvb",
+            "cash-flows"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "PV of cost under buy through loan",
+            "expression_md": "$PV_{buy} = PV(\\text{instalments}) - PV(\\text{interest tax shield}) - PV(\\text{depreciation tax shield}) - PV(\\text{residual})$",
+            "variables_md": "All present values use the lessee's after-tax cost of borrowing as the discount rate. Residual is the after-tax sale proceeds at the end of the horizon.",
+            "when_md": "Compare with the PV of the lease alternative; choose the lower PV of net outflow."
+          },
+          "tags": [
+            "lvb",
+            "buy",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "PV of cost under lease",
+            "expression_md": "$PV_{lease} = L(1-t)\\times PVIFA(k_d(1-t),\\,n) + PV(\\text{maintenance after tax})$",
+            "variables_md": "$L$ = annual lease rental, $t$ = tax rate, $k_d$ = pre-tax cost of borrowing, $n$ = lease years. Rentals are assumed at year end.",
+            "when_md": "If the lessee also pays maintenance only under lease, add its after-tax PV; costs common to both options are ignored."
+          },
+          "tags": [
+            "lvb",
+            "lease",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Discount rate in lease versus buy",
+            "expression_md": "$k = k_d\\,(1-t)$",
+            "variables_md": "$k_d$ = pre-tax interest rate on the loan, $t$ = marginal tax rate.",
+            "when_md": "Both options are really financing choices, so their after-tax flows are discounted at the after-tax cost of debt, unless the question gives a separate rate."
+          },
+          "tags": [
+            "lvb",
+            "discount-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the after-tax cost of borrowing used to discount in a lease versus buy decision?",
+            "answer_md": "The choice is between two ways of financing the same asset, both with fixed contractual payments and tax effects. The relevant opportunity cost is the lessee's borrowing cost net of tax saving. A question may instead give an after-tax cost of capital, in which case use that."
+          },
+          "tags": [
+            "lvb",
+            "discount-rate"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A firm borrows at 14% and pays tax at 35%. What discount rate do you use for lease versus buy?",
+            "answer_md": "$14\\% \\times (1 - 0.35) = 9.1\\%$ per annum."
+          },
+          "tags": [
+            "lvb",
+            "discount-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the decision rule for lease versus buy.",
+            "answer_md": "Compute the PV of net cash outflow under each option at the same discount rate. Choose the option with the lower PV of outflow; lease if the PV under lease is lower, buy otherwise."
+          },
+          "tags": [
+            "lvb",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Net advantage of leasing (NAL)",
+            "definition_md": "PV of net cash outflow under buying minus PV of net cash outflow under leasing. A positive figure favours leasing; a negative figure favours buying."
+          },
+          "tags": [
+            "lvb",
+            "nal"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outline the steps to evaluate lease versus buy where the asset is bought with a term loan repaid in equal instalments.",
+            "answer_md": "1) Find the after-tax discount rate. 2) Find the equal instalment from the loan amount, loan rate and years. 3) Prepare a schedule of interest and principal. 4) Interest tax shield = interest x tax rate each year. 5) Depreciation tax shield = depreciation x tax rate. 6) PV of buy = PV of instalments less both shields less PV of residual. 7) PV of lease = rental x (1 - t) discounted. 8) Compare."
+          },
+          "tags": [
+            "lvb",
+            "method",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Step 2 of a lease versus buy problem: how is the equal annual loan instalment found?",
+            "answer_md": "Divide the loan amount by the annuity factor at the loan's pre-tax rate for the number of instalments. Example: a loan of 5,00,000 at 10% for 3 years has instalment 5,00,000 / 2.4869 = about 2,01,057."
+          },
+          "tags": [
+            "lvb",
+            "loan",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the interest tax shield built from a loan schedule?",
+            "answer_md": "Each year interest = opening balance x loan rate; principal repaid = instalment less interest; closing balance = opening less principal. Tax saving = interest x tax rate. Example (loan 5,00,000, 10%, 3 years, tax 30%): interest 50,000, 34,894, 18,278 and tax saving 15,000, 10,468, 5,483."
+          },
+          "tags": [
+            "lvb",
+            "interest-shield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the instalment (not only the interest) a cash outflow under buy, but the principal part is not tax-deductible?",
+            "answer_md": "The whole instalment leaves the firm's bank account, so it is in the outflow. Only the interest portion is a tax-deductible expense; repayment of principal is not, and depreciation gives the separate deduction for the asset cost."
+          },
+          "tags": [
+            "lvb",
+            "interest-shield",
+            "buy"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compute the depreciation tax shield for an asset costing 6,00,000, 4 years straight line, nil salvage, tax 30%.",
+            "answer_md": "Depreciation = 6,00,000 / 4 = 1,50,000 a year. Tax shield = 1,50,000 x 30% = 45,000 each year for 4 years, discounted at the after-tax rate."
+          },
+          "tags": [
+            "lvb",
+            "dep-shield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Compute the depreciation tax shields for an asset costing 4,00,000 under 25% written down value, tax 30%, for the first three years.",
+            "answer_md": "Year 1 depreciation 1,00,000, shield 30,000. Year 2 depreciation 75,000, shield 22,500. Year 3 depreciation 56,250, shield 16,875. Shield = rate x opening WDV x tax rate."
+          },
+          "tags": [
+            "lvb",
+            "dep-shield",
+            "wdv",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When depreciation is on WDV and the analysis horizon is shorter than the asset's tax life, what is done about later shields?",
+            "answer_md": "The shields from depreciation continue after the lease term, so they are normally taken for as many years as the question specifies (some questions restrict the horizon to ten years). Follow the question's horizon and discount each year's shield."
+          },
+          "tags": [
+            "lvb",
+            "dep-shield",
+            "wdv"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example. Buy: loan 5,00,000 at 10% in 3 equal year-end instalments, SLM nil salvage, tax 30%. Lease: 2,00,000 a year for 3 years. Which option is cheaper?",
+            "answer_md": "Discount rate 7%. PV of instalments (2,01,057 x 2.6243) = 5,27,638. Less interest shield PV 27,638. Less depreciation shield PV (50,000 x 2.6243) = 1,31,216. Buy = 3,68,784. Lease = 2,00,000 x 0.7 x 2.6243 = 3,67,404. Lease is cheaper by about 1,380."
+          },
+          "tags": [
+            "lvb",
+            "worked-example",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Alternative layout for the buy option: how can it be computed year by year?",
+            "answer_md": "For each year write instalment less interest tax saving less depreciation tax saving to get the net cash flow, then discount at the after-tax rate and add. It gives the same total as the separate-PV method. Example above: net flows 1,36,057, 1,40,589 and 1,45,574 give 3,68,784."
+          },
+          "tags": [
+            "lvb",
+            "method",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does a residual (salvage) value enter a lease versus buy analysis?",
+            "answer_md": "Under buy the lessee owns the asset at the end, so the after-tax sale proceeds are a cash inflow and are deducted from the cost; its PV is discounted at the same rate. Under lease the lessee gets no residual value."
+          },
+          "tags": [
+            "lvb",
+            "residual"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "An asset fully depreciated for tax is sold for 50,000 at the end of year 4. Tax 30%. What inflow goes into the buy option?",
+            "answer_md": "Tax on gain = 30% x 50,000 = 15,000, so the net inflow is 35,000 at year 4, discounted at the after-tax rate."
+          },
+          "tags": [
+            "lvb",
+            "residual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-020",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A sale involves a 5% broker's commission on 20,000 and the book value is nil. Tax 30%. What is the net sale inflow?",
+            "answer_md": "Net of commission = 20,000 x 0.95 = 19,000. Tax on this gain = 30% x 19,000 = 5,700. Net inflow = 13,300."
+          },
+          "tags": [
+            "lvb",
+            "residual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are costs common to both options ignored in lease versus buy?",
+            "answer_md": "Costs such as operating and training costs that are the same whether the asset is leased or bought do not change the difference between the options. Only differing flows matter, for example maintenance paid only by the lessee under a lease."
+          },
+          "tags": [
+            "lvb",
+            "relevant-cost"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-022",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "In the buy option, what is the treatment of the tax on interest if the loan covers 100% of the asset cost?",
+            "answer_md": "Interest on the loan is deductible. Count the shield on the interest from the schedule, in addition to the shield on depreciation, because both reduce the tax paid."
+          },
+          "tags": [
+            "lvb",
+            "interest-shield",
+            "buy"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-023",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does a question often give the lease rental quote 'per 1,000 of asset value'?",
+            "answer_md": "It is a rate for pricing the rental. Rental = rate x asset value / 1,000. Example: 300 per 1,000 on an asset worth 2,00,000 means 60,000 per year."
+          },
+          "tags": [
+            "lvb",
+            "rental-quote",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do you compare lease and buy when the buy option has a longer analysis horizon than the lease?",
+            "answer_md": "The study text compares equivalent annual cash outflows: divide each PV by the annuity factor for its own horizon, then pick the smaller annual figure. Its own example reverses the earlier PV-based verdict, so treat this approach with care and follow the question's instruction."
+          },
+          "tags": [
+            "lvb",
+            "equivalent-annual",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-025",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Equivalent annual cost",
+            "expression_md": "$EAC = \\dfrac{PV\\ \\text{of cost}}{PVIFA(k,\\,n)}$",
+            "variables_md": "$k$ = discount rate, $n$ = years of the option's own horizon.",
+            "when_md": "To compare options with unequal lives; choose the lower EAC."
+          },
+          "tags": [
+            "lvb",
+            "equivalent-annual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-026",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Alternative presentation of net advantage of leasing in the study text: what is counted?",
+            "answer_md": "Benefits of leasing: the investment saved plus the PV of tax shield on rentals. Costs of leasing: PV of rentals (at the loan rate), PV of lost depreciation shield, PV of interest shield on the equivalent loan and PV of the lost residual. Net advantage = benefits less costs; negative means buy."
+          },
+          "tags": [
+            "lvb",
+            "nal",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-027",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Under the equivalent-loan view, what loan size and rate equals the lease rentals?",
+            "answer_md": "The loan is sized so that its instalments equal the lease rental, i.e. the loan amount equals the PV of the rentals discounted at the loan rate. It lets lease rentals be read as loan servicing."
+          },
+          "tags": [
+            "lvb",
+            "nal",
+            "equivalent-loan",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-028",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A past paper asks the lessee to assess the net advantage of leasing for a finance lease of a car. What should the answer show?",
+            "answer_md": "The PV of net cash outflow under the lease, the PV of net outflow under buying (instalments, tax shields, residual), and their difference. A positive difference supports lease."
+          },
+          "tags": [
+            "lvb",
+            "nal",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-029",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Worked decision on a purchase using computed figures: buy costs 4,10,000 in PV, lease costs 4,35,000 in PV. Decision?",
+            "answer_md": "Buy, because it has the lower PV of net outflow. NAL = 4,10,000 - 4,35,000 = -25,000, a negative net advantage of leasing."
+          },
+          "tags": [
+            "lvb",
+            "decision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-030",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Indifference problem: a company wants the annual lease rental that makes it indifferent to a loan. What is the method?",
+            "answer_md": "Compute PV of net cash outflow under the loan option, including instalments, interest and depreciation shields and the after-tax residual. Then solve rental x (1 - t) x annuity factor = that PV for the rental. This is the break-even lease rental."
+          },
+          "tags": [
+            "lvb",
+            "belr",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-031",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A loan of 50,000 repaid in 5 equal principal instalments of 10,000 at 15% interest. Compute the first year's net outflow with tax 40% and straight line depreciation.",
+            "answer_md": "Interest 7,500; outflow 17,500; interest tax saving 40% x 7,500 = 3,000; depreciation 10,000 gives 4,000 saving. Net outflow = 17,500 - 3,000 - 4,000 = 10,500."
+          },
+          "tags": [
+            "lvb",
+            "loan",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-032",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does equal principal repayment make the interest shield decline each year?",
+            "answer_md": "Interest is charged on the outstanding balance, which falls by the same principal each year, so interest and hence its tax saving fall steadily. Example: balance 50,000 gives interest 7,500; next year 40,000 gives 6,000."
+          },
+          "tags": [
+            "lvb",
+            "loan",
+            "interest-shield",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-033",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When the asset is sold at the end with a commission of 9% on the sale value, how is the inflow computed?",
+            "answer_md": "Sale value less 9% commission gives the net proceeds. Tax is charged at the tax rate on these net proceeds when the book value is nil, so inflow = net proceeds x (1 - t). Example: sale 2,000, commission 180, net 1,820, tax at 40% 728, inflow 1,092."
+          },
+          "tags": [
+            "lvb",
+            "residual",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-lvb-034",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the effect on the lease versus buy result of a lower tax rate?",
+            "answer_md": "Lower tax reduces both rental deductibility and the depreciation and interest shields, and it raises the after-tax discount rate. The ranking depends on the figures, so recompute with the new rate."
+          },
+          "tags": [
+            "lvb",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:lvb"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Break-even lease rental (BELR), lessee view",
+            "definition_md": "The lease rental at which the lessee is indifferent between leasing and buying through a loan, i.e. the PV of after-tax rentals equals the PV of net outflow under the buy option. It is the maximum rental the lessee should be willing to pay."
+          },
+          "tags": [
+            "belr",
+            "lessee"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a lessee use the break-even lease rental to decide?",
+            "answer_md": "If the rental actually offered is less than or equal to the BELR, accept the lease; if it is higher, reject it and buy."
+          },
+          "tags": [
+            "belr",
+            "lessee",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Break-even lease rental for the lessee",
+            "expression_md": "$L^{*} = \\dfrac{PV_{buy}}{(1-t)\\times PVIFA(k,\\,n)}$",
+            "variables_md": "$PV_{buy}$ = PV of instalments less PV of interest shield, depreciation shield and residual; $t$ = tax rate; $k$ = after-tax cost of borrowing; $n$ = lease years.",
+            "when_md": "Rentals at year end and level. If rentals are at the start of each year, use the annuity-due factor instead."
+          },
+          "tags": [
+            "belr",
+            "lessee",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example, lessee BELR: PV of buy option is 3,68,784, tax 30%, discount rate 7%, 3 years. Find the BELR.",
+            "answer_md": "After-tax annuity value = 0.7 x 2.6243 = 1.83702 per rupee of rental. BELR = 3,68,784 / 1.83702 = about 2,00,751. A rental up to this level makes leasing acceptable."
+          },
+          "tags": [
+            "belr",
+            "lessee",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Break-even lease rental, lessor view",
+            "definition_md": "The minimum lease rental the lessor can accept, i.e. the rental for which the lessor's NPV is zero at its required return. Below it the lessor earns less than its target."
+          },
+          "tags": [
+            "belr",
+            "lessor"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Lessor's break-even condition",
+            "expression_md": "$PV(\\text{after-tax rentals}) = \\text{Cost} - PV(\\text{depreciation tax shield}) - PV(\\text{salvage})$",
+            "variables_md": "Cost is the price the lessor pays for the asset. Depreciation shield = depreciation x tax rate for each year. Salvage is taken after tax. Discount rate = lessor's post-tax required return.",
+            "when_md": "Solve for the rental; with a wet lease, add the PV of the after-tax running costs to the right-hand side."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you get the lessor's after-tax discount rate when the target return is pre-tax?",
+            "answer_md": "Multiply by (1 - tax rate). Example: 10% pre-tax with a 30% tax rate gives 7%."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "discount-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Outline the steps to find the minimum lease rental a lessor should quote.",
+            "answer_md": "1) After-tax discount rate = target x (1 - t). 2) Depreciation tax shield each year, then its PV. 3) PV of after-tax salvage and any after-tax running costs. 4) Net amount to be recovered = cost - PV of shield - PV of salvage (+ PV of costs). 5) Express rentals as multiples of X, find PV of X x (1 - t). 6) Solve for X."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "method",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example, equal rental: cost 10,00,000, 4 years SLM, tax 30%, salvage 1,00,000 at the end (fully depreciated), lessor wants 12% pre-tax. Find the rental.",
+            "answer_md": "Discount rate 8.4%, annuity factor 3.2828. Depreciation shield = 2,50,000 x 0.3 = 75,000 a year, PV 2,46,214. After-tax salvage = 70,000 x 0.7243 = 50,697. Rental x 0.7 x 3.2828 = 10,00,000 - 2,46,214 - 50,697, so rental = about 3,05,958."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example, rentals in the ratio 3:2:1. Cost 60 lakh, 3 years SLM, tax 30%, lessor's required return 10% pre-tax. Find the rentals.",
+            "answer_md": "Discount rate 7%; annuity factor 2.6243. Depreciation shield = 20 lakh x 0.3 = 6 lakh a year, PV 15.746 lakh. Amount to be recovered = 60 - 15.746 = 44.254 lakh. PV of 0.7 x (3, 2, 1) x X at 7% = 1.9626X + 1.2228X + 0.5714X = 3.7568X. X = 11,77,961; rentals 35,33,883, 23,55,922 and 11,77,961."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "ratio",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a ratio-rental question, which rental do you call X and why?",
+            "answer_md": "Call the smallest term of the ratio X (the last year if rentals fall, the first if they rise). Each year's rental is then its ratio number times X, so there is only one unknown to solve."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "ratio",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A lessor asks the rentals to be paid in the ratio 2:2:1:1 over four years at a post-tax cost of 10% raised by 2% for inflation. What discount rate is used?",
+            "answer_md": "12%. The question tells you to hike the average post-tax cost by 2 percentage points, and the ratio rentals are discounted at that rate with the rentals taken after tax."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "ratio",
+            "discount-rate",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the depreciation tax shield a deduction from cost in the lessor's break-even equation?",
+            "answer_md": "The lessor owns the asset and claims depreciation, so tax saved on it is a benefit that reduces how much must be earned from rentals. The lessor needs PV of rentals only for the net investment."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "dep-shield"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Worked example, wet lease: asset 25 lakh, running costs 2 lakh a year, 3 years, salvage 3 lakh, SLM nil, tax 30%, target 10% pre-tax. Minimum annual rental?",
+            "answer_md": "Discount rate 7%, factor 2.6243. Depreciation 8,33,333 a year gives shield 2,50,000, PV 6,56,079. After-tax running costs 1,40,000 a year, PV 3,67,404. After-tax salvage 2,10,000 x 0.8163 = 1,71,423. Amount to recover = 25,00,000 + 3,67,404 - 6,56,079 - 1,71,423 = 20,39,903. Rental x 0.7 x 2.6243 = 20,39,903, so rental = about 11,10,440."
+          },
+          "tags": [
+            "belr",
+            "wet-lease",
+            "numerical",
+            "worked-example",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rentals are payable at the start of each year. How does this change the PV factor?",
+            "answer_md": "Use the annuity-due factor: 1 + PVIFA for (n - 1) years. For 3 years at 10% it is 1 + 1.7355 = 2.7355 rather than 2.4869. Check the timing of the tax effect too; it follows at the end of the year in the study text's worked solution."
+          },
+          "tags": [
+            "belr",
+            "timing",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rentals fall due at the beginning of each year and the lessor's tax rate changes during the lease. How is the PV of rentals after tax built?",
+            "answer_md": "Work with tax effects in the year they arise, split into blocks: the rental at time zero has no tax effect yet, years with the earlier tax rate give (1 - old rate) x annuity factor, the later block uses (1 - new rate), and the last year's tax adds an end-year outflow. Add all blocks to get the PV factor on X."
+          },
+          "tags": [
+            "belr",
+            "timing",
+            "tax-change",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-017",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "The lessor charges a 1% lease management fee at signing. How should it enter a break-even rental calculation?",
+            "answer_md": "Treat the fee as an inflow at time zero (it reduces the net investment to be recovered through rentals). The study text's own illustration states such a fee but leaves it out of the solution, so read the question to see whether to include it."
+          },
+          "tags": [
+            "belr",
+            "fee",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A builder builds flats for a customer, leases them back with rentals 100%, 120% and 150% of normal in three five-year blocks, and receives a nominal value at the end. What is the approach to the normal rental?",
+            "answer_md": "Put total outflow at time zero (cost plus after-tax repairs discounted). For each block, after-tax cash flow = rental x (1 - t) less after-tax depreciation shield effect; discount with block annuity factors; subtract PV of after-tax terminal value. Solve for the normal rental."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "stepped",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-019",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are block annuity factors obtained for years 6-10 or 11-15?",
+            "answer_md": "Subtract cumulative annuity factors. Years 6-10 factor = PVIFA(10 yrs) - PVIFA(5 yrs); years 11-15 = PVIFA(15 yrs) - PVIFA(10 yrs). At 10%: 6.1446 - 3.7908 = 2.3538."
+          },
+          "tags": [
+            "belr",
+            "annuity",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Land is provided by the customer free of cost in a build-and-lease deal. How does it affect the lessor's break-even?",
+            "answer_md": "The lessor does not pay for the land, so it is excluded from the investment to be recovered. Only construction, registration and other costs borne by the lessor count."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-021",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A lessor receives a nominal price for the asset at the end of the lease, which is above its written-down value. How is this terminal inflow handled?",
+            "answer_md": "Deduct tax on the profit from the nominal value to get the after-tax terminal inflow, discount it for the lease life and subtract it from the investment to be recovered. If the book value is nil, the whole price is taxable."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "residual"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-022",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Implicit rate in a lease",
+            "definition_md": "The lessor's internal rate of return on the lease: the rate at which the PV of rentals (and residual, if any) equals the cost of the asset."
+          },
+          "tags": [
+            "belr",
+            "implicit-rate"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-023",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the implicit rate found when rentals are level and there is no residual and no tax?",
+            "answer_md": "Cost / annual rental = annuity factor for the lease years. Find the rate whose annuity factor equals this figure, using the table and interpolating. Example: cost 1,00,000, rental 30,000 for 5 years gives factor 3.3333, between 15% (3.3522) and 16% (3.2743), so about 15.24%."
+          },
+          "tags": [
+            "belr",
+            "implicit-rate",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What rental would give a lessor a required yield of 20% on a 2,00,000 asset over 8 years ignoring tax?",
+            "answer_md": "Rental = 2,00,000 / PVIFA(20%, 8) = 2,00,000 / 3.8372 = about 52,122 a year."
+          },
+          "tags": [
+            "belr",
+            "implicit-rate",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-025",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "With tax and expenses, how is the lessor's required rental found for a given after-tax return?",
+            "answer_md": "Write after-tax cash flow = (rental - expenses - depreciation) x (1 - t) + depreciation. Equate its PV at the required return to the cost (and subtract PV of resale if any). Solve for the rental."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-026",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Does a resale value raise or lower the rental needed by a lessor?",
+            "answer_md": "Lower. The resale value is recovered at the end of the lease, so less has to be recovered through rentals. With depreciation to the resale value, depreciation also falls."
+          },
+          "tags": [
+            "belr",
+            "lessor",
+            "residual"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-027",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is a break-even lease rental a good negotiating figure for each party?",
+            "answer_md": "Lessee: the highest rental it can pay without being worse off than buying. Lessor: the lowest rental it can accept for its required return. A deal is possible only if the lessor's minimum is not above the lessee's maximum."
+          },
+          "tags": [
+            "belr",
+            "negotiation"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-028",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compare the lessee's BELR with the lessor's BELR on the discount rate used.",
+            "answer_md": "The lessee's BELR discounts at the lessee's after-tax cost of borrowing, using the buy option as the benchmark. The lessor's BELR discounts at the lessor's post-tax required return. Both are after-tax computations on the rental x (1 - tax rate)."
+          },
+          "tags": [
+            "belr",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-029",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What can be said of the lessee when the lease rental equals the break-even lease rental?",
+            "answer_md": "The lessee is indifferent between leasing and buying through the loan, since the PV of net outflow is the same under both options."
+          },
+          "tags": [
+            "belr",
+            "lessee",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-belr-030",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "The lessee's break-even lease rental is 98,400 and the lessor quotes 1,02,000. What should the lessee do?",
+            "answer_md": "Reject the lease and buy, since the quote is above the maximum rental the lessee can pay without being worse off."
+          },
+          "tags": [
+            "belr",
+            "lessee",
+            "decision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:belr"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Name the common lease rental structures.",
+            "answer_md": "Equal periodic plan, stepped-up plan, stepped-down plan, balloon payment plan and deferred payment plan."
+          },
+          "tags": [
+            "structures",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why are different rental structures used?",
+            "answer_md": "Rentals should suit both sides. The lessee wants low rentals matched to its cash flows; the lessor must recover the investment and its desired return. Every structure is priced so that the PV of rentals at the lessor's required return equals the investment, so only the timing differs."
+          },
+          "tags": [
+            "structures",
+            "rationale"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-003",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Equal periodic plan",
+            "definition_md": "Rentals are level in each period. The rental is the investment divided by the annuity factor for the lease term at the lessor's required return."
+          },
+          "tags": [
+            "structures",
+            "equal"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-004",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Stepped-up plan",
+            "definition_md": "Rentals rise from period to period at a stated rate of increase. It suits a lessee whose cash inflows from the asset grow over time."
+          },
+          "tags": [
+            "structures",
+            "stepped-up"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-005",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Stepped-down plan",
+            "definition_md": "Rentals fall from period to period at a stated rate of decrease, so heavier payments fall in the early years."
+          },
+          "tags": [
+            "structures",
+            "stepped-down"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-006",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Balloon payment plan",
+            "definition_md": "Small rentals are fixed for the early periods and the larger balance is paid as a lump sum in the closing periods, so that the lessor still recovers its cost and return."
+          },
+          "tags": [
+            "structures",
+            "balloon"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-007",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Deferred payment plan",
+            "definition_md": "No rental is paid for an initial period. Rentals start later and are equal, set high enough to recover the financing cost of the deferred period as well."
+          },
+          "tags": [
+            "structures",
+            "deferred"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which structure suits a lessee whose project has a gestation period with no revenue at first?",
+            "answer_md": "The deferred payment plan: nothing is paid during the gestation period, and rentals start when the asset begins to earn. The later rentals are higher."
+          },
+          "tags": [
+            "structures",
+            "deferred"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Equal rental",
+            "expression_md": "$X = \\dfrac{\\text{Investment}}{PVIFA(r,\\,n)}$",
+            "variables_md": "$r$ = lessor's required return, $n$ = lease term; investment net of residual PV if any; tax effects added if the question asks.",
+            "when_md": "Level rentals at year end, ignoring tax. With tax, use the after-tax method of the lessor's break-even lease rental."
+          },
+          "tags": [
+            "structures",
+            "equal",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Example, equal rental: investment 60 lakh, 3 years, required return 20%. Find the rental.",
+            "answer_md": "Annuity factor 2.1065 (about). X = 60,00,000 / 2.1065 = about 28,48,352 per year."
+          },
+          "tags": [
+            "structures",
+            "equal",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-011",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Stepped-up rental, step g per year",
+            "expression_md": "$X\\left[\\dfrac{1}{(1+r)} + \\dfrac{(1+g)}{(1+r)^2} + \\dfrac{(1+g)^2}{(1+r)^3}\\right] = \\text{Investment}$",
+            "variables_md": "$X$ = first-year rental, $g$ = annual increase in rental, $r$ = required return.",
+            "when_md": "Extend the bracket for longer terms. Solve for $X$, then each year's rental is the previous one x $(1+g)$."
+          },
+          "tags": [
+            "structures",
+            "stepped-up",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Example, stepped-up plan: investment 60 lakh, 3 years, 20% return, rentals rise 10% a year. Find the rentals.",
+            "answer_md": "PV factor on X = 0.8333 + 1.1 x 0.6944 + 1.21 x 0.5787 = 2.2975. X = 60,00,000 / 2.2975 = 26,11,587. Rentals: 26,11,587, 28,72,746 and 31,60,020."
+          },
+          "tags": [
+            "structures",
+            "stepped-up",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Stepped-down illustration: a 60 lakh asset, 3-year lease, 20% yield for the lessor, rentals shrinking by 10% annually. What are the three rentals?",
+            "answer_md": "PV factor on X = 0.8333 + 0.9 x 0.6944 + 0.81 x 0.5787 = 1.9271. X = 60,00,000 / 1.9271 = 31,13,514. Rentals: 31,13,514, 28,02,162 and 25,21,946."
+          },
+          "tags": [
+            "structures",
+            "stepped-down",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-014",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method for a balloon plan: what is the unknown and how is it found?",
+            "answer_md": "The lump-sum final rental is the unknown. PV of the fixed early rentals + PV of the final rental = investment, so final rental = (investment - PV of early rentals) / PV factor of the last year."
+          },
+          "tags": [
+            "structures",
+            "balloon",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Example, balloon plan: investment 60 lakh, 3 years, 20% return, rental 10 lakh in years 1 and 2. Find the final rental.",
+            "answer_md": "PV of early rentals = 10,00,000 x (0.8333 + 0.6944) = 15,27,778. Remaining 44,72,222 / 0.5787 = 77,28,000 in year 3."
+          },
+          "tags": [
+            "structures",
+            "balloon",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-016",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Method for a deferred plan: how are the PV factors chosen?",
+            "answer_md": "No factor is used for the deferred years. Add the PV factors only for the years in which rentals are paid, then rental = investment / that sum. Example: 60 lakh, 3 years, 20%, no rental in year 1: factor 0.6944 + 0.5787 = 1.2731, rental 47,12,727 in years 2 and 3."
+          },
+          "tags": [
+            "structures",
+            "deferred",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In the deferred example, the total rentals are 94.25 lakh against 85.45 lakh under equal rentals. Why?",
+            "answer_md": "Paying later costs the lessee more in total, since the lessor funds the asset for longer and must earn its required return during the deferment. This is the financing cost of the deferred period."
+          },
+          "tags": [
+            "structures",
+            "deferred",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which structure fits when the lessee's initial cash flow is uncertain, from a past paper on a deferred versus a balloon rental?",
+            "answer_md": "Deferred rentals, because no rental is due in the first period. A balloon plan still commits the lessee to fixed early rentals, though smaller. The cost is higher later rentals."
+          },
+          "tags": [
+            "structures",
+            "deferred",
+            "balloon",
+            "past-paper"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why does a balloon plan's final rental look so large?",
+            "answer_md": "Early rentals are small and fixed, so most of the investment and the return on it is recovered in the closing period. Its PV factor is low, so the lump sum must be much larger."
+          },
+          "tags": [
+            "structures",
+            "balloon"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-020",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A lessor's question says 'ignore depreciation and income tax' for the rental structure. What does that change?",
+            "answer_md": "Rentals are not reduced by tax and there is no depreciation shield, so PV of rentals at the pre-tax required return simply equals the investment (less PV of residual, if any)."
+          },
+          "tags": [
+            "structures",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-021",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "With nil residual and the required return given as pre-tax, how do you treat the discount rate in a rental-structure problem?",
+            "answer_md": "Use the rate as given for a no-tax problem. If tax is to be considered, take the post-tax required return and use after-tax rentals and the depreciation shield instead."
+          },
+          "tags": [
+            "structures",
+            "discount-rate"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Check method for any structure: how do you confirm your rentals are right?",
+            "answer_md": "Discount each year's rental at the lessor's required return and add; the total must equal the investment. Example: stepped-up 26,11,587, 28,72,746, 31,60,020 at 20% sums to 60,00,000."
+          },
+          "tags": [
+            "structures",
+            "check",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-struct-023",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which structure follows an upward rate of increase and which a downward rate of decrease?",
+            "answer_md": "Stepped-up: rentals increase at a specified rate. Stepped-down: rentals decrease at a specified rate."
+          },
+          "tags": [
+            "structures",
+            "stepped-up",
+            "stepped-down"
+          ],
+          "reference_keys": [
+            "sfm:struct"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Leveraged lease",
+            "definition_md": "A lease in which the lessor buys the asset partly with its own equity and partly with a loan from a financial institution, and leases it to the lessee for agreed rentals. It involves three parties: lessor, lessee and lender."
+          },
+          "tags": [
+            "leveraged-lease",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Describe the cash flow in a leveraged lease.",
+            "answer_md": "The lessee pays rentals into an escrow account kept with the lender. The lender deducts the loan instalment (principal and interest) from the escrow account and passes the balance, if any, to the lessor."
+          },
+          "tags": [
+            "leveraged-lease",
+            "escrow"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Who are the equity participant and the loan participant?",
+            "answer_md": "The equity participant is the lessor (or investor) who funds the equity part of the asset cost. The loan participant is the financial institution that lends the rest and is repaid from the rentals."
+          },
+          "tags": [
+            "leveraged-lease",
+            "parties"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why does the lessee pay rentals into an escrow account in a leveraged lease?",
+            "answer_md": "It protects the lender: loan instalments are served directly out of the rentals, and only the surplus reaches the lessor."
+          },
+          "tags": [
+            "leveraged-lease",
+            "escrow"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does the lessor try to recover from the rentals in a leveraged lease?",
+            "answer_md": "Its own equity, together with its required return, out of the net cash flow, i.e. rental less loan instalment. The loan portion is served by the lender's share of the rental."
+          },
+          "tags": [
+            "leveraged-lease",
+            "belr"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Break-even rental in a leveraged lease",
+            "expression_md": "$L = E_{loan} + \\dfrac{\\text{Equity}}{PVIFA(y,\\,n)}$",
+            "variables_md": "$E_{loan}$ = equated annual loan instalment = loan / PVIFA(loan rate, n); Equity = lessor's own funds; $y$ = required yield on equity; $n$ = lease term.",
+            "when_md": "Study-text method: tax effects are not applied and the loan instalment is the first claim on the rental. Check whether the question mentions tax or other flows."
+          },
+          "tags": [
+            "leveraged-lease",
+            "belr",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Steps for the minimum rental in a leveraged lease.",
+            "answer_md": "1) Loan = cost x debt share. 2) Equity = cost - loan. 3) Equated instalment = loan / annuity factor at loan rate. 4) Net cash flow needed = equity / annuity factor at the required yield. 5) Rental = instalment + net cash flow."
+          },
+          "tags": [
+            "leveraged-lease",
+            "belr",
+            "method"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Example: asset 30 crore, equity : debt = 1 : 2, loan 12% in 5 equated instalments, equity yield 18%. Find the instalment and minimum rental.",
+            "answer_md": "Loan = 20 crore; equity = 10 crore. Instalment = 20 / 3.6048 = 5.548 crore. Net cash flow needed = 10 / 3.1272 = 3.198 crore. Rental = 5.548 + 3.198 = about 8.746 crore a year."
+          },
+          "tags": [
+            "leveraged-lease",
+            "numerical",
+            "worked-example"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In a leveraged lease the investment is in the ratio 1:4 between equity and debt. What fraction is the loan?",
+            "answer_md": "Loan = 4/5 of cost (80%); equity = 1/5 (20%). For a cost of 50 crore the loan is 40 crore."
+          },
+          "tags": [
+            "leveraged-lease",
+            "ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a question's debt-equity ratio of 2:8 translate into amounts?",
+            "answer_md": "Read the ratio in the order stated (the study text uses 'fund the investment in the ratio of 2:8' for equity : loan). Loan = cost x 8/10, equity = cost x 2/10. For a 10 crore asset the loan is 8 crore."
+          },
+          "tags": [
+            "leveraged-lease",
+            "ratio",
+            "numerical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the lessor's yield a pre-tax or tax-free figure in the study text's leveraged lease problem?",
+            "answer_md": "The solution applies the yield directly on net cash flow without tax adjustments, though the question words the yield as belonging to the lender. Read the question to see whose return is meant."
+          },
+          "tags": [
+            "leveraged-lease",
+            "yield",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-012",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why can the lessor earn a high return in a leveraged lease even with small equity?",
+            "answer_md": "The lender funds most of the cost, and the lessor still owns the asset and claims depreciation, so the return on its small equity is magnified by leverage."
+          },
+          "tags": [
+            "leveraged-lease",
+            "leverage"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-leveraged-013",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What differentiates a leveraged lease from a simple finance lease?",
+            "answer_md": "A third party, the lender, is involved. In a simple lease the lessor funds the asset itself or with ordinary borrowing; in a leveraged lease the loan is serviced directly from the rentals through escrow."
+          },
+          "tags": [
+            "leveraged-lease",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:leveraged"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Cross-border lease",
+            "definition_md": "A lease in which the lessor and the lessee are in different countries. It can serve as an alternative to an equipment loan to a foreign buyer, differing in documentation, down payment, payment stream and end-of-lease options."
+          },
+          "tags": [
+            "cross-border",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the objectives of cross-border leasing.",
+            "answer_md": "Lower overall cost of financing; security for the lessor; favourable accounting treatment; easier repossession."
+          },
+          "tags": [
+            "cross-border",
+            "objectives"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a cross-border lease reduce the overall cost of financing?",
+            "answer_md": "The lessor uses the tax depreciation allowances to reduce its taxable income and passes the savings to the lessee as a lower cost of finance. It needs a high tax rate in the lessor's country, liberal depreciation and rules on tax ownership that are very flexible or very formal."
+          },
+          "tags": [
+            "cross-border",
+            "objectives",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What conditions make cross-border leasing attractive?",
+            "answer_md": "Three things: a high tax rate where the lessor sits, generous depreciation allowances, and tax-ownership rules that are at one extreme, either very flexible or very formal."
+          },
+          "tags": [
+            "cross-border",
+            "conditions"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does a cross-border lessor get security?",
+            "answer_md": "It can often fund a large part of the cost with non-recourse debt. The lender holds a mortgage over the equipment and also takes over the right to the lessee's rental payments as security."
+          },
+          "tags": [
+            "cross-border",
+            "objectives",
+            "security"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Describe the accounting and repossession objectives in cross-border leasing.",
+            "answer_md": "Accounting: in some countries the lessor gets the favourable leveraged lease accounting treatment, depending on the structure. Repossession: some legal systems let an owner take back the equipment more easily than a secured lender can."
+          },
+          "tags": [
+            "cross-border",
+            "objectives",
+            "accounting",
+            "repossession"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-007",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Double-dip lease",
+            "definition_md": "A cross-border lease structured so that the lessor in one country and the lessee (or a related party) in another are each treated as owner for tax, letting both claim depreciation allowances on the same asset."
+          },
+          "tags": [
+            "cross-border",
+            "double-dip"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is double-dip leasing possible?",
+            "answer_md": "Countries test tax ownership differently. One may require the lessor to hold the economic attributes of ownership, while another focuses on legal title. With a suitably structured long lease an asset can end up with two effective owners."
+          },
+          "tags": [
+            "cross-border",
+            "double-dip",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Give the two kinds of tests for tax ownership that make a double dip possible.",
+            "answer_md": "An economic ownership test (the lessor has substantially all the attributes of economic ownership) and a legal title test (formal property law looks at who holds title, often with some economic interest required)."
+          },
+          "tags": [
+            "cross-border",
+            "double-dip",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What use does cross-border leasing have in emerging economies?",
+            "answer_md": "It helps finance infrastructure with predictable revenue streams, such as rail and air transport equipment, telecommunications equipment and power generation and distribution assets."
+          },
+          "tags": [
+            "cross-border",
+            "infrastructure"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-011",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "When can operating leases be feasible in cross-border deals?",
+            "answer_md": "For export of large equipment whose economic life is long relative to the lease term."
+          },
+          "tags": [
+            "cross-border",
+            "operating-lease"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-012",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Sale and leaseback",
+            "definition_md": "An arrangement in which the lessee sells an asset it owns or has bought to a lessor and leases it right back. The lessee gets cash and keeps using the asset."
+          },
+          "tags": [
+            "sale-and-leaseback",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "State the advantages of sale and leaseback.",
+            "answer_md": "The lessee is sure of the asset's quality (it chose the asset); cash is released from an existing asset; liquidity improves while the asset stays in use; the lessor gets the depreciation tax benefit."
+          },
+          "tags": [
+            "sale-and-leaseback",
+            "advantages"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "In what situation is sale and leaseback popular?",
+            "answer_md": "When the lessee has a liquidity problem. It sells the asset to a leasing company, uses the funds released and continues to use the asset against rentals."
+          },
+          "tags": [
+            "sale-and-leaseback",
+            "liquidity"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Describe the sequence of events in a sale and leaseback.",
+            "answer_md": "The lessee first acquires the equipment of its choice (or already owns it), sells it to the lessor, and the lessor leases it back to the same lessee."
+          },
+          "tags": [
+            "sale-and-leaseback",
+            "process"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How does sale and leaseback work in a cross-border lease where the original owner pays no tax?",
+            "answer_md": "An owner that cannot claim depreciation (as it is not taxed anywhere) sells the asset, such as a sewerage system or a power plant, to an investor who can claim it, and leases it back for the long term."
+          },
+          "tags": [
+            "sale-and-leaseback",
+            "cross-border",
+            "tax"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-crossborder-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Contrast a conventional lease with a sale and leaseback on the starting point.",
+            "answer_md": "Conventional lease: the lessor buys a new asset and gives it to the lessee. Sale and leaseback: the lessee already holds the asset and transfers ownership to the lessor, who leases it back."
+          },
+          "tags": [
+            "sale-and-leaseback",
+            "comparison"
+          ],
+          "reference_keys": [
+            "sfm:crossborder"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-001",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A {{c1::finance}} lease transfers substantially all risks and rewards of ownership; an {{c2::operating}} lease does not."
+          },
+          "tags": [
+            "lease",
+            "types"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "In lease versus buy the discount rate is the {{c1::after-tax}} cost of {{c2::borrowing}}, equal to pre-tax rate x {{c3::(1 - t)}}."
+          },
+          "tags": [
+            "lvb",
+            "discount-rate"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Choose the option with the {{c1::lower}} PV of net cash outflow; the lessee accepts a lease when the rental is {{c2::at most}} the break-even lease rental."
+          },
+          "tags": [
+            "lvb",
+            "belr",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-004",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "For the lessee the break-even lease rental is the {{c1::maximum}} acceptable; for the lessor it is the {{c2::minimum}} acceptable."
+          },
+          "tags": [
+            "belr"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Buy option PV = instalments less {{c1::interest}} tax shield less {{c2::depreciation}} tax shield less {{c3::residual value}}."
+          },
+          "tags": [
+            "lvb",
+            "buy"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-006",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "In a leveraged lease the rentals are paid into an {{c1::escrow}} account; the {{c2::lender}} deducts its instalment and the balance goes to the {{c3::lessor}}."
+          },
+          "tags": [
+            "leveraged-lease"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A stepped plan makes rentals {{c1::increase}} (or decrease) at a fixed rate; a balloon plan has {{c2::small early}} rentals and a {{c3::large lump sum}} at the end; a deferred plan has {{c4::no rent}} at the start."
+          },
+          "tags": [
+            "structures"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-008",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "The three parties in a leveraged lease are the {{c1::lessor}}, the {{c2::lessee}} and the {{c3::lender}}."
+          },
+          "tags": [
+            "leveraged-lease",
+            "parties"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Rentals payable at the start of each year use the annuity-due factor: {{c1::1 + PVIFA for (n - 1) years}}."
+          },
+          "tags": [
+            "belr",
+            "timing"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-010",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "A lessor's advantages: {{c1::full security}}, tax benefit, high profits and {{c2::trading on equity}}."
+          },
+          "tags": [
+            "lease",
+            "lessor-advantages"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-011",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A lessee gains from leasing: no dilution of {{c1::ownership}}, no loss of {{c2::control}}, less risk of {{c3::obsolescence}}."
+          },
+          "tags": [
+            "lease",
+            "lessee-advantages"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-012",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Limitations of leasing for the lessee: {{c1::restrictions}} on use, a possible high {{c2::pay-out}} on early termination, and no {{c3::ownership}}."
+          },
+          "tags": [
+            "lease",
+            "limitations"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-013",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Net advantage of leasing = PV outflow under {{c1::buying}} minus PV outflow under {{c2::leasing}}; positive means {{c3::lease}}."
+          },
+          "tags": [
+            "lvb",
+            "nal"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-014",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "The objectives of a cross-border lease are lower financing {{c1::cost}}, {{c2::security}}, accounting treatment and easy {{c3::repossession}}."
+          },
+          "tags": [
+            "cross-border",
+            "objectives"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm03-clz-015",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "Eat Some Sweet Bread Daily",
+            "expands_md": "The five rental structures: Equal, Stepped-up, Stepped-down, Balloon, Deferred.",
+            "topic": "Rental structures"
+          },
+          "tags": [
+            "structures",
+            "mnemonic"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}

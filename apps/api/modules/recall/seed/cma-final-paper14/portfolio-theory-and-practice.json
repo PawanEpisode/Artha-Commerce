@@ -1,0 +1,4290 @@
+{
+  "schema": 1,
+  "sample": false,
+  "decks": [
+    {
+      "slug": "cma-final-sfm-portfolio-theory-and-practice",
+      "title": "SFM: Portfolio Theory and Practice",
+      "description": "Recall cards for CMA Final Paper 14, Chapter 8: Portfolio Theory and Practice.",
+      "changelog": "First version.",
+      "scope": {
+        "course": "cma",
+        "level": "final",
+        "subject_key": "strategic-financial-management",
+        "chapter_key": "portfolio-theory-and-practice"
+      },
+      "items": [
+        {
+          "ref": "sfm08-ret-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Ex-ante return",
+            "definition_md": "The return an investor expects in the future, worked out from projected outcomes and their probabilities. Portfolio selection is built on ex-ante values because every portfolio decision concerns the future."
+          },
+          "tags": [
+            "return",
+            "ex-ante",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-002",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Ex-post return",
+            "definition_md": "The return actually earned over a past period. It is used to judge how a portfolio or manager performed, not to choose a future portfolio."
+          },
+          "tags": [
+            "return",
+            "ex-post",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Which type of return do you use to choose a portfolio, and which to evaluate performance?",
+            "answer_md": "Choosing a portfolio uses ex-ante (expected, projected) returns and risk, because the decision is about the future. Evaluating performance uses ex-post (actual, historical) returns and risk for the past period."
+          },
+          "tags": [
+            "return",
+            "ex-ante",
+            "ex-post"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Holding period return",
+            "expression_md": "$HPR = \\dfrac{(P_1 - P_0) + D}{P_0}$",
+            "variables_md": "$P_0$ = price at the start, $P_1$ = price at the end, $D$ = dividend or income received during the period.",
+            "when_md": "Measures the actual (ex-post) return of one investment over the period held. Multiply by 100 for a percentage."
+          },
+          "tags": [
+            "return",
+            "holding-period",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is holding period return split into two parts, and what is the formula for each?",
+            "answer_md": "Current yield = income received / initial investment. Capital appreciation = (closing value - opening value) / initial investment. Their sum is the holding period return."
+          },
+          "tags": [
+            "return",
+            "holding-period",
+            "current-yield",
+            "capital-appreciation"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A share was bought at Rs 250, paid Rs 5 dividend and is worth Rs 280 a year later. Find the holding period return, current yield and capital appreciation.",
+            "answer_md": "Capital gain = 280 - 250 = Rs 30. HPR = (30 + 5) / 250 = 14%. Current yield = 5 / 250 = 2% and capital appreciation = 30 / 250 = 12%; 2% + 12% = 14%."
+          },
+          "tags": [
+            "return",
+            "holding-period",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expected return of a portfolio",
+            "expression_md": "$E(R_P) = \\sum_{i=1}^{n} w_i R_i$",
+            "variables_md": "$w_i$ = proportion of the portfolio in asset $i$ (weights add up to 1 or 100%), $R_i$ = return (or expected return) of asset $i$.",
+            "when_md": "Always a weighted average of the individual returns, however many securities the portfolio holds."
+          },
+          "tags": [
+            "return",
+            "portfolio-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A portfolio has 40% in P returning 10%, 35% in Q returning 18% and 25% in R returning -4%. What is the portfolio return?",
+            "answer_md": "0.40 x 10 + 0.35 x 18 + 0.25 x (-4) = 4.0 + 6.3 - 1.0 = 9.3%. A negative return simply reduces the weighted sum."
+          },
+          "tags": [
+            "return",
+            "portfolio-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Ex-ante (expected) return of a security",
+            "expression_md": "$E(R) = \\sum_{i=1}^{n} p_i R_i$",
+            "variables_md": "$p_i$ = probability of outcome (state) $i$, $R_i$ = return in that outcome. Probabilities add up to 1.",
+            "when_md": "Use when future returns are given as scenarios with probabilities (growth, stable, recession)."
+          },
+          "tags": [
+            "return",
+            "ex-ante",
+            "probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Stock A returns 14% in a boom (probability 0.5), 9% in a stable economy (0.3) and -6% in a slump (0.2). Stock B's expected return is 6%. Find E(R) of A and of a 70:30 portfolio of A and B.",
+            "answer_md": "E(A) = 0.5 x 14 + 0.3 x 9 + 0.2 x (-6) = 7 + 2.7 - 1.2 = 8.5%. Portfolio = 0.7 x 8.5 + 0.3 x 6 = 5.95 + 1.8 = 7.75%. First find each security's expected return from the probabilities, then weight them."
+          },
+          "tags": [
+            "return",
+            "portfolio-return",
+            "probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Does the way expected portfolio return is calculated change with the number of securities held?",
+            "answer_md": "No. It is always the weighted average of the securities' expected returns. Only portfolio risk behaves differently: it is not a weighted average, because it also depends on how the securities move together."
+          },
+          "tags": [
+            "return",
+            "portfolio-return",
+            "risk"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-012",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Annualised return from total return",
+            "expression_md": "$R_{ann} = (1 + R_{total})^{1/n} - 1$",
+            "variables_md": "$R_{total}$ = total return over the whole holding as a decimal (final value / initial value - 1), $n$ = number of years.",
+            "when_md": "Converts a multi-year total return, with dividends reinvested, into a compound yearly rate."
+          },
+          "tags": [
+            "return",
+            "annualised",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rs 10,000 grows to Rs 21,000 in 8 years with dividends reinvested. Find total and annualised return.",
+            "answer_md": "Total return = 21,000 / 10,000 - 1 = 110%. Annualised = 2.1^(1/8) - 1, about 9.72% a year. Do not divide 110% by 8, because that ignores compounding."
+          },
+          "tags": [
+            "return",
+            "annualised",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Define total return, current return and capital return for a security.",
+            "answer_md": "Current return is the periodic income (dividend or interest) from the investment. Capital return is the price appreciation or depreciation divided by the beginning price. Total return = current return + capital return."
+          },
+          "tags": [
+            "return",
+            "total-return",
+            "current-yield",
+            "capital-appreciation"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Who is the father of modern portfolio theory, and what did his 1952 work add?",
+            "answer_md": "Harry Markowitz (Nobel Prize in Economics, 1990). He gave the first scientific method to measure risk and return of securities, using covariance between them, and a way to find the optimum portfolio."
+          },
+          "tags": [
+            "markowitz",
+            "history",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How did the Markowitz approach differ from the traditional advice of not putting all eggs in one basket?",
+            "answer_md": "The traditional advice recommended spreading money without measuring risk. Markowitz quantified risk with variance and covariance, showing that a combination of securities can have a risk and return profile different from a simple sum of its parts."
+          },
+          "tags": [
+            "markowitz",
+            "diversification",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Distinguish investment, speculation and gambling.",
+            "answer_md": "Investment: employing funds in assets for income or capital appreciation, usually for safety of principal and stable returns over a longer horizon. Speculation: taking a risky financial transaction in the hope of substantial profit, normally over a short horizon. Gambling: a game of chance where the return depends on a particular event happening."
+          },
+          "tags": [
+            "basics",
+            "investment",
+            "speculation",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Name the steps of portfolio management in order.",
+            "answer_md": "Security analysis, then portfolio construction, then portfolio performance evaluation (checking over the review period how the portfolio did) and finally portfolio revision."
+          },
+          "tags": [
+            "basics",
+            "portfolio-management"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-ret-019",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What do the fundamental, technical and efficient-market approaches say about security prices?",
+            "answer_md": "Fundamental approach: every stock has an intrinsic value; buy if intrinsic value exceeds market price and sell otherwise. Technical approach: predict future prices from past market data. Efficient capital market theory: prices of traded securities always fully reflect all publicly available information."
+          },
+          "tags": [
+            "basics",
+            "fundamental-analysis",
+            "technical-analysis",
+            "emh"
+          ],
+          "reference_keys": [
+            "sfm:ret"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-001",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Portfolio risk",
+            "definition_md": "The uncertainty in portfolio returns, measured by the variance (or its square root, the standard deviation) of the portfolio's return. It depends on the risk of each holding, the weights and how the holdings move together."
+          },
+          "tags": [
+            "portfolio-risk",
+            "variance",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Variance of a two-asset portfolio",
+            "expression_md": "$\\sigma_P^2 = w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\,\\mathrm{Cov}(R_1,R_2)$",
+            "variables_md": "$w_1, w_2$ = weights ($w_2 = 1 - w_1$), $\\sigma_1^2,\\sigma_2^2$ = variances, $\\mathrm{Cov}(R_1,R_2)$ = covariance of the two returns.",
+            "when_md": "Obtained by taking the variance of $w_1R_1 + w_2R_2$. Portfolio standard deviation is the square root."
+          },
+          "tags": [
+            "portfolio-risk",
+            "variance",
+            "covariance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Standard deviation of a two-asset portfolio using correlation",
+            "expression_md": "$\\sigma_P = \\sqrt{w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\,\\rho_{12}\\,\\sigma_1\\sigma_2}$",
+            "variables_md": "$\\rho_{12}$ = correlation coefficient between the two returns, which replaces the covariance via $\\mathrm{Cov}=\\rho\\sigma_1\\sigma_2$.",
+            "when_md": "Standard form in exam problems when standard deviations, weights and the correlation coefficient are given."
+          },
+          "tags": [
+            "portfolio-risk",
+            "standard-deviation",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Weights 60:40, standard deviations 10% and 20%, correlation 0.3. Find the portfolio variance and standard deviation.",
+            "answer_md": "Covariance = 0.3 x 10 x 20 = 60. Variance = 0.36 x 100 + 0.16 x 400 + 2 x 0.6 x 0.4 x 60 = 36 + 64 + 28.8 = 128.8. Standard deviation = square root of 128.8, about 11.35%, which is below the weighted average of 14%."
+          },
+          "tags": [
+            "portfolio-risk",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-005",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why is the standard deviation of a portfolio not the weighted average of the securities' standard deviations?",
+            "answer_md": "Because the securities do not move exactly together, so their ups and downs partly offset. The cross term with correlation (covariance) enters the formula. Depending on the choice of securities, portfolio risk can even fall below the risk of the least risky holding."
+          },
+          "tags": [
+            "portfolio-risk",
+            "diversification",
+            "correlation"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Two assets move in perfect lockstep (correlation +1). What does the portfolio SD reduce to, and what does that imply?",
+            "answer_md": "With correlation +1 the expression is a perfect square: sigma_P = w1 x sigma1 + w2 x sigma2, the weighted average of the two risks. There is no diversification benefit and portfolio risk is at its maximum."
+          },
+          "tags": [
+            "portfolio-risk",
+            "correlation",
+            "perfect-positive"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-007",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Two assets are perfect opposites (correlation -1). Write the portfolio SD and say how zero risk is reached.",
+            "answer_md": "It is the absolute difference |w1 x sigma1 - w2 x sigma2|. By choosing weights that make the two terms equal, the risk can be reduced to zero. This is the lowest possible risk for the pair."
+          },
+          "tags": [
+            "portfolio-risk",
+            "correlation",
+            "perfect-negative"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-008",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Two assets have standard deviations 10% and 20%, weights 50:50. Find portfolio risk at correlation +1, 0 and -1.",
+            "answer_md": "Variance = 25 + 100 + 100 x rho. At +1: sqrt(225) = 15%. At 0: sqrt(125) = 11.18%. At -1: sqrt(25) = 5%. The same weights give lower risk as correlation falls."
+          },
+          "tags": [
+            "portfolio-risk",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-009",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Portfolio standard deviation for three securities",
+            "expression_md": "$\\sigma_P = \\sqrt{\\sum_i w_i^2\\sigma_i^2 + 2\\sum_{i<j} w_iw_j\\rho_{ij}\\sigma_i\\sigma_j}$",
+            "variables_md": "Three own-variance terms plus three cross terms (one for each pair P-Q, P-R, Q-R), each cross term doubled.",
+            "when_md": "Used for three-security problems. For more securities use the matrix approach."
+          },
+          "tags": [
+            "portfolio-risk",
+            "three-securities",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Explain the matrix approach to portfolio variance for three securities.",
+            "answer_md": "Write a 3 x 3 grid with securities along both sides, and the weights beside each row and column. The diagonal cells are w x w x variance; every off-diagonal cell is w_i x w_j x covariance. Add all nine cells to get portfolio variance; take the square root for standard deviation. Each covariance appears twice (above and below the diagonal)."
+          },
+          "tags": [
+            "portfolio-risk",
+            "matrix-approach",
+            "covariance"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Weights 0.5, 0.3, 0.2; SDs 10, 15, 20; correlations AB 0.4, AC 0.2, BC -0.1. Find portfolio SD.",
+            "answer_md": "Own terms: 25 + 20.25 + 16 = 61.25. Cross terms (doubled): AB 18, AC 8, BC -3.6, total 22.4. Variance = 61.25 + 22.4 = 83.65, so SD is about 9.15%. Covariances used: AB = 60, AC = 40, BC = -30."
+          },
+          "tags": [
+            "portfolio-risk",
+            "three-securities",
+            "matrix-approach",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you find the covariance between two securities when only correlation and standard deviations are given?",
+            "answer_md": "Multiply: Cov(A,B) = rho(AB) x sigma(A) x sigma(B). For example rho = 0.5 with SDs 8 and 12 gives covariance 48; with rho = -0.4 and SDs 8 and 6 it is -19.2."
+          },
+          "tags": [
+            "covariance",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-013",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Systematic (market, non-diversifiable) risk",
+            "definition_md": "The part of total risk that comes from external, uncontrollable factors affecting all securities, such as social, political and economic events, interest rates and inflation. It cannot be removed by diversification and is measured by beta. Also called market or non-diversifiable risk."
+          },
+          "tags": [
+            "systematic-risk",
+            "market-risk",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-014",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Unsystematic (specific, diversifiable) risk",
+            "definition_md": "The part of risk unique to a particular security or industry, arising from factors that can be known and controlled. It can be eliminated by diversification. Also called specific, residual or diversifiable (idiosyncratic) risk."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "diversifiable-risk",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the components of systematic risk and of unsystematic risk.",
+            "answer_md": "Systematic: market risk, interest rate risk, purchasing power risk. Unsystematic: business risk, financial risk, default risk."
+          },
+          "tags": [
+            "systematic-risk",
+            "unsystematic-risk",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-016",
+          "kind": "mnemonic",
+          "importance": "important",
+          "fields": {
+            "mnemonic": "MIP for systematic, BFD for unsystematic",
+            "expands_md": "Systematic = Market, Interest rate, Purchasing power. Unsystematic = Business, Financial, Default.",
+            "topic": "Types of risk"
+          },
+          "tags": [
+            "systematic-risk",
+            "unsystematic-risk",
+            "classification"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-017",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Market risk",
+            "definition_md": "A systematic risk triggered by social, political and economic events (for example a tax circular that makes prices fall across all sectors). It reflects changes in demand and supply, investor expectations, information flow and investors' risk perception."
+          },
+          "tags": [
+            "systematic-risk",
+            "market-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-018",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Interest rate risk",
+            "definition_md": "Uncertainty about future market values and income caused by changes in the general level of interest rates. Corporate debt cost depends on prevailing rates, maturity, borrower credit standing and monetary and credit policy of RBI. Prices of fixed-coupon securities move inversely to interest rates."
+          },
+          "tags": [
+            "systematic-risk",
+            "interest-rate-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-019",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Purchasing power risk",
+            "definition_md": "The risk that the real value of money is eroded by inflation, so that returns buy less than expected."
+          },
+          "tags": [
+            "systematic-risk",
+            "inflation",
+            "purchasing-power-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-020",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Business risk",
+            "definition_md": "Unsystematic risk: volatility in a company's revenues and profits arising from its market conditions, product mix and competition. It can have external causes (government policy for that industry) or internal causes (labour efficiency, management)."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "business-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-021",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Financial risk",
+            "definition_md": "Unsystematic risk linked to a company's capital structure: a firm with no debt has no financial risk, and higher financial leverage means higher financial risk. It also arises from short-term liquidity problems and funds tied up in working capital and receivables."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "financial-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-022",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Default risk",
+            "definition_md": "Unsystematic risk that a borrower fails to meet financial obligations on time. Late or non-payment raises insolvency and bankruptcy costs. For corporate securities it is also called credit risk."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "default-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Which risks of Government securities does the study text mention?",
+            "answer_md": "Interest rate risk (price moves inversely to interest rate; can be fully avoided if the investment horizon exactly matches the maturity) and re-investment risk (interim cash flows may be reinvested at lower rates). Default risk is zero for Government securities. The text also names a maturity risk, which is in doubt, so confirm before relying on it."
+          },
+          "tags": [
+            "government-securities",
+            "interest-rate-risk",
+            "reinvestment-risk",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-024",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is re-investment risk, and why does yield to maturity ignore it?",
+            "answer_md": "It is the risk that interim coupons are reinvested at a lower rate than assumed, reducing the realised return. Yield to maturity assumes every interim cash flow is reinvested at the YTM itself, so the realised return can differ from it."
+          },
+          "tags": [
+            "government-securities",
+            "reinvestment-risk",
+            "ytm"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-025",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How are total risk, systematic risk and unsystematic risk related?",
+            "answer_md": "Total risk = systematic risk + unsystematic risk. Systematic risk is the part due to market-wide factors and is measured by beta. Unsystematic risk is the residual, found as total risk less systematic risk."
+          },
+          "tags": [
+            "total-risk",
+            "systematic-risk",
+            "unsystematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-026",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "When is standard deviation the right measure of a security's risk, and when is beta?",
+            "answer_md": "Standard deviation (total risk) is right when the investor holds only that one security, or when evaluating its diversifiable risk. Beta is the proper measure for an investor who holds a diversified portfolio, because only systematic risk remains relevant."
+          },
+          "tags": [
+            "standard-deviation",
+            "beta",
+            "risk-measure"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-027",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Does the market reward diversifiable risk? Why?",
+            "answer_md": "No. Investors can remove it themselves by diversifying, so the market pays a return only for bearing systematic (market) risk."
+          },
+          "tags": [
+            "diversification",
+            "unsystematic-risk",
+            "systematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-028",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Diversification",
+            "definition_md": "Spreading investment over more than one security, so that some risks of individual assets are eliminated. It works because prices of different stocks do not move exactly together."
+          },
+          "tags": [
+            "diversification",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-029",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does diversification achieve and what can it not remove?",
+            "answer_md": "It removes unsystematic risk, for which investors are not rewarded, and protects against business and financial risk of individual firms across companies, industries and asset classes. It cannot remove systematic (market) risk, for which investors are rewarded."
+          },
+          "tags": [
+            "diversification",
+            "systematic-risk",
+            "unsystematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-030",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the effect of diversification on returns?",
+            "answer_md": "It averages the returns of the holdings, so it trims both the potential highs and the lows of the portfolio."
+          },
+          "tags": [
+            "diversification",
+            "return"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-031",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish naive (random) diversification from Markowitz diversification.",
+            "answer_md": "Naive diversification simply adds many securities without looking at how they relate. Markowitz diversification chooses securities by studying the interrelationships (correlation, covariance) between their returns, and combines those that are less than perfectly positively correlated."
+          },
+          "tags": [
+            "diversification",
+            "naive",
+            "markowitz"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-risk-032",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why can a combination of securities have lower risk than any one of them?",
+            "answer_md": "Negative swings in one security can be set off by positive swings in another. A security that is risky alone may add little risk, or even reduce risk, in the context of a portfolio, so risk should be judged by its contribution to the portfolio."
+          },
+          "tags": [
+            "diversification",
+            "portfolio-risk",
+            "markowitz"
+          ],
+          "reference_keys": [
+            "sfm:risk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Variance and standard deviation from probabilities",
+            "expression_md": "$\\sigma^2 = \\sum_i p_i\\,(R_i - E(R))^2, \\quad \\sigma = \\sqrt{\\sigma^2}$",
+            "variables_md": "$p_i$ = probability, $R_i$ = return in state $i$, $E(R)$ = expected return.",
+            "when_md": "Total risk of a security from scenario data. A higher standard deviation means higher risk."
+          },
+          "tags": [
+            "standard-deviation",
+            "variance",
+            "probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Returns 20%, 10%, -5% with probabilities 0.3, 0.5, 0.2. Find expected return, variance and SD.",
+            "answer_md": "E(R) = 6 + 5 - 1 = 10%. Deviations: 10, 0, -15. Variance = 0.3 x 100 + 0.5 x 0 + 0.2 x 225 = 75. SD = sqrt(75), about 8.66%."
+          },
+          "tags": [
+            "standard-deviation",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does standard deviation measure, and in what terms does it express risk?",
+            "answer_md": "It measures how far each possible outcome deviates from the expected value, so higher dispersion means higher risk. It expresses risk in absolute terms and is generally treated as the total risk of a security or portfolio."
+          },
+          "tags": [
+            "standard-deviation",
+            "risk-measure"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-004",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which divisor should be used for variance of historical returns, n or n - 1?",
+            "answer_md": "The study text mostly divides by n (treating the data as the whole population), but one solved case divides by n - 1 (sample). In an exam, follow the divisor the question or the official solution style indicates; if nothing is stated, state your assumption."
+          },
+          "tags": [
+            "variance",
+            "historical",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-005",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Coefficient of variation",
+            "expression_md": "$CV = \\dfrac{\\sigma}{E(R)}$",
+            "variables_md": "$\\sigma$ = standard deviation, $E(R)$ = expected (mean) return.",
+            "when_md": "Risk per unit of return. Use it to compare investments whose expected returns differ, where raw standard deviation gives no common base. Lower CV is better."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "risk-per-unit-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A has mean 8% and SD 6%; B has mean 20% and SD 12%. Which is better by CV?",
+            "answer_md": "CV(A) = 6 / 8 = 0.75; CV(B) = 12 / 20 = 0.60. B has the larger SD but less risk per unit of return, so B is preferred on a CV basis."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "decision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is coefficient of variation needed when standard deviation already measures risk?",
+            "answer_md": "Standard deviation is an absolute measure and gives no common base for comparing investments with different expected returns. CV gives the deviation per unit of mean return, so it compares them on one base."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "standard-deviation"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-008",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Covariance",
+            "definition_md": "A measure of how the returns of two securities move together: the product of their deviations from their own mean returns, averaged. Positive covariance means they tend to move in the same direction, negative means opposite directions."
+          },
+          "tags": [
+            "covariance",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-009",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Covariance from historical data",
+            "expression_md": "$\\mathrm{Cov}(A,B) = \\dfrac{1}{N}\\sum_{t}(R_{A,t}-\\bar R_A)(R_{B,t}-\\bar R_B)$",
+            "variables_md": "$\\bar R_A,\\bar R_B$ = mean returns, $N$ = number of observations.",
+            "when_md": "Use when past returns are given as a series of years or months."
+          },
+          "tags": [
+            "covariance",
+            "historical",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-010",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Covariance from probabilities",
+            "expression_md": "$\\mathrm{Cov}(A,B) = \\sum_{i} p_i\\,(R_{A,i}-E(R_A))(R_{B,i}-E(R_B))$",
+            "variables_md": "$p_i$ = probability of state $i$; deviations are measured from the expected returns.",
+            "when_md": "Use when returns are given by state of the economy with probabilities."
+          },
+          "tags": [
+            "covariance",
+            "probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "States p = 0.3, 0.4, 0.3; X returns 15, 10, -5; Y returns 6, 12, 10. Find Cov, SDs and correlation.",
+            "answer_md": "E(X) = 7, E(Y) = 9.6. Deviations X: 8, 3, -12; Y: -3.6, 2.4, 0.4. Cov = 0.3x8x(-3.6) + 0.4x3x2.4 + 0.3x(-12)x0.4 = -8.64 + 2.88 - 1.44 = -7.2. Var X = 66, Var Y = 6.24, so SDs are 8.12 and 2.50; correlation = -7.2 / (8.12 x 2.50), about -0.35."
+          },
+          "tags": [
+            "covariance",
+            "correlation",
+            "probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-012",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Correlation coefficient",
+            "definition_md": "A measure of the closeness of the relationship between two random variables, bounded between -1 and +1. It is the covariance divided by the product of the two standard deviations."
+          },
+          "tags": [
+            "correlation",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-013",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Correlation from covariance",
+            "expression_md": "$\\rho_{XY} = \\dfrac{\\mathrm{Cov}_{XY}}{\\sigma_X\\,\\sigma_Y}$",
+            "variables_md": "$\\mathrm{Cov}_{XY}$ = covariance, $\\sigma_X,\\sigma_Y$ = standard deviations.",
+            "when_md": "Default method. Rearranged, Cov = rho x sigma_X x sigma_Y."
+          },
+          "tags": [
+            "correlation",
+            "covariance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-014",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Correlation from raw historical returns",
+            "expression_md": "$\\rho_{XY} = \\dfrac{n\\sum X_iY_i - \\sum X_i\\sum Y_i}{\\sqrt{\\left[n\\sum X_i^2-(\\sum X_i)^2\\right]\\left[n\\sum Y_i^2-(\\sum Y_i)^2\\right]}}$",
+            "variables_md": "$n$ = number of pairs; sums are over the observations of the two return series.",
+            "when_md": "Shortcut when you have raw return pairs and want to avoid computing deviations from the mean. The study text prints this as the third form of the formula; its probability-based form is printed with a wrong denominator, so use covariance over SD product."
+          },
+          "tags": [
+            "correlation",
+            "historical",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "What do correlation values of +1, 0 and -1 mean for diversification?",
+            "answer_md": "+1: securities move in tandem, no diversification, maximum portfolio risk. -1: they move in opposite directions and offset fully, so risk can be reduced to zero with proper weights. 0: no co-movement; risk is still lower than at +1, but diversification is less complete than at negative correlation."
+          },
+          "tags": [
+            "correlation",
+            "diversification",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Where is portfolio risk maximum and minimum with respect to correlation?",
+            "answer_md": "Maximum when the two components are perfectly positively correlated (+1); minimum when they are perfectly negatively correlated (-1)."
+          },
+          "tags": [
+            "correlation",
+            "portfolio-risk"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is the coefficient of determination (rho squared) and how does it split total risk?",
+            "answer_md": "It is the square of the correlation between the security and the market. It gives the share of the security's variance explained by the market, that is the systematic share; 1 - rho squared is the unsystematic share. For rho = 0.8, 64% of variance is systematic and 36% is unsystematic."
+          },
+          "tags": [
+            "correlation",
+            "coefficient-of-determination",
+            "systematic-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-018",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Beta",
+            "definition_md": "A measure of a security's sensitivity to movements of a broad market index (such as Sensex or Nifty). It measures systematic, non-diversifiable risk, and is the expected movement in the security's return per unit of movement in the market return."
+          },
+          "tags": [
+            "beta",
+            "systematic-risk",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-019",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Beta from correlation and standard deviations",
+            "expression_md": "$\\beta_S = \\rho_{SM}\\,\\dfrac{\\sigma_S}{\\sigma_M}$",
+            "variables_md": "$\\rho_{SM}$ = correlation of security with market, $\\sigma_S,\\sigma_M$ = standard deviations of security and market.",
+            "when_md": "Beta depends on three things: the security's risk, the market's risk and their correlation."
+          },
+          "tags": [
+            "beta",
+            "correlation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-020",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Beta from covariance",
+            "expression_md": "$\\beta_S = \\dfrac{\\mathrm{Cov}_{SM}}{\\sigma_M^{2}}$",
+            "variables_md": "$\\mathrm{Cov}_{SM}$ = covariance of security and market returns, $\\sigma_M^2$ = variance of market returns.",
+            "when_md": "Divide by the market VARIANCE (not the standard deviation). The study text prints sigma without the square in one place, which is an error."
+          },
+          "tags": [
+            "beta",
+            "covariance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-021",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Beta from raw return data",
+            "expression_md": "$\\beta_S = \\dfrac{\\sum R_MR_S - n\\bar R_M\\bar R_S}{\\sum R_M^{2} - n\\bar R_M^{2}}$",
+            "variables_md": "$n$ = number of pairs, $\\bar R_M,\\bar R_S$ = mean returns, sums run over all periods.",
+            "when_md": "Same as covariance over market variance, written with sums so no deviation columns are needed."
+          },
+          "tags": [
+            "beta",
+            "historical",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-022",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Market returns 10, 12, 8, 14, 6 and stock returns 14, 16, 9, 20, 6. Find beta and the characteristic line.",
+            "answer_md": "Means: market 10, stock 13. Cov (divide by n) = 14, market variance = 8, so beta = 14 / 8 = 1.75. Check by sums: sum RMRS = 720, sum RM^2 = 540, n x means = 650 and 500, so (720 - 650) / (540 - 500) = 1.75. Alpha = 13 - 1.75 x 10 = -4.5, so line is R_S = -4.5 + 1.75 R_M."
+          },
+          "tags": [
+            "beta",
+            "characteristic-line",
+            "historical",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-023",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Security SD 24%, correlation with market 0.75, market SD 16%. Find beta, systematic and unsystematic variance.",
+            "answer_md": "Beta = 0.75 x 24 / 16 = 1.125. Systematic variance = beta^2 x sigma_M^2 = 1.265625 x 256 = 324. Total variance = 576, so unsystematic = 576 - 324 = 252. (Check: 576 x 0.75^2 = 324.)"
+          },
+          "tags": [
+            "beta",
+            "systematic-risk",
+            "unsystematic-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-024",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is beta interpreted: below 1, equal to 1, above 1, negative and zero?",
+            "answer_md": "Below 1: less risky than the market (defensive). Equal to 1: moves with the market (a 10% market change gives 10%). Above 1: aggressive or high-beta, moves more than the market (beta 2 means a 10% rise gives about 20%). Negative: moves opposite to the market. Zero: no relation to the market, as for a risk-free asset."
+          },
+          "tags": [
+            "beta",
+            "interpretation"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-025",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the beta of the market portfolio and of a risk-free asset?",
+            "answer_md": "Market portfolio: 1. Risk-free asset: 0, because it has no systematic risk and its return does not depend on the market."
+          },
+          "tags": [
+            "beta",
+            "risk-free",
+            "market-portfolio"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-026",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Split of total risk: standard deviation approach",
+            "expression_md": "$\\sigma_S = \\underbrace{\\beta_S\\,\\sigma_M}_{\\text{systematic}} + \\underbrace{(\\sigma_S - \\beta_S\\,\\sigma_M)}_{\\text{unsystematic}}$",
+            "variables_md": "Systematic part = beta x market SD (equal to $\\rho_{SM}\\sigma_S$); unsystematic = total SD less the systematic part.",
+            "when_md": "The study text's alternative form is sigma_S x rho + sigma_S x (1 - rho). Unsystematic risk is only a balancing figure."
+          },
+          "tags": [
+            "systematic-risk",
+            "unsystematic-risk",
+            "standard-deviation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-027",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Split of total risk: variance approach",
+            "expression_md": "$\\sigma_S^2 = \\underbrace{\\beta_S^2\\,\\sigma_M^2}_{\\text{systematic}} + \\underbrace{\\sigma_S^2(1-\\rho_{SM}^2)}_{\\text{unsystematic}}$",
+            "variables_md": "$\\beta_S^2\\sigma_M^2 = \\rho_{SM}^2\\sigma_S^2$. Unsystematic variance = total variance - systematic variance.",
+            "when_md": "Variances (not standard deviations) add up, so this is the more rigorous split and the one used for portfolios."
+          },
+          "tags": [
+            "systematic-risk",
+            "unsystematic-risk",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-028",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Covariance of stock with market is 18 and market variance is 12. Stock variance is 40. Find beta, systematic and unsystematic variance.",
+            "answer_md": "Beta = 18 / 12 = 1.5. Systematic variance = 1.5^2 x 12 = 27 (equivalently cov^2 / market variance = 324 / 12). Unsystematic = 40 - 27 = 13. Share of variance explained by the market = 27 / 40 = 67.5%."
+          },
+          "tags": [
+            "beta",
+            "systematic-risk",
+            "unsystematic-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-029",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A stock moves 16% when the market moves 10%, and market variance is 256. How big is its systematic risk (variance approach)?",
+            "answer_md": "Beta = 16 / 10 = 1.6. Systematic variance = 1.6^2 x 256 = 655.36, about 655 (in squared percent units)."
+          },
+          "tags": [
+            "beta",
+            "systematic-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-030",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Portfolio beta",
+            "expression_md": "$\\beta_P = \\sum_i w_i\\,\\beta_i$",
+            "variables_md": "$w_i$ = weight (value share) of security $i$, $\\beta_i$ = its beta. A risk-free holding enters with beta 0.",
+            "when_md": "Portfolio beta is the weighted average of betas, unlike portfolio standard deviation."
+          },
+          "tags": [
+            "beta",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-031",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Stocks A, B and C have betas 0.8, 1.2 and 1.6 and weights 20%, 50%, 30%. A risk-free asset is not held. Find portfolio beta.",
+            "answer_md": "0.2 x 0.8 + 0.5 x 1.2 + 0.3 x 1.6 = 0.16 + 0.60 + 0.48 = 1.24, so the portfolio is more volatile than the market."
+          },
+          "tags": [
+            "beta",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-032",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A portfolio is one-third risk-free asset, one-third stock P (beta 0.9) and one-third stock Q. Portfolio beta equals the market's 1. Find Q's beta.",
+            "answer_md": "Beta = (0 + 0.9 + b) / 3 = 1, so b = 3 - 0.9 = 2.1. The risk-free asset contributes zero but still takes its one-third weight."
+          },
+          "tags": [
+            "beta",
+            "portfolio-beta",
+            "risk-free",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-033",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "A project is financed 70% equity (equity beta 1.5) and 30% debt of zero beta. Rf is 7% and Rm is 13%. What return should it earn?",
+            "answer_md": "Project beta = 0.7 x 1.5 + 0.3 x 0 = 1.05. Required return = 7 + 1.05 x (13 - 7) = 13.3%."
+          },
+          "tags": [
+            "beta",
+            "capm",
+            "project",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-034",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Does a security with higher total risk always have higher beta?",
+            "answer_md": "No. A security with greater total risk can have lower systematic risk (and higher unsystematic risk) than another. Total risk and beta measure different things."
+          },
+          "tags": [
+            "beta",
+            "total-risk",
+            "systematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-035",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the unsystematic risk of a security called a balancing figure?",
+            "answer_md": "It is not computed independently; it is worked out as total risk minus systematic risk (beta^2 x market variance in the variance approach)."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "total-risk"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-stat-036",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Two stocks have SDs 12% and 18%, weights 50:50 and the portfolio variance is 144. Find the correlation.",
+            "answer_md": "Own terms: 0.25 x 144 + 0.25 x 324 = 117. The cross term is 144 - 117 = 27 = 2 x 0.5 x 0.5 x rho x 12 x 18 = 108 rho, so rho = 0.25. Rearrange the portfolio variance formula to isolate the correlation."
+          },
+          "tags": [
+            "correlation",
+            "portfolio-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:stat"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-001",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Minimum variance weight in a two-security portfolio",
+            "expression_md": "$w_A = \\dfrac{\\sigma_B^{2} - \\mathrm{Cov}_{AB}}{\\sigma_A^{2} + \\sigma_B^{2} - 2\\,\\mathrm{Cov}_{AB}}, \\quad w_B = 1 - w_A$",
+            "variables_md": "$\\sigma_A^2,\\sigma_B^2$ = variances, $\\mathrm{Cov}_{AB} = \\rho_{AB}\\sigma_A\\sigma_B$.",
+            "when_md": "Gives the proportion in A that makes portfolio variance smallest. Swap A and B in the numerator to get B directly."
+          },
+          "tags": [
+            "minimum-variance",
+            "weights",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "SD of A is 20%, SD of B is 30%, correlation 0.2. Find the minimum variance weights and risk.",
+            "answer_md": "Cov = 0.2 x 20 x 30 = 120. w_A = (900 - 120) / (400 + 900 - 240) = 780 / 1,060 = 0.7358, so w_B = 0.2642. Variance = 0.7358^2 x 400 + 0.2642^2 x 900 + 2 x 0.7358 x 0.2642 x 120 = 326.0, so SD is about 18.06%, lower than either security's SD."
+          },
+          "tags": [
+            "minimum-variance",
+            "weights",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-003",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Zero-risk weights when correlation is -1",
+            "expression_md": "$w_A = \\dfrac{\\sigma_B}{\\sigma_A + \\sigma_B}, \\quad w_B = \\dfrac{\\sigma_A}{\\sigma_A + \\sigma_B}$",
+            "variables_md": "$\\sigma_A,\\sigma_B$ = standard deviations of the two securities. This is the general minimum variance weight with $\\mathrm{Cov} = -\\sigma_A\\sigma_B$.",
+            "when_md": "Use for the zero-risk portfolio when two assets are perfectly negatively correlated."
+          },
+          "tags": [
+            "minimum-variance",
+            "perfect-negative",
+            "zero-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Correlation is -1, SD of X is 6% and of Y is 10%. Find the weights for a zero-risk portfolio.",
+            "answer_md": "Cov = -60. w_X = (100 + 60) / (36 + 100 + 120) = 160 / 256 = 0.625 and w_Y = 0.375. Check: 0.625 x 6 - 0.375 x 10 = 3.75 - 3.75 = 0, so risk is zero."
+          },
+          "tags": [
+            "minimum-variance",
+            "perfect-negative",
+            "zero-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What happens when the minimum variance formula gives a weight above 100%?",
+            "answer_md": "A weight above 1 (or below 0) means the minimum risk portfolio needs short selling, which is not possible if short sales are not allowed. Then the lowest-risk choice is to put everything in the less risky security. Example: SDs 4% and 12% with correlation +0.5 give w = 1.071 for the safer asset."
+          },
+          "tags": [
+            "minimum-variance",
+            "short-sale",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Securities with SDs 4% and 12%. Compute the minimum variance weight in the first at correlation 0 and +0.5.",
+            "answer_md": "At 0: w = 144 / (16 + 144) = 0.90. At +0.5: Cov = 24, w = (144 - 24) / (16 + 144 - 48) = 1.071, which exceeds 1, so no diversification gain is available without short selling. The higher the correlation, the larger the share of the safer asset."
+          },
+          "tags": [
+            "minimum-variance",
+            "numerical",
+            "correlation"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Can portfolio risk be reduced below the risk of the safer security when correlation is +1?",
+            "answer_md": "No. With correlation +1 risk is the weighted average of the two standard deviations, so the least risk is obtained by holding only the safer security."
+          },
+          "tags": [
+            "minimum-variance",
+            "perfect-positive",
+            "correlation"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Projects with returns 10% and 18%, SDs 2% and 8%, correlation +1, weights 75:25. Find portfolio return and risk.",
+            "answer_md": "Return = 0.75 x 10 + 0.25 x 18 = 12%. With correlation +1 risk = 0.75 x 2 + 0.25 x 8 = 3.5% (weighted average of SDs). Verify through the full formula: variance = 2.25 + 4 + 2 x 0.75 x 0.25 x 16 = 12.25, SD 3.5%."
+          },
+          "tags": [
+            "portfolio-return",
+            "portfolio-risk",
+            "perfect-positive",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How do you choose between individual securities when only returns and risks are given?",
+            "answer_md": "Discard a security if another offers the same return at lower risk, or higher return at the same risk (dominance). Example: P (return 9, risk 5), Q (9, 7), R (12, 7), S (6, 5). P dominates Q and S; R dominates Q; so P and R remain."
+          },
+          "tags": [
+            "efficient-set",
+            "dominance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "With correlation +1, P (return 9%, SD 5%) and R (return 12%, SD 7%) are mixed 50:50. Find return and risk, and compare.",
+            "answer_md": "Return = 10.5%; risk = 0.5 x 5 + 0.5 x 7 = 6% since correlation is +1 and risk averages linearly. Compare with a single security: any holding giving 10.5% with SD below 6% beats this mix, so check the single-security list too."
+          },
+          "tags": [
+            "dominance",
+            "perfect-positive",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How to mix a risk-free asset and a risky asset to hit a target risk?",
+            "answer_md": "The risk-free asset has zero SD and zero covariance, so portfolio SD = w x SD of risky asset, and return = w x R(risky) + (1 - w) x Rf. Set w = target SD / risky SD, then compute return. Example: Rf 6%, risky 18% with SD 20%, target SD 15%: w = 0.75, return = 0.75 x 18 + 0.25 x 6 = 15%; on Rs 8,00,000 that is Rs 1,20,000."
+          },
+          "tags": [
+            "risk-free",
+            "portfolio-return",
+            "portfolio-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Two portfolios X and Y lie on the minimum variance set (short sales allowed). How are weights of a mix found, and what follows if one security has equal weight in both?",
+            "answer_md": "Add the rupee amounts put in each security through each portfolio, then divide by the total. Any mixture of minimum variance portfolios is itself on the set. If a security's weight is the same in both portfolios (say 30% in T), its weight stays at that value in every portfolio on the set, so with the weight of another fixed the third follows by subtraction."
+          },
+          "tags": [
+            "minimum-variance",
+            "efficient-set",
+            "weights"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "X weights R/S/T = 0.25/0.45/0.30; Y weights = 0.35/0.35/0.30, both on the min-variance set. Mix Rs 8,000 in X and Rs 2,000 in Y; also, with R at 50%, what are S and T?",
+            "answer_md": "R = (0.25 x 8,000 + 0.35 x 2,000) / 10,000 = 0.27; S = (0.45 x 8,000 + 0.35 x 2,000) / 10,000 = 0.43; T = 0.30. Since T is 0.30 in both, T stays 0.30 on the whole set; with R = 0.50, S = 1 - 0.50 - 0.30 = 0.20."
+          },
+          "tags": [
+            "minimum-variance",
+            "weights",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-014",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Securities M (return 14%, SD 10%) and N (return 20%, SD 18%) with correlation 0.25. Compare five weight mixes from 100% M to 100% N in steps of 25%.",
+            "answer_md": "Return rises linearly from 14.0 to 15.5, 17.0, 18.5, 20.0. Risk: 10.00, 9.66, 11.34, 14.33, 18.00. The 75:25 mix has the least risk of the five (9.66%) and 100% N has the highest return. Computing each row uses the full two-asset formula; minimum risk lies near 83.5% in M."
+          },
+          "tags": [
+            "portfolio-risk",
+            "portfolio-return",
+            "weights",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-minv-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do portfolios of the same two assets with changed weights trace a curve in risk-return space?",
+            "answer_md": "Return changes in proportion to the weights, but risk changes non-linearly because of the covariance term, so mixes of imperfectly correlated assets bend toward the vertical axis. The lower the correlation, the more the curve bends; at +1 it is a straight line."
+          },
+          "tags": [
+            "diversification",
+            "correlation",
+            "efficient-frontier"
+          ],
+          "reference_keys": [
+            "sfm:minv"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Single index (market) model",
+            "definition_md": "Sharpe's simplification that links a security's return to just one factor, the return on the market index. Market risk affects the whole return of the security, and the return not explained by the market is a random error specific to the firm."
+          },
+          "tags": [
+            "single-index-model",
+            "market-model",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-002",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Single index model equation",
+            "expression_md": "$R_i = \\alpha_i + \\beta_i R_M + e_i$",
+            "variables_md": "$\\alpha_i$ = return when market return is zero (intercept), $\\beta_i R_M$ = beta-adjusted market return, $e_i$ = error term with zero mean and constant standard deviation.",
+            "when_md": "Version that does not use a risk-free rate. With a risk-free rate, work in excess returns: $R_i - R_f = \u0007lpha + \beta(R_M - R_f) + e$."
+          },
+          "tags": [
+            "single-index-model",
+            "alpha",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the properties of the error term in the single index model?",
+            "answer_md": "It has zero mean and constant standard deviation, and represents the firm-specific (unsystematic) part of the return that the market cannot explain. Its variance is the security's residual variance."
+          },
+          "tags": [
+            "single-index-model",
+            "error-term",
+            "unsystematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is beta computed under the market model in the study text?",
+            "answer_md": "From regression of the security's returns on the market's returns, using returns for each period (return = (dividend + price change) / opening price). Beta is the slope of the fitted line and alpha is its intercept."
+          },
+          "tags": [
+            "single-index-model",
+            "beta",
+            "regression"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-005",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Residual (unsystematic) variance of a security",
+            "expression_md": "$\\sigma_{e_i}^{2} = \\sigma_i^{2} - \\beta_i^{2}\\sigma_M^{2}$",
+            "variables_md": "$\\sigma_i^2$ = total variance of security $i$, $\\beta_i^2\\sigma_M^2$ = its systematic variance.",
+            "when_md": "Used as the balancing figure. If residual SDs are given directly, square them."
+          },
+          "tags": [
+            "single-index-model",
+            "unsystematic-risk",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-006",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Systematic variance of a portfolio",
+            "expression_md": "$\\sigma^2_{sys} = \\beta_P^{2}\\,\\sigma_M^{2}, \\quad \\beta_P = \\sum_i w_i\\beta_i$",
+            "variables_md": "$\\beta_P$ = weighted average beta, $\\sigma_M^2$ = variance of the market return.",
+            "when_md": "Square the portfolio beta, not the individual betas, then multiply by market variance."
+          },
+          "tags": [
+            "single-index-model",
+            "systematic-risk",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-007",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Unsystematic variance of a portfolio",
+            "expression_md": "$\\sigma^2_{unsys} = \\sum_i w_i^{2}\\,\\sigma_{e_i}^{2}$",
+            "variables_md": "$w_i$ = weight of security $i$, $\\sigma_{e_i}^2$ = its residual variance. Weights are squared because residual risks are assumed uncorrelated.",
+            "when_md": "Add after finding systematic variance. It shrinks as the number of securities grows."
+          },
+          "tags": [
+            "single-index-model",
+            "unsystematic-risk",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-008",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Portfolio variance under the single index model",
+            "expression_md": "$\\sigma_P^{2} = \\beta_P^{2}\\sigma_M^{2} + \\sum_i w_i^{2}\\sigma_{e_i}^{2}$",
+            "variables_md": "First term = systematic variance, second = unsystematic variance.",
+            "when_md": "Alternative to the Markowitz matrix when betas, market variance and residual variances are available."
+          },
+          "tags": [
+            "single-index-model",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "List the steps to find portfolio variance by the single index model.",
+            "answer_md": "1) Portfolio beta = sum of weight x beta. 2) Residual variance of each security = total variance - beta^2 x market variance. 3) Systematic variance = beta_P^2 x market variance. 4) Unsystematic = sum of weight^2 x residual variance. 5) Add 3 and 4; the square root gives SD."
+          },
+          "tags": [
+            "single-index-model",
+            "steps",
+            "variance"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-010",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Weights 0.4, 0.35, 0.25; betas 1.2, 0.9, 1.1; market SD 15%; residual SDs 6, 10, 4. Find portfolio variance and SD.",
+            "answer_md": "Beta_P = 0.48 + 0.315 + 0.275 = 1.07. Systematic = 1.07^2 x 225 = 257.60. Unsystematic = 0.16 x 36 + 0.1225 x 100 + 0.0625 x 16 = 5.76 + 12.25 + 1.00 = 19.01. Total variance = 276.61, SD about 16.63%."
+          },
+          "tags": [
+            "single-index-model",
+            "variance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-011",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Covariance between two securities under the single index model",
+            "expression_md": "$\\mathrm{Cov}_{ij} = \\beta_i\\,\\beta_j\\,\\sigma_M^{2}$",
+            "variables_md": "$\\beta_i,\\beta_j$ = betas of the two securities, $\\sigma_M^2$ = market variance.",
+            "when_md": "Securities are linked only through the market, so you can build the full covariance matrix from betas."
+          },
+          "tags": [
+            "single-index-model",
+            "covariance",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-012",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Two securities with SDs 24% and 15%, correlations with the index 0.7 and 0.9, index SD 12%, held 50:50. Find betas, covariance, portfolio risk and its split.",
+            "answer_md": "Betas: 0.7 x 24 / 12 = 1.4 and 0.9 x 15 / 12 = 1.125. Cov = 1.4 x 1.125 x 144 = 226.8. Variance = 0.25 x 576 + 0.25 x 225 + 2 x 0.25 x 226.8 = 313.65, SD 17.71%. Beta_P = 1.2625, systematic = 1.2625^2 x 144 = 229.52, unsystematic = 313.65 - 229.52 = 84.13."
+          },
+          "tags": [
+            "single-index-model",
+            "covariance",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When will the single-index and the Markowitz (matrix) portfolio variances differ in a question?",
+            "answer_md": "They agree only if the given covariances equal beta_i x beta_j x market variance. When a question supplies separate covariances and betas, the two methods can give different answers (in the study text's three-share case, about 0.0184 by the index model against 0.0363 by the matrix), so compute each method as the question asks."
+          },
+          "tags": [
+            "single-index-model",
+            "markowitz",
+            "matrix-approach"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why is the single index model simpler to use than the full Markowitz model for many securities?",
+            "answer_md": "Markowitz needs expected returns, variances and a covariance for every pair of securities. The index model needs only each security's alpha, beta and residual variance plus the market variance, because pairwise covariances come from betas."
+          },
+          "tags": [
+            "single-index-model",
+            "markowitz"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-015",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Alpha",
+            "definition_md": "The difference between an investment's actual (or expected) return and its fair return as predicted by CAPM. It is the return in excess of the CAPM prediction, a measure of the value added by a manager or the mispricing of a security, and the deviation from the SML."
+          },
+          "tags": [
+            "alpha",
+            "capm",
+            "performance"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-016",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Alpha",
+            "expression_md": "$\\alpha = R_{actual} - \\left[R_f + \\beta\\,(R_M - R_f)\\right]$",
+            "variables_md": "$R_{actual}$ = return earned (or expected), term in brackets = CAPM required return.",
+            "when_md": "Positive alpha: return above the SML. Negative alpha: below it. In market-model form alpha is the average return less beta x market return."
+          },
+          "tags": [
+            "alpha",
+            "capm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-017",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does a positive or negative alpha say about a stock, and what action follows?",
+            "answer_md": "Positive alpha: expected return exceeds the CAPM return by the alpha, so the stock is undervalued and should be bought. Negative alpha: expected return is below the CAPM return, so the stock is overvalued and should be sold."
+          },
+          "tags": [
+            "alpha",
+            "valuation",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A stock returned 16%. Rf = 6%, beta = 1.2, market return = 12%. Find alpha and the action.",
+            "answer_md": "CAPM return = 6 + 1.2 x (12 - 6) = 13.2%. Alpha = 16 - 13.2 = +2.8%. The stock gives more than its risk requires, so it is undervalued: buy."
+          },
+          "tags": [
+            "alpha",
+            "capm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "When is alpha an appropriate measure, and what does it tell about a manager?",
+            "answer_md": "It suits the case where the investment is one of many held by a client, because beta already captures its market risk. It shows how well the manager performed after allowing for the market risk taken, that is the value added over a market index."
+          },
+          "tags": [
+            "alpha",
+            "performance",
+            "manager"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-sim-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What should alpha average over a long period?",
+            "answer_md": "In the study text, alpha is expected to be zero over a longer period, since persistently higher or lower returns are competed away."
+          },
+          "tags": [
+            "alpha",
+            "market-model"
+          ],
+          "reference_keys": [
+            "sfm:sim"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-001",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "State the main assumptions of the Markowitz model.",
+            "answer_md": "Investors care only about expected return and risk (variance or SD of return); they can picture a probability distribution of returns; their risk estimate is proportional to the variance they see; they are rational and risk averse, preferring higher return for the same risk and less risk for the same return; and return is summarised by yield."
+          },
+          "tags": [
+            "markowitz",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does risk aversion mean in the Markowitz model?",
+            "answer_md": "Between two investments with equal expected return, the investor prefers the one with smaller risk; for a given risk, the one with the higher expected return."
+          },
+          "tags": [
+            "markowitz",
+            "risk-averse",
+            "assumptions"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-003",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What problems does the Markowitz model address?",
+            "answer_md": "It finds the mean-variance efficient portfolios and then helps select one of them according to the investor's preference. It balances safety, liquidity and return for different investors."
+          },
+          "tags": [
+            "markowitz",
+            "efficient-set"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Why does the stand-alone risk of a security not matter to a Markowitz investor?",
+            "answer_md": "What matters is the security's contribution to the investor's total portfolio risk. The risk-return trade-off is reflected in the required return, and diversification lets the investor trade between the two."
+          },
+          "tags": [
+            "markowitz",
+            "portfolio-risk",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-005",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Efficient portfolio",
+            "definition_md": "A portfolio is efficient if no other portfolio offers a higher expected return with lower risk, a higher return with the same risk, or the same return with lower risk. A portfolio that fails this test is inefficient."
+          },
+          "tags": [
+            "efficient-frontier",
+            "efficient-portfolio"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-006",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Efficient frontier",
+            "definition_md": "The set of all efficient portfolios: for each level of risk it has the maximum return, and for each level of return the minimum risk. It is the envelope curve of all the portfolio combinations of the available assets."
+          },
+          "tags": [
+            "efficient-frontier",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What are the three steps of portfolio decision-making under modern portfolio theory?",
+            "answer_md": "1) Select the securities and construct all possible portfolios. 2) Classify them into efficient and inefficient. 3) Pick a portfolio on the efficient set according to the investor's preference. A portfolio is inefficient if another has higher return and lower risk."
+          },
+          "tags": [
+            "efficient-frontier",
+            "markowitz",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-008",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What does it mean that one portfolio dominates another?",
+            "answer_md": "It gives a higher return for the same risk, or lower risk for the same return, or better on both. Portfolios below the frontier are dominated by frontier portfolios, whereas no frontier portfolio dominates another."
+          },
+          "tags": [
+            "efficient-frontier",
+            "dominance"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does the shape of the efficient frontier tell us?",
+            "answer_md": "Expected return rises with risk along the frontier. Because of diversification among imperfectly correlated assets the frontier consists mostly of portfolios, not single securities; the exceptions are the end points: the single asset with the highest return and the single asset with the lowest risk."
+          },
+          "tags": [
+            "efficient-frontier",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What should an investor do if their portfolio is not efficient?",
+            "answer_md": "Move toward the frontier: raise expected return without raising risk, cut risk without cutting return, or achieve a mix of both. Diversification combines assets that are less than perfectly positively correlated to do this."
+          },
+          "tags": [
+            "efficient-frontier",
+            "diversification"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-011",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How is the optimum portfolio chosen from the efficient frontier?",
+            "answer_md": "By tangency: the optimum is where the efficient frontier touches the highest attainable indifference (utility) curve of the investor. It is efficient and gives the most satisfaction, so different investors with different risk attitudes choose different portfolios."
+          },
+          "tags": [
+            "optimal-portfolio",
+            "indifference-curve",
+            "efficient-frontier"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-012",
+          "kind": "definition",
+          "importance": "bullet",
+          "fields": {
+            "term": "Utility",
+            "definition_md": "The satisfaction an investor gets from the return of his portfolio. An ordinary investor gets more utility from higher return, and the shape of the utility curve shows the attitude to risk."
+          },
+          "tags": [
+            "utility",
+            "risk-attitude"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Classify investors by risk attitude and describe the shape of utility for each.",
+            "answer_md": "Risk averse: concave utility with diminishing marginal utility (for example U = square root of wealth). Risk neutral: linear utility with constant marginal utility. Risk seeker (aggressive): convex utility with increasing marginal utility (for example U = wealth squared)."
+          },
+          "tags": [
+            "utility",
+            "risk-attitude",
+            "risk-averse"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "A fair gamble pays Rs 100 or nothing with equal chance and costs Rs 50. How do the three types of investor react?",
+            "answer_md": "Expected value = 0.5 x 100 + 0.5 x 0 = Rs 50, which equals the cost, so it is a fair gamble. A risk-averse investor rejects it (the pain of the loss outweighs the pleasure of an equal gain). A risk-neutral investor is indifferent. A risk seeker accepts it."
+          },
+          "tags": [
+            "utility",
+            "fair-gamble",
+            "risk-attitude",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-015",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are indifference curves, and how does their slope reveal risk aversion?",
+            "answer_md": "An indifference curve joins risk-return combinations giving the same satisfaction; a higher curve is more desirable. For a risk-averse investor the curves slope upward (more return is needed for more risk), and the steeper they are the more risk averse the investor. A conservative investor needs a large extra return for a small extra risk; an aggressive investor needs little."
+          },
+          "tags": [
+            "indifference-curve",
+            "utility",
+            "risk-averse"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Where does a risk lover's optimum lie on the efficient frontier?",
+            "answer_md": "At the upper right end of the frontier, which is a single security (all eggs in one basket). The study text's description of the slope of the risk lover's curves is unclear, so treat that point as the only safe takeaway."
+          },
+          "tags": [
+            "indifference-curve",
+            "risk-seeker",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-017",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Risk penalty and utility of a portfolio",
+            "expression_md": "$\\text{Risk penalty} = \\dfrac{\\sigma_P^{2}}{\\text{risk tolerance}}, \\quad U = E(R_P) - \\text{risk penalty}$",
+            "variables_md": "$\\sigma_P^2$ = variance of the portfolio, risk tolerance = a number from 0 to 100 (higher means more willingness to bear risk).",
+            "when_md": "Penalty falls as tolerance rises; doubling risk (SD) quadruples the penalty. Accept the portfolio if its utility exceeds the investor's minimum."
+          },
+          "tags": [
+            "utility",
+            "risk-penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-018",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Expected return 14%, variance 180, risk tolerance 50, minimum acceptable utility 10%. Accept?",
+            "answer_md": "Risk penalty = 180 / 50 = 3.6%. Utility = 14 - 3.6 = 10.4%, which exceeds 10%, so the portfolio is acceptable."
+          },
+          "tags": [
+            "utility",
+            "risk-penalty",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the optimal risky portfolio found when a risk-free asset is available?",
+            "answer_md": "Choose the portfolio of risky assets that maximises the Sharpe ratio, the slope of the capital allocation line from the risk-free rate, subject to the weights adding to 1. The steeper the line, the higher the return for any level of volatility."
+          },
+          "tags": [
+            "optimal-portfolio",
+            "sharpe-ratio",
+            "cal",
+            "risk-free"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-020",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Sharpe ratio (reward to variability)",
+            "expression_md": "$S_P = \\dfrac{E(R_P) - R_f}{\\sigma_P}$",
+            "variables_md": "$E(R_P)$ = expected portfolio return, $R_f$ = risk-free rate, $\\sigma_P$ = portfolio standard deviation.",
+            "when_md": "Risk premium per unit of total risk; it is the slope of the capital allocation line. T-bill rate is used as risk-free rate."
+          },
+          "tags": [
+            "sharpe-ratio",
+            "cal",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-021",
+          "kind": "formula",
+          "importance": "important",
+          "fields": {
+            "name": "Optimal weight of risky asset X when two risky assets and Rf exist",
+            "expression_md": "$w_X = \\dfrac{(E_X - R_f)\\sigma_Y^{2} - (E_Y - R_f)\\mathrm{Cov}_{XY}}{(E_X - R_f)\\sigma_Y^{2} + (E_Y - R_f)\\sigma_X^{2} - \\left[(E_X - R_f)+(E_Y - R_f)\\right]\\mathrm{Cov}_{XY}}$",
+            "variables_md": "$E_X,E_Y$ = expected returns, $\\sigma_X^2,\\sigma_Y^2$ = variances, $w_Y = 1 - w_X$.",
+            "when_md": "Maximises the Sharpe ratio. The study text prints the second numerator term with the wrong asset's excess return; use the form given here."
+          },
+          "tags": [
+            "optimal-portfolio",
+            "sharpe-ratio",
+            "weights",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-022",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Rf = 4%; A: return 10%, SD 20%; B: return 6%, SD 10%; correlation 0.2. Find the optimal risky mix.",
+            "answer_md": "Excess returns: 6 and 2. Cov = 0.2 x 20 x 10 = 40. w_A = (6 x 100 - 2 x 40) / (6 x 100 + 2 x 400 - 8 x 40) = 520 / 1,080 = 0.4815, w_B = 0.5185. Return 7.93%, SD 11.81%, Sharpe 0.332, higher than any other mix."
+          },
+          "tags": [
+            "optimal-portfolio",
+            "sharpe-ratio",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-023",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "After finding the optimal risky portfolio, how is the final split between risky and risk-free decided?",
+            "answer_md": "By the individual investor's degree of risk aversion. The optimal risky portfolio is the same for everyone; a more risk-averse investor puts a larger share in the risk-free asset, a less risk-averse one a larger share in the risky portfolio."
+          },
+          "tags": [
+            "optimal-portfolio",
+            "risk-averse",
+            "asset-allocation"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-mkw-024",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why must the risk-free asset be considered in the asset allocation decision?",
+            "answer_md": "Because the objective, the Sharpe ratio, is defined as the risk premium over the risk-free rate divided by SD. Using stocks, bonds and T-bills covers the three major asset classes."
+          },
+          "tags": [
+            "optimal-portfolio",
+            "asset-allocation",
+            "sharpe-ratio"
+          ],
+          "reference_keys": [
+            "sfm:mkw"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Capital Market Line (CML)",
+            "definition_md": "The straight line from the risk-free rate that is tangent to the efficient frontier of risky portfolios, drawn when an investor can lend and borrow at the same risk-free rate. It gives the best risk-return trade-off and the expected return for an efficient portfolio at each level of total risk."
+          },
+          "tags": [
+            "cml",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-002",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "How is the CML derived from the Markowitz efficient frontier?",
+            "answer_md": "Add a risk-free asset (such as Treasury bills) to the risky universe, with lending and borrowing at one risk-free rate. The efficiency boundary becomes a straight line from the risk-free point tangent to the risky efficient frontier at the market portfolio M. Points between Rf and M are lending portfolios; holding M alone is an all-equity portfolio."
+          },
+          "tags": [
+            "cml",
+            "efficient-frontier",
+            "risk-free"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the features and assumptions of the CML.",
+            "answer_md": "Portfolios on it are efficient, replicating the market portfolio in risk and reward; no unsystematic risk remains because diversification has removed it; the return estimate uses total risk (SD), which assumes perfect correlation of the portfolio with the market; individual securities do not lie on it because they carry unsystematic risk."
+          },
+          "tags": [
+            "cml",
+            "features"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-004",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Market price of risk",
+            "expression_md": "$\\lambda = \\dfrac{R_M - R_f}{\\sigma_M}$",
+            "variables_md": "$R_M$ = market return, $R_f$ = risk-free return, $\\sigma_M$ = standard deviation of the market portfolio.",
+            "when_md": "Extra return the market pays for each unit of total risk; it is the slope of the CML."
+          },
+          "tags": [
+            "cml",
+            "market-price-of-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-005",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Expected return from the CML",
+            "expression_md": "$E(R_P) = R_f + \\lambda\\,\\sigma_P = R_f + \\dfrac{R_M - R_f}{\\sigma_M}\\,\\sigma_P$",
+            "variables_md": "$\\sigma_P$ = standard deviation (total risk) of the efficient portfolio, $\\lambda$ = market price of risk.",
+            "when_md": "Use for fully diversified or efficient portfolios, where total risk is the measure of risk."
+          },
+          "tags": [
+            "cml",
+            "expected-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-006",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rf = 6%, market return 14%, market SD 16%. A diversified portfolio has SD 24%. Find lambda and expected return.",
+            "answer_md": "lambda = (14 - 6) / 16 = 0.5. E(R) = 6 + 0.5 x 24 = 18%."
+          },
+          "tags": [
+            "cml",
+            "expected-return",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-007",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "The market return is 15%, market SD is 5% and lambda is 2. Find the risk-free rate.",
+            "answer_md": "Lambda = (Rm - Rf) / SD, so Rf = Rm - lambda x SD = 15 - 2 x 5 = 5%. Back-solve the unknown from the lambda formula."
+          },
+          "tags": [
+            "cml",
+            "market-price-of-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How does the study text get a risk-free return from a Government bond's price and coupon?",
+            "answer_md": "It treats the coupon divided by the market price as the risk-free return (for example Rs 5.80 coupon on a Rs 100 bond trading at Rs 116 gives 5%). This is the current yield, not yield to maturity; confirm which the question wants."
+          },
+          "tags": [
+            "cml",
+            "risk-free",
+            "current-yield",
+            "to-verify"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-009",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What does the capital market line show for asset classes?",
+            "answer_md": "An upward-sloping risk-return line. T-bills sit at the low end as risk free; bonds and real estate lie in the middle (real estate riskier); equities higher (international above domestic); venture capital at the top. Higher return comes only with higher risk."
+          },
+          "tags": [
+            "cml",
+            "asset-classes"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-010",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Security Market Line (SML)",
+            "definition_md": "The line showing the linear relationship between systematic risk (beta) and expected return, with beta on the x-axis. It is the graph of CAPM and applies to both individual securities and portfolios."
+          },
+          "tags": [
+            "sml",
+            "capm",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-011",
+          "kind": "formula",
+          "importance": "mandatory",
+          "fields": {
+            "name": "Security Market Line equation",
+            "expression_md": "$E(R_i) = R_f + \\beta_i\\,(R_M - R_f)$",
+            "variables_md": "Intercept = $R_f$ (beta 0); slope = market risk premium $R_M - R_f$; at beta 1 the return is $R_M$.",
+            "when_md": "Gives the required return for a given beta; compare actual or expected return with it."
+          },
+          "tags": [
+            "sml",
+            "capm",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-012",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How does the position of a security relative to the SML show its value?",
+            "answer_md": "Above the SML: yields more than required for its risk, so underpriced (buy). On the SML: correctly priced. Below the SML: yields less than required, so overpriced (sell)."
+          },
+          "tags": [
+            "sml",
+            "valuation",
+            "decision"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-013",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Rf 7%, Rm 13%, beta 1.5. A stock expects 18%; another with the same beta expects 15%. Verdict on each?",
+            "answer_md": "Required return = 7 + 1.5 x 6 = 16%. The first gives 18%, 2% above the SML: underpriced. The second gives 15%, 1% below: overpriced. The gap is the alpha."
+          },
+          "tags": [
+            "sml",
+            "valuation",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-014",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Why do both securities and portfolios plot on the SML but not on the CML?",
+            "answer_md": "Under CAPM and efficient markets, all securities are expected to earn returns matching their systematic risk, so any asset lies on the SML. The CML uses total risk and only holds for efficient portfolios free of unsystematic risk."
+          },
+          "tags": [
+            "sml",
+            "cml",
+            "capm"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-015",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Differentiate the Capital Market Line from the Security Market Line.",
+            "answer_md": "CML: SD (total risk) on the x-axis; only efficient portfolios, which replicate the market; each point is a combination of the risk-free asset and the market portfolio. SML: beta (systematic risk) on the x-axis; covers efficient and inefficient portfolios and individual securities, so securities lying off the CML still lie on the SML."
+          },
+          "tags": [
+            "cml",
+            "sml",
+            "difference"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-016",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Compute the expected return of a 50:50 portfolio of betas 0.8 and 1.5 with Rf = 6% and Rm = 13% under CAPM.",
+            "answer_md": "Portfolio beta = 0.5 x 0.8 + 0.5 x 1.5 = 1.15. Return = 6 + 1.15 x 7 = 14.05%. Because beta is a weighted average, the weighted average of the two required returns gives the same answer."
+          },
+          "tags": [
+            "capm",
+            "portfolio-beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-017",
+          "kind": "definition",
+          "importance": "mandatory",
+          "fields": {
+            "term": "Characteristic line",
+            "definition_md": "A plot of a security's returns against the market index returns (usually excess over the risk-free rate) over time, with the fitted line R = alpha + beta x R_M. Its slope is beta, its intercept is alpha, and it shows how the security's return correlates with the market."
+          },
+          "tags": [
+            "characteristic-line",
+            "beta",
+            "alpha"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-018",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "How do you write the characteristic line from mean returns and beta?",
+            "answer_md": "The line passes through the mean points, so alpha = mean security return - beta x mean market return, and the line is R_S = alpha + beta x R_M. Example: means 13 (stock) and 10 (market) with beta 1.75 give alpha = 13 - 17.5 = -4.5."
+          },
+          "tags": [
+            "characteristic-line",
+            "alpha",
+            "beta",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish the Security Market Line from the characteristic line.",
+            "answer_md": "SML: cross-sectional, plots beta against expected return for many securities and portfolios, used to estimate the expected return for a given beta risk. Characteristic line: a time-series regression of one security's returns on the index returns, used to estimate beta and the security's correlation with the market."
+          },
+          "tags": [
+            "sml",
+            "characteristic-line",
+            "difference"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-cs-020",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the market risk premium and where does it appear?",
+            "answer_md": "It is the market return less the risk-free return, Rm - Rf. It is the slope of the SML, and for the CML the premium per unit of risk is this premium divided by the market SD."
+          },
+          "tags": [
+            "capm",
+            "sml",
+            "market-risk-premium"
+          ],
+          "reference_keys": [
+            "sfm:cs"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-001",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Asset allocation",
+            "definition_md": "Dividing an investment portfolio among asset categories such as equity, fixed income and cash to balance risk and reward according to the investor's goals, risk tolerance and investment horizon."
+          },
+          "tags": [
+            "asset-allocation",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-002",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Which are the three main asset classes, and why does the mix matter?",
+            "answer_md": "Equities, fixed income, and cash and equivalents. They have different levels of risk and return and behave differently over time, so the percentage in each depends on time frame and risk tolerance. Strategic asset allocation is arguably the most important part of the investment process."
+          },
+          "tags": [
+            "asset-allocation",
+            "asset-classes"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-003",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the two steps in building a diversified multi-asset portfolio?",
+            "answer_md": "1) The asset allocation decision: fixing long-term exposures to the asset classes from the client's circumstances, objectives and constraints. 2) Implementation: choosing the specific investments (securities, pooled vehicles, separate accounts) that deliver the target allocation."
+          },
+          "tags": [
+            "asset-allocation",
+            "steps"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-004",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Name the four asset allocation strategies.",
+            "answer_md": "Integrated, strategic, tactical and insured asset allocation."
+          },
+          "tags": [
+            "asset-allocation",
+            "strategies"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-005",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "I-S-T-I",
+            "expands_md": "Integrated, Strategic, Tactical, Insured: the four asset allocation strategies.",
+            "topic": "Asset allocation strategies"
+          },
+          "tags": [
+            "asset-allocation",
+            "strategies"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-006",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is integrated asset allocation?",
+            "answer_md": "It analyses capital market conditions together with the investor's objectives and constraints, and finds the allocation that best meets the investor's needs while using the capital market forecast."
+          },
+          "tags": [
+            "asset-allocation",
+            "integrated"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is strategic asset allocation?",
+            "answer_md": "Optimal portfolio mixes are generated from returns, risks and covariances using historical information, within the investor's objectives and constraints, and rebalanced periodically to restore the target allocation. It sets long-term exposures."
+          },
+          "tags": [
+            "asset-allocation",
+            "strategic"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is tactical asset allocation?",
+            "answer_md": "The investor's risk tolerance is assumed constant, but the asset mix is changed according to expectations about capital market conditions."
+          },
+          "tags": [
+            "asset-allocation",
+            "tactical"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-009",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is insured asset allocation?",
+            "answer_md": "The risk exposure is adjusted as portfolio value (wealth) changes: more wealth means more ability to take risk, so more can be put in risky assets when value rises."
+          },
+          "tags": [
+            "asset-allocation",
+            "insured"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-010",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "How do strategic and tactical allocation differ?",
+            "answer_md": "Strategic fixes long-term target weights from historical risk-return data and rebalances back to them. Tactical keeps risk tolerance constant but moves weights away from targets based on views of market conditions."
+          },
+          "tags": [
+            "asset-allocation",
+            "strategic",
+            "tactical"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-011",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Distinguish active from passive portfolio strategy.",
+            "answer_md": "Active: managers research and trade to beat the market after adjusting for risk, assuming exploitable inefficiencies. Passive: assumes the market is fairly efficient with respect to available information, so the portfolio is diversified at a chosen risk level and held with little change."
+          },
+          "tags": [
+            "active-strategy",
+            "passive-strategy",
+            "difference"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-012",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Active portfolio strategy (APS)",
+            "definition_md": "A strategy followed by professionals and aggressive investors who try to earn superior risk-adjusted returns by researching companies (financials, business strategies, management) and investing in those expected to beat the market or index. It rests on the assumption that the market's inefficiency can be exploited with specific techniques."
+          },
+          "tags": [
+            "active-strategy",
+            "basics"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-013",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "List the four techniques (principles) of an active portfolio strategy.",
+            "answer_md": "Market timing, sector (group) rotation, security selection, and use of a specialised investment concept."
+          },
+          "tags": [
+            "active-strategy",
+            "techniques"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-014",
+          "kind": "mnemonic",
+          "importance": "bullet",
+          "fields": {
+            "mnemonic": "MSSS",
+            "expands_md": "Market timing, Sector rotation, Security selection, Specialised concept: techniques of active portfolio strategy.",
+            "topic": "APS techniques"
+          },
+          "tags": [
+            "active-strategy",
+            "techniques"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-015",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is market timing?",
+            "answer_md": "Shifting the portfolio on an explicit or implicit forecast of general market movement, using tools like business cycle analysis, moving average analysis, advance-decline analysis and econometric models. The forecast is also coloured by the investor's own judgment."
+          },
+          "tags": [
+            "active-strategy",
+            "market-timing"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-016",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is sector (group) rotation in equity and in bonds?",
+            "answer_md": "Shifting weights between sectors. In equities, weightage of industry sectors follows their outlook and future prospects. In bonds, it means changing the composition of the bond portfolio by quality (credit rating), coupon rate and term to maturity. It applies to both equity and debt parts."
+          },
+          "tags": [
+            "active-strategy",
+            "sector-rotation"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-017",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is security selection, for equity and for bonds?",
+            "answer_md": "A search for underpriced securities. In equity, the manager uses fundamental or technical analysis to concentrate on stocks promising superior returns. In bonds, it means choosing those with the highest YTM for a given level of risk."
+          },
+          "tags": [
+            "active-strategy",
+            "security-selection"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-018",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is the specialised investment concept and what are its pros and cons?",
+            "answer_md": "A style used mainly for stocks, with investments in growth stocks, neglected or out-of-favour stocks, asset stocks, technology stocks or cyclical stocks. Benefits: focus on what suits one's ability, avoid distractions, and master the approach. Risk: sticking to one concept can make it obsolete if market conditions change the premise."
+          },
+          "tags": [
+            "active-strategy",
+            "specialised-concept"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-019",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What is a passive portfolio strategy and what are its two guidelines?",
+            "answer_md": "It assumes the capital market is fairly efficient, so managers do not try for superior returns. Guidelines: build a well-diversified portfolio at a pre-set level of risk; hold it largely unchanged over time, except when it stops being adequately diversified or no longer fits the investor's risk-return preference."
+          },
+          "tags": [
+            "passive-strategy",
+            "guidelines"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-020",
+          "kind": "definition",
+          "importance": "important",
+          "fields": {
+            "term": "Index fund",
+            "definition_md": "A mutual fund scheme that invests in the securities of a target index in the same proportions, so it is passively managed and its daily returns match the index. It does not remove market risk: its price rises and falls with the market and only ensures that returns stay close to the index."
+          },
+          "tags": [
+            "passive-strategy",
+            "index-fund"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-aa-021",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Compare active and passive management on cost and tracking.",
+            "answer_md": "Passive involves little buying and selling, so costs are lower, and performance is easy to track because it follows the index. Active has higher research and trading costs but offers the chance to beat the benchmark and earn alpha."
+          },
+          "tags": [
+            "active-strategy",
+            "passive-strategy",
+            "cost"
+          ],
+          "reference_keys": [
+            "sfm:aa"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-001",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Shares bought: A 200 shares at Rs 200 (dividend Rs 10, price at year end Rs 230); B 100 shares at Rs 300 (dividend Rs 6, year-end price Rs 285). Find each return and the portfolio return.",
+            "answer_md": "A: (30 + 10) / 200 = 20%. B: (-15 + 6) / 300 = -3%. Weights by opening cost: Rs 40,000 : Rs 30,000 = 4/7 : 3/7. Portfolio return = 4/7 x 20 - 3/7 x 3 = 11.43 - 1.29, about 10.14%. Weight by opening value, not closing value, and watch the sign of a negative return."
+          },
+          "tags": [
+            "portfolio-return",
+            "holding-period",
+            "weights",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-002",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "A share costing Rs 50 pays Rs 3 dividend. Year-end price is Rs 52, 56 or 60 with probabilities 0.3, 0.5, 0.2. Find expected return and its SD.",
+            "answer_md": "Returns: (2 + 3)/50 = 10%, (6 + 3)/50 = 18%, (10 + 3)/50 = 26%. Expected = 3 + 9 + 5.2 = 17.2%. Deviations: -7.2, 0.8, 8.8; variance = 0.3 x 51.84 + 0.5 x 0.64 + 0.2 x 77.44 = 31.36; SD = 5.6%. (Expected price is Rs 55.6, giving (5.6 + 3)/50 = 17.2%.)"
+          },
+          "tags": [
+            "return",
+            "standard-deviation",
+            "probability",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-003",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Historical returns X: 10, 14, 6, 12 and Y: 8, 4, 12, 16 (percent, four years). Find means, SDs, covariance, correlation, and the 50:50 portfolio return and risk (divide by n).",
+            "answer_md": "Means: X 10.5, Y 10. Variances: 8.75 and 20, so SDs 2.96 and 4.47. Cov = -5, rho = -5 / (2.96 x 4.47) = -0.378. Portfolio return = 10.25%. Variance = 0.25 x 8.75 + 0.25 x 20 + 2 x 0.25 x (-5) = 4.6875, SD 2.17%, lower than either security."
+          },
+          "tags": [
+            "historical",
+            "covariance",
+            "correlation",
+            "portfolio-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-004",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Project A has probabilities 0.2, 0.5, 0.3 on inflows of Rs 4, 8, 12 lakh and SD of Rs 2.4 lakh. Comparable projects have (mean, SD) of (8, 1.6), (10, 2.2) and (9, 1.8). Is A riskier than the industry benchmark CV?",
+            "answer_md": "E(A) = 0.8 + 4.0 + 3.6 = Rs 8.4 lakh, so CV(A) = 2.4 / 8.4 = 0.286. Comparable CVs: 0.20, 0.22, 0.20; benchmark = average = 0.207. A's CV is higher, so it carries more risk per unit of inflow and is less attractive than the benchmark."
+          },
+          "tags": [
+            "coefficient-of-variation",
+            "decision",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-005",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Why is the unsystematic risk of a diversified portfolio smaller than that of the individual shares?",
+            "answer_md": "Portfolio unsystematic variance is the sum of weight squared x residual variance, and squared weights are small. With weights 0.4, 0.35, 0.25 and residual variances 36, 100, 16 it is 19.01, far below the weighted average residual variance of 53.4, and below the largest single figure."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "diversification",
+            "single-index-model",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-006",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "What are the intercept and slope of the SML?",
+            "answer_md": "The intercept on the y-axis is the risk-free rate (beta zero). The slope is the market risk premium, Rm - Rf, so at beta 1 the expected return equals the market return."
+          },
+          "tags": [
+            "sml",
+            "capm"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-007",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "What is prepayment risk?",
+            "answer_md": "The possibility that borrowers repay their debt ahead of schedule, so the lender or bond holder must reinvest the money, perhaps at lower rates."
+          },
+          "tags": [
+            "risk",
+            "prepayment-risk"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-008",
+          "kind": "pointer",
+          "importance": "bullet",
+          "fields": {
+            "prompt_md": "Another name for company-specific risk, and which beta-type measure ignores it?",
+            "answer_md": "Idiosyncratic (unsystematic, diversifiable) risk. Beta ignores it, since beta captures only market-related movement."
+          },
+          "tags": [
+            "unsystematic-risk",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-009",
+          "kind": "pointer",
+          "importance": "mandatory",
+          "fields": {
+            "prompt_md": "Exam routine: given standard deviations, correlation with market and market SD for three stocks held equally, how do you get portfolio risk, beta and the risk split?",
+            "answer_md": "1) Beta_i = rho_im x SD_i / SD_m. 2) Cov_ij = beta_i x beta_j x market variance. 3) Fill the 3 x 3 matrix with w x w x (variance or covariance), sum to portfolio variance, and take the root. 4) Portfolio beta = average beta; systematic variance = beta_P^2 x market variance; 5) unsystematic = portfolio variance - systematic."
+          },
+          "tags": [
+            "single-index-model",
+            "matrix-approach",
+            "steps",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-wk-010",
+          "kind": "pointer",
+          "importance": "important",
+          "fields": {
+            "prompt_md": "Weights 0.2, 0.5, 0.3, betas 0.4, 0.5, 1.1, market SD 10%. Find portfolio beta and systematic variance as a fraction.",
+            "answer_md": "Beta_P = 0.08 + 0.25 + 0.33 = 0.66. Systematic variance = 0.66^2 x 0.01 = 0.004356 (market variance 0.10 squared = 0.01). Residual variance of each share comes from total variance less beta^2 x 0.01."
+          },
+          "tags": [
+            "beta",
+            "systematic-risk",
+            "numerical"
+          ],
+          "reference_keys": [
+            "sfm:wk"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-001",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Portfolio return is the {{c1::weighted average}} of the securities' returns, but portfolio risk also depends on the {{c2::covariance or correlation}} between them."
+          },
+          "tags": [
+            "portfolio-return",
+            "portfolio-risk"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-002",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Portfolio risk is highest when correlation is {{c1::+1}} and, for two assets, lowest when it is {{c2::-1}}, where risk can fall to {{c3::zero}}."
+          },
+          "tags": [
+            "correlation",
+            "portfolio-risk"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-003",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Systematic risk is measured by {{c1::beta}} and cannot be removed by {{c2::diversification}}; unsystematic risk is the {{c3::residual}} left after systematic risk is subtracted from total risk."
+          },
+          "tags": [
+            "systematic-risk",
+            "beta"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-004",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Beta = {{c1::covariance with the market}} divided by the {{c2::variance of the market}}, or {{c3::correlation x SD of security / SD of market}}."
+          },
+          "tags": [
+            "beta",
+            "formulae"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-005",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Systematic risk (variance approach) = {{c1::beta squared}} x {{c2::market variance}}; unsystematic = {{c3::total variance minus systematic}}."
+          },
+          "tags": [
+            "systematic-risk",
+            "variance"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-006",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "Coefficient of variation = {{c1::standard deviation}} divided by {{c2::expected return}}; the investment with the {{c3::lower}} value is preferred."
+          },
+          "tags": [
+            "coefficient-of-variation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-007",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "The Capital Market Line plots {{c1::standard deviation}} on the x-axis, while the Security Market Line plots {{c2::beta}}."
+          },
+          "tags": [
+            "cml",
+            "sml"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-008",
+          "kind": "cloze",
+          "importance": "mandatory",
+          "fields": {
+            "text_md": "A stock plotting {{c1::above}} the SML is underpriced; one {{c2::below}} the SML is overpriced; positive alpha means {{c3::buy}}."
+          },
+          "tags": [
+            "sml",
+            "alpha"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-009",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Minimum variance weight in A = (variance of B - {{c1::Cov(A,B)}}) / (variance of A + variance of B - {{c2::2 x Cov(A,B)}})."
+          },
+          "tags": [
+            "minimum-variance"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-010",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "An efficient portfolio gives the {{c1::maximum return}} for a given risk or the {{c2::minimum risk}} for a given return; the optimum is where the frontier is {{c3::tangent}} to the investor's indifference curve."
+          },
+          "tags": [
+            "efficient-frontier",
+            "optimal-portfolio"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-011",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Under the single index model, covariance between two securities = {{c1::beta of first}} x {{c2::beta of second}} x {{c3::market variance}}."
+          },
+          "tags": [
+            "single-index-model",
+            "covariance"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-012",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "Risk-averse investors have a {{c1::concave}} utility curve, risk-neutral investors a {{c2::linear}} one and risk seekers a {{c3::convex}} one."
+          },
+          "tags": [
+            "utility",
+            "risk-attitude"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-013",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Strategic allocation uses {{c1::long-term}} targets; tactical keeps {{c2::risk tolerance constant}} and changes weights on market views; insured links risk taken to {{c3::portfolio value}}."
+          },
+          "tags": [
+            "asset-allocation"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-014",
+          "kind": "cloze",
+          "importance": "important",
+          "fields": {
+            "text_md": "A passive strategy assumes the market is {{c1::fairly efficient}}; an index fund holds the securities of the target index in {{c2::the same proportions}}."
+          },
+          "tags": [
+            "passive-strategy",
+            "index-fund"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        },
+        {
+          "ref": "sfm08-clz-015",
+          "kind": "cloze",
+          "importance": "bullet",
+          "fields": {
+            "text_md": "Systematic risk includes {{c1::market}}, {{c2::interest rate}} and {{c3::purchasing power}} risks; unsystematic includes {{c4::business}}, {{c5::financial}} and {{c6::default}} risks."
+          },
+          "tags": [
+            "systematic-risk",
+            "unsystematic-risk"
+          ],
+          "reference_keys": [
+            "sfm:clz"
+          ],
+          "rights_status": "original",
+          "source_label": "Written by ArthaCommerce editors",
+          "source_url": null
+        }
+      ]
+    }
+  ]
+}
