@@ -2,7 +2,7 @@ import { Alert, Button, Skeleton } from '@artha/design-system'
 import { useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 
-import { CatchupResult, CatchupStep as CatchupPicker, useCatchupSubjects } from '~/modules/coverage'
+import { CatchupResult, CatchupStep as CatchupPicker, chosenSubjects, useCatchupSubjects } from '~/modules/coverage'
 
 import { useSaveStep, useSkipStep } from '../../hooks/useOnboarding'
 import { describeStepError } from '../../lib/stepErrors'
@@ -56,7 +56,7 @@ export function CatchupStep({ onDone }: StepProps) {
   }
 
   if (applied) {
-    const lowest = [...data.overview.subjects]
+    const lowest = [...chosenSubjects(data.overview)]
       .filter((s) => s.chapters_total > 0)
       .sort((a, b) => a.pct_simple - b.pct_simple)[0]
     const chapters = data.subjects.find((s) => s.subject.id === lowest?.id)?.chapters ?? []

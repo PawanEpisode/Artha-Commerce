@@ -20,6 +20,8 @@ export { useGoals, useSessionsPage, useToday, useTrackerSettings } from './hooks
 export { useTrackerSync } from './hooks/useTrackerSync'
 export { isFeatureDisabled as isTrackerOff } from './lib/api'
 export { markActive, nowIso, nowMs, recentlyActive, resetClock, setServerTime } from './lib/clock'
+export { contextPatch, storedPickerValue } from './lib/context'
+export { contextLabel } from './lib/contextLabel'
 export { formatClock, formatDuration, spokenDuration } from './lib/duration'
 export { trackerKeys } from './lib/keys'
 export { RANGE_PRESETS } from './lib/range'

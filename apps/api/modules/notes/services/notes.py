@@ -28,7 +28,7 @@ from ..models import Note, NoteVersion
 from . import body as bodies
 from . import images, links, quota, search_index, tags, versions
 
-SCALARS = ("title", "pinned", "chapter_id", "topic_id")
+SCALARS = ("title", "pinned", "chapter_id", "topic_id", "subject_id")
 RESOLUTIONS = ("mine", "theirs", "both")
 
 
@@ -78,6 +78,7 @@ def create_note(
     body_md: str = "",
     chapter_id: UUID | None = None,
     topic_id: UUID | None = None,
+    subject_id: UUID | None = None,
     tag_ids: Iterable[UUID] = (),
     origin: str = Note.Origin.TYPED,
     clip_source: Mapping[str, str] | None = None,
@@ -95,7 +96,7 @@ def create_note(
         return CreateResult(existing, False)
     title = bodies.clean_title(title)
     body = bodies.prepare_body(user_id, body_md, title, quota.limits_for(user_id))
-    link = links.link_columns(chapter_id, topic_id)
+    link = links.link_columns(chapter_id, topic_id, subject_id=subject_id)
     now = _now()
     try:
         with transaction.atomic():
@@ -171,6 +172,7 @@ def _scalar_view(note: Note) -> dict[str, Any]:
         "pinned": note.pinned,
         "chapter_id": str(note.chapter_id) if note.chapter_id else None,
         "topic_id": str(note.topic_id) if note.topic_id else None,
+        "subject_id": str(note.subject_id) if note.subject_id else None,
     }
 
 
@@ -200,7 +202,7 @@ def _resolve_scalars(note: Note, patch: Mapping[str, Any], base: Mapping[str, An
     mine = {k: patch[k] for k in SCALARS if k in patch}
     if "title" in mine:
         mine["title"] = bodies.clean_title(mine["title"])
-    for key in ("chapter_id", "topic_id"):
+    for key in ("chapter_id", "topic_id", "subject_id"):
         if key in mine and mine[key] is not None:
             mine[key] = str(mine[key])
     result = merge.merge_fields(base or {}, mine, _scalar_view(note))
@@ -251,12 +253,21 @@ def _field_changes(note: Note, values: Mapping[str, Any]) -> dict[str, Any]:
         changes["title"] = values["title"]
     if "pinned" in values and values["pinned"] != note.pinned:
         changes["pinned"] = values["pinned"]
-    if "chapter_id" in values or "topic_id" in values:
-        chapter = values.get("chapter_id", str(note.chapter_id) if note.chapter_id else None)
-        topic = values.get(
-            "topic_id", None if "chapter_id" in values else (str(note.topic_id) if note.topic_id else None)
+    if {"chapter_id", "topic_id", "subject_id"} & values.keys():
+        # `subject_id` alone files at subject level; `chapter_id: null` alone is Unfiled; a topic follows its chapter.
+        moved = "chapter_id" in values or "subject_id" in values
+        chapter = (
+            values["chapter_id"]
+            if "chapter_id" in values
+            else (None if "subject_id" in values else (str(note.chapter_id) if note.chapter_id else None))
         )
-        link = links.link_columns(UUID(chapter) if chapter else None, UUID(topic) if topic else None)
+        topic = values.get("topic_id", None if moved else (str(note.topic_id) if note.topic_id else None))
+        subject = values.get("subject_id")
+        link = links.link_columns(
+            UUID(chapter) if chapter else None,
+            UUID(topic) if topic else None,
+            subject_id=UUID(subject) if subject else None,
+        )
         if any(getattr(note, name) != value for name, value in link.items()):
             changes.update(link)
     return changes
@@ -288,7 +299,7 @@ def _apply(
         search_index.refresh(note)
     if restored:
         events.announce_counts(user_id, [note.link_key()], "restored")
-    elif "chapter_id" in changes:
+    elif "chapter_id" in changes or "subject_id" in changes:
         events.announce_counts(user_id, [old_key], "relinked")
         events.announce_counts(user_id, [note.link_key()], "relinked")
     return UpdateResult(note, merged=merged, restored=restored, overwritten=overwritten)

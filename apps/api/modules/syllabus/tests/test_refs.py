@@ -81,3 +81,17 @@ def test_chapters_for_scheme_are_in_syllabus_order_and_filter_by_subject():
     ]
     assert all(r.subject_key == "taxation" for r in only)
     assert Subject.objects.filter(scheme=scheme).count() == 2
+
+
+def test_subject_refs_carry_key_name_and_level_and_hide_drafts():
+    scheme = make_scheme()
+    taxation = Subject.objects.get(key="taxation")
+    ref = selectors.subject_refs([taxation.id, uuid.uuid4()])[taxation.id]
+    assert (ref.id, ref.key, ref.name, ref.level_id) == (taxation.id, "taxation", "Taxation", scheme.level_id)
+    assert selectors.subject_refs([]) == {}
+    assert selectors.resolve_subject_keys(scheme.level_id, ["taxation", "nope"]).keys() == {"taxation"}
+
+
+def test_draft_subjects_are_invisible_to_subject_refs():
+    make_scheme(publish=False)
+    assert selectors.subject_refs([Subject.objects.get(key="taxation").id]) == {}

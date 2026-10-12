@@ -138,9 +138,11 @@ def counts_for_chapters(user_id, chapter_ids: Sequence[UUID]) -> dict[UUID, Chap
 
 
 def unfiled_count(user_id) -> int:
-    """Items in no chapter: notes, marks that carry text or meaning, and documents with no default link and no page range."""
-    notes = live_notes(user_id).filter(chapter__isnull=True).count()
-    marks = live_marks(user_id).filter(chapter__isnull=True, kind__in=Annotation.LISTED_KINDS).count()
+    """Items in no subject and no chapter: notes, marks that carry text or meaning, and documents with no default link and no page range."""
+    notes = live_notes(user_id).filter(chapter__isnull=True, subject__isnull=True).count()
+    marks = (
+        live_marks(user_id).filter(chapter__isnull=True, subject__isnull=True, kind__in=Annotation.LISTED_KINDS).count()
+    )
     return notes + marks + document_scope(live_documents(user_id), NoteFilter(unfiled=True)).count()
 
 

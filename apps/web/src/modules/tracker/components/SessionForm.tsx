@@ -1,6 +1,7 @@
 import { Checkbox, DurationField, Label, SegmentedControl, Textarea, TextField } from '@artha/design-system'
 import { useId } from 'react'
 
+import { contextPatch, storedPickerValue } from '../lib/context'
 import { friendlyDateTime } from '../lib/format'
 import { MAX_MANUAL_SPAN_SECONDS, NOTE_MAX_CHARS } from '../lib/limits'
 import type { EntryMode, FormErrors, SessionFormValues } from '../lib/sessionForm'
@@ -89,8 +90,8 @@ export function SessionForm({
         chapters={chapters}
         subjectsLoading={subjectsLoading}
         chaptersLoading={chaptersLoading}
-        value={{ subject_id: values.subject_id, chapter_id: values.chapter_id, activity_type: values.activity_type }}
-        onChange={onChange}
+        value={storedPickerValue(values)}
+        onChange={(patch) => onChange(contextPatch(patch))}
       />
 
       <div className="space-y-1.5">

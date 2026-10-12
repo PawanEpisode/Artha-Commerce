@@ -1,6 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
+import { useMemo } from 'react'
 
+import { useChosenSubjects } from '~/modules/coverage'
 import { fetchCourses, fetchLevel, fetchSubject } from '~/modules/syllabus'
+
+import type { StudentPapers } from '../lib/studentPapers'
 
 const STALE = 10 * 60_000
 
@@ -33,4 +37,20 @@ export function useSubjectChapters(course: string, level: string, subject: strin
     enabled: Boolean(course && level && subject),
     staleTime: STALE,
   })
+}
+
+/** The student's own papers (core plus chosen electives) and her enrolment's course and level, or null without one. */
+export function useStudentPapers(): StudentPapers | null {
+  const { data, subjects } = useChosenSubjects()
+  return useMemo(
+    () =>
+      data
+        ? {
+            course: data.enrollment.course.code,
+            level: data.enrollment.level.code,
+            keys: new Set(subjects.map((s) => s.key)),
+          }
+        : null,
+    [data, subjects],
+  )
 }

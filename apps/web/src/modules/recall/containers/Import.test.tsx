@@ -25,6 +25,7 @@ vi.mock('../hooks/useChapterPicker', () => ({
   useCourses: () => ({ data: [], isPending: false, isError: false }),
   useLevelSubjects: () => ({ data: [], isPending: false, isError: false }),
   useSubjectChapters: () => ({ data: [], isPending: false, isError: false }),
+  useStudentPapers: () => null,
 }))
 vi.mock('../hooks/useCardScreens', () => ({
   useCreateCard: () => ({ mutate: vi.fn(), isPending: false }),

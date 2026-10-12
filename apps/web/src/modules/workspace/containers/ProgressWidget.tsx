@@ -1,4 +1,4 @@
-import { useOverview } from '~/modules/coverage'
+import { chosenSubjects, useOverview } from '~/modules/coverage'
 import { useOnline } from '~/modules/personalization'
 
 import { ProgressView } from '../components/ProgressView'
@@ -31,7 +31,7 @@ export function ProgressWidget() {
             chaptersStarted: data.level.chapters_started,
             chaptersTotal: data.level.chapters_total,
           }}
-          weakest={weakestSubjects(data.subjects)}
+          weakest={weakestSubjects(chosenSubjects(data))}
         />
       ) : null}
     </WidgetCard>

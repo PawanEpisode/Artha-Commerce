@@ -5,8 +5,18 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { renderWithQuery } from '../test-utils'
 import { ChapterPicker } from './ChapterPicker'
 
-const h = vi.hoisted(() => ({ fetchCourses: vi.fn(), fetchLevel: vi.fn(), fetchSubject: vi.fn() }))
-vi.mock('~/modules/syllabus', () => h)
+const h = vi.hoisted(() => ({
+  fetchCourses: vi.fn(),
+  fetchLevel: vi.fn(),
+  fetchSubject: vi.fn(),
+  chosen: { data: undefined as unknown, subjects: [] as Array<{ key: string }> },
+}))
+vi.mock('~/modules/syllabus', () => ({
+  fetchCourses: h.fetchCourses,
+  fetchLevel: h.fetchLevel,
+  fetchSubject: h.fetchSubject,
+}))
+vi.mock('~/modules/coverage', () => ({ useChosenSubjects: () => h.chosen }))
 
 const course = (code: string, levels: string[]) => ({
   id: code,
@@ -20,6 +30,7 @@ const course = (code: string, levels: string[]) => ({
 
 beforeEach(() => {
   vi.clearAllMocks()
+  h.chosen = { data: undefined, subjects: [] }
   h.fetchLevel.mockResolvedValue({ subjects: [{ key: 'p1', name: 'Paper 1' }] })
   h.fetchSubject.mockResolvedValue({
     chapters: [
@@ -67,5 +78,40 @@ describe('the chapter picker', () => {
     h.fetchCourses.mockRejectedValue(new Error('down'))
     renderWithQuery(<ChapterPicker onPick={vi.fn()} />)
     await waitFor(() => expect(screen.getByText(/could not load the syllabus/)).toBeInTheDocument())
+  })
+
+  it('offers only her papers (core and the elective she chose) for the level she is enrolled in', async () => {
+    const user = userEvent.setup()
+    h.fetchCourses.mockResolvedValue([course('ca', ['inter'])])
+    h.fetchLevel.mockResolvedValue({
+      subjects: [
+        { key: 'p1', name: 'Paper 1' },
+        { key: 'e1', name: 'Elective A' },
+        { key: 'e2', name: 'Elective B' },
+      ],
+    })
+    h.chosen = {
+      data: { enrollment: { course: { code: 'ca' }, level: { code: 'inter' } } },
+      subjects: [{ key: 'p1' }, { key: 'e2' }],
+    }
+    renderWithQuery(<ChapterPicker onPick={vi.fn()} />)
+    await user.click(await screen.findByRole('combobox', { name: 'Paper' }))
+    expect(await screen.findByRole('option', { name: 'Elective B' })).toBeInTheDocument()
+    expect(screen.getByRole('option', { name: 'Paper 1' })).toBeInTheDocument()
+    expect(screen.queryByRole('option', { name: 'Elective A' })).toBeNull()
+  })
+
+  it('offers every paper when she has no enrolment', async () => {
+    const user = userEvent.setup()
+    h.fetchCourses.mockResolvedValue([course('ca', ['inter'])])
+    h.fetchLevel.mockResolvedValue({
+      subjects: [
+        { key: 'p1', name: 'Paper 1' },
+        { key: 'e1', name: 'Elective A' },
+      ],
+    })
+    renderWithQuery(<ChapterPicker onPick={vi.fn()} />)
+    await user.click(await screen.findByRole('combobox', { name: 'Paper' }))
+    expect(await screen.findByRole('option', { name: 'Elective A' })).toBeInTheDocument()
   })
 })

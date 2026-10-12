@@ -31,7 +31,11 @@ vi.mock('~/modules/tracker', () => ({
   isTrackerOff: () => s.trackerOff,
   formatDuration: (sec: number) => `${Math.floor(sec / 60)} m`,
 }))
-vi.mock('~/modules/coverage', () => ({ useDue: () => s.due, useOverview: () => s.overview }))
+vi.mock('~/modules/coverage', () => ({
+  useDue: () => s.due,
+  useOverview: () => s.overview,
+  chosenSubjects: (data?: { subjects?: unknown[] }) => data?.subjects ?? [],
+}))
 vi.mock('~/modules/personalization', () => ({
   useOnline: () => true,
   useOnboardingState: () => s.onboarding,

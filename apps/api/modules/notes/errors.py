@@ -31,6 +31,18 @@ class UnknownChapter(CodedError):
     default_code = "unknown_chapter"
 
 
+class UnknownSubject(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That subject is not in your syllabus."
+    default_code = "unknown_subject"
+
+
+class SubjectChapterMismatch(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That chapter does not belong to the subject."
+    default_code = "subject_chapter_mismatch"
+
+
 class UnknownTag(CodedError):
     status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
     default_detail = "One of those tags does not exist."

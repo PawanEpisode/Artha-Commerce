@@ -35,6 +35,7 @@ vi.mock('../hooks/useChapterPicker', () => ({
   useCourses: () => ({ data: [], isPending: false, isError: false }),
   useLevelSubjects: () => ({ data: [], isPending: false, isError: false }),
   useSubjectChapters: () => ({ data: [], isPending: false, isError: false }),
+  useStudentPapers: () => null,
 }))
 vi.mock('../hooks/useCardScreens', () => ({ useRefresh: () => vi.fn() }))
 vi.mock('../lib/api', async (original) => ({ ...(await original<Record<string, unknown>>()), recallApi: h.api }))

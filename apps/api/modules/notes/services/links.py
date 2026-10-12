@@ -11,7 +11,7 @@ from uuid import UUID
 
 from modules.syllabus import selectors as syllabus
 
-from ..errors import UnknownChapter
+from ..errors import SubjectChapterMismatch, UnknownChapter, UnknownSubject
 
 UNLINKED: dict[str, Any] = {
     "level_id": None,
@@ -24,10 +24,21 @@ UNLINKED: dict[str, Any] = {
 }
 
 
-def link_columns(chapter_id: UUID | None, topic_id: UUID | None = None) -> dict[str, Any]:
-    """Model field values for a chapter (and optional topic) of the syllabus; both None means Unfiled."""
+def link_columns(
+    chapter_id: UUID | None, topic_id: UUID | None = None, *, subject_id: UUID | None = None
+) -> dict[str, Any]:
+    """
+    Model field values for a place in the syllabus. Three states: a chapter (and optional topic); a subject with no chapter
+    ("All chapters": level, subject and subject_key only); or nothing (Unfiled). `subject_id` is ignored for the state "no
+    subject" and must match the chapter's subject when a chapter (or topic) is given.
+    """
     if chapter_id is None and topic_id is None:
-        return dict(UNLINKED)
+        if subject_id is None:
+            return dict(UNLINKED)
+        subject = syllabus.subject_refs([subject_id]).get(subject_id)
+        if subject is None:
+            raise UnknownSubject
+        return {**UNLINKED, "level_id": subject.level_id, "subject_id": subject.id, "subject_key": subject.key}
     topic = None
     if topic_id is not None:
         topic = syllabus.topic_refs([topic_id]).get(topic_id)
@@ -37,6 +48,8 @@ def link_columns(chapter_id: UUID | None, topic_id: UUID | None = None) -> dict[
     chapter = syllabus.chapter_refs([chapter_id]).get(chapter_id)
     if chapter is None:
         raise UnknownChapter
+    if subject_id is not None and subject_id != chapter.subject_id:
+        raise SubjectChapterMismatch
     return {
         "level_id": chapter.level_id,
         "subject_id": chapter.subject_id,
@@ -50,7 +63,7 @@ def link_columns(chapter_id: UUID | None, topic_id: UUID | None = None) -> dict[
 
 def columns_key(columns: dict[str, Any]) -> tuple | None:
     """`link_key` of a dict of link columns (what `link_columns` returns)."""
-    if columns.get("chapter_id") is None:
+    if columns.get("chapter_id") is None:  # Unfiled or filed at subject level: neither counts per chapter
         return None
     return (columns["level_id"], columns["subject_key"], columns["chapter_key"], columns["chapter_id"])
 

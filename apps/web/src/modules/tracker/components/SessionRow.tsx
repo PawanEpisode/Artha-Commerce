@@ -12,6 +12,8 @@ import {
   Trash2,
 } from '@artha/design-system'
 
+import { ALL_CHAPTERS_LABEL } from '~/modules/coverage'
+
 import { formatDuration } from '../lib/duration'
 import { activityLabel, timeOfDay } from '../lib/format'
 import type { StudySession } from '../lib/types'
@@ -36,6 +38,8 @@ const SOURCE_LABEL: Record<string, string> = {
 /** One logged session: times, tags, counted minutes and its actions. Flags are words, not colour. */
 export function SessionRow({ session: s, tz, selected, onSelect, onEdit, onSplit, onDelete }: Props) {
   const title = s.subject_name || 'No subject'
+  // A subject with no chapter is the whole subject; say so instead of leaving the chapter blank.
+  const chapterText = s.chapter_name || (s.subject_id ? ALL_CHAPTERS_LABEL : '')
   return (
     <li className="flex items-start gap-3 rounded-xl border border-border bg-card p-3">
       <Checkbox
@@ -47,7 +51,7 @@ export function SessionRow({ session: s, tz, selected, onSelect, onEdit, onSplit
       <div className="min-w-0 flex-1 space-y-1">
         <p className="font-semibold">
           {title}
-          {s.chapter_name ? <span className="font-normal text-muted-foreground"> · {s.chapter_name}</span> : null}
+          {chapterText ? <span className="font-normal text-muted-foreground"> · {chapterText}</span> : null}
         </p>
         <p className="text-sm text-muted-foreground">
           {timeOfDay(s.started_at, tz)} to {timeOfDay(s.ended_at, tz)} · {activityLabel(s.activity_type)}

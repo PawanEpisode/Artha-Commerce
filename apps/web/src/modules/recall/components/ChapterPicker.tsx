@@ -1,7 +1,8 @@
 import { Alert, SelectField } from '@artha/design-system'
 import { useEffect, useId, useMemo, useState } from 'react'
 
-import { useCourses, useLevelSubjects, useSubjectChapters } from '../hooks/useChapterPicker'
+import { useCourses, useLevelSubjects, useStudentPapers, useSubjectChapters } from '../hooks/useChapterPicker'
+import { papersForStudent } from '../lib/studentPapers'
 
 const NONE = ''
 
@@ -34,6 +35,12 @@ export function ChapterPicker({
   const levels = useMemo(() => list.find((c) => c.code === course)?.levels ?? [], [list, course])
   const subjects = useLevelSubjects(course, level)
   const chapters = useSubjectChapters(course, level, subject)
+  // Only her papers: core ones and the elective she chose. Another level of the course shows all of its papers.
+  const student = useStudentPapers()
+  const papers = useMemo(
+    () => papersForStudent(subjects.data ?? [], course, level, student),
+    [subjects.data, course, level, student],
+  )
 
   // The only course (or the only level of it) is chosen for her.
   useEffect(() => {
@@ -99,7 +106,7 @@ export function ChapterPicker({
             }}
             options={[
               { value: NONE, label: subjects.isPending ? 'Loading…' : 'Choose a paper' },
-              ...(subjects.data ?? []).map((s) => ({ value: s.key, label: s.name })),
+              ...papers.map((s) => ({ value: s.key, label: s.name })),
             ]}
           />
         ) : null}

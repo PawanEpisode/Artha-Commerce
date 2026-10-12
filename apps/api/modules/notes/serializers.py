@@ -74,6 +74,7 @@ class NoteCreateSerializer(serializers.Serializer):
     )
     chapter_id = serializers.UUIDField(required=False, allow_null=True, default=None)
     topic_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    subject_id = serializers.UUIDField(required=False, allow_null=True, default=None)
     tag_ids = serializers.ListField(child=serializers.UUIDField(), required=False, max_length=20, default=list)
 
     def __init__(self, *args, path_id=None, **kwargs):
@@ -97,12 +98,13 @@ class NotePatchSerializer(serializers.Serializer):
     body_md = serializers.CharField(required=False, allow_blank=True, max_length=MAX_BODY, trim_whitespace=False)
     chapter_id = serializers.UUIDField(required=False, allow_null=True)
     topic_id = serializers.UUIDField(required=False, allow_null=True)
+    subject_id = serializers.UUIDField(required=False, allow_null=True)
     pinned = serializers.BooleanField(required=False)
     tag_ids = serializers.ListField(child=serializers.UUIDField(), required=False, max_length=20)
     source = serializers.ChoiceField(choices=["autosave", "manual"], required=False, default="autosave")
     resolution = serializers.ChoiceField(choices=["mine", "theirs", "both"], required=False, allow_null=True)
 
-    FIELDS = ("title", "body_md", "chapter_id", "topic_id", "pinned", "tag_ids")
+    FIELDS = ("title", "body_md", "chapter_id", "topic_id", "subject_id", "pinned", "tag_ids")
 
     def patch(self) -> dict:
         """Only the note fields the client actually sent, so omitted fields stay untouched."""

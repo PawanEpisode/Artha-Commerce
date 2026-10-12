@@ -59,6 +59,7 @@ class DocumentListCreateView(PdfWriteView):
             source_kind=d["source_kind"],
             chapter_id=d["chapter_id"],
             topic_id=d["topic_id"],
+            subject_id=d["subject_id"],
         )
         body = {
             "document": _detail_or_404(request.user.id, result.document.id),

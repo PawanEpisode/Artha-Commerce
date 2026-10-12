@@ -37,6 +37,7 @@ export function useSessionsPage(
     from?: string
     to?: string
     subject_id?: string
+    chapter_id?: string
     source?: string
     include_notes?: boolean
   },

@@ -118,6 +118,7 @@ def _create_note(view, request, note_id):
         body_md=d["body_md"],
         chapter_id=d["chapter_id"],
         topic_id=d["topic_id"],
+        subject_id=d["subject_id"],
         tag_ids=d["tag_ids"],
     )
     card = _card_or_404(request.user.id, result.note.id)

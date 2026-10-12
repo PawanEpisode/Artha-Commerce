@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import type { CatchupSubject } from '../components/CatchupStep'
 import { getSubject } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
+import { chosenSubjects } from '../lib/subjects'
 import { useOverview } from './useCoverageQueries'
 
 /**
@@ -14,10 +15,7 @@ export function useCatchupSubjects(enabled = true) {
   const overview = useOverview(enabled)
   const ov = overview.data
 
-  const subjects = useMemo(() => {
-    const chosen = new Map((ov?.electives ?? []).map((slot) => [slot.key, slot.chosen]))
-    return (ov?.subjects ?? []).filter((s) => !s.elective_slot || chosen.get(s.elective_slot) === s.id)
-  }, [ov])
+  const subjects = useMemo(() => chosenSubjects(ov), [ov])
 
   const chapterQueries = useQueries({
     queries: subjects.map((s) => ({

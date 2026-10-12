@@ -256,6 +256,38 @@ def chapter_refs(chapter_ids: Sequence[UUID]) -> dict[UUID, ChapterRef]:
     return {c.id: _chapter_ref(c) for c in _visible_chapters().filter(pk__in=list(chapter_ids))}
 
 
+@dataclass(frozen=True)
+class SubjectRef:
+    id: UUID
+    key: str
+    name: str
+    level_id: UUID
+
+
+def _subject_ref(subject: Subject) -> SubjectRef:
+    return SubjectRef(id=subject.id, key=subject.key, name=subject.name, level_id=subject.scheme.level_id)
+
+
+def subject_refs(subject_ids: Sequence[UUID]) -> dict[UUID, SubjectRef]:
+    """References for the visible subjects (published or retired schemes, never drafts) among `subject_ids`; others are absent."""
+    if not subject_ids:
+        return {}
+    subjects = Subject.objects.select_related("scheme").filter(
+        pk__in=list(subject_ids), scheme__status__in=[Scheme.Status.PUBLISHED, Scheme.Status.RETIRED]
+    )
+    return {s.id: _subject_ref(s) for s in subjects}
+
+
+def resolve_subject_keys(level_id: UUID, subject_keys: Iterable[str]) -> dict[str, SubjectRef]:
+    """Subject keys to the active subjects of the level's current published scheme (a note filed at subject level follows a scheme switch)."""
+    wanted = set(subject_keys)
+    scheme_id = _current_scheme_id(level_id) if wanted else None
+    if scheme_id is None:
+        return {}
+    subjects = Subject.objects.select_related("scheme").filter(scheme_id=scheme_id, is_active=True, key__in=wanted)
+    return {s.key: _subject_ref(s) for s in subjects}
+
+
 def topic_refs(topic_ids: Sequence[UUID]) -> dict[UUID, TopicRef]:
     if not topic_ids:
         return {}

@@ -7,9 +7,11 @@ import { FollowUpAskContainer, InstallOfferContainer } from '~/modules/notificat
 import { track } from '~/modules/observability'
 import {
   type ActivityType,
+  contextPatch,
   hasSubjectAndChapter,
   nowMs,
   type PickerValue,
+  storedPickerValue,
   useChapterOptionsState,
   useGoals,
   useSubjectOptionsState,
@@ -111,10 +113,10 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
   }, [search.chapter, chapterOptions, pick.subject_id])
 
   const shown: PickerValue = t
-    ? { subject_id: t.subject_id, chapter_id: t.chapter_id, activity_type: t.activity_type }
+    ? storedPickerValue({ subject_id: t.subject_id, chapter_id: t.chapter_id, activity_type: t.activity_type })
     : pick
   const onPick = (patch: Partial<PickerValue>) => {
-    if (t) f.context.mutate(patch)
+    if (t) f.context.mutate(contextPatch(patch))
     else setPick((p) => ({ ...p, ...patch }))
   }
 

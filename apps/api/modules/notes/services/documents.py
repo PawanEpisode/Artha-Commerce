@@ -121,6 +121,7 @@ def reserve_document(
     source_kind: str = Document.SourceKind.OTHER,
     chapter_id: uuid.UUID | None = None,
     topic_id: uuid.UUID | None = None,
+    subject_id: uuid.UUID | None = None,
 ) -> Reservation:
     existing = Document.objects.select_related("attachment").filter(user_id=user_id, client_id=client_id).first()
     if existing is not None:
@@ -132,7 +133,7 @@ def reserve_document(
         raise FileTooLarge(extra={"limit_mb": limits.max_file_mb})
     if page_count_hint is not None and page_count_hint > limits.max_pages:
         raise TooManyPages(extra={"limit": limits.max_pages})
-    link = links.link_columns(chapter_id, topic_id)
+    link = links.link_columns(chapter_id, topic_id, subject_id=subject_id)
     try:
         with transaction.atomic():
             upload = media.create_upload(user_id, PDF_KIND, mime=mime, bytes=bytes)
@@ -290,11 +291,19 @@ def update_document(user_id, document_id, *, base_rev: int | None, changes: dict
     if "edition_label" in changes and (changes["edition_label"] or None) != document.edition_label:
         document.edition_label, changed = changes["edition_label"] or None, True
     relinked_keys: list = []
-    if "chapter_id" in changes or "topic_id" in changes:
-        chapter_id = changes.get("chapter_id", document.chapter_id)
-        topic_id = changes.get("topic_id", document.topic_id if "chapter_id" not in changes else None)
-        if (chapter_id, topic_id) != (document.chapter_id, document.topic_id):
-            for column, value in links.link_columns(chapter_id, topic_id).items():
+    if {"chapter_id", "topic_id", "subject_id"} & changes.keys():
+        # `subject_id` alone files at subject level; `chapter_id: null` alone is Unfiled; a topic follows its chapter.
+        moved = "chapter_id" in changes or "subject_id" in changes
+        chapter_id = (
+            changes["chapter_id"]
+            if "chapter_id" in changes
+            else (None if "subject_id" in changes else document.chapter_id)
+        )
+        topic_id = changes.get("topic_id", None if moved else document.topic_id)
+        subject_id = changes.get("subject_id")
+        columns = links.link_columns(chapter_id, topic_id, subject_id=subject_id)
+        if any(getattr(document, column) != value for column, value in columns.items()):
+            for column, value in columns.items():
                 setattr(document, column, value)
             changed = True
             relinked_keys = document_ranges.relink_marks(document).keys

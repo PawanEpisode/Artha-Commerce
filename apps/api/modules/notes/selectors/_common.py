@@ -124,7 +124,7 @@ def live_documents(user_id) -> QuerySet[Document]:
 def document_scope(qs: QuerySet[Document], f: NoteFilter) -> QuerySet[Document]:
     """
     Documents "in" a subject or chapter: by their own (default) link OR by a page range that maps pages to it. Documents and
-    their ranges carry the same link columns, so one condition serves both. `unfiled` means no default and no range at all.
+    their ranges carry the same link columns, so one condition serves both. `unfiled` means no subject, no chapter and no range at all.
     """
     where = Q()
     if f.level_id:
@@ -139,7 +139,7 @@ def document_scope(qs: QuerySet[Document], f: NoteFilter) -> QuerySet[Document]:
     if where:
         qs = qs.filter(where | Exists(ranged.filter(where)))
     if f.unfiled:
-        qs = qs.filter(chapter__isnull=True).exclude(Exists(ranged))
+        qs = qs.filter(chapter__isnull=True, subject__isnull=True).exclude(Exists(ranged))
     return qs
 
 
@@ -159,8 +159,8 @@ def apply_filter(qs: QuerySet[Note], f: NoteFilter) -> QuerySet[Note]:
         qs = qs.filter(topic_key=f.topic_key)
     if f.tag_id:
         qs = qs.filter(item_tags__tag_id=f.tag_id)
-    if f.unfiled:
-        qs = qs.filter(chapter__isnull=True)
+    if f.unfiled:  # Unfiled means no subject and no chapter; a subject-level note is filed
+        qs = qs.filter(chapter__isnull=True, subject__isnull=True)
     if f.kind:
         qs = qs.filter(kind=f.kind)
     if f.pinned is not None:
@@ -221,6 +221,13 @@ def link_views(rows: Sequence[Any]) -> list[LinkView]:
     fixed number of queries. See `cards` for the resolution rule (stable keys against the level's current scheme).
     """
     linked = [n for n in rows if n.chapter_id]
+    subject_level = [n for n in rows if n.subject_id and not n.chapter_id]
+    current_subjects: dict[tuple, Any] = {}
+    for level_id in {n.level_id for n in subject_level}:
+        keys = {n.subject_key for n in subject_level if n.level_id == level_id}
+        for key, sref in syllabus.resolve_subject_keys(level_id, keys).items():
+            current_subjects[(level_id, key)] = sref
+    stored_subjects = syllabus.subject_refs([n.subject_id for n in subject_level])
     current: dict[tuple, Any] = {}
     for level_id in {n.level_id for n in linked}:
         pairs = {(n.subject_key, n.chapter_key) for n in linked if n.level_id == level_id}
@@ -228,12 +235,25 @@ def link_views(rows: Sequence[Any]) -> list[LinkView]:
             current[(level_id, *pair)] = ref
     stored = syllabus.chapter_refs([n.chapter_id for n in linked])
     topics = syllabus.topic_refs([n.topic_id for n in linked if n.topic_id])
-    return [_link(n, current, stored, topics) for n in rows]
+    return [_link(n, current, stored, topics, current_subjects, stored_subjects) for n in rows]
 
 
-def _link(note: Any, current: dict, stored: dict, topics: dict) -> LinkView:
+def _link(
+    note: Any, current: dict, stored: dict, topics: dict, current_subjects: dict, stored_subjects: dict
+) -> LinkView:
     if not note.chapter_id:
-        return LinkView()
+        if not note.subject_id:
+            return LinkView()
+        sref = current_subjects.get((note.level_id, note.subject_key))
+        moved = sref is None
+        sref = sref or stored_subjects.get(note.subject_id)
+        return LinkView(
+            level_id=note.level_id,
+            subject_id=sref.id if sref else note.subject_id,
+            subject_key=note.subject_key,
+            subject_name=sref.name if sref else None,
+            moved_or_removed=moved,
+        )
     ref = current.get((note.level_id, note.subject_key, note.chapter_key))
     moved = ref is None
     ref = ref or stored.get(note.chapter_id)

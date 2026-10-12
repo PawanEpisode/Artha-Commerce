@@ -27,6 +27,7 @@ const h = vi.hoisted(() => ({
   syl: { fetchCourses: vi.fn(), fetchLevel: vi.fn(), fetchSubject: vi.fn() },
 }))
 vi.mock('~/modules/syllabus', () => h.syl)
+vi.mock('~/modules/coverage', () => ({ useChosenSubjects: () => ({ data: undefined, subjects: [] }) }))
 
 vi.mock('@tanstack/react-router', async () => ({
   ...(await import('~/test/router-stub')).routerStub,

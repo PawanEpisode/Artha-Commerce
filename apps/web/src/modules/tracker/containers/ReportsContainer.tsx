@@ -92,7 +92,8 @@ function Reports({ search, tz, weekStart }: { search: ReportsSearch; tz: string;
   const heatRange = { from: addDays(range.to, -364), to: range.to }
   const heat = useHeatmap(heatRange)
   const hours = useHours(params)
-  const chosenSubject = search.subject ?? subjects[0]?.id
+  // A ?subject= that is not on the student's syllabus (an elective they did not pick) falls back to the first paper.
+  const chosenSubject = subjects.find((s) => s.id === search.subject)?.id ?? subjects[0]?.id
   const tvc = useTimeVsCoverage({ ...params, subject_id: chosenSubject })
 
   const viewed = useRef(false)

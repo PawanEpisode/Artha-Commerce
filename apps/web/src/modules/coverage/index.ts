@@ -6,10 +6,26 @@ export { RevisionContainer } from './containers/RevisionContainer'
 export { SubjectContainer, type SubjectSearch } from './containers/SubjectContainer'
 export { type MapSearch, SyllabusMapContainer } from './containers/SyllabusMapContainer'
 // Shared with the time tracker: the enrolment's subjects (the offline queue lives in ~/lib/offline-queue).
-export { useChapterCoverage, useContinue, useDue, useOverview, useSubjectCoverage } from './hooks/useCoverageQueries'
+export { ChapterField } from './components/ChapterField'
+export {
+  useChapterCoverage,
+  useChosenSubjects,
+  useContinue,
+  useDue,
+  useOverview,
+  useSubjectCoverage,
+} from './hooks/useCoverageQueries'
 export { isFeatureDisabled as isCoverageOff, isNoEnrollment } from './lib/api'
 export { newClientId } from './lib/api'
+export {
+  type ChapterSelection,
+  chapterSelectionOf,
+  chapterSelectValue,
+  isChapterUnset,
+  storedChapterSelection,
+} from './lib/chapterSelection'
 export { type ChapterCounts, paperSentence, progressSentence } from './lib/progress'
+export { ALL_CHAPTERS, ALL_CHAPTERS_LABEL, chosenSubjects } from './lib/subjects'
 export type { ChapterCoverage, ContinueChapter, Due, DueRow, Overview, SubjectCoverage, SubjectRow } from './lib/types'
 // Shared with the personalization flow: the targets controls and rules, so onboarding and Settings read the same.
 export { CatchupResult } from './components/CatchupResult'

@@ -31,6 +31,7 @@ class ReserveSerializer(serializers.Serializer):
     source_kind = serializers.ChoiceField(choices=SOURCE_KINDS, required=False, default=Document.SourceKind.OTHER)
     chapter_id = serializers.UUIDField(required=False, allow_null=True, default=None)
     topic_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    subject_id = serializers.UUIDField(required=False, allow_null=True, default=None)
 
 
 class ListQuery(serializers.Serializer):
@@ -54,6 +55,7 @@ class PatchSerializer(serializers.Serializer):
     edition_label = serializers.CharField(max_length=40, required=False, allow_null=True, allow_blank=True)
     chapter_id = serializers.UUIDField(required=False, allow_null=True)
     topic_id = serializers.UUIDField(required=False, allow_null=True)
+    subject_id = serializers.UUIDField(required=False, allow_null=True)
     tag_ids = serializers.ListField(child=serializers.UUIDField(), required=False, max_length=20)
 
     def changes(self) -> dict:

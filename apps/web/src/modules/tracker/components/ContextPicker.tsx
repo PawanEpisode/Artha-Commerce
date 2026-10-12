@@ -1,6 +1,8 @@
 import { Label, SelectField } from '@artha/design-system'
 import { useId } from 'react'
 
+import { ChapterField } from '~/modules/coverage'
+
 import { ACTIVITY_OPTIONS, type ActivityType } from '../lib/types'
 
 export interface PickerValue {
@@ -10,8 +12,6 @@ export interface PickerValue {
   all_chapters?: boolean
   activity_type: ActivityType
 }
-
-const ALL_CHAPTERS = '__all__'
 
 /** A study timer can start only once a subject and a chapter (or "All chapters") are chosen. */
 export function hasSubjectAndChapter(value: Pick<PickerValue, 'subject_id' | 'chapter_id' | 'all_chapters'>) {
@@ -57,28 +57,15 @@ export function ContextPicker({
           options={[{ value: '', label: 'No subject' }, ...subjects.map((s) => ({ value: s.id, label: s.name }))]}
         />
       </div>
-      <div className="space-y-1.5">
-        <Label htmlFor={`${id}-chapter`}>Chapter</Label>
-        <SelectField
-          id={`${id}-chapter`}
-          disabled={disabled || !value.subject_id}
-          loading={chaptersLoading}
-          loadingText="Loading chapters…"
-          emptyText="No chapters for this subject"
-          value={value.all_chapters ? ALL_CHAPTERS : (value.chapter_id ?? '')}
-          onValueChange={(chapterId) =>
-            onChange({
-              chapter_id: chapterId && chapterId !== ALL_CHAPTERS ? chapterId : null,
-              all_chapters: chapterId === ALL_CHAPTERS,
-            })
-          }
-          options={[
-            { value: '', label: 'No chapter' },
-            { value: ALL_CHAPTERS, label: 'All chapters' },
-            ...chapters.map((c) => ({ value: c.id, label: c.name })),
-          ]}
-        />
-      </div>
+      <ChapterField
+        id={`${id}-chapter`}
+        disabled={disabled || !value.subject_id}
+        loading={chaptersLoading}
+        chapters={chapters}
+        value={{ chapter_id: value.chapter_id, all_chapters: Boolean(value.all_chapters) }}
+        unsetLabel="No chapter"
+        onChange={onChange}
+      />
       <div className="space-y-1.5">
         <Label htmlFor={`${id}-activity`}>Activity</Label>
         <SelectField

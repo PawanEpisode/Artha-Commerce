@@ -14,6 +14,7 @@ import { useOverview } from '../hooks/useCoverageQueries'
 import { getSubject } from '../lib/api'
 import { coverageKeys } from '../lib/keys'
 import { prefillSelection } from '../lib/prefill'
+import { chosenSubjects } from '../lib/subjects'
 import type { Overview } from '../lib/types'
 
 type Stage = 'course' | 'term' | 'electives' | 'catchup'
@@ -66,10 +67,7 @@ export function OnboardingContainer({
 
   const ov = overview.data
   // Papers of an elective the student did not choose are out of their syllabus, so they are not offered for catch-up.
-  const subjects = useMemo(() => {
-    const chosen = new Map((ov?.electives ?? []).map((slot) => [slot.key, slot.chosen]))
-    return (ov?.subjects ?? []).filter((s) => !s.elective_slot || chosen.get(s.elective_slot) === s.id)
-  }, [ov])
+  const subjects = useMemo(() => chosenSubjects(ov), [ov])
   const chapterQueries = useQueries({
     queries: subjects.map((s) => ({
       queryKey: coverageKeys.subject(s.id),
@@ -141,7 +139,7 @@ export function OnboardingContainer({
   }
 
   function startWith(result: Overview) {
-    const lowest = [...result.subjects]
+    const lowest = [...chosenSubjects(result)]
       .filter((s) => s.chapters_total > 0)
       .sort((a, b) => a.pct_simple - b.pct_simple)[0]
     if (!lowest) return null

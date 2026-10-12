@@ -10,6 +10,7 @@ import { WeeklySummaryCard } from '../components/WeeklySummaryCard'
 import { useStopwatch } from '../hooks/useStopwatch'
 import { useChapterOptionsState, useSubjectOptionsState } from '../hooks/useTagOptions'
 import { useGoals, useSessionsPage, useToday, useTrackerSettings, useWeeklySummary } from '../hooks/useTrackerQueries'
+import { contextPatch, storedPickerValue } from '../lib/context'
 import { formatDuration } from '../lib/duration'
 import type { ActivityType } from '../lib/types'
 import { SessionFormDialog } from './SessionFormDialog'
@@ -30,7 +31,9 @@ function Today({ tz }: { tz: string }) {
     all_chapters?: boolean
     activity_type: ActivityType
   }>({ subject_id: null, chapter_id: null, activity_type: settings?.default_activity_type ?? 'other' })
-  const shown = sw ? { subject_id: sw.subject_id, chapter_id: sw.chapter_id, activity_type: sw.activity_type } : pick
+  const shown = sw
+    ? storedPickerValue({ subject_id: sw.subject_id, chapter_id: sw.chapter_id, activity_type: sw.activity_type })
+    : pick
   const { options: chapters, loading: chaptersLoading } = useChapterOptionsState(shown.subject_id)
   const [adding, setAdding] = useState(false)
   const goals = useGoals()
@@ -63,7 +66,7 @@ function Today({ tz }: { tz: string }) {
   }, [weekly.data])
 
   const onPick = (patch: Partial<typeof pick>) => {
-    if (sw) timer.context.mutate(patch)
+    if (sw) timer.context.mutate(contextPatch(patch))
     else setPick((p) => ({ ...p, ...patch }))
   }
 
