@@ -6,12 +6,16 @@ import { ACTIVITY_OPTIONS, type ActivityType } from '../lib/types'
 export interface PickerValue {
   subject_id: string | null
   chapter_id: string | null
+  /** "All chapters" was chosen: the time belongs to the whole subject, so chapter_id stays null. */
+  all_chapters?: boolean
   activity_type: ActivityType
 }
 
-/** A study timer can start only once both a subject and a chapter are chosen. */
-export function hasSubjectAndChapter(value: Pick<PickerValue, 'subject_id' | 'chapter_id'>) {
-  return Boolean(value.subject_id && value.chapter_id)
+const ALL_CHAPTERS = '__all__'
+
+/** A study timer can start only once a subject and a chapter (or "All chapters") are chosen. */
+export function hasSubjectAndChapter(value: Pick<PickerValue, 'subject_id' | 'chapter_id' | 'all_chapters'>) {
+  return Boolean(value.subject_id && (value.chapter_id || value.all_chapters))
 }
 
 interface Props {
@@ -47,7 +51,9 @@ export function ContextPicker({
           loadingText="Loading subjects…"
           emptyText="No subjects yet. Choose your course first."
           value={value.subject_id ?? ''}
-          onValueChange={(subjectId) => onChange({ subject_id: subjectId || null, chapter_id: null })}
+          onValueChange={(subjectId) =>
+            onChange({ subject_id: subjectId || null, chapter_id: null, all_chapters: false })
+          }
           options={[{ value: '', label: 'No subject' }, ...subjects.map((s) => ({ value: s.id, label: s.name }))]}
         />
       </div>
@@ -59,9 +65,18 @@ export function ContextPicker({
           loading={chaptersLoading}
           loadingText="Loading chapters…"
           emptyText="No chapters for this subject"
-          value={value.chapter_id ?? ''}
-          onValueChange={(chapterId) => onChange({ chapter_id: chapterId || null })}
-          options={[{ value: '', label: 'No chapter' }, ...chapters.map((c) => ({ value: c.id, label: c.name }))]}
+          value={value.all_chapters ? ALL_CHAPTERS : (value.chapter_id ?? '')}
+          onValueChange={(chapterId) =>
+            onChange({
+              chapter_id: chapterId && chapterId !== ALL_CHAPTERS ? chapterId : null,
+              all_chapters: chapterId === ALL_CHAPTERS,
+            })
+          }
+          options={[
+            { value: '', label: 'No chapter' },
+            { value: ALL_CHAPTERS, label: 'All chapters' },
+            ...chapters.map((c) => ({ value: c.id, label: c.name })),
+          ]}
         />
       </div>
       <div className="space-y-1.5">

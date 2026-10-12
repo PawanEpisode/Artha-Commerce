@@ -27,6 +27,7 @@ function Today({ tz }: { tz: string }) {
   const [pick, setPick] = useState<{
     subject_id: string | null
     chapter_id: string | null
+    all_chapters?: boolean
     activity_type: ActivityType
   }>({ subject_id: null, chapter_id: null, activity_type: settings?.default_activity_type ?? 'other' })
   const shown = sw ? { subject_id: sw.subject_id, chapter_id: sw.chapter_id, activity_type: sw.activity_type } : pick
@@ -84,7 +85,13 @@ function Today({ tz }: { tz: string }) {
         chaptersLoading={chaptersLoading}
         value={shown}
         onValueChange={onPick}
-        onStart={() => timer.start.mutate(pick)}
+        onStart={() =>
+          timer.start.mutate({
+            subject_id: pick.subject_id,
+            chapter_id: pick.chapter_id,
+            activity_type: pick.activity_type,
+          })
+        }
         onPause={() => timer.toggle.mutate('pause')}
         onResume={() => timer.toggle.mutate('resume')}
         onStop={() => timer.stop.mutate(true)}

@@ -1,10 +1,18 @@
 import { useOverview, useSubjectCoverage } from '~/modules/coverage'
 
+type Overview = NonNullable<ReturnType<typeof useOverview>['data']>
+
+/** Core papers plus only the elective papers the student chose (the others are not on their syllabus). */
+function chosenSubjects(data: Overview | undefined) {
+  const chosen = new Map((data?.electives ?? []).map((slot) => [slot.key, slot.chosen]))
+  return (data?.subjects ?? []).filter((s) => !s.elective_slot || chosen.get(s.elective_slot) === s.id)
+}
+
 /** Subjects of the student's enrolment, for the pickers, with whether they are still loading. */
 export function useSubjectOptionsState() {
   const { data, isPending } = useOverview()
   return {
-    options: data?.subjects.map((s) => ({ id: s.id, name: s.name, key: s.key })) ?? [],
+    options: chosenSubjects(data).map((s) => ({ id: s.id, name: s.name, key: s.key })),
     loading: isPending,
   }
 }

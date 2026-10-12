@@ -125,7 +125,13 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
     unlockAudio()
     const body = timings.preset === 'custom' ? { preset: 'custom', ...timings.timings } : { preset: timings.preset }
     f.start(
-      { ...(phase === 'focus' ? body : {}), phase, ...pick },
+      {
+        ...(phase === 'focus' ? body : {}),
+        phase,
+        subject_id: pick.subject_id,
+        chapter_id: pick.chapter_id,
+        activity_type: pick.activity_type,
+      },
       { has_subject: !!pick.subject_id, resumed_cycle: (f.idle?.next_round ?? 1) > 1 },
     )
   }
