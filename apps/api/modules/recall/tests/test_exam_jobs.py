@@ -92,5 +92,7 @@ def test_the_daily_walk_covers_students_with_an_exam_in_the_window_and_skips_the
 def test_the_tick_starts_one_walk_a_day_and_runs_it(settings):
     first = jobs.tick()
     again = jobs.tick()
-    assert first["jobs_ran"] == 1 and again["jobs_ran"] == 0
+    # two daily jobs: the exam walk and the expiry of old AI suggestions (W5)
+    assert first["jobs_ran"] == 2 and again["jobs_ran"] == 0
     assert core_jobs.Job.objects.filter(type=jobs.JOB_EXAM_HORIZON).count() == 1
+    assert core_jobs.Job.objects.filter(type=jobs.JOB_EXPIRE_SUGGESTIONS).count() == 1

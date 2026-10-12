@@ -394,6 +394,9 @@ class RecallSettings(TimeStampedModel):
     vacation_until = models.DateField(null=True, blank=True)
     improve_scheduler_consent = models.BooleanField(default=False)
     consent_at = models.DateTimeField(null=True, blank=True)
+    ai_consent_version = models.CharField(max_length=16, blank=True, default="")  # R2-W5: AI card suggestions
+    ai_consent_at = models.DateTimeField(null=True, blank=True)
+    ai_consent_withdrawn_at = models.DateTimeField(null=True, blank=True)
     params = models.ForeignKey(RecallParams, null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
 
     class Meta:
@@ -807,7 +810,7 @@ class RecallReport(UUIDModel):
 
 AUDITLOG_ACTIONS = (
     "deck_publish", "item_withdraw", "share_takedown", "attest_own_words", "params_activate", "force_replay",
-    "quota_change", "deck_sync_retry",
+    "quota_change", "deck_sync_retry", "ai_consent",
 )  # fmt: skip
 
 
@@ -917,6 +920,149 @@ class RecallSubscriptionUpdate(UUIDModel):
             ),
         ]
         indexes = [models.Index(fields=["user_id", "subscription", "-applied_at"], name="recall_subupd_sub_idx")]
+
+
+# --------------------------------------------------------------------------- R2-W5: AI suggestions
+
+BATCH_STATUSES = ("queued", "running", "ready", "failed", "cancelled", "expired")
+BATCH_ACTIVE = ("queued", "running")
+SUGGESTION_STATUSES = ("draft", "accepted", "edited_accepted", "rejected", "expired")
+AICALL_STATUSES = ("ok", "failed", "blocked")
+
+
+class RecallSuggestionBatch(UUIDModel):
+    """
+    One request for card suggestions from a chapter's material (FR-F15-18). `pasted_text` is the only copy of her text and is
+    emptied as soon as the job finishes; notes and wrong answers are re-read from their owners when the job runs. The quota
+    for the batch is charged when it is queued (`charged_suggestions`) and the unused part is refunded when it ends.
+    """
+
+    STATUSES = BATCH_STATUSES
+    ACTIVE = BATCH_ACTIVE
+
+    user_id = models.UUIDField()
+    client_id = models.UUIDField(null=True, blank=True)
+    chapter = models.ForeignKey("syllabus.Chapter", on_delete=models.PROTECT, related_name="+")
+    sources = models.JSONField(default=list)  # ["notes", "pasted"]
+    kinds = models.JSONField(default=list)
+    requested_count = models.SmallIntegerField()
+    source_hash = models.CharField(max_length=64, blank=True, default="")
+    source_chars = models.IntegerField(default=0)
+    pasted_text = models.TextField(blank=True, default="")
+    prompt_id = models.CharField(max_length=32)
+    prompt_version = models.CharField(max_length=8)
+    status = models.CharField(max_length=10, default="queued")
+    error_code = models.CharField(max_length=32, blank=True, default="")
+    produced = models.SmallIntegerField(default=0)
+    dropped = models.SmallIntegerField(default=0)
+    charged_suggestions = models.SmallIntegerField(default=0)
+    refunded = models.BooleanField(default=False)
+    cached_from = models.UUIDField(null=True, blank=True)
+    usage_day = models.DateField(null=True, blank=True)  # the India day the quota was charged to
+    finished_at = models.DateTimeField(null=True, blank=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "recall_suggestionbatch"
+        constraints = [
+            in_("status", BATCH_STATUSES, "recall_suggestionbatch_status_valid"),
+            models.CheckConstraint(
+                condition=Q(requested_count__gte=1, requested_count__lte=10), name="recall_suggestionbatch_count_range"
+            ),
+            models.UniqueConstraint(
+                fields=["user_id", "client_id"],
+                condition=Q(client_id__isnull=False),
+                name="recall_suggestionbatch_client_uniq",
+            ),
+        ]
+        indexes = [
+            models.Index(fields=["user_id", "-created_at"], name="recall_sugbatch_mine_idx"),
+            models.Index(fields=["user_id", "chapter", "status"], name="recall_sugbatch_chapter_idx"),
+            models.Index(fields=["status", "expires_at"], name="recall_sugbatch_expiry_idx"),
+        ]
+
+
+class RecallSuggestion(UUIDModel):
+    """A draft card. `evidence_quote` is verbatim from the source she supplied (checked by the service)."""
+
+    STATUSES = SUGGESTION_STATUSES
+
+    batch = models.ForeignKey(RecallSuggestionBatch, on_delete=models.CASCADE, related_name="suggestions")
+    user_id = models.UUIDField()
+    position = models.SmallIntegerField(default=0)
+    kind = models.CharField(max_length=10)
+    fields = models.JSONField(default=dict)
+    evidence_quote = models.CharField(max_length=300)
+    evidence_source = models.CharField(max_length=80, blank=True, default="")
+    fingerprint = models.CharField(max_length=64)
+    status = models.CharField(max_length=16, default="draft")
+    item_id = models.UUIDField(null=True, blank=True)  # the card item made by Accept
+    decided_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "recall_suggestion"
+        constraints = [
+            in_("status", SUGGESTION_STATUSES, "recall_suggestion_status_valid"),
+            in_("kind", ITEM_KINDS, "recall_suggestion_kind_valid"),
+        ]
+        indexes = [
+            models.Index(fields=["batch", "position"], name="recall_suggestion_batch_idx"),
+            models.Index(fields=["user_id", "status"], name="recall_suggestion_user_idx"),
+        ]
+
+
+class RecallSuggestionReject(UUIDModel):
+    """A rejected draft is remembered as a fingerprint for 90 days so it is not suggested again (FR-F15-19). No text."""
+
+    user_id = models.UUIDField()
+    fingerprint = models.CharField(max_length=64)
+
+    class Meta:
+        db_table = "recall_suggestionreject"
+        constraints = [models.UniqueConstraint(fields=["user_id", "fingerprint"], name="recall_suggestionreject_uniq")]
+        indexes = [models.Index(fields=["created_at"], name="recall_sugreject_age_idx")]
+
+
+class RecallAiCall(UUIDModel):
+    """The cost ledger (ERD 2.17): one row per model call, ids, counts and rupees only, never the text that was sent."""
+
+    STATUSES = AICALL_STATUSES
+
+    user_id = models.UUIDField()
+    batch_id = models.UUIDField(null=True, blank=True)
+    prompt_id = models.CharField(max_length=32)
+    prompt_version = models.CharField(max_length=8)
+    model = models.CharField(max_length=64, blank=True, default="")
+    tokens_in = models.IntegerField(default=0)
+    tokens_out = models.IntegerField(default=0)
+    cost_paise = models.IntegerField(default=0)
+    latency_ms = models.IntegerField(default=0)
+    status = models.CharField(max_length=8)
+    error_code = models.CharField(max_length=32, blank=True, default="")
+
+    class Meta:
+        db_table = "recall_aicall"
+        constraints = [in_("status", AICALL_STATUSES, "recall_aicall_status_valid")]
+        indexes = [
+            models.Index(fields=["user_id", "-created_at"], name="recall_aicall_user_idx"),
+            models.Index(fields=["created_at"], name="recall_aicall_day_idx"),
+        ]
+
+
+class RecallAiUsage(UUIDModel):
+    """What a student has used of the daily AI quota on one India day. Changed only by conditional UPDATEs."""
+
+    user_id = models.UUIDField()
+    day = models.DateField()
+    suggestions = models.IntegerField(default=0)
+    batches = models.IntegerField(default=0)
+
+    class Meta:
+        db_table = "recall_aiusage"
+        constraints = [
+            models.UniqueConstraint(fields=["user_id", "day"], name="recall_aiusage_user_day_uniq"),
+            models.CheckConstraint(condition=Q(suggestions__gte=0, batches__gte=0), name="recall_aiusage_nonnegative"),
+        ]
 
 
 # ------------------------------------------------------------------------------------------- quota

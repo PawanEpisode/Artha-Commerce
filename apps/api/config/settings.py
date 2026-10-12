@@ -177,6 +177,7 @@ REST_FRAMEWORK = {
         "recall_review": "600/min",  # W5: review events and batches
         "recall_write": "120/min",  # card, deck and settings writes
         "recall_export": "6/hour",  # W11: streamed CSV and JSON export
+        "recall_ai": "10/hour",  # R2-W5: asking for AI card suggestions (the money limits are the plan's daily quotas)
         "recall_apply_update": "30/hour",  # R2-W2: applying a deck update (one apply per subscription and version is normal)
         "media_upload": "120/hour",
         "media_read": "300/min",
@@ -269,6 +270,11 @@ NOTES_AI_CONSENT_APPROVED = env("NOTES_AI_CONSENT_APPROVED")
 NOTES_AI_SUMMARY_ENABLED = env("NOTES_AI_SUMMARY_ENABLED", "true").lower() == "true"  # kill switch
 NOTES_AI_OCR_ENABLED = env("NOTES_AI_OCR_ENABLED", "true").lower() == "true"  # kill switch
 NOTES_AI_DAILY_BUDGET_PAISE = int(env("NOTES_AI_DAILY_BUDGET_PAISE", "0") or 0)  # all students, India day; 0 = AI off
+# F-15 recall AI card suggestions (R2-W5; flag `recall_ai`, fails closed). Same Google key and data-tier rule as notes AI. Every
+# one of these fails closed: the wording version the owner approved, the kill switch and the shared daily budget (0 = AI off).
+RECALL_AI_CONSENT_APPROVED = env("RECALL_AI_CONSENT_APPROVED")
+RECALL_AI_ENABLED = env("RECALL_AI_ENABLED", "true").lower() == "true"  # kill switch
+RECALL_AI_DAILY_BUDGET_PAISE = int(env("RECALL_AI_DAILY_BUDGET_PAISE", "0") or 0)  # all students, India day
 # Unlock for search: Fernet keys (comma separated, newest first; `Fernet.generate_key()`) that seal a password for the hour it
 # is needed. Empty keeps the feature off (503 `unlock_unavailable`).
 NOTES_UNLOCK_FERNET_KEYS = env("NOTES_UNLOCK_FERNET_KEYS")

@@ -31,6 +31,7 @@ RECALL_OPEN_PATHS: tuple[str, ...] = (
     "/recall/export/cards.csv",
     "/recall/export/reviews.csv",
     "/recall/erase/",
+    "/recall/ai/consent/withdraw/",  # R2-W5: taking AI consent back is never blocked by a rollout switch
 )
 
 

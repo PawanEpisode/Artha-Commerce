@@ -111,14 +111,32 @@ subscription: {id, status, version_no, newer_versions, subscribed_at, min_import
 | `POST recall/chapter-remaps/{id}/choose/` | `{chapter_id}` | 200 `{id, status: "resolved", relation}`. The item's and her cards' chapter move to the chapter (a chapter of the new scheme). Safe to repeat | 404; 422 `unknown_chapter` |
 | `POST recall/items/{id}/report/` | `{reason: "wrong"\|"outdated"\|"copyright"\|"other", note? (<=500)}` | 201 `{id, created: true}` (200 `created: false` when she already has an open report on the item) | 404 |
 
+## AI card suggestions (flag `recall_ai`, fails closed; R2-W5)
+
+Every path needs both `recall_system` and `recall_ai` (403 `feature_disabled` otherwise), except `ai/consent/withdraw/`, which is open whatever the flags say. A suggestion is a draft made only from material she supplied; its `evidence_quote` is verbatim in that material (the service drops any that is not). Nothing becomes a card without Accept. The model runs in the worker (`recall.suggest`), never in a request. Text is never logged.
+
+| Method and path | Body or query | Success | Errors |
+| --- | --- | --- | --- |
+| `GET recall/ai/` | | 200 `{available, consent: {version, given, given_at}, quota: {batches_used, batches_limit, suggestions_used, suggestions_limit, resets_on}, sources: ["notes"?, "pasted"], limits: {min_count, max_count, default_count, max_pasted_chars, min_source_chars}, waiting_drafts}`. `available` is false until the key, the paid data tier, the approved notice wording, the kill switch and the daily budget are all set | |
+| `GET recall/ai/consent/` | | 200 `{version, title, points: [{heading, text}], consented, consented_at, available}` | |
+| `POST recall/ai/consent/` | `{version}` (the one she read) | 200 (same shape) | 409 `consent_version_mismatch`; 503 `ai_unavailable` |
+| `POST recall/ai/consent/withdraw/` | | 200 `{withdrawn: true, cancelled, drafts_deleted}`: waiting drafts are deleted and a running batch is cancelled and refunded | |
+| `GET recall/suggestions/` | `?chapter_id&limit<=50` | 200 `{results: Batch[]}` newest first (expired batches are left out) | 400 |
+| `POST recall/suggestions/` | `{chapter_id, sources: ["notes"\|"wrong_answers"\|"pasted"], pasted_text? (<=12000), count? (1 to 10, default 6), kinds? , client_id?}` | 202 `Batch` (queued; poll it) or 200 `Batch` with `reused` `"replay"` (same `client_id`), `"cache"` (same material, kinds and count in the last 7 days) or `"active"` (a batch for this chapter is running): nothing is charged or queued in those three | 400; 403 `ai_not_consented`; 422 `unknown_chapter`, `source_unavailable` details `{sources}`, `not_enough_material`; 429 `quota_exceeded` details `{kind: "ai_batches"\|"ai_suggestions", used, limit, plan, resets_on}`; 503 `ai_unavailable` |
+| `GET recall/suggestions/{id}/` | | 200 `Batch`: `{id, status: "queued"\|"running"\|"ready"\|"failed"\|"cancelled"\|"expired", chapter_id, sources, kinds, requested_count, produced, dropped, error_code, created_at, finished_at, expires_at, estimate_seconds, reused, suggestions: [{id, position, kind, fields, front_md, back_md, evidence_quote, evidence_label, status: "draft"\|"accepted"\|"edited_accepted"\|"rejected"\|"expired", item_id, decided_at}]}` | 404 |
+| `POST recall/suggestions/items/{id}/accept/` | `{fields? (her edits), force? (false)}` | 201 (200 when already accepted) `{item_id, kind, existing, cards: Card[], card_id, suggestion}`. The card has origin `ai_suggestion` and is private. Idempotent: the suggestion id is the card's client id | 404; 409 `duplicate_card`, `suggestion_decided`, `suggestions_not_ready`; 422 `invalid_fields`; 429 `quota_exceeded` (cards) |
+| `POST recall/suggestions/items/{id}/reject/` | | 200 `{suggestion}`. The same text is not suggested again for 90 days (a fingerprint is kept, no text). Safe to repeat | 404; 409 `suggestion_decided` |
+
+A batch that makes fewer cards than it reserved gives the unused part of today's quota back; a batch that fails, is blocked, makes nothing usable or is cancelled gives back everything. Throttles: `recall_ai` 10/hour on `POST suggestions/`, `recall_write` on the rest.
+
 ## Export and erase (never gated by the flag)
 
 | Method and path | Query or body | Success |
 | --- | --- | --- |
-| `GET recall/export/` | | 200 JSON of everything the student owns in recall (cards, items and versions, review log, sessions, settings, subscriptions with follow or pin, chapter remaps, reports), `Content-Disposition: attachment; filename="recall-export.json"` |
+| `GET recall/export/` | | 200 JSON of everything the student owns in recall (cards, items and versions, review log, sessions, settings, subscriptions with follow or pin, chapter remaps, AI drafts and the consent she gave, reports), `Content-Disposition: attachment; filename="recall-export.json"` |
 | `GET recall/export/cards.csv` | `cursor?`, `limit<=100000?` | streamed `text/csv`, `Cache-Control: no-store`; the last line is `#complete,<rows>` or `#next,<cursor>` (call again with the cursor) |
 | `GET recall/export/reviews.csv` | as `cards.csv` | as `cards.csv`; the review log without card text |
-| `POST recall/erase/` | `{confirm: "ERASE"}` | 200 `{deleted: {reviewlog, scheduleevents, sessions, cards, subscriptions, chapter_remaps, item_versions, items, decks, daily_rollups, chapter_rollups, settings, params, quota, reports}}` (row counts): every recall row of the student is deleted, including the partitioned review log; nothing is kept. A wrong `confirm` word is 400 |
+| `POST recall/erase/` | `{confirm: "ERASE"}` | 200 `{deleted: {reviewlog, scheduleevents, sessions, suggestion_batches, suggestion_rejects, ai_calls, ai_usage, cards, subscriptions, chapter_remaps, item_versions, items, decks, daily_rollups, chapter_rollups, settings, params, quota, reports}}` (row counts): every recall row of the student is deleted, including the partitioned review log; nothing is kept. A wrong `confirm` word is 400 |
 
 ## Notes for the web
 

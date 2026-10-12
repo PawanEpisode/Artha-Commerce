@@ -33,6 +33,11 @@ export const ALLOWED = {
   recall_question_card_made: ['existing'],
   recall_update_history_viewed: ['updates'],
   recall_card_changes_viewed: ['versions', 'waiting'],
+  recall_ai_consent_given: [],
+  recall_ai_consent_withdrawn: ['drafts_deleted'],
+  recall_suggestions_requested: ['count', 'sources', 'reused'],
+  recall_suggestions_ready: ['produced', 'dropped'],
+  recall_suggestion_decided: ['decision', 'edited'],
   recall_pacing_viewed: ['feasible', 'needed_per_day', 'days_to_exam'],
 } as const satisfies Record<string, readonly string[]>
 

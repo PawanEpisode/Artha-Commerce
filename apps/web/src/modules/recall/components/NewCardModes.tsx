@@ -1,10 +1,11 @@
 import { ButtonLink } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+import type { ReactNode } from 'react'
 
 import type { NewCardSearch } from '../lib/cardSearch'
 
 /** "One card" or "Import many": two links, so each way of adding cards has its own URL and the keyboard path is plain tabbing. */
-export function NewCardModes({ search }: { search: NewCardSearch }) {
+export function NewCardModes({ search, extra }: { search: NewCardSearch; extra?: ReactNode }) {
   const importing = search.mode === 'import'
   return (
     <nav aria-label="How to add cards" className="flex flex-wrap gap-2">
@@ -26,6 +27,7 @@ export function NewCardModes({ search }: { search: NewCardSearch }) {
           Import many
         </Link>
       </ButtonLink>
+      {extra}
     </nav>
   )
 }

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from . import views, views_ai
 
 urlpatterns = [
     path("recall/cards/", views.CardListCreateView.as_view(), name="recall-cards"),
@@ -99,4 +99,21 @@ urlpatterns += [
     path("recall/export/cards.csv", views.CsvExportView.as_view(which="cards"), name="recall-export-cards"),
     path("recall/export/reviews.csv", views.CsvExportView.as_view(which="reviews"), name="recall-export-reviews"),
     path("recall/erase/", views.EraseView.as_view(), name="recall-erase"),
+]
+urlpatterns += [
+    path("recall/ai/", views_ai.AiOverviewView.as_view(), name="recall-ai"),
+    path("recall/ai/consent/", views_ai.AiConsentView.as_view(), name="recall-ai-consent"),
+    path("recall/ai/consent/withdraw/", views_ai.AiConsentWithdrawView.as_view(), name="recall-ai-consent-withdraw"),
+    path("recall/suggestions/", views_ai.SuggestionBatchListView.as_view(), name="recall-suggestions"),
+    path(
+        "recall/suggestions/items/<uuid:suggestion_id>/accept/",
+        views_ai.SuggestionAcceptView.as_view(),
+        name="recall-suggestion-accept",
+    ),
+    path(
+        "recall/suggestions/items/<uuid:suggestion_id>/reject/",
+        views_ai.SuggestionRejectView.as_view(),
+        name="recall-suggestion-reject",
+    ),
+    path("recall/suggestions/<uuid:batch_id>/", views_ai.SuggestionBatchView.as_view(), name="recall-suggestion-batch"),
 ]

@@ -1,6 +1,9 @@
 """Write paths of the recall module. Views call these; they never call views. Services are added wave by wave."""
 
 from . import (
+    ai_consent,
+    ai_gate,
+    ai_quota,
     amendments,
     attestation,
     cards,
@@ -20,10 +23,14 @@ from . import (
     sessions,
     student,
     subscriptions,
+    suggestions,
     sync,
 )
 
 __all__ = [
+    "ai_consent",
+    "ai_gate",
+    "ai_quota",
     "amendments",
     "attestation",
     "cards",
@@ -43,5 +50,6 @@ __all__ = [
     "student",
     "remap",
     "subscriptions",
+    "suggestions",
     "sync",
 ]

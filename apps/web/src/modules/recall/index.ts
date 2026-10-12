@@ -14,6 +14,7 @@ export { ReviewCardsLink } from './containers/ReviewCardsLink'
 export { ReviewContainer } from './containers/ReviewContainer'
 export { SettingsContainer } from './containers/SettingsContainer'
 export { StatsContainer } from './containers/StatsContainer'
+export { SuggestionsContainer } from './containers/SuggestionsContainer'
 export { SummaryContainer } from './containers/SummaryContainer'
 export { useRecallEnabled } from './hooks/useRecallBasics'
 export { type CardsSearch, cardsSearchSchema, type NewCardSearch, newCardSearchSchema } from './lib/cardSearch'
@@ -26,3 +27,4 @@ export {
   type StatsSearch,
   statsSearchSchema,
 } from './lib/search'
+export { type SuggestionsSearch, suggestionsSearchSchema } from './lib/suggestionSearch'

@@ -642,3 +642,84 @@ export const cardChangesSchema = z.object({
 })
 export type CardChanges = z.infer<typeof cardChangesSchema>
 export type CardVersionRow = CardChanges['versions'][number]
+
+// ---------------------------------------------------------------------------------------- AI card suggestions (R2-W5)
+
+export const AI_SOURCES = ['notes', 'wrong_answers', 'pasted'] as const
+export type AiSource = (typeof AI_SOURCES)[number]
+
+export const aiOverviewSchema = z.object({
+  available: z.boolean(),
+  consent: z.object({ version: z.string(), given: z.boolean(), given_at: isoOrNull }),
+  quota: z.object({
+    batches_used: z.number(),
+    batches_limit: z.number(),
+    suggestions_used: z.number(),
+    suggestions_limit: z.number(),
+    resets_on: z.string(),
+  }),
+  sources: z.array(z.string()),
+  limits: z.object({
+    min_count: z.number(),
+    max_count: z.number(),
+    default_count: z.number(),
+    max_pasted_chars: z.number(),
+    min_source_chars: z.number(),
+  }),
+  waiting_drafts: z.number(),
+})
+export type AiOverview = z.infer<typeof aiOverviewSchema>
+
+export const aiConsentSchema = z.object({
+  version: z.string(),
+  title: z.string(),
+  points: z.array(z.object({ heading: z.string(), text: z.string() })),
+  consented: z.boolean(),
+  consented_at: isoOrNull,
+  available: z.boolean(),
+})
+export type AiConsent = z.infer<typeof aiConsentSchema>
+
+export const suggestionSchema = z.object({
+  id: z.string(),
+  position: z.number(),
+  kind: z.string(),
+  fields: z.record(z.string(), z.string()),
+  front_md: z.string(),
+  back_md: z.string(),
+  evidence_quote: z.string(),
+  evidence_label: z.string(),
+  status: z.enum(['draft', 'accepted', 'edited_accepted', 'rejected', 'expired']),
+  item_id: z.string().nullable(),
+  decided_at: isoOrNull,
+})
+export type Suggestion = z.infer<typeof suggestionSchema>
+
+export const suggestionBatchSchema = z.object({
+  id: z.string(),
+  status: z.enum(['queued', 'running', 'ready', 'failed', 'cancelled', 'expired']),
+  chapter_id: z.string(),
+  sources: z.array(z.string()),
+  kinds: z.array(z.string()),
+  requested_count: z.number(),
+  produced: z.number(),
+  dropped: z.number(),
+  error_code: z.string().nullable(),
+  created_at: z.string(),
+  finished_at: isoOrNull,
+  expires_at: isoOrNull,
+  estimate_seconds: z.number().nullable().optional(),
+  reused: z.string().nullable().optional(),
+  suggestions: z.array(suggestionSchema),
+})
+export type SuggestionBatch = z.infer<typeof suggestionBatchSchema>
+
+export const suggestionBatchListSchema = z.object({ results: z.array(suggestionBatchSchema) })
+
+export const acceptSuggestionSchema = createdCardsSchema.extend({ card_id: z.string(), suggestion: suggestionSchema })
+export const rejectSuggestionSchema = z.object({ suggestion: suggestionSchema })
+export const withdrawConsentSchema = z.object({
+  withdrawn: z.boolean(),
+  cancelled: z.number(),
+  drafts_deleted: z.number(),
+})

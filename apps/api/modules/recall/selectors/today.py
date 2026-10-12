@@ -5,12 +5,12 @@ from __future__ import annotations
 import math
 from collections import Counter
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.db.models import Min
 
 from ..domain.scheduling import streak
-from ..models import RecallCard, RecallDailyRollup
+from ..models import RecallCard, RecallDailyRollup, RecallSubscriptionUpdate
 from . import remaps
 from .exam import exam_context
 from .forgotten import ForgottenRow, forgotten
@@ -46,6 +46,7 @@ class TodayPlan:
     exam: dict | None = None
     needs_chapter: int = 0  # her own cards waiting for a chapter after a scheme switch
     recheck: int = 0  # cards waiting for "Still correct" (an updated deck or an amendment)
+    changed: int = 0  # cards that changed in her decks during this study day (W4: the daily "N cards changed")
     seconds_per_card: float = (
         20.0  # her median over the last 14 days (20 until she has 20 reviews): the base of every estimate
     )
@@ -100,14 +101,29 @@ def today_plan(user_id, *, now: datetime, tz: str | None = None) -> TodayPlan:
         exam=exam_context(study),
         needs_chapter=remaps.pending_count(user_id),
         recheck=RecallCard.objects.filter(user_id=user_id, status="active", needs_recheck=True).count(),
+        changed=cards_changed(user_id, since=study.day_end - timedelta(days=1), until=study.day_end),
         seconds_per_card=per_card,
     )
+
+
+def cards_changed(user_id, *, since: datetime, until: datetime) -> int:
+    """
+    How many of her cards a deck update touched in `[since, until)`: new cards, cards that came back for a re-check and cards
+    whose wording was fixed silently (a typo or a clarification). Summed from the history rows the sync wrote (ids and counts
+    only), so it is a few rows and never reads card text. Removed cards are not counted: nothing is left to look at.
+    """
+    total = 0
+    for summary in RecallSubscriptionUpdate.objects.filter(
+        user_id=user_id, applied_at__gte=since, applied_at__lt=until
+    ).values_list("summary", flat=True):
+        total += sum(int((summary or {}).get(k, 0) or 0) for k in ("added", "rechecked", "silent"))
+    return total
 
 
 # ------------------------------------------------------------------------------- F-13 shape (registered in R2-W3)
 @dataclass(frozen=True)
 class RecallTask:
-    kind: str  # recall_cards, forgotten_cards, recheck, quick_revision
+    kind: str  # recall_cards, forgotten_cards, recheck, cards_changed, quick_revision
     title: str
     count: int
     est_minutes: int = 0
@@ -132,8 +148,8 @@ def _minutes(count: int, seconds_per_card: float) -> int:
 def provide_today(user_id, *, now: datetime) -> ProviderResult:
     """
     What Today (F-13) shows from recall, through `core.today_port` (registered by `RecallConfig.ready`, behind the flag by
-    `provider.today_tasks`). Four tasks, each with minutes from her median seconds per card: "Recall: N cards due" (with the
-    per-subject tiles), "Forgotten: top 5", "Re-check after amendment" (cards waiting for "Still correct") and, within 45
+    `provider.today_tasks`). Five tasks, each with minutes from her median seconds per card: "Recall: N cards due" (with the
+    per-subject tiles), "Forgotten: top 5", "Re-check after amendment" (cards waiting for "Still correct"), "N cards changed in your decks" (what today's deck updates touched, R2-W4) and, within 45
     days of her exam, "Quick revision" (today's share of the at-risk set). Pure reads, local dataclasses.
     """
     plan = today_plan(user_id, now=now)
@@ -161,6 +177,17 @@ def provide_today(user_id, *, now: datetime) -> ProviderResult:
                 plan.recheck,
                 _minutes(plan.recheck, pace),
                 target="cards?state=recheck",
+            )
+        )
+    if plan.changed:
+        word = "card" if plan.changed == 1 else "cards"
+        tasks.append(
+            RecallTask(
+                "cards_changed",
+                f"{plan.changed} {word} changed in your decks",
+                plan.changed,
+                _minutes(plan.changed, pace),
+                target="decks",
             )
         )
     quick = (plan.exam or {}).get("quick")

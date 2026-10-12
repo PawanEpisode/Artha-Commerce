@@ -142,7 +142,7 @@ def test_the_tick_needs_the_secret_and_closes_idle_sessions_even_with_the_flag_o
     assert anon.post("/api/v1/recall/internal/tick/").status_code == 403
     assert anon.post("/api/v1/recall/internal/tick/", HTTP_X_RECALL_TICK_SECRET="wrong").status_code == 403
     ok = anon.post("/api/v1/recall/internal/tick/", HTTP_X_RECALL_TICK_SECRET="s3cret")
-    assert ok.status_code == 200 and ok.json() == {"sessions_closed": 1, "jobs_ran": 1}
+    assert ok.status_code == 200 and ok.json() == {"sessions_closed": 1, "jobs_ran": 2}
     assert anon.get("/api/v1/recall/internal/tick/", HTTP_AUTHORIZATION="Bearer s3cret").json() == {
         "sessions_closed": 0,
         "jobs_ran": 0,

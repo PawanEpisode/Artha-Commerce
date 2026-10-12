@@ -513,7 +513,7 @@ The review path is untouched; the capacity script was re-run and its numbers are
 
 ### 10.6 Not built in W4 (on purpose)
 
-Sharing by link and its abuse controls (`recall_sharing`), AI-suggested cards (`recall_ai`), a word-level diff in "what changed", daily "N cards changed" notifications (F-13), the Today screen, and the first mount of the question button (F-06).
+Sharing by link and its abuse controls (`recall_sharing`), AI-suggested cards (`recall_ai`, built in W5), a word-level diff in "what changed" (built after W4, see section 11.1), daily "N cards changed" notifications (built after W4 as a Today task, see section 11.1), the Today screen, and the first mount of the question button (F-06).
 
 ### 10.7 Proof
 
@@ -521,3 +521,49 @@ Ruff and ruff format on `apps/api` (clean); pytest `modules/coverage modules/rec
 
 Capacity (same sandbox): review p95 76 ms alone, as in W3 (nothing new runs on the review path); `capacity_w2.py` on the original code and on W4: update preview p95 88 ms and 86 ms, apply over HTTP 340 ms and 356 ms, fan-out to 1,000 followers 48.3 s in both, so the extra history row per sync is not measurable. The 8-students-at-once misses on today, quick plan and quick queue were already there before W3. Manual device and browser checks are not done (your standing rule).
 
+
+## 11. R2, wave W5: AI-suggested cards (new fail-closed flag `recall_ai`), and the W4 leftovers
+
+### 11.1 W4 leftovers
+
+- **Word diff.** "Show what changed since version N" on the card page compares a version with the one before it, word by word (`lib/wordDiff.ts`, pure, 400 words at most, longer texts show plain). Added and removed words are `<ins>` and `<del>` with a hidden "added:" or "removed:" so the change is never colour only.
+- **"N cards changed".** The Today port now carries a `cards_changed` task: the sum of the added, rechecked and silently changed cards of the student's deck updates in her study day (`selectors/today.cards_changed`). There is no Today screen yet; whoever builds it renders the task.
+
+### 11.2 What it does for a student
+
+At `/app/recall/suggestions` (a "Suggest with AI" link on the card creator while the flag is on) she chooses a chapter, the sources (her notes, her wrong answers when F-06 exists, or pasted text), and a number of cards. She must first read and agree to a versioned notice. The AI drafts cards in the background; each draft shows the exact quote from her material that backs it. She adds it, edits it first, or says it is not useful. **Nothing becomes a card until she accepts.** Accepted cards are private (`shareable=False`) and marked `origin=ai_suggestion`. She can withdraw her agreement at any time, which cancels running batches and deletes drafts she has not decided on.
+
+### 11.3 The rule that keeps it honest
+
+A draft is kept only if its `evidence_quote` appears verbatim in the text that was sent (whitespace and case ignored) and its fields pass the same validators as a hand-made card. Anything else is dropped and counted ("2 drafts were left out"). The prompt is versioned (`recall.suggest` v1).
+
+### 11.4 Decisions and deviations
+
+| # | Decision | Why |
+| --- | --- | --- |
+| W5-1 | Fail-closed flag `recall_ai`, plus env kill switch `RECALL_AI_ENABLED`, plus a shared daily budget `RECALL_AI_DAILY_BUDGET_PAISE` | It costs money and sends her text to Google |
+| W5-2 | `RECALL_AI_CONSENT_APPROVED` must be `true` before anyone can use it | The notice wording in `domain/ai_consent.py` is a draft; the owner (and counsel) approve it first |
+| W5-3 | Consent is stored with its version; a new version asks again | She agrees to what she read |
+| W5-4 | Quota is charged by one conditional UPDATE before the call; unused suggestions and failed or cancelled batches are refunded | No double spending under concurrent taps |
+| W5-5 | Free plan: 3 batches and 30 suggestions a day (India day), from `recall_quotaplan` | Staff can change it without a deploy |
+| W5-6 | One active batch per chapter; the same `client_id` joins the same batch; same source, kinds and count within 7 days reuse the cached answer | Taps and retries never pay twice |
+| W5-7 | Rejected drafts are remembered as a fingerprint for 90 days, never as text | The same card is not suggested again |
+| W5-8 | Pasted text is stored on the batch only until the job ends; no student text in logs, job payloads or the ledger | Privacy; tests prove it |
+| W5-9 | Notes registers a source through `core/suggestion_source_port.py`; `wrong_answers` answers 422 `source_unavailable` until F-06 registers one | Modules never import each other's models |
+| W5-10 | `recall.suggest` is a heavy job: it runs only in the worker (`manage.py run_worker`), not in the cron tick; drafts expire after 30 days through a light daily job | Same split as PDF work |
+| W5-11 | `ai/consent/withdraw/` is an open path (works with every flag off) | She can always take her agreement back |
+
+### 11.5 Operations
+
+- Apply migration `0008` (five new tables and three consent columns on `recall_settings`; older code ignores them).
+- Set on the API **and on the worker**: `GEMINI_API_KEY`, `GEMINI_DATA_TIER=paid`, `RECALL_AI_ENABLED=true`, `RECALL_AI_CONSENT_APPROVED=true` (only after the notice is approved), `RECALL_AI_DAILY_BUDGET_PAISE`. Then open the `recall_ai` flag for the beta cohort. Rollback: switch the flag or `RECALL_AI_ENABLED` off; data can stay.
+- Erase deletes batches, drafts, reject fingerprints, call ledger rows and usage rows with the student; export carries `ai_suggestions`.
+- Logs carry counts only.
+
+### 11.6 Not built in R2 (on purpose)
+
+Sharing by link (`recall_sharing`), the `wrong_answers` source until F-06 registers a provider, the Today screen.
+
+### 11.7 Proof
+
+Backend tests: pure rules (evidence check, parsing, cost), the full API (consent, request, reuse, quota and refunds, accept, edit, reject, expiry, erase, export, privacy), the URL contract drift test and the flag matrix. Web tests: pure helpers, the screen flow with axe, and the analytics allow-list. Run results are in the hand-over message; manual device checks are not done (your standing rule).

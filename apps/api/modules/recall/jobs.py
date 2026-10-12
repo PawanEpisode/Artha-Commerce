@@ -9,6 +9,8 @@ Background work of recall (ERD 6.4), run by the cron tick `recall/internal/tick/
     recall.flag_amendment     the two stages of an F-14 amendment event: platform ribbons, then chips on her own cards (1,000 a chunk)
     recall.scheme_changed     her own cards follow the chapter map after a scheme switch (payload `user_id`, `to_scheme_id`)
     recall.chapter_pass       the chapter recall pass check of one closed session (payload `user_id`, `session_id`)
+    recall.expire_suggestions once a day: drafts past 30 days, old batches and the 90-day reject memory go
+    recall.suggest            HEAVY, worker only (it waits on Google): one AI suggestion batch (payload `batch_id`, an id only)
 
 The tick claims only `LIGHT_TYPES`. Payloads hold ids and cursors, never text.
 """
@@ -30,6 +32,7 @@ from .services import amendments as amendment_service
 from .services import chapter_pass as chapter_pass_service
 from .services import exam as exam_service
 from .services import remap as remap_service
+from .services import suggestions as suggestion_service
 from .services import sync as sync_service
 
 JOB_EXAM_HORIZON = "recall.exam_horizon"
@@ -38,6 +41,8 @@ JOB_SYNC_SUBSCRIPTION = sync_service.JOB_SYNC_SUBSCRIPTION
 JOB_FLAG_AMENDMENT = amendment_service.JOB_FLAG_AMENDMENT
 JOB_SCHEME_CHANGED = remap_service.JOB_SCHEME_CHANGED
 JOB_CHAPTER_PASS = chapter_pass_service.JOB_CHAPTER_PASS
+JOB_EXPIRE_SUGGESTIONS = "recall.expire_suggestions"
+JOB_SUGGEST = suggestion_service.JOB_SUGGEST  # heavy: only the worker claims it
 LIGHT_TYPES = (
     JOB_EXAM_HORIZON,
     JOB_SYNC_SUBSCRIBERS,
@@ -45,7 +50,10 @@ LIGHT_TYPES = (
     JOB_FLAG_AMENDMENT,
     JOB_SCHEME_CHANGED,
     JOB_CHAPTER_PASS,
+    JOB_EXPIRE_SUGGESTIONS,
 )
+HEAVY_TYPES = (JOB_SUGGEST,)
+assert not set(LIGHT_TYPES) & set(HEAVY_TYPES), "a job type is either light (the tick) or heavy (the worker)"
 BATCH = 100
 TICK_BUDGET_SECONDS = 20
 
@@ -57,6 +65,9 @@ def register_handlers(jobs_module=core_jobs) -> None:
     jobs_module.register_handler(JOB_FLAG_AMENDMENT, amendment_service.run_job)
     jobs_module.register_handler(JOB_SCHEME_CHANGED, scheme_changed_job)
     jobs_module.register_handler(JOB_CHAPTER_PASS, chapter_pass_service.run_job)
+    jobs_module.register_handler(JOB_EXPIRE_SUGGESTIONS, suggestion_service.run_expiry)
+    jobs_module.register_handler(JOB_SUGGEST, suggestion_service.run_batch)
+    jobs_module.register_gave_up_handler(JOB_SUGGEST, suggestion_service.give_up)
 
 
 def queue_student(user_id) -> None:
@@ -116,5 +127,6 @@ def tick() -> dict[str, int]:
     """Starts today's walk (once a day) and runs the light jobs that are due, inside the time budget."""
     today = timezone.now().date().isoformat()
     core_jobs.enqueue(JOB_EXAM_HORIZON, {"day": today}, dedupe_key=f"{JOB_EXAM_HORIZON}:{today}:start", once=True)
+    core_jobs.enqueue(JOB_EXPIRE_SUGGESTIONS, {"day": today}, dedupe_key=f"{JOB_EXPIRE_SUGGESTIONS}:{today}", once=True)
     ran = core_jobs.run_pending(types=LIGHT_TYPES, budget_seconds=TICK_BUDGET_SECONDS, worker="recall-tick")
     return {"jobs_ran": ran}

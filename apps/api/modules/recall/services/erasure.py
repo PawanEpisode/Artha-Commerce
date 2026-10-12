@@ -19,6 +19,8 @@ from django.db import transaction
 from django.utils import timezone
 
 from ..models import (
+    RecallAiCall,
+    RecallAiUsage,
     RecallCard,
     RecallChapterRemap,
     RecallChapterRollup,
@@ -35,6 +37,8 @@ from ..models import (
     RecallSettings,
     RecallSubscription,
     RecallSubscriptionUpdate,
+    RecallSuggestionBatch,
+    RecallSuggestionReject,
 )
 from . import log_guard
 
@@ -53,9 +57,10 @@ JOB_TYPES = (
     "recall.flag_amendment",
     "recall.chapter_pass",
 )
+SUGGEST_JOB = "recall.suggest"  # its payload is a batch id, so it is found through her batches
 
 
-def _delete_jobs(user_id, subscription_ids: list) -> int:
+def _delete_jobs(user_id, subscription_ids: list, batch_ids: list | None = None) -> int:
     """
     Queued or finished background jobs that name the student: `user_id` payloads (exam horizon, scheme change) and the
     one-subscription sync jobs of her subscriptions. Fan-out and amendment jobs carry deck, version and amendment ids only,
@@ -66,6 +71,8 @@ def _delete_jobs(user_id, subscription_ids: list) -> int:
     n = Job.objects.filter(type__in=JOB_TYPES, payload__user_id=str(user_id)).delete()[0]
     for sid in subscription_ids:
         n += Job.objects.filter(type="recall.sync_subscription", payload__subscription_id=str(sid)).delete()[0]
+    for bid in batch_ids or []:
+        n += Job.objects.filter(type=SUGGEST_JOB, payload__batch_id=str(bid)).delete()[0]
     return n
 
 
@@ -74,12 +81,18 @@ def delete_all_for_user(user_id) -> dict:
     report: dict[str, int] = {}
     with transaction.atomic():
         report["jobs"] = _delete_jobs(
-            user_id, [str(i) for i in RecallSubscription.objects.filter(user_id=user_id).values_list("id", flat=True)]
+            user_id,
+            [str(i) for i in RecallSubscription.objects.filter(user_id=user_id).values_list("id", flat=True)],
+            [str(i) for i in RecallSuggestionBatch.objects.filter(user_id=user_id).values_list("id", flat=True)],
         )
         with log_guard.erasing():
             report["reviewlog"] = _count(RecallReviewLog.objects.filter(user_id=user_id))
         report["scheduleevents"] = _count(RecallScheduleEvent.objects.filter(user_id=user_id))
         report["sessions"] = _count(RecallSession.objects.filter(user_id=user_id))
+        report["suggestion_batches"] = _count(RecallSuggestionBatch.objects.filter(user_id=user_id))  # drafts cascade
+        report["suggestion_rejects"] = _count(RecallSuggestionReject.objects.filter(user_id=user_id))
+        report["ai_calls"] = _count(RecallAiCall.objects.filter(user_id=user_id))
+        report["ai_usage"] = _count(RecallAiUsage.objects.filter(user_id=user_id))
         report["cards"] = _count(RecallCard.objects.filter(user_id=user_id))
         report["subscription_updates"] = _count(RecallSubscriptionUpdate.objects.filter(user_id=user_id))
         report["subscriptions"] = _count(RecallSubscription.objects.filter(user_id=user_id))
@@ -230,12 +243,36 @@ def export_for_user(user_id) -> dict:
                 "resolved_at",
             )  # fmt: skip
         ],
+        "ai_suggestions": _export_suggestions(user_id),
         "reports": [
             _row(r)
             for r in RecallReport.objects.filter(reporter_user_id=user_id)
             .order_by("created_at", "id")
             .values("id", "target_kind", "target_id", "reason", "note", "status", "created_at")
         ],
+    }
+
+
+def _export_suggestions(user_id) -> dict:
+    """Her waiting and decided AI drafts (text is hers to take), the consent she gave and how many rejections are remembered."""
+    from ..models import RecallSuggestion
+
+    return {
+        "batches": [
+            _row(r)
+            for r in RecallSuggestionBatch.objects.filter(user_id=user_id)
+            .order_by("created_at", "id")
+            .values(
+                "id", "chapter_id", "sources", "kinds", "requested_count", "status", "produced", "dropped", "created_at"
+            )  # fmt: skip
+        ],
+        "suggestions": [
+            _row(r)
+            for r in RecallSuggestion.objects.filter(user_id=user_id)
+            .order_by("batch_id", "position")
+            .values("id", "batch_id", "kind", "fields", "evidence_quote", "status", "decided_at")
+        ],
+        "remembered_rejections": RecallSuggestionReject.objects.filter(user_id=user_id).count(),
     }
 
 

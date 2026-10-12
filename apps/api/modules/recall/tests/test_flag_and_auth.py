@@ -56,6 +56,15 @@ URLS = [
     ("get", "/recall/export/cards.csv"),
     ("get", "/recall/export/reviews.csv"),
     ("post", "/recall/erase/"),
+    ("get", "/recall/ai/"),
+    ("get", "/recall/ai/consent/"),
+    ("post", "/recall/ai/consent/"),
+    ("post", "/recall/ai/consent/withdraw/"),
+    ("get", "/recall/suggestions/"),
+    ("post", "/recall/suggestions/"),
+    ("get", f"/recall/suggestions/{CARD}/"),
+    ("post", f"/recall/suggestions/items/{CARD}/accept/"),
+    ("post", f"/recall/suggestions/items/{CARD}/reject/"),
 ]
 TICK = "/recall/internal/tick/"  # authenticated by a shared secret, open whatever the flag says (tested in test_reviews_api)
 
@@ -84,12 +93,32 @@ def test_export_and_erase_stay_open_with_the_flag_off(api, flag_off):
         "/recall/export/cards.csv",
         "/recall/export/reviews.csv",
         "/recall/erase/",
+        "/recall/ai/consent/withdraw/",
     )
     for path in RECALL_OPEN_PATHS:
         res = api.c.generic(
-            "POST" if path.endswith("erase/") else "GET", f"/api/v1{path}", "{}", content_type="application/json"
+            "POST" if path.endswith(("erase/", "withdraw/")) else "GET",
+            f"/api/v1{path}",
+            "{}",
+            content_type="application/json",
         )
         assert res.status_code not in (401, 403), path
+
+
+AI_URLS = [u for u in URLS if "/recall/ai/" in u[1] or "/recall/suggestions/" in u[1]]
+
+
+@pytest.mark.parametrize(("method", "path"), AI_URLS)
+def test_the_ai_urls_are_403_when_only_the_ai_flag_is_off(api, monkeypatch, method, path):
+    from core import feature_flags
+
+    feature_flags.clear_flag_cache()
+    monkeypatch.setattr(feature_flags, "_lookup", lambda name, distinct_id: name != "recall_ai")
+    res = call(api.c, method, path)
+    if path.endswith("/withdraw/"):  # taking consent back is never blocked
+        assert res.status_code == 200
+    else:
+        assert res.status_code == 403 and res.json()["error"]["code"] == "feature_disabled"
 
 
 def test_the_flag_fails_closed_without_posthog(api, monkeypatch):

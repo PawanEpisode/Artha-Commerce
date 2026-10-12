@@ -26,6 +26,7 @@ import {
 import type { NewCardSearch } from '../lib/cardSearch'
 import { errorText } from '../lib/errors'
 import { ImportContainer } from './ImportContainer'
+import { SuggestLink } from './SuggestLink'
 
 type Saved = { count: number; firstId: string | null; queued: boolean }
 
@@ -167,7 +168,7 @@ function NewCard({ search }: { search: NewCardSearch }) {
   return (
     <>
       <NewCardHeader />
-      <NewCardModes search={search} />
+      <NewCardModes search={search} extra={<SuggestLink chapter={search.chapter} />} />
 
       {search.from === 'selection' ? (
         <Alert variant="info">Made from the text you selected. Change it however you like.</Alert>

@@ -6,6 +6,10 @@ import { api } from '~/lib/api'
 
 import { setServerTime } from './clock'
 import {
+  acceptSuggestionSchema,
+  aiConsentSchema,
+  aiOverviewSchema,
+  type AiSource,
   type ApiPack,
   applyUpdateResultSchema,
   attestResultSchema,
@@ -32,6 +36,7 @@ import {
   quickPlanSchema,
   rebalanceSchema,
   type RecallSettings,
+  rejectSuggestionSchema,
   reportResultSchema,
   reviewHistorySchema,
   sessionCloseSchema,
@@ -42,12 +47,15 @@ import {
   statsRetentionSchema,
   statsSummarySchema,
   subscribeResultSchema,
+  suggestionBatchListSchema,
+  suggestionBatchSchema,
   todaySchema,
   undoResponseSchema,
   unsubscribeResultSchema,
   updateHistorySchema,
   updatePreviewSchema,
   vacationSchema,
+  withdrawConsentSchema,
 } from './schemas'
 
 export const QUEUE_SOURCES = ['today', 'chapter', 'deck', 'forgotten', 'catchup', 'quick', 'cram'] as const
@@ -83,7 +91,33 @@ export interface QueueParams {
   tz?: string
 }
 
+export interface SuggestionRequestBody {
+  chapter_id: string
+  sources: AiSource[]
+  pasted_text?: string
+  count?: number
+  client_id?: string
+}
+
 export const recallApi = {
+  // ---- AI card suggestions (R2-W5). Drafts only: nothing becomes a card until she accepts one.
+  aiOverview: async () => parse(aiOverviewSchema, await api<unknown>('/recall/ai/')),
+  aiConsent: async () => parse(aiConsentSchema, await api<unknown>('/recall/ai/consent/')),
+  grantAiConsent: async (version: string) =>
+    parse(aiConsentSchema, await api<unknown>('/recall/ai/consent/', jsonBody({ version }))),
+  withdrawAiConsent: async () =>
+    parse(withdrawConsentSchema, await api<unknown>('/recall/ai/consent/withdraw/', jsonBody({}))),
+  requestSuggestions: async (body: SuggestionRequestBody) =>
+    parse(suggestionBatchSchema, await api<unknown>('/recall/suggestions/', jsonBody(body))),
+  suggestionBatch: async (id: string) => parse(suggestionBatchSchema, await api<unknown>(`/recall/suggestions/${id}/`)),
+  suggestionBatches: async (chapterId?: string) =>
+    parse(suggestionBatchListSchema, await api<unknown>(`/recall/suggestions/${qs({ chapter_id: chapterId })}`))
+      .results,
+  acceptSuggestion: async (id: string, body: { fields?: Record<string, string>; force?: boolean } = {}) =>
+    parse(acceptSuggestionSchema, await api<unknown>(`/recall/suggestions/items/${id}/accept/`, jsonBody(body))),
+  rejectSuggestion: async (id: string) =>
+    parse(rejectSuggestionSchema, await api<unknown>(`/recall/suggestions/items/${id}/reject/`, jsonBody({}))),
+
   today: async (tz?: string) => learnClock(parse(todaySchema, await api<unknown>(`/recall/today/${qs({ tz })}`))),
 
   queue: async (source: QueueSource, p: QueueParams = {}) =>

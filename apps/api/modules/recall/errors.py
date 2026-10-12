@@ -5,7 +5,15 @@ from rest_framework import status
 from core.errors import CodedError, Conflict, FeatureDisabled, QuotaExceeded
 
 __all__ = [
+    "AiNotConsented",
+    "AiUnavailable",
     "AttestationNotNeeded",
+    "ConsentVersionMismatch",
+    "NotEnoughMaterial",
+    "RecallAiFeatureDisabled",
+    "SourceUnavailable",
+    "SuggestionDecided",
+    "SuggestionNotReady",
     "QuestionHasNoSource",
     "BadCursor",
     "BulkTooLarge",
@@ -212,3 +220,56 @@ class AttestationNotNeeded(CodedError):
     status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
     default_detail = "This card does not need that statement."
     default_code = "attestation_not_needed"
+
+
+class RecallAiFeatureDisabled(FeatureDisabled):
+    default_detail = "AI suggestions are not available yet."
+
+
+class AiUnavailable(CodedError):
+    """503: the key, the paid data tier, the approved consent wording or the budget is not set up. Never says which."""
+
+    status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+    default_detail = "AI suggestions are not available right now."
+    default_code = "ai_unavailable"
+
+
+class AiNotConsented(CodedError):
+    """403 with `details` `{version}`: she has not agreed (or withdrew) to the current wording."""
+
+    status_code = status.HTTP_403_FORBIDDEN
+    default_detail = "Agree to the AI notice first."
+    default_code = "ai_not_consented"
+
+
+class ConsentVersionMismatch(Conflict):
+    default_detail = "The AI notice changed. Read it again."
+    default_code = "consent_version_mismatch"
+
+
+class SourceUnavailable(CodedError):
+    """422 with `details` `{sources}`: a source she picked is not connected yet (wrong answers wait for the question bank)."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "One of those sources is not available yet."
+    default_code = "source_unavailable"
+
+
+class NotEnoughMaterial(CodedError):
+    """422: the chosen sources have too little text to make cards from."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "There is not enough text in those sources. Add notes or paste more text."
+    default_code = "not_enough_material"
+
+
+class SuggestionNotReady(Conflict):
+    default_detail = "These suggestions are not ready yet."
+    default_code = "suggestions_not_ready"
+
+
+class SuggestionDecided(Conflict):
+    """409: the draft was already accepted or rejected the other way (a repeat of the same decision is fine)."""
+
+    default_detail = "You already decided this suggestion."
+    default_code = "suggestion_decided"

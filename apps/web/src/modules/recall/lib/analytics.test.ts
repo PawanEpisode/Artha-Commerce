@@ -72,6 +72,10 @@ describe('recall analytics allow-list', () => {
       'recall_question_card_made',
       'recall_update_history_viewed',
       'recall_card_changes_viewed',
+      'recall_ai_consent_withdrawn',
+      'recall_suggestions_requested',
+      'recall_suggestions_ready',
+      'recall_suggestion_decided',
     ] as RecallEvent[]
     for (const e of events) {
       for (const key of allowedProperties(e))
@@ -97,6 +101,11 @@ describe('recall analytics privacy gate', () => {
       recall_leech_shown: ['lapses'],
       recall_pack_downloaded: ['bytes_bucket', 'cards'],
       recall_card_changes_viewed: ['versions', 'waiting'],
+      recall_ai_consent_given: [],
+      recall_ai_consent_withdrawn: ['drafts_deleted'],
+      recall_suggestions_requested: ['count', 'reused', 'sources'],
+      recall_suggestions_ready: ['dropped', 'produced'],
+      recall_suggestion_decided: ['decision', 'edited'],
       recall_cram_started: ['set_size'],
       recall_import_done: ['created', 'invalid', 'rows'],
       recall_import_previewed: ['invalid', 'rows', 'valid'],

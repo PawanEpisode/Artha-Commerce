@@ -21,5 +21,9 @@ export const recallKeys = {
   chapterStrength: (chapterId: string) => ['recall', 'chapter-strength', chapterId] as const,
   chapterRemaps: ['recall', 'chapter-remaps'] as const,
   offline: ['recall', 'offline'] as const,
+  aiOverview: ['recall', 'ai', 'overview'] as const,
+  aiConsent: ['recall', 'ai', 'consent'] as const,
+  suggestionBatches: (chapterId?: string) => ['recall', 'ai', 'batches', chapterId ?? 'all'] as const,
+  suggestionBatch: (id: string) => ['recall', 'ai', 'batch', id] as const,
   summary: (sessionId: string) => ['recall', 'summary', sessionId] as const,
 }

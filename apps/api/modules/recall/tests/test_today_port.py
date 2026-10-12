@@ -81,3 +81,47 @@ def test_through_the_port_the_flag_decides(scheme, clock, monkeypatch):
     RecallCard.objects.filter(pk=card.pk).update(needs_recheck=True)
     today_port.register_task_provider("recall", provider.today_tasks)
     assert [r.key for r in today_port.collect(ME, now=FIXED)] == ["recall"]
+
+
+# ---------------------------------------------------------------------------- R2-W4 leftover: "N cards changed"
+
+
+def test_a_deck_update_applied_today_is_a_cards_changed_task(api):
+    from .w22 import card_of, deck_with_student, edit, pointer, publish_next, really_review, unique
+
+    deck, items, sub = deck_with_student(3)
+    really_review(card_of(items[0]))
+    edit(items[0], pointer(unique("Rewritten")), "substantive")  # comes back for a re-check
+    edit(items[1], pointer(unique("Typo")), "typo")  # silent
+    publish_next(deck)
+    assert "cards_changed" not in kinds(provider.today_tasks(ME, now=timezone.now()))  # nothing applied yet
+    assert api.post(f"/recall/subscriptions/{sub.id}/apply-update/").status_code == 200
+    task = kinds(provider.today_tasks(ME, now=timezone.now()))["cards_changed"]
+    assert (task.count, task.title, task.target) == (2, "2 cards changed in your decks", "decks")
+    assert task.est_minutes >= 1
+
+
+def test_yesterdays_updates_and_removed_cards_are_not_counted(api):
+    from modules.recall.models import RecallSubscriptionUpdate
+    from modules.recall.selectors import today as today_selectors
+
+    from .w22 import deck_with_student, edit, pointer, publish_next, unique
+
+    deck, items, sub = deck_with_student(3)
+    edit(items[0], pointer(unique("Typo")), "typo")
+    publish_next(deck, removed=[items[2]])
+    api.post(f"/recall/subscriptions/{sub.id}/apply-update/")
+    now = timezone.now()
+    assert today_selectors.cards_changed(ME, since=now - timedelta(days=1), until=now + timedelta(days=1)) == 1
+    RecallSubscriptionUpdate.objects.update(applied_at=now - timedelta(days=2))
+    assert today_selectors.cards_changed(ME, since=now - timedelta(days=1), until=now + timedelta(days=1)) == 0
+
+
+def test_a_single_changed_card_reads_in_the_singular(api):
+    from .w22 import deck_with_student, edit, pointer, publish_next, unique
+
+    deck, items, sub = deck_with_student(2)
+    edit(items[0], pointer(unique("Typo")), "typo")
+    publish_next(deck)
+    api.post(f"/recall/subscriptions/{sub.id}/apply-update/")
+    assert kinds(provider.today_tasks(ME, now=timezone.now()))["cards_changed"].title == "1 card changed in your decks"

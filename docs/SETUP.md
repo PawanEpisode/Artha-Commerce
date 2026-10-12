@@ -328,6 +328,8 @@ DATABASE_URL=postgresql://postgres@127.0.0.1:5432/artha_e2e python scripts/e2e/r
 
 Both need `httpx`, `psycopg` and `PyJWT` (already in `requirements-dev.txt`) and print no card text. The capacity numbers and what they prove: `docs/F-15-ROLLOUT.md`, "Capacity note". The API shapes: `docs/F-15-API-CONTRACT.md`.
 
+**AI card suggestions (R2-W5).** Create the PostHog flag `recall_ai` at 0% (fails closed on the API and the web). Set on the API **and the worker** (the job `recall.suggest` runs only in the worker): `GEMINI_API_KEY`, `GEMINI_DATA_TIER=paid`, `RECALL_AI_ENABLED=true` (kill switch), `RECALL_AI_DAILY_BUDGET_PAISE` (all students, per India day; `0` blocks everything) and, only after the owner has approved the notice wording in `modules/recall/domain/ai_consent.py`, `RECALL_AI_CONSENT_APPROVED=true`. New throttle scope `recall_ai` 10/hour (requests for suggestions). Migration `0008` adds the tables. Details: `docs/F-15-ROLLOUT.md` section 11.
+
 ---
 
 ## 10. Environment variable master list
@@ -343,6 +345,7 @@ Both need `httpx`, `psycopg` and `PyJWT` (already in `requirements-dev.txt`) and
 | `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT` | yes (build) | | **yes** |
 | `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`, `DJANGO_ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS` | | yes | **yes** (secret key) |
 | `DATABASE_URL`, `DIRECT_DATABASE_URL` | | yes | **yes** |
+| `RECALL_AI_ENABLED`, `RECALL_AI_CONSENT_APPROVED`, `RECALL_AI_DAILY_BUDGET_PAISE` (API and worker) | | yes | no |
 | `SUPABASE_URL`, `SUPABASE_JWT_SECRET` | | yes | JWT secret **yes** |
 | `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_AVATAR_BUCKET` | | yes | service role key **yes** (never in the web project) |
 | `GEMINI_API_KEY`, `GEMINI_MODEL` | | yes | **yes** (key) |

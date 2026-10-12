@@ -165,3 +165,16 @@ Built: the student's history of deck updates, "what changed" in a card, the "my 
 | W4-5 | Update history starts at W4: updates applied before it are not listed | Accepted | Nothing recorded them; a deck that changes again fills the list |
 | W4-6 | Manual device checks (card page panels, deck page accordion on a phone) | Not run, accepted | Automated component, keyboard and axe tests and the e2e script stand in |
 
+## 10. F-15 R2, wave W5 (AI-suggested cards) and the W4 leftovers: built 2026-10-12, owner tasks
+
+Built: AI-suggested cards behind the fail-closed flag `recall_ai`, the word diff in "what changed", and the "N cards changed" Today task. R2 is complete except sharing (`recall_sharing`). Details: `docs/F-15-ROLLOUT.md` section 11.
+
+| # | Task | Status | Note |
+| --- | --- | --- | --- |
+| W5-1 | Apply migration `0008` on staging before the web build | Open (owner) | Additive |
+| W5-2 | Review and approve the notice wording in `modules/recall/domain/ai_consent.py` (counsel if needed), then set `RECALL_AI_CONSENT_APPROVED=true` | Open (owner) | Until then the feature answers unavailable |
+| W5-3 | Set `GEMINI_API_KEY`, `GEMINI_DATA_TIER=paid`, `RECALL_AI_ENABLED`, `RECALL_AI_DAILY_BUDGET_PAISE` on the API and the worker; confirm the worker handles `recall.suggest` | Open (owner) | See `docs/SETUP.md` |
+| W5-4 | Open `recall_ai` for the beta cohort only | Open (owner) | Fail closed |
+| W5-5 | F-06: register `core.suggestion_source_port` for `wrong_answers` | Open (F-06) | Until then that source answers 422 `source_unavailable` |
+| W5-6 | Run the recall, core and notes pytest once on a real PostgreSQL | Open (owner) | Verified on SQLite here |
+| W5-7 | Manual device checks of the suggestion screen on a phone | Not run, accepted | Automated component, keyboard and axe tests stand in |

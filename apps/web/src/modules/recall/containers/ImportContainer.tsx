@@ -9,6 +9,7 @@ import { useOnlineStatus } from '../hooks/useRecallBasics'
 import type { NewCardSearch } from '../lib/cardSearch'
 import { canImport, IMPORT_FILE_MAX_BYTES, importFailure } from '../lib/importFlow'
 import type { ImportResult } from '../lib/schemas'
+import { SuggestLink } from './SuggestLink'
 
 const newId = (): string => crypto.randomUUID()
 
@@ -77,7 +78,7 @@ export function ImportContainer({ search }: { search: NewCardSearch }) {
 
   return (
     <>
-      <NewCardModes search={search} />
+      <NewCardModes search={search} extra={<SuggestLink chapter={search.chapter} />} />
       <ImportPanel
         text={text}
         onText={edit}

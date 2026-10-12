@@ -127,4 +127,46 @@ describe('the card changes list', () => {
     rerender(<CardChangesList {...props} changes={undefined} failed />)
     expect(screen.getByRole('button', { name: /try again/i })).toBeInTheDocument()
   })
+
+  it('offers the changed words between two versions with text and marks them for everyone', async () => {
+    const user = userEvent.setup()
+    const two = changes({
+      versions: [
+        {
+          version_no: 3,
+          change_kind: 'substantive',
+          change_note: '',
+          at: null,
+          text: 'ITC limit is 60 days',
+          received: true,
+          current: true,
+        },
+        {
+          version_no: 2,
+          change_kind: 'create',
+          change_note: '',
+          at: null,
+          text: 'ITC limit is 30 days',
+          received: true,
+          current: false,
+        },
+      ],
+    })
+    const { container } = render(<CardChangesList {...props} changes={two} />)
+    const toggle = screen.getByRole('button', { name: 'Show what changed since version 2' })
+    expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    await user.click(toggle)
+    const diff = screen.getByLabelText('Words changed since version 2')
+    expect(diff.querySelector('del')).toHaveTextContent('removed: 30')
+    expect(diff.querySelector('ins')).toHaveTextContent('added: 60')
+    expect(screen.getByRole('button', { name: 'Hide the changed words' })).toHaveAttribute('aria-expanded', 'true')
+    await expectNoA11yViolations(container)
+    await user.click(screen.getByRole('button', { name: 'Hide the changed words' }))
+    expect(screen.queryByLabelText('Words changed since version 2')).not.toBeInTheDocument()
+  })
+
+  it('offers no comparison when a version has no earlier text or the words are the same', () => {
+    render(<CardChangesList {...props} />)
+    expect(screen.queryByRole('button', { name: /Show what changed/ })).not.toBeInTheDocument()
+  })
 })
