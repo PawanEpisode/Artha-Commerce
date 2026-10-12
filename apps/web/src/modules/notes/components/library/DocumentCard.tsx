@@ -9,9 +9,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
   Ellipsis,
+  EntityBadge,
   FileDown,
   FileText,
-  Lock,
   Pencil,
   ProgressBar,
   ScanText,
@@ -20,10 +20,11 @@ import {
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { isUnfiled, linkLabel, shortLinkLabel } from '../../lib/chapter-link'
+import { chapterChipLabel, isUnfiled, linkLabel, subjectChipLabel } from '../../lib/chapter-link'
 import { canOpenDocument, documentBadges, documentTitle, readPercent } from '../../lib/document-badges'
 import type { DocumentSummary } from '../../lib/document-types'
 import { formatBytes, pluralize } from '../../lib/format'
+import { DocumentCover } from './DocumentCover'
 import { DocumentStatusBadge } from './DocumentStatusBadge'
 
 export interface DocumentCardActions {
@@ -49,7 +50,7 @@ interface DocumentCardProps extends DocumentCardActions {
 
 const SHARE_PRIVATE = new Set(['coaching', 'institute_material'])
 
-/** One PDF in the library: cover, a two line title, pages and size, status, reading progress, chapter and tags, and a menu. */
+/** One PDF in the library: cover, a one line title, pages and size, status, reading progress, chapter and tags, and a menu. */
 export function DocumentCard({
   doc,
   compact = false,
@@ -88,27 +89,13 @@ export function DocumentCard({
     <Card
       data-slot="document-card"
       data-status={doc.status}
-      className={`flex items-start gap-3 p-3 sm:p-4 ${className ?? ''}`}
+      className={`flex min-w-0 items-start gap-3 p-3 sm:p-4 ${className ?? ''}`}
     >
-      <div
-        aria-hidden
-        className={`relative grid shrink-0 place-items-center overflow-hidden rounded-md border border-border bg-muted ${compact ? 'h-16 w-12' : 'h-24 w-[4.5rem]'}`}
-      >
-        {doc.cover_url ? (
-          <img src={doc.cover_url} alt="" loading="lazy" className="size-full object-cover" />
-        ) : (
-          <FileText className="size-6 text-muted-foreground" />
-        )}
-        {doc.status === 'needs_password' ? (
-          <span className="absolute right-0.5 bottom-0.5 grid size-5 place-items-center rounded-full bg-card shadow-soft">
-            <Lock className="size-3" />
-          </span>
-        ) : null}
-      </div>
+      <DocumentCover doc={doc} compact={compact} />
 
       <div className="min-w-0 flex-1 space-y-2">
         <div className="flex items-start gap-1">
-          <h3 className="line-clamp-2 min-w-0 flex-1 font-display text-base leading-snug font-bold break-words sm:text-lg">
+          <h3 className="min-w-0 flex-1 truncate font-display text-base leading-snug font-bold sm:text-lg">
             {heading}
           </h3>
           {hasMenu ? (
@@ -168,11 +155,15 @@ export function DocumentCard({
           {doc.page_count ? pluralize(doc.page_count, 'page') : 'Pages not counted yet'} · {formatBytes(doc.bytes)}
         </p>
 
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex min-w-0 flex-wrap items-center gap-1.5">
           {badges.map((badge) => (
             <DocumentStatusBadge key={badge.kind} badge={badge} />
           ))}
-          {SHARE_PRIVATE.has(doc.source_kind) && !compact ? <Badge variant="outline">Private to you</Badge> : null}
+          {SHARE_PRIVATE.has(doc.source_kind) && !compact ? (
+            <Badge variant="outline" className="max-w-full min-w-0">
+              <span className="truncate">Private to you</span>
+            </Badge>
+          ) : null}
         </div>
 
         {percent !== null && !compact ? (
@@ -183,18 +174,18 @@ export function DocumentCard({
         ) : null}
 
         {!compact || showLocation ? (
-          <div className="flex flex-wrap items-center gap-1.5 text-xs">
-            {showLocation && !isUnfiled(doc.link) ? (
-              <Badge variant="outline" className="max-w-full min-w-0 truncate" title={linkLabel(doc.link)}>
-                {shortLinkLabel(doc.link)}
+          <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-xs">
+            {showLocation ? <LocationChips doc={doc} /> : null}
+            {doc.link.moved_or_removed ? (
+              <Badge variant="outline" className="max-w-full min-w-0">
+                <span className="truncate">Chapter moved or removed</span>
               </Badge>
             ) : null}
-            {doc.link.moved_or_removed ? <Badge variant="outline">Chapter moved or removed</Badge> : null}
             {!compact
               ? doc.tags.map((tag) => (
-                  <Badge key={tag.id} variant="outline">
-                    <Tag aria-hidden className="size-3" />
-                    {tag.name}
+                  <Badge key={tag.id} variant="outline" className="max-w-full min-w-0" title={tag.name}>
+                    <Tag aria-hidden className="size-3 shrink-0" />
+                    <span className="truncate">{tag.name}</span>
                   </Badge>
                 ))
               : null}
@@ -219,5 +210,33 @@ export function DocumentCard({
         ) : null}
       </div>
     </Card>
+  )
+}
+
+/** Where the PDF is filed: a Subject chip and a Chapter chip ("All chapters" for the whole subject), or "Unfiled". */
+function LocationChips({ doc }: { doc: DocumentSummary }) {
+  if (isUnfiled(doc.link)) {
+    return (
+      <Badge variant="outline" className="max-w-full min-w-0">
+        <span className="truncate">Unfiled</span>
+      </Badge>
+    )
+  }
+  const subject = subjectChipLabel(doc.link)
+  const chapter = chapterChipLabel(doc.link)
+  const full = linkLabel(doc.link)
+  return (
+    <>
+      {subject ? (
+        <EntityBadge kind="paper" className="min-w-0" title={full}>
+          {subject}
+        </EntityBadge>
+      ) : null}
+      {chapter ? (
+        <EntityBadge kind="chapter" className="min-w-0" title={full}>
+          {chapter}
+        </EntityBadge>
+      ) : null}
+    </>
   )
 }

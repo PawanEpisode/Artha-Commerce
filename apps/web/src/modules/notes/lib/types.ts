@@ -190,6 +190,8 @@ export interface NotePatch {
   base_body_md?: string
   chapter_id?: string | null
   topic_id?: string | null
+  /** With `chapter_id: null`: file under the whole subject ("All chapters"). */
+  subject_id?: string | null
   pinned?: boolean
   tag_ids?: string[]
   source?: 'autosave' | 'manual'
@@ -204,6 +206,8 @@ export interface NoteCreate {
   body_md?: string
   chapter_id?: string | null
   topic_id?: string | null
+  /** With `chapter_id: null`: file under the whole subject ("All chapters"). */
+  subject_id?: string | null
   tag_ids?: string[]
 }
 

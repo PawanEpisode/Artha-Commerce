@@ -1,15 +1,21 @@
 import { describe, expect, it } from 'vitest'
 
+import { ALL_CHAPTERS } from '~/modules/coverage'
+
 import {
   buildSelection,
+  chapterChipLabel,
+  isSubjectLevel,
   isUnfiled,
   linkFields,
+  linkFromSelection,
   linkLabel,
   pickerReduce,
   sameLink,
   selectionFromLink,
   selectionFromSuggestion,
   shortLinkLabel,
+  subjectChipLabel,
 } from './chapter-link'
 import { FILED_LINK, UNFILED_LINK } from './testing'
 
@@ -102,5 +108,52 @@ describe('links', () => {
       'L',
     )
     expect(sel).toMatchObject({ levelId: 'L', chapterId: 'c1', topicId: null })
+  })
+})
+
+describe('subject-level filing ("All chapters")', () => {
+  const subjectLevel = {
+    ...UNFILED_LINK,
+    level_id: 'L',
+    subject_id: 's1',
+    subject_key: 'taxation',
+    subject_name: 'Taxation',
+  }
+  const wholeSubject = buildSelection('L', { subjectId: 's1', chapterId: ALL_CHAPTERS, topicId: '' }, subjects, [], [])
+
+  it('builds a subject-level selection from the sentinel', () => {
+    expect(wholeSubject).toMatchObject({ subjectId: 's1', chapterId: null, chapterName: null, topicId: null })
+  })
+
+  it('tells subject-level from unfiled and chapter filing', () => {
+    expect(isSubjectLevel(subjectLevel)).toBe(true)
+    expect(isUnfiled(subjectLevel)).toBe(false)
+    expect(isUnfiled(UNFILED_LINK)).toBe(true)
+    expect(isSubjectLevel(UNFILED_LINK)).toBe(false)
+    expect(isSubjectLevel(FILED_LINK)).toBe(false)
+  })
+
+  it('labels it Subject › All chapters', () => {
+    expect(linkLabel(subjectLevel)).toBe('Taxation › All chapters')
+    expect(chapterChipLabel(subjectLevel)).toBe('All chapters')
+    expect(subjectChipLabel(subjectLevel)).toBe('Taxation')
+    expect(subjectChipLabel(UNFILED_LINK)).toBeNull()
+  })
+
+  it('sends the subject with no chapter, and nothing for Unfiled', () => {
+    expect(linkFields(wholeSubject)).toEqual({ chapter_id: null, topic_id: null, subject_id: 's1' })
+    expect(linkFields(null)).toEqual({ chapter_id: null, topic_id: null })
+  })
+
+  it('compares against the note link', () => {
+    expect(sameLink(wholeSubject, subjectLevel)).toBe(true)
+    expect(sameLink(wholeSubject, UNFILED_LINK)).toBe(false)
+    expect(sameLink(null, subjectLevel)).toBe(false)
+  })
+
+  it('round-trips through linkFromSelection and selectionFromLink', () => {
+    const link = linkFromSelection(wholeSubject)
+    expect(isSubjectLevel(link)).toBe(true)
+    expect(selectionFromLink(link)).toMatchObject({ subjectId: 's1', chapterId: null })
   })
 })

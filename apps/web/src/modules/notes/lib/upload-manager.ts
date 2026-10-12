@@ -10,7 +10,15 @@
  * with a fresh signed URL); after it, a new `client_id` makes a new reservation. R2 restarts the file on retry (R3 resumes).
  * Nothing here stores the file name anywhere but memory; analytics get ranges only.
  */
-import type { DocumentDetail, DocumentProcessing, ReserveBody, ReserveResult, UploadTarget } from './document-types'
+import type {
+  DocumentDetail,
+  DocumentPatch,
+  DocumentProcessing,
+  RangeInput,
+  ReserveBody,
+  ReserveResult,
+  UploadTarget,
+} from './document-types'
 import {
   type DocumentQuotaDetails,
   documentQuotaExceeded,
@@ -58,6 +66,8 @@ export interface UploadItem {
   duplicateOf?: string | null
   startedAt: number
   reservedAt?: number
+  /** The file is safe but the details the student filled in (title, tags, page ranges) could not be saved. */
+  detailsFailed?: boolean
 }
 
 export interface UploadOptions {
@@ -65,6 +75,11 @@ export interface UploadOptions {
   sourceKind?: ReserveBody['source_kind']
   chapterId?: string | null
   topicId?: string | null
+  /** With no chapter: file under the whole subject ("All chapters"). */
+  subjectId?: string | null
+  /** What the student filled in beyond the file: saved right after the space is reserved (the server has no field for them). */
+  details?: Pick<DocumentPatch, 'title' | 'edition_label' | 'tag_ids'>
+  ranges?: RangeInput[]
   /** "Replace edition": the upload is a newer edition of this document (reserved through `documents/{id}/replace/`). */
   replaces?: ReplaceTarget
 }
@@ -85,6 +100,9 @@ export interface UploadDeps {
   abort: (id: string) => Promise<unknown>
   processing: (id: string) => Promise<DocumentProcessing>
   document: (id: string) => Promise<DocumentDetail>
+  /** Saves the title, edition and tags the student chose while uploading. */
+  patch: (id: string, body: DocumentPatch) => Promise<unknown>
+  putRanges: (id: string, ranges: RangeInput[]) => Promise<unknown>
   purge: (id: string) => Promise<unknown>
   now: () => number
   newId: () => string
@@ -213,6 +231,20 @@ export function createUploadManager(deps: UploadDeps) {
     }
   }
 
+  /** The file matters more than its details: if these writes fail the upload goes on and the card says so. */
+  async function saveDetails(id: string, documentId: string, opts: UploadOptions) {
+    const hasDetails = opts.details !== undefined && Object.keys(opts.details).length > 0
+    const hasRanges = (opts.ranges?.length ?? 0) > 0
+    if (!hasDetails && !hasRanges) return
+    try {
+      if (opts.details && hasDetails) await deps.patch(documentId, opts.details)
+      if (opts.ranges && hasRanges) await deps.putRanges(documentId, opts.ranges)
+      patch(id, { detailsFailed: false })
+    } catch {
+      patch(id, { detailsFailed: true })
+    }
+  }
+
   async function run(id: string) {
     const file = files.get(id)
     const item = find(id)
@@ -230,7 +262,11 @@ export function createUploadManager(deps: UploadDeps) {
         mime: 'application/pdf',
         ...(item.pages ? { page_count_hint: item.pages } : {}),
         ...(opts?.sourceKind ? { source_kind: opts.sourceKind } : {}),
-        ...(opts?.chapterId ? { chapter_id: opts.chapterId, topic_id: opts.topicId ?? null } : {}),
+        ...(opts?.chapterId
+          ? { chapter_id: opts.chapterId, topic_id: opts.topicId ?? null }
+          : opts?.subjectId
+            ? { subject_id: opts.subjectId }
+            : {}),
       }
       const reservation = await (opts?.replaces ? deps.reserve(body, opts.replaces) : deps.reserve(body))
       const documentId = reservation.document.id
@@ -239,6 +275,7 @@ export function createUploadManager(deps: UploadDeps) {
         void deps.abort(documentId).catch(() => undefined)
         return
       }
+      if (opts && !opts.replaces) await saveDetails(id, documentId, opts)
 
       // A replay of a file that already got past the upload (status beyond `reserved`) has no new URL: skip to completing.
       if (reservation.upload) {

@@ -17,7 +17,7 @@ describe('NoteCard', () => {
     expect(screen.getByText('ITC is blocked for motor vehicles.')).toBeInTheDocument()
     const location = screen.getByText('GST: Input tax credit')
     expect(location).toBeInTheDocument()
-    expect(location).toHaveAttribute('title', 'Taxation › GST: Input tax credit')
+    expect(location.closest('[title]')).toHaveAttribute('title', 'Taxation › GST: Input tax credit')
     expect(location).toHaveClass('truncate')
   })
 

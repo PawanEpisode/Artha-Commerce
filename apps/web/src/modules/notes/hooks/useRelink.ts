@@ -30,7 +30,7 @@ export function useRelink() {
           await actions.change(note, { selection })
           notesAnalytics.itemLinked('manual')
         }
-        notify.filed(selection.chapterName)
+        notify.filed(selection.chapterName ?? selection.subjectName)
         return notes.length
       } catch (error) {
         notify.error(error, 'Could not re-link these notes.')

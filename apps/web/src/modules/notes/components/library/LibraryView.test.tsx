@@ -116,11 +116,12 @@ describe('LibraryView states (PRD 7.3)', () => {
 describe('DocumentCard states', () => {
   const title =
     'A very long module title that goes on and on about indirect taxation, input tax credit and everything else a student could ever want in one PDF'
-  it('wraps a long title inside the card and links to the reader', () => {
+  it('keeps a long title on one line with an ellipsis and links to the reader', () => {
     render(<DocumentCard doc={makeDocument({ title })} />)
     const link = screen.getByRole('link', { name: title })
     expect(link).toHaveAttribute('href', '/app/notes/pdf/dddddddd-dddd-4ddd-8ddd-dddddddddddd')
-    expect(link.className + (link.parentElement?.className ?? '')).toMatch(/break-words|line-clamp/)
+    expect(link).toHaveAttribute('title', title)
+    expect(link.parentElement).toHaveClass('truncate', 'min-w-0')
   })
 
   it('partial: a preparing file and a file in OCR show words, not only colour', () => {

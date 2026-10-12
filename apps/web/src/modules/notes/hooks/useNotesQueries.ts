@@ -1,7 +1,7 @@
 import { keepPreviousData, useInfiniteQuery, useQueries, useQuery } from '@tanstack/react-query'
 
 import { currentUserId, isTransient } from '~/lib/offline-queue'
-import { useOverview } from '~/modules/coverage'
+import { useChosenSubjects, useOverview } from '~/modules/coverage'
 
 import {
   getAggregate,
@@ -29,12 +29,12 @@ export function useLevelId(): string | undefined {
   return useOverview().data?.enrollment.level.id
 }
 
-/** The subjects of the enrolment (id, key, name), the source of the hub's subject list and the picker. */
+/** The student's papers (id, key, name): core papers and the elective they chose, the source of the hub's list and every picker. */
 export function useEnrolledSubjects() {
-  const { data, isPending, isError, refetch, noEnrollment } = useOverview()
+  const { subjects: chosen, isPending, isError, refetch, noEnrollment } = useChosenSubjects()
   return {
     noEnrollment,
-    subjects: data?.subjects.map((s) => ({ id: s.id, key: s.key, name: s.name })) ?? [],
+    subjects: chosen.map((s) => ({ id: s.id, key: s.key, name: s.name })),
     isPending,
     isError,
     refetch,

@@ -8,6 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  StepDialog,
   SyncChip,
   UsageBar,
 } from '@artha/design-system'
@@ -16,6 +17,9 @@ import { useState } from 'react'
 /** Shared primitives added for Smart Notes: SyncChip, UsageBar, FilterChip and Sheet. */
 export function NotesPrimitivesShowcase() {
   const [chips, setChips] = useState(['Tag: doubt', 'Chapter: Input tax credit'])
+  const [stepsOpen, setStepsOpen] = useState(false)
+  const [step, setStep] = useState(0)
+  const stepNames = ['Details', 'Filing', 'Pages']
   return (
     <>
       <section className="space-y-4">
@@ -69,6 +73,45 @@ export function NotesPrimitivesShowcase() {
             </SheetFooter>
           </SheetContent>
         </Sheet>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-bold">Step dialog</h2>
+        <p className="text-sm text-muted-foreground">
+          A modal for a short flow: progress, one heading per step, Back and the primary action pinned at the bottom.
+        </p>
+        <Button
+          variant="outline"
+          onClick={() => {
+            setStep(0)
+            setStepsOpen(true)
+          }}
+        >
+          Open step dialog
+        </Button>
+        <StepDialog
+          open={stepsOpen}
+          onOpenChange={setStepsOpen}
+          title="Upload a PDF"
+          description="Your PDF is private to you."
+          steps={stepNames}
+          current={step}
+          onStepSelect={setStep}
+          stepTitle={stepNames[step] ?? ''}
+          stepDescription="Everything here is optional."
+          onBack={step > 0 ? () => setStep(step - 1) : undefined}
+          action={
+            step < stepNames.length - 1 ? (
+              <Button onClick={() => setStep(step + 1)}>Next</Button>
+            ) : (
+              <Button variant="cta" onClick={() => setStepsOpen(false)}>
+                Upload
+              </Button>
+            )
+          }
+        >
+          <p className="text-sm">The fields of the {stepNames[step]?.toLowerCase()} step go here.</p>
+        </StepDialog>
       </section>
     </>
   )

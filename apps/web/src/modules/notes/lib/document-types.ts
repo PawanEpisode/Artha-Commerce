@@ -139,6 +139,8 @@ export interface ReserveBody {
   source_kind?: SourceKind
   chapter_id?: string | null
   topic_id?: string | null
+  /** With no chapter: file under the whole subject ("All chapters"). */
+  subject_id?: string | null
 }
 
 export interface ReserveResult {
@@ -170,6 +172,8 @@ export interface DocumentPatch {
   edition_label?: string | null
   chapter_id?: string | null
   topic_id?: string | null
+  /** With `chapter_id: null`: file under the whole subject ("All chapters"). */
+  subject_id?: string | null
   tag_ids?: string[]
 }
 

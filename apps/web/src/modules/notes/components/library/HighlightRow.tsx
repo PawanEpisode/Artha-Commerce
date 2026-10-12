@@ -78,17 +78,21 @@ export function HighlightRow({ row, colorName, documentTitle, showLocation = tru
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap items-center gap-1.5 text-xs">
+      <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-xs">
         {showLocation && !isUnfiled(row.link) ? (
-          <Badge variant="outline" className="max-w-full min-w-0 truncate" title={linkLabel(row.link)}>
-            {shortLinkLabel(row.link)}
+          <Badge variant="outline" className="max-w-full min-w-0" title={linkLabel(row.link)}>
+            <span className="truncate">{shortLinkLabel(row.link)}</span>
           </Badge>
         ) : null}
-        {row.link.moved_or_removed ? <Badge variant="outline">Chapter moved or removed</Badge> : null}
+        {row.link.moved_or_removed ? (
+          <Badge variant="outline" className="max-w-full min-w-0">
+            <span className="truncate">Chapter moved or removed</span>
+          </Badge>
+        ) : null}
         {row.tags.map((tag) => (
-          <Badge key={tag.id} variant="outline">
-            <Tag aria-hidden className="size-3" />
-            {tag.name}
+          <Badge key={tag.id} variant="outline" className="max-w-full min-w-0" title={tag.name}>
+            <Tag aria-hidden className="size-3 shrink-0" />
+            <span className="truncate">{tag.name}</span>
           </Badge>
         ))}
         {row.recall_card_id ? (

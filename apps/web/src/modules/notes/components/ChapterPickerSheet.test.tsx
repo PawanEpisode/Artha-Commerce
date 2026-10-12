@@ -68,4 +68,10 @@ describe('ChapterPickerSheet', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
     expect(onRetry).toHaveBeenCalled()
   })
+
+  it('offers All chapters when allowAll is set', async () => {
+    render(<ChapterPickerSheet {...props} allowAll state={{ subjectId: 's1', chapterId: '', topicId: '' }} />)
+    await userEvent.click(screen.getByLabelText('Chapter'))
+    expect(screen.getByRole('option', { name: 'All chapters' })).toBeInTheDocument()
+  })
 })

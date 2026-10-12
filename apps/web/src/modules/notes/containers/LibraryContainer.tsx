@@ -24,7 +24,7 @@ import { notifyDocs } from '../lib/notify-documents'
 import { fullQuota, limitsFromUsage } from '../lib/upload-check'
 import { DocumentDialogs } from './DocumentDialogs'
 import { NotesShell } from './NotesShell'
-import { UploadSheetContainer } from './UploadSheetContainer'
+import { UploadDialogContainer } from './UploadDialogContainer'
 
 function Library({ search }: { search: LibrarySearch }) {
   const navigate = useNavigate()
@@ -138,7 +138,7 @@ function Library({ search }: { search: LibrarySearch }) {
           />
         )}
       />
-      <UploadSheetContainer
+      <UploadDialogContainer
         open={sheetOpen}
         onOpenChange={setSheetOpen}
         initialFiles={dropped}

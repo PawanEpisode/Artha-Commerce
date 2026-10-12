@@ -12,7 +12,7 @@ import { notifyDocs } from '../lib/notify-documents'
 import { isReplaceActive, openCount, replaceStatusText } from '../lib/replace-copy'
 import type { AttentionAction, AttentionItem } from '../lib/replace-types'
 import { QuotaSheetContainer } from './QuotaSheetContainer'
-import { UploadSheetContainer } from './UploadSheetContainer'
+import { UploadDialogContainer } from './UploadDialogContainer'
 
 /**
  * Replace edition in the document details (flag `notes_ai`, fails closed): a newer file for this document, and for a document
@@ -71,7 +71,7 @@ export function ReplaceSectionContainer({ doc }: { doc: DocumentDetail }) {
         onRetry={() => void attention.refetch()}
         onResolve={decide}
       />
-      <UploadSheetContainer
+      <UploadDialogContainer
         open={replacing}
         onOpenChange={setReplacing}
         replace={{ docId: doc.id, title: doc.title }}

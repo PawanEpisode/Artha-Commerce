@@ -35,6 +35,7 @@ export function UnfiledRow({ note }: { note: NoteSummary }) {
         showTrigger={false}
         open={open}
         onOpenChange={setOpen}
+        allowAllChapters
         onSelect={async (selection) => {
           if (!selection) return
           const done = await actions.change(note, { selection })

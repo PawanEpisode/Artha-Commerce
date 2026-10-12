@@ -56,6 +56,8 @@ export const createBodyOf = (note: Note): Omit<NoteCreate, 'client_id'> => ({
   body_md: note.body_md,
   chapter_id: note.link.chapter_id,
   topic_id: note.link.topic_id,
+  // Always present, so a later edit that moves the note to a chapter overwrites a waiting subject-level filing.
+  subject_id: note.link.chapter_id ? null : note.link.subject_id,
 })
 
 /** Newer fields win; `undefined` never erases what the waiting create already says. The client id stays. */

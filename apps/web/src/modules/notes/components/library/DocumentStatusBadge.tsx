@@ -41,9 +41,14 @@ export function DocumentStatusBadge({ badge }: { badge: DocBadge }) {
   const Icon = ICON[badge.kind]
   const spins = badge.kind === 'preparing' || badge.kind === 'ocr'
   return (
-    <Badge variant="outline" className={TONE[badge.tone]} title={badge.detail} data-kind={badge.kind}>
-      <Icon aria-hidden className={spins ? 'animate-spin motion-reduce:animate-none' : undefined} />
-      {badge.label}
+    <Badge
+      variant="outline"
+      className={`max-w-full min-w-0 ${TONE[badge.tone]}`}
+      title={badge.detail}
+      data-kind={badge.kind}
+    >
+      <Icon aria-hidden className={`shrink-0 ${spins ? 'animate-spin motion-reduce:animate-none' : ''}`} />
+      <span className="truncate">{badge.label}</span>
     </Badge>
   )
 }

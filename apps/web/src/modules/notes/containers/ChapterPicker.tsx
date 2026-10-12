@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { ALL_CHAPTERS } from '~/modules/coverage'
+
 import { ChapterPickerSheet } from '../components/ChapterPickerSheet'
 import { useChapterPickerData } from '../hooks/useChapterPickerData'
 import {
@@ -25,6 +27,8 @@ interface ChapterPickerProps {
   onOpenChange?: (open: boolean) => void
   disabled?: boolean
   showTrigger?: boolean
+  /** Offer "All chapters": filing under the whole subject (notes and PDFs). Marks and page ranges need a chapter. */
+  allowAllChapters?: boolean
 }
 
 /** Container of the F-02 picker: reads the syllabus lists, keeps the three choices, and hands back a stable-key selection. */
@@ -36,6 +40,7 @@ export function ChapterPicker({
   onOpenChange,
   disabled,
   showTrigger,
+  allowAllChapters = false,
 }: ChapterPickerProps) {
   const [inner, setInner] = useState(false)
   const open = controlled ?? inner
@@ -48,7 +53,11 @@ export function ChapterPicker({
   useEffect(() => {
     if (!open) return
     const subjectId = data.subjects.find((s) => s.key === current?.subjectKey)?.id ?? current?.subjectId ?? ''
-    setState({ subjectId, chapterId: current?.chapterId ?? '', topicId: current?.topicId ?? '' })
+    setState({
+      subjectId,
+      chapterId: current ? (current.chapterId ?? ALL_CHAPTERS) : '',
+      topicId: current?.topicId ?? '',
+    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, data.subjects.length])
 
@@ -88,6 +97,7 @@ export function ChapterPicker({
       }
       disabled={disabled}
       showTrigger={showTrigger}
+      allowAll={allowAllChapters}
     />
   )
 }

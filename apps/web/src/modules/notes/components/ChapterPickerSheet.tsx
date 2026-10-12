@@ -2,7 +2,6 @@ import {
   Alert,
   Button,
   FolderInput,
-  SelectField,
   Sheet,
   SheetContent,
   SheetDescription,
@@ -14,6 +13,7 @@ import {
 } from '@artha/design-system'
 
 import type { PickerOption, PickerState } from '../lib/chapter-link'
+import { ChapterFields } from './ChapterFields'
 
 interface ChapterPickerSheetProps {
   /** What the note is filed under now: "Taxation › GST", or "Unfiled". */
@@ -38,12 +38,9 @@ interface ChapterPickerSheetProps {
   disabled?: boolean
   /** False when another control opens the sheet (the suggestion bar). */
   showTrigger?: boolean
+  /** Offer "All chapters" (file under the whole subject). */
+  allowAll?: boolean
 }
-
-const toOptions = (items: readonly PickerOption[], blank: string) => [
-  { value: '', label: blank },
-  ...items.map((i) => ({ value: i.id, label: i.name })),
-]
 
 /**
  * The F-02 picker: subject, then chapter, then an optional topic, all from the student's own syllabus. A button shows
@@ -68,6 +65,7 @@ export function ChapterPickerSheet({
   onClear,
   disabled,
   showTrigger = true,
+  allowAll = false,
 }: ChapterPickerSheetProps) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -85,7 +83,9 @@ export function ChapterPickerSheet({
       <SheetContent side="bottom" className="max-h-[90dvh] overflow-y-auto sm:mx-auto sm:max-w-lg">
         <SheetHeader>
           <SheetTitle>File this note</SheetTitle>
-          <SheetDescription>Pick a chapter from your syllabus. You can change it any time.</SheetDescription>
+          <SheetDescription>
+            Pick a chapter{allowAll ? ' (or All chapters)' : ''} from your syllabus. You can change it any time.
+          </SheetDescription>
         </SheetHeader>
         {failed ? (
           <Alert variant="error">
@@ -99,45 +99,17 @@ export function ChapterPickerSheet({
         ) : loadingSubjects ? (
           <Skeleton className="h-32 w-full" />
         ) : (
-          <div className="space-y-4">
-            <div className="grid gap-2">
-              <label htmlFor="picker-subject" className="text-sm font-medium">
-                Subject
-              </label>
-              <SelectField
-                id="picker-subject"
-                value={state.subjectId}
-                onValueChange={(subjectId) => onState({ subjectId })}
-                options={toOptions(subjects, 'Choose a subject')}
-              />
-            </div>
-            <div className="grid gap-2">
-              <label htmlFor="picker-chapter" className="text-sm font-medium">
-                Chapter
-              </label>
-              <SelectField
-                id="picker-chapter"
-                value={state.chapterId}
-                disabled={!state.subjectId || loadingChapters}
-                onValueChange={(chapterId) => onState({ chapterId })}
-                options={toOptions(chapters, loadingChapters ? 'Loading chapters…' : 'Choose a chapter')}
-              />
-            </div>
-            {state.chapterId && (loadingTopics || topics.length > 0) ? (
-              <div className="grid gap-2">
-                <label htmlFor="picker-topic" className="text-sm font-medium">
-                  Topic (optional)
-                </label>
-                <SelectField
-                  id="picker-topic"
-                  value={state.topicId}
-                  disabled={loadingTopics}
-                  onValueChange={(topicId) => onState({ topicId })}
-                  options={toOptions(topics, loadingTopics ? 'Loading topics…' : 'Whole chapter')}
-                />
-              </div>
-            ) : null}
-          </div>
+          <ChapterFields
+            idPrefix="picker"
+            state={state}
+            onState={onState}
+            subjects={subjects}
+            chapters={chapters}
+            topics={topics}
+            loadingChapters={loadingChapters}
+            loadingTopics={loadingTopics}
+            allowAll={allowAll}
+          />
         )}
         <SheetFooter>
           {onClear ? (

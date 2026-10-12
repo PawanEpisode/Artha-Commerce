@@ -86,6 +86,11 @@ export function UploadRow({ item, compact, ...actions }: { item: UploadItem; com
             )}
           </p>
         ) : null}
+        {item.phase === 'ready' && item.detailsFailed ? (
+          <p className="text-muted-foreground">
+            Some details could not be saved. Open Edit details on its card to add them again.
+          </p>
+        ) : null}
         {item.phase === 'duplicate' ? <p className="text-foreground">You already have this file.</p> : null}
         {isFailed && failure ? (
           <p className="text-foreground">

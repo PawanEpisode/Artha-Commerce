@@ -379,7 +379,7 @@ export function useNoteEditor({ noteId }: Options) {
           baseRev.current = result.data.rev
           await storeNote(qc, { ...result.data, link: linkFromSelection(next) })
           qc.setQueryData(notesKeys.note(id), result.data)
-          notify.filed(next ? next.chapterName : 'Unfiled')
+          notify.filed(next ? (next.chapterName ?? next.subjectName) : 'Unfiled')
         } else {
           await applyEditLocally(qc, id, { link: linkFromSelection(next) }, true)
           notify.queued()

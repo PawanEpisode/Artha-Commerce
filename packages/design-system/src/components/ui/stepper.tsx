@@ -7,10 +7,12 @@ interface StepperProps extends React.ComponentProps<'ol'> {
   steps: string[]
   /** Zero-based index of the current step. */
   current: number
+  /** Makes every step a button, for flows where any step can be visited (editing). Without it the steps are plain text. */
+  onStepSelect?: (index: number) => void
 }
 
 /** Progress through a short flow (onboarding). Done steps show a check; the current one is aria-current="step". */
-export function Stepper({ steps, current, className, ...props }: StepperProps) {
+export function Stepper({ steps, current, onStepSelect, className, ...props }: StepperProps) {
   return (
     <ol
       data-slot="stepper"
@@ -21,8 +23,8 @@ export function Stepper({ steps, current, className, ...props }: StepperProps) {
       {steps.map((label, i) => {
         const done = i < current
         const active = i === current
-        return (
-          <li key={label} aria-current={active ? 'step' : undefined} className="flex min-w-0 flex-1 items-center gap-2">
+        const marker = (
+          <>
             <span
               aria-hidden
               className={cn(
@@ -44,6 +46,21 @@ export function Stepper({ steps, current, className, ...props }: StepperProps) {
               {label}
               {done ? <span className="sr-only"> (done)</span> : null}
             </span>
+          </>
+        )
+        return (
+          <li key={label} aria-current={active ? 'step' : undefined} className="flex min-w-0 flex-1 items-center gap-2">
+            {onStepSelect ? (
+              <button
+                type="button"
+                onClick={() => onStepSelect(i)}
+                className="-m-2 flex min-h-11 min-w-0 cursor-pointer items-center gap-2 rounded-lg p-2 outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
+              >
+                {marker}
+              </button>
+            ) : (
+              marker
+            )}
             {i < steps.length - 1 ? <span aria-hidden className="h-0.5 flex-1 rounded bg-border" /> : null}
           </li>
         )

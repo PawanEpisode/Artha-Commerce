@@ -183,3 +183,10 @@ API **and** worker: `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_DATA_TIER`, `NOTES
 - Replace edition never changes or deletes the old document. If a re-anchor misbehaves, the student still has the old edition with every mark; a failed re-anchor says so on the new edition.
 - Unlock for search stores no password and no unprotected file. If `NOTES_UNLOCK_FERNET_KEYS` is unset the button answers 503 `unlock_unavailable`.
 - Data rights: `DELETE /notes/` and the export include the AI ledger and the replace-edition items; erase removes them.
+
+## Library upload/edit dialogs and subject-level filing
+
+- Upload and edit use a multi-step `StepDialog` (File → Details → Filing → Page ranges; edit adds More). "Upload now" skips straight to the upload; details that fail to save show a note on the upload row.
+- "All chapters" files an item at subject level (`chapter_id: null` with `subject_id`); Unfiled means no subject and no chapter. Subject-level items appear under the subject filter, not in per-chapter counts. In filters, tracker and timer it means "whole subject". Recall cards and page ranges always need one chapter.
+- Subject pickers list only the student's chosen electives (`useChosenSubjects`).
+- Document cards show the first-page cover (server WebP, else a pdf.js fallback), Subject and Chapter chips, and ellipsize long titles and chips.

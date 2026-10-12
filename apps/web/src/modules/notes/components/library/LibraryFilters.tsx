@@ -1,6 +1,8 @@
 import { Button, FilterChip, ListFilter, Search, SegmentedControl, SelectField } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
+import { ALL_CHAPTERS_LABEL } from '~/modules/coverage'
+
 import {
   activeLibraryFilters,
   LIBRARY_STATUSES,
@@ -118,7 +120,7 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
               id="lib-subject"
               value={search.subject ?? ''}
               onValueChange={(subject) => set({ subject: subject || undefined, chapter: undefined })}
-              options={[{ value: '', label: 'Any subject' }, ...subjects]}
+              options={[{ value: '', label: 'All subjects' }, ...subjects]}
             />
           </Field>
           <Field id="lib-chapter" label="Chapter">
@@ -127,7 +129,10 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
               value={search.chapter ?? ''}
               disabled={!search.subject}
               onValueChange={(chapter) => set({ chapter: chapter || undefined })}
-              options={[{ value: '', label: search.subject ? 'Any chapter' : 'Choose a subject first' }, ...chapters]}
+              options={[
+                { value: '', label: search.subject ? ALL_CHAPTERS_LABEL : 'Choose a subject first' },
+                ...chapters,
+              ]}
             />
           </Field>
           <Field id="lib-tag" label="Tag">

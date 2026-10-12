@@ -1,3 +1,5 @@
+import { ALL_CHAPTERS, ALL_CHAPTERS_LABEL } from '~/modules/coverage'
+
 import type { ChapterOverview, ChapterSuggestion, NoteLink } from './types'
 
 /** A student's choice in the picker: stable keys next to the ids the API writes (FR-F03-40). */
@@ -6,34 +8,74 @@ export interface LinkSelection {
   subjectId: string
   subjectKey: string
   subjectName: string
-  chapterId: string
-  chapterKey: string
-  chapterName: string
+  /** Null when filed under the whole subject ("All chapters"). */
+  chapterId: string | null
+  chapterKey: string | null
+  chapterName: string | null
   topicId: string | null
   topicKey: string | null
   topicName: string | null
 }
 
-export const isUnfiled = (link: Pick<NoteLink, 'chapter_id' | 'chapter_key'>) =>
-  link.chapter_id === null && link.chapter_key === null
+type LinkIds = Pick<NoteLink, 'chapter_id' | 'chapter_key' | 'subject_key'>
 
-/** "Taxation › GST: ITC › Section 17(5)", or "Unfiled". */
+/** Filed under a subject but no chapter: "All chapters". */
+export const isSubjectLevel = (link: LinkIds) =>
+  link.chapter_id === null && link.chapter_key === null && link.subject_key !== null
+
+/** Unfiled means no subject and no chapter. A subject with "All chapters" is filed. */
+export const isUnfiled = (link: LinkIds) =>
+  link.chapter_id === null && link.chapter_key === null && link.subject_key === null
+
+/** "Taxation › GST: ITC › Section 17(5)", "Taxation › All chapters", or "Unfiled". */
 export function linkLabel(link: NoteLink): string {
   if (isUnfiled(link)) return 'Unfiled'
+  if (isSubjectLevel(link)) return [link.subject_name, ALL_CHAPTERS_LABEL].filter(Boolean).join(' › ')
   return [link.subject_name, link.chapter_name, link.topic_name].filter(Boolean).join(' › ')
 }
 
-/** Just the chapter, for a compact chip; falls back to the subject, then to "Unfiled". */
+/** Just the chapter (or the subject for "All chapters"), for a compact chip; falls back to "Unfiled". */
 export const shortLinkLabel = (link: NoteLink) => link.chapter_name ?? link.subject_name ?? 'Unfiled'
 
-/** What to send so a note ends up linked (or unfiled with `null`). Topic only counts inside a chapter. */
-export function linkFields(selection: LinkSelection | null): { chapter_id: string | null; topic_id: string | null } {
+/** The subject's name for a chip, or null when the item is Unfiled. */
+export const subjectChipLabel = (link: NoteLink): string | null => (isUnfiled(link) ? null : link.subject_name)
+
+/** The chapter's name for a chip: "All chapters" for subject-level filing, null when Unfiled. */
+export const chapterChipLabel = (link: NoteLink): string | null =>
+  isSubjectLevel(link) ? ALL_CHAPTERS_LABEL : link.chapter_name
+
+/**
+ * What to send so a note ends up linked: a chapter (and topic), the whole subject (`chapter_id: null` with the subject), or
+ * Unfiled (`null`). Topic only counts inside a chapter.
+ */
+export function linkFields(selection: LinkSelection | null): {
+  chapter_id: string | null
+  topic_id: string | null
+  subject_id?: string
+} {
   if (!selection) return { chapter_id: null, topic_id: null }
+  if (selection.chapterId === null) {
+    return { chapter_id: null, topic_id: null, ...(selection.subjectId ? { subject_id: selection.subjectId } : {}) }
+  }
   return { chapter_id: selection.chapterId, topic_id: selection.topicId }
 }
 
 export function selectionFromLink(link: NoteLink): LinkSelection | null {
-  if (!link.level_id || !link.subject_id || !link.subject_key || !link.chapter_id || !link.chapter_key) return null
+  if (!link.level_id || !link.subject_id || !link.subject_key) return null
+  if (!link.chapter_id || !link.chapter_key) {
+    return {
+      levelId: link.level_id,
+      subjectId: link.subject_id,
+      subjectKey: link.subject_key,
+      subjectName: link.subject_name ?? '',
+      chapterId: null,
+      chapterKey: null,
+      chapterName: null,
+      topicId: null,
+      topicKey: null,
+      topicName: null,
+    }
+  }
   return {
     levelId: link.level_id,
     subjectId: link.subject_id,
@@ -105,7 +147,7 @@ export function pickerReduce(state: PickerState, change: Partial<PickerState>): 
   return { ...state, ...change }
 }
 
-/** The finished selection from the picker's lists, or null while no chapter is chosen. */
+/** The finished selection from the picker's lists, or null while no chapter (or "All chapters") is chosen. */
 export function buildSelection(
   levelId: string,
   state: PickerState,
@@ -114,8 +156,23 @@ export function buildSelection(
   topics: PickerOption[],
 ): LinkSelection | null {
   const subject = subjects.find((s) => s.id === state.subjectId)
+  if (!subject) return null
+  if (state.chapterId === ALL_CHAPTERS) {
+    return {
+      levelId,
+      subjectId: subject.id,
+      subjectKey: subject.key,
+      subjectName: subject.name,
+      chapterId: null,
+      chapterKey: null,
+      chapterName: null,
+      topicId: null,
+      topicKey: null,
+      topicName: null,
+    }
+  }
   const chapter = chapters.find((c) => c.id === state.chapterId)
-  if (!subject || !chapter) return null
+  if (!chapter) return null
   const topic = topics.find((t) => t.id === state.topicId)
   return {
     levelId,
@@ -134,6 +191,8 @@ export function buildSelection(
 /** Does a selection differ from what the note already has? (No write for a no-op.) */
 export function sameLink(selection: LinkSelection | null, link: NoteLink): boolean {
   if (!selection) return isUnfiled(link)
+  if (selection.chapterId === null)
+    return isSubjectLevel(link) && (selection.subjectId === '' || selection.subjectId === link.subject_id)
   return selection.chapterId === link.chapter_id && (selection.topicId ?? null) === (link.topic_id ?? null)
 }
 

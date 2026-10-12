@@ -7,6 +7,10 @@ export interface RangeRow {
   key: string
   from: string
   to: string
+  /** The subject's id once the student picked one on this row; '' for a saved row (then `subjectKey` says which). */
+  subjectId: string
+  /** The subject's stable key, set on a saved row so its subject can be shown before the student touches it. */
+  subjectKey: string
   chapterId: string
   /** "GST: Input tax credit", shown on the row. */
   chapterLabel: string
@@ -24,6 +28,8 @@ export const rowsFromRanges = (ranges: readonly PageRange[]): RangeRow[] =>
       key: r.id,
       from: String(r.page_from),
       to: String(r.page_to),
+      subjectId: '',
+      subjectKey: r.subject_key,
       chapterId: r.chapter_id,
       chapterLabel: [r.subject_name, r.chapter_name].filter(Boolean).join(' › '),
       topicId: r.topic_id,
@@ -34,11 +40,19 @@ export const emptyRow = (from = ''): RangeRow => ({
   key: newRowKey(),
   from,
   to: '',
+  subjectId: '',
+  subjectKey: '',
   chapterId: '',
   chapterLabel: '',
   topicId: null,
   source: 'user',
 })
+
+/** A row nothing was typed or chosen on (the blank row "Add a range" makes): left out of what is saved. */
+export const isBlankRow = (row: RangeRow): boolean => row.from === '' && row.to === '' && row.chapterId === ''
+
+/** The rows that count: blank ones dropped. */
+export const filledRows = (rows: readonly RangeRow[]): RangeRow[] => rows.filter((r) => !isBlankRow(r))
 
 /** A whole number of at least 1, or null for anything else (empty, "3a", "2.5"). */
 export const parsePage = (text: string): number | null =>

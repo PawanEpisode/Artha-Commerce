@@ -36,6 +36,8 @@ function setup(overrides: Partial<UploadDeps> = {}) {
     abort: vi.fn(async () => undefined),
     processing: vi.fn(async () => makeProcessing()),
     document: vi.fn(async () => makeDocument()),
+    patch: vi.fn(async () => undefined),
+    putRanges: vi.fn(async () => undefined),
     purge: vi.fn(async () => undefined),
     now: () => clock,
     newId: () => `id-${++n}`,
@@ -296,6 +298,37 @@ describe('upload manager: retry, cancel and duplicates', () => {
     expect(manager.getSnapshot()).toHaveLength(1)
     expect(manager.getSnapshot()[0]).toMatchObject({ id: 'id-2', phase: 'ready' })
     expect(vi.mocked(deps.reserve).mock.calls.map(([b]) => b.client_id)).toEqual(['id-1', 'id-2'])
+  })
+
+  it('saves the title, tags and page ranges the student chose, right after the space is reserved', async () => {
+    const { manager, deps, item } = setup()
+    const ranges = [{ page_from: 1, page_to: 3, chapter_id: 'c1', topic_id: null, source: 'user' as const }]
+    const id = manager.start(file(), {
+      pages: 3,
+      subjectId: 's1',
+      details: { title: 'Taxation', tag_ids: ['t1'] },
+      ranges,
+    })
+    await flush()
+    expect(deps.reserve).toHaveBeenCalledWith(expect.objectContaining({ subject_id: 's1' }))
+    expect(deps.patch).toHaveBeenCalledWith(expect.any(String), { title: 'Taxation', tag_ids: ['t1'] })
+    expect(deps.putRanges).toHaveBeenCalledWith(expect.any(String), ranges)
+    expect(item(id)).toMatchObject({ phase: 'ready', detailsFailed: false })
+  })
+
+  it('keeps uploading when the details cannot be saved, and says so', async () => {
+    const { manager, item } = setup({ patch: vi.fn(async () => Promise.reject(new Error('boom'))) })
+    const id = manager.start(file(), { pages: 3, details: { title: 'Taxation' } })
+    await flush()
+    expect(item(id)).toMatchObject({ phase: 'ready', detailsFailed: true })
+  })
+
+  it('does not call the details endpoints when there is nothing to save', async () => {
+    const { manager, deps } = setup()
+    manager.start(file(), { pages: 3, details: {}, ranges: [] })
+    await flush()
+    expect(deps.patch).not.toHaveBeenCalled()
+    expect(deps.putRanges).not.toHaveBeenCalled()
   })
 
   it('does not retry what retrying cannot fix', async () => {

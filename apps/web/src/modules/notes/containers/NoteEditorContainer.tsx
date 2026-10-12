@@ -172,6 +172,7 @@ function EditorScreen({ noteId, search }: ScreenProps) {
             link={link}
             selection={editor.localOnly ? editor.selection : undefined}
             disabled={trashed}
+            allowAllChapters
             onSelect={(selection) => void editor.setSelection(selection)}
           />
           {unfiled && (suggestions.data?.length ?? 0) > 0 && levelId ? (

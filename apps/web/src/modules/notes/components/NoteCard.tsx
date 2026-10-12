@@ -35,17 +35,21 @@ export function NoteCard({ note, showLocation = true, onPin, onTrash }: NoteCard
           {showLocation ? (
             <Badge
               variant={filed ? 'outline' : 'highlight'}
-              className="max-w-full min-w-0 truncate"
+              className="max-w-full min-w-0"
               title={filed ? linkLabel(note.link) : undefined}
             >
-              {filed ? shortLinkLabel(note.link) : 'Unfiled'}
+              <span className="truncate">{filed ? shortLinkLabel(note.link) : 'Unfiled'}</span>
             </Badge>
           ) : null}
-          {note.link.moved_or_removed ? <Badge variant="outline">Chapter moved or removed</Badge> : null}
+          {note.link.moved_or_removed ? (
+            <Badge variant="outline" className="max-w-full min-w-0">
+              <span className="truncate">Chapter moved or removed</span>
+            </Badge>
+          ) : null}
           {note.tags.map((tag) => (
-            <Badge key={tag.id} variant="outline">
-              <Tag aria-hidden className="size-3" />
-              {tag.name}
+            <Badge key={tag.id} variant="outline" className="max-w-full min-w-0" title={tag.name}>
+              <Tag aria-hidden className="size-3 shrink-0" />
+              <span className="truncate">{tag.name}</span>
             </Badge>
           ))}
           {note.offline_copy ? (

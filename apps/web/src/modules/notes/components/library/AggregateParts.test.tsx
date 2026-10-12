@@ -183,33 +183,29 @@ describe('PageRangeEditor', () => {
     onEdit: vi.fn(),
     onAdd: vi.fn(),
     onRemove: vi.fn(),
-    onPickChapter: vi.fn(),
+    renderChapter: (row: { key: string }) => <p>chapter fields of {row.key}</p>,
     onSuggest: vi.fn(),
-    dirty: true,
-    saving: false,
-    onSave: vi.fn(),
-    onReset: vi.fn(),
   }
-  it('shows an overlap inline on its row and blocks Save', () => {
+  it('shows an overlap inline on its row and the chapter fields of every row', () => {
     render(<PageRangeEditor {...props} />)
     expect(screen.getByRole('alert')).toHaveTextContent('Overlaps pages 1 to 10.')
-    expect(screen.getByRole('button', { name: 'Save page ranges' })).toBeDisabled()
-    expect(screen.getByRole('button', { name: 'GST › ITC for range 1' })).toBeInTheDocument()
+    expect(screen.getByText('chapter fields of a')).toBeInTheDocument()
+    expect(screen.getByText('chapter fields of b')).toBeInTheDocument()
+    expect(screen.getByText('Range 2')).toBeInTheDocument()
   })
-  it('adds, suggests from the contents, picks a chapter and removes by keyboard-reachable buttons', async () => {
-    const p = { ...props, problems: {}, onAdd: vi.fn(), onSuggest: vi.fn(), onPickChapter: vi.fn() }
+  it('adds, suggests from the contents and removes by keyboard-reachable buttons', async () => {
+    const p = { ...props, problems: {}, onAdd: vi.fn(), onSuggest: vi.fn(), onRemove: vi.fn() }
     render(<PageRangeEditor {...p} />)
     await userEvent.click(screen.getByRole('button', { name: /Add a range/ }))
     await userEvent.click(screen.getByRole('button', { name: /Start from the contents/ }))
-    await userEvent.click(screen.getByRole('button', { name: 'Choose a chapter for range 2' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Remove range 2' }))
     expect(p.onAdd).toHaveBeenCalled()
     expect(p.onSuggest).toHaveBeenCalled()
-    expect(p.onPickChapter).toHaveBeenCalledWith('b')
-    expect(screen.getByRole('button', { name: 'Save page ranges' })).toBeEnabled()
+    expect(p.onRemove).toHaveBeenCalledWith('b')
   })
-  it('explains an empty set', () => {
-    render(<PageRangeEditor {...props} rows={[]} problems={{}} dirty={false} />)
+  it('explains an empty set and hides the contents button when there is no outline to read', () => {
+    render(<PageRangeEditor {...props} rows={[]} problems={{}} onSuggest={undefined} />)
     expect(screen.getByText(/No ranges yet/)).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: 'Save page ranges' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Start from the contents/ })).not.toBeInTheDocument()
   })
 })
