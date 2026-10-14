@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     "modules.media",
     "modules.notes",
     "modules.recall",
+    "modules.today",
 ]
 
 MIDDLEWARE = [

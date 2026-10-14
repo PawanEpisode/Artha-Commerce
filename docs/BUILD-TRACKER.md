@@ -178,3 +178,16 @@ Built: AI-suggested cards behind the fail-closed flag `recall_ai`, the word diff
 | W5-5 | F-06: register `core.suggestion_source_port` for `wrong_answers` | Open (F-06) | Until then that source answers 422 `source_unavailable` |
 | W5-6 | Run the recall, core and notes pytest once on a real PostgreSQL | Open (owner) | Verified on SQLite here |
 | W5-7 | Manual device checks of the suggestion screen on a phone | Not run, accepted | Automated component, keyboard and axe tests stand in |
+
+## 11. F-13 Today (flag `today_plan`, fail closed): waves planned 2026-10-14, W1 built
+
+Plan: `docs/F-13-BUILD-WAVES.md` (W1 to W6 for R1, W7 to W9 for R2). W1 (API engine: schema, registry, pure composition, state machine, deep-link allow-list) is built and tested; nothing is user-visible and no endpoint exists yet.
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| F13-1 | Run `pnpm lint:api && pnpm test:api` once on the real repo and on PostgreSQL (migration `today.0001`, RLS test) | Open (owner) | W1 was verified on SQLite in isolation |
+| F13-2 | Approve the three PRD changes in `docs/F-13-BUILD-WAVES.md` section 5 (rotation guarantee needs a 3 day hard priority, unknown hours give 60 minutes, never-touched counts as starved) | Open (owner) | |
+| F13-3 | Create the PostHog flag `today_plan` at 0 percent | Open (owner) | Needed from W2 |
+| F13-4 | `core/today_port.py` (Recall W3 stand-in) is bridged in W2 by the provider `recall.legacy`; delete both once Recall registers on `today.registry` | Planned | |
+| F13-5 | Practice provider waits for F-06 | Parked | R1 ships with coverage, Recall and own tasks |
+| F13-6 | F-02 extensions: `coverage.selectors.study_state`, event `coverage_event_recorded`, AUD-018 UTC date fix | Planned (W2, W3) | |

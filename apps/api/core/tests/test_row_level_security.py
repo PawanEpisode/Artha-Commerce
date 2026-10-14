@@ -9,7 +9,18 @@ from django.apps import apps
 from django.db import connection
 from django.db.models.signals import post_migrate
 
-APP_LABELS = ("syllabus", "coverage", "tracking", "focus", "profiles", "notifications", "core", "media", "notes")
+APP_LABELS = (
+    "syllabus",
+    "coverage",
+    "tracking",
+    "focus",
+    "profiles",
+    "notifications",
+    "core",
+    "media",
+    "notes",
+    "today",
+)
 
 
 def app_tables(*labels: str) -> list[str]:
@@ -71,6 +82,16 @@ def test_the_notification_tables_are_covered():
         "notifications_delivery",
         "notifications_scheduledjob",
         "notifications_actiontoken",
+    } <= set(TABLES)
+
+
+def test_the_today_tables_are_covered():
+    assert {
+        "today_dayplan",
+        "today_task",
+        "today_taskevidence",
+        "today_settings",
+        "today_providerconfig",
     } <= set(TABLES)
 
 

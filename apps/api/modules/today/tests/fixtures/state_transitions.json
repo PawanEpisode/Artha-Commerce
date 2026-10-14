@@ -1,0 +1,61 @@
+{
+  "description": "Task state machine cases (PRD 5.2, ERD 3.5), run by Python and by the web mirror in lib/transitions.ts. 'to' is the new state; 'error' is invalid_transition (with the allowed actions) or undo_expired.",
+  "transitions": [
+    {"name": "start a suggested task", "state": "suggested", "action": "start", "to": "accepted"},
+    {"name": "pin a suggested task", "state": "suggested", "action": "pin", "to": "accepted"},
+    {"name": "tick a suggested task", "state": "suggested", "action": "complete_manual", "to": "done"},
+    {"name": "event completes a suggested task", "state": "suggested", "action": "complete_event", "to": "done"},
+    {"name": "tick an accepted task", "state": "accepted", "action": "complete_manual", "to": "done"},
+    {"name": "event completes an accepted task", "state": "accepted", "action": "complete_event", "to": "done"},
+    {"name": "skip a suggested task", "state": "suggested", "action": "skip", "to": "skipped"},
+    {"name": "skip an accepted task", "state": "accepted", "action": "skip", "to": "skipped"},
+    {"name": "swap a suggested task", "state": "suggested", "action": "swap", "to": "skipped"},
+    {"name": "swap an accepted task", "state": "accepted", "action": "swap", "to": "skipped"},
+    {"name": "snooze a suggested task", "state": "suggested", "action": "snooze", "to": "snoozed"},
+    {"name": "snooze an accepted task", "state": "accepted", "action": "snooze", "to": "snoozed"},
+    {"name": "expire a suggested task", "state": "suggested", "action": "expire", "to": "expired"},
+    {"name": "expire an accepted task", "state": "accepted", "action": "expire", "to": "expired"},
+    {"name": "expire a skipped task", "state": "skipped", "action": "expire", "to": "expired"},
+    {"name": "expire a snoozed task", "state": "snoozed", "action": "expire", "to": "expired"},
+
+    {"name": "start again is a no-op", "state": "accepted", "action": "start", "to": "accepted"},
+    {"name": "tick again is a no-op", "state": "done", "action": "complete_manual", "to": "done"},
+    {"name": "event after a tick is a no-op", "state": "done", "action": "complete_event", "to": "done"},
+    {"name": "skip again is a no-op", "state": "skipped", "action": "skip", "to": "skipped"},
+    {"name": "snooze again is a no-op", "state": "snoozed", "action": "snooze", "to": "snoozed"},
+    {"name": "expire again is a no-op", "state": "expired", "action": "expire", "to": "expired"},
+
+    {"name": "restore a skipped task the same day", "state": "skipped", "action": "restore", "same_day": true, "to": "suggested"},
+    {"name": "cannot restore a skipped task on another day", "state": "skipped", "action": "restore", "same_day": false, "error": "invalid_transition", "allowed": ["expire"]},
+    {"name": "own snoozed task moves to its new date", "state": "snoozed", "action": "move", "origin": "user", "to": "suggested"},
+    {"name": "provider snoozed task stays suppressed", "state": "snoozed", "action": "move", "origin": "provider", "error": "invalid_transition", "allowed": ["expire"]},
+
+    {"name": "undo a tick back to suggested", "state": "done", "action": "undo", "prev_state": "suggested", "within_undo": true, "to": "suggested"},
+    {"name": "undo a tick back to accepted", "state": "done", "action": "undo", "prev_state": "accepted", "within_undo": true, "to": "accepted"},
+    {"name": "undo after the window", "state": "done", "action": "undo", "prev_state": "suggested", "within_undo": false, "error": "undo_expired"},
+    {"name": "undo with nothing to return to", "state": "done", "action": "undo", "prev_state": null, "within_undo": true, "error": "undo_expired"},
+    {"name": "undo something that is not done", "state": "suggested", "action": "undo", "prev_state": "suggested", "within_undo": true, "error": "invalid_transition", "allowed": ["start", "pin", "complete_manual", "complete_event", "skip", "swap", "snooze", "expire"]},
+
+    {"name": "a stale skip cannot reopen a done task", "state": "done", "action": "skip", "error": "invalid_transition", "allowed": ["undo"]},
+    {"name": "a stale snooze cannot reopen a done task", "state": "done", "action": "snooze", "error": "invalid_transition", "allowed": ["undo"]},
+    {"name": "cannot start a done task", "state": "done", "action": "start", "error": "invalid_transition", "allowed": ["undo"]},
+    {"name": "cannot tick a skipped task", "state": "skipped", "action": "complete_manual", "error": "invalid_transition", "allowed": ["restore", "expire"]},
+    {"name": "cannot snooze a skipped task", "state": "skipped", "action": "snooze", "error": "invalid_transition", "allowed": ["restore", "expire"]},
+    {"name": "cannot start a snoozed task", "state": "snoozed", "action": "start", "origin": "user", "error": "invalid_transition", "allowed": ["move", "expire"]},
+
+    {"name": "late event completes yesterday's expired task inside the grace window", "state": "expired", "action": "complete_event", "within_grace": true, "to": "done"},
+    {"name": "late event after the grace window is ignored", "state": "expired", "action": "complete_event", "within_grace": false, "error": "invalid_transition", "allowed": []},
+    {"name": "a manual tick cannot complete an expired task", "state": "expired", "action": "complete_manual", "within_grace": true, "error": "invalid_transition", "allowed": ["complete_event"]},
+    {"name": "an unknown action is rejected", "state": "suggested", "action": "teleport", "error": "invalid_transition", "allowed": ["start", "pin", "complete_manual", "complete_event", "skip", "swap", "snooze", "expire"]}
+  ],
+  "conflicts": [
+    {"name": "done beats an older skip", "state": "suggested", "action": "complete_manual", "current_ts": 200, "client_ts": 100, "wins": true},
+    {"name": "event completion beats a newer skip", "state": "skipped", "action": "complete_event", "current_ts": 100, "client_ts": 200, "wins": true},
+    {"name": "a stale skip never beats done", "state": "done", "action": "skip", "current_ts": 100, "client_ts": 900, "wins": false},
+    {"name": "a stale snooze never beats done", "state": "done", "action": "snooze", "current_ts": 100, "client_ts": 900, "wins": false},
+    {"name": "undo is applied to a done task", "state": "done", "action": "undo", "current_ts": 100, "client_ts": 200, "wins": true},
+    {"name": "later skip wins over an earlier snooze", "state": "snoozed", "action": "skip", "current_ts": 100, "client_ts": 200, "wins": true},
+    {"name": "earlier skip loses to a later snooze", "state": "snoozed", "action": "skip", "current_ts": 200, "client_ts": 100, "wins": false},
+    {"name": "equal timestamps: the incoming write wins", "state": "accepted", "action": "skip", "current_ts": 100, "client_ts": 100, "wins": true}
+  ]
+}

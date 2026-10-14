@@ -1,0 +1,38 @@
+{
+  "description": "PRD 5.6 worked example: Aarav, budget 65 minutes, 60 days to the exam (consolidate), two focus papers. The web mirror reads this file too.",
+  "context": {
+    "local_date": "2026-10-14",
+    "phase": "consolidate",
+    "days_to_exam": 60,
+    "budget_minutes": 65,
+    "focus_papers": 2,
+    "max_tasks": 8,
+    "seed": 0,
+    "papers": [
+      {"key": "taxation", "days_untouched": 1},
+      {"key": "audit", "days_untouched": 1},
+      {"key": "costing", "days_untouched": 5}
+    ]
+  },
+  "candidates": [
+    {"id": "A", "paper": "taxation", "title": "Revise GST: ITC", "group": "revise", "slot": "revision", "min": 20, "u": 90, "i": 80, "w": 50, "f": 60, "score": 876},
+    {"id": "B", "paper": "taxation", "title": "5 MCQs: GST ITC", "group": "practice", "slot": "mcq", "min": 8, "u": 40, "i": 80, "w": 70, "f": 50, "score": 708},
+    {"id": "C", "paper": "taxation", "title": "Read Sec 17(5)", "group": "learn", "slot": "section", "min": 12, "u": 50, "i": 70, "w": 40, "f": 80, "score": 570},
+    {"id": "D", "paper": "audit", "title": "Revise SA 230", "group": "revise", "slot": "revision", "min": 15, "u": 60, "i": 60, "w": 60, "f": 90, "score": 774},
+    {"id": "E", "paper": "audit", "title": "Practical question", "group": "practice", "slot": "practical", "min": 20, "u": 30, "i": 70, "w": 80, "f": 60, "score": 684},
+    {"id": "F", "paper": "costing", "title": "Recall 3 formulas", "group": "revise", "slot": "formula", "min": 5, "u": 50, "i": 60, "w": 70, "f": 95, "score": 771},
+    {"id": "I", "paper": "costing", "title": "Read: process costing", "group": "learn", "slot": "read", "min": 40, "u": 40, "i": 60, "w": 30, "f": 70, "score": 470},
+    {"id": "G", "paper": null, "title": "Recall 12 cards", "group": "revise", "slot": "recall", "min": 6, "u": 70, "i": 60, "w": 50, "f": 40, "score": 696},
+    {"id": "H", "paper": null, "title": "Read 3 amendments", "group": "news", "slot": "amendment", "min": 10, "u": 60, "i": 70, "w": 0, "f": 50, "score": 506}
+  ],
+  "expected": {
+    "selection_order": ["A", "F", "G", "B", "H", "C"],
+    "display_order": ["B", "C", "A", "F", "G", "H"],
+    "tiles": [["taxation", ["B", "C", "A"]], ["costing", ["F"]], [null, ["G", "H"]]],
+    "planned_minutes": 61,
+    "starter": "F",
+    "focus": ["taxation", "costing"],
+    "starved": ["costing"],
+    "needs": {"taxation": 1230, "audit": 1116, "costing": 1156}
+  }
+}
