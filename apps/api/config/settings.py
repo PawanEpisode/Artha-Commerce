@@ -152,6 +152,10 @@ REST_FRAMEWORK = {
         "tracking_reports": "120/min",
         "tracking_export": "6/hour",
         "focus_write": "120/min",
+        # F-13 Today: reads and writes per student, and the daily cap on regenerating a plan
+        "today_read": "120/min",
+        "today_write": "120/min",
+        "today_regen": "6/day",
         # F-16 profile, onboarding and account data
         "profile_write": "30/min",
         "avatar_write": "10/hour",
@@ -203,6 +207,8 @@ POSTHOG_API_KEY = env("POSTHOG_API_KEY")
 POSTHOG_HOST = env("POSTHOG_HOST", "https://us.i.posthog.com")  # the real host, not the web's /ingest proxy
 POSTHOG_FLAG_TIMEOUT_SECONDS = float(env("POSTHOG_FLAG_TIMEOUT_SECONDS", "1.5"))
 FEATURE_FLAG_CACHE_SECONDS = int(env("FEATURE_FLAG_CACHE_SECONDS", "60"))
+# F-13 Today runs its task providers in a small thread pool; "0" runs them one after another (debugging, tests).
+TODAY_PROVIDER_PARALLEL = env("TODAY_PROVIDER_PARALLEL", "1") == "1"
 # --- Notifications (X-01.1) -------------------------------------------------------------------
 # Master kill switch, read at start-up and OFF by default: nothing is scheduled or sent until it is set to "true".
 # The PostHog flag `push_notifications` (strict for sending) is the fast switch; this is the hard stop.

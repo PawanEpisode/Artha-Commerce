@@ -5,5 +5,10 @@ class TodayConfig(AppConfig):
     name = "modules.today"
     label = "today"
 
-    # Providers register themselves from their own `AppConfig.ready()` (see `registry.py`); Today imports no provider code.
-    # The completion subscribers, the account eraser and exporter, and the tick job are wired here in later waves (W3, W6).
+    def ready(self):
+        from . import legacy_bridge
+
+        # The only provider Today itself registers: Recall's stand-in port. Real providers register from their own
+        # `AppConfig.ready()` (see `registry.py`). Completion subscribers, the account eraser and exporter, and the tick job
+        # are wired here in later waves (W3, W6).
+        legacy_bridge.register()

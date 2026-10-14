@@ -51,7 +51,7 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | Confirm the Vercel cron or `pg_cron` route for `POST internal/tick/` (Q-F13-14) | W6 |
 | Review the phase thresholds and budget formula after the first 100 users | Beta |
 
-## 5. Changes to the PRD to approve (found while building W1)
+## 5. Changes to the PRD (found while building W1). Approved by the owner 2026-10-15
 
 | # | PRD text | What the tests showed | What W1 does instead |
 | --- | --- | --- | --- |
@@ -64,4 +64,5 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | Wave | State |
 | --- | --- |
 | W1 Engine | Built 2026-10-14. 222 tests green (golden PRD 5.6, rules, 300-example properties, rotation simulation, state cases, deep links, registry, model constraints) on SQLite; `ruff check` and `ruff format --check` clean. Not yet run on PostgreSQL or inside the full repo suite (the linked computer has no usable Python environment), run `pnpm lint:api && pnpm test:api` once |
-| W2 to W6 | Not started |
+| W2 Generate and read | Built 2026-10-15. Provider runner, context builder, single-flight `open_today`, endpoints `open`, `plan`, `preview`, `history`, `settings`, `coverage.study_state` and coverage providers, `recall.legacy` bridge, admin, `sync_today_providers`, `docs/F-13-API-CONTRACT.md` with a drift test. Today and coverage-provider suites green on SQLite and PostgreSQL (two simultaneous opens give one plan, verified on PostgreSQL; 401/403/404 matrix; `GET plan/` issues no writes). The flag negative cache item was already done in the repo and is dropped. AUD-018: coverage still derives `next_revision_due` from the UTC date; Today reads local dates and a test pins the current behaviour. Differences from the PRD are listed in the contract doc |
+| W3 to W6 | Not started |

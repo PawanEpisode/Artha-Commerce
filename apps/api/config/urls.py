@@ -18,4 +18,5 @@ urlpatterns = [
     path("api/v1/", include("modules.media.urls")),
     path("api/v1/", include("modules.notes.urls")),
     path("api/v1/", include("modules.recall.urls")),
+    path("api/v1/", include("modules.today.urls")),
 ]

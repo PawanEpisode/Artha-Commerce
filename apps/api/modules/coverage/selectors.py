@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
+from zoneinfo import ZoneInfo
 
 from django.db.models import Q, QuerySet
 from django.db.models.functions import Coalesce
@@ -409,3 +410,140 @@ def tracked_study_seconds(user_id, source_refs) -> dict[tuple[str, object], int]
     for ref, chapter_id, value in rows:
         totals[(ref, chapter_id)] += int(value or 0)
     return dict(totals)
+
+
+# ---- the student's study state as plain data (F-13 Today, and any module that plans a day) ----------------------------------
+
+
+@dataclass(frozen=True)
+class NextTopic:
+    id: object
+    key: str
+    name: str
+
+
+@dataclass(frozen=True)
+class ChapterState:
+    chapter_id: object
+    key: str
+    name: str
+    section: str
+    subject_id: object
+    sort_order: int
+    marks_weight: float
+    est_study_minutes: int | None
+    status: str
+    coverage_pct: int
+    read_pct: int
+    revision_count: int
+    next_revision_due: date | None
+    last_studied_on: date | None  # the student's local date, never UTC
+    topics_total: int
+    topics_done: int
+    next_topic: NextTopic | None  # the first active topic not done, in syllabus order
+
+
+@dataclass(frozen=True)
+class SubjectState:
+    subject_id: object
+    key: str
+    name: str
+    paper_number: int | None
+    kind: str
+    coverage_pct: int
+    last_studied_on: date | None
+    chapters: tuple[ChapterState, ...]  # active, not excluded, in syllabus order
+
+
+@dataclass(frozen=True)
+class StudyState:
+    enrollment_id: object
+    scheme_id: object
+    subjects: tuple[SubjectState, ...]  # only papers the student studies (excluded electives are absent)
+    had_activity: bool
+
+
+def study_state(user_id, enrollment: Enrollment, tz: str = "UTC") -> StudyState:
+    """
+    One read of what the student has and has not covered, as frozen values with no models in them. Dates are the student's
+    local dates (`tz`), so "days untouched" and "overdue" mean what the student sees on their calendar. Three queries.
+    """
+    zone = ZoneInfo(tz)
+
+    def local(moment):
+        return moment.astimezone(zone).date() if moment else None
+
+    chapters = list(
+        Chapter.objects.filter(subject__scheme=enrollment.scheme, subject__is_active=True, is_active=True)
+        .select_related("subject")
+        .order_by("subject__sort_order", "subject__key", "sort_order", "key")
+    )
+    progress = {
+        p.chapter_id: p
+        for p in ChapterProgress.objects.filter(enrollment=enrollment, chapter_id__in=[c.id for c in chapters])
+    }
+    topics: dict = defaultdict(list)
+    for t in Topic.objects.filter(chapter_id__in=[c.id for c in chapters], is_active=True).order_by(
+        "sort_order", "key"
+    ):
+        topics[t.chapter_id].append(t)
+    done_ids = set(
+        TopicProgress.objects.filter(user_id=user_id, topic__chapter__in=chapters, is_done=True).values_list(
+            "topic_id", flat=True
+        )
+    )
+    rollups = rollups_for_enrollment(enrollment)
+
+    by_subject: dict = defaultdict(list)
+    subjects: dict = {}
+    for c in chapters:
+        p = progress.get(c.id)
+        if p is not None and p.is_excluded:
+            continue
+        subjects[c.subject_id] = c.subject
+        rows = topics.get(c.id, [])
+        next_topic = next((NextTopic(t.id, t.key, t.name) for t in rows if t.id not in done_ids), None)
+        by_subject[c.subject_id].append(
+            ChapterState(
+                chapter_id=c.id,
+                key=c.key,
+                name=c.name,
+                section=c.section,
+                subject_id=c.subject_id,
+                sort_order=c.sort_order,
+                marks_weight=c.marks_weight,
+                est_study_minutes=c.est_study_minutes,
+                status=p.status if p else ChapterProgress.Status.NOT_STARTED,
+                coverage_pct=p.coverage_pct if p else 0,
+                read_pct=p.read_pct if p else 0,
+                revision_count=p.revision_count if p else 0,
+                next_revision_due=p.next_revision_due if p else None,
+                last_studied_on=local(p.last_studied_at) if p else None,
+                topics_total=len(rows),
+                topics_done=sum(1 for t in rows if t.id in done_ids),
+                next_topic=next_topic,
+            )
+        )
+    out = []
+    for subject_id, rows in by_subject.items():
+        s = subjects[subject_id]
+        rollup = rollups.get(("subject", subject_id))
+        touched = [r.last_studied_on for r in rows if r.last_studied_on]
+        out.append(
+            SubjectState(
+                subject_id=subject_id,
+                key=s.key,
+                name=s.name,
+                paper_number=s.paper_number,
+                kind=s.kind,
+                coverage_pct=rollup.pct_simple if rollup else 0,
+                last_studied_on=max(touched) if touched else None,
+                chapters=tuple(rows),
+            )
+        )
+    return StudyState(
+        enrollment_id=enrollment.id,
+        scheme_id=enrollment.scheme_id,
+        subjects=tuple(out),
+        had_activity=any(r.last_studied_on for sub in out for r in sub.chapters),
+    )

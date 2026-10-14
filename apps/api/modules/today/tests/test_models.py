@@ -134,7 +134,7 @@ def test_state_columns_only_exist_in_their_own_state():
     rejected(lambda: task(p, dedupe_key="g", end_reason="day_ended"))
     rejected(lambda: task(p, dedupe_key="h", state="skipped", skip_reason="bored"))
     rejected(lambda: task(p, dedupe_key="i", state="expired", end_reason="whim"))
-    rejected(lambda: task(p, dedupe_key="j", state="done", completed_at=now, completed_via="telepathy"))
+    rejected(lambda: task(p, dedupe_key="j", state="done", completed_at=now, completed_via="robot"))
     task(p, dedupe_key="ok1", state="done", completed_at=now, completed_via="event")
     task(p, dedupe_key="ok2", state="snoozed", snoozed_until=DAY + timedelta(days=1))
     task(p, dedupe_key="ok3", state="skipped", skip_reason="swapped")
