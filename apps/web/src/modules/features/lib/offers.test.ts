@@ -10,6 +10,9 @@ const flagsOn: FeatureViewer['flags'] = {
   syllabus_coverage: true,
   notes: true,
   recall_system: true,
+  pyq_bank: true,
+  question_bank: true,
+  mcq_bank: true,
 }
 
 const guest: FeatureViewer = { signedIn: false, flags: flagsOn }
@@ -61,6 +64,7 @@ describe('groupFeatures', () => {
       'streaks-analytics',
       'smart-notes',
       'revision',
+      'past-papers',
     ])
     expect(soon.map((o) => o.feature.slug)).toContain('study-planner')
     expect(soon.some((o) => o.feature.status === 'live')).toBe(false)

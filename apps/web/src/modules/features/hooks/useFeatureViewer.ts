@@ -20,6 +20,9 @@ export function useFeatureViewer(): FeatureViewer {
     notes: useFeatureFlag('notes'),
     // Fails closed, like the nav link: the card says Coming soon until PostHog explicitly turns the flag on.
     recall_system: useFeatureFlag('recall_system', { strict: true }),
+    pyq_bank: useFeatureFlag('pyq_bank', { strict: true }),
+    question_bank: useFeatureFlag('question_bank', { strict: true }),
+    mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
   }
   const overview = useOverview(signedIn && flags.syllabus_coverage)
   const sessions = useSessionsPage({}, signedIn && flags.time_tracker)

@@ -16,9 +16,7 @@ def load_env(env_path: Path):
             key, _, val = line.partition("=")
             key = key.strip()
             val = val.strip()
-            if (val.startswith('"') and val.endswith('"')) or (
-                val.startswith("'") and val.endswith("'")
-            ):
+            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
                 val = val[1:-1]
             os.environ.setdefault(key, val)
 

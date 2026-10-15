@@ -14,6 +14,9 @@ export function useWorkspaceNav() {
     recall_system: useFeatureFlag('recall_system', { strict: true }),
     today_plan: useFeatureFlag('today_plan', { strict: true }),
     today_planner: useFeatureFlag('today_planner', { strict: true }),
+    question_bank: useFeatureFlag('question_bank', { strict: true }),
+    pyq_bank: useFeatureFlag('pyq_bank', { strict: true }),
+    mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
   }
   return {
     study: visibleLinks(STUDY_LINKS, enabled),

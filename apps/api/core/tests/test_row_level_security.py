@@ -22,6 +22,8 @@ APP_LABELS = (
     "today",
     "questionbank",
     "practice",
+    "pyq",
+    "mcqbank",
 )
 
 
@@ -145,6 +147,31 @@ def test_the_practice_tables_are_covered():
         "practice_dailyrollup",
         "practice_regradejob",
         "practice_settings",
+    } <= set(TABLES)
+
+
+def test_the_pyq_tables_are_covered():
+    assert {
+        "pyq_paper",
+        "pyq_choicegroup",
+        "pyq_paperquestion",
+        "pyq_paperlink",
+        "pyq_askedcache",
+        "pyq_dailyset",
+        "pyq_dailysetitem",
+    } <= set(TABLES)
+
+
+def test_the_mcqbank_tables_are_covered():
+    assert {
+        "mcqbank_set",
+        "mcqbank_patternprofile",
+        "mcqbank_testpreset",
+        "mcqbank_externallog",
+        "mcqbank_refsource",
+        "mcqbank_adaptiverun",
+        "mcqbank_adaptiveround",
+        "mcqbank_abilityestimate",
     } <= set(TABLES)
 
 

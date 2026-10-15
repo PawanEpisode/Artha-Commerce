@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     "modules.questionbank",
     "modules.practice",
     "modules.pyq",
+    "modules.mcqbank",
 ]
 
 MIDDLEWARE = [

@@ -31,9 +31,25 @@ export type FeatureIconKey =
   | 'bell-ring'
 
 export type LiveToolPath =
-  '/app/focus' | '/app/syllabus' | '/app/tracker' | '/app/tracker/reports' | '/app/notes' | '/app/recall'
+  | '/app/focus'
+  | '/app/syllabus'
+  | '/app/tracker'
+  | '/app/tracker/reports'
+  | '/app/notes'
+  | '/app/recall'
+  | '/app/pyq'
+  | '/app/mcq'
+  | '/app/questions'
 
-export type FeatureFlagName = 'focus_timer' | 'time_tracker' | 'syllabus_coverage' | 'notes' | 'recall_system'
+export type FeatureFlagName =
+  | 'focus_timer'
+  | 'time_tracker'
+  | 'syllabus_coverage'
+  | 'notes'
+  | 'recall_system'
+  | 'pyq_bank'
+  | 'question_bank'
+  | 'mcq_bank'
 
 /** Where a shipped tool opens. Absent on features that are not built yet. */
 export interface FeatureTool {

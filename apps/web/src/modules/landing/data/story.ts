@@ -157,6 +157,15 @@ export const featureBeats: readonly FeatureBeat[] = [
     cta: 'See revision',
   },
   {
+    slug: 'past-papers',
+    rail: 'Past papers',
+    headline: 'The examiner has already told you what they ask.',
+    insight:
+      'RTP, MTP and past attempts are not a separate hobby. They belong next to the chapter, so you can see which topics keep returning and which illustrations you have never written.',
+    points: ['Organised by subject and chapter', 'Filter by attempt', 'Track what you have already solved'],
+    cta: 'See past papers',
+  },
+  {
     slug: 'today',
     rail: 'Today',
     headline: 'Open the app and know what to study, paper by paper.',
@@ -207,15 +216,6 @@ export const featureBeats: readonly FeatureBeat[] = [
       'Save a useful answer into your notes',
     ],
     cta: 'How doubts will work',
-  },
-  {
-    slug: 'past-papers',
-    rail: 'Past papers',
-    headline: 'The examiner has already told you what they ask.',
-    insight:
-      'RTP, MTP and past attempts are not a separate hobby. They belong next to the chapter, so you can see which topics keep returning and which illustrations you have never written.',
-    points: ['Organised by subject and chapter', 'Filter by attempt', 'Track what you have already solved'],
-    cta: 'How past papers will work',
   },
   {
     slug: 'amendment-updates',

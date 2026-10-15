@@ -8,6 +8,9 @@ export type WorkspaceFlag =
   | 'recall_system'
   | 'today_plan'
   | 'today_planner'
+  | 'question_bank'
+  | 'pyq_bank'
+  | 'mcq_bank'
 
 export interface WorkspaceLink {
   to:
@@ -18,6 +21,9 @@ export interface WorkspaceLink {
     | '/app/syllabus'
     | '/app/notes'
     | '/app/recall'
+    | '/app/questions'
+    | '/app/pyq'
+    | '/app/mcq'
     | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
@@ -73,6 +79,24 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     description: 'Flashcards that come back just before you forget.',
     flag: 'recall_system',
   },
+  {
+    to: '/app/questions',
+    label: 'Questions',
+    description: 'Practise and review curated syllabus questions.',
+    flag: 'question_bank',
+  },
+  {
+    to: '/app/pyq',
+    label: 'Past papers',
+    description: 'Previous year exam papers and suggested answers.',
+    flag: 'pyq_bank',
+  },
+  {
+    to: '/app/mcq',
+    label: 'MCQ Bank',
+    description: 'Targeted multiple choice practice and ICMAI booklets.',
+    flag: 'mcq_bank',
+  },
 ]
 
 export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
@@ -94,6 +118,9 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   recall_system: true,
   today_plan: true,
   today_planner: true,
+  question_bank: true,
+  pyq_bank: true,
+  mcq_bank: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

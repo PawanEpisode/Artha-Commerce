@@ -148,7 +148,8 @@ export const features: Feature[] = [
       'Practise with past exam questions, revision and mock papers, organised by subject and chapter so you can target weak areas.',
     icon: 'file-clock',
     highlights: ['Organised by chapter', 'Filter by attempt', 'Track what you have solved'],
-    status: 'soon',
+    status: 'live',
+    tool: { to: '/app/pyq', cta: 'Explore past papers', flag: 'pyq_bank' },
   },
   {
     slug: 'amendment-updates',

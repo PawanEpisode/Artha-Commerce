@@ -11,6 +11,9 @@ const off = {
   recall_system: false,
   today_plan: false,
   today_planner: false,
+  question_bank: false,
+  pyq_bank: false,
+  mcq_bank: false,
 }
 
 describe('visibleLinks', () => {
@@ -23,6 +26,9 @@ describe('visibleLinks', () => {
       '/app/syllabus',
       '/app/notes',
       '/app/recall',
+      '/app/questions',
+      '/app/pyq',
+      '/app/mcq',
     ])
     expect(visibleLinks(SETTINGS_LINKS).map((link) => link.to)).toEqual([
       '/app/settings/today',
@@ -74,5 +80,13 @@ describe('visibleLinks', () => {
   it('shows Revision only when the recall_system flag is on', () => {
     expect(visibleLinks(STUDY_LINKS, off).map((link) => link.label)).toEqual([])
     expect(visibleLinks(STUDY_LINKS, { ...off, recall_system: true }).map((link) => link.to)).toEqual(['/app/recall'])
+  })
+
+  it('shows Questions, Past papers, and MCQ Bank only when their flags are on', () => {
+    expect(visibleLinks(STUDY_LINKS, { ...off, question_bank: true }).map((link) => link.to)).toEqual([
+      '/app/questions',
+    ])
+    expect(visibleLinks(STUDY_LINKS, { ...off, pyq_bank: true }).map((link) => link.to)).toEqual(['/app/pyq'])
+    expect(visibleLinks(STUDY_LINKS, { ...off, mcq_bank: true }).map((link) => link.to)).toEqual(['/app/mcq'])
   })
 })
