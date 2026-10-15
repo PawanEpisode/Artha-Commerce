@@ -7,7 +7,7 @@ student's own task text is personal data and stays out of the admin.
 from django.contrib import admin
 
 from . import registry
-from .models import DayPlan, ProviderConfig
+from .models import DayPlan, Milestone, ProviderConfig, ReplanEvent, StudyPlan
 
 
 @admin.register(ProviderConfig)
@@ -54,3 +54,55 @@ class DayPlanAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+
+class ReadOnlyAdmin(admin.ModelAdmin):
+    """Planner rows are explained here, never edited: the planner service is the only writer (support reads, it does not fix dates)."""
+
+    def get_readonly_fields(self, request, obj=None):
+        return [f.name for f in self.model._meta.fields]
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+class MilestoneInline(admin.TabularInline):
+    model = Milestone
+    extra = 0
+    can_delete = False
+    ordering = ("sort_order",)
+    fields = ("kind", "subject_key", "target_date", "original_target_date", "status", "remaining_minutes", "replan_no")
+    readonly_fields = fields
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+
+@admin.register(StudyPlan)
+class StudyPlanAdmin(ReadOnlyAdmin):
+    list_display = ("exam_date", "student", "status", "health", "shortfall_minutes", "replan_no", "last_replanned_at")
+    list_filter = ("status", "health")
+    date_hierarchy = "exam_date"
+    search_fields = ("user_id",)
+    inlines = [MilestoneInline]
+
+    @admin.display(description="Student")
+    def student(self, obj):
+        return str(obj.user_id)
+
+
+@admin.register(ReplanEvent)
+class ReplanEventAdmin(ReadOnlyAdmin):
+    list_display = ("created_at", "trigger", "health_before", "health_after", "moved_count", "option_chosen")
+    list_filter = ("trigger", "health_after", "option_chosen")
+    date_hierarchy = "created_at"
+    search_fields = ("user_id",)

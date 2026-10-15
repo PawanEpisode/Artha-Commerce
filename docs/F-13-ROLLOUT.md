@@ -9,6 +9,14 @@ Flag `today_plan` stays **off** until you open the cohort. Everything below is s
 4. Schedule the tick every 5 minutes (Vercel cron, pg_cron or any scheduler): `POST /api/v1/today/internal/tick/` with header `X-Today-Tick-Secret: <secret>` (or `Authorization: Bearer <secret>`). It is idempotent and has a budget of about 20 s, so overlapping calls are safe. It runs whatever the flag says.
 5. Check the response: it reports pregenerated, closed and pruned counts.
 
+### 1a. Scheduling the tick in Zoho Catalyst (step by step)
+1. Generate the secret: `openssl rand -hex 32` (it may equal `RECALL_TICK_SECRET`; a separate value is cleaner).
+2. Set `TODAY_TICK_SECRET=<value>` on the API host and redeploy. An empty value refuses every caller.
+3. Test by hand: `curl -i -X POST https://<api-host>/api/v1/today/internal/tick/ -H "X-Today-Tick-Secret: <value>"`. 200 with counts is good; 401/403 is a wrong secret; 404 means W6 is not deployed.
+4. Catalyst console, your project, Serverless, Cron, Create Cron. Name `today-tick`; schedule `*/5 * * * *` (UTC); target Webhook (HTTP).
+5. URL `https://<api-host>/api/v1/today/internal/tick/`, method `POST`, header `X-Today-Tick-Secret: <value>` (or `Authorization: Bearer <value>`), empty body. Save and enable.
+6. Check the first run in the Catalyst execution log (200) and in the API logs. Keep only one Today cron (no Vercel cron for it).
+
 ## 2. What the tick does
 - Pregenerates tomorrow's plan for students who opened a plan in the last 8 days (only when the flag is on for them).
 - Close sweep: a plan closes 3 hours after its day ends in the student's time zone. Open provider tasks expire (counted as skipped); open own tasks carry to the next day, at most 3 times, then expire.

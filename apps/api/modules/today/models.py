@@ -1,20 +1,23 @@
 """
-Tables for Today (F-13 R1, ERD section 2). Today stores decisions, not knowledge: a task row is a snapshot of one offer made to
-one student on one day; the truth about the underlying work stays in the owning module. `user_id` holds the Supabase user id by
+Tables for Today (F-13 R1 and, from migration 0002, the R2 planner; ERD section 2). Today stores decisions, not knowledge: a task
+row is a snapshot of one offer made to one student on one day; the truth about the underlying work stays in the owning module. `user_id` holds the Supabase user id by
 value (no cross-schema foreign key). `subject_id` and `chapter_id` are real foreign keys that become NULL if the syllabus row is
 removed; the stable `subject_key` and `chapter_key` copies keep links working across a scheme switch.
 
 Counters on `DayPlan` are recomputed from the tasks under the plan lock, never incremented (ERD 0.6).
 """
 
+import uuid
+
 from django.db import models
-from django.db.models import Q, TextField
-from django.db.models.functions import Cast, Length
+from django.db.models import F, Q, TextField, Value
+from django.db.models.functions import Cast, Greatest, Length
 from django.db.models.lookups import LessThanOrEqual
 
 from core.models import TimeStampedModel, UUIDModel
 
 from .domain import constants as c
+from .planner import constants as pc
 
 
 def _in(field: str, values) -> Q:
@@ -294,3 +297,158 @@ class ProviderConfig(models.Model):
 
     def __str__(self) -> str:
         return self.provider
+
+
+# ---- R2: the study planner (ERD 2.6 to 2.8). Plain numbers and dates only: nothing the student typed is stored here. ------------
+
+
+class StudyPlan(UUIDModel):
+    """The student's date-driven plan for one enrolment. At most one `active` per student and enrolment (partial unique index).
+
+    The numbers (`capacity_minutes`, `remaining_minutes`, `shortfall_minutes`) are what the pure planner computed at the last
+    check; the database keeps them consistent (`shortfall = max(0, remaining - capacity)`) and never negative.
+    """
+
+    user_id = models.UUIDField()
+    enrollment_id = models.UUIDField()  # by value (`coverage_enrollment.id`), validated through `coverage.selectors`
+    scheme_id = models.UUIDField()  # by value: the scheme the plan was built on
+    exam_date = models.DateField()
+    daily_minutes = models.SmallIntegerField()
+    utilisation_pct = models.SmallIntegerField(default=pc.UTILISATION_PCT_DEFAULT)
+    status = models.CharField(max_length=10, choices=_choices(pc.PLAN_STATUSES), default="active")
+    health = models.CharField(max_length=15, choices=_choices(pc.HEALTHS), default="unknown")
+    capacity_minutes = models.IntegerField(default=0)
+    remaining_minutes = models.IntegerField(default=0)
+    shortfall_minutes = models.IntegerField(default=0)
+    reading_deadline = models.DateField(null=True, blank=True)
+    revise_until = models.DateField(null=True, blank=True)
+    health_checked_at = models.DateTimeField(null=True, blank=True)
+    last_replanned_at = models.DateTimeField(null=True, blank=True)
+    replan_no = models.SmallIntegerField(default=0)
+    params = models.JSONField(default=dict)  # {"v": 1, "learn_share": 70, "exam_week_days": 7, "lanes": 2}
+    version = models.IntegerField(default=1)
+
+    class Meta:
+        db_table = "today_studyplan"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user_id", "enrollment_id"],
+                condition=Q(status="active"),
+                name="today_studyplan_one_active",
+            ),
+            models.CheckConstraint(condition=_in("status", pc.PLAN_STATUSES), name="today_studyplan_status_valid"),
+            models.CheckConstraint(condition=_in("health", pc.HEALTHS), name="today_studyplan_health_valid"),
+            models.CheckConstraint(
+                condition=Q(daily_minutes__gte=pc.DAILY_MINUTES_MIN, daily_minutes__lte=pc.DAILY_MINUTES_MAX),
+                name="today_studyplan_daily_range",
+            ),
+            models.CheckConstraint(
+                condition=Q(utilisation_pct__gte=pc.UTILISATION_PCT_MIN, utilisation_pct__lte=pc.UTILISATION_PCT_MAX),
+                name="today_studyplan_util_range",
+            ),
+            models.CheckConstraint(
+                condition=Q(capacity_minutes__gte=0, remaining_minutes__gte=0, shortfall_minutes__gte=0),
+                name="today_studyplan_minutes_nonneg",
+            ),
+            models.CheckConstraint(
+                condition=Q(shortfall_minutes=Greatest(Value(0), F("remaining_minutes") - F("capacity_minutes"))),
+                name="today_studyplan_shortfall_exact",
+            ),
+            models.CheckConstraint(
+                condition=Q(reading_deadline__isnull=True) | Q(reading_deadline__lte=F("exam_date")),
+                name="today_studyplan_deadline_order",
+            ),
+            models.CheckConstraint(condition=_json_size_ok("params", 2048), name="today_studyplan_params_size"),
+        ]
+        indexes = [models.Index(fields=["user_id", "status"], name="today_splan_user_status_idx")]
+
+    def __str__(self) -> str:
+        return f"{self.user_id} plan for {self.exam_date} ({self.health})"
+
+
+class Milestone(UUIDModel):
+    """One dated goal of a plan: finish reading, first revision or a mock for a paper, or the plan's `exam_week`.
+
+    `subject_key` is the stable key of the paper and survives a scheme switch; it is empty only for `exam_week`.
+    `original_target_date` is the first date, so the screen can say "moved by 6 days".
+    """
+
+    plan = models.ForeignKey(StudyPlan, on_delete=models.CASCADE, related_name="milestones")
+    user_id = models.UUIDField()
+    subject = models.ForeignKey("syllabus.Subject", null=True, blank=True, on_delete=models.SET_NULL, related_name="+")
+    subject_key = models.CharField(max_length=80, blank=True, default="")  # as long as `syllabus_subject.key`
+    kind = models.CharField(max_length=14, choices=_choices(pc.MILESTONE_KINDS))
+    target_date = models.DateField()
+    original_target_date = models.DateField()
+    remaining_minutes = models.IntegerField(default=0)
+    status = models.CharField(max_length=7, choices=_choices(pc.MILESTONE_STATUSES), default="pending")
+    done_at = models.DateTimeField(null=True, blank=True)
+    sort_order = models.SmallIntegerField(default=0)
+    replan_no = models.SmallIntegerField(default=0)  # the plan revision that last changed it
+
+    class Meta:
+        db_table = "today_milestone"
+        constraints = [
+            models.UniqueConstraint(fields=["plan", "kind", "subject_key"], name="today_milestone_once"),
+            models.CheckConstraint(condition=_in("kind", pc.MILESTONE_KINDS), name="today_milestone_kind_valid"),
+            models.CheckConstraint(condition=_in("status", pc.MILESTONE_STATUSES), name="today_milestone_status_valid"),
+            models.CheckConstraint(condition=Q(remaining_minutes__gte=0), name="today_milestone_minutes_nonneg"),
+            models.CheckConstraint(
+                condition=(Q(kind="exam_week") & Q(subject_key="")) | (~Q(kind="exam_week") & ~Q(subject_key="")),
+                name="today_milestone_key_matches_kind",
+            ),
+            models.CheckConstraint(
+                condition=(Q(status="done") & Q(done_at__isnull=False)) | (~Q(status="done") & Q(done_at__isnull=True)),
+                name="today_milestone_done_at_matches",
+            ),
+        ]
+        indexes = [
+            models.Index(
+                fields=["user_id", "target_date"],
+                name="today_milestone_open_idx",
+                condition=_in("status", pc.OPEN_MILESTONE_STATUSES),
+            )
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.kind} {self.subject_key or 'plan'} on {self.target_date}"
+
+
+class ReplanEvent(models.Model):
+    """Audit of one re-plan, so the student can see what moved and support can explain it. `option_chosen` is NULL while the options are pending."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    plan = models.ForeignKey(StudyPlan, on_delete=models.CASCADE, related_name="replan_events")
+    user_id = models.UUIDField()
+    trigger = models.CharField(max_length=13, choices=_choices(pc.REPLAN_TRIGGERS))
+    health_before = models.CharField(max_length=15, choices=_choices(pc.HEALTHS))
+    health_after = models.CharField(max_length=15, choices=_choices(pc.HEALTHS))
+    shortfall_before = models.IntegerField(default=0)
+    shortfall_after = models.IntegerField(default=0)
+    moved_count = models.SmallIntegerField(default=0)
+    option_chosen = models.CharField(max_length=15, null=True, blank=True, choices=_choices(pc.OPTION_CHOICES))  # noqa: DJ001 - NULL while pending; "" is not a choice
+    summary = models.JSONField(default=dict)  # {"v": 1, "moved": [...], "options": [...]}, at most 8 KB
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "today_replanevent"
+        constraints = [
+            models.CheckConstraint(condition=_in("trigger", pc.REPLAN_TRIGGERS), name="today_replan_trigger_valid"),
+            models.CheckConstraint(condition=_in("health_before", pc.HEALTHS), name="today_replan_before_valid"),
+            models.CheckConstraint(condition=_in("health_after", pc.HEALTHS), name="today_replan_after_valid"),
+            models.CheckConstraint(
+                condition=Q(option_chosen__isnull=True) | _in("option_chosen", pc.OPTION_CHOICES),
+                name="today_replan_option_valid",
+            ),
+            models.CheckConstraint(
+                condition=Q(shortfall_before__gte=0, shortfall_after__gte=0, moved_count__gte=0),
+                name="today_replan_numbers_nonneg",
+            ),
+            models.CheckConstraint(
+                condition=_json_size_ok("summary", pc.SUMMARY_MAX_CHARS), name="today_replan_summary_size"
+            ),
+        ]
+        indexes = [models.Index(fields=["plan", "-created_at"], name="today_replan_plan_created_idx")]
+
+    def __str__(self) -> str:
+        return f"{self.trigger}: {self.health_before} -> {self.health_after}"
