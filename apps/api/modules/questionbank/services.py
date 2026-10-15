@@ -139,8 +139,11 @@ def create_draft(
         source_url=labels.get("source_url", ""),
         source_ref=labels.get("source_ref", ""),
         source_year=labels.get("source_year"),
-        source_term_code=labels.get("source_term_code", ""),
-        difficulty=labels.get("difficulty"),
+        difficulty=(
+            {"easy": 1, "medium": 2, "hard": 3}.get(str(labels.get("difficulty")).lower())
+            if isinstance(labels.get("difficulty"), str)
+            else labels.get("difficulty")
+        ),
         bloom=labels.get("bloom", ""),
         nature=labels.get("nature", ""),
         marks=marks,

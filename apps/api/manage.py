@@ -8,7 +8,7 @@ def load_env(env_path: Path):
     """Load key-value pairs from .env into os.environ without overriding existing vars."""
     if not env_path.is_file():
         return
-    with open(env_path, "r", encoding="utf-8") as f:
+    with open(env_path, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith("#") or "=" not in line:

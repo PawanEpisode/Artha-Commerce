@@ -1,7 +1,8 @@
 """Errors Today raises. Each carries the machine-readable `code` the web branches on (see `core.exceptions`)."""
 
-from core.errors import CodedError
 from rest_framework import status
+
+from core.errors import CodedError
 
 
 class PlanNotGenerated(CodedError):

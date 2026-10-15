@@ -323,6 +323,14 @@ def progress_by_chapter(user_id: uuid.UUID, chapter_ids: Sequence[uuid.UUID]) ->
     return result
 
 
+def get_question_states(
+    user_id: uuid.UUID,
+    question_ids: Sequence[uuid.UUID],
+) -> list[QuestionState]:
+    """Returns QuestionState records for a student across specific questions."""
+    return list(QuestionState.objects.filter(user_id=user_id, question_id__in=question_ids))
+
+
 def state_stamp(user_id: uuid.UUID) -> str:
     """E-F06-1: State stamp for HTTP conditional headers and cache invalidation."""
     agg = QuestionState.objects.filter(user_id=user_id).aggregate(

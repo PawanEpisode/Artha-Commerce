@@ -14,10 +14,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 
-from core import events
 from django.db import transaction
 from django.db.models import Max
 from django.utils import timezone
+
+from core import events
 
 from . import generation, selectors, services
 from .domain import adapt

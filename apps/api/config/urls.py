@@ -21,4 +21,5 @@ urlpatterns = [
     path("api/v1/", include("modules.today.urls")),
     path("api/v1/", include("modules.questionbank.urls")),
     path("api/v1/practice/", include("modules.practice.urls")),
+    path("api/v1/pyq/", include("modules.pyq.urls")),
 ]

@@ -82,3 +82,59 @@ export async function reportQuestion(
     body: JSON.stringify(payload),
   })
 }
+
+export interface CsvImportResult {
+  total_rows: number
+  imported_count: number
+  errors: string[]
+}
+
+export async function importQuestionsCsv(csvText: string, autoPublish = false): Promise<CsvImportResult> {
+  return await api<CsvImportResult>('/questionbank/editor/import-csv/', {
+    method: 'POST',
+    body: JSON.stringify({ csv_text: csvText, auto_publish: autoPublish }),
+  })
+}
+
+export interface ReviewQueueItem {
+  id: string
+  question_id: string
+  version_id: string
+  kind: string
+  status: string
+  stem_head: string
+  question_kind: string
+  submitted_at: string | null
+  sla_due_at: string | null
+}
+
+export async function getEditorReviewQueue(status = 'pending'): Promise<ReviewQueueItem[]> {
+  const res = await api<{ items: ReviewQueueItem[] }>(`/questionbank/editor/review-queue/?status=${status}`)
+  return res.items
+}
+
+export interface EditorReportItem {
+  id: string
+  question_id: string
+  version_id: string
+  kind: string
+  message: string
+  status: string
+  stem_head: string
+  created_at: string
+}
+
+export async function getEditorReports(status = 'open'): Promise<EditorReportItem[]> {
+  const res = await api<{ items: EditorReportItem[] }>(`/questionbank/editor/reports/?status=${status}`)
+  return res.items
+}
+
+export async function resolveEditorReport(
+  reportId: string,
+  payload: { status?: string; note?: string },
+): Promise<{ report_id: string; status: string }> {
+  return await api<{ report_id: string; status: string }>(`/questionbank/editor/reports/${reportId}/resolve/`, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  })
+}

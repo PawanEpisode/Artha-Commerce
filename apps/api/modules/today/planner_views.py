@@ -5,12 +5,13 @@ the owner opens the beta), parse, call a service or a selector, serialise. `GET`
 
 from __future__ import annotations
 
-from core.permissions import flag_required
 from django.utils import timezone
 from rest_framework import status as http
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
+
+from core.permissions import flag_required
 
 from . import adaptive_services, generation, planner_selectors, planner_services, serializers
 from . import planner_serializers as ps

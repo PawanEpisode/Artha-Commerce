@@ -333,3 +333,112 @@ class MergeDuplicateView(QuestionBankBaseView):
             canonical_id=data["canonical_id"],
         )
         return Response({"status": "merged"})
+
+
+class ImportQuestionsCsvView(QuestionBankBaseView):
+    permission_classes = [IsAuthenticated, IsEditor]
+    throttle_scope = "qb_write"
+
+    def post(self, request):
+        csv_text = request.data.get("csv_text")
+        if not csv_text and "file" in request.FILES:
+            csv_text = request.FILES["file"].read().decode("utf-8", errors="replace")
+
+        if not csv_text:
+            return Response(
+                {"error": {"code": "missing_data", "message": "csv_text or file is required."}},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        auto_publish = bool(request.data.get("auto_publish", False))
+        from .domain.csv_importer import parse_and_import_questions_csv
+
+        result = parse_and_import_questions_csv(csv_text, request.user.id, auto_publish=auto_publish)
+        return Response(result, status=status.HTTP_201_CREATED)
+
+
+class EditorReviewQueueView(QuestionBankBaseView):
+    permission_classes = [IsAuthenticated, IsEditor]
+    throttle_scope = "qb_read"
+
+    def get(self, request):
+        from .models import Review
+
+        status_filter = request.query_params.get("status", "pending")
+        reviews = (
+            Review.objects.select_related("question", "version")
+            .filter(status=status_filter)
+            .order_by("sla_due_at")[:50]
+        )
+
+        items = [
+            {
+                "id": str(r.id),
+                "question_id": str(r.question_id),
+                "version_id": str(r.version_id),
+                "kind": r.kind,
+                "status": r.status,
+                "stem_head": r.question.stem_head,
+                "question_kind": r.question.kind,
+                "submitted_at": r.submitted_at.isoformat() if r.submitted_at else None,
+                "sla_due_at": r.sla_due_at.isoformat() if r.sla_due_at else None,
+            }
+            for r in reviews
+        ]
+        return Response({"items": items})
+
+
+class EditorReportsListView(QuestionBankBaseView):
+    permission_classes = [IsAuthenticated, IsEditor]
+    throttle_scope = "qb_read"
+
+    def get(self, request):
+        from .models import Report
+
+        status_filter = request.query_params.get("status", "open")
+        reports = (
+            Report.objects.select_related("question", "version")
+            .filter(status=status_filter)
+            .order_by("-created_at")[:50]
+        )
+
+        items = [
+            {
+                "id": str(r.id),
+                "question_id": str(r.question_id),
+                "version_id": str(r.version_id),
+                "kind": r.kind,
+                "message": r.message,
+                "status": r.status,
+                "stem_head": r.question.stem_head,
+                "created_at": r.created_at.isoformat(),
+            }
+            for r in reports
+        ]
+        return Response({"items": items})
+
+
+class EditorResolveReportView(QuestionBankBaseView):
+    permission_classes = [IsAuthenticated, IsEditor]
+    throttle_scope = "qb_write"
+
+    def post(self, request, pk):
+        from django.utils import timezone
+
+        from .models import Report
+
+        try:
+            report = Report.objects.get(id=pk)
+        except Report.DoesNotExist:
+            raise Http404("Report not found.") from None
+
+        resolution = request.data.get("status", Report.Status.FIXED)
+        if resolution not in Report.Status.values:
+            resolution = Report.Status.FIXED
+        report.status = resolution
+        report.resolved_by = request.user.id
+        report.resolved_at = timezone.now()
+        report.resolution_note = request.data.get("note", "")
+        report.save()
+
+        return Response({"report_id": str(report.id), "status": report.status})

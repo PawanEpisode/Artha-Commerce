@@ -70,4 +70,24 @@ urlpatterns = [
         views.MergeDuplicateView.as_view(),
         name="qb_merge_duplicate",
     ),
+    path(
+        "questionbank/editor/import-csv/",
+        views.ImportQuestionsCsvView.as_view(),
+        name="qb_import_csv",
+    ),
+    path(
+        "questionbank/editor/review-queue/",
+        views.EditorReviewQueueView.as_view(),
+        name="qb_review_queue",
+    ),
+    path(
+        "questionbank/editor/reports/",
+        views.EditorReportsListView.as_view(),
+        name="qb_editor_reports",
+    ),
+    path(
+        "questionbank/editor/reports/<uuid:pk>/resolve/",
+        views.EditorResolveReportView.as_view(),
+        name="qb_resolve_report",
+    ),
 ]

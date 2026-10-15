@@ -9,11 +9,12 @@ Counters on `DayPlan` are recomputed from the tasks under the plan lock, never i
 
 import uuid
 
-from core.models import TimeStampedModel, UUIDModel
 from django.db import models
 from django.db.models import F, Q, TextField, Value
 from django.db.models.functions import Cast, Greatest, Length
 from django.db.models.lookups import LessThanOrEqual
+
+from core.models import TimeStampedModel, UUIDModel
 
 from .domain import constants as c
 from .planner import constants as pc

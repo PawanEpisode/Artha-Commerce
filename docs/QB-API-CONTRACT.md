@@ -21,6 +21,10 @@ Drift is asserted by `apps/api/modules/questionbank/tests/test_contract.py`.
 | POST | `questionbank/editor/versions/<uuid:pk>/publish/` | Publish a question version live | `qb_write` |
 | POST | `questionbank/editor/verify/` | Verify a question version | `qb_write` |
 | POST | `questionbank/editor/merge/` | Merge duplicate questions | `qb_write` |
+| POST | `questionbank/editor/import-csv/` | Import multiple questions from CSV | `qb_write` |
+| GET | `questionbank/editor/review-queue/` | Editorial review queue | `qb_read` |
+| GET | `questionbank/editor/reports/` | List reported questions | `qb_read` |
+| POST | `questionbank/editor/reports/<uuid:pk>/resolve/` | Resolve or action question report | `qb_write` |
 <!-- /contract:endpoints -->
 
 Throttle scopes: `qb_read` 300 per minute, `qb_write` 60 per minute, `qb_report` 20 per hour, `qb_upload` 100 per hour, `qb_export` 6 per hour, `qb_import` 5 per day, `legal_notice` 5 per hour.
