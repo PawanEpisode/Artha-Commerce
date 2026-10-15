@@ -207,6 +207,48 @@ def _close(batch: Batch, status: str, *, error: str = "", refund_all: bool = Fal
         ai_quota.refund(batch.user_id, batch.usage_day, suggestions=batch.charged_suggestions, batch=True)
         batch.refunded = True
     batch.save(update_fields=["status", "error_code", "finished_at", "pasted_text", "refunded", "updated_at"])
+    if status == "failed":
+        _notify_suggestions_failed(batch)
+
+
+def _notify_suggestions_ready(batch: Batch) -> None:
+    user_id = batch.user_id
+    batch_id = str(batch.id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                user_id,
+                "recall_suggestions_ready",
+                context={"batch_id": batch_id, "failed": False},
+                dedupe_ref={"batch_id": batch_id},
+            )
+        except Exception:
+            logger.exception("Failed to send recall_suggestions_ready notification")
+
+    transaction.on_commit(_send)
+
+
+def _notify_suggestions_failed(batch: Batch) -> None:
+    user_id = batch.user_id
+    batch_id = str(batch.id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                user_id,
+                "recall_suggestions_ready",
+                context={"batch_id": batch_id, "failed": True},
+                dedupe_ref={"batch_id": batch_id},
+            )
+        except Exception:
+            logger.exception("Failed to send recall_suggestions_ready failure notification")
+
+    transaction.on_commit(_send)
 
 
 def _ledger(batch: Batch, status: str, *, result=None, latency_ms: int = 0, error: str = "") -> int:
@@ -323,6 +365,7 @@ def _store(batch_id, result, material: list[sdomain.SourceText], latency_ms: int
         batch.status, batch.finished_at, batch.pasted_text = "ready", now, ""
         batch.expires_at = now + timedelta(days=sdomain.DRAFT_DAYS)
         batch.save()
+        _notify_suggestions_ready(batch)
     return {"status": "ready", "produced": len(rows), "dropped": parsed.dropped, "cost_paise": cost}
 
 

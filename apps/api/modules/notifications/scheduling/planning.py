@@ -68,6 +68,29 @@ def plan_stopwatch_long(
     )
 
 
+def plan_stopwatch_idle(
+    user_id, *, client_id, version: int, fire_at: datetime, context: Mapping[str, Any]
+) -> ScheduledJob:
+    """The job that will ask 'still studying?' when a running stopwatch goes quiet."""
+    return _plan(
+        user_id, JobKind.STOPWATCH_IDLE, subject_key=str(client_id), version=version, fire_at=fire_at, context=context
+    )
+
+
+def plan_stopwatch_idle_end(
+    user_id, *, client_id, version: int, fire_at: datetime, context: Mapping[str, Any]
+) -> ScheduledJob:
+    """The job that will settle an idle stopwatch if unanswered."""
+    return _plan(
+        user_id,
+        JobKind.STOPWATCH_IDLE_END,
+        subject_key=str(client_id),
+        version=version,
+        fire_at=fire_at,
+        context=context,
+    )
+
+
 def plan_deferred(notification: Notification, deliver_at: datetime) -> ScheduledJob | None:
     """
     The send that waits for the end of quiet hours (FR-N33), or a send that is due now and must not run inside the
@@ -146,5 +169,8 @@ def cancel_for_timer(user_id, *, keep: tuple[object, int] | None = None) -> int:
 
 
 def cancel_for_stopwatch(user_id, *, keep: tuple[object, int] | None = None) -> int:
-    """The same for the student's pending long-stopwatch jobs."""
-    return _cancel_pending(user_id, JobKind.STOPWATCH_LONG, keep)
+    """The same for the student's pending stopwatch jobs (long and idle)."""
+    cancelled = _cancel_pending(user_id, JobKind.STOPWATCH_LONG, keep)
+    cancelled += _cancel_pending(user_id, JobKind.STOPWATCH_IDLE, keep)
+    cancelled += _cancel_pending(user_id, JobKind.STOPWATCH_IDLE_END, keep)
+    return cancelled

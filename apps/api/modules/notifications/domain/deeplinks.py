@@ -16,6 +16,8 @@ ALLOWED_PREFIXES = (
     "/app/syllabus",
     "/app/notifications",
     "/app/settings/notifications",
+    "/app/notes",
+    "/app/recall",
 )
 MAX_LENGTH = 200  # matches the database column
 

@@ -74,12 +74,18 @@ function SettingsForm() {
           submit()
         }}
       >
-        <div className="flex items-center gap-3">
-          <Switch id="idle-on" checked={idleOn} onCheckedChange={setIdleOn} />
-          <label htmlFor="idle-on" className="text-sm font-medium">
-            Ask if I am still studying when I have been idle
-          </label>
+        <div className="space-y-1">
+          <div className="flex items-center gap-3">
+            <Switch id="idle-on" checked={idleOn} onCheckedChange={setIdleOn} />
+            <label htmlFor="idle-on" className="text-sm font-medium">
+              Alert me when the stopwatch goes quiet
+            </label>
+          </div>
+          <p className="pl-11 text-xs text-muted-foreground">
+            When you leave the tab or app, we'll ask if you are still studying. The timer pauses on its own either way.
+          </p>
         </div>
+
         {idleOn ? (
           <DurationField
             label="Idle time before we ask"

@@ -66,6 +66,8 @@ def stopwatch_snapshot(user_id, sw: ActiveStopwatch | None, at: datetime) -> dic
         "started_at": sw.started_at,
         "paused": sw.paused_at is not None,
         "paused_total_seconds": sw.paused_total_seconds,
+        "last_active_at": sw.last_active_at,
+        "subject_name": sw.subject.name if sw.subject_id and sw.subject else None,
         "at": at,
     }
 

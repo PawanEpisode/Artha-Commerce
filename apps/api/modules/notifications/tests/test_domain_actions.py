@@ -34,8 +34,19 @@ def test_titles_are_short_and_name_the_next_round():
     assert actions.button_title(START_FOCUS, {}) == "Start next round"
 
 
-def test_only_android_gets_buttons():
-    assert actions.PLATFORMS == frozenset({"android"})
+def test_button_platform_and_browser_rules():
+    assert actions.supports_buttons("android", "chrome")
+    assert actions.supports_buttons("android", "edge")
+    assert actions.supports_buttons("windows", "chrome")
+    assert actions.supports_buttons("windows", "edge")
+    assert actions.supports_buttons("macos", "chrome")
+    assert actions.supports_buttons("macos", "edge")
+    assert actions.supports_buttons("linux", "chrome")
+    assert actions.supports_buttons("linux", "edge")
+    assert not actions.supports_buttons("windows", "firefox")
+    assert not actions.supports_buttons("macos", "safari")
+    assert not actions.supports_buttons("ios", "chrome")
+    assert not actions.supports_buttons("ios", "safari")
 
 
 def test_token_shape_and_hash():

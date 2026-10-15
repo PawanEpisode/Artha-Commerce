@@ -12,6 +12,8 @@ export const DEEP_LINK_PREFIXES: readonly string[] = [
   '/app/syllabus',
   '/app/notifications',
   '/app/settings/notifications',
+  '/app/notes',
+  '/app/recall',
 ]
 export const DEEP_LINK_MAX_LENGTH = 200
 /** Where a notification with a missing or refused link opens. */

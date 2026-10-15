@@ -24,6 +24,7 @@ class Category(StrEnum):
     EXAM = "exam"
     PROGRESS = "progress"
     MOTIVATION = "motivation"
+    RESULTS = "results"
     SYSTEM = "system"  # not switchable by the student (the test push); never listed in CATEGORIES
     DIGEST = "digest"  # the daily digest (W3.7): its switch is `NotificationSettings.digest_enabled`, not a category
 
@@ -87,6 +88,9 @@ CATEGORIES: tuple[CategorySpec, ...] = (
     CategorySpec(
         Category.MOTIVATION, "Daily thought", "A short nudge on days you have not opened Artha.", _PUSH_AND_INBOX
     ),
+    CategorySpec(
+        Category.RESULTS, "Finished in the background", "When long notes or recall tasks finish.", _PUSH_AND_INBOX
+    ),
 )
 
 _HOUR = timedelta(hours=1)
@@ -95,6 +99,16 @@ _EVENT_LIST: tuple[EventSpec, ...] = (
     EventSpec("timer_end", Category.TIMER, 0, "timer_end:{client_id}:{version}"),
     EventSpec("break_over", Category.TIMER, 0, "timer_end:{client_id}:{version}"),
     EventSpec("stopwatch_long", Category.TRACKER, 1, "stopwatch_long:{client_id}", expires_after=_HOUR),
+    EventSpec(
+        "stopwatch_idle",
+        Category.TRACKER,
+        0,
+        "stopwatch_idle:{client_id}:{spell}",
+        expires_after=timedelta(seconds=120),
+    ),
+    EventSpec(
+        "stopwatch_paused", Category.TRACKER, 1, "stopwatch_paused:{client_id}:{version}", expires_after=2 * _HOUR
+    ),
     EventSpec("goal_reached", Category.TRACKER, 1, "goal:{local_date}", expires_after=6 * _HOUR),
     EventSpec("streak_at_risk", Category.TRACKER, 1, "streak:{local_date}", expires_after=3 * _HOUR),
     EventSpec(
@@ -108,6 +122,10 @@ _EVENT_LIST: tuple[EventSpec, ...] = (
     EventSpec("evaluation_ready", Category.EVALUATION, 1, "evaluation:{attempt_id}", expires_after=24 * _HOUR),
     EventSpec("plan_ready", Category.PLAN, 2, "plan:{local_date}", expires_after=12 * _HOUR),
     EventSpec("weekly_summary", Category.PROGRESS, 3, "weekly:{iso_week}", expires_after=24 * _HOUR),
+    EventSpec("notes_ocr_done", Category.RESULTS, 2, "notes_ocr:{job_id}", expires_after=24 * _HOUR),
+    EventSpec("notes_summary_ready", Category.RESULTS, 2, "notes_summary:{job_id}", expires_after=24 * _HOUR),
+    EventSpec("notes_export_ready", Category.RESULTS, 2, "notes_export:{job_id}", expires_after=24 * _HOUR),
+    EventSpec("recall_suggestions_ready", Category.RESULTS, 2, "recall_suggest:{batch_id}", expires_after=24 * _HOUR),
     # W3.7: one push a day at the nudge time for a student who chose the digest (FR-N34) instead of separate alerts.
     EventSpec("daily_digest", Category.DIGEST, 3, "digest:{local_date}", expires_after=6 * _HOUR),
 )

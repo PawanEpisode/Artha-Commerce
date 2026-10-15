@@ -101,6 +101,32 @@ def stopwatch_running_judgement(
     )
 
 
+def stopwatch_idle_judgement(
+    user_id, client_id, expected_version: int, now: datetime, *, idle_minutes: int
+) -> judgement.IdleJudgement:
+    """
+    Is stopwatch (client_id, expected_version) quiet and ready for an idle check? Read-only (FR-A3):
+    one plain SELECT, no lock, no idle settle.
+    """
+    sw = ActiveStopwatch.objects.select_related("subject").filter(pk=user_id).first()
+    if sw is None:
+        facts = None
+    else:
+        facts = judgement.StopwatchIdleFacts(
+            client_id=sw.client_id,
+            version=sw.version,
+            started_at=sw.started_at,
+            paused_at=sw.paused_at,
+            last_seen_at=sw.last_seen_at,
+            last_active_at=sw.last_active_at,
+            idle_pending=sw.idle_pending,
+            idle_prompted_at=sw.idle_prompted_at,
+            idle_minutes=idle_minutes,
+            subject_name=sw.subject.name if sw.subject else None,
+        )
+    return judgement.judge_idle(facts, client_id=client_id, expected_version=expected_version, now=now)
+
+
 # --- Sessions ------------------------------------------------------------------------------------------------------
 def get_session(user_id, session_id) -> StudySession | None:
     return StudySession.objects.select_related("subject", "chapter").filter(user_id=user_id, pk=session_id).first()

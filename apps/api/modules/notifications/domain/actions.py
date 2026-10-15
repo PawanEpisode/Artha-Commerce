@@ -17,7 +17,7 @@ from dataclasses import dataclass
 from datetime import timedelta
 from typing import Any
 
-from .enums import ButtonAction, DevicePlatform
+from .enums import ButtonAction, DeviceBrowser, DevicePlatform
 
 #: How long a button works after the alert (ERD 2.8). The timer's version check makes a later change a no-op anyway.
 TOKEN_TTL = timedelta(minutes=10)
@@ -25,7 +25,21 @@ TOKEN_BYTES = 32
 _TOKEN_PATTERN = re.compile(r"^[A-Za-z0-9_-]{43}$")
 #: Put this name in `NOTIFICATIONS_DISABLED_EVENTS` to stop offering buttons and refuse every tap (the alerts still go).
 KILL_SWITCH = "timer_buttons"
-PLATFORMS: frozenset[str] = frozenset({DevicePlatform.ANDROID.value})
+SUPPORTED_PLATFORMS: frozenset[str] = frozenset(
+    {
+        DevicePlatform.ANDROID.value,
+        DevicePlatform.WINDOWS.value,
+        DevicePlatform.MACOS.value,
+        DevicePlatform.LINUX.value,
+    }
+)
+SUPPORTED_BROWSERS: frozenset[str] = frozenset({DeviceBrowser.CHROME.value, DeviceBrowser.EDGE.value})
+PLATFORMS: frozenset[str] = SUPPORTED_PLATFORMS
+
+
+def supports_buttons(platform: str, browser: str) -> bool:
+    """Buttons on Android and desktop Chromium (Chrome and Edge on Windows, macOS, Linux; FR-A9)."""
+    return platform in SUPPORTED_PLATFORMS and browser in SUPPORTED_BROWSERS
 
 
 def buttons_for(event_key: str, context: Mapping[str, Any]) -> tuple[ButtonAction, ...]:
@@ -41,6 +55,10 @@ def buttons_for(event_key: str, context: Mapping[str, Any]) -> tuple[ButtonActio
         return () if context.get("break_starts_itself") else (ButtonAction.START_BREAK,)
     if event_key == "break_over":
         return (ButtonAction.START_FOCUS,)
+    if event_key == "stopwatch_idle":
+        return (ButtonAction.STILL_STUDYING, ButtonAction.PAUSE)
+    if event_key == "stopwatch_paused":
+        return (ButtonAction.RESUME,)
     return ()
 
 
@@ -52,6 +70,7 @@ def button_title(action: ButtonAction, context: Mapping[str, Any] | None = None)
         ButtonAction.PAUSE: "Pause",
         ButtonAction.RESUME: "Resume",
         ButtonAction.START_BREAK: "Start break",
+        ButtonAction.STILL_STUDYING: "Still studying",
     }[action]
 
 
@@ -75,12 +94,14 @@ _DONE = {
     ButtonAction.RESUME: Confirmation("Timer running", "Your round is counting again."),
     ButtonAction.START_BREAK: Confirmation("Break started", "Round saved. Enjoy your break."),
     ButtonAction.START_FOCUS: Confirmation("Round started", "Your next round is running."),
+    ButtonAction.STILL_STUDYING: Confirmation("Timer running", "We are counting your study time."),
 }
 _ALREADY = {
     ButtonAction.PAUSE: Confirmation("Already paused", "Your round is on hold."),
     ButtonAction.RESUME: Confirmation("Already running", "Your round is counting."),
     ButtonAction.START_BREAK: Confirmation("Break running", "Your break has already started."),
     ButtonAction.START_FOCUS: Confirmation("Round running", "Your next round has already started."),
+    ButtonAction.STILL_STUDYING: Confirmation("Already answered", "Your stopwatch is counting."),
 }
 STALE = Confirmation("Nothing changed", "The timer changed after this alert. Open the app to see where it is.")
 NEEDS_APP = Confirmation("Open the app", "Tell us whether you studied through this round to save it.")

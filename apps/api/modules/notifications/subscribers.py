@@ -28,7 +28,7 @@ A queue problem is absorbed inside `scheduling.planning`; the sweep fires any jo
 from __future__ import annotations
 
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 from uuid import UUID
 
 from core import events
@@ -114,6 +114,8 @@ def on_stopwatch_changed(
     started_at: datetime | None = None,
     paused: bool = False,
     paused_total_seconds: int = 0,
+    last_active_at: datetime | None = None,
+    subject_name: str | None = None,
     at: datetime | None = None,
     **_ignored,
 ) -> None:
@@ -128,6 +130,28 @@ def on_stopwatch_changed(
         if ahead and not flags.event_disabled("stopwatch_long") and flags.sending_enabled(student):
             jobs.plan_stopwatch_long(student, client_id=client_id, version=version, fire_at=fire_at, context={})
             keep = (client_id, version)
+
+        if (
+            flags.away_alerts_enabled(student)
+            and not flags.event_disabled("stopwatch_idle")
+            and flags.sending_enabled(student)
+        ):
+            from modules.tracking import selectors as tracking_selectors
+
+            tracking_settings = tracking_selectors.get_settings(student)
+            idle_minutes = tracking_settings.idle_minutes if tracking_settings else 10
+            if idle_minutes > 0:
+                active_moment = last_active_at or started_at
+                idle_fire_at = active_moment + timedelta(minutes=idle_minutes)
+                jobs.plan_stopwatch_idle(
+                    student,
+                    client_id=client_id,
+                    version=version,
+                    fire_at=idle_fire_at,
+                    context={"idle_minutes": idle_minutes, "subject_name": subject_name},
+                )
+                keep = (client_id, version)
+
     cancelled = jobs.cancel_for_stopwatch(student, keep=keep)
     if cancelled:
         log_event(logging.INFO, "job_cancelled", kind="stopwatch_long", count=cancelled)

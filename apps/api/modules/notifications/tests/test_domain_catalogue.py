@@ -22,8 +22,8 @@ def test_every_event_belongs_to_a_known_category():
     assert {key for key, spec in EVENTS.items() if spec.category not in keys} == {"daily_digest"}
 
 
-def test_only_timer_events_are_exempt():
-    assert {key for key, spec in EVENTS.items() if spec.exempt} == {"timer_end", "break_over"}
+def test_only_timer_and_idle_events_are_exempt():
+    assert {key for key, spec in EVENTS.items() if spec.exempt} == {"timer_end", "break_over", "stopwatch_idle"}
 
 
 def test_event_keys_fit_the_database_column():

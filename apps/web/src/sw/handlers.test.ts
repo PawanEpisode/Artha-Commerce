@@ -9,7 +9,7 @@ import {
   NOTIFICATION_ICON,
   readNotificationData,
 } from './handlers'
-import { SW_MESSAGE_PUSH_RECEIVED, SW_MESSAGE_SUBSCRIPTION_CHANGED } from './messages'
+import { SW_MESSAGE_NAVIGATE, SW_MESSAGE_PUSH_RECEIVED, SW_MESSAGE_SUBSCRIPTION_CHANGED } from './messages'
 import { fallbackContent, parsePushPayload } from './payload'
 import type { ClientsLike, WindowClientLike } from './types'
 
@@ -95,6 +95,7 @@ const client = (patch: Partial<WindowClientLike> & { url: string }): WindowClien
   visibilityState: 'hidden',
   focus: vi.fn().mockResolvedValue(undefined),
   navigate: vi.fn().mockResolvedValue(undefined),
+  postMessage: vi.fn(),
   ...patch,
 })
 
@@ -133,8 +134,19 @@ describe('handleNotificationClick', () => {
     expect(clients.openWindow).toHaveBeenCalledWith(`${ORIGIN}/app/focus?n=1`)
   })
 
-  it('focuses an open tab and sends it to the link', async () => {
+  it('focuses an open tab and sends it the path by message without reload', async () => {
     const tab = client({ url: `${ORIGIN}/app/tracker`, visibilityState: 'visible' })
+    const clients = clientsOf([tab])
+    await expect(handleNotificationClick({ clients, origin: ORIGIN }, { url: '/app/focus?n=1' })).resolves.toBe(
+      'navigated',
+    )
+    expect(tab.focus).toHaveBeenCalled()
+    expect(tab.postMessage).toHaveBeenCalledWith({ type: SW_MESSAGE_NAVIGATE, path: '/app/focus?n=1' })
+    expect(clients.openWindow).not.toHaveBeenCalled()
+  })
+
+  it('falls back to client.navigate when postMessage is unavailable', async () => {
+    const tab = client({ url: `${ORIGIN}/app/tracker`, visibilityState: 'visible', postMessage: undefined })
     const clients = clientsOf([tab])
     await expect(handleNotificationClick({ clients, origin: ORIGIN }, { url: '/app/focus?n=1' })).resolves.toBe(
       'navigated',
@@ -154,7 +166,7 @@ describe('handleNotificationClick', () => {
   })
 
   it('opens a window when the tab cannot navigate or focus fails', async () => {
-    const noNavigate = client({ url: `${ORIGIN}/app`, navigate: undefined })
+    const noNavigate = client({ url: `${ORIGIN}/app`, navigate: undefined, postMessage: undefined })
     const a = clientsOf([noNavigate])
     await expect(handleNotificationClick({ clients: a, origin: ORIGIN }, { url: '/app/focus' })).resolves.toBe('opened')
 

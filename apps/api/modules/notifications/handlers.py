@@ -11,7 +11,7 @@ The timer handler reads `focus`, and the stopwatch handler `tracking`, only thro
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any, Protocol
 
 from django.core.exceptions import ValidationError
@@ -19,7 +19,7 @@ from django.core.exceptions import ValidationError
 from modules.focus import selectors as focus_selectors
 from modules.focus.domain.judgement import EndState
 from modules.tracking import selectors as tracking_selectors
-from modules.tracking.domain.judgement import RunState
+from modules.tracking.domain.judgement import IdleState, RunState
 
 from .domain import tracker_alerts
 from .domain.enums import JobKind, SkipReason
@@ -54,7 +54,14 @@ class Redeliver:
     notification: Notification
 
 
-Verdict = Skip | NotYet | Notify | Redeliver
+@dataclass(frozen=True)
+class Reschedule:
+    """The student was active meanwhile; move fire_at to the new due moment and re-queue (ERD 2.1)."""
+
+    at: datetime
+
+
+Verdict = Skip | NotYet | Notify | Redeliver | Reschedule
 
 
 class JobHandler(Protocol):
@@ -158,7 +165,85 @@ class DeliverDeferredHandler:
         return Redeliver(notification)
 
 
+class StopwatchIdleHandler:
+    """`stopwatch_idle` jobs: ask 'still studying?' when a running stopwatch goes quiet (FR-A3)."""
+
+    def event_key(self, job: ScheduledJob) -> str:
+        return "stopwatch_idle"
+
+    def judge(self, job: ScheduledJob, now: datetime) -> Verdict:
+        idle_minutes = int(job.context.get("idle_minutes", 10))
+        judgement = tracking_selectors.stopwatch_idle_judgement(
+            job.user_id, job.subject_key, job.expected_version, now, idle_minutes=idle_minutes
+        )
+        match judgement.state:
+            case IdleState.GONE:
+                return Skip(SkipReason.GONE)
+            case IdleState.CHANGED:
+                return Skip(SkipReason.CHANGED)
+            case IdleState.PAUSED:
+                return Skip(SkipReason.PAUSED)
+            case IdleState.ALREADY_PENDING:
+                return Skip(SkipReason.CHANGED)
+            case IdleState.RESCHEDULE:
+                assert judgement.reschedule_at is not None
+                return Reschedule(judgement.reschedule_at)
+            case IdleState.PAGE_ALIVE:
+                return Skip(SkipReason.PAGE_ALIVE)
+            case IdleState.DUE:
+                from modules.tracking import services as tracking_services
+
+                ok = tracking_services.request_idle_check(job.user_id, job.subject_key, job.expected_version, now=now)
+                if not ok:
+                    return Skip(SkipReason.CHANGED)
+                from .scheduling import planning
+
+                end_fire_at = now + timedelta(seconds=120)
+                planning.plan_stopwatch_idle_end(
+                    job.user_id,
+                    client_id=job.subject_key,
+                    version=job.expected_version,
+                    fire_at=end_fire_at,
+                    context={"client_id": job.subject_key, "version": job.expected_version},
+                )
+                context = {
+                    "client_id": job.subject_key,
+                    "version": job.expected_version,
+                    "subject_name": judgement.subject_name,
+                }
+                dedupe_parts = {"client_id": job.subject_key, "spell": judgement.spell}
+                return Notify(self.event_key(job), context, dedupe_parts)
+
+
+class StopwatchIdleEndHandler:
+    """`stopwatch_idle_end` jobs: settle an idle stopwatch if unanswered (FR-A6)."""
+
+    def event_key(self, job: ScheduledJob) -> str:
+        return "stopwatch_paused"
+
+    def judge(self, job: ScheduledJob, now: datetime) -> Verdict:
+        from modules.tracking import services as tracking_services
+
+        outcome = tracking_services.settle_idle(job.user_id, job.subject_key, now=now)
+        if outcome.outcome == "paused":
+            context = {
+                "client_id": str(outcome.client_id or job.subject_key),
+                "version": outcome.version,
+                "paused_time": outcome.paused_time,
+            }
+            dedupe_parts = {
+                "client_id": str(outcome.client_id or job.subject_key),
+                "version": outcome.version,
+            }
+            return Notify(self.event_key(job), context, dedupe_parts)
+        if outcome.outcome == "gone":
+            return Skip(SkipReason.GONE)
+        return Skip(SkipReason.CHANGED)
+
+
 def register_defaults() -> None:
     register(JobKind.TIMER_END, TimerEndHandler())
     register(JobKind.STOPWATCH_LONG, StopwatchLongHandler())
+    register(JobKind.STOPWATCH_IDLE, StopwatchIdleHandler())
+    register(JobKind.STOPWATCH_IDLE_END, StopwatchIdleEndHandler())
     register(JobKind.DELIVER_DEFERRED, DeliverDeferredHandler())

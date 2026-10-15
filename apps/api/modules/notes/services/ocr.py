@@ -404,6 +404,11 @@ def _settle(content_id, lang: str, since: datetime | None) -> dict:
             ocr_status="done" if finished else "partial",
             updated_at=timezone.now(),
         )
+        if finished and not was_done:
+            job = core_jobs.current_job()
+            jid = str(job.id) if job else str(content_id)
+            for doc in Document.objects.filter(content_id=content_id, deleted_at__isnull=True, status="ready"):
+                _notify_ocr_done(doc.user_id, doc.id, jid)
     if finished and not was_done:
         _announce_all(content_id)  # after the transaction, so a consumer reads the committed rows
     return {"status": "done" if finished else "partial", "done": done, "total": total}
@@ -426,6 +431,48 @@ def _announce_all(content_id) -> None:
         _announce(document)
 
 
+def _notify_ocr_done(user_id, document_id, job_id: str) -> None:
+    uid = user_id
+    did = str(document_id)
+    jid = str(job_id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                uid,
+                "notes_ocr_done",
+                context={"doc_id": did, "job_id": jid, "failed": False},
+                dedupe_ref={"job_id": jid},
+            )
+        except Exception:
+            logger.exception("Failed to send notes_ocr_done notification")
+
+    transaction.on_commit(_send)
+
+
+def _notify_ocr_failed(user_id, document_id, job_id: str) -> None:
+    uid = user_id
+    did = str(document_id) if document_id else ""
+    jid = str(job_id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                uid,
+                "notes_ocr_done",
+                context={"doc_id": did, "job_id": jid, "failed": True},
+                dedupe_ref={"job_id": jid},
+            )
+        except Exception:
+            logger.exception("Failed to send notes_ocr_done failure notification")
+
+    transaction.on_commit(_send)
+
+
 def give_up(payload: dict) -> dict:
     """
     The job ran out of attempts: the content is `failed` (unless it finished meanwhile) and the pages this request paid for and
@@ -437,9 +484,19 @@ def give_up(payload: dict) -> dict:
     since = _parse_since(payload.get("since"))
     unspent = len(_remaining(content, payload, since))
     refund = min(unspent, int(payload.get("charged", 0)))
-    if refund:
-        quota.refund_monthly(payload["user_id"], "ocr_pages", refund)
-    FileContent.objects.filter(pk=content.pk).exclude(ocr_status="done").update(
-        ocr_status="failed", updated_at=timezone.now()
-    )
+    with transaction.atomic():
+        if refund:
+            quota.refund_monthly(payload["user_id"], "ocr_pages", refund)
+        updated = (
+            FileContent.objects.filter(pk=content.pk)
+            .exclude(ocr_status="done")
+            .update(ocr_status="failed", updated_at=timezone.now())
+        )
+        if updated:
+            job = core_jobs.current_job()
+            jid = str(job.id) if job else str(payload.get("job_id") or payload.get("chain") or content.id)
+            user_id = payload.get("user_id")
+            doc_id = payload.get("document_id") or ""
+            if user_id:
+                _notify_ocr_failed(user_id, doc_id, jid)
     return {"refunded": refund}

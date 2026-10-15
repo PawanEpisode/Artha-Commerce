@@ -175,6 +175,8 @@ def test_a_running_stopwatch_payload_carries_what_a_consumer_needs_to_plan_its_m
         "started_at": NOW,
         "paused": False,
         "paused_total_seconds": 300,
+        "last_active_at": w.sw.last_active_at,
+        "subject_name": None,
         "at": w.now,
     }
 
@@ -348,7 +350,9 @@ def test_no_public_action_can_be_added_without_announcing_or_being_listed_here()
         "set_goals",
         "local_today",
         "reconcile_coverage",
+        "request_idle_check",
     }
+
     announcing = {n for n in _public() if getattr(getattr(services, n), "announces_stopwatch_changes", False)}
     assert _public() - announcing == not_stopwatch
 

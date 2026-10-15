@@ -248,6 +248,7 @@ def run_summary(payload: dict) -> dict:
         items = gather_by_ids(job.user_id, job.scope.get("items") or [])
         if not sdomain.enough(items):
             ai_jobs.close(job, AiJob.Status.FAILED, error="too_little", refunded=True)
+            _notify_summary_failed(job)
             return {"status": "failed", "reason": "too_little"}
         if job.status == AiJob.Status.QUEUED:
             job.status, job.started_at = AiJob.Status.RUNNING, timezone.now()
@@ -272,11 +273,52 @@ def run_summary(payload: dict) -> dict:
     return _store(job_id, result, draft, len(items))
 
 
+def _notify_summary_ready(job: AiJob) -> None:
+    user_id = job.user_id
+    job_id = str(job.id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                user_id,
+                "notes_summary_ready",
+                context={"job_id": job_id, "failed": False},
+                dedupe_ref={"job_id": job_id},
+            )
+        except Exception:
+            logger.exception("Failed to send notes_summary_ready notification")
+
+    transaction.on_commit(_send)
+
+
+def _notify_summary_failed(job: AiJob) -> None:
+    user_id = job.user_id
+    job_id = str(job.id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                user_id,
+                "notes_summary_ready",
+                context={"job_id": job_id, "failed": True},
+                dedupe_ref={"job_id": job_id},
+            )
+        except Exception:
+            logger.exception("Failed to send notes_summary_ready failure notification")
+
+    transaction.on_commit(_send)
+
+
 def _fail(job_id, code: str) -> dict:
     with transaction.atomic():
         job = AiJob.objects.select_for_update().get(pk=job_id)
         if job.status in AiJob.ACTIVE:
             ai_jobs.close(job, AiJob.Status.FAILED, error=code, refunded=True)
+            _notify_summary_failed(job)
     return {"status": "failed", "reason": code}
 
 
@@ -317,6 +359,7 @@ def _store(job_id, result: gemini.GeminiResult, draft: sdomain.Draft, item_count
         job.item_count = item_count
         job.save()
         events.announce_summary_ready(job.user_id, job.id, items=item_count, cost_paise=cost)
+        _notify_summary_ready(job)
     return {"status": "ready", "points": draft.points, "cost_paise": cost}
 
 
@@ -326,6 +369,7 @@ def give_up(payload: dict) -> None:
         job = AiJob.objects.select_for_update().filter(pk=payload.get("job_id")).first()
         if job is not None and job.status in AiJob.ACTIVE:
             ai_jobs.close(job, AiJob.Status.FAILED, error="model_error", refunded=True)
+            _notify_summary_failed(job)
 
 
 # --- Review: accept ------------------------------------------------------------------------------------------------------

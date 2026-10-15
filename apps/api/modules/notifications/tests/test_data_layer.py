@@ -142,3 +142,74 @@ def test_eraser_and_exporter_are_registered_and_cover_everything():
     assert counts["devices"] == 1 and counts["settings"] == 1
     assert not Delivery.objects.exists() and Notification.objects.filter(user_id=other).count() == 1
     assert delete_all_for_user(USER)["notifications"] == 0  # idempotent
+
+
+def test_away_alerts_constraints_and_action_tokens():
+    from modules.notifications.models import ActionToken
+
+    n = make_notification()
+    # Allowed new job kinds
+    idle_job = ScheduledJob.objects.create(
+        user_id=USER, kind="stopwatch_idle", subject_key="sw-1", fire_at="2026-03-01T00:00:00Z"
+    )
+    assert idle_job.kind == "stopwatch_idle"
+    idle_end = ScheduledJob.objects.create(
+        user_id=USER, kind="stopwatch_idle_end", subject_key="sw-1", fire_at="2026-03-01T00:02:00Z"
+    )
+    assert idle_end.kind == "stopwatch_idle_end"
+    fails(
+        make=lambda: ScheduledJob.objects.create(
+            user_id=USER, kind="unknown_kind", subject_key="sw-1", fire_at="2026-03-01T00:00:00Z"
+        )
+    )
+
+    # Allowed new action token subject_kind and actions
+    token = ActionToken.objects.create(
+        user_id=USER,
+        notification=n,
+        timer_client_id=uuid.uuid4(),
+        timer_version=1,
+        action="still_studying",
+        subject_kind="stopwatch",
+        token_hash=hmac_hex("token-hash-1"),
+        expires_at="2026-03-01T00:02:00Z",
+    )
+    assert token.subject_kind == "stopwatch" and token.action == "still_studying"
+
+    # Default subject_kind is focus
+    focus_token = ActionToken.objects.create(
+        user_id=USER,
+        notification=n,
+        timer_client_id=uuid.uuid4(),
+        timer_version=1,
+        action="pause",
+        token_hash=hmac_hex("token-hash-2"),
+        expires_at="2026-03-01T00:10:00Z",
+    )
+    assert focus_token.subject_kind == "focus"
+
+    # Invalid action or subject_kind fails constraint
+    fails(
+        make=lambda: ActionToken.objects.create(
+            user_id=USER,
+            notification=n,
+            timer_client_id=uuid.uuid4(),
+            timer_version=1,
+            action="invalid_action",
+            subject_kind="stopwatch",
+            token_hash=hmac_hex("token-hash-3"),
+            expires_at="2026-03-01T00:02:00Z",
+        )
+    )
+    fails(
+        make=lambda: ActionToken.objects.create(
+            user_id=USER,
+            notification=n,
+            timer_client_id=uuid.uuid4(),
+            timer_version=1,
+            action="still_studying",
+            subject_kind="invalid_kind",
+            token_hash=hmac_hex("token-hash-4"),
+            expires_at="2026-03-01T00:02:00Z",
+        )
+    )

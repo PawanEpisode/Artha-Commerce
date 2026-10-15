@@ -123,7 +123,50 @@ def _fail(job_id, code: str, *, suggestion: str | None = None) -> bool:
     )
     if changed and job.kind == "pdf":
         quota.refund_monthly(job.user_id, "exports", 1, now=job.created_at)  # the month the charge was made in
+        _notify_export_failed(job)
     return bool(changed)
+
+
+def _notify_export_done(job: ExportJob, document_id) -> None:
+    user_id = job.user_id
+    doc_id = str(document_id) if document_id else ""
+    job_id = str(job.id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                user_id,
+                "notes_export_ready",
+                context={"doc_id": doc_id, "job_id": job_id, "failed": False},
+                dedupe_ref={"job_id": job_id},
+            )
+        except Exception:
+            logger.exception("Failed to send notes_export_ready notification")
+
+    transaction.on_commit(_send)
+
+
+def _notify_export_failed(job: ExportJob) -> None:
+    user_id = job.user_id
+    doc_id = str(job.document_id) if job.document_id else ""
+    job_id = str(job.id)
+
+    def _send():
+        try:
+            from modules.notifications.services.notify import notify
+
+            notify(
+                user_id,
+                "notes_export_ready",
+                context={"doc_id": doc_id, "job_id": job_id, "failed": True},
+                dedupe_ref={"job_id": job_id},
+            )
+        except Exception:
+            logger.exception("Failed to send notes_export_ready failure notification")
+
+    transaction.on_commit(_send)
 
 
 def _progress(job_id, value: int) -> None:
@@ -206,6 +249,7 @@ def run_pdf_export(export_id) -> dict:
         media.queue_delete([attachment.id])
         return {"skipped": True}
     events.announce_export_ready(job.user_id, job.id, kind="pdf", document_id=document.id, page_count=result.page_count)
+    _notify_export_done(job, document.id)
     return {"pages": result.page_count, "marks": result.marks_drawn, "skipped_marks": len(result.skipped)}
 
 

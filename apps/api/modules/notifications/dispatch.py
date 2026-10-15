@@ -127,6 +127,17 @@ def close_held(notification_id, reason: SuppressReason, *, event: str, now: date
         _log(logging.INFO, "push_suppressed", event=event, reason=reason.value)
 
 
+def _is_away_alert(event_key: str) -> bool:
+    return event_key in {
+        "stopwatch_idle",
+        "stopwatch_paused",
+        "notes_ocr_done",
+        "notes_summary_ready",
+        "notes_export_ready",
+        "recall_suggestions_ready",
+    }
+
+
 def _facts(notification, spec, devices, now, intended_at) -> PolicyInput:
     user_id = notification.user_id
     prefs = selectors.get_settings(user_id)
@@ -139,7 +150,11 @@ def _facts(notification, spec, devices, now, intended_at) -> PolicyInput:
         has_active_device=bool(devices),
         quiet=QuietPreference(prefs.quiet_enabled, prefs.timezone, prefs.quiet_start, prefs.quiet_end),
         sent_today=selectors.sent_cap_count(user_id, start, end, exclude_notification_id=notification.id),
-        event_disabled=flags.event_disabled(spec.key) or not flags.sending_enabled(user_id),
+        event_disabled=(
+            flags.event_disabled(spec.key)
+            or not flags.sending_enabled(user_id)
+            or (_is_away_alert(spec.key) and not flags.away_alerts_enabled(user_id))
+        ),
         intended_at=intended_at,
         expires_at=notification.expires_at,
         # Only asked for events that are pointless after a visit (the daily nudge), so no other send pays for the reads.
@@ -176,9 +191,11 @@ def _send(notification, spec, devices, delivered, now, intended_at) -> DispatchR
 
     ttl, urgency = delivery_window(spec.priority, now, notification.expires_at)
     message = PushMessage(body=_encoded_payload(notification), ttl_seconds=ttl, urgency=Urgency(urgency))
-    # Android shows buttons (W3.6): those devices get the same message plus one-time tokens, minted once for this send.
+    # Action buttons on Android and desktop Chromium (FR-A9, FR-A13).
     with_buttons = message
-    if any(device.platform in buttons.PLATFORMS and device.id not in delivered for device in devices):
+    if any(
+        buttons.supports_buttons(device.platform, device.browser) and device.id not in delivered for device in devices
+    ):
         with_buttons = _message_with_buttons(notification, message, now)
     channel = channels.get_channel(channels.PUSH)
     lateness_ms = max(0, int((now - (intended_at or notification.created_at)).total_seconds() * 1000))
@@ -189,7 +206,10 @@ def _send(notification, spec, devices, delivered, now, intended_at) -> DispatchR
             already += 1
             continue
         row = _claim_row(notification, device, now)
-        result = _call(channel, device, with_buttons if device.platform in buttons.PLATFORMS else message)
+        result = _call(
+            channel, device, with_buttons if buttons.supports_buttons(device.platform, device.browser) else message
+        )
+
         if result.status is SendStatus.SENT:
             sent += 1
             _mark_sent(row, result, spec, device, now, lateness_ms)

@@ -117,6 +117,8 @@ class JobKind(StrEnum):
     TIMER_END = "timer_end"
     STOPWATCH_LONG = "stopwatch_long"
     DELIVER_DEFERRED = "deliver_deferred"
+    STOPWATCH_IDLE = "stopwatch_idle"
+    STOPWATCH_IDLE_END = "stopwatch_idle_end"
 
 
 class JobStatus(StrEnum):
@@ -134,6 +136,7 @@ class SkipReason(StrEnum):
     FLAG_OFF = "flag_off"
     DISABLED = "disabled"
     STALE = "stale"
+    PAGE_ALIVE = "page_alive"
 
 
 class DeliveryStatus(StrEnum):
@@ -154,6 +157,11 @@ class SuppressReason(StrEnum):
     NO_ADDRESS = "no_address"  # email: the student has no address on file
 
 
+class SubjectKind(StrEnum):
+    FOCUS = "focus"
+    STOPWATCH = "stopwatch"
+
+
 class ButtonAction(StrEnum):
     """What a button on a timer alert does (W3.6, FR-N12). The meaning of each lives in `focus`."""
 
@@ -161,6 +169,7 @@ class ButtonAction(StrEnum):
     RESUME = "resume"
     START_BREAK = "start_break"
     START_FOCUS = "start_focus"
+    STILL_STUDYING = "still_studying"
 
 
 def choices(enum_class: type[StrEnum]) -> list[tuple[str, str]]:

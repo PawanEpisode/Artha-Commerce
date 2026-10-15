@@ -163,10 +163,67 @@ def _weekly_summary(context: Mapping[str, Any]) -> Copy:
     return Copy("Your week in Artha", _fit(". ".join(parts) + ".", BODY_LIMIT), TRACKER_LINK, "weekly")
 
 
+def _stopwatch_idle(context: Mapping[str, Any]) -> Copy:
+    subject = context.get("subject_name")
+    title = f"Still studying {subject}?" if subject else "Still studying?"
+    body = "The stopwatch pauses in 2 minutes if you do not answer."
+    return Copy(_fit(title, TITLE_LIMIT), _fit(body, BODY_LIMIT), TRACKER_LINK, f"stopwatch:{context['client_id']}")
+
+
+def _stopwatch_paused(context: Mapping[str, Any]) -> Copy:
+    title = "Stopwatch paused"
+    paused_time = context.get("paused_time")
+    if paused_time:
+        body = f"Paused at {paused_time}. We stopped counting when you went quiet."
+    else:
+        body = "We stopped counting when you went quiet."
+    return Copy(title, _fit(body, BODY_LIMIT), TRACKER_LINK, f"stopwatch:{context['client_id']}")
+
+
+def _notes_ocr_done(context: Mapping[str, Any]) -> Copy:
+    failed = bool(context.get("failed"))
+    title = "OCR could not finish" if failed else "OCR finished"
+    body = "Your file is safe. Try again." if failed else "Your scanned pages are searchable now."
+    doc_id = context.get("doc_id")
+    link = str(context.get("link") or (f"/app/notes/pdf/{doc_id}" if doc_id else "/app/notes"))
+    job_id = context.get("job_id", "")
+    return Copy(title, _fit(body, BODY_LIMIT), link, f"notes_ocr:{job_id}")
+
+
+def _notes_summary_ready(context: Mapping[str, Any]) -> Copy:
+    failed = bool(context.get("failed"))
+    title = "Summary could not finish" if failed else "Exam summary ready"
+    body = "Try again from your chapter notes." if failed else "Open it to review and edit."
+    note_id = context.get("note_id")
+    link = str(context.get("link") or (f"/app/notes/{note_id}" if note_id else "/app/notes"))
+    job_id = context.get("job_id", "")
+    return Copy(title, _fit(body, BODY_LIMIT), link, f"notes_summary:{job_id}")
+
+
+def _notes_export_ready(context: Mapping[str, Any]) -> Copy:
+    failed = bool(context.get("failed"))
+    title = "Export could not finish" if failed else "Your PDF export is ready"
+    body = "Try exporting again from the reader." if failed else "Download it from the reader."
+    doc_id = context.get("doc_id")
+    link = str(context.get("link") or (f"/app/notes/pdf/{doc_id}" if doc_id else "/app/notes"))
+    job_id = context.get("job_id", "")
+    return Copy(title, _fit(body, BODY_LIMIT), link, f"notes_export:{job_id}")
+
+
+def _recall_suggestions_ready(context: Mapping[str, Any]) -> Copy:
+    failed = bool(context.get("failed"))
+    title = "Suggestions could not finish" if failed else "Card suggestions ready"
+    body = "Try generating card suggestions again." if failed else "Review them; nothing is added until you accept."
+    batch_id = context.get("batch_id", "")
+    return Copy(title, _fit(body, BODY_LIMIT), "/app/recall/suggestions", f"recall_suggest:{batch_id}")
+
+
 _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "timer_end": _timer_end,
     "break_over": _break_over,
     "stopwatch_long": _stopwatch_long,
+    "stopwatch_idle": _stopwatch_idle,
+    "stopwatch_paused": _stopwatch_paused,
     "goal_reached": _goal_reached,
     "streak_at_risk": _streak_at_risk,
     "daily_nudge": _daily_nudge,
@@ -176,6 +233,10 @@ _BUILDERS: Mapping[str, Callable[[Mapping[str, Any]], Copy]] = {
     "weekly_summary": _weekly_summary,
     "daily_digest": _daily_digest,
     "test_push": _test_push,
+    "notes_ocr_done": _notes_ocr_done,
+    "notes_summary_ready": _notes_summary_ready,
+    "notes_export_ready": _notes_export_ready,
+    "recall_suggestions_ready": _recall_suggestions_ready,
 }
 
 

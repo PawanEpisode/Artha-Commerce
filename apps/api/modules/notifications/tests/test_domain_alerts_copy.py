@@ -72,9 +72,35 @@ def test_content_without_a_link_opens_the_workspace_home():
         ("revision_due", {"local_date": "2026-10-07", "due_count": 99, "first_chapter": "Y" * 300}),
         ("exam_milestone", {"days_left": 60}),
         ("content_published", {"item_id": "abc", "title": "T" * 300}),
+        ("stopwatch_idle", {"client_id": "c1", "subject_name": "Taxation"}),
+        ("stopwatch_idle", {"client_id": "c1"}),
+        ("stopwatch_paused", {"client_id": "c1", "paused_time": "4:12"}),
+        ("stopwatch_paused", {"client_id": "c1"}),
+        ("notes_ocr_done", {"job_id": "j1", "doc_id": "d1"}),
+        ("notes_ocr_done", {"job_id": "j1", "failed": True}),
+        ("notes_summary_ready", {"job_id": "j2", "note_id": "n1"}),
+        ("notes_summary_ready", {"job_id": "j2", "failed": True}),
+        ("notes_export_ready", {"job_id": "j3", "doc_id": "d1"}),
+        ("notes_export_ready", {"job_id": "j3", "failed": True}),
+        ("recall_suggestions_ready", {"batch_id": "b1"}),
+        ("recall_suggestions_ready", {"batch_id": "b1", "failed": True}),
     ],
 )
 def test_every_new_alert_fits_a_lock_screen_and_links_inside_the_allow_list(event, context):
     copy = build_copy(event, context)
     assert len(copy.title) <= TITLE_LIMIT and len(copy.body) <= BODY_LIMIT
     assert is_allowed(copy.deep_link) and all(ord(c) < 0x2000 or c == "…" for c in copy.title + copy.body)
+
+
+def test_stopwatch_idle_and_paused_copy():
+    idle = build_copy("stopwatch_idle", {"client_id": "c1", "subject_name": "Taxation"})
+    assert idle.title == "Still studying Taxation?"
+    assert idle.body == "The stopwatch pauses in 2 minutes if you do not answer."
+    assert idle.deep_link == "/app/tracker"
+    assert idle.tag == "stopwatch:c1"
+
+    paused = build_copy("stopwatch_paused", {"client_id": "c1", "paused_time": "4:12"})
+    assert paused.title == "Stopwatch paused"
+    assert paused.body == "Paused at 4:12. We stopped counting when you went quiet."
+    assert paused.deep_link == "/app/tracker"
+    assert paused.tag == "stopwatch:c1"

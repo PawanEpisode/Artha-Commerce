@@ -38,6 +38,14 @@ def _context(event: str) -> tuple[dict, dict]:
         "exam_milestone": ({"days_left": 7}, {"days_left": ref}),
         "content_published": ({"title": "A paper", "item_id": ref}, {"item_id": ref}),
         "daily_digest": ({"unread": 1, "local_date": ref}, {"local_date": ref}),
+        "stopwatch_paused": (
+            {"client_id": ref, "minutes": 45, "paused_time": "4:12"},
+            {"client_id": ref, "version": 1},
+        ),
+        "notes_ocr_done": ({"job_id": ref, "doc_id": ref}, {"job_id": ref}),
+        "notes_summary_ready": ({"job_id": ref, "note_id": ref}, {"job_id": ref}),
+        "notes_export_ready": ({"job_id": ref, "doc_id": ref}, {"job_id": ref}),
+        "recall_suggestions_ready": ({"batch_id": ref}, {"batch_id": ref}),
     }[event]
 
 
@@ -45,7 +53,11 @@ def _context(event: str) -> tuple[dict, dict]:
 P3_PUSH_EVENTS = sorted(
     key
     for key, spec in EVENTS.items()
-    if not spec.exempt and key in _BUILDERS and key != "weekly_summary"  # the weekly summary is email only
+    if not spec.exempt
+    and key in _BUILDERS
+    and key != "weekly_summary"
+    and spec.category.value != "results"
+    and key not in ("stopwatch_idle", "stopwatch_paused")
 )
 
 

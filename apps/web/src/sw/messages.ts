@@ -21,3 +21,17 @@ export interface PushReceivedMessage {
 
 export const isPushReceivedMessage = (data: unknown): data is PushReceivedMessage =>
   typeof data === 'object' && data !== null && (data as { type?: unknown }).type === SW_MESSAGE_PUSH_RECEIVED
+
+/** Client navigation message posted by service worker to navigate tab without reload (FR-A14). */
+export const SW_MESSAGE_NAVIGATE = 'artha:navigate'
+
+export interface NavigateMessage {
+  type: typeof SW_MESSAGE_NAVIGATE
+  path: string
+}
+
+export const isNavigateMessage = (data: unknown): data is NavigateMessage =>
+  typeof data === 'object' &&
+  data !== null &&
+  (data as { type?: unknown }).type === SW_MESSAGE_NAVIGATE &&
+  typeof (data as { path?: unknown }).path === 'string'

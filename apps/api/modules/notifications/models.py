@@ -308,9 +308,10 @@ class ActionToken(UUIDModel):
 
     user_id = models.UUIDField()
     notification = models.ForeignKey(Notification, on_delete=models.CASCADE, related_name="action_tokens")
-    timer_client_id = models.UUIDField()  # the timer phase this token may act on
+    subject_kind = models.CharField(max_length=10, choices=choices(enums.SubjectKind), default=enums.SubjectKind.FOCUS)
+    timer_client_id = models.UUIDField()  # the timer phase this token may act on (or stopwatch client_id)
     timer_version = models.IntegerField()  # the version of that phase when the button was made
-    action = models.CharField(max_length=12, choices=choices(enums.ButtonAction))
+    action = models.CharField(max_length=16, choices=choices(enums.ButtonAction))
     token_hash = models.CharField(max_length=64, unique=True)
     expires_at = models.DateTimeField()
     used_at = models.DateTimeField(null=True, blank=True)
@@ -318,6 +319,9 @@ class ActionToken(UUIDModel):
     class Meta:
         db_table = "notifications_actiontoken"
         constraints = [
+            models.CheckConstraint(
+                condition=_in("subject_kind", enums.SubjectKind), name="notif_actiontoken_subject_kind"
+            ),
             models.CheckConstraint(condition=_in("action", enums.ButtonAction), name="notif_actiontoken_action"),
         ]
         indexes = [models.Index(fields=["expires_at"], name="notif_token_expiry_idx")]

@@ -67,3 +67,63 @@ def judge_running(
     if timedelta(seconds=elapsed) < timedelta(seconds=after_seconds) - EARLY_TOLERANCE:
         return RunJudgement(RunState.NOT_DUE, elapsed_seconds=elapsed)
     return RunJudgement(RunState.DUE, elapsed_seconds=elapsed)
+
+
+class IdleState(StrEnum):
+    DUE = "due"
+    GONE = "gone"
+    CHANGED = "changed"
+    PAUSED = "paused"
+    ALREADY_PENDING = "already_pending"
+    RESCHEDULE = "reschedule"
+    PAGE_ALIVE = "page_alive"
+
+
+@dataclass(frozen=True)
+class StopwatchIdleFacts:
+    client_id: object
+    version: int
+    started_at: datetime
+    paused_at: datetime | None
+    last_seen_at: datetime
+    last_active_at: datetime
+    idle_pending: bool
+    idle_prompted_at: datetime | None
+    idle_minutes: int
+    subject_name: str | None = None
+
+
+@dataclass(frozen=True)
+class IdleJudgement:
+    state: IdleState
+    reschedule_at: datetime | None = None
+    subject_name: str | None = None
+    spell: int | None = None
+
+
+def judge_idle(facts: StopwatchIdleFacts | None, *, client_id, expected_version: int, now: datetime) -> IdleJudgement:
+    if facts is None:
+        return IdleJudgement(IdleState.GONE)
+    if str(facts.client_id) != str(client_id) or facts.version != expected_version:
+        return IdleJudgement(IdleState.CHANGED)
+    if facts.paused_at is not None:
+        return IdleJudgement(IdleState.PAUSED)
+    if facts.idle_pending and durations.idle_expired(now, facts.idle_prompted_at):
+        return IdleJudgement(IdleState.PAUSED)
+    if facts.idle_pending:
+        return IdleJudgement(IdleState.ALREADY_PENDING)
+    if facts.idle_minutes <= 0:
+        return IdleJudgement(IdleState.CHANGED)
+
+    new_due_at = facts.last_active_at + timedelta(minutes=facts.idle_minutes)
+    if new_due_at > now + EARLY_TOLERANCE:
+        return IdleJudgement(IdleState.RESCHEDULE, reschedule_at=new_due_at)
+
+    if now - facts.last_seen_at < timedelta(seconds=90):
+        return IdleJudgement(IdleState.PAGE_ALIVE)
+
+    return IdleJudgement(
+        IdleState.DUE,
+        subject_name=facts.subject_name,
+        spell=int(facts.last_active_at.timestamp()),
+    )

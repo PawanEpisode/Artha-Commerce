@@ -79,20 +79,29 @@ def test_an_overtime_alert_to_android_carries_start_break_and_pause_with_one_tim
     assert not any(t in str(stored) for t in found.values())  # only the hash is kept
 
 
-def test_only_android_devices_get_buttons(bench, fake_push):
+def test_only_supported_devices_get_buttons(bench, fake_push):
     register(USER, platform="ios", browser="safari", display_mode="standalone")
-    register(USER, platform="windows", browser="chrome")
+    register(USER, platform="windows", browser="firefox")
     alert(bench, fake_push)
     by_actions = sorted(len(p["actions"]) for p in sent_payloads(fake_push))
     assert by_actions == [0, 0, 2]
     assert ActionToken.objects.count() == 2  # minted once for the send, not per device
 
 
-def test_no_device_on_android_means_no_tokens(bench, fake_push, android):
+def test_no_supported_device_means_no_tokens(bench, fake_push, android):
     android.platform = "macos"
+    android.browser = "safari"
     android.save()
     alert(bench, fake_push)
     assert sent_payloads(fake_push)[0]["actions"] == [] and not ActionToken.objects.exists()
+
+
+def test_desktop_chromium_gets_buttons(bench, fake_push):
+    register(USER, platform="windows", browser="chrome")
+    register(USER, platform="macos", browser="edge")
+    alert(bench, fake_push)
+    for p in sent_payloads(fake_push):
+        assert len(p["actions"]) == 2
 
 
 def test_a_round_whose_break_begins_by_itself_has_no_buttons(bench, fake_push):

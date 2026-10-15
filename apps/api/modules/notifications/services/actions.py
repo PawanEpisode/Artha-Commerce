@@ -11,7 +11,7 @@ from __future__ import annotations
 import logging
 import secrets
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.db import transaction
 from django.utils import timezone
@@ -21,7 +21,7 @@ from modules.tracking.errors import TrackingError
 
 from .. import flags
 from ..domain import actions as buttons
-from ..domain.enums import ButtonAction
+from ..domain.enums import ButtonAction, SubjectKind
 from ..domain.payload import PayloadAction, link_with_notification
 from ..errors import ActionUnavailable, NotificationsDisabled
 from ..logs import log_event
@@ -43,10 +43,11 @@ def mint(
     actions: tuple[ButtonAction, ...] | None = None,
     client_id=None,
     version: int | None = None,
+    subject_kind: str | None = None,
 ) -> list[PayloadAction]:
     """
     Fresh one-time tokens for the buttons of `notification` (by default the ones its event and context call for),
-    valid for `TOKEN_TTL`. Empty when the alert has no buttons or buttons are switched off.
+    valid for `TOKEN_TTL` (or 120s for `stopwatch_idle`). Empty when the alert has no buttons or buttons are switched off.
     """
     if not buttons_enabled():
         return []
@@ -56,6 +57,13 @@ def mint(
     version = version if version is not None else context.get("version")
     if not chosen or client_id is None or version is None:
         return []
+    if subject_kind is None:
+        subject_kind = (
+            SubjectKind.STOPWATCH.value
+            if notification.event in ("stopwatch_idle", "stopwatch_paused")
+            else SubjectKind.FOCUS.value
+        )
+    ttl = timedelta(seconds=120) if notification.event == "stopwatch_idle" else buttons.TOKEN_TTL
     rows, out = [], []
     for action in chosen:
         token = secrets.token_urlsafe(buttons.TOKEN_BYTES)
@@ -63,11 +71,12 @@ def mint(
             ActionToken(
                 user_id=notification.user_id,
                 notification=notification,
+                subject_kind=subject_kind,
                 timer_client_id=client_id,
                 timer_version=int(version),
                 action=action,
                 token_hash=buttons.hash_token(token),
-                expires_at=now + buttons.TOKEN_TTL,
+                expires_at=now + ttl,
             )
         )
         out.append(PayloadAction(action.value, buttons.button_title(action, context), token))
@@ -116,26 +125,47 @@ def tap(token: str, *, now: datetime | None = None) -> TapResult:
     if not flags.send_flag_enabled(row.user_id):
         raise NotificationsDisabled
     action = ButtonAction(row.action)
-    try:
-        with transaction.atomic():
-            result = focus_services.act_from_notification(
-                row.user_id,
-                action=action.value,
-                client_id=row.timer_client_id,
-                version=row.timer_version,
-                issued_at=row.expires_at - buttons.TOKEN_TTL,  # when the button was made, on the clock that made it
-            )
-    except TrackingError:  # the timer refused (a stopwatch is running, the round cannot change): nothing changed
-        result = focus_services.ButtonResult(STALE)
+    if row.subject_kind == SubjectKind.STOPWATCH.value:
+        from modules.tracking import services as tracking_services
+
+        try:
+            with transaction.atomic():
+                result = tracking_services.act_from_notification(
+                    row.user_id,
+                    action=action.value,
+                    client_id=row.timer_client_id,
+                    version=row.timer_version,
+                    issued_at=row.created_at,
+                )
+        except TrackingError:
+            result = tracking_services.StopwatchButtonResult(STALE)
+    else:
+        try:
+            with transaction.atomic():
+                result = focus_services.act_from_notification(
+                    row.user_id,
+                    action=action.value,
+                    client_id=row.timer_client_id,
+                    version=row.timer_version,
+                    issued_at=row.expires_at - buttons.TOKEN_TTL,  # when the button was made, on the clock that made it
+                )
+        except TrackingError:  # the timer refused (a stopwatch is running, the round cannot change): nothing changed
+            result = focus_services.ButtonResult(STALE)
 
     notification = row.notification
     inbox_service.mark_clicked(row.user_id, notification.id, now=now)  # the student engaged with this alert
     follow_up: list[PayloadAction] = []
     if action is ButtonAction.PAUSE and result.outcome in ("done", "already") and result.paused:
         follow_up = mint(
-            notification, now=now, actions=(ButtonAction.RESUME,), client_id=result.client_id, version=result.version
+            notification,
+            now=now,
+            actions=(ButtonAction.RESUME,),
+            client_id=result.client_id,
+            version=result.version,
+            subject_kind=row.subject_kind,
         )
     copy = buttons.confirmation(action, result.outcome)
+
     log_event(logging.INFO, "push_action", event=notification.event, action=action.value, outcome=result.outcome)
     return TapResult(
         outcome=result.outcome,

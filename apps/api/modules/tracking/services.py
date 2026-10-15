@@ -10,6 +10,7 @@ from __future__ import annotations
 import logging
 import uuid
 from collections.abc import Callable
+from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
@@ -896,6 +897,136 @@ def answer_idle(user_id, *, answer: str) -> ActiveStopwatch:
     sw.last_seen_at = now
     sw.save()
     return sw
+
+
+@dataclass(frozen=True)
+class SettleOutcome:
+    outcome: str  # "paused", "answered", "gone"
+    paused_at: datetime | None = None
+    paused_time: str | None = None
+    client_id: uuid.UUID | None = None
+    version: int | None = None
+
+
+@dataclass(frozen=True)
+class StopwatchButtonResult:
+    outcome: str  # "done", "already", "stale"
+    client_id: uuid.UUID | None = None
+    version: int | None = None
+    paused: bool = False
+
+
+@transaction.atomic
+def request_idle_check(user_id, client_id, version: int, *, now: datetime | None = None) -> bool:
+    """
+    Mark an active stopwatch as prompted for idle check (ERD 2.4, FR-A3).
+    Only writes if row matches client_id and version, is not paused, and idle_pending is False.
+    """
+    now = now or _now()
+    sw = _lock_stopwatch(user_id)
+    if not sw or str(sw.client_id) != str(client_id) or sw.version != version:
+        return False
+    if sw.paused_at is not None or sw.idle_pending:
+        return False
+    sw.idle_pending = True
+    sw.idle_prompted_at = now
+    sw.save(update_fields=["idle_pending", "idle_prompted_at", "updated_at"])
+    return True
+
+
+@transaction.atomic
+@announces_stopwatch
+def settle_idle(user_id, client_id, *, now: datetime | None = None) -> SettleOutcome:
+    """
+    Settle an idle stopwatch after the answer window has expired (ERD 2.4, FR-A6).
+    Pauses at the last active moment, increments pause_count, bumps version.
+    """
+    now = now or _now()
+    sw = _lock_stopwatch(user_id)
+    if not sw or str(sw.client_id) != str(client_id):
+        return SettleOutcome("gone")
+    if not sw.idle_pending:
+        return SettleOutcome("answered", client_id=sw.client_id, version=sw.version)
+    if sw.paused_at is not None:
+        sw.idle_pending, sw.idle_prompted_at = False, None
+        sw.save(update_fields=["idle_pending", "idle_prompted_at", "updated_at"])
+        return SettleOutcome("paused", paused_at=sw.paused_at, client_id=sw.client_id, version=sw.version)
+
+    paused_moment = min(now, max(sw.last_active_at, sw.started_at))
+    sw.paused_at = paused_moment
+    sw.pause_count += 1
+    sw.idle_pending = False
+    sw.idle_prompted_at = None
+    sw.version += 1
+    sw.save()
+
+    tz_name = get_timezone(user_id)
+    local_dt = paused_moment.astimezone(ZoneInfo(tz_name))
+    paused_time = f"{local_dt.hour % 12 or 12}:{local_dt.minute:02d}"
+    return SettleOutcome(
+        "paused",
+        paused_at=paused_moment,
+        paused_time=paused_time,
+        client_id=sw.client_id,
+        version=sw.version,
+    )
+
+
+@transaction.atomic
+@announces_stopwatch
+def act_from_notification(
+    user_id, *, action: str, client_id, version: int, issued_at: datetime
+) -> StopwatchButtonResult:
+    """
+    A button on a stopwatch alert was tapped (ERD 2.2, FR-A8).
+    Actions: still_studying, pause, resume.
+    """
+    if action not in ("still_studying", "pause", "resume"):
+        raise InvalidInput("Unknown action.", code="unknown_action")
+    now = _now()
+    sw = _lock_stopwatch(user_id)
+    if not sw or str(sw.client_id) != str(client_id):
+        return StopwatchButtonResult("stale")
+
+    _resolve_idle(sw, now)
+
+    if sw.version != version:
+        return StopwatchButtonResult("stale", sw.client_id, sw.version, sw.paused_at is not None)
+
+    if action == "still_studying":
+        if sw.paused_at is not None:
+            return StopwatchButtonResult("stale", sw.client_id, sw.version, True)
+        if not sw.idle_pending:
+            return StopwatchButtonResult("already", sw.client_id, sw.version, False)
+        sw.idle_pending = False
+        sw.idle_prompted_at = None
+        sw.last_active_at = now
+        sw.last_seen_at = now
+        sw.save()
+        return StopwatchButtonResult("done", sw.client_id, sw.version, False)
+
+    if action == "pause":
+        if sw.paused_at is not None:
+            return StopwatchButtonResult("already", sw.client_id, sw.version, True)
+        sw.paused_at = max(now, sw.started_at)
+        sw.pause_count += 1
+        sw.idle_pending = False
+        sw.idle_prompted_at = None
+        _bump(sw, now)
+        return StopwatchButtonResult("done", sw.client_id, sw.version, True)
+
+    if action == "resume":
+        if sw.paused_at is None:
+            return StopwatchButtonResult("already", sw.client_id, sw.version, False)
+        moment = durations.whole_seconds(durations.clamp_client_time(now, now))
+        sw.paused_total_seconds += max(0, durations.span_seconds(sw.paused_at, max(moment, sw.paused_at)))
+        sw.paused_at = None
+        sw.idle_pending = False
+        sw.idle_prompted_at = None
+        _bump(sw, now)
+        return StopwatchButtonResult("done", sw.client_id, sw.version, False)
+
+    return StopwatchButtonResult("stale")
 
 
 @transaction.atomic

@@ -3,6 +3,7 @@ import { resolveDeepLink, safeDeepLink } from './deeplink'
 import {
   type PushReceivedMessage,
   type SubscriptionChangedMessage,
+  SW_MESSAGE_NAVIGATE,
   SW_MESSAGE_PUSH_RECEIVED,
   SW_MESSAGE_SUBSCRIPTION_CHANGED,
 } from './messages'
@@ -103,6 +104,16 @@ export async function handleNotificationClick(deps: ClickDeps, data: unknown): P
   try {
     await client.focus()
     if (client.url === target) return 'focused'
+    if (typeof client.postMessage === 'function') {
+      try {
+        const urlObj = new URL(target)
+        const path = urlObj.pathname + urlObj.search + urlObj.hash
+        client.postMessage({ type: SW_MESSAGE_NAVIGATE, path })
+        return 'navigated'
+      } catch {
+        // Fall back to navigate or open
+      }
+    }
     if (!client.navigate) return open()
     await client.navigate(target)
     return 'navigated'

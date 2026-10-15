@@ -39,3 +39,11 @@ def declarative_push_enabled() -> bool:
     return bool(getattr(settings, "NOTIFICATIONS_DECLARATIVE_PUSH", False)) and bool(
         getattr(settings, "NOTIFICATIONS_WEB_BASE_URL", "")
     )
+
+
+#: FR-A19: Gates away alerts and background-results notifications. Strict: PostHog unreachable means off.
+AWAY_ALERTS_FLAG = "away_alerts"
+
+
+def away_alerts_enabled(user_id) -> bool:
+    return master_enabled() and flag_enabled(AWAY_ALERTS_FLAG, user_id, strict=True)

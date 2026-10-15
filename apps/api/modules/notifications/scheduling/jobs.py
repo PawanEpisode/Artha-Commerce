@@ -33,9 +33,13 @@ from ..services import notify as notify_service
 from .planning import (  # noqa: F401 - the planning surface, re-exported
     cancel_for_stopwatch,
     cancel_for_timer,
+    forget_message,
     plan_deferred,
+    plan_stopwatch_idle,
+    plan_stopwatch_idle_end,
     plan_stopwatch_long,
     plan_timer_end,
+    publish,
 )
 
 logger = logging.getLogger(__name__)
@@ -48,6 +52,7 @@ class FireOutcome(StrEnum):
     NOTIFIED = "notified"  # a notification was created and handed to dispatch (its own outcome is in `delivery`)
     SKIPPED = "skipped"  # claimed, judged, nothing to send
     IGNORED = "ignored"  # the job is gone, or another call already claimed it
+    RESCHEDULED = "rescheduled"  # rescheduled to a new fire_at
 
 
 @dataclass(frozen=True)
@@ -134,6 +139,21 @@ def _process(job: ScheduledJob, now: datetime) -> FireResult:
         return _skip(job, verdict.reason, now)
     if isinstance(verdict, handlers.NotYet):
         raise TransientJobError("The moment has not arrived yet.")
+    if isinstance(verdict, handlers.Reschedule):
+        ScheduledJob.objects.filter(pk=job.pk).update(
+            fire_at=verdict.at,
+            status=JobStatus.PENDING,
+            external_id=None,
+            fired_at=None,
+            updated_at=timezone.now(),
+        )
+        forget_message(job.external_id)
+        job.fire_at = verdict.at
+        job.status = JobStatus.PENDING
+        job.external_id = None
+        publish(job)
+        log_event(logging.INFO, "job_rescheduled", kind=job.kind, new_fire_at=verdict.at.isoformat())
+        return FireResult(FireOutcome.RESCHEDULED)
 
     if isinstance(verdict, handlers.Redeliver):
         # A notification that already exists (held by quiet hours, or due now): ask dispatch again with today's facts.

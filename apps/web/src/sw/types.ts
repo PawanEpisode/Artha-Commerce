@@ -30,6 +30,7 @@ export interface WindowClientLike {
   visibilityState: 'visible' | 'hidden' | 'prerender' | string
   focus(): Promise<unknown>
   navigate?(url: string): Promise<unknown>
+  postMessage?(message: unknown): void
 }
 
 export interface ClientsLike {
