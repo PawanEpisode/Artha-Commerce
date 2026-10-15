@@ -178,7 +178,8 @@ def test_thousand_pages_inspect_and_extract_stay_within_memory(tmp_path):
         check=True,
         timeout=240,
     )
-    peak_mb = int(out.stdout.strip().splitlines()[-1]) / 1024  # ru_maxrss is KiB on Linux
+    scale = 1024 * 1024 if sys.platform == "darwin" else 1024  # ru_maxrss is bytes on macOS, KiB on Linux
+    peak_mb = int(out.stdout.strip().splitlines()[-1]) / scale
     assert peak_mb < 400, f"peak RSS {peak_mb:.0f} MB"
 
 

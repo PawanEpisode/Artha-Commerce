@@ -26,6 +26,7 @@ from core import jobs as core_jobs
 from core import suggestion_source_port as port
 
 from ..adapters import ai as ai_adapter
+from ..adapters import notifications as notifications_adapter
 from ..adapters import syllabus as syllabus_adapter
 from ..domain import cards as card_domain
 from ..domain import suggestions as sdomain
@@ -212,41 +213,21 @@ def _close(batch: Batch, status: str, *, error: str = "", refund_all: bool = Fal
 
 
 def _notify_suggestions_ready(batch: Batch) -> None:
-    user_id = batch.user_id
+    user_id = str(batch.user_id)
     batch_id = str(batch.id)
 
     def _send():
-        try:
-            from modules.notifications.services.notify import notify
-
-            notify(
-                user_id,
-                "recall_suggestions_ready",
-                context={"batch_id": batch_id, "failed": False},
-                dedupe_ref={"batch_id": batch_id},
-            )
-        except Exception:
-            logger.exception("Failed to send recall_suggestions_ready notification")
+        notifications_adapter.notify_suggestions_ready(user_id, batch_id, failed=False)
 
     transaction.on_commit(_send)
 
 
 def _notify_suggestions_failed(batch: Batch) -> None:
-    user_id = batch.user_id
+    user_id = str(batch.user_id)
     batch_id = str(batch.id)
 
     def _send():
-        try:
-            from modules.notifications.services.notify import notify
-
-            notify(
-                user_id,
-                "recall_suggestions_ready",
-                context={"batch_id": batch_id, "failed": True},
-                dedupe_ref={"batch_id": batch_id},
-            )
-        except Exception:
-            logger.exception("Failed to send recall_suggestions_ready failure notification")
+        notifications_adapter.notify_suggestions_ready(user_id, batch_id, failed=True)
 
     transaction.on_commit(_send)
 

@@ -285,7 +285,12 @@ def test_clamd_ping_talks_the_real_protocol(settings, tmp_path):
 
     sock_path = str(tmp_path / "clamd.sock")
     server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-    server.bind(sock_path)
+    try:
+        server.bind(sock_path)
+    except OSError as err:
+        if "AF_UNIX path too long" in str(err) or "too long" in str(err).lower():
+            pytest.skip(f"AF_UNIX path exceeds platform limits: {err}")
+        raise
     server.listen(1)
 
     def serve():

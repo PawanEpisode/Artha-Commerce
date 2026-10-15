@@ -96,8 +96,11 @@ def events():
 
     from core import events as core_events
 
-    core_events.clear()
+    handlers = []
     for ev in ("question_version_live", "contribution_decided", "question_flagged", "question_taken_down"):
-        core_events.subscribe(ev, _handler(ev))
+        h = _handler(ev)
+        core_events.subscribe(ev, h)
+        handlers.append((ev, h))
     yield emitted
-    core_events.clear()
+    for ev, h in handlers:
+        core_events.unsubscribe(ev, h)

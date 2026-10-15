@@ -44,6 +44,7 @@ def test_only_adapters_import_other_modules_and_only_through_selectors():
         "adapters/coverage.py": None,
         "adapters/tracking.py": None,
         "adapters/profiles.py": "modules.profiles",
+        "adapters/notifications.py": None,
     }
     other = re.compile(r"^\s*(?:from|import)\s+modules\.(?!recall\b)(\w+)", re.M)
     for path in sources():

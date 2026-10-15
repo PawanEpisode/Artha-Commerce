@@ -38,6 +38,12 @@ def subscribe(name: str, fn: Subscriber) -> None:
         _subscribers[name].append(fn)
 
 
+def unsubscribe(name: str, fn: Subscriber) -> None:
+    """Remove a previously registered subscriber."""
+    if fn in _subscribers.get(name, []):
+        _subscribers[name].remove(fn)
+
+
 def emit(name: str, **payload: Any) -> None:
     for fn in list(_subscribers.get(name, ())):
         try:

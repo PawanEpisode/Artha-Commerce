@@ -1,7 +1,10 @@
 {
   "version": 1,
   "never_sent": ["title", "task_reason_text", "notes"],
+  "never_sent": ["title", "task_reason_text", "notes"],
   "buckets": {
+    "minutes": ["0-5", "6-15", "16-30", "31-60", "61+"],
+    "time": ["lt1s", "1-3s", "3-10s", "10-30s", "30s+"]
     "minutes": ["0-5", "6-15", "16-30", "31-60", "61+"],
     "time": ["lt1s", "1-3s", "3-10s", "10-30s", "30s+"]
   },
@@ -36,9 +39,11 @@
     "today_plan_regenerated": {
       "where": "api",
       "props": ["reason", "kept_count", "replaced_count"]
+      "props": ["reason", "kept_count", "replaced_count"]
     },
     "today_task_started": {
       "where": "web",
+      "props": ["kind", "provider", "position", "slot", "was_starter"]
       "props": ["kind", "provider", "position", "slot", "was_starter"]
     },
     "today_task_completed": {
@@ -57,65 +62,81 @@
     "today_task_skipped": {
       "where": "api",
       "props": ["kind", "reason", "suppressed"]
+      "props": ["kind", "reason", "suppressed"]
     },
     "today_task_snoozed": {
       "where": "api",
+      "props": ["kind", "until_days"]
       "props": ["kind", "until_days"]
     },
     "today_task_swapped": {
       "where": "api",
       "props": ["kind", "result"]
+      "props": ["kind", "result"]
     },
     "today_task_added": {
       "where": "web",
+      "props": ["has_subject", "est_minutes_bucket", "offline"]
       "props": ["has_subject", "est_minutes_bucket", "offline"]
     },
     "today_task_undone": {
       "where": "web",
       "props": ["from_state", "via"]
+      "props": ["from_state", "via"]
     },
     "today_why_opened": {
       "where": "web",
+      "props": ["kind", "reason_code"]
       "props": ["kind", "reason_code"]
     },
     "today_day_completed": {
       "where": "api",
       "props": ["done", "skipped", "planned", "minutes_bucket", "streak"]
+      "props": ["done", "skipped", "planned", "minutes_bucket", "streak"]
     },
     "today_day_closed": {
       "where": "api",
+      "props": ["done", "skipped", "expired", "planned", "completed", "comeback"]
       "props": ["done", "skipped", "expired", "planned", "completed", "comeback"]
     },
     "today_celebration_viewed": {
       "where": "web",
       "props": ["reduced_motion"]
+      "props": ["reduced_motion"]
     },
     "today_tomorrow_viewed": {
       "where": "web",
+      "props": ["task_count"]
       "props": ["task_count"]
     },
     "today_overload_shown": {
       "where": "web",
       "props": ["kind", "backlog_bucket"]
+      "props": ["kind", "backlog_bucket"]
     },
     "today_exam_date_prompted": {
       "where": "web",
+      "props": ["action", "days_to_exam_bucket"]
       "props": ["action", "days_to_exam_bucket"]
     },
     "today_exam_date_set": {
       "where": "web",
       "props": ["action", "days_to_exam_bucket"]
+      "props": ["action", "days_to_exam_bucket"]
     },
     "today_feedback_given": {
       "where": "web",
+      "props": ["rating"]
       "props": ["rating"]
     },
     "today_offline_queued": {
       "where": "web",
       "props": ["count", "age_bucket"]
+      "props": ["count", "age_bucket"]
     },
     "today_offline_replayed": {
       "where": "web",
+      "props": ["count", "age_bucket"]
       "props": ["count", "age_bucket"]
     },
     "today_settings_changed": {
