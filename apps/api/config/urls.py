@@ -20,4 +20,5 @@ urlpatterns = [
     path("api/v1/", include("modules.recall.urls")),
     path("api/v1/", include("modules.today.urls")),
     path("api/v1/", include("modules.questionbank.urls")),
+    path("api/v1/practice/", include("modules.practice.urls")),
 ]

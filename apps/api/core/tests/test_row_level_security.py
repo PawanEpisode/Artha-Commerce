@@ -21,6 +21,7 @@ APP_LABELS = (
     "notes",
     "today",
     "questionbank",
+    "practice",
 )
 
 
@@ -130,6 +131,20 @@ def test_the_questionbank_tables_are_covered():
         "questionbank_importrow",
         "questionbank_exportjob",
         "questionbank_questionstats",
+    } <= set(TABLES)
+
+
+def test_the_practice_tables_are_covered():
+    assert {
+        "practice_session",
+        "practice_attemptanswer",
+        "practice_submission",
+        "practice_submissionpage",
+        "practice_scoringrule",
+        "practice_questionstate",
+        "practice_dailyrollup",
+        "practice_regradejob",
+        "practice_settings",
     } <= set(TABLES)
 
 

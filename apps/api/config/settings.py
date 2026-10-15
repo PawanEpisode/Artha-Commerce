@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     "modules.recall",
     "modules.today",
     "modules.questionbank",
+    "modules.practice",
 ]
 
 MIDDLEWARE = [

@@ -9,7 +9,7 @@ import base64
 import random
 import uuid
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Any, Literal
 
@@ -97,6 +97,15 @@ class GradableQuestion:
     correct_option_ids: list[uuid.UUID]
     numeric_key: dict[str, Any] | None
     rubric_id: uuid.UUID | None
+    course_id: uuid.UUID | None = None
+    level_id: uuid.UUID | None = None
+    subject_id: uuid.UUID | None = None
+    subject_key: str = ""
+    chapter_id: uuid.UUID | None = None
+    options: list[Any] = field(default_factory=list)
+    explanation_md: str = ""
+    answer_key: Any = None
+    parent_id: uuid.UUID | None = None
 
 
 @dataclass
@@ -444,6 +453,19 @@ def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uu
 
         rubric_id = v.rubric.pk if hasattr(v, "rubric") else None
 
+        options_list = [
+            type(
+                "GradableOption",
+                (),
+                {
+                    "id": opt.id,
+                    "is_correct": opt.is_correct,
+                    "feedback_md": opt.feedback_md or "",
+                },
+            )()
+            for opt in v.options.all()
+        ]
+
         res[q_id] = GradableQuestion(
             question_id=q.id,
             version_id=v.id,
@@ -454,6 +476,15 @@ def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uu
             correct_option_ids=correct_opt_ids,
             numeric_key=num_key,
             rubric_id=rubric_id,
+            course_id=q.course_id,
+            level_id=q.level_id,
+            subject_id=q.primary_subject_id,
+            subject_key=q.subject_key,
+            chapter_id=q.primary_chapter_id,
+            options=options_list,
+            explanation_md=v.explanation_md or "",
+            answer_key=key,
+            parent_id=q.parent_id,
         )
     return res
 

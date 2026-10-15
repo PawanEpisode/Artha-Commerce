@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "practice_session_completed.v1",
+  "type": "object",
+  "required": [
+    "session_id",
+    "mode",
+    "origin_module",
+    "completion",
+    "active_seconds",
+    "tz",
+    "local_date",
+    "scoring_profile",
+    "rule_verified",
+    "score",
+    "max_score",
+    "score_status",
+    "counts",
+    "by_chapter"
+  ],
+  "properties": {
+    "session_id": { "type": "string", "format": "uuid" },
+    "mode": { "type": "string" },
+    "origin_module": { "type": "string" },
+    "origin_ref": { "type": ["string", "null"] },
+    "completion": {
+      "type": "string",
+      "enum": ["submitted", "auto_submitted", "abandoned_partial"]
+    },
+    "started_at": { "type": ["string", "null"], "format": "date-time" },
+    "ended_at": { "type": ["string", "null"], "format": "date-time" },
+    "active_seconds": { "type": "integer", "minimum": 0 },
+    "tz": { "type": "string" },
+    "local_date": { "type": "string", "format": "date" },
+    "scoring_profile": { "type": "string" },
+    "rule_verified": { "type": "boolean" },
+    "score": { "type": "number" },
+    "max_score": { "type": "number" },
+    "score_status": { "type": "string", "enum": ["none", "final", "provisional"] },
+    "counts": {
+      "type": "object",
+      "required": ["answered", "correct", "incorrect", "partial", "skipped", "pending"],
+      "properties": {
+        "answered": { "type": "integer", "minimum": 0 },
+        "correct": { "type": "integer", "minimum": 0 },
+        "incorrect": { "type": "integer", "minimum": 0 },
+        "partial": { "type": "integer", "minimum": 0 },
+        "skipped": { "type": "integer", "minimum": 0 },
+        "pending": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "by_chapter": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_id",
+          "answered",
+          "correct",
+          "incorrect",
+          "skipped",
+          "seconds",
+          "marks",
+          "max_marks"
+        ],
+        "properties": {
+          "chapter_id": { "type": "string", "format": "uuid" },
+          "chapter_key": { "type": ["string", "null"] },
+          "subject_id": { "type": ["string", "null"], "format": "uuid" },
+          "subject_key": { "type": ["string", "null"] },
+          "answered": { "type": "integer", "minimum": 0 },
+          "correct": { "type": "integer", "minimum": 0 },
+          "incorrect": { "type": "integer", "minimum": 0 },
+          "skipped": { "type": "integer", "minimum": 0 },
+          "seconds": { "type": "integer", "minimum": 0 },
+          "marks": { "type": "number" },
+          "max_marks": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "retake_of_id": { "type": ["string", "null"], "format": "uuid" }
+  },
+  "additionalProperties": false
+}

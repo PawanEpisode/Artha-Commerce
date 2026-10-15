@@ -208,4 +208,5 @@ Plan: `docs/QB-BUILD-WAVES.md` (W1 to W5 for R1). W1 (Content Engine API: schema
 | QB-1 | Run `pnpm lint:api && pnpm test:api` on real PostgreSQL (apply migration `questionbank.0001`, RLS tests) | Open (owner) | Verified on SQLite and via contract drift test |
 | QB-2 | Create PostHog flag `question_bank` at 0% (strict mode fails closed) | Open (owner) | Needed before enabling any cohort |
 | QB-3 | Initial seed target: CMA Intermediate and Final (Syllabus 2022, last 3 sittings: June 2024, Dec 2024, June 2025) | Agreed | Selected by owner 2026-10-15 |
-| QB-4 | Wave 2 (Practice Engine API: practice schema, partitioned attempts, scoring & grading, ports) | Planned | Next wave |
+| QB-4 | Wave 2 (Practice Engine API: practice schema, partitioned attempts, scoring & grading, ports, subscribers, chapter progress, zero answer leakage) | Built (W2) | All 39 tests passing; contract drift test green; `core.question_port`, `core.suggestion_source_port`, `core.today_port` registered; fail-closed |
+| QB-5 | Wave 3 (Web browse and practice: DS primitives, questionbank web, practice player, offline queue) | Planned | Next wave |

@@ -196,7 +196,12 @@ def test_a_batch_already_running_for_the_chapter_is_returned_without_a_charge(ap
 
 def test_validation_unknown_chapter_sources_and_too_little_material(api, ids, notes, consented):
     assert ask(api, str(uuid.uuid4())).status_code == 422
-    assert ask(api, ids["gst"], sources=["wrong_answers"]).json_body["error"]["code"] == "source_unavailable"
+    curr_wa = port.get_suggestion_source("wrong_answers")
+    port.register_suggestion_source("wrong_answers", None)
+    try:
+        assert ask(api, ids["gst"], sources=["wrong_answers"]).json_body["error"]["code"] == "source_unavailable"
+    finally:
+        port.register_suggestion_source("wrong_answers", curr_wa)
     assert ask(api, ids["gst"], sources=["bogus"]).status_code == 400
     assert ask(api, ids["gst"], count=11).status_code == 400
     assert (

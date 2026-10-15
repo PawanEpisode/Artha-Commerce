@@ -53,3 +53,42 @@ id,public_id,kind,stem_head,marks,difficulty,nature,source_name,source_year,sour
 <!-- contract:error-codes -->
 feature_disabled,validation_failed,checks_failed,invalid_operation,not_found
 <!-- /contract:error-codes -->
+
+## 6. Practice Engine Endpoints and Throttles
+
+<!-- contract:practice-endpoints -->
+| Method | Path | Purpose | Throttle Scope |
+| --- | --- | --- | --- |
+| GET | `sessions/` | List student practice sessions | `qb_read` |
+| POST | `sessions/` | Create new practice session | `qb_write` |
+| GET | `sessions/<uuid:session_id>/` | Session detail (playable or review) | `qb_read` |
+| POST | `sessions/<uuid:session_id>/answers/<uuid:item_id>/` | Save student answer | `qb_write` |
+| POST | `sessions/<uuid:session_id>/answers/<uuid:item_id>/check/` | Instant answer check | `qb_write` |
+| POST | `sessions/<uuid:session_id>/answers/<uuid:item_id>/mistake-reason/` | Tag mistake reason | `qb_write` |
+| POST | `sessions/<uuid:session_id>/pause/` | Pause timed session | `qb_write` |
+| POST | `sessions/<uuid:session_id>/resume/` | Resume paused session | `qb_write` |
+| POST | `sessions/<uuid:session_id>/submit/` | Submit and finalize session | `qb_write` |
+| POST | `sessions/<uuid:session_id>/retake/` | Retake session items | `qb_write` |
+| GET | `progress/chapters/` | Progress by chapter batch (E-F06-1) | `qb_read` |
+| GET | `progress/chapters/<uuid:chapter_id>/` | Progress for one chapter (E-F06-1) | `qb_read` |
+| GET | `bookmarks/` | List student bookmarked questions | `qb_read` |
+| GET | `mistakes/` | List recent question mistakes | `qb_read` |
+| POST | `questions/<uuid:question_id>/state/` | Update question state flags | `qb_write` |
+<!-- /contract:practice-endpoints -->
+
+## 7. Practice Payload Keys
+
+### Session View Keys
+<!-- contract:practice-session-view-keys -->
+id,mode,title,status,feedback_policy,scoring_profile,question_count,total_marks,time_limit_seconds,deadline_at,score,max_score,score_status,items
+<!-- /contract:practice-session-view-keys -->
+
+### Session Item View Keys
+<!-- contract:practice-session-item-view-keys -->
+position,question_id,kind,stem_md,options,marks_max,negative_max,status,selected_option_ids,numeric_value,numeric_unit,time_spent_ms,marked_for_review,doubt,confidence,result,marks_awarded,negative_applied,explanation_md,feedback
+<!-- /contract:practice-session-item-view-keys -->
+
+### Chapter Progress Keys (E-F06-1)
+<!-- contract:practice-chapter-progress-keys -->
+attempted,correct_last,wrong_last,bookmarked,due,avg_time_ms,last_attempt_at
+<!-- /contract:practice-chapter-progress-keys -->
