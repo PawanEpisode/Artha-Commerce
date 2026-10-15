@@ -20,6 +20,7 @@ APP_LABELS = (
     "media",
     "notes",
     "today",
+    "questionbank",
 )
 
 
@@ -95,6 +96,39 @@ def test_the_today_tables_are_covered():
         "today_studyplan",
         "today_milestone",
         "today_replanevent",
+    } <= set(TABLES)
+
+
+def test_the_questionbank_tables_are_covered():
+    assert {
+        "questionbank_question",
+        "questionbank_questionversion",
+        "questionbank_option",
+        "questionbank_answerkey",
+        "questionbank_rubric",
+        "questionbank_rubricstep",
+        "questionbank_questiontopic",
+        "questionbank_tag",
+        "questionbank_questiontag",
+        "questionbank_versionmedia",
+        "questionbank_fingerprint",
+        "questionbank_duplicatelink",
+        "questionbank_review",
+        "questionbank_report",
+        "questionbank_verification",
+        "questionbank_takedown",
+        "questionbank_takedownitem",
+        "questionbank_contributor",
+        "questionbank_quotaplan",
+        "questionbank_auditlog",
+        "questionbank_collection",
+        "questionbank_collectionitem",
+        "questionbank_savedfilter",
+        "questionbank_sharelink",
+        "questionbank_importjob",
+        "questionbank_importrow",
+        "questionbank_exportjob",
+        "questionbank_questionstats",
     } <= set(TABLES)
 
 

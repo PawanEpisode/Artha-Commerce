@@ -12,9 +12,12 @@ This is the stand-in for the `core/events` outbox that F-06 will introduce; name
 from __future__ import annotations
 
 import logging
+import uuid
 from collections import defaultdict
 from collections.abc import Callable
 from typing import Any
+
+from django.utils import timezone
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +44,33 @@ def emit(name: str, **payload: Any) -> None:
             fn(**payload)
         except Exception:  # noqa: BLE001 - a consumer must never roll back or fail the publisher's write
             logger.exception("Subscriber %s failed for event %s", getattr(fn, "__name__", fn), name)
+
+
+def emit_domain_event(
+    name: str,
+    payload: dict[str, Any],
+    *,
+    user_id: Any | None = None,
+    actor_id: Any | None = None,
+    key: str | None = None,
+    v: int = 1,
+) -> dict[str, Any]:
+    """
+    Standard domain event envelope (F-06 ERD 3.4).
+    Emits the structured event across the synchronous bus.
+    """
+    envelope = {
+        "id": str(uuid.uuid4()),
+        "name": name,
+        "v": v,
+        "occurred_at": timezone.now().isoformat(),
+        "user_id": str(user_id) if user_id is not None else None,
+        "actor_id": str(actor_id) if actor_id is not None else None,
+        "key": key or str(uuid.uuid4()),
+        "payload": payload,
+    }
+    emit(name, **{k: v for k, v in envelope.items() if k != "name"})
+    return envelope
 
 
 def clear() -> None:

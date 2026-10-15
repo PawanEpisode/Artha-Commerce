@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "question_report_resolved",
+  "type": "object",
+  "required": ["report_id", "question_id", "reporter_user_id", "outcome"],
+  "properties": {
+    "report_id": { "type": "string", "format": "uuid" },
+    "question_id": { "type": "string", "format": "uuid" },
+    "reporter_user_id": { "type": "string", "format": "uuid" },
+    "outcome": { "type": "string" },
+    "fixed_version_id": { "type": ["string", "null"], "format": "uuid" }
+  },
+  "additionalProperties": false
+}

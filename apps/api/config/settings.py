@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     "modules.notes",
     "modules.recall",
     "modules.today",
+    "modules.questionbank",
 ]
 
 MIDDLEWARE = [
@@ -186,6 +187,14 @@ REST_FRAMEWORK = {
         "recall_apply_update": "30/hour",  # R2-W2: applying a deck update (one apply per subscription and version is normal)
         "media_upload": "120/hour",
         "media_read": "300/min",
+        # F-06 questionbank
+        "qb_read": "300/min",
+        "qb_write": "60/min",
+        "qb_upload": "100/hour",
+        "qb_report": "20/hour",
+        "qb_export": "6/hour",
+        "qb_import": "5/day",
+        "legal_notice": "5/hour",
     },
     "UNAUTHENTICATED_USER": None,
 }

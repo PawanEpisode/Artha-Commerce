@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "question_flagged",
+  "type": "object",
+  "required": ["question_id", "report_count", "kind"],
+  "properties": {
+    "question_id": { "type": "string", "format": "uuid" },
+    "report_count": { "type": "integer", "minimum": 1 },
+    "kind": { "type": "string" }
+  },
+  "additionalProperties": false
+}

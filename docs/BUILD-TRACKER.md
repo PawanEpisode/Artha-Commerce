@@ -196,3 +196,14 @@ Plan: `docs/F-13-BUILD-WAVES.md` (W1 to W6 for R1, W7 to W9 for R2). W1 (API eng
 | F13-10 | Wave 6 (offline cache and queue, lite mode, analytics contract, settings, exam card, onboarding handoff, stuck prompt, `/features/today`, cron tick, eraser and exporter, `docs/F-13-ROLLOUT.md`) built | Built (W6) | Owner: run `pnpm check` and `pnpm lint:api && pnpm test:api`; set `TODAY_TICK_SECRET` and schedule the tick every 5 minutes; run `python manage.py rebuild_coverage` once after deploy; flag `today_plan` stays off until the beta cohort opens |
 | F13-11 | Wave 7 (planner engine, R2 slice 16): migration `today.0002_planner` (`today_studyplan`, `today_milestone`, `today_replanevent`), pure `modules/today/planner/` (capacity, milestones, health, options, re-plan) with hand-derived golden fixtures, properties, a multi-week simulation and a missed-week scenario | Built (W7) | Nothing is user-visible: no endpoint, service or flag wiring until W8. Owner: run `pnpm lint:api && pnpm test:api` on the real repo (migration `today.0002` on PostgreSQL); create the PostHog flag `today_planner` at 0 percent before W8; sanity-check the planner numbers and `[VERIFY]` constants listed in `docs/F-13-BUILD-WAVES.md` ("Changes to the PRD found in W7") |
 | F13-6 | F-02 extensions: `coverage.selectors.study_state` (W2), event `coverage_event_recorded` (W3), AUD-018 UTC date fix (done 2026-10-15) | Built | After deploying, run `python manage.py rebuild_coverage` once so revision dates stored before the fix are recalculated on each student's calendar |
+
+## 12. F-06 Question Bank System, F-09 PYQ, F-05 MCQ Bank: planned 2026-10-15, W1 built
+
+Plan: `docs/QB-BUILD-WAVES.md` (W1 to W5 for R1). W1 (Content Engine API: schema with 28 tables, RLS test, domain, 7 kind specs, services, selectors, views, contract doc `docs/QB-API-CONTRACT.md` with drift test) is built and tested; all 65 tests + 8 RLS tests passing; ruff check and format clean. Endpoints exist behind the fail-closed flag `question_bank`.
+
+| # | Item | Status | Notes |
+| --- | --- | --- | --- |
+| QB-1 | Run `pnpm lint:api && pnpm test:api` on real PostgreSQL (apply migration `questionbank.0001`, RLS tests) | Open (owner) | Verified on SQLite and via contract drift test |
+| QB-2 | Create PostHog flag `question_bank` at 0% (strict mode fails closed) | Open (owner) | Needed before enabling any cohort |
+| QB-3 | Initial seed target: CMA Intermediate and Final (Syllabus 2022, last 3 sittings: June 2024, Dec 2024, June 2025) | Agreed | Selected by owner 2026-10-15 |
+| QB-4 | Wave 2 (Practice Engine API: practice schema, partitioned attempts, scoring & grading, ports) | Planned | Next wave |

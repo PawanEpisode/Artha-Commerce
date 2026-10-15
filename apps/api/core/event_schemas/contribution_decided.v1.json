@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "contribution_decided",
+  "type": "object",
+  "required": ["question_id", "author_user_id", "decision", "code"],
+  "properties": {
+    "question_id": { "type": "string", "format": "uuid" },
+    "author_user_id": { "type": "string", "format": "uuid" },
+    "decision": { "type": "string" },
+    "code": { "type": "string" },
+    "note_present": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

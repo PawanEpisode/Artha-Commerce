@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "question_unpublished",
+  "type": "object",
+  "required": ["question_id", "reason"],
+  "properties": {
+    "question_id": { "type": "string", "format": "uuid" },
+    "reason": { "type": "string" },
+    "session_count_open": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}
