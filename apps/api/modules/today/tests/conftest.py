@@ -64,6 +64,12 @@ class Api:
     def put(self, path, body=None):
         return self._send("put", path, body or {})
 
+    def patch(self, path, body=None):
+        return self._send("patch", path, body or {})
+
+    def delete(self, path, body=None):
+        return self._send("delete", path, body)
+
 
 @pytest.fixture(autouse=True)
 def _fresh_throttle_counters():

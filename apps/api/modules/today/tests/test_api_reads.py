@@ -7,20 +7,19 @@ import pytest
 from django.db import connection
 from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
-from django.utils import timezone
 
 from modules.today import urls as today_urls
 from modules.today.models import DayPlan, Task, TodaySettings
 from modules.today.views import TodayView
 
 from .conftest import USER, Api
-from .helpers import register_practice
+from .helpers import local_today, register_practice
 
 pytestmark = pytest.mark.django_db
 
 
 def day(offset):
-    return (timezone.now() + timedelta(days=offset)).date().isoformat()
+    return (local_today() + timedelta(days=offset)).isoformat()
 
 
 def writes(queries):
@@ -102,8 +101,8 @@ def test_preview_shows_up_to_four_tasks_and_stores_nothing(api, enrolled):
 
 
 def test_preview_includes_the_students_own_tasks_for_that_day(api, enrolled):
-    target = timezone.now().date() + timedelta(days=3)
-    plan = DayPlan.objects.create(user_id=USER, local_date=target, tz="UTC", status="draft", generation_no=0)
+    target = local_today() + timedelta(days=3)
+    plan = DayPlan.objects.create(user_id=USER, local_date=target, tz="Asia/Kolkata", status="draft", generation_no=0)
     Task.objects.create(
         user_id=USER, plan=plan, local_date=target, origin="user", kind="custom", slot="custom",
         dedupe_key="user:7", title="Mock paper review", est_minutes=30, position=0,

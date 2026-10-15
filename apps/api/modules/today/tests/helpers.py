@@ -72,3 +72,32 @@ def register_practice():
         return out
 
     return register_fake("fake.practice", offers, kinds=kinds)
+
+
+def local_today(user_id: str = "3f2b8c7e-6d2e-4f0e-9a45-0f9e5b3e1c11") -> date:
+    """The student's own local date. Tests must not use the UTC date: for five and a half hours a day it is yesterday's."""
+    from modules.today import generation
+
+    return generation.student_today(user_id)[0]
+
+
+def cid() -> str:
+    """A fresh client id for a write."""
+    return str(uuid.uuid4())
+
+
+def register_many():
+    """Two more kinds per paper (read, recall), so a plan has five or six suggestions to touch in different ways."""
+    kinds = [
+        KindSpec("fake_read", "learn", "read", "BookOpen", 12),
+        KindSpec("fake_recall", "revise", "recall", "RefreshCw", 6),
+    ]
+
+    def offers(request):
+        out = []
+        for paper in request.ctx.papers:
+            out.append(candidate(f"read:{paper.key}", "fake_read", paper.subject_id, 12, (40, 50, 60, 40)))
+            out.append(candidate(f"recall:{paper.key}", "fake_recall", paper.subject_id, 6, (30, 50, 50, 40)))
+        return out
+
+    return register_fake("fake.many", offers, kinds=kinds)

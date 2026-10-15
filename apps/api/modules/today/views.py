@@ -9,6 +9,7 @@ from datetime import timedelta
 
 from django.http import HttpResponse
 from django.utils import timezone
+from rest_framework import status as http
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
@@ -16,7 +17,7 @@ from rest_framework.views import APIView
 
 from core.permissions import flag_required
 
-from . import generation, selectors, serializers, services
+from . import actions, generation, selectors, serializers, services
 from .domain import constants as c
 from .errors import InvalidDate, PlanNotGenerated
 
@@ -138,3 +139,154 @@ class SettingsView(TodayView):
         values = self.parse(serializers.SettingsSerializer, request.data)
         row = services.save_settings(request.user.id, values)
         return Response(serializers.settings_payload(row, now=timezone.now()))
+
+
+# ---- task actions -----------------------------------------------------------------------------------------------------------
+
+
+class TaskActionView(WriteView):
+    """Parse, call the action service, answer `{task, counts, ...}`. The services own every rule."""
+
+    serializer_class = serializers.ActionSerializer
+
+    def post(self, request, task_id):
+        data = self.parse(self.serializer_class, request.data)
+        now = timezone.now()
+        task, extra = self.act(request.user.id, task_id, data, now)
+        return Response(serializers.task_response(task, now=now, **extra))
+
+    def act(self, user_id, task_id, data, now):  # pragma: no cover - overridden
+        raise NotImplementedError
+
+
+class StartView(TaskActionView):
+    def act(self, user_id, task_id, data, now):
+        result = actions.start_task(
+            user_id, task_id, client_id=data["client_id"], client_ts=data.get("client_ts"), now=now
+        )
+        return result.task, {"link": result.link}
+
+
+class CompleteView(TaskActionView):
+    serializer_class = serializers.CompleteSerializer
+
+    def act(self, user_id, task_id, data, now):
+        task = actions.complete_task(
+            user_id,
+            task_id,
+            client_id=data["client_id"],
+            client_ts=data.get("client_ts"),
+            run_manual_action=data["run_manual_action"],
+            now=now,
+        )
+        return task, {}
+
+
+class SkipView(TaskActionView):
+    serializer_class = serializers.SkipSerializer
+
+    def act(self, user_id, task_id, data, now):
+        result = actions.skip_task(
+            user_id,
+            task_id,
+            client_id=data["client_id"],
+            reason=data.get("reason"),
+            client_ts=data.get("client_ts"),
+            now=now,
+        )
+        return result.task, {"suppressed_days": result.suppressed_days}
+
+
+class SnoozeView(TaskActionView):
+    serializer_class = serializers.SnoozeSerializer
+
+    def act(self, user_id, task_id, data, now):
+        task = actions.snooze_task(
+            user_id, task_id, client_id=data["client_id"], until=data["until"], client_ts=data.get("client_ts"), now=now
+        )
+        return task, {}
+
+
+class UndoView(WriteView):
+    def post(self, request, task_id):
+        data = self.parse(serializers.UndoSerializer, request.data)
+        now = timezone.now()
+        task = actions.undo_task(
+            request.user.id, task_id, client_id=data["client_id"], from_state=data["from_state"], now=now
+        )
+        return Response(serializers.task_response(task, now=now))
+
+
+class SwapView(WriteView):
+    def post(self, request, task_id):
+        data = self.parse(serializers.ActionSerializer, request.data)
+        now = timezone.now()
+        result = actions.swap_task(
+            request.user.id, task_id, client_id=data["client_id"], client_ts=data.get("client_ts"), now=now
+        )
+        body = serializers.task_response(result.old, now=now)
+        return Response(
+            {
+                "version": body["version"],
+                "server_time": body["server_time"],
+                "old": body["task"],
+                "new": serializers.task_dict(result.new),
+                "counts": body["counts"],
+            }
+        )
+
+
+class TasksView(WriteView):
+    """POST: add an own task (201, or 200 for a retry of the same `client_id`)."""
+
+    def post(self, request):
+        data = self.parse(serializers.AddTaskSerializer, request.data)
+        now = timezone.now()
+        task, created = actions.add_task(
+            request.user.id,
+            client_id=data["client_id"],
+            title=data["title"],
+            local_date=data.get("date"),
+            est_minutes=data["est_minutes"],
+            subject_id=data["subject_id"],
+            chapter_id=data["chapter_id"],
+            now=now,
+        )
+        return Response(
+            serializers.task_response(task, now=now), status=http.HTTP_201_CREATED if created else http.HTTP_200_OK
+        )
+
+
+class TaskDetailView(WriteView):
+    """PATCH edits and DELETE removes an own task. Suggested tasks answer 403 `provider_task_readonly`."""
+
+    def patch(self, request, task_id):
+        data = dict(self.parse(serializers.EditTaskSerializer, request.data))
+        version = data.pop("version")
+        now = timezone.now()
+        task = actions.edit_task(request.user.id, task_id, data, version=version, now=now)
+        return Response(serializers.task_response(task, now=now))
+
+    def delete(self, request, task_id):
+        data = self.parse(serializers.DeleteSerializer, request.query_params)  # DELETE has no body (PRD section 9)
+        now = timezone.now()
+        result = actions.delete_task(request.user.id, task_id, client_id=data.get("client_id"), now=now)
+        return Response(serializers.task_response(result.task, now=now, undo_until=result.undo_until.isoformat()))
+
+
+class RegenerateView(WriteView):
+    throttle_scope = "today_regen"
+
+    def post(self, request):
+        data = self.parse(serializers.RegenerateSerializer, request.data)
+        now = timezone.now()
+        plan, info = actions.regenerate(
+            request.user.id,
+            expected_generation=data["expected_generation"],
+            reason=data["reason"],
+            client_id=data["client_id"],
+            now=now,
+        )
+        payload = serializers.plan_payload(plan, user_id=request.user.id, now=now)
+        payload["regenerated"] = info
+        return Response(payload)

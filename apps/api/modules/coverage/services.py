@@ -343,7 +343,30 @@ def _append_event(
             )
     except IntegrityError:  # a concurrent retry won the race
         return CoverageEvent.objects.get(user_id=enrollment.user_id, client_id=client_id), False
+    _announce(event, enrollment)
     return event, True
+
+
+#: Published once per new ledger event (never for a replay), after the surrounding transaction commits. Payload: `user_id`,
+#: `event_id` (the idempotency key for consumers), `chapter_id`, `subject_id`, `topic_id` (or None), `type`, `source`,
+#: `source_ref`, `occurred_at` (ISO 8601, UTC). Consumed by Today (F-13) to complete tasks. [PROPOSED EXTENSION to F-02]
+COVERAGE_EVENT_RECORDED = "coverage_event_recorded"
+
+
+def _announce(event: CoverageEvent, enrollment: Enrollment) -> None:
+    chapter = syllabus.get_chapter(event.chapter_id)
+    payload = dict(
+        user_id=str(event.user_id),
+        event_id=str(event.id),
+        chapter_id=str(event.chapter_id),
+        subject_id=str(chapter.subject_id) if chapter else None,
+        topic_id=str(event.topic_id) if event.topic_id else None,
+        type=event.type,
+        source=event.source,
+        source_ref=event.source_ref,
+        occurred_at=event.occurred_at.isoformat(),
+    )
+    transaction.on_commit(lambda: events.emit(COVERAGE_EVENT_RECORDED, **payload))
 
 
 def apply_event(

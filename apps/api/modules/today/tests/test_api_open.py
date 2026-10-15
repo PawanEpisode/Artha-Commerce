@@ -193,8 +193,12 @@ def test_a_backlog_is_summarised_with_how_many_are_scheduled(api, enrolled):
 
 
 def test_a_draft_plan_made_by_an_own_task_is_upgraded_not_duplicated(api, enrolled):
-    today = timezone.localdate()
-    draft = DayPlan.objects.create(user_id=USER, local_date=today, tz="UTC", status="draft", generation_no=0)
+    from modules.today import generation
+
+    today, tz = generation.student_today(
+        USER
+    )  # the student's own date: it differs from the UTC date for a few hours a day
+    draft = DayPlan.objects.create(user_id=USER, local_date=today, tz=tz, status="draft", generation_no=0)
     Task.objects.create(
         user_id=USER, plan=draft, local_date=today, origin="user", kind="custom", slot="custom",
         dedupe_key="user:1", title="Call the CA coaching centre", est_minutes=5, position=0,

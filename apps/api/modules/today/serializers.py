@@ -72,6 +72,76 @@ class SettingsSerializer(serializers.Serializer):
         return sorted(set(value))
 
 
+REGENERATE_REASONS = ("manual", "exam_date", "settings", "provider_recovered")
+UNDO_FROM = ("done", "skipped", "deleted")
+SKIP_REASONS_PUBLIC = tuple(r for r in c.SKIP_REASONS if r != "swapped")  # `swapped` is the swap endpoint's own reason
+
+
+class ActionSerializer(serializers.Serializer):
+    """Every task action: `client_id` makes a retry harmless, `client_ts` orders writes from different devices."""
+
+    client_id = serializers.UUIDField()
+    client_ts = serializers.DateTimeField(required=False)
+
+
+class CompleteSerializer(ActionSerializer):
+    run_manual_action = serializers.BooleanField(required=False, default=False)
+
+
+class SkipSerializer(ActionSerializer):
+    reason = serializers.ChoiceField(choices=SKIP_REASONS_PUBLIC, required=False, allow_null=True)
+
+
+class SnoozeSerializer(ActionSerializer):
+    until = serializers.CharField(max_length=20)
+
+    def validate_until(self, value):
+        if value in c.SNOOZE_PRESET_DAYS:
+            return value
+        try:
+            return date.fromisoformat(value)
+        except ValueError as error:
+            raise serializers.ValidationError("Use a date (YYYY-MM-DD) or tomorrow, in_3_days, next_week.") from error
+
+
+class UndoSerializer(serializers.Serializer):
+    client_id = serializers.UUIDField()
+    from_state = serializers.ChoiceField(choices=UNDO_FROM)
+
+
+class DeleteSerializer(serializers.Serializer):
+    client_id = serializers.UUIDField(required=False)
+
+
+class AddTaskSerializer(serializers.Serializer):
+    client_id = serializers.UUIDField()
+    title = serializers.CharField(max_length=c.TITLE_MAX, trim_whitespace=True)
+    date = serializers.DateField(required=False)
+    subject_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    chapter_id = serializers.UUIDField(required=False, allow_null=True, default=None)
+    est_minutes = serializers.IntegerField(min_value=c.OWN_EST_MIN, max_value=c.OWN_EST_MAX)
+
+
+class EditTaskSerializer(serializers.Serializer):
+    version = serializers.IntegerField(min_value=1)
+    title = serializers.CharField(max_length=c.TITLE_MAX, trim_whitespace=True, required=False)
+    date = serializers.DateField(required=False)
+    subject_id = serializers.UUIDField(required=False, allow_null=True)
+    chapter_id = serializers.UUIDField(required=False, allow_null=True)
+    est_minutes = serializers.IntegerField(min_value=c.OWN_EST_MIN, max_value=c.OWN_EST_MAX, required=False)
+
+    def validate(self, attrs):
+        if not set(attrs) - {"version"}:
+            raise serializers.ValidationError("Send at least one field to change.")
+        return attrs
+
+
+class RegenerateSerializer(serializers.Serializer):
+    expected_generation = serializers.IntegerField(min_value=0)
+    reason = serializers.ChoiceField(choices=REGENERATE_REASONS, default="manual")
+    client_id = serializers.UUIDField()
+
+
 # ---- responses --------------------------------------------------------------------------------------------------------------
 
 
@@ -263,4 +333,26 @@ def settings_payload(row: TodaySettings, *, now: datetime) -> dict:
         "show_tomorrow": row.show_tomorrow,
         "celebrate": row.celebrate,
         "lite_mode": row.lite_mode,
+    }
+
+
+def counts_of(plan: DayPlan) -> dict:
+    return {
+        "planned": plan.planned_count,
+        "done": plan.done_count,
+        "open": plan.open_count,
+        "skipped": plan.skipped_count,
+        "snoozed": plan.snoozed_count,
+    }
+
+
+def task_response(task: Task, *, now: datetime, **extra) -> dict:
+    """What a task action answers: the task, the plan's counters (so the ring updates without a refetch), and anything the action adds."""
+    task.plan.refresh_from_db(fields=["planned_count", "done_count", "open_count", "skipped_count", "snoozed_count"])
+    return {
+        "version": PLAN_VERSION,
+        "server_time": now.isoformat(),
+        "task": task_dict(task),
+        "counts": counts_of(task.plan),
+        **extra,
     }

@@ -246,6 +246,7 @@ TIMEOUT_MIN_MS, TIMEOUT_MAX_MS = 100, 2000
 MAX_CANDIDATES_MIN, MAX_CANDIDATES_MAX = 1, 50
 
 _providers: dict[str, ProviderSpec] = {}
+_hooks: list[Callable[[], None]] = []
 _reasons: dict[str, str] = dict(BUILTIN_REASONS)
 
 
@@ -312,6 +313,14 @@ def register_task_provider(
         reconcile=reconcile,
         manual_actions=tuple(manual_actions),
     )
+    for hook in list(_hooks):
+        hook()  # e.g. Today subscribes to the events a new provider's completion rules name
+
+
+def add_register_hook(fn: Callable[[], None]) -> None:
+    """Called after every registration. Idempotent. Providers register from other apps' `ready()`, in any order."""
+    if fn not in _hooks:
+        _hooks.append(fn)
 
 
 def register_reason(code: str, *, label: str) -> None:

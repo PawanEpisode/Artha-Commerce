@@ -82,9 +82,9 @@ def refresh_counters(plan: DayPlan) -> DayPlan:
     return plan
 
 
-def _task_rows(plan: DayPlan, gen: generation.Generated) -> list[Task]:
+def _task_rows(plan: DayPlan, gen: generation.Generated, *, picks=None, offset: int = 0) -> list[Task]:
     papers = {p.key: p for p in gen.ctx.papers}
-    picks = gen.selection.picks
+    picks = gen.selection.picks if picks is None else picks
     chapter_keys = syllabus_adapter.chapter_keys(
         gen.candidates_by_key[p.candidate.dedupe_key][1].chapter_id
         for p in picks
@@ -125,7 +125,7 @@ def _task_rows(plan: DayPlan, gen: generation.Generated) -> list[Task]:
                 subject_key=paper.key if paper else "",
                 chapter_key=chapter_keys.get(tc.chapter_id, "") if chapter_known else "",
                 target_value=cand.target_value,
-                position=pick.position,
+                position=offset + pick.position,
                 is_must_do=pick.breakdown.get("must_do", False) is True,
                 score=pick.score,
                 score_breakdown=_json_safe(pick.breakdown),
@@ -136,11 +136,12 @@ def _task_rows(plan: DayPlan, gen: generation.Generated) -> list[Task]:
     return rows
 
 
-def _persist(plan: DayPlan | None, gen: generation.Generated, user_id, now: datetime) -> DayPlan:
+def plan_fields(gen: generation.Generated, now: datetime) -> dict:
+    """The plan columns a generation decides (shared by the first open, a draft upgrade and a regeneration)."""
     ctx = gen.ctx
     selection_log = gen.selection.selection_log()
     selection_log["backlogs"] = {b["provider"]: b["count"] for b in gen.backlogs}
-    fields = dict(
+    return dict(
         tz=ctx.tz,
         status="ready",
         algorithm_version=c.ALGORITHM_VERSION,
@@ -154,8 +155,34 @@ def _persist(plan: DayPlan | None, gen: generation.Generated, user_id, now: date
         selection_log=_json_safe(selection_log, default={"v": 1}),
         context_hash=gen.context_hash,
         generated_at=now,
-        first_opened_at=now,
     )
+
+
+def settle(plan: DayPlan) -> DayPlan:
+    """Recount from the rows and bump the version. Call with the plan row locked, after the task rows changed."""
+    refresh_counters(plan)
+    plan.version += 1
+    plan.save()
+    return plan
+
+
+def wake_snoozed(plan: DayPlan) -> int:
+    """
+    A student's own task that was snoozed to this day becomes a suggestion when the day opens (`move`, PRD 5.2). A provider task
+    stays snoozed: its provider re-offers the work as a new task if it is still needed.
+    """
+    woken = Task.objects.filter(
+        plan=plan, origin="user", state="snoozed", snoozed_until__lte=plan.local_date, deleted_at__isnull=True
+    ).update(state="suggested", prev_state="snoozed", snoozed_until=None, version=F("version") + 1)
+    if woken:
+        settle(plan)
+    return woken
+
+
+def _persist(plan: DayPlan | None, gen: generation.Generated, user_id, now: datetime) -> DayPlan:
+    ctx = gen.ctx
+    fields = plan_fields(gen, now)
+    fields["first_opened_at"] = now
     if plan is None:
         plan = DayPlan(user_id=user_id, local_date=ctx.local_date, generation_no=1, **fields)
     else:  # a draft made by the student's own first task for this day
@@ -170,6 +197,7 @@ def _persist(plan: DayPlan | None, gen: generation.Generated, user_id, now: date
     Task.objects.bulk_create(_task_rows(plan, gen))
     refresh_counters(plan)
     plan.save()
+    wake_snoozed(plan)
     return plan
 
 
@@ -191,13 +219,15 @@ def open_today(user_id, *, local_date: date | None = None, now: datetime | None 
 
     existing = selectors.get_plan(user_id, day)
     if existing is not None and existing.status != "draft":
-        return OpenResult(READY, _touch(existing, now), False, day, tz)
+        return OpenResult(READY, _refreshed(existing, now), False, day, tz)
 
     with transaction.atomic():
         _lock(user_id, day)
         plan = DayPlan.objects.select_for_update().filter(user_id=user_id, local_date=day).first()
         if plan is not None and plan.status != "draft":
-            return OpenResult(READY, _touch(plan, now), False, day, tz)  # the other caller won the lock and finished
+            return OpenResult(
+                READY, _refreshed(plan, now), False, day, tz
+            )  # the other caller won the lock and finished
         gen = generation.generate(user_id, day, tz, plan=plan)
         if gen.ctx.enrollment is None:
             return OpenResult(NOT_ENROLLED, None, False, day, tz)
@@ -211,6 +241,22 @@ def open_today(user_id, *, local_date: date | None = None, now: datetime | None 
             saved = selectors.get_plan(user_id, day)
             return OpenResult(READY, saved, False, day, tz)
     return OpenResult(READY, saved, True, day, tz)
+
+
+def _refreshed(plan: DayPlan, now: datetime) -> DayPlan:
+    """
+    What `open/` does for a plan that exists: stamp the first open, wake own tasks snoozed to today, and let each provider's
+    `reconcile` complete tasks whose work the student already did (offline, another device, a missed event). `GET plan/` never
+    does this: it stays a pure read (audit AUD-014), so the web opens first and reads after.
+    """
+    from . import completion  # a cycle at import time: completion needs this module's locks
+
+    plan = _touch(plan, now)
+    if plan.status == "ready":
+        wake_snoozed(plan)
+        if completion.reconcile_plan(plan, now=now):
+            plan.refresh_from_db()
+    return plan
 
 
 def _touch(plan: DayPlan, now: datetime) -> DayPlan:

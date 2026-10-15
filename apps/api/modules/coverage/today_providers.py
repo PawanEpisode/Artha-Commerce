@@ -20,10 +20,14 @@ import logging
 import uuid
 
 from modules.today.registry import (
+    CompletionRule,
     DeepLink,
+    Event,
+    Evidence,
     KindSpec,
     ManualAction,
     ManualActionRef,
+    Match,
     ProviderResult,
     Signals,
     TaskCandidate,
@@ -246,7 +250,84 @@ def log_revision(user_id, task: TaskView) -> None:
         logger.info("today: revision for task %s was already at its target", task.id)
 
 
+# ---- completion: what finishes a task ---------------------------------------------------------------------------------------
+
+EVENT = "coverage_event_recorded"
+_STARTED_TYPES = (CoverageEvent.Type.TOPIC_DONE, CoverageEvent.Type.PRACTICE_DONE)
+
+
+def _same_chapter(event: Event, task: TaskView) -> bool:
+    return task.chapter_id is not None and str(event.payload.get("chapter_id")) == str(task.chapter_id)
+
+
+def _revision_match(event: Event, task: TaskView) -> Match | None:
+    """A revision of the task's chapter, from anywhere (the revision page, tracked time is not enough), completes it."""
+    if event.payload.get("type") == CoverageEvent.Type.REVISION_DONE and _same_chapter(event, task):
+        return Match(evidence_key=event.key, done=True)
+    return None
+
+
+def _topic_match(event: Event, task: TaskView) -> Match | None:
+    topic = task.dedupe_key.removeprefix("topic:")
+    if event.payload.get("type") == CoverageEvent.Type.TOPIC_DONE and str(event.payload.get("topic_id")) == topic:
+        return Match(evidence_key=event.key, done=True)
+    return None
+
+
+def _chapter_started_match(event: Event, task: TaskView) -> Match | None:
+    """Starting a chapter is reading a topic of it or practising it."""
+    if event.payload.get("type") in _STARTED_TYPES and _same_chapter(event, task):
+        return Match(evidence_key=event.key, done=True)
+    return None
+
+
+def _kind_rule():
+    """One rule per event; the task's kind picks the matcher (a provider has one rule list for all its kinds)."""
+    matchers = {"revise_chapter": _revision_match, "next_topic": _topic_match, "next_chapter": _chapter_started_match}
+
+    def match(event: Event, task: TaskView) -> Match | None:
+        fn = matchers.get(task.kind)
+        return fn(event, task) if fn else None
+
+    return CompletionRule(EVENT, match)
+
+
+def _chapters(user_id, tz: str) -> dict:
+    enrollment = selectors.get_active_enrollment(user_id)
+    if enrollment is None:
+        return {}
+    state = selectors.study_state(user_id, enrollment, tz)
+    return {chapter.chapter_id: chapter for subject in state.subjects for chapter in subject.chapters}
+
+
+def _reconcile(tz_of):
+    def reconcile(user_id, tasks, local_date):
+        """The ledger is the truth: anything the student already did (offline, another device) completes the stale task."""
+        chapters = _chapters(user_id, tz_of(user_id))
+        found: dict = {}
+        for task in tasks:
+            chapter = chapters.get(task.chapter_id)
+            if chapter is None:
+                continue
+            if task.kind == "revise_chapter":
+                number = int(task.dedupe_key.rsplit(":", 1)[-1])
+                done = chapter.revision_count >= number
+            elif task.kind == "next_topic":
+                done = chapter.next_topic is None or str(chapter.next_topic.id) != task.dedupe_key.removeprefix(
+                    "topic:"
+                )
+            else:
+                done = chapter.status != "not_started" or chapter.coverage_pct > 0
+            if done:
+                found[task.id] = Evidence(done=True, progress=None, key=f"reconcile:{task.dedupe_key}")
+        return found
+
+    return reconcile
+
+
 def register() -> None:
+    from modules.today.adapters import tracking as tracking_adapter
+
     register_task_provider(
         REVISION,
         revision_candidates,
@@ -255,6 +336,8 @@ def register() -> None:
         timeout_ms=400,
         max_candidates=20,
         manual_actions=[ManualAction(LOG_REVISION, "Also log this revision", True, log_revision)],
+        completion=(_kind_rule(),),
+        reconcile=_reconcile(tracking_adapter.timezone_of),
     )
     register_task_provider(
         SYLLABUS,
@@ -263,4 +346,6 @@ def register() -> None:
         label="Syllabus",
         timeout_ms=400,
         max_candidates=12,
+        completion=(_kind_rule(),),
+        reconcile=_reconcile(tracking_adapter.timezone_of),
     )
