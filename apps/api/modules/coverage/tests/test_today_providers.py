@@ -175,16 +175,39 @@ def test_selector_dates_are_the_students_local_dates(enrolled, ids):
     assert pick(utc).last_studied_on == date(2026, 10, 13)
 
 
-def test_stored_due_date_is_derived_from_the_utc_day_of_the_event(enrolled, ids):
-    """
-    AUD-018, pinned: coverage still stores `next_revision_due` from the event's UTC date, so a revision logged late in the
-    evening IST is due a day early on the student's calendar. Today reads it as is; changing the write path belongs to coverage.
-    This test fails on purpose the day coverage fixes it, so the Today docs get updated in the same change.
-    """
+def test_stored_due_date_is_derived_from_the_students_calendar_day(enrolled, ids):
+    """AUD-018 fixed: 01:00 IST on the 14th is the 13th in UTC, but the revision happened on the student's 14th."""
     at = datetime(2026, 10, 13, 19, 30, tzinfo=UTC)  # 01:00 IST on the 14th
     services.record_event(USER, ids["gst"], CoverageEvent.Type.REVISION_DONE, occurred_at=at, client_id=uuid.uuid4())
     progress = ChapterProgress.objects.get(user_id=USER, chapter_id=ids["gst"])
-    assert progress.next_revision_due == date(2026, 10, 16)  # IST calendar would say 17 October
+    assert progress.next_revision_due == date(
+        2026, 10, 17
+    )  # the first gap counts from the 14th (the UTC day gave the 16th)
+
+
+def test_a_revision_late_in_the_evening_counts_from_that_day(enrolled, ids):
+    at = datetime(2026, 10, 14, 17, 30, tzinfo=UTC)  # 23:00 IST on the 14th: same day in both calendars
+    services.record_event(USER, ids["gst"], CoverageEvent.Type.REVISION_DONE, occurred_at=at, client_id=uuid.uuid4())
+    assert ChapterProgress.objects.get(user_id=USER, chapter_id=ids["gst"]).next_revision_due == date(2026, 10, 17)
+
+
+def test_the_students_own_time_zone_is_used(enrolled, ids):
+    from modules.tracking.models import TrackerSettings
+
+    TrackerSettings.objects.update_or_create(user_id=USER, defaults={"tz": "America/Los_Angeles"})
+    at = datetime(2026, 10, 14, 3, 0, tzinfo=UTC)  # 20:00 on the 13th in Los Angeles
+    services.record_event(USER, ids["gst"], CoverageEvent.Type.REVISION_DONE, occurred_at=at, client_id=uuid.uuid4())
+    assert ChapterProgress.objects.get(user_id=USER, chapter_id=ids["gst"]).next_revision_due == date(2026, 10, 16)
+
+
+def test_a_rebuild_gives_the_same_due_date_as_the_live_path(enrolled, ids):
+    at = datetime(2026, 10, 13, 19, 30, tzinfo=UTC)
+    services.record_event(USER, ids["gst"], CoverageEvent.Type.REVISION_DONE, occurred_at=at, client_id=uuid.uuid4())
+    live = ChapterProgress.objects.get(user_id=USER, chapter_id=ids["gst"]).next_revision_due
+    services.rebuild_enrollment(Enrollment.objects.get(user_id=USER, status="active"))
+    assert (
+        ChapterProgress.objects.get(user_id=USER, chapter_id=ids["gst"]).next_revision_due == live == date(2026, 10, 17)
+    )
 
 
 def test_ticking_by_hand_logs_one_revision_even_if_replayed(enrolled, ids):

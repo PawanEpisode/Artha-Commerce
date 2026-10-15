@@ -9,11 +9,13 @@ const off = {
   notifications_ui: false,
   notes: false,
   recall_system: false,
+  today_plan: false,
 }
 
 describe('visibleLinks', () => {
   it('keeps every study and settings link when the flags are on', () => {
     expect(visibleLinks(STUDY_LINKS).map((link) => link.to)).toEqual([
+      '/app/today',
       '/app/focus',
       '/app/tracker',
       '/app/syllabus',
@@ -49,6 +51,11 @@ describe('visibleLinks', () => {
       'Notes settings',
       'Account',
     ])
+  })
+
+  it('shows Today only when the today_plan flag is on', () => {
+    expect(visibleLinks(STUDY_LINKS, off).map((link) => link.to)).not.toContain('/app/today')
+    expect(visibleLinks(STUDY_LINKS, { ...off, today_plan: true }).map((link) => link.to)).toEqual(['/app/today'])
   })
 
   it('shows Revision only when the recall_system flag is on', () => {

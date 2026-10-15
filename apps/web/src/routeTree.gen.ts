@@ -22,6 +22,7 @@ import { Route as AppAccountRouteImport } from './routes/app.account'
 import { Route as AppNotificationsRouteImport } from './routes/app.notifications'
 import { Route as AppOnboardingRouteImport } from './routes/app.onboarding'
 import { Route as AppRevisionRouteImport } from './routes/app.revision'
+import { Route as AppTodayRouteImport } from './routes/app.today'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
 import { Route as AuthConfirmRouteImport } from './routes/auth.confirm'
 import { Route as AuthForgotPasswordRouteImport } from './routes/auth.forgot-password'
@@ -140,6 +141,11 @@ const AppOnboardingRoute = AppOnboardingRouteImport.update({
 const AppRevisionRoute = AppRevisionRouteImport.update({
   id: '/revision',
   path: '/revision',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTodayRoute = AppTodayRouteImport.update({
+  id: '/today',
+  path: '/today',
   getParentRoute: () => AppRoute,
 } as any)
 const AuthCallbackRoute = AuthCallbackRouteImport.update({
@@ -432,6 +438,7 @@ export interface FileRoutesByFullPath {
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
+  '/app/today': typeof AppTodayRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -500,6 +507,7 @@ export interface FileRoutesByTo {
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
+  '/app/today': typeof AppTodayRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -570,6 +578,7 @@ export interface FileRoutesById {
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
+  '/app/today': typeof AppTodayRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -641,6 +650,7 @@ export interface FileRouteTypes {
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
+    | '/app/today'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -709,6 +719,7 @@ export interface FileRouteTypes {
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
+    | '/app/today'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -778,6 +789,7 @@ export interface FileRouteTypes {
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
+    | '/app/today'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -949,6 +961,13 @@ declare module '@tanstack/react-router' {
       path: '/revision'
       fullPath: '/app/revision'
       preLoaderRoute: typeof AppRevisionRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/today': {
+      id: '/app/today'
+      path: '/today'
+      fullPath: '/app/today'
+      preLoaderRoute: typeof AppTodayRouteImport
       parentRoute: typeof AppRoute
     }
     '/auth/callback': {
@@ -1337,6 +1356,7 @@ interface AppRouteChildren {
   AppNotificationsRoute: typeof AppNotificationsRoute
   AppOnboardingRoute: typeof AppOnboardingRoute
   AppRevisionRoute: typeof AppRevisionRoute
+  AppTodayRoute: typeof AppTodayRoute
   AppIndexRoute: typeof AppIndexRoute
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppFocusMiniRoute: typeof AppFocusMiniRoute
@@ -1386,6 +1406,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotificationsRoute: AppNotificationsRoute,
   AppOnboardingRoute: AppOnboardingRoute,
   AppRevisionRoute: AppRevisionRoute,
+  AppTodayRoute: AppTodayRoute,
   AppIndexRoute: AppIndexRoute,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppFocusMiniRoute: AppFocusMiniRoute,

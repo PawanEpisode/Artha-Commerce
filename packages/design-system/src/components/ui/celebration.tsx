@@ -72,3 +72,37 @@ export function Celebration({ title, message, ctaLabel, onContinue, autoContinue
     </div>
   )
 }
+
+export interface CelebrateProps {
+  /** Fires one burst when this turns true, and never again until it has been false. */
+  active: boolean
+  /** Announced politely, e.g. "Day complete". Always rendered, so reduced-motion and screen-reader users get it too. */
+  message: string
+  className?: string
+}
+
+/**
+ * The small in-place celebration (Today's "day complete"): one confetti burst on the transition to `active`, a polite
+ * status line, no overlay and no focus change. Nothing moves under reduced motion; the message still announces.
+ */
+export function Celebrate({ active, message, className }: CelebrateProps) {
+  const fired = React.useRef(false)
+  React.useEffect(() => {
+    if (!active) {
+      fired.current = false
+      return
+    }
+    if (fired.current || reducedMotion()) return
+    fired.current = true
+    void import('canvas-confetti')
+      .then(({ default: confetti }) => {
+        void confetti({ particleCount: 60, spread: 60, origin: { y: 0.4 }, disableForReducedMotion: true })
+      })
+      .catch(() => undefined)
+  }, [active])
+  return (
+    <p data-slot="celebrate" role="status" className={className}>
+      {active ? message : ''}
+    </p>
+  )
+}

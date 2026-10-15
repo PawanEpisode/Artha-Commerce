@@ -18,6 +18,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  Celebrate,
   Check,
   Checkbox,
   CircleAlert,
@@ -257,6 +258,19 @@ function TimeTrackerDemo() {
 }
 
 /** Living style guide for @artha/design-system. Every primitive appears here in all its variants. */
+/** Day-complete burst on demand, so the showcase never throws confetti on load. */
+function CelebrateDemo() {
+  const [on, setOn] = useState(false)
+  return (
+    <div className="space-y-1">
+      <Button variant="outline" size="sm" onClick={() => setOn((v) => !v)}>
+        {on ? 'Reset' : 'Celebrate the day'}
+      </Button>
+      <Celebrate active={on} message="Day complete. Well done." className="text-sm font-semibold" />
+    </div>
+  )
+}
+
 export function DesignShowcase() {
   return (
     <Container className="space-y-12 py-14">
@@ -402,6 +416,27 @@ export function DesignShowcase() {
           <ProgressRing value={12} size={64} strokeWidth={6} tone="destructive" label="Needs attention">
             <span className="text-sm font-bold">12%</span>
           </ProgressRing>
+          <ProgressRing
+            value={60}
+            size={72}
+            strokeWidth={8}
+            segments={5}
+            segmentLabel={(done, total) => `${done} of ${total} papers done`}
+            label="Today's papers"
+          >
+            <span className="text-sm font-bold">3/5</span>
+          </ProgressRing>
+          <ProgressRing
+            value={100}
+            size={72}
+            strokeWidth={8}
+            segments={1}
+            segmentLabel={(done, total) => `${done} of ${total} paper done`}
+            label="One paper today"
+          >
+            <span className="text-sm font-bold">1/1</span>
+          </ProgressRing>
+          <CelebrateDemo />
           <div className="w-64 space-y-3">
             <ProgressBar value={45} label="Reading" />
             <ProgressBar value={80} size="lg" label="Practice" />

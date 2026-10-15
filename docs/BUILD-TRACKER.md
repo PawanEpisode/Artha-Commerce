@@ -187,8 +187,9 @@ Plan: `docs/F-13-BUILD-WAVES.md` (W1 to W6 for R1, W7 to W9 for R2). W1 (API eng
 | --- | --- | --- | --- |
 | F13-1 | Run `pnpm lint:api && pnpm test:api` once on the real repo and on PostgreSQL (migration `today.0001`, RLS test) | Open (owner) | W1 was verified on SQLite in isolation |
 | F13-2 | Approve the three PRD changes in `docs/F-13-BUILD-WAVES.md` section 5 (rotation guarantee needs a 3 day hard priority, unknown hours give 60 minutes, never-touched counts as starved) | Done | Approved by the owner 2026-10-15 |
-| F13-3 | Create the PostHog flag `today_plan` at 0 percent | Open (owner) | Needed now: the API fails closed until it exists and is on |
+| F13-3 | Create the PostHog flag `today_plan` at 0 percent | Done | Needed now: the API fails closed until it exists and is on |
 | F13-4 | `core/today_port.py` (Recall W3 stand-in) is bridged by the provider `recall.legacy`; delete both once Recall registers on `today.registry` | Built (W2) | |
 | F13-5 | Practice provider waits for F-06 | Parked | R1 ships with coverage, Recall and own tasks |
-| F13-7 | Wave 3 (task actions, own tasks, regenerate, completion events, reconcile) built; confirm the seven decisions at the end of `docs/F-13-BUILD-WAVES.md` section 6 | Built (W3), decisions open (owner) | W4 mirrors the transition table in the web |
-| F13-6 | F-02 extensions: `coverage.selectors.study_state` (built W2), event `coverage_event_recorded` (built W3), AUD-018 UTC date fix | Partly built | AUD-018 is open: `next_revision_due` is still derived from the UTC date in `coverage.services.apply_event`; a Today test pins it and fails on purpose when it is fixed |
+| F13-7 | Wave 3 (task actions, own tasks, regenerate, completion events, reconcile) built; confirm the seven decisions at the end of `docs/F-13-BUILD-WAVES.md` section 6 | Done (W3 built; the seven decisions approved 2026-10-15) | W4 mirrors the transition table in the web |
+| F13-8 | Wave 4 (Today screen, web and design system) built: `/app/today`, `/app` redirect, `ProgressRing` segments, `Celebrate`, nav link | Built (W4) | Owner: run `pnpm check` on the real repo and look at the four themes at 320 and 1280 px |
+| F13-6 | F-02 extensions: `coverage.selectors.study_state` (W2), event `coverage_event_recorded` (W3), AUD-018 UTC date fix (done 2026-10-15) | Built | After deploying, run `python manage.py rebuild_coverage` once so revision dates stored before the fix are recalculated on each student's calendar |

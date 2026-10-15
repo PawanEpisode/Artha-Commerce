@@ -10,8 +10,8 @@ Two providers, registered from `CoverageConfig.ready()`:
   chapter in syllabus order), at most one per paper.
 
 Both are pure reads of `selectors.study_state`, deterministic for the same request, and offer only papers in `ctx.papers`. Dates
-are the student's local dates (the plan's), so "overdue" is what the student sees on their calendar (audit AUD-018: the stored
-`next_revision_due` itself is derived from the UTC date of the event; see `docs/F-13-BUILD-WAVES.md`).
+are the student's local dates (the plan's), so "overdue" is what the student sees on their calendar. The stored `next_revision_due` is
+derived from the student's local day too (audit AUD-018, fixed in `coverage.services.apply_event`).
 """
 
 from __future__ import annotations

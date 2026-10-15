@@ -14,6 +14,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from django.db import IntegrityError, transaction
 from django.utils import timezone
@@ -369,6 +370,13 @@ def _announce(event: CoverageEvent, enrollment: Enrollment) -> None:
     transaction.on_commit(lambda: events.emit(COVERAGE_EVENT_RECORDED, **payload))
 
 
+def _tz_of(user_id) -> str:
+    """The student's time zone (the tracker's setting, default Asia/Kolkata). Imported late: tracking already depends on coverage."""
+    from modules.tracking import selectors as tracking
+
+    return tracking.settings_or_default(user_id).tz
+
+
 def apply_event(
     progress: ChapterProgress,
     event_type: str,
@@ -377,8 +385,13 @@ def apply_event(
     payload: dict | None = None,
     occurred_at: datetime,
     revision_days: list[int],
+    tz: str | None = None,
 ) -> None:
-    """Applies one ledger event to the derived counters of a chapter. Shared by the live path and the rebuild."""
+    """
+    Applies one ledger event to the derived counters of a chapter. Shared by the live path and the rebuild. `tz` is the
+    student's time zone (read from the tracker when not given): a revision's next due date counts from the student's own
+    calendar day, not the UTC day (audit AUD-018: 01:00 IST on the 14th is still the 13th in UTC).
+    """
     payload = payload or {}
     count = int(payload.get("count", 1))
     # Keeping a note is not studying: a note event leaves the start date alone (and, like every event, the percentage).
@@ -405,7 +418,9 @@ def apply_event(
         if progress.last_revised_at is None or occurred_at >= progress.last_revised_at:
             progress.last_revised_at = occurred_at
             progress.next_revision_due = formula.next_revision_due(
-                occurred_at.date(), progress.revision_count, revision_days
+                occurred_at.astimezone(ZoneInfo(tz or _tz_of(progress.user_id))).date(),
+                progress.revision_count,
+                revision_days,
             )
     elif event_type == EventType.STUDY_TIME:
         # A negative value is a correction from tracking (a session was edited or deleted); never below zero.
@@ -1279,6 +1294,7 @@ def rebuild_enrollment(enrollment: Enrollment) -> None:
     """Resets all derived data of an enrolment and replays the ledger in time order (admin command and tests)."""
     settings = get_or_create_settings(enrollment.user_id)
     revision_days = selectors.revision_days_of(settings)
+    tz = _tz_of(enrollment.user_id)
     TopicProgress.objects.filter(user_id=enrollment.user_id, enrollment=enrollment).delete()
     progress_by_chapter = {p.chapter_id: p for p in selectors.chapter_progress_for_enrollment(enrollment)}
     for p in progress_by_chapter.values():
@@ -1306,6 +1322,7 @@ def rebuild_enrollment(enrollment: Enrollment) -> None:
             payload=event.payload,
             occurred_at=event.occurred_at,
             revision_days=revision_days,
+            tz=tz,
         )
         if event.type in (EventType.TOPIC_DONE, EventType.TOPIC_UNDONE):
             done = event.type == EventType.TOPIC_DONE
