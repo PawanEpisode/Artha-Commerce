@@ -16,11 +16,12 @@ from modules.today import registry, runner
 def _real_providers():
     """`test_registry` empties the process-wide registry; every other test starts with what the apps register in `ready()`."""
     from modules.coverage import today_providers
-    from modules.today import legacy_bridge
+    from modules.today import legacy_bridge, planner_provider
 
     registry.clear()
     today_providers.register()
     legacy_bridge.register()
+    planner_provider.register()
     yield
 
 
@@ -80,12 +81,14 @@ def _fresh_throttle_counters():
 
 @pytest.fixture
 def flag(settings, monkeypatch):
-    """`today_plan` on or off for everyone, through the same PostHog client seam the other modules' tests use."""
+    """`today_plan` (and `today_planner`, unless given) on or off for everyone, through the same PostHog client seam the other modules' tests use."""
 
-    def _set(on: bool):
+    def _set(on: bool, planner: bool | None = None):
+        planner = on if planner is None else planner
+
         class Client_:
             def get_feature_flag(self, key, distinct_id, **kwargs):
-                return on if key == "today_plan" else None
+                return {"today_plan": on, "today_planner": planner}.get(key)
 
         settings.POSTHOG_API_KEY = "phc_test"
         monkeypatch.setattr(feature_flags, "_client", Client_())

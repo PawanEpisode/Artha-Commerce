@@ -8,6 +8,7 @@ What runs on a clock (PRD slice 15, ERD 3.6), called by the cron tick and safe t
   `OWN_CARRY_MAX` times expires instead, after the student had the "Still relevant?" prompt for a day), the plan closes and
   `today_day_closed` is announced once.
 - `prune`: evidence older than 90 days and tasks older than 13 months go; plan counters stay for 24 months (PRD section 8).
+- `replan_sweep`: the planner's own clock (R2): re-plans a plan when 2 days were missed or on Monday, and refreshes its health every day.
 - `reminder_digest` lives in `selectors`; it only reads.
 
 Every step is bounded by a time budget, so a big backlog is worked off over several ticks.
@@ -21,20 +22,25 @@ from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 from django.db import transaction
-from django.db.models import Max
+from django.db.models import Max, Q
 from django.utils import timezone
 
 from core import events
 from core.feature_flags import flag_enabled
 
-from . import actions, generation, selectors, services
+from . import actions, generation, planner_services, selectors, services
 from .domain import constants as c
-from .models import DayPlan, Task, TaskEvidence
+from .errors import PlannerNotReady
+from .models import DayPlan, ReplanEvent, StudyPlan, Task, TaskEvidence
+from .planner import constants as pc
 
 logger = logging.getLogger(__name__)
 
 DAY_CLOSED = "today_day_closed"
 FLAG = "today_plan"
+PLANNER_FLAG = "today_planner"
+PLANNER_CHECK_HOURS = 12  # a plan is looked at again this long after its last health check
+PLANNER_BATCH = 200
 ACTIVE_DAYS = 7  # pre-generate for students whose plan was opened in the last week
 CLOSE_BATCH = 200
 EVIDENCE_DAYS = 90
@@ -199,6 +205,41 @@ def close_sweep(now: datetime | None = None, *, budget_seconds: float = TICK_BUD
     return {"closed": closed, "expired": expired, "carried": carried}
 
 
+# ---- planner ----------------------------------------------------------------------------------------------------------------
+
+
+def replan_sweep(now: datetime | None = None, *, budget_seconds: float = TICK_BUDGET_SECONDS) -> dict[str, int]:
+    """Active plans not checked in the last 12 hours, oldest check first: automatic re-plan or health refresh, only while the flag is on."""
+    now = now or timezone.now()
+    deadline = time.monotonic() + budget_seconds
+    due = (
+        StudyPlan.objects.filter(status="active")
+        .filter(Q(health_checked_at__isnull=True) | Q(health_checked_at__lt=now - timedelta(hours=PLANNER_CHECK_HOURS)))
+        .order_by("health_checked_at", "id")
+        .values_list("user_id", flat=True)[:PLANNER_BATCH]
+    )
+    counts = {"checked": 0, "replanned": 0, "refreshed": 0, "archived": 0, "flag_off": 0, "failed": 0}
+    for user_id in list(due):
+        if time.monotonic() >= deadline:
+            break
+        counts["checked"] += 1
+        try:
+            if not flag_enabled(PLANNER_FLAG, str(user_id), strict=True):
+                counts["flag_off"] += 1
+                continue
+            outcome = planner_services.auto_replan(user_id, now=now)
+        except PlannerNotReady:
+            continue  # no exam date for now: the plan waits
+        except Exception:  # noqa: BLE001 - one student's failure never stops the rest
+            logger.exception("today: planner check failed for one student")
+            counts["failed"] += 1
+            continue
+        key = outcome if outcome in ("refreshed", "archived") else "replanned"
+        if outcome != "none":
+            counts[key] += 1
+    return counts
+
+
 # ---- prune ------------------------------------------------------------------------------------------------------------------
 
 
@@ -219,7 +260,12 @@ def prune(now: datetime | None = None) -> dict[str, int]:
     plans = DayPlan.objects.filter(local_date__lt=plan_cut, tasks__isnull=True)
     plan_ids = list(plans.values_list("pk", flat=True)[:PRUNE_BATCH])
     plans_deleted = DayPlan.objects.filter(pk__in=plan_ids).delete()[0] if plan_ids else 0
-    return {"evidence": evidence, "tasks": tasks, "plans": plans_deleted}
+    event_cut = _months_ago(now.date(), pc.REPLAN_EVENT_MONTHS)
+    event_ids = list(
+        ReplanEvent.objects.filter(created_at__date__lt=event_cut).values_list("pk", flat=True)[:PRUNE_BATCH]
+    )
+    replan_events = ReplanEvent.objects.filter(pk__in=event_ids).delete()[0] if event_ids else 0
+    return {"evidence": evidence, "tasks": tasks, "plans": plans_deleted, "replan_events": replan_events}
 
 
 def _months_ago(day: date, months: int) -> date:
@@ -231,10 +277,11 @@ def _months_ago(day: date, months: int) -> date:
 
 
 def tick(now: datetime | None = None) -> dict[str, dict]:
-    """One cron call: close first (so a carried task is in tomorrow's plan before it is made), then pre-generate, then prune."""
+    """One cron call: close first (so a carried task is in tomorrow's plan before it is made), then pre-generate, then the planner, then prune."""
     now = now or timezone.now()
     return {
         "close": close_sweep(now),
         "pregenerate": pregenerate(now),
+        "planner": replan_sweep(now),
         "prune": prune(now),
     }

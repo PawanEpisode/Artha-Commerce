@@ -61,3 +61,13 @@ SKIM_FACTOR_PCT = 50  # "skim" halves the estimate of a chapter [VERIFY]
 SUMMARY_MAX_CHARS = 8192  # `today_replanevent.summary` (ERD 2.8: at most 8 KB)
 SUMMARY_MAX_MOVED = 60  # the list of moved milestones in the summary is cut here (a plan has about 25)
 SUMMARY_MAX_SKIM_CHAPTERS = 40  # the skim option names at most this many chapters (the count is always exact)
+
+# ---- services (W8) ----------------------------------------------------------------------------------------------------------
+PARAMS_MAX_CHARS = (
+    1800  # `StudyPlan.params` is limited to 2048 rendered characters; the skim list is cut to stay under this
+)
+RESULT_EVENTS = 20  # re-plan events returned with a plan
+REPLAN_EVENT_MONTHS = 24  # retention of `today_replanevent` (PRD section 8)
+OVERDUE_MUST_DO_DAYS = (
+    3  # FR-F13-50: a milestone task is `must_do` when its milestone is overdue by this many days or more
+)

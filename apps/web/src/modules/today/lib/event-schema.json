@@ -122,6 +122,18 @@
       "where": "web",
       "props": ["changed_keys"]
     },
+    "today_planner_created": {
+      "where": "api",
+      "props": ["health", "paper_count", "milestone_count", "scheme_switch"]
+    },
+    "today_plan_replanned": {
+      "where": "api",
+      "props": ["trigger", "health_before", "health_after", "moved_count", "option_count", "applied"]
+    },
+    "today_replan_option_chosen": {
+      "where": "api",
+      "props": ["option", "health_after"]
+    },
     "provider_failed": {
       "where": "api",
       "props": ["provider", "status", "ms_bucket"]

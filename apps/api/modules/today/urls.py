@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from . import planner_views, views
 
 urlpatterns = [
     path("today/open/", views.OpenView.as_view(), name="today-open"),
@@ -10,6 +10,10 @@ urlpatterns = [
     path("today/settings/", views.SettingsView.as_view(), name="today-settings"),
     path("today/plan/regenerate/", views.RegenerateView.as_view(), name="today-regenerate"),
     path("today/plan/celebrated/", views.CelebratedView.as_view(), name="today-celebrated"),
+    path("today/planner/", planner_views.PlannerRootView.as_view(), name="today-planner"),
+    path("today/planner/replan/", planner_views.ReplanView.as_view(), name="today-planner-replan"),
+    path("today/planner/options/", planner_views.OptionView.as_view(), name="today-planner-options"),
+    path("today/planner/events/", planner_views.EventsView.as_view(), name="today-planner-events"),
     path("today/internal/tick/", views.TickView.as_view(), name="today-tick"),
     path("today/tasks/", views.TasksView.as_view(), name="today-tasks"),
     path("today/tasks/<uuid:task_id>/", views.TaskDetailView.as_view(), name="today-task"),

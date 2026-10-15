@@ -57,7 +57,7 @@ def test_tick_runs_with_the_secret_or_the_bearer_form_whatever_the_flag_says(cli
     settings.TODAY_TICK_SECRET = "s3cret-value"
     res = client.post("/api/v1/today/internal/tick/", HTTP_X_TODAY_TICK_SECRET="s3cret-value")
     assert res.status_code == 200
-    assert set(res.json()) == {"close", "pregenerate", "prune"}
+    assert set(res.json()) == {"close", "pregenerate", "planner", "prune"}
     res = client.get("/api/v1/today/internal/tick/", HTTP_AUTHORIZATION="Bearer s3cret-value")
     assert res.status_code == 200
 
@@ -258,7 +258,7 @@ def test_delete_and_export_cover_every_today_row(api, plan):
     assert not DayPlan.objects.filter(user_id=USER).exists()
     assert not Task.objects.filter(user_id=USER).exists()
     assert not TodaySettings.objects.filter(pk=USER).exists()
-    assert erasure.delete_all_for_user(USER) == {"evidence": 0, "tasks": 0, "plans": 0, "settings": 0}  # idempotent
+    assert set(erasure.delete_all_for_user(USER).values()) == {0}  # idempotent
 
 
 # ---- analytics ------------------------------------------------------------------------------------------------------------

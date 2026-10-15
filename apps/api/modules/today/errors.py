@@ -73,3 +73,44 @@ class InvalidScope(CodedError):
     status_code = status.HTTP_400_BAD_REQUEST
     default_detail = "Pick a paper and chapter from your course."
     default_code = "invalid_scope"
+
+
+# ---- the planner (R2) --------------------------------------------------------------------------------------------------------
+
+
+class StudyPlanNotFound(CodedError):
+    """`GET planner/` never creates a plan. The web answers with `POST planner/`."""
+
+    status_code = status.HTTP_404_NOT_FOUND
+    default_detail = "You have no study plan yet."
+    default_code = "study_plan_not_found"
+
+
+class PlannerNotReady(CodedError):
+    """A plan needs an active course, an exam date that has not passed and daily minutes. `details.reason` says which is missing."""
+
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "Set your course, exam date and daily study time to plan."
+    default_code = "planner_not_ready"
+
+
+class ReplanEventNotFound(CodedError):
+    """Also what another student's event id gets."""
+
+    status_code = status.HTTP_404_NOT_FOUND
+    default_detail = "That re-plan does not exist."
+    default_code = "replan_not_found"
+
+
+class OptionNotAvailable(CodedError):
+    status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
+    default_detail = "That option cannot be used for this re-plan."
+    default_code = "option_not_available"
+
+
+class OptionExpired(CodedError):
+    """The student already chose, or a newer re-plan replaced these options."""
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = "These options are out of date. Reload your plan."
+    default_code = "option_expired"

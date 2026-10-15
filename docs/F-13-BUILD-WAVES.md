@@ -26,12 +26,12 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | **W5 Actions and motivation** (web) | 11, 12 | Tick with undo, menu, why, skip, snooze, swap, add task sheet, optimistic updates with per-task scope, streak and goal, week strip, celebration, tomorrow card, overload notice, comeback copy, day view `/app/today/$date` | All task actions reachable by keyboard; focus moves to next open row; no swipe-only action |
 | **W6 Offline, settings, cron, launch** (web + API) | 13, 14, 15 | Offline plan cache and queued actions (queue moved to `src/lib`), lite mode, analytics events with schema contract test, settings page, exam date card, onboarding handoff, `/features/today` and catalog entry, cron (pregenerate, close sweep, prune), digest selector, domain events, eraser and exporter, rollout doc `docs/F-13-ROLLOUT.md` | **R1 complete.** Beta runbook written; flag `today_plan` stays off until the owner opens the cohort |
 
-## 2. Waves (R2; W7 built, W8 onwards not started)
+## 2. Waves (R2; W7 and W8 built, W9 onwards not started)
 
 | Wave | Slices | Delivers |
 | --- | --- | --- |
 | W7 Planner engine (built 2026-10-15) | 16 | Migration `0002_planner`, pure `planner/` (capacity, milestones, health, re-plan, options) with fixtures |
-| W8 Planner API | 17 | Services, endpoints, planner provider, replan events, flag `today_planner` |
+| W8 Planner API (built 2026-10-15) | 17 | Services, endpoints, planner provider, replan events, flag `today_planner` |
 | W9 Planner web and adaptive | 18 | `/app/planner`, health card, re-plan flow, feedback and adaptive budget (migration `0003`), bonus round |
 | Provider slices | 19 | One per owning module as F-10, F-11, F-14, F-04, F-09 and F-06 practice ship; Recall moves off the bridge |
 
@@ -50,7 +50,7 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | Create the PostHog flag `today_plan` (0 percent) and, later, `today_planner` | W2 (API reads it) |
 | ~~Confirm the cron route for `internal/tick/` (Q-F13-14)~~ Resolved in W6: `GET`/`POST today/internal/tick/` with `TODAY_TICK_SECRET`, called every 5 minutes by any scheduler (see `docs/F-13-ROLLOUT.md`) | W6 |
 | Review the phase thresholds and budget formula after the first 100 users | Beta |
-| Create the PostHog flag `today_planner` at 0 percent (the planner endpoints of W8 read it; fail-closed like `today_plan`) | Before W8 |
+| ~~Create the PostHog flag `today_planner` at 0 percent~~ Done by the owner before W8 (the planner endpoints read it, fail-closed like `today_plan`) | W8 |
 | Sanity-check the planner numbers in `apps/api/modules/today/tests/fixtures/planner_golden.json` (hand-derived, derivations written beside them) and the `[VERIFY]` constants in `planner/constants.py` | Before the planner opens |
 
 ## 5. Changes to the PRD (found while building W1). Approved by the owner 2026-10-15
@@ -72,6 +72,7 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | W5 | Built 2026-10-15 (see "W5 notes" below) |
 | W6 | Built (2026-10-15) |
 | W7 Planner engine | Built 2026-10-15 (see "W7 notes" and "Changes to the PRD found in W7" below). API only and pure: nothing is user-visible and there is no endpoint, flag wiring or service yet (W8). |
+| W8 Planner API | Built 2026-10-15 (see "W8 notes" and "Changes to the PRD found in W8" below). Five endpoints under `today/planner/`, services, the planner provider, re-plan events, the cron sweep, eraser and exporter. Behind the flag `today_planner`; the web screen is W9. |
 
 ### W3 decisions (approved by the owner 2026-10-15; differences from the PRD, listed in the contract doc)
 
@@ -112,6 +113,27 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 - Tests: 143 planner tests. Golden scenarios worked out by hand (`fixtures/planner_golden.json`: a plan that fits, one that is at risk with the three options, a short runway, FR-F13-48's 120 h against 100 h, and two three-missed-day re-plans); 17 hypothesis properties (capacity never negative, shortfall exact, capacity never grows as days pass, milestones monotonic and unique, a paper finishes before the deadline exactly when its lane load fits the capacity, re-plan idempotent, a feasible option closes the gap, health bands ordered, the summary always fits the database check); and a simulation over 12 weeks with a steady student, a missed week (with and without slack, each option taken or declined), a student who stops, the exam day and after, and a moved exam date. 20 rules were broken on purpose (floor for ceil, off-by-one in the gap, the deadline recomputed, done rows moving, ...) and every one is caught by a test. Two found real defects while writing the tests: the summary size was measured compactly, which PostgreSQL's check would not have accepted; and a finished paper's first revision slid later with the calendar.
 - Whole `modules/today` and `core` suites on PostgreSQL: 877 passed, 1 skipped; the one failure is `test_web_parity`, which reads a file in `apps/web` that the scratch layout does not have (it passes in the real repo).
 - For W8 (the numbers and rules the services must respect): store the reading deadline when the plan is created (`planner.freeze_deadline`) and pass it back on every re-plan; clear it when the exam date or the scheme changes (apply `next_attempt` does this); mark a `finish_reading` milestone done when the last chapter is read (the date of the milestone becomes that day) rather than waiting for the weekly re-plan, and pass `finished_on` or the stored done rows back in; persist a chosen `skim_low_weight` choice (for example in `params["skimmed"]`) and pass `skim=True` for those chapters; build the milestone `Task` rows only from milestones that are open; compute `missed_days` from the tracker's and Today's activity with `consecutive_missed_days(active_days, today, since=plan start)`.
+
+### W8 notes (planner API, PRD slice 17)
+
+- Code: `planner_services.py` (writes, single flight per student), `planner_selectors.py`, `planner_serializers.py`, `planner_views.py`, `planner_provider.py` (`today.planner`, kind `planner_read`, behind the flag), `planner_hooks.py` (reading finished, exam date changed, scheme switched). The contract is `docs/F-13-API-CONTRACT.md` ("Planner"), checked by `test_contract.py`.
+- Endpoints (flag `today_planner`, strict, independent of `today_plan`): `GET` and `POST today/planner/`, `POST today/planner/replan/` (throttle `today_replan`, 20 a day), `POST today/planner/options/`, `GET today/planner/events/`.
+- The W7 notes are all applied: the reading deadline is frozen at creation and cleared on an exam-date change, a scheme switch or `next_attempt`; `finish_reading` is marked done on the day the last chapter is read (listening to `coverage_event_recorded`); a chosen skim is kept in `params["skimmed"]` and passed back as `skim=True` (the list is cut to fit the 2 KB column; a cut chapter counts in full again, which the health shows); only open milestones feed the provider; missed days come from tracked time plus done tasks.
+- The cron tick has a new `planner` step: every active plan not checked in 12 hours is re-planned when a trigger applies (2 missed days, Monday, 3-day gap), otherwise its health numbers are refreshed; a plan whose exam passed is archived. Replan events older than 24 months are pruned. The eraser and exporter include the plan, milestones and events.
+- Not built, on purpose: the "apply moves of 1 day or less silently" idea from the W7 observation (every move is stored and listed; the web in W9 can decide what to show). Recall and other providers are untouched.
+
+### Changes to the PRD found in W8 (decided by Claude without a question, because the session ran unattended; each can be reversed in a small change)
+
+| # | PRD / ERD text | What W8 found | What W8 does instead |
+| --- | --- | --- | --- |
+| 1 | Section 9 lists only R1 endpoints | R2 has no endpoint table | Five endpoints under `today/planner/` (contract doc). One active plan per student |
+| 2 | FR-F13-49 "apply only the student's choice" | An exam-date change, new daily minutes or a scheme switch is itself the student's choice | Those apply their new dates at once; a shortfall found by a plain re-plan only stores numbers and waits for an option |
+| 3 | `next_attempt` | The exam date belongs to F-03 | Choosing it sets the exam date on the enrolment through the coverage service, then the plan follows. Only a later open term of the same level is offered |
+| 4 | Plan on scheme switch | Another scheme has other chapters | The old plan is `superseded`, a new plan starts, with a `scheme_switch` event. Done milestones are not carried over |
+| 5 | Re-plan triggers | Section 6.F says "on demand, weekly, 2 missed days" without a clock | The cron tick checks each plan every 12 hours; an automatic re-plan with nothing new records no event |
+| 6 | `must_do` | FR-F13-50: overdue by 3 or more days | `OVERDUE_MUST_DO_DAYS = 3`. A paper is "behind" when its reading milestone is `at_risk` or its date has come |
+| 7 | Daily minutes | Enrolment `planned_minutes`, else the Today setting, else the student must say | `422 planner_not_ready` with `details.reason = no_daily_minutes` |
+| 8 | Planner flag | Not in the PRD for the provider | The provider carries `flag="today_planner"` (fails open once a plan exists, which only a flagged student can make) |
 
 ### Changes to the PRD found in W7 (approved by the owner 2026-10-15, in the W7 session)
 

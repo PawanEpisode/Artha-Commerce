@@ -26,3 +26,10 @@ def daily_minutes(enrollment) -> int | None:
 
 def study_state(user_id, enrollment, tz: str) -> StudyState:
     return coverage.study_state(user_id, enrollment, tz)
+
+
+def set_exam_date(enrollment, exam_date: date):
+    """The student chose to sit a later attempt: the exam date lives in F-03, so the change goes through its service."""
+    from modules.coverage import services as coverage_services
+
+    return coverage_services.update_enrollment(enrollment, data={"exam_date": exam_date})

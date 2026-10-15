@@ -157,6 +157,7 @@ REST_FRAMEWORK = {
         "today_read": "120/min",
         "today_write": "120/min",
         "today_regen": "6/day",
+        "today_replan": "20/day",
         # F-16 profile, onboarding and account data
         "profile_write": "30/min",
         "avatar_write": "10/hour",

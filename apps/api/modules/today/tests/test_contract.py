@@ -12,9 +12,9 @@ from pathlib import Path
 import pytest
 from django.utils import timezone
 
-from modules.coverage.models import ChapterProgress
+from modules.coverage.models import ChapterProgress, Enrollment
 from modules.today import errors, urls
-from modules.today.models import ProviderConfig, Task
+from modules.today.models import ProviderConfig, StudyPlan, Task
 from modules.today.registry import KindSpec
 from modules.today.views import TickView, TodayView
 
@@ -217,10 +217,31 @@ def test_the_error_table_lists_exactly_the_codes_the_api_can_raise(doc):
             errors.StateConflict,
             errors.PlanChanged,
             errors.UndoExpiredError,
+            errors.StudyPlanNotFound,
+            errors.PlannerNotReady,
+            errors.ReplanEventNotFound,
+            errors.OptionNotAvailable,
+            errors.OptionExpired,
         )
     }
     raised |= {"feature_disabled": 403, "invalid": 400, "quota_exceeded": 429}
     assert documented == raised
+
+
+def planner_errors(api):
+    """The five planner errors, each provoked the way the web would meet it."""
+    seen = {"study_plan_not_found": api.get("/today/planner/")}
+    seen["replan_not_found"] = api.post("/today/planner/options/", {"event_id": str(uuid.uuid4()), "option": "none"})
+    api.post("/today/planner/")
+    event = api.post("/today/planner/replan/").json_body["replan"]  # the plan fits: no options
+    seen["option_not_available"] = api.post("/today/planner/options/", {"event_id": event["id"], "option": "more_time"})
+    api.post("/today/planner/options/", {"event_id": event["id"], "option": "none"})
+    seen["option_expired"] = api.post("/today/planner/options/", {"event_id": event["id"], "option": "none"})
+    Enrollment.objects.filter(user_id=USER).update(exam_date=None)
+    StudyPlan.objects.all().delete()
+    seen["planner_not_ready"] = api.post("/today/planner/")
+    Enrollment.objects.filter(user_id=USER).update(exam_date=local_today() + timedelta(days=56))
+    return seen
 
 
 def test_each_documented_error_is_what_the_api_really_answers(doc, api, flag, enrolled):
@@ -262,8 +283,39 @@ def test_each_documented_error_is_what_the_api_really_answers(doc, api, flag, en
     )
     Task.objects.filter(pk=second["id"]).update(provider="fake.only", kind="only_kind", dedupe_key="only")
     seen["no_alternative"] = api.post(f"/today/tasks/{second['id']}/swap/", {"client_id": cid()})
+    seen.update(planner_errors(api))
     flag(False)
     seen["feature_disabled"] = api.get("/today/plan/")
     for code, http, _when in rows(doc, "errors"):
         assert seen[code].status_code == int(http), code
         assert seen[code].json_body["error"]["code"] == code, code
+
+
+# ---- planner ----------------------------------------------------------------------------------------------------------------
+
+
+def test_the_planner_payloads_have_the_documented_keys(doc, api, enrolled):
+    created = api.post("/today/planner/")
+    assert set(created.json_body) == keys(doc, "planner-keys") | {"created"}
+    body = api.get("/today/planner/").json_body
+    assert set(body) == keys(doc, "planner-keys")
+    assert body["milestones"] and set(body["milestones"][0]) == keys(doc, "milestone-keys")
+    replanned = api.post("/today/planner/replan/").json_body
+    assert set(replanned) == keys(doc, "planner-keys") | {"replan"}
+    assert set(replanned["replan"]) == keys(doc, "replan-event-keys")
+    events = api.get("/today/planner/events/").json_body
+    assert set(events) == {"version", "server_time", "events"}
+    assert set(events["events"][0]) == keys(doc, "replan-event-keys")
+    chosen = api.post("/today/planner/options/", {"event_id": replanned["replan"]["id"], "option": "none"}).json_body
+    assert set(chosen) == keys(doc, "planner-keys") | {"replan"}
+
+
+def test_the_planner_throttle_scopes_are_documented(doc):
+    scopes = {(m, p): s for m, p, _purpose, s in rows(doc, "endpoints") if p.startswith("today/planner/")}
+    assert scopes == {
+        ("GET", "today/planner/"): "today_read",
+        ("POST", "today/planner/"): "today_write",
+        ("POST", "today/planner/replan/"): "today_replan",
+        ("POST", "today/planner/options/"): "today_write",
+        ("GET", "today/planner/events/"): "today_read",
+    }

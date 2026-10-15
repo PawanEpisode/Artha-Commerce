@@ -1,4 +1,4 @@
-# F-13 Today: API contract (Wave 6)
+# F-13 Today: API contract (Waves 6 and 8)
 
 What `/api/v1/today/` answers today. The web builds against this file. It is checked by `modules/today/tests/test_contract.py`: if the code and this page disagree, that test fails, so change both together. PRD section 9 is the source; the places where W2 and W3 differ from it are listed under "Differences from the PRD".
 
@@ -7,7 +7,7 @@ Every endpoint of PRD section 9 is built. The cron entry (`today/internal/tick/`
 ## Rules for every endpoint
 
 - Bearer Supabase token. No token or a bad token: `401`.
-- Flag `today_plan` off (or PostHog unable to answer, it fails closed): `403` with code `feature_disabled`.
+- Flag `today_plan` off (or PostHog unable to answer, it fails closed): `403` with code `feature_disabled`. The planner endpoints (`today/planner/...`) use the flag `today_planner` the same way, and do not need `today_plan`.
 - Errors have one shape: `{"error": {"code", "message", "details"}}`.
 - Every response carries `version` (payload version, 1) and `server_time` (ISO 8601, UTC) except `304` and `404`.
 - `GET` never writes: no plan, no settings row, no counter. Generation is the explicit `POST open/`.
@@ -38,10 +38,15 @@ Every endpoint of PRD section 9 is built. The cron entry (`today/internal/tick/`
 | POST | `today/tasks/<uuid:task_id>/snooze/` | Snooze to a date or a preset | `today_write` |
 | POST | `today/tasks/<uuid:task_id>/swap/` | Replace a suggestion with another | `today_write` |
 | POST | `today/tasks/<uuid:task_id>/undo/` | Revert the last change within 60 seconds | `today_write` |
+| GET | `today/planner/` | The study plan: health, numbers, milestones, the options still waiting for a choice | `today_read` |
+| POST | `today/planner/` | Make the plan (or change its daily minutes). Idempotent | `today_write` |
+| POST | `today/planner/replan/` | The student's own "Re-plan" | `today_replan` |
+| POST | `today/planner/options/` | Apply the option the student chose from the latest re-plan, or `none` | `today_write` |
+| GET | `today/planner/events/` | The re-plan history of the active plan, newest first | `today_read` |
 
 <!-- /contract:endpoints -->
 
-Throttle scopes: `today_read` 120 per minute, `today_write` 120 per minute, `today_regen` 6 per day (used by `plan/regenerate/`).
+Throttle scopes: `today_read` 120 per minute, `today_write` 120 per minute, `today_regen` 6 per day (used by `plan/regenerate/`), `today_replan` 20 per day (used by `planner/replan/`).
 
 ### POST `today/open/`
 
@@ -237,13 +242,53 @@ date, planned_count, done_count, skipped_count, open_count, planned_minutes, out
 version, server_time, minutes_per_day, focus_papers, disabled_kinds, show_tomorrow, celebrate, lite_mode
 <!-- /contract:settings-keys -->
 
+## Planner (Wave 8, flag `today_planner`)
+
+The date-driven study plan of PRD 6.F (FR-F13-47 to FR-F13-50). The numbers come from the pure planner in `modules/today/planner/`; every constant is `[VERIFY]` in `planner/constants.py`. A plan belongs to the student's active enrolment, one active at a time.
+
+- `POST planner/` makes the plan from the enrolment's exam date and daily minutes (or the body's `daily_minutes`, 30 to 720) and answers `201`. A second call answers `200` with the same plan. It changes the plan only when `daily_minutes` differs (a manual re-plan) or the exam date moved. `422 planner_not_ready` says what is missing.
+- `GET planner/` never writes. `404 study_plan_not_found` means call `POST planner/`.
+- `POST planner/replan/` is the student's own "Re-plan". With nothing short the new dates apply and `replan.moved` lists what moved. With a shortfall the dates stay as they were, `pending` holds the three options (`more_time`, `skim_low_weight`, `next_attempt`) and nothing changes until `POST planner/options/` with `{event_id, option}`. `option: "none"` keeps the plan as it is.
+- Automatic re-plans come from the cron tick: after 2 missed days or every Monday (the student's own time zone), at least 3 days apart. They record an event only when something changed.
+- Milestone `status` is `pending`, `done`, `at_risk`, `missed` or `dropped`. `finish_reading` is marked `done` on the day the last chapter is read.
+
+<!-- contract:planner-keys -->
+version, server_time, id, enrollment_id, exam_date, daily_minutes, health, capacity_minutes, remaining_minutes, shortfall_minutes, reading_deadline, revise_until, health_checked_at, last_replanned_at, next_replan_on, replan_no, plan_version, tz, milestones, pending, latest_replan
+<!-- /contract:planner-keys -->
+
+`POST planner/` adds `created`. `POST planner/replan/` and `POST planner/options/` add `replan` (the event, or `null` when a manual re-plan found nothing to record).
+
+<!-- contract:milestone-keys -->
+id, kind, subject_key, subject_id, subject_name, target_date, original_target_date, moved_days, overdue_days, remaining_minutes, status, done_at
+<!-- /contract:milestone-keys -->
+
+<!-- contract:replan-event-keys -->
+id, trigger, health_before, health_after, shortfall_before, shortfall_after, moved_count, option_chosen, moved, options, created_at
+<!-- /contract:replan-event-keys -->
+
+`GET planner/events/` answers `{version, server_time, events: [...]}` with the event keys above (`?limit=` 1 to 50, default 20).
+
+The planner provider (`today.planner`, kind `planner_read`) puts "Read: {chapter}" in Today for a paper whose reading milestone is `at_risk` or has come; it is `must_do` only when the milestone is overdue by 3 or more days. It is behind the flag `today_planner` and offers nothing to a student without a plan.
+
+Planner events (`today_planner_created`, `today_plan_replanned`, `today_replan_option_chosen`) are in the event schema.
+
+### Differences from the PRD (planner)
+
+| PRD | Built | Why |
+| --- | --- | --- |
+| Section 9 lists no R2 endpoints | Five endpoints under `today/planner/` | Slice 17 asks for "endpoints"; the shapes above are the proposal |
+| The planner screen uses `?enrollment=` for a second level | One active plan per student for the active enrolment | Only one enrolment is active at a time today |
+| Re-plan "applies automatically" | A manual or automatic re-plan with a shortfall stores only the numbers; dates wait for the student's choice. An exam-date change, a new daily time or a scheme switch is the student's choice, so those apply | FR-F13-49 "apply only the student's choice" |
+| Next attempt | Applying it sets the exam date on the enrolment (F-03) and the plan follows | The exam date has one owner |
+| Scheme switch | The old plan is `superseded` and a new plan starts, with a `scheme_switch` event | Chapters of another scheme have no shared milestones |
+
 ## Error codes
 
 <!-- contract:errors -->
 
 | Code | HTTP | When |
 | --- | --- | --- |
-| `feature_disabled` | 403 | The flag `today_plan` is off for this student |
+| `feature_disabled` | 403 | The flag `today_plan` (planner endpoints: `today_planner`) is off for this student |
 | `plan_not_generated` | 404 | `GET plan/` for a date with no generated plan |
 | `invalid_date` | 400 | A date outside what the endpoint allows |
 | `invalid` | 400 | Any other bad input; field errors in `details` |
@@ -256,6 +301,11 @@ version, server_time, minutes_per_day, focus_papers, disabled_kinds, show_tomorr
 | `plan_changed` | 409 | Regenerate with a stale `expected_generation` |
 | `undo_expired` | 410 | Undo after the 60 second window |
 | `quota_exceeded` | 429 | Own tasks per day, open tasks for later days, swaps per day, regenerations per day |
+| `study_plan_not_found` | 404 | `GET planner/` or `planner/events/` before a plan exists: the web then calls `POST planner/` |
+| `planner_not_ready` | 422 | No course, no exam date, the exam date has passed or no daily minutes; `details.reason` is `not_enrolled`, `no_exam_date`, `post_exam` or `no_daily_minutes` |
+| `replan_not_found` | 404 | An unknown re-plan, or another student's |
+| `option_not_available` | 422 | The option was not offered, or it is not feasible |
+| `option_expired` | 409 | The student already chose, or a newer re-plan replaced these options |
 
 <!-- /contract:errors -->
 
@@ -284,7 +334,8 @@ version, server_time, minutes_per_day, focus_papers, disabled_kinds, show_tomorr
 
 - `close`: `closed`, `expired`, `carried`. A plan closes once its day plus 3 hours is over in the plan's own time zone. Open provider tasks expire (`end_reason=day_ended`); the student's own open tasks move to the next day with `carry_count` + 1, and one already carried three times expires. `today_day_closed` is emitted once per plan.
 - `pregenerate`: `checked`, `pregenerated`, `flag_off`, `failed`. Students who opened Today in the last 8 days and have no plan for their own today get one (flag `today_plan` must be on for them). The plan is not marked opened.
-- `prune`: `evidence` (older than 90 days), `tasks` (older than 13 months), `plans` (older than 24 months and empty).
+- `planner`: `checked`, `replanned`, `refreshed`, `archived`, `flag_off`, `failed`. Active study plans not checked in the last 12 hours are re-planned when a trigger applies (2 missed days, Monday, 3 days since the last), otherwise their health is refreshed. A plan whose exam date has passed is archived. Needs the flag `today_planner` on for the student.
+- `prune`: `evidence` (older than 90 days), `tasks` (older than 13 months), `plans` (older than 24 months and empty), `replan_events` (older than 24 months).
 
 Domain events through `core.events`: `today_plan_generated`, `today_task_completed`, `today_day_completed`, `today_day_closed`, plus the action events of PRD section 10. `selectors.reminder_digest(user_id, date)` is the read side for X-01. The account eraser and exporter are registered as `today`.
 
