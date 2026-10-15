@@ -5,15 +5,14 @@ the owner opens the beta), parse, call a service or a selector, serialise. `GET`
 
 from __future__ import annotations
 
+from core.permissions import flag_required
 from django.utils import timezone
 from rest_framework import status as http
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 
-from core.permissions import flag_required
-
-from . import generation, planner_selectors, planner_services
+from . import adaptive_services, generation, planner_selectors, planner_services, serializers
 from . import planner_serializers as ps
 from .adapters import tracking as tracking_adapter
 from .errors import StudyPlanNotFound
@@ -92,3 +91,64 @@ class EventsView(PlannerView):
         if plan is None:
             raise StudyPlanNotFound
         return Response(ps.events_payload(planner_selectors.events_of(plan, query["limit"]), now=timezone.now()))
+
+
+# ---- day feedback, adaptive budget, bonus round (R2, behind the same flag) -------------------------------------------------
+
+
+class FeedbackView(PlannerView):
+    """One tap after the day: too much, just right, too little. Answers the budget suggestion it may have produced."""
+
+    throttle_scope = "today_write"
+
+    def post(self, request):
+        data = self.parse(serializers.FeedbackSerializer, request.data)
+        now = timezone.now()
+        result = adaptive_services.record_feedback(request.user.id, data["rating"], day=data.get("date"), now=now)
+        return Response(
+            {
+                "version": ps.PLANNER_VERSION,
+                "server_time": now.isoformat(),
+                "date": result.feedback.local_date.isoformat(),
+                "rating": result.feedback.rating,
+                "suggestion": result.suggestion,
+            }
+        )
+
+
+class BudgetSuggestionView(PlannerView):
+    """GET: the standing suggestion or `null`. POST `{accept}`: apply it (the minutes setting) or dismiss it."""
+
+    @property
+    def throttle_scope(self):
+        return "today_read" if self.request.method == "GET" else "today_write"
+
+    def get(self, request):
+        return Response(
+            {
+                "version": ps.PLANNER_VERSION,
+                "server_time": timezone.now().isoformat(),
+                "suggestion": adaptive_services.current_suggestion(request.user.id),
+            }
+        )
+
+    def post(self, request):
+        data = self.parse(serializers.SuggestionAnswerSerializer, request.data)
+        answered = adaptive_services.answer_suggestion(request.user.id, accept=data["accept"])
+        return Response(
+            {"version": ps.PLANNER_VERSION, "server_time": timezone.now().isoformat(), "suggestion": answered}
+        )
+
+
+class BonusView(PlannerView):
+    """ "Do a little more": up to 3 extra tasks within 20 minutes that never count toward the day."""
+
+    throttle_scope = "today_write"
+
+    def post(self, request):
+        self.parse(serializers.BonusSerializer, request.data)
+        now = timezone.now()
+        plan, added = adaptive_services.add_bonus(request.user.id, now=now)
+        payload = serializers.plan_payload(plan, user_id=request.user.id, now=now)
+        payload["bonus"] = {"added": added}
+        return Response(payload)

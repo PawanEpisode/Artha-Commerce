@@ -96,6 +96,7 @@ def test_the_today_tables_are_covered():
         "today_studyplan",
         "today_milestone",
         "today_replanevent",
+        "today_dayfeedback",
     } <= set(TABLES)
 
 

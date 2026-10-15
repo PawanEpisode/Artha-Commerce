@@ -18,6 +18,7 @@ import { useBootstrap } from '~/modules/personalization'
 
 import { AddTaskSheet } from '../components/AddTaskSheet'
 import { CelebrationCard } from '../components/CelebrationCard'
+import { DayExtras } from '../components/DayExtras'
 import { ExamDateCard } from '../components/ExamDateCard'
 import { FirstPlanReveal } from '../components/FirstPlanReveal'
 import { OverloadNotice } from '../components/OverloadNotice'
@@ -269,6 +270,7 @@ function Body({ plan, search, firstName, readOnly, lite, status }: BodyProps) {
         </Alert>
       ) : null}
       <CelebrationCard plan={plan} burst={burst} lite={lite} />
+      <DayExtras plan={plan} readOnly={readOnly} />
       <OverloadNotice backlog={plan.backlog} />
       {plan.planned_minutes > LONG_DAY_MINUTES ? (
         <Alert variant="info">That is a long day. Consider moving one task to tomorrow.</Alert>

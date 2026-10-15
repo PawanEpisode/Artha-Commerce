@@ -42,6 +42,10 @@ Every endpoint of PRD section 9 is built. The cron entry (`today/internal/tick/`
 | POST | `today/planner/` | Make the plan (or change its daily minutes). Idempotent | `today_write` |
 | POST | `today/planner/replan/` | The student's own "Re-plan" | `today_replan` |
 | POST | `today/planner/options/` | Apply the option the student chose from the latest re-plan, or `none` | `today_write` |
+| POST | `today/plan/feedback/` | One tap after the day: too much, just right, too little. Answers the budget suggestion it may produce | `today_write` |
+| POST | `today/plan/bonus/` | "Do a little more": up to 3 extra tasks within 20 minutes on a completed day, once a day | `today_write` |
+| GET | `today/budget-suggestion/` | The standing minutes suggestion, or `null` | `today_read` |
+| POST | `today/budget-suggestion/` | Accept or dismiss the suggestion with one tap | `today_write` |
 | GET | `today/planner/events/` | The re-plan history of the active plan, newest first | `today_read` |
 
 <!-- /contract:endpoints -->
@@ -197,7 +201,7 @@ subject_id, subject_key, name, tasks
 Tiles are in display order; the General pool (`subject_id: null`, empty `name`) comes last. `tasks` holds task ids.
 
 <!-- contract:task-keys -->
-id, origin, kind, slot, title, reason, reason_code, why, est_minutes, progress, target, state, link, subject_id, chapter_id, manual_action, is_must_do, stuck, version
+id, origin, kind, slot, title, reason, reason_code, why, est_minutes, progress, target, state, link, subject_id, chapter_id, manual_action, is_must_do, is_bonus, stuck, version
 <!-- /contract:task-keys -->
 
 `stuck` is `true` for the student's own open task that the day sweep carried to a new day three times: the screen asks "Still relevant? Keep, snooze or delete" (PATCH `keep`, snooze or delete). A task left open at day end (provider tasks, and own tasks carried three times) reads as `skipped` in that day's recap.
@@ -272,6 +276,14 @@ The planner provider (`today.planner`, kind `planner_read`) puts "Read: {chapter
 
 Planner events (`today_planner_created`, `today_plan_replanned`, `today_replan_option_chosen`) are in the event schema.
 
+### Feedback, adaptive budget and bonus round (Wave 9)
+
+Same flag as the planner (`today_planner`).
+
+- `POST plan/feedback/` `{rating, date?}`: `rating` is `too_much`, `just_right` or `too_little`; `date` is today or yesterday (default today). One answer per day, a later one replaces it. Answers `{version, server_time, date, rating, suggestion}`. `404 plan_not_generated` when that day has no plan.
+- A suggestion stands after 3 unused answers in a row of the same extreme: `{direction, minutes, current}`, 15 percent fewer (`too_much`) or more (`too_little`) minutes, rounded to 5 and kept in 15 to 240. `GET budget-suggestion/` answers `{version, server_time, suggestion}`. `POST budget-suggestion/` `{accept}` applies it (it saves the Today setting `minutes_per_day`) or dismisses it, uses up those three answers either way, and answers the suggestion with `accepted`.
+- `POST plan/bonus/` answers the plan payload plus `bonus: {added}`. Bonus tasks have `is_bonus: true`, never count toward completion, the ring or the streak, and are not part of the plan counters.
+
 ### Differences from the PRD (planner)
 
 | PRD | Built | Why |
@@ -305,6 +317,8 @@ Planner events (`today_planner_created`, `today_plan_replanned`, `today_replan_o
 | `planner_not_ready` | 422 | No course, no exam date, the exam date has passed or no daily minutes; `details.reason` is `not_enrolled`, `no_exam_date`, `post_exam` or `no_daily_minutes` |
 | `replan_not_found` | 404 | An unknown re-plan, or another student's |
 | `option_not_available` | 422 | The option was not offered, or it is not feasible |
+| `no_budget_suggestion` | 409 | `POST budget-suggestion/` when no suggestion stands |
+| `bonus_not_available` | 409 | `details.reason`: `day_not_complete`, `already_used` or `nothing_to_offer` |
 | `option_expired` | 409 | The student already chose, or a newer re-plan replaced these options |
 
 <!-- /contract:errors -->

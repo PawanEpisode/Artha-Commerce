@@ -101,6 +101,7 @@ export function TaskRow({
               <Flag aria-hidden /> Must do
             </Badge>
           ) : null}
+          {task.is_bonus ? <Badge variant="outline">Bonus</Badge> : null}
           {note ? <Badge variant="outline">{note}</Badge> : null}
           {waiting ? <Badge variant="outline">Waiting to sync</Badge> : null}
           {done ? <span className="sr-only">Done</span> : null}

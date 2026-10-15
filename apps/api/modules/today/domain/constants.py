@@ -8,6 +8,8 @@ explained after a constant changes.
 
 from __future__ import annotations
 
+from datetime import date
+
 ALGORITHM_VERSION = 1
 
 # ---- enumerations (closed lists: the database has CHECK constraints for them) -----------------------------------------------
@@ -137,3 +139,11 @@ DROP_REASONS = (
     "budget",
     "cap",
 )
+
+# ---- day feedback, adaptive budget and bonus round (R2, FR-F13-36, FR-F13-37) ---------------------------------------------------
+FEEDBACK_RATINGS = ("too_much", "just_right", "too_little")
+FEEDBACK_STREAK = 3  # this many answers in a row of the same extreme suggest a new budget
+ADAPT_PCT = 15  # [VERIFY] a suggestion changes the minutes by this share
+BONUS_MAX_MINUTES = 20
+BONUS_MAX_TASKS = 3
+FEEDBACK_LOCK_DAY = date(2000, 1, 2)  # advisory lock of the budget suggestion, apart from every plan day

@@ -9,12 +9,11 @@ Counters on `DayPlan` are recomputed from the tasks under the plan lock, never i
 
 import uuid
 
+from core.models import TimeStampedModel, UUIDModel
 from django.db import models
 from django.db.models import F, Q, TextField, Value
 from django.db.models.functions import Cast, Greatest, Length
 from django.db.models.lookups import LessThanOrEqual
-
-from core.models import TimeStampedModel, UUIDModel
 
 from .domain import constants as c
 from .planner import constants as pc
@@ -452,3 +451,24 @@ class ReplanEvent(models.Model):
 
     def __str__(self) -> str:
         return f"{self.trigger}: {self.health_before} -> {self.health_after}"
+
+
+class DayFeedback(UUIDModel):
+    """The student's one-tap answer for a day: too much, just right or too little. One per day plan. `consumed` rows have already
+    been used (or dismissed) in a budget suggestion, so the same three answers never suggest twice."""
+
+    user_id = models.UUIDField()
+    plan = models.OneToOneField(DayPlan, on_delete=models.CASCADE, related_name="feedback")
+    local_date = models.DateField()
+    rating = models.CharField(max_length=10, choices=_choices(c.FEEDBACK_RATINGS))
+    consumed = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = "today_dayfeedback"
+        constraints = [
+            models.CheckConstraint(condition=_in("rating", c.FEEDBACK_RATINGS), name="today_feedback_rating")
+        ]
+        indexes = [models.Index(fields=["user_id", "-local_date"], name="today_feedback_user_date_idx")]
+
+    def __str__(self) -> str:
+        return f"{self.local_date}: {self.rating}"

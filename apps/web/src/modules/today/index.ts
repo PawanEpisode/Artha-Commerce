@@ -1,6 +1,8 @@
 export { DayViewContainer } from './containers/DayViewContainer'
+export { PlannerContainer } from './containers/PlannerContainer'
 export { TodayContainer } from './containers/TodayContainer'
 export { TodayHomeRedirect } from './containers/TodayHomeRedirect'
 export { TodaySettingsContainer } from './containers/TodaySettingsContainer'
+export { usePlannerFlag } from './hooks/usePlannerFlag'
 export { useTodayFlag } from './hooks/useTodayFlag'
 export { type TodaySearch, todaySearchSchema } from './lib/search'

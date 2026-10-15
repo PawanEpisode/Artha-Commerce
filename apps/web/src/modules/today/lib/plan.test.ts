@@ -21,6 +21,7 @@ const task = (id: string, state: Task['state'], extra: Partial<Task> = {}): Task
   chapter_id: null,
   manual_action: null,
   is_must_do: false,
+  is_bonus: false,
   stuck: false,
   version: 1,
   ...extra,

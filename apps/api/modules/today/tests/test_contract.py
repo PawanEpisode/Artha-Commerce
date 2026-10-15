@@ -222,6 +222,8 @@ def test_the_error_table_lists_exactly_the_codes_the_api_can_raise(doc):
             errors.ReplanEventNotFound,
             errors.OptionNotAvailable,
             errors.OptionExpired,
+            errors.NoBudgetSuggestion,
+            errors.BonusNotAvailable,
         )
     }
     raised |= {"feature_disabled": 403, "invalid": 400, "quota_exceeded": 429}
@@ -239,6 +241,7 @@ def planner_errors(api):
     seen["option_expired"] = api.post("/today/planner/options/", {"event_id": event["id"], "option": "none"})
     Enrollment.objects.filter(user_id=USER).update(exam_date=None)
     StudyPlan.objects.all().delete()
+    seen["no_budget_suggestion"] = api.post("/today/budget-suggestion/", {"accept": True})
     seen["planner_not_ready"] = api.post("/today/planner/")
     Enrollment.objects.filter(user_id=USER).update(exam_date=local_today() + timedelta(days=56))
     return seen
@@ -284,6 +287,7 @@ def test_each_documented_error_is_what_the_api_really_answers(doc, api, flag, en
     Task.objects.filter(pk=second["id"]).update(provider="fake.only", kind="only_kind", dedupe_key="only")
     seen["no_alternative"] = api.post(f"/today/tasks/{second['id']}/swap/", {"client_id": cid()})
     seen.update(planner_errors(api))
+    seen["bonus_not_available"] = api.post("/today/plan/bonus/")
     flag(False)
     seen["feature_disabled"] = api.get("/today/plan/")
     for code, http, _when in rows(doc, "errors"):
@@ -319,3 +323,11 @@ def test_the_planner_throttle_scopes_are_documented(doc):
         ("POST", "today/planner/options/"): "today_write",
         ("GET", "today/planner/events/"): "today_read",
     }
+
+
+def test_feedback_suggestion_and_bonus_answer_the_documented_shapes(doc, api, enrolled):
+    api.post("/today/open/")
+    feedback = api.post("/today/plan/feedback/", {"rating": "too_much"}).json_body
+    assert set(feedback) == {"version", "server_time", "date", "rating", "suggestion"}
+    assert set(api.get("/today/budget-suggestion/").json_body) == {"version", "server_time", "suggestion"}
+    assert "`today/plan/bonus/`" in doc and "`today/budget-suggestion/`" in doc

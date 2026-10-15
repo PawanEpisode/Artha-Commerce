@@ -21,6 +21,7 @@ import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppAccountRouteImport } from './routes/app.account'
 import { Route as AppNotificationsRouteImport } from './routes/app.notifications'
 import { Route as AppOnboardingRouteImport } from './routes/app.onboarding'
+import { Route as AppPlannerRouteImport } from './routes/app.planner'
 import { Route as AppRevisionRouteImport } from './routes/app.revision'
 import { Route as AppTodayRouteImport } from './routes/app.today'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
@@ -139,6 +140,11 @@ const AppNotificationsRoute = AppNotificationsRouteImport.update({
 const AppOnboardingRoute = AppOnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPlannerRoute = AppPlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
   getParentRoute: () => AppRoute,
 } as any)
 const AppRevisionRoute = AppRevisionRouteImport.update({
@@ -455,6 +461,7 @@ export interface FileRoutesByFullPath {
   '/app/account': typeof AppAccountRoute
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
+  '/app/planner': typeof AppPlannerRoute
   '/app/revision': typeof AppRevisionRoute
   '/app/today': typeof AppTodayRouteWithChildren
   '/auth/callback': typeof AuthCallbackRoute
@@ -527,6 +534,7 @@ export interface FileRoutesByTo {
   '/app/account': typeof AppAccountRoute
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
+  '/app/planner': typeof AppPlannerRoute
   '/app/revision': typeof AppRevisionRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
@@ -600,6 +608,7 @@ export interface FileRoutesById {
   '/app/account': typeof AppAccountRoute
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
+  '/app/planner': typeof AppPlannerRoute
   '/app/revision': typeof AppRevisionRoute
   '/app/today': typeof AppTodayRouteWithChildren
   '/auth/callback': typeof AuthCallbackRoute
@@ -675,6 +684,7 @@ export interface FileRouteTypes {
     | '/app/account'
     | '/app/notifications'
     | '/app/onboarding'
+    | '/app/planner'
     | '/app/revision'
     | '/app/today'
     | '/auth/callback'
@@ -747,6 +757,7 @@ export interface FileRouteTypes {
     | '/app/account'
     | '/app/notifications'
     | '/app/onboarding'
+    | '/app/planner'
     | '/app/revision'
     | '/auth/callback'
     | '/auth/confirm'
@@ -819,6 +830,7 @@ export interface FileRouteTypes {
     | '/app/account'
     | '/app/notifications'
     | '/app/onboarding'
+    | '/app/planner'
     | '/app/revision'
     | '/app/today'
     | '/auth/callback'
@@ -988,6 +1000,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/app/onboarding'
       preLoaderRoute: typeof AppOnboardingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/planner': {
+      id: '/app/planner'
+      path: '/planner'
+      fullPath: '/app/planner'
+      preLoaderRoute: typeof AppPlannerRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/revision': {
@@ -1424,6 +1443,7 @@ interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
   AppNotificationsRoute: typeof AppNotificationsRoute
   AppOnboardingRoute: typeof AppOnboardingRoute
+  AppPlannerRoute: typeof AppPlannerRoute
   AppRevisionRoute: typeof AppRevisionRoute
   AppTodayRoute: typeof AppTodayRouteWithChildren
   AppIndexRoute: typeof AppIndexRoute
@@ -1475,6 +1495,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppAccountRoute: AppAccountRoute,
   AppNotificationsRoute: AppNotificationsRoute,
   AppOnboardingRoute: AppOnboardingRoute,
+  AppPlannerRoute: AppPlannerRoute,
   AppRevisionRoute: AppRevisionRoute,
   AppTodayRoute: AppTodayRouteWithChildren,
   AppIndexRoute: AppIndexRoute,

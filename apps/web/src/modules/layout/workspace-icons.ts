@@ -7,6 +7,7 @@ import {
   type LucideIcon,
   Notebook,
   Settings,
+  Target,
   Timer,
 } from '@artha/design-system'
 
@@ -14,6 +15,7 @@ import type { WorkspaceLink } from './workspace-nav'
 
 const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/today': CalendarClock,
+  '/app/planner': Target,
   '/app/focus': Timer,
   '/app/tracker': Clock,
   '/app/syllabus': ListChecks,

@@ -1,10 +1,18 @@
 /** Signed-in destinations. A flag hides the link until that feature is on for this student. */
 export type WorkspaceFlag =
-  'focus_timer' | 'time_tracker' | 'syllabus_coverage' | 'notifications_ui' | 'notes' | 'recall_system' | 'today_plan'
+  | 'focus_timer'
+  | 'time_tracker'
+  | 'syllabus_coverage'
+  | 'notifications_ui'
+  | 'notes'
+  | 'recall_system'
+  | 'today_plan'
+  | 'today_planner'
 
 export interface WorkspaceLink {
   to:
     | '/app/today'
+    | '/app/planner'
     | '/app/focus'
     | '/app/tracker'
     | '/app/syllabus'
@@ -28,6 +36,12 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'Today',
     description: 'Your tasks for today, paper by paper.',
     flag: 'today_plan',
+  },
+  {
+    to: '/app/planner',
+    label: 'Study plan',
+    description: 'Your plan to the exam, and whether you are on track.',
+    flag: 'today_planner',
   },
   {
     to: '/app/focus',
@@ -79,6 +93,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   notes: true,
   recall_system: true,
   today_plan: true,
+  today_planner: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

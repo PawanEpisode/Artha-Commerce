@@ -25,6 +25,19 @@ OPEN_SOURCES = ("nav", "reminder", "redirect")
 # ---- requests ---------------------------------------------------------------------------------------------------------------
 
 
+class FeedbackSerializer(serializers.Serializer):
+    rating = serializers.ChoiceField(choices=c.FEEDBACK_RATINGS)
+    date = serializers.DateField(required=False)
+
+
+class SuggestionAnswerSerializer(serializers.Serializer):
+    accept = serializers.BooleanField()
+
+
+class BonusSerializer(serializers.Serializer):
+    pass
+
+
 class CelebratedSerializer(serializers.Serializer):
     pass
 
@@ -181,6 +194,7 @@ def task_dict(task: Task, *, lite: bool = False) -> dict:
         "chapter_id": str(task.chapter_id) if task.chapter_id else None,
         "manual_action": {"label": action["label"], "default": action["default"]} if action else None,
         "is_must_do": task.is_must_do,
+        "is_bonus": not task.counts_toward_day,
         "stuck": is_stuck(task),
         "version": task.version,
     }

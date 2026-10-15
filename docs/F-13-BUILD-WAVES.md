@@ -26,13 +26,13 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | **W5 Actions and motivation** (web) | 11, 12 | Tick with undo, menu, why, skip, snooze, swap, add task sheet, optimistic updates with per-task scope, streak and goal, week strip, celebration, tomorrow card, overload notice, comeback copy, day view `/app/today/$date` | All task actions reachable by keyboard; focus moves to next open row; no swipe-only action |
 | **W6 Offline, settings, cron, launch** (web + API) | 13, 14, 15 | Offline plan cache and queued actions (queue moved to `src/lib`), lite mode, analytics events with schema contract test, settings page, exam date card, onboarding handoff, `/features/today` and catalog entry, cron (pregenerate, close sweep, prune), digest selector, domain events, eraser and exporter, rollout doc `docs/F-13-ROLLOUT.md` | **R1 complete.** Beta runbook written; flag `today_plan` stays off until the owner opens the cohort |
 
-## 2. Waves (R2; W7 and W8 built, W9 onwards not started)
+## 2. Waves (R2; W7, W8 and W9 built, provider slices not started)
 
 | Wave | Slices | Delivers |
 | --- | --- | --- |
 | W7 Planner engine (built 2026-10-15) | 16 | Migration `0002_planner`, pure `planner/` (capacity, milestones, health, re-plan, options) with fixtures |
 | W8 Planner API (built 2026-10-15) | 17 | Services, endpoints, planner provider, replan events, flag `today_planner` |
-| W9 Planner web and adaptive | 18 | `/app/planner`, health card, re-plan flow, feedback and adaptive budget (migration `0003`), bonus round |
+| W9 Planner web and adaptive (built 2026-10-15) | 18 | `/app/planner`, health card, re-plan flow, feedback and adaptive budget (migration `0003`), bonus round |
 | Provider slices | 19 | One per owning module as F-10, F-11, F-14, F-04, F-09 and F-06 practice ship; Recall moves off the bridge |
 
 ## 3. Decisions taken (defaults, change if you disagree)
@@ -73,6 +73,7 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | W6 | Built (2026-10-15) |
 | W7 Planner engine | Built 2026-10-15 (see "W7 notes" and "Changes to the PRD found in W7" below). API only and pure: nothing is user-visible and there is no endpoint, flag wiring or service yet (W8). |
 | W8 Planner API | Built 2026-10-15 (see "W8 notes" and "Changes to the PRD found in W8" below). Five endpoints under `today/planner/`, services, the planner provider, re-plan events, the cron sweep, eraser and exporter. Behind the flag `today_planner`; the web screen is W9. |
+| W9 Planner web and adaptive | Built 2026-10-15 (see "W9 notes" and "Changes to the PRD found in W9" below). API: migration `today.0003_feedback` (`today_dayfeedback`), feedback, budget suggestion and bonus round endpoints. Web: `/app/planner`, a "Study plan" nav link, and feedback, suggestion and bonus cards on Today. All behind the flag `today_planner`. |
 
 ### W3 decisions (approved by the owner 2026-10-15; differences from the PRD, listed in the contract doc)
 
@@ -121,6 +122,27 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 - The W7 notes are all applied: the reading deadline is frozen at creation and cleared on an exam-date change, a scheme switch or `next_attempt`; `finish_reading` is marked done on the day the last chapter is read (listening to `coverage_event_recorded`); a chosen skim is kept in `params["skimmed"]` and passed back as `skim=True` (the list is cut to fit the 2 KB column; a cut chapter counts in full again, which the health shows); only open milestones feed the provider; missed days come from tracked time plus done tasks.
 - The cron tick has a new `planner` step: every active plan not checked in 12 hours is re-planned when a trigger applies (2 missed days, Monday, 3-day gap), otherwise its health numbers are refreshed; a plan whose exam passed is archived. Replan events older than 24 months are pruned. The eraser and exporter include the plan, milestones and events.
 - Not built, on purpose: the "apply moves of 1 day or less silently" idea from the W7 observation (every move is stored and listed; the web in W9 can decide what to show). Recall and other providers are untouched.
+
+### W9 notes (planner web and adaptive, PRD slice 18)
+
+- API: migration `today.0003_feedback` (table `today_dayfeedback`, one answer per plan, check constraint on the rating, row-level security list updated). Pure rule `domain/adapt.py`; services in `adaptive_services.py` (`record_feedback`, `current_suggestion`, `answer_suggestion`, `add_bonus`); views `FeedbackView`, `BudgetSuggestionView`, `BonusView` in `planner_views.py`. Endpoints (flag `today_planner`): `POST today/plan/feedback/`, `GET` and `POST today/budget-suggestion/`, `POST today/plan/bonus/`. The task payload has a new key `is_bonus`. Two events, `today_budget_adapted` and `today_bonus_added`, are in the event schema (API copy and web twin, identical). Eraser and exporter cover the feedback rows. Contract doc updated and machine-checked.
+- Adaptive rule: three unused answers in a row that are all "too much" (or all "too little") offer a change of the daily minutes by 15 percent, rounded to the nearest 5 (halves up), kept inside the Today setting range 15 to 240. Accepting saves `minutes_per_day`; accepting or declining marks those three answers used, so the same three never ask twice.
+- Bonus round: only on a completed day, once per day, 1 to 3 extra tasks of at most 20 minutes in total, marked `counts_toward_day = false` so they never change the done count, completion or the streak. Web shows them with a "Bonus" badge.
+- Web (written without running the web tooling; the owner runs `pnpm check`): `/app/planner` (`PlannerContainer`: first-plan form, health card, phases and milestones, re-plan with the three options, slipped alert, 320 px layout), `DayExtras` on Today (feedback card, suggestion card, bonus card), nav link "Study plan" (`today_planner`), route tree entry, `todayKeys.studyPlan` and `budgetSuggestion`, pure helpers in `lib/planner.ts` with tests.
+- Not built, on purpose: per-paper health on the planner screen beyond the milestone list, any notification for a pending suggestion, and the Today settings screen change (the minutes field already exists and the suggestion saves into it).
+
+### Changes to the PRD found in W9 (agreed by the owner 2026-10-15 where marked "asked"; the rest decided by Claude and easy to reverse)
+
+| # | PRD / ERD text | What W9 found | What W9 does instead |
+| --- | --- | --- | --- |
+| 1 | FR-F13-37 only describes "too much" | The mirror case is not said | "Too little" three times in a row raises the minutes by 15 percent, with the same one-tap confirmation (asked) |
+| 2 | Where feedback lives | Not in the ERD | New table `today_dayfeedback` (asked); the accepted minutes go to the Today setting `minutes_per_day` (asked) |
+| 3 | 15 percent of 25 minutes | Rounding is not said | Rounded to the nearest 5, halves up, kept in 15 to 240 (the setting range). If the result equals the current minutes there is no suggestion |
+| 4 | "Three in a row" | A re-answer or an old answer could count twice | Only unused answers count; a re-answer replaces the day's rating and clears its used mark; a suggestion answered (either way) uses the three |
+| 5 | FR-F13-36 bonus | Not said how often or when | Once per completed day; tasks are `counts_toward_day = false`; refused with `409 bonus_not_available` (`details.reason` day_not_complete, already_used or nothing_to_offer) |
+| 6 | Feedback day | Not said | Today or yesterday only, in the student's time zone; older is `422 invalid_date` |
+| 7 | Flag | Not said for these endpoints | All under `today_planner`, so with the flag off nothing new shows |
+| 8 | Feedback memory on the device | The card should not nag after an answer | The web remembers the answered day in local storage (`today:feedback:<date>`); the server stays the source of truth |
 
 ### Changes to the PRD found in W8 (decided by Claude without a question, because the session ran unattended; each can be reversed in a small change)
 

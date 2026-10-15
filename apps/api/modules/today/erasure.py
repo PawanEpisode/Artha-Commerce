@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
-from .models import DayPlan, Milestone, ReplanEvent, StudyPlan, Task, TaskEvidence, TodaySettings
+from .models import DayFeedback, DayPlan, Milestone, ReplanEvent, StudyPlan, Task, TaskEvidence, TodaySettings
 
 
 def delete_all_for_user(user_id) -> dict:
     """Removes every `today_*` row of the student, the planner's included. Idempotent. Tasks and evidence go with their plans (cascade); counts are reported."""
     evidence = TaskEvidence.objects.filter(user_id=user_id).delete()[0]
     tasks = Task.objects.filter(user_id=user_id).delete()[0]
+    feedback = DayFeedback.objects.filter(user_id=user_id).delete()[0]
     plans = DayPlan.objects.filter(user_id=user_id).delete()[0]
     settings = TodaySettings.objects.filter(pk=user_id).delete()[0]
     replan_events = ReplanEvent.objects.filter(user_id=user_id).delete()[0]
@@ -22,12 +23,14 @@ def delete_all_for_user(user_id) -> dict:
         "replan_events": replan_events,
         "milestones": milestones,
         "study_plans": study_plans,
+        "feedback": feedback,
     }
 
 
 def export_for_user(user_id) -> dict:
     """Everything Today holds for the student, JSON-serialisable. Titles are the student's own data, so they are included here."""
     plans = list(DayPlan.objects.filter(user_id=user_id).order_by("local_date"))
+    feedback_of = dict(DayFeedback.objects.filter(user_id=user_id).values_list("plan_id", "rating"))
     tasks = Task.objects.filter(user_id=user_id, deleted_at__isnull=True).order_by("local_date", "position")
     by_plan: dict = {}
     for t in tasks:
@@ -60,6 +63,7 @@ def export_for_user(user_id) -> dict:
                 "planned": p.planned_count,
                 "done": p.done_count,
                 "skipped": p.skipped_count,
+                "feedback": feedback_of.get(p.id),
                 "tasks": by_plan.get(p.id, []),
             }
             for p in plans

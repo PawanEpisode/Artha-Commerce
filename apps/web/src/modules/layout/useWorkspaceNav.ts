@@ -13,6 +13,7 @@ export function useWorkspaceNav() {
     // Fails closed: the link shows only once the flag is known to be on.
     recall_system: useFeatureFlag('recall_system', { strict: true }),
     today_plan: useFeatureFlag('today_plan', { strict: true }),
+    today_planner: useFeatureFlag('today_planner', { strict: true }),
   }
   return {
     study: visibleLinks(STUDY_LINKS, enabled),

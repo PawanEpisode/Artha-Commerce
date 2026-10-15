@@ -102,6 +102,7 @@ export function localOwnTask(body: { client_id: string; title: string; est_minut
     chapter_id: null,
     manual_action: null,
     is_must_do: false,
+    is_bonus: false,
     stuck: false,
     version: 1,
   }

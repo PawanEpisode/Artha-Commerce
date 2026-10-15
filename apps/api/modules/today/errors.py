@@ -1,8 +1,7 @@
 """Errors Today raises. Each carries the machine-readable `code` the web branches on (see `core.exceptions`)."""
 
-from rest_framework import status
-
 from core.errors import CodedError
+from rest_framework import status
 
 
 class PlanNotGenerated(CodedError):
@@ -114,3 +113,17 @@ class OptionExpired(CodedError):
     status_code = status.HTTP_409_CONFLICT
     default_detail = "These options are out of date. Reload your plan."
     default_code = "option_expired"
+
+
+class NoBudgetSuggestion(CodedError):
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = "There is no suggestion to answer."
+    default_code = "no_budget_suggestion"
+
+
+class BonusNotAvailable(CodedError):
+    """`details.reason`: `day_not_complete`, `already_used` or `nothing_to_offer`."""
+
+    status_code = status.HTTP_409_CONFLICT
+    default_detail = "A bonus round is not available right now."
+    default_code = "bonus_not_available"

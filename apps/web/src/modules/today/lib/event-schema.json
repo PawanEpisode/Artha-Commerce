@@ -137,6 +137,14 @@
     "provider_failed": {
       "where": "api",
       "props": ["provider", "status", "ms_bucket"]
+    },
+    "today_budget_adapted": {
+      "where": "api",
+      "props": ["direction", "accepted"]
+    },
+    "today_bonus_added": {
+      "where": "api",
+      "props": ["task_count", "minutes"]
     }
   }
 }

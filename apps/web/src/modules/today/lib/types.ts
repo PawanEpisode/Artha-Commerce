@@ -33,6 +33,8 @@ export interface Task {
   chapter_id: string | null
   manual_action: { label: string; default: boolean } | null
   is_must_do: boolean
+  /** A "Do a little more" task: never counts toward the day or the streak. */
+  is_bonus: boolean
   /** An own task carried to a new day three times: the screen asks "Still relevant?" (FR-F13-29). */
   stuck: boolean
   version: number
