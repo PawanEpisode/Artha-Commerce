@@ -23,11 +23,13 @@ logger.warn = (msg, options) => {
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
+  const port = Number(process.env.PORT || env.PORT || env.VITE_PORT || 3000)
   const uploadSourcemaps = Boolean(env.SENTRY_AUTH_TOKEN && env.SENTRY_ORG && env.SENTRY_PROJECT)
 
   return {
     customLogger: logger,
-    server: { port: 3000 },
+    server: { port },
+    preview: { port },
     // Same short commit id the service worker is built with (scripts/build-sw.mjs), sent with a device registration.
     define: { __APP_BUILD__: JSON.stringify(swVersionFrom(process.env)) },
     resolve: { tsconfigPaths: true },

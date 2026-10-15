@@ -17,7 +17,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,css,yml,yaml}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json,css,yml,yaml}\"",
     "test:web": "pnpm --filter @artha/web test",
-    "dev:api": "cd apps/api && python manage.py runserver 8000",
+    "dev:api": "cd apps/api && python manage.py runserver",
     "test:api": "cd apps/api && pytest",
     "lint:api": "cd apps/api && ruff check . && ruff format --check .",
     "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm check:contrast && pnpm emails:check && pnpm test && pnpm build:web",
