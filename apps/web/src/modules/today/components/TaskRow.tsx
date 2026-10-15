@@ -1,29 +1,47 @@
-import { Badge, CircleCheck, Clock, Flag, Square } from '@artha/design-system'
-import { Link } from '@tanstack/react-router'
+import { Badge, Button, Checkbox, Clock, Ellipsis, Flag } from '@artha/design-system'
+import { useState } from 'react'
 
 import { progressText } from '../lib/plan'
 import { formatMinutes } from '../lib/time'
 import type { Task } from '../lib/types'
 
 const STATE_NOTE: Partial<Record<Task['state'], string>> = { skipped: 'Skipped', snoozed: 'Snoozed' }
+const LONG_TITLE = 80
 
-/** One task. W4 shows it; ticking, the menu and swap arrive with the actions (W5), so the marker is a status, not a button. */
-export function TaskRow({ task, highlighted = false }: { task: Task; highlighted?: boolean }) {
+export interface TaskRowProps {
+  task: Task
+  highlighted?: boolean
+  /** A recap or a preview: no tick, no menu. */
+  readOnly?: boolean
+  /** A request for this task is in flight. */
+  busy?: boolean
+  /** The tick was the student's own and is still inside the 60 second undo window. */
+  undoable?: boolean
+  onTick?: (task: Task) => void
+  onUntick?: (task: Task) => void
+  onStart?: (task: Task) => void
+  onMenu?: (task: Task) => void
+}
+
+/** One task: a 44 px tick, the title (two lines, expandable), reason, minutes, progress, Start and a menu. Every action is a button. */
+export function TaskRow({
+  task,
+  highlighted = false,
+  readOnly = false,
+  busy = false,
+  undoable = false,
+  onTick,
+  onUntick,
+  onStart,
+  onMenu,
+}: TaskRowProps) {
+  const [expanded, setExpanded] = useState(false)
   const done = task.state === 'done'
+  const open = task.state === 'suggested' || task.state === 'accepted'
   const quiet = task.state === 'skipped' || task.state === 'snoozed'
   const progress = progressText(task)
   const note = STATE_NOTE[task.state]
-  const title = task.link ? (
-    <Link
-      to={task.link.path as never}
-      search={task.link.search as never}
-      className="rounded font-semibold underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-    >
-      {task.title}
-    </Link>
-  ) : (
-    <span className="font-semibold">{task.title}</span>
-  )
+  const long = task.title.length > LONG_TITLE
   return (
     <li
       id={`task-${task.id}`}
@@ -33,15 +51,32 @@ export function TaskRow({ task, highlighted = false }: { task: Task; highlighted
         highlighted ? 'border-primary ring-2 ring-primary/30' : 'border-border'
       } ${quiet ? 'opacity-75' : ''}`}
     >
-      {done ? (
-        <CircleCheck aria-hidden className="mt-0.5 size-5 shrink-0 text-success" />
-      ) : (
-        <Square aria-hidden className="mt-0.5 size-5 shrink-0 text-muted-foreground" />
-      )}
+      <Checkbox
+        id={`task-${task.id}-check`}
+        checked={done}
+        disabled={readOnly || busy || !(open || (done && undoable))}
+        aria-label={done ? `${task.title}, done` : `Mark done: ${task.title}`}
+        onCheckedChange={(next) => (next === true ? onTick?.(task) : onUntick?.(task))}
+        className="mt-0.5"
+      />
       <div className="min-w-0 flex-1 space-y-1">
-        <p className={`break-words ${done || quiet ? 'text-muted-foreground' : ''} ${done ? 'line-through' : ''}`}>
-          {title}
+        <p
+          className={`font-semibold break-words ${expanded || !long ? '' : 'line-clamp-2'} ${
+            done || quiet ? 'text-muted-foreground' : ''
+          } ${done ? 'line-through' : ''}`}
+        >
+          {task.title}
         </p>
+        {long ? (
+          <button
+            type="button"
+            aria-expanded={expanded}
+            onClick={() => setExpanded((v) => !v)}
+            className="text-xs font-medium underline underline-offset-4"
+          >
+            {expanded ? 'Show less' : 'Expand'}
+          </button>
+        ) : null}
         {task.reason ? <p className="text-sm text-muted-foreground">{task.reason}</p> : null}
         <p className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1">
@@ -49,6 +84,7 @@ export function TaskRow({ task, highlighted = false }: { task: Task; highlighted
             {formatMinutes(task.est_minutes)}
           </span>
           {progress ? <span>{progress}</span> : null}
+          {task.state === 'accepted' ? <Badge variant="accent">In progress</Badge> : null}
           {task.is_must_do ? (
             <Badge variant="highlight">
               <Flag aria-hidden /> Must do
@@ -58,6 +94,31 @@ export function TaskRow({ task, highlighted = false }: { task: Task; highlighted
           {done ? <span className="sr-only">Done</span> : null}
         </p>
       </div>
+      {!readOnly ? (
+        <div className="flex shrink-0 items-center gap-1">
+          {open && task.link ? (
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={busy}
+              onClick={() => onStart?.(task)}
+              aria-label={`${task.state === 'accepted' ? 'Continue' : 'Start'}: ${task.title}`}
+            >
+              {task.state === 'accepted' ? 'Continue' : 'Start'}
+            </Button>
+          ) : null}
+          <Button
+            variant="ghost"
+            size="icon"
+            id={`task-${task.id}-menu`}
+            aria-label={`More actions for ${task.title}`}
+            aria-haspopup="dialog"
+            onClick={() => onMenu?.(task)}
+          >
+            <Ellipsis aria-hidden />
+          </Button>
+        </div>
+      ) : null}
     </li>
   )
 }

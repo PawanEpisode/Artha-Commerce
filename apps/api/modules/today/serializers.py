@@ -25,6 +25,10 @@ OPEN_SOURCES = ("nav", "reminder", "redirect")
 # ---- requests ---------------------------------------------------------------------------------------------------------------
 
 
+class CelebratedSerializer(serializers.Serializer):
+    pass
+
+
 class OpenSerializer(serializers.Serializer):
     client_id = serializers.UUIDField(required=False)
     date = serializers.DateField(required=False)
@@ -242,6 +246,7 @@ def plan_payload(plan: DayPlan, *, user_id, now: datetime, lite: bool = False) -
             name for name, s in (plan.provider_status or {}).items() if s.get("status") in PARTIAL_STATUSES
         ),
         "budget_minutes": plan.budget_minutes,
+        "budget_source": plan.budget_source,
         "planned_minutes": plan.planned_minutes,
         "counts": {
             "planned": plan.planned_count,
@@ -257,6 +262,7 @@ def plan_payload(plan: DayPlan, *, user_id, now: datetime, lite: bool = False) -
         "streak": streak,
         "goal": goal,
         "celebrate": bool(closing == "celebrate" and settings.celebrate and plan.celebrated_at is None),
+        "closing": closing,
         "tomorrow": None,  # the web asks `preview/` for it: computing it here would run every provider on every read
     }
     if not lite:

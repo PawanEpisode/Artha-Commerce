@@ -43,7 +43,14 @@ export function tileViews(plan: Plan): TileView[] {
     if (existing) {
       existing.tasks.push(...rest)
       Object.assign(existing, counts(existing.tasks))
-    } else views.push({ key: OTHER_KEY, name: 'Other', subjectId: null, tasks: rest, ...counts(rest) })
+    } else
+      views.push({
+        key: OTHER_KEY,
+        name: rest.every((t) => t.origin === 'user') ? 'Yours' : 'Other',
+        subjectId: null,
+        tasks: rest,
+        ...counts(rest),
+      })
   }
   return views
 }
@@ -67,6 +74,7 @@ export function groupTasks(tasks: Task[]): TaskGroups {
     else if (t.state === 'done') out.done.push(t)
     else if (t.state === 'skipped' || t.state === 'snoozed') out.parked.push(t)
   }
+  out.open.sort((a, b) => Number(b.state === 'accepted') - Number(a.state === 'accepted')) // started work first (stable)
   return out
 }
 
@@ -85,3 +93,6 @@ export function progressText(task: Task): string | null {
 
 export const taskCountLabel = (done: number, total: number) =>
   `${done} of ${total} ${total === 1 ? 'task' : 'tasks'} done`
+
+/** A planned day above this many minutes gets the "long day" note (PRD 7.3). Web only, so it is not in `limits.ts`. */
+export const LONG_DAY_MINUTES = 180

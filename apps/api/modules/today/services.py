@@ -278,3 +278,23 @@ def save_settings(user_id, values: dict) -> TodaySettings:
             setattr(row, name, value)
         row.save()
     return row
+
+
+# ---- celebration ------------------------------------------------------------------------------------------------------------
+
+
+def mark_celebrated(user_id, *, now: datetime | None = None) -> DayPlan | None:
+    """
+    Records that today's celebration was shown (`celebrated_at`, once per day across devices). Idempotent: the first call wins and a
+    later one changes nothing. Returns None when there is no plan for the student's day.
+    """
+    now = now or timezone.now()
+    today, _tz = generation.student_today(user_id, now)
+    with transaction.atomic():
+        plan = DayPlan.objects.select_for_update().filter(user_id=user_id, local_date=today).first()
+        if plan is None or plan.status == "draft":
+            return None
+        if plan.celebrated_at is None:
+            plan.celebrated_at = now
+            plan.save(update_fields=["celebrated_at"])
+    return plan

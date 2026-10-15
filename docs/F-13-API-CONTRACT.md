@@ -25,6 +25,7 @@ Only `POST internal/tick/` (W6) is not built yet.
 | GET | `today/history/` | Day counters for the week strip and recaps | `today_read` |
 | GET | `today/settings/` | The student's settings (never creates a row) | `today_read` |
 | PUT | `today/settings/` | Save settings (creates the row on the first save) | `today_write` |
+| POST | `today/plan/celebrated/` | Record that today's celebration was shown (once per day, any device) | `today_write` |
 | POST | `today/plan/regenerate/` | Rebuild today's suggestions, keep what the student touched | `today_regen` |
 | POST | `today/tasks/` | Add the student's own task | `today_write` |
 | PATCH | `today/tasks/<uuid:task_id>/` | Edit an own task | `today_write` |
@@ -138,6 +139,10 @@ Replaces a suggestion with another of the same group (else any) that is not alre
 
 `from_state`: `done`, `skipped` or `deleted`. Within 60 seconds of the change: a tick goes back to where it was, a skip back to `suggested` (the same day only), a deleted own task comes back. After the window `410 undo_expired`. A `from_state` that is not the task's state is `422 invalid_transition`.
 
+### POST `today/plan/celebrated/`
+
+Empty body. Sets `celebrated_at` on today's plan the first time and changes nothing after that, so the answer is the same for a replay. Answers `{version, server_time, celebrated_at}`. `404` `plan_not_generated` when the student has no plan today.
+
 ### POST `today/plan/regenerate/`
 
 `expected_generation` (the `generation_no` the web holds), `reason` (`manual`, `exam_date`, `settings`, `provider_recovered`; default `manual`), `client_id`. Keeps done, started, snoozed, skipped, own and pinned tasks; replaces the suggested ones; adds new ones only while the plan is below 90 percent of the budget. Answers the plan payload plus `regenerated`:
@@ -159,10 +164,10 @@ Key lists are exact: the contract test compares them with a real response.
 ### Plan
 
 <!-- contract:plan-keys -->
-version, date, tz, server_time, state, phase, days_to_exam, generation_no, partial, failed_providers, budget_minutes, planned_minutes, counts, starter_task_id, backlog, tiles, tasks, streak, goal, celebrate, tomorrow, week
+version, date, tz, server_time, state, phase, days_to_exam, generation_no, partial, failed_providers, budget_minutes, budget_source, planned_minutes, counts, starter_task_id, backlog, tiles, tasks, streak, goal, celebrate, closing, tomorrow, week
 <!-- /contract:plan-keys -->
 
-`open/` adds `created`; `plan/regenerate/` adds `regenerated`. `week` is absent in lite mode. `state` is `ready`. `phase` is one of `steady`, `build`, `consolidate`, `sprint`, `final`. `failed_providers` lists providers that timed out or failed (`partial` is then `true`). `tomorrow` is always `null` in W2: ask `preview/`. `streak` and `goal` come from the tracker, Today never computes its own. `celebrate` is true once the day is complete, the student wants it and it has not been shown (the action that records it is not built: the PRD lists no endpoint for it, W5 decides).
+`open/` adds `created`; `plan/regenerate/` adds `regenerated`. `week` is absent in lite mode. `state` is `ready`. `phase` is one of `steady`, `build`, `consolidate`, `sprint`, `final`. `failed_providers` lists providers that timed out or failed (`partial` is then `true`). `tomorrow` is always `null` in W2: ask `preview/`. `streak` and `goal` come from the tracker, Today never computes its own. `celebrate` is true once the day is complete, the student wants it and it has not been shown; the web shows it once, then calls `plan/celebrated/`. `closing` is `celebrate` (nothing open and at least half of what was resolved was done), `calm` (nothing open, mostly skipped: "You did 1 and skipped 5. Tomorrow is a fresh start", no celebration) or `null` while tasks are open or the plan is empty. `budget_source` is `auto`, `setting`, `comeback` (the lighter "welcome back" day) or `feedback`.
 
 <!-- contract:counts-keys -->
 planned, done, open, skipped, snoozed

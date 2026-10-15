@@ -9,6 +9,7 @@ urlpatterns = [
     path("today/history/", views.HistoryView.as_view(), name="today-history"),
     path("today/settings/", views.SettingsView.as_view(), name="today-settings"),
     path("today/plan/regenerate/", views.RegenerateView.as_view(), name="today-regenerate"),
+    path("today/plan/celebrated/", views.CelebratedView.as_view(), name="today-celebrated"),
     path("today/tasks/", views.TasksView.as_view(), name="today-tasks"),
     path("today/tasks/<uuid:task_id>/", views.TaskDetailView.as_view(), name="today-task"),
     path("today/tasks/<uuid:task_id>/start/", views.StartView.as_view(), name="today-task-start"),

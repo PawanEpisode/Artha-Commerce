@@ -51,6 +51,8 @@ import { Route as AppSettingsNotificationsRouteImport } from './routes/app.setti
 import { Route as AppSettingsRecallRouteImport } from './routes/app.settings.recall'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
+import { Route as AppTodayIndexRouteImport } from './routes/app.today.index'
+import { Route as AppTodayDateRouteImport } from './routes/app.today.$date'
 import { Route as AppTrackerIndexRouteImport } from './routes/app.tracker.index'
 import { Route as AppTrackerGoalsRouteImport } from './routes/app.tracker.goals'
 import { Route as AppTrackerLogRouteImport } from './routes/app.tracker.log'
@@ -289,6 +291,16 @@ const AppSyllabusIndexRoute = AppSyllabusIndexRouteImport.update({
   path: '/syllabus/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppTodayIndexRoute = AppTodayIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppTodayRoute,
+} as any)
+const AppTodayDateRoute = AppTodayDateRouteImport.update({
+  id: '/$date',
+  path: '/$date',
+  getParentRoute: () => AppTodayRoute,
+} as any)
 const AppTrackerIndexRoute = AppTrackerIndexRouteImport.update({
   id: '/tracker/',
   path: '/tracker/',
@@ -438,7 +450,7 @@ export interface FileRoutesByFullPath {
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
-  '/app/today': typeof AppTodayRoute
+  '/app/today': typeof AppTodayRouteWithChildren
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -464,6 +476,7 @@ export interface FileRoutesByFullPath {
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
+  '/app/today/$date': typeof AppTodayDateRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
@@ -472,6 +485,7 @@ export interface FileRoutesByFullPath {
   '/app/notes/': typeof AppNotesIndexRoute
   '/app/recall/': typeof AppRecallIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
+  '/app/today/': typeof AppTodayIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -507,7 +521,6 @@ export interface FileRoutesByTo {
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
-  '/app/today': typeof AppTodayRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -533,6 +546,7 @@ export interface FileRoutesByTo {
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
+  '/app/today/$date': typeof AppTodayDateRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
@@ -541,6 +555,7 @@ export interface FileRoutesByTo {
   '/app/notes': typeof AppNotesIndexRoute
   '/app/recall': typeof AppRecallIndexRoute
   '/app/syllabus': typeof AppSyllabusIndexRoute
+  '/app/today': typeof AppTodayIndexRoute
   '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -578,7 +593,7 @@ export interface FileRoutesById {
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/revision': typeof AppRevisionRoute
-  '/app/today': typeof AppTodayRoute
+  '/app/today': typeof AppTodayRouteWithChildren
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -604,6 +619,7 @@ export interface FileRoutesById {
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
+  '/app/today/$date': typeof AppTodayDateRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
@@ -612,6 +628,7 @@ export interface FileRoutesById {
   '/app/notes/': typeof AppNotesIndexRoute
   '/app/recall/': typeof AppRecallIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
+  '/app/today/': typeof AppTodayIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -676,6 +693,7 @@ export interface FileRouteTypes {
     | '/app/settings/notifications'
     | '/app/settings/recall'
     | '/app/settings/tracker'
+    | '/app/today/$date'
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
@@ -684,6 +702,7 @@ export interface FileRouteTypes {
     | '/app/notes/'
     | '/app/recall/'
     | '/app/syllabus/'
+    | '/app/today/'
     | '/app/tracker/'
     | '/courses/$course/'
     | '/app/notes/$subject/$chapter'
@@ -719,7 +738,6 @@ export interface FileRouteTypes {
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/revision'
-    | '/app/today'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -745,6 +763,7 @@ export interface FileRouteTypes {
     | '/app/settings/notifications'
     | '/app/settings/recall'
     | '/app/settings/tracker'
+    | '/app/today/$date'
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
@@ -753,6 +772,7 @@ export interface FileRouteTypes {
     | '/app/notes'
     | '/app/recall'
     | '/app/syllabus'
+    | '/app/today'
     | '/app/tracker'
     | '/courses/$course'
     | '/app/notes/$subject/$chapter'
@@ -815,6 +835,7 @@ export interface FileRouteTypes {
     | '/app/settings/notifications'
     | '/app/settings/recall'
     | '/app/settings/tracker'
+    | '/app/today/$date'
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
@@ -823,6 +844,7 @@ export interface FileRouteTypes {
     | '/app/notes/'
     | '/app/recall/'
     | '/app/syllabus/'
+    | '/app/today/'
     | '/app/tracker/'
     | '/courses/$course/'
     | '/app/notes/$subject/$chapter'
@@ -1166,6 +1188,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSyllabusIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/today/': {
+      id: '/app/today/'
+      path: '/'
+      fullPath: '/app/today/'
+      preLoaderRoute: typeof AppTodayIndexRouteImport
+      parentRoute: typeof AppTodayRoute
+    }
+    '/app/today/$date': {
+      id: '/app/today/$date'
+      path: '/$date'
+      fullPath: '/app/today/$date'
+      preLoaderRoute: typeof AppTodayDateRouteImport
+      parentRoute: typeof AppTodayRoute
+    }
     '/app/tracker/': {
       id: '/app/tracker/'
       path: '/tracker'
@@ -1351,12 +1387,26 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AppTodayRouteChildren {
+  AppTodayDateRoute: typeof AppTodayDateRoute
+  AppTodayIndexRoute: typeof AppTodayIndexRoute
+}
+
+const AppTodayRouteChildren: AppTodayRouteChildren = {
+  AppTodayDateRoute: AppTodayDateRoute,
+  AppTodayIndexRoute: AppTodayIndexRoute,
+}
+
+const AppTodayRouteWithChildren = AppTodayRoute._addFileChildren(
+  AppTodayRouteChildren,
+)
+
 interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
   AppNotificationsRoute: typeof AppNotificationsRoute
   AppOnboardingRoute: typeof AppOnboardingRoute
   AppRevisionRoute: typeof AppRevisionRoute
-  AppTodayRoute: typeof AppTodayRoute
+  AppTodayRoute: typeof AppTodayRouteWithChildren
   AppIndexRoute: typeof AppIndexRoute
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppFocusMiniRoute: typeof AppFocusMiniRoute
@@ -1406,7 +1456,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotificationsRoute: AppNotificationsRoute,
   AppOnboardingRoute: AppOnboardingRoute,
   AppRevisionRoute: AppRevisionRoute,
-  AppTodayRoute: AppTodayRoute,
+  AppTodayRoute: AppTodayRouteWithChildren,
   AppIndexRoute: AppIndexRoute,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppFocusMiniRoute: AppFocusMiniRoute,

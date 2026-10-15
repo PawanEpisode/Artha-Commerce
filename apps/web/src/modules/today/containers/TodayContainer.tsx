@@ -1,27 +1,39 @@
 import {
+  addIsoDays,
   Alert,
   Button,
   CalendarClock,
-  Celebrate,
   Container,
   EmptyState,
-  Info,
+  Plus,
   Skeleton,
   Sparkles,
 } from '@artha/design-system'
+import { useQueryClient } from '@tanstack/react-query'
 import { Link, useNavigate } from '@tanstack/react-router'
+import { useEffect, useRef, useState } from 'react'
 
 import { useBootstrap } from '~/modules/personalization'
 
+import { AddTaskSheet } from '../components/AddTaskSheet'
+import { CelebrationCard } from '../components/CelebrationCard'
+import { OverloadNotice } from '../components/OverloadNotice'
 import { PaperTile } from '../components/PaperTile'
 import { TaskRow } from '../components/TaskRow'
+import { type SheetMode, TaskSheet } from '../components/TaskSheet'
 import { TodayHeader } from '../components/TodayHeader'
+import { TomorrowCard } from '../components/TomorrowCard'
+import { WeekStrip } from '../components/WeekStrip'
+import { useTaskActions } from '../hooks/useTaskActions'
 import { useTodayFlag } from '../hooks/useTodayFlag'
-import { useTodayPlan } from '../hooks/useTodayQueries'
-import { isFeatureDisabled } from '../lib/api'
-import { groupTasks, screenState, selectedTile, tileViews } from '../lib/plan'
+import { useDayPreview, useTodayPlan, useTodaySettings } from '../hooks/useTodayQueries'
+import { isFeatureDisabled, markCelebrated } from '../lib/api'
+import { todayKeys } from '../lib/keys'
+import { nextOpenTaskId } from '../lib/optimistic'
+import { groupTasks, LONG_DAY_MINUTES, screenState, selectedTile, tileViews } from '../lib/plan'
 import type { TodaySearch } from '../lib/search'
-import { isEmptyPlan, type Plan } from '../lib/types'
+import { hourIn } from '../lib/time'
+import { isEmptyPlan, type OpenResult, type Plan, type Task } from '../lib/types'
 
 const Shell = ({ children }: { children: React.ReactNode }) => (
   <Container className="max-w-3xl min-w-0 space-y-5 py-6 sm:space-y-6 sm:py-10">{children}</Container>
@@ -63,8 +75,51 @@ function Unavailable() {
   )
 }
 
+/** Moves keyboard focus to the next open row's tick (or the list heading) once the list has re-rendered. */
+function focusSoon(id: string | null) {
+  const run = () => {
+    const el = (id && document.getElementById(`task-${id}-check`)) || document.getElementById('open-tasks')
+    el?.focus()
+  }
+  requestAnimationFrame(() => requestAnimationFrame(run))
+}
+
+function Section({
+  id,
+  title,
+  muted,
+  children,
+}: {
+  id: string
+  title: string
+  muted?: boolean
+  children: React.ReactNode
+}) {
+  return (
+    <section aria-labelledby={id} className="space-y-3">
+      <h2
+        id={id}
+        tabIndex={-1}
+        className={`font-display text-lg font-bold outline-none ${muted ? 'text-muted-foreground' : ''}`}
+      >
+        {title}
+      </h2>
+      {children}
+    </section>
+  )
+}
+
 function Body({ plan, search, firstName }: { plan: Plan; search: TodaySearch; firstName?: string | null }) {
-  const navigate = useNavigate({ from: '/app/today' })
+  const navigate = useNavigate({ from: '/app/today/' })
+  const qc = useQueryClient()
+  const actions = useTaskActions()
+  const settings = useTodaySettings()
+  const [sheet, setSheet] = useState<{ id: string; mode: SheetMode } | null>(
+    search.task ? { id: search.task, mode: 'why' } : null,
+  )
+  const [burst, setBurst] = useState(false)
+  const celebrating = useRef(false)
+
   const state = screenState(plan)
   const views = tileViews(plan)
   const chosen = selectedTile(views, search.paper)
@@ -72,29 +127,84 @@ function Body({ plan, search, firstName }: { plan: Plan; search: TodaySearch; fi
   const choose = (key: string | undefined) =>
     void navigate({ search: (prev) => ({ ...prev, paper: key }), replace: true, resetScroll: false })
 
+  // The celebration shows once per day on any device: show it now, then record it.
+  useEffect(() => {
+    if (!plan.celebrate || celebrating.current) return
+    celebrating.current = true
+    setBurst(true)
+    void markCelebrated()
+      .then(() =>
+        qc.setQueryData<OpenResult>(todayKeys.plan, (old) =>
+          old && old.state === 'ready' ? { ...old, celebrate: false } : old,
+        ),
+      )
+      .catch(() => {
+        celebrating.current = false // try again on the next refresh; the burst already played
+      })
+  }, [plan.celebrate, qc])
+
+  const hour = hourIn(plan.server_time, plan.tz)
+  const settled = plan.closing !== null
+  const wantsTomorrow = settings.data?.show_tomorrow !== false && (settled || hour >= 18)
+  const tomorrow = useDayPreview(wantsTomorrow ? addIsoDays(plan.date, 1) : null)
+
+  const task = sheet ? (plan.tasks.find((t) => t.id === sheet.id) ?? null) : null
+  const closeSheet = () => {
+    setSheet(null)
+    if (search.task) void navigate({ search: (prev) => ({ ...prev, task: undefined }), replace: true })
+  }
+  const withFocus = (t: { id: string }, run: () => unknown) => {
+    const next = nextOpenTaskId(groups.open, t.id)
+    void Promise.resolve(run()).then(() => focusSoon(next))
+  }
+  const onTick = (t: Task) =>
+    t.manual_action ? setSheet({ id: t.id, mode: 'tick' }) : withFocus(t, () => actions.tick(t))
+  const onUntick = (t: Task) => {
+    const entry = actions.canUndo(t.id)
+    if (entry) void actions.undo(t, entry.from, entry.back)
+  }
+  const onStart = async (t: Task) => {
+    const link = await actions.start(t)
+    if (link)
+      void navigate({
+        to: link.path as never,
+        search: { ...link.search, from: 'today', task: t.id } as never,
+      })
+  }
+  const row = (t: Task) => (
+    <TaskRow
+      key={t.id}
+      task={t}
+      highlighted={search.task === t.id}
+      busy={actions.busy.has(t.id)}
+      undoable={actions.canUndo(t.id)?.from === 'done'}
+      onTick={onTick}
+      onUntick={onUntick}
+      onStart={(x) => void onStart(x)}
+      onMenu={(x) => setSheet({ id: x.id, mode: 'menu' })}
+    />
+  )
+
   return (
     <Shell>
-      <TodayHeader plan={plan} firstName={firstName} />
+      <TodayHeader plan={plan} firstName={firstName} onStart={(t) => void onStart(t)} />
       {plan.partial ? (
         <Alert variant="info">
           Some suggestions are missing right now, so today's list may be shorter than usual. Reload in a moment to try
           again.
         </Alert>
       ) : null}
-      <Celebrate
-        active={state === 'all_done' && plan.celebrate}
-        message="Day complete. Well done."
-        className="text-center font-display text-lg font-bold empty:hidden"
-      />
-      {state === 'all_done' ? (
-        <Alert variant="success">You finished today's plan. Anything left below is optional.</Alert>
+      <CelebrationCard plan={plan} burst={burst} />
+      <OverloadNotice backlog={plan.backlog} />
+      {plan.planned_minutes > LONG_DAY_MINUTES ? (
+        <Alert variant="info">That is a long day. Consider moving one task to tomorrow.</Alert>
       ) : null}
 
       {state === 'nothing_due' ? (
         <EmptyState
           icon={<CalendarClock aria-hidden />}
           title="Nothing is due today"
-          description="You are caught up. Pick something from your syllabus if you want to get ahead."
+          description="You are caught up. Add a task of your own, or pick something from your syllabus to get ahead."
           action={
             <Button asChild variant="outline">
               <Link to="/app/syllabus">Open your syllabus</Link>
@@ -123,70 +233,48 @@ function Body({ plan, search, firstName }: { plan: Plan; search: TodaySearch; fi
             </section>
           ) : null}
 
-          <section aria-labelledby="open-tasks" className="space-y-3">
-            <h2 id="open-tasks" className="font-display text-lg font-bold">
-              {groups.open.length ? 'To do' : 'Nothing left to do'}
-            </h2>
-            <ul className="space-y-2">
-              {groups.open.map((t) => (
-                <TaskRow key={t.id} task={t} highlighted={search.task === t.id} />
-              ))}
-            </ul>
-          </section>
-
+          <Section id="open-tasks" title={groups.open.length ? 'To do' : 'Nothing left to do'}>
+            <ul className="space-y-2">{groups.open.map(row)}</ul>
+          </Section>
           {groups.done.length ? (
-            <section aria-labelledby="done-tasks" className="space-y-3">
-              <h2 id="done-tasks" className="font-display text-lg font-bold">
-                Done
-              </h2>
-              <ul className="space-y-2">
-                {groups.done.map((t) => (
-                  <TaskRow key={t.id} task={t} highlighted={search.task === t.id} />
-                ))}
-              </ul>
-            </section>
+            <Section id="done-tasks" title="Done">
+              <ul className="space-y-2">{groups.done.map(row)}</ul>
+            </Section>
           ) : null}
-
           {groups.parked.length ? (
-            <section aria-labelledby="parked-tasks" className="space-y-3">
-              <h2 id="parked-tasks" className="font-display text-lg font-bold text-muted-foreground">
-                Skipped and snoozed
-              </h2>
-              <ul className="space-y-2">
-                {groups.parked.map((t) => (
-                  <TaskRow key={t.id} task={t} highlighted={search.task === t.id} />
-                ))}
-              </ul>
-            </section>
+            <Section id="parked-tasks" title="Skipped and snoozed" muted>
+              <ul className="space-y-2">{groups.parked.map(row)}</ul>
+            </Section>
           ) : null}
         </>
       )}
 
-      {plan.backlog.length ? (
-        <section aria-labelledby="backlog" className="space-y-2">
-          <h2 id="backlog" className="font-display text-lg font-bold">
-            Waiting for you
-          </h2>
-          <ul className="space-y-1 text-sm">
-            {plan.backlog.map((b) => (
-              <li key={b.kind} className="flex items-center gap-2">
-                <Info aria-hidden className="size-4 shrink-0 text-muted-foreground" />
-                {b.link ? (
-                  <Link
-                    to={b.link.path as never}
-                    search={b.link.search as never}
-                    className="underline-offset-4 hover:underline"
-                  >
-                    {b.label}
-                  </Link>
-                ) : (
-                  <span>{b.label}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+      <Button
+        variant="outline"
+        onClick={() => void navigate({ search: (prev) => ({ ...prev, add: true }), replace: true, resetScroll: false })}
+      >
+        <Plus aria-hidden /> Add your own task
+      </Button>
+
+      {tomorrow.data ? <TomorrowCard preview={tomorrow.data} /> : null}
+      {plan.week ? <WeekStrip days={plan.week} today={plan.date} /> : null}
+
+      <TaskSheet
+        task={task}
+        mode={sheet?.mode ?? 'menu'}
+        today={plan.date}
+        actions={actions}
+        onMode={(mode) => sheet && setSheet({ id: sheet.id, mode })}
+        onClose={closeSheet}
+      />
+      <AddTaskSheet
+        open={search.add === true}
+        plan={plan}
+        actions={actions}
+        onClose={() =>
+          void navigate({ search: (prev) => ({ ...prev, add: undefined }), replace: true, resetScroll: false })
+        }
+      />
     </Shell>
   )
 }

@@ -82,6 +82,20 @@ class PlanView(ReadView):
         return response
 
 
+class CelebratedView(WriteView):
+    """The web shows the day-complete celebration once, then records it here so no other device shows it again."""
+
+    def post(self, request):
+        self.parse(serializers.CelebratedSerializer, request.data)
+        now = timezone.now()
+        plan = services.mark_celebrated(request.user.id, now=now)
+        if plan is None:
+            raise PlanNotGenerated
+        return Response(
+            {"version": plan.version, "server_time": now.isoformat(), "celebrated_at": plan.celebrated_at.isoformat()}
+        )
+
+
 class PreviewView(ReadView):
     """What a later day would hold (at most 14 days ahead), computed and thrown away."""
 

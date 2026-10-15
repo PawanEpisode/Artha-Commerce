@@ -78,15 +78,18 @@ export interface Plan {
   partial: boolean
   failed_providers: string[]
   budget_minutes: number
+  budget_source: 'auto' | 'setting' | 'comeback' | 'feedback'
   planned_minutes: number
   counts: Counts
   starter_task_id: string | null
   backlog: Backlog[]
   tiles: Tile[]
   tasks: Task[]
-  streak: { current: number; best?: number } | null
+  /** The tracker's streak in days (Today never computes its own). */
+  streak: number
   goal: { target_minutes: number; done_seconds: number; percent: number } | null
   celebrate: boolean
+  closing: 'celebrate' | 'calm' | null
   tomorrow: unknown
   week?: WeekDay[]
   created?: boolean
@@ -117,3 +120,63 @@ export type ActionName =
   | 'expire'
   | 'restore'
   | 'move'
+
+export type SkipReason = 'not_in_attempt' | 'already_know' | 'no_time' | 'other'
+export type SnoozeUntil = 'tomorrow' | 'in_3_days' | 'next_week' | (string & {})
+export type UndoFrom = 'done' | 'skipped' | 'deleted'
+
+/** What every task action answers: the task and the plan's counters, so the ring updates without a refetch. */
+export interface TaskResponse {
+  version: number
+  server_time: string
+  task: Task
+  counts: Counts
+  link?: TaskLink
+  suppressed_days?: number | null
+  undo_until?: string
+}
+
+export interface SwapResponse {
+  version: number
+  server_time: string
+  old: Task
+  new: Task
+  counts: Counts
+}
+
+export interface AddTaskBody {
+  client_id: string
+  title: string
+  est_minutes: number
+  date?: string
+  subject_id?: string | null
+  chapter_id?: string | null
+}
+
+export interface Preview {
+  date: string
+  tz: string
+  phase: Phase
+  days_to_exam: number | null
+  count: number
+  minutes: number
+  tasks: Array<{ kind: string; slot: string; title: string; reason: string; est_minutes: number; subject_key: string }>
+  own_tasks: Array<{ id: string; title: string; est_minutes: number; state: TaskState }>
+}
+
+export interface TodaySettings {
+  minutes_per_day: number | null
+  focus_papers: unknown
+  disabled_kinds: string[]
+  show_tomorrow: boolean
+  celebrate: boolean
+  lite_mode: 'auto' | 'on' | 'off'
+}
+
+export interface EditFields {
+  title?: string
+  est_minutes?: number
+  subject_id?: string | null
+  chapter_id?: string | null
+  date?: string
+}

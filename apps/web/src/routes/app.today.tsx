@@ -1,18 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 
-import { buildHead } from '~/modules/seo'
-import { TodayContainer, todaySearchSchema } from '~/modules/today'
-
-export const Route = createFileRoute('/app/today')({
-  validateSearch: todaySearchSchema,
-  head: () =>
-    buildHead({
-      title: 'Today',
-      description: 'Your tasks for today, paper by paper.',
-      path: '/app/today',
-      noindex: true,
-    }),
-  component: function TodayRoute() {
-    return <TodayContainer search={Route.useSearch()} />
-  },
-})
+/** Layout for `/app/today` (the day) and `/app/today/$date` (a preview or a recap). */
+export const Route = createFileRoute('/app/today')({ component: Outlet })
