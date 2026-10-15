@@ -38,7 +38,8 @@ function Harness({
 
 /** The lazy CodeMirror box takes a moment to load; resolves with its view. */
 async function editor() {
-  await waitFor(() => expect(document.querySelector('.cm-content')).not.toBeNull())
+  // The first test pays for the dynamic import; the 1 s default is too tight (vitest fails a test at 5 s) when the whole suite runs in parallel.
+  await waitFor(() => expect(document.querySelector('.cm-content')).not.toBeNull(), { timeout: 4_000 })
   return EditorView.findFromDOM(document.querySelector<HTMLElement>('.cm-editor')!)!
 }
 
