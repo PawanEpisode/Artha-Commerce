@@ -39,6 +39,12 @@ import { Route as AppNotesLibraryRouteImport } from './routes/app.notes.library'
 import { Route as AppNotesNewRouteImport } from './routes/app.notes.new'
 import { Route as AppNotesSearchRouteImport } from './routes/app.notes.search'
 import { Route as AppNotesTrashRouteImport } from './routes/app.notes.trash'
+import { Route as AppPracticeIndexRouteImport } from './routes/app.practice.index'
+import { Route as AppPracticeBookmarksRouteImport } from './routes/app.practice.bookmarks'
+import { Route as AppPracticeMistakesRouteImport } from './routes/app.practice.mistakes'
+import { Route as AppPracticeNewRouteImport } from './routes/app.practice.new'
+import { Route as AppQuestionsIndexRouteImport } from './routes/app.questions.index'
+import { Route as AppQuestionsIdRouteImport } from './routes/app.questions.$id'
 import { Route as AppRecallIndexRouteImport } from './routes/app.recall.index'
 import { Route as AppRecallChaptersRouteImport } from './routes/app.recall.chapters'
 import { Route as AppRecallForgottenRouteImport } from './routes/app.recall.forgotten'
@@ -77,9 +83,12 @@ import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllab
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
 import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
+import { Route as AppPracticeSessionIdIndexRouteImport } from './routes/app.practice.session.$id.index'
+import { Route as AppPracticeSessionIdReviewRouteImport } from './routes/app.practice.session.$id.review'
 import { Route as AppRecallReviewSummarySessionIdRouteImport } from './routes/app.recall.review.summary.$sessionId'
 import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
 import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
+import { Route as CoursesCourseLevelSubjectChapterQuestionsRouteImport } from './routes/courses.$course.$level.$subject.$chapter.questions'
 import { Route as OgCoursesCourseLevelSubjectChapterRouteImport } from './routes/og.courses.$course.$level.$subject.$chapter'
 
 const IndexRoute = IndexRouteImport.update({
@@ -230,6 +239,36 @@ const AppNotesSearchRoute = AppNotesSearchRouteImport.update({
 const AppNotesTrashRoute = AppNotesTrashRouteImport.update({
   id: '/notes/trash',
   path: '/notes/trash',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPracticeIndexRoute = AppPracticeIndexRouteImport.update({
+  id: '/practice/',
+  path: '/practice/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPracticeBookmarksRoute = AppPracticeBookmarksRouteImport.update({
+  id: '/practice/bookmarks',
+  path: '/practice/bookmarks',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPracticeMistakesRoute = AppPracticeMistakesRouteImport.update({
+  id: '/practice/mistakes',
+  path: '/practice/mistakes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPracticeNewRoute = AppPracticeNewRouteImport.update({
+  id: '/practice/new',
+  path: '/practice/new',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppQuestionsIndexRoute = AppQuestionsIndexRouteImport.update({
+  id: '/questions/',
+  path: '/questions/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppQuestionsIdRoute = AppQuestionsIdRouteImport.update({
+  id: '/questions/$id',
+  path: '/questions/$id',
   getParentRoute: () => AppRoute,
 } as any)
 const AppRecallIndexRoute = AppRecallIndexRouteImport.update({
@@ -424,6 +463,18 @@ const CoursesCourseLevelIndexRoute = CoursesCourseLevelIndexRouteImport.update({
   path: '/courses/$course/$level/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppPracticeSessionIdIndexRoute =
+  AppPracticeSessionIdIndexRouteImport.update({
+    id: '/practice/session/$id/',
+    path: '/practice/session/$id/',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppPracticeSessionIdReviewRoute =
+  AppPracticeSessionIdReviewRouteImport.update({
+    id: '/practice/session/$id/review',
+    path: '/practice/session/$id/review',
+    getParentRoute: () => AppRoute,
+  } as any)
 const AppRecallReviewSummarySessionIdRoute =
   AppRecallReviewSummarySessionIdRouteImport.update({
     id: '/recall/review/summary/$sessionId',
@@ -441,6 +492,12 @@ const CoursesCourseLevelSubjectChapterRoute =
     id: '/courses/$course/$level/$subject/$chapter',
     path: '/courses/$course/$level/$subject/$chapter',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const CoursesCourseLevelSubjectChapterQuestionsRoute =
+  CoursesCourseLevelSubjectChapterQuestionsRouteImport.update({
+    id: '/questions',
+    path: '/questions',
+    getParentRoute: () => CoursesCourseLevelSubjectChapterRoute,
   } as any)
 const OgCoursesCourseLevelSubjectChapterRoute =
   OgCoursesCourseLevelSubjectChapterRouteImport.update({
@@ -478,6 +535,10 @@ export interface FileRoutesByFullPath {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/practice/bookmarks': typeof AppPracticeBookmarksRoute
+  '/app/practice/mistakes': typeof AppPracticeMistakesRoute
+  '/app/practice/new': typeof AppPracticeNewRoute
+  '/app/questions/$id': typeof AppQuestionsIdRoute
   '/app/recall/chapters': typeof AppRecallChaptersRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
   '/app/recall/quick': typeof AppRecallQuickRoute
@@ -497,6 +558,8 @@ export interface FileRoutesByFullPath {
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
+  '/app/practice/': typeof AppPracticeIndexRoute
+  '/app/questions/': typeof AppQuestionsIndexRoute
   '/app/recall/': typeof AppRecallIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/today/': typeof AppTodayIndexRoute
@@ -518,9 +581,12 @@ export interface FileRoutesByFullPath {
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
-  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
+  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
+  '/app/practice/session/$id/': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
+  '/courses/$course/$level/$subject/$chapter/questions': typeof CoursesCourseLevelSubjectChapterQuestionsRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
 }
 export interface FileRoutesByTo {
@@ -550,6 +616,10 @@ export interface FileRoutesByTo {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/practice/bookmarks': typeof AppPracticeBookmarksRoute
+  '/app/practice/mistakes': typeof AppPracticeMistakesRoute
+  '/app/practice/new': typeof AppPracticeNewRoute
+  '/app/questions/$id': typeof AppQuestionsIdRoute
   '/app/recall/chapters': typeof AppRecallChaptersRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
   '/app/recall/quick': typeof AppRecallQuickRoute
@@ -569,6 +639,8 @@ export interface FileRoutesByTo {
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus': typeof AppFocusIndexRoute
   '/app/notes': typeof AppNotesIndexRoute
+  '/app/practice': typeof AppPracticeIndexRoute
+  '/app/questions': typeof AppQuestionsIndexRoute
   '/app/recall': typeof AppRecallIndexRoute
   '/app/syllabus': typeof AppSyllabusIndexRoute
   '/app/today': typeof AppTodayIndexRoute
@@ -590,9 +662,12 @@ export interface FileRoutesByTo {
   '/app/recall/review': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
+  '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
-  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
+  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
+  '/app/practice/session/$id': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject': typeof CoursesCourseLevelSubjectIndexRoute
+  '/courses/$course/$level/$subject/$chapter/questions': typeof CoursesCourseLevelSubjectChapterQuestionsRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
 }
 export interface FileRoutesById {
@@ -625,6 +700,10 @@ export interface FileRoutesById {
   '/app/notes/new': typeof AppNotesNewRoute
   '/app/notes/search': typeof AppNotesSearchRoute
   '/app/notes/trash': typeof AppNotesTrashRoute
+  '/app/practice/bookmarks': typeof AppPracticeBookmarksRoute
+  '/app/practice/mistakes': typeof AppPracticeMistakesRoute
+  '/app/practice/new': typeof AppPracticeNewRoute
+  '/app/questions/$id': typeof AppQuestionsIdRoute
   '/app/recall/chapters': typeof AppRecallChaptersRoute
   '/app/recall/forgotten': typeof AppRecallForgottenRoute
   '/app/recall/quick': typeof AppRecallQuickRoute
@@ -644,6 +723,8 @@ export interface FileRoutesById {
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
+  '/app/practice/': typeof AppPracticeIndexRoute
+  '/app/questions/': typeof AppQuestionsIndexRoute
   '/app/recall/': typeof AppRecallIndexRoute
   '/app/syllabus/': typeof AppSyllabusIndexRoute
   '/app/today/': typeof AppTodayIndexRoute
@@ -665,9 +746,12 @@ export interface FileRoutesById {
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
-  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRoute
+  '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
+  '/app/practice/session/$id/': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
+  '/courses/$course/$level/$subject/$chapter/questions': typeof CoursesCourseLevelSubjectChapterQuestionsRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
 }
 export interface FileRouteTypes {
@@ -701,6 +785,10 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/practice/bookmarks'
+    | '/app/practice/mistakes'
+    | '/app/practice/new'
+    | '/app/questions/$id'
     | '/app/recall/chapters'
     | '/app/recall/forgotten'
     | '/app/recall/quick'
@@ -720,6 +808,8 @@ export interface FileRouteTypes {
     | '/og/courses/$course'
     | '/app/focus/'
     | '/app/notes/'
+    | '/app/practice/'
+    | '/app/questions/'
     | '/app/recall/'
     | '/app/syllabus/'
     | '/app/today/'
@@ -741,9 +831,12 @@ export interface FileRouteTypes {
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
+    | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
+    | '/app/practice/session/$id/'
     | '/courses/$course/$level/$subject/'
+    | '/courses/$course/$level/$subject/$chapter/questions'
     | '/og/courses/$course/$level/$subject/$chapter'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -773,6 +866,10 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/practice/bookmarks'
+    | '/app/practice/mistakes'
+    | '/app/practice/new'
+    | '/app/questions/$id'
     | '/app/recall/chapters'
     | '/app/recall/forgotten'
     | '/app/recall/quick'
@@ -792,6 +889,8 @@ export interface FileRouteTypes {
     | '/og/courses/$course'
     | '/app/focus'
     | '/app/notes'
+    | '/app/practice'
+    | '/app/questions'
     | '/app/recall'
     | '/app/syllabus'
     | '/app/today'
@@ -813,9 +912,12 @@ export interface FileRouteTypes {
     | '/app/recall/review'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
+    | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
+    | '/app/practice/session/$id'
     | '/courses/$course/$level/$subject'
+    | '/courses/$course/$level/$subject/$chapter/questions'
     | '/og/courses/$course/$level/$subject/$chapter'
   id:
     | '__root__'
@@ -847,6 +949,10 @@ export interface FileRouteTypes {
     | '/app/notes/new'
     | '/app/notes/search'
     | '/app/notes/trash'
+    | '/app/practice/bookmarks'
+    | '/app/practice/mistakes'
+    | '/app/practice/new'
+    | '/app/questions/$id'
     | '/app/recall/chapters'
     | '/app/recall/forgotten'
     | '/app/recall/quick'
@@ -866,6 +972,8 @@ export interface FileRouteTypes {
     | '/og/courses/$course'
     | '/app/focus/'
     | '/app/notes/'
+    | '/app/practice/'
+    | '/app/questions/'
     | '/app/recall/'
     | '/app/syllabus/'
     | '/app/today/'
@@ -887,9 +995,12 @@ export interface FileRouteTypes {
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
+    | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
+    | '/app/practice/session/$id/'
     | '/courses/$course/$level/$subject/'
+    | '/courses/$course/$level/$subject/$chapter/questions'
     | '/og/courses/$course/$level/$subject/$chapter'
   fileRoutesById: FileRoutesById
 }
@@ -912,7 +1023,7 @@ export interface RootRouteChildren {
   OgCoursesCourseRoute: typeof OgCoursesCourseRouteWithChildren
   CoursesCourseIndexRoute: typeof CoursesCourseIndexRoute
   CoursesCourseLevelIndexRoute: typeof CoursesCourseLevelIndexRoute
-  CoursesCourseLevelSubjectChapterRoute: typeof CoursesCourseLevelSubjectChapterRoute
+  CoursesCourseLevelSubjectChapterRoute: typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   CoursesCourseLevelSubjectIndexRoute: typeof CoursesCourseLevelSubjectIndexRoute
 }
 
@@ -1126,6 +1237,48 @@ declare module '@tanstack/react-router' {
       path: '/notes/trash'
       fullPath: '/app/notes/trash'
       preLoaderRoute: typeof AppNotesTrashRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/practice/': {
+      id: '/app/practice/'
+      path: '/practice'
+      fullPath: '/app/practice/'
+      preLoaderRoute: typeof AppPracticeIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/practice/bookmarks': {
+      id: '/app/practice/bookmarks'
+      path: '/practice/bookmarks'
+      fullPath: '/app/practice/bookmarks'
+      preLoaderRoute: typeof AppPracticeBookmarksRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/practice/mistakes': {
+      id: '/app/practice/mistakes'
+      path: '/practice/mistakes'
+      fullPath: '/app/practice/mistakes'
+      preLoaderRoute: typeof AppPracticeMistakesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/practice/new': {
+      id: '/app/practice/new'
+      path: '/practice/new'
+      fullPath: '/app/practice/new'
+      preLoaderRoute: typeof AppPracticeNewRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/questions/': {
+      id: '/app/questions/'
+      path: '/questions'
+      fullPath: '/app/questions/'
+      preLoaderRoute: typeof AppQuestionsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/questions/$id': {
+      id: '/app/questions/$id'
+      path: '/questions/$id'
+      fullPath: '/app/questions/$id'
+      preLoaderRoute: typeof AppQuestionsIdRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/recall/': {
@@ -1394,6 +1547,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseLevelIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/practice/session/$id/': {
+      id: '/app/practice/session/$id/'
+      path: '/practice/session/$id'
+      fullPath: '/app/practice/session/$id/'
+      preLoaderRoute: typeof AppPracticeSessionIdIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/practice/session/$id/review': {
+      id: '/app/practice/session/$id/review'
+      path: '/practice/session/$id/review'
+      fullPath: '/app/practice/session/$id/review'
+      preLoaderRoute: typeof AppPracticeSessionIdReviewRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/recall/review/summary/$sessionId': {
       id: '/app/recall/review/summary/$sessionId'
       path: '/recall/review/summary/$sessionId'
@@ -1414,6 +1581,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/courses/$course/$level/$subject/$chapter'
       preLoaderRoute: typeof CoursesCourseLevelSubjectChapterRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/courses/$course/$level/$subject/$chapter/questions': {
+      id: '/courses/$course/$level/$subject/$chapter/questions'
+      path: '/questions'
+      fullPath: '/courses/$course/$level/$subject/$chapter/questions'
+      preLoaderRoute: typeof CoursesCourseLevelSubjectChapterQuestionsRouteImport
+      parentRoute: typeof CoursesCourseLevelSubjectChapterRoute
     }
     '/og/courses/$course/$level/$subject/$chapter': {
       id: '/og/courses/$course/$level/$subject/$chapter'
@@ -1453,6 +1627,10 @@ interface AppRouteChildren {
   AppNotesNewRoute: typeof AppNotesNewRoute
   AppNotesSearchRoute: typeof AppNotesSearchRoute
   AppNotesTrashRoute: typeof AppNotesTrashRoute
+  AppPracticeBookmarksRoute: typeof AppPracticeBookmarksRoute
+  AppPracticeMistakesRoute: typeof AppPracticeMistakesRoute
+  AppPracticeNewRoute: typeof AppPracticeNewRoute
+  AppQuestionsIdRoute: typeof AppQuestionsIdRoute
   AppRecallChaptersRoute: typeof AppRecallChaptersRoute
   AppRecallForgottenRoute: typeof AppRecallForgottenRoute
   AppRecallQuickRoute: typeof AppRecallQuickRoute
@@ -1470,6 +1648,8 @@ interface AppRouteChildren {
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
   AppNotesIndexRoute: typeof AppNotesIndexRoute
+  AppPracticeIndexRoute: typeof AppPracticeIndexRoute
+  AppQuestionsIndexRoute: typeof AppQuestionsIndexRoute
   AppRecallIndexRoute: typeof AppRecallIndexRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
@@ -1488,7 +1668,9 @@ interface AppRouteChildren {
   AppRecallDecksIndexRoute: typeof AppRecallDecksIndexRoute
   AppRecallReviewIndexRoute: typeof AppRecallReviewIndexRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
+  AppPracticeSessionIdReviewRoute: typeof AppPracticeSessionIdReviewRoute
   AppRecallReviewSummarySessionIdRoute: typeof AppRecallReviewSummarySessionIdRoute
+  AppPracticeSessionIdIndexRoute: typeof AppPracticeSessionIdIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
@@ -1505,6 +1687,10 @@ const AppRouteChildren: AppRouteChildren = {
   AppNotesNewRoute: AppNotesNewRoute,
   AppNotesSearchRoute: AppNotesSearchRoute,
   AppNotesTrashRoute: AppNotesTrashRoute,
+  AppPracticeBookmarksRoute: AppPracticeBookmarksRoute,
+  AppPracticeMistakesRoute: AppPracticeMistakesRoute,
+  AppPracticeNewRoute: AppPracticeNewRoute,
+  AppQuestionsIdRoute: AppQuestionsIdRoute,
   AppRecallChaptersRoute: AppRecallChaptersRoute,
   AppRecallForgottenRoute: AppRecallForgottenRoute,
   AppRecallQuickRoute: AppRecallQuickRoute,
@@ -1522,6 +1708,8 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerReportsRoute: AppTrackerReportsRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
   AppNotesIndexRoute: AppNotesIndexRoute,
+  AppPracticeIndexRoute: AppPracticeIndexRoute,
+  AppQuestionsIndexRoute: AppQuestionsIndexRoute,
   AppRecallIndexRoute: AppRecallIndexRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
   AppTrackerIndexRoute: AppTrackerIndexRoute,
@@ -1540,7 +1728,9 @@ const AppRouteChildren: AppRouteChildren = {
   AppRecallDecksIndexRoute: AppRecallDecksIndexRoute,
   AppRecallReviewIndexRoute: AppRecallReviewIndexRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
+  AppPracticeSessionIdReviewRoute: AppPracticeSessionIdReviewRoute,
   AppRecallReviewSummarySessionIdRoute: AppRecallReviewSummarySessionIdRoute,
+  AppPracticeSessionIdIndexRoute: AppPracticeSessionIdIndexRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
@@ -1557,6 +1747,21 @@ const OgCoursesCourseRouteChildren: OgCoursesCourseRouteChildren = {
 const OgCoursesCourseRouteWithChildren = OgCoursesCourseRoute._addFileChildren(
   OgCoursesCourseRouteChildren,
 )
+
+interface CoursesCourseLevelSubjectChapterRouteChildren {
+  CoursesCourseLevelSubjectChapterQuestionsRoute: typeof CoursesCourseLevelSubjectChapterQuestionsRoute
+}
+
+const CoursesCourseLevelSubjectChapterRouteChildren: CoursesCourseLevelSubjectChapterRouteChildren =
+  {
+    CoursesCourseLevelSubjectChapterQuestionsRoute:
+      CoursesCourseLevelSubjectChapterQuestionsRoute,
+  }
+
+const CoursesCourseLevelSubjectChapterRouteWithChildren =
+  CoursesCourseLevelSubjectChapterRoute._addFileChildren(
+    CoursesCourseLevelSubjectChapterRouteChildren,
+  )
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -1577,7 +1782,8 @@ const rootRouteChildren: RootRouteChildren = {
   OgCoursesCourseRoute: OgCoursesCourseRouteWithChildren,
   CoursesCourseIndexRoute: CoursesCourseIndexRoute,
   CoursesCourseLevelIndexRoute: CoursesCourseLevelIndexRoute,
-  CoursesCourseLevelSubjectChapterRoute: CoursesCourseLevelSubjectChapterRoute,
+  CoursesCourseLevelSubjectChapterRoute:
+    CoursesCourseLevelSubjectChapterRouteWithChildren,
   CoursesCourseLevelSubjectIndexRoute: CoursesCourseLevelSubjectIndexRoute,
 }
 export const routeTree = rootRouteImport

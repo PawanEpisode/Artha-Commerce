@@ -199,9 +199,9 @@ Plan: `docs/F-13-BUILD-WAVES.md` (W1 to W6 for R1, W7 to W9 for R2). W1 (API eng
 | F13-13 | Wave 9 (planner web and adaptive, R2 slice 18): migration `today.0003_feedback`, feedback, budget suggestion and bonus round endpoints, `/app/planner` (health card, milestones, re-plan options), "Study plan" nav link, feedback, suggestion and bonus cards on Today, two analytics events | Built (W9) | Owner: run `pnpm lint:api && pnpm test:api` and `pnpm check` (the web half was written without running the web tooling; check the route tree and the new component tests); apply migration `today.0003`; the flag `today_planner` stays at 0 percent until the beta cohort opens. Review the 8 numbered decisions in the waves doc, "Changes to the PRD found in W9" |
 | F13-6 | F-02 extensions: `coverage.selectors.study_state` (W2), event `coverage_event_recorded` (W3), AUD-018 UTC date fix (done 2026-10-15) | Built | After deploying, run `python manage.py rebuild_coverage` once so revision dates stored before the fix are recalculated on each student's calendar |
 
-## 12. F-06 Question Bank System, F-09 PYQ, F-05 MCQ Bank: planned 2026-10-15, W1 built
+## 12. F-06 Question Bank System, F-09 PYQ, F-05 MCQ Bank: planned 2026-10-15, W1, W2, W3 built
 
-Plan: `docs/QB-BUILD-WAVES.md` (W1 to W5 for R1). W1 (Content Engine API: schema with 28 tables, RLS test, domain, 7 kind specs, services, selectors, views, contract doc `docs/QB-API-CONTRACT.md` with drift test) is built and tested; all 65 tests + 8 RLS tests passing; ruff check and format clean. Endpoints exist behind the fail-closed flag `question_bank`.
+Plan: `docs/QB-BUILD-WAVES.md` (W1 to W5 for R1). W1 (Content Engine API: schema with 28 tables, RLS test, domain, 7 kind specs, services, selectors, views, contract doc `docs/QB-API-CONTRACT.md` with drift test), W2 (Practice Engine API: practice schema, partitioned attempts, scoring & grading, ports, subscribers, chapter progress, zero answer leakage), and W3 (Web Browse and Practice: design system primitives, question browser, practice hub/builder/player/review, offline queue, mistakes/bookmarks, SEO routes) are built and tested.
 
 | # | Item | Status | Notes |
 | --- | --- | --- | --- |
@@ -209,4 +209,5 @@ Plan: `docs/QB-BUILD-WAVES.md` (W1 to W5 for R1). W1 (Content Engine API: schema
 | QB-2 | Create PostHog flag `question_bank` at 0% (strict mode fails closed) | Open (owner) | Needed before enabling any cohort |
 | QB-3 | Initial seed target: CMA Intermediate and Final (Syllabus 2022, last 3 sittings: June 2024, Dec 2024, June 2025) | Agreed | Selected by owner 2026-10-15 |
 | QB-4 | Wave 2 (Practice Engine API: practice schema, partitioned attempts, scoring & grading, ports, subscribers, chapter progress, zero answer leakage) | Built (W2) | All 39 tests passing; contract drift test green; `core.question_port`, `core.suggestion_source_port`, `core.today_port` registered; fail-closed |
-| QB-5 | Wave 3 (Web browse and practice: DS primitives, questionbank web, practice player, offline queue) | Planned | Next wave |
+| QB-5 | Wave 3 (Web browse and practice: DS primitives, questionbank web, practice player, offline queue) | Built (W3) | DS primitives (`Combobox`, `TagInput`, `NumberGrid`, `Countdown`, `SegmentedBar`), showcase, `pnpm check:contrast` 100%, web modules `questionbank` and `practice`, 9 TanStack Start routes, fail-closed flag guard, 0 answer leak, `pnpm check` and `build:web` green |
+| QB-6 | Wave 4 (Editors, admin and Past Papers F-09 R1) | Planned | Next wave: staff editor UI, CSV import, PYQ schema, `artha.paper.v1` import, web PYQ home & paper practice, public SEO pages |

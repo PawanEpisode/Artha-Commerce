@@ -81,6 +81,7 @@ import { useState } from 'react'
 import { AnnotationPrimitivesShowcase } from './AnnotationPrimitivesShowcase'
 import { NewPrimitivesShowcase } from './NewPrimitivesShowcase'
 import { NotesPrimitivesShowcase } from './NotesPrimitivesShowcase'
+import { PracticePrimitivesShowcase } from './PracticePrimitivesShowcase'
 import { RecallPrimitivesShowcase } from './RecallPrimitivesShowcase'
 
 const swatches = [
@@ -498,6 +499,7 @@ export function DesignShowcase() {
       <NotesPrimitivesShowcase />
       <RecallPrimitivesShowcase />
       <AnnotationPrimitivesShowcase />
+      <PracticePrimitivesShowcase />
 
       <Block title="Motion">
         <Reveal>

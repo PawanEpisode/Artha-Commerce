@@ -40,3 +40,11 @@ export function DialogTitle({ className, ...props }: React.ComponentProps<typeof
 export function DialogDescription({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Description>) {
   return <DialogPrimitive.Description className={cn('mt-1 text-sm text-muted-foreground', className)} {...props} />
 }
+
+export function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
+  return <div data-slot="dialog-header" className={cn('mb-4 space-y-1 pr-10', className)} {...props} />
+}
+
+export function DialogFooter({ className, ...props }: React.ComponentProps<'div'>) {
+  return <div data-slot="dialog-footer" className={cn('mt-6 flex flex-wrap justify-end gap-2', className)} {...props} />
+}
