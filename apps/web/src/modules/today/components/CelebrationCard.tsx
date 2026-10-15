@@ -7,7 +7,7 @@ import type { Plan } from '../lib/types'
  * The day's close. `celebrate`: a short burst the first time (any device), then a quiet card. `calm`: no confetti, a kind line.
  * `burst` is true only in the moment the plan said "show it".
  */
-export function CelebrationCard({ plan, burst }: { plan: Plan; burst: boolean }) {
+export function CelebrationCard({ plan, burst, lite = false }: { plan: Plan; burst: boolean; lite?: boolean }) {
   const { done, skipped } = plan.counts
   if (plan.closing === 'celebrate') {
     return (
@@ -22,7 +22,7 @@ export function CelebrationCard({ plan, burst }: { plan: Plan; burst: boolean })
         <p className="text-sm">
           {done} of {plan.counts.planned} done · {formatMinutes(plan.planned_minutes)} planned
         </p>
-        <Celebrate active={burst} message="Day complete. Well done." className="sr-only" />
+        <Celebrate active={burst && !lite} message="Day complete. Well done." className="sr-only" />
       </section>
     )
   }

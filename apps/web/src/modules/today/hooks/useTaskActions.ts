@@ -2,10 +2,22 @@ import { toast } from '@artha/design-system'
 import { useQueryClient } from '@tanstack/react-query'
 import { useCallback, useRef, useState } from 'react'
 
+import { pendingCount } from '~/lib/offline-queue'
+
+import { minutesBucket, trackToday } from '../lib/analytics'
 import * as api from '../lib/api'
 import { todayKeys } from '../lib/keys'
 import { UNDO_WINDOW_SECONDS } from '../lib/limits'
-import { addOwnTask, applyAction, applySwap, findTask, mergeTask, removeTask, restoreTask } from '../lib/optimistic'
+import {
+  addOwnTask,
+  applyAction,
+  applySwap,
+  findTask,
+  localOwnTask,
+  mergeTask,
+  removeTask,
+  restoreTask,
+} from '../lib/optimistic'
 import type {
   AddTaskBody,
   EditFields,
@@ -28,6 +40,7 @@ interface UndoEntry {
 }
 
 const UNDO_TOAST_MS = 10_000
+const NO_COUNTS = { planned: 0, done: 0, open: 0, skipped: 0, snoozed: 0 }
 const SNOOZE_WORDS: Record<string, string> = { tomorrow: 'tomorrow', in_3_days: 'in 3 days', next_week: 'next week' }
 
 /**
@@ -73,8 +86,19 @@ export function useTaskActions() {
     return next.catch(() => undefined) as Promise<T | undefined>
   }, [])
 
+  /** A write was stored for later: the screen keeps the change, says so once, and counts what waits. */
+  const queued = useCallback(() => {
+    toast.info('Saved on this device. It will sync when you are back online.', { id: 'today-queued' })
+    void qc.invalidateQueries({ queryKey: todayKeys.offline })
+    void pendingCount(api.TODAY_SCOPE).then((count) => trackToday('today_offline_queued', { count, age_bucket: '<1h' }))
+  }, [qc])
+
   const fail = useCallback(
     (error: unknown, snapshot?: Task) => {
+      if (api.isNetworkError(error)) {
+        if (snapshot) patch((p) => restoreTask(p, snapshot))
+        return void toast.error('You are offline. This one needs a connection.')
+      }
       const code = api.errorCode(error)
       const details = api.errorDetails(error)
       if (code === 'state_conflict' && details.task) {
@@ -127,17 +151,19 @@ export function useTaskActions() {
           ok?.(res)
           return res
         } catch (error) {
-          fail(error, snapshot)
+          if (error instanceof api.QueuedOffline) queued()
+          else fail(error, snapshot)
           return undefined
         }
       })
     },
-    [enqueue, fail, patch, plan, qc],
+    [enqueue, fail, patch, plan, qc, queued],
   )
 
   const undo = useCallback(
-    (task: Task, from: UndoFrom, back: TaskState) =>
-      act(
+    (task: Task, from: UndoFrom, back: TaskState, via: 'toast' | 'menu' = 'menu') => {
+      trackToday('today_task_undone', { from_state: from, via })
+      return act(
         task,
         (p) => applyAction(p, task.id, 'undo', back),
         () => api.undoTask(task.id, api.newClientId(), from),
@@ -145,7 +171,8 @@ export function useTaskActions() {
           forget(task.id)
           toast.dismiss(`undo-${task.id}`)
         },
-      ),
+      )
+    },
     [act],
   )
 
@@ -155,7 +182,7 @@ export function useTaskActions() {
       toast.success(title, {
         id: `undo-${task.id}`,
         duration: UNDO_TOAST_MS,
-        action: { label: 'Undo', onClick: () => void undo(task, from, back) },
+        action: { label: 'Undo', onClick: () => void undo(task, from, back, 'toast') },
       })
     },
     [undo],
@@ -205,6 +232,14 @@ export function useTaskActions() {
     async (task: Task): Promise<TaskLink | null> => {
       const fallback = task.link
       if (task.state === 'accepted' || !plan()) return fallback
+      const current = plan()
+      trackToday('today_task_started', {
+        kind: task.kind,
+        provider: task.origin,
+        position: current ? current.tasks.findIndex((t) => t.id === task.id) : -1,
+        slot: task.slot,
+        was_starter: current?.starter_task_id === task.id,
+      })
       const res = await act(
         task,
         (p) => applyAction(p, task.id, 'start'),
@@ -260,22 +295,42 @@ export function useTaskActions() {
             },
           })
         } catch (error) {
+          if (error instanceof api.QueuedOffline) return void queued() // the row stays gone; the delete replays later
           if (snapshot) patch((p) => addOwnTask(p, snapshot))
           fail(error)
         }
       })
     },
-    [enqueue, fail, patch, plan],
+    [enqueue, fail, patch, plan, queued],
   )
 
   /** Not optimistic (the server makes the id). Throws, so the sheet can show the field errors or the quota message. */
   const add = useCallback(
     async (body: AddTaskBody) => {
-      const res = await api.addTask(body)
-      patch((p) => (body.date && body.date !== p.date ? p : addOwnTask(p, res.task, res.counts)))
-      return res
+      try {
+        const res = await api.addTask(body)
+        patch((p) => (body.date && body.date !== p.date ? p : addOwnTask(p, res.task, res.counts)))
+        trackToday('today_task_added', {
+          has_subject: Boolean(body.subject_id),
+          est_minutes_bucket: minutesBucket(body.est_minutes),
+          offline: false,
+        })
+        return res
+      } catch (error) {
+        if (!(error instanceof api.QueuedOffline)) throw error
+        // Offline: the task shows at once, marked as waiting, and the server makes the real one when the queue replays.
+        const local = localOwnTask(body)
+        patch((p) => (body.date && body.date !== p.date ? p : addOwnTask(p, local)))
+        queued()
+        trackToday('today_task_added', {
+          has_subject: Boolean(body.subject_id),
+          est_minutes_bucket: minutesBucket(body.est_minutes),
+          offline: true,
+        })
+        return { version: 1, server_time: new Date().toISOString(), task: local, counts: plan()?.counts ?? NO_COUNTS }
+      }
     },
-    [patch],
+    [patch, plan, queued],
   )
 
   const edit = useCallback(

@@ -21,10 +21,10 @@ def get_plan(user_id, local_date: date) -> DayPlan | None:
 
 
 def live_tasks(plan: DayPlan) -> QuerySet[Task]:
-    """What the plan shows: not expired, not deleted, in display order."""
+    """What the plan shows: not deleted, in display order; expired tasks stay hidden except those left over at day end (they read as skipped)."""
     return (
         Task.objects.filter(plan=plan, deleted_at__isnull=True)
-        .exclude(state="expired")
+        .exclude(Q(state="expired") & ~Q(end_reason="day_ended"))
         .select_related("subject")
         .order_by("position", "created_at")
     )
@@ -157,3 +157,36 @@ def provider_task_counts(plan: DayPlan) -> dict[str, int]:
     """Live tasks per provider, for the admin and the contract tests."""
     rows = live_tasks(plan).values("provider").annotate(n=Count("id"))
     return defaultdict(int, {r["provider"]: r["n"] for r in rows})
+
+
+def reminder_digest(user_id, local_date: date) -> dict:
+    """
+    What X-01 needs for "3 tasks left, about 20 min" (FR-F13-43): the open count and minutes, the top three titles with their links, and
+    `is_done` (true once nothing is open, so reminders stop). A day with no plan has `has_plan: false` and is never "done". Read only.
+    """
+    plan = get_plan(user_id, local_date)
+    if plan is None or plan.status == "draft":
+        return {
+            "date": local_date.isoformat(),
+            "has_plan": False,
+            "open_count": 0,
+            "open_minutes": 0,
+            "top": [],
+            "is_done": False,
+        }
+    open_tasks = list(
+        Task.objects.filter(
+            plan=plan, state__in=c.OPEN_STATES, deleted_at__isnull=True, counts_toward_day=True
+        ).order_by("-is_must_do", "-score", "position")
+    )
+    return {
+        "date": local_date.isoformat(),
+        "has_plan": True,
+        "open_count": len(open_tasks),
+        "open_minutes": sum(t.est_minutes for t in open_tasks),
+        "top": [
+            {"title": t.title, "link": {"path": t.link_path, "search": dict(t.link_search or {})}}
+            for t in open_tasks[:3]
+        ],
+        "is_done": not open_tasks,
+    }

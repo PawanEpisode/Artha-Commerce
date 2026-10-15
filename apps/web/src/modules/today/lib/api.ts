@@ -1,4 +1,5 @@
 import { api, ApiError } from '~/lib/api'
+import { flushQueue, QueuedOffline, writeOrQueue } from '~/lib/offline-queue'
 import { newClientId } from '~/modules/coverage'
 
 import type {
@@ -16,7 +17,13 @@ import type {
   WeekDay,
 } from './types'
 
-export { newClientId }
+export { newClientId, QueuedOffline }
+
+/** The ordered lane of the shared offline queue that Today's queued writes use (a stuck lane never blocks another module). */
+export const TODAY_SCOPE = 'today'
+
+/** True for a request that failed because there is no network (the browser's fetch rejects with a TypeError). */
+export const isNetworkError = (error: unknown) => error instanceof TypeError
 
 /** 403 `feature_disabled`: the server-side `today_plan` flag is off for this user. Treated like the web flag off. */
 export function isFeatureDisabled(error: unknown): boolean {
@@ -47,7 +54,16 @@ export function errorDetails(error: unknown): Record<string, unknown> {
 const post = <T>(path: string, body: unknown = {}) => api<T>(path, { method: 'POST', body: JSON.stringify(body) })
 
 /** The app-open call: ensures today's plan exists and returns it. Idempotent, so it is also how the screen refreshes. */
-export const openToday = () => post<OpenResult>('/today/open/')
+export const openToday = (lite = false) => post<OpenResult>('/today/open/', lite ? { lite: true } : {})
+
+/**
+ * Opens the plan after replaying what this device queued while it was offline, so the plan the student sees already has their
+ * ticks and tasks (otherwise a plan fetched a moment before the replay would flicker back). A replay that fails does not stop the open.
+ */
+export async function syncThenOpen(lite = false): Promise<OpenResult> {
+  await flushQueue({ scope: TODAY_SCOPE }).catch(() => null)
+  return openToday(lite)
+}
 
 export const markCelebrated = () =>
   post<{ version: number; server_time: string; celebrated_at: string }>('/today/plan/celebrated/')
@@ -62,6 +78,24 @@ export const getHistory = (from: string, to: string) =>
 
 export const getSettings = () => api<TodaySettings>('/today/settings/')
 
+export const saveSettings = (values: Partial<TodaySettings>) =>
+  api<TodaySettings>('/today/settings/', { method: 'PUT', body: JSON.stringify(values) })
+
+/** Rebuilds today's suggestions (the student's ticks, skips and own tasks stay). `expected_generation` guards against a stale screen. */
+export const regeneratePlan = (expectedGeneration: number, reason: 'manual' | 'exam_date' | 'settings') =>
+  post<Plan>('/today/plan/regenerate/', {
+    expected_generation: expectedGeneration,
+    reason,
+    client_id: newClientId(),
+  })
+
+/** Opens today's plan, then rebuilds it for a reason (a new exam date, new settings). Null when there is no plan to rebuild. */
+export async function rebuildToday(reason: 'exam_date' | 'settings'): Promise<Plan | null> {
+  const opened = await openToday()
+  if (opened.state !== 'ready') return null
+  return regeneratePlan(opened.generation_no, reason)
+}
+
 // ---- task actions: every call carries a client id, so a retry is harmless -------------------------------------------------
 
 const task = (id: string, action: string) => `/today/tasks/${id}/${action}/`
@@ -69,8 +103,14 @@ const task = (id: string, action: string) => `/today/tasks/${id}/${action}/`
 export const startTask = (id: string, clientId: string) =>
   post<TaskResponse>(task(id, 'start'), { client_id: clientId })
 
-export const completeTask = (id: string, clientId: string, runManualAction = false) =>
-  post<TaskResponse>(task(id, 'complete'), { client_id: clientId, run_manual_action: runManualAction })
+/** A tick is one of the two writes that queue offline (the other is the student's own tasks): replayed later with the same client id. */
+export const completeTask = (id: string, clientId: string, runManualAction = false) => {
+  const path = task(id, 'complete')
+  const body = { client_id: clientId, run_manual_action: runManualAction }
+  return writeOrQueue<TaskResponse>({ clientId, scope: TODAY_SCOPE, method: 'POST', path, body }, () =>
+    post<TaskResponse>(path, body),
+  )
+}
 
 export const skipTask = (id: string, clientId: string, reason?: SkipReason | null) =>
   post<TaskResponse>(task(id, 'skip'), { client_id: clientId, ...(reason ? { reason } : {}) })
@@ -83,10 +123,18 @@ export const swapTask = (id: string, clientId: string) => post<SwapResponse>(tas
 export const undoTask = (id: string, clientId: string, from: UndoFrom) =>
   post<TaskResponse>(task(id, 'undo'), { client_id: clientId, from_state: from })
 
-export const addTask = (body: AddTaskBody) => post<TaskResponse>('/today/tasks/', body)
+export const addTask = (body: AddTaskBody) =>
+  writeOrQueue<TaskResponse>(
+    { clientId: body.client_id, scope: TODAY_SCOPE, method: 'POST', path: '/today/tasks/', body: { ...body } },
+    () => post<TaskResponse>('/today/tasks/', body),
+  )
 
 export const editTask = (id: string, body: EditFields & { version: number }) =>
   api<TaskResponse>(`/today/tasks/${id}/`, { method: 'PATCH', body: JSON.stringify(body) })
 
-export const deleteTask = (id: string, clientId: string) =>
-  api<TaskResponse>(`/today/tasks/${id}/?client_id=${clientId}`, { method: 'DELETE' })
+export const deleteTask = (id: string, clientId: string) => {
+  const path = `/today/tasks/${id}/?client_id=${clientId}`
+  return writeOrQueue<TaskResponse>({ clientId, scope: TODAY_SCOPE, method: 'DELETE', path, body: {} }, () =>
+    api<TaskResponse>(path, { method: 'DELETE' }),
+  )
+}

@@ -6,10 +6,15 @@ class TodayConfig(AppConfig):
     label = "today"
 
     def ready(self):
-        from . import completion, legacy_bridge
+        from core import registry as account_registry
+
+        from . import analytics, completion, erasure, legacy_bridge
 
         # The only provider Today itself registers: Recall's stand-in port. Real providers register from their own
         # `AppConfig.ready()` (see `registry.py`). Completion subscribers, the account eraser and exporter, and the tick job
         # are wired here in later waves (W3, W6).
         legacy_bridge.register()
         completion.install()  # inline subscribers: owning modules' events complete tasks (PRD 5.3)
+        analytics.install()  # domain events -> analytics events (schema-checked)
+        account_registry.register_eraser("today", erasure.delete_all_for_user)
+        account_registry.register_exporter("today", erasure.export_for_user)

@@ -32,6 +32,8 @@ def writes(queries):
 def requests_for_every_endpoint():
     seen = []
     for pattern in today_urls.urlpatterns:
+        if pattern.name == "today-tick":  # the cron entry has its own secret and its own tests (test_lifecycle.py)
+            continue
         kwargs = {name: uuid.uuid4() for name in pattern.pattern.converters}
         view_class = pattern.callback.view_class
         assert issubclass(view_class, TodayView), f"{pattern.name} must extend TodayView"

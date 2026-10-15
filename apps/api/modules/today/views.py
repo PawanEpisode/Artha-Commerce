@@ -7,17 +7,19 @@ from __future__ import annotations
 
 from datetime import timedelta
 
+from django.conf import settings as django_settings
 from django.http import HttpResponse
 from django.utils import timezone
 from rest_framework import status as http
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import ScopedRateThrottle, UserRateThrottle
 from rest_framework.views import APIView
 
+from core.http import request_has_secret
 from core.permissions import flag_required
 
-from . import actions, generation, selectors, serializers, services
+from . import actions, generation, lifecycle, selectors, serializers, services
 from .domain import constants as c
 from .errors import InvalidDate, PlanNotGenerated
 
@@ -54,7 +56,8 @@ class OpenView(WriteView):
             return Response(
                 serializers.empty_state_payload(result.state, local_date=result.local_date, tz=result.tz, now=now)
             )
-        payload = serializers.plan_payload(result.plan, user_id=request.user.id, now=now)
+        lite = data["lite"] or selectors.get_settings(request.user.id).lite_mode == "on"
+        payload = serializers.plan_payload(result.plan, user_id=request.user.id, now=now, lite=lite)
         payload["created"] = result.created
         return Response(payload)
 
@@ -304,3 +307,26 @@ class RegenerateView(WriteView):
         payload = serializers.plan_payload(plan, user_id=request.user.id, now=now)
         payload["regenerated"] = info
         return Response(payload)
+
+
+TICK_HEADER = "X-Today-Tick-Secret"
+
+
+class TickView(APIView):
+    """
+    Cron entry (Vercel Cron GET or a POST from any scheduler): closes finished days, pre-generates the new day's plans and prunes old
+    rows. Authenticated by a shared secret, not a student token, open whatever the flag says (a student's data is housekept even
+    with the flag off), bounded to about 20 seconds and safe to repeat or overlap.
+    """
+
+    authentication_classes: list = []
+    permission_classes = [AllowAny]
+    throttle_classes: list = []
+    throttle_scope = "none"  # no throttle: the secret is the gate (the contract test reads this)
+
+    def _tick(self, request):
+        if not request_has_secret(request, django_settings.TODAY_TICK_SECRET, TICK_HEADER):
+            return Response({"error": {"code": "forbidden", "message": "Not allowed.", "details": None}}, status=403)
+        return Response(lifecycle.tick())
+
+    get = post = _tick

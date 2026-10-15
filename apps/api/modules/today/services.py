@@ -13,12 +13,15 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import time
 from dataclasses import dataclass
 from datetime import date, datetime
 
 from django.db import IntegrityError, connection, transaction
-from django.db.models import F
+from django.db.models import F, Q
 from django.utils import timezone
+
+from core import events
 
 from . import generation, registry, selectors
 from .adapters import syllabus as syllabus_adapter
@@ -30,6 +33,8 @@ from .models import DayPlan, Task, TodaySettings
 logger = logging.getLogger(__name__)
 
 JSON_SAFE_CHARS = 3500  # the database limit is 4096 characters of rendered JSON; stay clear of it
+
+PLAN_GENERATED = "today_plan_generated"
 
 NOT_ENROLLED, POST_EXAM, READY = "not_enrolled", "post_exam", "ready"
 
@@ -67,8 +72,14 @@ def _json_safe(value, limit: int = JSON_SAFE_CHARS, default=None):
 
 def refresh_counters(plan: DayPlan) -> DayPlan:
     """Recomputes every counter from the live tasks (ERD 0.6: counters are recomputed, never incremented)."""
-    rows = Task.objects.filter(plan=plan, deleted_at__isnull=True).exclude(state="expired")
-    counters = recount(rows.values_list("state", "est_minutes", "counts_toward_day"))
+    # A task the close sweep expired at day end counts as skipped: the day record stays "did 3, left 3", never "planned 3".
+    rows = Task.objects.filter(plan=plan, deleted_at__isnull=True).exclude(
+        Q(state="expired") & ~Q(end_reason="day_ended")
+    )
+    counters = recount(
+        ("skipped" if state == "expired" else state, minutes, counts)
+        for state, minutes, counts in rows.values_list("state", "est_minutes", "counts_toward_day")
+    )
     for name in (
         "planned_count",
         "done_count",
@@ -179,10 +190,12 @@ def wake_snoozed(plan: DayPlan) -> int:
     return woken
 
 
-def _persist(plan: DayPlan | None, gen: generation.Generated, user_id, now: datetime) -> DayPlan:
+def _persist(
+    plan: DayPlan | None, gen: generation.Generated, user_id, now: datetime, *, opened: bool = True
+) -> DayPlan:
     ctx = gen.ctx
     fields = plan_fields(gen, now)
-    fields["first_opened_at"] = now
+    fields["first_opened_at"] = now if opened else None
     if plan is None:
         plan = DayPlan(user_id=user_id, local_date=ctx.local_date, generation_no=1, **fields)
     else:  # a draft made by the student's own first task for this day
@@ -204,9 +217,12 @@ def _persist(plan: DayPlan | None, gen: generation.Generated, user_id, now: date
 # ---- open -------------------------------------------------------------------------------------------------------------------
 
 
-def open_today(user_id, *, local_date: date | None = None, now: datetime | None = None) -> OpenResult:
+def open_today(
+    user_id, *, local_date: date | None = None, now: datetime | None = None, trigger: str = "open"
+) -> OpenResult:
     """
-    Ensure the plan for the student's local day and return it. Creates nothing for a student with no enrolment (`not_enrolled`) or
+    Ensure the plan for the student's local day and return it. `trigger` is `open` (the student) or `cron` (pre-generation, which does not
+    stamp `first_opened_at`). Creates nothing for a student with no enrolment (`not_enrolled`) or
     whose exam date has passed (`post_exam`): the web shows its own state, there is no plan to keep.
     """
     now = now or timezone.now()
@@ -235,12 +251,44 @@ def open_today(user_id, *, local_date: date | None = None, now: datetime | None 
             return OpenResult(POST_EXAM, None, False, day, tz)
         try:
             with transaction.atomic():
-                saved = _persist(plan, gen, user_id, now)
+                started = time.monotonic()
+                saved = _persist(plan, gen, user_id, now, opened=trigger != "cron")
+                transaction.on_commit(lambda: _announce(saved, gen, trigger, (time.monotonic() - started) * 1000))
         except IntegrityError:  # the unique constraint caught a race the lock could not (SQLite, a missed lock)
             logger.info("today: lost a plan race for %s on %s", user_id, day)
             saved = selectors.get_plan(user_id, day)
             return OpenResult(READY, saved, False, day, tz)
     return OpenResult(READY, saved, True, day, tz)
+
+
+def _announce(plan: DayPlan, gen: generation.Generated, trigger: str, ms: float) -> None:
+    """`today_plan_generated` (domain event and analytics): counts and buckets only, never a title."""
+    from .analytics import time_bucket
+    from .runner import PARTIAL_STATUSES
+
+    failed = [o for o in gen.run.outcomes if o.status in PARTIAL_STATUSES]
+    for outcome in failed:
+        events.emit(
+            "provider_failed",
+            user_id=str(plan.user_id),
+            provider=outcome.spec.name,
+            status=outcome.status,
+            ms_bucket=time_bucket(outcome.ms),
+        )
+    events.emit(
+        PLAN_GENERATED,
+        user_id=str(plan.user_id),
+        trigger=trigger,
+        generation_no=plan.generation_no,
+        task_count=plan.planned_count,
+        planned_minutes=plan.planned_minutes,
+        budget_minutes=plan.budget_minutes,
+        phase=plan.phase,
+        partial=plan.partial,
+        failed_provider_count=len(failed),
+        candidate_count=gen.selection.candidates,
+        generation_time_bucket=time_bucket(ms),
+    )
 
 
 def _refreshed(plan: DayPlan, now: datetime) -> DayPlan:

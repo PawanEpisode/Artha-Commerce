@@ -48,7 +48,7 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | Item | Needed by |
 | --- | --- |
 | Create the PostHog flag `today_plan` (0 percent) and, later, `today_planner` | W2 (API reads it) |
-| Confirm the Vercel cron or `pg_cron` route for `POST internal/tick/` (Q-F13-14) | W6 |
+| ~~Confirm the cron route for `internal/tick/` (Q-F13-14)~~ Resolved in W6: `GET`/`POST today/internal/tick/` with `TODAY_TICK_SECRET`, called every 5 minutes by any scheduler (see `docs/F-13-ROLLOUT.md`) | W6 |
 | Review the phase thresholds and budget formula after the first 100 users | Beta |
 
 ## 5. Changes to the PRD (found while building W1). Approved by the owner 2026-10-15
@@ -68,7 +68,7 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 | W3 Act and complete | Built 2026-10-15. Task actions (start, complete, skip, snooze, swap, undo), own tasks (add, edit, soft delete with undo, quotas, drafts for later days), regenerate (optimistic, 6 a day), completion by events with idempotent evidence and the late-night grace, reconcile on `open/`, and the `coverage_event_recorded` emit (F-02 extension). Row locks plan then task; counters recomputed after every action. Exit checks met on PostgreSQL: replayed, duplicated and reordered events change nothing (including five workers at once), done beats a stale skip however two requests interleave, counters equal the aggregate after 12 seeded random 60-action runs. Three rules were broken on purpose and each was caught by a test. Extended `docs/F-13-API-CONTRACT.md` (drift test now covers every endpoint and error code). Two real bugs were found and fixed by the new tests (a retry race on own-task creation, and evidence reviving a replaced task). Full API suite on PostgreSQL: only the 7 tests that read monorepo files absent in the scratch layout fail (focus/tracking/recall contracts, email brand), same as before W3 |
 | W4 | Built 2026-10-15 (see "W4 notes" below) |
 | W5 | Built 2026-10-15 (see "W5 notes" below) |
-| W6 | Not started |
+| W6 | Built (2026-10-15) |
 
 ### W3 decisions (approved by the owner 2026-10-15; differences from the PRD, listed in the contract doc)
 
@@ -95,3 +95,9 @@ Each wave is shippable on its own: tests green, behind the flag, nothing user-vi
 - Fixed from W4: the header read the streak as an object; the API sends a number.
 - Differences to know: a snooze has no Undo (the API undoes only a tick, a same-day skip and an own-task delete), so its toast has no Undo button; the `?task=<id>` link opens the task sheet at "Why this?" and highlights the row; keyboard shortcuts j, k and x of the desktop wireframe are not built (every action is reachable with Tab, Enter and Space); "stuck" own-task prompt (FR-F13-29) and the exam date card are W6.
 - Not checked by eye: the new screens in the four themes at 320 to 1280 px (the contrast check and component tests pass).
+
+### W6 notes (offline, settings, cron, launch)
+
+- Built: offline plan cache (IndexedDB `artha-today`) with offline, reconnect, stale (over 6 h) and previous-day banners and a day-rollover bar; ticks and own-task add/delete queue in the shared offline queue (scope `today`) and replay idempotently by `client_id`; lite mode (`open/` accepts `lite`, under 12 KB gzipped); analytics events from the shared `event_schema.json` with a byte-identical API and web copy checked by `test_event_schema.py`; settings page `/app/settings/today`; exam date card; first-plan reveal from onboarding (`/app/today?from=onboarding`, linked from `CatchupResult` when `today_plan` is on); stuck own task prompt (carried 3 times: Keep, Snooze or Delete); `/features/today` (catalog status `soon`, landing beat); API cron tick (pregenerate, close sweep, prune), digest selector, domain events, account eraser and exporter.
+- Differences to know: only ticks and own-task add/delete work offline; skip, snooze, swap, edit and undo need a connection. An offline-added task shows "Waiting to sync" and cannot be ticked until it syncs. A plan closes 3 h after its day ends; open provider tasks expire and count as skipped, open own tasks carry to the next day (3 times at most). The API analytics sink is a log line until a PostHog server client is plugged in with `analytics.set_sink`. Keyboard shortcuts j, k and x are still not built.
+- Flag `today_plan` stays off until the owner opens the beta cohort (`docs/F-13-ROLLOUT.md`).

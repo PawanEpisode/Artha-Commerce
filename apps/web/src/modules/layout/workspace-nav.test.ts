@@ -23,6 +23,7 @@ describe('visibleLinks', () => {
       '/app/recall',
     ])
     expect(visibleLinks(SETTINGS_LINKS).map((link) => link.to)).toEqual([
+      '/app/settings/today',
       '/app/settings/focus',
       '/app/settings/tracker',
       '/app/settings/coverage',
@@ -56,6 +57,11 @@ describe('visibleLinks', () => {
   it('shows Today only when the today_plan flag is on', () => {
     expect(visibleLinks(STUDY_LINKS, off).map((link) => link.to)).not.toContain('/app/today')
     expect(visibleLinks(STUDY_LINKS, { ...off, today_plan: true }).map((link) => link.to)).toEqual(['/app/today'])
+    expect(visibleLinks(SETTINGS_LINKS, off).map((link) => link.to)).not.toContain('/app/settings/today')
+    expect(visibleLinks(SETTINGS_LINKS, { ...off, today_plan: true }).map((link) => link.to)).toEqual([
+      '/app/settings/today',
+      '/app/account',
+    ])
   })
 
   it('shows Revision only when the recall_system flag is on', () => {

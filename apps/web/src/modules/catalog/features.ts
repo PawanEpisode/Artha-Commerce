@@ -67,6 +67,20 @@ export const features: Feature[] = [
     tool: { to: '/app/tracker/reports', cta: 'See your study hours', flag: 'time_tracker' },
   },
   {
+    slug: 'today',
+    title: 'Today',
+    tagline: 'Know what to study today, paper by paper.',
+    description:
+      'Open the app and see one short list for the day: revisions that are due, the next topics in your syllabus and tasks of your own, spread across your papers and sized to the time you have. Tick things off, skip what does not fit and see why each task is there. It works on a slow connection and offline, and it is paced to your exam date.',
+    icon: 'list-checks',
+    highlights: [
+      'One short list a day, built from your syllabus and revisions',
+      'Every task says why it is there; skip or swap what does not fit',
+      'Works offline and on slow connections',
+    ],
+    status: 'soon',
+  },
+  {
     slug: 'study-planner',
     title: 'Smart Study Planner',
     tagline: 'A day-by-day plan built backwards from your exam date.',

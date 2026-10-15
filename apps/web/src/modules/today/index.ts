@@ -1,5 +1,6 @@
 export { DayViewContainer } from './containers/DayViewContainer'
 export { TodayContainer } from './containers/TodayContainer'
 export { TodayHomeRedirect } from './containers/TodayHomeRedirect'
+export { TodaySettingsContainer } from './containers/TodaySettingsContainer'
 export { useTodayFlag } from './hooks/useTodayFlag'
 export { type TodaySearch, todaySearchSchema } from './lib/search'

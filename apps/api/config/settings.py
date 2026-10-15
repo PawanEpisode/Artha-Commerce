@@ -237,6 +237,9 @@ NOTES_TICK_SECRET = env("NOTES_TICK_SECRET")
 # NOTES_TICK_SECRET: empty refuses every caller). RECALL_PACK_MAX caps the offline pack a client may ask for, whatever the
 # plan allows (W6). RECALL_DEFAULT_WEIGHTS_VERSION names the seeded default parameter set new cards start on.
 RECALL_TICK_SECRET = env("RECALL_TICK_SECRET")
+# F-13 Today: guards `today/internal/tick/` (close sweep, pre-generation, prune). Empty refuses every caller; for Vercel Cron set it to
+# the same value as CRON_SECRET.
+TODAY_TICK_SECRET = env("TODAY_TICK_SECRET")
 RECALL_PACK_MAX = int(env("RECALL_PACK_MAX", "500"))
 RECALL_DEFAULT_WEIGHTS_VERSION = env("RECALL_DEFAULT_WEIGHTS_VERSION", "fsrs-6.0")
 # Upload scanning (F-03 R2, media). `null` marks files clean without scanning (development and tests only); `clamd` streams them

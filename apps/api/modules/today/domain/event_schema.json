@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "never_sent": [
+    "title",
+    "task_reason_text",
+    "notes"
+  ],
+  "buckets": {
+    "minutes": [
+      "0-5",
+      "6-15",
+      "16-30",
+      "31-60",
+      "61+"
+    ],
+    "time": [
+      "lt1s",
+      "1-3s",
+      "3-10s",
+      "10-30s",
+      "30s+"
+    ]
+  },
+  "events": {
+    "today_opened": {
+      "where": "web",
+      "props": [
+        "source",
+        "plan_state",
+        "task_count",
+        "planned_minutes_bucket",
+        "from_cache",
+        "render_time_bucket",
+        "lite"
+      ]
+    },
+    "today_plan_generated": {
+      "where": "api",
+      "props": [
+        "trigger",
+        "generation_no",
+        "task_count",
+        "planned_minutes",
+        "budget_minutes",
+        "phase",
+        "partial",
+        "failed_provider_count",
+        "candidate_count",
+        "generation_time_bucket"
+      ]
+    },
+    "today_plan_regenerated": {
+      "where": "api",
+      "props": [
+        "reason",
+        "kept_count",
+        "replaced_count"
+      ]
+    },
+    "today_task_started": {
+      "where": "web",
+      "props": [
+        "kind",
+        "provider",
+        "position",
+        "slot",
+        "was_starter"
+      ]
+    },
+    "today_task_completed": {
+      "where": "api",
+      "props": [
+        "kind",
+        "provider",
+        "via",
+        "est_minutes_bucket",
+        "position",
+        "first_of_day",
+        "since_open_bucket",
+        "manual_action_ran"
+      ]
+    },
+    "today_task_skipped": {
+      "where": "api",
+      "props": [
+        "kind",
+        "reason",
+        "suppressed"
+      ]
+    },
+    "today_task_snoozed": {
+      "where": "api",
+      "props": [
+        "kind",
+        "until_days"
+      ]
+    },
+    "today_task_swapped": {
+      "where": "api",
+      "props": [
+        "kind",
+        "result"
+      ]
+    },
+    "today_task_added": {
+      "where": "web",
+      "props": [
+        "has_subject",
+        "est_minutes_bucket",
+        "offline"
+      ]
+    },
+    "today_task_undone": {
+      "where": "web",
+      "props": [
+        "from_state",
+        "via"
+      ]
+    },
+    "today_why_opened": {
+      "where": "web",
+      "props": [
+        "kind",
+        "reason_code"
+      ]
+    },
+    "today_day_completed": {
+      "where": "api",
+      "props": [
+        "done",
+        "skipped",
+        "planned",
+        "minutes_bucket",
+        "streak"
+      ]
+    },
+    "today_day_closed": {
+      "where": "api",
+      "props": [
+        "done",
+        "skipped",
+        "expired",
+        "planned",
+        "completed",
+        "comeback"
+      ]
+    },
+    "today_celebration_viewed": {
+      "where": "web",
+      "props": [
+        "reduced_motion"
+      ]
+    },
+    "today_tomorrow_viewed": {
+      "where": "web",
+      "props": [
+        "task_count"
+      ]
+    },
+    "today_overload_shown": {
+      "where": "web",
+      "props": [
+        "kind",
+        "backlog_bucket"
+      ]
+    },
+    "today_exam_date_prompted": {
+      "where": "web",
+      "props": [
+        "action",
+        "days_to_exam_bucket"
+      ]
+    },
+    "today_exam_date_set": {
+      "where": "web",
+      "props": [
+        "action",
+        "days_to_exam_bucket"
+      ]
+    },
+    "today_feedback_given": {
+      "where": "web",
+      "props": [
+        "rating"
+      ]
+    },
+    "today_offline_queued": {
+      "where": "web",
+      "props": [
+        "count",
+        "age_bucket"
+      ]
+    },
+    "today_offline_replayed": {
+      "where": "web",
+      "props": [
+        "count",
+        "age_bucket"
+      ]
+    },
+    "today_settings_changed": {
+      "where": "web",
+      "props": [
+        "changed_keys"
+      ]
+    },
+    "provider_failed": {
+      "where": "api",
+      "props": [
+        "provider",
+        "status",
+        "ms_bucket"
+      ]
+    }
+  }
+}

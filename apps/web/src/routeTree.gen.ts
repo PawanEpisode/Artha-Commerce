@@ -49,6 +49,7 @@ import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focu
 import { Route as AppSettingsNotesRouteImport } from './routes/app.settings.notes'
 import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
 import { Route as AppSettingsRecallRouteImport } from './routes/app.settings.recall'
+import { Route as AppSettingsTodayRouteImport } from './routes/app.settings.today'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
 import { Route as AppSyllabusIndexRouteImport } from './routes/app.syllabus.index'
 import { Route as AppTodayIndexRouteImport } from './routes/app.today.index'
@@ -281,6 +282,11 @@ const AppSettingsRecallRoute = AppSettingsRecallRouteImport.update({
   path: '/settings/recall',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsTodayRoute = AppSettingsTodayRouteImport.update({
+  id: '/settings/today',
+  path: '/settings/today',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsTrackerRoute = AppSettingsTrackerRouteImport.update({
   id: '/settings/tracker',
   path: '/settings/tracker',
@@ -475,6 +481,7 @@ export interface FileRoutesByFullPath {
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
+  '/app/settings/today': typeof AppSettingsTodayRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/today/$date': typeof AppTodayDateRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
@@ -545,6 +552,7 @@ export interface FileRoutesByTo {
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
+  '/app/settings/today': typeof AppSettingsTodayRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/today/$date': typeof AppTodayDateRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
@@ -618,6 +626,7 @@ export interface FileRoutesById {
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
+  '/app/settings/today': typeof AppSettingsTodayRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
   '/app/today/$date': typeof AppTodayDateRoute
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
@@ -692,6 +701,7 @@ export interface FileRouteTypes {
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/recall'
+    | '/app/settings/today'
     | '/app/settings/tracker'
     | '/app/today/$date'
     | '/app/tracker/goals'
@@ -762,6 +772,7 @@ export interface FileRouteTypes {
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/recall'
+    | '/app/settings/today'
     | '/app/settings/tracker'
     | '/app/today/$date'
     | '/app/tracker/goals'
@@ -834,6 +845,7 @@ export interface FileRouteTypes {
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/recall'
+    | '/app/settings/today'
     | '/app/settings/tracker'
     | '/app/today/$date'
     | '/app/tracker/goals'
@@ -1174,6 +1186,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSettingsRecallRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings/today': {
+      id: '/app/settings/today'
+      path: '/settings/today'
+      fullPath: '/app/settings/today'
+      preLoaderRoute: typeof AppSettingsTodayRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/tracker': {
       id: '/app/settings/tracker'
       path: '/settings/tracker'
@@ -1424,6 +1443,7 @@ interface AppRouteChildren {
   AppSettingsNotesRoute: typeof AppSettingsNotesRoute
   AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
   AppSettingsRecallRoute: typeof AppSettingsRecallRoute
+  AppSettingsTodayRoute: typeof AppSettingsTodayRoute
   AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
@@ -1474,6 +1494,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppSettingsNotesRoute: AppSettingsNotesRoute,
   AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,
   AppSettingsRecallRoute: AppSettingsRecallRoute,
+  AppSettingsTodayRoute: AppSettingsTodayRoute,
   AppSettingsTrackerRoute: AppSettingsTrackerRoute,
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,

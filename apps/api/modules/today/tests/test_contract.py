@@ -16,7 +16,7 @@ from modules.coverage.models import ChapterProgress
 from modules.today import errors, urls
 from modules.today.models import ProviderConfig, Task
 from modules.today.registry import KindSpec
-from modules.today.views import TodayView
+from modules.today.views import TickView, TodayView
 
 from .conftest import USER
 from .helpers import cid, local_today, register_practice
@@ -74,7 +74,7 @@ def implemented_endpoints():
     found = {}
     for pattern in urls.urlpatterns:
         view = pattern.callback.view_class
-        assert issubclass(view, TodayView)
+        assert issubclass(view, (TodayView, TickView))
         for method in ("get", "post", "put", "patch", "delete"):
             if hasattr(view, method):
                 found[(method.upper(), str(pattern.pattern))] = view

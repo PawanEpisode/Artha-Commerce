@@ -19,6 +19,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/syllabus': ListChecks,
   '/app/notes': Notebook,
   '/app/recall': Layers,
+  '/app/settings/today': CalendarClock,
   '/app/settings/focus': Timer,
   '/app/settings/tracker': Clock,
   '/app/settings/coverage': ListChecks,

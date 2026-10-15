@@ -1,13 +1,17 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 
-import { getPlanFor, getPreview, getSettings, isFeatureDisabled, openToday } from '../lib/api'
+import { getPlanFor, getPreview, getSettings, isFeatureDisabled, syncThenOpen } from '../lib/api'
 import { todayKeys } from '../lib/keys'
+import { isLite, networkHints } from '../lib/lite'
+import type { TodaySettings } from '../lib/types'
 
 /** Today's plan. `open/` is idempotent and also reconciles finished work, so it is both the first load and every refresh. */
 export function useTodayPlan(enabled = true) {
+  const qc = useQueryClient()
   return useQuery({
     queryKey: todayKeys.plan,
-    queryFn: openToday,
+    // The smaller payload when the student's setting or the network asks for it (settings may still be loading: then the network decides).
+    queryFn: () => syncThenOpen(isLite(qc.getQueryData<TodaySettings>(todayKeys.settings)?.lite_mode, networkHints())),
     enabled,
     staleTime: 30_000,
     refetchOnWindowFocus: true,

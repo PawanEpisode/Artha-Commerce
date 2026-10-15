@@ -12,10 +12,13 @@ export function TodayHeader({
   plan,
   firstName,
   onStart,
+  lite = false,
 }: {
   plan: Plan
   firstName?: string | null
   onStart?: (task: Task) => void
+  /** Lite mode: no ring and no goal bar, a smaller heading. */
+  lite?: boolean
 }) {
   const starter = starterTask(plan)
   const { planned, done } = plan.counts
@@ -29,23 +32,25 @@ export function TodayHeader({
   return (
     <header className="space-y-4 rounded-2xl border border-border bg-card p-4 shadow-soft sm:p-6">
       <div className="flex flex-wrap items-center gap-5">
-        <ProgressRing
-          value={percent}
-          size={96}
-          strokeWidth={9}
-          segments={planned > 0 ? Math.min(12, planned) : undefined}
-          segmentLabel={taskCountLabel}
-          label="Today's tasks"
-        >
-          <span className="text-center leading-tight">
-            <span className="block text-lg font-bold">
-              {done}/{planned}
+        {lite ? null : (
+          <ProgressRing
+            value={percent}
+            size={96}
+            strokeWidth={9}
+            segments={planned > 0 ? Math.min(12, planned) : undefined}
+            segmentLabel={taskCountLabel}
+            label="Today's tasks"
+          >
+            <span className="text-center leading-tight">
+              <span className="block text-lg font-bold">
+                {done}/{planned}
+              </span>
+              <span className="block text-[11px] text-muted-foreground">tasks</span>
             </span>
-            <span className="block text-[11px] text-muted-foreground">tasks</span>
-          </span>
-        </ProgressRing>
+          </ProgressRing>
+        )}
         <div className="min-w-0 flex-1 space-y-1">
-          <h1 className="font-display text-2xl font-extrabold sm:text-3xl">
+          <h1 className={`font-display font-extrabold ${lite ? 'text-xl' : 'text-2xl sm:text-3xl'}`}>
             {comeback ? `Welcome back${firstName ? `, ${firstName}` : ''}` : greeting(dayPart(hour), firstName)}
           </h1>
           {comeback ? <p className="text-sm font-medium">A lighter day to ease back in.</p> : null}
@@ -62,7 +67,7 @@ export function TodayHeader({
           ) : null}
         </div>
       </div>
-      {goal ? (
+      {goal && !lite ? (
         <div className="space-y-1">
           <ProgressBar value={goal.percent} size="sm" label="Daily study goal" />
           <p className="text-xs text-muted-foreground">

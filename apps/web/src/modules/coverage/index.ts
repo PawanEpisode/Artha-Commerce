@@ -15,7 +15,8 @@ export {
   useOverview,
   useSubjectCoverage,
 } from './hooks/useCoverageQueries'
-export { isFeatureDisabled as isCoverageOff, isNoEnrollment } from './lib/api'
+export { useEnrollments } from './hooks/useCoverageQueries'
+export { isFeatureDisabled as isCoverageOff, isNoEnrollment, updateEnrollment } from './lib/api'
 export { newClientId } from './lib/api'
 export {
   type ChapterSelection,
@@ -24,6 +25,7 @@ export {
   isChapterUnset,
   storedChapterSelection,
 } from './lib/chapterSelection'
+export { coverageKeys } from './lib/keys'
 export { type ChapterCounts, paperSentence, progressSentence } from './lib/progress'
 export { ALL_CHAPTERS, ALL_CHAPTERS_LABEL, chosenSubjects } from './lib/subjects'
 export type { ChapterCoverage, ContinueChapter, Due, DueRow, Overview, SubjectCoverage, SubjectRow } from './lib/types'

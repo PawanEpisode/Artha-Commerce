@@ -157,6 +157,19 @@ export const featureBeats: readonly FeatureBeat[] = [
     cta: 'See revision',
   },
   {
+    slug: 'today',
+    rail: 'Today',
+    headline: 'Open the app and know what to study, paper by paper.',
+    insight:
+      'Most days are lost before they start, deciding what to do. Today puts one short list in front of you: revisions that are due, the next topics in your syllabus and tasks of your own, sized to the time you have.',
+    points: [
+      'Every task says why it is there; skip or swap what does not fit',
+      'Works offline and on a slow connection, and ticks sync when you are back',
+      'Paced to your exam date, with a lighter day when you are behind',
+    ],
+    cta: 'See what Today will do',
+  },
+  {
     slug: 'study-planner',
     rail: 'Planner',
     headline: 'Plan backwards from the exam date, not forwards from guilt.',

@@ -10,6 +10,8 @@ const mocks = vi.hoisted(() => ({
 vi.mock('@artha/design-system', () => ({ toast: mocks.toast }))
 vi.mock('../lib/api', () => ({
   newClientId: () => 'client-1',
+  isNetworkError: () => false,
+  QueuedOffline: class QueuedOffline extends Error {},
   errorCode: (e: { code?: string }) => e?.code ?? null,
   errorDetails: (e: { details?: object }) => e?.details ?? {},
   errorMessage: (_e: unknown, fallback: string) => fallback,

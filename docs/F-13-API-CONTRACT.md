@@ -1,8 +1,8 @@
-# F-13 Today: API contract (Wave 3)
+# F-13 Today: API contract (Wave 6)
 
 What `/api/v1/today/` answers today. The web builds against this file. It is checked by `modules/today/tests/test_contract.py`: if the code and this page disagree, that test fails, so change both together. PRD section 9 is the source; the places where W2 and W3 differ from it are listed under "Differences from the PRD".
 
-Only `POST internal/tick/` (W6) is not built yet.
+Every endpoint of PRD section 9 is built. The cron entry (`today/internal/tick/`) is authenticated by a shared secret, not a student token.
 
 ## Rules for every endpoint
 
@@ -25,6 +25,8 @@ Only `POST internal/tick/` (W6) is not built yet.
 | GET | `today/history/` | Day counters for the week strip and recaps | `today_read` |
 | GET | `today/settings/` | The student's settings (never creates a row) | `today_read` |
 | PUT | `today/settings/` | Save settings (creates the row on the first save) | `today_write` |
+| GET | `today/internal/tick/` | Cron: close finished days, pre-generate, prune. Shared secret, not a student token | none |
+| POST | `today/internal/tick/` | The same, for schedulers that POST | none |
 | POST | `today/plan/celebrated/` | Record that today's celebration was shown (once per day, any device) | `today_write` |
 | POST | `today/plan/regenerate/` | Rebuild today's suggestions, keep what the student touched | `today_regen` |
 | POST | `today/tasks/` | Add the student's own task | `today_write` |
@@ -43,7 +45,7 @@ Throttle scopes: `today_read` 120 per minute, `today_write` 120 per minute, `tod
 
 ### POST `today/open/`
 
-Request (all optional): `client_id` (uuid), `date` (must be the student's own today), `source` (`nav`, `reminder`, `redirect`; default `nav`).
+Request (all optional): `client_id` (uuid), `date` (must be the student's own today), `source` (`nav`, `reminder`, `redirect`; default `nav`), `lite` (`true` answers the small payload: no `why.signals`, no `week`; the setting `lite_mode: "on"` does the same; under 12 KB gzipped).
 
 Responses:
 
@@ -117,7 +119,7 @@ version, server_time, task, counts
 
 ### PATCH and DELETE `today/tasks/<id>/`
 
-`PATCH`: `version` (what the web last saw) and any of `title`, `est_minutes`, `subject_id`, `chapter_id`, `date`. A different `version` is `409 state_conflict`. `DELETE` is a soft delete answering `undo_until`. Both answer `403 provider_task_readonly` for a suggested task: skip or snooze it instead.
+`PATCH`: `version` (what the web last saw) and any of `title`, `est_minutes`, `subject_id`, `chapter_id`, `date`, `keep` (`true` answers the "Still relevant?" prompt: the stuck counter starts again). A different `version` is `409 state_conflict`. `DELETE` is a soft delete answering `undo_until`. Both answer `403 provider_task_readonly` for a suggested task: skip or snooze it instead.
 
 ### POST `today/tasks/<id>/complete/`
 
@@ -190,8 +192,10 @@ subject_id, subject_key, name, tasks
 Tiles are in display order; the General pool (`subject_id: null`, empty `name`) comes last. `tasks` holds task ids.
 
 <!-- contract:task-keys -->
-id, origin, kind, slot, title, reason, reason_code, why, est_minutes, progress, target, state, link, subject_id, chapter_id, manual_action, is_must_do, version
+id, origin, kind, slot, title, reason, reason_code, why, est_minutes, progress, target, state, link, subject_id, chapter_id, manual_action, is_must_do, stuck, version
 <!-- /contract:task-keys -->
+
+`stuck` is `true` for the student's own open task that the day sweep carried to a new day three times: the screen asks "Still relevant? Keep, snooze or delete" (PATCH `keep`, snooze or delete). A task left open at day end (provider tasks, and own tasks carried three times) reads as `skipped` in that day's recap.
 
 `why` is `{"modifiers": [...up to two], "signals": {...}}` (no `signals` in lite mode). `link` is `{"path", "search"}`; the path is an allow-listed `/app/...` route. `manual_action` is `{"label", "default"}` or `null`. `state` is one of `suggested`, `accepted`, `done`, `skipped`, `snoozed`.
 
@@ -274,6 +278,16 @@ version, server_time, minutes_per_day, focus_papers, disabled_kinds, show_tomorr
 | Undo reverts "the last transition" | Done (manual ticks only), skipped (same day) and own deletion | A completion by the student's activity is a fact, not a click; a swap is undone by skipping the new task |
 | A completion that finds a skipped task | Completes it | Done always wins over a stale skip |
 
-## Not built yet (W6)
+## The cron tick
 
-`POST internal/tick/` and the jobs behind it (pre-generation, the day sweep that expires open tasks, retention).
+`GET` or `POST today/internal/tick/` with the header `X-Today-Tick-Secret: <TODAY_TICK_SECRET>` (or `Authorization: Bearer <secret>`, which is what Vercel Cron sends). A wrong or missing secret, or an unset `TODAY_TICK_SECRET`, answers `403 forbidden`. It ignores the `today_plan` flag (housekeeping must run for every student), stops after about 20 seconds and is safe to repeat or overlap. Call it every 5 minutes. It answers the counts of what it did:
+
+- `close`: `closed`, `expired`, `carried`. A plan closes once its day plus 3 hours is over in the plan's own time zone. Open provider tasks expire (`end_reason=day_ended`); the student's own open tasks move to the next day with `carry_count` + 1, and one already carried three times expires. `today_day_closed` is emitted once per plan.
+- `pregenerate`: `checked`, `pregenerated`, `flag_off`, `failed`. Students who opened Today in the last 8 days and have no plan for their own today get one (flag `today_plan` must be on for them). The plan is not marked opened.
+- `prune`: `evidence` (older than 90 days), `tasks` (older than 13 months), `plans` (older than 24 months and empty).
+
+Domain events through `core.events`: `today_plan_generated`, `today_task_completed`, `today_day_completed`, `today_day_closed`, plus the action events of PRD section 10. `selectors.reminder_digest(user_id, date)` is the read side for X-01. The account eraser and exporter are registered as `today`.
+
+## Analytics events
+
+Property names are in `modules/today/domain/event_schema.json`; the web twin `apps/web/src/modules/today/lib/event-schema.json` must be byte-identical (`test_event_schema.py` and the web test fail on drift). `analytics.track` keeps only schema properties.

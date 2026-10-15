@@ -33,6 +33,7 @@ class OpenSerializer(serializers.Serializer):
     client_id = serializers.UUIDField(required=False)
     date = serializers.DateField(required=False)
     source = serializers.ChoiceField(choices=OPEN_SOURCES, required=False, default="nav")
+    lite = serializers.BooleanField(required=False, default=False)  # the smaller payload (no `why.signals`, no `week`)
 
 
 class DateQuerySerializer(serializers.Serializer):
@@ -133,6 +134,7 @@ class EditTaskSerializer(serializers.Serializer):
     subject_id = serializers.UUIDField(required=False, allow_null=True)
     chapter_id = serializers.UUIDField(required=False, allow_null=True)
     est_minutes = serializers.IntegerField(min_value=c.OWN_EST_MIN, max_value=c.OWN_EST_MAX, required=False)
+    keep = serializers.BooleanField(required=False)  # "Still relevant? Keep": the stuck counter starts again
 
     def validate(self, attrs):
         if not set(attrs) - {"version"}:
@@ -171,14 +173,22 @@ def task_dict(task: Task, *, lite: bool = False) -> dict:
         "est_minutes": task.est_minutes,
         "progress": task.progress_value,
         "target": task.target_value,
-        "state": task.state,
+        "state": "skipped"
+        if task.state == "expired"
+        else task.state,  # left over at day end: a recap reads it as skipped
         "link": link_of(task),
         "subject_id": str(task.subject_id) if task.subject_id else None,
         "chapter_id": str(task.chapter_id) if task.chapter_id else None,
         "manual_action": {"label": action["label"], "default": action["default"]} if action else None,
         "is_must_do": task.is_must_do,
+        "stuck": is_stuck(task),
         "version": task.version,
     }
+
+
+def is_stuck(task: Task) -> bool:
+    """An own task left open and carried to a new day `OWN_CARRY_MAX` times: the screen asks "Still relevant?" (FR-F13-29)."""
+    return task.origin == "user" and task.carry_count >= c.OWN_CARRY_MAX and task.state in c.OPEN_STATES
 
 
 def _starter(tasks: list[Task]) -> str | None:

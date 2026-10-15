@@ -1,6 +1,7 @@
 import { Badge, Button, Checkbox, Clock, Ellipsis, Flag } from '@artha/design-system'
 import { useState } from 'react'
 
+import { isLocalTask } from '../lib/optimistic'
 import { progressText } from '../lib/plan'
 import { formatMinutes } from '../lib/time'
 import type { Task } from '../lib/types'
@@ -21,6 +22,10 @@ export interface TaskRowProps {
   onUntick?: (task: Task) => void
   onStart?: (task: Task) => void
   onMenu?: (task: Task) => void
+  /** The "Still relevant?" answers for a stuck own task (FR-F13-29). */
+  onKeep?: (task: Task) => void
+  onStuckSnooze?: (task: Task) => void
+  onStuckDelete?: (task: Task) => void
 }
 
 /** One task: a 44 px tick, the title (two lines, expandable), reason, minutes, progress, Start and a menu. Every action is a button. */
@@ -34,8 +39,14 @@ export function TaskRow({
   onUntick,
   onStart,
   onMenu,
+  onKeep,
+  onStuckSnooze,
+  onStuckDelete,
 }: TaskRowProps) {
   const [expanded, setExpanded] = useState(false)
+  // A task made offline exists only on this device until the queue replays it: it cannot be ticked or edited yet.
+  const waiting = isLocalTask(task)
+  const inert = readOnly || waiting
   const done = task.state === 'done'
   const open = task.state === 'suggested' || task.state === 'accepted'
   const quiet = task.state === 'skipped' || task.state === 'snoozed'
@@ -54,7 +65,7 @@ export function TaskRow({
       <Checkbox
         id={`task-${task.id}-check`}
         checked={done}
-        disabled={readOnly || busy || !(open || (done && undoable))}
+        disabled={inert || busy || !(open || (done && undoable))}
         aria-label={done ? `${task.title}, done` : `Mark done: ${task.title}`}
         onCheckedChange={(next) => (next === true ? onTick?.(task) : onUntick?.(task))}
         className="mt-0.5"
@@ -91,10 +102,32 @@ export function TaskRow({
             </Badge>
           ) : null}
           {note ? <Badge variant="outline">{note}</Badge> : null}
+          {waiting ? <Badge variant="outline">Waiting to sync</Badge> : null}
           {done ? <span className="sr-only">Done</span> : null}
         </p>
+        {task.stuck && !inert ? (
+          <div
+            role="group"
+            aria-label={`Still relevant? ${task.title}`}
+            className="mt-2 space-y-2 rounded-lg border border-border bg-secondary p-3"
+          >
+            <p className="text-sm font-medium">Still relevant?</p>
+            <p className="text-sm text-muted-foreground">This has been on your list for a few days.</p>
+            <div className="flex flex-wrap gap-2">
+              <Button size="sm" variant="outline" disabled={busy} onClick={() => onKeep?.(task)}>
+                Keep
+              </Button>
+              <Button size="sm" variant="outline" disabled={busy} onClick={() => onStuckSnooze?.(task)}>
+                Snooze
+              </Button>
+              <Button size="sm" variant="outline" disabled={busy} onClick={() => onStuckDelete?.(task)}>
+                Delete
+              </Button>
+            </div>
+          </div>
+        ) : null}
       </div>
-      {!readOnly ? (
+      {!inert ? (
         <div className="flex shrink-0 items-center gap-1">
           {open && task.link ? (
             <Button

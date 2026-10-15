@@ -33,6 +33,8 @@ export interface Task {
   chapter_id: string | null
   manual_action: { label: string; default: boolean } | null
   is_must_do: boolean
+  /** An own task carried to a new day three times: the screen asks "Still relevant?" (FR-F13-29). */
+  stuck: boolean
   version: number
 }
 
@@ -166,7 +168,8 @@ export interface Preview {
 
 export interface TodaySettings {
   minutes_per_day: number | null
-  focus_papers: unknown
+  /** How many papers get a bigger share today; null is automatic. */
+  focus_papers: number | null
   disabled_kinds: string[]
   show_tomorrow: boolean
   celebrate: boolean
@@ -179,4 +182,6 @@ export interface EditFields {
   subject_id?: string | null
   chapter_id?: string | null
   date?: string
+  /** Answers the "Still relevant?" prompt with Keep: the stuck counter starts again. */
+  keep?: boolean
 }

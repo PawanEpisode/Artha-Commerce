@@ -337,6 +337,7 @@ def snooze_task(user_id, task_id, *, client_id, until, client_ts=None, now: date
         task.snoozed_until = until
         task.snooze_count += 1
         if task.origin == "user":
+            task.carry_count = 0  # the student decided: the stuck counter starts again
             target = _plan_for_write(user_id, until, plan.tz)
             _check_day_quota(user_id, until)
             task.plan, task.local_date = target, until
@@ -602,6 +603,8 @@ def edit_task(user_id, task_id, changes: dict, *, version: int, now: datetime | 
             task.title = " ".join(changes["title"].split())
         if "est_minutes" in changes:
             task.est_minutes = changes["est_minutes"]
+        if changes.get("keep"):
+            task.carry_count = 0
         if "subject_id" in changes or "chapter_id" in changes:
             wanted_subject = changes.get("subject_id", task.subject_id if "chapter_id" not in changes else None)
             wanted_chapter = changes.get("chapter_id", task.chapter_id if "subject_id" not in changes else None)

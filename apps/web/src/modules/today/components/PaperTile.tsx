@@ -3,7 +3,17 @@ import { ProgressBar } from '@artha/design-system'
 import type { TileView } from '../lib/plan'
 
 /** A paper's share of today as a filter button: "2 of 3 done". Pressed = the list below shows only this paper. */
-export function PaperTile({ tile, pressed, onSelect }: { tile: TileView; pressed: boolean; onSelect: () => void }) {
+export function PaperTile({
+  tile,
+  pressed,
+  onSelect,
+  lite = false,
+}: {
+  tile: TileView
+  pressed: boolean
+  onSelect: () => void
+  lite?: boolean
+}) {
   const percent = tile.total ? Math.round((tile.done / tile.total) * 100) : 0
   return (
     <button
@@ -15,7 +25,7 @@ export function PaperTile({ tile, pressed, onSelect }: { tile: TileView; pressed
       }`}
     >
       <span className="text-sm font-semibold break-words">{tile.name}</span>
-      <ProgressBar value={percent} size="sm" label={`${tile.name} progress`} />
+      {lite ? null : <ProgressBar value={percent} size="sm" label={`${tile.name} progress`} />}
       <span className="text-xs text-muted-foreground">
         {tile.done} of {tile.total} done
       </span>

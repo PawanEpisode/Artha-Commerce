@@ -10,6 +10,7 @@ export interface WorkspaceLink {
     | '/app/syllabus'
     | '/app/notes'
     | '/app/recall'
+    | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/settings/coverage'
@@ -61,6 +62,7 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
 ]
 
 export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
+  { to: '/app/settings/today', label: 'Today settings', flag: 'today_plan' },
   { to: '/app/settings/focus', label: 'Focus settings', flag: 'focus_timer' },
   { to: '/app/settings/tracker', label: 'Tracker settings', flag: 'time_tracker' },
   { to: '/app/settings/coverage', label: 'Coverage settings', flag: 'syllabus_coverage' },

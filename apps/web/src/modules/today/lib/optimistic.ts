@@ -78,6 +78,35 @@ export function applySwap(plan: Plan, oldTask: Task, newTask: Task, counts?: Cou
   return { ...withTasks(plan, tasks, counts), tiles }
 }
 
+/** Id prefix of an own task made offline: it exists only on this device until the queue replays it. */
+export const LOCAL_PREFIX = 'local-'
+export const isLocalTask = (task: Pick<Task, 'id'>) => task.id.startsWith(LOCAL_PREFIX)
+
+/** The row an offline "Add your own task" shows until the server makes the real one. It cannot be ticked or edited yet. */
+export function localOwnTask(body: { client_id: string; title: string; est_minutes: number }): Task {
+  return {
+    id: `${LOCAL_PREFIX}${body.client_id}`,
+    origin: 'user',
+    kind: 'own',
+    slot: 'own',
+    title: body.title,
+    reason: '',
+    reason_code: 'custom',
+    why: { modifiers: [], signals: {} },
+    est_minutes: body.est_minutes,
+    progress: null,
+    target: null,
+    state: 'suggested',
+    link: null,
+    subject_id: null,
+    chapter_id: null,
+    manual_action: null,
+    is_must_do: false,
+    stuck: false,
+    version: 1,
+  }
+}
+
 /** An own task the server just created joins the plan (and the "Yours" tile is built from unclaimed tasks, so no tile edit). */
 export function addOwnTask(plan: Plan, task: Task, counts?: Counts): Plan {
   if (findTask(plan, task.id)) return mergeTask(plan, task, counts)

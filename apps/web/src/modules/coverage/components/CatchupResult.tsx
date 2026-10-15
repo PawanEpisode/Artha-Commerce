@@ -2,6 +2,8 @@ import { ArrowRight, Button, Card, ProgressRing } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
+import { useFeatureFlag } from '~/modules/observability'
+
 interface Props {
   levelName: string
   percent: number
@@ -12,6 +14,7 @@ interface Props {
 /** The aha moment: the ring animates from 0 to the starting point and says what is left. */
 export function CatchupResult({ levelName, percent, startWith }: Props) {
   const [shown, setShown] = useState(0)
+  const todayOn = useFeatureFlag('today_plan', { strict: true })
   useEffect(() => {
     const id = requestAnimationFrame(() => setShown(percent))
     return () => cancelAnimationFrame(id)
@@ -32,11 +35,24 @@ export function CatchupResult({ levelName, percent, startWith }: Props) {
           </p>
         ) : null}
       </div>
-      <Button size="lg" asChild>
-        <Link to="/app/syllabus">
-          Open my syllabus map <ArrowRight />
-        </Link>
-      </Button>
+      {todayOn ? (
+        <div className="flex flex-col items-center gap-3">
+          <Button size="lg" asChild>
+            <Link to="/app/today" search={{ from: 'onboarding' }}>
+              See today's plan <ArrowRight />
+            </Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link to="/app/syllabus">Open my syllabus map</Link>
+          </Button>
+        </div>
+      ) : (
+        <Button size="lg" asChild>
+          <Link to="/app/syllabus">
+            Open my syllabus map <ArrowRight />
+          </Link>
+        </Button>
+      )}
     </Card>
   )
 }
