@@ -7,7 +7,7 @@ vi.mock('~/modules/observability', () => ({ track: vi.fn() }))
 
 describe('event schema contract (FR-F13-46)', () => {
   it('lists every event of PRD section 10 with a place', () => {
-    expect(Object.keys(schema.events)).toHaveLength(26)
+    expect(Object.keys(schema.events)).toHaveLength(28)
     for (const spec of Object.values(schema.events)) expect(['web', 'api']).toContain(spec.where)
   })
   it('never lists a property that could carry a title, a reason text or a note', () => {
