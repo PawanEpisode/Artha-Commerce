@@ -8,6 +8,14 @@
 | Depends on | `profiles`, `coverage`, `syllabus`, `tracking`, `focus`, `notes`, `recall` (read through their selectors and ports only), `core/plans.py`, `core/registry.py`, `integrations/gemini.py` |
 | Last updated | 11 Oct 2026 |
 
+> **Restructure of 2026-10-15.** This ERD is now the umbrella. The table definitions below remain the base, with these changes:
+>
+> - `tutor_chunk` (2.14) is **removed**. Platform content moves to the knowledge base app: `tutorkb_*` (see `erd/F-17.2-knowledge-bases-and-ingestion.md`).
+> - `tutor_conversation`, `tutor_message`, `tutor_turn`, `tutor_citation`, `tutor_quotaplan`, `tutor_quotausage`, `tutor_costline`, `tutor_settings` gain columns described in `erd/F-17.1-agent-platform.md` section 3 (release id, knowledge base code, block key, verify status, retrieval trace, plan codes, units, and so on).
+> - New tables: `tutor_instruction`, `tutor_instructionversion`, `tutor_release`, `tutor_modelprofile`, `tutor_functionconfig`, `tutor_rule`, `tutor_killswitch`, `tutor_budget`, `tutor_llmcall`, `tutor_glossaryterm`, `tutor_staticmessage`, `tutor_configversion` (F-17.1); `tutorkb_*` (F-17.2); `tutorblocks_*` (F-17.3); `tutoradmin_*` (F-17.4); `tutornudges_*` (F-17.5).
+> - Unchanged here and still owned by this document: `tutor_action`, `tutor_voice_session`, `tutor_memory`, `tutor_lexicon` (release R2 to R4).
+> - Where this file and a child ERD disagree, the child ERD wins. Architecture: `docs/F-17-ARCHITECTURE.md`. Build order: `docs/F-17-BUILD-WAVES.md`.
+
 ## 0. Design decisions
 
 1. **The vendors hold no student data we depend on.** Anam, Deepgram and Cartesia are stateless pipes for audio and video. Transcripts, memory, citations and costs are ours. We store vendor session ids only to reconcile bills and to ask Anam to delete its session report.

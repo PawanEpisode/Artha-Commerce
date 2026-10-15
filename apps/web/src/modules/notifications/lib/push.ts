@@ -32,7 +32,7 @@ export class IncompleteSubscription extends Error {
 }
 
 /** Endpoint and keys in the shape `POST devices/` wants. */
-export function toDeviceKeys(subscription: PushSubscriptionLike): Pick<DeviceRegistration, 'endpoint' | 'keys'> {
+export function toDeviceKeys(subscription: PushSubscriptionLike): DeviceRegistration['subscription'] {
   const json = subscription.toJSON()
   const endpoint = json.endpoint ?? subscription.endpoint
   const p256dh = json.keys?.p256dh

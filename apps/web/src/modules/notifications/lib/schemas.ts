@@ -99,13 +99,11 @@ export const deviceIdResponseSchema = z.object({ device_id: z.string().min(1) })
 
 /** Body of `POST devices/`. The endpoint and keys are secrets: they go to the API and nowhere else. */
 export interface DeviceRegistration {
-  endpoint: string
-  keys: { p256dh: string; auth: string }
+  subscription: { endpoint: string; keys: { p256dh: string; auth: string } }
   platform: string
   browser: string
   display_mode: string
   sw_version: string
-  label?: string
 }
 
 /** `POST inbox/{id}/click/` may say what was clicked; every field is optional. */

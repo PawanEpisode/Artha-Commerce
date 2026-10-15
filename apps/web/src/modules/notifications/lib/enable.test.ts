@@ -59,7 +59,7 @@ describe('enableAlerts', () => {
     expect(api.postPermissionState).toHaveBeenCalledWith('granted', 'settings')
     expect(api.registerDevice).toHaveBeenCalledWith(
       expect.objectContaining({
-        endpoint: 'https://push.example.test/e',
+        subscription: expect.objectContaining({ endpoint: 'https://push.example.test/e' }),
         platform: 'windows',
         browser: 'chrome',
         display_mode: 'browser',

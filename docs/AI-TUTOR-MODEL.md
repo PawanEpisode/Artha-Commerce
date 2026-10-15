@@ -3,6 +3,8 @@
 Status: draft for review. Standalone planning document. It is not a feature in `product/FEATURE_MAP.md` and has no F-xx ID yet.
 Date: 2026-10-15. Cost and time figures are planning estimates and must be re-quoted before budgeting. Licence and copyright points are not legal advice.
 
+> **Relationship to F-17 (added 2026-10-15).** The product design for the tutor is F-17 and its children (`docs/F-17-ARCHITECTURE.md`). That design calls models only through the provider-neutral gateway in `integrations/llm` (ADR-12), which has an OpenAI-compatible adapter slot. A self-hosted fine-tuned model from this document plugs in there as one more model profile, chosen per function in the admin console, and is judged by the same evaluation gates as Gemini. Nothing in F-17 depends on this document being built.
+
 ## 1. The short answer
 
 A commerce-specialised tutor on free open-source models is feasible. Pre-training an LLM from scratch is not the right start: it costs crores, needs trillions of tokens, and gives a weaker tutor than a fine-tuned open model. The best result per rupee is three layers: an open base model fine-tuned on curated CA/CS/CMA/Class 11-12 data, retrieval over the actual study material, and a verifier that checks each answer before the student sees it.

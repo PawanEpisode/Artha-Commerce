@@ -646,7 +646,7 @@ X-03 Gamification, X-02 Context Agent, payments, mentor mode, WhatsApp channel
 | 17 | **F-03 Notes and PDF editor** | `prd/F-03-notes-and-pdf-editor.md` | `erd/F-03-notes-and-pdf-editor.md` | written (draft for review, 5 Oct 2026) |
 | 18 | **F-16 Personalization, Onboarding, Profile and Workspace Home** | `prd/F-16-personalization-onboarding-profile.md` | `erd/F-16-personalization-onboarding-profile.md` | written (draft for review, 6 Oct 2026); **build before the practice engine** (slices S1 to S14) |
 | 19 | X-01 Notifications, X-03 Gamification | | | next to write |
-| 20 | **F-17 AI Tutor and Context Agent** (supersedes X-02) | `prd/F-17-ai-tutor-and-context-agent.md` | `erd/F-17-ai-tutor-and-context-agent.md` | written (draft for review, 11 Oct 2026); vendors Anam, Deepgram, Cartesia assessed in PRD section 14 |
+| 20 | **F-17 AI Tutor and Context Agent** (supersedes X-02) | `prd/F-17-ai-tutor-and-context-agent.md` | `erd/F-17-ai-tutor-and-context-agent.md` | written (draft for review, 11 Oct 2026); vendors Anam, Deepgram, Cartesia assessed in PRD section 14; **umbrella since 15 Oct 2026**, children F-17.1 Agent platform, F-17.2 Knowledge bases, F-17.3 Study blocks, F-17.4 Admin console, F-17.5 Widget, nudges, localisation (`prd/F-17.x-*.md`, `erd/F-17.x-*.md`), architecture `docs/F-17-ARCHITECTURE.md`, build order `docs/F-17-BUILD-WAVES.md` |
 
 Index, build waves and open decisions: `docs/product/README.md`. Implementation audit: `docs/product/validation/`.
 

@@ -8,12 +8,11 @@ import type { DeviceRegistration } from './schemas'
 /** The body of `POST devices/` for this browser. */
 export function buildRegistration(subscription: PushSubscriptionLike, environment: Environment): DeviceRegistration {
   return {
-    ...toDeviceKeys(subscription),
+    subscription: toDeviceKeys(subscription),
     platform: environment.platform,
     browser: environment.browser,
     display_mode: environment.displayMode,
     sw_version: BUILD_VERSION,
-    label: environment.label,
   }
 }
 

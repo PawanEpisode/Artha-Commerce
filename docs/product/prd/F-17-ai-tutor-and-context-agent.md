@@ -10,6 +10,39 @@
 | Supersedes | X-02 in the feature map (this document is X-02, widened) |
 | Flags | `ai_tutor` (R1, text agent), `tutor_actions` (R2), `tutor_voice` (R3), `tutor_avatar` (R4). All fail closed on API and web |
 
+## 0. Restructure of 2026-10-15 (read this first)
+
+F-17 is now an **umbrella**. The student chat agent (the four study blocks, the knowledge bases, the admin console, the widget, nudges and localisation) is specified in five child PRDs and ERDs and is built in waves W1 to W11. This document keeps ownership of everything the children do not cover: the command bar and navigation, actions with confirmation, memory and study modes, voice, the avatar, vendor assessment (sections 14 and appendix), and the cross-cutting risks.
+
+| Child | PRD | ERD | Owns |
+| --- | --- | --- | --- |
+| F-17.1 Agent platform | `prd/F-17.1-agent-platform.md` | `erd/F-17.1-agent-platform.md` | Turn runtime, admission, quotas and budgets, routing, instructions, rules, model profiles, grounding and verification, language engine, releases, evaluation, privacy |
+| F-17.2 Knowledge bases | `prd/F-17.2-knowledge-bases-and-ingestion.md` | `erd/F-17.2-knowledge-bases-and-ingestion.md` | Four global knowledge bases, sources, licences, extractors, pipeline, hybrid retrieval, freshness, regimes, gold sets |
+| F-17.3 Study blocks | `prd/F-17.3-study-blocks.md` | `erd/F-17.3-study-blocks.md` | Block SDK, Ask AI, Formula, Law Sections, Numerical, cards, stores, verifiers |
+| F-17.4 Admin console | `prd/F-17.4-admin-console.md` | `erd/F-17.4-admin-console.md` | `/admin/tutor`, scopes, audit, releases UI, alerts, reports |
+| F-17.5 Widget, nudges, localisation | `prd/F-17.5-widget-nudges-localisation.md` | `erd/F-17.5-widget-nudges-localisation.md` | `<artha-tutor>` element, nudge engine, English, Hindi and Hinglish |
+
+Architecture and decisions: `docs/F-17-ARCHITECTURE.md` (ADR-1 to ADR-13). Build order and the owner checklist: `docs/F-17-BUILD-WAVES.md`.
+
+**Requirements that moved or changed** (the child document wins where it differs from the text below):
+
+| Here | Now owned by | Change |
+| --- | --- | --- |
+| FR-F17-01 to 11 (conversations, grounding, citations, language, persona, disclaimer, history, regenerate, feedback) | F-17.1 groups A to J and F-17.5 groups B and D | Same intent; streaming uses fetch-based SSE from a container role, not `EventSource` |
+| FR-F17-30 to 37 (knowledge sources, rights, hybrid retrieval, freshness, token budget) | F-17.2 | Platform content is now four partitioned knowledge bases (`tutorkb_*`); `tutor_chunk` is removed |
+| FR-F17-34 (hybrid retrieval) | F-17.2 FR-KB-60 to 70 | Full text plus vector with rank fusion, filtered recall tested against exact search |
+| FR-F17-60 (evaluation harness) | F-17.1 section I and F-17.3 FR-SB-95 | Packs per block, hard release gates |
+| FR-F17-66, 68, 72 (consent, kill switches and budgets, plans) | F-17.1 FR-AP-11 to 19 | Kill switches and budgets are database rows editable in the admin console (environment variables remain as a hard ceiling) |
+| FR-F17-72 plan codes | F-17.1 | `free`, `pro`, `pro_max`, `staff`; `pro_max` is not yet in `docs/BILLING-PLAN.md` (open question Q-AP-1) |
+| FR-F17-38 to 43 (context, memory, modes) | Still here (R2), plugging into F-17.1 through `private_sources` and the instruction layers | Study modes of F-17.3 (`explain`, `quick`, `exam`, hints) cover part of FR-F17-42 |
+| FR-F17-12 to 17 (command bar, navigation), FR-F17-20 to 28 (actions), FR-F17-44 to 59 (voice, avatar) | Still here, unchanged | They hook into the F-17.5 widget events and the F-17.1 turn runtime when their releases start |
+
+**Flags.** `ai_tutor` stays the master flag (R1). New: `ai_tutor_block_ask`, `ai_tutor_block_formula`, `ai_tutor_block_law`, `ai_tutor_block_numerical`, `ai_tutor_nudges` (all strict, fail closed). `tutor_actions`, `tutor_voice` and `tutor_avatar` are unchanged.
+
+**Release mapping.** This document's R1 is delivered by waves W1 to W7 of the build-waves document (platform, knowledge, runtime, widget, control, and the first three blocks). R2 (actions, memory, pgvector for platform content) now reuses F-17.2 for content, so only actions, memory and modes remain. R3 and R4 (voice, avatar) are unchanged and start after W11.
+
+**Open items from this restructure:** the brief's attached image is still needed (it may change block naming or the nudge layout); Pro Max plan; the `school` course in F-02 and F-16; F-14 amendments feeding the tutor (Q-KB-11).
+
 Tags as in the feature map: `[NOTE]` the founder's words, `[ADD]` our proposal, `[NEW]` added by this document, `[?]` interpreted. Vendor facts marked "verified" were read from the vendors' own pages on 2026-10-11 (section 14); anything not stated there is marked "to confirm" and is a spike or an owner action in section 12.
 
 ## 1. Problem and goal

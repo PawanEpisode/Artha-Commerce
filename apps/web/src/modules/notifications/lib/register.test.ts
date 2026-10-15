@@ -28,13 +28,11 @@ const browser = (permission: 'granted' | 'default' | 'denied', current: PushSubs
 describe('buildRegistration', () => {
   it('matches the POST devices/ contract', () => {
     expect(buildRegistration(subscription, environment)).toEqual({
-      endpoint: 'https://push.example.test/abc',
-      keys: { p256dh: 'P', auth: 'A' },
+      subscription: { endpoint: 'https://push.example.test/abc', keys: { p256dh: 'P', auth: 'A' } },
       platform: 'android',
       browser: 'chrome',
       display_mode: 'browser',
       sw_version: 'dev',
-      label: 'Chrome on Android',
     })
   })
 })
@@ -45,7 +43,9 @@ describe('syncCurrentDevice', () => {
     await expect(syncCurrentDevice({ browser: browser('granted', subscription), environment, register })).resolves.toBe(
       'dev-1',
     )
-    expect(register).toHaveBeenCalledWith(expect.objectContaining({ endpoint: 'https://push.example.test/abc' }))
+    expect(register).toHaveBeenCalledWith(
+      expect.objectContaining({ subscription: expect.objectContaining({ endpoint: 'https://push.example.test/abc' }) }),
+    )
   })
 
   it('does nothing without permission or without a subscription', async () => {

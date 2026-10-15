@@ -114,13 +114,11 @@ describe('devices', () => {
   it('registers with the whole contract and returns only the id', async () => {
     api.mockResolvedValue({ device_id: 'd1' })
     const body = {
-      endpoint: 'https://push.example.test/x',
-      keys: { p256dh: 'P', auth: 'A' },
+      subscription: { endpoint: 'https://push.example.test/x', keys: { p256dh: 'P', auth: 'A' } },
       platform: 'android',
       browser: 'chrome',
       display_mode: 'browser',
       sw_version: 'abc1234',
-      label: 'Chrome on Android',
     }
     await expect(registerDevice(body)).resolves.toBe('d1')
     expect(api).toHaveBeenLastCalledWith('/notifications/devices/', { method: 'POST', body: JSON.stringify(body) })
