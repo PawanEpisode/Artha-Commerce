@@ -13,21 +13,7 @@ import type {
 } from './types'
 
 export async function getMcqHome(): Promise<McqHomeData> {
-  const path = '/mcq/home/'
-  try {
-    return await api<McqHomeData>(path)
-  } catch {
-    const res = await publicApi<McqHomeData>(path)
-    return (
-      res ?? {
-        course: 'cma',
-        level: 'intermediate',
-        subjects: [],
-        open_sessions: [],
-        suggestion: null,
-      }
-    )
-  }
+  return await api<McqHomeData>('/mcq/home/')
 }
 
 export async function getSubjectTiles(
@@ -40,13 +26,8 @@ export async function getSubjectTiles(
 
   const qs = query.toString()
   const path = `/mcq/subjects/${subjectKey}/tiles/${qs ? `?${qs}` : ''}`
-  try {
-    const res = await api<{ items: ChapterTile[] }>(path)
-    return res.items
-  } catch {
-    const res = await publicApi<{ items: ChapterTile[] }>(path)
-    return res?.items ?? []
-  }
+  const res = await api<{ items: ChapterTile[] }>(path)
+  return res.items
 }
 
 export async function getChapterDetail(
@@ -60,11 +41,7 @@ export async function getChapterDetail(
 
   const qs = query.toString()
   const path = `/mcq/subjects/${subjectKey}/chapters/${chapterKey}/${qs ? `?${qs}` : ''}`
-  try {
-    return await api<ChapterDetailData>(path)
-  } catch {
-    return await publicApi<ChapterDetailData>(path)
-  }
+  return await api<ChapterDetailData>(path)
 }
 
 export async function listMcqSets(filter: McqFilter = {}): Promise<McqSetCard[]> {

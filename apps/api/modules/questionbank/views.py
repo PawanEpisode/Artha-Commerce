@@ -164,11 +164,10 @@ class QuestionReviewView(QuestionBankBaseView):
             raise Http404("Question not found.")
 
         version_id = request.query_params.get("version_id")
-        if not version_id:
-            playable = get_playable(pk)
-            version_id = str(playable.version_id)
-
         try:
+            if not version_id:
+                playable = get_playable(pk)
+                version_id = str(playable.version_id)
             rev_view = get_review_view(pk, uuid.UUID(version_id))
         except Exception:
             raise Http404("Question review not found.") from None

@@ -227,6 +227,8 @@ def list_sessions(
     user_id: uuid.UUID,
     *,
     status: str | None = None,
+    mode: str | None = None,
+    origin: str | None = None,
     cursor: str | None = None,
     limit: int = 20,
 ) -> Page[SessionRow]:
@@ -234,6 +236,10 @@ def list_sessions(
     qs = Session.objects.filter(user_id=user_id)
     if status:
         qs = qs.filter(status=status)
+    if mode:
+        qs = qs.filter(mode=mode)
+    if origin:
+        qs = qs.filter(origin_module=origin)
 
     qs = qs.order_by("-created_at", "-id")
 

@@ -240,6 +240,9 @@ class Command(BaseCommand):
                     state=QuestionVersion.State.LIVE,
                     stem_md=stem,
                 )
+                q.live_version = qv
+                q.current_version = qv
+                q.save(update_fields=["live_version", "current_version"])
                 for opt_idx, (opt_k, opt_t) in enumerate(opts, start=1):
                     Option.objects.create(
                         version=qv,

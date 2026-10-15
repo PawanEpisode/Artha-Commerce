@@ -71,12 +71,12 @@ def pick_mcq_blueprint(ctx: PickContext) -> list[PickedItem]:
 
         chapters = list(
             Chapter.objects.filter(
-                subject__code=validated.subject_key,
-                scheme__status="published",
+                subject__key=validated.subject_key,
+                subject__scheme__status="published",
             ).order_by("sort_order")
         )
         if not chapters:
-            chapters = list(Chapter.objects.filter(subject__code=validated.subject_key).order_by("sort_order"))
+            chapters = list(Chapter.objects.filter(subject__key=validated.subject_key).order_by("sort_order"))
 
         ch_keys = [str(c.id) for c in chapters]
         weights = [float(c.marks_max or c.marks_min or 5) for c in chapters]

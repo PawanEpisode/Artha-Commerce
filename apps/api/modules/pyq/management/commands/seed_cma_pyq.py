@@ -375,6 +375,9 @@ class Command(BaseCommand):
                             state=QuestionVersion.State.LIVE,
                             stem_md=qdata["stem"],
                         )
+                        qb_q.live_version = qv
+                        qb_q.current_version = qv
+                        qb_q.save(update_fields=["live_version", "current_version"])
                         for opt_idx, (opt_key, opt_text) in enumerate(qdata["options"], start=1):
                             Option.objects.create(
                                 version=qv,

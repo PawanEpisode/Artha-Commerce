@@ -339,14 +339,21 @@ def facets(
     return res
 
 
-def can_view(viewer_id: uuid.UUID | None, question_id: uuid.UUID, *, token: str | None = None) -> bool:
+def can_view(viewer_id: uuid.UUID | str | None, question_id: uuid.UUID, *, token: str | None = None) -> bool:
     """Visibility rule: true if owner, public+active, valid share link token, or staff."""
     question = Question.objects.filter(id=question_id).first()
     if not question:
         return False
 
-    if viewer_id and question.owner_user_id == viewer_id:
-        return True
+    if viewer_id:
+        if str(question.owner_user_id) == str(viewer_id):
+            return True
+        from modules.profiles.models import Profile
+        from modules.profiles.selectors import get_profile
+
+        profile = get_profile(viewer_id)
+        if profile and profile.role in {Profile.Role.EDITOR, Profile.Role.ADMIN}:
+            return True
 
     if question.visibility == Question.Visibility.PUBLIC and question.status == Question.Status.ACTIVE:
         return True
@@ -376,7 +383,12 @@ def get_playable(question_id: uuid.UUID, version_id: uuid.UUID | None = None) ->
     if version_id:
         version = QuestionVersion.objects.get(id=version_id, question=question)
     else:
-        version = question.live_version or question.current_version
+        version = (
+            question.live_version
+            or question.current_version
+            or question.versions.filter(state=QuestionVersion.State.LIVE).first()
+            or question.versions.order_by("-version_no").first()
+        )
         if not version:
             raise ValueError(f"Question {question_id} has no version.")
 
@@ -434,7 +446,16 @@ def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uu
     res: dict[uuid.UUID, GradableQuestion] = {}
     for q_id, v_id in refs:
         q = Question.objects.get(id=q_id)
-        v = QuestionVersion.objects.get(id=v_id) if v_id else (q.live_version or q.current_version)
+        v = (
+            QuestionVersion.objects.get(id=v_id)
+            if v_id
+            else (
+                q.live_version
+                or q.current_version
+                or q.versions.filter(state=QuestionVersion.State.LIVE).first()
+                or q.versions.order_by("-version_no").first()
+            )
+        )
         if not v:
             continue
 

@@ -27,9 +27,9 @@ from .models import ExternalLog, McqSet, PatternProfile, RefSource, TestPreset
 
 def home(user_id: uuid.UUID) -> dict[str, Any]:
     """Returns MCQ Home view: suggestion, open sessions, due count, subject cards."""
-    enrollment = coverage_selectors.get_active_enrollment(user_id)
-    course_code = enrollment.course_code if enrollment else "cma"
-    level_code = enrollment.level_code if enrollment else "intermediate"
+    summary = coverage_selectors.course_summary(user_id)
+    course_code = summary.course_code if summary else "cma"
+    level_code = summary.level_code if summary else "intermediate"
 
     level = syllabus_selectors.get_level(course_code, level_code)
     scheme = syllabus_selectors.get_current_scheme(level) if level else None
@@ -161,16 +161,20 @@ def chapter_detail(
         )
 
     # Difficulty split
-    easy = qb_selectors.count_matching(user_id, {"chapter_id": chapter.id, "difficulty": 2, "kind_groups": ["choice"]})
-    med = qb_selectors.count_matching(user_id, {"chapter_id": chapter.id, "difficulty": 3, "kind_groups": ["choice"]})
-    hard = qb_selectors.count_matching(user_id, {"chapter_id": chapter.id, "difficulty": 5, "kind_groups": ["choice"]})
+    easy = qb_selectors.count_matching(
+        user_id, {"chapter_id": chapter.id, "difficulty": [2], "kind_groups": ["choice"]}
+    )
+    med = qb_selectors.count_matching(user_id, {"chapter_id": chapter.id, "difficulty": [3], "kind_groups": ["choice"]})
+    hard = qb_selectors.count_matching(
+        user_id, {"chapter_id": chapter.id, "difficulty": [5], "kind_groups": ["choice"]}
+    )
 
     # Sets in this chapter
     sets = list_sets(user_id, subject_key=subject_key, chapter_key=chapter_key).get("items", [])
 
     return {
         "chapter_id": str(chapter.id),
-        "chapter_key": chapter.code,
+        "chapter_key": chapter.key,
         "name": chapter.name,
         "section": getattr(chapter, "section", ""),
         "topics": topic_cards,
@@ -187,9 +191,9 @@ def suggest_quick_set(
     exclude_chapter_ids: Sequence[uuid.UUID] = (),
 ) -> dict[str, Any] | None:
     """Ranks chapters for quick-start recommendation."""
-    enrollment = coverage_selectors.get_active_enrollment(user_id)
-    course_code = enrollment.course_code if enrollment else "cma"
-    level_code = enrollment.level_code if enrollment else "intermediate"
+    summary = coverage_selectors.course_summary(user_id)
+    course_code = summary.course_code if summary else "cma"
+    level_code = summary.level_code if summary else "intermediate"
 
     chapters = list(
         Chapter.objects.filter(
@@ -214,7 +218,7 @@ def suggest_quick_set(
 
     ch_ids = [c.id for c in chapters]
     progress_map = practice_selectors.progress_by_chapter(user_id, ch_ids)
-    coverage_map = coverage_selectors.coverage_pct_by_chapters(user_id, ch_ids)
+    coverage_map = coverage_selectors.coverage_pct_by_chapter(user_id, ch_ids)
 
     now = timezone.now()
     metrics_list = []
@@ -232,8 +236,8 @@ def suggest_quick_set(
         metrics_list.append(
             ChapterMetrics(
                 chapter_id=str(c.id),
-                subject_key=c.subject.code if c.subject else "",
-                chapter_key=c.code,
+                subject_key=c.subject.key if c.subject else "",
+                chapter_key=c.key,
                 available=avail,
                 wrong_last=wrong,
                 due=due,
@@ -378,7 +382,7 @@ def preview_blueprint(user_id: uuid.UUID, spec: dict) -> dict[str, Any]:
         ]
         quotas = allocate_quotas(count, ch_keys, weights, availabilities)
     elif subject_key:
-        ch_objs = list(Chapter.objects.filter(subject__code=subject_key).order_by("sort_order"))
+        ch_objs = list(Chapter.objects.filter(subject__key=subject_key).order_by("sort_order"))
         ch_keys = [str(c.id) for c in ch_objs]
         weights = [float(c.marks_max or c.marks_min or 5) for c in ch_objs]
         availabilities = [

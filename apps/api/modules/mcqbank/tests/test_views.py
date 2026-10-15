@@ -30,6 +30,31 @@ def test_home_view(api, syllabus_tree):
 
 
 @pytest.mark.django_db
+def test_home_view_enrolled_with_suggestions(api, syllabus_tree):
+    from datetime import timedelta
+
+    from django.utils import timezone
+
+    from modules.coverage.services import create_enrollment
+    from modules.mcqbank.tests.conftest import USER
+
+    create_enrollment(
+        USER,
+        scheme_id=syllabus_tree.id,
+        exam_date=(timezone.now() + timedelta(days=60)).date(),
+        daily_minutes=120,
+    )
+    res = api.get("/mcq/home/")
+    assert res.status_code == 200
+    assert res.json_body["course"] == syllabus_tree.level.course.code
+    assert res.json_body["level"] == syllabus_tree.level.code
+    assert "suggestion" in res.json_body
+    if res.json_body["suggestion"]:
+        assert "chapter_id" in res.json_body["suggestion"]
+        assert "subject_key" in res.json_body["suggestion"]
+
+
+@pytest.mark.django_db
 def test_subject_tiles(api, syllabus_tree):
     course = syllabus_tree.level.course
     level = syllabus_tree.level
@@ -38,6 +63,21 @@ def test_subject_tiles(api, syllabus_tree):
     res = api.get(f"/mcq/subjects/{subject.key}/tiles/?course={course.code}&level={level.code}")
     assert res.status_code == 200
     assert isinstance(res.json_body, list)
+
+
+@pytest.mark.django_db
+def test_chapter_detail_view(api, syllabus_tree):
+    course = syllabus_tree.level.course
+    level = syllabus_tree.level
+    subject = syllabus_tree.subjects.first()
+    chapter = subject.chapters.first()
+
+    res = api.get(f"/mcq/subjects/{subject.key}/chapters/{chapter.key}/?course={course.code}&level={level.code}")
+    assert res.status_code == 200
+    assert res.json_body["chapter_id"] == str(chapter.id)
+    assert res.json_body["chapter_key"] == chapter.key
+    assert "topics" in res.json_body
+    assert "difficulty_split" in res.json_body
 
 
 @pytest.mark.django_db
