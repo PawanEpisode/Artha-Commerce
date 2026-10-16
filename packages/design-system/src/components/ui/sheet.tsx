@@ -16,8 +16,10 @@ const sheetVariants = cva(
       side: {
         /** Thumb-reachable on phones. Safe-area padding keeps the last control above the home indicator. */
         bottom:
-          'inset-x-0 bottom-0 mx-auto max-h-[90dvh] w-full max-w-2xl rounded-t-2xl border-t p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] data-[state=open]:slide-in-from-bottom sm:p-6',
+          'inset-x-0 bottom-0 mx-auto max-h-[90dvh] w-full max-w-2xl rounded-t-xl border-t p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] data-[state=open]:slide-in-from-bottom sm:p-6',
         right: 'inset-y-0 right-0 h-dvh w-[min(26rem,100vw)] border-l p-5 data-[state=open]:slide-in-from-right sm:p-6',
+        /** The mobile app drawer: full height, no padding, the content brings its own. */
+        left: 'inset-y-0 left-0 h-dvh w-[min(10rem,75vw)] border-r p-0 data-[state=open]:slide-in-from-left',
       },
     },
     defaultVariants: { side: 'bottom' },
@@ -41,7 +43,7 @@ export function SheetContent({
         {children}
         <DialogPrimitive.Close
           aria-label="Close"
-          className="absolute top-3 right-3 grid size-11 cursor-pointer place-items-center rounded-lg text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
+          className="absolute top-2.5 right-2.5 grid size-9 cursor-pointer place-items-center rounded-md text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
         >
           <X className="size-4" aria-hidden />
         </DialogPrimitive.Close>

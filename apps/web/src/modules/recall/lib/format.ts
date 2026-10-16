@@ -46,3 +46,20 @@ export function minutesLabel(seconds: number): string {
   if (m < 1) return seconds > 0 ? 'Under a minute' : '0 min'
   return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60} min`
 }
+
+/**
+ * When a card is due, in a few words for a table cell: "Today", "Tomorrow", "In 5 d", "3 d overdue", or a date from two
+ * weeks out. Counts calendar days in the device's zone. A card with no due time (new, paused) gets a dash.
+ */
+export function dueLabel(iso: string | null | undefined, now: Date = new Date()): string {
+  if (!iso) return '-'
+  const due = new Date(iso)
+  if (Number.isNaN(due.getTime())) return '-'
+  const startOf = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime()
+  const days = Math.round((startOf(due) - startOf(now)) / 86_400_000)
+  if (days < 0) return `${-days} d overdue`
+  if (days === 0) return 'Today'
+  if (days === 1) return 'Tomorrow'
+  if (days < 14) return `In ${days} d`
+  return due.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
+}

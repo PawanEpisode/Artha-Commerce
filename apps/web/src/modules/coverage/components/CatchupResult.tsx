@@ -20,10 +20,10 @@ export function CatchupResult({ levelName, percent, startWith }: Props) {
     return () => cancelAnimationFrame(id)
   }, [percent])
   return (
-    <Card className="flex flex-col items-center gap-5 p-8 text-center">
+    <Card className="flex flex-col items-center gap-4 p-6 text-center">
       <ProgressRing value={shown} label="Coverage so far" size={160} strokeWidth={14} />
       <div role="status" className="space-y-2">
-        <p className="font-display text-xl font-bold">
+        <p className="text-base font-semibold">
           You have already covered {percent}% of {levelName}. {100 - percent}% to go.
         </p>
         {startWith ? (
@@ -37,7 +37,7 @@ export function CatchupResult({ levelName, percent, startWith }: Props) {
       </div>
       {todayOn ? (
         <div className="flex flex-col items-center gap-3">
-          <Button size="lg" asChild>
+          <Button asChild>
             <Link to="/app/today" search={{ from: 'onboarding' }}>
               See today's plan <ArrowRight />
             </Link>
@@ -47,7 +47,7 @@ export function CatchupResult({ levelName, percent, startWith }: Props) {
           </Button>
         </div>
       ) : (
-        <Button size="lg" asChild>
+        <Button asChild>
           <Link to="/app/syllabus">
             Open my syllabus map <ArrowRight />
           </Link>

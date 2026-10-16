@@ -13,10 +13,10 @@ export function ExclusionList({
   onChange: (s: SubjectRow, excluded: boolean) => void
 }) {
   return (
-    <Card className="space-y-4 p-6">
-      <div>
-        <h2 className="font-display text-xl font-bold">Papers you are not taking</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
+    <Card className="divide-y">
+      <div className="p-4">
+        <h2 className="text-sm font-semibold">Papers you are not taking</h2>
+        <p className="text-xs text-muted-foreground">
           Excluded papers are left out of your percentages. Your progress is kept, and comes back if you include them
           again. Elective papers are not listed here: choose yours on the syllabus map.
         </p>
@@ -27,11 +27,11 @@ export function ExclusionList({
           .map((s) => {
             const excluded = s.chapters_total === 0 && s.excluded_chapters > 0
             return (
-              <li key={s.id} className="flex items-center justify-between gap-4 py-3">
-                <Label htmlFor={`exclude-${s.id}`} className="min-w-0 flex-1 font-medium">
+              <li key={s.id} className="flex items-center justify-between gap-4 px-4 py-2">
+                <Label htmlFor={`exclude-${s.id}`} className="min-w-0 flex-1 text-[13px] font-medium">
                   {s.name}
                 </Label>
-                <span className="text-sm text-muted-foreground">{excluded ? 'Excluded' : 'Counted'}</span>
+                <span className="text-xs text-muted-foreground">{excluded ? 'Excluded' : 'Counted'}</span>
                 <Switch
                   id={`exclude-${s.id}`}
                   checked={excluded}

@@ -20,10 +20,17 @@ export function TestPushControl({
   const message = testStatusMessage(status)
   return (
     <div className="space-y-2">
-      <Button type="button" variant="outline" disabled={!canSend} loading={status.kind === 'sending'} onClick={onSend}>
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        disabled={!canSend}
+        loading={status.kind === 'sending'}
+        onClick={onSend}
+      >
         <Send aria-hidden /> Send me a test
       </Button>
-      <p role="status" aria-live="polite" className="text-sm text-muted-foreground">
+      <p role="status" aria-live="polite" className="text-xs text-muted-foreground">
         {message ?? (hasDevice ? '' : 'Turn on alerts on this device first, then you can send yourself a test.')}
       </p>
     </div>

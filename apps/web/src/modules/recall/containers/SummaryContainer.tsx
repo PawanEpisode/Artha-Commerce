@@ -11,11 +11,12 @@ function Summary({ sessionId }: { sessionId: string }) {
   const { data, loading, offline } = useSessionSummary(sessionId, sync.pending === 0 && !sync.syncing)
   if (loading) {
     return (
-      <div aria-busy="true" className="space-y-4">
+      <div aria-busy="true" className="space-y-2">
         <span className="sr-only" role="status">
           Loading your summary…
         </span>
-        <Skeleton className="h-40 w-full" />
+        <Skeleton className="h-8 w-1/2" />
+        <Skeleton className="h-20 w-full" />
       </div>
     )
   }
@@ -24,7 +25,7 @@ function Summary({ sessionId }: { sessionId: string }) {
       <Alert variant="info">
         <span className="flex flex-wrap items-center gap-3">
           We could not find that session on this device.
-          <ButtonLink variant="outline" asChild>
+          <ButtonLink variant="outline" size="sm" asChild>
             <Link to="/app/recall">Back to revision</Link>
           </ButtonLink>
         </span>

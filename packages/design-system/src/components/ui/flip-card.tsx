@@ -77,7 +77,7 @@ export function FlipCard({
   }
 
   return (
-    <div data-slot="flip-card" className={cn('grid gap-3', className)} {...props}>
+    <div data-slot="flip-card" className={cn('grid gap-2.5', className)} {...props}>
       <div
         role="group"
         aria-roledescription="flashcard"
@@ -145,7 +145,7 @@ function Face({ hidden, back = false, className, children, ...props }: FaceProps
       aria-hidden={hidden || undefined}
       inert={hidden}
       className={cn(
-        'col-start-1 row-start-1 grid min-h-48 content-center gap-3 rounded-2xl border border-border bg-card p-5 text-center shadow-soft outline-none [backface-visibility:hidden] focus-visible:ring-[3px] focus-visible:ring-ring/40 sm:p-8',
+        'col-start-1 row-start-1 grid min-h-48 content-center gap-3 rounded-xl border border-border bg-card p-4 text-center shadow-soft outline-none [backface-visibility:hidden] focus-visible:ring-2 focus-visible:ring-ring/50 sm:p-6',
         back && 'motion-safe:[transform:rotateY(180deg)]',
         hidden && 'pointer-events-none',
         className,

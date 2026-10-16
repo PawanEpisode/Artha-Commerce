@@ -56,7 +56,7 @@ const NAMES = [
 ]
 
 const many = NAMES.map((n, i) => row(i + 1, n, i === 0 ? { status: 'reading', coverage_pct: 40 } : {}))
-const items = () => screen.getAllByRole('listitem')
+const items = () => screen.getAllByRole('row').slice(1)
 
 describe('ChapterList search', () => {
   it('offers the search only when the paper is long enough to need it', () => {
@@ -85,7 +85,7 @@ describe('ChapterList search', () => {
     const box = screen.getByRole('searchbox', { name: 'Find a chapter' })
     await userEvent.type(box, 'zzz')
     expect(screen.getByText('No chapter matches.')).toBeInTheDocument()
-    expect(screen.queryAllByRole('listitem')).toHaveLength(0)
+    expect(screen.queryAllByRole('row')).toHaveLength(0)
     await userEvent.clear(box)
     expect(items()).toHaveLength(10)
   })

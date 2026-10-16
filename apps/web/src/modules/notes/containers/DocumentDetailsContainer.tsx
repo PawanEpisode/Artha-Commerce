@@ -159,7 +159,7 @@ function Loaded({ doc, onOpenChange }: { doc: DocumentDetail; onOpenChange: (ope
             <UnlockSectionContainer doc={doc} />
             <ReplaceSectionContainer doc={doc} />
             <section aria-labelledby="remove-h" className="space-y-3 rounded-xl border border-border p-4">
-              <h4 id="remove-h" className="font-display text-base font-bold">
+              <h4 id="remove-h" className="text-sm font-semibold">
                 Remove this PDF
               </h4>
               <p className="text-sm text-muted-foreground">

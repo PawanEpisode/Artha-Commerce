@@ -12,15 +12,15 @@ interface Props {
 export function TargetsView({ heading, rows, confirmed }: Props) {
   return (
     <>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-[13px] text-muted-foreground">
         {confirmed
           ? `${heading}. Every chapter counts toward these.`
           : 'You have not chosen your targets yet. The standard ones are in use.'}
       </p>
-      <ul className="grid grid-cols-3 gap-3">
+      <ul className="grid grid-cols-3 gap-2">
         {rows.map((row) => (
-          <li key={row.label} className="rounded-lg bg-muted/50 p-3 text-center">
-            <p className="font-display text-2xl font-bold tabular-nums">{row.count ?? 'Off'}</p>
+          <li key={row.label} className="rounded-md bg-muted/50 p-2 text-center">
+            <p className="text-lg font-semibold tabular-nums">{row.count ?? 'Off'}</p>
             <p className="text-xs text-muted-foreground">
               {row.count === null ? `${row.label} not tracked` : row.label}
             </p>
@@ -29,7 +29,7 @@ export function TargetsView({ heading, rows, confirmed }: Props) {
       </ul>
       <Link
         to="/app/settings/coverage"
-        className="mt-auto text-sm font-semibold text-primary underline-offset-4 hover:underline"
+        className="mt-auto text-[13px] font-medium text-primary underline-offset-4 hover:underline"
       >
         {confirmed ? 'Change targets' : 'Choose targets'}
       </Link>

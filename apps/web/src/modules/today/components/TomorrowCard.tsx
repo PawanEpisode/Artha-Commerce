@@ -11,14 +11,17 @@ export function TomorrowCard({ preview }: { preview: Preview }) {
   if (count === 0) return null
   const minutes = preview.minutes + preview.own_tasks.reduce((s, t) => s + t.est_minutes, 0)
   return (
-    <section aria-labelledby="tomorrow-heading" className="space-y-2 rounded-2xl border border-border bg-card p-4">
-      <h2 id="tomorrow-heading" className="flex items-center gap-2 font-display text-lg font-bold">
-        <CalendarClock aria-hidden className="size-5 text-primary" /> Tomorrow
+    <section
+      aria-labelledby="tomorrow-heading"
+      className="space-y-2 rounded-lg border border-border bg-card p-4 shadow-soft"
+    >
+      <h2 id="tomorrow-heading" className="flex items-center gap-2 text-sm font-semibold">
+        <CalendarClock aria-hidden className="size-4 text-primary" /> Tomorrow
       </h2>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-[13px] text-muted-foreground">
         {count === 1 ? '1 task' : `${count} tasks`}, about {formatMinutes(minutes)}. This may change.
       </p>
-      <ul className="space-y-1 text-sm">
+      <ul className="space-y-1 text-[13px]">
         {preview.tasks.map((t) => (
           <li key={`${t.kind}-${t.title}`} className="break-words">
             {t.title}
@@ -33,7 +36,7 @@ export function TomorrowCard({ preview }: { preview: Preview }) {
       <Link
         to={'/app/today/$date' as never}
         params={{ date: preview.date } as never}
-        className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold underline-offset-4 hover:underline"
+        className="inline-flex min-h-8 items-center gap-1 text-[13px] font-medium underline-offset-4 hover:underline pointer-coarse:min-h-11"
       >
         See tomorrow <ArrowRight aria-hidden className="size-4" />
       </Link>

@@ -34,7 +34,7 @@ export function InstallGuide({
       <InstallSteps />
       {finishFailed ? <Alert variant="error">{SAVE_FAILED}</Alert> : null}
       <AlertsActions>
-        <Button variant="outline" size="lg" loading={finishing} onClick={onContinue} className={WRAP_BUTTON}>
+        <Button variant="outline" loading={finishing} onClick={onContinue} className={WRAP_BUTTON}>
           Continue without alerts
         </Button>
       </AlertsActions>

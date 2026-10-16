@@ -26,15 +26,15 @@ export function DataSection() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">Your data</CardTitle>
+        <CardTitle>Your data</CardTitle>
         <CardDescription>Take a copy of everything we hold about you, or delete your account.</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="divide-y [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
         <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[13px] text-muted-foreground">
             A JSON file with your profile, setup answers, coverage and study history.
           </p>
-          <Button variant="outline" onClick={() => exporter.mutate()} disabled={exporter.isPending}>
+          <Button variant="outline" size="sm" onClick={() => exporter.mutate()} disabled={exporter.isPending}>
             <Download aria-hidden /> {exporter.isPending ? 'Preparing…' : 'Download my data'}
           </Button>
           {exporter.isError ? (
@@ -42,12 +42,13 @@ export function DataSection() {
           ) : null}
         </div>
 
-        <div className="space-y-2 border-t border-border pt-6">
-          <p className="text-sm text-muted-foreground">
+        <div className="space-y-2">
+          <p className="text-[13px] text-muted-foreground">
             Deleting removes your account and all of the above for good. You will type {CONFIRM_WORD} to confirm.
           </p>
           <Button
             variant="danger"
+            size="sm"
             onClick={() => {
               remove.reset()
               setConfirming(true)

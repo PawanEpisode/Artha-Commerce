@@ -165,7 +165,7 @@ export function FloatingToolbar({
               }
             }}
             className={cn(
-              'z-50 flex max-w-[calc(100vw-1rem)] flex-wrap items-center gap-1 rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-(--shadow-lift) data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
+              'z-50 flex max-w-[calc(100vw-1rem)] flex-wrap items-center gap-1 rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-(--shadow-lift) data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
               className,
             )}
           >
@@ -198,7 +198,7 @@ export function FloatingToolbarSeparator({
   return (
     <ToolbarPrimitive.Separator
       data-slot="floating-toolbar-separator"
-      className={cn('mx-0.5 h-6 w-px shrink-0 bg-border', className)}
+      className={cn('mx-0.5 h-5 w-px shrink-0 bg-border', className)}
       {...props}
     />
   )

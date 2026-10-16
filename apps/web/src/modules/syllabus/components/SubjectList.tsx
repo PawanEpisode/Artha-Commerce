@@ -34,7 +34,7 @@ function SubjectCard({ course, level, subject }: { course: string; level: string
               {subject.is_optional ? <Badge variant="outline">Optional</Badge> : null}
             </span>
           </span>
-          <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+          <ChevronRight aria-hidden className="size-4 shrink-0 text-muted-foreground" />
         </Link>
       </EntityListRow>
     </li>
@@ -55,11 +55,11 @@ export function SubjectList({ course, level, groups, subjects }: Props) {
     : [{ id: 'all', name: '', items: subjects }]
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {sections.map((section) => (
         <section key={section.id} aria-label={section.name || 'Papers'}>
-          {section.name ? <h2 className="mb-3 font-display text-xl font-bold">{section.name}</h2> : null}
-          <ul className="space-y-3">
+          {section.name ? <h2 className="mb-2 text-base font-semibold">{section.name}</h2> : null}
+          <ul className="space-y-1.5">
             {section.items.map((s) => (
               <SubjectCard key={s.id} course={course} level={level} subject={s} />
             ))}

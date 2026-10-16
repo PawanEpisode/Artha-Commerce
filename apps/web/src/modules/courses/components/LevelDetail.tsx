@@ -25,32 +25,32 @@ interface Props {
 export function LevelDetail({ course, level, syllabus, subjectCount, meta, report, prompt }: Props) {
   const count = subjectCount ?? level.subjects.length
   return (
-    <Container className="max-w-3xl py-16 sm:py-24">
-      <Button variant="outline" size="sm" className="mb-6" asChild>
+    <Container className="py-6 sm:py-8">
+      <Button variant="outline" size="sm" className="mb-4" asChild>
         <Link to="/courses/$course" params={{ course: course.slug }}>
           <ArrowLeft /> {course.name}
         </Link>
       </Button>
-      <h1 className="text-4xl font-extrabold sm:text-5xl">
+      <h1 className="text-xl font-semibold tracking-tight">
         {course.name} {level.name}
       </h1>
-      <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-lg text-muted-foreground">
-        <EntityBadge kind="paper" size="lg">
+      <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+        <EntityBadge kind="paper">
           {count} {count === 1 ? 'paper' : 'papers'}
         </EntityBadge>
         {syllabus
           ? 'Open a paper to see its chapters and weightage.'
           : `Syllabus shown is indicative; confirm the current scheme with ${course.body}.`}
       </p>
-      {meta ? <div className="mt-3">{meta}</div> : null}
-      {prompt ? <div className="mt-8">{prompt}</div> : null}
+      {meta ? <div className="mt-2">{meta}</div> : null}
+      {prompt ? <div className="mt-4">{prompt}</div> : null}
       {syllabus ? (
-        <div className="mt-10">{syllabus}</div>
+        <div className="mt-4">{syllabus}</div>
       ) : (
-        <ol className="mt-10 list-none space-y-3">
+        <ol className="mt-4 list-none space-y-1.5">
           {level.subjects.map((s, i) => (
             <li key={s}>
-              <EntityListRow kind="paper" className="flex items-center gap-4 p-4">
+              <EntityListRow kind="paper" className="flex items-center gap-3 p-3">
                 <EntityIndex kind="paper">{i + 1}</EntityIndex>
                 <EntityTitle className="min-w-0 flex-1 font-medium">{s}</EntityTitle>
               </EntityListRow>
@@ -58,7 +58,7 @@ export function LevelDetail({ course, level, syllabus, subjectCount, meta, repor
           ))}
         </ol>
       )}
-      {report ? <div className="mt-8">{report}</div> : null}
+      {report ? <div className="mt-4">{report}</div> : null}
     </Container>
   )
 }

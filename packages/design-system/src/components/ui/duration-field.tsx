@@ -106,7 +106,10 @@ export function DurationField({
   }
 
   const compact = size === 'compact'
-  const inputClass = cn('text-center tabular-nums', compact ? 'h-11 w-20 md:text-base' : 'h-12 w-24 text-lg md:text-lg')
+  const inputClass = cn(
+    'text-center tabular-nums',
+    compact ? 'h-8 w-16 pointer-coarse:h-11' : 'h-9 w-20 text-sm pointer-coarse:h-12 pointer-coarse:text-lg',
+  )
 
   return (
     <div
@@ -114,13 +117,13 @@ export function DurationField({
       aria-labelledby={legendId}
       aria-describedby={describedBy}
       data-slot="duration-field"
-      className={cn('grid gap-2', className)}
+      className={cn('grid gap-1.5', className)}
     >
-      <span id={legendId} className="text-sm leading-none font-semibold">
+      <span id={legendId} className="text-[13px] leading-none font-medium">
         {label}
         {required ? <span aria-hidden> *</span> : null}
       </span>
-      <div className="flex items-end gap-3">
+      <div className="flex items-end gap-2">
         <div className="grid gap-1">
           <Label htmlFor={`${id}-h`} className="text-xs font-medium text-muted-foreground">
             Hours
@@ -145,7 +148,7 @@ export function DurationField({
             onBlur={normalise}
           />
         </div>
-        <span aria-hidden className="pb-3 text-lg font-semibold text-muted-foreground">
+        <span aria-hidden className="pb-1.5 text-base font-semibold text-muted-foreground">
           :
         </span>
         <div className="grid gap-1">
@@ -173,12 +176,12 @@ export function DurationField({
         </div>
       </div>
       {hint ? (
-        <p id={hintId} className="text-sm text-muted-foreground">
+        <p id={hintId} className="text-xs text-muted-foreground">
           {hint}
         </p>
       ) : null}
       {error ? (
-        <p id={errorId} role="alert" className="text-sm font-medium text-destructive">
+        <p id={errorId} role="alert" className="text-xs font-medium text-destructive">
           {error}
         </p>
       ) : null}

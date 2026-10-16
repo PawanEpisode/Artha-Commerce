@@ -15,13 +15,15 @@ export function ContinueView({
   if (!chapter) {
     return (
       <>
-        <p className="text-sm text-muted-foreground">Your syllabus map shows every paper and chapter you can start.</p>
+        <p className="text-[13px] text-muted-foreground">
+          Your syllabus map shows every paper and chapter you can start.
+        </p>
         {onReturn ? (
-          <Button variant="outline" className="self-start" onClick={onReturn}>
+          <Button variant="outline" size="sm" className="self-start" onClick={onReturn}>
             Return to your last page
           </Button>
         ) : null}
-        <Link to="/app/syllabus" className={`mt-auto self-start ${buttonVariants({ variant: 'cta' })}`}>
+        <Link to="/app/syllabus" className={`mt-auto self-start ${buttonVariants({ variant: 'cta', size: 'sm' })}`}>
           Open the syllabus map
           <ArrowRight aria-hidden />
         </Link>
@@ -30,16 +32,16 @@ export function ContinueView({
   }
   return (
     <>
-      <div className="min-w-0 space-y-2">
-        <p className="text-sm text-muted-foreground">{chapter.subject.name}</p>
-        <p className="text-lg font-semibold break-words">{chapter.name}</p>
+      <div className="min-w-0 space-y-1.5">
+        <p className="text-[13px] text-muted-foreground">{chapter.subject.name}</p>
+        <p className="text-sm font-semibold break-words">{chapter.name}</p>
         <ProgressBar value={chapter.coverage_pct} label={`${chapter.name} coverage`} />
-        <p className="text-sm text-muted-foreground tabular-nums">{chapter.coverage_pct}% covered</p>
+        <p className="text-xs text-muted-foreground tabular-nums">{chapter.coverage_pct}% covered</p>
       </div>
       <Link
         to="/app/syllabus/$subject/$chapter"
         params={{ subject: chapter.subject.id, chapter: chapter.id }}
-        className={`mt-auto self-start ${buttonVariants({ variant: 'cta' })}`}
+        className={`mt-auto self-start ${buttonVariants({ variant: 'cta', size: 'sm' })}`}
       >
         Continue <span className="sr-only">{chapter.name}</span>
         <ArrowRight aria-hidden />

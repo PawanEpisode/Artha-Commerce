@@ -16,7 +16,7 @@ export function DialogContent({ className, children, ...props }: React.Component
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          'fixed top-1/2 left-1/2 z-50 max-h-[90dvh] w-[min(34rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border border-border bg-popover p-6 text-popover-foreground shadow-(--shadow-lift) outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
+          'fixed top-1/2 left-1/2 z-50 max-h-[90dvh] w-[min(32rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-xl border border-border bg-popover p-5 text-popover-foreground shadow-(--shadow-lift) outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
           className,
         )}
         {...props}
@@ -24,7 +24,7 @@ export function DialogContent({ className, children, ...props }: React.Component
         {children}
         <DialogPrimitive.Close
           aria-label="Close"
-          className="absolute top-3 right-3 grid size-11 cursor-pointer place-items-center rounded-lg text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
+          className="absolute top-2.5 right-2.5 grid size-8 cursor-pointer place-items-center rounded-md text-muted-foreground outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 pointer-coarse:size-11"
         >
           <X className="size-4" aria-hidden />
         </DialogPrimitive.Close>
@@ -34,11 +34,11 @@ export function DialogContent({ className, children, ...props }: React.Component
 }
 
 export function DialogTitle({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Title>) {
-  return <DialogPrimitive.Title className={cn('pr-10 font-display text-xl font-bold', className)} {...props} />
+  return <DialogPrimitive.Title className={cn('pr-10 font-display text-base font-semibold', className)} {...props} />
 }
 
 export function DialogDescription({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Description>) {
-  return <DialogPrimitive.Description className={cn('mt-1 text-sm text-muted-foreground', className)} {...props} />
+  return <DialogPrimitive.Description className={cn('mt-1 text-[13px] text-muted-foreground', className)} {...props} />
 }
 
 export function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
@@ -46,5 +46,5 @@ export function DialogHeader({ className, ...props }: React.ComponentProps<'div'
 }
 
 export function DialogFooter({ className, ...props }: React.ComponentProps<'div'>) {
-  return <div data-slot="dialog-footer" className={cn('mt-6 flex flex-wrap justify-end gap-2', className)} {...props} />
+  return <div data-slot="dialog-footer" className={cn('mt-5 flex flex-wrap justify-end gap-2', className)} {...props} />
 }

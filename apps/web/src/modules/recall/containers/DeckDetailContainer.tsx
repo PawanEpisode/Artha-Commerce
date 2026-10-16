@@ -1,10 +1,10 @@
-import { Alert, Badge, Button, Skeleton, toast } from '@artha/design-system'
+import { Alert, Badge, Button, PageHeader, Skeleton, toast } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 
 import { ApiError } from '~/lib/api'
 
-import { DeckItemRow } from '../components/DeckItemRow'
+import { DeckItemTable } from '../components/DeckItemRow'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import { ReportDialog } from '../components/ReportDialog'
 import { FollowToggle, OldSyllabusFlag, UpdateBanner } from '../components/UpdateBanner'
@@ -43,10 +43,10 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
         : null
   const newer = sub ? newerText(sub.newer_versions) : ''
   return (
-    <div className="space-y-3 rounded-2xl border border-border bg-card p-4 sm:p-5">
+    <div className="space-y-3 rounded-lg border border-border bg-card p-4 text-[13px]">
       {state === 'none' ? (
         <>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground">
             Adding this deck puts {cardsText(deck)} into your revision. Your progress stays with you if you remove it
             later.
           </p>
@@ -79,7 +79,7 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
       ) : null}
       {state === 'active' ? (
         <>
-          <p className="text-sm">
+          <p>
             <Badge variant="accent">Subscribed</Badge> <span className="ml-1">Version {sub?.version_no}</span>
           </p>
           {sub?.update_available ? (
@@ -128,6 +128,7 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
           ) : null}
           <Button
             variant="outline"
+            size="sm"
             loading={unsubscribe.isPending}
             onClick={() =>
               sub && unsubscribe.mutate(sub.id, { onSuccess: () => toast.success('Removed. Your progress is kept.') })
@@ -139,7 +140,7 @@ function SubscribeBar({ deck }: { deck: ApiDeck }) {
       ) : null}
       {state === 'archived' ? (
         <>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground">
             You removed this deck. Bring it back and your cards return with the progress you had.
           </p>
           <Button
@@ -165,8 +166,8 @@ function Detail({ deckId }: { deckId: string }) {
         <span className="sr-only" role="status">
           Loading the deck…
         </span>
-        <Skeleton className="h-10 w-2/3" />
-        <Skeleton className="h-32 w-full" />
+        <Skeleton className="h-8 w-2/3" />
+        <Skeleton className="h-40 w-full" />
       </div>
     )
   }
@@ -176,7 +177,7 @@ function Detail({ deckId }: { deckId: string }) {
       <Alert variant="error">
         <span className="flex flex-wrap items-center gap-3">
           This deck is not available.
-          <Button variant="outline" asChild>
+          <Button variant="outline" size="sm" asChild>
             <Link to="/app/recall/decks">Back to decks</Link>
           </Button>
         </span>
@@ -189,41 +190,44 @@ function Detail({ deckId }: { deckId: string }) {
   return (
     <>
       <nav aria-label="Breadcrumb">
-        <Link to="/app/recall/decks" className="text-sm text-muted-foreground hover:underline">
+        <Link to="/app/recall/decks" className="text-xs text-muted-foreground hover:underline">
           ← All decks
         </Link>
       </nav>
-      <header className="space-y-2">
-        <h1 className="text-3xl font-extrabold break-words">{deck.title}</h1>
-        {deck.description ? <p className="text-muted-foreground">{deck.description}</p> : null}
-        <p className="text-sm">
-          {cardsText(deck)}
-          {tiersText(deck.tiers) ? <span className="text-muted-foreground"> ({tiersText(deck.tiers)})</span> : null}
-        </p>
-        {deck.changelog_md ? (
-          <p className="text-xs text-muted-foreground">
-            Version {deck.version_no}: {deck.changelog_md}
-          </p>
-        ) : null}
-      </header>
-      <SubscribeBar deck={deck} />
-      <section aria-labelledby="deck-items-heading" className="space-y-3">
-        <h2 id="deck-items-heading" className="font-display text-xl font-bold">
-          What is inside
-        </h2>
-        <ul aria-label="Cards in this deck" className="space-y-3">
-          {items.map((item) => (
-            <DeckItemRow
-              key={item.item_id}
-              item={item}
-              onReport={(i) => {
-                report.reset()
-                setReporting(i)
-              }}
-            />
-          ))}
-        </ul>
-      </section>
+      <PageHeader
+        title={deck.title}
+        description={
+          <>
+            {deck.description ? <span className="block">{deck.description}</span> : null}
+            <span className="block">
+              {cardsText(deck)}
+              {tiersText(deck.tiers) ? <span> ({tiersText(deck.tiers)})</span> : null}
+            </span>
+            {deck.changelog_md ? (
+              <span className="block text-xs">
+                Version {deck.version_no}: {deck.changelog_md}
+              </span>
+            ) : null}
+          </>
+        }
+      />
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <section aria-labelledby="deck-items-heading" className="order-2 min-w-0 space-y-2 lg:order-1">
+          <h2 id="deck-items-heading" className="text-sm font-semibold">
+            What is inside
+          </h2>
+          <DeckItemTable
+            items={items}
+            onReport={(i) => {
+              report.reset()
+              setReporting(i)
+            }}
+          />
+        </section>
+        <div className="order-1 min-w-0 lg:order-2">
+          <SubscribeBar deck={deck} />
+        </div>
+      </div>
       <ReportDialog
         key={reporting?.item_id ?? 'none'}
         open={reporting !== null}

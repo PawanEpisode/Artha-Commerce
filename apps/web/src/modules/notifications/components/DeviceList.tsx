@@ -23,29 +23,29 @@ export function DeviceList({
 }) {
   if (devices.length === 0) {
     return (
-      <p className="text-sm text-muted-foreground">
+      <p className="text-[13px] text-muted-foreground">
         No device yet. Turn on alerts on this device above and it will appear here.
       </p>
     )
   }
   return (
-    <div className="space-y-3">
-      <p className="text-sm text-muted-foreground">
+    <div className="space-y-2">
+      <p className="text-xs text-muted-foreground">
         {devices.length} of {MAX_ACTIVE_DEVICES} devices
       </p>
-      <ul className="divide-y divide-border rounded-xl border border-border">
+      <ul className="divide-y divide-border rounded-lg border border-border">
         {devices.map((device) => {
           const name = device.label || 'Unnamed device'
           const mode = MODE_LABEL[device.display_mode]
           return (
-            <li key={device.id} className="flex flex-wrap items-center gap-x-4 gap-y-2 p-4">
-              <Smartphone aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+            <li key={device.id} className="flex flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-2">
+              <Smartphone aria-hidden className="size-4 shrink-0 text-muted-foreground" />
               <div className="min-w-0 flex-1">
-                <p className="flex flex-wrap items-center gap-2 text-sm font-medium break-words">
+                <p className="flex flex-wrap items-center gap-2 text-[13px] font-medium break-words">
                   {name}
                   {device.id === currentId ? <Badge variant="accent">This device</Badge> : null}
                 </p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {[mode, formatLastSeen(device.last_seen_at, now)].filter(Boolean).join(' · ')}
                 </p>
               </div>

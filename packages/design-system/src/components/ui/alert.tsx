@@ -4,7 +4,7 @@ import * as React from 'react'
 import { CircleAlert, CircleCheck, Info } from '../../icons'
 import { cn } from '../../lib/utils'
 
-const alertVariants = cva('flex items-start gap-3 rounded-xl border p-4 text-sm text-foreground', {
+const alertVariants = cva('flex items-start gap-2.5 rounded-lg border px-3 py-2.5 text-[13px] text-foreground', {
   variants: {
     variant: {
       info: 'border-input bg-secondary',

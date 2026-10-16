@@ -1,6 +1,6 @@
 import { BellRing, Button } from '@artha/design-system'
 
-import { WRAP_BUTTON } from './classes'
+import { CARD, WRAP_BUTTON } from './classes'
 
 interface Props {
   time: string
@@ -12,8 +12,8 @@ interface Props {
 /** Settings, while the daily digest is on (W3.7): what the student gets, and the way back to separate alerts. */
 export function DigestStatusCard({ time, busy, headingRef, onStop }: Props) {
   return (
-    <section aria-labelledby="digest-status-heading" className="space-y-4 rounded-2xl border border-border bg-card p-6">
-      <h2 id="digest-status-heading" ref={headingRef} tabIndex={-1} className="text-lg font-bold outline-none">
+    <section aria-labelledby="digest-status-heading" className={`${CARD} text-[13px]`}>
+      <h2 id="digest-status-heading" ref={headingRef} tabIndex={-1} className="text-sm font-semibold outline-none">
         Daily digest is on
       </h2>
       <p>

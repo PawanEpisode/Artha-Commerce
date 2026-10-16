@@ -24,20 +24,20 @@ export interface SegmentedBarProps {
 
 const variantBackgrounds: Record<SegmentVariant, string> = {
   primary: 'bg-primary text-primary-foreground',
-  success: 'bg-emerald-600 text-white',
+  success: 'bg-success text-primary-foreground',
   destructive: 'bg-destructive text-destructive-foreground',
-  warning: 'bg-amber-500 text-white',
+  warning: 'bg-warning text-primary-foreground',
   muted: 'bg-muted-foreground/30 text-foreground',
-  accent: 'bg-indigo-600 text-white',
+  accent: 'bg-accent text-accent-foreground',
 }
 
 const variantDot: Record<SegmentVariant, string> = {
   primary: 'bg-primary',
-  success: 'bg-emerald-600',
+  success: 'bg-success',
   destructive: 'bg-destructive',
-  warning: 'bg-amber-500',
+  warning: 'bg-warning',
   muted: 'bg-muted-foreground/50',
-  accent: 'bg-indigo-600',
+  accent: 'bg-accent',
 }
 
 export function SegmentedBar({
@@ -67,10 +67,10 @@ export function SegmentedBar({
         aria-valuenow={sumValues}
         aria-valuetext={textSummary || 'No data'}
         className={cn(
-          'flex w-full overflow-hidden rounded-full bg-muted/40 shadow-inner',
+          'flex w-full overflow-hidden rounded-full bg-muted/40',
           height === 'sm' && 'h-2',
-          height === 'md' && 'h-3.5',
-          height === 'lg' && 'h-5',
+          height === 'md' && 'h-2.5',
+          height === 'lg' && 'h-3.5',
         )}
       >
         {sumValues === 0 ? (

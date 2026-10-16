@@ -15,12 +15,12 @@ export function StatTile({ label, value, hint, className, ...props }: StatTilePr
   return (
     <div
       data-slot="stat-tile"
-      className={cn('rounded-xl border border-border bg-card p-4 shadow-soft', className)}
+      className={cn('rounded-lg border border-border bg-card p-3 shadow-soft', className)}
       {...props}
     >
-      <p className="text-sm font-medium text-muted-foreground">{label}</p>
-      <p className="mt-1 font-display text-2xl font-bold text-foreground tabular-nums">{value}</p>
-      {hint ? <p className="mt-1 text-xs text-muted-foreground">{hint}</p> : null}
+      <p className="text-xs font-medium text-muted-foreground">{label}</p>
+      <p className="mt-0.5 text-xl font-semibold text-foreground tabular-nums">{value}</p>
+      {hint ? <p className="mt-0.5 text-xs text-muted-foreground">{hint}</p> : null}
     </div>
   )
 }

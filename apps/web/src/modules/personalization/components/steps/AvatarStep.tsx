@@ -17,10 +17,10 @@ export function AvatarStep({ bootstrap, onDone }: StepProps) {
   const failure = skip.error ? describeStepError(skip.error) : null
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center gap-5">
-        <IdentityAvatar size={96} />
-        <p className="text-muted-foreground">
+    <div className="space-y-5">
+      <div className="flex items-center gap-3">
+        <IdentityAvatar size={44} />
+        <p className="min-w-0 text-[13px] text-muted-foreground">
           {chosen
             ? 'Looking good. You can change it any time in Account.'
             : 'Until you choose one, your initials show.'}
@@ -28,10 +28,8 @@ export function AvatarStep({ bootstrap, onDone }: StepProps) {
       </div>
       <AvatarEditor avatar={live.avatar} />
       {chosen ? (
-        <div className="flex flex-wrap gap-3">
-          <Button size="lg" onClick={onDone}>
-            Continue
-          </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button onClick={onDone}>Continue</Button>
         </div>
       ) : (
         <form

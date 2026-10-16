@@ -22,7 +22,7 @@ export function TargetsFields({ value, presets, limits, onChange, disabled }: Pr
     if (preset) onChange(targetsOfPreset(preset))
   }
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <PresetChips
         label="Study plan"
         value={active === 'custom' ? null : active}
@@ -30,12 +30,12 @@ export function TargetsFields({ value, presets, limits, onChange, disabled }: Pr
         disabled={disabled}
         options={presets.map((p) => ({ value: p.key, label: p.label, description: targetsLine(targetsOfPreset(p)) }))}
       />
-      <ul className="space-y-4">
+      <ul className="space-y-3">
         {TARGET_FIELDS.map((f) => (
           <li key={f.key} className="flex items-center justify-between gap-4">
             <div>
-              <p className="font-medium">{f.label}</p>
-              <p className="text-sm text-muted-foreground">{value[f.key] === 0 ? 'Not tracked' : f.hint}</p>
+              <p className="text-[13px] font-medium">{f.label}</p>
+              <p className="text-xs text-muted-foreground">{value[f.key] === 0 ? 'Not tracked' : f.hint}</p>
             </div>
             <NumberStepper
               label={f.label}
@@ -48,7 +48,7 @@ export function TargetsFields({ value, presets, limits, onChange, disabled }: Pr
           </li>
         ))}
       </ul>
-      {active === 'custom' ? <p className="text-sm text-muted-foreground">Custom plan.</p> : null}
+      {active === 'custom' ? <p className="text-xs text-muted-foreground">Custom plan.</p> : null}
     </div>
   )
 }

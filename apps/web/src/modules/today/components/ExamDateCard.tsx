@@ -29,15 +29,15 @@ export function ExamDateCard({ terms, today, pending, error, onPickTerm, onCusto
   return (
     <section
       aria-labelledby="exam-card-heading"
-      className="space-y-4 rounded-2xl border border-border bg-card p-4 sm:p-5"
+      className="space-y-3 rounded-lg border border-border bg-card p-4 shadow-soft"
     >
       <div className="flex items-start gap-3">
-        <CalendarClock aria-hidden className="mt-1 size-5 shrink-0 text-primary" />
+        <CalendarClock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
         <div className="min-w-0 space-y-1">
-          <h2 id="exam-card-heading" className="font-display text-lg font-bold">
+          <h2 id="exam-card-heading" className="text-sm font-semibold">
             Pick your attempt so we can pace you
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[13px] text-muted-foreground">
             With your exam date we plan more revision as it gets closer. You can change it later in your coverage
             settings.
           </p>
@@ -47,7 +47,7 @@ export function ExamDateCard({ terms, today, pending, error, onPickTerm, onCusto
       {terms.length > 0 ? (
         <div role="group" aria-label="Exam attempts" className="flex flex-wrap gap-2">
           {terms.map((term) => (
-            <Button key={term.id} variant="outline" disabled={pending} onClick={() => onPickTerm(term)}>
+            <Button key={term.id} variant="outline" size="sm" disabled={pending} onClick={() => onPickTerm(term)}>
               {term.name}
               {term.exam_start ? ` · ${formatDay(term.exam_start)}` : ''}
             </Button>
@@ -56,7 +56,7 @@ export function ExamDateCard({ terms, today, pending, error, onPickTerm, onCusto
       ) : null}
       {custom ? (
         <form
-          className="flex flex-wrap items-end gap-3"
+          className="flex flex-wrap items-end gap-2"
           onSubmit={(e) => {
             e.preventDefault()
             save()
@@ -71,7 +71,7 @@ export function ExamDateCard({ terms, today, pending, error, onPickTerm, onCusto
             onChange={(e) => setDate(e.target.value)}
             error={fieldError ?? undefined}
           />
-          <Button type="submit" disabled={pending}>
+          <Button type="submit" size="sm" disabled={pending}>
             {pending ? 'Saving' : 'Save date'}
           </Button>
         </form>

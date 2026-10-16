@@ -164,7 +164,7 @@ export function OcrDialog({
             </Button>
           ) : null}
           {startable && offer.fits ? (
-            <Button variant="cta" onClick={() => onStart()} loading={busy}>
+            <Button onClick={() => onStart()} loading={busy}>
               Make searchable
             </Button>
           ) : null}

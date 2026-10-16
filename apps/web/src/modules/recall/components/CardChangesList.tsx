@@ -30,9 +30,9 @@ export function CardChangesList({ changes, loading, failed, onRetry }: Props) {
   if (failed || !changes) return <LoadError what="what changed" onRetry={onRetry} />
   const waiting = waitingText(changes.waiting)
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {waiting ? <Alert variant="info">{waiting}</Alert> : null}
-      <ol className="space-y-3" aria-label="Versions of this card">
+      <ol className="space-y-2" aria-label="Versions of this card">
         {changes.versions.map((v, index) => {
           const older = changes.versions[index + 1]
           const segments = older && v.text && older.text ? diffWords(older.text, v.text) : []
@@ -40,7 +40,7 @@ export function CardChangesList({ changes, loading, failed, onRetry }: Props) {
           const olderNo = older?.version_no
           const open = shown === v.version_no
           return (
-            <li key={v.version_no} className="space-y-1 rounded-xl border border-border bg-card p-3 text-sm">
+            <li key={v.version_no} className="space-y-1 rounded-lg border border-border bg-card p-2.5 text-[13px]">
               <p className="flex flex-wrap items-center gap-2 font-semibold">
                 Version {v.version_no}
                 <Badge variant={v.current ? 'accent' : 'outline'}>{versionStatus(v)}</Badge>
@@ -72,8 +72,8 @@ export function CardChangesList({ changes, loading, failed, onRetry }: Props) {
       </ol>
       {changes.resets.length > 0 ? (
         <section aria-label="Times this card came back" className="space-y-1">
-          <h3 className="text-sm font-semibold">Times it came back for a re-check</h3>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <h3 className="text-[13px] font-semibold">Times it came back for a re-check</h3>
+          <ul className="list-disc space-y-1 pl-5 text-[13px] text-muted-foreground">
             {changes.resets.map((r) => (
               <li key={`${r.at}-${r.reason}`}>
                 {dayText(r.at)}: {resetReasonLabel(r.reason)}

@@ -29,7 +29,7 @@ ArthaCommerce has four theme preferences, stored in localStorage key `theme`:
 ## 2. UI design
 
 - [ ] Built from `@artha/design-system` primitives; checked the showcase before making anything new
-- [ ] Clear hierarchy: one primary action per view, consistent spacing scale, `rounded-lg/xl/2xl`
+- [ ] Clear hierarchy: one primary action per view, consistent spacing scale, `rounded-md` controls and `rounded-lg` panels, app text 13px, `font-semibold` headings
 - [ ] Loading, empty, error and success states exist and look designed
 - [ ] Motion explains change (150 to 600 ms) and is skipped under `prefers-reduced-motion`
 - [ ] Icons only from `@artha/design-system` (curated `icons.ts`, Lucide). Never import `lucide-react` directly (ESLint blocks it). Add a new icon to `icons.ts` first. Decorative icons get `aria-hidden`; icon-only buttons get an `aria-label`
@@ -39,7 +39,7 @@ ArthaCommerce has four theme preferences, stored in localStorage key `theme`:
 
 - [ ] Contrast: body text 7:1, UI text 4.5:1, borders of inputs and focus rings 3:1 in every theme (`pnpm check:contrast` must pass)
 - [ ] Visible `focus-visible` ring; full keyboard path; logical tab order; no keyboard traps
-- [ ] Touch targets at least 44 x 44 px on mobile
+- [ ] Touch targets: compact with a mouse (controls 28 to 32px), at least 44 x 44 px under `pointer-coarse:` (touch). Use the design-system primitives, which already switch; never shrink a hit area below that on touch
 - [ ] Every control has a label (`Label` / `TextField`); errors use `aria-invalid` and `aria-describedby`; live results use `aria-live`
 - [ ] Colour is never the only signal (add icon or text for status)
 - [ ] Semantic HTML first (`button`, `a`, `nav`, `main`, headings in order); ARIA only to fill gaps

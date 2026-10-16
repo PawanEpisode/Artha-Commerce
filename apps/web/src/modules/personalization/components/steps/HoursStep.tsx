@@ -25,7 +25,7 @@ export function HoursStep({ bootstrap, onDone }: StepProps) {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="space-y-8">
+    <form onSubmit={submit} noValidate className="space-y-5">
       <DurationField
         label="Study time per day"
         valueMinutes={minutes}
@@ -41,13 +41,13 @@ export function HoursStep({ bootstrap, onDone }: StepProps) {
               : undefined
         }
       />
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-2.5">
         <Checkbox id="use-as-goal" checked={asGoal} onCheckedChange={(v) => setAsGoal(v === true)} />
         <div>
-          <Label htmlFor="use-as-goal" className="text-base">
+          <Label htmlFor="use-as-goal" className="text-[13px]">
             Use this as my daily goal
           </Label>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             The time tracker will show your progress against it. An existing goal is never replaced.
           </p>
         </div>

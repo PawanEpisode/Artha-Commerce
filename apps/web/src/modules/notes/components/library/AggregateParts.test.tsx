@@ -12,6 +12,14 @@ import { FilterBar } from '../FilterBar'
 import { HighlightRow } from './HighlightRow'
 import { PageRangeEditor } from './PageRangeEditor'
 
+const inTable = {
+  wrapper: ({ children }: { children: React.ReactNode }) => (
+    <table>
+      <tbody>{children}</tbody>
+    </table>
+  ),
+}
+
 vi.mock('@tanstack/react-router', async () => (await import('~/test/router-stub')).routerStub)
 
 const legend = { y: 'Important', g: 'Formula', b: 'Section', p: 'Doubt', o: 'Example' }
@@ -33,7 +41,7 @@ const mark = (over: Partial<Row> = {}): Row => ({
 
 describe('HighlightRow', () => {
   it('shows the text, the colour NAME, the document and page, and opens at the mark', () => {
-    render(<HighlightRow row={mark()} colorName="Formula" documentTitle="Taxation module" />)
+    render(<HighlightRow row={mark()} colorName="Formula" documentTitle="Taxation module" />, inTable)
     expect(screen.getByRole('link', { name: /Credit on motor vehicles is blocked/ })).toHaveAttribute(
       'href',
       '/app/notes/pdf/doc-1?page=14&ann=m1',
@@ -49,6 +57,7 @@ describe('HighlightRow', () => {
         row={mark({ recall_card_id: 'c1', link: { ...UNFILED_LINK, moved_or_removed: true } })}
         documentTitle="Taxation module"
       />,
+      inTable,
     )
     expect(screen.getByText('Card')).toBeInTheDocument()
     expect(screen.getByText('Chapter moved or removed')).toBeInTheDocument()
@@ -57,6 +66,7 @@ describe('HighlightRow', () => {
   it('falls back to the comment, then to the kind, for a mark with no quote', () => {
     const { rerender } = render(
       <HighlightRow row={mark({ quote_exact: null, comment: 'Check with sir', kind: 'sticky' })} />,
+      inTable,
     )
     expect(screen.getByRole('link', { name: /Check with sir/ })).toBeInTheDocument()
     rerender(<HighlightRow row={mark({ quote_exact: null, comment: '', kind: 'area' })} />)

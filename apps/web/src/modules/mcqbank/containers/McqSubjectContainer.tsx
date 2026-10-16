@@ -1,8 +1,8 @@
-import { ArrowLeft, Badge, ButtonLink, Container, Skeleton, toast } from '@artha/design-system'
+import { Badge, EmptyState, Page, PageHeader, Skeleton, toast } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
-import { ChapterTileGrid } from '../components/ChapterTileGrid'
+import { ChaptersTable } from '../components/ChaptersTable'
 import { getSubjectTiles, startQuickPractice } from '../lib/api'
 import type { ChapterTile } from '../lib/types'
 
@@ -54,15 +54,12 @@ export function McqSubjectContainer({ subjectKey }: McqSubjectContainerProps) {
 
   if (isLoading) {
     return (
-      <Container className="space-y-6 py-8">
-        <Skeleton className="h-6 w-32" />
-        <Skeleton className="h-10 w-64" />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Skeleton className="h-44 w-full" />
-          <Skeleton className="h-44 w-full" />
-          <Skeleton className="h-44 w-full" />
+      <Page>
+        <div role="status" aria-busy="true" aria-label="Loading chapters" className="space-y-3">
+          <Skeleton className="h-8 w-64" />
+          <Skeleton className="h-48 w-full" />
         </div>
-      </Container>
+      </Page>
     )
   }
 
@@ -72,45 +69,34 @@ export function McqSubjectContainer({ subjectKey }: McqSubjectContainerProps) {
     .join(' ')
 
   return (
-    <Container className="space-y-8 py-8">
-      {/* Breadcrumb & Navigation */}
-      <div className="space-y-4">
-        <ButtonLink
-          asChild
-          variant="ghost"
-          size="sm"
-          className="-ml-2 gap-1.5 text-xs text-muted-foreground hover:text-foreground"
-        >
-          <Link to="/app/mcq">
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back to MCQ Bank
+    <Page>
+      <PageHeader
+        eyebrow={
+          <Link to="/app/mcq" className="hover:underline">
+            MCQ Bank
           </Link>
-        </ButtonLink>
+        }
+        title={
+          <span className="inline-flex items-center gap-2">
+            {subjectTitle}
+            <Badge variant="outline" className="font-mono uppercase">
+              {subjectKey}
+            </Badge>
+          </span>
+        }
+        description={`${totalAvailable} total MCQs across ${chapters.length} syllabus chapters (${totalAttempted} attempted).`}
+      />
 
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{subjectTitle}</h1>
-              <Badge variant="outline" className="font-mono text-xs uppercase">
-                {subjectKey}
-              </Badge>
-            </div>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {totalAvailable} total MCQs across {chapters.length} syllabus chapters ({totalAttempted} attempted).
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Chapters Grid */}
-      <div className="space-y-4">
-        <ChapterTileGrid
+      {chapters.length === 0 ? (
+        <EmptyState title="No chapters found for this subject." />
+      ) : (
+        <ChaptersTable
           chapters={chapters}
           subjectKey={subjectKey}
           onQuickPractice={handleQuickPractice}
           isStarting={isStarting}
         />
-      </div>
-    </Container>
+      )}
+    </Page>
   )
 }

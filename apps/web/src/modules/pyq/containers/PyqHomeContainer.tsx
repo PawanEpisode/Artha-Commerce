@@ -3,13 +3,15 @@ import {
   Badge,
   Button,
   ButtonLink,
-  Card,
   EmptyState,
   FileText,
+  FilterChip,
   Input,
-  Label,
+  Page,
+  PageHeader,
+  Search,
   SelectField,
-  Skeleton,
+  TableToolbar,
   toast,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
@@ -17,8 +19,9 @@ import * as React from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
 
-import { PaperCard } from '../components/PaperCard'
+import { PapersTable, PapersTableSkeleton } from '../components/PapersTable'
 import { listPapers, startPaperPractice } from '../lib/api'
+import { termLabel } from '../lib/labels'
 import type { PyqPaperCard, PyqSearch } from '../lib/types'
 
 interface PyqHomeContainerProps {
@@ -90,11 +93,11 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">
           The Previous Year Questions (PYQ) bank is currently under rollout and not yet available.
         </Alert>
-      </div>
+      </Page>
     )
   }
 
@@ -109,110 +112,118 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
     )
   })
 
+  const resetFilters = () => {
+    setLevelFilter('all')
+    setTermFilter('all')
+    setQuery('')
+  }
+
+  const activeFilters: Array<{ key: string; label: string; onRemove: () => void }> = []
+  if (query) activeFilters.push({ key: 'q', label: `Search: "${query}"`, onRemove: () => setQuery('') })
+  if (levelFilter !== 'all') {
+    const label = CMA_LEVELS.find((l) => l.value === levelFilter)?.label ?? levelFilter
+    activeFilters.push({ key: 'level', label: `Level: ${label}`, onRemove: () => setLevelFilter('all') })
+  }
+  if (termFilter !== 'all') {
+    const label = TERMS.find((t) => t.value === termFilter)?.label ?? termLabel(termFilter)
+    activeFilters.push({ key: 'term', label: `Term: ${label}`, onRemove: () => setTermFilter('all') })
+  }
+
   return (
-    <div className="mx-auto max-w-6xl space-y-6 px-4 py-8">
-      {/* Header */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Past Papers & PYQ Bank</h1>
-            <Badge variant="default" className="font-mono text-xs">
-              CMA 2022
-            </Badge>
-          </div>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Browse, simulate and practise original ICMAI exam papers with syllabus mappings and suggested solutions.
-          </p>
-        </div>
+    <Page>
+      <PageHeader
+        title={
+          <span className="inline-flex items-center gap-2">
+            Past Papers & PYQ Bank
+            <Badge className="font-mono">CMA 2022</Badge>
+          </span>
+        }
+        description="Browse, simulate and practise original ICMAI exam papers with syllabus mappings and suggested solutions."
+        actions={
+          <>
+            <ButtonLink asChild variant="outline" size="sm">
+              <Link to="/app/questions">Question Bank</Link>
+            </ButtonLink>
+            <ButtonLink asChild>
+              <Link to="/app/practice/new">Custom Practice</Link>
+            </ButtonLink>
+          </>
+        }
+      />
 
-        <div className="flex items-center gap-2">
-          <ButtonLink asChild variant="outline" size="sm">
-            <Link to="/app/practice/new">Custom Practice</Link>
-          </ButtonLink>
-          <ButtonLink asChild variant="outline" size="sm">
-            <Link to="/app/questions">Question Bank</Link>
-          </ButtonLink>
-        </div>
-      </div>
-
-      {/* Filter Toolbar */}
-      <Card className="p-4">
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div>
-            <Label htmlFor="pyq-query" className="mb-1 block text-xs font-medium text-muted-foreground">
-              Search by subject or paper code
-            </Label>
+      <div className="space-y-2">
+        <TableToolbar>
+          <div className="relative w-full sm:w-64">
+            <Search
+              aria-hidden
+              className="pointer-events-none absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2 text-muted-foreground"
+            />
             <Input
               id="pyq-query"
-              placeholder="e.g. Direct Tax, Law, Costing..."
+              type="search"
+              aria-label="Search by subject or paper code"
+              placeholder="Search subject or paper code"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              className="w-full pl-8 sm:w-64"
             />
           </div>
+          <SelectField
+            id="pyq-level"
+            aria-label="Exam level"
+            value={levelFilter}
+            onValueChange={setLevelFilter}
+            options={CMA_LEVELS}
+            className="w-44"
+          />
+          <SelectField
+            id="pyq-term"
+            aria-label="Exam term"
+            value={termFilter}
+            onValueChange={setTermFilter}
+            options={TERMS}
+            className="w-44"
+          />
+          {!loading && !error && (
+            <p aria-live="polite" className="text-xs text-muted-foreground tabular-nums sm:ml-auto">
+              Showing {filteredPapers.length}
+            </p>
+          )}
+        </TableToolbar>
 
-          <div>
-            <Label htmlFor="pyq-level" className="mb-1 block text-xs font-medium text-muted-foreground">
-              Exam Level
-            </Label>
-            <SelectField id="pyq-level" value={levelFilter} onValueChange={setLevelFilter} options={CMA_LEVELS} />
+        {activeFilters.length > 0 && (
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="text-xs text-muted-foreground">Active filters:</span>
+            {activeFilters.map((chip) => (
+              <FilterChip key={chip.key} removeLabel={`Remove ${chip.label}`} onRemove={chip.onRemove}>
+                {chip.label}
+              </FilterChip>
+            ))}
+            <Button type="button" variant="ghost" size="xs" onClick={resetFilters}>
+              Clear all
+            </Button>
           </div>
+        )}
+      </div>
 
-          <div>
-            <Label htmlFor="pyq-term" className="mb-1 block text-xs font-medium text-muted-foreground">
-              Exam Term
-            </Label>
-            <SelectField id="pyq-term" value={termFilter} onValueChange={setTermFilter} options={TERMS} />
-          </div>
-        </div>
-      </Card>
-
-      {/* Content State */}
       {error && <Alert variant="error">{error}</Alert>}
 
       {loading ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[...Array(6)].map((_, i) => (
-            <Card key={i} className="space-y-4 p-5">
-              <Skeleton className="h-6 w-3/4" />
-              <Skeleton className="h-4 w-1/2" />
-              <div className="flex justify-between border-t border-border pt-4">
-                <Skeleton className="h-8 w-24" />
-                <Skeleton className="h-8 w-28" />
-              </div>
-            </Card>
-          ))}
-        </div>
+        <PapersTableSkeleton />
       ) : filteredPapers.length === 0 ? (
         <EmptyState
           icon={<FileText aria-hidden className="size-6" />}
           title="No past papers match your filter"
           description="Try selecting a different level or term, or clear your search query."
           action={
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                setLevelFilter('all')
-                setTermFilter('all')
-                setQuery('')
-              }}
-            >
+            <Button variant="outline" size="sm" onClick={resetFilters}>
               Reset Filters
             </Button>
           }
         />
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredPapers.map((paper) => (
-            <PaperCard
-              key={paper.id}
-              paper={paper}
-              onStartPractice={handleStartPractice}
-              isStarting={startingPaperId === paper.id}
-            />
-          ))}
-        </div>
+        <PapersTable papers={filteredPapers} onStartPractice={handleStartPractice} startingPaperId={startingPaperId} />
       )}
-    </div>
+    </Page>
   )
 }

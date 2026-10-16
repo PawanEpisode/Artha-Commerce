@@ -3,7 +3,7 @@ import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 
 import { findLevel, loadCourse } from '~/modules/courses'
 import { publicPage } from '~/modules/layout'
-import { listMcqSets, SetCard } from '~/modules/mcqbank'
+import { listMcqSets, SetsTable } from '~/modules/mcqbank'
 import { buildHead } from '~/modules/seo'
 import { fetchSubject } from '~/modules/syllabus'
 
@@ -36,7 +36,7 @@ export const Route = createFileRoute('/courses/$course/$level/$subject/mcqs')({
     const { course, level, subject, sets } = Route.useLoaderData()
 
     return (
-      <Container className="space-y-8 py-8">
+      <Container className="space-y-6 py-8">
         <div className="space-y-4">
           <ButtonLink
             asChild
@@ -60,7 +60,9 @@ export const Route = createFileRoute('/courses/$course/$level/$subject/mcqs')({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{subject.name} MCQs</h1>
+                <h1 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                  {subject.name} MCQs
+                </h1>
                 <Badge variant="outline" className="font-mono text-xs uppercase">
                   {course.slug} {level.slug}
                 </Badge>
@@ -70,7 +72,7 @@ export const Route = createFileRoute('/courses/$course/$level/$subject/mcqs')({
               </p>
             </div>
 
-            <ButtonLink asChild size="default" className="font-semibold shadow">
+            <ButtonLink asChild>
               <Link to="/app/mcq/subjects/$subject" params={{ subject: subject.key }}>
                 Open Interactive Bank
               </Link>
@@ -79,11 +81,7 @@ export const Route = createFileRoute('/courses/$course/$level/$subject/mcqs')({
         </div>
 
         {sets.length > 0 ? (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sets.map((s) => (
-              <SetCard key={s.id} set={s} />
-            ))}
-          </div>
+          <SetsTable sets={sets} />
         ) : (
           <Card className="p-8 text-center text-muted-foreground">
             No public MCQ booklets currently published for this subject. Check back soon or open the interactive bank in

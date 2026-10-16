@@ -85,11 +85,11 @@ export function AlertsOutcomeCard({
       {children}
       {finishFailed ? <Alert variant="error">{SAVE_FAILED}</Alert> : null}
       <AlertsActions>
-        <Button variant="cta" size="lg" loading={finishing} onClick={onContinue}>
+        <Button variant="cta" loading={finishing} onClick={onContinue}>
           Continue
         </Button>
         {kind === 'dismissed' && onRetry ? (
-          <Button variant="outline" size="lg" disabled={finishing} onClick={onRetry} className={WRAP_BUTTON}>
+          <Button variant="outline" disabled={finishing} onClick={onRetry} className={WRAP_BUTTON}>
             <BellRing aria-hidden /> Turn on alerts after all
           </Button>
         ) : null}

@@ -1,4 +1,13 @@
-import { Alert, Button, DurationField, formatDuration, SelectField, Switch, TextField } from '@artha/design-system'
+import {
+  Alert,
+  Button,
+  DurationField,
+  formatDuration,
+  PageHeader,
+  SelectField,
+  Switch,
+  TextField,
+} from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { useSaveSettings } from '../hooks/useSessionActions'
@@ -63,12 +72,9 @@ function SettingsForm() {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Tracker settings</h1>
-        <p className="text-muted-foreground">How the timer and your reports behave.</p>
-      </header>
+      <PageHeader title="Tracker settings" description="How the timer and your reports behave." />
       <form
-        className="space-y-5 rounded-2xl border border-border bg-card p-6"
+        className="space-y-4 rounded-lg border border-border bg-card p-4"
         onSubmit={(e) => {
           e.preventDefault()
           submit()
@@ -96,8 +102,8 @@ function SettingsForm() {
             hint={`Between ${formatDuration(IDLE_MINUTES_MIN, 'long')} and ${formatDuration(IDLE_MINUTES_MAX, 'long')}.`}
           />
         ) : null}
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="grid gap-2">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-1.5">
             <label htmlFor="week-start" className="text-sm font-medium">
               Week starts on
             </label>
@@ -111,7 +117,7 @@ function SettingsForm() {
               ]}
             />
           </div>
-          <div className="grid gap-2">
+          <div className="grid gap-1.5">
             <label htmlFor="default-activity" className="text-sm font-medium">
               Default activity
             </label>
@@ -129,14 +135,14 @@ function SettingsForm() {
           onChange={(e) => setTz(e.target.value)}
           hint="An IANA name, for example Asia/Kolkata. Days and reports follow this zone."
         />
-        <div className="space-y-2 rounded-xl border border-border p-4">
+        <div className="space-y-2 rounded-lg border border-border p-3">
           <div className="flex items-center gap-3">
             <Switch id="auto-capture" checked={auto} onCheckedChange={setAuto} />
             <label htmlFor="auto-capture" className="text-sm font-medium">
               Log time on syllabus chapter pages automatically
             </label>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[13px] text-muted-foreground">
             Off by default. When on, while a chapter page is open, visible and in use, we save that time as study time
             (up to 4 hours a day). We store only the chapter, the start time and the length. We never read what is on
             your screen, and a running timer or time you logged yourself always comes first. You can edit or delete any
@@ -148,13 +154,14 @@ function SettingsForm() {
             <span role="alert">{error}</span>
           </Alert>
         ) : null}
-        <div className="flex flex-wrap gap-3">
-          <Button type="submit" variant="cta" loading={save.isPending}>
+        <div className="flex flex-wrap gap-2">
+          <Button type="submit" size="sm" variant="cta" loading={save.isPending}>
             Save settings
           </Button>
           <Button
             type="button"
             variant="outline"
+            size="sm"
             onClick={() =>
               void resetSettings()
                 .then(() => q.refetch())
@@ -167,16 +174,17 @@ function SettingsForm() {
         </div>
       </form>
 
-      <section aria-labelledby="data-heading" className="space-y-3 rounded-2xl border border-border bg-card p-6">
-        <h2 id="data-heading" className="text-lg font-bold">
+      <section aria-labelledby="data-heading" className="space-y-2 rounded-lg border border-border bg-card p-4">
+        <h2 id="data-heading" className="text-sm font-semibold">
           Your data
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           Download everything the tracker stores about you, or delete it for good. Deleting cannot be undone.
         </p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           <Button
             variant="outline"
+            size="sm"
             onClick={() => {
               notify.exportStarted('your data')
               void exportData()
@@ -196,6 +204,7 @@ function SettingsForm() {
           </Button>
           <Button
             variant="outline"
+            size="sm"
             onClick={() => {
               notify.exportStarted('sessions CSV')
               void downloadCsv('/tracking/sessions/export.csv', {}, 'study-sessions.csv')
@@ -208,6 +217,7 @@ function SettingsForm() {
           {confirmDelete ? (
             <Button
               variant="outline"
+              size="sm"
               className="border-destructive text-destructive"
               onClick={() =>
                 void deleteData()
@@ -221,7 +231,7 @@ function SettingsForm() {
               Yes, delete all my tracker data
             </Button>
           ) : (
-            <Button variant="outline" onClick={() => setConfirmDelete(true)}>
+            <Button variant="outline" size="sm" onClick={() => setConfirmDelete(true)}>
               Delete my data
             </Button>
           )}
@@ -232,5 +242,9 @@ function SettingsForm() {
 }
 
 export function TrackerSettingsContainer() {
-  return <TrackerShell>{() => <SettingsForm />}</TrackerShell>
+  return (
+    <TrackerShell width="form" tabs={false}>
+      {() => <SettingsForm />}
+    </TrackerShell>
+  )
 }

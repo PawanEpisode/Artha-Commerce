@@ -1,10 +1,26 @@
-import { Alert, Button, ButtonLink, CircleCheck, EmptyState, Layers, Skeleton, WifiOff } from '@artha/design-system'
+import {
+  Alert,
+  Button,
+  ButtonLink,
+  CircleCheck,
+  DataTable,
+  EmptyState,
+  Layers,
+  PageHeader,
+  Skeleton,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  WifiOff,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useMemo } from 'react'
 
 import { CatchUpNotice } from '../components/CatchUpNotice'
 import { ExamStrip } from '../components/ExamStrip'
-import { ForgottenRow } from '../components/ForgottenRow'
+import { ForgottenTable } from '../components/ForgottenRow'
 import { QueueSummary } from '../components/QueueSummary'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import { SyncStatus } from '../components/SyncStatus'
@@ -22,7 +38,7 @@ import type { TodayPlan } from '../lib/schemas'
 
 function StartLink({ label = 'Start reviewing', source = 'today' }: { label?: string; source?: string }) {
   return (
-    <ButtonLink size="lg" asChild>
+    <ButtonLink asChild>
       <Link to="/app/recall/review" search={{ source: source as 'today' }}>
         {label}
       </Link>
@@ -49,18 +65,19 @@ function HubBody({ plan }: { plan: TodayPlan }) {
 
   const hero =
     state === 'vacation' ? (
-      <section className="space-y-3 rounded-2xl border border-border bg-card p-5">
-        <h2 className="font-display text-xl font-bold">You are on vacation</h2>
-        <p className="text-sm text-muted-foreground">
+      <section className="space-y-3 rounded-lg border border-border bg-card p-4">
+        <h2 className="text-base font-semibold">You are on vacation</h2>
+        <p className="text-[13px] text-muted-foreground">
           Reviews are paused until {plan.vacation_until ? shortDate(plan.vacation_until) : 'you return'}. Your streak is
           safe and nothing piles up as overdue while you are away.
         </p>
-        <Button variant="outline" onClick={() => vacation.mutate(null)} disabled={vacation.isPending}>
+        <Button variant="outline" size="sm" onClick={() => vacation.mutate(null)} disabled={vacation.isPending}>
           End vacation now
         </Button>
       </section>
     ) : state === 'empty' ? (
       <EmptyState
+        className="rounded-lg py-6"
         icon={<Layers aria-hidden />}
         title="No revision cards yet"
         description="Select a line in your notes and choose Make a card. Cards you make appear here on the right day."
@@ -79,6 +96,7 @@ function HubBody({ plan }: { plan: TodayPlan }) {
       />
     ) : state === 'caught_up' ? (
       <EmptyState
+        className="rounded-lg py-6"
         icon={<CircleCheck aria-hidden />}
         title="All caught up"
         description={
@@ -100,8 +118,6 @@ function HubBody({ plan }: { plan: TodayPlan }) {
 
   return (
     <>
-      {hero}
-      {plan.exam ? <ExamStrip exam={plan.exam} /> : null}
       {plan.needs_chapter.count > 0 ? (
         <Alert variant="info">
           <span className="flex flex-wrap items-center gap-3">
@@ -130,48 +146,59 @@ function HubBody({ plan }: { plan: TodayPlan }) {
           <span role="status">Done. Your backlog is spread over the coming days.</span>
         </Alert>
       ) : null}
-      {plan.limits.new_done > 0 || plan.limits.reviews_done > 0 ? (
-        <p className="text-sm text-muted-foreground">
-          Today so far: {plural(plan.limits.reviews_done, 'review')} and {plural(plan.limits.new_done, 'new card')}.
-        </p>
-      ) : null}
-      {plan.forgotten.length > 0 ? (
-        <section aria-labelledby="forgotten-heading" className="space-y-3">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 id="forgotten-heading" className="font-display text-lg font-bold">
-              Slipping away
-            </h2>
-            <ButtonLink variant="outline" size="sm" asChild>
-              <Link to="/app/recall/review" search={{ source: 'forgotten' }}>
-                Review these
-              </Link>
-            </ButtonLink>
-          </div>
-          <ul className="space-y-3">
-            {plan.forgotten.slice(0, 3).map((f) => (
-              <ForgottenRow key={f.card_id} item={f} />
-            ))}
-          </ul>
-        </section>
-      ) : null}
-      {plan.tiles.length > 0 ? (
-        <section aria-labelledby="subjects-heading" className="space-y-3">
-          <h2 id="subjects-heading" className="font-display text-lg font-bold">
-            By subject
-          </h2>
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {plan.tiles.map((t) => (
-              <li
-                key={t.subject_key ?? 'none'}
-                className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm"
-              >
-                <span className="font-medium">{t.subject_key ?? 'Other'}</span>
-                <span className="text-muted-foreground">{plural(t.total, 'card')}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="min-w-0 space-y-4">
+          {hero}
+          {plan.limits.new_done > 0 || plan.limits.reviews_done > 0 ? (
+            <p className="text-[13px] text-muted-foreground">
+              Today so far: {plural(plan.limits.reviews_done, 'review')} and {plural(plan.limits.new_done, 'new card')}.
+            </p>
+          ) : null}
+          {plan.forgotten.length > 0 ? (
+            <section aria-labelledby="forgotten-heading" className="space-y-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h2 id="forgotten-heading" className="text-sm font-semibold">
+                  Slipping away
+                </h2>
+                <ButtonLink variant="outline" size="sm" asChild>
+                  <Link to="/app/recall/review" search={{ source: 'forgotten' }}>
+                    Review these
+                  </Link>
+                </ButtonLink>
+              </div>
+              <ForgottenTable items={plan.forgotten.slice(0, 5)} label="Cards slipping away" />
+            </section>
+          ) : null}
+        </div>
+        <div className="min-w-0 space-y-4">
+          {plan.exam ? <ExamStrip exam={plan.exam} /> : null}
+          {plan.tiles.length > 0 ? (
+            <section aria-labelledby="subjects-heading" className="space-y-2">
+              <h2 id="subjects-heading" className="text-sm font-semibold">
+                By subject
+              </h2>
+              <DataTable aria-labelledby="subjects-heading">
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Subject</TableHead>
+                    <TableHead className="text-right">Cards</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {plan.tiles.map((t) => (
+                    <TableRow key={t.subject_key ?? 'none'}>
+                      <TableCell className="font-medium">{t.subject_key ?? 'Other'}</TableCell>
+                      <TableCell className="text-right text-muted-foreground tabular-nums">
+                        {plural(t.total, 'card')}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </DataTable>
+            </section>
+          ) : null}
+        </div>
+      </div>
     </>
   )
 }
@@ -180,10 +207,11 @@ function HubBody({ plan }: { plan: TodayPlan }) {
 function OfflineHub() {
   const { pack, loading } = usePack()
   const planned = useMemo(() => (pack ? planFromPack(pack, nowDate()).cards.length : 0), [pack])
-  if (loading) return <Skeleton className="h-40 w-full" />
+  if (loading) return <Skeleton className="h-28 w-full" />
   if (!pack) {
     return (
       <EmptyState
+        className="rounded-lg py-6"
         icon={<WifiOff aria-hidden />}
         title="You are offline"
         description="Connect once to download your cards, then you can review without a connection."
@@ -191,9 +219,9 @@ function OfflineHub() {
     )
   }
   return (
-    <section className="space-y-3 rounded-2xl border border-border bg-card p-5">
-      <h2 className="font-display text-xl font-bold">{plural(planned, 'card')} on this device</h2>
-      <p className="text-sm text-muted-foreground">
+    <section className="space-y-3 rounded-lg border border-border bg-card p-4">
+      <h2 className="text-base font-semibold">{plural(planned, 'card')} on this device</h2>
+      <p className="text-[13px] text-muted-foreground">
         You are offline. Reviews are saved here and sync when you are back.
       </p>
       {planned > 0 ? <StartLink /> : null}
@@ -207,10 +235,7 @@ function Hub() {
   const sync = useSync()
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Revision</h1>
-        <p className="text-muted-foreground">Short reviews, spaced so you remember for the exam.</p>
-      </header>
+      <PageHeader title="Revision" description="Short reviews, spaced so you remember for the exam." />
       {sync.pending > 0 || !online ? (
         <SyncStatus
           pending={sync.pending}
@@ -221,12 +246,12 @@ function Hub() {
         />
       ) : null}
       {plan.isPending && online ? (
-        <div aria-busy="true" className="space-y-4">
+        <div aria-busy="true" className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
           <span className="sr-only" role="status">
             Loading today's revision…
           </span>
-          <Skeleton className="h-48 w-full" />
-          <Skeleton className="h-24 w-full" />
+          <Skeleton className="h-36 w-full" />
+          <Skeleton className="h-36 w-full" />
         </div>
       ) : plan.data ? (
         <HubBody plan={plan.data} />

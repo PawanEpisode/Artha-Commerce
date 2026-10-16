@@ -28,7 +28,7 @@ export function PageReadNotice({ page, quality, canImprove, working, message, on
           <span>{working ? `AI is reading page ${page}. You can keep reading.` : (message ?? quality.text)}</span>
         </p>
         {canImprove && !working ? (
-          <Button size="sm" className="min-h-11" onClick={onImprove}>
+          <Button size="sm" onClick={onImprove}>
             Improve this page
           </Button>
         ) : null}

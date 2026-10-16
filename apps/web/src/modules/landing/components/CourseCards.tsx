@@ -12,7 +12,7 @@ export function CourseCards() {
       title="Pick the institute you sit"
       description="One workspace for ICAI, ICSI and ICMAI. Foundation through Final, chapter by chapter, with the same coverage, hours and notes."
     >
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3">
         {courses.map((course, i) => {
           const story = courseStories[course.slug]
           const papers = paperCountForLevels(course.levels)
@@ -21,10 +21,10 @@ export function CourseCards() {
               <Link
                 to="/courses/$course"
                 params={{ course: course.slug }}
-                className="group block h-full rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40"
+                className="group block h-full rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
               >
-                <Card className="flex h-full flex-col p-7 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
-                  <span className="font-display text-5xl font-extrabold text-primary">{course.name}</span>
+                <Card className="flex h-full flex-col p-5 transition-colors group-hover:border-primary/50">
+                  <span className="text-3xl font-semibold text-primary">{course.name}</span>
                   <h3 className="mt-4 text-lg font-semibold">{course.fullName}</h3>
                   <p className="mt-2 text-sm leading-relaxed">{story.outcome}</p>
                   <p className="mt-3 text-sm text-muted-foreground">{story.insight}</p>

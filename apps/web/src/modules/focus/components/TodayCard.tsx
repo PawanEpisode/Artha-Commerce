@@ -1,4 +1,4 @@
-import { Card, CardContent, Flame, ProgressRing } from '@artha/design-system'
+import { Flame, StatTile } from '@artha/design-system'
 
 import { formatDuration } from '~/modules/tracker'
 
@@ -11,29 +11,32 @@ interface Props {
   rounds: number
 }
 
-/** Today at a glance: the shared daily goal (all study time counts), the streak and rounds finished. */
+/** Today at a glance as a stat row: the shared daily goal (all study time counts), rounds finished and the streak. */
 export function TodayCard({ doneSeconds, targetMinutes, percent, streak, rounds }: Props) {
   return (
-    <Card>
-      <CardContent className="flex flex-wrap items-center gap-6 p-6">
-        <ProgressRing value={percent} size={96} strokeWidth={9} label="Daily goal">
-          <span className="text-lg font-bold">{Math.round(percent)}%</span>
-        </ProgressRing>
-        <div className="min-w-0 flex-1 space-y-1">
-          <h2 className="text-lg font-bold">Today</h2>
-          <p className="text-sm text-muted-foreground">
-            {formatDuration(doneSeconds)} of {formatDuration(targetMinutes * 60)}. Stopwatch, manual and Pomodoro time
-            all count.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            {rounds === 1 ? '1 round' : `${rounds} rounds`} finished today
-          </p>
-        </div>
-        <p className="flex items-center gap-1.5 text-sm font-semibold" aria-label={`Streak: ${streak} days`}>
-          <Flame className="size-5 text-primary" aria-hidden />
-          {streak} {streak === 1 ? 'day' : 'days'}
-        </p>
-      </CardContent>
-    </Card>
+    <section aria-label="Today" className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <StatTile
+        className="col-span-2 p-3 shadow-none sm:col-span-1"
+        label="Daily goal"
+        value={`${Math.round(percent)}%`}
+        hint={`${formatDuration(doneSeconds)} of ${formatDuration(targetMinutes * 60)}. All study time counts.`}
+      />
+      <StatTile
+        className="p-3 shadow-none"
+        label="Rounds today"
+        value={rounds}
+        hint={`${rounds === 1 ? '1 round' : `${rounds} rounds`} finished today`}
+      />
+      <StatTile
+        className="p-3 shadow-none"
+        label="Streak"
+        value={
+          <span className="flex items-center gap-1.5">
+            <Flame className="size-5 text-primary" aria-hidden />
+            {streak} {streak === 1 ? 'day' : 'days'}
+          </span>
+        }
+      />
+    </section>
   )
 }

@@ -11,7 +11,7 @@ Audience: stressed, time-poor students, mostly on mobile, often at night. The pr
 2. **One primary action per screen.** Make "what do I do today?" the hero of the dashboard.
 3. **Progress is visible and honest.** Rings, bars and streaks update instantly with motion. Never invent numbers or testimonials.
 4. **Progressive disclosure.** Defaults first, advanced options behind a tap.
-5. **Mobile first.** Thumb-reachable actions, 44px targets, bottom sheets over modals, no hover-only features.
+5. **Mobile first.** Thumb-reachable actions, 44px targets on touch (compact with a mouse), bottom sheets over modals, no hover-only features.
 6. **Calm visual tone.** Generous whitespace, one accent per view, motion only to explain change. Respect reduced motion.
 7. **Forgiving.** Undo over confirm dialogs, autosave, resume where you left off.
 8. **Everything has a URL.** Shareable and bookmarkable: `/courses/ca/intermediate`, later `/app/planner`, `/app/tracker/advanced-accounting`.

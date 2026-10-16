@@ -27,9 +27,11 @@ const OCR_DEFAULTS: ReadonlyArray<{ value: OcrDefault; label: string }> = [
 
 function Row({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
   return (
-    <div className="space-y-2">
-      <h3 className="text-sm font-semibold">{title}</h3>
-      {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
+    <div className="space-y-2 p-4">
+      <div>
+        <h3 className="text-[13px] font-semibold">{title}</h3>
+        {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
+      </div>
       {children}
     </div>
   )
@@ -45,14 +47,16 @@ interface PdfSettingsSectionProps {
 export function PdfSettingsSection({ settings, saving, onChange }: PdfSettingsSectionProps) {
   const hindi = settings.capabilities?.ocr_hindi !== false
   return (
-    <Card className="space-y-6 p-6">
-      <h2 className="font-display text-xl font-bold">PDF reading</h2>
-      <LegendEditor
-        key={COLOR_KEYS.map((k) => settings.color_legend[k]).join('|')}
-        legend={settings.color_legend}
-        saving={saving}
-        onSave={(color_legend) => onChange({ color_legend })}
-      />
+    <Card className="divide-y">
+      <h2 className="p-4 text-sm font-semibold">PDF reading</h2>
+      <div className="p-4">
+        <LegendEditor
+          key={COLOR_KEYS.map((k) => settings.color_legend[k]).join('|')}
+          legend={settings.color_legend}
+          saving={saving}
+          onSave={(color_legend) => onChange({ color_legend })}
+        />
+      </div>
       <Row title="Default highlight colour" hint="The colour a new highlight starts with.">
         <SwatchPicker
           label="Default highlight colour"
@@ -70,7 +74,7 @@ export function PdfSettingsSection({ settings, saving, onChange }: PdfSettingsSe
           onValueChange={(page_tone) => onChange({ page_tone })}
         />
       </Row>
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-3 p-4">
         <Switch
           id="notes-finger-draws"
           checked={settings.finger_draws}
@@ -79,7 +83,7 @@ export function PdfSettingsSection({ settings, saving, onChange }: PdfSettingsSe
         />
         <div className="min-w-0 space-y-1">
           <Label htmlFor="notes-finger-draws">Draw with my finger</Label>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             Off by default so a finger scrolls the page. A stylus always draws.
           </p>
         </div>
@@ -118,8 +122,8 @@ export function PdfUsage({ usage, onManageStorage }: PdfUsageProps) {
   const storageFull = storageLimit > 0 && used.storage_bytes >= storageLimit
   const reset = resetDateText(usage.resets_on)
   return (
-    <Card className="space-y-4 p-6">
-      <h2 className="font-display text-xl font-bold">PDF space and monthly allowance</h2>
+    <Card className="space-y-3 p-4">
+      <h2 className="text-sm font-semibold">PDF space and monthly allowance</h2>
       <UsageBar
         label="PDF storage"
         used={used.storage_bytes}
@@ -155,7 +159,7 @@ export function PdfUsage({ usage, onManageStorage }: PdfUsageProps) {
         limit={l.exports_per_month ?? 0}
         fullText="Export limit reached"
       />
-      {reset ? <p className="text-sm text-muted-foreground">Monthly allowances reset on {reset}.</p> : null}
+      {reset ? <p className="text-xs text-muted-foreground">Monthly allowances reset on {reset}.</p> : null}
     </Card>
   )
 }

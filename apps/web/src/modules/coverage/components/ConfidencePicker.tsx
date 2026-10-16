@@ -35,11 +35,12 @@ export function ConfidencePicker({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locked])
   return (
-    <div className="space-y-3">
-      <div role="group" aria-label="How confident do you feel about this chapter?" className="flex flex-wrap gap-2">
+    <div className="space-y-2">
+      <div role="group" aria-label="How confident do you feel about this chapter?" className="flex flex-wrap gap-1.5">
         {ORDER.map((c) => (
           <Button
             key={c}
+            size="sm"
             type="button"
             variant={value === c ? 'secondary' : 'outline'}
             aria-pressed={value === c}
@@ -54,8 +55,8 @@ export function ConfidencePicker({
         ))}
       </div>
       {unlocked ? null : (
-        <p id={hintId} className="flex items-start gap-2 text-sm text-muted-foreground">
-          <Lock aria-hidden className="mt-0.5 size-4 shrink-0" />
+        <p id={hintId} className="flex items-start gap-2 text-xs text-muted-foreground">
+          <Lock aria-hidden className="mt-0.5 size-3.5 shrink-0" />
           {confidenceHint(coveragePct)}
         </p>
       )}

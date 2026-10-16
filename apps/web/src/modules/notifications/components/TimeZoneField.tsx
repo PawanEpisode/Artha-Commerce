@@ -17,9 +17,9 @@ export function TimeZoneField({
     <div className="space-y-2">
       <Label htmlFor="notification-timezone">Your time zone</Label>
       <SelectField id="notification-timezone" value={value} onValueChange={onChange} options={options} />
-      <p className="text-sm text-muted-foreground">Quiet hours and the daily nudge follow this time zone.</p>
+      <p className="text-xs text-muted-foreground">Quiet hours and the daily nudge follow this time zone.</p>
       {proposal ? (
-        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-input bg-secondary p-3 text-sm">
+        <div className="flex flex-wrap items-center gap-2 rounded-lg border border-input bg-secondary p-2.5 text-[13px]">
           <span className="min-w-0 flex-1">
             Your browser says you are in <strong>{proposal.replace(/_/g, ' ')}</strong>.
           </span>

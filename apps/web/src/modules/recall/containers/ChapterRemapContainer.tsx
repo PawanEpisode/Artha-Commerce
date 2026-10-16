@@ -1,7 +1,7 @@
-import { ButtonLink, CircleCheck, EmptyState, Skeleton } from '@artha/design-system'
+import { ButtonLink, CircleCheck, EmptyState, PageHeader, Skeleton } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
-import { ChapterRemapRow } from '../components/ChapterRemapList'
+import { ChapterRemapRow, ChapterRemapTable } from '../components/ChapterRemapList'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import { useChapterRemaps, useChooseChapter } from '../hooks/useUpdates'
 import { errorText } from '../lib/errors'
@@ -12,38 +12,36 @@ function Remaps() {
   const choose = useChooseChapter()
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Needs a new chapter</h1>
-        <p className="text-muted-foreground">
-          You moved to a new syllabus. Pick a chapter for each card that did not move by itself. Nothing about your
-          memory changes.
-        </p>
-      </header>
+      <PageHeader
+        title="Needs a new chapter"
+        description="You moved to a new syllabus. Pick a chapter for each card that did not move by itself. Nothing about your memory changes."
+      />
       {q.isPending ? (
-        <div aria-busy="true" className="space-y-3">
+        <div aria-busy="true" className="space-y-1">
           <span className="sr-only" role="status">
             Loading…
           </span>
-          <Skeleton className="h-28 w-full" />
-          <Skeleton className="h-28 w-full" />
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
         </div>
       ) : q.isError ? (
         <LoadError what="your cards" onRetry={() => void q.refetch()} />
       ) : q.data.items.length === 0 ? (
         <EmptyState
+          className="rounded-lg py-6"
           icon={<CircleCheck aria-hidden />}
           title="Every card has a chapter"
           description="Nothing is waiting for a chapter of your new syllabus."
           action={
-            <ButtonLink variant="outline" asChild>
+            <ButtonLink variant="outline" size="sm" asChild>
               <Link to="/app/recall">Back to revision</Link>
             </ButtonLink>
           }
         />
       ) : (
         <>
-          <p className="text-sm font-medium">{remapSummary(q.data.items)}</p>
-          <ul aria-label="Cards waiting for a chapter" className="space-y-3">
+          <p className="text-[13px] font-medium">{remapSummary(q.data.items)}</p>
+          <ChapterRemapTable>
             {q.data.items.map((item) => (
               <ChapterRemapRow
                 key={item.id}
@@ -58,7 +56,7 @@ function Remaps() {
                 onChoose={(chapterId) => choose.mutate({ remapId: item.id, chapterId, relation: item.relation })}
               />
             ))}
-          </ul>
+          </ChapterRemapTable>
         </>
       )}
     </>

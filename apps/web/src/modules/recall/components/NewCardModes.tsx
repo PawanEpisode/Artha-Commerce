@@ -9,7 +9,7 @@ export function NewCardModes({ search, extra }: { search: NewCardSearch; extra?:
   const importing = search.mode === 'import'
   return (
     <nav aria-label="How to add cards" className="flex flex-wrap gap-2">
-      <ButtonLink variant={importing ? 'outline' : 'default'} asChild>
+      <ButtonLink variant={importing ? 'outline' : 'default'} size="sm" asChild>
         <Link
           to="/app/recall/cards/new"
           search={{ ...search, mode: undefined }}
@@ -18,7 +18,7 @@ export function NewCardModes({ search, extra }: { search: NewCardSearch; extra?:
           One card
         </Link>
       </ButtonLink>
-      <ButtonLink variant={importing ? 'default' : 'outline'} asChild>
+      <ButtonLink variant={importing ? 'default' : 'outline'} size="sm" asChild>
         <Link
           to="/app/recall/cards/new"
           search={{ ...search, mode: 'import' }}

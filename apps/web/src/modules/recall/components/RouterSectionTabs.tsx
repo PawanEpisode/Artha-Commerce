@@ -12,7 +12,6 @@ export function RouterSectionTabs() {
       label="Revision sections"
       items={RECALL_SECTIONS.map((i) => ({ value: i.value, label: i.label, href: i.to }))}
       value={activeSection(pathname, RECALL_SECTIONS) ?? ''}
-      className="[&>div]:mx-auto [&>div]:max-w-3xl"
       renderLink={(item, props) => {
         const to = hrefs.get(item.value)
         return to ? <Link to={to} {...props} /> : null

@@ -1,6 +1,6 @@
 import { Button, Clock } from '@artha/design-system'
 
-import { WRAP_BUTTON } from './classes'
+import { CARD, WRAP_BUTTON } from './classes'
 
 interface Props {
   /** `offer`: the question. `done`: what happened, with Close. */
@@ -22,11 +22,8 @@ interface Props {
  */
 export function DigestOfferCard({ stage, time, message, busy, headingRef, onAccept, onDecline, onClose }: Props) {
   return (
-    <section
-      aria-labelledby="digest-offer-heading"
-      className="space-y-4 rounded-2xl border border-border bg-card p-5 sm:p-6"
-    >
-      <h2 id="digest-offer-heading" ref={headingRef} tabIndex={-1} className="text-lg font-bold outline-none">
+    <section aria-labelledby="digest-offer-heading" className={`${CARD} text-[13px]`}>
+      <h2 id="digest-offer-heading" ref={headingRef} tabIndex={-1} className="text-sm font-semibold outline-none">
         {stage === 'offer' ? 'Fewer alerts, one daily digest?' : 'Daily digest'}
       </h2>
       {stage === 'offer' ? (
@@ -36,7 +33,7 @@ export function DigestOfferCard({ stage, time, message, busy, headingRef, onAcce
             and what is due. Timer alerts still reach you, and everything else waits in your inbox. You can switch back
             any time in Settings.
           </p>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <Button variant="cta" loading={busy} onClick={onAccept} className={WRAP_BUTTON}>
               <Clock aria-hidden /> Switch to a daily digest
             </Button>
@@ -46,7 +43,7 @@ export function DigestOfferCard({ stage, time, message, busy, headingRef, onAcce
           </div>
         </>
       ) : (
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           <p className="min-w-0 flex-1">{message}</p>
           <Button variant="outline" onClick={onClose}>
             Close

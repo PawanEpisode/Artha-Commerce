@@ -85,6 +85,12 @@ const toHex = (rgb) =>
 // [foreground token, background token, minimum ratio, why]
 const REQUIRED = [
   ['foreground', 'background', 7, 'body text (AAA)'],
+  ['foreground', 'sidebar', 7, 'sidebar labels'],
+  ['muted-foreground', 'sidebar', 4.5, 'sidebar group labels and idle icons'],
+  ['foreground', 'sidebar-accent', 7, 'active and hovered sidebar item'],
+  ['muted-foreground', 'sidebar-accent', 4.5, 'secondary text on a hovered sidebar item'],
+  ['primary', 'sidebar', 4.5, 'primary accents in the sidebar'],
+  ['ring', 'sidebar', 3, 'focus indicator in the sidebar'],
   ['card-foreground', 'card', 7, 'text on cards (AAA)'],
   ['popover-foreground', 'popover', 4.5, 'menus'],
   ['primary-foreground', 'primary', 4.5, 'primary buttons'],

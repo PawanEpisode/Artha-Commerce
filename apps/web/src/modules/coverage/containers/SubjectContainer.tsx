@@ -5,8 +5,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  EntityBadge,
   Label,
+  PageHeader,
   ProgressBar,
   Skeleton,
   Switch,
@@ -32,7 +32,7 @@ function SubjectBody({ subjectId, search }: { subjectId: string; search: Subject
   // Same rule as the map: an explicit ?view wins, otherwise the student's saved default.
   const weighted = search.view ? search.view === 'weighted' : (overview?.weighted_default ?? false)
 
-  if (isPending) return <Skeleton className="h-64 w-full" />
+  if (isPending) return <Skeleton className="h-40 w-full" />
   if (isError || !data) return <Alert variant="error">This paper is not part of your syllabus.</Alert>
 
   const pct = pick(data.subject, weighted)
@@ -57,32 +57,30 @@ function SubjectBody({ subjectId, search }: { subjectId: string; search: Subject
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <header className="space-y-3">
-        <EntityBadge kind="paper" size="lg">
-          {data.subject.paper_number ? `Paper ${data.subject.paper_number}` : 'Paper'}
-        </EntityBadge>
-        <h1 className="font-display text-3xl font-extrabold break-words">{data.subject.name}</h1>
-        <p className="text-muted-foreground">
-          {paperSentence(pct, {
-            chaptersDone: data.subject.chapters_done,
-            chaptersStarted: data.subject.chapters_started,
-            chaptersTotal: data.subject.chapters_total,
-          })}
-        </p>
-        <ProgressBar size="lg" value={pct} label={`${data.subject.name} coverage`} />
-        <div className="flex items-center gap-2">
-          <Switch
-            id="subject-weighted-view"
-            checked={weighted}
-            onCheckedChange={(w) =>
-              void navigate({ search: (prev) => ({ ...prev, view: w ? 'weighted' : 'simple' }), replace: true })
-            }
-          />
-          <Label htmlFor="subject-weighted-view">Weight by marks</Label>
-        </div>
-      </header>
+      <PageHeader
+        eyebrow={data.subject.paper_number ? `Paper ${data.subject.paper_number}` : 'Paper'}
+        title={<span className="line-clamp-2 break-words whitespace-normal">{data.subject.name}</span>}
+        description={paperSentence(pct, {
+          chaptersDone: data.subject.chapters_done,
+          chaptersStarted: data.subject.chapters_started,
+          chaptersTotal: data.subject.chapters_total,
+        })}
+        actions={
+          <div className="flex items-center gap-2">
+            <Switch
+              id="subject-weighted-view"
+              checked={weighted}
+              onCheckedChange={(w) =>
+                void navigate({ search: (prev) => ({ ...prev, view: w ? 'weighted' : 'simple' }), replace: true })
+              }
+            />
+            <Label htmlFor="subject-weighted-view">Weight by marks</Label>
+          </div>
+        }
+      />
+      <ProgressBar value={pct} label={`${data.subject.name} coverage`} className="max-w-xl" />
       {data.chapters.length === 0 ? (
-        <p className="rounded-xl border border-dashed p-6 text-muted-foreground">
+        <p className="rounded-lg border border-dashed p-4 text-[13px] text-muted-foreground">
           Chapters for this paper are coming soon.
         </p>
       ) : (

@@ -22,16 +22,14 @@ interface Props {
 /** Export and delete everything My Coverage stores (FR-29). Delete asks for one explicit confirmation. */
 export function DataControls({ exporting, deleting, error, deleted, onExport, onDelete }: Props) {
   return (
-    <Card className="space-y-4 p-6">
+    <Card className="space-y-3 p-4">
       <div>
-        <h2 className="font-display text-xl font-bold">Your data</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Download everything My Coverage holds about you, or erase it.
-        </p>
+        <h2 className="text-sm font-semibold">Your data</h2>
+        <p className="text-xs text-muted-foreground">Download everything My Coverage holds about you, or erase it.</p>
       </div>
       {error ? <Alert variant="error">{error}</Alert> : null}
       {deleted ? <Alert variant="success">All your coverage data has been deleted.</Alert> : null}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         <Button variant="outline" onClick={onExport} disabled={exporting}>
           {exporting ? <LoaderCircle className="animate-spin" aria-hidden /> : <Download aria-hidden />}
           Export as JSON

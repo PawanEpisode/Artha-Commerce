@@ -30,9 +30,9 @@ export function UpdateHistoryList({ rows, loading, failed, onRetry }: Props) {
     )
   }
   return (
-    <ol className="space-y-3" aria-label="Past updates">
+    <ol className="space-y-2" aria-label="Past updates">
       {rows.map((r) => (
-        <li key={r.id} className="space-y-1 rounded-xl border border-border bg-card p-3 text-sm">
+        <li key={r.id} className="space-y-1 rounded-lg border border-border bg-card p-2.5 text-[13px]">
           <p className="flex flex-wrap items-center gap-2 font-semibold">
             {dayText(r.applied_at)}
             <Badge variant="outline">{triggerLabel(r.trigger)}</Badge>

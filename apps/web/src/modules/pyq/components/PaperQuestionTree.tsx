@@ -1,8 +1,12 @@
-import { Badge, ButtonLink, Card } from '@artha/design-system'
+import { Badge, Button, DataTable, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import * as React from 'react'
 
-import type { PyqChoiceGroup, PyqPaperQuestion, SchemeRelation } from '../lib/types'
+import { ResultLabel } from '~/modules/questionbank'
+
+import { marksText } from '../lib/labels'
+import type { PyqChoiceGroup, PyqPaperQuestion } from '../lib/types'
+import { SchemeBadge } from './SchemeBadge'
 
 interface PaperQuestionTreeProps {
   questions: PyqPaperQuestion[]
@@ -10,26 +14,13 @@ interface PaperQuestionTreeProps {
   className?: string
 }
 
-const schemeRelationBadge: Record<SchemeRelation, { label: string; className: string }> = {
-  current: {
-    label: '2022 Syllabus',
-    className: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300',
-  },
-  mapped: { label: 'Mapped', className: 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300' },
-  changed: {
-    label: 'Changed in 2022',
-    className: 'bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300',
-  },
-  unmapped: { label: 'Out of Syllabus', className: 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400' },
-}
-
+/**
+ * The paper's questions as one dense table, grouped by section. Sub-questions are indented by depth; rows that only
+ * group children (no question of their own) read as headings. Practise opens the question in the bank.
+ */
 export function PaperQuestionTree({ questions, choiceGroups, className }: PaperQuestionTreeProps) {
-  // Group questions by section / choice group
-  const choiceGroupMap = React.useMemo(() => {
-    return new Map(choiceGroups.map((cg) => [cg.id, cg]))
-  }, [choiceGroups])
+  const choiceGroupMap = React.useMemo(() => new Map(choiceGroups.map((cg) => [cg.id, cg])), [choiceGroups])
 
-  // Group questions by section
   const sections = React.useMemo(() => {
     const map = new Map<string, PyqPaperQuestion[]>()
     for (const q of questions) {
@@ -42,79 +33,88 @@ export function PaperQuestionTree({ questions, choiceGroups, className }: PaperQ
   }, [questions])
 
   return (
-    <div className={`space-y-6 ${className ?? ''}`}>
+    <DataTable className={className}>
+      <TableHeader>
+        <TableRow className="hover:bg-transparent">
+          <TableHead className="w-16">No.</TableHead>
+          <TableHead>Question</TableHead>
+          <TableHead className="hidden text-right sm:table-cell">Marks</TableHead>
+          <TableHead className="hidden sm:table-cell">Syllabus</TableHead>
+          <TableHead className="hidden lg:table-cell">Chapter</TableHead>
+          <TableHead className="hidden xl:table-cell">Suggested answer</TableHead>
+          <TableHead className="hidden md:table-cell">Your result</TableHead>
+          <TableHead className="text-right">
+            <span className="sr-only">Action</span>
+          </TableHead>
+        </TableRow>
+      </TableHeader>
       {sections.map(([sectionName, sectionQuestions]) => (
-        <section key={sectionName} className="space-y-3">
-          <div className="flex items-center justify-between border-b border-border pb-2">
-            <h3 className="text-sm font-bold tracking-wide text-foreground uppercase">{sectionName}</h3>
-            <span className="text-xs font-medium text-muted-foreground">
-              {sectionQuestions.length} {sectionQuestions.length === 1 ? 'item' : 'items'}
-            </span>
-          </div>
-
-          <div className="space-y-2.5">
-            {sectionQuestions.map((q) => {
-              const cg = q.choice_group_id ? choiceGroupMap.get(q.choice_group_id) : null
-              const rel = schemeRelationBadge[q.scheme_relation] || schemeRelationBadge.current
-
-              return (
-                <Card
-                  key={q.id}
-                  className="flex flex-col justify-between gap-3 p-3.5 transition-colors hover:bg-muted/20 sm:flex-row sm:items-center"
+        <TableBody key={sectionName}>
+          <TableRow className="bg-muted/30 hover:bg-muted/30">
+            <TableCell colSpan={8} className="h-8 py-0">
+              <span className="text-xs font-semibold tracking-wide text-foreground uppercase">{sectionName}</span>
+              <span className="ml-2 text-xs text-muted-foreground">
+                {sectionQuestions.length} {sectionQuestions.length === 1 ? 'item' : 'items'}
+              </span>
+            </TableCell>
+          </TableRow>
+          {sectionQuestions.map((q) => {
+            const cg = q.choice_group_id ? choiceGroupMap.get(q.choice_group_id) : null
+            return (
+              <TableRow key={q.id}>
+                <TableCell
+                  className="font-mono text-xs font-semibold whitespace-nowrap"
+                  style={q.depth > 0 ? { paddingLeft: `${0.875 + q.depth * 0.75}rem` } : undefined}
                 >
-                  <div className="min-w-0 flex-1 space-y-1.5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-mono text-sm font-bold text-foreground">{q.number_label}</span>
-
-                      <Badge variant="outline" className="text-xs">
-                        {q.marks} {q.marks === '1.0' || q.marks === '1' ? 'mark' : 'marks'}
-                      </Badge>
-
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${rel.className}`}
+                  {q.number_label}
+                </TableCell>
+                <TableCell className="min-w-48 py-2">
+                  <p className={`line-clamp-2 ${q.is_leaf ? '' : 'font-medium'}`}>
+                    {q.descriptor || <span className="text-muted-foreground">Question {q.number_label}</span>}
+                  </p>
+                  <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted-foreground sm:hidden">
+                    <span className="tabular-nums">{marksText(q.marks)} marks</span>
+                    <SchemeBadge relation={q.scheme_relation} short />
+                  </p>
+                  {cg && (
+                    <Badge className="mt-1" variant="default">
+                      {cg.label}
+                    </Badge>
+                  )}
+                </TableCell>
+                <TableCell className="hidden text-right tabular-nums sm:table-cell">{marksText(q.marks)}</TableCell>
+                <TableCell className="hidden sm:table-cell">
+                  <SchemeBadge relation={q.scheme_relation} />
+                </TableCell>
+                <TableCell className="hidden text-muted-foreground lg:table-cell">{q.chapter_key || '-'}</TableCell>
+                <TableCell className="hidden text-muted-foreground xl:table-cell">
+                  {q.answer_page_hint || '-'}
+                </TableCell>
+                <TableCell className="hidden text-xs whitespace-nowrap md:table-cell">
+                  {q.user_state ? (
+                    <ResultLabel result={q.user_state.last_result} />
+                  ) : (
+                    <span className="text-muted-foreground">-</span>
+                  )}
+                </TableCell>
+                <TableCell className="text-right">
+                  {q.question_id && (
+                    <Button asChild variant="outline" size="sm">
+                      <Link
+                        to="/app/questions/$id"
+                        params={{ id: q.question_id }}
+                        aria-label={`Practise question ${q.number_label}`}
                       >
-                        {rel.label}
-                      </span>
-
-                      {cg && (
-                        <Badge variant="default" className="text-xs">
-                          {cg.label}
-                        </Badge>
-                      )}
-                    </div>
-
-                    {q.descriptor && <p className="line-clamp-2 text-sm text-foreground">{q.descriptor}</p>}
-
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                      {q.chapter_key && (
-                        <span className="font-medium">
-                          Chapter: <span className="text-foreground">{q.chapter_key}</span>
-                        </span>
-                      )}
-                      {q.answer_page_hint && (
-                        <>
-                          <span>•</span>
-                          <span>Suggested Answer: {q.answer_page_hint}</span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
-                    {q.question_id && (
-                      <ButtonLink asChild variant="outline" size="sm">
-                        <Link to="/app/questions/$id" params={{ id: q.question_id }}>
-                          Practise
-                        </Link>
-                      </ButtonLink>
-                    )}
-                  </div>
-                </Card>
-              )
-            })}
-          </div>
-        </section>
+                        Practise
+                      </Link>
+                    </Button>
+                  )}
+                </TableCell>
+              </TableRow>
+            )
+          })}
+        </TableBody>
       ))}
-    </div>
+    </DataTable>
   )
 }

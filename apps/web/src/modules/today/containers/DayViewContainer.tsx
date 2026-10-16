@@ -4,9 +4,10 @@ import {
   ArrowLeft,
   ArrowRight,
   Button,
-  Container,
   EmptyState,
   isIsoDate,
+  Page,
+  PageHeader,
   Skeleton,
 } from '@artha/design-system'
 import { Link, Navigate } from '@tanstack/react-router'
@@ -19,9 +20,7 @@ import { PREVIEW_MAX_DAYS_AHEAD } from '../lib/limits'
 import { groupTasks } from '../lib/plan'
 import { formatDay, formatMinutes } from '../lib/time'
 
-const Shell = ({ children }: { children: React.ReactNode }) => (
-  <Container className="max-w-3xl min-w-0 space-y-5 py-6 sm:py-10">{children}</Container>
-)
+const Shell = ({ children }: { children: React.ReactNode }) => <Page width="reading">{children}</Page>
 
 const daysBetween = (from: string, to: string) =>
   Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86_400_000)
@@ -29,7 +28,8 @@ const daysBetween = (from: string, to: string) =>
 function Nav({ date, today }: { date: string; today: string }) {
   const prev = addIsoDays(date, -1)
   const next = addIsoDays(date, 1)
-  const link = 'inline-flex min-h-11 items-center gap-1 text-sm font-semibold underline-offset-4 hover:underline'
+  const link =
+    'inline-flex min-h-8 items-center gap-1 text-[13px] font-medium underline-offset-4 hover:underline pointer-coarse:min-h-11'
   const to = (d: string) => (d === today ? '/app/today' : '/app/today/$date')
   return (
     <nav aria-label="Day" className="flex items-center justify-between">
@@ -83,8 +83,8 @@ export function DayViewContainer({ date }: { date: string }) {
   if (todayPlan.isPending || !today)
     return (
       <Shell>
-        <Skeleton className="h-24 w-full rounded-2xl" />
-        <Skeleton className="h-16 w-full rounded-xl" />
+        <Skeleton className="h-10 w-1/2" />
+        <Skeleton className="h-24 w-full" />
       </Shell>
     )
   if (offset === 0) return <Navigate to="/app/today" search={{}} replace />
@@ -92,7 +92,7 @@ export function DayViewContainer({ date }: { date: string }) {
   let body: React.ReactNode
   if (offset !== null && offset > 0) {
     if (offset > PREVIEW_MAX_DAYS_AHEAD) body = <NoPlan />
-    else if (preview.isPending) body = <Skeleton className="h-32 w-full rounded-2xl" />
+    else if (preview.isPending) body = <Skeleton className="h-24 w-full" />
     else if (preview.isError || !preview.data) body = <NoPlan />
     else {
       const p = preview.data
@@ -104,13 +104,10 @@ export function DayViewContainer({ date }: { date: string }) {
         <>
           <Alert variant="info">Preview, may change. Nothing here is saved until the day starts.</Alert>
           {items.length ? (
-            <ul className="space-y-2">
+            <ul className="divide-y overflow-hidden rounded-lg border bg-card">
               {items.map((i) => (
-                <li
-                  key={i.key}
-                  className="flex items-start justify-between gap-3 rounded-xl border border-border bg-card p-3"
-                >
-                  <span className="min-w-0 font-semibold break-words">{i.title}</span>
+                <li key={i.key} className="flex items-start justify-between gap-3 px-3 py-2">
+                  <span className="min-w-0 font-medium break-words">{i.title}</span>
                   <span className="shrink-0 text-xs text-muted-foreground">{formatMinutes(i.minutes)}</span>
                 </li>
               ))}
@@ -121,7 +118,7 @@ export function DayViewContainer({ date }: { date: string }) {
         </>
       )
     }
-  } else if (past.isPending) body = <Skeleton className="h-32 w-full rounded-2xl" />
+  } else if (past.isPending) body = <Skeleton className="h-24 w-full" />
   else if (past.isError || !past.data)
     body = errorCode(past.error) === 'plan_not_generated' || past.isError ? <NoPlan /> : null
   else {
@@ -132,7 +129,7 @@ export function DayViewContainer({ date }: { date: string }) {
         <Alert variant="info">
           Recap: {plan.counts.done} of {plan.counts.planned} done.
         </Alert>
-        <ul className="space-y-2">
+        <ul className="divide-y overflow-hidden rounded-lg border bg-card">
           {[...g.done, ...g.open, ...g.parked].map((t) => (
             <TaskRow key={t.id} task={t} readOnly />
           ))}
@@ -143,7 +140,7 @@ export function DayViewContainer({ date }: { date: string }) {
 
   return (
     <Shell>
-      <h1 className="font-display text-2xl font-extrabold sm:text-3xl">{formatDay(date)}</h1>
+      <PageHeader title={formatDay(date)} />
       <Nav date={date} today={today} />
       {body}
     </Shell>

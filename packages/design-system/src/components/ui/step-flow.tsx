@@ -35,8 +35,8 @@ export function StepFlow({ steps, current, title, description, onBack, children,
   }, [current, title])
 
   return (
-    <section data-slot="step-flow" className={cn('space-y-8', className)}>
-      <div className="space-y-4">
+    <section data-slot="step-flow" className={cn('space-y-6', className)}>
+      <div className="space-y-3">
         <Stepper steps={[...steps]} current={Math.min(current, steps.length - 1)} />
         <p className="sr-only" role="status">
           Step {Math.min(current + 1, steps.length)} of {steps.length}: {title}
@@ -44,14 +44,14 @@ export function StepFlow({ steps, current, title, description, onBack, children,
       </div>
       <div className="space-y-2">
         {onBack ? (
-          <Button type="button" variant="ghost" size="sm" className="-ml-3" onClick={onBack}>
+          <Button type="button" variant="ghost" size="sm" className="-ml-2.5" onClick={onBack}>
             <ArrowLeft aria-hidden /> Back
           </Button>
         ) : null}
-        <h1 ref={heading} tabIndex={-1} className="font-display text-3xl font-extrabold outline-none">
+        <h1 ref={heading} tabIndex={-1} className="text-lg font-semibold tracking-tight outline-none">
           {title}
         </h1>
-        {description ? <p className="text-muted-foreground">{description}</p> : null}
+        {description ? <p className="text-sm text-muted-foreground">{description}</p> : null}
       </div>
       {children}
     </section>

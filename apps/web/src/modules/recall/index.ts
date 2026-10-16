@@ -20,6 +20,8 @@ export { useRecallEnabled } from './hooks/useRecallBasics'
 export { type CardsSearch, cardsSearchSchema, type NewCardSearch, newCardSearchSchema } from './lib/cardSearch'
 export { clearRecallLocalData } from './lib/localData'
 export {
+  type DecksSearch,
+  decksSearchSchema,
   type QuickSearch,
   quickSearchSchema,
   type ReviewSearch,

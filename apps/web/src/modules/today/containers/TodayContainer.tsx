@@ -3,8 +3,8 @@ import {
   Alert,
   Button,
   CalendarClock,
-  Container,
   EmptyState,
+  Page,
   Plus,
   Skeleton,
   Sparkles,
@@ -49,22 +49,22 @@ import type { TodaySearch } from '../lib/search'
 import { hourIn } from '../lib/time'
 import { isEmptyPlan, type OpenResult, type Plan, type Task } from '../lib/types'
 
-const Shell = ({ children }: { children: React.ReactNode }) => (
-  <Container className="max-w-3xl min-w-0 space-y-5 py-6 sm:space-y-6 sm:py-10">{children}</Container>
-)
+const Shell = ({ children }: { children: React.ReactNode }) => <Page>{children}</Page>
 
 function Loading() {
   return (
     <Shell>
-      <div role="status" aria-label="Loading today's plan" className="space-y-4">
-        <Skeleton className="h-32 w-full rounded-2xl" />
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <Skeleton className="h-20 rounded-xl" />
-          <Skeleton className="h-20 rounded-xl" />
-          <Skeleton className="hidden h-20 rounded-xl sm:block" />
+      <div role="status" aria-label="Loading today's plan" className="space-y-3">
+        <Skeleton className="h-14 w-full" />
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
+          <div className="space-y-2">
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
+          </div>
+          <Skeleton className="hidden h-40 w-full lg:block" />
         </div>
-        <Skeleton className="h-16 w-full rounded-xl" />
-        <Skeleton className="h-16 w-full rounded-xl" />
       </div>
     </Shell>
   )
@@ -102,26 +102,36 @@ function Section({
   id,
   title,
   muted,
+  action,
   children,
 }: {
   id: string
   title: string
   muted?: boolean
+  action?: React.ReactNode
   children: React.ReactNode
 }) {
   return (
-    <section aria-labelledby={id} className="space-y-3">
-      <h2
-        id={id}
-        tabIndex={-1}
-        className={`font-display text-lg font-bold outline-none ${muted ? 'text-muted-foreground' : ''}`}
-      >
-        {title}
-      </h2>
+    <section aria-labelledby={id} className="space-y-2">
+      <div className="flex items-center justify-between gap-2">
+        <h2
+          id={id}
+          tabIndex={-1}
+          className={`text-sm font-semibold outline-none ${muted ? 'text-muted-foreground' : ''}`}
+        >
+          {title}
+        </h2>
+        {action}
+      </div>
       {children}
     </section>
   )
 }
+
+/** The task rows share one bordered surface with hairline dividers, so a long day scans as a list, not a pile of cards. */
+const TaskList = ({ children }: { children: React.ReactNode }) => (
+  <ul className="divide-y overflow-hidden rounded-lg border bg-card">{children}</ul>
+)
 
 interface BodyProps {
   plan: Plan
@@ -270,75 +280,99 @@ function Body({ plan, search, firstName, readOnly, lite, status }: BodyProps) {
         </Alert>
       ) : null}
       <CelebrationCard plan={plan} burst={burst} lite={lite} />
-      <DayExtras plan={plan} readOnly={readOnly} />
       <OverloadNotice backlog={plan.backlog} />
       {plan.planned_minutes > LONG_DAY_MINUTES ? (
         <Alert variant="info">That is a long day. Consider moving one task to tomorrow.</Alert>
       ) : null}
+      <DayExtras plan={plan} readOnly={readOnly} />
 
-      {state === 'nothing_due' ? (
-        <EmptyState
-          icon={<CalendarClock aria-hidden />}
-          title="Nothing is due today"
-          description="You are caught up. Add a task of your own, or pick something from your syllabus to get ahead."
-          action={
-            <Button asChild variant="outline">
-              <Link to="/app/syllabus">Open your syllabus</Link>
-            </Button>
-          }
-        />
-      ) : (
-        <>
-          {views.length > 1 ? (
-            <section aria-label="Papers" className="space-y-2">
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {views.map((tile) => (
-                  <PaperTile
-                    key={tile.key}
-                    tile={tile}
-                    pressed={chosen?.key === tile.key}
-                    lite={lite}
-                    onSelect={() => choose(chosen?.key === tile.key ? undefined : tile.key)}
-                  />
-                ))}
-              </div>
-              {chosen ? (
-                <Button variant="ghost" size="sm" onClick={() => choose(undefined)}>
-                  Show all papers
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_20rem] [&>*]:min-w-0">
+        <div className="space-y-4">
+          {state === 'nothing_due' ? (
+            <EmptyState
+              icon={<CalendarClock aria-hidden />}
+              title="Nothing is due today"
+              description="You are caught up. Add a task of your own, or pick something from your syllabus to get ahead."
+              action={
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/app/syllabus">Open your syllabus</Link>
                 </Button>
+              }
+            />
+          ) : (
+            <>
+              {views.length > 1 ? (
+                <section aria-label="Papers" className="space-y-2">
+                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4">
+                    {views.map((tile) => (
+                      <PaperTile
+                        key={tile.key}
+                        tile={tile}
+                        pressed={chosen?.key === tile.key}
+                        lite={lite}
+                        onSelect={() => choose(chosen?.key === tile.key ? undefined : tile.key)}
+                      />
+                    ))}
+                  </div>
+                  {chosen ? (
+                    <Button variant="ghost" size="sm" onClick={() => choose(undefined)}>
+                      Show all papers
+                    </Button>
+                  ) : null}
+                </section>
               ) : null}
-            </section>
-          ) : null}
 
-          <Section id="open-tasks" title={groups.open.length ? 'To do' : 'Nothing left to do'}>
-            <ul className="space-y-2">{groups.open.map(row)}</ul>
-          </Section>
-          {groups.done.length ? (
-            <Section id="done-tasks" title="Done">
-              <ul className="space-y-2">{groups.done.map(row)}</ul>
-            </Section>
-          ) : null}
-          {groups.parked.length ? (
-            <Section id="parked-tasks" title="Skipped and snoozed" muted>
-              <ul className="space-y-2">{groups.parked.map(row)}</ul>
-            </Section>
-          ) : null}
-        </>
-      )}
+              <Section
+                id="open-tasks"
+                title={groups.open.length ? 'To do' : 'Nothing left to do'}
+                action={
+                  readOnly ? null : (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() =>
+                        void navigate({ search: (prev) => ({ ...prev, add: true }), replace: true, resetScroll: false })
+                      }
+                    >
+                      <Plus aria-hidden /> Add your own task
+                    </Button>
+                  )
+                }
+              >
+                <TaskList>{groups.open.map(row)}</TaskList>
+              </Section>
+              {groups.done.length ? (
+                <Section id="done-tasks" title="Done">
+                  <TaskList>{groups.done.map(row)}</TaskList>
+                </Section>
+              ) : null}
+              {groups.parked.length ? (
+                <Section id="parked-tasks" title="Skipped and snoozed" muted>
+                  <TaskList>{groups.parked.map(row)}</TaskList>
+                </Section>
+              ) : null}
+            </>
+          )}
+          {readOnly || state !== 'nothing_due' ? null : (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() =>
+                void navigate({ search: (prev) => ({ ...prev, add: true }), replace: true, resetScroll: false })
+              }
+            >
+              <Plus aria-hidden /> Add your own task
+            </Button>
+          )}
+        </div>
 
-      {readOnly ? null : (
-        <Button
-          variant="outline"
-          onClick={() =>
-            void navigate({ search: (prev) => ({ ...prev, add: true }), replace: true, resetScroll: false })
-          }
-        >
-          <Plus aria-hidden /> Add your own task
-        </Button>
-      )}
-
-      {tomorrow.data ? <TomorrowCard preview={tomorrow.data} /> : null}
-      {plan.week && !lite ? <WeekStrip days={plan.week} today={plan.date} /> : null}
+        {tomorrow.data || (plan.week && !lite) ? (
+          <div className="space-y-4">
+            {plan.week && !lite ? <WeekStrip days={plan.week} today={plan.date} /> : null}
+            {tomorrow.data ? <TomorrowCard preview={tomorrow.data} /> : null}
+          </div>
+        ) : null}
+      </div>
 
       <TaskSheet
         task={readOnly ? null : task}

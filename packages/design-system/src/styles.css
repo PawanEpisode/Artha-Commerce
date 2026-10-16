@@ -1,11 +1,12 @@
 /* Consumers must `@import 'tailwindcss'` first and add `@source` for this package. See ../README.md */
 @import 'tw-animate-css';
 @import '@fontsource-variable/inter';
-@import '@fontsource-variable/plus-jakarta-sans';
 @import '@fontsource-variable/source-serif-4';
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant reading (&:is([data-theme='reading'] *));
+/* Inside the signed-in app frame (AppShell sets data-app-frame). Used by layout primitives to go fluid and compact. */
+@custom-variant app (&:is([data-app-frame] *));
 
 /*
  * ArthaCommerce design tokens: the single source of truth for colour, radius, type and motion.
@@ -22,7 +23,7 @@
 :root,
 :root[data-theme='reading'] {
   color-scheme: light;
-  --radius: 0.875rem;
+  --radius: 0.5rem;
 
   --background: oklch(0.955 0.026 88);
   --foreground: oklch(0.255 0.022 60);
@@ -46,6 +47,10 @@
   --border: oklch(0.87 0.03 85);
   --input: oklch(0.63 0.04 75);
   --ring: oklch(0.5 0.17 272);
+
+  /* App shell (sidebar rail, topbar chrome): one step off the page so the rail reads as chrome, plus the hover and active fill. */
+  --sidebar: oklch(0.935 0.026 86);
+  --sidebar-accent: oklch(0.905 0.03 85);
 
   /* Status and entity-label tokens: accent (icon, rail, dot), bg, fg (text on bg) and border. */
   --success: oklch(0.5 0.14 155);
@@ -127,8 +132,8 @@
   --page-paper: oklch(0.955 0.026 88);
   --page-night: oklch(0.18 0.012 262);
 
-  --shadow-soft: 0 1px 2px oklch(0.3 0.04 60 / 0.06), 0 8px 24px -8px oklch(0.35 0.08 60 / 0.14);
-  --shadow-lift: 0 2px 4px oklch(0.3 0.04 60 / 0.07), 0 24px 48px -16px oklch(0.35 0.1 60 / 0.28);
+  --shadow-soft: 0 1px 1px oklch(0.3 0.04 60 / 0.04);
+  --shadow-lift: 0 1px 2px oklch(0.3 0.04 60 / 0.06), 0 8px 24px -6px oklch(0.35 0.08 60 / 0.22);
 
   /* Chart series: fixed order, never cycled. Validated for colour-blind separation and 3:1 on --card (WCAG 1.4.11). */
   --chart-1: oklch(0.52 0.15 160);
@@ -163,6 +168,10 @@
   --border: oklch(0.92 0.01 265);
   --input: oklch(0.64 0.02 265);
   --ring: oklch(0.55 0.2 270);
+
+  /* App shell (sidebar rail, topbar chrome): one step off the page so the rail reads as chrome, plus the hover and active fill. */
+  --sidebar: oklch(0.972 0.006 95);
+  --sidebar-accent: oklch(0.94 0.012 265);
 
   /* Status and entity-label tokens: accent (icon, rail, dot), bg, fg (text on bg) and border. */
   --success: oklch(0.5 0.14 155);
@@ -239,8 +248,8 @@
   --swatch-marker: oklch(0.22 0.03 270);
   --swatch-marker-inverse: oklch(0.99 0.005 95);
 
-  --shadow-soft: 0 1px 2px oklch(0.21 0.035 268 / 0.05), 0 8px 24px -8px oklch(0.3 0.12 270 / 0.12);
-  --shadow-lift: 0 2px 4px oklch(0.21 0.035 268 / 0.06), 0 24px 48px -16px oklch(0.3 0.15 270 / 0.28);
+  --shadow-soft: 0 1px 1px oklch(0.21 0.035 268 / 0.04);
+  --shadow-lift: 0 1px 2px oklch(0.21 0.035 268 / 0.06), 0 8px 24px -6px oklch(0.3 0.12 270 / 0.2);
 
   /* Chart series: fixed order, never cycled. Validated for colour-blind separation and 3:1 on --card (WCAG 1.4.11). */
   --chart-1: oklch(0.52 0.15 160);
@@ -276,6 +285,10 @@
   --border: oklch(1 0 0 / 0.1);
   --input: oklch(0.5 0.03 268);
   --ring: oklch(0.68 0.18 272);
+
+  /* App shell (sidebar rail, topbar chrome): one step off the page so the rail reads as chrome, plus the hover and active fill. */
+  --sidebar: oklch(0.135 0.022 268);
+  --sidebar-accent: oklch(0.24 0.03 268);
 
   /* Status and entity-label tokens: accent (icon, rail, dot), bg, fg (text on bg) and border. */
   --success: oklch(0.76 0.14 155);
@@ -352,8 +365,8 @@
   --swatch-marker: oklch(0.22 0.03 270);
   --swatch-marker-inverse: oklch(0.99 0.005 95);
 
-  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3), 0 8px 24px -8px oklch(0 0 0 / 0.5);
-  --shadow-lift: 0 2px 4px oklch(0 0 0 / 0.4), 0 24px 48px -16px oklch(0.4 0.2 270 / 0.4);
+  --shadow-soft: 0 1px 1px oklch(0 0 0 / 0.25);
+  --shadow-lift: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -6px oklch(0 0 0 / 0.55);
 
   --chart-1: oklch(0.64 0.15 160);
   --chart-2: oklch(0.64 0.15 272);
@@ -365,7 +378,7 @@
 @theme inline {
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
   --font-reading: 'Source Serif 4 Variable', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-display: 'Plus Jakarta Sans Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -407,6 +420,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-accent: var(--sidebar-accent);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -457,11 +472,11 @@
   --color-tag-paper-fg: var(--tag-paper-fg);
   --color-tag-paper-border: var(--tag-paper-border);
 
-  --radius-sm: calc(var(--radius) - 6px);
-  --radius-md: calc(var(--radius) - 3px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 6px);
-  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-xl: calc(var(--radius) + 2px);
+  --radius-2xl: calc(var(--radius) + 6px);
 
   --shadow-soft: var(--shadow-soft);
   --shadow-lift: var(--shadow-lift);
@@ -504,10 +519,36 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Rail widths. Set to the collapsed width before first paint by SIDEBAR_INIT_SCRIPT, so there is no layout jump. */
+    --sidebar-w-open: 12.5rem;
+    --sidebar-w: var(--sidebar-w-open);
+  }
+  html[data-sidebar='collapsed'] {
+    --sidebar-w: 3rem;
   }
   body {
     @apply bg-background font-sans text-foreground antialiased;
     text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv11', 'ss03';
+  }
+  /* The signed-in app is denser: 13px body, like a tool, not a brochure. Public pages keep 16px. */
+  [data-app-frame] {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  [data-app-frame] ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  [data-app-frame] ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--foreground) 18%, transparent);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  [data-app-frame] ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--foreground) 32%, transparent);
+    background-clip: content-box;
   }
   h1,
   h2,
@@ -766,3 +807,6 @@
     outline-offset: 12px;
   }
 }
+
+/* Collapsed sidebar rail (not peeking): hide what only makes sense with a label. */
+@custom-variant rail (&:is(html[data-sidebar='collapsed'] aside[data-peek='false'] *));

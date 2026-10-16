@@ -85,7 +85,7 @@ export function AttentionSheet({
                   <div className="flex flex-wrap gap-2">
                     <Button
                       size="sm"
-                      className="min-h-11"
+
                       disabled={!online || busyId === item.id}
                       onClick={() => onResolve(item, 'keep')}
                     >
@@ -100,7 +100,7 @@ export function AttentionSheet({
                       <Button
                         size="sm"
                         variant="outline"
-                        className="min-h-11"
+
                         disabled={!online || busyId === item.id}
                         onClick={() => onResolve(item, 'note')}
                       >
@@ -110,7 +110,7 @@ export function AttentionSheet({
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="min-h-11"
+
                       disabled={!online || busyId === item.id}
                       onClick={() => onResolve(item, 'dismiss')}
                     >

@@ -182,31 +182,31 @@ export function FileDropzone({
       <label
         htmlFor={inputId}
         className={cn(
-          'flex min-h-40 w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-input bg-card p-6 text-center transition-colors peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/60 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-background hover:bg-muted motion-reduce:transition-none',
+          'flex min-h-32 w-full cursor-pointer flex-col items-center justify-center gap-1.5 rounded-lg border border-dashed border-input bg-card p-4 text-center transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-ring/50 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-background hover:bg-muted motion-reduce:transition-none',
           dragging && 'border-solid border-primary bg-secondary',
           shownError && !dragging && 'border-error-border',
           disabled && 'cursor-not-allowed opacity-60 hover:bg-card',
         )}
       >
         {dragging ? (
-          <FileUp aria-hidden className="size-8 text-primary" />
+          <FileUp aria-hidden className="size-6 text-primary" />
         ) : (
-          <Upload aria-hidden className="size-8 text-muted-foreground" />
+          <Upload aria-hidden className="size-6 text-muted-foreground" />
         )}
-        <span className="max-w-full text-base font-semibold break-words">{dragging ? 'Release to add' : title}</span>
+        <span className="max-w-full text-[13px] font-medium break-words">{dragging ? 'Release to add' : title}</span>
         {hint ? (
-          <span id={hintId} aria-hidden className="max-w-full text-sm break-words text-muted-foreground">
+          <span id={hintId} aria-hidden className="max-w-full text-xs break-words text-muted-foreground">
             {hint}
           </span>
         ) : null}
       </label>
       {disabled && reason ? (
-        <p id={reasonId} className="text-sm font-medium text-foreground">
+        <p id={reasonId} className="text-xs font-medium text-foreground">
           {reason}
         </p>
       ) : null}
       {shownError ? (
-        <p id={errorId} role="alert" className="flex items-start gap-1.5 text-sm font-medium text-error-fg">
+        <p id={errorId} role="alert" className="flex items-start gap-1.5 text-xs font-medium text-error-fg">
           <CircleAlert aria-hidden className="mt-0.5 size-4 shrink-0" />
           <span className="min-w-0 break-words">{shownError}</span>
         </p>

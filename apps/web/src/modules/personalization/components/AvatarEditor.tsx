@@ -133,7 +133,7 @@ export function AvatarEditor({ avatar, onChanged }: { avatar: Avatar; onChanged?
           <DialogDescription>
             Your initials will show instead. The photo is deleted and cannot be restored.
           </DialogDescription>
-          <div className="mt-5 flex flex-wrap justify-end gap-3">
+          <div className="mt-4 flex flex-wrap justify-end gap-2">
             <Button variant="outline" onClick={() => setConfirmRemove(false)}>
               Keep photo
             </Button>

@@ -1,4 +1,4 @@
-import { Alert, Button, Container, EmptyState, Skeleton, Sparkles } from '@artha/design-system'
+import { Alert, Button, EmptyState, Page, Skeleton, Sparkles } from '@artha/design-system'
 import { Navigate } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
@@ -16,9 +16,12 @@ import type { Overview } from '../lib/types'
 export function CoverageShell({
   children,
   nav = true,
+  width = 'fluid',
 }: {
   children: (overview: Overview) => ReactNode
   nav?: boolean
+  /** `form` keeps settings and forms at a readable width. */
+  width?: 'fluid' | 'form'
 }) {
   const enabled = useFeatureFlag('syllabus_coverage')
   const { data, isPending, isError, noEnrollment, featureDisabled, refetch } = useOverview()
@@ -26,13 +29,14 @@ export function CoverageShell({
 
   if (!enabled || featureDisabled) {
     return (
-      <Container className="max-w-3xl py-14">
+      <Page width="form">
         <EmptyState
+          className="rounded-lg py-6"
           icon={<Sparkles aria-hidden />}
           title="My Coverage is not available yet"
           description="We are rolling it out gradually. Please check back soon."
         />
-      </Container>
+      </Page>
     )
   }
   if (noEnrollment) return <Navigate to="/app/onboarding" replace />
@@ -40,7 +44,7 @@ export function CoverageShell({
   return (
     <>
       {nav ? <CoverageNav dueCount={data?.due_count} /> : null}
-      <Container className="max-w-3xl space-y-6 py-8 sm:py-12">
+      <Page width={width}>
         {pending > 0 ? (
           <Alert variant="info">
             <span role="status">
@@ -50,13 +54,15 @@ export function CoverageShell({
           </Alert>
         ) : null}
         {isPending ? (
-          <div aria-busy="true" className="space-y-4">
+          <div aria-busy="true" className="space-y-3">
             <span className="sr-only" role="status">
               Loading your coverage…
             </span>
-            <Skeleton className="h-44 w-full" />
-            <Skeleton className="h-20 w-full" />
-            <Skeleton className="h-20 w-full" />
+            <Skeleton className="h-7 w-48" />
+            <Skeleton className="h-16 w-full max-w-4xl" />
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
           </div>
         ) : isError || !data ? (
           <Alert variant="error">
@@ -70,7 +76,7 @@ export function CoverageShell({
         ) : (
           children(data)
         )}
-      </Container>
+      </Page>
     </>
   )
 }

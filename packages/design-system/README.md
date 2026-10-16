@@ -15,3 +15,5 @@ Consumer CSS (`apps/web/src/styles.css`):
 ```
 
 Rules and how to add a primitive: `.claude/skills/design-system-usage/SKILL.md`. Live guide: run the web app and open `/design-system`.
+
+Compact scale (see `docs/UI-REDESIGN.md`): `Button` sizes `xs sm default lg xl icon icon-sm` (44px targets only under `pointer-coarse:`), `Page`/`PageHeader`, `DataTable` with `TableToolbar`, `Sidebar*`, `CommandPalette`, `SectionTabs`, `StatTile`, `FilterChip`, compact `EmptyState`.

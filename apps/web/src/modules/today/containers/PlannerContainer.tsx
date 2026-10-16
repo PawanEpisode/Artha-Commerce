@@ -2,8 +2,9 @@ import {
   Alert,
   Button,
   CalendarClock,
-  Container,
   EmptyState,
+  Page,
+  PageHeader,
   Skeleton,
   Sparkles,
   TextField,
@@ -21,18 +22,14 @@ import { errorCode, errorDetails, errorMessage, isFeatureDisabled } from '../lib
 import { gotWorse, replanSummary } from '../lib/planner'
 import type { OptionChoice } from '../lib/planner-types'
 
-const Shell = ({ children }: { children: React.ReactNode }) => (
-  <Container className="max-w-3xl min-w-0 space-y-5 py-6 sm:space-y-6 sm:py-10">{children}</Container>
-)
+const Shell = ({ children }: { children: React.ReactNode }) => <Page>{children}</Page>
 
 function Heading() {
   return (
-    <header className="space-y-1">
-      <h1 className="font-display text-2xl font-extrabold">Study plan</h1>
-      <p className="text-sm text-muted-foreground">
-        Dates for reading, revision and mocks, worked out from your exam date.
-      </p>
-    </header>
+    <PageHeader
+      title="Study plan"
+      description="Dates for reading, revision and mocks, worked out from your exam date."
+    />
   )
 }
 
@@ -56,10 +53,16 @@ function Unavailable() {
 function Loading() {
   return (
     <Shell>
-      <div role="status" aria-label="Loading your study plan" className="space-y-4">
-        <Skeleton className="h-40 w-full rounded-2xl" />
-        <Skeleton className="h-16 w-full rounded-xl" />
-        <Skeleton className="h-16 w-full rounded-xl" />
+      <div role="status" aria-label="Loading your study plan" className="space-y-3">
+        <Skeleton className="h-10 w-1/2" />
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="space-y-2">
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
+          </div>
+          <Skeleton className="h-44 w-full" />
+        </div>
       </div>
     </Shell>
   )
@@ -89,7 +92,7 @@ function FirstPlan() {
         title="Make your study plan"
         description="We use your exam date and your chapters to date when to finish reading, start revising and sit mocks. You can re-plan any time."
         action={
-          <div className="space-y-3 text-left">
+          <div className="space-y-2 text-left">
             {asksForMinutes ? (
               <TextField
                 label="Minutes you can study each day"
@@ -102,7 +105,7 @@ function FirstPlan() {
                 error={minutes && bad ? 'Use a number from 30 to 720.' : undefined}
               />
             ) : null}
-            <Button onClick={make} disabled={create.isPending || (asksForMinutes && bad)}>
+            <Button size="sm" onClick={make} disabled={create.isPending || (asksForMinutes && bad)}>
               {create.isPending ? 'Making your plan' : 'Make my plan'}
             </Button>
           </div>
@@ -174,12 +177,20 @@ export function PlannerContainer() {
   return (
     <Shell>
       <Heading />
-      <PlannerHealthCard plan={data} replanning={replan.isPending} onReplan={onReplan} />
-      {data.pending ? <ReplanOptions event={data.pending} busy={choose.isPending} onChoose={onChoose} /> : null}
-      {!data.pending && worse ? (
-        <Alert variant="info">Your plan slipped since the last check. Re-plan to see what you can do about it.</Alert>
-      ) : null}
-      <MilestoneList milestones={data.milestones} />
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] [&>*]:min-w-0">
+        <div className="space-y-4 lg:order-last">
+          <PlannerHealthCard plan={data} replanning={replan.isPending} onReplan={onReplan} />
+        </div>
+        <div className="space-y-4">
+          {data.pending ? <ReplanOptions event={data.pending} busy={choose.isPending} onChoose={onChoose} /> : null}
+          {!data.pending && worse ? (
+            <Alert variant="info">
+              Your plan slipped since the last check. Re-plan to see what you can do about it.
+            </Alert>
+          ) : null}
+          <MilestoneList milestones={data.milestones} />
+        </div>
+      </div>
     </Shell>
   )
 }

@@ -89,15 +89,13 @@ export function DocumentCard({
     <Card
       data-slot="document-card"
       data-status={doc.status}
-      className={`flex min-w-0 items-start gap-3 p-3 sm:p-4 ${className ?? ''}`}
+      className={`flex min-w-0 items-start gap-3 p-3 ${className ?? ''}`}
     >
       <DocumentCover doc={doc} compact={compact} />
 
       <div className="min-w-0 flex-1 space-y-2">
         <div className="flex items-start gap-1">
-          <h3 className="min-w-0 flex-1 truncate font-display text-base leading-snug font-bold sm:text-lg">
-            {heading}
-          </h3>
+          <h3 className="min-w-0 flex-1 truncate text-[13px] leading-snug font-semibold">{heading}</h3>
           {hasMenu ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -197,7 +195,7 @@ export function DocumentCard({
             to="/app/notes/pdf/$docId"
             params={{ docId: doc.id }}
             search={{ page: doc.last_page }}
-            className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline-offset-4 hover:underline focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none"
+            className="inline-flex min-h-7 items-center text-xs font-semibold text-primary underline-offset-4 hover:underline focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none"
           >
             Continue on page {doc.last_page}
           </Link>
@@ -214,7 +212,7 @@ export function DocumentCard({
 }
 
 /** Where the PDF is filed: a Subject chip and a Chapter chip ("All chapters" for the whole subject), or "Unfiled". */
-function LocationChips({ doc }: { doc: DocumentSummary }) {
+export function LocationChips({ doc }: { doc: DocumentSummary }) {
   if (isUnfiled(doc.link)) {
     return (
       <Badge variant="outline" className="max-w-full min-w-0">

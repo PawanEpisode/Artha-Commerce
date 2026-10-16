@@ -15,19 +15,19 @@ export function EmptyState({ icon, title, description, action, className, ...pro
     <div
       data-slot="empty-state"
       className={cn(
-        'flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border bg-card px-6 py-12 text-center',
+        'flex flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-card px-4 py-8 text-center',
         className,
       )}
       {...props}
     >
       {icon ? (
-        <div className="grid size-12 place-items-center rounded-full bg-secondary text-secondary-foreground [&_svg]:size-6">
+        <div className="grid size-9 place-items-center rounded-md bg-secondary text-secondary-foreground [&_svg]:size-5">
           {icon}
         </div>
       ) : null}
-      <h2 className="font-display text-lg font-bold">{title}</h2>
-      {description ? <p className="max-w-md text-sm text-muted-foreground">{description}</p> : null}
-      {action ? <div className="mt-2">{action}</div> : null}
+      <h2 className="text-sm font-semibold">{title}</h2>
+      {description ? <p className="max-w-md text-[13px] text-muted-foreground">{description}</p> : null}
+      {action ? <div className="mt-1">{action}</div> : null}
     </div>
   )
 }

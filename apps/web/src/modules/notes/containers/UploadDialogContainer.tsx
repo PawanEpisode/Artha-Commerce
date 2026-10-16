@@ -202,7 +202,7 @@ export function UploadDialogContainer({
     : `Your plan holds ${pluralize(limits.maxDocuments, 'PDF')} and ${limits.maxStorageMb} MB.`
 
   const action = !ready ? undefined : last ? (
-    <Button variant="cta" onClick={startUpload} disabled={!online}>
+    <Button onClick={startUpload} disabled={!online}>
       {replace ? 'Replace' : 'Upload'}
     </Button>
   ) : (

@@ -41,10 +41,10 @@ export function UsageBar({
   const percent = limit > 0 ? Math.min(100, Math.round((used / limit) * 100)) : 0
   const text = `${format(used)} of ${format(limit)}${unit ? ` ${unit}` : ''}`
   return (
-    <div data-slot="usage-bar" data-level={level} className={cn('space-y-1.5', className)} {...props}>
+    <div data-slot="usage-bar" data-level={level} className={cn('space-y-1', className)} {...props}>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-        <span className="text-sm font-semibold">{label}</span>
-        <span className="text-sm text-muted-foreground tabular-nums">{text}</span>
+        <span className="text-[13px] font-medium">{label}</span>
+        <span className="text-xs text-muted-foreground tabular-nums">{text}</span>
       </div>
       <div
         role="meter"
@@ -53,7 +53,7 @@ export function UsageBar({
         aria-valuemax={limit}
         aria-valuenow={Math.min(used, limit)}
         aria-valuetext={text}
-        className="h-2 w-full overflow-hidden rounded-full bg-secondary"
+        className="h-1.5 w-full overflow-hidden rounded-full bg-secondary"
       >
         <div
           className={cn(
@@ -66,8 +66,8 @@ export function UsageBar({
         />
       </div>
       {level !== 'ok' ? (
-        <p className="flex items-center gap-1.5 text-xs font-medium text-foreground">
-          <CircleAlert aria-hidden className="size-3.5 shrink-0" />
+        <p className="flex items-center gap-1 text-xs font-medium text-foreground">
+          <CircleAlert aria-hidden className="size-3 shrink-0" />
           {level === 'full' ? (fullText ?? `${label} full`) : `${label} almost full`}
         </p>
       ) : null}

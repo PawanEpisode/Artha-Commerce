@@ -60,7 +60,7 @@ export function TagInput({
       role="group"
       aria-label={ariaLabel}
       className={cn(
-        'flex min-h-11 w-full flex-wrap items-center gap-1.5 rounded-lg border border-input bg-card p-1.5 text-sm transition-colors focus-within:ring-[3px] focus-within:ring-ring/40',
+        'flex min-h-8 w-full flex-wrap items-center gap-1 rounded-md border border-input bg-card p-1 text-[13px] transition-colors focus-within:ring-2 focus-within:ring-ring/50 pointer-coarse:min-h-11',
         disabled && 'cursor-not-allowed opacity-50',
         className,
       )}
@@ -68,7 +68,7 @@ export function TagInput({
       {value.map((tag, idx) => (
         <span
           key={`${tag}-${idx}`}
-          className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-foreground"
+          className="inline-flex items-center gap-1 rounded-sm bg-muted px-1.5 py-0.5 text-xs font-medium text-foreground"
         >
           <span className="max-w-40 truncate">{tag}</span>
           {!disabled && (
@@ -79,7 +79,7 @@ export function TagInput({
                 e.stopPropagation()
                 handleRemove(idx)
               }}
-              className="grid size-4 place-items-center rounded-sm text-muted-foreground hover:bg-background/80 hover:text-foreground"
+              className="grid size-4 place-items-center rounded-sm text-muted-foreground hover:bg-background/80 hover:text-foreground pointer-coarse:size-6"
             >
               <X aria-hidden className="size-3" />
             </button>
@@ -99,7 +99,7 @@ export function TagInput({
             if (inputValue.trim()) handleAdd(inputValue)
           }}
           placeholder={value.length === 0 ? placeholder : ''}
-          className="min-w-24 flex-1 bg-transparent px-1.5 py-1 text-sm outline-none placeholder:text-muted-foreground"
+          className="min-w-24 flex-1 bg-transparent px-1.5 py-0.5 text-[13px] outline-none placeholder:text-muted-foreground pointer-coarse:text-base"
         />
       )}
     </div>

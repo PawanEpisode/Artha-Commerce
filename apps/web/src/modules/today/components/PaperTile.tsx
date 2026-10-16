@@ -20,11 +20,11 @@ export function PaperTile({
       type="button"
       aria-pressed={pressed}
       onClick={onSelect}
-      className={`flex min-h-11 w-full min-w-0 flex-col gap-2 rounded-xl border p-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${
+      className={`flex min-h-11 w-full min-w-0 flex-col gap-1.5 rounded-lg border p-2.5 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${
         pressed ? 'border-primary bg-secondary' : 'border-border bg-card hover:bg-muted'
       }`}
     >
-      <span className="text-sm font-semibold break-words">{tile.name}</span>
+      <span className="text-[13px] font-medium break-words">{tile.name}</span>
       {lite ? null : <ProgressBar value={percent} size="sm" label={`${tile.name} progress`} />}
       <span className="text-xs text-muted-foreground">
         {tile.done} of {tile.total} done

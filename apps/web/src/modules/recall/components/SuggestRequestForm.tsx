@@ -29,7 +29,7 @@ export function SuggestRequestForm(p: RequestFormProps) {
   const max = Math.max(p.overview.limits.max_count, p.overview.limits.min_count)
   return (
     <form
-      className="space-y-5"
+      className="space-y-4"
       onSubmit={(e) => {
         e.preventDefault()
         if (!p.problem && !p.pending && !p.offline) p.onSubmit()
@@ -38,8 +38,8 @@ export function SuggestRequestForm(p: RequestFormProps) {
     >
       {p.chapterField}
 
-      <fieldset className="space-y-3">
-        <legend className="font-semibold">Where should the cards come from?</legend>
+      <fieldset className="space-y-2">
+        <legend className="text-[13px] font-semibold">Where should the cards come from?</legend>
         {AI_SOURCES.map((s) => {
           const connected = p.overview.sources.includes(s)
           return (
@@ -53,7 +53,7 @@ export function SuggestRequestForm(p: RequestFormProps) {
               />
               <div>
                 <Label htmlFor={`${id}-${s}`}>{SOURCE_LABEL[s].title}</Label>
-                <p id={`${id}-${s}-help`} className="text-sm text-muted-foreground">
+                <p id={`${id}-${s}-help`} className="text-xs text-muted-foreground">
                   {connected ? SOURCE_LABEL[s].help : 'Not available yet.'}
                 </p>
               </div>
@@ -69,18 +69,18 @@ export function SuggestRequestForm(p: RequestFormProps) {
             id={`${id}-text`}
             value={p.pasted}
             maxLength={p.overview.limits.max_pasted_chars}
-            rows={8}
+            rows={6}
             onChange={(e) => p.onPasted(e.target.value)}
             aria-describedby={`${id}-text-count`}
           />
-          <p id={`${id}-text-count`} className="text-sm text-muted-foreground">
+          <p id={`${id}-text-count`} className="text-xs text-muted-foreground">
             {p.pasted.length} of {p.overview.limits.max_pasted_chars} characters
           </p>
         </div>
       ) : null}
 
       <div className="space-y-2">
-        <p className="font-semibold">How many cards?</p>
+        <p className="text-[13px] font-semibold">How many cards?</p>
         <NumberStepper
           label="Number of cards"
           value={p.count}
@@ -90,7 +90,7 @@ export function SuggestRequestForm(p: RequestFormProps) {
         />
       </div>
 
-      <p className="text-sm text-muted-foreground">{quotaText(p.overview.quota)}</p>
+      <p className="text-xs text-muted-foreground">{quotaText(p.overview.quota)}</p>
 
       {p.error ? <Alert variant="error">{p.error}</Alert> : null}
       {p.offline ? <Alert>You are offline. Connect to ask for suggestions.</Alert> : null}
@@ -99,7 +99,7 @@ export function SuggestRequestForm(p: RequestFormProps) {
         <Button type="submit" disabled={p.pending || p.offline || p.problem !== null} aria-describedby={`${id}-why`}>
           <Sparkles aria-hidden /> {p.pending ? 'Sending…' : 'Suggest cards'}
         </Button>
-        <p id={`${id}-why`} className="text-sm text-muted-foreground">
+        <p id={`${id}-why`} className="text-xs text-muted-foreground">
           {p.problem ?? 'Nothing becomes a card until you accept it.'}
         </p>
       </div>

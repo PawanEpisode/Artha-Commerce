@@ -1,4 +1,4 @@
-import { Alert, Skeleton } from '@artha/design-system'
+import { Alert, PageHeader, Skeleton } from '@artha/design-system'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
@@ -88,15 +88,13 @@ function Body({ overview }: { overview: Overview }) {
 
   return (
     <>
-      <header className="space-y-2">
-        <h1 className="font-display text-3xl font-extrabold">Coverage settings</h1>
-        <p className="text-muted-foreground">
-          Tune how your progress is measured. Your history is never rewritten, only how it is shown.
-        </p>
-      </header>
+      <PageHeader
+        title="Coverage settings"
+        description="Tune how your progress is measured. Your history is never rewritten, only how it is shown."
+      />
 
       {settings.isPending ? (
-        <Skeleton className="h-96 w-full" />
+        <Skeleton className="h-64 w-full" />
       ) : settings.isError || !settings.data ? (
         <Alert variant="error">We could not load your settings.</Alert>
       ) : (
@@ -147,5 +145,9 @@ function Body({ overview }: { overview: Overview }) {
 }
 
 export function CoverageSettingsContainer() {
-  return <CoverageShell>{(overview) => <Body overview={overview} />}</CoverageShell>
+  return (
+    <CoverageShell nav={false} width="form">
+      {(overview) => <Body overview={overview} />}
+    </CoverageShell>
+  )
 }

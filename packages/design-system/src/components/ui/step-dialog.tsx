@@ -75,7 +75,7 @@ export function StepDialog({
           className,
         )}
       >
-        <div className="space-y-4 border-b border-border px-5 pt-5 pb-4 sm:px-6 sm:pt-6">
+        <div className="space-y-3 border-b border-border px-4 pt-4 pb-3 sm:px-5 sm:pt-5">
           <div>
             <DialogTitle>{title}</DialogTitle>
             {description ? (
@@ -94,17 +94,17 @@ export function StepDialog({
           ) : null}
         </div>
 
-        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto px-5 py-5 sm:px-6">
+        <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-4 py-4 sm:px-5">
           <div className="space-y-1">
-            <h3 ref={heading} tabIndex={-1} className="font-display text-lg font-bold outline-none">
+            <h3 ref={heading} tabIndex={-1} className="text-base font-semibold outline-none">
               {stepTitle}
             </h3>
-            {stepDescription ? <p className="text-sm text-muted-foreground">{stepDescription}</p> : null}
+            {stepDescription ? <p className="text-[13px] text-muted-foreground">{stepDescription}</p> : null}
           </div>
           {children}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-5 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-5">
           <div className="flex min-w-0 flex-wrap items-center gap-2">{aside}</div>
           <div className="flex flex-wrap items-center justify-end gap-2">
             {onBack ? (

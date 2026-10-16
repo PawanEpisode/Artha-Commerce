@@ -20,7 +20,6 @@ export function CoverageNav({ dueCount }: { dueCount?: number }) {
       label="My Coverage"
       items={ITEMS.map(({ value, label, to }) => ({ value, label, href: to }))}
       value={sectionOf(pathname)}
-      className="[&>div]:mx-auto [&>div]:max-w-3xl"
       renderLink={(item, props) => {
         const target = ITEMS.find((i) => i.value === item.value)
         if (!target) return null

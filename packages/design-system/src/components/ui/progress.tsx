@@ -118,15 +118,15 @@ export function ProgressRing({
           </>
         )}
       </svg>
-      <span className="absolute inset-0 grid place-items-center font-display text-foreground tabular-nums">
-        {children ?? <span className="text-2xl font-bold">{Math.round(v)}%</span>}
+      <span className="absolute inset-0 grid place-items-center text-foreground tabular-nums">
+        {children ?? <span className="text-xl font-semibold">{Math.round(v)}%</span>}
       </span>
     </div>
   )
 }
 
-const barVariants = cva('h-2 w-full overflow-hidden rounded-full bg-secondary', {
-  variants: { size: { sm: 'h-1.5', md: 'h-2', lg: 'h-3' } },
+const barVariants = cva('h-1.5 w-full overflow-hidden rounded-full bg-secondary', {
+  variants: { size: { sm: 'h-1', md: 'h-1.5', lg: 'h-2.5' } },
   defaultVariants: { size: 'md' },
 })
 

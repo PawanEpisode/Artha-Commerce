@@ -125,9 +125,10 @@ export function ReviewPlayer({
     <div
       data-slot="review-player"
       className="mx-auto flex w-full max-w-2xl flex-col"
-      style={{ height: vvh ? `${vvh}px` : '100dvh' }}
+      // The visible viewport minus the app topbar (the variable is unset, so 0, when the page is framed by nothing).
+      style={{ height: `calc(${vvh ? `${vvh}px` : '100dvh'} - var(--site-header-height, 0px))` }}
     >
-      <header className="flex items-center gap-2 px-4 pt-3 pb-2">
+      <header className="flex items-center gap-2 px-4 pt-2 pb-1.5">
         <Button variant="ghost" size="sm" onClick={onLeave}>
           <ArrowLeft aria-hidden />
           Leave
@@ -140,7 +141,7 @@ export function ReviewPlayer({
             U
           </Kbd>
         </Button>
-        <Button variant="ghost" size="icon" aria-label="Keyboard shortcuts" onClick={() => setHelp(true)}>
+        <Button variant="ghost" size="icon-sm" aria-label="Keyboard shortcuts" onClick={() => setHelp(true)}>
           <Keyboard aria-hidden />
         </Button>
       </header>
@@ -158,7 +159,7 @@ export function ReviewPlayer({
         {session.staleWarning ? (
           <p
             role="status"
-            className="rounded-lg border border-warning-border bg-warning-bg px-3 py-2 text-sm text-warning-fg"
+            className="rounded-md border border-warning-border bg-warning-bg px-3 py-1.5 text-[13px] text-warning-fg"
           >
             These cards were downloaded more than 2 days ago. Some may have changed. Connect to refresh them.
           </p>
@@ -166,25 +167,25 @@ export function ReviewPlayer({
         {session.quotaFull ? (
           <p
             role="alert"
-            className="rounded-lg border border-warning-border bg-warning-bg px-3 py-2 text-sm text-warning-fg"
+            className="rounded-md border border-warning-border bg-warning-bg px-3 py-1.5 text-[13px] text-warning-fg"
           >
             This device is holding as many reviews as it can keep. Connect to the internet to sync them, then carry on.
           </p>
         ) : null}
         {session.catchup ? (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[13px] text-muted-foreground">
             Catch-up: the most important and most overdue cards come first.
           </p>
         ) : null}
       </div>
 
-      <div className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto px-4 py-3">
+      <div className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto px-4 py-2">
         {!introDone ? (
           <FirstTimeIntro onDone={onIntroDone} />
         ) : card ? (
           <div className="space-y-3">
             {tricky ? (
-              <p className="flex flex-wrap items-center gap-2 text-sm">
+              <p className="flex flex-wrap items-center gap-2 text-[13px]">
                 <Badge variant="highlight">Tricky card</Badge>
                 <span className="text-muted-foreground">
                   You have missed this one a few times. Rewording it can help.
@@ -243,7 +244,7 @@ export function ReviewPlayer({
       </div>
 
       {introDone && card ? (
-        <div className="border-t border-border bg-background px-4 pt-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
+        <div className="border-t border-border bg-background px-4 pt-2.5 pb-[max(env(safe-area-inset-bottom),0.625rem)]">
           {flipped ? (
             <div className="space-y-2">
               <RatingButtons
@@ -257,7 +258,12 @@ export function ReviewPlayer({
               </p>
             </div>
           ) : (
-            <Button ref={showRef} size="lg" className="w-full" aria-keyshortcuts="Space Enter" onClick={session.flip}>
+            <Button
+              ref={showRef}
+              className="h-10 min-h-10 w-full pointer-coarse:h-12"
+              aria-keyshortcuts="Space Enter"
+              onClick={session.flip}
+            >
               Show answer
               <Kbd aria-hidden className="ml-2 hidden sm:inline-flex">
                 Space

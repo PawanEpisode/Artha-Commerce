@@ -6,6 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Button,
+  PageHeader,
   Skeleton,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
@@ -45,22 +46,19 @@ function SubjectNotes({ subject, search }: { subject: string; search: NoteFilter
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <h1 className="font-display text-3xl font-extrabold break-words">{name}</h1>
-        <NewNoteLink levelId={levelId} subject={subject} />
-      </header>
+      <PageHeader title={name} actions={<NewNoteLink levelId={levelId} subject={subject} />} />
 
-      <section aria-labelledby="chapters-h" className="space-y-3">
-        <h2 id="chapters-h" className="font-display text-xl font-bold">
+      <section aria-labelledby="chapters-h" className="space-y-2">
+        <h2 id="chapters-h" className="text-sm font-semibold">
           Chapters
         </h2>
         {counts.isPending ? (
-          <div aria-busy="true" className="space-y-2">
+          <div aria-busy="true" className="space-y-1.5">
             <span role="status" className="sr-only">
               Loading chapters…
             </span>
-            <Skeleton className="h-16 w-full" />
-            <Skeleton className="h-16 w-full" />
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
           </div>
         ) : counts.isError || !counts.data ? (
           <Alert variant="error">
@@ -81,8 +79,8 @@ function SubjectNotes({ subject, search }: { subject: string; search: NoteFilter
         )}
       </section>
 
-      <section aria-labelledby="all-notes-h" className="space-y-3">
-        <h2 id="all-notes-h" className="font-display text-xl font-bold">
+      <section aria-labelledby="all-notes-h" className="space-y-2">
+        <h2 id="all-notes-h" className="text-sm font-semibold">
           All notes in {name}
         </h2>
         <AggregateSection

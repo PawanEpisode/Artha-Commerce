@@ -22,6 +22,8 @@ interface Props {
   preset?: PresetKey
   onChange: (timings: Timings, preset: PresetKey) => void
   disabled?: boolean
+  /** A narrow column (the focus page's setup rail): the custom fields stack one per row. */
+  narrow?: boolean
 }
 
 type DurationKey = 'focus_minutes' | 'short_break_minutes' | 'long_break_minutes'
@@ -38,7 +40,7 @@ const OPTIONS = (['classic', 'deep', 'light', 'custom'] as const).map((value) =>
 }))
 
 /** Classic, Deep, Light or Custom. Custom shows four steppers bounded by the same limits the server enforces. */
-export function PresetPicker({ value, preset, onChange, disabled }: Props) {
+export function PresetPicker({ value, preset, onChange, disabled, narrow = false }: Props) {
   const derived = preset ?? matchPreset(value)
   // Keep the click visible before a parent (or the server) echoes the new preset back.
   const [pending, setPending] = useState<PresetKey | null>(null)
@@ -87,15 +89,17 @@ export function PresetPicker({ value, preset, onChange, disabled }: Props) {
           stretch
           onValueChange={choose}
         />
-        <p className="text-sm text-muted-foreground">{describeTimings(value)}</p>
+        <p className="text-xs text-muted-foreground">{describeTimings(value)}</p>
         {selected === 'custom' ? (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             Adjust the lengths below. They stay custom until you choose another preset.
           </p>
         ) : null}
       </div>
       {selected === 'custom' ? (
-        <div className="grid gap-5 motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none sm:grid-cols-2">
+        <div
+          className={`grid gap-3 motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none ${narrow ? '' : 'sm:grid-cols-2'}`}
+        >
           <DurationField
             label="Focus length"
             size="compact"
@@ -142,7 +146,7 @@ export function PresetPicker({ value, preset, onChange, disabled }: Props) {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="space-y-1.5">
-      <p className="text-sm font-medium">{label}</p>
+      <p className="text-[13px] font-medium">{label}</p>
       {children}
     </div>
   )

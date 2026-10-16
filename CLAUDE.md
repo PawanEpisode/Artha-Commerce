@@ -17,6 +17,10 @@ shareable (WhatsApp previews); signed-in students get a workspace that stores th
 | Quality | ESLint (flat) + Prettier + Husky + lint-staged + commitlint (Conventional Commits), Vitest, pytest, ruff, CI, Dependabot, gitleaks |
 | Hosting | Vercel: two projects from one monorepo (`apps/web`, `apps/api`) |
 
+## UI redesign
+
+The signed-in app uses a compact, Linear-style design: 13px text, 28 to 32px controls (44px under `pointer-coarse:` on touch), a 232/48px sidebar rail, `Page` + `PageHeader`, and `DataTable` for lists of like things. Public pages stay editorial but use the same compact primitives and a 48px header. The contract and page recipes are in `docs/UI-REDESIGN.md`; primitives are listed in `.claude/skills/design-system-usage`.
+
 ## Repo map
 
 - `apps/web`: frontend. `src/routes` (thin), `src/modules/*` (features), `src/styles.css` (Tailwind entry), `src/lib` (env, supabase, api)

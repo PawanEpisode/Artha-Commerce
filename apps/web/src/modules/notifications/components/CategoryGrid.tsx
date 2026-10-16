@@ -19,11 +19,11 @@ export function CategoryGrid({
   return (
     <ul className="divide-y divide-border">
       {categories.map((category) => (
-        <li key={category.key} className="py-4 first:pt-0 last:pb-0">
-          <fieldset className="min-w-0 space-y-3">
-            <legend className="text-sm font-semibold">{category.label}</legend>
-            <p className="text-sm text-muted-foreground">{category.description}</p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
+        <li key={category.key} className="py-3 first:pt-0 last:pb-0">
+          <fieldset className="min-w-0 space-y-1.5">
+            <legend className="text-[13px] font-semibold">{category.label}</legend>
+            <p className="text-xs text-muted-foreground">{category.description}</p>
+            <div className="flex flex-wrap gap-x-5 gap-y-0.5">
               {CHANNEL_ORDER.map((channel) => {
                 const id = `pref-${category.key}-${channel}`
                 return (
@@ -35,7 +35,7 @@ export function CategoryGrid({
                       onCheckedChange={(enabled) => onChange({ category: category.key, channel, enabled })}
                     />
                     {/* The visible text is a label too, so a tap on it toggles; aria-label above names it in full. */}
-                    <label htmlFor={id} className="min-h-11 content-center text-sm">
+                    <label htmlFor={id} className="min-h-8 content-center text-[13px] pointer-coarse:min-h-11">
                       {CHANNEL_LABEL[channel]}
                     </label>
                   </div>

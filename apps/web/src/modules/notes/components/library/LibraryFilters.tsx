@@ -1,4 +1,12 @@
-import { Button, FilterChip, ListFilter, Search, SegmentedControl, SelectField } from '@artha/design-system'
+import {
+  Button,
+  FilterChip,
+  ListFilter,
+  Search,
+  SegmentedControl,
+  SelectField,
+  TableToolbar,
+} from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { ALL_CHAPTERS_LABEL } from '~/modules/coverage'
@@ -70,15 +78,15 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
   const set = (patch: Partial<LibrarySearch>) => onChange({ ...search, ...patch })
 
   return (
-    <section aria-label="Find a PDF" className="space-y-3">
-      <div className="flex flex-wrap items-end gap-2">
-        <div className="relative min-w-0 flex-1 basis-56">
+    <section aria-label="Find a PDF" className="space-y-2">
+      <TableToolbar>
+        <div className="relative min-w-0 flex-1 basis-56 sm:max-w-sm">
           <label htmlFor="library-q" className="sr-only">
             Search your PDFs by title
           </label>
           <Search
             aria-hidden
-            className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground"
+            className="pointer-events-none absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2 text-muted-foreground"
           />
           <input
             id="library-q"
@@ -88,7 +96,7 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
             autoComplete="off"
             placeholder="Search your PDFs by title"
             onChange={(e) => setText(e.target.value)}
-            className="h-11 w-full rounded-lg border border-input bg-card pr-3 pl-9 text-base outline-none placeholder:text-muted-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40 md:text-sm"
+            className="h-8 w-full rounded-md border border-input bg-card pr-3 pl-8 text-[13px] outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring/50 pointer-coarse:h-11 pointer-coarse:text-base"
           />
         </div>
         <SegmentedControl
@@ -99,21 +107,23 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
             { value: 'title', label: 'Title' },
           ]}
           onValueChange={(sort) => set({ sort })}
+          className="rounded-lg p-0.5 [&_button]:h-7 [&_button]:rounded-md [&_button]:px-2.5 [&_button]:text-[13px]"
         />
         <Button
           variant="outline"
+          size="sm"
           aria-expanded={open}
           aria-controls="library-filter-panel"
           onClick={() => setOpen((v) => !v)}
         >
           <ListFilter aria-hidden /> Filters{active.length > 0 ? ` (${active.length})` : ''}
         </Button>
-      </div>
+      </TableToolbar>
 
       {open ? (
         <div
           id="library-filter-panel"
-          className="grid gap-3 rounded-xl border border-border bg-card p-3 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-3 rounded-lg border border-border bg-card p-3 sm:grid-cols-2 lg:grid-cols-4"
         >
           <Field id="lib-subject" label="Subject">
             <SelectField
@@ -169,7 +179,7 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
       ) : null}
 
       {active.length > 0 || search.q ? (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5">
           {[...active, ...(search.q ? (['q'] as const) : [])].map((key) => {
             const text = describe(key, search, { subjects, chapters, tags })
             return (
@@ -193,8 +203,8 @@ export function LibraryFilters({ search, subjects, chapters, tags, onChange, deb
 
 function Field({ id, label, children }: { id: string; label: string; children: React.ReactNode }) {
   return (
-    <div className="grid gap-2">
-      <label htmlFor={id} className="text-sm font-medium">
+    <div className="grid gap-1">
+      <label htmlFor={id} className="text-xs font-medium text-muted-foreground">
         {label}
       </label>
       {children}

@@ -42,10 +42,10 @@ export function LogActions({ activities, pending, onLog }: Props) {
   if (everythingLogged(activities)) {
     return (
       <div role="status" className="flex items-start gap-3">
-        <CircleCheck aria-hidden className="mt-0.5 size-6 shrink-0 text-success-fg" />
+        <CircleCheck aria-hidden className="mt-0.5 size-5 shrink-0 text-success-fg" />
         <div>
-          <p className="font-semibold">Everything planned for this chapter is logged.</p>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="text-[13px] font-semibold">Everything planned for this chapter is logged.</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">
             Practice, mock tests and revision are all at target. Open another chapter to keep going.
           </p>
         </div>
@@ -70,8 +70,8 @@ export function LogActions({ activities, pending, onLog }: Props) {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="grid gap-4 sm:grid-cols-[1fr_9rem_auto] sm:items-end">
-      <div className="grid gap-2">
+    <form onSubmit={submit} noValidate className="grid gap-3 sm:grid-cols-[1fr_9rem_auto] sm:items-end">
+      <div className="grid gap-1.5">
         <Label htmlFor="log-type">What did you finish?</Label>
         <SelectField
           id="log-type"
@@ -101,7 +101,7 @@ export function LogActions({ activities, pending, onLog }: Props) {
         Log it
       </Button>
       {blocked.length > 0 ? (
-        <ul className="space-y-1 text-sm text-muted-foreground sm:col-span-3">
+        <ul className="space-y-1 text-xs text-muted-foreground sm:col-span-3">
           {blocked.map((reason) => (
             <li key={reason}>{reason}</li>
           ))}

@@ -1,4 +1,4 @@
-import { Alert, BarChart, Heatmap, SegmentedControl, SelectField, Skeleton } from '@artha/design-system'
+import { Alert, BarChart, Heatmap, PageHeader, SegmentedControl, SelectField, Skeleton } from '@artha/design-system'
 import { useNavigate } from '@tanstack/react-router'
 import { type ReactNode, useEffect, useMemo, useRef } from 'react'
 
@@ -45,7 +45,7 @@ function Block({
   children: ReactNode
   label: string
 }) {
-  if (query.isPending) return <Skeleton className="h-40 w-full" aria-label={`Loading ${label}`} />
+  if (query.isPending) return <Skeleton className="h-28 w-full" aria-label={`Loading ${label}`} />
   if (query.isError)
     return (
       <Alert variant="error">
@@ -55,8 +55,11 @@ function Block({
   return <>{children}</>
 }
 
-const Card = ({ children, title }: { children: ReactNode; title: string }) => (
-  <section aria-label={title} className="space-y-3 rounded-2xl border border-border bg-card p-5 shadow-soft">
+const Panel = ({ children, title, className }: { children: ReactNode; title: string; className?: string }) => (
+  <section
+    aria-label={title}
+    className={`min-w-0 space-y-2 rounded-lg border border-border bg-card p-4 ${className ?? ''}`}
+  >
     {children}
   </section>
 )
@@ -110,12 +113,7 @@ function Reports({ search, tz, weekStart }: { search: ReportsSearch; tz: string;
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Reports</h1>
-        <p className="text-muted-foreground">
-          {dayLabel(range.from)} to {dayLabel(range.to)}
-        </p>
-      </header>
+      <PageHeader title="Reports" description={`${dayLabel(range.from)} to ${dayLabel(range.to)}`} />
 
       <ReportToolbar
         preset={search.range}
@@ -144,47 +142,50 @@ function Reports({ search, tz, weekStart }: { search: ReportsSearch; tz: string;
             {summary.data ? <SummaryTiles summary={summary.data} /> : null}
           </Block>
 
-          <Card title="Study time">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="text-lg font-bold">Study time</h2>
-              <SegmentedControl<ReportsSearch['by']>
-                label="Split the chart by"
-                value={search.by}
-                onValueChange={(v) => setSearch({ by: v })}
-                options={[
-                  { value: 'total', label: 'Total' },
-                  { value: 'subject', label: 'Subject' },
-                  { value: 'activity', label: 'Activity' },
-                ]}
-              />
-            </div>
-            <Block query={series} label="the chart">
-              {chart ? (
-                <BarChart
-                  title={`Study time by ${group}`}
-                  series={chart.series}
-                  columns={chart.columns}
-                  format={fmt}
-                  labelEvery={Math.max(1, Math.ceil(chart.columns.length / 12))}
+          <div className="grid items-start gap-4 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+            <Panel title="Study time">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h2 className="text-sm font-semibold">Study time</h2>
+                <SegmentedControl<ReportsSearch['by']>
+                  label="Split the chart by"
+                  value={search.by}
+                  onValueChange={(v) => setSearch({ by: v })}
+                  options={[
+                    { value: 'total', label: 'Total' },
+                    { value: 'subject', label: 'Subject' },
+                    { value: 'activity', label: 'Activity' },
+                  ]}
                 />
-              ) : null}
-            </Block>
-          </Card>
+              </div>
+              <Block query={series} label="the chart">
+                {chart ? (
+                  <BarChart
+                    title={`Study time by ${group}`}
+                    series={chart.series}
+                    columns={chart.columns}
+                    format={fmt}
+                    labelEvery={Math.max(1, Math.ceil(chart.columns.length / 12))}
+                    height={128}
+                  />
+                ) : null}
+              </Block>
+            </Panel>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <Card title="By subject">
-              <Block query={subjectSplit} label="the subject split">
-                {subjectSplit.data ? <BreakdownList title="By subject" data={subjectSplit.data} /> : null}
-              </Block>
-            </Card>
-            <Card title="By activity">
-              <Block query={activitySplit} label="the activity split">
-                {activitySplit.data ? <BreakdownList title="By activity" data={activitySplit.data} /> : null}
-              </Block>
-            </Card>
+            <div className="min-w-0 space-y-4">
+              <div className="min-w-0">
+                <Block query={subjectSplit} label="the subject split">
+                  {subjectSplit.data ? <BreakdownList title="By subject" data={subjectSplit.data} /> : null}
+                </Block>
+              </div>
+              <div className="min-w-0">
+                <Block query={activitySplit} label="the activity split">
+                  {activitySplit.data ? <BreakdownList title="By activity" data={activitySplit.data} /> : null}
+                </Block>
+              </div>
+            </div>
           </div>
 
-          <Card title="Calendar">
+          <Panel title="Calendar">
             <Block query={heat} label="the calendar">
               {heat.data ? (
                 <Heatmap
@@ -196,51 +197,53 @@ function Reports({ search, tz, weekStart }: { search: ReportsSearch; tz: string;
                 />
               ) : null}
             </Block>
-          </Card>
+          </Panel>
 
-          <Card title="Time of day">
-            <Block query={hours} label="the time of day chart">
-              {hours.data ? (
-                <>
-                  <BarChart
-                    title="Study time by hour of day"
-                    series={[{ key: 'seconds', name: 'Study time' }]}
-                    columns={hours.data.hours.map((s, h) => ({
-                      label: `${String(h).padStart(2, '0')}:00`,
-                      short: String(h),
-                      values: { seconds: s },
-                    }))}
-                    format={fmt}
-                    labelEvery={3}
-                    height={120}
-                  />
-                  <p className="text-xs text-muted-foreground">Hours are approximate for sessions with pauses.</p>
-                </>
-              ) : null}
-            </Block>
-          </Card>
-
-          <Card title="Time against coverage">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="text-lg font-bold">Time against coverage</h2>
-              {subjects.length > 0 ? (
-                <SelectField
-                  aria-label="Subject"
-                  value={chosenSubject ?? subjects[0].id}
-                  onValueChange={(subject) => setSearch({ subject })}
-                  className="w-56"
-                  options={subjects.map((s) => ({ value: s.id, label: s.name }))}
-                />
-              ) : null}
-            </div>
-            {subjects.length === 0 ? (
-              <p className="text-sm text-muted-foreground">Set up My Coverage to compare time with progress.</p>
-            ) : (
-              <Block query={tvc} label="the comparison">
-                {tvc.data ? <TimeVsCoverageTable data={tvc.data} /> : null}
+          <div className="grid items-start gap-4 lg:grid-cols-2">
+            <Panel title="Time of day">
+              <Block query={hours} label="the time of day chart">
+                {hours.data ? (
+                  <>
+                    <BarChart
+                      title="Study time by hour of day"
+                      series={[{ key: 'seconds', name: 'Study time' }]}
+                      columns={hours.data.hours.map((s, h) => ({
+                        label: `${String(h).padStart(2, '0')}:00`,
+                        short: String(h),
+                        values: { seconds: s },
+                      }))}
+                      format={fmt}
+                      labelEvery={3}
+                      height={128}
+                    />
+                    <p className="text-xs text-muted-foreground">Hours are approximate for sessions with pauses.</p>
+                  </>
+                ) : null}
               </Block>
-            )}
-          </Card>
+            </Panel>
+
+            <Panel title="Time against coverage">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h2 className="text-sm font-semibold">Time against coverage</h2>
+                {subjects.length > 0 ? (
+                  <SelectField
+                    aria-label="Subject"
+                    value={chosenSubject ?? subjects[0].id}
+                    onValueChange={(subject) => setSearch({ subject })}
+                    className="w-44"
+                    options={subjects.map((s) => ({ value: s.id, label: s.name }))}
+                  />
+                ) : null}
+              </div>
+              {subjects.length === 0 ? (
+                <p className="text-sm text-muted-foreground">Set up My Coverage to compare time with progress.</p>
+              ) : (
+                <Block query={tvc} label="the comparison">
+                  {tvc.data ? <TimeVsCoverageTable data={tvc.data} /> : null}
+                </Block>
+              )}
+            </Panel>
+          </div>
         </>
       )}
     </>

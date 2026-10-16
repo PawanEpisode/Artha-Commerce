@@ -45,7 +45,7 @@ export function NumberGrid({
     <div
       role="group"
       aria-label={ariaLabel}
-      className={cn('grid gap-2', className)}
+      className={cn('grid gap-1.5', className)}
       style={{
         gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
       }}
@@ -64,37 +64,36 @@ export function NumberGrid({
             aria-label={fullAriaLabel}
             aria-current={isCurrent ? 'true' : undefined}
             className={cn(
-              'relative flex h-10 w-full min-w-10 items-center justify-center rounded-lg border text-xs font-semibold transition-all outline-none',
+              'relative flex h-8 w-full min-w-8 items-center justify-center rounded-md border text-xs font-medium transition-colors outline-none pointer-coarse:h-10 pointer-coarse:min-w-10',
               // Base states
               item.state === 'unseen' && 'border-border/60 bg-muted/30 text-muted-foreground hover:bg-muted/60',
               item.state === 'seen' && 'border-border bg-card text-foreground hover:border-primary/50',
               item.state === 'answered' && 'border-primary bg-primary text-primary-foreground hover:opacity-90',
-              item.state === 'marked' &&
-                'border-amber-500 bg-amber-500/15 text-amber-900 hover:bg-amber-500/25 dark:text-amber-200',
+              item.state === 'marked' && 'border-warning-border bg-warning-bg text-warning-fg hover:brightness-95',
               item.state === 'answered_marked' && 'border-primary bg-primary text-primary-foreground hover:opacity-90',
-              item.state === 'correct' && 'border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-700',
+              item.state === 'correct' && 'border-success-border bg-success-bg text-success-fg hover:brightness-95',
               item.state === 'incorrect' &&
                 'text-destructive-foreground border-destructive bg-destructive hover:opacity-90',
               item.state === 'skipped' && 'border-dashed border-muted-foreground/40 bg-muted/20 text-muted-foreground',
               item.state === 'removed' && 'cursor-not-allowed border-dashed line-through opacity-40',
               // Current item highlight
-              isCurrent && 'font-bold shadow-sm ring-2 ring-ring ring-offset-2 ring-offset-background',
+              isCurrent && 'font-semibold shadow-soft ring-2 ring-ring ring-offset-1 ring-offset-background',
             )}
           >
             <span>{item.number}</span>
             {/* Corner status icons so state is never colour only */}
             {(item.state === 'marked' || item.state === 'answered_marked') && (
-              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-amber-500 text-[8px] text-white shadow-xs">
-                <Flag aria-hidden className="size-2 fill-white stroke-white" />
+              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-warning text-[8px] text-background shadow-xs">
+                <Flag aria-hidden className="size-2 fill-background stroke-background" />
               </span>
             )}
             {item.state === 'correct' && (
-              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-white text-emerald-700 shadow-xs">
+              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-card text-success-fg shadow-xs">
                 <Check aria-hidden className="size-2.5 stroke-[3]" />
               </span>
             )}
             {item.state === 'incorrect' && (
-              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-white text-destructive shadow-xs">
+              <span className="absolute -top-1 -right-1 flex size-3.5 items-center justify-center rounded-full bg-card text-destructive shadow-xs">
                 <X aria-hidden className="size-2.5 stroke-[3]" />
               </span>
             )}

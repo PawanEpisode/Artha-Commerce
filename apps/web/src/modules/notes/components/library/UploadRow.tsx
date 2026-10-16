@@ -39,7 +39,7 @@ export function UploadRow({ item, compact, ...actions }: { item: UploadItem; com
     <div
       data-slot="upload-row"
       data-phase={item.phase}
-      className="flex items-start gap-3 rounded-xl border border-border bg-card p-3 text-sm shadow-soft"
+      className="flex items-start gap-3 rounded-lg border border-border bg-card p-2.5 text-[13px]"
     >
       <span aria-hidden className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-muted">
         {isFailed ? (

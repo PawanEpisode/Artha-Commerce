@@ -37,12 +37,12 @@ function FieldMessages({
   return (
     <>
       {hint && (
-        <p id={hintId} className="text-sm text-muted-foreground">
+        <p id={hintId} className="text-xs text-muted-foreground">
           {hint}
         </p>
       )}
       {error && (
-        <p id={errorId} role="alert" className="text-sm font-medium text-destructive">
+        <p id={errorId} role="alert" className="text-xs font-medium text-destructive">
           {error}
         </p>
       )}
@@ -54,7 +54,7 @@ function FieldMessages({
 export function TextField({ id: idProp, label, hint, error, className, ...props }: FieldProps) {
   const { id, hintId, errorId, describedBy } = useFieldIds(idProp, hint, error)
   return (
-    <div className={cn('grid gap-2', className)}>
+    <div className={cn('grid gap-1.5', className)}>
       <Label htmlFor={id}>{label}</Label>
       <Input id={id} aria-invalid={error ? true : undefined} aria-describedby={describedBy} {...props} />
       <FieldMessages hint={hint} hintId={hintId} error={error} errorId={errorId} />
@@ -62,12 +62,12 @@ export function TextField({ id: idProp, label, hint, error, className, ...props 
   )
 }
 
-/** Password input with a show/hide toggle (44px target). Never auto-fills the visible state. */
+/** Password input with a show/hide toggle (32px, 44px on touch). Never auto-fills the visible state. */
 export function PasswordField({ id: idProp, label, hint, error, className, ...props }: Omit<FieldProps, 'type'>) {
   const { id, hintId, errorId, describedBy } = useFieldIds(idProp, hint, error)
   const [visible, setVisible] = React.useState(false)
   return (
-    <div className={cn('grid gap-2', className)}>
+    <div className={cn('grid gap-1.5', className)}>
       <Label htmlFor={id}>{label}</Label>
       <div className="relative">
         <Input
@@ -75,7 +75,7 @@ export function PasswordField({ id: idProp, label, hint, error, className, ...pr
           type={visible ? 'text' : 'password'}
           aria-invalid={error ? true : undefined}
           aria-describedby={describedBy}
-          className="pr-12"
+          className="pr-9"
           {...props}
         />
         <button
@@ -83,7 +83,7 @@ export function PasswordField({ id: idProp, label, hint, error, className, ...pr
           onClick={() => setVisible((v) => !v)}
           aria-label={visible ? 'Hide password' : 'Show password'}
           aria-pressed={visible}
-          className="absolute top-0 right-0 grid size-11 cursor-pointer place-items-center rounded-lg text-muted-foreground outline-none hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/40"
+          className="absolute top-0 right-0 grid size-8 cursor-pointer place-items-center rounded-md text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50 pointer-coarse:size-11"
         >
           {visible ? <EyeOff className="size-4" aria-hidden /> : <Eye className="size-4" aria-hidden />}
         </button>

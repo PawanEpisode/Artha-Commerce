@@ -3,10 +3,12 @@ import {
   Badge,
   Button,
   ButtonLink,
+  Card,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
+  PageHeader,
   Skeleton,
   toast,
 } from '@artha/design-system'
@@ -186,14 +188,14 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
 
   return (
     <form
-      className="space-y-5"
+      className="space-y-4 rounded-lg border border-border bg-card p-4"
       noValidate
       onSubmit={(e) => {
         e.preventDefault()
         save()
       }}
     >
-      <h2 className="font-display text-xl font-bold">Edit</h2>
+      <h2 className="text-sm font-semibold">Edit</h2>
       {faces > 1 ? <Alert variant="info">This item makes {faces} cards. Changing it changes all of them.</Alert> : null}
       <CardFields
         kind={kind}
@@ -206,11 +208,12 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
       <CardPreview kind={kind} fields={fields} />
       {lost ? (
         <Alert variant="info">
-          <span className="flex flex-wrap items-center gap-3">
+          <span className="flex flex-wrap items-center gap-2">
             This card was deleted somewhere else. Your edit is kept here so you can copy it.
             <Button
               type="button"
               variant="outline"
+              size="sm"
               onClick={() => {
                 offline.dropEdit(card.id)
                 setLost(false)
@@ -234,8 +237,8 @@ function Editor({ card, kind }: { card: RecallCardDetail; kind: CardKind }) {
         <Alert variant="info">You are offline. You can keep editing; the change is sent when you are back.</Alert>
       ) : null}
       {problem ? <Alert variant="error">{problem}</Alert> : null}
-      <div className="flex flex-wrap gap-3">
-        <Button type="submit" size="lg" disabled={!dirty || patch.isPending}>
+      <div className="flex flex-wrap gap-2">
+        <Button type="submit" disabled={!dirty || patch.isPending}>
           {patch.isPending ? 'Saving…' : online ? 'Save changes' : 'Save on this device'}
         </Button>
         {dirty ? (
@@ -290,31 +293,31 @@ function ChapterMove({ card }: { card: RecallCardDetail }) {
   }
 
   return (
-    <section aria-labelledby="chapter-heading" className="space-y-3">
-      <h2 id="chapter-heading" className="font-display text-xl font-bold">
+    <section aria-labelledby="chapter-heading" className="space-y-2 rounded-lg border border-border bg-card p-4">
+      <h2 id="chapter-heading" className="text-sm font-semibold">
         Chapter
       </h2>
-      <p className="text-muted-foreground">
+      <p className="text-[13px] text-muted-foreground">
         {card.chapter?.name ? `This card belongs to ${card.chapter.name}.` : 'This card is not in a chapter.'}
       </p>
       {!open ? (
-        <Button variant="outline" disabled={!online} onClick={() => setOpen(true)}>
+        <Button variant="outline" size="sm" disabled={!online} onClick={() => setOpen(true)}>
           Move to another chapter
         </Button>
       ) : (
         <div className="space-y-3">
-          <ChapterPicker label="Move to" onPick={setPicked} />
-          <div className="flex gap-3">
-            <Button disabled={!picked || bulk.isPending} onClick={move}>
+          <ChapterPicker stacked label="Move to" onPick={setPicked} />
+          <div className="flex gap-2">
+            <Button size="sm" disabled={!picked || bulk.isPending} onClick={move}>
               {bulk.isPending ? 'Moving…' : 'Move card'}
             </Button>
-            <Button variant="ghost" onClick={() => setOpen(false)}>
+            <Button variant="ghost" size="sm" onClick={() => setOpen(false)}>
               Cancel
             </Button>
           </div>
         </div>
       )}
-      {!online ? <p className="text-sm text-muted-foreground">Moving a card needs the internet.</p> : null}
+      {!online ? <p className="text-xs text-muted-foreground">Moving a card needs the internet.</p> : null}
     </section>
   )
 }
@@ -358,14 +361,15 @@ function Actions({ card }: { card: RecallCardDetail }) {
     })
 
   return (
-    <section aria-labelledby="actions-heading" className="space-y-3">
-      <h2 id="actions-heading" className="font-display text-xl font-bold">
+    <section aria-labelledby="actions-heading" className="space-y-2 rounded-lg border border-border bg-card p-4">
+      <h2 id="actions-heading" className="text-sm font-semibold">
         Actions
       </h2>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         {paused ? (
           <Button
             variant="outline"
+            size="sm"
             disabled={state.isPending}
             onClick={() => run('unsuspend', 'Card is back in your reviews')}
           >
@@ -373,10 +377,20 @@ function Actions({ card }: { card: RecallCardDetail }) {
           </Button>
         ) : (
           <>
-            <Button variant="outline" disabled={state.isPending} onClick={() => run('bury', 'Hidden until tomorrow')}>
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={state.isPending}
+              onClick={() => run('bury', 'Hidden until tomorrow')}
+            >
               Skip until tomorrow
             </Button>
-            <Button variant="outline" disabled={state.isPending} onClick={() => run('suspend', 'Card paused')}>
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={state.isPending}
+              onClick={() => run('suspend', 'Card paused')}
+            >
               Pause
             </Button>
           </>
@@ -384,16 +398,17 @@ function Actions({ card }: { card: RecallCardDetail }) {
         {recheck ? (
           <Button
             variant="outline"
+            size="sm"
             disabled={state.isPending}
             onClick={() => run('recheck-ok', 'Thanks, marked as checked')}
           >
             This card is still right
           </Button>
         ) : null}
-        <Button variant="outline" onClick={() => setConfirm('reset')}>
+        <Button variant="outline" size="sm" onClick={() => setConfirm('reset')}>
           Reset memory
         </Button>
-        <Button variant="danger" onClick={() => setConfirm('delete')}>
+        <Button variant="danger" size="sm" onClick={() => setConfirm('delete')}>
           Delete
         </Button>
       </div>
@@ -435,7 +450,7 @@ function Detail({ id }: { id: string }) {
         <span className="sr-only" role="status">
           Loading your card…
         </span>
-        <Skeleton className="h-10 w-2/3" />
+        <Skeleton className="h-8 w-2/3" />
         <Skeleton className="h-64 w-full" />
       </div>
     )
@@ -448,7 +463,7 @@ function Detail({ id }: { id: string }) {
           {q.error instanceof ApiError && q.error.status === 410
             ? 'This card was deleted.'
             : 'We could not find this card.'}
-          <ButtonLink variant="outline" asChild>
+          <ButtonLink variant="outline" size="sm" asChild>
             <Link to="/app/recall/cards" search={{}}>
               Back to your cards
             </Link>
@@ -465,54 +480,64 @@ function Detail({ id }: { id: string }) {
 
   return (
     <>
-      <header className="space-y-2">
-        <ButtonLink variant="ghost" asChild>
-          <Link to="/app/recall/cards" search={{}}>
-            Back to your cards
-          </Link>
-        </ButtonLink>
-        <h1 className="text-3xl font-extrabold">{kindLabel(card.kind)}</h1>
-        <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-          {card.chapter?.name ? <span>{card.chapter.name}</span> : null}
-          {card.source ? <span>From your {card.source.module === 'notes' ? 'notes' : 'highlights'}</span> : null}
-          {card.badges.map((b) => (
-            <Badge key={b} variant="outline">
-              {{ suspended: 'Paused', tricky: 'Tricky', recheck: 'Needs a look', buried: 'Back tomorrow' }[b] ?? b}
-            </Badge>
-          ))}
+      <nav aria-label="Breadcrumb">
+        <Link to="/app/recall/cards" search={{}} className="text-xs text-muted-foreground hover:underline">
+          ← Back to your cards
+        </Link>
+      </nav>
+      <PageHeader
+        title={kindLabel(card.kind)}
+        description={
+          <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            {card.chapter?.name ? <span>{card.chapter.name}</span> : null}
+            {card.source ? <span>From your {card.source.module === 'notes' ? 'notes' : 'highlights'}</span> : null}
+            {card.badges.map((b) => (
+              <Badge key={b} variant="outline">
+                {{ suspended: 'Paused', tricky: 'Tricky', recheck: 'Needs a look', buried: 'Back tomorrow' }[b] ?? b}
+              </Badge>
+            ))}
+          </span>
+        }
+      />
+
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
+        <div className="min-w-0 space-y-4">
+          {/* Remounting on the card id only: a background refresh never throws away what she is typing. */}
+          <Editor key={card.id} card={card} kind={card.kind} />
+
+          <section aria-labelledby="history-heading" className="space-y-2">
+            <h2 id="history-heading" className="text-sm font-semibold">
+              Review history
+            </h2>
+            {history.isPending ? (
+              <Skeleton className="h-20 w-full" />
+            ) : history.isError ? (
+              <LoadError what="the history" onRetry={() => void history.refetch()} />
+            ) : (
+              <ReviewHistory rows={history.data.items} />
+            )}
+          </section>
         </div>
-      </header>
 
-      <section aria-labelledby="memory-heading" className="space-y-3">
-        <h2 id="memory-heading" className="font-display text-xl font-bold">
-          Your memory of it
-        </h2>
-        {card.memory ? <CardMemoryPanel memory={card.memory} /> : null}
-      </section>
+        <div className="min-w-0 space-y-3">
+          <section aria-labelledby="memory-heading" className="space-y-2">
+            <h2 id="memory-heading" className="text-sm font-semibold">
+              Your memory of it
+            </h2>
+            {card.memory ? <CardMemoryPanel memory={card.memory} /> : null}
+          </section>
 
-      {/* Remounting on the card id only: a background refresh never throws away what she is typing. */}
-      <Editor key={card.id} card={card} kind={card.kind} />
+          <AttestationSection card={card} />
 
-      <AttestationSection card={card} />
+          <ChapterMove card={card} />
 
-      <ChapterMove card={card} />
+          <Actions card={card} />
 
-      <Actions card={card} />
-
-      <CardChangesSection cardId={card.id} />
-
-      <section aria-labelledby="history-heading" className="space-y-3">
-        <h2 id="history-heading" className="font-display text-xl font-bold">
-          Review history
-        </h2>
-        {history.isPending ? (
-          <Skeleton className="h-20 w-full" />
-        ) : history.isError ? (
-          <LoadError what="the history" onRetry={() => void history.refetch()} />
-        ) : (
-          <ReviewHistory rows={history.data.items} />
-        )}
-      </section>
+          <Card className="p-4">
+            <CardChangesSection cardId={card.id} />
+          </Card>
+        </div>
+      </div>
     </>
   )
 }

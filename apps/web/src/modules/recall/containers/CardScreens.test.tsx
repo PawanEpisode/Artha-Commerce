@@ -138,7 +138,7 @@ describe('the cards browser', () => {
     const user = userEvent.setup()
     h.api.cards.mockResolvedValue({ items: [row(1), row(2)], next_cursor: null, server_time: '2026-10-09T05:00:00Z' })
     const { container } = renderWithQuery(<CardsContainer search={{ kind: 'cloze', tier: 'mandatory', q: 'gst' }} />)
-    expect(within(await screen.findByRole('list', { name: 'Cards' })).getAllByRole('listitem')).toHaveLength(2)
+    expect(within(await screen.findByRole('table', { name: 'Cards' })).getAllByRole('row')).toHaveLength(3) // header + 2
     expect(h.api.cards).toHaveBeenCalledWith(
       expect.objectContaining({ kind: 'cloze', tier: 'mandatory', q: 'gst', limit: 50 }),
     )
@@ -169,7 +169,7 @@ describe('the cards browser', () => {
       .mockResolvedValueOnce({ items: [row(2)], next_cursor: null, server_time: '2026-10-09T05:00:00Z' })
     renderWithQuery(<CardsContainer search={{}} />)
     await user.click(await screen.findByRole('button', { name: 'Show more cards' }))
-    expect(within(await screen.findByRole('list', { name: 'Cards' })).getAllByRole('listitem')).toHaveLength(2)
+    expect(within(await screen.findByRole('table', { name: 'Cards' })).getAllByRole('row')).toHaveLength(3) // header + 2
     expect(h.api.cards).toHaveBeenLastCalledWith(expect.objectContaining({ cursor: 'cur1' }))
   })
 
@@ -183,8 +183,9 @@ describe('the cards browser', () => {
     h.api.bulkCards.mockResolvedValue({ count: 2 })
     renderWithQuery(<CardsContainer search={{}} />)
     const boxes = await screen.findAllByRole('checkbox')
-    await user.click(boxes[0]!)
-    await user.click(boxes[2]!)
+    // boxes[0] is the select-all box in the header
+    await user.click(boxes[1]!)
+    await user.click(boxes[3]!)
     expect(screen.getByRole('status', { name: '' })).toHaveTextContent('2 selected')
     await user.click(screen.getByRole('button', { name: 'Delete' }))
     expect(h.api.bulkCards).not.toHaveBeenCalled()

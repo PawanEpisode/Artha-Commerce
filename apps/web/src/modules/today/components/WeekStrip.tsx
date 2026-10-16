@@ -22,7 +22,7 @@ const weekdayLetter = (day: string) => {
 export function WeekStrip({ days, today }: { days: WeekDay[]; today: string }) {
   if (!days.length) return null
   return (
-    <nav aria-label="This week" className="rounded-2xl border border-border bg-card p-3 sm:p-4">
+    <nav aria-label="This week" className="rounded-lg border border-border bg-card p-2">
       <ul className="flex items-center justify-between gap-1">
         {days.map((d) => {
           const isToday = d.date === today

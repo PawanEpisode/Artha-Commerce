@@ -6,6 +6,7 @@ import type { DocumentSummary } from '../../lib/document-types'
 import { makeDocument } from '../../lib/testing-documents'
 import { FALLBACK_UPLOAD_LIMITS, MIB } from '../../lib/upload-check'
 import { DocumentCard } from './DocumentCard'
+import { DocumentRow } from './DocumentRow'
 import { LibraryView } from './LibraryView'
 
 vi.mock('@tanstack/react-router', async () => (await import('~/test/router-stub')).routerStub)
@@ -34,7 +35,7 @@ const base = {
   onUpload: () => undefined,
   onFiles: () => undefined,
   onClearFilters: () => undefined,
-  renderCard: (doc: DocumentSummary) => <DocumentCard doc={doc} />,
+  renderRow: (doc: DocumentSummary) => <DocumentRow full doc={doc} />,
 }
 
 const docs = (n: number) => Array.from({ length: n }, (_, i) => makeDocument({ id: `d${i}`, title: `Module ${i}` }))
@@ -66,7 +67,7 @@ describe('LibraryView states (PRD 7.3)', () => {
     render(<LibraryView {...base} state="error" items={docs(2)} requestId="req-42" onRetry={onRetry} />)
     expect(screen.getByRole('alert')).toHaveTextContent('This is the last list we had.')
     expect(screen.getByRole('alert')).toHaveTextContent('Request req-42')
-    expect(screen.getAllByRole('listitem')).toHaveLength(2)
+    expect(screen.getAllByRole('row')).toHaveLength(3)
     await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
     expect(onRetry).toHaveBeenCalled()
   })
@@ -95,7 +96,7 @@ describe('LibraryView states (PRD 7.3)', () => {
   it('pages a long list by cursor and says it is partial', async () => {
     const onLoadMore = vi.fn()
     render(<LibraryView {...base} items={docs(100)} hasMore onLoadMore={onLoadMore} />)
-    expect(screen.getAllByRole('listitem').length).toBeGreaterThanOrEqual(100)
+    expect(screen.getAllByRole('row').length).toBeGreaterThanOrEqual(100)
     expect(screen.getByText(/Showing 100 PDFs so far/)).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'Load more' }))
     expect(onLoadMore).toHaveBeenCalled()

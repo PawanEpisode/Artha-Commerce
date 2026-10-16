@@ -1,5 +1,11 @@
 /// <reference types="vite/client" />
-import { buildThemeInitScript, THEME_META_COLORS, ThemeProvider, Toaster } from '@artha/design-system'
+import {
+  buildThemeInitScript,
+  SIDEBAR_INIT_SCRIPT,
+  THEME_META_COLORS,
+  ThemeProvider,
+  Toaster,
+} from '@artha/design-system'
 import { type QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
@@ -77,6 +83,8 @@ function RootDocument({ children }: { children: ReactNode }) {
         {/* After the stylesheet link and the theme-color meta, before first paint. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script dangerouslySetInnerHTML={{ __html: SIGNED_IN_MARK_SCRIPT }} />
+        {/* Restores a collapsed sidebar rail before paint, so it never flashes open. */}
+        <script dangerouslySetInnerHTML={{ __html: SIDEBAR_INIT_SCRIPT }} />
       </head>
       <body data-site={env.VITE_SITE_NAME}>
         {children}

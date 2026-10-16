@@ -178,7 +178,7 @@ describe('decks library', () => {
   it('lists decks with links to their pages and passes axe', async () => {
     const { container } = renderWithQuery(<DecksContainer />)
     expect(screen.getByRole('heading', { name: 'Decks', level: 1 })).toBeInTheDocument()
-    const list = screen.getByRole('list', { name: 'Deck library' })
+    const list = screen.getByRole('table', { name: 'Deck library' })
     expect(within(list).getByRole('link', { name: 'GST: input tax credit' })).toHaveAttribute(
       'href',
       '/app/recall/decks/d1',
@@ -193,7 +193,7 @@ describe('decks library', () => {
     h.library = lib([deck({ subscription: sub({ newer_versions: 2 }) })])
     h.mine = query([deck({ subscription: sub({ newer_versions: 2 }) })])
     const { container } = renderWithQuery(<DecksContainer />)
-    const mine = screen.getByRole('list', { name: 'Your decks' })
+    const mine = screen.getByRole('table', { name: 'Your decks' })
     expect(within(mine).getByText('Subscribed')).toBeInTheDocument()
     expect(within(mine).getByText('2 newer versions exist')).toBeInTheDocument()
     await expectNoA11yViolations(container)
@@ -202,7 +202,7 @@ describe('decks library', () => {
   it('does not list an unsubscribed deck under "Your decks"', () => {
     h.mine = query([deck({ subscription: sub({ status: 'archived' }) })])
     renderWithQuery(<DecksContainer />)
-    expect(screen.queryByRole('list', { name: 'Your decks' })).toBeNull()
+    expect(screen.queryByRole('table', { name: 'Your decks' })).toBeNull()
   })
 
   it('has loading, empty, error and "show more" states', async () => {
@@ -238,8 +238,8 @@ describe('deck page', () => {
     const user = userEvent.setup()
     const { container } = renderWithQuery(<DeckDetailContainer deckId="d1" />)
     expect(screen.getByRole('heading', { name: 'GST: input tax credit', level: 1 })).toBeInTheDocument()
-    const items = screen.getByRole('list', { name: 'Cards in this deck' })
-    expect(within(items).getAllByRole('listitem')).toHaveLength(2)
+    const items = screen.getByRole('table', { name: 'Cards in this deck' })
+    expect(within(items).getAllByRole('row')).toHaveLength(3) // header + 2
     await expectNoA11yViolations(container)
     expectFits320(container)
     await user.click(screen.getByRole('button', { name: 'Must know only' }))

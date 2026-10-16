@@ -1,4 +1,4 @@
-import { Button } from '@artha/design-system'
+import { Button, PageHeader } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
@@ -59,10 +59,7 @@ function Body({ settings }: { settings: FocusSettings }) {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Focus settings</h1>
-        <p className="text-muted-foreground">Your rhythm and alerts. Changes save as you make them.</p>
-      </header>
+      <PageHeader title="Focus settings" description="Your rhythm and alerts. Changes save as you make them." />
       <FocusSettingsForm
         value={{ ...settings, volume }}
         onChange={(p) => void onChange(p)}
@@ -78,11 +75,11 @@ function Body({ settings }: { settings: FocusSettings }) {
         popoutSupported={isDocumentPipSupported()}
         busy={save.isPending}
       />
-      <section aria-labelledby="focus-data" className="space-y-3 rounded-2xl border border-border bg-card p-6">
-        <h2 id="focus-data" className="text-lg font-bold">
+      <section aria-labelledby="focus-data" className="space-y-2 rounded-lg border border-border bg-card p-4">
+        <h2 id="focus-data" className="text-sm font-semibold">
           Your data
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           Your finished rounds are part of your study time and live in the time tracker. You can download or delete them
           from{' '}
           <Link to="/app/settings/tracker" className="font-medium underline">
@@ -90,9 +87,10 @@ function Body({ settings }: { settings: FocusSettings }) {
           </Link>
           . Here you can download or delete the timer and its settings.
         </p>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           <Button
             variant="outline"
+            size="sm"
             onClick={() => {
               notify.exportStarted()
               void exportData()
@@ -113,6 +111,7 @@ function Body({ settings }: { settings: FocusSettings }) {
           {confirmDelete ? (
             <Button
               variant="outline"
+              size="sm"
               className="border-destructive text-destructive"
               onClick={() =>
                 void deleteData()
@@ -126,7 +125,7 @@ function Body({ settings }: { settings: FocusSettings }) {
               Yes, delete my timer data
             </Button>
           ) : (
-            <Button variant="outline" onClick={() => setConfirmDelete(true)}>
+            <Button variant="outline" size="sm" onClick={() => setConfirmDelete(true)}>
               Delete my timer data
             </Button>
           )}
@@ -143,6 +142,8 @@ export function SettingsContainer() {
       state={q.isPending ? 'loading' : q.isError && !isFeatureDisabled(q.error) ? 'error' : 'ready'}
       disabled={isFeatureDisabled(q.error)}
       onRetry={() => void q.refetch()}
+      width="form"
+      tabs={false}
     >
       {q.data ? <Body settings={q.data} /> : null}
     </FocusShell>

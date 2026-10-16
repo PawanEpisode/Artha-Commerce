@@ -6,7 +6,7 @@ import { Share, SquarePlus } from '@artha/design-system'
  */
 export function InstallSteps() {
   return (
-    <ol className="list-decimal space-y-3 pl-5 marker:font-semibold">
+    <ol className="list-decimal space-y-2 pl-5 marker:font-semibold">
       <li>
         Open this page in Safari and tap the Share button{' '}
         <Share aria-hidden className="inline size-4 align-text-bottom" /> at the bottom of the screen.

@@ -32,7 +32,7 @@ describe('the revision list', () => {
         renderAction={({ chapterId, chapterName }) => <a href={`/x/${chapterId}`}>Do it for {chapterName}</a>}
       />,
     )
-    const items = screen.getAllByRole('listitem')
+    const items = screen.getAllByRole('row').slice(1)
     expect(items).toHaveLength(2)
     const action = within(items[0]).getByRole('link', { name: 'Do it for GST and ITC' })
     expect(action).toHaveAttribute('href', '/x/c1')

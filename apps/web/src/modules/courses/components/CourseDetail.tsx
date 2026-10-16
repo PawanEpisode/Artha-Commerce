@@ -1,4 +1,15 @@
-import { ArrowRight, buttonVariants, Card, Container, EntityBadge, EntityDot } from '@artha/design-system'
+import {
+  ArrowRight,
+  Button,
+  Container,
+  DataTable,
+  EntityBadge,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
@@ -6,48 +17,50 @@ import type { PublicCourse } from '../lib/load'
 
 export function CourseDetail({ course, prompt }: { course: PublicCourse; prompt?: ReactNode }) {
   return (
-    <Container className="py-16 sm:py-24">
-      <p className="text-sm font-semibold tracking-widest text-primary uppercase">{course.body}</p>
-      <h1 className="mt-2 text-4xl font-extrabold sm:text-5xl">
-        {course.fullName} ({course.name})
-      </h1>
-      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{course.description}</p>
-      {prompt ? <div className="mt-8">{prompt}</div> : null}
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {course.levels.map((l) => (
-          <Link
-            key={l.slug}
-            to="/courses/$course/$level"
-            params={{ course: course.slug, level: l.slug }}
-            className="group block rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-          >
-            <Card className="flex h-full flex-col p-6 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
-              <h2 className="text-xl font-bold">{l.name}</h2>
-              <p className="mt-2">
-                <EntityBadge kind="paper">
-                  {l.subjects.length} {l.subjects.length === 1 ? 'paper' : 'papers'}
-                </EntityBadge>
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                {l.subjects.slice(0, 3).map((s) => (
-                  <li key={s} className="flex items-start gap-2.5">
-                    <EntityDot kind="paper" className="mt-1.5" />
-                    <span className="min-w-0 break-words">{s}</span>
-                  </li>
-                ))}
-              </ul>
-              <span className="mt-auto pt-5">
-                <span className={buttonVariants({ variant: 'outline' })}>
-                  Open {l.name} papers
-                  <ArrowRight
-                    aria-hidden
-                    className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
-                  />
-                </span>
-              </span>
-            </Card>
-          </Link>
-        ))}
+    <Container className="py-6 sm:py-8">
+      <header>
+        <p className="text-[11px] font-medium tracking-wide text-muted-foreground uppercase">{course.body}</p>
+        <h1 className="text-xl font-semibold tracking-tight">
+          {course.fullName} ({course.name})
+        </h1>
+        <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{course.description}</p>
+      </header>
+      <div className="mt-5 space-y-3">
+        {prompt}
+        <DataTable>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent">
+              <TableHead>Level</TableHead>
+              <TableHead className="hidden md:table-cell">Papers include</TableHead>
+              <TableHead className="text-right">Papers</TableHead>
+              <TableHead>
+                <span className="sr-only">Open</span>
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {course.levels.map((l) => (
+              <TableRow key={l.slug}>
+                <TableCell className="h-12 py-2 text-sm font-medium">{l.name}</TableCell>
+                <TableCell className="hidden max-w-md truncate text-muted-foreground md:table-cell">
+                  {l.subjects.slice(0, 3).join(' · ')}
+                  {l.subjects.length > 3 ? ' …' : ''}
+                </TableCell>
+                <TableCell className="text-right">
+                  <EntityBadge kind="paper">{l.subjects.length}</EntityBadge>
+                </TableCell>
+                <TableCell className="text-right">
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to="/courses/$course/$level" params={{ course: course.slug, level: l.slug }}>
+                      Open<span className="sr-only"> {l.name} papers</span>
+                      <ArrowRight aria-hidden />
+                    </Link>
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </DataTable>
       </div>
     </Container>
   )

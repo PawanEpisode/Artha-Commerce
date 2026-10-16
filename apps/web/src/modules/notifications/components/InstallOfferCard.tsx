@@ -2,7 +2,7 @@ import { Button, Download, motion, useReducedMotion } from '@artha/design-system
 import { useId } from 'react'
 
 import type { InstallKind } from '../lib/install'
-import { WRAP_BUTTON } from './classes'
+import { CARD, WRAP_BUTTON } from './classes'
 import { InstallSteps } from './InstallSteps'
 
 interface Props {
@@ -28,9 +28,9 @@ export function InstallOfferCard({ kind, busy, onInstall, onClose }: Props) {
       initial={reduce ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="space-y-4 rounded-2xl border border-border bg-card p-5 shadow-soft sm:p-6"
+      className={`${CARD} text-[13px]`}
     >
-      <h2 id={headingId} className="text-lg font-bold">
+      <h2 id={headingId} className="text-sm font-semibold">
         Keep Artha one tap away
       </h2>
       <p>
@@ -43,7 +43,7 @@ export function InstallOfferCard({ kind, busy, onInstall, onClose }: Props) {
           In Safari, choose <strong>File</strong>, then <strong>Add to Dock</strong>.
         </p>
       ) : null}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2">
         {kind === 'prompt' ? (
           <>
             <Button variant="cta" loading={busy} onClick={onInstall} className={WRAP_BUTTON}>

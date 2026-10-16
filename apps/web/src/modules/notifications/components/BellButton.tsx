@@ -26,7 +26,7 @@ export function BellButton({
   const count = unread === null ? '' : bellCountLabel(unread)
   return (
     <div className="relative shrink-0">
-      <Button asChild variant="ghost" size="icon" className="size-11 rounded-full">
+      <Button asChild variant="ghost" size="icon" className="size-8 rounded-md pointer-coarse:size-11">
         <a href={INBOX_PATH} aria-label={label} aria-current={current ? 'page' : undefined} onClick={onOpen}>
           <Bell aria-hidden />
         </a>
@@ -34,7 +34,7 @@ export function BellButton({
       {count ? (
         <span
           aria-hidden
-          className="pointer-events-none absolute top-0.5 right-0 grid min-w-5 place-items-center rounded-full border-2 border-background bg-primary px-1 text-[11px] leading-4 font-bold text-primary-foreground tabular-nums"
+          className="pointer-events-none absolute -top-0.5 -right-0.5 grid min-w-4 place-items-center rounded-full border-2 border-background bg-primary px-0.5 text-[10px] leading-3 font-semibold text-primary-foreground tabular-nums"
         >
           {count}
         </span>

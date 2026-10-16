@@ -17,13 +17,13 @@ export function SwitchRow({
   disabled?: boolean
 }) {
   return (
-    <div className="flex items-start gap-3">
+    <div className="flex items-start gap-2.5">
       <Switch id={id} checked={checked} onCheckedChange={onChange} disabled={disabled} className="mt-0.5" />
       <div className="min-w-0">
-        <label htmlFor={id} className="text-sm font-medium">
+        <label htmlFor={id} className="text-[13px] font-medium">
           {label}
         </label>
-        {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
+        {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
       </div>
     </div>
   )

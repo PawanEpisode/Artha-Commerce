@@ -23,7 +23,7 @@ export function StatusBanner({
       return null
     case 'updating':
       return (
-        <p role="status" className="text-sm text-muted-foreground">
+        <p role="status" className="text-xs text-muted-foreground">
           Updating
         </p>
       )

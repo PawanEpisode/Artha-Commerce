@@ -1,4 +1,4 @@
-import { Alert, Button, ButtonLink, Card, Combobox, toast } from '@artha/design-system'
+import { Alert, Button, Card, Combobox, Page, PageHeader, toast } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
@@ -43,9 +43,9 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-2xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Practice Engine is currently in rollout and not available yet.</Alert>
-      </div>
+      </Page>
     )
   }
 
@@ -93,22 +93,20 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
   }
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6 px-4 py-8">
-      <div>
-        <ButtonLink asChild variant="ghost" size="sm" className="mb-2">
-          <Link to="/app/practice">← Back to Practice Hub</Link>
-        </ButtonLink>
-        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-          Build Practice Test
-        </h1>
-        <p className="text-sm text-muted-foreground">
-          Configure a targeted session with custom subjects, timing, and feedback style.
-        </p>
-      </div>
+    <Page width="form">
+      <PageHeader
+        eyebrow={
+          <Link to="/app/practice" className="hover:underline">
+            Practice
+          </Link>
+        }
+        title="Build Practice Test"
+        description="Configure a targeted session with custom subjects, timing, and feedback style."
+      />
 
-      <form onSubmit={handleStart} className="space-y-6">
+      <form onSubmit={handleStart} className="space-y-4">
         {/* Subject selection */}
-        <Card className="space-y-4 p-5">
+        <Card className="space-y-4 p-4">
           <div className="space-y-1.5">
             <span className="text-sm font-semibold text-foreground">Syllabus Subject</span>
             <Combobox
@@ -136,7 +134,7 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
                     if (m.id === 'chapter_quiz') setFeedbackPolicy('instant')
                     if (m.id === 'timed') setFeedbackPolicy('at_end')
                   }}
-                  className={`flex flex-col items-start rounded-lg border p-3 text-left transition-all ${
+                  className={`flex flex-col items-start rounded-lg border p-3 text-left transition-colors ${
                     mode === m.id
                       ? 'border-primary bg-primary/5 text-foreground ring-2 ring-primary/40'
                       : 'border-border bg-card text-muted-foreground hover:bg-muted/50'
@@ -151,7 +149,7 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
         </Card>
 
         {/* Count & Timing */}
-        <Card className="space-y-4 p-5">
+        <Card className="space-y-4 p-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
               <span className="text-sm font-semibold text-foreground">Number of questions</span>
@@ -176,7 +174,7 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
             <div className="space-y-2 border-t border-border/60 pt-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-semibold text-foreground">Time limit</span>
-                <span className="font-mono text-sm font-bold">{timeLimitMinutes} minutes</span>
+                <span className="text-sm font-semibold tabular-nums">{timeLimitMinutes} minutes</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {[15, 20, 30, 45, 60, 90].map((mins) => (
@@ -196,7 +194,7 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
         </Card>
 
         {/* Feedback & Scoring Policy */}
-        <Card className="space-y-4 p-5">
+        <Card className="space-y-4 p-4">
           <div className="space-y-2">
             <span className="text-sm font-semibold text-foreground">When to show answers & explanations</span>
             <div className="grid gap-2 sm:grid-cols-2">
@@ -266,10 +264,10 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
           </div>
         </Card>
 
-        <Button type="submit" size="lg" loading={isSubmitting} disabled={isSubmitting} className="w-full">
+        <Button type="submit" loading={isSubmitting} disabled={isSubmitting} className="w-full sm:w-auto">
           Start Practice Session ({questionCount} questions)
         </Button>
       </form>
-    </div>
+    </Page>
   )
 }

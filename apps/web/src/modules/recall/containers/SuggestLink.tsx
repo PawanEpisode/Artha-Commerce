@@ -8,7 +8,7 @@ export function SuggestLink({ chapter }: { chapter?: string }) {
   const enabled = useRecallAiEnabled()
   if (!enabled) return null
   return (
-    <ButtonLink variant="outline" asChild>
+    <ButtonLink variant="outline" size="sm" asChild>
       <Link to="/app/recall/suggestions" search={{ chapter }}>
         <Sparkles aria-hidden /> Suggest with AI
       </Link>

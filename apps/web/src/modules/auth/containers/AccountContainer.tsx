@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
   LogOut,
+  Page,
+  PageHeader,
   ThemeRadioGroup,
 } from '@artha/design-system'
 import { useState } from 'react'
@@ -23,7 +25,7 @@ function Section({ title, description, children }: { title: string; description:
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>{children}</CardContent>
@@ -85,11 +87,8 @@ export function AccountContainer({
   const waitingForCode = pendingPassword !== undefined && password.status !== 'success'
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-6">
-      <header>
-        <h1 className="text-3xl font-extrabold">Account</h1>
-        <p className="mt-1 text-muted-foreground">Signed in as {user?.email}</p>
-      </header>
+    <Page width="form">
+      <PageHeader title="Account" description={`Signed in as ${user?.email ?? ''}`} />
 
       {profileSlot}
 
@@ -102,7 +101,7 @@ export function AccountContainer({
 
       <Section title="Email" description="We email a confirmation to the new address before the change applies.">
         {requestedEmail ? (
-          <p role="status" className="text-sm">
+          <p role="status" className="text-[13px]">
             Check <strong className="break-all">{requestedEmail}</strong> and click the confirmation link. Until then
             your sign-in email stays {user?.email}.
           </p>
@@ -117,7 +116,7 @@ export function AccountContainer({
 
       <Section title="Password" description="Set or change the password you use with your email.">
         {password.status === 'success' && !waitingForCode ? (
-          <p role="status" className="text-sm">
+          <p role="status" className="text-[13px]">
             Password updated.
           </p>
         ) : waitingForCode ? (
@@ -145,10 +144,10 @@ export function AccountContainer({
       {dataSlot}
 
       <Section title="Session" description="Sign out on this device.">
-        <Button variant="outline" onClick={() => void signOut()}>
+        <Button variant="danger" size="sm" onClick={() => void signOut()}>
           <LogOut aria-hidden /> Sign out
         </Button>
       </Section>
-    </div>
+    </Page>
   )
 }

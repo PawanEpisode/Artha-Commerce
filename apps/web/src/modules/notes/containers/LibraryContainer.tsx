@@ -6,7 +6,7 @@ import { useSubjectCoverage } from '~/modules/coverage'
 import { useFeatureFlag } from '~/modules/observability'
 import { useOnline } from '~/modules/personalization'
 
-import { DocumentCard } from '../components/library/DocumentCard'
+import { DocumentRow } from '../components/library/DocumentRow'
 import { LibraryFilters } from '../components/library/LibraryFilters'
 import { LibraryView } from '../components/library/LibraryView'
 import { UploadRow } from '../components/library/UploadRow'
@@ -61,6 +61,7 @@ function Library({ search }: { search: LibrarySearch }) {
   if (!enabled || isFeatureDisabled(list.error)) {
     return (
       <EmptyState
+        className="rounded-lg py-6"
         icon={<Notebook aria-hidden />}
         title="The PDF library is not available yet"
         description="We are rolling it out gradually. Your typed notes are not affected."
@@ -108,7 +109,7 @@ function Library({ search }: { search: LibrarySearch }) {
         }
         uploads={
           visibleUploads.length > 0 ? (
-            <ul aria-label="Uploads in progress" className="space-y-2">
+            <ul aria-label="Uploads in progress" className="space-y-1.5">
               {visibleUploads.map((item) => (
                 <li key={item.id}>
                   <UploadRow item={item} {...rowActions} />
@@ -127,8 +128,9 @@ function Library({ search }: { search: LibrarySearch }) {
           setSheetOpen(true)
         }}
         onClearFilters={() => go({ sort: search.sort })}
-        renderCard={(doc) => (
-          <DocumentCard
+        renderRow={(doc) => (
+          <DocumentRow
+            full
             doc={doc}
             onEdit={dialogs.openEdit}
             onExport={online ? dialogs.openExport : undefined}

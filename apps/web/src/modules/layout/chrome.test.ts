@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { hasFooter, isBareChrome, publicPage } from './chrome'
+import { hasFooter, isAppChrome, isBareChrome, publicPage } from './chrome'
 
 describe('isBareChrome', () => {
   it('is true when any matched route asks for the bare chrome', () => {
@@ -22,5 +22,17 @@ describe('hasFooter', () => {
   })
   it('is never true for a bare route', () => {
     expect(hasFooter([{ staticData: { footer: true, chrome: 'bare' } }])).toBe(false)
+  })
+})
+
+describe('isAppChrome', () => {
+  it('is true for the /app layout route', () => {
+    expect(isAppChrome([{ staticData: { chrome: 'app' } }, { staticData: {} }])).toBe(true)
+  })
+  it('loses to a bare child route, which draws nothing at all', () => {
+    expect(isAppChrome([{ staticData: { chrome: 'app' } }, { staticData: { chrome: 'bare' } }])).toBe(false)
+  })
+  it('is false on public pages', () => {
+    expect(isAppChrome([{ staticData: {} }])).toBe(false)
   })
 })

@@ -1,4 +1,4 @@
-import { Badge } from '@artha/design-system'
+import { Badge, DataTable, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@artha/design-system'
 
 import { groupMilestones, milestoneTitle, movedNote, statusNote } from '../lib/planner'
 import type { Milestone } from '../lib/planner-types'
@@ -9,18 +9,37 @@ function Row({ m }: { m: Milestone }) {
   const note = statusNote(m)
   const finished = m.status === 'done' || m.status === 'dropped'
   return (
-    <li
-      className={`flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl border border-border p-3 ${finished ? 'bg-card/50 text-muted-foreground' : 'bg-card'}`}
-    >
-      <span className="min-w-0 flex-1 font-medium">{milestoneTitle(m)}</span>
-      <span className="text-sm">{formatDay(m.target_date)}</span>
-      <span className="flex flex-wrap gap-1">
-        {note ? (
-          <Badge variant={m.overdue_days > 0 || m.status === 'at_risk' ? 'highlight' : 'outline'}>{note}</Badge>
-        ) : null}
-        {moved ? <Badge variant="outline">{moved}</Badge> : null}
-      </span>
-    </li>
+    <TableRow className={finished ? 'text-muted-foreground' : undefined}>
+      <TableCell className="max-w-0 min-w-40 font-medium break-words whitespace-normal">{milestoneTitle(m)}</TableCell>
+      <TableCell className="whitespace-nowrap tabular-nums">{formatDay(m.target_date)}</TableCell>
+      <TableCell>
+        <span className="flex flex-wrap gap-1">
+          {note ? (
+            <Badge variant={m.overdue_days > 0 || m.status === 'at_risk' ? 'highlight' : 'outline'}>{note}</Badge>
+          ) : null}
+          {moved ? <Badge variant="outline">{moved}</Badge> : null}
+        </span>
+      </TableCell>
+    </TableRow>
+  )
+}
+
+function MilestoneTable({ rows, label, className }: { rows: Milestone[]; label: string; className?: string }) {
+  return (
+    <DataTable aria-label={label} containerClassName={className}>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Milestone</TableHead>
+          <TableHead>Date</TableHead>
+          <TableHead>Status</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {rows.map((m) => (
+          <Row key={m.id} m={m} />
+        ))}
+      </TableBody>
+    </DataTable>
   )
 }
 
@@ -28,23 +47,17 @@ function Row({ m }: { m: Milestone }) {
 export function MilestoneList({ milestones }: { milestones: Milestone[] }) {
   const { open, finished } = groupMilestones(milestones)
   return (
-    <section aria-labelledby="milestones-heading" className="space-y-3">
-      <h2 id="milestones-heading" className="font-display text-lg font-bold">
+    <section aria-labelledby="milestones-heading" className="space-y-2">
+      <h2 id="milestones-heading" className="text-sm font-semibold">
         Milestones
       </h2>
-      <ul className="max-h-[28rem] space-y-2 overflow-y-auto pr-1">
-        {open.map((m) => (
-          <Row key={m.id} m={m} />
-        ))}
-      </ul>
+      <MilestoneTable rows={open} label="Open milestones" className="max-h-[32rem] overflow-y-auto" />
       {finished.length ? (
         <details className="space-y-2">
-          <summary className="cursor-pointer text-sm text-muted-foreground">Done ({finished.length})</summary>
-          <ul className="mt-2 space-y-2">
-            {finished.map((m) => (
-              <Row key={m.id} m={m} />
-            ))}
-          </ul>
+          <summary className="cursor-pointer text-[13px] text-muted-foreground">Done ({finished.length})</summary>
+          <div className="mt-2">
+            <MilestoneTable rows={finished} label="Finished milestones" />
+          </div>
         </details>
       ) : null}
     </section>

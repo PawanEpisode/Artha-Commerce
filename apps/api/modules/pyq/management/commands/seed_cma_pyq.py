@@ -374,6 +374,7 @@ class Command(BaseCommand):
                             version_no=1,
                             state=QuestionVersion.State.LIVE,
                             stem_md=qdata["stem"],
+                            marks=qdata["marks"],
                         )
                         qb_q.live_version = qv
                         qb_q.current_version = qv

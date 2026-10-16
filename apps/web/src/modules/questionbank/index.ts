@@ -1,5 +1,5 @@
 export { CsvImportDialog } from './components/CsvImportDialog'
-export { QuestionCard } from './components/QuestionCard'
+export { DifficultyDots, QuestionTable, QuestionTableSkeleton, ResultLabel } from './components/QuestionTable'
 export { ReportErrorDialog } from './components/ReportErrorDialog'
 export { EditorReviewQueueContainer } from './containers/EditorReviewQueueContainer'
 export { PublicChapterQuestionsContainer } from './containers/PublicChapterQuestionsContainer'
@@ -14,7 +14,16 @@ export {
   reportQuestion,
   type ReportQuestionPayload,
 } from './lib/api'
+export {
+  DIFFICULTY_LABELS,
+  formatMarks,
+  kindLabel,
+  numericKeyText,
+  QUESTION_KIND_LABELS,
+  QUESTION_TEXT_CLASS,
+} from './lib/labels'
 export type {
+  NumericKey,
   PlayableOption,
   PlayableQuestion,
   QuestionCardData,

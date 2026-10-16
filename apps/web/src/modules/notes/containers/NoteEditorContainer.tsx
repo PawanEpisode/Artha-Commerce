@@ -1,4 +1,4 @@
-import { Alert, Button, Container, EmptyState, Notebook, Skeleton } from '@artha/design-system'
+import { Alert, Button, EmptyState, Notebook, Page, Skeleton } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
@@ -26,21 +26,22 @@ import { NotesShell, useNotesChrome } from './NotesShell'
 function EditorStates({ status, onRetry }: { status: 'loading' | 'error' | 'notfound'; onRetry: () => void }) {
   if (status === 'loading') {
     return (
-      <Container className="max-w-5xl space-y-4 py-10">
-        <div aria-busy="true" className="space-y-4">
+      <Page>
+        <div aria-busy="true" className="space-y-3">
           <span role="status" className="sr-only">
             Opening your note…
           </span>
-          <Skeleton className="h-12 w-full" />
-          <Skeleton className="h-80 w-full" />
+          <Skeleton className="h-10 w-full max-w-3xl" />
+          <Skeleton className="h-80 w-full max-w-3xl" />
         </div>
-      </Container>
+      </Page>
     )
   }
   if (status === 'notfound') {
     return (
-      <Container className="max-w-3xl py-14">
+      <Page width="form">
         <EmptyState
+          className="rounded-lg py-6"
           icon={<Notebook aria-hidden />}
           title="This note could not be found"
           description="It may have been deleted for good, or it belongs to another account."
@@ -50,11 +51,11 @@ function EditorStates({ status, onRetry }: { status: 'loading' | 'error' | 'notf
             </Button>
           }
         />
-      </Container>
+      </Page>
     )
   }
   return (
-    <Container className="max-w-3xl py-14">
+    <Page width="form">
       <Alert variant="error">
         <span className="flex flex-wrap items-center gap-3">
           <span>We could not open this note.</span>
@@ -63,7 +64,7 @@ function EditorStates({ status, onRetry }: { status: 'loading' | 'error' | 'notf
           </Button>
         </span>
       </Alert>
-    </Container>
+    </Page>
   )
 }
 

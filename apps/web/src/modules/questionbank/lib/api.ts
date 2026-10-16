@@ -1,5 +1,6 @@
 import { api, publicApi } from '~/lib/api'
 
+import { buildQuestionQuery } from './query'
 import type {
   PlayableQuestion,
   QuestionCardData,
@@ -10,17 +11,7 @@ import type {
 } from './types'
 
 export async function getPublicQuestions(params: QuestionSearchParams = {}): Promise<QuestionListResponse> {
-  const query = new URLSearchParams()
-  if (params.q) query.set('q', params.q)
-  if (params.subject) query.set('subject', params.subject)
-  if (params.chapter) query.set('chapter', params.chapter)
-  if (params.kind) query.set('kind', params.kind)
-  if (params.difficulty) query.set('difficulty', String(params.difficulty))
-  if (params.year) query.set('year', String(params.year))
-  if (params.term) query.set('term', params.term)
-  if (params.tag) query.set('tag', params.tag)
-  if (params.cursor) query.set('cursor', params.cursor)
-  if (params.limit) query.set('limit', String(params.limit))
+  const query = buildQuestionQuery(params)
 
   const qs = query.toString()
   const path = `/questionbank/public/questions/${qs ? `?${qs}` : ''}`

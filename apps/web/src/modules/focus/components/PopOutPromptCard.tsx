@@ -17,10 +17,10 @@ function PillPreview() {
   return (
     <div
       aria-hidden
-      className="flex shrink-0 items-center gap-3 rounded-full border border-input bg-card px-4 py-2 shadow-soft"
+      className="flex shrink-0 items-center gap-3 rounded-full border border-input bg-card px-3 py-1.5 shadow-soft"
     >
       <span className="size-2 rounded-full bg-primary" />
-      <span className="text-base font-bold tabular-nums">24:12</span>
+      <span className="text-sm font-semibold tabular-nums">24:12</span>
       <span className="grid size-7 place-items-center rounded-full bg-secondary text-foreground">
         <Pause className="size-3.5" />
       </span>
@@ -47,14 +47,14 @@ export function PopOutPromptCard({ always, onAlwaysChange, onPopOut, onNotNow }:
       initial={reduce ? false : { opacity: 0, y: 12, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="space-y-4 rounded-2xl border border-border bg-card p-5 shadow-soft sm:p-6"
+      className="space-y-3 rounded-lg border border-border bg-card p-4 shadow-soft"
     >
       <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
         <div className="min-w-0 flex-1 basis-56 space-y-1">
-          <h2 id={headingId} className="text-lg font-bold">
+          <h2 id={headingId} className="text-sm font-semibold">
             Keep the timer on top while you study?
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[13px] text-muted-foreground">
             A small window that stays above your notes and PDFs, so the clock is always in sight. Closing it never stops
             the round.
           </p>
@@ -64,12 +64,12 @@ export function PopOutPromptCard({ always, onAlwaysChange, onPopOut, onNotNow }:
 
       <div className="flex items-start gap-3">
         <Checkbox id={boxId} checked={always} onCheckedChange={(v) => onAlwaysChange(v === true)} />
-        <Label htmlFor={boxId} className="text-sm font-medium">
+        <Label htmlFor={boxId} className="text-[13px] font-medium">
           Do this every time I start a round
         </Label>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2">
         <Button variant="cta" onClick={onPopOut} className="h-auto min-h-11 max-w-full py-2.5 whitespace-normal">
           <PictureInPicture2 aria-hidden /> Pop out
         </Button>

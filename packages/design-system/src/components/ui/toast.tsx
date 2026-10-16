@@ -34,7 +34,7 @@ const ICON_TONE: Record<ToastVariant, string> = {
 }
 
 function VariantIcon({ record }: { record: ToastRecord }) {
-  const cls = cn('size-5 shrink-0', ICON_TONE[record.variant])
+  const cls = cn('size-4 shrink-0', ICON_TONE[record.variant])
   if (record.icon) return <span className={cls}>{record.icon as React.ReactNode}</span>
   switch (record.variant) {
     case 'success':
@@ -131,7 +131,7 @@ function ToastItem({ record }: { record: ToastRecord }) {
       }}
       style={dx ? { transform: `translateX(${dx}px)`, opacity: Math.max(0.3, 1 - Math.abs(dx) / 240) } : undefined}
       className={cn(
-        'pointer-events-auto flex w-full touch-pan-y items-start gap-3 rounded-xl border py-3 pr-1 pl-4 text-sm shadow-lift select-none',
+        'pointer-events-auto flex w-full touch-pan-y items-start gap-2.5 rounded-lg border py-2 pr-1 pl-3 text-[13px] shadow-lift select-none',
         'motion-safe:animate-in motion-safe:duration-200 motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3',
         leaving &&
           'motion-safe:animate-out motion-safe:duration-150 motion-safe:fade-out-0 motion-safe:fill-mode-forwards',
@@ -142,8 +142,8 @@ function ToastItem({ record }: { record: ToastRecord }) {
         <VariantIcon record={record} />
       </span>
       <div className="min-w-0 flex-1 py-0.5">
-        <p className="font-semibold break-words">{record.title}</p>
-        {record.description ? <p className="mt-0.5 break-words opacity-90">{record.description}</p> : null}
+        <p className="font-medium break-words">{record.title}</p>
+        {record.description ? <p className="break-words opacity-90">{record.description}</p> : null}
         {record.action ? (
           <button
             type="button"
@@ -151,7 +151,7 @@ function ToastItem({ record }: { record: ToastRecord }) {
               record.action?.onClick()
               toast.dismiss(id)
             }}
-            className="mt-2 inline-flex min-h-11 cursor-pointer items-center rounded-lg border border-current px-3.5 text-sm font-semibold outline-none hover:bg-foreground/10 focus-visible:ring-[3px] focus-visible:ring-ring/60"
+            className="mt-1.5 inline-flex min-h-7 cursor-pointer items-center rounded-md border border-current px-2.5 text-xs font-medium outline-none hover:bg-foreground/10 focus-visible:ring-2 focus-visible:ring-ring/50 pointer-coarse:min-h-11"
           >
             {record.action.label}
           </button>
@@ -161,7 +161,7 @@ function ToastItem({ record }: { record: ToastRecord }) {
         type="button"
         aria-label="Dismiss notification"
         onClick={() => toast.dismiss(id)}
-        className="-my-0.5 grid size-11 shrink-0 cursor-pointer place-items-center rounded-lg outline-none hover:bg-foreground/10 focus-visible:ring-[3px] focus-visible:ring-ring/60"
+        className="-my-0.5 grid size-7 shrink-0 cursor-pointer place-items-center rounded-md outline-none hover:bg-foreground/10 focus-visible:ring-2 focus-visible:ring-ring/50 pointer-coarse:size-11"
       >
         <X className="size-4" aria-hidden />
       </button>
@@ -193,12 +193,12 @@ export function Toaster({ className }: { className?: string }) {
       aria-label="Notifications"
       data-slot="toaster"
       className={cn(
-        'pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:items-end sm:px-6',
+        'pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:items-end sm:px-4',
         className,
       )}
     >
       {records.map((record) => (
-        <div key={record.id} className="w-full max-w-md sm:w-96">
+        <div key={record.id} className="w-full max-w-md sm:w-80">
           <ToastItem record={record} />
         </div>
       ))}

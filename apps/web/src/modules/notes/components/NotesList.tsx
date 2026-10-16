@@ -1,8 +1,19 @@
-import { Alert, Button, CloudOff, Skeleton } from '@artha/design-system'
+import {
+  Alert,
+  Button,
+  CloudOff,
+  DataTable,
+  Skeleton,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@artha/design-system'
 import type { ReactNode } from 'react'
 
 import type { AggregateItem, NoteSummary } from '../lib/types'
-import { NoteCard } from './NoteCard'
+import { noteColumnCount, NoteRow } from './NoteRow'
 
 /** A row of the list: a note, or (R2) a mark or a document from the aggregate feed. */
 export type ListRow = NoteSummary | AggregateItem
@@ -24,13 +35,13 @@ interface NotesListProps {
   onLoadMore?: () => void
   onPin?: (note: NoteSummary, pinned: boolean) => void
   onTrash?: (note: NoteSummary) => void
-  /** Rows to put before a note (an inline suggestion bar for the unfiled inbox). */
+  /** A full width row after a note (an inline suggestion bar for the unfiled inbox). */
   renderExtra?: (note: NoteSummary) => ReactNode
-  /** How a mark or a document row is drawn (notes always use the note card). */
+  /** How a mark or a document row is drawn: a `TableRow` with the same columns (notes always use `NoteRow`). */
   renderOther?: (row: Exclude<ListRow, NoteSummary>) => ReactNode
 }
 
-/** A list of notes with all four states: loading, error with retry, empty, and the items with "Load more". */
+/** A table of notes with all four states: loading, error with retry, empty, and the rows with "Load more". */
 export function NotesList({
   label,
   items,
@@ -39,7 +50,7 @@ export function NotesList({
   onRetry,
   empty,
   offline,
-  showLocation,
+  showLocation = true,
   hasMore,
   loadingMore,
   onLoadMore,
@@ -50,13 +61,13 @@ export function NotesList({
 }: NotesListProps) {
   if (isPending) {
     return (
-      <div aria-busy="true" className="space-y-3">
+      <div aria-busy="true" className="space-y-1.5">
         <span role="status" className="sr-only">
           Loading {label}…
         </span>
-        <Skeleton className="h-24 w-full" />
-        <Skeleton className="h-24 w-full" />
-        <Skeleton className="h-24 w-full" />
+        <Skeleton className="h-9 w-full" />
+        <Skeleton className="h-9 w-full" />
+        <Skeleton className="h-9 w-full" />
       </div>
     )
   }
@@ -72,6 +83,7 @@ export function NotesList({
       </Alert>
     )
   }
+  const columns = noteColumnCount(showLocation)
   return (
     <div className="space-y-3">
       {offline ? (
@@ -85,29 +97,72 @@ export function NotesList({
       {items.length === 0 ? (
         empty
       ) : (
-        <ul aria-label={label} className="space-y-3">
-          {items.map((row) =>
-            isNoteRow(row) ? (
-              <li key={row.id} className="space-y-2">
-                <NoteCard
+        <DataTable aria-label={label}>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Title</TableHead>
+              {showLocation ? <TableHead>Filed under</TableHead> : null}
+              <TableHead className="hidden md:table-cell">Tags</TableHead>
+              <TableHead className="text-right">Updated</TableHead>
+              <TableHead className="w-px">
+                <span className="sr-only">Actions</span>
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {items.map((row) =>
+              isNoteRow(row) ? (
+                <NoteBlock
+                  key={row.id}
+                  columns={columns}
+                  extra={renderExtra?.(row)}
                   note={row}
                   showLocation={showLocation}
                   onPin={onPin ? (pinned) => onPin(row, pinned) : undefined}
                   onTrash={onTrash ? () => onTrash(row) : undefined}
                 />
-                {renderExtra?.(row)}
-              </li>
-            ) : (
-              <li key={`${row.type}-${row.id}`}>{renderOther?.(row as Exclude<ListRow, NoteSummary>)}</li>
-            ),
-          )}
-        </ul>
+              ) : (
+                <RowFragment key={`${row.type}-${row.id}`}>
+                  {renderOther?.(row as Exclude<ListRow, NoteSummary>)}
+                </RowFragment>
+              ),
+            )}
+          </TableBody>
+        </DataTable>
       )}
       {hasMore && onLoadMore ? (
-        <Button variant="outline" onClick={onLoadMore} disabled={loadingMore}>
+        <Button variant="outline" size="sm" onClick={onLoadMore} disabled={loadingMore}>
           {loadingMore ? 'Loading…' : 'Load more'}
         </Button>
       ) : null}
     </div>
+  )
+}
+
+const RowFragment = ({ children }: { children: ReactNode }) => <>{children}</>
+
+function NoteBlock({
+  columns,
+  extra,
+  ...rest
+}: {
+  columns: number
+  extra: ReactNode
+  note: NoteSummary
+  showLocation: boolean
+  onPin?: (pinned: boolean) => void
+  onTrash?: () => void
+}) {
+  return (
+    <>
+      <NoteRow {...rest} />
+      {extra ? (
+        <TableRow className="hover:bg-transparent">
+          <TableCell colSpan={columns} className="h-auto bg-muted/30 py-1.5">
+            {extra}
+          </TableCell>
+        </TableRow>
+      ) : null}
+    </>
   )
 }

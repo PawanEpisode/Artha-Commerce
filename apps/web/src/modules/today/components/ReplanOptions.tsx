@@ -18,24 +18,32 @@ export function ReplanOptions({
   onChoose: (option: OptionChoice) => void
 }) {
   return (
-    <section aria-labelledby="options-heading" className="space-y-3">
-      <div className="space-y-1">
-        <h2 id="options-heading" className="font-display text-lg font-bold">
+    <section aria-labelledby="options-heading" className="space-y-2">
+      <div className="space-y-0.5">
+        <h2 id="options-heading" className="text-sm font-semibold">
           Your reading does not fit yet
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           You are about {formatMinutes(event.shortfall_after)} short. Pick one, and we change nothing until you do.
         </p>
       </div>
       {event.options.length === 0 ? <Alert variant="info">There are no options to offer right now.</Alert> : null}
-      <ul className="space-y-3">
+      <ul className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
         {event.options.map((raw) => {
           const view = optionView(raw)
           return (
-            <li key={view.name} className="space-y-2 rounded-xl border border-border bg-card p-4">
-              <h3 className="font-medium">{view.title}</h3>
-              <p className="text-sm text-muted-foreground">{view.detail}</p>
-              <Button disabled={busy || !view.feasible} onClick={() => onChoose(view.name)}>
+            <li
+              key={view.name}
+              className="flex flex-col gap-1.5 rounded-lg border border-border bg-card p-3 shadow-soft"
+            >
+              <h3 className="text-[13px] font-medium">{view.title}</h3>
+              <p className="text-[13px] text-muted-foreground">{view.detail}</p>
+              <Button
+                size="sm"
+                className="mt-auto self-start"
+                disabled={busy || !view.feasible}
+                onClick={() => onChoose(view.name)}
+              >
                 {view.confirm}
               </Button>
             </li>

@@ -58,8 +58,8 @@ export function TaskRow({
       id={`task-${task.id}`}
       data-state={task.state}
       data-highlighted={highlighted || undefined}
-      className={`flex items-start gap-3 rounded-xl border bg-card p-3 sm:p-4 ${
-        highlighted ? 'border-primary ring-2 ring-primary/30' : 'border-border'
+      className={`flex items-start gap-2.5 px-3 py-2 ${
+        highlighted ? 'bg-primary/10 ring-2 ring-primary/40 ring-inset' : ''
       } ${quiet ? 'opacity-75' : ''}`}
     >
       <Checkbox
@@ -70,9 +70,9 @@ export function TaskRow({
         onCheckedChange={(next) => (next === true ? onTick?.(task) : onUntick?.(task))}
         className="mt-0.5"
       />
-      <div className="min-w-0 flex-1 space-y-1">
+      <div className="min-w-0 flex-1 space-y-0.5">
         <p
-          className={`font-semibold break-words ${expanded || !long ? '' : 'line-clamp-2'} ${
+          className={`font-medium break-words ${expanded || !long ? '' : 'line-clamp-2'} ${
             done || quiet ? 'text-muted-foreground' : ''
           } ${done ? 'line-through' : ''}`}
         >
@@ -88,7 +88,7 @@ export function TaskRow({
             {expanded ? 'Show less' : 'Expand'}
           </button>
         ) : null}
-        {task.reason ? <p className="text-sm text-muted-foreground">{task.reason}</p> : null}
+        {task.reason ? <p className="text-xs text-muted-foreground">{task.reason}</p> : null}
         <p className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1">
             <Clock aria-hidden className="size-3.5" />
@@ -110,10 +110,10 @@ export function TaskRow({
           <div
             role="group"
             aria-label={`Still relevant? ${task.title}`}
-            className="mt-2 space-y-2 rounded-lg border border-border bg-secondary p-3"
+            className="mt-1.5 space-y-1.5 rounded-md border border-border bg-secondary p-2.5"
           >
-            <p className="text-sm font-medium">Still relevant?</p>
-            <p className="text-sm text-muted-foreground">This has been on your list for a few days.</p>
+            <p className="text-[13px] font-medium">Still relevant?</p>
+            <p className="text-xs text-muted-foreground">This has been on your list for a few days.</p>
             <div className="flex flex-wrap gap-2">
               <Button size="sm" variant="outline" disabled={busy} onClick={() => onKeep?.(task)}>
                 Keep
@@ -143,7 +143,7 @@ export function TaskRow({
           ) : null}
           <Button
             variant="ghost"
-            size="icon"
+            size="icon-sm"
             id={`task-${task.id}-menu`}
             aria-label={`More actions for ${task.title}`}
             aria-haspopup="dialog"

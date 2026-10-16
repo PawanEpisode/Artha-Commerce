@@ -79,20 +79,20 @@ function Review({ search }: { search: ReviewSearch }) {
 
   if (status === 'loading') {
     return (
-      <div aria-busy="true" className="mx-auto max-w-2xl space-y-4 px-4 py-10">
+      <div aria-busy="true" className="mx-auto max-w-2xl space-y-3 px-4 py-6">
         <span className="sr-only" role="status">
           Getting your cards ready…
         </span>
-        <Skeleton className="h-10 w-full" />
+        <Skeleton className="h-6 w-full" />
         <Skeleton className="h-64 w-full" />
       </div>
     )
   }
   if (status === 'error') {
     return (
-      <div className="mx-auto max-w-2xl space-y-4 px-4 py-10">
+      <div className="mx-auto max-w-2xl space-y-3 px-4 py-6">
         <LoadError what="your cards" onRetry={session.restart} />
-        <ButtonLink variant="outline" asChild>
+        <ButtonLink variant="outline" size="sm" asChild>
           <Link to="/app/recall">Back to revision</Link>
         </ButtonLink>
       </div>
@@ -101,8 +101,9 @@ function Review({ search }: { search: ReviewSearch }) {
   if (status === 'empty') {
     const forChapter = search.source === 'chapter' && search.chapter !== undefined
     return (
-      <div className="mx-auto max-w-2xl px-4 py-10">
+      <div className="mx-auto max-w-2xl px-4 py-6">
         <EmptyState
+          className="rounded-lg py-6"
           icon={<CircleCheck aria-hidden />}
           title={forChapter ? 'No cards to review in this chapter' : 'Nothing to review right now'}
           description={
@@ -111,7 +112,7 @@ function Review({ search }: { search: ReviewSearch }) {
               : 'You are all caught up for this list. You can look at cards that are due soon.'
           }
           action={
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2">
               {session.canReviewAhead && !forChapter ? (
                 <Button onClick={session.reviewAhead}>Review ahead 10 cards</Button>
               ) : null}

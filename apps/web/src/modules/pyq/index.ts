@@ -1,5 +1,6 @@
-export { PaperCard } from './components/PaperCard'
 export { PaperQuestionTree } from './components/PaperQuestionTree'
+export { PapersTable, PapersTableSkeleton } from './components/PapersTable'
+export { SchemeBadge } from './components/SchemeBadge'
 export { PaperDetailContainer } from './containers/PaperDetailContainer'
 export { PublicPyqChapterContainer } from './containers/PublicPyqChapterContainer'
 export { PyqHomeContainer } from './containers/PyqHomeContainer'

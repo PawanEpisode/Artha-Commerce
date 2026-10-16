@@ -40,7 +40,6 @@ export function NotesNav() {
       label="Notes"
       items={items.map(({ value, label, to }) => ({ value, label, href: to }))}
       value={sectionOf(pathname)}
-      className="[&>div]:mx-auto [&>div]:max-w-4xl"
       renderLink={(item, props) => {
         const target = items.find((i) => i.value === item.value)
         return target ? <Link to={target.to} {...props} /> : null

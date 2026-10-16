@@ -84,7 +84,7 @@ export function VersionPanel(props: VersionPanelProps) {
             <Button variant="ghost" size="sm" onClick={() => props.onSelect(undefined)}>
               Back to all versions
             </Button>
-            <h3 className="font-display text-lg font-bold">
+            <h3 className="text-sm font-semibold">
               Version {selected.rev}
               {selected.rev === props.currentRev ? <Badge className="ml-2">Current</Badge> : null}
             </h3>

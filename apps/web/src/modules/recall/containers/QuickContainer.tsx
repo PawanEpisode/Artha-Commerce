@@ -1,4 +1,4 @@
-import { Alert, ButtonLink, CalendarDays, EmptyState, Skeleton, WifiOff } from '@artha/design-system'
+import { Alert, ButtonLink, CalendarDays, EmptyState, PageHeader, Skeleton, WifiOff } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
@@ -29,14 +29,13 @@ function Quick({ search }: { search: QuickSearch }) {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Quick revision</h1>
-        <p className="text-muted-foreground">
-          The cards most likely to fade before your exam, fitted to the minutes you have.
-        </p>
-      </header>
+      <PageHeader
+        title="Quick revision"
+        description="The cards most likely to fade before your exam, fitted to the minutes you have."
+      />
       {!online ? (
         <EmptyState
+          className="rounded-lg py-6"
           icon={<WifiOff aria-hidden />}
           title="You are offline"
           description="The plan needs a connection. Your normal reviews still work."
@@ -46,10 +45,11 @@ function Quick({ search }: { search: QuickSearch }) {
           <span className="sr-only" role="status">
             Planning…
           </span>
-          <Skeleton className="h-56 w-full" />
+          <Skeleton className="h-40 w-full" />
         </div>
       ) : code === 'no_exam_date' ? (
         <EmptyState
+          className="rounded-lg py-6"
           icon={<CalendarDays aria-hidden />}
           title="Add your exam date"
           description="Quick revision counts back from your exam. Set the date in your coverage settings."
