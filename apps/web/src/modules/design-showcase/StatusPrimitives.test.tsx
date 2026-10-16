@@ -60,14 +60,14 @@ describe('SegmentedControl as a tool pill', () => {
 })
 
 describe('Button touch targets', () => {
-  it('reaches 44 px on mobile for sm and icon, and keeps the compact size from sm up', () => {
+  it('reaches 44 px on a touch screen for sm and icon, and stays compact with a mouse', () => {
     render(
       <>
         <Button size="sm">Small</Button>
         <Button size="icon" aria-label="Icon" />
       </>,
     )
-    expect(screen.getByRole('button', { name: 'Small' })).toHaveClass('min-h-11', 'sm:min-h-9')
-    expect(screen.getByRole('button', { name: 'Icon' })).toHaveClass('size-11', 'sm:size-10')
+    expect(screen.getByRole('button', { name: 'Small' })).toHaveClass('min-h-7', 'pointer-coarse:min-h-11')
+    expect(screen.getByRole('button', { name: 'Icon' })).toHaveClass('size-8', 'pointer-coarse:size-11')
   })
 })

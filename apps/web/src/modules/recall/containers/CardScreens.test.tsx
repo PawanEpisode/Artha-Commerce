@@ -222,7 +222,7 @@ describe('the cards browser', () => {
     h.api.cards.mockResolvedValue({ items: [row(1)], next_cursor: null, server_time: '2026-10-09T05:00:00Z' })
     h.api.bulkCards.mockResolvedValue({ count: 1 })
     renderWithQuery(<CardsContainer search={{}} />)
-    await user.click(await screen.findByRole('checkbox'))
+    await user.click(await screen.findByRole('checkbox', { name: /^Select: / }))
     await user.click(screen.getByRole('button', { name: 'Add tag' }))
     const dialog = await screen.findByRole('dialog')
     await user.type(within(dialog).getByLabelText('Tag'), 'gst, itc')

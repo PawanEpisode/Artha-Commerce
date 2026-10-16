@@ -22,14 +22,14 @@ export const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        /** Compact by default (28 / 32 px) with a mouse. Touch screens keep a 40 / 44 px target (WCAG 2.2 target size). */
-        xs: 'h-6 min-h-6 gap-1 px-2 text-xs pointer-coarse:h-9 pointer-coarse:min-h-9',
-        sm: 'h-7 min-h-7 gap-1.5 px-2.5 text-xs pointer-coarse:h-10 pointer-coarse:min-h-10',
+        /** Compact by default (24 / 28 / 32 px) with a mouse. Touch screens keep a 44 px target (WCAG 2.2 target size). */
+        xs: 'h-6 min-h-6 gap-1 px-2 text-xs pointer-coarse:h-11 pointer-coarse:min-h-11',
+        sm: 'h-7 min-h-7 gap-1.5 px-2.5 text-xs pointer-coarse:h-11 pointer-coarse:min-h-11',
         default: 'h-8 min-h-8 px-3 pointer-coarse:h-11 pointer-coarse:min-h-11',
         lg: 'h-10 min-h-10 px-5 text-sm',
         xl: 'h-12 min-h-12 rounded-lg px-7 text-base',
         icon: 'size-8 pointer-coarse:size-11',
-        'icon-sm': 'size-7 pointer-coarse:size-10',
+        'icon-sm': 'size-7 pointer-coarse:size-11',
       },
       /** `h-auto` lets a long label wrap inside the button instead of growing past its container. */
       fullWidth: { true: 'h-auto w-full min-w-0 py-2 text-center whitespace-normal', false: '' },

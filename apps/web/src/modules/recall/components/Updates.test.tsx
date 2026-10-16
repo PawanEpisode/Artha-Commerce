@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import type { ChapterRemapItem, UpdatePreview } from '../lib/schemas'
 import { expectNoA11yViolations } from '../test-utils'
-import { ChapterRemapRow } from './ChapterRemapList'
+import { ChapterRemapRow, ChapterRemapTable } from './ChapterRemapList'
 import { RecheckNote } from './RecheckNote'
 import { FollowToggle, OldSyllabusFlag, UpdateBanner } from './UpdateBanner'
 import { UpdateSheet } from './UpdateSheet'
@@ -163,9 +163,9 @@ describe('a card waiting for a chapter', () => {
     const user = userEvent.setup()
     const onChoose = vi.fn()
     const { container } = render(
-      <ul>
+      <ChapterRemapTable>
         <ChapterRemapRow item={item} chapters={[]} pending={false} error={null} onChoose={onChoose} />
-      </ul>,
+      </ChapterRemapTable>,
     )
     expect(screen.getByText('Was: Old chapter')).toBeInTheDocument()
     expect(screen.getByText(/split in the new syllabus/)).toBeInTheDocument()
@@ -176,7 +176,7 @@ describe('a card waiting for a chapter', () => {
 
   it('falls back to every chapter when the map has no suggestion and shows an error', () => {
     render(
-      <ul>
+      <ChapterRemapTable>
         <ChapterRemapRow
           item={{ ...item, relation: 'none', candidates: [] }}
           chapters={[{ id: 'x', name: 'Any chapter' }]}
@@ -184,9 +184,9 @@ describe('a card waiting for a chapter', () => {
           error="Could not move this card. Please try again."
           onChoose={vi.fn()}
         />
-      </ul>,
+      </ChapterRemapTable>,
     )
     expect(screen.getByRole('alert')).toHaveTextContent('Could not move this card')
-    expect(screen.getByRole('combobox', { name: 'Move to chapter' })).toHaveTextContent('Any chapter')
+    expect(screen.getByRole('combobox', { name: /^Move to chapter/ })).toHaveTextContent('Any chapter')
   })
 })
