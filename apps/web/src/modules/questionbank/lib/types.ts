@@ -54,6 +54,13 @@ export interface PlayableQuestion {
   needs_attention?: boolean
 }
 
+export interface NumericKey {
+  value: number | string
+  unit?: string | null
+  tolerance_abs?: number | string | null
+  tolerance_rel?: number | string | null
+}
+
 export interface ReviewOption extends PlayableOption {
   is_correct?: boolean
 }
@@ -66,11 +73,12 @@ export interface ReviewQuestion {
   position: number
   stem_md: string
   marks: number
-  negative_marks: number
+  negative_marks: number | string | null
   suggested_seconds: number
   options: ReviewOption[]
   correct_option_ids: string[]
-  numeric_key?: number
+  /** The API sends `{ value, unit, tolerance_* }` for numeric questions and null for every other kind. */
+  numeric_key?: NumericKey | number | null
   explanation_md?: string
   explanation_source?: string
   reference_labels?: string[]

@@ -6,31 +6,33 @@ import { ArrowRight, LoaderCircle } from '../../icons'
 import { cn } from '../../lib/utils'
 
 export const buttonVariants = cva(
-  "group/btn relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress aria-disabled:pointer-events-none aria-disabled:opacity-50 motion-reduce:transition-none motion-reduce:active:translate-y-0 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/btn relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-[13px] font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/50 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress aria-disabled:pointer-events-none aria-disabled:opacity-50 motion-reduce:transition-none motion-reduce:active:translate-y-0 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default: 'bg-primary text-primary-foreground shadow-soft hover:brightness-110',
         /** The one primary call to action on a view: solid, lifted, arrow slides on hover. */
-        cta: 'bg-primary text-primary-foreground shadow-lift ring-1 ring-primary-foreground/15 ring-inset hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:shadow-soft motion-reduce:hover:translate-y-0',
+        cta: 'bg-primary text-primary-foreground shadow-soft ring-1 ring-primary-foreground/15 ring-inset hover:brightness-110',
         accent: 'bg-accent text-accent-foreground shadow-soft hover:brightness-105',
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/70',
-        outline: 'border border-input bg-card text-foreground hover:bg-muted',
+        outline: 'border border-border bg-card text-foreground shadow-soft hover:bg-muted',
         ghost: 'text-foreground hover:bg-muted',
         /** Irreversible actions (delete account). Outlined, so the destructive text colour keeps its checked contrast in every theme. */
         danger: 'border border-destructive bg-card text-destructive hover:bg-destructive/10',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        /** 44 px on a phone (WCAG 2.2 target size, audit AUD-010), the compact 36 px from `sm` upward. */
-        sm: 'h-11 min-h-11 px-3.5 sm:h-9 sm:min-h-9',
-        default: 'h-11 min-h-11 px-5',
-        lg: 'h-12 min-h-12 rounded-xl px-7 text-base',
-        xl: 'h-14 min-h-14 rounded-xl px-8 text-base sm:text-lg',
-        icon: 'size-11 sm:size-10',
+        /** Compact by default (24 / 28 / 32 px) with a mouse. Touch screens keep a 44 px target (WCAG 2.2 target size). */
+        xs: 'h-6 min-h-6 gap-1 px-2 text-xs pointer-coarse:h-11 pointer-coarse:min-h-11',
+        sm: 'h-7 min-h-7 gap-1.5 px-2.5 text-xs pointer-coarse:h-11 pointer-coarse:min-h-11',
+        default: 'h-8 min-h-8 px-3 pointer-coarse:h-11 pointer-coarse:min-h-11',
+        lg: 'h-10 min-h-10 px-5 text-sm',
+        xl: 'h-12 min-h-12 rounded-lg px-7 text-base',
+        icon: 'size-8 pointer-coarse:size-11',
+        'icon-sm': 'size-7 pointer-coarse:size-11',
       },
       /** `h-auto` lets a long label wrap inside the button instead of growing past its container. */
-      fullWidth: { true: 'h-auto w-full min-w-0 py-2.5 text-center whitespace-normal sm:h-auto', false: '' },
+      fullWidth: { true: 'h-auto w-full min-w-0 py-2 text-center whitespace-normal', false: '' },
     },
     defaultVariants: { variant: 'default', size: 'default', fullWidth: false },
   },

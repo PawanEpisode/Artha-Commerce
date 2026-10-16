@@ -20,17 +20,17 @@ export function LibraryEmpty({ limits, online, onFiles }: LibraryEmptyProps) {
   return (
     <section
       aria-labelledby="library-empty-h"
-      className="space-y-5 rounded-2xl border border-border bg-card p-5 sm:p-8"
+      className="max-w-3xl space-y-4 rounded-lg border border-border bg-card p-4"
     >
       <div className="space-y-2">
-        <h2 id="library-empty-h" className="font-display text-2xl font-bold">
+        <h2 id="library-empty-h" className="text-base font-semibold">
           Add your first PDF
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           Read it on any device, highlight it, and find your marks later by subject and chapter.
         </p>
       </div>
-      <ul className="space-y-2 text-sm">
+      <ul className="space-y-1.5 text-[13px]">
         {TIPS.map((tip) => (
           <li key={tip} className="flex gap-2">
             <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
@@ -51,7 +51,7 @@ export function LibraryEmpty({ limits, online, onFiles }: LibraryEmptyProps) {
         }}
         onFiles={onFiles}
       />
-      <Button variant="ghost" asChild>
+      <Button variant="ghost" size="sm" asChild>
         <Link to="/app/notes/new">
           <NotebookPen aria-hidden /> Start a note instead
         </Link>

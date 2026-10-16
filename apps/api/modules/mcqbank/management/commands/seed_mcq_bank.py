@@ -239,6 +239,7 @@ class Command(BaseCommand):
                     version_no=1,
                     state=QuestionVersion.State.LIVE,
                     stem_md=stem,
+                    marks=Decimal("2.0"),
                 )
                 q.live_version = qv
                 q.current_version = qv

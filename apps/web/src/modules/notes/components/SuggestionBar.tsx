@@ -13,7 +13,7 @@ interface SuggestionBarProps {
 /** One tap filing for an unfiled note: up to three chapters from a plain text match (no AI), then the full picker. */
 export function SuggestionBar({ suggestions, busy, onPick, onOther }: SuggestionBarProps) {
   return (
-    <div role="group" aria-label="Suggested chapters" className="flex flex-wrap items-center gap-2 pl-1">
+    <div role="group" aria-label="Suggested chapters" className="flex flex-wrap items-center gap-1.5">
       {suggestions.length > 0 ? (
         <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground">
           <Sparkles aria-hidden className="size-3.5" /> Looks like
@@ -24,7 +24,7 @@ export function SuggestionBar({ suggestions, busy, onPick, onOther }: Suggestion
           key={s.chapter_id}
           size="sm"
           variant="secondary"
-          className="h-auto min-h-11 max-w-full py-1.5 text-left whitespace-normal"
+          className="h-auto min-h-7 max-w-full py-1 text-left whitespace-normal"
           disabled={busy}
           onClick={() => onPick(s)}
         >

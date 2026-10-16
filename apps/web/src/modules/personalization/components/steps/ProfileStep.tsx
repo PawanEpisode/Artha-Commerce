@@ -24,7 +24,7 @@ export function ProfileStep({ bootstrap, onDone }: StepProps) {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="space-y-8">
+    <form onSubmit={submit} noValidate className="space-y-5">
       <TextField
         label="Your name"
         value={name}

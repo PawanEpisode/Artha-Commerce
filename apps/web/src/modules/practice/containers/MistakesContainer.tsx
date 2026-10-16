@@ -1,4 +1,20 @@
-import { Alert, Badge, Button, ButtonLink, Card, CircleAlert, EmptyState, Skeleton, toast } from '@artha/design-system'
+import {
+  Alert,
+  Badge,
+  Button,
+  CircleAlert,
+  DataTable,
+  EmptyState,
+  Page,
+  PageHeader,
+  Skeleton,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  toast,
+} from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
@@ -43,36 +59,50 @@ export function MistakesContainer() {
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Practice feature is currently in rollout.</Alert>
-      </div>
+      </Page>
     )
   }
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <ButtonLink asChild variant="ghost" size="sm" className="mb-2">
-            <Link to="/app/practice">← Back to Practice Hub</Link>
-          </ButtonLink>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">My Mistakes</h1>
-          <p className="text-sm text-muted-foreground">
-            Target and correct questions you previously answered incorrectly.
-          </p>
-        </div>
-
-        {mistakes.length > 0 && (
-          <Button loading={isStarting} disabled={isStarting} onClick={handlePractiseMistakes}>
-            Practise these mistakes ({mistakes.length})
-          </Button>
-        )}
-      </div>
+    <Page>
+      <PageHeader
+        eyebrow={
+          <Link to="/app/practice" className="hover:underline">
+            Practice
+          </Link>
+        }
+        title="My Mistakes"
+        description="Target and correct questions you previously answered incorrectly."
+        actions={
+          mistakes.length > 0 ? (
+            <Button loading={isStarting} disabled={isStarting} onClick={handlePractiseMistakes}>
+              Practise these mistakes ({mistakes.length})
+            </Button>
+          ) : undefined
+        }
+      />
 
       {loading ? (
-        <div className="space-y-3">
-          <Skeleton className="h-20 w-full rounded-xl" />
-          <Skeleton className="h-20 w-full rounded-xl" />
+        <div role="status" aria-busy="true" aria-label="Loading mistakes">
+          <DataTable>
+            <TableBody>
+              {[1, 2, 3, 4].map((i) => (
+                <TableRow key={i} className="hover:bg-transparent">
+                  <TableCell>
+                    <Skeleton className="h-4 w-48" />
+                  </TableCell>
+                  <TableCell className="hidden sm:table-cell">
+                    <Skeleton className="h-4 w-20" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="h-4 w-16" />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </DataTable>
         </div>
       ) : error ? (
         <Alert variant="error">{error}</Alert>
@@ -81,39 +111,51 @@ export function MistakesContainer() {
           title="No mistakes recorded yet"
           description="When you answer questions incorrectly during practice sessions, they will appear here so you can review and retry them."
           action={
-            <Button asChild>
+            <Button asChild size="sm">
               <Link to="/app/practice/new">Start practicing</Link>
             </Button>
           }
         />
       ) : (
-        <div className="space-y-3">
-          {mistakes.map((m, idx) => (
-            <Card key={idx} className="flex items-center justify-between p-4">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <CircleAlert className="size-4 text-destructive" />
-                  <span className="text-sm font-semibold text-foreground">Question {m.question_id.slice(0, 8)}...</span>
-                  {m.mistake_reason && (
-                    <Badge variant="outline" className="text-xs capitalize">
-                      {m.mistake_reason}
+        <DataTable>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent">
+              <TableHead>Question</TableHead>
+              <TableHead className="hidden sm:table-cell">Reason</TableHead>
+              <TableHead>Last attempted</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {mistakes.map((m) => (
+              <TableRow key={m.question_id}>
+                <TableCell>
+                  <Link
+                    to="/app/questions/$id"
+                    params={{ id: m.question_id }}
+                    aria-label={`View question ${m.question_id.slice(0, 8)}`}
+                    className="inline-flex items-center gap-1.5 rounded-sm font-medium outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50"
+                  >
+                    <CircleAlert aria-hidden className="size-3.5 text-destructive" />
+                    Question {m.question_id.slice(0, 8)}
+                  </Link>
+                </TableCell>
+                <TableCell className="hidden sm:table-cell">
+                  {m.mistake_reason ? (
+                    <Badge variant="outline" className="capitalize">
+                      {m.mistake_reason.replace(/_/g, ' ')}
                     </Badge>
+                  ) : (
+                    <span className="text-muted-foreground">-</span>
                   )}
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  Last attempted: {new Date(m.created_at).toLocaleDateString()}
-                </p>
-              </div>
-
-              <ButtonLink size="sm" variant="outline" asChild>
-                <Link to="/app/questions/$id" params={{ id: m.question_id }}>
-                  View question
-                </Link>
-              </ButtonLink>
-            </Card>
-          ))}
-        </div>
+                </TableCell>
+                <TableCell className="whitespace-nowrap text-muted-foreground tabular-nums">
+                  {new Date(m.created_at).toLocaleDateString()}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </DataTable>
       )}
-    </div>
+    </Page>
   )
 }

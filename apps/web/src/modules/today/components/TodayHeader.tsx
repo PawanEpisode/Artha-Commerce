@@ -1,4 +1,4 @@
-import { Button, Flame, ProgressBar, ProgressRing } from '@artha/design-system'
+import { Button, Flame, PageHeader, ProgressBar, ProgressRing } from '@artha/design-system'
 
 import { minutesLeft } from '../lib/optimistic'
 import { starterTask, taskCountLabel } from '../lib/plan'
@@ -30,59 +30,65 @@ export function TodayHeader({
   const goalMet = goal ? goal.percent >= 100 : false
   const comeback = plan.budget_source === 'comeback'
   return (
-    <header className="space-y-4 rounded-2xl border border-border bg-card p-4 shadow-soft sm:p-6">
-      <div className="flex flex-wrap items-center gap-5">
-        {lite ? null : (
-          <ProgressRing
-            value={percent}
-            size={96}
-            strokeWidth={9}
-            segments={planned > 0 ? Math.min(12, planned) : undefined}
-            segmentLabel={taskCountLabel}
-            label="Today's tasks"
-          >
-            <span className="text-center leading-tight">
-              <span className="block text-lg font-bold">
-                {done}/{planned}
-              </span>
-              <span className="block text-[11px] text-muted-foreground">tasks</span>
-            </span>
-          </ProgressRing>
-        )}
-        <div className="min-w-0 flex-1 space-y-1">
-          <h1 className={`font-display font-extrabold ${lite ? 'text-xl' : 'text-2xl sm:text-3xl'}`}>
-            {comeback ? `Welcome back${firstName ? `, ${firstName}` : ''}` : greeting(dayPart(hour), firstName)}
-          </h1>
-          {comeback ? <p className="text-sm font-medium">A lighter day to ease back in.</p> : null}
-          <p className="text-sm text-muted-foreground">
+    <div className="space-y-3">
+      <PageHeader
+        title={comeback ? `Welcome back${firstName ? `, ${firstName}` : ''}` : greeting(dayPart(hour), firstName)}
+        description={
+          <>
+            {comeback ? (
+              <span className="block font-medium text-foreground">A lighter day to ease back in.</span>
+            ) : null}
             {formatDay(plan.date)} · {done} of {planned} done
             {left > 0 ? ` · about ${formatMinutes(left)} left` : ''}
             {exam ? ` · ${exam}` : ''}
-          </p>
+          </>
+        }
+      />
+      {lite && plan.streak === 0 && !starter?.link ? null : (
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-lg border bg-card px-3 py-2.5 shadow-soft">
+          {lite ? null : (
+            <ProgressRing
+              value={percent}
+              size={48}
+              strokeWidth={6}
+              segments={planned > 0 ? Math.min(12, planned) : undefined}
+              segmentLabel={taskCountLabel}
+              label="Today's tasks"
+            >
+              <span className="text-center text-xs leading-tight font-semibold">
+                {done}/{planned}
+              </span>
+            </ProgressRing>
+          )}
           {plan.streak > 0 ? (
-            <p className="flex items-center gap-1.5 text-sm font-medium">
+            <p className="flex items-center gap-1.5 text-[13px] font-medium">
               <Flame aria-hidden className="size-4 text-primary" />
               {plan.streak === 1 ? '1 day streak' : `${plan.streak} day streak`}
             </p>
           ) : null}
+          {goal && !lite ? (
+            <div className="min-w-[10rem] flex-1 space-y-1">
+              <ProgressBar value={goal.percent} size="sm" label="Daily study goal" />
+              <p className="text-xs text-muted-foreground">
+                Goal {formatMinutes(goal.target_minutes)}: {formatMinutes(goal.done_seconds / 60)} studied
+                {plan.streak > 0 && !goalMet && hour >= AT_RISK_HOUR
+                  ? '. A little study tonight keeps your streak going.'
+                  : ''}
+              </p>
+            </div>
+          ) : null}
+          {starter?.link ? (
+            <Button
+              variant="cta"
+              size="sm"
+              className="h-auto max-w-full py-1.5 text-left whitespace-normal sm:ml-auto"
+              onClick={() => onStart?.(starter)}
+            >
+              {starter.state === 'accepted' ? 'Continue' : 'Start here'}: {starter.title}
+            </Button>
+          ) : null}
         </div>
-      </div>
-      {goal && !lite ? (
-        <div className="space-y-1">
-          <ProgressBar value={goal.percent} size="sm" label="Daily study goal" />
-          <p className="text-xs text-muted-foreground">
-            Goal {formatMinutes(goal.target_minutes)}: {formatMinutes(goal.done_seconds / 60)} studied
-            {plan.streak > 0 && !goalMet && hour >= AT_RISK_HOUR
-              ? '. A little study tonight keeps your streak going.'
-              : ''}
-          </p>
-        </div>
-      ) : null}
-      {starter?.link ? (
-        <Button variant="cta" size="lg" className="w-full sm:w-auto" onClick={() => onStart?.(starter)}>
-          {starter.state === 'accepted' ? 'Continue' : 'Start here'}: {starter.title}
-        </Button>
-      ) : null}
-    </header>
+      )}
+    </div>
   )
 }

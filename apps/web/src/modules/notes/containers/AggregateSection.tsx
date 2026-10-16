@@ -5,7 +5,7 @@ import { type ReactNode, useEffect, useRef } from 'react'
 import { useFeatureFlag } from '~/modules/observability'
 
 import { FilterBar } from '../components/FilterBar'
-import { DocumentCard } from '../components/library/DocumentCard'
+import { DocumentRow } from '../components/library/DocumentRow'
 import { HighlightRow } from '../components/library/HighlightRow'
 import { NotesList } from '../components/NotesList'
 import { useDocumentTitles } from '../hooks/useLibrary'
@@ -73,7 +73,7 @@ export function AggregateSection({
   const legend = pdfOn ? settings.data?.color_legend : undefined
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <FilterBar
         search={search}
         tags={tags.data ?? []}
@@ -104,7 +104,7 @@ export function AggregateSection({
               showLocation={kind === 'subject'}
             />
           ) : (
-            <DocumentCard doc={row satisfies DocumentSummary} compact showLocation={kind === 'subject'} />
+            <DocumentRow doc={row satisfies DocumentSummary} showLocation={kind === 'subject'} />
           )
         }
         empty={
@@ -156,7 +156,7 @@ export function NewNoteLink({
   topic?: string
 }) {
   return (
-    <Button variant="cta" asChild>
+    <Button asChild>
       <Link to="/app/notes/new" search={{ level: levelId, subject, chapter, topic }}>
         New note
       </Link>

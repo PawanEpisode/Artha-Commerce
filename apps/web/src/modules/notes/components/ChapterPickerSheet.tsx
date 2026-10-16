@@ -71,7 +71,7 @@ export function ChapterPickerSheet({
     <Sheet open={open} onOpenChange={onOpenChange}>
       {showTrigger ? (
         <SheetTrigger asChild>
-          <Button variant="outline" className="max-w-full justify-start" disabled={disabled}>
+          <Button variant="outline" className="w-full max-w-full justify-start" disabled={disabled}>
             <FolderInput aria-hidden />
             <span className="min-w-0 truncate">
               <span className="sr-only">Filed under: </span>

@@ -17,7 +17,7 @@ export function Stepper({ steps, current, onStepSelect, className, ...props }: S
     <ol
       data-slot="stepper"
       aria-label="Progress"
-      className={cn('flex items-center gap-2 text-sm', className)}
+      className={cn('flex items-center gap-2 text-[13px]', className)}
       {...props}
     >
       {steps.map((label, i) => {
@@ -28,13 +28,13 @@ export function Stepper({ steps, current, onStepSelect, className, ...props }: S
             <span
               aria-hidden
               className={cn(
-                'grid size-7 shrink-0 place-items-center rounded-full border-2 text-xs font-bold',
+                'grid size-6 shrink-0 place-items-center rounded-full border text-xs font-semibold',
                 done && 'border-primary bg-primary text-primary-foreground',
                 active && 'border-primary text-primary',
                 !done && !active && 'border-input text-muted-foreground',
               )}
             >
-              {done ? <Check className="size-4" strokeWidth={3} /> : i + 1}
+              {done ? <Check className="size-3.5" strokeWidth={3} /> : i + 1}
             </span>
             <span
               className={cn(
@@ -54,14 +54,14 @@ export function Stepper({ steps, current, onStepSelect, className, ...props }: S
               <button
                 type="button"
                 onClick={() => onStepSelect(i)}
-                className="-m-2 flex min-h-11 min-w-0 cursor-pointer items-center gap-2 rounded-lg p-2 outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40"
+                className="-m-1.5 flex min-h-8 min-w-0 cursor-pointer items-center gap-2 rounded-md p-1.5 outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring/50 pointer-coarse:min-h-11"
               >
                 {marker}
               </button>
             ) : (
               marker
             )}
-            {i < steps.length - 1 ? <span aria-hidden className="h-0.5 flex-1 rounded bg-border" /> : null}
+            {i < steps.length - 1 ? <span aria-hidden className="h-px flex-1 bg-border" /> : null}
           </li>
         )
       })}

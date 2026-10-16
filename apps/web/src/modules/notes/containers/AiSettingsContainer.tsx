@@ -21,9 +21,9 @@ export function AiSettingsContainer() {
     notify.aiWithdrawn()
   }
   return (
-    <Card className="space-y-4 p-6">
-      <h2 className="font-display text-xl font-bold">AI help</h2>
-      <p className="text-sm text-muted-foreground">
+    <Card className="space-y-3 p-4">
+      <h2 className="text-sm font-semibold">AI help</h2>
+      <p className="text-[13px] text-muted-foreground">
         {consent.data.consented
           ? 'You agreed to send your notes, highlights and the page pictures you choose to Google.'
           : 'You have not agreed to AI help, so nothing is sent.'}
@@ -52,7 +52,7 @@ export function AiSettingsContainer() {
             </span>
           </Alert>
         ) : (
-          <Button variant="outline" onClick={() => setConfirming(true)}>
+          <Button variant="outline" size="sm" onClick={() => setConfirming(true)}>
             Withdraw consent
           </Button>
         )

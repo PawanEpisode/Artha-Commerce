@@ -64,7 +64,7 @@ function FieldBox({
     'aria-required': required || undefined,
   }
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-1.5">
       <Label htmlFor={id}>
         {label}
         {required ? null : <span className="font-normal text-muted-foreground"> (optional)</span>}
@@ -72,15 +72,15 @@ function FieldBox({
       {short ? (
         <Input {...common} onChange={(e) => onChange(e.target.value)} />
       ) : (
-        <Textarea {...common} rows={3} className="min-h-24" onChange={(e) => onChange(e.target.value)} />
+        <Textarea {...common} rows={3} className="min-h-20" onChange={(e) => onChange(e.target.value)} />
       )}
       {hint ? (
-        <p id={`${id}-hint`} className="text-sm text-muted-foreground">
+        <p id={`${id}-hint`} className="text-xs text-muted-foreground">
           {hint}
         </p>
       ) : null}
       {error ? (
-        <p id={`${id}-error`} role="alert" className="text-sm font-medium text-destructive">
+        <p id={`${id}-error`} role="alert" className="text-xs font-medium text-destructive">
           {error}
         </p>
       ) : null}
@@ -129,8 +129,8 @@ export function ImportanceField({
   disabled?: boolean
 }) {
   return (
-    <div className="grid gap-2">
-      <span className="text-sm font-medium">How important is it?</span>
+    <div className="grid gap-1.5">
+      <span className="text-[13px] font-medium">How important is it?</span>
       <SegmentedControl
         label="How important is it?"
         value={value}
@@ -156,7 +156,7 @@ export function TagsField({
 }) {
   const id = useId()
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-1.5">
       <Label htmlFor={id}>
         Tags <span className="font-normal text-muted-foreground">(optional)</span>
       </Label>
@@ -170,7 +170,7 @@ export function TagsField({
       />
       <p
         id={`${id}-hint`}
-        className={cn('text-sm', error ? 'font-medium text-destructive' : 'text-muted-foreground')}
+        className={cn('text-xs', error ? 'font-medium text-destructive' : 'text-muted-foreground')}
         role={error ? 'alert' : undefined}
       >
         {error ?? 'Separate tags with commas.'}
@@ -183,13 +183,15 @@ export function TagsField({
 export function CardPreview({ kind, fields }: { kind: CardKind; fields: Fields }) {
   const faces = facesOf(kind, fields)
   return (
-    <section aria-label="Preview" className="space-y-3 rounded-2xl border border-border bg-muted/40 p-4">
-      <h2 className="text-sm font-semibold text-muted-foreground">Preview</h2>
-      {faces.length === 0 ? <p className="text-sm text-muted-foreground">Add a hidden word to see the cards.</p> : null}
+    <section aria-label="Preview" className="space-y-2 rounded-lg border border-border bg-muted/40 p-3">
+      <h2 className="text-[13px] font-semibold text-muted-foreground">Preview</h2>
+      {faces.length === 0 ? (
+        <p className="text-[13px] text-muted-foreground">Add a hidden word to see the cards.</p>
+      ) : null}
       {faces.map((ordinal) => {
         const [front, back] = renderFace(kind, fields, ordinal)
         return (
-          <div key={ordinal} className="grid gap-3 sm:grid-cols-2">
+          <div key={ordinal} className="grid gap-2">
             <div className="space-y-1">
               <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">Front</p>
               <RichText markdown={front || ' '} profile="card" />

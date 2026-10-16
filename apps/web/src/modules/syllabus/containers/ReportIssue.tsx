@@ -53,7 +53,7 @@ export function ReportIssue({ nodeType, nodeId }: { nodeType: ReportNodeType; no
       }}
     >
       <PopoverTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" size="sm">
           <CircleAlert aria-hidden /> Report a wrong item
         </Button>
       </PopoverTrigger>

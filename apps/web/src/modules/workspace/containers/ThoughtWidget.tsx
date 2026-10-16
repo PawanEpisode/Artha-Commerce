@@ -21,6 +21,7 @@ export function ThoughtWidget() {
       onRetry={() => void query.refetch()}
       offline={!online}
       skeletonHeight="h-16"
+      className="md:col-span-2 xl:col-span-1"
     >
       {thought ? <ThoughtView body={thought.body} attribution={thought.attribution} /> : null}
     </WidgetCard>

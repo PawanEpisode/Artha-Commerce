@@ -41,16 +41,16 @@ export function UnblockSteps({
       <p>We cannot ask again while they are blocked. You can allow them yourself:</p>
       <p className="font-medium">{unblockSteps(browser, platform)}</p>
       {checks > 0 && !checking ? (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           Still blocked. Allow notifications for this site, then check again.
         </p>
       ) : null}
       {finishFailed ? <Alert variant="error">{SAVE_FAILED}</Alert> : null}
       <AlertsActions>
-        <Button variant="cta" size="lg" loading={checking} disabled={finishing} onClick={onCheckAgain}>
+        <Button variant="cta" loading={checking} disabled={finishing} onClick={onCheckAgain}>
           <RefreshCw aria-hidden /> Check again
         </Button>
-        <Button variant="ghost" size="lg" loading={finishing} disabled={checking} onClick={onSkip}>
+        <Button variant="ghost" loading={finishing} disabled={checking} onClick={onSkip}>
           Skip for now
         </Button>
       </AlertsActions>

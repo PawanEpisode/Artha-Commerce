@@ -1,4 +1,4 @@
-import { Alert, Button, EmptyState, Search, SegmentedControl, Skeleton } from '@artha/design-system'
+import { Alert, Button, EmptyState, PageHeader, Search, SegmentedControl, Skeleton } from '@artha/design-system'
 import { useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
@@ -98,10 +98,7 @@ function SearchScreen({ search }: { search: NoteSearchParams }) {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="font-display text-3xl font-extrabold">Search notes</h1>
-        <p className="text-muted-foreground">Section numbers work too, like 17(5) or 80C.</p>
-      </header>
+      <PageHeader title="Search notes" description="Section numbers work too, like 17(5) or 80C." />
       <SearchBox value={text} onChange={setText} onSubmit={() => submit(text)} busy={results.isFetching && !!q} />
       <SegmentedControl
         label="Where to search"
@@ -123,12 +120,12 @@ function SearchScreen({ search }: { search: NoteSearchParams }) {
           }}
         />
       ) : results.isPending ? (
-        <div aria-busy="true" className="space-y-3">
+        <div aria-busy="true" className="space-y-1.5">
           <span role="status" className="sr-only">
             Searching…
           </span>
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-20 w-full" />
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
         </div>
       ) : results.isError && items.length === 0 ? (
         <Alert variant="error">
@@ -146,6 +143,7 @@ function SearchScreen({ search }: { search: NoteSearchParams }) {
       ) : items.length === 0 ? (
         <div className="space-y-3">
           <EmptyState
+            className="rounded-lg py-6"
             icon={<Search aria-hidden />}
             title={scope === 'pdf' ? 'No PDF pages match' : 'No notes match'}
             description="Try fewer or different words, or a section number such as 17(5)."
@@ -168,7 +166,7 @@ function SearchScreen({ search }: { search: NoteSearchParams }) {
               <span>You are offline. Searching the notes kept on this device. PDFs need a connection.</span>
             </Alert>
           ) : null}
-          <p role="status" className="text-sm text-muted-foreground">
+          <p role="status" className="text-xs text-muted-foreground">
             {items.length}
             {results.hasNextPage ? '+' : ''} result{items.length === 1 && !results.hasNextPage ? '' : 's'} for &ldquo;
             {q}&rdquo;
@@ -191,6 +189,7 @@ function SearchScreen({ search }: { search: NoteSearchParams }) {
           {results.hasNextPage ? (
             <Button
               variant="outline"
+              size="sm"
               disabled={results.isFetchingNextPage}
               onClick={() => void results.fetchNextPage()}
             >
@@ -206,7 +205,7 @@ function SearchScreen({ search }: { search: NoteSearchParams }) {
 
 export function NotesSearchContainer({ search }: { search: NoteSearchParams }) {
   return (
-    <NotesShell width="max-w-3xl">
+    <NotesShell>
       <SearchScreen search={search} />
     </NotesShell>
   )

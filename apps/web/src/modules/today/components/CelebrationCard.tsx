@@ -13,13 +13,13 @@ export function CelebrationCard({ plan, burst, lite = false }: { plan: Plan; bur
     return (
       <section
         aria-labelledby="celebrate-heading"
-        className="space-y-1 rounded-2xl border border-primary bg-secondary p-5 text-center"
+        className="space-y-0.5 rounded-lg border border-primary bg-secondary p-3 text-center"
       >
-        <CircleCheck aria-hidden className="mx-auto size-10 text-success" />
-        <h2 id="celebrate-heading" className="font-display text-xl font-extrabold">
+        <CircleCheck aria-hidden className="mx-auto size-6 text-success" />
+        <h2 id="celebrate-heading" className="text-sm font-semibold">
           Day complete
         </h2>
-        <p className="text-sm">
+        <p className="text-[13px]">
           {done} of {plan.counts.planned} done · {formatMinutes(plan.planned_minutes)} planned
         </p>
         <Celebrate active={burst && !lite} message="Day complete. Well done." className="sr-only" />
@@ -30,13 +30,13 @@ export function CelebrationCard({ plan, burst, lite = false }: { plan: Plan; bur
     return (
       <section
         aria-labelledby="calm-heading"
-        className="space-y-1 rounded-2xl border border-border bg-card p-5 text-center"
+        className="space-y-0.5 rounded-lg border border-border bg-card p-3 text-center"
       >
-        <Sparkles aria-hidden className="mx-auto size-8 text-primary" />
-        <h2 id="calm-heading" className="font-display text-lg font-bold">
+        <Sparkles aria-hidden className="mx-auto size-5 text-primary" />
+        <h2 id="calm-heading" className="text-sm font-semibold">
           Day closed
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           You did {done} and skipped {skipped}. Tomorrow is a fresh start.
         </p>
       </section>

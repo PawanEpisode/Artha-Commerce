@@ -1,4 +1,4 @@
-import { Button, DurationField, Label, Plus, SelectField, Trash2 } from '@artha/design-system'
+import { Button, DurationField, Label, PageHeader, Plus, SelectField, Trash2 } from '@artha/design-system'
 import { useEffect, useState } from 'react'
 
 import { GoalRings } from '../components/GoalRings'
@@ -52,116 +52,118 @@ function GoalsForm() {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Goals</h1>
-        <p className="text-muted-foreground">
-          Set targets in hours and minutes. Leave a goal empty to remove it. Without a daily goal we use 2 hours.
-        </p>
-      </header>
-      {loaded ? <GoalRings progress={loaded.progress} /> : null}
-      <form
-        className="space-y-6 rounded-2xl border border-border bg-card p-6"
-        noValidate
-        onSubmit={(e) => {
-          e.preventDefault()
-          submit()
-        }}
-      >
-        <div className="grid gap-6 sm:grid-cols-2">
-          <DurationField
-            label="Daily goal"
-            valueMinutes={draft.daily}
-            onChangeMinutes={(daily) => setDraft((d) => ({ ...d, daily }))}
-            maxMinutes={GOAL_DAILY_MAX}
-            error={errors.daily}
-            hint="How long you want to study each day."
-          />
-          <DurationField
-            label="Weekly goal"
-            valueMinutes={draft.weekly}
-            onChangeMinutes={(weekly) => setDraft((d) => ({ ...d, weekly }))}
-            maxMinutes={GOAL_WEEKLY_MAX}
-            error={errors.weekly}
-            hint="Your total for the week."
-          />
-        </div>
+      <PageHeader
+        title="Goals"
+        description="Set targets in hours and minutes. Leave a goal empty to remove it. Without a daily goal we use 2 hours."
+      />
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <form
+          className="min-w-0 space-y-4 rounded-lg border border-border bg-card p-4"
+          noValidate
+          onSubmit={(e) => {
+            e.preventDefault()
+            submit()
+          }}
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            <DurationField
+              label="Daily goal"
+              valueMinutes={draft.daily}
+              onChangeMinutes={(daily) => setDraft((d) => ({ ...d, daily }))}
+              maxMinutes={GOAL_DAILY_MAX}
+              error={errors.daily}
+              hint="How long you want to study each day."
+            />
+            <DurationField
+              label="Weekly goal"
+              valueMinutes={draft.weekly}
+              onChangeMinutes={(weekly) => setDraft((d) => ({ ...d, weekly }))}
+              maxMinutes={GOAL_WEEKLY_MAX}
+              error={errors.weekly}
+              hint="Your total for the week."
+            />
+          </div>
 
-        <fieldset className="space-y-3">
-          <legend className="text-sm font-semibold">Weekly goals by subject</legend>
-          {draft.subjects.length === 0 ? (
-            <p className="rounded-xl border border-dashed border-border p-4 text-sm text-muted-foreground">
-              {subjects.length === 0
-                ? 'Set up My Coverage first, then you can give each subject its own weekly goal.'
-                : 'No subject goals yet. Add one to aim for a weekly target in a single subject.'}
-            </p>
-          ) : (
-            <ul className="space-y-3">
-              {draft.subjects.map((row, index) => {
-                const name = nameOf(row.subject_id)
-                const taken = new Set(draft.subjects.filter((r) => r.key !== row.key).map((r) => r.subject_id))
-                const selectId = `goal-subject-${row.key}`
-                return (
-                  <li key={row.key} className="space-y-3 rounded-xl border border-border bg-background p-4">
-                    <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-                      Subject goal {index + 1}
-                    </p>
-                    <div className="grid gap-2">
-                      <Label htmlFor={selectId}>Subject</Label>
-                      <SelectField
-                        id={selectId}
-                        value={row.subject_id}
-                        onValueChange={(subject_id) => patchRow(row.key, { subject_id })}
-                        options={[
-                          { value: '', label: 'Choose a subject' },
-                          ...subjects.map((o) => ({ value: o.id, label: o.name, disabled: taken.has(o.id) })),
-                        ]}
-                      />
-                      {errors[`subject-${row.key}-subject`] ? (
-                        <p role="alert" className="text-sm font-medium text-destructive">
-                          {errors[`subject-${row.key}-subject`]}
-                        </p>
-                      ) : null}
-                    </div>
-                    <div className="flex flex-wrap items-end justify-between gap-3">
-                      <DurationField
-                        label={name ? `Weekly goal for ${name}` : 'Weekly goal for this subject'}
-                        valueMinutes={row.minutes}
-                        onChangeMinutes={(minutes) => patchRow(row.key, { minutes })}
-                        maxMinutes={GOAL_WEEKLY_MAX}
-                        error={errors[`subject-${row.key}`]}
-                      />
-                      <Button
-                        type="button"
-                        variant="outline"
-                        aria-label={name ? `Remove ${name} goal` : `Remove subject goal ${index + 1}`}
-                        onClick={() =>
-                          setDraft((d) => ({ ...d, subjects: d.subjects.filter((r) => r.key !== row.key) }))
-                        }
-                      >
-                        <Trash2 aria-hidden /> Remove
-                      </Button>
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
-          )}
-          <Button
-            type="button"
-            variant="secondary"
-            disabled={subjects.length === 0 || draft.subjects.length >= subjects.length}
-            onClick={() =>
-              setDraft((d) => ({ ...d, subjects: [...d.subjects, { key: rowKey(), subject_id: '', minutes: null }] }))
-            }
-          >
-            <Plus aria-hidden /> Add a subject goal
+          <fieldset className="space-y-2">
+            <legend className="text-sm font-semibold">Weekly goals by subject</legend>
+            {draft.subjects.length === 0 ? (
+              <p className="rounded-lg border border-dashed border-border p-3 text-[13px] text-muted-foreground">
+                {subjects.length === 0
+                  ? 'Set up My Coverage first, then you can give each subject its own weekly goal.'
+                  : 'No subject goals yet. Add one to aim for a weekly target in a single subject.'}
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {draft.subjects.map((row, index) => {
+                  const name = nameOf(row.subject_id)
+                  const taken = new Set(draft.subjects.filter((r) => r.key !== row.key).map((r) => r.subject_id))
+                  const selectId = `goal-subject-${row.key}`
+                  return (
+                    <li key={row.key} className="space-y-2 rounded-lg border border-border bg-background p-3">
+                      <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                        Subject goal {index + 1}
+                      </p>
+                      <div className="grid gap-2">
+                        <Label htmlFor={selectId}>Subject</Label>
+                        <SelectField
+                          id={selectId}
+                          value={row.subject_id}
+                          onValueChange={(subject_id) => patchRow(row.key, { subject_id })}
+                          options={[
+                            { value: '', label: 'Choose a subject' },
+                            ...subjects.map((o) => ({ value: o.id, label: o.name, disabled: taken.has(o.id) })),
+                          ]}
+                        />
+                        {errors[`subject-${row.key}-subject`] ? (
+                          <p role="alert" className="text-sm font-medium text-destructive">
+                            {errors[`subject-${row.key}-subject`]}
+                          </p>
+                        ) : null}
+                      </div>
+                      <div className="flex flex-wrap items-end justify-between gap-3">
+                        <DurationField
+                          label={name ? `Weekly goal for ${name}` : 'Weekly goal for this subject'}
+                          valueMinutes={row.minutes}
+                          onChangeMinutes={(minutes) => patchRow(row.key, { minutes })}
+                          maxMinutes={GOAL_WEEKLY_MAX}
+                          error={errors[`subject-${row.key}`]}
+                        />
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="sm"
+                          aria-label={name ? `Remove ${name} goal` : `Remove subject goal ${index + 1}`}
+                          onClick={() =>
+                            setDraft((d) => ({ ...d, subjects: d.subjects.filter((r) => r.key !== row.key) }))
+                          }
+                        >
+                          <Trash2 aria-hidden /> Remove
+                        </Button>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
+            <Button
+              type="button"
+              variant="secondary"
+              size="sm"
+              disabled={subjects.length === 0 || draft.subjects.length >= subjects.length}
+              onClick={() =>
+                setDraft((d) => ({ ...d, subjects: [...d.subjects, { key: rowKey(), subject_id: '', minutes: null }] }))
+              }
+            >
+              <Plus aria-hidden /> Add a subject goal
+            </Button>
+          </fieldset>
+
+          <Button type="submit" variant="cta" loading={save.isPending}>
+            Save goals
           </Button>
-        </fieldset>
-
-        <Button type="submit" variant="cta" loading={save.isPending}>
-          Save goals
-        </Button>
-      </form>
+        </form>
+        {loaded ? <GoalRings progress={loaded.progress} /> : null}
+      </div>
     </>
   )
 }

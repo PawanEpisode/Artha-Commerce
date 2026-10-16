@@ -1,4 +1,4 @@
-import { Alert, Button, Download, SelectField, TextField } from '@artha/design-system'
+import { Alert, Button, Download, PageHeader, SelectField, TableToolbar, TextField } from '@artha/design-system'
 import { useState } from 'react'
 
 import { ChapterField } from '~/modules/coverage'
@@ -6,7 +6,6 @@ import { ChapterField } from '~/modules/coverage'
 import { useChapterOptionsState, useSubjectOptions } from '../hooks/useTagOptions'
 import { useSessionsPage, useTrackerSettings } from '../hooks/useTrackerQueries'
 import { downloadCsv } from '../lib/api'
-import { dayLabel } from '../lib/format'
 import { notify } from '../lib/notify'
 import { SessionsPanel } from './SessionsPanel'
 import { TrackerShell } from './TrackerShell'
@@ -29,30 +28,30 @@ function Log({ tz }: { tz: string }) {
   }
   const q = useSessionsPage(filters)
   const rows = q.data?.pages.flatMap((p) => p.results) ?? []
-  const days = [...new Set(rows.map((r) => r.study_date))]
   return (
     <>
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-3xl font-extrabold">Session log</h1>
-          <p className="text-muted-foreground">Every session, newest first.</p>
-        </div>
-        <Button
-          variant="outline"
-          onClick={() => {
-            notify.exportStarted('sessions CSV')
-            void downloadCsv('/tracking/sessions/export.csv', { ...filters }, 'study-sessions.csv')
-              .then(() => notify.exportFinished('sessions CSV'))
-              .catch((e: unknown) => notify.error(e, 'Could not download your sessions.'))
-          }}
-        >
-          <Download aria-hidden /> Download CSV
-        </Button>
-      </header>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <TextField label="From" type="date" value={from} onChange={(e) => setFrom(e.target.value)} />
-        <TextField label="To" type="date" value={to} onChange={(e) => setTo(e.target.value)} />
-        <div className="grid gap-2">
+      <PageHeader
+        title="Session log"
+        description="Every session, newest first."
+        actions={
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              notify.exportStarted('sessions CSV')
+              void downloadCsv('/tracking/sessions/export.csv', { ...filters }, 'study-sessions.csv')
+                .then(() => notify.exportFinished('sessions CSV'))
+                .catch((e: unknown) => notify.error(e, 'Could not download your sessions.'))
+            }}
+          >
+            <Download aria-hidden /> Download CSV
+          </Button>
+        }
+      />
+      <TableToolbar className="items-end">
+        <TextField label="From" type="date" value={from} onChange={(e) => setFrom(e.target.value)} className="w-40" />
+        <TextField label="To" type="date" value={to} onChange={(e) => setTo(e.target.value)} className="w-40" />
+        <div className="grid gap-1.5">
           <label htmlFor="log-subject" className="text-sm font-medium">
             Subject
           </label>
@@ -74,28 +73,25 @@ function Log({ tz }: { tz: string }) {
           value={{ chapter_id: chapter, all_chapters: !chapter }}
           onChange={(next) => setChapter(next.chapter_id)}
         />
-      </div>
+      </TableToolbar>
       {q.isError ? (
         <Alert variant="error">
           <span role="alert">We could not load your sessions.</span>
         </Alert>
-      ) : (
-        days.map((day) => (
-          <section key={day} aria-label={dayLabel(day)} className="space-y-2">
-            <h2 className="text-base font-bold">{dayLabel(day)}</h2>
-            <SessionsPanel
-              sessions={rows.filter((r) => r.study_date === day)}
-              tz={tz}
-              defaultActivity={settings?.default_activity_type ?? 'other'}
-            />
-          </section>
-        ))
-      )}
+      ) : rows.length > 0 ? (
+        <SessionsPanel
+          sessions={rows}
+          tz={tz}
+          defaultActivity={settings?.default_activity_type ?? 'other'}
+          groupByDay
+          label="Session log"
+        />
+      ) : null}
       {!q.isPending && rows.length === 0 && !q.isError ? (
         <p className="text-muted-foreground">No sessions match.</p>
       ) : null}
       {q.hasNextPage ? (
-        <Button variant="outline" onClick={() => void q.fetchNextPage()} disabled={q.isFetchingNextPage}>
+        <Button variant="outline" size="sm" onClick={() => void q.fetchNextPage()} disabled={q.isFetchingNextPage}>
           Load more
         </Button>
       ) : null}

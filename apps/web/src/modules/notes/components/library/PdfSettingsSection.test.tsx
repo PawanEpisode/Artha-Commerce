@@ -127,7 +127,8 @@ describe('TrashedDocuments', () => {
     expect(onRestore).toHaveBeenCalledWith(doc)
     await userEvent.click(screen.getByRole('button', { name: 'Delete Old scan now' }))
     expect(onDeleteNow).toHaveBeenCalledWith(doc)
-    expect(screen.getByText(/5.0 MB\. Deleted/)).toBeInTheDocument()
+    expect(screen.getByText('5.0 MB')).toBeInTheDocument()
+    expect(screen.getByText(/^Deleted /)).toBeInTheDocument()
   })
   it('needs a connection', () => {
     render(<TrashedDocuments items={[doc]} online={false} onRestore={() => undefined} onDeleteNow={() => undefined} />)

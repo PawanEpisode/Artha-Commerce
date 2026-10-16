@@ -15,9 +15,9 @@ export function KeepAwakeChip({ status }: { status: KeepAwakeStatus }) {
       {label ? (
         <span
           data-status={status}
-          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-foreground"
+          className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2 py-0.5 text-xs font-medium text-foreground"
         >
-          <Icon className="size-4" aria-hidden="true" />
+          <Icon className="size-3.5" aria-hidden="true" />
           {label}
         </span>
       ) : null}

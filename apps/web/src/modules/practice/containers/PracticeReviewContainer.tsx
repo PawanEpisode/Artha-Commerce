@@ -4,10 +4,13 @@ import {
   Button,
   ButtonLink,
   Card,
+  CardContent,
   CircleAlert,
   CircleCheck,
   CircleX,
   EmptyState,
+  Page,
+  PageHeader,
   SegmentedBar,
   Select,
   SelectContent,
@@ -23,7 +26,7 @@ import * as React from 'react'
 
 import { RichText } from '~/lib/richtext'
 import { useFeatureFlag } from '~/modules/observability'
-import { ReportErrorDialog } from '~/modules/questionbank'
+import { kindLabel, QUESTION_TEXT_CLASS, ReportErrorDialog } from '~/modules/questionbank'
 import { QuestionCardButton } from '~/modules/recall'
 
 import { getSession, retakeSession, setMistakeReason } from '../lib/api'
@@ -88,29 +91,31 @@ export function PracticeReviewContainer({ sessionId }: PracticeReviewProps) {
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Question Bank feature is currently in rollout.</Alert>
-      </div>
+      </Page>
     )
   }
 
   if (loading) {
     return (
-      <div className="mx-auto max-w-4xl space-y-4 px-4 py-8">
-        <Skeleton className="h-40 w-full rounded-xl" />
-        <Skeleton className="h-48 w-full rounded-xl" />
-      </div>
+      <Page>
+        <div role="status" aria-busy="true" aria-label="Loading review" className="space-y-3">
+          <Skeleton className="h-16 w-full rounded-lg" />
+          <Skeleton className="h-40 w-full rounded-lg" />
+        </div>
+      </Page>
     )
   }
 
   if (error || !session) {
     return (
-      <div className="mx-auto max-w-4xl space-y-4 px-4 py-12">
+      <Page width="form">
         <Alert variant="error">{error ?? 'Session not found.'}</Alert>
-        <ButtonLink asChild variant="outline">
+        <ButtonLink asChild variant="outline" size="sm">
           <Link to="/app/practice">Back to Hub</Link>
         </ButtonLink>
-      </div>
+      </Page>
     )
   }
 
@@ -138,62 +143,50 @@ export function PracticeReviewContainer({ sessionId }: PracticeReviewProps) {
   ]
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-8">
-      {/* Top navigation */}
-      <div className="flex items-center justify-between">
-        <ButtonLink asChild variant="ghost" size="sm">
-          <Link to="/app/practice">← Back to Practice Hub</Link>
-        </ButtonLink>
-
-        <div className="flex items-center gap-2">
-          {incorrectCount > 0 && (
+    <Page>
+      <PageHeader
+        eyebrow={
+          <Link to="/app/practice" className="hover:underline">
+            Practice
+          </Link>
+        }
+        title={session.title || 'Session Review'}
+        description="Test results"
+        actions={
+          <>
             <Button
-              variant="default"
+              variant="outline"
               size="sm"
               loading={isRetaking}
               disabled={isRetaking}
-              onClick={() => handleRetake('wrong')}
+              onClick={() => handleRetake('all')}
             >
-              Retry Wrong ({incorrectCount})
+              Retake All
             </Button>
-          )}
-          <Button
-            variant="outline"
-            size="sm"
-            loading={isRetaking}
-            disabled={isRetaking}
-            onClick={() => handleRetake('all')}
-          >
-            Retake All
-          </Button>
-        </div>
+            {incorrectCount > 0 && (
+              <Button loading={isRetaking} disabled={isRetaking} onClick={() => handleRetake('wrong')}>
+                Retry Wrong ({incorrectCount})
+              </Button>
+            )}
+          </>
+        }
+      />
+
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <StatTile label="Score" value={`${session.score || 0} / ${session.max_score || 0}`} />
+        <StatTile label="Accuracy" value={`${accuracy}%`} />
+        <StatTile label="Correct" value={correctCount} />
+        <StatTile label="Incorrect" value={incorrectCount} />
       </div>
 
-      {/* Summary Score Card */}
-      <Card className="space-y-6 p-6">
-        <div>
-          <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Test Results</span>
-          <h1 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
-            {session.title || 'Session Review'}
-          </h1>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <StatTile label="Score" value={`${session.score || 0} / ${session.max_score || 0}`} />
-          <StatTile label="Accuracy" value={`${accuracy}%`} />
-          <StatTile label="Correct" value={correctCount} />
-          <StatTile label="Incorrect" value={incorrectCount} />
-        </div>
-
-        {/* Multi-segment distribution */}
-        <div className="space-y-1.5 border-t border-border/60 pt-2">
+      <Card>
+        <CardContent className="space-y-1.5">
           <span className="text-xs font-medium text-muted-foreground">Score breakdown</span>
           <SegmentedBar label="Result breakdown" segments={segmentData} total={totalItems} showLegend showValues />
-        </div>
+        </CardContent>
       </Card>
 
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2">
+      <div role="group" aria-label="Filter questions" className="flex flex-wrap items-center gap-1.5">
         {(
           [
             { id: 'all', label: `All (${totalItems})` },
@@ -207,6 +200,7 @@ export function PracticeReviewContainer({ sessionId }: PracticeReviewProps) {
             key={t.id}
             variant={filter === t.id ? 'default' : 'outline'}
             size="sm"
+            aria-pressed={filter === t.id}
             onClick={() => setFilter(t.id)}
           >
             {t.label}
@@ -214,140 +208,143 @@ export function PracticeReviewContainer({ sessionId }: PracticeReviewProps) {
         ))}
       </div>
 
-      {/* Question Review List */}
       {filteredItems.length === 0 ? (
         <EmptyState
           title="No questions in this filter"
           description="Select another filter above to view your questions."
         />
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-3">
           {filteredItems.map((item) => {
             const isCorrect = item.result === 'correct'
             const isWrong = item.result === 'incorrect' || item.result === 'partial'
             const isSkipped = item.result === 'skipped' || !item.result
 
             return (
-              <Card key={item.question_id} className="space-y-4 p-5">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3 text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-foreground">Question {item.position}</span>
-                    <span className="text-muted-foreground">•</span>
-                    <Badge variant="outline">{item.kind.replace('_', ' ')}</Badge>
-                    <span className="text-muted-foreground">•</span>
-                    <span>
-                      {item.marks_awarded ?? 0} / {item.marks_max} marks
-                    </span>
+              <Card key={item.question_id}>
+                <CardContent className="space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b pb-2 text-xs">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-semibold text-foreground">Question {item.position}</span>
+                      <Badge variant="outline">{kindLabel(item.kind)}</Badge>
+                      <span className="text-muted-foreground tabular-nums">
+                        {item.marks_awarded ?? 0} / {item.marks_max} marks
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      {isCorrect && (
+                        <span className="flex items-center gap-1 font-medium text-success-fg">
+                          <CircleCheck aria-hidden className="size-4" /> Correct
+                        </span>
+                      )}
+                      {isWrong && (
+                        <span className="flex items-center gap-1 font-medium text-destructive">
+                          <CircleX aria-hidden className="size-4" /> Incorrect
+                        </span>
+                      )}
+                      {isSkipped && (
+                        <span className="flex items-center gap-1 text-muted-foreground">
+                          <CircleAlert aria-hidden className="size-4" /> Skipped
+                        </span>
+                      )}
+                      <ReportErrorDialog questionId={item.question_id} />
+                    </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    {isCorrect && (
-                      <span className="flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400">
-                        <CircleCheck className="size-4" /> Correct
-                      </span>
-                    )}
-                    {isWrong && (
-                      <span className="flex items-center gap-1 font-semibold text-destructive">
-                        <CircleX className="size-4" /> Incorrect
-                      </span>
-                    )}
-                    {isSkipped && (
-                      <span className="flex items-center gap-1 text-muted-foreground">
-                        <CircleAlert className="size-4" /> Skipped
-                      </span>
-                    )}
-                    <ReportErrorDialog questionId={item.question_id} />
-                  </div>
-                </div>
+                  <RichText markdown={item.stem_md} profile="question" className={QUESTION_TEXT_CLASS} />
 
-                {/* Stem */}
-                <div className="prose-reading text-sm text-foreground">
-                  <RichText markdown={item.stem_md} profile="question" />
-                </div>
+                  {item.options && item.options.length > 0 && (
+                    <ul className="space-y-1.5">
+                      {item.options.map((opt, idx) => {
+                        const wasSelected = item.selected_option_ids?.includes(opt.id)
+                        const letter = String.fromCharCode(65 + idx)
 
-                {/* Options Review */}
-                {item.options && item.options.length > 0 && (
-                  <div className="space-y-2 pt-2">
-                    {item.options.map((opt, idx) => {
-                      const wasSelected = item.selected_option_ids?.includes(opt.id)
-                      const letter = String.fromCharCode(65 + idx)
-
-                      return (
-                        <div
-                          key={opt.id}
-                          className={`flex items-start gap-3 rounded-lg border p-3 text-xs sm:text-sm ${
-                            wasSelected
-                              ? isCorrect
-                                ? 'border-emerald-600 bg-emerald-500/10'
-                                : 'border-destructive bg-destructive/10'
-                              : 'border-border bg-card'
-                          }`}
-                        >
-                          <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-xs font-bold text-foreground">
-                            {letter}
-                          </span>
-                          <div className="min-w-0 flex-1">
-                            <RichText markdown={opt.body_md} profile="question" />
-                          </div>
-                          {wasSelected && (
-                            <span className="text-xs font-semibold">
-                              {isCorrect ? 'Your answer (✓)' : 'Your answer (✗)'}
+                        return (
+                          <li
+                            key={opt.id}
+                            className={`flex min-h-10 items-center gap-2.5 rounded-md border px-2.5 py-1.5 ${
+                              wasSelected
+                                ? isCorrect
+                                  ? 'border-success-border bg-success-bg'
+                                  : 'border-destructive bg-destructive/10'
+                                : 'border-border bg-card'
+                            }`}
+                          >
+                            <span
+                              aria-hidden
+                              className="grid size-6 shrink-0 place-items-center rounded-md bg-muted text-xs font-semibold text-foreground"
+                            >
+                              {letter}
                             </span>
-                          )}
-                        </div>
-                      )
-                    })}
-                  </div>
-                )}
+                            <div className="min-w-0 flex-1">
+                              <span className="sr-only">Option {letter}. </span>
+                              <RichText markdown={opt.body_md} profile="question" className={QUESTION_TEXT_CLASS} />
+                            </div>
+                            {wasSelected && (
+                              <span
+                                className={`inline-flex shrink-0 items-center gap-1 text-xs font-medium ${
+                                  isCorrect ? 'text-success-fg' : 'text-destructive'
+                                }`}
+                              >
+                                {isCorrect ? (
+                                  <CircleCheck aria-hidden className="size-3.5" />
+                                ) : (
+                                  <CircleX aria-hidden className="size-3.5" />
+                                )}
+                                Your answer{isCorrect ? ' (correct)' : ' (incorrect)'}
+                              </span>
+                            )}
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )}
 
-                {/* Numeric answer review */}
-                {item.kind === 'numeric' && (
-                  <div className="rounded-lg border border-border bg-muted/20 p-3 text-sm">
-                    <span className="text-xs text-muted-foreground">Your answer: </span>
-                    <span className="font-mono font-bold">{item.numeric_value ?? 'None'}</span>
-                  </div>
-                )}
-
-                {/* Explanation */}
-                {item.explanation_md && (
-                  <div className="space-y-2 rounded-xl border border-primary/20 bg-primary/5 p-4 text-xs sm:text-sm dark:bg-primary/10">
-                    <h4 className="font-bold text-foreground">Explanation</h4>
-                    <div className="prose-reading text-foreground">
-                      <RichText markdown={item.explanation_md} profile="question" />
+                  {item.kind === 'numeric' && (
+                    <div className="rounded-md border border-border bg-muted/40 px-3 py-2 text-[13px]">
+                      <span className="text-xs text-muted-foreground">Your answer: </span>
+                      <span className="font-semibold tabular-nums">{item.numeric_value ?? 'None'}</span>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {/* Mistake reason tagging & Recall Card Bridge if incorrect */}
-                {isWrong && (
-                  <div className="flex flex-col gap-3 rounded-xl border border-border bg-muted/30 p-4 sm:flex-row sm:items-center sm:justify-between">
-                    <div className="space-y-1">
-                      <span className="text-xs font-semibold text-foreground">Why did you get this wrong?</span>
-                      <Select
-                        value={mistakeTags[item.question_id] || ''}
-                        onValueChange={(val) => handleSetMistake(item.question_id, val as MistakeReason)}
-                      >
-                        <SelectTrigger className="h-9 w-64 text-xs">
-                          <SelectValue placeholder="Tag mistake reason..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {MISTAKE_REASONS.map((r) => (
-                            <SelectItem key={r.value} value={r.value}>
-                              {r.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                  {item.explanation_md && (
+                    <div className="space-y-1.5 rounded-md border border-primary/20 bg-primary/5 p-3 dark:bg-primary/10">
+                      <h3 className="text-[13px] font-semibold text-foreground">Explanation</h3>
+                      <RichText markdown={item.explanation_md} profile="question" className={QUESTION_TEXT_CLASS} />
                     </div>
+                  )}
 
-                    <QuestionCardButton questionId={item.question_id} versionId={item.question_id} />
-                  </div>
-                )}
+                  {isWrong && (
+                    <div className="flex flex-col gap-3 rounded-md border border-border bg-muted/30 p-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="space-y-1">
+                        <span className="text-xs font-medium text-foreground">Why did you get this wrong?</span>
+                        <Select
+                          value={mistakeTags[item.question_id] || ''}
+                          onValueChange={(val) => handleSetMistake(item.question_id, val as MistakeReason)}
+                        >
+                          <SelectTrigger aria-label="Mistake reason" className="w-full sm:w-64">
+                            <SelectValue placeholder="Tag mistake reason..." />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {MISTAKE_REASONS.map((r) => (
+                              <SelectItem key={r.value} value={r.value}>
+                                {r.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <QuestionCardButton questionId={item.question_id} versionId={item.question_id} />
+                    </div>
+                  )}
+                </CardContent>
               </Card>
             )
           })}
         </div>
       )}
-    </div>
+    </Page>
   )
 }

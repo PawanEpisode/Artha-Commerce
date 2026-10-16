@@ -18,9 +18,9 @@ interface SegmentedControlProps<T extends string> extends Omit<
   }>
   /** Accessible name of the group. */
   label: string
-  /** Stretch the choices across the full width, with a 44px target. */
+  /** Stretch the choices across the full width. */
   stretch?: boolean
-  /** `lg` makes every choice at least 44 px tall and wide (tool pickers on touch screens). */
+  /** `lg` makes every choice at least 44 px tall and wide (tool pickers on touch screens). `md` is 24 px, 36 px on touch. */
   size?: 'md' | 'lg'
   /** Show only the icons from small screens down; the label stays as the accessible name and returns from `sm` up. */
   iconOnlyOnMobile?: boolean
@@ -50,7 +50,7 @@ export function SegmentedControl<T extends string>({
       onValueChange={(v) => onValueChange(v as T)}
       orientation="horizontal"
       className={cn(
-        'inline-flex flex-wrap items-center gap-1 rounded-xl bg-muted p-1',
+        'inline-flex flex-wrap items-center gap-1 rounded-lg bg-muted p-0.5',
         stretch && 'flex w-full flex-nowrap',
         className,
       )}
@@ -61,10 +61,10 @@ export function SegmentedControl<T extends string>({
           key={o.value}
           value={o.value}
           className={cn(
-            'inline-flex h-9 min-w-11 cursor-pointer items-center justify-center rounded-lg px-3 text-sm font-semibold text-muted-foreground transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 data-[state=checked]:bg-card data-[state=checked]:text-foreground data-[state=checked]:shadow-soft',
+            'inline-flex h-6 min-w-8 cursor-pointer items-center justify-center rounded-md px-2.5 text-xs font-medium text-muted-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/50 data-[state=checked]:bg-card data-[state=checked]:text-foreground data-[state=checked]:shadow-soft pointer-coarse:h-9 pointer-coarse:min-w-11',
             size === 'lg' && 'h-11 min-w-11',
-            stretch && 'h-11 min-w-0 flex-1 basis-0 px-1',
-            o.icon ? 'gap-2 [&_svg]:size-4 [&_svg]:shrink-0' : null,
+            stretch && 'min-w-0 flex-1 basis-0 px-1 pointer-coarse:h-11',
+            o.icon ? 'gap-1.5 [&_svg]:size-3.5 [&_svg]:shrink-0' : null,
           )}
         >
           {o.icon}

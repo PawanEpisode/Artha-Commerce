@@ -12,11 +12,11 @@ const formatDate = (iso: string | null) =>
 /** What the student has logged on this chapter, newest first. */
 export function ActivityLog({ events }: { events: CoverageEventRow[] }) {
   const logged = events.filter((e) => e.type in LABEL)
-  if (logged.length === 0) return <p className="text-sm text-muted-foreground">Nothing logged yet.</p>
+  if (logged.length === 0) return <p className="text-xs text-muted-foreground">Nothing logged yet.</p>
   return (
-    <ol className="divide-y rounded-xl border bg-card">
+    <ol className="divide-y rounded-lg border bg-card">
       {logged.map((e) => (
-        <li key={e.id} className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
+        <li key={e.id} className="flex items-center justify-between gap-3 px-3.5 py-2 text-[13px]">
           <span className="font-medium">
             {LABEL[e.type]}
             {e.value !== null ? <span className="text-muted-foreground"> · {e.value}%</span> : null}

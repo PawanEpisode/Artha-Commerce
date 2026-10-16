@@ -20,10 +20,10 @@ export function StudyTargetsForm({ settings, pending, error, onSave }: Props) {
   const valid = targetsValid(draft, min, max)
 
   return (
-    <Card className="space-y-5 p-6">
+    <Card className="space-y-4 p-4">
       <div>
-        <h2 className="font-display text-xl font-bold">Study targets</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
+        <h2 className="text-sm font-semibold">Study targets</h2>
+        <p className="text-xs text-muted-foreground">
           What you aim to finish in every chapter. Chapters count as done when you reach these. Set 0 to leave one out.
         </p>
       </div>
@@ -35,13 +35,13 @@ export function StudyTargetsForm({ settings, pending, error, onSave }: Props) {
         disabled={pending}
       />
       {error ? <Alert variant="error">{error}</Alert> : null}
-      <div className="flex flex-wrap items-center gap-3">
-        <Button size="lg" disabled={!changed || !valid || pending} onClick={() => onSave(draft)}>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button disabled={!changed || !valid || pending} onClick={() => onSave(draft)}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
           Save targets
         </Button>
         {changed ? (
-          <Button variant="ghost" size="lg" disabled={pending} onClick={() => setDraft(settings.targets)}>
+          <Button variant="ghost" disabled={pending} onClick={() => setDraft(settings.targets)}>
             Discard changes
           </Button>
         ) : null}

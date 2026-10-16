@@ -13,17 +13,17 @@ interface Props {
 export function ProgressView({ percent, counts, weakest }: Props) {
   return (
     <>
-      <div className="flex items-center gap-5">
-        <ProgressRing value={percent} label="Average progress across chapters" size={96}>
-          <span className="text-lg font-bold">{percent}%</span>
+      <div className="flex items-center gap-3">
+        <ProgressRing value={percent} label="Average progress across chapters" size={64}>
+          <span className="text-sm font-semibold">{percent}%</span>
         </ProgressRing>
-        <p className="min-w-0 text-sm text-muted-foreground">{progressSentence(counts)}</p>
+        <p className="min-w-0 text-[13px] text-muted-foreground">{progressSentence(counts)}</p>
       </div>
       {weakest.length > 0 ? (
-        <ul className="space-y-3">
+        <ul className="space-y-2">
           {weakest.map((s) => (
             <li key={s.id} className="space-y-1">
-              <p className="flex justify-between gap-2 text-sm">
+              <p className="flex justify-between gap-2 text-[13px]">
                 <span className="truncate">{s.name}</span>
                 <span className="text-muted-foreground tabular-nums">{s.pct_simple}%</span>
               </p>
@@ -34,7 +34,7 @@ export function ProgressView({ percent, counts, weakest }: Props) {
       ) : null}
       <Link
         to="/app/syllabus"
-        className="mt-auto text-sm font-semibold text-primary underline-offset-4 hover:underline"
+        className="mt-auto text-[13px] font-medium text-primary underline-offset-4 hover:underline"
       >
         Open the syllabus map
       </Link>

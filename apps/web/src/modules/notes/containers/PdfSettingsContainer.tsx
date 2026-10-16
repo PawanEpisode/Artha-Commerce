@@ -32,7 +32,7 @@ export function PdfSettingsContainer() {
   return (
     <>
       {settings.isPending ? (
-        <Skeleton className="h-64 w-full" />
+        <Skeleton className="h-48 w-full" />
       ) : settings.isError || !settings.data ? (
         <Alert variant="error">
           <span className="flex flex-wrap items-center gap-3">
@@ -51,8 +51,8 @@ export function PdfSettingsContainer() {
       )}
       {update.isError ? <Alert variant="error">Your last change was not saved. Please try again.</Alert> : null}
       {usage.data ? <PdfUsage usage={usage.data} onManageStorage={manageStorage} /> : null}
-      <Card className="space-y-3 p-6">
-        <h2 className="font-display text-xl font-bold">Download my notes</h2>
+      <Card className="space-y-3 p-4">
+        <h2 className="text-sm font-semibold">Download my notes</h2>
         <ArchiveExportContainer />
       </Card>
       <DocumentDialogs controller={dialogs} />

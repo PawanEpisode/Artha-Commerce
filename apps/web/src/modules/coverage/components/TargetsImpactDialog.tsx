@@ -23,7 +23,7 @@ export function TargetsImpactDialog({ open, impact, from, to, pending, onConfirm
           {impact ? impactSentence(impact.chapters_dropping) : ''} A higher target means more is needed to count a
           chapter as done. Nothing you logged is removed, and you can undo this right after saving.
         </DialogDescription>
-        <p className="mt-4 rounded-xl bg-muted p-3 text-sm tabular-nums">
+        <p className="mt-4 rounded-lg bg-muted p-3 text-[13px] tabular-nums">
           <span className="text-muted-foreground">Now</span> {targetsLine(from)}
           <span aria-hidden className="mx-2">
             →
@@ -32,7 +32,7 @@ export function TargetsImpactDialog({ open, impact, from, to, pending, onConfirm
           <span className="font-semibold">{targetsLine(to)}</span>
           <span className="ml-2 text-muted-foreground">(practice · revisions · mocks)</span>
         </p>
-        <div className="mt-6 flex flex-wrap justify-end gap-3">
+        <div className="mt-4 flex flex-wrap justify-end gap-2">
           <Button variant="outline" onClick={onCancel} disabled={pending}>
             Keep current targets
           </Button>

@@ -27,6 +27,8 @@ interface Props {
   /** Options are still being fetched: the open menus show a loader instead of looking empty. */
   subjectsLoading?: boolean
   chaptersLoading?: boolean
+  /** One select per row, for a narrow column. Default: three across from `sm`. */
+  stacked?: boolean
 }
 
 /** What the time is for: subject, chapter and kind of study. All optional, so the timer never waits on a choice. */
@@ -38,10 +40,11 @@ export function ContextPicker({
   disabled,
   subjectsLoading,
   chaptersLoading,
+  stacked = false,
 }: Props) {
   const id = useId()
   return (
-    <div className="grid gap-3 sm:grid-cols-3">
+    <div className={stacked ? 'grid gap-2.5' : 'grid gap-3 sm:grid-cols-3'}>
       <div className="space-y-1.5">
         <Label htmlFor={`${id}-subject`}>Subject</Label>
         <SelectField

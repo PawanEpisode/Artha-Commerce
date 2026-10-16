@@ -33,12 +33,12 @@ export function ReplaceSection({
       ) : null}
       <div className="flex flex-wrap gap-2">
         {openCount > 0 ? (
-          <Button variant="outline" className="min-h-11" onClick={onReview}>
+          <Button variant="outline" onClick={onReview}>
             Review {openCount} {openCount === 1 ? 'mark' : 'marks'}
           </Button>
         ) : null}
         {canReplace ? (
-          <Button variant="outline" className="min-h-11" onClick={onReplace} disabled={!online}>
+          <Button variant="outline" onClick={onReplace} disabled={!online}>
             <RefreshCw aria-hidden /> Replace with a newer edition
           </Button>
         ) : null}

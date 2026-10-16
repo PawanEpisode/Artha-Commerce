@@ -9,7 +9,7 @@ export const PopoverTrigger = PopoverPrimitive.Trigger
 export function PopoverContent({
   className,
   align = 'start',
-  sideOffset = 8,
+  sideOffset = 6,
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Content>) {
   return (
@@ -19,7 +19,7 @@ export function PopoverContent({
         align={align}
         sideOffset={sideOffset}
         className={cn(
-          'z-50 w-[min(22rem,calc(100vw-2rem))] rounded-xl border border-border bg-popover p-4 text-sm text-popover-foreground shadow-(--shadow-lift) outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
+          'z-50 w-[min(22rem,calc(100vw-2rem))] rounded-lg border border-border bg-popover p-3 text-[13px] text-popover-foreground shadow-(--shadow-lift) outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
           className,
         )}
         {...props}

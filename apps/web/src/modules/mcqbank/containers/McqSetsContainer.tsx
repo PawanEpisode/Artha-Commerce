@@ -1,9 +1,9 @@
-import { ArrowLeft, ButtonLink, Container, Skeleton, toast } from '@artha/design-system'
+import { EmptyState, Page, PageHeader, Skeleton, toast } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
 import { ExternalLogDialog } from '../components/ExternalLogDialog'
-import { SetCard } from '../components/SetCard'
+import { SetsTable } from '../components/SetsTable'
 import { listMcqSets, startSetPractice } from '../lib/api'
 import type { McqFilter, McqSetCard } from '../lib/types'
 
@@ -56,63 +56,43 @@ export function McqSetsContainer({
 
   if (isLoading) {
     return (
-      <Container className="space-y-6 py-8">
-        <Skeleton className="h-6 w-32" />
-        <Skeleton className="h-10 w-64" />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Skeleton className="h-44 w-full" />
-          <Skeleton className="h-44 w-full" />
-          <Skeleton className="h-44 w-full" />
+      <Page>
+        <div role="status" aria-busy="true" aria-label="Loading MCQ sets" className="space-y-3">
+          <Skeleton className="h-8 w-64" />
+          <Skeleton className="h-48 w-full" />
         </div>
-      </Container>
+      </Page>
     )
   }
 
   return (
-    <Container className="space-y-8 py-8">
-      <div className="space-y-4">
-        <ButtonLink
-          asChild
-          variant="ghost"
-          size="sm"
-          className="-ml-2 gap-1.5 text-xs text-muted-foreground hover:text-foreground"
-        >
-          <Link to="/app/mcq">
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back to MCQ Bank
+    <Page>
+      <PageHeader
+        eyebrow={
+          <Link to="/app/mcq" className="hover:underline">
+            MCQ Bank
           </Link>
-        </ButtonLink>
-
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{title}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
-        </div>
-      </div>
+        }
+        title={title}
+        description={subtitle}
+      />
 
       {sets.length > 0 ? (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sets.map((s) => (
-            <SetCard
-              key={s.id}
-              set={s}
-              onStartPractice={handleStartSet}
-              onOpenExternalLog={(item) => setLogDialogSet(item)}
-              isStarting={isStarting}
-            />
-          ))}
-        </div>
+        <SetsTable
+          sets={sets}
+          onStartPractice={handleStartSet}
+          onOpenExternalLog={(item) => setLogDialogSet(item)}
+          isStarting={isStarting}
+        />
       ) : (
-        <div className="rounded-lg border border-dashed p-8 text-center text-muted-foreground">
-          No MCQ practice sets found matching criteria.
-        </div>
+        <EmptyState title="No MCQ practice sets found matching criteria." />
       )}
 
-      {/* External Score Dialog */}
       <ExternalLogDialog
         open={!!logDialogSet}
         onOpenChange={(open) => !open && setLogDialogSet(null)}
         set={logDialogSet}
       />
-    </Container>
+    </Page>
   )
 }

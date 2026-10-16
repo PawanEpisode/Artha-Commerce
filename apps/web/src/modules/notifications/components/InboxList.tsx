@@ -28,24 +28,19 @@ export function InboxList({
   onLoadMore: () => void
 }) {
   return (
-    <div className="space-y-4">
-      <ul className="divide-y overflow-hidden rounded-2xl border bg-card">
+    <div className="space-y-3">
+      <ul className="divide-y overflow-hidden rounded-lg border bg-card">
         {items.map((item) => {
           const link = followableLink(item)
-          const titleClass = `rounded-sm text-base break-words outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 ${
-            item.read ? 'font-medium' : 'font-bold'
+          const titleClass = `rounded-sm text-[13px] break-words outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 ${
+            item.read ? 'font-medium' : 'font-semibold'
           }`
           return (
             <li
               key={item.id}
-              className={`flex items-start gap-2 p-4 ${item.read ? '' : 'border-l-4 border-l-primary'}`}
+              className={`flex items-start gap-2 px-3 py-2 ${item.read ? '' : 'border-l-2 border-l-primary bg-primary/5'}`}
             >
-              <div className="min-w-0 flex-1 space-y-1">
-                <p className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                  <Badge variant="outline">{item.category_label}</Badge>
-                  {item.read ? <span className="sr-only">Read</span> : <Badge variant="accent">New</Badge>}
-                  <time dateTime={item.created_at}>{formatSent(item.created_at, now)}</time>
-                </p>
+              <div className="min-w-0 flex-1 space-y-0.5">
                 <h2 className="min-w-0">
                   {link ? (
                     <a href={link} className={`${titleClass} hover:underline`} onClick={(event) => onOpen(item, event)}>
@@ -61,13 +56,22 @@ export function InboxList({
                     </button>
                   )}
                 </h2>
-                <p className="text-sm break-words text-muted-foreground">{item.body}</p>
+                <p className="text-xs break-words text-muted-foreground">{item.body}</p>
               </div>
-              {item.read ? null : (
+              <p className="flex shrink-0 flex-col items-end gap-1 text-xs text-muted-foreground sm:flex-row sm:items-center sm:gap-2">
+                <Badge variant="outline">{item.category_label}</Badge>
+                {item.read ? <span className="sr-only">Read</span> : <Badge variant="accent">New</Badge>}
+                <time dateTime={item.created_at} className="tabular-nums">
+                  {formatSent(item.created_at, now)}
+                </time>
+              </p>
+              {item.read ? (
+                <span aria-hidden className="size-7 shrink-0 pointer-coarse:size-10" />
+              ) : (
                 <Button
                   variant="ghost"
-                  size="icon"
-                  className="size-11 shrink-0"
+                  size="icon-sm"
+                  className="shrink-0"
                   aria-label={`Mark "${item.title}" as read`}
                   onClick={() => onMarkRead(item)}
                 >
@@ -80,7 +84,7 @@ export function InboxList({
       </ul>
       {hasMore ? (
         <div className="flex justify-center">
-          <Button variant="outline" onClick={onLoadMore} disabled={loadingMore} aria-busy={loadingMore}>
+          <Button variant="outline" size="sm" onClick={onLoadMore} disabled={loadingMore} aria-busy={loadingMore}>
             {loadingMore ? <LoaderCircle aria-hidden className="animate-spin motion-reduce:animate-none" /> : null}
             {loadingMore ? 'Loading…' : 'Show older'}
           </Button>

@@ -39,32 +39,32 @@ export function CourseLevelStep({
 }: CourseLevelProps) {
   const selected = courses.find((c) => c.code === course)
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <fieldset className="space-y-3">
-        <legend className="mb-2 font-display text-lg font-bold">Which course are you preparing for?</legend>
+        <legend className="mb-1 text-sm font-semibold">Which course are you preparing for?</legend>
         <RadioGroup value={course} onValueChange={onCourse} className="sm:grid-cols-3">
           {courses.map((c) => (
             <RadioCardItem key={c.code} value={c.code}>
-              <span className="block font-semibold">{c.name}</span>
-              <span className="text-sm text-muted-foreground">{c.institute_name}</span>
+              <span className="block text-[13px] font-medium">{c.name}</span>
+              <span className="text-xs text-muted-foreground">{c.institute_name}</span>
             </RadioCardItem>
           ))}
         </RadioGroup>
       </fieldset>
       {selected ? (
         <fieldset className="space-y-3">
-          <legend className="mb-2 font-display text-lg font-bold">Which level?</legend>
+          <legend className="mb-1 text-sm font-semibold">Which level?</legend>
           <RadioGroup value={level} onValueChange={onLevel} className="sm:grid-cols-3">
             {selected.levels.map((l) => (
               <RadioCardItem key={l.code} value={l.code}>
-                <span className="block font-semibold">{l.name}</span>
+                <span className="block text-[13px] font-medium">{l.name}</span>
               </RadioCardItem>
             ))}
           </RadioGroup>
         </fieldset>
       ) : null}
       {level ? (
-        <p role="status" className="text-sm text-muted-foreground">
+        <p role="status" className="text-xs text-muted-foreground">
           {schemeLoading
             ? 'Checking the syllabus…'
             : schemeName
@@ -72,7 +72,7 @@ export function CourseLevelStep({
               : 'The syllabus for this level is not ready yet. Please pick another level.'}
         </p>
       ) : null}
-      <Button size="lg" onClick={onNext} disabled={!course || !level || schemeLoading || !schemeName}>
+      <Button onClick={onNext} disabled={!course || !level || schemeLoading || !schemeName}>
         Continue
       </Button>
     </div>
@@ -125,7 +125,7 @@ export function TermStep({
     if (!hoursError) onSubmit()
   }
   return (
-    <form onSubmit={submit} noValidate className="space-y-6">
+    <form onSubmit={submit} noValidate className="space-y-4">
       <div className="grid gap-2">
         <Label htmlFor="term">Which attempt are you aiming for?</Label>
         <SelectField
@@ -153,13 +153,13 @@ export function TermStep({
         />
       ) : null}
       {error ? <Alert variant="error">{error}</Alert> : null}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         {onBack ? (
           <Button type="button" variant="outline" onClick={onBack}>
             Back
           </Button>
         ) : null}
-        <Button type="submit" size="lg" disabled={pending || Boolean(hoursError)}>
+        <Button type="submit" disabled={pending || Boolean(hoursError)}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
           {submitLabel ?? (hasElectives ? 'Continue' : 'Create my syllabus map')}
         </Button>
@@ -191,8 +191,8 @@ export function ElectiveStep({
   submitLabel = 'Create my syllabus map',
 }: ElectiveStepProps) {
   return (
-    <div className="space-y-6">
-      <p className="text-muted-foreground">
+    <div className="space-y-4">
+      <p className="text-[13px] text-muted-foreground">
         You sit just one option for each elective paper, so only that one should count toward your coverage. You can
         change it any time from your syllabus map.
       </p>
@@ -206,13 +206,13 @@ export function ElectiveStep({
         />
       ))}
       {error ? <Alert variant="error">{error}</Alert> : null}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         {onBack ? (
           <Button type="button" variant="outline" onClick={onBack} disabled={pending}>
             Back
           </Button>
         ) : null}
-        <Button size="lg" onClick={onSubmit} disabled={pending}>
+        <Button onClick={onSubmit} disabled={pending}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
           {submitLabel}
         </Button>

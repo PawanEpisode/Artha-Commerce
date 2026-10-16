@@ -1,10 +1,10 @@
-import { Badge, ChevronRight, ProgressBar } from '@artha/design-system'
+import { Badge, DataTable, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-
-import { EntityIndex, EntityListRow, EntityTitle, ROW_LINK_CLASS } from '~/modules/syllabus'
+import { Fragment } from 'react'
 
 import { pick } from '../lib/formula'
 import type { ElectiveSlot, GroupRow, SubjectRow } from '../lib/types'
+import { ProgressCell } from './ProgressCell'
 
 interface Props {
   groups: GroupRow[]
@@ -29,42 +29,39 @@ function Row({
   const pct = pick(subject, weighted)
   const allExcluded = subject.chapters_total === 0
   return (
-    <li>
-      <EntityListRow kind="paper">
+    <TableRow>
+      <TableCell className="w-10 text-center text-xs text-muted-foreground tabular-nums">
+        {subject.paper_number ?? '·'}
+      </TableCell>
+      <TableCell className="min-w-44 whitespace-normal">
         <Link
           to="/app/syllabus/$subject"
           params={{ subject: subject.id }}
           search={view ? { view } : {}}
-          className={ROW_LINK_CLASS}
+          title={subject.name}
+          className="line-clamp-2 font-medium break-words underline-offset-4 outline-none hover:underline focus-visible:underline focus-visible:ring-2 focus-visible:ring-ring/50"
         >
-          <EntityIndex kind="paper">{subject.paper_number ?? '·'}</EntityIndex>
-          <span className="min-w-0 space-y-2">
-            <EntityTitle>{subject.name}</EntityTitle>
-            {subject.elective_slot || subject.excluded_chapters > 0 ? (
-              <span className="flex flex-wrap items-center gap-2">
-                {subject.elective_slot ? (
-                  <Badge variant="outline">{notChosen ? 'Elective: not chosen' : 'Your elective'}</Badge>
-                ) : null}
-                {subject.excluded_chapters > 0 && !subject.elective_slot ? (
-                  <Badge variant="outline">{subject.excluded_chapters} excluded</Badge>
-                ) : null}
-              </span>
-            ) : null}
-            <ProgressBar value={pct} label={`${subject.name} coverage`} />
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="w-12 text-right font-display text-lg font-bold tabular-nums">
-              {allExcluded ? 'n/a' : `${pct}%`}
-            </span>
-            <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
-          </span>
+          {subject.name}
         </Link>
-      </EntityListRow>
-    </li>
+      </TableCell>
+      <TableCell className="hidden sm:table-cell">
+        <div className="flex flex-wrap items-center gap-1">
+          {subject.elective_slot ? (
+            <Badge variant="outline">{notChosen ? 'Elective: not chosen' : 'Your elective'}</Badge>
+          ) : null}
+          {subject.excluded_chapters > 0 && !subject.elective_slot ? (
+            <Badge variant="outline">{subject.excluded_chapters} excluded</Badge>
+          ) : null}
+        </div>
+      </TableCell>
+      <TableCell className="text-right">
+        <ProgressCell value={pct} label={`${subject.name} coverage`} na={allExcluded} />
+      </TableCell>
+    </TableRow>
   )
 }
 
-/** Groups (Group 1, Group 2) with their papers, each with a bar and percent. */
+/** Groups (Group 1, Group 2) with their papers as one dense table: the paper, its flags, a thin bar and the percent. */
 export function SubjectProgressList({ groups, subjects: allSubjects, electives = [], weighted, view }: Props) {
   // Once an elective is chosen the other options are out of the student's syllabus; until then all of them are listed.
   const chosenBySlot = new Map(electives.map((e) => [e.key, e.chosen]))
@@ -90,18 +87,30 @@ export function SubjectProgressList({ groups, subjects: allSubjects, electives =
     : [{ id: 'all', name: '', pct: null, items: subjects }]
 
   return (
-    <div className="space-y-8">
-      {sections.map((section) => (
-        <section key={section.id} aria-label={section.name || 'Papers'}>
-          {section.name ? (
-            <h2 className="mb-3 flex items-baseline justify-between font-display text-lg font-bold">
-              {section.name}
-              {section.pct !== null ? (
-                <span className="text-sm font-semibold text-muted-foreground tabular-nums">{section.pct}%</span>
-              ) : null}
-            </h2>
-          ) : null}
-          <ul className="space-y-3">
+    <DataTable aria-label="Papers">
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-10 text-center">No.</TableHead>
+          <TableHead>Paper</TableHead>
+          <TableHead className="hidden sm:table-cell">
+            <span className="sr-only">Flags</span>
+          </TableHead>
+          <TableHead className="text-right">Progress</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {sections.map((section) => (
+          <Fragment key={section.id}>
+            {section.name ? (
+              <TableRow className="bg-muted/40 hover:bg-muted/40">
+                <TableCell colSpan={3} className="h-8 text-xs font-semibold">
+                  {section.name}
+                </TableCell>
+                <TableCell className="h-8 text-right text-xs font-semibold text-muted-foreground tabular-nums">
+                  {section.pct !== null ? `${section.pct}%` : ''}
+                </TableCell>
+              </TableRow>
+            ) : null}
             {section.items.map((s) => (
               <Row
                 key={s.id}
@@ -111,9 +120,9 @@ export function SubjectProgressList({ groups, subjects: allSubjects, electives =
                 notChosen={Boolean(s.elective_slot) && !chosenBySlot.get(s.elective_slot ?? '')}
               />
             ))}
-          </ul>
-        </section>
-      ))}
-    </div>
+          </Fragment>
+        ))}
+      </TableBody>
+    </DataTable>
   )
 }

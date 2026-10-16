@@ -3,6 +3,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { useMemo } from 'react'
 
 import { CategoryGrid } from '../components/CategoryGrid'
+import { CARD } from '../components/classes'
 import { DeviceList } from '../components/DeviceList'
 import { NudgeForm } from '../components/NudgeForm'
 import { PermissionCard } from '../components/PermissionCard'
@@ -32,8 +33,8 @@ import { DigestContainer } from './DigestContainer'
 import { NotificationsShell } from './NotificationsShell'
 
 const Card = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
-  <section aria-labelledby={id} className="space-y-4 rounded-2xl border border-border bg-card p-6">
-    <h2 id={id} className="text-lg font-bold">
+  <section aria-labelledby={id} className={CARD}>
+    <h2 id={id} className="text-sm font-semibold">
       {title}
     </h2>
     {children}
@@ -107,14 +108,14 @@ function Body({ settings }: { settings: NotificationSettings }) {
 
       <Card id="categories-heading" title="What to tell me about">
         {categories.isPending ? (
-          <p role="status" className="text-sm text-muted-foreground">
+          <p role="status" className="text-[13px] text-muted-foreground">
             Loading your choices…
           </p>
         ) : categories.isError ? (
           <Alert variant="error">
             <span className="flex flex-wrap items-center gap-3">
               We could not load your choices.
-              <Button variant="outline" onClick={() => void categories.refetch()}>
+              <Button variant="outline" size="sm" onClick={() => void categories.refetch()}>
                 Try again
               </Button>
             </span>
@@ -130,7 +131,7 @@ function Body({ settings }: { settings: NotificationSettings }) {
                 })
               }
             />
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               Inbox and email choices are saved now and start working as those features arrive.
             </p>
           </>
@@ -160,14 +161,14 @@ function Body({ settings }: { settings: NotificationSettings }) {
 
       <Card id="devices-heading" title="Your devices">
         {devices.isPending ? (
-          <p role="status" className="text-sm text-muted-foreground">
+          <p role="status" className="text-[13px] text-muted-foreground">
             Loading your devices…
           </p>
         ) : devices.isError ? (
           <Alert variant="error">
             <span className="flex flex-wrap items-center gap-3">
               We could not load your devices.
-              <Button variant="outline" onClick={() => void devices.refetch()}>
+              <Button variant="outline" size="sm" onClick={() => void devices.refetch()}>
                 Try again
               </Button>
             </span>

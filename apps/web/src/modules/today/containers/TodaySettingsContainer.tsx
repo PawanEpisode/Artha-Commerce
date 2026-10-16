@@ -1,8 +1,10 @@
 import {
   Alert,
   Button,
-  Container,
+  Card,
   EmptyState,
+  Page,
+  PageHeader,
   PresetChips,
   SegmentedControl,
   Skeleton,
@@ -29,24 +31,23 @@ import {
 } from '../lib/settings'
 import type { TodaySettings } from '../lib/types'
 
-const Shell = ({ children }: { children: React.ReactNode }) => (
-  <Container className="max-w-2xl min-w-0 space-y-6 py-6 sm:py-10">{children}</Container>
-)
+const Shell = ({ children }: { children: React.ReactNode }) => <Page width="form">{children}</Page>
 
+/** One settings row: label and hint on the left, the control on the right. */
 function Row({ id, title, hint, children }: { id: string; title: string; hint?: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-start justify-between gap-4">
+    <div className="flex flex-col gap-2 p-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
       <div className="min-w-0 space-y-0.5">
-        <label htmlFor={id} className="text-sm font-medium">
+        <label htmlFor={id} className="text-[13px] font-medium">
           {title}
         </label>
         {hint ? (
-          <p id={`${id}-hint`} className="text-sm text-muted-foreground">
+          <p id={`${id}-hint`} className="text-xs text-muted-foreground">
             {hint}
           </p>
         ) : null}
       </div>
-      {children}
+      <div className="min-w-0 sm:shrink-0">{children}</div>
     </div>
   )
 }
@@ -88,10 +89,7 @@ function Form({ saved }: { saved: TodaySettings }) {
   const preset = draft.minutes_per_day !== null && MINUTE_PRESETS.some((m) => m === draft.minutes_per_day)
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="font-display text-3xl font-extrabold">Today settings</h1>
-        <p className="text-muted-foreground">How much we plan for you each day, and what we leave out.</p>
-      </header>
+      <PageHeader title="Today settings" description="How much we plan for you each day, and what we leave out." />
       {!online ? (
         <Alert variant="info">
           You are offline, so settings cannot be changed right now. Connect to the internet and come back.
@@ -99,102 +97,106 @@ function Form({ saved }: { saved: TodaySettings }) {
       ) : null}
       {error ? <Alert variant="error">{error}</Alert> : null}
       <form
-        className="space-y-6 rounded-2xl border border-border bg-card p-4 sm:p-6"
+        className="space-y-3"
         onSubmit={(e) => {
           e.preventDefault()
           submit(draft, 'Settings saved')
         }}
       >
-        <fieldset disabled={!online} className="min-w-0 space-y-6 border-0 p-0">
-          <div className="space-y-2">
-            <p id="minutes-label" className="text-sm font-medium">
-              Minutes per day
-            </p>
-            <PresetChips
-              label="Minutes per day"
-              value={draft.minutes_per_day === null ? 'auto' : preset ? String(draft.minutes_per_day) : null}
-              onValueChange={(v) => set('minutes_per_day', v === 'auto' ? null : Number(v))}
-              options={[
-                { value: 'auto', label: 'Automatic', description: 'From your exam date' },
-                ...MINUTE_PRESETS.map((m) => ({ value: String(m), label: `${m} min` })),
-              ]}
-            />
-            <p className="text-sm text-muted-foreground">
-              Automatic uses your exam date and study hours. A fixed number is the most we plan, never a promise to fill
-              it.
-            </p>
-          </div>
+        <fieldset disabled={!online} className="min-w-0 border-0 p-0">
+          <Card className="divide-y">
+            <div className="space-y-2 p-4">
+              <p id="minutes-label" className="text-[13px] font-medium">
+                Minutes per day
+              </p>
+              <PresetChips
+                label="Minutes per day"
+                value={draft.minutes_per_day === null ? 'auto' : preset ? String(draft.minutes_per_day) : null}
+                onValueChange={(v) => set('minutes_per_day', v === 'auto' ? null : Number(v))}
+                options={[
+                  { value: 'auto', label: 'Automatic', description: 'From your exam date' },
+                  ...MINUTE_PRESETS.map((m) => ({ value: String(m), label: `${m} min` })),
+                ]}
+              />
+              <p className="text-xs text-muted-foreground">
+                Automatic uses your exam date and study hours. A fixed number is the most we plan, never a promise to
+                fill it.
+              </p>
+            </div>
 
-          <div className="space-y-2">
-            <p className="text-sm font-medium">Papers to focus on each day</p>
-            <SegmentedControl
-              label="Papers to focus on each day"
-              value={focusValue(draft.focus_papers)}
-              onValueChange={(v) => set('focus_papers', focusFromValue(v))}
-              options={FOCUS_OPTIONS.map((o) => ({ value: o, label: o === 'auto' ? 'Auto' : o }))}
-            />
-            <p className="text-sm text-muted-foreground">
-              The papers take turns, so each one comes round within a few days.
-            </p>
-          </div>
+            <div className="space-y-2 p-4">
+              <p className="text-[13px] font-medium">Papers to focus on each day</p>
+              <SegmentedControl
+                label="Papers to focus on each day"
+                value={focusValue(draft.focus_papers)}
+                onValueChange={(v) => set('focus_papers', focusFromValue(v))}
+                options={FOCUS_OPTIONS.map((o) => ({ value: o, label: o === 'auto' ? 'Auto' : o }))}
+              />
+              <p className="text-xs text-muted-foreground">
+                The papers take turns, so each one comes round within a few days.
+              </p>
+            </div>
 
-          <fieldset className="space-y-3 border-0 p-0">
-            <legend className="text-sm font-medium">Kinds of task to show</legend>
-            {listedKinds(draft.disabled_kinds).map((kind) => (
-              <div key={kind} className="flex items-center gap-3">
-                <Switch
-                  id={`kind-${kind}`}
-                  checked={!draft.disabled_kinds.includes(kind)}
-                  onCheckedChange={(on) => toggleKind(kind, on)}
-                />
-                <label htmlFor={`kind-${kind}`} className="text-sm">
-                  {kindLabel(kind)}
-                </label>
+            <fieldset className="border-0 p-4">
+              <legend className="mb-2 text-[13px] font-medium">Kinds of task to show</legend>
+              <div className="grid gap-x-4 gap-y-2 sm:grid-cols-2">
+                {listedKinds(draft.disabled_kinds).map((kind) => (
+                  <div key={kind} className="flex items-center gap-2.5">
+                    <Switch
+                      id={`kind-${kind}`}
+                      checked={!draft.disabled_kinds.includes(kind)}
+                      onCheckedChange={(on) => toggleKind(kind, on)}
+                    />
+                    <label htmlFor={`kind-${kind}`} className="text-[13px]">
+                      {kindLabel(kind)}
+                    </label>
+                  </div>
+                ))}
               </div>
-            ))}
-          </fieldset>
+            </fieldset>
 
-          <Row id="show-tomorrow" title="Show a preview of tomorrow" hint="After 6 pm, or once today is finished.">
-            <Switch
-              id="show-tomorrow"
-              aria-describedby="show-tomorrow-hint"
-              checked={draft.show_tomorrow}
-              onCheckedChange={(on) => set('show_tomorrow', on)}
-            />
-          </Row>
-          <Row
-            id="celebrate"
-            title="Celebrate a finished day"
-            hint="A short animation, off when your device asks for less motion."
-          >
-            <Switch
+            <Row id="show-tomorrow" title="Show a preview of tomorrow" hint="After 6 pm, or once today is finished.">
+              <Switch
+                id="show-tomorrow"
+                aria-describedby="show-tomorrow-hint"
+                checked={draft.show_tomorrow}
+                onCheckedChange={(on) => set('show_tomorrow', on)}
+              />
+            </Row>
+            <Row
               id="celebrate"
-              aria-describedby="celebrate-hint"
-              checked={draft.celebrate}
-              onCheckedChange={(on) => set('celebrate', on)}
-            />
-          </Row>
+              title="Celebrate a finished day"
+              hint="A short animation, off when your device asks for less motion."
+            >
+              <Switch
+                id="celebrate"
+                aria-describedby="celebrate-hint"
+                checked={draft.celebrate}
+                onCheckedChange={(on) => set('celebrate', on)}
+              />
+            </Row>
 
-          <div className="space-y-2">
-            <p className="text-sm font-medium">Lite mode</p>
-            <SegmentedControl
-              label="Lite mode"
-              value={draft.lite_mode}
-              onValueChange={(v) => set('lite_mode', v)}
-              options={[
-                { value: 'auto', label: 'Auto' },
-                { value: 'on', label: 'On' },
-                { value: 'off', label: 'Off' },
-              ]}
-            />
-            <p className="text-sm text-muted-foreground">
-              No animation or charts, and less data. Auto turns it on when your phone is saving data or the connection
-              is slow.
-            </p>
-          </div>
+            <div className="space-y-2 p-4">
+              <p className="text-[13px] font-medium">Lite mode</p>
+              <SegmentedControl
+                label="Lite mode"
+                value={draft.lite_mode}
+                onValueChange={(v) => set('lite_mode', v)}
+                options={[
+                  { value: 'auto', label: 'Auto' },
+                  { value: 'on', label: 'On' },
+                  { value: 'off', label: 'Off' },
+                ]}
+              />
+              <p className="text-xs text-muted-foreground">
+                No animation or charts, and less data. Auto turns it on when your phone is saving data or the connection
+                is slow.
+              </p>
+            </div>
+          </Card>
         </fieldset>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           <Button type="submit" disabled={!online || save.isPending || !dirty}>
             {save.isPending ? 'Saving' : 'Save settings'}
           </Button>
@@ -222,7 +224,7 @@ function Form({ saved }: { saved: TodaySettings }) {
           </Button>
         </Alert>
       ) : null}
-      <p className="text-sm">
+      <p className="text-[13px]">
         <Link to="/app/today" className="font-medium underline underline-offset-4">
           Back to Today
         </Link>
@@ -250,9 +252,9 @@ export function TodaySettingsContainer() {
   if (settings.isPending) {
     return (
       <Shell>
-        <div role="status" aria-label="Loading your settings" className="space-y-4">
-          <Skeleton className="h-10 w-2/3" />
-          <Skeleton className="h-64 w-full rounded-2xl" />
+        <div role="status" aria-label="Loading your settings" className="space-y-3">
+          <Skeleton className="h-8 w-1/2" />
+          <Skeleton className="h-64 w-full" />
         </div>
       </Shell>
     )

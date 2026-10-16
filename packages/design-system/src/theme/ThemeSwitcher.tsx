@@ -67,7 +67,7 @@ export function ThemeRadioGroup({ className }: { className?: string }) {
             <Icon aria-hidden className="size-4 text-primary" />
             {label}
           </span>
-          <span className="mt-1 block text-sm text-muted-foreground">{description}</span>
+          <span className="mt-1 block text-xs text-muted-foreground">{description}</span>
         </RadioCardItem>
       ))}
     </RadioGroup>

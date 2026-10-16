@@ -15,24 +15,24 @@ interface ConsentPanelProps {
 export function ConsentPanel({ text, pending, failed, onAgree, onCancel }: ConsentPanelProps) {
   const [agreed, setAgreed] = useState(false)
   return (
-    <Card className="space-y-4 p-6">
-      <h2 className="flex items-center gap-2 font-display text-xl font-bold">
-        <ShieldCheck aria-hidden className="size-5 text-primary" /> {text.title}
+    <Card className="max-w-3xl space-y-3 p-4">
+      <h2 className="flex items-center gap-2 text-sm font-semibold">
+        <ShieldCheck aria-hidden className="size-4 text-primary" /> {text.title}
       </h2>
-      <dl className="space-y-3">
+      <dl className="space-y-2">
         {text.points.map((point) => (
           <div key={point.heading}>
-            <dt className="font-semibold">{point.heading}</dt>
-            <dd className="text-sm text-muted-foreground">{point.text}</dd>
+            <dt className="text-[13px] font-semibold">{point.heading}</dt>
+            <dd className="text-[13px] text-muted-foreground">{point.text}</dd>
           </div>
         ))}
       </dl>
-      <label className="flex min-h-11 items-start gap-3">
+      <label className="flex min-h-8 items-start gap-2.5">
         <Checkbox checked={agreed} onCheckedChange={(v) => setAgreed(v === true)} className="mt-0.5" />
-        <span className="text-sm">{text.checkbox}</span>
+        <span className="text-[13px]">{text.checkbox}</span>
       </label>
       {failed ? <Alert variant="error">We could not save your choice. Please try again.</Alert> : null}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         <Button onClick={onAgree} disabled={!agreed || pending}>
           {pending ? <LoaderCircle aria-hidden className="animate-spin" /> : null} Agree and continue
         </Button>

@@ -1,4 +1,19 @@
-import { Alert, Bookmark, Button, ButtonLink, Card, EmptyState, Skeleton, toast } from '@artha/design-system'
+import {
+  Alert,
+  Bookmark,
+  Button,
+  DataTable,
+  EmptyState,
+  Page,
+  PageHeader,
+  Skeleton,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  toast,
+} from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
@@ -45,36 +60,50 @@ export function BookmarksContainer() {
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Practice feature is currently in rollout.</Alert>
-      </div>
+      </Page>
     )
   }
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <ButtonLink asChild variant="ghost" size="sm" className="mb-2">
-            <Link to="/app/practice">← Back to Practice Hub</Link>
-          </ButtonLink>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Bookmarked Questions
-          </h1>
-          <p className="text-sm text-muted-foreground">Questions you saved for revision and concept reinforcement.</p>
-        </div>
-
-        {bookmarks.length > 0 && (
-          <Button loading={isStarting} disabled={isStarting} onClick={handlePractiseBookmarks}>
-            Practise bookmarks ({bookmarks.length})
-          </Button>
-        )}
-      </div>
+    <Page>
+      <PageHeader
+        eyebrow={
+          <Link to="/app/practice" className="hover:underline">
+            Practice
+          </Link>
+        }
+        title="Bookmarked Questions"
+        description="Questions you saved for revision and concept reinforcement."
+        actions={
+          bookmarks.length > 0 ? (
+            <Button loading={isStarting} disabled={isStarting} onClick={handlePractiseBookmarks}>
+              Practise bookmarks ({bookmarks.length})
+            </Button>
+          ) : undefined
+        }
+      />
 
       {loading ? (
-        <div className="space-y-3">
-          <Skeleton className="h-20 w-full rounded-xl" />
-          <Skeleton className="h-20 w-full rounded-xl" />
+        <div role="status" aria-busy="true" aria-label="Loading bookmarks">
+          <DataTable>
+            <TableBody>
+              {[1, 2, 3, 4].map((i) => (
+                <TableRow key={i} className="hover:bg-transparent">
+                  <TableCell>
+                    <Skeleton className="h-4 w-48" />
+                  </TableCell>
+                  <TableCell className="hidden sm:table-cell">
+                    <Skeleton className="h-4 w-32" />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton className="h-4 w-16" />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </DataTable>
         </div>
       ) : error ? (
         <Alert variant="error">{error}</Alert>
@@ -83,35 +112,45 @@ export function BookmarksContainer() {
           title="No bookmarked questions yet"
           description="Click the bookmark icon on any question in the player or browser to save it here."
           action={
-            <Button asChild>
+            <Button asChild size="sm">
               <Link to="/app/questions">Browse questions</Link>
             </Button>
           }
         />
       ) : (
-        <div className="space-y-3">
-          {bookmarks.map((b, idx) => (
-            <Card key={idx} className="flex items-center justify-between p-4">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Bookmark className="size-4 fill-amber-500 text-amber-500" />
-                  <span className="text-sm font-semibold text-foreground">Question {b.question_id.slice(0, 8)}...</span>
-                </div>
-                {b.notes && <p className="text-xs text-muted-foreground italic">Note: {b.notes}</p>}
-                <p className="text-xs text-muted-foreground">
-                  Saved on: {new Date(b.bookmarked_at).toLocaleDateString()}
-                </p>
-              </div>
-
-              <ButtonLink size="sm" variant="outline" asChild>
-                <Link to="/app/questions/$id" params={{ id: b.question_id }}>
-                  View question
-                </Link>
-              </ButtonLink>
-            </Card>
-          ))}
-        </div>
+        <DataTable>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent">
+              <TableHead>Question</TableHead>
+              <TableHead className="hidden sm:table-cell">Note</TableHead>
+              <TableHead>Saved</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {bookmarks.map((b) => (
+              <TableRow key={b.question_id}>
+                <TableCell>
+                  <Link
+                    to="/app/questions/$id"
+                    params={{ id: b.question_id }}
+                    aria-label={`View question ${b.question_id.slice(0, 8)}`}
+                    className="inline-flex items-center gap-1.5 rounded-sm font-medium outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50"
+                  >
+                    <Bookmark aria-hidden className="size-3.5 fill-warning text-warning" />
+                    Question {b.question_id.slice(0, 8)}
+                  </Link>
+                </TableCell>
+                <TableCell className="hidden max-w-64 truncate text-muted-foreground sm:table-cell">
+                  {b.notes || '-'}
+                </TableCell>
+                <TableCell className="whitespace-nowrap text-muted-foreground tabular-nums">
+                  {new Date(b.bookmarked_at).toLocaleDateString()}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </DataTable>
       )}
-    </div>
+    </Page>
   )
 }

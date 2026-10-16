@@ -12,27 +12,27 @@ export function QuickPlanView({ plan, minutes }: { plan: QuickPlan; minutes: num
   return (
     <section
       aria-labelledby="quick-heading"
-      className="space-y-5 rounded-2xl border border-border bg-card p-5 shadow-soft"
+      className="max-w-3xl space-y-4 rounded-lg border border-border bg-card p-4"
     >
       <div className="space-y-1">
-        <h2 id="quick-heading" className="font-display text-xl font-bold">
+        <h2 id="quick-heading" className="text-base font-semibold">
           {plan.too_few ? 'Your memory looks solid' : `${plural(plan.selected, 'card')} to refresh`}
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           {plan.too_few
             ? `Only ${plural(plan.candidates, 'card')} would fade before the exam. Your normal reviews are enough.`
             : quickSummary(plan)}
         </p>
       </div>
       {!plan.too_few ? (
-        <div className="grid grid-cols-3 gap-3">
-          <StatTile label="Days left" value={plan.days_to_exam} />
-          <StatTile label="Per day" value={plan.per_day} />
-          <StatTile label="Minutes" value={plan.minutes_per_day} />
+        <div className="grid grid-cols-3 gap-2">
+          <StatTile label="Days left" value={plan.days_to_exam} className="p-3 shadow-none" />
+          <StatTile label="Per day" value={plan.per_day} className="p-3 shadow-none" />
+          <StatTile label="Minutes" value={plan.minutes_per_day} className="p-3 shadow-none" />
         </div>
       ) : null}
       <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">Minutes you can give each day</legend>
+        <legend className="text-[13px] font-medium">Minutes you can give each day</legend>
         <div className="flex flex-wrap gap-2">
           {QUICK_MINUTE_CHOICES.map((m) => (
             <ButtonLink key={m} variant={m === minutes ? 'default' : 'outline'} size="sm" asChild>
@@ -43,9 +43,9 @@ export function QuickPlanView({ plan, minutes }: { plan: QuickPlan; minutes: num
           ))}
         </div>
       </fieldset>
-      {cut ? <p className="text-sm text-muted-foreground">{cut}</p> : null}
+      {cut ? <p className="text-[13px] text-muted-foreground">{cut}</p> : null}
       {!plan.too_few ? (
-        <ButtonLink size="lg" asChild>
+        <ButtonLink asChild>
           <Link to="/app/recall/review" search={{ source: 'quick' }}>
             Start quick revision
           </Link>

@@ -32,7 +32,7 @@ export function PresetChips<T extends string>({
   className,
 }: PresetChipsProps<T>) {
   return (
-    <div role="group" aria-label={label} data-slot="preset-chips" className={cn('grid grid-cols-3 gap-2', className)}>
+    <div role="group" aria-label={label} data-slot="preset-chips" className={cn('grid grid-cols-3 gap-1.5', className)}>
       {options.map((o) => {
         const pressed = o.value === value
         return (
@@ -43,11 +43,11 @@ export function PresetChips<T extends string>({
             disabled={disabled}
             onClick={() => onValueChange(o.value)}
             className={cn(
-              'flex min-h-16 cursor-pointer flex-col items-start gap-0.5 rounded-xl border-2 border-input bg-card p-3 text-left transition-colors outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:pointer-events-none disabled:opacity-50',
+              'flex min-h-12 cursor-pointer flex-col items-start gap-0.5 rounded-lg border border-input bg-card p-2.5 text-left transition-colors outline-none hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50',
               pressed && 'border-primary bg-secondary',
             )}
           >
-            <span className="flex items-center gap-1.5 text-sm font-bold">
+            <span className="flex items-center gap-1.5 text-[13px] font-semibold">
               {o.label}
               {pressed ? (
                 <span aria-hidden className="text-primary">

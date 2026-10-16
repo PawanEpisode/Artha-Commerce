@@ -20,7 +20,7 @@ export function NudgeForm({ enabled, time, tone, onChange }: Props) {
   useEffect(() => setDraft(time), [time])
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <SwitchRow
         id="nudge-enabled"
         label="Daily nudge"
@@ -29,7 +29,7 @@ export function NudgeForm({ enabled, time, tone, onChange }: Props) {
         onChange={(value) => onChange({ nudge_enabled: value })}
       />
       {enabled ? (
-        <div className="grid gap-4 sm:grid-cols-2 sm:pl-15">
+        <div className="grid gap-3 sm:grid-cols-2 sm:pl-15">
           <TimeField
             id="nudge-time"
             label="Around this time"
@@ -38,7 +38,7 @@ export function NudgeForm({ enabled, time, tone, onChange }: Props) {
             onCommit={(value) => value !== time && onChange({ nudge_time: value })}
           />
           <div className="space-y-2">
-            <p aria-hidden className="text-sm leading-none font-semibold">
+            <p aria-hidden className="text-[13px] leading-none font-medium">
               Tone
             </p>
             <SegmentedControl

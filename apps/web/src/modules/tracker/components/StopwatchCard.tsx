@@ -37,39 +37,73 @@ export function StopwatchCard(props: Props) {
   const startDisabled = busy || !!otherLive || needsContext
   return (
     <Card>
-      <CardContent className="space-y-5 p-6">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="flex items-center gap-2 text-lg font-bold">
-            <StudyTimeIcon className="size-5 text-primary" aria-hidden /> Stopwatch
+      <CardContent className="space-y-4 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="flex items-center gap-2 text-sm font-semibold">
+            <StudyTimeIcon className="size-4 text-primary" aria-hidden /> Stopwatch
           </h2>
           {sw ? (
-            <span className="text-sm font-medium text-muted-foreground">{running ? 'Running' : 'Paused'}</span>
+            <span className="text-xs font-medium text-muted-foreground">{running ? 'Running' : 'Paused'}</span>
           ) : null}
         </div>
 
-        <div className="relative mx-auto w-fit px-6 py-1">
-          {running ? (
-            <span
-              aria-hidden
-              className="absolute inset-0 rounded-full bg-primary/10 motion-safe:animate-pulse motion-reduce:bg-primary/5"
-            />
-          ) : null}
-          <p
-            role="timer"
-            aria-label={`Elapsed ${spokenDuration(seconds)}`}
-            className={cn(
-              'relative text-center font-display text-5xl font-extrabold tracking-tight tabular-nums sm:text-6xl',
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+          <div className="relative w-fit px-3 py-1">
+            {running ? (
+              <span
+                aria-hidden
+                className="absolute inset-0 rounded-full bg-primary/10 motion-safe:animate-pulse motion-reduce:bg-primary/5"
+              />
+            ) : null}
+            <p
+              role="timer"
+              aria-label={`Elapsed ${spokenDuration(seconds)}`}
+              className={cn('relative text-center font-display text-5xl font-extrabold tracking-tight tabular-nums')}
+            >
+              <span aria-hidden>{formatClock(seconds)}</span>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            {!sw ? (
+              <Button
+                variant="cta"
+                className="min-w-24"
+                onClick={props.onStart}
+                disabled={startDisabled}
+                aria-describedby={needsContext && !otherLive ? 'stopwatch-needs-context' : undefined}
+              >
+                <Play aria-hidden /> Start
+              </Button>
+            ) : (
+              <>
+                {running ? (
+                  <Button variant="outline" onClick={props.onPause} disabled={busy}>
+                    <Pause aria-hidden /> Pause
+                  </Button>
+                ) : (
+                  <Button onClick={props.onResume} disabled={busy}>
+                    <Play aria-hidden /> Resume
+                  </Button>
+                )}
+                <Button onClick={props.onStop} disabled={busy}>
+                  <Square aria-hidden /> Stop and save
+                </Button>
+                <Button variant="outline" onClick={props.onDiscard} disabled={busy}>
+                  Discard
+                </Button>
+              </>
             )}
-          >
-            <span aria-hidden>{formatClock(seconds)}</span>
-          </p>
+          </div>
         </div>
 
         {props.idlePending ? (
           <Alert variant="info">
-            <span role="alert" className="flex flex-wrap items-center gap-3">
+            <span role="alert" className="flex flex-wrap items-center gap-2">
               Still studying? The timer pauses on its own if you do not answer.
-              <Button onClick={props.onStillStudying}>Yes, still studying</Button>
+              <Button size="sm" onClick={props.onStillStudying}>
+                Yes, still studying
+              </Button>
             </span>
           </Alert>
         ) : null}
@@ -95,43 +129,12 @@ export function StopwatchCard(props: Props) {
           disabled={busy}
         />
 
-        <div className="flex flex-wrap justify-center gap-3">
-          {!sw ? (
-            <Button
-              size="lg"
-              variant="cta"
-              onClick={props.onStart}
-              disabled={startDisabled}
-              aria-describedby={needsContext && !otherLive ? 'stopwatch-needs-context' : undefined}
-            >
-              <Play aria-hidden /> Start
-            </Button>
-          ) : (
-            <>
-              {running ? (
-                <Button size="lg" variant="outline" onClick={props.onPause} disabled={busy}>
-                  <Pause aria-hidden /> Pause
-                </Button>
-              ) : (
-                <Button size="lg" onClick={props.onResume} disabled={busy}>
-                  <Play aria-hidden /> Resume
-                </Button>
-              )}
-              <Button size="lg" onClick={props.onStop} disabled={busy}>
-                <Square aria-hidden /> Stop and save
-              </Button>
-              <Button size="lg" variant="outline" onClick={props.onDiscard} disabled={busy}>
-                Discard
-              </Button>
-            </>
-          )}
-        </div>
         {!sw && needsContext && !otherLive ? (
-          <p id="stopwatch-needs-context" className="text-center text-sm text-muted-foreground">
+          <p id="stopwatch-needs-context" className="text-[13px] text-muted-foreground">
             Choose a subject and a chapter to start.
           </p>
         ) : null}
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           Time under one minute is not saved. The clock keeps running if you close this tab.
         </p>
       </CardContent>

@@ -14,10 +14,10 @@ interface Props {
 export function ElectivePicker({ slots, pending, error, onChange }: Props) {
   const undecided = slots.filter((s) => !s.chosen).length
   return (
-    <Card className="space-y-6 p-6" id="electives">
+    <Card className="max-w-3xl space-y-4 p-4" id="electives">
       <div className="space-y-1">
-        <h2 className="font-display text-xl font-bold">Your elective papers</h2>
-        <p className="text-sm text-muted-foreground">
+        <h2 className="text-sm font-semibold">Your elective papers</h2>
+        <p className="text-[13px] text-muted-foreground">
           You sit one option for each elective paper. Only your choice counts toward your coverage. Your progress in the
           others is kept if you change your mind.
         </p>

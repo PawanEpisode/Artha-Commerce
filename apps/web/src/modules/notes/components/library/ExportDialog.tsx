@@ -152,7 +152,7 @@ export function ExportDialog({
                         type="button"
                         aria-pressed={form.tags.includes(tag.id)}
                         onClick={() => onFormChange({ ...form, tags: toggle(form.tags, tag.id) })}
-                        className="inline-flex min-h-11 items-center rounded-full border border-input bg-card px-4 text-sm font-medium outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 aria-pressed:border-primary aria-pressed:bg-secondary"
+                        className="inline-flex min-h-7 items-center rounded-md border border-input bg-card px-2.5 text-xs font-medium outline-none hover:bg-muted focus-visible:ring-[3px] focus-visible:ring-ring/40 aria-pressed:border-primary aria-pressed:bg-secondary pointer-coarse:min-h-10"
                       >
                         {tag.name}
                       </button>
@@ -192,7 +192,7 @@ export function ExportDialog({
             <Button type="button" variant="ghost" onClick={() => onOpenChange(false)}>
               Close
             </Button>
-            <Button type="submit" variant="cta" disabled={disabled || noKinds || Boolean(pagesError)} loading={busy}>
+            <Button type="submit" disabled={disabled || noKinds || Boolean(pagesError)} loading={busy}>
               Build export
             </Button>
           </div>

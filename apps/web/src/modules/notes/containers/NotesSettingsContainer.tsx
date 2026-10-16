@@ -1,4 +1,4 @@
-import { Skeleton } from '@artha/design-system'
+import { Page, PageHeader, Skeleton } from '@artha/design-system'
 import { useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 
@@ -70,13 +70,10 @@ function Settings() {
   }
 
   return (
-    <>
-      <header className="space-y-1">
-        <h1 className="font-display text-3xl font-extrabold">Notes settings</h1>
-        <p className="text-muted-foreground">How much space your notes use, and your data.</p>
-      </header>
+    <Page width="form">
+      <PageHeader title="Notes settings" description="How much space your notes use, and your data." />
       {usage.isPending ? (
-        <Skeleton className="h-48 w-full" />
+        <Skeleton className="h-40 w-full" />
       ) : (
         <UsageSection
           usage={usage.data}
@@ -95,13 +92,13 @@ function Settings() {
         failed={deleteFailed}
         onConfirm={() => void onDelete()}
       />
-    </>
+    </Page>
   )
 }
 
 export function NotesSettingsContainer() {
   return (
-    <NotesShell width="max-w-3xl" allowWhenOff>
+    <NotesShell bare allowWhenOff>
       <Settings />
     </NotesShell>
   )

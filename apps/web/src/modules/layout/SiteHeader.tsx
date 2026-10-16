@@ -45,8 +45,12 @@ function AccountMenu({ email, onSignOut }: { email?: string; onSignOut: () => vo
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        {/* The 44 px target is the whole button; the first name is hidden under 640 px so nothing overflows at 320. */}
-        <Button variant="ghost" className="h-11 min-w-11 gap-2 rounded-full px-1 sm:pr-3" aria-label="Account menu">
+        {/* Compact with a mouse, 44 px on touch; the first name is hidden under 640 px so nothing overflows at 320. */}
+        <Button
+          variant="ghost"
+          className="h-8 min-w-8 gap-2 rounded-full px-0.5 sm:pr-2.5 pointer-coarse:h-11 pointer-coarse:min-w-11"
+          aria-label="Account menu"
+        >
           <IdentityAvatar size={32} decorative />
           {firstName ? <span className="hidden max-w-28 truncate sm:inline">{firstName}</span> : null}
         </Button>
@@ -93,14 +97,14 @@ export function SiteHeader() {
     else delete document.documentElement.dataset.signedIn
   }, [loading, user])
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-xl">
-      <style>{`html[data-signed-in="1"] [data-nav="courses"]{display:none}`}</style>
+    <header data-slot="site-header" className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur-md">
+      <style>{`html[data-signed-in="1"] [data-nav="courses"]{display:none}html[data-signed-in="1"] [data-slot="site-header"]{visibility:hidden}`}</style>
       <Container className="flex h-[var(--site-header-height)] items-center justify-between gap-2">
         <Link to="/" aria-label="ArthaCommerce home" className="shrink-0">
           <Logo compactOnMobile />
         </Link>
-        <div className="flex min-w-0 items-center gap-1 sm:gap-2">
-          <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
+        <div className="flex min-w-0 items-center gap-1">
+          <nav aria-label="Main" className="hidden items-center md:flex">
             {links.map((item) => (
               <Button
                 key={item.to}

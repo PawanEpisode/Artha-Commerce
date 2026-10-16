@@ -1,21 +1,28 @@
 import {
   Alert,
-  Badge,
   Bookmark,
   Button,
   ButtonLink,
   Card,
   CircleAlert,
   Clock,
+  DataTable,
   EmptyState,
-  Play,
+  Page,
+  PageHeader,
   Skeleton,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import * as React from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
 
+import { SessionsTable } from '../components/SessionsTable'
 import { listSessions } from '../lib/api'
 import type { SessionRow } from '../lib/types'
 
@@ -45,9 +52,9 @@ export function PracticeHubContainer() {
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Practice Engine is currently in rollout and not available yet.</Alert>
-      </div>
+      </Page>
     )
   }
 
@@ -55,32 +62,30 @@ export function PracticeHubContainer() {
   const completedSessions = sessions.filter((s) => s.status === 'submitted')
 
   return (
-    <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
-      {/* Header & Primary Actions */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Practice Hub</h1>
-          <p className="text-sm text-muted-foreground">
-            Solve questions, test your exam readiness, and review mistakes.
-          </p>
-        </div>
+    <Page>
+      <PageHeader
+        title="Practice Hub"
+        description="Solve questions, test your exam readiness, and review mistakes."
+        actions={
+          <>
+            <ButtonLink asChild variant="outline" size="sm">
+              <Link to="/app/questions">Browse Questions</Link>
+            </ButtonLink>
+            <Button asChild>
+              <Link to="/app/practice/new">Build Custom Test</Link>
+            </Button>
+          </>
+        }
+      />
 
-        <div className="flex flex-wrap items-center gap-2">
-          <ButtonLink asChild variant="outline">
-            <Link to="/app/questions">Browse Questions</Link>
-          </ButtonLink>
-          <Button asChild>
-            <Link to="/app/practice/new">Build Custom Test</Link>
-          </Button>
-        </div>
-      </div>
-
-      {/* Quick Navigation Cards */}
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-3 md:grid-cols-3">
         <Card className="p-4 transition-colors hover:border-primary/50">
-          <Link to="/app/practice/mistakes" className="block space-y-1">
-            <div className="flex items-center gap-2 font-semibold text-foreground">
-              <CircleAlert className="size-4 text-destructive" />
+          <Link
+            to="/app/practice/mistakes"
+            className="block space-y-1 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
+            <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+              <CircleAlert aria-hidden className="size-4 text-destructive" />
               <span>Review Mistakes</span>
             </div>
             <p className="text-xs text-muted-foreground">Review and retry questions you answered incorrectly.</p>
@@ -88,9 +93,12 @@ export function PracticeHubContainer() {
         </Card>
 
         <Card className="p-4 transition-colors hover:border-primary/50">
-          <Link to="/app/practice/bookmarks" className="block space-y-1">
-            <div className="flex items-center gap-2 font-semibold text-foreground">
-              <Bookmark className="size-4 fill-amber-500 text-amber-500" />
+          <Link
+            to="/app/practice/bookmarks"
+            className="block space-y-1 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
+            <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+              <Bookmark aria-hidden className="size-4 fill-warning text-warning" />
               <span>Bookmarked Questions</span>
             </div>
             <p className="text-xs text-muted-foreground">Questions you flagged for revision or tricky concepts.</p>
@@ -98,9 +106,13 @@ export function PracticeHubContainer() {
         </Card>
 
         <Card className="p-4 transition-colors hover:border-primary/50">
-          <Link to="/app/practice/new" search={{ mode: 'timed', n: 20 }} className="block space-y-1">
-            <div className="flex items-center gap-2 font-semibold text-foreground">
-              <Clock className="size-4 text-primary" />
+          <Link
+            to="/app/practice/new"
+            search={{ mode: 'timed', n: 20 }}
+            className="block space-y-1 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
+            <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+              <Clock aria-hidden className="size-4 text-primary" />
               <span>Timed Speed Drill</span>
             </div>
             <p className="text-xs text-muted-foreground">
@@ -110,80 +122,61 @@ export function PracticeHubContainer() {
         </Card>
       </div>
 
-      {/* Resume In-Progress Sessions */}
       {openSessions.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="text-lg font-bold text-foreground">In Progress</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {openSessions.map((s) => (
-              <Card key={s.id} className="flex items-center justify-between p-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="max-w-64 truncate font-semibold text-foreground">
-                      {s.title || 'Practice Session'}
-                    </span>
-                    <Badge variant={s.status === 'paused' ? 'outline' : 'default'} className="text-[10px]">
-                      {s.status === 'paused' ? 'Paused' : 'Active'}
-                    </Badge>
-                  </div>
-                  <p className="text-xs text-muted-foreground">
-                    {s.question_count} questions • {s.mode.replace('_', ' ')}
-                  </p>
-                </div>
-
-                <Button size="sm" asChild>
-                  <Link to="/app/practice/session/$id" params={{ id: s.id }}>
-                    <Play className="mr-1 size-3.5 fill-current" /> Resume
-                  </Link>
-                </Button>
-              </Card>
-            ))}
-          </div>
+        <section className="space-y-2">
+          <h2 className="text-sm font-semibold text-foreground">In Progress</h2>
+          <SessionsTable sessions={openSessions} variant="open" />
         </section>
       )}
 
-      {/* Quick Chapter Launchers (CMA Intermediate & Final) */}
-      <section className="space-y-3">
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-foreground">High-Yield Chapters (CMA 2022)</h2>
+      <section className="space-y-2">
+        <div className="flex items-center justify-between gap-2">
+          <h2 className="text-sm font-semibold text-foreground">High-Yield Chapters (CMA 2022)</h2>
           <Link to="/app/questions" className="text-xs font-medium text-primary hover:underline">
-            View all chapters →
+            View all chapters
           </Link>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CMA_QUICK_CHAPTERS.map((ch, idx) => (
-            <Card key={idx} className="flex flex-col justify-between space-y-3 p-4">
-              <div>
-                <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
-                  {ch.subject}
-                </span>
-                <h3 className="mt-0.5 text-sm font-semibold text-foreground">{ch.title}</h3>
-                <span className="mt-1 inline-block text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                  Weightage: {ch.marks}
-                </span>
-              </div>
-
-              <Button size="sm" variant="outline" asChild className="w-full">
-                <Link
-                  to="/app/practice/new"
-                  search={{ subject: ch.subject, chapter: ch.chapter, mode: 'chapter_quiz' }}
-                >
-                  Practise chapter
-                </Link>
-              </Button>
-            </Card>
-          ))}
-        </div>
+        <DataTable>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent">
+              <TableHead>Chapter</TableHead>
+              <TableHead className="hidden sm:table-cell">Subject</TableHead>
+              <TableHead className="hidden md:table-cell">Weightage</TableHead>
+              <TableHead className="text-right">
+                <span className="sr-only">Action</span>
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {CMA_QUICK_CHAPTERS.map((ch) => (
+              <TableRow key={ch.chapter}>
+                <TableCell className="font-medium">{ch.title}</TableCell>
+                <TableCell className="hidden text-muted-foreground capitalize sm:table-cell">{ch.subject}</TableCell>
+                <TableCell className="hidden text-muted-foreground md:table-cell">{ch.marks}</TableCell>
+                <TableCell className="text-right">
+                  <Button size="sm" variant="outline" asChild>
+                    <Link
+                      to="/app/practice/new"
+                      search={{ subject: ch.subject, chapter: ch.chapter, mode: 'chapter_quiz' }}
+                      aria-label={`Practise chapter ${ch.title}`}
+                    >
+                      Practise chapter
+                    </Link>
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </DataTable>
       </section>
 
-      {/* Recent Completed Sessions */}
-      <section className="space-y-3">
-        <h2 className="text-lg font-bold text-foreground">Recent Sessions</h2>
+      <section className="space-y-2">
+        <h2 className="text-sm font-semibold text-foreground">Recent Sessions</h2>
         {loading ? (
-          <div className="space-y-2">
-            <Skeleton className="h-16 w-full rounded-xl" />
-            <Skeleton className="h-16 w-full rounded-xl" />
+          <div role="status" aria-busy="true" aria-label="Loading sessions" className="space-y-2">
+            <Skeleton className="h-9 w-full" />
+            <Skeleton className="h-9 w-full" />
           </div>
         ) : error ? (
           <Alert variant="error">{error}</Alert>
@@ -192,51 +185,15 @@ export function PracticeHubContainer() {
             title="No completed sessions yet"
             description="Start practicing chapter quizzes or timed test sets to build your progress."
             action={
-              <Button asChild>
+              <Button asChild size="sm">
                 <Link to="/app/practice/new">Start your first test</Link>
               </Button>
             }
           />
         ) : (
-          <div className="space-y-2">
-            {completedSessions.map((s) => {
-              const accuracy =
-                s.score !== null && s.max_score ? Math.round((Number(s.score) / Number(s.max_score)) * 100) : null
-
-              return (
-                <Card key={s.id} className="flex flex-col gap-2 p-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="space-y-1">
-                    <span className="font-semibold text-foreground">{s.title || 'Completed Practice'}</span>
-                    <p className="text-xs text-muted-foreground">
-                      {s.question_count} questions • {s.mode.replace('_', ' ')} • Submitted{' '}
-                      {s.submitted_at ? new Date(s.submitted_at).toLocaleDateString() : ''}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    {s.score !== null && (
-                      <div className="text-right">
-                        <div className="font-mono text-sm font-bold text-foreground">
-                          {s.score} / {s.max_score} marks
-                        </div>
-                        {accuracy !== null && (
-                          <span className="text-xs text-muted-foreground">{accuracy}% accuracy</span>
-                        )}
-                      </div>
-                    )}
-
-                    <ButtonLink size="sm" variant="outline" asChild>
-                      <Link to="/app/practice/session/$id/review" params={{ id: s.id }}>
-                        Review
-                      </Link>
-                    </ButtonLink>
-                  </div>
-                </Card>
-              )
-            })}
-          </div>
+          <SessionsTable sessions={completedSessions} variant="done" />
         )}
       </section>
-    </div>
+    </Page>
   )
 }

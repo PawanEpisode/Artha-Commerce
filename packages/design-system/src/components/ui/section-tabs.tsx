@@ -44,14 +44,14 @@ export interface SectionTabsProps {
 }
 
 const tabClass =
-  'relative inline-flex h-11 shrink-0 cursor-pointer items-center gap-2 rounded-full px-4 text-base font-semibold whitespace-nowrap outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-ring/40 motion-reduce:transition-none aria-disabled:pointer-events-none aria-disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0 data-[active=true]:bg-primary data-[active=true]:text-primary-foreground data-[active=true]:shadow-soft data-[active=false]:text-muted-foreground data-[active=false]:hover:bg-muted data-[active=false]:hover:text-foreground'
+  'relative inline-flex h-7 shrink-0 cursor-pointer items-center gap-1.5 rounded-md px-2.5 text-[13px] font-medium whitespace-nowrap outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring/50 motion-reduce:transition-none aria-disabled:pointer-events-none aria-disabled:opacity-50 pointer-coarse:h-10 [&_svg]:size-3.5 [&_svg]:shrink-0 data-[active=true]:bg-sidebar-accent data-[active=true]:text-foreground data-[active=false]:text-muted-foreground data-[active=false]:hover:bg-muted data-[active=false]:hover:text-foreground'
 
 const scrollerClass =
-  'relative overflow-x-auto overscroll-x-contain scroll-px-4 px-4 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+  'relative overflow-x-auto overscroll-x-contain scroll-px-4 px-4 py-1.5 [scrollbar-width:none] md:px-6 [&::-webkit-scrollbar]:hidden'
 
 /**
  * Sticky, horizontally scrollable sub-navigation with edge fades. The active tab scrolls into view,
- * arrow keys / Home / End move between tabs, and every tab is at least 44px tall with 16px text.
+ * arrow keys / Home / End move between tabs, and tabs are 28px tall with a mouse and 40px on touch screens.
  */
 export function SectionTabs({
   label,

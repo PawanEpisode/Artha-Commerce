@@ -28,7 +28,7 @@ export function QuietHoursForm({ enabled, start, end, onChange }: Props) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <SwitchRow
         id="quiet-enabled"
         label="Quiet hours"
@@ -38,7 +38,7 @@ export function QuietHoursForm({ enabled, start, end, onChange }: Props) {
       />
       {enabled ? (
         <div className="space-y-2 pl-0 sm:pl-15">
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2">
             <TimeField
               id="quiet-start"
               label="Quiet from"
@@ -55,7 +55,7 @@ export function QuietHoursForm({ enabled, start, end, onChange }: Props) {
               onCommit={(value) => commit('quiet_end', value)}
             />
           </div>
-          {error ? null : <p className="text-sm text-muted-foreground">{describeQuietHours(draftStart, draftEnd)}</p>}
+          {error ? null : <p className="text-xs text-muted-foreground">{describeQuietHours(draftStart, draftEnd)}</p>}
         </div>
       ) : null}
     </div>

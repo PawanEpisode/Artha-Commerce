@@ -1,4 +1,4 @@
-import { Alert, Button, Container, EmptyState, Notebook } from '@artha/design-system'
+import { Alert, Button, EmptyState, Notebook, Page } from '@artha/design-system'
 import { createContext, type ReactNode, useCallback, useContext, useMemo, useState } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
@@ -25,14 +25,15 @@ interface NotesShellProps {
   bare?: boolean
   /** Export and delete never depend on the flag, so Settings passes the off state through instead of blocking. */
   allowWhenOff?: boolean
-  width?: 'max-w-3xl' | 'max-w-4xl'
+  /** `max-w-3xl` for forms and settings and long reading; leave out for data pages (full width). */
+  width?: 'max-w-3xl' | 'fluid'
 }
 
 /**
  * The frame of every notes screen: the `notes` flag (web and server, fail open), the one queue flusher of this tab,
  * and the conflict sheet for edits the server could not merge. Children render when the feature is on.
  */
-export function NotesShell({ children, bare = false, allowWhenOff = false, width = 'max-w-4xl' }: NotesShellProps) {
+export function NotesShell({ children, bare = false, allowWhenOff = false, width = 'fluid' }: NotesShellProps) {
   const enabled = useFeatureFlag('notes')
   const usage = useUsage()
   const off = !enabled || isFeatureDisabled(usage.error)
@@ -45,13 +46,14 @@ export function NotesShell({ children, bare = false, allowWhenOff = false, width
 
   if (off && !allowWhenOff) {
     return (
-      <Container className="max-w-3xl py-14">
+      <Page width="form">
         <EmptyState
+          className="rounded-lg py-6"
           icon={<Notebook aria-hidden />}
           title="Notes are not available yet"
           description="We are rolling them out gradually. Please check back soon."
         />
-      </Container>
+      </Page>
     )
   }
 
@@ -88,16 +90,16 @@ export function NotesShell({ children, bare = false, allowWhenOff = false, width
     <ChromeContext.Provider value={chrome}>
       {bare ? (
         <>
-          {banner ? <Container className="max-w-5xl pt-6">{banner}</Container> : null}
+          {banner ? <Page>{banner}</Page> : null}
           {children}
         </>
       ) : (
         <>
           <NotesNav />
-          <Container className={`${width} space-y-6 py-8 sm:py-12`}>
+          <Page className={width === 'max-w-3xl' ? 'max-w-3xl' : undefined}>
             {banner}
             {children}
-          </Container>
+          </Page>
         </>
       )}
       {sheet}

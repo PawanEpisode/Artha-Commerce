@@ -6,6 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Button,
+  PageHeader,
   Skeleton,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
@@ -31,7 +32,7 @@ function ChapterNotes({ subject, chapter, search }: { subject: string; chapter: 
   const summary = useChapterSummary(chapterId, ai.available)
   const subjectName = overview.data?.chapter.subject_name ?? subjects.find((s) => s.key === subject)?.name ?? subject
 
-  if (overview.isPending && levelId !== undefined) return <Skeleton className="h-40 w-full" />
+  if (overview.isPending && levelId !== undefined) return <Skeleton className="h-24 w-full" />
   if (overview.isError) {
     return (
       <Alert variant="error">
@@ -79,10 +80,10 @@ function ChapterNotes({ subject, chapter, search }: { subject: string; chapter: 
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <h1 className="font-display text-3xl font-extrabold break-words">{name}</h1>
-        <NewNoteLink levelId={levelId} subject={subject} chapter={chapter} topic={search.topic} />
-      </header>
+      <PageHeader
+        title={name}
+        actions={<NewNoteLink levelId={levelId} subject={subject} chapter={chapter} topic={search.topic} />}
+      />
       {ai.available && chapterId ? <SummaryOffer chapterId={chapterId} job={summary.data} /> : null}
       <AggregateSection
         levelId={levelId}

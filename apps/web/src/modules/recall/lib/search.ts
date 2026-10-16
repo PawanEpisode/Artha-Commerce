@@ -31,3 +31,9 @@ export const quickSearchSchema = z.object({
   minutes: z.coerce.number().int().min(5).max(240).optional().catch(undefined),
 })
 export type QuickSearch = z.infer<typeof quickSearchSchema>
+
+/** URL of the decks library: the tier filter ("Important and must know"). Anything invalid shows all cards. */
+export const decksSearchSchema = z.object({
+  tier: z.enum(['bullet', 'important', 'mandatory']).optional().catch(undefined),
+})
+export type DecksSearch = z.infer<typeof decksSearchSchema>

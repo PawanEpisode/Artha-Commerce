@@ -25,9 +25,9 @@ export function Tooltip({ content, children, side = 'top' }: TooltipProps) {
       <TooltipPrimitive.Portal>
         <TooltipPrimitive.Content
           side={side}
-          sideOffset={6}
+          sideOffset={4}
           className={cn(
-            'z-50 max-w-xs rounded-lg border border-border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-(--shadow-lift)',
+            'z-50 max-w-xs rounded-md border border-border bg-popover px-2 py-1 text-xs text-popover-foreground shadow-(--shadow-lift)',
           )}
         >
           {content}

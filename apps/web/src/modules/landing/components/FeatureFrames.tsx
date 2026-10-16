@@ -4,7 +4,7 @@ import { FrameShell } from './FrameShell'
 
 function Row({ done, label }: { done?: boolean; label: string }) {
   return (
-    <li className="flex items-center gap-3 rounded-xl border bg-background px-3 py-2.5 text-sm">
+    <li className="flex items-center gap-3 rounded-lg border bg-background px-3 py-2 text-sm">
       <span
         className={cn(
           'grid size-5 shrink-0 place-items-center rounded-full text-[11px]',
@@ -23,7 +23,7 @@ export function SyllabusFrame() {
     <FrameShell label="Coverage · CA Intermediate">
       <div className="mb-4 flex items-end justify-between gap-3">
         <div>
-          <p className="font-display text-3xl font-extrabold tabular-nums">68%</p>
+          <p className="text-2xl font-semibold tabular-nums">68%</p>
           <p className="text-xs text-muted-foreground">Advanced Accounting readiness</p>
         </div>
         <ProgressRing value={68} size={72} strokeWidth={8} label="Advanced Accounting readiness">
@@ -45,7 +45,7 @@ export function FocusFrame() {
       <div className="flex flex-col items-center py-2">
         <ProgressRing value={42} size={132} strokeWidth={10} label="Focus round remaining">
           <span className="text-center">
-            <span className="block font-display text-3xl font-extrabold tabular-nums">14:32</span>
+            <span className="block text-2xl font-semibold tabular-nums">14:32</span>
             <span className="text-[11px] text-muted-foreground">Classic · 25 min</span>
           </span>
         </ProgressRing>
@@ -59,7 +59,7 @@ export function HoursFrame() {
   const days = [40, 70, 20, 90, 55, 0, 80]
   return (
     <FrameShell label="This week">
-      <p className="font-display text-3xl font-extrabold tabular-nums">12 h 40 m</p>
+      <p className="text-2xl font-semibold tabular-nums">12 h 40 m</p>
       <p className="text-xs text-muted-foreground">Against a 14 hour goal</p>
       <ProgressBar value={90} label="Weekly hours against the 14 hour goal" className="mt-3" />
       <ol className="mt-5 flex items-end gap-2" aria-hidden>
@@ -106,7 +106,7 @@ export function StreaksFrame() {
 export function NotesFrame() {
   return (
     <FrameShell label="Notes · GST">
-      <p className="font-display text-lg font-bold">Input tax credit</p>
+      <p className="font-display text-lg font-semibold">Input tax credit</p>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         Blocked credits under s.17(5) — motor vehicles, food, club memberships. File this under Indirect Tax, not a
         nameless doc.
@@ -125,7 +125,7 @@ export function PlannerFrame() {
           ['Revise', '6 weeks · second pass + RTPs'],
           ['Mock', '4 weeks · full papers under time'],
         ].map(([phase, detail]) => (
-          <li key={phase} className="rounded-xl border bg-background px-4 py-3">
+          <li key={phase} className="rounded-lg border bg-background px-3 py-2">
             <p className="text-sm font-semibold">{phase}</p>
             <p className="text-xs text-muted-foreground">{detail}</p>
           </li>
@@ -139,7 +139,7 @@ export function MocksFrame() {
   return (
     <FrameShell label="Mock · Audit">
       <div className="flex items-center justify-between">
-        <p className="font-display text-2xl font-extrabold tabular-nums">02:47:12</p>
+        <p className="font-display text-2xl font-semibold tabular-nums">02:47:12</p>
         <Badge variant="outline">Exam mode</Badge>
       </div>
       <ProgressBar value={22} label="Mock paper time elapsed" className="mt-3" />
@@ -152,7 +152,7 @@ export function MocksFrame() {
 export function DoubtsFrame() {
   return (
     <FrameShell label="Doubt">
-      <p className="rounded-xl bg-secondary px-3 py-2 text-sm">Why is a contingent liability not recognised?</p>
+      <p className="rounded-lg bg-secondary px-3 py-2 text-sm">Why is a contingent liability not recognised?</p>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
         Because the outflow is not probable, or cannot be measured reliably. Disclose it, unless the chance is remote —
         then check the chapter note, not only this answer.
@@ -164,9 +164,9 @@ export function DoubtsFrame() {
 export function CardsFrame() {
   return (
     <FrameShell label="Today’s queue · 12 cards">
-      <div className="rounded-2xl border bg-background px-4 py-8 text-center">
+      <div className="rounded-lg border bg-background px-4 py-6 text-center">
         <p className="text-xs text-muted-foreground">Section</p>
-        <p className="mt-2 font-display text-xl font-bold">s.185 — Loans to directors</p>
+        <p className="mt-2 font-display text-xl font-semibold">s.185 — Loans to directors</p>
       </div>
       <p className="mt-3 text-center text-xs text-muted-foreground">Show answer when you have it, not before.</p>
     </FrameShell>
@@ -182,7 +182,7 @@ export function PapersFrame() {
           ['Nov 2023 · Law', 'Q2 — charges'],
           ['MTP 1 · Audit', 'Not started'],
         ].map(([title, detail]) => (
-          <li key={title} className="rounded-xl border bg-background px-4 py-3">
+          <li key={title} className="rounded-lg border bg-background px-3 py-2">
             <p className="text-sm font-medium">{title}</p>
             <p className="text-xs text-muted-foreground">{detail}</p>
           </li>

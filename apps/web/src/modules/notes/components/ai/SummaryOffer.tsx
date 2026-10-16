@@ -13,12 +13,12 @@ interface SummaryOfferProps {
 export function SummaryOffer({ chapterId, job }: SummaryOfferProps) {
   const open = job && (isSummaryActive(job.status) || job.status === 'ready')
   return (
-    <Card className="flex flex-wrap items-center justify-between gap-3 p-4">
+    <Card className="flex flex-wrap items-center justify-between gap-3 px-4 py-3">
       <div className="min-w-0 space-y-1">
-        <h2 className="flex items-center gap-2 font-semibold">
+        <h2 className="flex items-center gap-2 text-sm font-semibold">
           <Sparkles aria-hidden className="size-4 text-primary" /> Exam summary
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           {open
             ? job.status === 'ready'
               ? 'A draft is ready for you to check.'
@@ -26,7 +26,7 @@ export function SummaryOffer({ chapterId, job }: SummaryOfferProps) {
             : 'Turn your notes and highlights for this chapter into a short revision summary. You check it before it is saved.'}
         </p>
       </div>
-      <Button variant={open ? 'default' : 'outline'} asChild>
+      <Button variant={open ? 'default' : 'outline'} size="sm" asChild>
         {open ? (
           <Link to="/app/notes/summary/$jobId" params={{ jobId: job.id }}>
             {job.status === 'ready' ? 'Review the draft' : 'See progress'}

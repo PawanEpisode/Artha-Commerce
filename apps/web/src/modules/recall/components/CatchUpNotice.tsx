@@ -22,20 +22,20 @@ export function CatchUpNotice({
   return (
     <section
       aria-labelledby="catchup-heading"
-      className="space-y-4 rounded-2xl border border-info-border bg-info-bg p-5 text-info-fg"
+      className="space-y-3 rounded-lg border border-info-border bg-info-bg p-4 text-info-fg"
     >
       <div className="space-y-1">
-        <h2 id="catchup-heading" className="font-display text-xl font-bold">
+        <h2 id="catchup-heading" className="text-base font-semibold">
           Let's get you back on track
         </h2>
-        <p className="text-sm">
+        <p className="text-[13px]">
           {backlogSentence(plan.catchup.due, plan.days_to_clear)} Today you will see the {plan.queue_size} most
           important and most overdue cards. New cards wait until you are caught up.
         </p>
       </div>
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2">
         {action}
-        <Button variant="outline" onClick={onRebalance} disabled={rebalancing} aria-busy={rebalancing}>
+        <Button variant="outline" size="sm" onClick={onRebalance} disabled={rebalancing} aria-busy={rebalancing}>
           Spread it over the next 7 days
         </Button>
       </div>

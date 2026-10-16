@@ -18,9 +18,9 @@ export function ChapterRecallCard({
   onRetry: () => void
 }) {
   return (
-    <section aria-labelledby="chapter-recall-h" className="space-y-3">
-      <h2 id="chapter-recall-h" className="flex items-center gap-2.5 font-display text-xl font-bold">
-        <Layers aria-hidden className="size-5" /> Recall
+    <section aria-labelledby="chapter-recall-h" className="space-y-2">
+      <h2 id="chapter-recall-h" className="flex items-center gap-2 text-sm font-semibold">
+        <Layers aria-hidden className="size-4" /> Recall
       </h2>
       {failed || !strength ? (
         <Alert variant="error">
@@ -32,8 +32,8 @@ export function ChapterRecallCard({
           </span>
         </Alert>
       ) : (
-        <Card className="flex flex-wrap items-center justify-between gap-4 p-6">
-          <p className="min-w-0 text-base font-medium" role="status">
+        <Card className="flex flex-wrap items-center justify-between gap-3 p-4">
+          <p className="min-w-0 text-[13px] font-medium" role="status">
             {strengthSentence(strength)}
           </p>
           <ButtonLink variant={strength.due > 0 ? 'default' : 'outline'} asChild>

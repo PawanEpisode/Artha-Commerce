@@ -1,72 +1,24 @@
-import { ArrowRight, buttonVariants, Card, Container } from '@artha/design-system'
-import { Link } from '@tanstack/react-router'
+import { Container } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
 import type { PublicCourse } from '../lib/load'
+import { CoursesTable } from './CoursesTable'
 
-/** The public catalog. Signed-in students are sent home before this paints. */
-export function CoursesIndex({
-  courses,
-  prompt,
-  backHome = false,
-}: {
-  courses: PublicCourse[]
-  prompt?: ReactNode
-  /** Signed-in student exploring other courses: offer the way back to their own. */
-  backHome?: boolean
-}) {
+/** The course catalog. Signed-in students see it inside the app frame. */
+export function CoursesIndex({ courses, prompt }: { courses: PublicCourse[]; prompt?: ReactNode }) {
   return (
-    <Container className="py-12 sm:py-20">
-      <header className="max-w-2xl">
-        <p className="mb-3 text-sm font-semibold tracking-widest text-primary uppercase">Courses</p>
-        <h1 className="text-3xl font-bold sm:text-4xl">CA, CS and CMA</h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Open a course to read its papers and chapters. Tick what you have finished once you are signed in.
+    <Container className="py-6 sm:py-8">
+      <header>
+        <h1 className="text-xl font-semibold tracking-tight">Courses</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          CA, CS and CMA. Open a course to read its papers and chapters. Tick what you have finished once you are signed
+          in.
         </p>
       </header>
-      {backHome ? (
-        <p className="mt-6">
-          <Link to="/" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
-            Back to your course
-          </Link>
-        </p>
-      ) : null}
-      {prompt ? <div className="mt-10">{prompt}</div> : null}
-      <ul className="mt-8 grid list-none gap-5 md:grid-cols-3">
-        {courses.map((c) => {
-          const papers = c.levels.reduce((sum, level) => sum + level.subjects.length, 0)
-          return (
-            <li key={c.slug}>
-              <Link
-                to="/courses/$course"
-                params={{ course: c.slug }}
-                className="group block h-full rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-              >
-                <Card className="flex h-full flex-col p-7 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
-                  <span className="font-display text-5xl font-extrabold text-primary">{c.name}</span>
-                  <h2 className="mt-4 text-lg font-semibold">{c.fullName}</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">{c.tagline}</p>
-                  <p className="mt-3 text-sm text-muted-foreground">{c.levels.map((l) => l.name).join(' · ')}</p>
-                  {papers > 0 ? (
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {papers} {papers === 1 ? 'paper' : 'papers'}
-                    </p>
-                  ) : null}
-                  <span className="mt-auto pt-5">
-                    <span className={buttonVariants({ variant: 'outline' })}>
-                      Browse {c.name} papers
-                      <ArrowRight
-                        aria-hidden
-                        className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
-                      />
-                    </span>
-                  </span>
-                </Card>
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      <div className="mt-5 space-y-3">
+        {prompt}
+        <CoursesTable courses={courses} />
+      </div>
     </Container>
   )
 }

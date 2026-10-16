@@ -38,15 +38,15 @@ export function InAppBrowserCard({
         <li>Copy the link below.</li>
         <li>Open Chrome or Safari and paste it into the address bar.</li>
       </ol>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-xs text-muted-foreground">
         Or use the menu or share button of {app} and choose Open in browser.
       </p>
       {finishFailed ? <Alert variant="error">{SAVE_FAILED}</Alert> : null}
       <AlertsActions>
-        <Button variant="cta" size="lg" onClick={onCopyLink} disabled={finishing} className={WRAP_BUTTON}>
+        <Button variant="cta" onClick={onCopyLink} disabled={finishing} className={WRAP_BUTTON}>
           <Copy aria-hidden /> Copy link
         </Button>
-        <Button variant="ghost" size="lg" loading={finishing} onClick={onContinue} className={WRAP_BUTTON}>
+        <Button variant="ghost" loading={finishing} onClick={onContinue} className={WRAP_BUTTON}>
           Continue without alerts
         </Button>
       </AlertsActions>

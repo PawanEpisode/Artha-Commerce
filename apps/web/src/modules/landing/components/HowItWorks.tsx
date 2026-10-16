@@ -6,7 +6,7 @@ import { FrameShell } from './FrameShell'
 function GoalFrame() {
   return (
     <FrameShell label="Onboarding">
-      <p className="font-display text-xl font-bold">CA Intermediate · May 2027</p>
+      <p className="font-display text-xl font-semibold">CA Intermediate · May 2027</p>
       <p className="mt-2 text-sm text-muted-foreground">2 h 30 min a day. Group I first.</p>
       <div className="mt-4 flex flex-wrap gap-2">
         <Badge variant="outline">ICAI</Badge>
@@ -21,9 +21,9 @@ function TodayFrame() {
   return (
     <FrameShell label="Today">
       <ul className="space-y-2 text-sm">
-        <li className="rounded-xl border bg-background px-4 py-3">Advanced Accounting: AS 19 — first read</li>
-        <li className="rounded-xl border bg-background px-4 py-3">Taxation: GST ITC — 20 MCQs</li>
-        <li className="rounded-xl border bg-background px-4 py-3 text-muted-foreground">
+        <li className="rounded-lg border bg-background px-3 py-2">Advanced Accounting: AS 19 — first read</li>
+        <li className="rounded-lg border bg-background px-3 py-2">Taxation: GST ITC — 20 MCQs</li>
+        <li className="rounded-lg border bg-background px-3 py-2 text-muted-foreground">
           Law: charges — revise tomorrow
         </li>
       </ul>
@@ -37,7 +37,7 @@ function ReadinessFrame() {
       <div className="flex items-center gap-5">
         <ProgressRing value={68} size={96} strokeWidth={9} label="Overall readiness" />
         <div>
-          <p className="font-display text-2xl font-extrabold">68%</p>
+          <p className="font-display text-2xl font-semibold">68%</p>
           <p className="text-sm text-muted-foreground">Chapters finished, not hours meant.</p>
           <Badge variant="highlight" className="mt-3">
             <Flame /> 12 day streak
@@ -67,9 +67,9 @@ export function HowItWorks() {
       ),
       content: (
         <div>
-          <p className="mb-3 font-display text-5xl font-extrabold text-primary/20">{beat.n}</p>
-          <h3 className="font-display text-2xl font-extrabold sm:text-3xl">{beat.title}</h3>
-          <p className="prose-reading mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">{beat.body}</p>
+          <p className="mb-3 text-3xl font-semibold text-primary/20">{beat.n}</p>
+          <h3 className="text-xl font-semibold sm:text-2xl">{beat.title}</h3>
+          <p className="prose-reading mt-3 text-[15px] leading-relaxed text-muted-foreground">{beat.body}</p>
           <ul className="mt-6 space-y-3">
             {beat.points.map((point) => (
               <li key={point} className="flex items-start gap-3 text-sm sm:text-base">

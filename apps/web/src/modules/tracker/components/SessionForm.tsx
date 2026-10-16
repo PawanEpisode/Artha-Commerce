@@ -112,7 +112,7 @@ export function SessionForm({
       </div>
 
       {overlap ? (
-        <fieldset className="space-y-2 rounded-xl border border-input bg-secondary p-4">
+        <fieldset className="space-y-2 rounded-lg border border-input bg-secondary p-3">
           <legend className="px-1 text-sm font-semibold">This overlaps other study time</legend>
           <SegmentedControl<'trim' | 'keep' | 'reject'>
             label="What to do about the overlap"

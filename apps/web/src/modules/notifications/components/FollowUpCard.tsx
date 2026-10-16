@@ -1,7 +1,7 @@
 import { BellRing, Button } from '@artha/design-system'
 
 import { AlertPreview } from './AlertPreview'
-import { WRAP_BUTTON } from './classes'
+import { CARD, WRAP_BUTTON } from './classes'
 
 interface Props {
   /** `ask`: the question. `done`: what happened, with Close. */
@@ -20,11 +20,8 @@ interface Props {
  */
 export function FollowUpCard({ stage, message, enabling, headingRef, onEnable, onNotNow, onClose }: Props) {
   return (
-    <section
-      aria-labelledby="followup-heading"
-      className="space-y-4 rounded-2xl border border-border bg-card p-5 sm:p-6"
-    >
-      <h2 id="followup-heading" ref={headingRef} tabIndex={-1} className="text-lg font-bold outline-none">
+    <section aria-labelledby="followup-heading" className={`${CARD} text-[13px]`}>
+      <h2 id="followup-heading" ref={headingRef} tabIndex={-1} className="text-sm font-semibold outline-none">
         {stage === 'ask' ? 'Want to hear the next round end?' : 'Alerts'}
       </h2>
       {stage === 'ask' ? (
@@ -34,7 +31,7 @@ export function FollowUpCard({ stage, message, enabling, headingRef, onEnable, o
             or closed. Nothing else is sent, and you can turn alerts off any time in Settings.
           </p>
           <AlertPreview />
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <Button variant="cta" loading={enabling} onClick={onEnable} className={WRAP_BUTTON}>
               <BellRing aria-hidden /> Turn on alerts
             </Button>
@@ -44,7 +41,7 @@ export function FollowUpCard({ stage, message, enabling, headingRef, onEnable, o
           </div>
         </>
       ) : (
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           <p className="min-w-0 flex-1">{message}</p>
           <Button variant="outline" onClick={onClose}>
             Close

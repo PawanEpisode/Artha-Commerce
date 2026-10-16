@@ -30,7 +30,7 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
   const { course, level, subject } = chapter
   const marks = marksLabel(chapter)
   return (
-    <Container className="max-w-3xl py-12 sm:py-20">
+    <Container className="max-w-3xl py-8 sm:py-10">
       <Breadcrumb className="mb-6">
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -70,8 +70,8 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
       <EntityBadge kind="chapter" size="lg">
         Chapter
       </EntityBadge>
-      <h1 className="mt-3 text-4xl font-extrabold break-words sm:text-5xl">{chapter.name}</h1>
-      <p className="mt-3 flex flex-wrap items-center gap-2 text-lg text-muted-foreground">
+      <h1 className="mt-2 text-2xl font-semibold tracking-tight break-words sm:text-3xl">{chapter.name}</h1>
+      <p className="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
         <EntityBadge kind="paper" size="lg">
           {subject.name}
         </EntityBadge>
@@ -82,20 +82,20 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
         ) : null}
       </p>
 
-      <section className="mt-10" aria-labelledby="topics-heading">
-        <h2 id="topics-heading" className="flex items-center gap-2.5 font-display text-xl font-bold">
+      <section className="mt-6" aria-labelledby="topics-heading">
+        <h2 id="topics-heading" className="flex items-center gap-2 text-base font-semibold">
           <EntityDot kind="topic" />
           {chapter.topics.length ? pluralize(chapter.topics.length, 'topic') : 'Topics'}
         </h2>
         {chapter.topics.length === 0 ? (
-          <p className="mt-3 rounded-xl border border-dashed p-6 text-muted-foreground">
+          <p className="mt-3 rounded-lg border border-dashed p-4 text-muted-foreground">
             The topic list is coming soon.
           </p>
         ) : (
-          <ol className="mt-4 space-y-2">
+          <ol className="mt-3 space-y-1.5">
             {chapter.topics.map((t) => (
               <li key={t.id}>
-                <EntityListRow kind="topic" className="flex flex-wrap items-center gap-x-3 gap-y-2 p-4">
+                <EntityListRow kind="topic" className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-2.5">
                   <EntityTitle className="min-w-0 flex-1 basis-40 font-medium">{t.name}</EntityTitle>
                   {t.kind !== 'concept' ? <Badge variant="outline">{t.kind.replace('_', ' ')}</Badge> : null}
                 </EntityListRow>
@@ -106,12 +106,12 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
       </section>
 
       {chapter.prev_chapter || chapter.next_chapter ? (
-        <nav aria-label="Chapters in this paper" className="mt-10 grid gap-3 sm:grid-cols-2">
+        <nav aria-label="Chapters in this paper" className="mt-6 grid gap-2 sm:grid-cols-2">
           {chapter.prev_chapter ? (
             <Link
               to="/courses/$course/$level/$subject/$chapter"
               params={{ course, level, subject: subject.key, chapter: chapter.prev_chapter.key }}
-              className="flex items-center gap-3 rounded-xl border p-4 hover:shadow-(--shadow-soft)"
+              className="flex items-center gap-3 rounded-lg border p-3 hover:bg-muted/40"
             >
               <ArrowLeft aria-hidden className="size-5 shrink-0 text-muted-foreground" />
               <span className="min-w-0">
@@ -126,7 +126,7 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
             <Link
               to="/courses/$course/$level/$subject/$chapter"
               params={{ course, level, subject: subject.key, chapter: chapter.next_chapter.key }}
-              className="flex items-center justify-end gap-3 rounded-xl border p-4 text-right hover:shadow-(--shadow-soft)"
+              className="flex items-center justify-end gap-3 rounded-lg border p-3 text-right hover:bg-muted/40"
             >
               <span className="min-w-0">
                 <span className="block text-sm text-muted-foreground">Next chapter</span>
@@ -138,8 +138,8 @@ export function ChapterView({ courseName, levelName, chapter, report }: Props) {
         </nav>
       ) : null}
 
-      <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Button variant="cta" size="lg" arrow asChild>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <Button variant="cta" arrow asChild>
           <Link to="/app/syllabus">Track this chapter</Link>
         </Button>
         {report}

@@ -1,4 +1,4 @@
-import { Button, FilterChip, SegmentedControl, SelectField, TextField } from '@artha/design-system'
+import { Button, FilterChip, Input, SegmentedControl, SelectField, TableToolbar } from '@artha/design-system'
 
 import {
   activeFilters,
@@ -63,33 +63,37 @@ export function FilterBar({ search, tags, topics, legend, documents, onChange }:
   const active = activeFilters(search)
   const tab = tabOf(search)
   const showMarkFilters = tab === 'all' || tab === 'highlights'
+  const selectClass = 'h-8 w-auto min-w-28 max-w-48'
   return (
-    <section aria-label="Filters" className="space-y-3">
-      <SegmentedControl
-        label="What to show"
-        value={tabOf(search)}
-        options={legend ? TABS : TABS.filter((t) => t.value === 'all' || t.value === 'notes')}
-        onValueChange={(tab) => onChange({ ...search, tab, cursor: undefined })}
-      />
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="grid gap-2">
-          <label htmlFor="notes-filter-tag" className="text-sm font-medium">
+    <section aria-label="Filters" className="space-y-2">
+      <TableToolbar>
+        <SegmentedControl
+          label="What to show"
+          value={tabOf(search)}
+          options={legend ? TABS : TABS.filter((t) => t.value === 'all' || t.value === 'notes')}
+          onValueChange={(tab) => onChange({ ...search, tab, cursor: undefined })}
+          className="rounded-lg p-0.5 [&_button]:h-7 [&_button]:rounded-md [&_button]:px-2.5 [&_button]:text-[13px]"
+        />
+        <div className="flex min-w-0">
+          <label htmlFor="notes-filter-tag" className="sr-only">
             Tag
           </label>
           <SelectField
             id="notes-filter-tag"
+            className={selectClass}
             value={search.tag ?? ''}
             onValueChange={(tag) => onChange({ ...search, tag: tag || undefined, cursor: undefined })}
             options={[{ value: '', label: 'Any tag' }, ...tags.map((t) => ({ value: t.id, label: t.name }))]}
           />
         </div>
         {legend && showMarkFilters ? (
-          <div className="grid gap-2">
-            <label htmlFor="notes-filter-color" className="text-sm font-medium">
+          <div className="flex min-w-0">
+            <label htmlFor="notes-filter-color" className="sr-only">
               Colour
             </label>
             <SelectField
               id="notes-filter-color"
+              className={selectClass}
               value={search.color ?? ''}
               onValueChange={(color) => onChange({ ...search, color: color || undefined, cursor: undefined })}
               options={[
@@ -100,12 +104,13 @@ export function FilterBar({ search, tags, topics, legend, documents, onChange }:
           </div>
         ) : null}
         {documents && documents.length > 0 && showMarkFilters ? (
-          <div className="grid gap-2">
-            <label htmlFor="notes-filter-doc" className="text-sm font-medium">
+          <div className="flex min-w-0">
+            <label htmlFor="notes-filter-doc" className="sr-only">
               Document
             </label>
             <SelectField
               id="notes-filter-doc"
+              className={selectClass}
               value={search.doc ?? ''}
               onValueChange={(doc) => onChange({ ...search, doc: doc || undefined, cursor: undefined })}
               options={[
@@ -116,33 +121,40 @@ export function FilterBar({ search, tags, topics, legend, documents, onChange }:
           </div>
         ) : null}
         {topics && topics.length > 0 ? (
-          <div className="grid gap-2">
-            <label htmlFor="notes-filter-topic" className="text-sm font-medium">
+          <div className="flex min-w-0">
+            <label htmlFor="notes-filter-topic" className="sr-only">
               Topic
             </label>
             <SelectField
               id="notes-filter-topic"
+              className={selectClass}
               value={search.topic ?? ''}
               onValueChange={(topic) => onChange({ ...search, topic: topic || undefined, cursor: undefined })}
               options={[{ value: '', label: 'Any topic' }, ...topics.map((t) => ({ value: t.key, label: t.name }))]}
             />
           </div>
         ) : null}
-        <TextField
-          label="From"
-          type="date"
-          value={search.from ?? ''}
-          onChange={(e) => onChange({ ...search, from: e.target.value || undefined, cursor: undefined })}
-        />
-        <TextField
-          label="To"
-          type="date"
-          value={search.to ?? ''}
-          onChange={(e) => onChange({ ...search, to: e.target.value || undefined, cursor: undefined })}
-        />
-      </div>
+        <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+          <label htmlFor="notes-filter-from">From</label>
+          <Input
+            id="notes-filter-from"
+            type="date"
+            className="w-36"
+            value={search.from ?? ''}
+            onChange={(e) => onChange({ ...search, from: e.target.value || undefined, cursor: undefined })}
+          />
+          <label htmlFor="notes-filter-to">To</label>
+          <Input
+            id="notes-filter-to"
+            type="date"
+            className="w-36"
+            value={search.to ?? ''}
+            onChange={(e) => onChange({ ...search, to: e.target.value || undefined, cursor: undefined })}
+          />
+        </div>
+      </TableToolbar>
       {active.length > 0 ? (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5">
           {active.map((key) => {
             const text = describe(key, search, tags, topics, legend, documents)
             return (

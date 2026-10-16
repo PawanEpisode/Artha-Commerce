@@ -16,9 +16,15 @@ function changeHint(summary: Summary): string | undefined {
 /** The headline numbers of a range. The change is written out, so it never depends on colour. */
 export function SummaryTiles({ summary }: { summary: Summary }) {
   return (
-    <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-      <StatTile label="Total study time" value={formatDuration(summary.total_seconds)} hint={changeHint(summary)} />
+    <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
       <StatTile
+        className="p-3 shadow-none"
+        label="Total study time"
+        value={formatDuration(summary.total_seconds)}
+        hint={changeHint(summary)}
+      />
+      <StatTile
+        className="p-3 shadow-none"
         label="Days studied"
         value={summary.days_studied}
         hint={
@@ -28,11 +34,13 @@ export function SummaryTiles({ summary }: { summary: Summary }) {
         }
       />
       <StatTile
+        className="p-3 shadow-none"
         label="Best day"
         value={summary.longest_day ? formatDuration(summary.longest_day.seconds) : '0 m'}
         hint={summary.longest_day ? dayLabel(summary.longest_day.date) : undefined}
       />
       <StatTile
+        className="p-3 shadow-none"
         label="Sessions"
         value={summary.sessions}
         hint={summary.sessions ? `Longest ${formatDuration(summary.longest_session_seconds)}` : undefined}

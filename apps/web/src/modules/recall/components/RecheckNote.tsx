@@ -12,7 +12,7 @@ interface Props {
 /** "Updated, please re-check" with the one button that clears it. Memory is never touched by it. */
 export function RecheckNote({ reason, pending, offline, onConfirm }: Props) {
   return (
-    <div className="space-y-2 rounded-xl border border-input bg-secondary p-3 text-sm">
+    <div className="space-y-2 rounded-lg border border-input bg-secondary p-3 text-[13px]">
       <p className="flex flex-wrap items-center gap-2">
         <Badge variant="highlight">{recheckLabel(reason)}</Badge>
       </p>

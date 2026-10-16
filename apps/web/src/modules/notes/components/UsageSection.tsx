@@ -17,10 +17,12 @@ interface UsageSectionProps {
 export function UsageSection({ usage, onExport, exporting, onDeleteAll, hideStorage }: UsageSectionProps) {
   const mb = (n: number) => `${formatBytes(n * 1024 * 1024)}`
   return (
-    <div className="space-y-6">
+    <Card className="divide-y">
       {usage ? (
-        <Card className="space-y-4 p-6">
-          <h2 className="font-display text-xl font-bold">Your space</h2>
+        <section aria-labelledby="notes-space-h" className="space-y-3 p-4">
+          <h2 id="notes-space-h" className="text-sm font-semibold">
+            Your space
+          </h2>
           {hideStorage ? null : (
             <UsageBar
               label="Storage"
@@ -37,29 +39,39 @@ export function UsageSection({ usage, onExport, exporting, onDeleteAll, hideStor
             fullText="Note limit reached"
           />
           <UsageBar label="Tags" used={usage.used.tags} limit={usage.limits.max_tags} fullText="Tag limit reached" />
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             One note can hold up to {usage.limits.max_note_chars.toLocaleString('en-IN')} characters and{' '}
             {usage.limits.max_note_images} images. Your plan is {usage.plan}, with {mb(usage.limits.max_storage_mb)} of
             storage.
           </p>
-        </Card>
+        </section>
       ) : null}
-      <Card className="space-y-3 p-6">
-        <h2 className="font-display text-xl font-bold">Export</h2>
-        <p className="text-sm text-muted-foreground">Download every note with its versions and tags as one file.</p>
+      <section aria-labelledby="notes-export-h" className="flex flex-wrap items-center justify-between gap-3 p-4">
+        <div className="min-w-0">
+          <h2 id="notes-export-h" className="text-sm font-semibold">
+            Export
+          </h2>
+          <p className="text-[13px] text-muted-foreground">
+            Download every note with its versions and tags as one file.
+          </p>
+        </div>
         <Button variant="outline" onClick={onExport} disabled={exporting}>
           <Download aria-hidden /> {exporting ? 'Preparing…' : 'Export all my notes'}
         </Button>
-      </Card>
-      <Card className="space-y-3 p-6">
-        <h2 className="font-display text-xl font-bold">Delete everything</h2>
+      </section>
+      <section aria-labelledby="notes-delete-h" className="space-y-3 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 id="notes-delete-h" className="text-sm font-semibold">
+            Delete everything
+          </h2>
+          <Button variant="danger" onClick={onDeleteAll}>
+            <Trash2 aria-hidden /> Delete all my notes
+          </Button>
+        </div>
         <Alert variant="error">
           Deleting removes all your notes, versions, tags and images for good. It cannot be undone.
         </Alert>
-        <Button variant="danger" onClick={onDeleteAll}>
-          <Trash2 aria-hidden /> Delete all my notes
-        </Button>
-      </Card>
-    </div>
+      </section>
+    </Card>
   )
 }

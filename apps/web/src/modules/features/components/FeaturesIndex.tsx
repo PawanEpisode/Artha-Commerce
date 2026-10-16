@@ -1,4 +1,14 @@
-import { Badge, Button, Card, cn, Container } from '@artha/design-system'
+import {
+  Badge,
+  Button,
+  Container,
+  DataTable,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { FeatureIcon } from '~/components/feature-icon'
@@ -12,123 +22,110 @@ interface Props {
   onOpen: (slug: string, destination: OpenDestination) => void
 }
 
-function HowItWorks({
-  slug,
-  title,
-  fullWidth = false,
-  className,
-}: {
-  slug: string
-  title: string
-  fullWidth?: boolean
-  className?: string
-}) {
-  return (
-    <Button variant="ghost" arrow fullWidth={fullWidth} asChild className={cn('text-primary', className)}>
-      <Link to="/features/$slug" params={{ slug }}>
-        How it works<span className="sr-only"> for {title}</span>
-      </Link>
-    </Button>
-  )
-}
-
-function Hero({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] }) {
+function FeatureCell({ offer, first }: { offer: FeatureOffer; first?: boolean }) {
   const { feature } = offer
   return (
-    <Card className="border-primary p-6 sm:p-8">
-      <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-        <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-secondary text-primary">
-          <FeatureIcon name={feature.icon} className="size-7" />
-        </span>
-        <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-primary">Start here</p>
-          <h2 className="mt-1 text-2xl font-bold">{feature.title}</h2>
-          <p className="mt-2 text-muted-foreground">{feature.tagline}</p>
-        </div>
-      </div>
-      <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-        <OfferButton offer={offer} size="lg" variant="cta" className="w-full sm:w-auto sm:max-w-full" onOpen={onOpen} />
-        <BrowseButton offer={offer} className="w-full sm:w-auto" onOpen={onOpen} />
-        <HowItWorks slug={feature.slug} title={feature.title} className="w-full sm:w-auto" />
-      </div>
-    </Card>
-  )
-}
-
-function ReadyCard({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] }) {
-  const { feature } = offer
-  return (
-    <Card className="flex h-full min-w-0 flex-col p-6">
-      <span className="grid size-12 place-items-center rounded-xl bg-secondary text-primary">
-        <FeatureIcon name={feature.icon} className="size-6" />
+    <div className="flex min-w-0 items-center gap-3">
+      <span className="grid size-8 shrink-0 place-items-center rounded-md bg-secondary text-primary">
+        <FeatureIcon name={feature.icon} className="size-4" />
       </span>
-      <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-      <p className="mt-1 flex-1 text-sm text-muted-foreground">{feature.tagline}</p>
-      <div className="mt-5 flex min-w-0 flex-col gap-2">
-        <OfferButton offer={offer} variant="default" fullWidth onOpen={onOpen} />
-        <BrowseButton offer={offer} fullWidth onOpen={onOpen} />
-        <HowItWorks slug={feature.slug} title={feature.title} fullWidth />
+      <div className="min-w-0">
+        <p className="flex flex-wrap items-center gap-1.5 text-sm font-medium">
+          <Link
+            to="/features/$slug"
+            params={{ slug: feature.slug }}
+            className="rounded outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
+            {feature.title}
+          </Link>
+          {first ? <Badge variant="accent">Start here</Badge> : null}
+        </p>
+        <p className="text-[13px] text-muted-foreground">{feature.tagline}</p>
       </div>
-    </Card>
+    </div>
+  )
+}
+
+function ReadyActions({ offer, onOpen }: { offer: FeatureOffer; onOpen: Props['onOpen'] }) {
+  const { feature } = offer
+  return (
+    <div className="flex flex-wrap items-center justify-end gap-1.5">
+      <OfferButton offer={offer} size="sm" variant="default" arrow={false} onOpen={onOpen} />
+      <BrowseButton offer={offer} size="sm" arrow={false} onOpen={onOpen} />
+      <Button variant="ghost" size="sm" className="text-primary" asChild>
+        <Link to="/features/$slug" params={{ slug: feature.slug }}>
+          How it works<span className="sr-only"> for {feature.title}</span>
+        </Link>
+      </Button>
+    </div>
   )
 }
 
 export function FeaturesIndex({ ready, soon, onOpen }: Props) {
-  const [hero, ...rest] = ready
   return (
-    <Container className="py-12 sm:py-20">
-      <header className="max-w-2xl">
-        <p className="mb-3 text-sm font-semibold tracking-widest text-primary uppercase">Features</p>
-        <h1 className="text-3xl font-bold sm:text-4xl">What you can use today</h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Syllabus coverage, a focus timer and a time tracker are ready. Everything else is coming soon.
-        </p>
+    <Container className="py-6 sm:py-8">
+      <header>
+        <h1 className="text-xl font-semibold tracking-tight">Features</h1>
+        <p className="mt-1 text-sm text-muted-foreground">What you can use today. Everything else is coming soon.</p>
       </header>
 
-      {hero ? (
-        <div className="mt-10">
-          <Hero offer={hero} onOpen={onOpen} />
-        </div>
-      ) : (
-        <p className="mt-10 text-muted-foreground">
-          Nothing is open for your account yet. The tools below are on the way.
-        </p>
-      )}
-
-      {rest.length > 0 ? (
-        <ul className="mt-5 grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((offer) => (
-            <li key={offer.feature.slug} className="min-w-0">
-              <ReadyCard offer={offer} onOpen={onOpen} />
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      <section className="mt-6" aria-labelledby="available-heading">
+        <h2 id="available-heading" className="mb-2 text-sm font-semibold">
+          Available now
+        </h2>
+        {ready.length > 0 ? (
+          <DataTable>
+            <TableHeader>
+              <TableRow className="hover:bg-transparent">
+                <TableHead>Feature</TableHead>
+                <TableHead className="text-right">Open</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {ready.map((offer, i) => (
+                <TableRow key={offer.feature.slug}>
+                  <TableCell className="h-14 py-2">
+                    <FeatureCell offer={offer} first={i === 0} />
+                  </TableCell>
+                  <TableCell className="py-2">
+                    <ReadyActions offer={offer} onOpen={onOpen} />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </DataTable>
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            Nothing is open for your account yet. The tools below are on the way.
+          </p>
+        )}
+      </section>
 
       {soon.length > 0 ? (
-        <section className="mt-14" aria-labelledby="coming-soon-heading">
-          <h2 id="coming-soon-heading" className="text-2xl font-bold">
+        <section className="mt-8" aria-labelledby="coming-soon-heading">
+          <h2 id="coming-soon-heading" className="mb-2 text-sm font-semibold">
             Coming soon
           </h2>
-          <p className="mt-2 max-w-2xl text-muted-foreground">These are not in the workspace yet.</p>
-          <ul className="mt-6 grid list-none gap-5 sm:grid-cols-2">
-            {soon.map(({ feature }) => (
-              <li key={feature.slug}>
-                <Link to="/features/$slug" params={{ slug: feature.slug }} className="group block h-full">
-                  <Card className="flex h-full flex-col p-6 transition-all group-hover:-translate-y-1 group-hover:shadow-lift">
-                    <div className="flex items-start justify-between gap-3">
-                      <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-secondary text-primary">
-                        <FeatureIcon name={feature.icon} className="size-6" />
-                      </span>
-                      <Badge variant="outline">Coming soon</Badge>
-                    </div>
-                    <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{feature.tagline}</p>
-                  </Card>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <DataTable>
+            <TableHeader>
+              <TableRow className="hover:bg-transparent">
+                <TableHead>Feature</TableHead>
+                <TableHead className="w-28 text-right">Status</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {soon.map((offer) => (
+                <TableRow key={offer.feature.slug}>
+                  <TableCell className="h-14 py-2">
+                    <FeatureCell offer={offer} />
+                  </TableCell>
+                  <TableCell className="py-2 text-right">
+                    <Badge variant="outline">Coming soon</Badge>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </DataTable>
         </section>
       ) : null}
     </Container>

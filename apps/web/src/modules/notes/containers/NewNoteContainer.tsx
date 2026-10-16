@@ -1,4 +1,4 @@
-import { Container, Skeleton } from '@artha/design-system'
+import { Page, Skeleton } from '@artha/design-system'
 import { useNavigate } from '@tanstack/react-router'
 import { useEffect, useRef } from 'react'
 
@@ -40,15 +40,15 @@ function NewNoteRedirect({ search }: { search: NewNoteSearch }) {
   }, [waiting, selection, search.chapter, start, navigate])
 
   return (
-    <Container className="max-w-5xl py-10">
+    <Page>
       <div aria-busy="true" className="space-y-4">
         <span role="status" className="sr-only">
           Opening a new note…
         </span>
-        <Skeleton className="h-12 w-full" />
-        <Skeleton className="h-80 w-full" />
+        <Skeleton className="h-10 w-full max-w-3xl" />
+        <Skeleton className="h-80 w-full max-w-3xl" />
       </div>
-    </Container>
+    </Page>
   )
 }
 

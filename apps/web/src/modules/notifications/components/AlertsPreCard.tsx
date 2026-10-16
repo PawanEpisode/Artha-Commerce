@@ -45,7 +45,7 @@ export function AlertsPreCard({
           : 'Your browser already allows alerts. Set up this device so they reach you when a round ends.'}
       </p>
       <AlertPreview />
-      <p className="text-sm text-muted-foreground">
+      <p className="text-xs text-muted-foreground">
         {prompt
           ? 'Your browser will ask for permission once. You can turn alerts off any time in Settings, and each device can be removed.'
           : 'You can turn alerts off any time in Settings, and each device can be removed.'}
@@ -53,17 +53,10 @@ export function AlertsPreCard({
       {enableError ? <Alert variant="error">{enableError}</Alert> : null}
       {finishFailed ? <Alert variant="error">{SAVE_FAILED}</Alert> : null}
       <AlertsActions>
-        <Button
-          variant="cta"
-          size="lg"
-          loading={enabling}
-          disabled={finishing}
-          onClick={onEnable}
-          className={WRAP_BUTTON}
-        >
+        <Button variant="cta" loading={enabling} disabled={finishing} onClick={onEnable} className={WRAP_BUTTON}>
           <BellRing aria-hidden /> {prompt ? 'Turn on alerts' : 'Set up this device'}
         </Button>
-        <Button variant="ghost" size="lg" loading={finishing} disabled={enabling} onClick={onNotNow}>
+        <Button variant="ghost" loading={finishing} disabled={enabling} onClick={onNotNow}>
           Not now
         </Button>
       </AlertsActions>

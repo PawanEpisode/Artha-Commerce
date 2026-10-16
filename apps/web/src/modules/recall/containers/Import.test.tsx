@@ -77,7 +77,7 @@ describe('the import panel of the card creator', () => {
   it('starts empty, with the format explained and nothing to press', async () => {
     const { container } = mount()
     expect(screen.getByRole('heading', { name: 'Import many cards' })).toBeInTheDocument()
-    expect(screen.getByText('Nothing to check yet. Paste your rows above.')).toBeInTheDocument()
+    expect(screen.getByText('Nothing to check yet. Paste your rows to begin.')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Check rows' })).toBeDisabled()
     expect(screen.getByRole('link', { name: 'Import many' })).toHaveAttribute('aria-current', 'page')
     expect(screen.getByRole('link', { name: 'One card' })).toHaveAttribute('href', '/app/recall/cards/new')

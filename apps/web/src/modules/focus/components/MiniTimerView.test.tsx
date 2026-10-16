@@ -176,8 +176,8 @@ describe('MiniTimerView: card', () => {
 })
 
 describe('MiniTimerView: touch targets', () => {
-  // The design system's button sizes: icon 40, default 44, large 48. Small (36) is never used here.
-  const bigEnough = /\b(size-10|min-h-11|min-h-12)\b/
+  // The design system's buttons are compact with a mouse and 44 px on a touch screen (`pointer-coarse:`). Large (40) stays.
+  const bigEnough = /pointer-coarse:(size-11|min-h-11)|\b(min-h-10|min-h-12)\b/
 
   it.each((['corner', 'pill', 'card'] as const).flatMap((size) => views.map(([name, v]) => [size, name, v] as const)))(
     'every button in the %s for %s is at least 40 px',

@@ -27,14 +27,14 @@ export function ProfileSection() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">Profile</CardTitle>
+        <CardTitle>Profile</CardTitle>
         <CardDescription>Your name and picture. Only you see them, on this account.</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4">
         {isPending ? (
-          <div className="flex items-center gap-4" aria-busy>
-            <Skeleton className="size-24 rounded-full" />
-            <Skeleton className="h-11 flex-1" />
+          <div className="flex items-center gap-3" aria-busy>
+            <Skeleton className="size-11 rounded-full" />
+            <Skeleton className="h-8 flex-1" />
           </div>
         ) : isError || !data ? (
           <Alert variant="error">
@@ -47,8 +47,8 @@ export function ProfileSection() {
           </Alert>
         ) : (
           <>
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-              <IdentityAvatar size={96} />
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+              <IdentityAvatar size={44} />
               <div className="min-w-0 flex-1">
                 <NameForm
                   key={data.full_name}
@@ -59,7 +59,7 @@ export function ProfileSection() {
                   onSave={(name) => rename.mutate(name)}
                 />
                 {!online ? (
-                  <p className="mt-2 text-sm text-muted-foreground">You are offline. Name changes need a connection.</p>
+                  <p className="mt-2 text-xs text-muted-foreground">You are offline. Name changes need a connection.</p>
                 ) : null}
               </div>
             </div>

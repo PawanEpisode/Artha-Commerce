@@ -21,15 +21,15 @@ export function StepActions({
   skipPending,
 }: Props) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {error ? <Alert variant="error">{error}</Alert> : null}
-      <div className="flex flex-wrap items-center gap-3">
-        <Button type="submit" size="lg" disabled={pending || skipPending || continueDisabled}>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button type="submit" disabled={pending || skipPending || continueDisabled}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
           {continueLabel}
         </Button>
         {onSkip ? (
-          <Button type="button" variant="ghost" size="lg" onClick={onSkip} disabled={pending || skipPending}>
+          <Button type="button" variant="ghost" onClick={onSkip} disabled={pending || skipPending}>
             {skipPending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
             Skip for now
           </Button>

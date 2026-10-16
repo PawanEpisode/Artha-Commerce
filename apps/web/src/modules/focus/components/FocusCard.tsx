@@ -77,10 +77,23 @@ export function FocusCard(p: Props) {
   const needsContext = !t && !hasSubjectAndChapter(p.value)
   const startDisabled = p.busy || !!p.otherLive || needsContext
 
+  const context = (
+    <ContextPicker
+      stacked
+      subjects={p.subjects}
+      chapters={p.chapters}
+      subjectsLoading={p.subjectsLoading}
+      chaptersLoading={p.chaptersLoading}
+      value={p.value}
+      onChange={p.onValueChange}
+      disabled={p.busy || t?.status === 'away'}
+    />
+  )
+
   return (
     <Card>
-      <CardContent className="space-y-6 p-6">
-        <div className="flex flex-col items-center gap-4">
+      <CardContent className="grid gap-5 p-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start lg:gap-0 lg:p-0">
+        <div className="flex min-w-0 flex-col items-center gap-4 lg:px-6 lg:py-6">
           <TimerRing
             phase={t?.phase ?? null}
             status={t?.status ?? null}
@@ -94,120 +107,103 @@ export function FocusCard(p: Props) {
             current={t ? (t.phase === 'focus' ? t.round_number : t.round_number + 1) : (p.idle?.next_round ?? 1)}
             active={t?.phase === 'focus'}
           />
-        </div>
 
-        <p role="status" aria-live="polite" className="sr-only">
-          {p.announcement}
-        </p>
-        {p.otherLive && !t ? (
-          <Alert variant="info">
-            <span role="status">The {p.otherLive} is running. Stop it before you start a focus round.</span>
-          </Alert>
-        ) : null}
-        {p.error ? (
-          <Alert variant="error">
-            <span role="alert">{p.error}</span>
-          </Alert>
-        ) : null}
-
-        {!t ? (
-          <div className="space-y-4">
-            <PresetPicker value={p.timings} preset={p.preset} onChange={p.onTimingsChange} disabled={p.busy} />
-            <ContextPicker
-              subjects={p.subjects}
-              chapters={p.chapters}
-              subjectsLoading={p.subjectsLoading}
-              chaptersLoading={p.chaptersLoading}
-              value={p.value}
-              onChange={p.onValueChange}
-              disabled={p.busy}
-            />
-          </div>
-        ) : (
-          <ContextPicker
-            subjects={p.subjects}
-            chapters={p.chapters}
-            subjectsLoading={p.subjectsLoading}
-            chaptersLoading={p.chaptersLoading}
-            value={p.value}
-            onChange={p.onValueChange}
-            disabled={p.busy || t.status === 'away'}
-          />
-        )}
-
-        <div className="flex flex-wrap justify-center gap-3">
-          {!t ? (
-            <>
-              <Button
-                size="lg"
-                variant="cta"
-                onClick={p.onStart}
-                disabled={startDisabled}
-                aria-describedby={needsContext && !p.otherLive ? 'focus-needs-context' : undefined}
-              >
-                {dueBreak ? <Coffee aria-hidden /> : <Play aria-hidden />} {startLabel(p.idle)}
-              </Button>
-              {dueBreak ? (
-                <Button size="lg" variant="outline" onClick={p.onStartFocusInsteadOfBreak} disabled={startDisabled}>
-                  Skip the break
-                </Button>
-              ) : null}
-            </>
-          ) : t.status === 'away' ? null : onBreak ? (
-            <Button size="lg" variant="outline" onClick={p.onSkipBreak} disabled={p.busy}>
-              <SkipForward aria-hidden /> Skip break
-            </Button>
-          ) : (
-            <>
-              {running ? (
-                <Button size="lg" variant="outline" onClick={p.onPause} disabled={p.busy}>
-                  <Pause aria-hidden /> Pause
-                </Button>
-              ) : (
-                <Button size="lg" onClick={p.onResume} disabled={p.busy}>
-                  <Play aria-hidden /> Resume
-                </Button>
-              )}
-              {overtime !== null && p.onStopAndSave ? (
-                <Button size="lg" variant="cta" onClick={p.onStopAndSave} disabled={p.busy}>
-                  <Square aria-hidden /> Stop and save
-                </Button>
-              ) : (
-                <>
-                  <Button size="lg" variant="outline" onClick={p.onExtend} disabled={p.busy || !t.can_extend}>
-                    +{formatDuration(EXTEND_SECONDS / 60)}
-                    {extensionsLeft > 0 ? ` (${extensionsLeft} left)` : ''}
-                  </Button>
-                  <Button size="lg" variant="outline" onClick={p.onEndEarly} disabled={p.busy}>
-                    <Square aria-hidden /> End early
-                  </Button>
-                </>
-              )}
-            </>
-          )}
-          {p.popOut}
-        </div>
-        {needsContext && !p.otherLive ? (
-          <p id="focus-needs-context" className="text-center text-sm text-muted-foreground">
-            Choose a subject and a chapter to start.
+          <p role="status" aria-live="polite" className="sr-only">
+            {p.announcement}
           </p>
-        ) : null}
-        <p className="text-center text-xs text-muted-foreground">
-          {t
-            ? `${PHASE_LABEL[t.phase]} runs on our clock, so a reload or another device shows the same time. `
-            : 'Rounds under one minute are not saved. '}
-          <Kbd>Space</Kbd> {t ? 'pauses' : 'starts'}
-          {onBreak ? (
-            <>
-              , <Kbd>S</Kbd> skips
-            </>
-          ) : t ? (
-            <>
-              , <Kbd>E</Kbd> {overtime !== null ? 'stops and saves' : 'ends early'}
-            </>
+          {p.otherLive && !t ? (
+            <Alert variant="info">
+              <span role="status">The {p.otherLive} is running. Stop it before you start a focus round.</span>
+            </Alert>
           ) : null}
-          .
-        </p>
+          {p.error ? (
+            <Alert variant="error">
+              <span role="alert">{p.error}</span>
+            </Alert>
+          ) : null}
+
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {!t ? (
+              <>
+                <Button
+                  variant="cta"
+                  className="min-w-28"
+                  onClick={p.onStart}
+                  disabled={startDisabled}
+                  aria-describedby={needsContext && !p.otherLive ? 'focus-needs-context' : undefined}
+                >
+                  {dueBreak ? <Coffee aria-hidden /> : <Play aria-hidden />} {startLabel(p.idle)}
+                </Button>
+                {dueBreak ? (
+                  <Button variant="outline" onClick={p.onStartFocusInsteadOfBreak} disabled={startDisabled}>
+                    Skip the break
+                  </Button>
+                ) : null}
+              </>
+            ) : t.status === 'away' ? null : onBreak ? (
+              <Button variant="outline" onClick={p.onSkipBreak} disabled={p.busy}>
+                <SkipForward aria-hidden /> Skip break
+              </Button>
+            ) : (
+              <>
+                {running ? (
+                  <Button variant="outline" onClick={p.onPause} disabled={p.busy}>
+                    <Pause aria-hidden /> Pause
+                  </Button>
+                ) : (
+                  <Button onClick={p.onResume} disabled={p.busy}>
+                    <Play aria-hidden /> Resume
+                  </Button>
+                )}
+                {overtime !== null && p.onStopAndSave ? (
+                  <Button variant="cta" onClick={p.onStopAndSave} disabled={p.busy}>
+                    <Square aria-hidden /> Stop and save
+                  </Button>
+                ) : (
+                  <>
+                    <Button variant="outline" onClick={p.onExtend} disabled={p.busy || !t.can_extend}>
+                      +{formatDuration(EXTEND_SECONDS / 60)}
+                      {extensionsLeft > 0 ? ` (${extensionsLeft} left)` : ''}
+                    </Button>
+                    <Button variant="outline" onClick={p.onEndEarly} disabled={p.busy}>
+                      <Square aria-hidden /> End early
+                    </Button>
+                  </>
+                )}
+              </>
+            )}
+            {p.popOut}
+          </div>
+          {needsContext && !p.otherLive ? (
+            <p id="focus-needs-context" className="text-center text-[13px] text-muted-foreground">
+              Choose a subject and a chapter to start.
+            </p>
+          ) : null}
+          <p className="text-center text-xs text-muted-foreground">
+            {t
+              ? `${PHASE_LABEL[t.phase]} runs on our clock, so a reload or another device shows the same time. `
+              : 'Rounds under one minute are not saved. '}
+            <Kbd>Space</Kbd> {t ? 'pauses' : 'starts'}
+            {onBreak ? (
+              <>
+                , <Kbd>S</Kbd> skips
+              </>
+            ) : t ? (
+              <>
+                , <Kbd>E</Kbd> {overtime !== null ? 'stops and saves' : 'ends early'}
+              </>
+            ) : null}
+            .
+          </p>
+        </div>
+
+        <div className="min-w-0 space-y-4 border-t border-border pt-4 lg:h-full lg:border-t-0 lg:border-l lg:p-6">
+          <h2 className="text-sm font-semibold">{t ? 'This round counts for' : 'Set up your round'}</h2>
+          {!t ? (
+            <PresetPicker narrow value={p.timings} preset={p.preset} onChange={p.onTimingsChange} disabled={p.busy} />
+          ) : null}
+          {context}
+        </div>
       </CardContent>
     </Card>
   )

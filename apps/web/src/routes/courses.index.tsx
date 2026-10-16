@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 
-import { COURSES_INDEX_REDIRECT_SCRIPT, CoursesIndexContainer, loadCourses } from '~/modules/courses'
+import { CoursesIndexContainer, loadCourses } from '~/modules/courses'
 import { publicPage } from '~/modules/layout'
 import { pageHead } from '~/modules/seo'
 
@@ -9,11 +9,7 @@ export const Route = createFileRoute('/courses/')({
   staticData: publicPage,
   validateSearch: z.object({ all: z.literal(1).optional().catch(undefined) }),
   loader: async () => ({ courses: await loadCourses() }),
-  head: () => {
-    const head = pageHead('/courses')
-    // Signed-in students belong on the home. Guests and crawlers still receive the catalog.
-    return { ...head, scripts: [...(head.scripts ?? []), { children: COURSES_INDEX_REDIRECT_SCRIPT }] }
-  },
+  head: () => pageHead('/courses'),
   component: function CoursesRoute() {
     const { courses } = Route.useLoaderData()
     const { all } = Route.useSearch()

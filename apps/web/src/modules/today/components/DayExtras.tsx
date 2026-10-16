@@ -43,7 +43,7 @@ function FeedbackCard({ plan }: { plan: Plan }) {
   const [given, setGiven] = useState<FeedbackRating | null>(() => remembered(plan.date))
   if (given) {
     return (
-      <p role="status" className="text-center text-sm text-muted-foreground">
+      <p role="status" className="text-center text-[13px] text-muted-foreground">
         Thanks. We will use this to size your days.
       </p>
     )
@@ -61,13 +61,16 @@ function FeedbackCard({ plan }: { plan: Plan }) {
       },
     )
   return (
-    <section aria-labelledby="feedback-heading" className="space-y-3 rounded-2xl border border-border bg-card p-4">
-      <h2 id="feedback-heading" className="font-display text-base font-bold">
+    <section
+      aria-labelledby="feedback-heading"
+      className="space-y-2 rounded-lg border border-border bg-card p-3 shadow-soft"
+    >
+      <h2 id="feedback-heading" className="text-sm font-semibold">
         How was today's plan?
       </h2>
       <div role="group" aria-label="Rate today's plan" className="flex flex-wrap gap-2">
         {RATINGS.map((r) => (
-          <Button key={r.value} variant="outline" disabled={send.isPending} onClick={() => pick(r.value)}>
+          <Button key={r.value} variant="outline" size="sm" disabled={send.isPending} onClick={() => pick(r.value)}>
             {r.label}
           </Button>
         ))}
@@ -92,7 +95,7 @@ function SuggestionCard() {
     })
   return (
     <Alert variant="info">
-      <div className="space-y-3">
+      <div className="space-y-2">
         <p>
           {fewer ? 'Three days in a row felt like too much.' : 'Three days in a row felt like too little.'} Try{' '}
           <strong>{formatMinutes(suggestion.minutes)}</strong> a day instead of {formatMinutes(suggestion.current)}?
@@ -140,10 +143,10 @@ function BonusCard({ plan }: { plan: Plan }) {
   return (
     <section
       aria-label="Bonus round"
-      className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border bg-card p-4"
+      className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border bg-card p-3 shadow-soft"
     >
-      <p className="text-sm text-muted-foreground">Still going? A few extra minutes, no pressure.</p>
-      <Button variant="outline" disabled={busy} onClick={() => void run()}>
+      <p className="text-[13px] text-muted-foreground">Still going? A few extra minutes, no pressure.</p>
+      <Button variant="outline" size="sm" disabled={busy} onClick={() => void run()}>
         <Sparkles aria-hidden /> {busy ? 'Adding' : 'Do a little more'}
       </Button>
     </section>
@@ -159,7 +162,7 @@ export function DayExtras({ plan, readOnly }: { plan: Plan; readOnly: boolean })
   const enabled = usePlannerFlag()
   if (!enabled || readOnly || plan.closing === null) return null
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <SuggestionCard />
       <FeedbackCard plan={plan} />
       {plan.closing === 'celebrate' ? <BonusCard plan={plan} /> : null}

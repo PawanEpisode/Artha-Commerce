@@ -10,7 +10,7 @@ export function CardChangesSection({ cardId }: { cardId: string }) {
   const q = useCardChanges(cardId, open === 'changes')
   return (
     <section aria-labelledby="changes-heading" className="space-y-2">
-      <h2 id="changes-heading" className="font-display text-xl font-bold">
+      <h2 id="changes-heading" className="text-sm font-semibold">
         What changed
       </h2>
       <Accordion type="single" collapsible value={open} onValueChange={setOpen}>

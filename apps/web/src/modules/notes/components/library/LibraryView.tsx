@@ -1,5 +1,20 @@
-import { Alert, Button, CloudOff, EmptyState, FileText, Plus, Skeleton, UsageBar } from '@artha/design-system'
-import type { ReactNode } from 'react'
+import {
+  Alert,
+  Button,
+  CloudOff,
+  DataTable,
+  EmptyState,
+  FileText,
+  PageHeader,
+  Plus,
+  Skeleton,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+  UsageBar,
+} from '@artha/design-system'
+import { Fragment, type ReactNode } from 'react'
 
 import type { DocumentSummary } from '../../lib/document-types'
 import { formatBytes, pluralize } from '../../lib/format'
@@ -28,7 +43,8 @@ interface LibraryViewProps {
   onUpload: () => void
   onFiles: (files: File[]) => void
   onClearFilters: () => void
-  renderCard: (doc: DocumentSummary) => ReactNode
+  /** One PDF as a `TableRow` (the library passes `DocumentRow` with `full`). */
+  renderRow: (doc: DocumentSummary) => ReactNode
 }
 
 const mb = (bytes: number) => Math.round(bytes / MIB)
@@ -42,15 +58,12 @@ export function LibraryView(props: LibraryViewProps) {
   const showEmptyFirstTime = state === 'ready' && items.length === 0 && !filtered && !props.hasUploads
   return (
     <>
-      <header className="space-y-4">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h1 className="font-display text-3xl font-extrabold">Library</h1>
-            <p className="text-muted-foreground">Your PDFs, ready to read and mark.</p>
-          </div>
+      <PageHeader
+        title="Library"
+        description="Your PDFs, ready to read and mark."
+        actions={
           <div className="flex flex-col items-start gap-1 sm:items-end">
             <Button
-              variant="cta"
               onClick={props.onUpload}
               disabled={!online}
               aria-describedby={!online ? 'library-offline-reason' : undefined}
@@ -58,32 +71,32 @@ export function LibraryView(props: LibraryViewProps) {
               <Plus aria-hidden /> Upload PDF
             </Button>
             {!online ? (
-              <p id="library-offline-reason" className="text-sm text-muted-foreground">
+              <p id="library-offline-reason" className="text-xs text-muted-foreground">
                 You are offline. Upload needs a connection.
               </p>
             ) : null}
           </div>
+        }
+      />
+      {usage ? (
+        <div className="grid gap-3 sm:grid-cols-2 xl:max-w-3xl">
+          <UsageBar
+            label="PDF storage"
+            used={mb(usage.used.storage_bytes)}
+            limit={usage.limits.max_storage_mb}
+            unit="MB"
+            fullText="Storage full"
+          />
+          <UsageBar
+            label="PDFs"
+            used={usage.used.documents ?? 0}
+            limit={usage.limits.max_documents ?? limits.maxDocuments}
+            fullText="PDF limit reached"
+          />
         </div>
-        {usage ? (
-          <div className="grid gap-3 sm:grid-cols-2">
-            <UsageBar
-              label="PDF storage"
-              used={mb(usage.used.storage_bytes)}
-              limit={usage.limits.max_storage_mb}
-              unit="MB"
-              fullText="Storage full"
-            />
-            <UsageBar
-              label="PDFs"
-              used={usage.used.documents ?? 0}
-              limit={usage.limits.max_documents ?? limits.maxDocuments}
-              fullText="PDF limit reached"
-            />
-          </div>
-        ) : state === 'loading' ? (
-          <Skeleton className="h-12 w-full" />
-        ) : null}
-      </header>
+      ) : state === 'loading' ? (
+        <Skeleton className="h-10 w-full" />
+      ) : null}
 
       {!online ? (
         <Alert variant="info">
@@ -102,19 +115,12 @@ export function LibraryView(props: LibraryViewProps) {
         <>
           {props.filters}
           {state === 'loading' ? (
-            <div aria-busy="true" className="space-y-3">
+            <div aria-busy="true" className="space-y-1.5">
               <span role="status" className="sr-only">
                 Loading your PDFs…
               </span>
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex gap-3 rounded-xl border border-border bg-card p-4">
-                  <Skeleton className="h-24 w-[4.5rem] shrink-0" />
-                  <div className="min-w-0 flex-1 space-y-2">
-                    <Skeleton className="h-5 w-3/4" />
-                    <Skeleton className="h-4 w-1/3" />
-                    <Skeleton className="h-6 w-1/2" />
-                  </div>
-                </div>
+              {[0, 1, 2, 3].map((i) => (
+                <Skeleton key={i} className="h-12 w-full" />
               ))}
             </div>
           ) : (
@@ -132,31 +138,45 @@ export function LibraryView(props: LibraryViewProps) {
               ) : null}
               {items.length === 0 && state === 'ready' ? (
                 <EmptyState
+                  className="rounded-lg py-6"
                   icon={<FileText aria-hidden />}
                   title="No PDFs match"
                   description="Try different words, or remove a filter."
                   action={
-                    <Button variant="outline" onClick={props.onClearFilters}>
+                    <Button variant="outline" size="sm" onClick={props.onClearFilters}>
                       Clear all filters
                     </Button>
                   }
                 />
               ) : (
-                <ul aria-label="Your PDFs" className={`space-y-3 ${state === 'error' ? 'opacity-60' : ''}`}>
-                  {items.map((doc) => (
-                    <li key={doc.id}>{props.renderCard(doc)}</li>
-                  ))}
-                </ul>
+                <DataTable aria-label="Your PDFs" containerClassName={state === 'error' ? 'opacity-60' : undefined}>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>PDF</TableHead>
+                      <TableHead>Filed under</TableHead>
+                      <TableHead className="hidden md:table-cell">Tags</TableHead>
+                      <TableHead className="text-right">Updated</TableHead>
+                      <TableHead className="w-px">
+                        <span className="sr-only">Actions</span>
+                      </TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {items.map((doc) => (
+                      <Fragment key={doc.id}>{props.renderRow(doc)}</Fragment>
+                    ))}
+                  </TableBody>
+                </DataTable>
               )}
               {items.length > 0 ? (
-                <p className="text-sm text-muted-foreground" role="status">
+                <p className="text-xs text-muted-foreground" role="status">
                   Showing {pluralize(items.length, 'PDF')}
                   {hasMore ? ' so far' : ''}
                   {usage ? `, ${formatBytes(usage.used.storage_bytes)} used in all` : ''}.
                 </p>
               ) : null}
               {hasMore ? (
-                <Button variant="outline" onClick={props.onLoadMore} disabled={loadingMore}>
+                <Button variant="outline" size="sm" onClick={props.onLoadMore} disabled={loadingMore}>
                   {loadingMore ? 'Loading…' : 'Load more'}
                 </Button>
               ) : null}

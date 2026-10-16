@@ -5,11 +5,11 @@ import { DocumentCard } from './DocumentCard'
 export function ContinueReadingRow({ items }: { items: readonly DocumentSummary[] }) {
   if (items.length === 0) return null
   return (
-    <section aria-labelledby="continue-h" className="space-y-3">
-      <h2 id="continue-h" className="font-display text-xl font-bold">
+    <section aria-labelledby="continue-h" className="space-y-2">
+      <h2 id="continue-h" className="text-sm font-semibold">
         Continue reading
       </h2>
-      <ul className="grid gap-3 sm:grid-cols-3">
+      <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {items.slice(0, 3).map((doc) => (
           <li key={doc.id} className="min-w-0">
             <DocumentCard doc={doc} compact showLocation={false} resume className="h-full" />

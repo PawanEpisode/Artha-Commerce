@@ -1,4 +1,4 @@
-import { Badge } from '@artha/design-system'
+import { Badge, PageHeader } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { useBootstrap } from '~/modules/personalization'
@@ -10,26 +10,25 @@ export function StudyHeader() {
   const { data } = useBootstrap()
   const chip = examChip(data?.course ?? null)
   return (
-    <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <h1 className="text-2xl font-extrabold sm:text-3xl">{headline(new Date().getHours(), data?.first_name ?? '')}</h1>
-      {data ? (
-        chip.dated ? (
-          <Badge
-            variant="accent"
-            className="h-auto max-w-full self-start text-left leading-snug whitespace-normal sm:self-auto"
-          >
-            {chip.text}
-          </Badge>
-        ) : (
-          <Link
-            to="/app/onboarding"
-            search={{ step: 'course' }}
-            className="self-start text-sm font-semibold text-primary underline-offset-4 hover:underline sm:self-auto"
-          >
-            {chip.text}
-          </Link>
-        )
-      ) : null}
-    </header>
+    <PageHeader
+      title={headline(new Date().getHours(), data?.first_name ?? '')}
+      actions={
+        data ? (
+          chip.dated ? (
+            <Badge variant="accent" className="h-auto max-w-full text-left leading-snug whitespace-normal">
+              {chip.text}
+            </Badge>
+          ) : (
+            <Link
+              to="/app/onboarding"
+              search={{ step: 'course' }}
+              className="text-[13px] font-medium text-primary underline-offset-4 hover:underline"
+            >
+              {chip.text}
+            </Link>
+          )
+        ) : null
+      }
+    />
   )
 }

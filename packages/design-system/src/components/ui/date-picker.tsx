@@ -51,7 +51,7 @@ interface DatePickerProps extends Omit<React.ComponentProps<'input'>, 'type' | '
 
 /**
  * A date field on the browser's own date input, so phones show their native picker and keyboards type the day directly.
- * Labelled, with a hint and an error wired for screen readers, and a 44 px target. Used for the vacation end date; the exam
+ * Labelled, with a hint and an error wired for screen readers, and a compact target (44 px on touch). Used for the vacation end date; the exam
  * date comes in R2. The browser does not always enforce `min` and `max` when a date is typed, so the value is clamped here.
  */
 export function DatePicker({
@@ -72,7 +72,7 @@ export function DatePicker({
   const errorId = error ? `${id}-error` : undefined
   const describedBy = [errorId, hintId].filter(Boolean).join(' ') || undefined
   return (
-    <div data-slot="date-picker" className={cn('grid gap-2', className)}>
+    <div data-slot="date-picker" className={cn('grid gap-1.5', className)}>
       <Label htmlFor={id}>{label}</Label>
       <Input
         id={id}
@@ -90,12 +90,12 @@ export function DatePicker({
         {...props}
       />
       {hint ? (
-        <p id={hintId} className="text-sm text-muted-foreground">
+        <p id={hintId} className="text-xs text-muted-foreground">
           {hint}
         </p>
       ) : null}
       {error ? (
-        <p id={errorId} role="alert" className="text-sm font-medium text-destructive">
+        <p id={errorId} role="alert" className="text-xs font-medium text-destructive">
           {error}
         </p>
       ) : null}

@@ -9,14 +9,14 @@ export function WeeklySummaryCard({ data }: { data: WeeklySummary }) {
   const s = data.suggestion
   return (
     <Card>
-      <CardContent className="space-y-3 p-6">
-        <h2 className="text-lg font-bold">
+      <CardContent className="space-y-2 p-4">
+        <h2 className="text-sm font-semibold">
           Your week, {shortDay(data.week_start)} to {shortDay(data.week_end)}
         </h2>
         {data.total_seconds === 0 ? (
-          <p className="text-muted-foreground">No study time was logged that week.</p>
+          <p className="text-[13px] text-muted-foreground">No study time was logged that week.</p>
         ) : (
-          <ul className="list-disc space-y-1 pl-5 text-sm">
+          <ul className="list-disc space-y-1 pl-5 text-[13px]">
             <li>
               You studied {formatDuration(data.total_seconds)} over {data.days_tracked}{' '}
               {data.days_tracked === 1 ? 'day' : 'days'}.
@@ -40,7 +40,7 @@ export function WeeklySummaryCard({ data }: { data: WeeklySummary }) {
             ) : null}
           </ul>
         )}
-        <p className="text-sm font-medium">
+        <p className="text-[13px] font-medium">
           {s.kind === 'subject_shortfall'
             ? `Next week, try ${formatDuration(s.remaining_seconds)} more on ${s.subject_name}.`
             : 'Keep going. Your routine is working.'}

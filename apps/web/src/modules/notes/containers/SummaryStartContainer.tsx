@@ -1,4 +1,4 @@
-import { Alert, Button, LoaderCircle, Skeleton } from '@artha/design-system'
+import { Alert, Button, LoaderCircle, PageHeader, Skeleton } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
@@ -39,16 +39,13 @@ function Start({ chapterId }: { chapterId: string }) {
   }, [ready, chapterId, start, navigate])
 
   if (!ai.flag || (!ai.loading && !ai.available)) return <Alert>AI help is not available yet.</Alert>
-  if (ai.loading || consent.isPending) return <Skeleton className="h-48 w-full" />
+  if (ai.loading || consent.isPending) return <Skeleton className="h-40 w-full max-w-3xl" />
   if (!chapterId) return <Alert variant="error">Choose a chapter first, from its notes page.</Alert>
   const allowance = allowanceText(summaryAllowance(usage.data))
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="font-display text-3xl font-extrabold">Write an exam summary</h1>
-        {allowance ? <p className="text-muted-foreground">{allowance}</p> : null}
-      </header>
+      <PageHeader title="Write an exam summary" description={allowance || undefined} />
       {consent.data && !consented && !declined ? (
         <ConsentPanel
           text={consent.data.text}
@@ -75,7 +72,7 @@ function Start({ chapterId }: { chapterId: string }) {
       ) : null}
       {ready && !failure ? (
         <p role="status" className="flex items-center gap-2">
-          <LoaderCircle aria-hidden className="size-5 animate-spin" /> Starting your summary…
+          <LoaderCircle aria-hidden className="size-4 animate-spin" /> Starting your summary…
         </p>
       ) : null}
     </>

@@ -19,10 +19,13 @@ export function ChapterPicker({
   label = 'Chapter',
   onPick,
   disabled,
+  stacked = false,
 }: {
   label?: string
   onPick: (chapter: PickedChapter | null) => void
   disabled?: boolean
+  /** One select per row, for a narrow column. */
+  stacked?: boolean
 }) {
   const id = useId()
   const courses = useCourses()
@@ -62,9 +65,9 @@ export function ChapterPicker({
   if (courses.isError) return <Alert variant="error">We could not load the syllabus. Try again in a moment.</Alert>
 
   return (
-    <fieldset className="grid gap-3" disabled={disabled}>
-      <legend className="text-sm font-medium">{label}</legend>
-      <div className="grid gap-3 sm:grid-cols-2">
+    <fieldset className="grid gap-2" disabled={disabled}>
+      <legend className="text-[13px] font-medium">{label}</legend>
+      <div className={stacked ? 'grid gap-2' : 'grid gap-2 sm:grid-cols-2'}>
         {list.length > 1 ? (
           <SelectField
             aria-label="Course"

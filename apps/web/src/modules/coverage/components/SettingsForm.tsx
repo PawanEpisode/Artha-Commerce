@@ -56,8 +56,8 @@ export function SettingsForm({ settings, pending, error, saved, onSave, onReset 
   }
 
   const row = (key: keyof typeof w, label: string) => (
-    <div className="flex items-center justify-between gap-4">
-      <span className="font-medium">{label}</span>
+    <div className="flex items-center justify-between gap-4 px-4 py-2.5">
+      <span className="text-[13px] font-medium">{label}</span>
       <NumberStepper
         label={`${label} weight`}
         value={w[key]}
@@ -70,53 +70,47 @@ export function SettingsForm({ settings, pending, error, saved, onSave, onReset 
   )
 
   return (
-    <form onSubmit={submit} noValidate className="space-y-8">
-      <Card className="space-y-5 p-6">
-        <div>
-          <h2 className="font-display text-xl font-bold">How coverage is weighed</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
+    <form onSubmit={submit} noValidate className="space-y-4">
+      <Card className="divide-y">
+        <div className="p-4">
+          <h2 className="text-sm font-semibold">How coverage is weighed</h2>
+          <p className="text-xs text-muted-foreground">
             Decide how much each part counts towards a chapter&apos;s percent.
           </p>
         </div>
-        <div className="space-y-4">
-          {row('read', 'Reading')}
-          {row('practice', 'Practice')}
-          {row('revise', 'Revision')}
-          {row('mock', 'Mock tests')}
-        </div>
+        {row('read', 'Reading')}
+        {row('practice', 'Practice')}
+        {row('revise', 'Revision')}
+        {row('mock', 'Mock tests')}
         <p
           role="status"
-          className={`text-sm font-semibold ${total === 100 ? 'text-muted-foreground' : 'text-destructive'}`}
+          className={`px-4 py-2.5 text-[13px] font-semibold ${total === 100 ? 'text-muted-foreground' : 'text-destructive'}`}
         >
           Total: {total}%{' '}
           {total === 100 ? '' : `(must be 100, ${total > 100 ? `${total - 100} over` : `${100 - total} short`})`}
         </p>
-      </Card>
-
-      <Card className="space-y-5 p-6">
-        <div>
-          <h2 className="font-display text-xl font-bold">Revision schedule</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Days after each revision until the next one is due. The last gap repeats.
-          </p>
-        </div>
-        <TextField
-          label="Days between revisions"
-          value={days}
-          onChange={(e) => setDays(e.target.value)}
-          inputMode="numeric"
-          hint="For example: 3, 7, 21, 45"
-          error={daysOk ? undefined : 'Enter 1 to 8 whole numbers between 1 and 365, separated by commas.'}
-        />
-      </Card>
-
-      <Card className="p-6">
-        <div className="flex items-center justify-between gap-4">
+        <div className="space-y-3 p-4">
           <div>
-            <Label htmlFor="weighted-default" className="text-base font-semibold">
+            <h2 className="text-sm font-semibold">Revision schedule</h2>
+            <p className="text-xs text-muted-foreground">
+              Days after each revision until the next one is due. The last gap repeats.
+            </p>
+          </div>
+          <TextField
+            label="Days between revisions"
+            value={days}
+            onChange={(e) => setDays(e.target.value)}
+            inputMode="numeric"
+            hint="For example: 3, 7, 21, 45"
+            error={daysOk ? undefined : 'Enter 1 to 8 whole numbers between 1 and 365, separated by commas.'}
+          />
+        </div>
+        <div className="flex items-center justify-between gap-4 p-4">
+          <div className="min-w-0">
+            <Label htmlFor="weighted-default" className="text-[13px] font-semibold">
               Weight by marks by default
             </Label>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-0.5 text-xs text-muted-foreground">
               Chapters with more marks count more in subject and level percentages.
             </p>
           </div>
@@ -126,12 +120,12 @@ export function SettingsForm({ settings, pending, error, saved, onSave, onReset 
 
       {error ? <Alert variant="error">{error}</Alert> : null}
       {saved && !error ? <Alert variant="success">Saved. Your percentages are updated.</Alert> : null}
-      <div className="flex flex-wrap gap-3">
-        <Button type="submit" size="lg" disabled={!canSave}>
+      <div className="flex flex-wrap gap-2">
+        <Button type="submit" disabled={!canSave}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
           Save settings
         </Button>
-        <Button type="button" variant="outline" size="lg" onClick={resetLocal} disabled={pending}>
+        <Button type="button" variant="outline" onClick={resetLocal} disabled={pending}>
           Reset to defaults
         </Button>
       </div>

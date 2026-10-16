@@ -45,9 +45,9 @@ export function FocusSettingsForm({
     rounds_before_long: value.rounds_before_long,
   }
   return (
-    <div className="space-y-6">
-      <section className="space-y-4 rounded-2xl border border-border bg-card p-6" aria-labelledby="rhythm-heading">
-        <h2 id="rhythm-heading" className="text-lg font-bold">
+    <div className="space-y-4">
+      <section className="space-y-3 rounded-lg border border-border bg-card p-4" aria-labelledby="rhythm-heading">
+        <h2 id="rhythm-heading" className="text-sm font-semibold">
           Rhythm
         </h2>
         <PresetPicker value={timings} preset={value.preset} onChange={onTimingsChange} disabled={busy} />
@@ -73,8 +73,8 @@ export function FocusSettingsForm({
         />
       </section>
 
-      <section className="space-y-4 rounded-2xl border border-border bg-card p-6" aria-labelledby="alerts-heading">
-        <h2 id="alerts-heading" className="text-lg font-bold">
+      <section className="space-y-3 rounded-lg border border-border bg-card p-4" aria-labelledby="alerts-heading">
+        <h2 id="alerts-heading" className="text-sm font-semibold">
           Alerts
         </h2>
         <Row
@@ -96,7 +96,7 @@ export function FocusSettingsForm({
               onValueChange={(v) => onChange({ volume: v })}
             />
             <span className="w-10 text-right text-sm tabular-nums">{value.volume}</span>
-            <Button type="button" variant="outline" onClick={onPreview} disabled={!value.sound_enabled}>
+            <Button type="button" variant="outline" size="sm" onClick={onPreview} disabled={!value.sound_enabled}>
               Play
             </Button>
           </div>
@@ -123,8 +123,8 @@ export function FocusSettingsForm({
         ) : null}
       </section>
       {showKeepAwake ? (
-        <section className="space-y-4 rounded-2xl border border-border bg-card p-6" aria-labelledby="screen-heading">
-          <h2 id="screen-heading" className="text-lg font-bold">
+        <section className="space-y-3 rounded-lg border border-border bg-card p-4" aria-labelledby="screen-heading">
+          <h2 id="screen-heading" className="text-sm font-semibold">
             Screen
           </h2>
           <Row
@@ -151,8 +151,8 @@ export function FocusSettingsForm({
         </section>
       ) : null}
       {showPopOut ? (
-        <section className="space-y-4 rounded-2xl border border-border bg-card p-6" aria-labelledby="popout-heading">
-          <h2 id="popout-heading" className="text-lg font-bold">
+        <section className="space-y-3 rounded-lg border border-border bg-card p-4" aria-labelledby="popout-heading">
+          <h2 id="popout-heading" className="text-sm font-semibold">
             Pop-out timer
           </h2>
           <Row
@@ -171,7 +171,7 @@ export function FocusSettingsForm({
               onValueChange={(v) => onChange({ popout_size: v })}
               disabled={busy}
             />
-            <p className="text-sm text-muted-foreground">
+            <p className="text-[13px] text-muted-foreground">
               Pill shows the time and one button. Card adds the progress ring, your subject and every control.
             </p>
           </div>
@@ -214,14 +214,14 @@ function Row({
   onChange: (v: boolean) => void
 }) {
   return (
-    <div className="flex items-start gap-3">
-      <Switch id={id} checked={checked} disabled={disabled} onCheckedChange={onChange} className="mt-0.5" />
-      <div>
+    <div className="flex items-start justify-between gap-4">
+      <div className="min-w-0">
         <label htmlFor={id} className="text-sm font-medium">
           {label}
         </label>
-        {hint ? <p className="text-sm text-muted-foreground">{hint}</p> : null}
+        {hint ? <p className="text-[13px] text-muted-foreground">{hint}</p> : null}
       </div>
+      <Switch id={id} checked={checked} disabled={disabled} onCheckedChange={onChange} className="mt-0.5 shrink-0" />
     </div>
   )
 }

@@ -61,7 +61,7 @@ export function CatchupStep({ onDone }: StepProps) {
       .sort((a, b) => a.pct_simple - b.pct_simple)[0]
     const chapters = data.subjects.find((s) => s.subject.id === lowest?.id)?.chapters ?? []
     return (
-      <div className="space-y-6">
+      <div className="space-y-4">
         <CatchupResult
           levelName={`${data.overview.enrollment.course.name} ${data.overview.enrollment.level.name}`}
           percent={data.overview.level.pct_simple}
@@ -69,9 +69,7 @@ export function CatchupStep({ onDone }: StepProps) {
             lowest ? { name: lowest.name, notStarted: chapters.filter((c) => c.status === 'not_started').length } : null
           }
         />
-        <Button size="lg" onClick={onDone}>
-          Continue
-        </Button>
+        <Button onClick={onDone}>Continue</Button>
       </div>
     )
   }

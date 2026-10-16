@@ -10,9 +10,9 @@ export function ErrorFallback({ error, reset }: { error: Error; reset: () => voi
   }, [error])
 
   return (
-    <Container className="grid min-h-[60vh] place-items-center py-24 text-center">
+    <Container className="grid min-h-[60vh] place-items-center py-16 text-center">
       <div>
-        <h1 className="text-2xl font-bold">Something went wrong</h1>
+        <h1 className="text-2xl font-semibold">Something went wrong</h1>
         <p className="mt-2 text-muted-foreground">We have been notified. Please try again.</p>
         <div className="mt-8 flex justify-center gap-3">
           <Button onClick={reset}>Try again</Button>

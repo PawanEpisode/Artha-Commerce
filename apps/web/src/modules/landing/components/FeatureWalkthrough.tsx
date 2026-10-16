@@ -18,10 +18,10 @@ function BeatCopy({ slug }: { slug: string }) {
           Coming soon
         </Badge>
       ) : (
-        <p className="mb-4 text-sm font-semibold tracking-widest text-primary uppercase">Available now</p>
+        <p className="mb-4 text-xs font-semibold tracking-widest text-primary uppercase">Available now</p>
       )}
-      <h3 className="font-display text-2xl font-extrabold sm:text-3xl">{beat.headline}</h3>
-      <p className="prose-reading mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">{beat.insight}</p>
+      <h3 className="text-xl font-semibold sm:text-2xl">{beat.headline}</h3>
+      <p className="prose-reading mt-3 text-[15px] leading-relaxed text-muted-foreground">{beat.insight}</p>
       <ul className="mt-6 space-y-3">
         {beat.points.map((point) => (
           <li key={point} className="flex items-start gap-3 text-sm sm:text-base">

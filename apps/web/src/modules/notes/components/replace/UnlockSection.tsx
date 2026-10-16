@@ -48,7 +48,7 @@ export function UnlockSection({ statusText, working, canUnlock, online, error, o
       ) : null}
       {canUnlock && !open ? (
         <div>
-          <Button variant="outline" className="min-h-11" onClick={() => setOpen(true)} disabled={!online}>
+          <Button variant="outline" onClick={() => setOpen(true)} disabled={!online}>
             <Lock aria-hidden /> Unlock for search
           </Button>
         </div>
@@ -64,13 +64,13 @@ export function UnlockSection({ statusText, working, canUnlock, online, error, o
             onChange={(e) => setPassword(e.target.value)}
           />
           <div className="flex flex-wrap gap-2">
-            <Button type="submit" className="min-h-11" disabled={!password || !online}>
+            <Button type="submit" disabled={!password || !online}>
               Unlock
             </Button>
             <Button
               type="button"
               variant="ghost"
-              className="min-h-11"
+
               onClick={() => {
                 setPassword('')
                 setOpen(false)

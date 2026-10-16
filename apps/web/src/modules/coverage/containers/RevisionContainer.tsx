@@ -1,4 +1,4 @@
-import { Alert, Skeleton } from '@artha/design-system'
+import { Alert, PageHeader, Skeleton } from '@artha/design-system'
 
 import { DueList, type DueRowAction } from '../components/DueList'
 import { useDue } from '../hooks/useCoverageQueries'
@@ -8,14 +8,16 @@ function Body({ renderRowAction }: { renderRowAction?: DueRowAction }) {
   const { data, isPending, isError } = useDue()
   return (
     <>
-      <header className="space-y-2">
-        <h1 className="font-display text-3xl font-extrabold">Due for revision</h1>
-        <p className="text-muted-foreground">
-          Chapters whose revision date has arrived. The most overdue and highest-marks chapters come first.
-        </p>
-      </header>
+      <PageHeader
+        title="Due for revision"
+        description="Chapters whose revision date has arrived. The most overdue and highest-marks chapters come first."
+      />
       {isPending ? (
-        <Skeleton className="h-40 w-full" />
+        <div className="space-y-1.5">
+          <Skeleton className="h-9 w-full" />
+          <Skeleton className="h-9 w-full" />
+          <Skeleton className="h-9 w-full" />
+        </div>
       ) : isError || !data ? (
         <Alert variant="error">We could not load your revisions.</Alert>
       ) : (

@@ -1,7 +1,19 @@
-import { Badge, BoxSelect, Card, Highlighter, Layers, StickyNote, Tag, Type, Underline } from '@artha/design-system'
+import {
+  Badge,
+  BoxSelect,
+  Highlighter,
+  Layers,
+  StickyNote,
+  TableCell,
+  TableRow,
+  Tag,
+  Type,
+  Underline,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { isUnfiled, linkLabel, shortLinkLabel } from '../../lib/chapter-link'
+import { formatDate } from '../../lib/format'
 import type { HighlightRow as Row, MarkKind } from '../../lib/library-types'
 import { markOpenedFrom } from '../../lib/opened-from'
 
@@ -38,70 +50,82 @@ interface HighlightRowProps {
   showLocation?: boolean
 }
 
-/** One mark in the aggregated views: kind icon and text, colour name, document and page, chapter, tags, card badge. Opens the PDF at the mark. */
+/** One mark in the aggregated table: kind icon and text, colour name, document and page, chapter, tags, card badge. Opens the PDF at the mark. */
 export function HighlightRow({ row, colorName, documentTitle, showLocation = true }: HighlightRowProps) {
   const kind = KIND[row.kind] ?? KIND.highlight
   const Icon = kind.icon
   const text = row.quote_exact?.trim() || row.comment.trim() || `${kind.label} on page ${row.page}`
   return (
-    <Card data-slot="highlight-row" className="space-y-2 p-4">
-      <div className="flex items-start gap-3">
-        <span aria-hidden className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-muted">
-          <Icon className="size-4" />
-        </span>
-        <div className="min-w-0 flex-1 space-y-1.5">
-          <p className="line-clamp-3 text-base leading-snug break-words">
-            <Link
-              to="/app/notes/pdf/$docId"
-              params={{ docId: row.document_id }}
-              search={{ page: row.page, ann: row.id }}
-              onClick={() => markOpenedFrom('aggregate')}
-              className="underline-offset-4 outline-none hover:underline focus-visible:underline focus-visible:ring-[3px] focus-visible:ring-ring/40"
-            >
-              <span className="sr-only">{kind.label}: </span>
-              {text}
-            </Link>
-          </p>
-          {row.quote_exact && row.comment.trim() ? (
-            <p className="line-clamp-2 text-sm break-words text-muted-foreground">{row.comment}</p>
-          ) : null}
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-            {row.color ? (
-              <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
-                <ColorDot color={row.color} />
-                {colorName ?? 'Colour'}
-              </span>
+    <TableRow data-slot="highlight-row">
+      <TableCell className="min-w-48 py-2 whitespace-normal">
+        <div className="flex items-start gap-2">
+          <Icon aria-hidden className="mt-0.5 size-3.5 shrink-0 text-muted-foreground" />
+          <div className="min-w-0 space-y-0.5">
+            <p className="line-clamp-2 break-words">
+              <Link
+                to="/app/notes/pdf/$docId"
+                params={{ docId: row.document_id }}
+                search={{ page: row.page, ann: row.id }}
+                onClick={() => markOpenedFrom('aggregate')}
+                className="font-medium underline-offset-4 outline-none hover:underline focus-visible:underline focus-visible:ring-2 focus-visible:ring-ring/50"
+              >
+                <span className="sr-only">{kind.label}: </span>
+                {text}
+              </Link>
+            </p>
+            {row.quote_exact && row.comment.trim() ? (
+              <p className="line-clamp-1 text-xs break-words text-muted-foreground">{row.comment}</p>
             ) : null}
-            <span className="min-w-0 break-words">
-              {documentTitle ? `${documentTitle} · ` : ''}page {row.page}
-            </span>
-          </p>
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-muted-foreground">
+              {row.color ? (
+                <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
+                  <ColorDot color={row.color} />
+                  {colorName ?? 'Colour'}
+                </span>
+              ) : null}
+              <span className="min-w-0 break-words">
+                {documentTitle ? `${documentTitle} · ` : ''}page {row.page}
+              </span>
+              {row.recall_card_id ? (
+                <Badge variant="accent">
+                  <Layers aria-hidden />
+                  Card
+                </Badge>
+              ) : null}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-xs">
-        {showLocation && !isUnfiled(row.link) ? (
-          <Badge variant="outline" className="max-w-full min-w-0" title={linkLabel(row.link)}>
-            <span className="truncate">{shortLinkLabel(row.link)}</span>
-          </Badge>
-        ) : null}
-        {row.link.moved_or_removed ? (
-          <Badge variant="outline" className="max-w-full min-w-0">
-            <span className="truncate">Chapter moved or removed</span>
-          </Badge>
-        ) : null}
-        {row.tags.map((tag) => (
-          <Badge key={tag.id} variant="outline" className="max-w-full min-w-0" title={tag.name}>
-            <Tag aria-hidden className="size-3 shrink-0" />
-            <span className="truncate">{tag.name}</span>
-          </Badge>
-        ))}
-        {row.recall_card_id ? (
-          <Badge variant="accent">
-            <Layers aria-hidden className="size-3" />
-            Card
-          </Badge>
-        ) : null}
-      </div>
-    </Card>
+      </TableCell>
+      {showLocation ? (
+        <TableCell className="max-w-56">
+          <div className="flex min-w-0 flex-wrap items-center gap-1">
+            {!isUnfiled(row.link) ? (
+              <Badge variant="outline" className="max-w-full min-w-0" title={linkLabel(row.link)}>
+                <span className="truncate">{shortLinkLabel(row.link)}</span>
+              </Badge>
+            ) : null}
+            {row.link.moved_or_removed ? (
+              <Badge variant="outline" className="max-w-full min-w-0">
+                <span className="truncate">Chapter moved or removed</span>
+              </Badge>
+            ) : null}
+          </div>
+        </TableCell>
+      ) : null}
+      <TableCell className="hidden md:table-cell">
+        <div className="flex max-w-56 min-w-0 flex-wrap items-center gap-1">
+          {row.tags.map((tag) => (
+            <Badge key={tag.id} variant="outline" className="max-w-full min-w-0" title={tag.name}>
+              <Tag aria-hidden className="shrink-0" />
+              <span className="truncate">{tag.name}</span>
+            </Badge>
+          ))}
+        </div>
+      </TableCell>
+      <TableCell className="text-right text-xs whitespace-nowrap text-muted-foreground tabular-nums">
+        <time dateTime={row.updated_at}>{formatDate(row.updated_at)}</time>
+      </TableCell>
+      <TableCell className="w-px" />
+    </TableRow>
   )
 }

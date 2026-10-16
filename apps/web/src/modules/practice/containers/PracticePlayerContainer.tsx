@@ -17,6 +17,7 @@ import {
   Input,
   NumberGrid,
   type NumberGridItem,
+  Page,
   Pause,
   Play,
   type QuestionGridState,
@@ -33,7 +34,7 @@ import * as React from 'react'
 
 import { RichText } from '~/lib/richtext'
 import { useFeatureFlag } from '~/modules/observability'
-import { ReportErrorDialog } from '~/modules/questionbank'
+import { kindLabel, QUESTION_TEXT_CLASS, ReportErrorDialog } from '~/modules/questionbank'
 import { QuestionCardButton } from '~/modules/recall'
 
 import {
@@ -293,48 +294,50 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Question Bank feature is currently in rollout.</Alert>
-      </div>
+      </Page>
     )
   }
 
   if (loading) {
     return (
-      <div className="mx-auto max-w-4xl space-y-4 px-4 py-8">
-        <Skeleton className="h-12 w-full rounded-xl" />
-        <Skeleton className="h-64 w-full rounded-xl" />
-        <Skeleton className="h-32 w-full rounded-xl" />
-      </div>
+      <Page className="max-w-4xl">
+        <div role="status" aria-busy="true" aria-label="Loading session" className="space-y-3">
+          <Skeleton className="h-10 w-full rounded-lg" />
+          <Skeleton className="h-64 w-full rounded-lg" />
+          <Skeleton className="h-24 w-full rounded-lg" />
+        </div>
+      </Page>
     )
   }
 
   if (error || !session) {
     return (
-      <div className="mx-auto max-w-3xl space-y-4 px-4 py-12">
+      <Page width="form">
         <Alert variant="error">{error ?? 'Session not found.'}</Alert>
-        <ButtonLink asChild variant="outline">
+        <ButtonLink asChild variant="outline" size="sm">
           <Link to="/app/practice">Back to Hub</Link>
         </ButtonLink>
-      </div>
+      </Page>
     )
   }
 
   // Paused screen overlay
   if (session.status === 'paused') {
     return (
-      <div className="mx-auto max-w-xl space-y-5 px-4 py-20 text-center">
-        <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-muted">
-          <Pause aria-hidden className="size-6 text-foreground" />
+      <Page width="form" className="space-y-3 text-center">
+        <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-muted">
+          <Pause aria-hidden className="size-5 text-foreground" />
         </div>
-        <h1 className="font-display text-2xl font-bold text-foreground">Session Paused</h1>
+        <h1 className="text-lg font-semibold text-foreground">Session Paused</h1>
         <p className="text-sm text-muted-foreground">
           Take a breather. Questions and timer are paused so you can resume whenever ready.
         </p>
-        <Button size="lg" onClick={handleResume} className="gap-2">
+        <Button onClick={handleResume} className="gap-2">
           <Play aria-hidden className="size-4 fill-current" /> Resume Session
         </Button>
-      </div>
+      </Page>
     )
   }
 
@@ -343,7 +346,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
   const currentSelected = selectedAnswers[currentIndex] || []
 
   return (
-    <div className="mx-auto max-w-4xl space-y-4 px-4 py-6">
+    <Page className="max-w-4xl">
       {/* Offline banner */}
       {isOffline && (
         <Alert variant="info">
@@ -407,7 +410,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
                     <span>Answered</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="size-3 rounded border border-amber-500 bg-amber-500/30" />
+                    <span className="size-3 rounded border border-warning-border bg-warning-bg" />
                     <span>Marked for review</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -427,13 +430,11 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
 
       {/* Main Question Card */}
       {currentItem && (
-        <Card className="space-y-6 p-6">
+        <Card className="space-y-4 p-4">
           {/* Metadata badges */}
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="text-[10px] font-semibold uppercase">
-                {currentItem.kind.replace('_', ' ')}
-              </Badge>
+              <Badge variant="outline">{kindLabel(currentItem.kind)}</Badge>
               <span className="text-muted-foreground">•</span>
               <span className="font-semibold text-foreground">
                 {currentItem.marks_max} {currentItem.marks_max === 1 ? 'mark' : 'marks'}
@@ -449,7 +450,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
                 onClick={toggleBookmark}
                 className={`rounded p-1 transition-colors ${
                   bookmarkedQuestions[currentItem.question_id]
-                    ? 'fill-amber-500 text-amber-500'
+                    ? 'fill-warning text-warning'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
                 title="Bookmark question"
@@ -462,13 +463,11 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
           </div>
 
           {/* Stem */}
-          <div className="prose-reading text-base leading-relaxed text-foreground">
-            <RichText markdown={currentItem.stem_md} profile="question" />
-          </div>
+          <RichText markdown={currentItem.stem_md} profile="question" className={QUESTION_TEXT_CLASS} />
 
           {/* Option list for MCQ */}
           {currentItem.options && currentItem.options.length > 0 && (
-            <div className="space-y-2.5">
+            <div className="space-y-1.5">
               {currentItem.options.map((opt, idx) => {
                 const isSelected = currentSelected.includes(opt.id)
                 const letter = String.fromCharCode(65 + idx)
@@ -481,9 +480,9 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
                 if (isChecked && checkData) {
                   const isOptionCorrect = checkData.correct_option_ids?.includes(opt.id)
                   if (isOptionCorrect) {
-                    rowBorder = 'border-emerald-600 bg-emerald-500/10 text-emerald-900 dark:text-emerald-200'
+                    rowBorder = 'border-success-border bg-success-bg'
                   } else if (isSelected && !isOptionCorrect) {
-                    rowBorder = 'border-destructive bg-destructive/10 text-destructive'
+                    rowBorder = 'border-destructive bg-destructive/10'
                   }
                 }
 
@@ -493,16 +492,31 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
                     key={opt.id}
                     disabled={isChecked}
                     onClick={() => !isChecked && handleSelectOption(opt.id)}
-                    className={`flex w-full cursor-pointer items-start gap-3 rounded-xl border p-3.5 text-left text-sm transition-all ${rowBorder} ${
+                    className={`flex min-h-10 w-full cursor-pointer items-center gap-2.5 rounded-md border px-2.5 py-1.5 text-left transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/50 ${rowBorder} ${
                       isStriked ? 'line-through opacity-40' : ''
                     }`}
                   >
-                    <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-xs font-bold text-foreground">
+                    <span
+                      aria-hidden
+                      className="grid size-6 shrink-0 place-items-center rounded-md bg-muted text-xs font-semibold text-foreground"
+                    >
                       {letter}
                     </span>
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      <RichText markdown={opt.body_md} profile="question" />
+                    <div className="min-w-0 flex-1">
+                      <span className="sr-only">Option {letter}. </span>
+                      <RichText markdown={opt.body_md} profile="question" className={QUESTION_TEXT_CLASS} />
                     </div>
+
+                    {isChecked && checkData?.correct_option_ids?.includes(opt.id) && (
+                      <span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-success-fg">
+                        <CircleCheck aria-hidden className="size-3.5" /> Correct
+                      </span>
+                    )}
+                    {isChecked && isSelected && !checkData?.correct_option_ids?.includes(opt.id) && (
+                      <span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-destructive">
+                        <CircleX aria-hidden className="size-3.5" /> Your answer
+                      </span>
+                    )}
 
                     {/* Strikethrough toggle helper */}
                     {!isChecked && (
@@ -547,7 +561,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
                   value={numericAnswers[currentIndex] || ''}
                   onChange={(e) => handleNumericChange(e.target.value)}
                   placeholder="e.g. 1,25,000"
-                  className="font-mono text-base font-bold"
+                  className="text-base font-semibold tabular-nums"
                 />
                 {currentItem.numeric_unit && (
                   <span className="text-xs font-semibold text-muted-foreground">{currentItem.numeric_unit}</span>
@@ -559,32 +573,32 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
           {/* Instant feedback explanation panel */}
           {isChecked && checkData && (
             <div
-              className={`space-y-4 rounded-xl border p-4 transition-all ${
+              className={`space-y-3 rounded-md border p-3 ${
                 checkData.result === 'correct'
-                  ? 'border-emerald-600/40 bg-emerald-500/5 dark:bg-emerald-950/20'
+                  ? 'border-success-border bg-success-bg'
                   : 'border-destructive/40 bg-destructive/5 dark:bg-destructive/10'
               }`}
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {checkData.result === 'correct' ? (
-                    <span className="flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400">
-                      <CircleCheck className="size-5" /> Correct (+{checkData.marks_awarded} marks)
+                    <span className="flex items-center gap-1.5 font-semibold text-success-fg">
+                      <CircleCheck aria-hidden className="size-5" /> Correct (+{checkData.marks_awarded} marks)
                     </span>
                   ) : (
-                    <span className="flex items-center gap-1.5 font-bold text-destructive">
-                      <CircleX className="size-5" /> Incorrect
+                    <span className="flex items-center gap-1.5 font-semibold text-destructive">
+                      <CircleX aria-hidden className="size-5" /> Incorrect
                     </span>
                   )}
                 </div>
               </div>
 
               {checkData.explanation_md && (
-                <div className="prose-reading border-t border-border/40 pt-1 text-sm text-foreground">
-                  <h4 className="mb-1 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+                <div className="border-t border-border/40 pt-2">
+                  <h4 className="mb-1 text-[11px] font-medium tracking-wide text-muted-foreground uppercase">
                     Explanation
                   </h4>
-                  <RichText markdown={checkData.explanation_md} profile="question" />
+                  <RichText markdown={checkData.explanation_md} profile="question" className={QUESTION_TEXT_CLASS} />
                 </div>
               )}
 
@@ -672,6 +686,6 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
           </div>
         </DialogContent>
       </Dialog>
-    </div>
+    </Page>
   )
 }

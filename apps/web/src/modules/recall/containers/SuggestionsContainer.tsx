@@ -1,4 +1,14 @@
-import { Alert, Button, ButtonLink, EmptyState, Skeleton, Sparkles, toast } from '@artha/design-system'
+import {
+  Alert,
+  Button,
+  ButtonLink,
+  Card,
+  EmptyState,
+  PageHeader,
+  Skeleton,
+  Sparkles,
+  toast,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 
@@ -25,19 +35,17 @@ import type { SuggestionsSearch } from '../lib/suggestionSearch'
 
 function Header() {
   return (
-    <header className="space-y-1">
-      <h1 className="text-3xl font-extrabold">Suggest cards with AI</h1>
-      <p className="text-muted-foreground">
-        The AI drafts cards from your own material. Every card shows the words it came from, and nothing is added until
-        you say so.
-      </p>
-    </header>
+    <PageHeader
+      title="Suggest cards with AI"
+      description="The AI drafts cards from your own material. Every card shows the words it came from, and nothing is added until you say so."
+    />
   )
 }
 
 function Unavailable({ text }: { text: string }) {
   return (
     <EmptyState
+      className="rounded-lg py-6"
       icon={<Sparkles aria-hidden />}
       title="AI suggestions are not available"
       description={text}
@@ -98,64 +106,74 @@ function Working({ overview, search }: { overview: AiOverview; search: Suggestio
   }
 
   return (
-    <>
-      <SuggestRequestForm
-        overview={overview}
-        chapterField={<ChapterPicker onPick={change(setChapter)} />}
-        sources={sources}
-        onSources={change(setSources)}
-        pasted={pasted}
-        onPasted={change(setPasted)}
-        count={count}
-        onCount={change(setCount)}
-        problem={problem}
-        pending={ask.isPending}
-        offline={!online}
-        error={ask.isError ? suggestionFailure(ask.error) : null}
-        onSubmit={submit}
-      />
-
-      {batchId ? (
-        batch.isPending ? (
-          <Skeleton className="h-28 w-full" />
-        ) : batch.isError || !batch.data ? (
-          <LoadError what="these suggestions" onRetry={() => void batch.refetch()} />
-        ) : (
-          <SuggestionTray
-            batch={batch.data}
-            busyId={busyId}
-            error={rowError}
-            onAccept={(s, fields) =>
-              decide(s, () =>
-                accept.mutateAsync({ id: s.id, fields }).then(() => toast.success('Added to your cards.')),
-              )
-            }
-            onReject={(s) => decide(s, () => reject.mutateAsync(s.id))}
+    <div className="grid gap-4 lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start">
+      <div className="min-w-0 space-y-3">
+        <Card className="p-4">
+          <SuggestRequestForm
+            overview={overview}
+            chapterField={<ChapterPicker stacked onPick={change(setChapter)} />}
+            sources={sources}
+            onSources={change(setSources)}
+            pasted={pasted}
+            onPasted={change(setPasted)}
+            count={count}
+            onCount={change(setCount)}
+            problem={problem}
+            pending={ask.isPending}
+            offline={!online}
+            error={ask.isError ? suggestionFailure(ask.error) : null}
+            onSubmit={submit}
           />
-        )
-      ) : null}
+        </Card>
+        <footer className="space-y-2">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={withdraw.isPending}
+            onClick={() =>
+              withdraw.mutate(undefined, {
+                onSuccess: () => {
+                  setBatchId(undefined)
+                  toast.success('Your agreement is withdrawn and waiting suggestions are deleted.')
+                },
+              })
+            }
+          >
+            Withdraw my agreement
+          </Button>
+          <p className="text-xs text-muted-foreground">
+            This deletes suggestions you have not decided on. Cards you already added stay.
+          </p>
+          {withdraw.isError ? <Alert variant="error">{suggestionFailure(withdraw.error)}</Alert> : null}
+        </footer>
+      </div>
 
-      <footer className="border-t border-border pt-4">
-        <Button
-          variant="outline"
-          disabled={withdraw.isPending}
-          onClick={() =>
-            withdraw.mutate(undefined, {
-              onSuccess: () => {
-                setBatchId(undefined)
-                toast.success('Your agreement is withdrawn and waiting suggestions are deleted.')
-              },
-            })
-          }
-        >
-          Withdraw my agreement
-        </Button>
-        <p className="mt-2 text-sm text-muted-foreground">
-          This deletes suggestions you have not decided on. Cards you already added stay.
-        </p>
-        {withdraw.isError ? <Alert variant="error">{suggestionFailure(withdraw.error)}</Alert> : null}
-      </footer>
-    </>
+      <div className="min-w-0">
+        {batchId ? (
+          batch.isPending ? (
+            <Skeleton className="h-28 w-full" />
+          ) : batch.isError || !batch.data ? (
+            <LoadError what="these suggestions" onRetry={() => void batch.refetch()} />
+          ) : (
+            <SuggestionTray
+              batch={batch.data}
+              busyId={busyId}
+              error={rowError}
+              onAccept={(s, fields) =>
+                decide(s, () =>
+                  accept.mutateAsync({ id: s.id, fields }).then(() => toast.success('Added to your cards.')),
+                )
+              }
+              onReject={(s) => decide(s, () => reject.mutateAsync(s.id))}
+            />
+          )
+        ) : (
+          <p className="rounded-lg border border-dashed border-border px-4 py-6 text-center text-[13px] text-muted-foreground">
+            Choose a chapter and where the cards should come from. Suggestions appear here.
+          </p>
+        )}
+      </div>
+    </div>
   )
 }
 
@@ -165,12 +183,12 @@ function Body({ search }: { search: SuggestionsSearch }) {
   const consent = useAiConsent(consentOn)
   const grant = useGrantAiConsent()
 
-  if (overview.isPending) return <Skeleton className="h-48 w-full" />
+  if (overview.isPending) return <Skeleton className="h-40 w-full" />
   if (overview.isError || !overview.data) return <LoadError what="this page" onRetry={() => void overview.refetch()} />
   if (!overview.data.available)
     return <Unavailable text="This is paused for now. You can still make cards yourself, or import them." />
   if (!overview.data.consent.given) {
-    if (consent.isPending) return <Skeleton className="h-48 w-full" />
+    if (consent.isPending) return <Skeleton className="h-40 w-full" />
     if (consent.isError || !consent.data) return <LoadError what="the notice" onRetry={() => void consent.refetch()} />
     return (
       <AiConsentPanel

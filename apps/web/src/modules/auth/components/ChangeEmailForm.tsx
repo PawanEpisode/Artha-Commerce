@@ -21,7 +21,7 @@ export function ChangeEmailForm({ pending, error, onSubmit }: ChangeEmailFormPro
   }
 
   return (
-    <form onSubmit={handle} noValidate className="space-y-4">
+    <form onSubmit={handle} noValidate className="space-y-3">
       <TextField
         label="New email address"
         type="email"

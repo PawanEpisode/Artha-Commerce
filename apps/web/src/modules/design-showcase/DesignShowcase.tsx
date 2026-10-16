@@ -79,6 +79,7 @@ import {
 import { useState } from 'react'
 
 import { AnnotationPrimitivesShowcase } from './AnnotationPrimitivesShowcase'
+import { CompactShowcase } from './CompactShowcase'
 import { NewPrimitivesShowcase } from './NewPrimitivesShowcase'
 import { NotesPrimitivesShowcase } from './NotesPrimitivesShowcase'
 import { PracticePrimitivesShowcase } from './PracticePrimitivesShowcase'
@@ -128,7 +129,7 @@ function ThemeStatus() {
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl font-bold">{title}</h2>
+      <h2 className="text-base font-semibold">{title}</h2>
       {children}
     </section>
   )
@@ -277,7 +278,7 @@ export function DesignShowcase() {
     <Container className="space-y-12 py-14">
       <header className="space-y-3">
         <Logo />
-        <h1 className="text-4xl font-extrabold">Design system</h1>
+        <h1 className="text-3xl font-semibold">Design system</h1>
         <p className="max-w-2xl text-muted-foreground">
           Tokens and primitives from <code>packages/design-system</code>. Use the theme menu in the header to check
           every theme.
@@ -345,8 +346,8 @@ export function DesignShowcase() {
 
       <Block title="Typography">
         <div className="space-y-2">
-          <p className="font-display text-5xl font-extrabold">Display 5xl</p>
-          <p className="font-display text-3xl font-bold">Heading 3xl</p>
+          <p className="text-4xl font-semibold">Display 4xl</p>
+          <p className="text-2xl font-semibold">Heading 2xl</p>
           <p className="text-lg">Body large, Inter Variable</p>
           <p className="text-sm text-muted-foreground">Small muted text</p>
         </div>
@@ -360,11 +361,21 @@ export function DesignShowcase() {
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="link">Link</Button>
+          <Button size="xs">Extra small</Button>
           <Button size="sm">Small</Button>
           <Button size="lg">Large</Button>
+          <Button size="xl">Extra large</Button>
+          <Button size="icon" aria-label="Icon">
+            <Sparkles />
+          </Button>
+          <Button size="icon-sm" aria-label="Small icon">
+            <Sparkles />
+          </Button>
           <Button disabled>Disabled</Button>
         </div>
       </Block>
+
+      <CompactShowcase />
 
       <Block title="Badges">
         <div className="flex flex-wrap gap-2">
@@ -415,7 +426,7 @@ export function DesignShowcase() {
         <div className="flex flex-wrap items-center gap-8">
           <ProgressRing value={68} label="Overall coverage" />
           <ProgressRing value={12} size={64} strokeWidth={6} tone="destructive" label="Needs attention">
-            <span className="text-sm font-bold">12%</span>
+            <span className="text-sm font-semibold">12%</span>
           </ProgressRing>
           <ProgressRing
             value={60}
@@ -425,7 +436,7 @@ export function DesignShowcase() {
             segmentLabel={(done, total) => `${done} of ${total} papers done`}
             label="Today's papers"
           >
-            <span className="text-sm font-bold">3/5</span>
+            <span className="text-sm font-semibold">3/5</span>
           </ProgressRing>
           <ProgressRing
             value={100}
@@ -435,7 +446,7 @@ export function DesignShowcase() {
             segmentLabel={(done, total) => `${done} of ${total} paper done`}
             label="One paper today"
           >
-            <span className="text-sm font-bold">1/1</span>
+            <span className="text-sm font-semibold">1/1</span>
           </ProgressRing>
           <CelebrateDemo />
           <div className="w-64 space-y-3">
@@ -518,7 +529,7 @@ export function DesignShowcase() {
               rail: 'Plan',
               content: (
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Tell us the attempt</h3>
+                  <h3 className="text-xl font-semibold">Tell us the attempt</h3>
                   <p className="text-muted-foreground">Course, level and exam date. Under a minute.</p>
                 </div>
               ),
@@ -529,7 +540,7 @@ export function DesignShowcase() {
               rail: 'Today',
               content: (
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Follow the list</h3>
+                  <h3 className="text-xl font-semibold">Follow the list</h3>
                   <p className="text-muted-foreground">Learn, revise, practise — one focused day.</p>
                 </div>
               ),

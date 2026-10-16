@@ -29,14 +29,14 @@ export function LegendEditor({ legend, saving, onSave }: LegendEditorProps) {
         if (!invalid) onSave(tidyLegend(draft))
       }}
     >
-      <p className="text-sm text-muted-foreground">
+      <p className="text-[13px] text-muted-foreground">
         Name what each colour means to you, like &ldquo;Formula&rdquo; or &ldquo;Doubt&rdquo;. Highlights show these
         names instead of colours.
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
         {COLOR_KEYS.map((key) => (
           <div key={key} className="flex items-start gap-2">
-            <span className="mt-9 grid size-5 shrink-0 place-items-center">
+            <span className="mt-8 grid size-5 shrink-0 place-items-center">
               <ColorDot color={key} />
             </span>
             <TextField

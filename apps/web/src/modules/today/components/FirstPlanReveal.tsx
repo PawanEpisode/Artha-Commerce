@@ -32,12 +32,12 @@ export function FirstPlanReveal({ plan, lite }: { plan: Plan; lite: boolean }) {
       role="status"
       aria-label="Your first plan"
       style={still ? undefined : { transition: `opacity ${REVEAL_MS}ms ease-out, transform ${REVEAL_MS}ms ease-out` }}
-      className={`flex items-center gap-3 rounded-2xl border border-primary bg-secondary p-4 ${
+      className={`flex items-center gap-2 rounded-lg border border-primary bg-secondary p-3 ${
         shown ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
       }`}
     >
-      <Sparkles aria-hidden className="size-6 shrink-0 text-primary" />
-      <p className="font-display text-lg font-bold">{revealLine(plan)}</p>
+      <Sparkles aria-hidden className="size-4 shrink-0 text-primary" />
+      <p className="text-sm font-semibold">{revealLine(plan)}</p>
     </section>
   )
 }

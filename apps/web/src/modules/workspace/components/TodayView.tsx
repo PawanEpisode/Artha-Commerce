@@ -16,13 +16,13 @@ interface Props {
 export function TodayView({ percent, doneLabel, streak, action, canLogTime }: Props) {
   return (
     <>
-      <div className="flex items-center gap-5">
-        <ProgressRing value={percent} label="Today's goal" size={96}>
-          <span className="text-lg font-bold">{percent}%</span>
+      <div className="flex items-center gap-3">
+        <ProgressRing value={percent} label="Today's goal" size={64}>
+          <span className="text-sm font-semibold">{percent}%</span>
         </ProgressRing>
-        <div className="min-w-0 space-y-1">
-          <p className="font-semibold">{doneLabel}</p>
-          <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
+        <div className="min-w-0 space-y-0.5">
+          <p className="font-medium">{doneLabel}</p>
+          <p className="flex items-center gap-1.5 text-[13px] text-muted-foreground">
             <Flame className="size-4 text-primary" aria-hidden />
             {streak === 1 ? '1 day streak' : `${streak} day streak`}
           </p>
@@ -30,12 +30,12 @@ export function TodayView({ percent, doneLabel, streak, action, canLogTime }: Pr
       </div>
       <div className="mt-auto flex flex-wrap gap-2">
         {action.kind !== 'none' ? (
-          <Link to={action.to} className={buttonVariants({ variant: 'cta', size: 'default' })}>
+          <Link to={action.to} className={buttonVariants({ variant: 'cta', size: 'sm' })}>
             {action.label}
           </Link>
         ) : null}
         {canLogTime ? (
-          <Link to="/app/tracker/log" className={buttonVariants({ variant: 'outline' })}>
+          <Link to="/app/tracker/log" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
             Log time
           </Link>
         ) : null}

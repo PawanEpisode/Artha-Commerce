@@ -1,4 +1,4 @@
-import { Alert, Button, Plus, Skeleton } from '@artha/design-system'
+import { Alert, Button, PageHeader, Plus, Skeleton } from '@artha/design-system'
 import { useEffect, useRef, useState } from 'react'
 
 import { KeepAwakeChip, useKeepAwake } from '~/modules/keepawake'
@@ -72,68 +72,74 @@ function Today({ tz }: { tz: string }) {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Time tracker</h1>
-        <p className="text-muted-foreground">Study time today: {formatDuration(total)}</p>
-      </header>
-
-      <StopwatchCard
-        stopwatch={sw}
-        seconds={timer.seconds}
-        busy={timer.busy}
-        otherLive={timer.state?.live ?? null}
-        subjects={subjects}
-        chapters={chapters}
-        subjectsLoading={subjectsLoading}
-        chaptersLoading={chaptersLoading}
-        value={shown}
-        onValueChange={onPick}
-        onStart={() =>
-          timer.start.mutate({
-            subject_id: pick.subject_id,
-            chapter_id: pick.chapter_id,
-            activity_type: pick.activity_type,
-          })
-        }
-        onPause={() => timer.toggle.mutate('pause')}
-        onResume={() => timer.toggle.mutate('resume')}
-        onStop={() => timer.stop.mutate(true)}
-        onDiscard={() => timer.stop.mutate(false)}
-        idlePending={!!sw?.idle_pending}
-        onStillStudying={() => idle.mutate('still_studying')}
-      />
-      <KeepAwakeChip status={awake} />
-
-      {goals.data ? (
-        <GoalRings progress={goals.data.progress} />
-      ) : goals.isError ? null : (
-        <Skeleton className="h-48 w-full" />
-      )}
-
-      <section aria-labelledby="today-heading" className="space-y-3">
-        <div className="flex items-center justify-between gap-3">
-          <h2 id="today-heading" className="text-lg font-bold">
-            Today
-          </h2>
-          <Button variant="outline" onClick={() => setAdding(true)}>
+      <PageHeader
+        title="Time tracker"
+        description={`Study time today: ${formatDuration(total)}`}
+        actions={
+          <Button variant="outline" size="sm" onClick={() => setAdding(true)}>
             <Plus aria-hidden /> Add time
           </Button>
-        </div>
-        {sessions.isError ? (
-          <Alert variant="error">
-            <span role="alert">We could not load today's sessions.</span>
-          </Alert>
-        ) : (
-          <SessionsPanel
-            sessions={todays}
-            tz={tz}
-            defaultActivity={settings?.default_activity_type ?? 'other'}
-            emptyText="No study time yet today."
-          />
-        )}
-      </section>
+        }
+      />
 
-      {weekly.data && weekly.data.total_seconds > 0 ? <WeeklySummaryCard data={weekly.data} /> : null}
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div className="min-w-0 space-y-4">
+          <StopwatchCard
+            stopwatch={sw}
+            seconds={timer.seconds}
+            busy={timer.busy}
+            otherLive={timer.state?.live ?? null}
+            subjects={subjects}
+            chapters={chapters}
+            subjectsLoading={subjectsLoading}
+            chaptersLoading={chaptersLoading}
+            value={shown}
+            onValueChange={onPick}
+            onStart={() =>
+              timer.start.mutate({
+                subject_id: pick.subject_id,
+                chapter_id: pick.chapter_id,
+                activity_type: pick.activity_type,
+              })
+            }
+            onPause={() => timer.toggle.mutate('pause')}
+            onResume={() => timer.toggle.mutate('resume')}
+            onStop={() => timer.stop.mutate(true)}
+            onDiscard={() => timer.stop.mutate(false)}
+            idlePending={!!sw?.idle_pending}
+            onStillStudying={() => idle.mutate('still_studying')}
+          />
+
+          <section aria-labelledby="today-heading" className="space-y-2">
+            <h2 id="today-heading" className="text-sm font-semibold">
+              Today
+            </h2>
+            {sessions.isError ? (
+              <Alert variant="error">
+                <span role="alert">We could not load today's sessions.</span>
+              </Alert>
+            ) : (
+              <SessionsPanel
+                sessions={todays}
+                tz={tz}
+                defaultActivity={settings?.default_activity_type ?? 'other'}
+                emptyText="No study time yet today."
+                label="Today's sessions"
+              />
+            )}
+          </section>
+        </div>
+
+        <div className="min-w-0 space-y-4">
+          <KeepAwakeChip status={awake} />
+          {goals.data ? (
+            <GoalRings progress={goals.data.progress} />
+          ) : goals.isError ? null : (
+            <Skeleton className="h-32 w-full" />
+          )}
+          {weekly.data && weekly.data.total_seconds > 0 ? <WeeklySummaryCard data={weekly.data} /> : null}
+        </div>
+      </div>
 
       <SessionFormDialog
         open={adding}

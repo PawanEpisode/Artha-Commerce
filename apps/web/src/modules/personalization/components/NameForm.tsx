@@ -27,7 +27,7 @@ export function NameForm({ value, pending, serverError, disabled, onSave }: Prop
   }
 
   return (
-    <form onSubmit={submit} noValidate className="space-y-3">
+    <form onSubmit={submit} noValidate className="space-y-2">
       <TextField
         label="Your name"
         value={draft}

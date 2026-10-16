@@ -1,4 +1,4 @@
-import { Alert, Button, EmptyState, Skeleton, Trash2 } from '@artha/design-system'
+import { Alert, Button, EmptyState, PageHeader, Skeleton, Trash2 } from '@artha/design-system'
 import { useState } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
@@ -30,17 +30,14 @@ function Trash() {
 
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="font-display text-3xl font-extrabold">Trash</h1>
-        <p className="text-muted-foreground">Deleted notes stay here for 30 days, then they are removed for good.</p>
-      </header>
+      <PageHeader title="Trash" description="Deleted notes stay here for 30 days, then they are removed for good." />
       {list.isPending ? (
-        <div aria-busy="true" className="space-y-3">
+        <div aria-busy="true" className="space-y-1.5">
           <span role="status" className="sr-only">
             Loading the trash…
           </span>
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-20 w-full" />
+          <Skeleton className="h-9 w-full" />
+          <Skeleton className="h-9 w-full" />
         </div>
       ) : list.isError ? (
         <Alert variant="error">
@@ -53,21 +50,22 @@ function Trash() {
         </Alert>
       ) : items.length === 0 && !showDocs ? (
         <EmptyState
+          className="rounded-lg py-6"
           icon={<Trash2 aria-hidden />}
           title="The trash is empty"
           description="Notes you delete will wait here for 30 days."
         />
       ) : (
-        <div className="space-y-6">
+        <div className="space-y-4">
           {!online ? (
             <Alert variant="info">
               <span>You are offline. You can restore notes when you are back online.</span>
             </Alert>
           ) : null}
           {items.length > 0 ? (
-            <section aria-labelledby="trash-notes-h" className="space-y-3">
+            <section aria-labelledby="trash-notes-h" className="space-y-2">
               {showDocs ? (
-                <h2 id="trash-notes-h" className="font-display text-xl font-bold">
+                <h2 id="trash-notes-h" className="text-sm font-semibold">
                   Notes
                 </h2>
               ) : null}
@@ -82,15 +80,20 @@ function Trash() {
                 }}
               />
               {list.hasNextPage ? (
-                <Button variant="outline" disabled={list.isFetchingNextPage} onClick={() => void list.fetchNextPage()}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  disabled={list.isFetchingNextPage}
+                  onClick={() => void list.fetchNextPage()}
+                >
                   {list.isFetchingNextPage ? 'Loading…' : 'Load more'}
                 </Button>
               ) : null}
             </section>
           ) : null}
           {showDocs ? (
-            <section aria-labelledby="trash-docs-h" className="space-y-3">
-              <h2 id="trash-docs-h" className="font-display text-xl font-bold">
+            <section aria-labelledby="trash-docs-h" className="space-y-2">
+              <h2 id="trash-docs-h" className="text-sm font-semibold">
                 PDFs
               </h2>
               <TrashedDocuments
@@ -105,7 +108,12 @@ function Trash() {
                 onDeleteNow={setPurging}
               />
               {docs.hasNextPage ? (
-                <Button variant="outline" disabled={docs.isFetchingNextPage} onClick={() => void docs.fetchNextPage()}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  disabled={docs.isFetchingNextPage}
+                  onClick={() => void docs.fetchNextPage()}
+                >
                   {docs.isFetchingNextPage ? 'Loading…' : 'Load more PDFs'}
                 </Button>
               ) : null}

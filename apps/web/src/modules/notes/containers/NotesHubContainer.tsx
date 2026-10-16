@@ -1,4 +1,4 @@
-import { Alert, Button, EmptyState, Inbox, Notebook, Plus, Skeleton } from '@artha/design-system'
+import { Alert, Button, EmptyState, Inbox, Notebook, PageHeader, Plus, Skeleton } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef } from 'react'
 
@@ -66,126 +66,135 @@ function Hub() {
 
   return (
     <>
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="font-display text-3xl font-extrabold">Notes</h1>
-          <p className="text-muted-foreground">Write once, find it by subject and chapter.</p>
-        </div>
-        <Button variant="cta" asChild>
-          <Link to="/app/notes/new">
-            <Plus aria-hidden /> New note
-          </Link>
-        </Button>
-      </header>
+      <PageHeader
+        title="Notes"
+        description="Write once, find it by subject and chapter."
+        actions={
+          <Button asChild>
+            <Link to="/app/notes/new">
+              <Plus aria-hidden /> New note
+            </Link>
+          </Button>
+        }
+      />
 
       <ContinueReadingRow items={reading.items} />
 
-      {pinnedList.items.length > 0 ? (
-        <section aria-labelledby="pinned-h" className="space-y-3">
-          <h2 id="pinned-h" className="font-display text-xl font-bold">
-            Pinned
+      <div className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="min-w-0 space-y-4">
+          {pinnedList.items.length > 0 ? (
+            <section aria-labelledby="pinned-h" className="space-y-2">
+              <h2 id="pinned-h" className="text-sm font-semibold">
+                Pinned
+              </h2>
+              <NotesList
+                label="pinned notes"
+                items={pinnedList.items}
+                isPending={false}
+                isError={false}
+                onRetry={() => void pinned.refetch()}
+                empty={null}
+                onPin={onPin}
+                onTrash={onTrash}
+              />
+            </section>
+          ) : null}
+
+          {unfiledList.items.length > 0 || unfiled.isError ? (
+            <section aria-labelledby="unfiled-h" className="space-y-2">
+              <h2 id="unfiled-h" className="flex items-center gap-2 text-sm font-semibold">
+                <Inbox aria-hidden className="size-4" /> Unfiled
+                <span className="font-normal text-muted-foreground">
+                  ({pluralize(unfiledList.items.length, 'note')}
+                  {unfiled.hasNextPage ? ' or more' : ''}). Tap a suggestion to file a note under its chapter.
+                </span>
+              </h2>
+              <NotesList
+                label="unfiled notes"
+                items={unfiledList.items}
+                isPending={unfiled.isPending}
+                isError={unfiled.isError}
+                onRetry={() => void unfiled.refetch()}
+                empty={null}
+                offline={unfiledList.offline}
+                hasMore={unfiled.hasNextPage}
+                loadingMore={unfiled.isFetchingNextPage}
+                onLoadMore={() => void unfiled.fetchNextPage()}
+                onPin={onPin}
+                onTrash={onTrash}
+                renderExtra={(note) => <UnfiledRow note={note} />}
+              />
+            </section>
+          ) : null}
+
+          <section aria-labelledby="recent-h" className="space-y-2">
+            <h2 id="recent-h" className="text-sm font-semibold">
+              Recent
+            </h2>
+            <NotesList
+              label="recent notes"
+              items={recentList.items}
+              isPending={recent.isPending}
+              isError={recent.isError}
+              onRetry={() => void recent.refetch()}
+              offline={recentList.offline}
+              onPin={onPin}
+              onTrash={onTrash}
+              empty={
+                <EmptyState
+                  className="rounded-lg py-6"
+                  icon={<Notebook aria-hidden />}
+                  title="Write your first note"
+                  description="Capture a formula, a doubt or a summary. It saves as you type, even offline."
+                  action={
+                    <Button asChild>
+                      <Link to="/app/notes/new">
+                        <Plus aria-hidden /> New note
+                      </Link>
+                    </Button>
+                  }
+                />
+              }
+            />
+          </section>
+        </div>
+
+        <section aria-labelledby="subjects-h" className="min-w-0 space-y-2">
+          <h2 id="subjects-h" className="text-sm font-semibold">
+            By subject
           </h2>
-          <NotesList
-            label="pinned notes"
-            items={pinnedList.items}
-            isPending={false}
-            isError={false}
-            onRetry={() => void pinned.refetch()}
-            empty={null}
-            onPin={onPin}
-            onTrash={onTrash}
-          />
-        </section>
-      ) : null}
-
-      <section aria-labelledby="subjects-h" className="space-y-3">
-        <h2 id="subjects-h" className="font-display text-xl font-bold">
-          By subject
-        </h2>
-        {subjectsPending ? (
-          <Skeleton className="h-24 w-full" />
-        ) : noEnrollment ? (
-          <EmptyState
-            icon={<Notebook aria-hidden />}
-            title="Choose your course first"
-            description="Pick your course and level so your notes can follow your syllabus."
-            action={
-              <Button asChild>
-                <Link to="/app/onboarding">Choose my course</Link>
-              </Button>
-            }
-          />
-        ) : subjectsError ? (
-          <Alert variant="error">
-            <span className="flex flex-wrap items-center gap-3">
-              <span>We could not load your subjects.</span>
-              <Button size="sm" variant="outline" onClick={() => void refetch()}>
-                Try again
-              </Button>
-            </span>
-          </Alert>
-        ) : (
-          <SubjectGrid subjects={tiles} />
-        )}
-      </section>
-
-      {unfiledList.items.length > 0 || unfiled.isError ? (
-        <section aria-labelledby="unfiled-h" className="space-y-3">
-          <h2 id="unfiled-h" className="flex items-center gap-2 font-display text-xl font-bold">
-            <Inbox aria-hidden className="size-5" /> Unfiled
-            <span className="text-base font-medium text-muted-foreground">
-              ({pluralize(unfiledList.items.length, 'note')}
-              {unfiled.hasNextPage ? ' or more' : ''})
-            </span>
-          </h2>
-          <p className="text-sm text-muted-foreground">Tap a suggestion to file a note under its chapter.</p>
-          <NotesList
-            label="unfiled notes"
-            items={unfiledList.items}
-            isPending={unfiled.isPending}
-            isError={unfiled.isError}
-            onRetry={() => void unfiled.refetch()}
-            empty={null}
-            offline={unfiledList.offline}
-            hasMore={unfiled.hasNextPage}
-            loadingMore={unfiled.isFetchingNextPage}
-            onLoadMore={() => void unfiled.fetchNextPage()}
-            onPin={onPin}
-            onTrash={onTrash}
-            renderExtra={(note) => <UnfiledRow note={note} />}
-          />
-        </section>
-      ) : null}
-
-      <section aria-labelledby="recent-h" className="space-y-3">
-        <h2 id="recent-h" className="font-display text-xl font-bold">
-          Recent
-        </h2>
-        <NotesList
-          label="recent notes"
-          items={recentList.items}
-          isPending={recent.isPending}
-          isError={recent.isError}
-          onRetry={() => void recent.refetch()}
-          offline={recentList.offline}
-          onPin={onPin}
-          onTrash={onTrash}
-          empty={
+          {subjectsPending ? (
+            <div aria-busy="true" className="space-y-1.5">
+              <Skeleton className="h-9 w-full" />
+              <Skeleton className="h-9 w-full" />
+              <Skeleton className="h-9 w-full" />
+            </div>
+          ) : noEnrollment ? (
             <EmptyState
+              className="rounded-lg py-6"
               icon={<Notebook aria-hidden />}
-              title="Write your first note"
-              description="Capture a formula, a doubt or a summary. It saves as you type, even offline."
+              title="Choose your course first"
+              description="Pick your course and level so your notes can follow your syllabus."
               action={
-                <Button variant="cta" asChild>
-                  <Link to="/app/notes/new">
-                    <Plus aria-hidden /> New note
-                  </Link>
+                <Button asChild>
+                  <Link to="/app/onboarding">Choose my course</Link>
                 </Button>
               }
             />
-          }
-        />
-      </section>
+          ) : subjectsError ? (
+            <Alert variant="error">
+              <span className="flex flex-wrap items-center gap-3">
+                <span>We could not load your subjects.</span>
+                <Button size="sm" variant="outline" onClick={() => void refetch()}>
+                  Try again
+                </Button>
+              </span>
+            </Alert>
+          ) : (
+            <SubjectGrid subjects={tiles} />
+          )}
+        </section>
+      </div>
     </>
   )
 }

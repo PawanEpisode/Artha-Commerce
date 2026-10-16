@@ -23,7 +23,7 @@ function Form({ initial, onDone }: { initial: Targets; onDone: () => void }) {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="space-y-8">
+    <form onSubmit={submit} noValidate className="space-y-5">
       <TargetsFields
         value={targets}
         presets={settings?.target_presets ?? DEFAULT_PRESETS}
@@ -31,7 +31,7 @@ function Form({ initial, onDone }: { initial: Targets; onDone: () => void }) {
         onChange={setTargets}
         disabled={save.isPending}
       />
-      <p className="text-sm text-muted-foreground">
+      <p className="text-xs text-muted-foreground">
         These are goals, not rules. Your logged work is always kept, and you can change them later.
       </p>
       <StepActions pending={save.isPending} error={failure?.message} />

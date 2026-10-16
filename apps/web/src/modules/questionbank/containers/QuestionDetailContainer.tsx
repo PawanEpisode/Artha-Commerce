@@ -1,4 +1,16 @@
-import { Alert, Badge, ButtonLink, Card, Check, Skeleton } from '@artha/design-system'
+import {
+  Alert,
+  Badge,
+  ButtonLink,
+  Card,
+  CardContent,
+  Check,
+  CircleX,
+  Page,
+  PageHeader,
+  ShieldCheck,
+  Skeleton,
+} from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import * as React from 'react'
 
@@ -6,12 +18,28 @@ import { RichText } from '~/lib/richtext'
 import { useFeatureFlag } from '~/modules/observability'
 import { QuestionCardButton } from '~/modules/recall'
 
+import { DifficultyDots } from '../components/QuestionTable'
 import { ReportErrorDialog } from '../components/ReportErrorDialog'
 import { getPlayableQuestion, getReviewQuestion } from '../lib/api'
+import { DIFFICULTY_LABELS, formatMarks, kindLabel, numericKeyText, QUESTION_TEXT_CLASS } from '../lib/labels'
 import type { ReviewQuestion } from '../lib/types'
 
 interface QuestionDetailContainerProps {
   questionId: string
+}
+
+const labelText = (labels: Record<string, unknown> | undefined, key: string): string => {
+  const v = labels?.[key]
+  return typeof v === 'string' || typeof v === 'number' ? String(v) : ''
+}
+
+function MetaRow({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex items-center justify-between gap-3 px-4 py-2 text-[13px]">
+      <dt className="shrink-0 text-muted-foreground">{label}</dt>
+      <dd className="min-w-0 text-right font-medium text-foreground">{children}</dd>
+    </div>
+  )
 }
 
 export function QuestionDetailContainer({ questionId }: QuestionDetailContainerProps) {
@@ -58,25 +86,37 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">The Question Bank feature is currently in rollout and not available yet.</Alert>
-      </div>
+      </Page>
     )
   }
 
   if (loading) {
     return (
-      <div className="mx-auto max-w-3xl space-y-4 px-4 py-8">
-        <Skeleton className="h-6 w-32" />
-        <Skeleton className="h-48 w-full rounded-xl" />
-        <Skeleton className="h-32 w-full rounded-xl" />
-      </div>
+      <Page>
+        <Skeleton className="h-6 w-40" />
+        <div
+          role="status"
+          aria-busy="true"
+          aria-label="Loading question"
+          className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]"
+        >
+          <div className="space-y-3">
+            <Skeleton className="h-32 w-full rounded-lg" />
+            <Skeleton className="h-10 w-full rounded-lg" />
+            <Skeleton className="h-10 w-full rounded-lg" />
+            <Skeleton className="h-10 w-full rounded-lg" />
+          </div>
+          <Skeleton className="h-64 w-full rounded-lg" />
+        </div>
+      </Page>
     )
   }
 
   if (error || !data) {
     return (
-      <div className="mx-auto max-w-3xl space-y-4 px-4 py-8">
+      <Page>
         <Alert variant="error">
           {error ?? 'Question not found.'}
           <div className="mt-3">
@@ -85,122 +125,166 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
             </ButtonLink>
           </div>
         </Alert>
-      </div>
+      </Page>
     )
   }
 
+  const labels = data.labels
+  const difficulty = Number(labelText(labels, 'difficulty')) || undefined
+  const source = [labelText(labels, 'source_name'), labelText(labels, 'source_year')].filter(Boolean).join(' ')
+  const sourceRef = labelText(labels, 'source_ref')
+  const nature = labelText(labels, 'nature')
+  const verified = labels?.verified === true
+  const negative = Number(data.negative_marks) > 0
+  const numericKey = data.kind === 'numeric' ? numericKeyText(data.numeric_key) : null
+  const hasAnswerKey = data.correct_option_ids.length > 0
+
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-8">
-      {/* Navigation header */}
-      <div className="flex items-center justify-between">
-        <ButtonLink asChild variant="ghost" size="sm">
-          <Link to="/app/questions">← Back to questions</Link>
-        </ButtonLink>
+    <Page>
+      <PageHeader
+        title="Question"
+        description={`${kindLabel(data.kind)} · ${formatMarks(data.marks)}`}
+        actions={
+          <ButtonLink asChild variant="ghost" size="sm">
+            <Link to="/app/questions">Back to questions</Link>
+          </ButtonLink>
+        }
+      />
 
-        <div className="flex items-center gap-2">
-          <ReportErrorDialog questionId={questionId} />
-        </div>
-      </div>
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
+        <div className="min-w-0 space-y-4">
+          <Card>
+            <CardContent className="space-y-4">
+              <RichText markdown={data.stem_md} profile="question" className={QUESTION_TEXT_CLASS} />
 
-      {/* Main question card */}
-      <Card className="space-y-6 p-6">
-        {/* Meta badges */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3 text-xs">
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="outline" className="font-semibold tracking-wider uppercase">
-              {data.kind.replace('_', ' ')}
-            </Badge>
-            <span className="text-muted-foreground">•</span>
-            <span className="font-medium text-foreground">
-              {data.marks} {data.marks === 1 ? 'mark' : 'marks'}
-            </span>
-            {data.negative_marks > 0 && (
-              <span className="font-medium text-destructive">(-{data.negative_marks} for wrong)</span>
-            )}
-          </div>
+              {data.options && data.options.length > 0 && (
+                <div className="space-y-2">
+                  <h2 className="text-[11px] font-medium tracking-wide text-muted-foreground uppercase">Options</h2>
+                  <ul className="space-y-1.5">
+                    {data.options.map((opt, idx) => {
+                      const isCorrect = data.correct_option_ids.includes(opt.id)
+                      const wrong = hasAnswerKey && !isCorrect
+                      const letter = String.fromCharCode(65 + idx)
+                      return (
+                        <li
+                          key={opt.id}
+                          className={`flex min-h-10 items-center gap-2.5 rounded-md border px-2.5 py-1.5 ${
+                            isCorrect ? 'border-success-border bg-success-bg' : 'border-border bg-card'
+                          }`}
+                        >
+                          <span
+                            aria-hidden
+                            className={`grid size-6 shrink-0 place-items-center rounded-md text-xs font-semibold ${
+                              isCorrect
+                                ? 'border border-success-border bg-card text-success-fg'
+                                : 'bg-muted text-foreground'
+                            }`}
+                          >
+                            {letter}
+                          </span>
+                          <div className="min-w-0 flex-1">
+                            <span className="sr-only">Option {letter}. </span>
+                            <RichText markdown={opt.body_md} profile="question" className={QUESTION_TEXT_CLASS} />
+                          </div>
+                          {isCorrect && (
+                            <span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-success-fg">
+                              <Check aria-hidden className="size-3.5" /> Correct
+                            </span>
+                          )}
+                          {wrong && (
+                            <span className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
+                              <CircleX aria-hidden className="size-3.5" /> Incorrect
+                            </span>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
+              )}
 
-          <div className="flex items-center gap-2">
-            <span className="text-muted-foreground">Version {data.version_no}</span>
-          </div>
-        </div>
+              {numericKey !== null && (
+                <div className="rounded-md border border-border bg-muted/40 px-3 py-2">
+                  <p className="text-xs text-muted-foreground">Correct numerical value</p>
+                  <p className="text-base font-semibold text-foreground tabular-nums">{numericKey}</p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
 
-        {/* Stem */}
-        <div className="prose-reading text-foreground">
-          <RichText markdown={data.stem_md} profile="question" />
-        </div>
+          {data.explanation_md && (
+            <Card>
+              <CardContent className="space-y-2">
+                <h2 className="text-sm font-semibold text-foreground">Explanation and solution</h2>
+                <RichText markdown={data.explanation_md} profile="question" className={QUESTION_TEXT_CLASS} />
 
-        {/* Options (MCQ) */}
-        {data.options && data.options.length > 0 && (
-          <div className="space-y-3 pt-2">
-            <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Options</p>
-            <div className="space-y-2">
-              {data.options.map((opt, idx) => {
-                const isCorrect = data.correct_option_ids?.includes(opt.id)
-                const letter = String.fromCharCode(65 + idx)
-                return (
-                  <div
-                    key={opt.id}
-                    className={`flex items-start gap-3 rounded-lg border p-3 text-sm transition-colors ${
-                      isCorrect
-                        ? 'border-emerald-600/60 bg-emerald-500/10 dark:bg-emerald-950/20'
-                        : 'border-border bg-card'
-                    }`}
-                  >
-                    <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-muted font-mono text-xs font-bold text-foreground">
-                      {letter}
-                    </span>
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      <RichText markdown={opt.body_md} profile="question" />
-                    </div>
-                    {isCorrect && (
-                      <span className="flex items-center gap-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                        <Check aria-hidden className="size-4" /> Correct
-                      </span>
-                    )}
+                {data.reference_labels && data.reference_labels.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                    <span className="text-xs text-muted-foreground">References:</span>
+                    {data.reference_labels.map((ref, i) => (
+                      <Badge key={i} variant="outline">
+                        {ref}
+                      </Badge>
+                    ))}
                   </div>
-                )
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* Numeric Answer key if available */}
-        {data.numeric_key !== undefined && (
-          <div className="rounded-lg border border-border bg-muted/30 p-4">
-            <span className="text-xs font-semibold text-muted-foreground">Correct numerical value:</span>
-            <div className="font-mono text-lg font-bold text-foreground">{data.numeric_key}</div>
-          </div>
-        )}
-
-        {/* Explanation & References */}
-        {data.explanation_md && (
-          <div className="space-y-3 rounded-xl border border-primary/20 bg-primary/5 p-4 dark:bg-primary/10">
-            <h3 className="text-sm font-bold text-foreground">Explanation & Solution</h3>
-            <div className="prose-reading text-sm text-foreground">
-              <RichText markdown={data.explanation_md} profile="question" />
-            </div>
-
-            {data.reference_labels && data.reference_labels.length > 0 && (
-              <div className="flex flex-wrap items-center gap-1.5 pt-2">
-                <span className="text-xs text-muted-foreground">References:</span>
-                {data.reference_labels.map((ref, i) => (
-                  <span
-                    key={i}
-                    className="rounded bg-background/80 px-2 py-0.5 font-mono text-xs text-foreground shadow-xs"
-                  >
-                    {ref}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Card creation bridge for Recall */}
-        <div className="border-t border-border/60 pt-4">
-          <QuestionCardButton questionId={data.question_id} versionId={data.version_id} />
+                )}
+              </CardContent>
+            </Card>
+          )}
         </div>
-      </Card>
-    </div>
+
+        <aside
+          aria-label="Question details"
+          className="space-y-3 lg:sticky lg:top-[calc(var(--site-header-height)+1rem)]"
+        >
+          <Card>
+            <dl className="divide-y">
+              <MetaRow label="Kind">
+                <Badge variant="outline">{kindLabel(data.kind)}</Badge>
+              </MetaRow>
+              <MetaRow label="Marks">
+                <span className="tabular-nums">{Number(data.marks)}</span>
+                {negative && <span className="ml-1.5 text-destructive">(-{Number(data.negative_marks)} wrong)</span>}
+              </MetaRow>
+              {difficulty && (
+                <MetaRow label="Difficulty">
+                  <span className="inline-flex items-center gap-2">
+                    <DifficultyDots level={difficulty} />
+                    <span className="tabular-nums">
+                      {difficulty}/5{DIFFICULTY_LABELS[difficulty] ? ` ${DIFFICULTY_LABELS[difficulty]}` : ''}
+                    </span>
+                  </span>
+                </MetaRow>
+              )}
+              {source && <MetaRow label="Source">{source}</MetaRow>}
+              {sourceRef && <MetaRow label="Reference">{sourceRef}</MetaRow>}
+              {nature && (
+                <MetaRow label="Nature">
+                  <span className="capitalize">{nature.replace(/_/g, ' ')}</span>
+                </MetaRow>
+              )}
+              <MetaRow label="Status">
+                <span className="inline-flex flex-wrap items-center justify-end gap-x-2 gap-y-0.5">
+                  {verified && (
+                    <span className="inline-flex items-center gap-1 text-success-fg">
+                      <ShieldCheck aria-hidden className="size-3.5" /> Verified
+                    </span>
+                  )}
+                  <span className="text-muted-foreground">Version {data.version_no}</span>
+                  {data.newer_version_available && <Badge variant="highlight">Newer version</Badge>}
+                </span>
+              </MetaRow>
+            </dl>
+          </Card>
+
+          <Card>
+            <CardContent className="flex flex-wrap items-center gap-2">
+              <QuestionCardButton questionId={data.question_id} versionId={data.version_id} />
+              <ReportErrorDialog questionId={questionId} />
+            </CardContent>
+          </Card>
+        </aside>
+      </div>
+    </Page>
   )
 }

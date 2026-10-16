@@ -1,5 +1,5 @@
-import { Alert, Button, Container, EmptyState, Skeleton, Sparkles, TooltipProvider } from '@artha/design-system'
-import type { ReactNode } from 'react'
+import { Alert, Button, EmptyState, Page, Skeleton, Sparkles, TooltipProvider } from '@artha/design-system'
+import type { ComponentProps, ReactNode } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
 import { RouterSectionTabs, type SectionLink, useTrackerSync } from '~/modules/tracker'
@@ -19,12 +19,17 @@ export function FocusShell({
   state,
   disabled,
   onRetry,
+  width = 'fluid',
+  tabs = true,
   children,
 }: {
   state: 'loading' | 'error' | 'ready'
   /** The server answered 403 `feature_disabled`. */
   disabled: boolean
   onRetry: () => void
+  width?: ComponentProps<typeof Page>['width']
+  /** Settings live in the settings area, which has its own side list, so they drop the local tabs. */
+  tabs?: boolean
   children: ReactNode
 }) {
   const enabled = useFeatureFlag('focus_timer')
@@ -32,20 +37,21 @@ export function FocusShell({
 
   if (!enabled || disabled) {
     return (
-      <Container className="max-w-3xl py-14">
+      <Page width="form">
         <EmptyState
+          className="rounded-lg py-6"
           icon={<Sparkles aria-hidden />}
           title="The focus timer is not available yet"
           description="We are rolling it out gradually. Please check back soon."
         />
-      </Container>
+      </Page>
     )
   }
 
   return (
     <TooltipProvider>
-      <RouterSectionTabs label="Focus timer sections" items={SECTIONS} width="3xl" />
-      <Container className="max-w-3xl space-y-6 py-8 sm:py-12">
+      {tabs ? <RouterSectionTabs label="Focus timer sections" items={SECTIONS} /> : null}
+      <Page width={width}>
         {pending > 0 ? (
           <Alert variant="info">
             <span role="status">
@@ -55,18 +61,19 @@ export function FocusShell({
           </Alert>
         ) : null}
         {state === 'loading' ? (
-          <div aria-busy="true" className="space-y-4">
+          <div aria-busy="true" className="space-y-3">
             <span className="sr-only" role="status">
               Loading the focus timer…
             </span>
-            <Skeleton className="h-96 w-full" />
-            <Skeleton className="h-24 w-full" />
+            <Skeleton className="h-8 w-48" />
+            <Skeleton className="h-80 w-full" />
+            <Skeleton className="h-20 w-full" />
           </div>
         ) : state === 'error' ? (
           <Alert variant="error">
             <span className="flex flex-wrap items-center gap-3">
               We could not load the focus timer.
-              <Button variant="outline" onClick={onRetry}>
+              <Button variant="outline" size="sm" onClick={onRetry}>
                 Try again
               </Button>
             </span>
@@ -74,7 +81,7 @@ export function FocusShell({
         ) : (
           children
         )}
-      </Container>
+      </Page>
     </TooltipProvider>
   )
 }

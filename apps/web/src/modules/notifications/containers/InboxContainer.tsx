@@ -1,4 +1,4 @@
-import { Alert, Bell, Button, Container, EmptyState, ListChecks, Settings, Skeleton } from '@artha/design-system'
+import { Alert, Bell, Button, EmptyState, ListChecks, Page, PageHeader, Settings, Skeleton } from '@artha/design-system'
 import { Link, useRouter } from '@tanstack/react-router'
 import type { MouseEvent } from 'react'
 
@@ -42,57 +42,54 @@ export function InboxContainer() {
   }
 
   return (
-    <Container className="max-w-3xl space-y-6 py-8 sm:py-12">
-      <header className="space-y-3">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div className="space-y-1">
-            <h1 className="text-3xl font-extrabold">Inbox</h1>
-            {off ? null : (
-              <p className="text-muted-foreground">Everything Artha has told you lately, in case you missed a push.</p>
-            )}
-          </div>
-          {off ? null : (
-            <div className="flex flex-wrap items-center gap-2">
+    <Page>
+      <PageHeader
+        title="Inbox"
+        description={off ? undefined : 'Everything Artha has told you lately, in case you missed a push.'}
+        actions={
+          off ? null : (
+            <>
               <Button
                 variant="outline"
+                size="sm"
                 onClick={() => markRead.mutate({ all: true })}
                 disabled={!unread || markRead.isPending}
               >
                 <ListChecks aria-hidden /> Mark all as read
               </Button>
-              <Button variant="ghost" asChild>
+              <Button variant="ghost" size="sm" asChild>
                 <Link to="/app/settings/notifications">
                   <Settings aria-hidden /> Settings
                 </Link>
               </Button>
-            </div>
-          )}
-        </div>
-        {off ? null : (
-          <p role="status" aria-live="polite" className="text-sm font-semibold">
-            {unread === null ? '' : unreadPhrase(unread)}
-          </p>
-        )}
-      </header>
+            </>
+          )
+        }
+      />
+      {off ? null : (
+        <p role="status" aria-live="polite" className="text-[13px] font-medium empty:hidden">
+          {unread === null ? '' : unreadPhrase(unread)}
+        </p>
+      )}
 
       {off ? null : <DigestContainer place="inbox" />}
 
       {off ? (
         <NotificationsOff />
       ) : list.isPending ? (
-        <div aria-busy="true" className="space-y-3">
+        <div aria-busy="true" className="space-y-2">
           <span className="sr-only" role="status">
             Loading your notifications…
           </span>
-          <Skeleton className="h-24 w-full" />
-          <Skeleton className="h-24 w-full" />
-          <Skeleton className="h-24 w-full" />
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
+          <Skeleton className="h-12 w-full" />
         </div>
       ) : list.isError ? (
         <Alert variant="error">
           <span className="flex flex-wrap items-center gap-3">
             We could not load your notifications.
-            <Button variant="outline" onClick={() => void list.refetch()}>
+            <Button variant="outline" size="sm" onClick={() => void list.refetch()}>
               Try again
             </Button>
           </span>
@@ -117,6 +114,6 @@ export function InboxContainer() {
           />
         </>
       )}
-    </Container>
+    </Page>
   )
 }

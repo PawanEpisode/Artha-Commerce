@@ -80,7 +80,7 @@ export function TimerRing({
                   ? `Extra focus: about ${minuteLabel} past the round`
                   : `${phase ? PHASE_LABEL[phase] : 'Timer'}: about ${minuteLabel} left`)
               }
-              className={`font-display font-extrabold tracking-tight tabular-nums ${ended ? 'text-success-fg' : ''} motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none ${compact ? 'text-3xl' : 'text-5xl sm:text-6xl'}`}
+              className={`font-display font-extrabold tracking-tight tabular-nums ${ended ? 'text-success-fg' : ''} motion-safe:animate-in motion-safe:fade-in-0 motion-reduce:animate-none ${compact ? 'text-3xl' : 'text-5xl'}`}
             >
               <span aria-hidden>
                 {clock ?? (extra ? formatOvertime(overtimeSeconds) : formatRemaining(remainingSeconds))}
@@ -97,13 +97,13 @@ export function TimerRing({
 /** The floating window's ring: with the 10px stroke it leaves room for a 30px clock inside a 320 x 300 window. */
 const COMPACT_RING = 148
 
-/** 220px fits a 320px screen once page and card padding are subtracted; wider screens get the full ring. */
+/** 220px fits a 320px screen once page and card padding are subtracted; wider screens get a 240px ring. */
 function useRingSize() {
   const [size, setSize] = useState(220)
   useEffect(() => {
     if (typeof window.matchMedia !== 'function') return
     const query = window.matchMedia('(min-width: 640px)')
-    const apply = () => setSize(query.matches ? 280 : 220)
+    const apply = () => setSize(query.matches ? 240 : 220)
     apply()
     query.addEventListener('change', apply)
     return () => query.removeEventListener('change', apply)

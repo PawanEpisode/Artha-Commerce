@@ -1,4 +1,4 @@
-import { Button } from '@artha/design-system'
+import { Button, PageHeader } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
@@ -185,10 +185,7 @@ function Body({ search, f }: { search: FocusSearch; f: FocusTimerApi }) {
   const studied = t ? elapsedSeconds(t, nowMs()) : 0
   return (
     <>
-      <header className="space-y-1">
-        <h1 className="text-3xl font-extrabold">Focus timer</h1>
-        <p className="text-muted-foreground">Study in focused rounds, then rest.</p>
-      </header>
+      <PageHeader title="Focus timer" description="Study in focused rounds, then rest." />
 
       {settings && !settings.intro_seen ? <FirstRunIntro onDismiss={() => save.mutate({ intro_seen: true })} /> : null}
 

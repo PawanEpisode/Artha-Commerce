@@ -49,12 +49,12 @@ export function CatchupStep({
   onSkip,
 }: Props) {
   return (
-    <div className="space-y-6">
-      <p className="text-muted-foreground">
+    <div className="space-y-4">
+      <p className="text-[13px] text-muted-foreground">
         Tick what you have already read. We will count it as read and show your starting point. You can change anything
         later.
       </p>
-      {note ? <p className="text-sm text-muted-foreground">{note}</p> : null}
+      {note ? <p className="text-xs text-muted-foreground">{note}</p> : null}
       <Accordion type="multiple">
         {subjects.map(({ subject, chapters }) => {
           const ids = chapters?.map((c) => c.id) ?? []
@@ -64,20 +64,20 @@ export function CatchupStep({
             <AccordionItem key={subject.id} value={subject.id}>
               <AccordionTrigger>
                 <span className="flex-1 text-left">{subject.name}</span>
-                <span className="mr-2 text-sm font-normal text-muted-foreground">
+                <span className="mr-2 text-xs font-normal text-muted-foreground">
                   {count} of {chapters ? ids.length : '…'} selected
                 </span>
               </AccordionTrigger>
               <AccordionContent>
                 {!chapters ? (
-                  <Skeleton className="h-24 w-full" />
+                  <Skeleton className="h-20 w-full" />
                 ) : ids.length === 0 ? (
-                  <p className="text-sm text-muted-foreground">Chapters for this paper are coming soon.</p>
+                  <p className="text-[13px] text-muted-foreground">Chapters for this paper are coming soon.</p>
                 ) : (
                   <div className="space-y-1">
                     <label
                       htmlFor={`all-${subject.id}`}
-                      className="flex min-h-11 cursor-pointer items-center gap-3 font-semibold"
+                      className="flex min-h-8 cursor-pointer items-center gap-3 text-[13px] font-semibold pointer-coarse:min-h-11"
                     >
                       <Checkbox
                         id={`all-${subject.id}`}
@@ -90,7 +90,7 @@ export function CatchupStep({
                       <label
                         key={c.id}
                         htmlFor={`ch-${c.id}`}
-                        className="flex min-h-11 cursor-pointer items-center gap-3 pl-6"
+                        className="flex min-h-8 cursor-pointer items-center gap-3 pl-6 text-[13px] pointer-coarse:min-h-11"
                       >
                         <Checkbox
                           id={`ch-${c.id}`}
@@ -112,8 +112,8 @@ export function CatchupStep({
         <Label htmlFor="also-revised">Also count them as revised once</Label>
       </div>
       {error ? <Alert variant="error">{error}</Alert> : null}
-      <div className="flex flex-wrap gap-3">
-        <Button size="lg" onClick={onApply} disabled={pending || selected.size === 0}>
+      <div className="flex flex-wrap gap-2">
+        <Button onClick={onApply} disabled={pending || selected.size === 0}>
           {pending ? <LoaderCircle className="animate-spin" aria-hidden /> : null}
           Apply to {selected.size} chapter{selected.size === 1 ? '' : 's'}
         </Button>

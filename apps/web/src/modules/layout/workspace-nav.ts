@@ -34,65 +34,86 @@ export interface WorkspaceLink {
   label: string
   description?: string
   flag?: WorkspaceFlag
+  /** Which sidebar section a study link lives in. Settings links have none. */
+  group?: NavGroup
 }
+
+export type NavGroup = 'plan' | 'learn' | 'practice'
+
+/** Sidebar sections in order. */
+export const NAV_GROUPS: ReadonlyArray<{ id: NavGroup; label: string }> = [
+  { id: 'plan', label: 'Plan' },
+  { id: 'learn', label: 'Learn' },
+  { id: 'practice', label: 'Practice' },
+]
 
 export const STUDY_LINKS: readonly WorkspaceLink[] = [
   {
     to: '/app/today',
+    group: 'plan',
     label: 'Today',
     description: 'Your tasks for today, paper by paper.',
     flag: 'today_plan',
   },
   {
     to: '/app/planner',
+    group: 'plan',
     label: 'Study plan',
     description: 'Your plan to the exam, and whether you are on track.',
     flag: 'today_planner',
   },
   {
     to: '/app/focus',
+    group: 'plan',
     label: 'Focus timer',
     description: 'Study in focused rounds, then rest.',
     flag: 'focus_timer',
   },
   {
     to: '/app/tracker',
+    group: 'plan',
     label: 'Time tracker',
     description: 'Log hours and see where today went.',
     flag: 'time_tracker',
   },
   {
     to: '/app/syllabus',
+    group: 'plan',
     label: 'My coverage',
     description: 'Tick chapters and see what is left.',
     flag: 'syllabus_coverage',
   },
   {
     to: '/app/notes',
+    group: 'learn',
     label: 'Notes',
     description: 'Write notes and find them by chapter.',
     flag: 'notes',
   },
   {
     to: '/app/recall',
+    group: 'learn',
     label: 'Revision',
     description: 'Flashcards that come back just before you forget.',
     flag: 'recall_system',
   },
   {
     to: '/app/questions',
+    group: 'practice',
     label: 'Questions',
     description: 'Practise and review curated syllabus questions.',
     flag: 'question_bank',
   },
   {
     to: '/app/pyq',
+    group: 'practice',
     label: 'Past papers',
     description: 'Previous year exam papers and suggested answers.',
     flag: 'pyq_bank',
   },
   {
     to: '/app/mcq',
+    group: 'practice',
     label: 'MCQ Bank',
     description: 'Targeted multiple choice practice and ICMAI booklets.',
     flag: 'mcq_bank',

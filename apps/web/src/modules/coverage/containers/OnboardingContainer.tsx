@@ -1,4 +1,4 @@
-import { Alert, Container, Skeleton, Stepper } from '@artha/design-system'
+import { Alert, Page, PageHeader, Skeleton, Stepper } from '@artha/design-system'
 import { useQueries, useQuery } from '@tanstack/react-query'
 import { Navigate, useNavigate } from '@tanstack/react-router'
 import { useEffect, useMemo, useRef, useState } from 'react'
@@ -155,14 +155,12 @@ export function OnboardingContainer({
   const stepIndex = done ? steps.length : stageIndex
 
   return (
-    <Container className="max-w-2xl space-y-8 py-10 sm:py-16">
-      <header className="space-y-4">
-        <h1 className="font-display text-3xl font-extrabold">Set up My Coverage</h1>
-        <Stepper steps={steps} current={Math.min(stepIndex, steps.length - 1)} />
-      </header>
+    <Page width="form">
+      <PageHeader title="Set up My Coverage" />
+      <Stepper steps={steps} current={Math.min(stepIndex, steps.length - 1)} />
 
       {courses.isPending ? (
-        <Skeleton className="h-64 w-full" />
+        <Skeleton className="h-48 w-full" />
       ) : courses.isError ? (
         <Alert variant="error">We could not load the course list. Please refresh and try again.</Alert>
       ) : done ? (
@@ -232,6 +230,6 @@ export function OnboardingContainer({
           onSkip={() => void navigate({ to: '/app/syllabus' })}
         />
       )}
-    </Container>
+    </Page>
   )
 }

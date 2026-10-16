@@ -44,18 +44,18 @@ export function ComponentBreakdown({ chapter, weights }: { chapter: ChapterRow; 
   ].filter((r) => r.show)
 
   return (
-    <dl className="space-y-4">
+    <dl className="space-y-3">
       {rows.map((r) => (
-        <div key={r.key} className="space-y-1.5">
+        <div key={r.key} className="space-y-1">
           <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-            <dt className="font-medium">
-              {r.label} <span className="text-sm font-normal text-muted-foreground">({r.weight}% of the total)</span>
+            <dt className="text-[13px] font-medium">
+              {r.label} <span className="text-xs font-normal text-muted-foreground">({r.weight}% of the total)</span>
             </dt>
-            <dd className="text-sm text-muted-foreground tabular-nums">
+            <dd className="text-xs text-muted-foreground tabular-nums">
               {r.detail}, <span className="font-semibold text-foreground">{r.pct}%</span>
             </dd>
           </div>
-          <ProgressBar value={r.pct} label={`${r.label} component`} />
+          <ProgressBar size="sm" value={r.pct} label={`${r.label} component`} />
         </div>
       ))}
     </dl>

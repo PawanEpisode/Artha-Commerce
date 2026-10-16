@@ -34,7 +34,7 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
   const [query, setQuery] = useState('')
   const shown = subject.chapters.filter((c) => matchesQuery(c.name, query))
   return (
-    <Container className="max-w-3xl py-12 sm:py-20">
+    <Container className="max-w-3xl py-8 sm:py-10">
       <Breadcrumb className="mb-6">
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -61,8 +61,8 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
         </BreadcrumbList>
       </Breadcrumb>
 
-      <h1 className="text-4xl font-extrabold break-words sm:text-5xl">{subject.name}</h1>
-      <p className="mt-3 flex flex-wrap items-center gap-2 text-lg text-muted-foreground">
+      <h1 className="text-2xl font-semibold tracking-tight break-words sm:text-3xl">{subject.name}</h1>
+      <p className="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
         <EntityBadge kind="paper" size="lg">
           {subject.paper_number ? `Paper ${subject.paper_number}` : 'Paper'}
         </EntityBadge>
@@ -89,11 +89,11 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
       </div>
 
       {subject.chapters.length === 0 ? (
-        <p className="mt-10 rounded-xl border border-dashed p-6 text-muted-foreground">
+        <p className="mt-6 rounded-lg border border-dashed p-4 text-muted-foreground">
           The chapter list for this paper is coming soon.
         </p>
       ) : (
-        <div className="mt-10 space-y-8">
+        <div className="mt-6 space-y-6">
           {subject.chapters.length > SEARCH_THRESHOLD ? (
             <ChapterSearch value={query} onChange={setQuery} shown={shown.length} total={subject.chapters.length} />
           ) : null}
@@ -101,8 +101,8 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
           {groupBySection(shown).map((group) => {
             return (
               <section key={group.section || 'all'}>
-                {group.section ? <h2 className="mb-3 font-display text-xl font-bold">{group.section}</h2> : null}
-                <ol className="space-y-3">
+                {group.section ? <h2 className="mb-2 text-base font-semibold">{group.section}</h2> : null}
+                <ol className="space-y-1.5">
                   {group.items.map((c) => (
                     <li key={c.id}>
                       <EntityListRow kind="chapter">
@@ -121,7 +121,7 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
                               {marksLabel(c) ? <Badge variant="outline">{marksLabel(c)}</Badge> : null}
                             </span>
                           </span>
-                          <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+                          <ChevronRight aria-hidden className="size-4 shrink-0 text-muted-foreground" />
                         </Link>
                       </EntityListRow>
                     </li>
@@ -133,8 +133,8 @@ export function SubjectView({ courseName, levelName, body, subject, report }: Pr
         </div>
       )}
 
-      <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Button variant="cta" size="lg" arrow asChild>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <Button variant="cta" arrow asChild>
           <Link to="/app/syllabus">Track {subject.name}</Link>
         </Button>
         {report}

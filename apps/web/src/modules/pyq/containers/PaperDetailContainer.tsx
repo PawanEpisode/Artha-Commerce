@@ -6,9 +6,13 @@ import {
   Button,
   ButtonLink,
   Card,
+  CardContent,
   Clock,
+  Page,
+  PageHeader,
   Play,
   Skeleton,
+  StatTile,
   toast,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
@@ -18,6 +22,7 @@ import { useFeatureFlag } from '~/modules/observability'
 
 import { PaperQuestionTree } from '../components/PaperQuestionTree'
 import { getPaperDetail, startPaperPractice } from '../lib/api'
+import { levelLabel, marksText, termLabel } from '../lib/labels'
 import type { PyqPaperDetail } from '../lib/types'
 
 interface PaperDetailContainerProps {
@@ -79,179 +84,154 @@ export function PaperDetailContainer({ paperId }: PaperDetailContainerProps) {
 
   if (!enabled) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <Page width="form">
         <Alert variant="info">
           The Previous Year Questions (PYQ) bank is currently under rollout and not yet available.
         </Alert>
-      </div>
+      </Page>
     )
   }
 
   if (loading) {
     return (
-      <div className="mx-auto max-w-5xl space-y-6 px-4 py-8">
-        <Skeleton className="h-6 w-32" />
-        <Skeleton className="h-10 w-3/4" />
-        <Skeleton className="h-32 w-full" />
-      </div>
+      <Page>
+        <div role="status" aria-busy="true" aria-label="Loading paper" className="space-y-3">
+          <Skeleton className="h-6 w-32" />
+          <Skeleton className="h-8 w-3/4" />
+          <Skeleton className="h-20 w-full" />
+        </div>
+      </Page>
     )
   }
 
   if (error || !paper) {
     return (
-      <div className="mx-auto max-w-5xl space-y-6 px-4 py-8">
+      <Page>
         <ButtonLink asChild variant="outline" size="sm" className="gap-1.5">
           <Link to="/app/pyq">
-            <ArrowLeft className="size-4" />
+            <ArrowLeft aria-hidden className="size-4" />
             Back to Past Papers
           </Link>
         </ButtonLink>
         <Alert variant="error">{error || 'Paper not found.'}</Alert>
-      </div>
+      </Page>
     )
   }
 
   const isCurrentScheme = paper.syllabus_status === 'current'
 
   return (
-    <div className="mx-auto max-w-5xl space-y-8 px-4 py-8">
-      {/* Back button */}
-      <div>
-        <ButtonLink asChild variant="ghost" size="sm" className="gap-1.5 text-muted-foreground hover:text-foreground">
-          <Link to="/app/pyq">
-            <ArrowLeft className="size-4" />
+    <Page>
+      <PageHeader
+        eyebrow={
+          <Link to="/app/pyq" className="hover:underline">
             All Past Papers
           </Link>
-        </ButtonLink>
-      </div>
-
-      {/* Header Banner */}
-      <div className="space-y-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <Badge variant="outline" className="font-semibold text-primary">
-            {paper.term_code.replace('_', ' ').toUpperCase()}
-          </Badge>
-          <Badge variant="default" className="font-mono text-xs uppercase">
-            {paper.paper_code || paper.subject_key}
-          </Badge>
-          {isCurrentScheme ? (
-            <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-              2022 Syllabus
+        }
+        title={paper.title}
+        description={
+          <span className="flex flex-wrap items-center gap-1.5">
+            <span>
+              {paper.course_code.toUpperCase()} {levelLabel(paper.level_code)}
             </span>
-          ) : (
-            <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700 dark:bg-amber-950/40 dark:text-amber-300">
-              Mapped Syllabus
-            </span>
-          )}
-        </div>
-
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{paper.title}</h1>
-            <p className="mt-1 text-sm text-muted-foreground capitalize">
-              {paper.course_code.toUpperCase()} • {paper.level_code.replace('_', ' ').toUpperCase()}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2.5">
-            <Button
-              variant="outline"
-              onClick={() => handleStartPractice('untimed')}
-              disabled={isStarting}
-              className="gap-1.5"
-            >
-              <Play className="size-3.5 fill-current" />
+            <Badge variant="outline">{termLabel(paper.term_code)}</Badge>
+            <Badge className="uppercase">{paper.paper_code || paper.subject_key}</Badge>
+            {isCurrentScheme ? (
+              <Badge variant="outline" className="border-success-border bg-success-bg text-success-fg">
+                2022 Syllabus
+              </Badge>
+            ) : (
+              <Badge variant="outline" className="border-warning-border bg-warning-bg text-warning-fg">
+                Mapped Syllabus
+              </Badge>
+            )}
+          </span>
+        }
+        actions={
+          <>
+            <Button variant="outline" onClick={() => handleStartPractice('untimed')} disabled={isStarting}>
+              <Play aria-hidden className="size-3.5 fill-current" />
               Practise Mode
             </Button>
-            <Button onClick={() => handleStartPractice('timed')} disabled={isStarting} className="gap-1.5">
-              <Clock className="size-3.5" />
+            <Button onClick={() => handleStartPractice('timed')} disabled={isStarting}>
+              <Clock aria-hidden className="size-3.5" />
               Simulate Exam
             </Button>
-          </div>
-        </div>
+          </>
+        }
+      />
 
-        {/* Paper Stats strip */}
-        <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
-          <Card className="p-3">
-            <span className="block text-xs text-muted-foreground">Total Marks</span>
-            <span className="text-lg font-bold text-foreground">{paper.total_marks}</span>
-          </Card>
-          <Card className="p-3">
-            <span className="block text-xs text-muted-foreground">Duration</span>
-            <span className="text-lg font-bold text-foreground">{paper.duration_minutes ?? 180} mins</span>
-          </Card>
-          <Card className="p-3">
-            <span className="block text-xs text-muted-foreground">Reading Time</span>
-            <span className="text-lg font-bold text-foreground">{paper.reading_minutes ?? 15} mins</span>
-          </Card>
-          <Card className="p-3">
-            <span className="block text-xs text-muted-foreground">Questions</span>
-            <span className="text-lg font-bold text-foreground">{paper.question_count} items</span>
-          </Card>
-        </div>
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <StatTile label="Total Marks" value={marksText(paper.total_marks)} />
+        <StatTile label="Duration" value={`${paper.duration_minutes ?? 180} mins`} />
+        <StatTile label="Reading Time" value={`${paper.reading_minutes ?? 15} mins`} />
+        <StatTile label="Questions" value={`${paper.question_count} items`} />
       </div>
 
-      {/* Official Links & Notes */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {paper.links.length > 0 && (
-          <Card className="space-y-3 p-4">
-            <h3 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
-              Official ICMAI Documents
-            </h3>
-            <ul className="space-y-2 text-sm">
-              {paper.links.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
-                  >
-                    <ArrowUpRight className="size-4 shrink-0" />
-                    <span>{link.label || 'Official Document'}</span>
-                    <span className="font-mono text-xs text-muted-foreground">({link.host})</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        )}
+      {(paper.links.length > 0 || paper.marks_note || paper.law_note || paper.choice_groups.length > 0) && (
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {paper.links.length > 0 && (
+            <Card>
+              <CardContent className="space-y-2">
+                <h2 className="text-sm font-semibold text-foreground">Official ICMAI documents</h2>
+                <ul className="space-y-1.5 text-[13px]">
+                  {paper.links.map((link) => (
+                    <li key={link.id}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+                      >
+                        <ArrowUpRight aria-hidden className="size-3.5 shrink-0" />
+                        <span>{link.label || 'Official Document'}</span>
+                        <span className="font-mono text-xs text-muted-foreground">({link.host})</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
 
-        {(paper.marks_note || paper.law_note) && (
-          <Card className="space-y-2 p-4 text-xs text-muted-foreground">
-            <h3 className="font-bold tracking-wider text-foreground uppercase">Exam Instructions & Notes</h3>
-            {paper.marks_note && <p>{paper.marks_note}</p>}
-            {paper.law_note && <p className="italic">{paper.law_note}</p>}
-          </Card>
-        )}
-      </div>
+          {(paper.marks_note || paper.law_note) && (
+            <Card>
+              <CardContent className="space-y-1.5 text-xs text-muted-foreground">
+                <h2 className="text-sm font-semibold text-foreground">Exam instructions and notes</h2>
+                {paper.marks_note && <p>{paper.marks_note}</p>}
+                {paper.law_note && <p className="italic">{paper.law_note}</p>}
+              </CardContent>
+            </Card>
+          )}
 
-      {/* Choice Structure summary */}
-      {paper.choice_groups.length > 0 && (
-        <Card className="space-y-2 bg-muted/30 p-4">
-          <h3 className="text-xs font-bold tracking-wider text-foreground uppercase">Choice & Paper Structure</h3>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {paper.choice_groups.map((cg) => (
-              <div key={cg.id} className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">{cg.section_label}: </span>
-                {cg.label}
-              </div>
-            ))}
-          </div>
-        </Card>
+          {paper.choice_groups.length > 0 && (
+            <Card className="bg-muted/30">
+              <CardContent className="space-y-1.5">
+                <h2 className="text-sm font-semibold text-foreground">Choice and paper structure</h2>
+                <ul className="space-y-1">
+                  {paper.choice_groups.map((cg) => (
+                    <li key={cg.id} className="text-xs text-muted-foreground">
+                      <span className="font-medium text-foreground">{cg.section_label}: </span>
+                      {cg.label}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+        </div>
       )}
 
-      {/* Questions Breakdown */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-foreground">Questions Breakdown</h2>
+      <section className="space-y-2">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+          <h2 className="text-sm font-semibold text-foreground">Questions breakdown</h2>
           <span className="text-xs text-muted-foreground">
             Click &quot;Practise&quot; on any question to solve it individually
           </span>
         </div>
 
         <PaperQuestionTree questions={paper.questions} choiceGroups={paper.choice_groups} />
-      </div>
-    </div>
+      </section>
+    </Page>
   )
 }

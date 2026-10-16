@@ -20,7 +20,7 @@ export function SelectTrigger({ className, children, ...props }: React.Component
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       className={cn(
-        'flex h-11 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-input bg-card px-3.5 text-left text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&>span]:line-clamp-1',
+        'flex h-8 w-full cursor-pointer items-center justify-between gap-2 rounded-md border border-input bg-card px-2.5 text-left text-[13px] outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 pointer-coarse:h-11 pointer-coarse:text-base [&_svg]:pointer-events-none [&_svg]:shrink-0 [&>span]:line-clamp-1',
         className,
       )}
       {...props}
@@ -44,10 +44,10 @@ export function SelectContent({
       <SelectPrimitive.Content
         data-slot="select-content"
         position={position}
-        sideOffset={6}
+        sideOffset={4}
         collisionPadding={12}
         className={cn(
-          'z-60 max-h-72 max-w-(--radix-select-trigger-width) min-w-(--radix-select-trigger-width) overflow-hidden rounded-xl border bg-popover text-popover-foreground shadow-lift data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
+          'z-60 max-h-72 max-w-(--radix-select-trigger-width) min-w-(--radix-select-trigger-width) overflow-hidden rounded-lg border bg-popover text-popover-foreground shadow-lift data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none',
           className,
         )}
         {...props}

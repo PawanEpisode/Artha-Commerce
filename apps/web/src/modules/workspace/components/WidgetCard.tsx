@@ -29,7 +29,7 @@ export function WidgetCard({
   state,
   onRetry,
   offline,
-  skeletonHeight = 'h-36',
+  skeletonHeight = 'h-28',
   className,
   onInteract,
   children,
@@ -39,20 +39,20 @@ export function WidgetCard({
       <section
         aria-labelledby={id}
         data-widget={id}
-        className="flex h-full flex-col gap-4 p-5 sm:p-6"
+        className="flex h-full flex-col gap-3 p-4"
         aria-busy={state === 'loading'}
         onClickCapture={(event) => {
           if (onInteract && (event.target as HTMLElement).closest('a,button')) onInteract()
         }}
       >
         <div className="flex items-center justify-between gap-2">
-          <h2 id={id} className="text-base font-bold">
+          <h2 id={id} className="text-sm font-semibold">
             {title}
           </h2>
           {offline && state === 'ready' ? <Badge>Offline</Badge> : null}
         </div>
         {state === 'loading' ? (
-          <div className="space-y-3" role="status" aria-label={`Loading ${title}`}>
+          <div className="space-y-2" role="status" aria-label={`Loading ${title}`}>
             <Skeleton className={`${skeletonHeight} w-full`} />
           </div>
         ) : state === 'error' ? (

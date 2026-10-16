@@ -20,7 +20,7 @@ interface Props {
 
 function ChapterLine({ name, subject, note }: { name: string; subject: string; note?: string }) {
   return (
-    <li className="text-sm">
+    <li className="text-[13px]">
       <span className="font-medium">{name}</span>
       <span className="text-muted-foreground">
         {' '}
@@ -35,7 +35,7 @@ function Group({ title, count, children }: { title: string; count: number; child
   if (count === 0) return null
   return (
     <details className="rounded-lg border p-3">
-      <summary className="cursor-pointer text-sm font-semibold">
+      <summary className="cursor-pointer text-[13px] font-semibold">
         {title} ({count})
       </summary>
       <ul className="mt-2 space-y-1.5">{children}</ul>
@@ -79,10 +79,10 @@ export function SchemeSwitch({ current, options, pending, error, summary, onSwit
   const [target, setTarget] = useState('')
   const chosen = others.find((s) => s.id === target)
   return (
-    <Card className="space-y-4 p-6">
+    <Card className="space-y-3 p-4">
       <div>
-        <h2 className="font-display text-xl font-bold">Syllabus scheme</h2>
-        <p className="mt-1 text-sm text-muted-foreground">You are on {current.name}.</p>
+        <h2 className="text-sm font-semibold">Syllabus scheme</h2>
+        <p className="text-xs text-muted-foreground">You are on {current.name}.</p>
       </div>
       {summary ? (
         <div className="space-y-3">
@@ -97,10 +97,10 @@ export function SchemeSwitch({ current, options, pending, error, summary, onSwit
         </div>
       ) : null}
       {others.length === 0 ? (
-        <p className="text-sm text-muted-foreground">No other scheme is published for your level.</p>
+        <p className="text-[13px] text-muted-foreground">No other scheme is published for your level.</p>
       ) : (
         <div className="space-y-3">
-          <div className="grid gap-2">
+          <div className="grid gap-1.5">
             <Label htmlFor="scheme-target">Switch to</Label>
             <SelectField
               id="scheme-target"

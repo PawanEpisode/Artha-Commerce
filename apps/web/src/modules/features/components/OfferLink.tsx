@@ -57,7 +57,7 @@ export function OfferButton({
   if (offer.destination === 'soon') return null
   const destination = offer.destination
   const onClick = () => onOpen(offer.feature.slug, destination)
-  const label = <span className="min-w-0 text-balance">{offer.label}</span>
+  const label = <span className="min-w-0">{offer.label}</span>
   const link =
     offer.destination === 'login' && offer.nextPath ? (
       <Link to="/login" search={{ next: offer.nextPath }} onClick={onClick}>
@@ -75,7 +75,7 @@ export function OfferButton({
       size={size}
       arrow={arrow}
       fullWidth={fullWidth}
-      className={cn('h-auto max-w-full min-w-0 py-2.5 whitespace-normal', className)}
+      className={cn('max-w-full min-w-0', className)}
       asChild
     >
       {link}
@@ -86,13 +86,15 @@ export function OfferButton({
 /** The secondary action next to an offer, e.g. "Browse the syllabus". */
 export function BrowseButton({
   offer,
+  size = 'default',
+  arrow = true,
   fullWidth = false,
   className,
   onOpen,
-}: Omit<Props, 'size' | 'variant' | 'arrow'>) {
+}: Omit<Props, 'variant'>) {
   if (!offer.browse) return null
   return (
-    <Button variant="outline" arrow fullWidth={fullWidth} className={className} asChild>
+    <Button variant="outline" size={size} arrow={arrow} fullWidth={fullWidth} className={className} asChild>
       <Link to="/courses" onClick={() => onOpen(offer.feature.slug, 'browse')}>
         {offer.browse.label}
       </Link>

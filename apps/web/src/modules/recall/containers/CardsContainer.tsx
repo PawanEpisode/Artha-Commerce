@@ -9,15 +9,17 @@ import {
   EmptyState,
   FilterChip,
   Input,
+  PageHeader,
   SelectField,
   Skeleton,
   Sparkles,
+  TableToolbar,
   toast,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useMemo, useState } from 'react'
 
-import { CardRow } from '../components/CardRow'
+import { CardTable } from '../components/CardRow'
 import { ChapterPicker, type PickedChapter } from '../components/ChapterPicker'
 import { LoadError, RecallShell } from '../components/RecallShell'
 import { useCards } from '../hooks/useCards'
@@ -55,12 +57,15 @@ function Search({ value, onCommit }: { value: string; onCommit: (v: string) => v
     return () => clearTimeout(t)
   }, [text, value, onCommit])
   return (
-    <div className="grid gap-1">
-      <label htmlFor="card-search" className="text-sm font-medium">
-        Search your cards
-      </label>
-      <Input id="card-search" type="search" value={text} onChange={(e) => setText(e.target.value)} />
-    </div>
+    <Input
+      id="card-search"
+      type="search"
+      aria-label="Search your cards"
+      placeholder="Search your cards"
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      className="w-full sm:w-64"
+    />
   )
 }
 
@@ -129,17 +134,17 @@ function Cards({ search }: { search: CardsSearch }) {
 
   return (
     <>
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div className="space-y-1">
-          <h1 className="text-3xl font-extrabold">Your cards</h1>
-          <p className="text-muted-foreground">Find, fix and organise the cards you review.</p>
-        </div>
-        <ButtonLink asChild>
-          <Link to="/app/recall/cards/new" search={{}}>
-            Make a card
-          </Link>
-        </ButtonLink>
-      </header>
+      <PageHeader
+        title="Your cards"
+        description="Find, fix and organise the cards you review."
+        actions={
+          <ButtonLink asChild>
+            <Link to="/app/recall/cards/new" search={{}}>
+              Make a card
+            </Link>
+          </ButtonLink>
+        }
+      />
 
       {offline.attention.length > 0 ? (
         <Alert variant="error">
@@ -151,7 +156,7 @@ function Cards({ search }: { search: CardsSearch }) {
             </span>
             <span className="flex flex-wrap gap-2">
               {offline.attention.map((e) => (
-                <ButtonLink key={e.cardId} variant="outline" asChild>
+                <ButtonLink key={e.cardId} variant="outline" size="sm" asChild>
                   <Link to="/app/recall/cards/$cardId" params={{ cardId: e.cardId }}>
                     Open {KIND_LABELS[e.kind as keyof typeof KIND_LABELS]?.label.toLowerCase() ?? 'card'}
                   </Link>
@@ -169,11 +174,12 @@ function Cards({ search }: { search: CardsSearch }) {
         </Alert>
       ) : null}
 
-      <section aria-label="Filters" className="space-y-3 rounded-2xl border border-border bg-card p-4">
-        <Search value={search.q ?? ''} onCommit={(v) => set({ q: v.trim() || undefined })} />
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <section aria-label="Filters" className="space-y-2">
+        <TableToolbar>
+          <Search value={search.q ?? ''} onCommit={(v) => set({ q: v.trim() || undefined })} />
           <SelectField
             aria-label="Kind"
+            className="w-auto min-w-32"
             value={search.kind ?? ANY}
             onValueChange={(v) => set({ kind: (v || undefined) as CardsSearch['kind'] })}
             options={[
@@ -183,6 +189,7 @@ function Cards({ search }: { search: CardsSearch }) {
           />
           <SelectField
             aria-label="Importance"
+            className="w-auto min-w-32"
             value={search.tier ?? ANY}
             onValueChange={(v) => set({ tier: (v || undefined) as CardsSearch['tier'] })}
             options={[
@@ -192,6 +199,7 @@ function Cards({ search }: { search: CardsSearch }) {
           />
           <SelectField
             aria-label="Status"
+            className="w-auto min-w-32"
             value={search.state ?? ANY}
             onValueChange={(v) => set({ state: (v || undefined) as CardsSearch['state'] })}
             options={[
@@ -201,11 +209,12 @@ function Cards({ search }: { search: CardsSearch }) {
           />
           <SelectField
             aria-label="Order"
+            className="w-auto min-w-32"
             value={search.sort ?? 'newest'}
             onValueChange={(v) => set({ sort: v === 'newest' ? undefined : (v as CardsSearch['sort']) })}
             options={Object.entries(SORT_LABEL).map(([value, label]) => ({ value, label }))}
           />
-        </div>
+        </TableToolbar>
         {chips.length > 0 ? (
           <div className="flex flex-wrap items-center gap-2">
             {chips.map((c) => (
@@ -217,6 +226,13 @@ function Cards({ search }: { search: CardsSearch }) {
                 {c.text}
               </FilterChip>
             ))}
+            <Button
+              variant="ghost"
+              size="xs"
+              onClick={() => void navigate({ to: '/app/recall/cards', search: {}, replace: true })}
+            >
+              Clear
+            </Button>
           </div>
         ) : null}
       </section>
@@ -224,56 +240,59 @@ function Cards({ search }: { search: CardsSearch }) {
       {picked.size > 0 ? (
         <section
           aria-label="Selected cards"
-          className="sticky bottom-3 z-10 flex flex-wrap items-center gap-2 rounded-2xl border border-border bg-card p-3 shadow-soft"
+          className="sticky bottom-3 z-10 flex flex-wrap items-center gap-2 rounded-lg border border-border bg-card p-2 shadow-lift"
         >
-          <p className="mr-auto text-sm font-medium" role="status">
+          <p className="mr-auto pl-1 text-[13px] font-medium" role="status">
             {picked.size} selected
           </p>
-          <Button variant="outline" disabled={bulk.isPending} onClick={() => act('suspend')}>
+          <Button size="sm" variant="outline" disabled={bulk.isPending} onClick={() => act('suspend')}>
             Pause
           </Button>
           <Button
             variant="outline"
+            size="sm"
             disabled={bulk.isPending}
             onClick={() => act('set_importance', { importance: 'mandatory' })}
           >
             Mark as must know
           </Button>
-          <Button variant="outline" disabled={bulk.isPending} onClick={() => setDialog('move')}>
+          <Button size="sm" variant="outline" disabled={bulk.isPending} onClick={() => setDialog('move')}>
             Move to chapter
           </Button>
-          <Button variant="outline" disabled={bulk.isPending} onClick={() => setDialog('tag')}>
+          <Button size="sm" variant="outline" disabled={bulk.isPending} onClick={() => setDialog('tag')}>
             Add tag
           </Button>
-          <Button variant="danger" disabled={bulk.isPending} onClick={() => setConfirmDelete(true)}>
+          <Button size="sm" variant="danger" disabled={bulk.isPending} onClick={() => setConfirmDelete(true)}>
             Delete
           </Button>
-          <Button variant="ghost" onClick={() => setPicked(new Set())}>
+          <Button size="sm" variant="ghost" onClick={() => setPicked(new Set())}>
             Clear
           </Button>
         </section>
       ) : null}
 
       {q.isPending ? (
-        <div aria-busy="true" className="space-y-3">
+        <div aria-busy="true" className="space-y-1">
           <span className="sr-only" role="status">
             Loading your cards…
           </span>
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-20 w-full" />
-          <Skeleton className="h-20 w-full" />
+          {Array.from({ length: 6 }, (_, i) => (
+            <Skeleton key={i} className="h-9 w-full" />
+          ))}
         </div>
       ) : q.isError ? (
         <LoadError what="your cards" onRetry={() => void q.refetch()} />
       ) : cards.length === 0 ? (
         filtered || search.q ? (
           <EmptyState
+            className="rounded-lg py-6"
             icon={<Sparkles aria-hidden />}
             title="No cards match"
             description="Try fewer filters or a different word."
             action={
               <Button
                 variant="outline"
+                size="sm"
                 onClick={() => void navigate({ to: '/app/recall/cards', search: {}, replace: true })}
               >
                 Clear filters
@@ -282,6 +301,7 @@ function Cards({ search }: { search: CardsSearch }) {
           />
         ) : (
           <EmptyState
+            className="rounded-lg py-6"
             icon={<Sparkles aria-hidden />}
             title="You have no cards yet"
             description="Make one here, or highlight a line in your notes and choose Make a card."
@@ -296,30 +316,21 @@ function Cards({ search }: { search: CardsSearch }) {
         )
       ) : (
         <>
-          <ul className="space-y-3" aria-label="Cards">
-            {cards.map((c) => (
-              <CardRow
-                key={c.id}
-                card={c}
-                selected={picked.has(c.id)}
-                onSelect={(id, on) =>
-                  setPicked((prev) => {
-                    const next = new Set(prev)
-                    if (on) next.add(id)
-                    else next.delete(id)
-                    return next
-                  })
-                }
-              />
-            ))}
-          </ul>
+          <CardTable
+            cards={cards}
+            picked={picked}
+            onSelect={(id, on) =>
+              setPicked((prev) => {
+                const next = new Set(prev)
+                if (on) next.add(id)
+                else next.delete(id)
+                return next
+              })
+            }
+            onSelectAll={(on) => setPicked(on ? new Set(cards.map((c) => c.id)) : new Set())}
+          />
           {q.hasNextPage ? (
-            <Button
-              variant="outline"
-              className="w-full"
-              disabled={q.isFetchingNextPage}
-              onClick={() => void q.fetchNextPage()}
-            >
+            <Button variant="outline" size="sm" disabled={q.isFetchingNextPage} onClick={() => void q.fetchNextPage()}>
               {q.isFetchingNextPage ? 'Loading…' : 'Show more cards'}
             </Button>
           ) : null}

@@ -47,7 +47,8 @@ describe('NotesList', () => {
         renderExtra={(n) => <span>extra for {n.title}</span>}
       />,
     )
-    expect(screen.getAllByRole('listitem')).toHaveLength(2)
+    expect(screen.getByRole('table', { name: 'notes' })).toBeInTheDocument()
+    expect(screen.getAllByRole('link')).toHaveLength(2)
     expect(screen.getByText(/You are offline/)).toBeInTheDocument()
     expect(screen.getByText('extra for Two')).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'Load more' }))

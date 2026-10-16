@@ -121,7 +121,7 @@ export function Combobox({
             aria-expanded={open}
             aria-label={ariaLabel ?? placeholder}
             className={cn(
-              'flex h-11 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-input bg-card px-3.5 text-left text-sm transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:cursor-not-allowed disabled:opacity-50',
+              'flex h-8 w-full cursor-pointer items-center justify-between gap-2 rounded-md border border-input bg-card px-2.5 text-left text-[13px] transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 pointer-coarse:h-11 pointer-coarse:text-base',
               selectedValues.length === 0 && 'text-muted-foreground',
               triggerClassName,
             )}
@@ -131,8 +131,8 @@ export function Combobox({
           </button>
         </PopoverTrigger>
         <PopoverContent className="w-[min(26rem,calc(100vw-2rem))] p-0" align="start" onKeyDown={handleKeyDown}>
-          <div className="flex items-center border-b border-border px-3 py-2">
-            <Search aria-hidden className="mr-2 size-4 shrink-0 text-muted-foreground" />
+          <div className="flex items-center border-b border-border px-2.5 py-1.5">
+            <Search aria-hidden className="mr-2 size-3.5 shrink-0 text-muted-foreground" />
             <input
               ref={inputRef}
               type="text"
@@ -146,13 +146,13 @@ export function Combobox({
                 setSearch(e.target.value)
                 setHighlightedIndex(0)
               }}
-              className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+              className="w-full bg-transparent text-[13px] outline-none placeholder:text-muted-foreground pointer-coarse:text-base"
             />
             {search && (
               <button
                 type="button"
                 onClick={() => setSearch('')}
-                className="rounded p-0.5 text-muted-foreground hover:text-foreground"
+                className="rounded-sm p-0.5 text-muted-foreground hover:text-foreground pointer-coarse:p-2"
                 aria-label="Clear search"
               >
                 <X aria-hidden className="size-3.5" />
@@ -163,10 +163,10 @@ export function Combobox({
             id={listboxId}
             role="listbox"
             aria-multiselectable={multiple}
-            className="max-h-60 overflow-y-auto p-1 text-sm"
+            className="max-h-60 overflow-y-auto p-1 text-[13px]"
           >
             {filteredOptions.length === 0 ? (
-              <div className="py-4 text-center text-sm text-muted-foreground">{emptyText}</div>
+              <div className="py-3 text-center text-[13px] text-muted-foreground">{emptyText}</div>
             ) : (
               filteredOptions.map((opt, index) => {
                 const isSelected = selectedValues.includes(opt.value)
@@ -181,7 +181,7 @@ export function Combobox({
                     onClick={() => handleSelect(opt.value)}
                     onMouseEnter={() => setHighlightedIndex(index)}
                     className={cn(
-                      'flex w-full cursor-pointer items-center justify-between rounded-md px-2.5 py-2 text-left text-sm transition-colors outline-none',
+                      'flex w-full cursor-pointer items-center justify-between rounded-md px-2 py-1.5 text-left text-[13px] transition-colors outline-none pointer-coarse:min-h-11',
                       isHighlighted && 'bg-accent text-accent-foreground',
                       isSelected && 'font-medium',
                       opt.disabled && 'cursor-not-allowed opacity-50',
@@ -200,7 +200,7 @@ export function Combobox({
                       )}
                       <span className="truncate">{opt.label}</span>
                       {opt.badge && (
-                        <span className="rounded bg-muted px-1.5 py-0.5 text-xs text-muted-foreground">
+                        <span className="rounded-sm bg-muted px-1.5 py-0.5 text-[11px] text-muted-foreground">
                           {opt.badge}
                         </span>
                       )}

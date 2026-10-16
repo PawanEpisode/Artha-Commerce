@@ -24,7 +24,7 @@ export function NewPasswordForm({ submitLabel, pending, error, onSubmit }: NewPa
   }
 
   return (
-    <form onSubmit={handle} noValidate className="space-y-4">
+    <form onSubmit={handle} noValidate className="space-y-3">
       <PasswordField
         label="New password"
         name="new-password"

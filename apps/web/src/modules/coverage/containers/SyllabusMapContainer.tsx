@@ -47,15 +47,24 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
           void navigate({ search: (prev) => ({ ...prev, view: w ? 'weighted' : 'simple' }), replace: true })
         }
         calculation={<CalculationPopover weights={weights} />}
+        dueAction={
+          overview.due_count > 0 ? (
+            <Button variant="secondary" asChild>
+              <Link to="/app/revision">
+                Revise what is due <Badge variant="highlight">{overview.due_count}</Badge>
+              </Link>
+            </Button>
+          ) : undefined
+        }
       />
 
       {search.status === 'due' ? (
-        <section aria-labelledby="due-heading" className="space-y-3">
+        <section aria-labelledby="due-heading" className="space-y-2">
           <div className="flex items-center justify-between gap-3">
-            <h2 id="due-heading" className="font-display text-xl font-bold">
+            <h2 id="due-heading" className="text-sm font-semibold">
               Due for revision
             </h2>
-            <Button variant="outline" asChild>
+            <Button variant="outline" size="sm" asChild>
               <Link to="/app/syllabus" search={(prev) => ({ ...prev, status: undefined })}>
                 <ArrowLeft aria-hidden /> Show all papers
               </Link>
@@ -65,15 +74,6 @@ function Map({ overview, search }: { overview: Overview; search: MapSearch }) {
         </section>
       ) : (
         <>
-          {overview.due_count > 0 ? (
-            <Button variant="secondary" size="lg" arrow fullWidth className="justify-between" asChild>
-              <Link to="/app/revision">
-                <span className="flex items-center gap-2">
-                  Revise what is due <Badge variant="highlight">{overview.due_count}</Badge>
-                </span>
-              </Link>
-            </Button>
-          ) : null}
           <SubjectProgressList
             groups={overview.groups}
             subjects={overview.subjects}

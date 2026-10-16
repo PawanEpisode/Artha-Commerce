@@ -18,8 +18,8 @@ export function SetupWidget() {
   if (cards.length === 0) return null
 
   return (
-    <section aria-labelledby="widget-setup" className="space-y-3 lg:col-span-2">
-      <h2 id="widget-setup" className="text-base font-bold">
+    <section aria-labelledby="widget-setup" className="space-y-2 md:col-span-2 xl:col-span-3">
+      <h2 id="widget-setup" className="text-sm font-semibold">
         Finish your setup
       </h2>
       <SetupCards

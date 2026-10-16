@@ -17,7 +17,7 @@ export function FirstTimeIntro({ onDone }: { onDone: () => void }) {
           </li>
           <li>Be honest. Choosing Again is not a failure: it is how the schedule learns what to show you sooner.</li>
         </ol>
-        <Button size="lg" className="w-full" onClick={onDone}>
+        <Button className="w-full" onClick={onDone}>
           Start reviewing
         </Button>
       </CardContent>

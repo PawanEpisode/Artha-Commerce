@@ -13,7 +13,7 @@ export function UpdateBanner({ changes, follow, onReview }: BannerProps) {
   return (
     <section
       aria-label="Deck update"
-      className="space-y-2 rounded-xl border border-input bg-secondary p-4 text-sm text-foreground"
+      className="space-y-2 rounded-lg border border-input bg-secondary p-3 text-[13px] text-foreground"
     >
       <p className="flex items-center gap-2 font-semibold">
         <RefreshCw aria-hidden className="size-4 text-primary" />
@@ -46,7 +46,7 @@ export function FollowToggle({ follow, pending, disabled, onChange }: FollowProp
         aria-describedby="follow-updates-help"
       />
       <div className="min-w-0 space-y-0.5">
-        <Label htmlFor="follow-updates" className="flex items-center gap-1.5 text-sm font-medium">
+        <Label htmlFor="follow-updates" className="flex items-center gap-1.5 text-[13px] font-medium">
           {follow ? null : <Pin aria-hidden className="size-4" />}
           Take updates automatically
         </Label>

@@ -49,21 +49,21 @@ function CoverageRing({ value, label }: { value: number; label: string }) {
     const id = requestAnimationFrame(() => setShown(value))
     return () => cancelAnimationFrame(id)
   }, [value])
-  return <ProgressRing value={shown} label={label} size={112} strokeWidth={10} />
+  return <ProgressRing value={shown} label={label} size={64} strokeWidth={7} />
 }
 
 /** The next useful step: a real coverage number, or one tap into setup. */
 export function StudyPromptCard({ prompt, onOpen }: { prompt: StudyPrompt; onOpen: () => void }) {
   return (
-    <Card className="flex flex-col items-center gap-5 p-6 sm:flex-row sm:items-center">
+    <Card className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:gap-4">
       {prompt.percent !== undefined ? (
         <CoverageRing value={prompt.percent} label={prompt.progressLabel ?? 'Coverage'} />
       ) : null}
-      <div className="min-w-0 flex-1 text-center sm:text-left">
-        <p className="text-xl font-bold break-words">{prompt.title}</p>
-        <p className="mt-2 text-muted-foreground">{prompt.body}</p>
+      <div className="min-w-0 flex-1">
+        <p className="text-sm font-semibold break-words">{prompt.title}</p>
+        <p className="mt-0.5 text-sm text-muted-foreground">{prompt.body}</p>
       </div>
-      <Button variant="cta" size="lg" arrow className="w-full sm:w-auto" asChild>
+      <Button arrow className="shrink-0" asChild>
         <PromptLink link={prompt.link} onOpen={onOpen}>
           {prompt.link.label}
         </PromptLink>
