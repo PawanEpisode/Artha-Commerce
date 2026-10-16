@@ -29,6 +29,7 @@ import {
   useTheme,
 } from '@artha/design-system'
 import { Link, useLocation } from '@tanstack/react-router'
+import { Fragment } from 'react'
 
 import { useAuth } from '~/modules/auth'
 import { IdentityAvatar, useBootstrap } from '~/modules/personalization'
@@ -137,11 +138,23 @@ export function AppSidebar() {
           if (items.length === 0) return null
           return (
             <SidebarGroup key={group.id} label={group.label}>
-              {items.map((link) => (
-                <SidebarItem key={link.to} asChild icon={workspaceIcon(link.to)}>
-                  <Link to={link.to}>{link.label}</Link>
-                </SidebarItem>
-              ))}
+              {items.map((link) => {
+                const open = pathname === link.to || pathname.startsWith(`${link.to}/`)
+                return (
+                  <Fragment key={link.to}>
+                    <SidebarItem asChild icon={workspaceIcon(link.to)}>
+                      <Link to={link.to}>{link.label}</Link>
+                    </SidebarItem>
+                    {open && link.children
+                      ? link.children.map((child) => (
+                          <SidebarItem key={child.to} asChild className="h-7 pl-9 text-[12.5px] rail:hidden">
+                            <Link to={child.to}>{child.label}</Link>
+                          </SidebarItem>
+                        ))
+                      : null}
+                  </Fragment>
+                )
+              })}
             </SidebarGroup>
           )
         })}

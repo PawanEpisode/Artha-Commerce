@@ -5,10 +5,13 @@ import {
   Clock,
   FileClock,
   FileText,
+  Inbox,
   Layers,
   ListChecks,
   type LucideIcon,
   Notebook,
+  PenLine,
+  RefreshCw,
   Settings,
   Target,
   Timer,
@@ -17,6 +20,10 @@ import {
 import type { WorkspaceLink } from './workspace-nav'
 
 const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
+  '/app/revision': RefreshCw,
+  '/app/practice': PenLine,
+  '/app/notifications': Inbox,
+  '/app/settings/recall': Layers,
   '/app/today': CalendarClock,
   '/app/planner': Target,
   '/app/focus': Timer,

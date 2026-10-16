@@ -22,6 +22,7 @@ from .domain.content import (
     lint_option,
     lint_stem,
 )
+from .domain.difficulty import estimate_difficulty
 from .domain.fingerprint import (
     compute_fp_exact,
     compute_fp_template,
@@ -140,10 +141,11 @@ def create_draft(
         source_ref=labels.get("source_ref", ""),
         source_year=labels.get("source_year"),
         difficulty=(
-            {"easy": 1, "medium": 2, "hard": 3}.get(str(labels.get("difficulty")).lower())
+            {"easy": 1, "medium": 3, "hard": 4}.get(str(labels.get("difficulty")).lower())
             if isinstance(labels.get("difficulty"), str)
             else labels.get("difficulty")
-        ),
+        )
+        or estimate_difficulty(kind=kind_name, stem=stem_md, options=opt_bodies, marks=marks),
         bloom=labels.get("bloom", ""),
         nature=labels.get("nature", ""),
         marks=marks,

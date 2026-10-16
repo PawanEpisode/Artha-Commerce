@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { SETTINGS_LINKS, STUDY_LINKS, visibleLinks } from './workspace-nav'
+import { SETTINGS_LINKS, STAFF_LINKS, STUDY_LINKS, visibleLinks } from './workspace-nav'
 
 const off = {
   focus_timer: false,
@@ -24,8 +24,11 @@ describe('visibleLinks', () => {
       '/app/focus',
       '/app/tracker',
       '/app/syllabus',
+      '/app/revision',
+      '/app/notifications',
       '/app/notes',
       '/app/recall',
+      '/app/practice',
       '/app/questions',
       '/app/pyq',
       '/app/mcq',
@@ -36,9 +39,17 @@ describe('visibleLinks', () => {
       '/app/settings/tracker',
       '/app/settings/coverage',
       '/app/settings/notes',
+      '/app/settings/recall',
       '/app/settings/notifications',
       '/app/account',
     ])
+  })
+
+  it('lists the pages inside a section and keeps staff tabs out of the study links', () => {
+    const recall = STUDY_LINKS.find((link) => link.to === '/app/recall')
+    expect(recall?.children?.map((c) => c.to)).toContain('/app/recall/stats')
+    expect(STUDY_LINKS.map((link) => link.to)).not.toContain('/app/questions/editor')
+    expect(STAFF_LINKS.map((link) => link.to)).toEqual(['/app/questions/editor', '/design-system'])
   })
 
   it('hides a tool and its settings when that flag is off, and always keeps Account', () => {
@@ -84,6 +95,7 @@ describe('visibleLinks', () => {
 
   it('shows Questions, Past papers, and MCQ Bank only when their flags are on', () => {
     expect(visibleLinks(STUDY_LINKS, { ...off, question_bank: true }).map((link) => link.to)).toEqual([
+      '/app/practice',
       '/app/questions',
     ])
     expect(visibleLinks(STUDY_LINKS, { ...off, pyq_bank: true }).map((link) => link.to)).toEqual(['/app/pyq'])

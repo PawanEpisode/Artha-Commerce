@@ -1,6 +1,7 @@
 import { useFeatureFlag } from '~/modules/observability'
+import { useBootstrap } from '~/modules/personalization'
 
-import { SETTINGS_LINKS, STUDY_LINKS, visibleLinks, type WorkspaceFlag } from './workspace-nav'
+import { SETTINGS_LINKS, STAFF_LINKS, STUDY_LINKS, visibleLinks, type WorkspaceFlag } from './workspace-nav'
 
 /** Study tools and settings the signed-in student is allowed to open. */
 export function useWorkspaceNav() {
@@ -18,8 +19,11 @@ export function useWorkspaceNav() {
     pyq_bank: useFeatureFlag('pyq_bank', { strict: true }),
     mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
   }
+  const { data } = useBootstrap()
   return {
     study: visibleLinks(STUDY_LINKS, enabled),
     settings: visibleLinks(SETTINGS_LINKS, enabled),
+    /** Editorial and design-system tabs, only for editors and admins. */
+    staff: data?.role === 'editor' || data?.role === 'admin' ? STAFF_LINKS : [],
   }
 }

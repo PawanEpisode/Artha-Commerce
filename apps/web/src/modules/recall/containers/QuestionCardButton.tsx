@@ -1,4 +1,4 @@
-import { Button, Check, toast } from '@artha/design-system'
+import { Button, Check, Layers, toast } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
 
 import { useCardFromQuestion } from '../hooks/useHistory'
@@ -37,6 +37,8 @@ export function QuestionCardButton({ questionId, versionId, onMade }: Props) {
     <div className="space-y-1">
       <Button
         variant="outline"
+        size="sm"
+        className="w-full justify-start"
         loading={make.isPending}
         disabled={!online}
         onClick={() =>
@@ -46,7 +48,7 @@ export function QuestionCardButton({ questionId, versionId, onMade }: Props) {
           })
         }
       >
-        Make a card from this
+        <Layers aria-hidden /> Make a card from this
       </Button>
       {!online ? <p className="text-xs text-muted-foreground">This needs the internet.</p> : null}
     </div>

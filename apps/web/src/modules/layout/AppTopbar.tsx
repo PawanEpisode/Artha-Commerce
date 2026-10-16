@@ -12,7 +12,7 @@ const isMac = () => typeof navigator !== 'undefined' && /mac|iphone|ipad/i.test(
 
 /** 44 px bar above every app page: where you are, a jump-to search, and the notification bell. */
 export function AppTopbar({ onSearch }: { onSearch: () => void }) {
-  const { study } = useWorkspaceNav()
+  const { study, staff } = useWorkspaceNav()
   const pathname = useLocation({ select: (l) => l.pathname })
   const section = currentSection(pathname, study)
   const Icon =
@@ -34,6 +34,19 @@ export function AppTopbar({ onSearch }: { onSearch: () => void }) {
           <span className="truncate">{section.label}</span>
         </Link>
       </nav>
+      {staff.length > 0 ? (
+        <nav aria-label="Staff" className="ml-3 hidden items-center gap-0.5 border-l pl-3 md:flex">
+          {staff.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="rounded-md px-2 py-1 text-xs font-medium text-muted-foreground outline-none hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50 data-[status=active]:bg-muted data-[status=active]:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      ) : null}
       <div className="ml-auto flex items-center gap-1.5">
         <Button
           variant="outline"

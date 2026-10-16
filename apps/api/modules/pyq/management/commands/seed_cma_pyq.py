@@ -1,7 +1,7 @@
 """
 Management command: python manage.py seed_cma_pyq
 Seeds authentic CMA Intermediate & Final (Syllabus 2022) past exam papers
-with official ICMAI links, section structure, and question nodes.
+with official ICMAI links. It no longer invents questions: real ones are imported from the institute PDFs.
 """
 
 from __future__ import annotations
@@ -90,40 +90,14 @@ class Command(BaseCommand):
                             "label": "Section A: Compulsory Objective Questions (30 Marks)",
                             "min_choose": 15,
                             "max_choose": 15,
-                            "questions": [
-                                {
-                                    "label": f"Q1.({chr(97 + i)})",
-                                    "marks": Decimal("2.0"),
-                                    "stem": f"Which of the following is a key statutory requirement under the Companies Act 2013 regarding independent directors? (Part {i + 1})",
-                                    "options": [
-                                        ("A", "Minimum 1/3rd of total directors in listed company"),
-                                        ("B", "Minimum 1/2 of total directors in all private companies"),
-                                        (
-                                            "C",
-                                            "At least two independent directors in unlisted public company with capital >= 10 Cr",
-                                        ),
-                                        ("D", "Both A and C"),
-                                    ],
-                                    "correct": ["D"],
-                                }
-                                for i in range(15)
-                            ],
+                            "questions": [],
                         },
                         {
                             "name": "Section B",
                             "label": "Section B: Descriptive Questions (Answer any 5 out of 7 - 70 Marks)",
                             "min_choose": 5,
                             "max_choose": 5,
-                            "questions": [
-                                {
-                                    "label": f"Q{i}",
-                                    "marks": Decimal("14.0"),
-                                    "stem": f"Examine the doctrine of indoor management with relevant landmark case laws and exceptions. (Question {i})",
-                                    "options": [],
-                                    "correct": [],
-                                }
-                                for i in range(2, 9)
-                            ],
+                            "questions": [],
                         },
                     ],
                 },
@@ -145,21 +119,7 @@ class Command(BaseCommand):
                             "label": "Section A: Multiple Choice Questions (15 x 2 = 30 Marks)",
                             "min_choose": 15,
                             "max_choose": 15,
-                            "questions": [
-                                {
-                                    "label": f"Q1.({chr(97 + i)})",
-                                    "marks": Decimal("2.0"),
-                                    "stem": f"Under AS 2 / Ind AS 2, inventory should be valued at: (Item {i + 1})",
-                                    "options": [
-                                        ("A", "Historical cost only"),
-                                        ("B", "Net realizable value only"),
-                                        ("C", "Lower of cost and net realizable value"),
-                                        ("D", "Replacement cost"),
-                                    ],
-                                    "correct": ["C"],
-                                }
-                                for i in range(15)
-                            ],
+                            "questions": [],
                         },
                     ],
                 },
@@ -181,24 +141,7 @@ class Command(BaseCommand):
                             "label": "Section A: Objective Questions (15 x 2 = 30 Marks)",
                             "min_choose": 15,
                             "max_choose": 15,
-                            "questions": [
-                                {
-                                    "label": f"Q1.({chr(97 + i)})",
-                                    "marks": Decimal("2.0"),
-                                    "stem": f"Under Section 17(5) of the CGST Act 2017, input tax credit is blocked on: (Item {i + 1})",
-                                    "options": [
-                                        (
-                                            "A",
-                                            "Motor vehicles for transportation of persons with seating capacity <= 13 (except for taxable supplies)",
-                                        ),
-                                        ("B", "Food and beverages supplied in the course of business"),
-                                        ("C", "Goods lost, stolen, destroyed, or written off"),
-                                        ("D", "All of the above"),
-                                    ],
-                                    "correct": ["D"],
-                                }
-                                for i in range(15)
-                            ],
+                            "questions": [],
                         },
                     ],
                 },
@@ -220,21 +163,7 @@ class Command(BaseCommand):
                             "label": "Section A: Multiple Choice Questions (15 x 2 = 30 Marks)",
                             "min_choose": 15,
                             "max_choose": 15,
-                            "questions": [
-                                {
-                                    "label": f"Q1.({chr(97 + i)})",
-                                    "marks": Decimal("2.0"),
-                                    "stem": f"In marginal costing, contribution is calculated as: (Item {i + 1})",
-                                    "options": [
-                                        ("A", "Sales minus Total Cost"),
-                                        ("B", "Sales minus Variable Cost"),
-                                        ("C", "Fixed Cost plus Profit"),
-                                        ("D", "Both B and C"),
-                                    ],
-                                    "correct": ["D"],
-                                }
-                                for i in range(15)
-                            ],
+                            "questions": [],
                         },
                     ],
                 },
@@ -256,21 +185,7 @@ class Command(BaseCommand):
                             "label": "Section A: Objective Questions (15 x 2 = 30 Marks)",
                             "min_choose": 15,
                             "max_choose": 15,
-                            "questions": [
-                                {
-                                    "label": f"Q1.({chr(97 + i)})",
-                                    "marks": Decimal("2.0"),
-                                    "stem": f"Under the Insolvency and Bankruptcy Code 2016, a Corporate Insolvency Resolution Process (CIRP) must be completed within: (Item {i + 1})",
-                                    "options": [
-                                        ("A", "90 days"),
-                                        ("B", "180 days"),
-                                        ("C", "330 days including legal proceedings"),
-                                        ("D", "Both B and C"),
-                                    ],
-                                    "correct": ["D"],
-                                }
-                                for i in range(15)
-                            ],
+                            "questions": [],
                         },
                     ],
                 },
@@ -335,6 +250,9 @@ class Command(BaseCommand):
                 # Populate sections and questions
                 sort_order = 1
                 for sec_idx, sec in enumerate(pd["sections"], start=1):
+                    # Questions come from the institute's PDFs (artha.paper.v1 JSON, imported with `import_paper`), never generated.
+                    if not sec["questions"]:
+                        continue
                     cg, _ = ChoiceGroup.objects.update_or_create(
                         paper=paper,
                         sort_order=sec_idx,

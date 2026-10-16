@@ -250,7 +250,9 @@ def import_paper(
                     "source_term_code": paper.term_code,
                     "tags": ["institute_pyq", f"term:{paper.term_code}"]
                     + (["pyq_stub"] if not p.get("stem_md") else []),
-                    "difficulty": p.get("difficulty", "medium"),
+                    # None lets the question bank estimate it (domain/difficulty.py) instead of stamping everything "medium".
+                    "difficulty": p.get("difficulty"),
+                    "source_year": int(paper.term_code[:4]) if paper.term_code[:4].isdigit() else None,
                 },
             }
 

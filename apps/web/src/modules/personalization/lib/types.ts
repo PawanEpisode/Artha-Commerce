@@ -36,6 +36,7 @@ export const bootstrapSchema = z.object({
   email: z.string(),
   full_name: z.string(),
   first_name: z.string(),
+  role: z.enum(['student', 'editor', 'admin']).optional(),
   name_suggestion: z.string(),
   avatar: avatarSchema,
   onboarding: onboardingSchema,

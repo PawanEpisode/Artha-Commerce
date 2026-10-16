@@ -6,6 +6,7 @@ import {
   isThemePreference,
   LogOut,
   PanelLeft,
+  Settings,
   SidebarInset,
   SidebarProvider,
   Sparkles,
@@ -25,11 +26,11 @@ import { isBareChrome } from './chrome'
 import { SettingsFrame } from './SettingsFrame'
 import { useWorkspaceNav } from './useWorkspaceNav'
 import { workspaceIcon } from './workspace-icons'
-import { NAV_GROUPS, type WorkspaceLink } from './workspace-nav'
+import { NAV_GROUPS, type WorkspaceLink, type WorkspaceSubLink } from './workspace-nav'
 
 /** Cmd/Ctrl+K palette: every destination, plus the few actions people look for. Built from the same flag-filtered links as the sidebar. */
 function CommandMenu({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
-  const { study, settings } = useWorkspaceNav()
+  const { study, settings, staff } = useWorkspaceNav()
   const navigate = useNavigate()
   const { signOut } = useAuth()
   const { setPreference } = useTheme()
@@ -45,13 +46,22 @@ function CommandMenu({ open, onOpenChange }: { open: boolean; onOpenChange: (ope
         icon: workspaceIcon('/app/today'),
         keywords: ['dashboard', 'workspace'],
       },
-      ...study.map((l) => ({
-        id: l.to,
-        label: l.label,
-        group: groupLabel(l),
-        icon: workspaceIcon(l.to),
-        keywords: l.description?.split(' '),
-      })),
+      ...study.flatMap((l) => [
+        {
+          id: l.to,
+          label: l.label,
+          group: groupLabel(l),
+          icon: workspaceIcon(l.to),
+          keywords: l.description?.split(' '),
+        },
+        ...(l.children ?? []).map((child) => ({
+          id: child.to,
+          label: `${l.label}: ${child.label}`,
+          group: groupLabel(l),
+          icon: workspaceIcon(l.to),
+        })),
+      ]),
+      ...staff.map((l) => ({ id: l.to, label: l.label, group: 'Staff', icon: Settings })),
       { id: '/courses', label: 'Courses', group: 'Explore', icon: GraduationCap },
       { id: '/features', label: 'Features', group: 'Explore', icon: Sparkles },
       ...settings.map((l) => ({ id: l.to, label: l.label, group: 'Settings', icon: workspaceIcon(l.to) })),
@@ -64,11 +74,11 @@ function CommandMenu({ open, onOpenChange }: { open: boolean; onOpenChange: (ope
       })),
       { id: 'action:signout', label: 'Sign out', group: 'Actions', icon: LogOut },
     ]
-  }, [study, settings])
+  }, [study, settings, staff])
 
   const onSelect = useCallback(
     (item: CommandItem) => {
-      if (item.id.startsWith('/')) void navigate({ to: item.id as WorkspaceLink['to'] })
+      if (item.id.startsWith('/')) void navigate({ to: item.id as WorkspaceLink['to'] | WorkspaceSubLink['to'] })
       else if (item.id === 'action:sidebar') toggle()
       else if (item.id === 'action:signout') void signOut()
       else if (item.id.startsWith('action:theme:')) {

@@ -13,6 +13,7 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from modules.mcqbank.models import McqSet, PatternProfile
+from modules.questionbank.domain.difficulty import estimate_difficulty
 from modules.questionbank.models import Collection, CollectionItem, Option, Question, QuestionVersion
 from modules.syllabus.models import Chapter, Course, Level, Scheme, Subject
 
@@ -219,7 +220,14 @@ class Command(BaseCommand):
 
             pos = 1
             for stem, opts, correct_key in itc_questions:
+                # Stable key: running the seeder again must not add the same question twice.
+                ext_ref = f"seed:gst-itc:{pos}"
+                if Question.objects.filter(origin_module="seed_mcq", external_ref=ext_ref).exists():
+                    pos += 1
+                    continue
                 q = Question.objects.create(
+                    origin_module="seed_mcq",
+                    external_ref=ext_ref,
                     course=course,
                     level=inter_level,
                     primary_chapter=tax_ch,
@@ -232,7 +240,7 @@ class Command(BaseCommand):
                     source_kind="platform",
                     source_name="ArthaCommerce",
                     marks=Decimal("2.0"),
-                    difficulty=3,
+                    difficulty=estimate_difficulty(kind="mcq_single", stem=stem, options=[o for _, o in opts], marks=2),
                 )
                 qv = QuestionVersion.objects.create(
                     question=q,

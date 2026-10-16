@@ -1,11 +1,13 @@
 import {
   Alert,
   Badge,
+  Button,
   ButtonLink,
   Card,
   CardContent,
   Check,
   CircleX,
+  Flag,
   Page,
   PageHeader,
   ShieldCheck,
@@ -154,7 +156,7 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
         <div className="min-w-0 space-y-4">
           <Card>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 pt-4">
               <RichText markdown={data.stem_md} profile="question" className={QUESTION_TEXT_CLASS} />
 
               {data.options && data.options.length > 0 && (
@@ -214,7 +216,7 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
 
           {data.explanation_md && (
             <Card>
-              <CardContent className="space-y-2">
+              <CardContent className="space-y-2 pt-4">
                 <h2 className="text-sm font-semibold text-foreground">Explanation and solution</h2>
                 <RichText markdown={data.explanation_md} profile="question" className={QUESTION_TEXT_CLASS} />
 
@@ -278,9 +280,17 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
           </Card>
 
           <Card>
-            <CardContent className="flex flex-wrap items-center gap-2">
+            <CardContent className="space-y-2 pt-4">
+              <h2 className="text-[11px] font-medium tracking-wide text-muted-foreground uppercase">Actions</h2>
               <QuestionCardButton questionId={data.question_id} versionId={data.version_id} />
-              <ReportErrorDialog questionId={questionId} />
+              <ReportErrorDialog
+                questionId={questionId}
+                trigger={
+                  <Button variant="outline" size="sm" className="w-full justify-start">
+                    <Flag aria-hidden /> Report an error
+                  </Button>
+                }
+              />
             </CardContent>
           </Card>
         </aside>

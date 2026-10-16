@@ -12,8 +12,36 @@ export type WorkspaceFlag =
   | 'pyq_bank'
   | 'mcq_bank'
 
+/** A page inside a section. Shown under its section in the sidebar while that section is open. */
+export interface WorkspaceSubLink {
+  to:
+    | '/app/focus/history'
+    | '/app/tracker/log'
+    | '/app/tracker/goals'
+    | '/app/tracker/reports'
+    | '/app/notes/library'
+    | '/app/notes/search'
+    | '/app/notes/trash'
+    | '/app/recall/review'
+    | '/app/recall/cards'
+    | '/app/recall/decks'
+    | '/app/recall/chapters'
+    | '/app/recall/forgotten'
+    | '/app/recall/suggestions'
+    | '/app/recall/stats'
+    | '/app/practice/new'
+    | '/app/practice/bookmarks'
+    | '/app/practice/mistakes'
+    | '/app/mcq/sets'
+  label: string
+}
+
 export interface WorkspaceLink {
   to:
+    | '/app/revision'
+    | '/app/practice'
+    | '/app/notifications'
+    | '/app/settings/recall'
     | '/app/today'
     | '/app/planner'
     | '/app/focus'
@@ -34,6 +62,8 @@ export interface WorkspaceLink {
   label: string
   description?: string
   flag?: WorkspaceFlag
+  /** Pages inside this section, listed under it while the section is open. */
+  children?: readonly WorkspaceSubLink[]
   /** Which sidebar section a study link lives in. Settings links have none. */
   group?: NavGroup
 }
@@ -68,6 +98,7 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'Focus timer',
     description: 'Study in focused rounds, then rest.',
     flag: 'focus_timer',
+    children: [{ to: '/app/focus/history', label: 'History' }],
   },
   {
     to: '/app/tracker',
@@ -75,6 +106,11 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'Time tracker',
     description: 'Log hours and see where today went.',
     flag: 'time_tracker',
+    children: [
+      { to: '/app/tracker/log', label: 'Log time' },
+      { to: '/app/tracker/goals', label: 'Goals' },
+      { to: '/app/tracker/reports', label: 'Reports' },
+    ],
   },
   {
     to: '/app/syllabus',
@@ -84,11 +120,30 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     flag: 'syllabus_coverage',
   },
   {
+    to: '/app/revision',
+    group: 'learn',
+    label: 'Due for revision',
+    description: 'Chapters to revise today.',
+    flag: 'syllabus_coverage',
+  },
+  {
+    to: '/app/notifications',
+    group: 'plan',
+    label: 'Inbox',
+    description: 'Reminders and updates.',
+    flag: 'notifications_ui',
+  },
+  {
     to: '/app/notes',
     group: 'learn',
     label: 'Notes',
     description: 'Write notes and find them by chapter.',
     flag: 'notes',
+    children: [
+      { to: '/app/notes/library', label: 'PDF library' },
+      { to: '/app/notes/search', label: 'Search' },
+      { to: '/app/notes/trash', label: 'Trash' },
+    ],
   },
   {
     to: '/app/recall',
@@ -96,6 +151,27 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'Revision',
     description: 'Flashcards that come back just before you forget.',
     flag: 'recall_system',
+    children: [
+      { to: '/app/recall/review', label: 'Review' },
+      { to: '/app/recall/cards', label: 'Cards' },
+      { to: '/app/recall/decks', label: 'Decks' },
+      { to: '/app/recall/chapters', label: 'Chapters' },
+      { to: '/app/recall/forgotten', label: 'Forgotten' },
+      { to: '/app/recall/suggestions', label: 'Suggestions' },
+      { to: '/app/recall/stats', label: 'Stats' },
+    ],
+  },
+  {
+    to: '/app/practice',
+    group: 'practice',
+    label: 'Practice',
+    description: 'Build a practice session, then review your answers.',
+    flag: 'question_bank',
+    children: [
+      { to: '/app/practice/new', label: 'New session' },
+      { to: '/app/practice/bookmarks', label: 'Bookmarks' },
+      { to: '/app/practice/mistakes', label: 'Mistakes' },
+    ],
   },
   {
     to: '/app/questions',
@@ -117,7 +193,14 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'MCQ Bank',
     description: 'Targeted multiple choice practice and ICMAI booklets.',
     flag: 'mcq_bank',
+    children: [{ to: '/app/mcq/sets', label: 'Sets' }],
   },
+]
+
+/** Header tabs for editors and admins. Everyone else never sees them (the API checks the role too). */
+export const STAFF_LINKS: ReadonlyArray<{ to: '/app/questions/editor' | '/design-system'; label: string }> = [
+  { to: '/app/questions/editor', label: 'Editorial queue' },
+  { to: '/design-system', label: 'Design system' },
 ]
 
 export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
@@ -126,6 +209,7 @@ export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
   { to: '/app/settings/tracker', label: 'Tracker settings', flag: 'time_tracker' },
   { to: '/app/settings/coverage', label: 'Coverage settings', flag: 'syllabus_coverage' },
   { to: '/app/settings/notes', label: 'Notes settings', flag: 'notes' },
+  { to: '/app/settings/recall', label: 'Revision settings', flag: 'recall_system' },
   { to: '/app/settings/notifications', label: 'Notification settings', flag: 'notifications_ui' },
   { to: '/app/account', label: 'Account' },
 ]

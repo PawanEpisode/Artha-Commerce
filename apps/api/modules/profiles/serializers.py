@@ -83,6 +83,8 @@ def bootstrap_dict(b: Bootstrap, user: SupabaseUser) -> dict:
         "email": p.email,
         "full_name": p.full_name,
         "first_name": first_name(p.full_name),
+        # Read-only: lets the app show staff navigation. The API still enforces the role on every staff endpoint.
+        "role": p.role,
         # Prefill for the name field; never stored until the student confirms it in onboarding.
         "name_suggestion": suggested_name(user.claims, p.email),
         "avatar": avatar_summary(p),
