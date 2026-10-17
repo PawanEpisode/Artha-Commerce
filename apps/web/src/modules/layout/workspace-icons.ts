@@ -15,6 +15,7 @@ import {
   Settings,
   Target,
   Timer,
+  TrendingUp,
 } from '@artha/design-system'
 
 import type { WorkspaceLink } from './workspace-nav'
@@ -34,6 +35,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/questions': FileText,
   '/app/pyq': FileClock,
   '/app/mcq': BookOpen,
+  '/app/analytics': TrendingUp,
   '/app/settings/today': CalendarClock,
   '/app/settings/focus': Timer,
   '/app/settings/tracker': Clock,

@@ -15,7 +15,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
@@ -41,7 +41,7 @@ export function McqHomeContainer() {
         setData(homeData)
         setFeaturedSets(sets)
       } catch (err: unknown) {
-        toast.error(err instanceof Error ? err.message : 'Failed to load MCQ Bank')
+        toastApiError(err, 'Failed to load MCQ Bank')
       } finally {
         setIsLoading(false)
       }
@@ -64,7 +64,7 @@ export function McqHomeContainer() {
         params: { id: res.session_id },
       })
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : 'Could not start quiz')
+      toastApiError(err, 'Could not start quiz')
       setIsStarting(false)
     }
   }
@@ -78,7 +78,7 @@ export function McqHomeContainer() {
         params: { id: res.session_id },
       })
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : 'Could not start practice set')
+      toastApiError(err, 'Could not start practice set')
       setIsStarting(false)
     }
   }

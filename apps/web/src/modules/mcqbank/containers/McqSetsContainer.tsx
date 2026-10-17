@@ -1,4 +1,4 @@
-import { EmptyState, Page, PageHeader, Skeleton, toast } from '@artha/design-system'
+import { EmptyState, Page, PageHeader, Skeleton, toastApiError } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
@@ -32,7 +32,7 @@ export function McqSetsContainer({
         const items = await listMcqSets(initialFilter)
         setSets(items)
       } catch (err: unknown) {
-        toast.error(err instanceof Error ? err.message : 'Failed to load MCQ sets')
+        toastApiError(err, 'Failed to load MCQ sets')
       } finally {
         setIsLoading(false)
       }
@@ -49,7 +49,7 @@ export function McqSetsContainer({
         params: { id: res.session_id },
       })
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : 'Could not start set')
+      toastApiError(err, 'Could not start set')
       setIsStarting(false)
     }
   }

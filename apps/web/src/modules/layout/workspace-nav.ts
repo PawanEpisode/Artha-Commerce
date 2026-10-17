@@ -11,6 +11,7 @@ export type WorkspaceFlag =
   | 'question_bank'
   | 'pyq_bank'
   | 'mcq_bank'
+  | 'performance_analytics'
 
 /** A page inside a section. Shown under its section in the sidebar while that section is open. */
 export interface WorkspaceSubLink {
@@ -52,6 +53,7 @@ export interface WorkspaceLink {
     | '/app/questions'
     | '/app/pyq'
     | '/app/mcq'
+    | '/app/analytics'
     | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
@@ -195,6 +197,13 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     flag: 'mcq_bank',
     children: [{ to: '/app/mcq/sets', label: 'Sets' }],
   },
+  {
+    to: '/app/analytics',
+    group: 'practice',
+    label: 'Analytics',
+    description: 'Exam readiness, accuracy trends, and weak topic drills.',
+    flag: 'performance_analytics',
+  },
 ]
 
 /** Header tabs for editors and admins. Everyone else never sees them (the API checks the role too). */
@@ -226,6 +235,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   question_bank: true,
   pyq_bank: true,
   mcq_bank: true,
+  performance_analytics: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

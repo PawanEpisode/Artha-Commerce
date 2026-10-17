@@ -20,6 +20,7 @@ import {
   Skeleton,
   StatTile,
   toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
@@ -83,7 +84,7 @@ export function PracticeReviewContainer({ sessionId }: PracticeReviewProps) {
       toast.success('Retake session created!')
       navigate({ to: '/app/practice/session/$id', params: { id: newSession.id } })
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Could not retake session.')
+      toastApiError(err, 'Could not retake session.')
     } finally {
       setIsRetaking(false)
     }

@@ -1,4 +1,4 @@
-import { Badge, EmptyState, Page, PageHeader, Skeleton, toast } from '@artha/design-system'
+import { Badge, EmptyState, Page, PageHeader, Skeleton, toastApiError } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
@@ -22,7 +22,7 @@ export function McqSubjectContainer({ subjectKey }: McqSubjectContainerProps) {
         const tiles = await getSubjectTiles(subjectKey)
         setChapters(tiles)
       } catch (err: unknown) {
-        toast.error(err instanceof Error ? err.message : 'Failed to load subject chapters')
+        toastApiError(err, 'Failed to load subject chapters')
       } finally {
         setIsLoading(false)
       }
@@ -44,7 +44,7 @@ export function McqSubjectContainer({ subjectKey }: McqSubjectContainerProps) {
         params: { id: res.session_id },
       })
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : 'Could not start quiz')
+      toastApiError(err, 'Could not start quiz')
       setIsStarting(false)
     }
   }

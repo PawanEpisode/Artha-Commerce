@@ -133,6 +133,7 @@ export {
   Target,
   Timer,
   Trash2,
+  TrendingUp,
   TriangleAlert,
   Type,
   Underline,

@@ -14,6 +14,7 @@ const off = {
   question_bank: false,
   pyq_bank: false,
   mcq_bank: false,
+  performance_analytics: false,
 }
 
 describe('visibleLinks', () => {
@@ -32,6 +33,7 @@ describe('visibleLinks', () => {
       '/app/questions',
       '/app/pyq',
       '/app/mcq',
+      '/app/analytics',
     ])
     expect(visibleLinks(SETTINGS_LINKS).map((link) => link.to)).toEqual([
       '/app/settings/today',
@@ -100,5 +102,8 @@ describe('visibleLinks', () => {
     ])
     expect(visibleLinks(STUDY_LINKS, { ...off, pyq_bank: true }).map((link) => link.to)).toEqual(['/app/pyq'])
     expect(visibleLinks(STUDY_LINKS, { ...off, mcq_bank: true }).map((link) => link.to)).toEqual(['/app/mcq'])
+    expect(visibleLinks(STUDY_LINKS, { ...off, performance_analytics: true }).map((link) => link.to)).toEqual([
+      '/app/analytics',
+    ])
   })
 })

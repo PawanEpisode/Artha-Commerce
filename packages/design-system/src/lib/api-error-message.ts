@@ -8,15 +8,19 @@ interface ApiErrorLike {
 const isApiErrorLike = (e: unknown): e is ApiErrorLike =>
   typeof e === 'object' && e !== null && typeof (e as { status?: unknown }).status === 'number'
 
-/** The API envelope is `{ error: { code, message, details } }`; `details` may hold DRF field errors. */
+/** The API envelope is `{ error: { code, message, details } }` or `{ code, message, details }` or `{ detail }`. */
 function envelope(body: unknown): { code?: string; message?: string; details?: unknown } {
   if (typeof body !== 'object' || body === null) return {}
-  const err = (body as { error?: unknown }).error
-  if (typeof err !== 'object' || err === null) return {}
-  const { code, message, details } = err as Record<string, unknown>
+  if (Array.isArray(body)) return { details: body }
+  const raw = body as Record<string, unknown>
+  const err = typeof raw.error === 'object' && raw.error !== null ? (raw.error as Record<string, unknown>) : raw
+  const code = typeof err.code === 'string' ? err.code : undefined
+  const rawMessage = err.message ?? err.detail
+  const message = typeof rawMessage === 'string' ? rawMessage : undefined
+  const details = err.details !== undefined ? err.details : err !== body ? undefined : raw
   return {
-    code: typeof code === 'string' ? code : undefined,
-    message: typeof message === 'string' ? message : undefined,
+    code,
+    message,
     details,
   }
 }
@@ -30,7 +34,14 @@ function firstDetail(details: unknown): string | undefined {
   return undefined
 }
 
-const GENERIC = new Set(['Request failed.', 'Bad request.', 'Invalid input.'])
+const GENERIC = new Set([
+  'Request failed.',
+  'Bad request.',
+  'Invalid input.',
+  'Validation error.',
+  'Invalid.',
+  'Error.',
+])
 
 export function apiErrorMessage(error: unknown, fallback: string): string {
   if (isApiErrorLike(error)) {

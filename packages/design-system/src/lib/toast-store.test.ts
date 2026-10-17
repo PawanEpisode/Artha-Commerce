@@ -63,6 +63,28 @@ describe('apiErrorMessage', () => {
       apiErrorMessage(err(400, { error: { message: 'Request failed.', details: { score: ['Too high.'] } } }), 'fb'),
     ).toBe('Too high.')
   })
+  it('handles root-level DRF validation error envelopes', () => {
+    expect(
+      apiErrorMessage(
+        err(400, {
+          code: 'invalid',
+          message: 'Request failed.',
+          details: { period_kind: ['"7d" is not a valid choice.'] },
+        }),
+        'fb',
+      ),
+    ).toBe('"7d" is not a valid choice.')
+  })
+  it('handles root-level DRF detail string', () => {
+    expect(apiErrorMessage(err(400, { detail: 'Session is already submitted or closed.' }), 'fb')).toBe(
+      'Session is already submitted or closed.',
+    )
+  })
+  it('handles root-level field errors without envelope', () => {
+    expect(apiErrorMessage(err(400, { email: ['Enter a valid email address.'] }), 'fb')).toBe(
+      'Enter a valid email address.',
+    )
+  })
   it('maps statuses', () => {
     expect(apiErrorMessage(err(401), 'fb')).toMatch(/sign in/)
     expect(apiErrorMessage(err(429), 'fb')).toMatch(/Too many/)
@@ -72,6 +94,17 @@ describe('apiErrorMessage', () => {
   it('handles offline and unknown errors', () => {
     expect(apiErrorMessage(new TypeError('Failed to fetch'), 'fb')).toMatch(/offline/)
     expect(apiErrorMessage('boom', 'fb')).toBe('fb')
+  })
+})
+
+describe('toast deduplication', () => {
+  it('reuses the same toast if an identical active toast already exists', () => {
+    const id1 = toast.error('Failed to submit form')
+    const id2 = toast.error('Failed to submit form')
+    expect(id1).toBe(id2)
+    const snapshot = toastStore.getSnapshot()
+    expect(snapshot).toHaveLength(1)
+    expect(snapshot[0]?.revision).toBe(2)
   })
 })
 

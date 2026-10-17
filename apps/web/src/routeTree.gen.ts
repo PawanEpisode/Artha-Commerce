@@ -31,6 +31,7 @@ import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-passw
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
+import { Route as AppAnalyticsIndexRouteImport } from './routes/app.analytics.index'
 import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
 import { Route as AppFocusMiniRouteImport } from './routes/app.focus.mini'
@@ -70,6 +71,7 @@ import { Route as AppTrackerLogRouteImport } from './routes/app.tracker.log'
 import { Route as AppTrackerReportsRouteImport } from './routes/app.tracker.reports'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
 import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course'
+import { Route as AppAnalyticsShareTokenRouteImport } from './routes/app.analytics.share.$token'
 import { Route as AppMcqSetsIndexRouteImport } from './routes/app.mcq.sets.index'
 import { Route as AppMcqSetsSlugRouteImport } from './routes/app.mcq.sets.$slug'
 import { Route as AppMcqSubjectsSubjectRouteImport } from './routes/app.mcq.subjects.$subject'
@@ -209,6 +211,11 @@ const FeaturesSlugRoute = FeaturesSlugRouteImport.update({
   id: '/features/$slug',
   path: '/features/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AppAnalyticsIndexRoute = AppAnalyticsIndexRouteImport.update({
+  id: '/analytics/',
+  path: '/analytics/',
+  getParentRoute: () => AppRoute,
 } as any)
 const AppFocusIndexRoute = AppFocusIndexRouteImport.update({
   id: '/focus/',
@@ -405,6 +412,11 @@ const OgCoursesCourseRoute = OgCoursesCourseRouteImport.update({
   id: '/og/courses/$course',
   path: '/og/courses/$course',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AppAnalyticsShareTokenRoute = AppAnalyticsShareTokenRouteImport.update({
+  id: '/analytics/share/$token',
+  path: '/analytics/share/$token',
+  getParentRoute: () => AppRoute,
 } as any)
 const AppMcqSetsIndexRoute = AppMcqSetsIndexRouteImport.update({
   id: '/mcq/sets/',
@@ -613,6 +625,7 @@ export interface FileRoutesByFullPath {
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/mcq/': typeof AppMcqIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
@@ -624,6 +637,7 @@ export interface FileRoutesByFullPath {
   '/app/today/': typeof AppTodayIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
   '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -703,6 +717,7 @@ export interface FileRoutesByTo {
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/analytics': typeof AppAnalyticsIndexRoute
   '/app/focus': typeof AppFocusIndexRoute
   '/app/mcq': typeof AppMcqIndexRoute
   '/app/notes': typeof AppNotesIndexRoute
@@ -714,6 +729,7 @@ export interface FileRoutesByTo {
   '/app/today': typeof AppTodayIndexRoute
   '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
+  '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
   '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -796,6 +812,7 @@ export interface FileRoutesById {
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/mcq/': typeof AppMcqIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
@@ -807,6 +824,7 @@ export interface FileRoutesById {
   '/app/today/': typeof AppTodayIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
   '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -890,6 +908,7 @@ export interface FileRouteTypes {
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/analytics/'
     | '/app/focus/'
     | '/app/mcq/'
     | '/app/notes/'
@@ -901,6 +920,7 @@ export interface FileRouteTypes {
     | '/app/today/'
     | '/app/tracker/'
     | '/courses/$course/'
+    | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
     | '/app/mcq/subjects/$subject'
     | '/app/notes/$subject/$chapter'
@@ -980,6 +1000,7 @@ export interface FileRouteTypes {
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/analytics'
     | '/app/focus'
     | '/app/mcq'
     | '/app/notes'
@@ -991,6 +1012,7 @@ export interface FileRouteTypes {
     | '/app/today'
     | '/app/tracker'
     | '/courses/$course'
+    | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
     | '/app/mcq/subjects/$subject'
     | '/app/notes/$subject/$chapter'
@@ -1072,6 +1094,7 @@ export interface FileRouteTypes {
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/analytics/'
     | '/app/focus/'
     | '/app/mcq/'
     | '/app/notes/'
@@ -1083,6 +1106,7 @@ export interface FileRouteTypes {
     | '/app/today/'
     | '/app/tracker/'
     | '/courses/$course/'
+    | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
     | '/app/mcq/subjects/$subject'
     | '/app/notes/$subject/$chapter'
@@ -1293,6 +1317,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/features/$slug'
       preLoaderRoute: typeof FeaturesSlugRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/app/analytics/': {
+      id: '/app/analytics/'
+      path: '/analytics'
+      fullPath: '/app/analytics/'
+      preLoaderRoute: typeof AppAnalyticsIndexRouteImport
+      parentRoute: typeof AppRoute
     }
     '/app/focus/': {
       id: '/app/focus/'
@@ -1567,6 +1598,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OgCoursesCourseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/analytics/share/$token': {
+      id: '/app/analytics/share/$token'
+      path: '/analytics/share/$token'
+      fullPath: '/app/analytics/share/$token'
+      preLoaderRoute: typeof AppAnalyticsShareTokenRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/mcq/sets/': {
       id: '/app/mcq/sets/'
       path: '/mcq/sets'
@@ -1821,6 +1859,7 @@ interface AppRouteChildren {
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
+  AppAnalyticsIndexRoute: typeof AppAnalyticsIndexRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
   AppMcqIndexRoute: typeof AppMcqIndexRoute
   AppNotesIndexRoute: typeof AppNotesIndexRoute
@@ -1830,6 +1869,7 @@ interface AppRouteChildren {
   AppRecallIndexRoute: typeof AppRecallIndexRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
+  AppAnalyticsShareTokenRoute: typeof AppAnalyticsShareTokenRoute
   AppMcqSetsSlugRoute: typeof AppMcqSetsSlugRoute
   AppMcqSubjectsSubjectRoute: typeof AppMcqSubjectsSubjectRoute
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
@@ -1888,6 +1928,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,
   AppTrackerReportsRoute: AppTrackerReportsRoute,
+  AppAnalyticsIndexRoute: AppAnalyticsIndexRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
   AppMcqIndexRoute: AppMcqIndexRoute,
   AppNotesIndexRoute: AppNotesIndexRoute,
@@ -1897,6 +1938,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppRecallIndexRoute: AppRecallIndexRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
   AppTrackerIndexRoute: AppTrackerIndexRoute,
+  AppAnalyticsShareTokenRoute: AppAnalyticsShareTokenRoute,
   AppMcqSetsSlugRoute: AppMcqSetsSlugRoute,
   AppMcqSubjectsSubjectRoute: AppMcqSubjectsSubjectRoute,
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,

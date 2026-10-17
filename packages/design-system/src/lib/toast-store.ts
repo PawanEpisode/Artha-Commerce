@@ -84,7 +84,12 @@ export const toastStore = {
 }
 
 function push(variant: ToastVariant, title: string, options: ToastOptions = {}): string {
-  const id = options.id ?? `toast-${++counter}`
+  const duplicate =
+    !options.id &&
+    records.find(
+      (r) => !r.dismissed && r.variant === variant && r.title === title && r.description === options.description,
+    )
+  const id = options.id ?? (duplicate ? duplicate.id : `toast-${++counter}`)
   const existing = records.find((r) => r.id === id)
   const record: ToastRecord = {
     id,

@@ -28,6 +28,7 @@ import {
   SheetTrigger,
   Skeleton,
   toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
@@ -241,8 +242,8 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     try {
       await setQuestionState(qid, { bookmarked: nextVal })
       toast.success(nextVal ? 'Bookmarked' : 'Bookmark removed')
-    } catch {
-      toast.error('Could not update bookmark.')
+    } catch (err) {
+      toastApiError(err, 'Could not update bookmark.')
     }
   }
 
@@ -256,7 +257,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
       })
       setCheckedResults((prev) => ({ ...prev, [currentIndex]: res }))
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Could not check answer.')
+      toastApiError(err, 'Could not check answer.')
     } finally {
       setIsChecking(false)
     }
@@ -266,8 +267,8 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     try {
       await pauseSession(sessionId)
       loadSession()
-    } catch {
-      toast.error('Could not pause session.')
+    } catch (err) {
+      toastApiError(err, 'Could not pause session.')
     }
   }
 
@@ -275,8 +276,8 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     try {
       await resumeSession(sessionId)
       loadSession()
-    } catch {
-      toast.error('Could not resume session.')
+    } catch (err) {
+      toastApiError(err, 'Could not resume session.')
     }
   }
 
@@ -286,7 +287,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
       await submitSession(sessionId)
       navigate({ to: '/app/practice/session/$id/review', params: { id: sessionId } })
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Could not submit session.')
+      toastApiError(err, 'Could not submit session.')
     } finally {
       setIsSubmitting(false)
     }

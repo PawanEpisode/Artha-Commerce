@@ -8,7 +8,7 @@ import {
   Play,
   Skeleton,
   StatTile,
-  toast,
+  toastApiError,
 } from '@artha/design-system'
 import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
@@ -38,8 +38,7 @@ export const Route = createFileRoute('/app/mcq/sets/$slug')({
           const detail = await getMcqSet(slug)
           setSet(detail)
         } catch (err: unknown) {
-          const msg = err instanceof Error ? err.message : 'Failed to load practice set'
-          toast.error(msg)
+          toastApiError(err, 'Failed to load practice set')
         } finally {
           setIsLoading(false)
         }
@@ -56,8 +55,7 @@ export const Route = createFileRoute('/app/mcq/sets/$slug')({
           params: { id: res.session_id },
         })
       } catch (err: unknown) {
-        const msg = err instanceof Error ? err.message : 'Could not start practice session'
-        toast.error(msg)
+        toastApiError(err, 'Could not start practice session')
         setIsStarting(false)
       }
     }

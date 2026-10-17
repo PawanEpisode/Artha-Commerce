@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
@@ -52,7 +52,7 @@ export function BookmarksContainer() {
       })
       navigate({ to: '/app/practice/session/$id', params: { id: session.id } })
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Could not start bookmarks practice.')
+      toastApiError(err, 'Could not start bookmarks practice.')
     } finally {
       setIsStarting(false)
     }

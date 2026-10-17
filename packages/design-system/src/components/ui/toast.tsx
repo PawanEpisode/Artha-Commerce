@@ -57,7 +57,7 @@ const prefersReducedMotion = () =>
 
 const SWIPE_DISMISS_PX = 72
 
-function ToastItem({ record }: { record: ToastRecord }) {
+function ToastItem({ record, position = 'top' }: { record: ToastRecord; position?: 'top' | 'bottom' }) {
   const { id, variant, duration, revision, dismissed } = record
   const [paused, setPaused] = React.useState(false)
   const [leaving, setLeaving] = React.useState(false)
@@ -132,7 +132,9 @@ function ToastItem({ record }: { record: ToastRecord }) {
       style={dx ? { transform: `translateX(${dx}px)`, opacity: Math.max(0.3, 1 - Math.abs(dx) / 240) } : undefined}
       className={cn(
         'pointer-events-auto flex w-full touch-pan-y items-start gap-2.5 rounded-lg border py-2 pr-1 pl-3 text-[13px] shadow-lift select-none',
-        'motion-safe:animate-in motion-safe:duration-200 motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3',
+        position === 'top'
+          ? 'motion-safe:animate-in motion-safe:duration-200 motion-safe:fade-in-0 motion-safe:slide-in-from-top-3'
+          : 'motion-safe:animate-in motion-safe:duration-200 motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-3',
         leaving &&
           'motion-safe:animate-out motion-safe:duration-150 motion-safe:fade-out-0 motion-safe:fill-mode-forwards',
         SURFACE[variant],
@@ -173,10 +175,10 @@ function ToastItem({ record }: { record: ToastRecord }) {
 const activeToasters = new Set<string>()
 
 /**
- * Mount once in the app root. Stacks bottom-centre on phones and bottom-right from `sm`, above the safe area.
+ * Mount once in the app root. Stacks top-centre by default, above the safe area.
  * Errors are announced assertively (role="alert"); everything else politely (role="status").
  */
-export function Toaster({ className }: { className?: string }) {
+export function Toaster({ className, position = 'top' }: { className?: string; position?: 'top' | 'bottom' }) {
   const id = React.useId()
   const [primary, setPrimary] = React.useState(true)
   React.useEffect(() => {
@@ -188,18 +190,25 @@ export function Toaster({ className }: { className?: string }) {
   }, [id])
   const records = React.useSyncExternalStore(toastStore.subscribe, toastStore.getSnapshot, () => [])
   if (!primary) return null
+
+  const isTop = position === 'top'
+
   return (
     <section
       aria-label="Notifications"
       data-slot="toaster"
+      data-position={position}
       className={cn(
-        'pointer-events-none fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:items-end sm:px-4',
+        'pointer-events-none fixed inset-x-0 z-[60] flex flex-col items-center gap-2 px-4',
+        isTop
+          ? 'top-0 pt-[max(0.75rem,env(safe-area-inset-top))] sm:pt-4'
+          : 'bottom-0 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:items-end sm:px-4',
         className,
       )}
     >
       {records.map((record) => (
-        <div key={record.id} className="w-full max-w-md sm:w-80">
-          <ToastItem record={record} />
+        <div key={record.id} className="w-full max-w-md sm:w-96">
+          <ToastItem record={record} position={position} />
         </div>
       ))}
     </section>
@@ -215,11 +224,17 @@ export interface ToastInput {
 }
 
 /** Back-compat wrapper: renders the Toaster. Prefer mounting <Toaster /> once at the app root. */
-export function ToastProvider({ children }: { children: React.ReactNode }) {
+export function ToastProvider({
+  children,
+  position = 'top',
+}: {
+  children: React.ReactNode
+  position?: 'top' | 'bottom'
+}) {
   return (
     <>
       {children}
-      <Toaster />
+      <Toaster position={position} />
     </>
   )
 }

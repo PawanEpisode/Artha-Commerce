@@ -43,7 +43,11 @@ export function useTick(active: boolean, everyMs = 1000, timers: Window | null =
 
 /** Whether a stopwatch exists, read from the cache the corner timer keeps fresh. It never fetches. */
 export function useStopwatchLive(): boolean {
-  const q = useQuery<StopwatchState>({ queryKey: trackerKeys.stopwatch, enabled: false })
+  const q = useQuery<StopwatchState>({
+    queryKey: trackerKeys.stopwatch,
+    queryFn: () => null as unknown as StopwatchState,
+    enabled: false,
+  })
   return !!q.data?.stopwatch
 }
 

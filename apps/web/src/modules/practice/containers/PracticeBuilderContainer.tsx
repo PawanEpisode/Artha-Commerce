@@ -1,4 +1,4 @@
-import { Alert, Button, Card, Combobox, Page, PageHeader, toast } from '@artha/design-system'
+import { Alert, Button, Card, Combobox, Page, PageHeader, toast, toastApiError } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
@@ -86,7 +86,7 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
         params: { id: session.id },
       })
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Could not create session. Please try again.')
+      toastApiError(err, 'Could not create session. Please try again.')
     } finally {
       setIsSubmitting(false)
     }

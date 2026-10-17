@@ -9,7 +9,7 @@ import {
   Play,
   ProgressBar,
   Skeleton,
-  toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
@@ -37,7 +37,7 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
         const detail = await getChapterDetail(subjectKey, chapterKey)
         setData(detail)
       } catch (err: unknown) {
-        toast.error(err instanceof Error ? err.message : 'Failed to load chapter details')
+        toastApiError(err, 'Failed to load chapter details')
       } finally {
         setIsLoading(false)
       }
@@ -60,7 +60,7 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
         params: { id: res.session_id },
       })
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : 'Could not start quiz')
+      toastApiError(err, 'Could not start quiz')
       setIsStarting(false)
     }
   }
@@ -74,7 +74,7 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
         params: { id: res.session_id },
       })
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : 'Could not start set')
+      toastApiError(err, 'Could not start set')
       setIsStarting(false)
     }
   }

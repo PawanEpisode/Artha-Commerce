@@ -13,7 +13,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
@@ -51,7 +51,7 @@ export function MistakesContainer() {
       })
       navigate({ to: '/app/practice/session/$id', params: { id: session.id } })
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Could not start mistakes practice.')
+      toastApiError(err, 'Could not start mistakes practice.')
     } finally {
       setIsStarting(false)
     }
